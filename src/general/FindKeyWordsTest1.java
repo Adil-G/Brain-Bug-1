@@ -1,7 +1,5 @@
 package general;
 
-import SentenceGenerator.ConversationBot_april23_2016;
-import SentenceGenerator.ConversationBot_may05_2016;
 import com.knowledgebooks.nlp.ExtractNames;
 import com.knowledgebooks.nlp.util.ScoredList;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL;
