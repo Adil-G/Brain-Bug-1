@@ -1,7 +1,6 @@
 package general;
 
 import general.chat.MainGUI;
-import general.graph.theory.WikipediaInfoBoxModel2OldJuly6;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL;
 import org.apache.commons.lang3.StringUtils;
 
