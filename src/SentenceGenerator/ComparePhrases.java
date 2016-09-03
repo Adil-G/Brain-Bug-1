@@ -1,17 +1,16 @@
 package SentenceGenerator;
 
-import general.FindKeyWordsTest;
 import general.LuceneSnowBallTest;
-import general.graph.theory.*;
+import general.graph.theory.Edge;
+import general.graph.theory.Graph;
+import general.graph.theory.GraphNew_July8;
+import general.graph.theory.Vertex;
 import org.apache.jena.ext.com.google.common.collect.HashMultiset;
 import org.apache.jena.ext.com.google.common.collect.Iterables;
 import org.apache.jena.ext.com.google.common.collect.Lists;
 import org.apache.jena.ext.com.google.common.collect.Multiset;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

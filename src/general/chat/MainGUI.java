@@ -2,11 +2,8 @@ package general.chat; /**
  * Created by corpi on 2016-07-09.
  */
 
-import com.sun.jna.platform.unix.X11;
-import com.sun.jna.platform.win32.OaIdl;
 import general.TestChatBotMain;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL;
-import javafx.stage.Screen;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.OutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
 
 public class MainGUI {
 

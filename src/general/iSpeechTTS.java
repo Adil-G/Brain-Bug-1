@@ -3,11 +3,13 @@ package general;
 /**
  * Created by corpi on 2016-06-14.
  */
+
+import com.iSpeech.TTSResult;
+import com.iSpeech.iSpeechSynthesis;
+
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-
-import com.iSpeech.*;
 
 public class iSpeechTTS
 {

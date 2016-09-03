@@ -3,12 +3,11 @@ package general.chat.pdf;
 /**
  * Created by corpi on 2016-08-22.
  */
+
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**

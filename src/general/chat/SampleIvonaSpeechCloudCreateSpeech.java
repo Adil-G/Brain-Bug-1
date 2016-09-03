@@ -11,29 +11,20 @@ package general.chat;
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-        import java.io.File;
-        import java.io.FileOutputStream;
-        import java.io.IOException;
-        import java.io.InputStream;
-        import java.net.URL;
-        import java.util.ArrayList;
 
-        import com.amazonaws.ClientConfiguration;
-        import com.amazonaws.auth.AWSCredentials;
-        import com.amazonaws.auth.AWSCredentialsProvider;
-        import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
-        import com.ivona.services.tts.IvonaSpeechCloudClient;
-        import com.ivona.services.tts.model.CreateSpeechRequest;
-        import com.ivona.services.tts.model.CreateSpeechResult;
-        import com.ivona.services.tts.model.Input;
-        import com.ivona.services.tts.model.Voice;import com.amazonaws.auth.AWSCredentials;
-        import com.amazonaws.auth.AWSCredentialsProvider;
-        import com.sun.media.jfxmedia.Media;
-        import com.sun.media.jfxmedia.MediaPlayer;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.ivona.services.tts.IvonaSpeechCloudClient;
+import com.ivona.services.tts.model.CreateSpeechRequest;
+import com.ivona.services.tts.model.CreateSpeechResult;
+import com.ivona.services.tts.model.Input;
+import com.ivona.services.tts.model.Voice;
 
-        import javax.sound.sampled.AudioInputStream;
-        import javax.sound.sampled.AudioSystem;
-        import javax.sound.sampled.Clip;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 
 
 /**

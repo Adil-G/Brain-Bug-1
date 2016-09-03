@@ -23,10 +23,10 @@ package general.chat;
  *
  *************************************************************************/
 
+import javazoom.jl.player.Player;
+
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-
-import javazoom.jl.player.Player;
 
 
 public class MP3 {

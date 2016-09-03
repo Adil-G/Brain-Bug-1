@@ -3,10 +3,7 @@ package general;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.util.Version;
 import org.tartarus.snowball.ext.PorterStemmer;
-
-import java.io.PrintStream;
 
 /**
  * Created by corpi on 2016-05-02.

@@ -2,17 +2,13 @@ package general.graph.theory;
 
 import SentenceGenerator.ComparePhrases;
 import SentenceGenerator.GoogleCSAPI;
-import SentenceGenerator.testWordnet;
-import com.github.andrewoma.dexx.collection.internal.redblack.Tree;
 import com.qoppa.pdfText.PDFText;
-import general.*;
+import general.FindKeyWordsTest;
+import general.LuceneSnowBallTest;
 import general.chat.MainGUI;
 import general.chat.ProgressBarDemo;
-import javafx.print.Collation;
+import general.comparePhrasesold_june7;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.jena.base.Sys;
-import org.apache.jena.util.CollectionFactory;
 import org.apache.lucene.wordnet.SynonymMap;
 import org.jsoup.Connection;
 import org.jsoup.HttpStatusException;
@@ -29,7 +25,6 @@ import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

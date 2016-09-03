@@ -32,11 +32,9 @@ package general.chat;
  */
 
 
-        import java.awt.*;
-        import java.awt.event.*;
-        import javax.swing.*;
-        import java.beans.*;
-        import java.util.Random;
+import javax.swing.*;
+import java.awt.*;
+import java.beans.PropertyChangeEvent;
 
 public class ProgressBarDemo extends JPanel{
 
