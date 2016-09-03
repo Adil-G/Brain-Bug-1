@@ -14,11 +14,14 @@ import static general.chat.MainGUI.local;
  */
 public class TestChatBot {
     public static void main(String[] args) throws Exception {
+        // hard coded
         File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\localData.txt");
+        // user input
         String question  =  new java.util.Scanner(System.in).nextLine();
+
         System.out.println(getAnswer(file,question));
     }
-    public static String getAnswer(File file,String question) throws Exception {
+    private static String getAnswer(File file,String question) throws Exception {
         String answer = "No Result.";
         if(file!=null) {
             // Set up environment and DATA
