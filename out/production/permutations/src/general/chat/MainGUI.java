@@ -52,7 +52,7 @@ public class MainGUI {
             }
         });
     }
-    public File chooseFile()
+    public static File chooseFile()
     {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
@@ -111,6 +111,8 @@ public class MainGUI {
         button3.setFont(new Font("Serif", Font.PLAIN, 25));
         button3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                // choose a file based on what you want
+                // it will take care of the rest
                 File file = chooseFile();
                 if(file!=null) {
                     useNewData = false;
