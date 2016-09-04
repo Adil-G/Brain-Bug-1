@@ -1,17 +1,12 @@
 package SentenceGenerator;
 
-import general.FindKeyWordsTest;
 import general.LuceneSnowBallTest;
-import general.graph.theory.*;
-import org.apache.jena.ext.com.google.common.collect.HashMultiset;
-import org.apache.jena.ext.com.google.common.collect.Iterables;
-import org.apache.jena.ext.com.google.common.collect.Lists;
-import org.apache.jena.ext.com.google.common.collect.Multiset;
+import general.graph.theory.Edge;
+import general.graph.theory.Graph;
+import general.graph.theory.GraphNew_July8;
+import general.graph.theory.Vertex;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -95,35 +90,6 @@ public class ComparePhrases {
             if(!added.contains(va.getLabel()))
                 addVertecies(va,array,added);
         }
-    }
-    public static ArrayList<String> mostCommonWordsList(ArrayList<String> theWords, final int HOW_MANY)
-    {
-        Multiset<String> words = HashMultiset.create(theWords);
-
-        List<Multiset.Entry<String>> wordCounts = Lists.newArrayList(words.entrySet());
-        Collections.sort(wordCounts, new Comparator<Multiset.Entry<String>>() {
-            public int compare(Multiset.Entry<String> left, Multiset.Entry<String> right) {
-                // Note reversal of 'right' and 'left' to get descending order
-                int compareto = 0;
-                if(right.getCount()<left.getCount())
-                    compareto = -1;
-                else if(right.getCount()>left.getCount())
-                    compareto = 1;
-                return compareto;
-            }
-        });
-// wordCounts now contains all the words, sorted by count descending
-
-// Take the first X entries (alternative: use a loop; this is simple because
-// it copes easily with < X elements)
-        Iterable<Multiset.Entry<String>> firstX = Iterables.limit(wordCounts, HOW_MANY);
-        ArrayList<String> wordArray = new ArrayList<>();
-// Guava-ey alternative: use a Function and Iterables.transform, but in this case
-// the 'manual' way is probably simpler:
-        for (Multiset.Entry<String> entry : firstX) {
-            wordArray.add(LuceneSnowBallTest.getStem(entry.getElement()));
-        }
-        return  wordArray;
     }
     public static HashSet<String> keyWords = new HashSet<>();
     public static HashSet<String> keyWordsVerbOrAdjective = new HashSet<>();

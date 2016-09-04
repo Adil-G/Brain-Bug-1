@@ -9,9 +9,6 @@ import opennlp.tools.tokenize.WhitespaceTokenizer;
 import opennlp.tools.util.ObjectStream;
 import opennlp.tools.util.PlainTextByLineStream;
 import org.apache.lucene.wordnet.SynonymMap;
-import org.jsoup.HttpStatusException;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -270,83 +267,6 @@ public class Paraphrase1 {
             synonymsList.add("or");
         }
         return synonymsList;
-    }
-    public static ArrayList<String> listSynonymsJJ2(String lastWord,String type) throws IOException {
-        ArrayList<String> rjhymes = new ArrayList<String>();
-        System.out.println("... Getting source");
-        //String url = "http://www.thesaurus.com/browse/"+ lastWord+"?s=t";
-        String url = "http://www.wordhippo.com/what-is/another-word-for/"+lastWord+".html";
-        //String url = "http://www.getanotherwordfor.com/"+lastWord;
-        String html = "";
-        Document doc = null;
-        try {
-            doc = Jsoup.connect(url).get();
-            html = doc.html();
-        }catch(HttpStatusException e)
-        {
-            System.out.println("No internet");
-        }
-        //System.out.println(html);
-        if(html.equals("")||html.contains("No words found."))
-        {
-            System.out.println("REWORDING FAILED.");
-            return new ArrayList<String>();//listSynonymsBACKUP(lastWord);
-        }
-        else {
-            System.out.println("... Got source succeeded");
-            if (!html.equals("") && !html.contains("no thesaurus results")) {
-                System.out.println("GOt the HTML");
-                String pattern ="";
-                if(type.toLowerCase().startsWith("v")) {
-                    pattern = "<div class=\"wordtype\">Verb</div>(.*?)";
-                }
-                else if(type.toLowerCase().startsWith("j"))
-                {
-                    pattern = "<div class=\"wordtype\">Adjective</div>(.*?)";
-                }
-                else if(type.toLowerCase().startsWith("r"))
-                {
-                    pattern = "<div class=\"wordtype\">Adverb</div>(.*?)";
-                }
-                Pattern p = Pattern.compile(pattern);
-                Matcher m = p.matcher(html);
-                while(m.find())
-                {
-                    if(m.groupCount()>0) {
-                        html = m.group(1);
-                    }
-                }
-                /////////////////////////////////////////////////////////////
-                pattern = "/what-is/another-word-for/.*?\">([a-z\\s]+)</a>";
-                p = Pattern.compile(pattern);
-                m = p.matcher(html);
-                final int WORD_BANK_SIZE = 4;
-                int h = 0;
-                while (h++<WORD_BANK_SIZE&&m.find()) {
-                    String rhyme1 = m.group(1);
-                    System.out.println("Synonym = " + rhyme1);
-                    if(!rhyme1.equals(lastWord)) {
-                        rjhymes.add(rhyme1);
-                    }
-                }
-                //TreeMap<Integer,String> set = new TreeMap<Integer,String>(Collections.reverseOrder());
-                if (rjhymes.size() > 1) {
-                    int maxSize = 4;
-                    if (rjhymes.size() < maxSize) {
-                        maxSize = rjhymes.size();
-                    }
-
-                    //rjhymes = pickNRandom(rjhymes, maxSize - 1);
-                } else {
-                    //System.out.println(usedPhrases7.get(i));
-                    //System.out.println(usedPhrases5.get(i + 1));
-                }
-            }
-        }
-        System.out.println("DFSIUGHENSVJLNEIONVS last word = <" + lastWord + ">");
-        System.out.println("DFSIUGHENSVJLNEIONVS synonym = <"+rjhymes+">");
-        System.out.println("DFSIUGHENSVJLNEIONVS type = <" + type + ">");
-        return rjhymes;
     }
     public static String filterWithTag2(String[] words,Map<String,ArrayList<String>> totalPhrase,
                                               Map<String,String> wordToTag) throws IOException {

@@ -205,13 +205,8 @@ public class MainGUI {
     public void setSendErrorMessageToUser(String errorMessage) throws Exception {
         chatBox.append("<" + chatbotName + ">:  " +  errorMessage
                 + "\n");
-        //new FreeTTS(errorMessage).speak();
-        SampleIvonaSpeechCloudCreateSpeech samp = new SampleIvonaSpeechCloudCreateSpeech();
-        samp.text = errorMessage;
-        samp.speak();
 
     }
-    private  SampleIvonaSpeechCloudCreateSpeech samp;
     public static PrintStream originalStream = System.out;
     public void setSendMessageToUser(String userResponse) throws Exception {
 
@@ -272,9 +267,6 @@ public class MainGUI {
                 public void run() {
                     //messageBox.setFont(new Font());
                     //here your code
-                    if(samp!=null)
-                        if(samp.mp3!=null)
-                            samp.mp3.close();
                     if (messageBox.getText().length() < 1) {
                         // do nothing
                         messageBox.requestFocusInWindow();

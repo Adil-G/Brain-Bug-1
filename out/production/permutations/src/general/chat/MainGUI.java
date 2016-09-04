@@ -2,11 +2,8 @@ package general.chat; /**
  * Created by corpi on 2016-07-09.
  */
 
-import com.sun.jna.platform.unix.X11;
-import com.sun.jna.platform.win32.OaIdl;
 import general.TestChatBotMain;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL;
-import javafx.stage.Screen;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.OutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
 
 public class MainGUI {
 
@@ -209,13 +205,8 @@ public class MainGUI {
     public void setSendErrorMessageToUser(String errorMessage) throws Exception {
         chatBox.append("<" + chatbotName + ">:  " +  errorMessage
                 + "\n");
-        //new FreeTTS(errorMessage).speak();
-        SampleIvonaSpeechCloudCreateSpeech samp = new SampleIvonaSpeechCloudCreateSpeech();
-        samp.text = errorMessage;
-        samp.speak();
 
     }
-    private  SampleIvonaSpeechCloudCreateSpeech samp;
     public static PrintStream originalStream = System.out;
     public void setSendMessageToUser(String userResponse) throws Exception {
 
@@ -276,9 +267,6 @@ public class MainGUI {
                 public void run() {
                     //messageBox.setFont(new Font());
                     //here your code
-                    if(samp!=null)
-                        if(samp.mp3!=null)
-                            samp.mp3.close();
                     if (messageBox.getText().length() < 1) {
                         // do nothing
                         messageBox.requestFocusInWindow();

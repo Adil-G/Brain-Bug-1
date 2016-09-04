@@ -3,6 +3,7 @@ package general;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
+import org.apache.lucene.util.Version;
 import org.tartarus.snowball.ext.PorterStemmer;
 
 /**
@@ -12,7 +13,7 @@ public class LuceneSnowBallTest {
     public static void main(String[] args) throws ParseException {
         //PrintStream c = System.out;
         //c.println(getStem("children"));
-        EnglishAnalyzer en_an = new EnglishAnalyzer();
+        EnglishAnalyzer en_an = new EnglishAnalyzer(Version.LUCENE_30);
         QueryParser parser = new QueryParser("noun", en_an);
         String str = "awarded";
         System.out.println("result: " + parser.parse(str)); //amenit
