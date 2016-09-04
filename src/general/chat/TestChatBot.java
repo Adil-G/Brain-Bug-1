@@ -21,7 +21,7 @@ public class TestChatBot {
 
         System.out.println(getAnswer(file,question));
     }
-    private static String getAnswer(File file,String question) throws Exception {
+    public static String getAnswer(File file,String question) throws Exception {
         String answer = "No Result.";
         if(file!=null) {
             // Set up environment and DATA
