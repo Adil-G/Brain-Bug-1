@@ -6,6 +6,7 @@ import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL;
 import java.io.File;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 import static general.chat.MainGUI.local;
 
@@ -17,9 +18,18 @@ public class TestChatBot {
         // hard coded
         File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\localData.txt");
         // user input
-        String question  =  "what is the canny edge detection";
+        //String question  =  "what is the canny edge detection";
+        String question  =  (new Scanner(System.in)).nextLine();
 
         System.out.println(getAnswer(file,question,"openNLP\\"));
+    }
+    public static String getAnswerWithGUI(String question) throws Exception {
+        // hard coded
+        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\localData.txt");
+        // user input
+
+        //System.out.println();
+        return getAnswer(file,question,"openNLP\\");
     }
     public static String getAnswer(File file,String question,String openNLPDir) throws Exception {
         String answer = "No Result.";

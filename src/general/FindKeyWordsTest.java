@@ -61,6 +61,9 @@ public class FindKeyWordsTest {
         String[] places = place.split(":\\d,\\s?");
         return new ArrayList<String>(Arrays.asList(places));
     }
+    public static void main(String[] args) throws IOException {
+        System.out.println(findName("who is Hillary"));
+    }
     public static ArrayList<String> POSTag2(String input) throws IOException {
         /*POSModel model = new POSModelLoader()
                 .load(new File(WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsDirectoryName+"en-pos-maxent.bin"));
@@ -479,7 +482,8 @@ public class FindKeyWordsTest {
         for(String word : adjective)
             name += word + " ";
         for(String word : verb)
-            if(!word.toLowerCase().equals("be"))
+            if(!word.toLowerCase().equals("be")
+                    &&!word.toLowerCase().equals("do"))
                 name += word + " ";
 
         return name;

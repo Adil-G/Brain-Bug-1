@@ -62,73 +62,22 @@ public class MainGUI {
     }
     public void dataChooser(MainGUI mainGUI)
     {
-        /*
+
         JFrame currFrame = new JFrame(appName);
         currFrame.setLayout(new GridLayout(1,3));
         Button button1 = new Button("Personal Bot");
         button1.setFont(new Font("Serif", Font.PLAIN, 25));
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                File file = chooseFile();
-                if(file!=null) {
-                    String name = file.getAbsolutePath().substring(
-                            file.getAbsolutePath().lastIndexOf('/') + 1);
-                    String directory = file.getAbsolutePath().substring(
-                            0, file.getAbsolutePath().lastIndexOf('/') + 1);
-                    WikipediaInfoBoxModel2OldJune14_PERSONAL.dataDirectoryName = directory;
-                    personal = name;
-                    WikipediaInfoBoxModel2OldJune14_PERSONAL.changeStatementsFileName(personal);
-                    currFrame.setVisible(false);
-                    mainGUI.preDisplay();
-                }
+                currFrame.setVisible(false);
+                mainGUI.preDisplay();
             }
         } );
+
         currFrame.add(button1);
-        Button button2 = new Button("Local Q & A (New)");
-        button2.setFont(new Font("Serif", Font.PLAIN, 25));
-        button2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                File file = chooseFile();
-                if(file!=null) {
-                    useNewData = true;
-                    String name = file.getAbsolutePath().substring(
-                            file.getAbsolutePath().lastIndexOf('/') + 1);
-                    String directory = file.getAbsolutePath().substring(
-                            0, file.getAbsolutePath().lastIndexOf('/') + 1);
-                    WikipediaInfoBoxModel2OldJune14_PERSONAL.dataDirectoryName = directory;
-                    local = name;
-                    WikipediaInfoBoxModel2OldJune14_PERSONAL.changeStatementsFileName(local);
-                    currFrame.setVisible(false);
-                    mainGUI.preDisplay();
-                }
-            }
-        } );
-        currFrame.add(button2);
-        Button button3 = new Button("Local Q & A (Existing)");
-        button3.setFont(new Font("Serif", Font.PLAIN, 25));
-        button3.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                // choose a file based on what you want
-                // it will take care of the rest
-                File file = chooseFile();
-                if(file!=null) {
-                    useNewData = false;
-                    String name = file.getAbsolutePath().substring(
-                            file.getAbsolutePath().lastIndexOf('/') + 1);
-                    String directory = file.getAbsolutePath().substring(
-                            0, file.getAbsolutePath().lastIndexOf('/') + 1);
-                    WikipediaInfoBoxModel2OldJune14_PERSONAL.dataDirectoryName = directory;
-                    local = name;
-                    WikipediaInfoBoxModel2OldJune14_PERSONAL.changeStatementsFileName(local);
-                    currFrame.setVisible(false);
-                    mainGUI.preDisplay();
-                }
-            }
-        } );
-        currFrame.add(button3);
         currFrame.setSize(size, size);
         currFrame.setVisible(true);
-        */
+
     }
     public void preDisplay() {
         newFrame.setVisible(false);
@@ -221,7 +170,7 @@ public class MainGUI {
 
         System.setOut(dummyStream);
 
-        String answer = TestChatBotMain.runChatbot(userResponse);
+        String answer = TestChatBot.getAnswerWithGUI(userResponse);
 
         System.setOut(originalStream);
 

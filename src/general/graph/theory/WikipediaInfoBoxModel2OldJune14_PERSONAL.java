@@ -21,6 +21,8 @@ import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static general.FindKeyWordsTest.findName;
+
 /**
  * Created by corpi on 2016-04-30.
  */
@@ -88,7 +90,8 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         return occurrences;
     }
     public static String chatbot(String question, String origionalQuestion) throws Exception {
-
+        //question = question.replaceAll("you","you Donald Trump");
+        //origionalQuestion = origionalQuestion.replaceAll("you","you Donald Trump");
         //System.exit(-100);
         list.clear();
         if (statementsFileNameEquals(MainGUI.web)
@@ -253,18 +256,26 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                 // no, add the key word
                 newKeyWordsNouns.add(keyword);
         }
+        newKeyWordsNouns.addAll(findName(origionalQuestion));
         // adjectives
         for (String keyword : ComparePhrases.keyWordsVerbOrAdjective)
         {
-            // find the root word
-            String rootWord = LuceneSnowBallTest.getStem(keyword);
-            // Check if root word of key word is an ACTUAL WORD
-            if (rootWord.length()>2)
-                // add the root word
-                newKeyWordsVerbsOrAdjectives.add(rootWord);
-            else
-                // no, add the key word
-                newKeyWordsVerbsOrAdjectives.add(keyword);
+            boolean keywordIsActuallyANoun = false;
+            for(String nounWord : newKeyWordsNouns) {
+                // find the root word
+                if(nounWord.toLowerCase().equals(keyword.toLowerCase()))
+                    keywordIsActuallyANoun= true;
+            }
+            if(!keywordIsActuallyANoun) {
+                String rootWord = LuceneSnowBallTest.getStem(keyword);
+                // Check if root word of key word is an ACTUAL WORD
+                if (rootWord.length() > 2)
+                    // add the root word
+                    newKeyWordsVerbsOrAdjectives.add(rootWord);
+                else
+                    // no, add the key word
+                    newKeyWordsVerbsOrAdjectives.add(keyword);
+            }
         }
 
         ComparePhrases.keyWords = newKeyWordsNouns;
@@ -282,13 +293,15 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         long origionalFreeMemory = Runtime.getRuntime().freeMemory();
         boolean shouldCollect  =true;
         int prevValue = 0;
-        for (File result : listOfFiles) {
-            try {
-                //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
-                if (result.getName().toLowerCase().endsWith(".txt")
-                        && !result.getName().toLowerCase().startsWith(".")
-                        && !(Paths.get(statementsFileName).equals(result.toPath()))
-                        ) {
+        int hasAnswer = 0;
+        while (hasAnswer <3) {
+            for (File result : listOfFiles) {
+                try {
+                    //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
+                    if (result.getName().toLowerCase().endsWith(".txt")
+                            && !result.getName().toLowerCase().startsWith(".")
+                            && !(Paths.get(statementsFileName).equals(result.toPath()))
+                            ) {
                     /*if((newContentPane.progressBar.getValue()-prevValue)>5
                             && newContentPane.progressBar.getValue()>40)
                     {
@@ -296,24 +309,24 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         prevValue = newContentPane.progressBar.getValue();
                     }
                     */
-                    if(shouldCollect) {
-                        double bytes = result.length();
-                        double kilobytes = (bytes / 1024);
-                        double megabytes = (kilobytes / 1024);
-                        double gigabytes = (megabytes / 1024);
-                        double terabytes = (gigabytes / 1024);
-                        double petabytes = (terabytes / 1024);
-                        double exabytes = (petabytes / 1024);
-                        double zettabytes = (exabytes / 1024);
-                        double yottabytes = (zettabytes / 1024);
-                        System.setOut(MainGUI.originalStream);
-                        System.out.println("you lost: "+(origionalFreeMemory - Runtime.getRuntime().freeMemory())
-                        +", From: "+kilobytes);
-                        System.setOut(dummyStream);
-                        System.gc();
-                        shouldCollect = false;
+                        if (shouldCollect) {
+                            double bytes = result.length();
+                            double kilobytes = (bytes / 1024);
+                            double megabytes = (kilobytes / 1024);
+                            double gigabytes = (megabytes / 1024);
+                            double terabytes = (gigabytes / 1024);
+                            double petabytes = (terabytes / 1024);
+                            double exabytes = (petabytes / 1024);
+                            double zettabytes = (exabytes / 1024);
+                            double yottabytes = (zettabytes / 1024);
+                            System.setOut(MainGUI.originalStream);
+                            System.out.println("you lost: " + (origionalFreeMemory - Runtime.getRuntime().freeMemory())
+                                    + ", From: " + kilobytes);
+                            System.setOut(dummyStream);
+                            System.gc();
+                            shouldCollect = false;
 
-                    }
+                        }
                         /*String allText = FileUtils.readFileToString(result, "utf-8").toLowerCase();
                     ComparePhrases.textSize = allText.split("[^\\w]+").length;
                     System.out.println(ComparePhrases.keyWordUniqueness);
@@ -343,84 +356,105 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         }
                     */
 
-                    int charsize = 0;
-                    newKeyWordsFullNouns = ComparePhrases.keyWords;
-                    newKeyWordsFullVerbsOrAdjectives = ComparePhrases.keyWordsVerbOrAdjective;
+                        int charsize = 0;
+                        newKeyWordsFullNouns = ComparePhrases.keyWords;
+                        newKeyWordsFullVerbsOrAdjectives = ComparePhrases.keyWordsVerbOrAdjective;
+                        /*
+                        if (hasAnswer > 0) {
 
-                    String biggestText=FileUtils.readFileToString(
-                            result, "utf-8").toLowerCase();
-                    ;//(|mr|ms|mrs)
-                    biggestText = biggestText.toString().toLowerCase().replaceAll("dr\\.", "dr");
-                    biggestText = biggestText.toString().toLowerCase().replaceAll("mr\\.", "mr");
-                    biggestText = biggestText.toString().toLowerCase().replaceAll("ms\\.", "ms");
-                    biggestText = biggestText.toString().toLowerCase().replaceAll("mrs\\.", "mrs");
-                    //String[] sentences = biggestText.split("[\\.\\?!\\n]+");
+                            newKeyWordsFullVerbsOrAdjectives.clear();
 
-
-                    HashSet<ParagraphInfo> sentsNouns = new HashSet<>();
-                    HashSet<ParagraphInfo> sentsVerbsOrAdjFinal = new HashSet<>();
-                    HashSet<String> keywordsUsedAsNouns = new HashSet<>();
-
-
-                    String publicationName = result.getName()
-                            .substring(0, result.getName().lastIndexOf("."));
-
-                    for (String y : biggestText.split("[\\.\\?!]+"))
-                        for (String keyWord : newKeyWordsFullNouns) {
-                            System.out.println(y + "->" + keyWord);
-                            if (y.toLowerCase().contains(keyWord.toLowerCase())) {
-                                ParagraphInfo info = new ParagraphInfo(y, publicationName);
-                                sentsNouns.add(info);
-                                keywordsUsedAsNouns.add(keyWord.toLowerCase());
-                                /*System.setOut(MainGUI.originalStream);
-                                System.out.println("noun: " + keyWord.toLowerCase());
-                                System.setOut(dummyStream);
-                                */
-                            }
                         }
+                         */
+                        String biggestText = FileUtils.readFileToString(
+                                result, "utf-8").toLowerCase();
+                        ;//(|mr|ms|mrs)
+                        biggestText = biggestText.toString().toLowerCase().replaceAll("dr\\.", "dr");
+                        biggestText = biggestText.toString().toLowerCase().replaceAll("mr\\.", "mr");
+                        biggestText = biggestText.toString().toLowerCase().replaceAll("ms\\.", "ms");
+                        biggestText = biggestText.toString().toLowerCase().replaceAll("mrs\\.", "mrs");
+                        //String[] sentences = biggestText.split("[\\.\\?!\\n]+");
 
-                    System.out.println(sentsNouns.size());
-                    newKeyWordsFullVerbsOrAdjectives.remove("");
-                    if (newKeyWordsFullVerbsOrAdjectives.size() > 0)
-                        for (ParagraphInfo info : sentsNouns) {//what length should my line be
-                            String y = info.getText();
-                            for (String keyWord : newKeyWordsFullVerbsOrAdjectives) {
-                                System.out.println(y + "->" + keyWord);
-                                if (y.toLowerCase().contains(keyWord.toLowerCase())
-                                        && !keywordsUsedAsNouns.contains(keyWord.toLowerCase())
-                                        && !keyWord.isEmpty()) {
-                                    sentsVerbsOrAdjFinal.add(info);
-                                    /*System.setOut(MainGUI.originalStream);
-                                    System.out.println("verb: " + keyWord.toLowerCase());
-                                    System.setOut(dummyStream);
-                                    */
-                                }
-                            }
-                        }
-                    else
-                        for (String y : biggestText.split("[\\.\\?!]+")) {
-                            int count = 0;
+
+                        HashSet<ParagraphInfo> sentsNouns = new HashSet<>();
+                        HashSet<ParagraphInfo> sentsVerbsOrAdjFinal = new HashSet<>();
+                        HashSet<String> keywordsUsedAsNouns = new HashSet<>();
+
+
+                        String publicationName = result.getName()
+                                .substring(0, result.getName().lastIndexOf("."));
+
+                        for (String y : biggestText.split("[\\.\\?!]+"))
                             for (String keyWord : newKeyWordsFullNouns) {
                                 System.out.println(y + "->" + keyWord);
                                 if (y.toLowerCase().contains(keyWord.toLowerCase())) {
-                                    count++;
+                                    ParagraphInfo info = new ParagraphInfo(y, publicationName);
+                                    sentsNouns.add(info);
+                                    keywordsUsedAsNouns.add(keyWord.toLowerCase());
+                                    System.setOut(MainGUI.originalStream);
+                                    System.out.println("noun: " + keyWord.toLowerCase());
+                                    System.setOut(dummyStream);
+
                                 }
                             }
-                            if (count > 1) {
-                                ParagraphInfo info = new ParagraphInfo(y, result.getName()
-                                        .substring(0, result.getName().lastIndexOf(".")));
-                                sentsVerbsOrAdjFinal.add(info);
-                            }
+                        System.setOut(MainGUI.originalStream);
+                        System.out.println("adsf" + sentsNouns.size());
+                        System.setOut(dummyStream);
+                        if (hasAnswer > 0) {
+
                         }
-                    int prevSize = sentsVerbsOrAdjFinal.size();
+                        if (hasAnswer > 0 && sentsNouns.size() > 0) {
+                            totalFinalfinalSetOfWords.addAll(sentsNouns);
+                        }
+                        else
+                        {
+                        System.out.println(sentsNouns.size());
+                        newKeyWordsFullVerbsOrAdjectives.remove("");
+                        if (newKeyWordsFullVerbsOrAdjectives.size() > 0)
+                            for (ParagraphInfo info : sentsNouns) {//what length should my line be
+                                String y = info.getText();
+                                for (String keyWord : newKeyWordsFullVerbsOrAdjectives) {
+                                    System.out.println(y + "->" + keyWord);
+                                    if (y.toLowerCase().contains(keyWord.toLowerCase())
+                                            && !keywordsUsedAsNouns.contains(keyWord.toLowerCase())
+                                            && !keyWord.isEmpty()) {
+                                        sentsVerbsOrAdjFinal.add(info);
+                                    System.setOut(MainGUI.originalStream);
+                                    System.out.println("verb: " + keyWord.toLowerCase());
+                                    System.setOut(dummyStream);
 
-                    totalFinalfinalSetOfWords.addAll(sentsVerbsOrAdjFinal);
+                                    }
+                                }
+                            }
+                        else// if(false &&hasAnswer > 0 )
+                            for (String y : biggestText.split("[\\.\\?!]+")) {
+                                int count = 0;
+                                for (String keyWord : newKeyWordsFullNouns) {
+                                    System.out.println(y + "->" + keyWord);
+                                    if (y.toLowerCase().contains(keyWord.toLowerCase())) {
+                                        count++;
+                                    }
+                                }
+                                if (count > 1) {
+                                    ParagraphInfo info = new ParagraphInfo(y, result.getName()
+                                            .substring(0, result.getName().lastIndexOf(".")));
+                                    sentsVerbsOrAdjFinal.add(info);
+                                }
+                            }
+                        int prevSize = sentsVerbsOrAdjFinal.size();
+
+                        totalFinalfinalSetOfWords.addAll(sentsVerbsOrAdjFinal);
+                    }
+                    }
+                } catch (Exception exception) {
+                    exception.printStackTrace();
                 }
-            }catch(Exception exception)
-            {
-                exception.printStackTrace();
-            }
 
+            }
+            if(totalFinalfinalSetOfWords.size() == 0)
+                hasAnswer = 5;
+            else
+                hasAnswer = 5;
         }
             boolean isNew = false;
             //newContentPane.progressBar.setMinimum(0);
@@ -437,7 +471,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         for (String paraBig : bigtext.split("[\\.\\?!]+"))
                             for (String para : paraBig.split("[\\.\\?!]+")) {
                                 String resultMeaningless = Integer.toString(1);
-                                String p12 = para.replaceAll("\\[.*?\\]", "");
+                                String p12 = para.replaceAll("[\\.\\?!]+", "");
                                 try {
                                     p12 = p12.substring(p12.indexOf(':'));
                                 } catch (Exception k) {//do nothing
@@ -851,7 +885,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
 
 
                 System.out.println(ComparePhrases.synMap);
-                if (!statementsFileNameEquals(MainGUI.web) && !statementsFileNameEquals(MainGUI.local)) {
+                if (true||!statementsFileNameEquals(MainGUI.web) && !statementsFileNameEquals(MainGUI.local)) {
                     speakfull = ((AnswerPair) match.firstEntry().getValue().toArray()
                             [new Random().nextInt(
                             match.firstEntry().getValue().size()
@@ -866,7 +900,8 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                 return speakfull;
                 */
                 else
-                    return speakfull;// +origionalQuestion.toLowerCase().matches(".*?how\\s.*?") +speakfull.replaceAll("\\[.*?\\]","").matches(".*?\\d+.*?");
+                    return speakfull.replaceAll("<92j8q9g93sajd9f8jqa9pf8j>","")
+                            .replaceAll("@[\\d\\w]+","");// +origionalQuestion.toLowerCase().matches(".*?how\\s.*?") +speakfull.replaceAll("\\[.*?\\]","").matches(".*?\\d+.*?");
 
 
             } catch (Exception l) {
@@ -891,7 +926,14 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                 WikipediaInfoBoxModel2OldJune14_PERSONAL.dataDirectoryName;
         return WikipediaInfoBoxModel2OldJune14_PERSONALActualWorkingVersion.chatbot(question,origionalQuestion);
         */
-
+        if(totalFinalfinalSetOfWords.size()>0) {
+            String ans = "";
+            for (ParagraphInfo answer : totalFinalfinalSetOfWords)
+                ans += answer.getText() + " ( " + answer.getPub() + " )\n";
+            return ans.split(" \\)\n")[0].replaceAll("<92j8q9g93sajd9f8jqa9pf8j>","")
+                    .replaceAll("@[\\d\\w]+","");
+        }
+        else
         return "Either you are not giving me a lot to go on, or I don't have any info on this. Perhaps you can provide me with more detail?";
 
     }

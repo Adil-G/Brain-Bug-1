@@ -28,5 +28,6 @@ public class LuceneSnowBallTest {
         stemmer.setCurrent(notANoun); //set string you need to stem
         stemmer.stem();  //stem the word
         return stemmer.getCurrent();
+        //return  notANoun;
     }
 }
