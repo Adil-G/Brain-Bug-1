@@ -62,6 +62,7 @@ public class MainGUI {
     }
     public void dataChooser(MainGUI mainGUI)
     {
+        /*
         JFrame currFrame = new JFrame(appName);
         currFrame.setLayout(new GridLayout(1,3));
         Button button1 = new Button("Personal Bot");
@@ -127,6 +128,7 @@ public class MainGUI {
         currFrame.add(button3);
         currFrame.setSize(size, size);
         currFrame.setVisible(true);
+        */
     }
     public void preDisplay() {
         newFrame.setVisible(false);

@@ -30,17 +30,24 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
     public static String statementsFileName = "statements2";
     public static String statementsDirectoryName = "openNLP\\";
     public static String dataDirectoryName = "openNLP\\";
+    public static String mainFileName = "";
+    public static String mainFileDir = "";
 
     final public static int HOW_MANY_IN_THE_TOP_X = 20;
     //final public static String statementsFileName = "statements_july6.txt";
     //
-    public static void changeStatementsFileName(String newName)
+    public static void changeStatementsFileName(String directory,String filename, String openNLPDir)
     {
-        statementsFileName = dataDirectoryName+newName;
+        statementsDirectoryName =openNLPDir;
+        dataDirectoryName = openNLPDir;
+        statementsFileName = directory+filename;
+        mainFileDir=  directory;
+        mainFileName = filename;
+
     }
     public static boolean statementsFileNameEquals(String other)
     {
-        return statementsFileName.equals(dataDirectoryName+other);
+        return statementsFileName.equals(mainFileDir+other);
         //System.out.println(statementsFileName);
         //System.out.println(statementsFileName.substring(statementsFileName.lastIndexOf("openNLP")+1+"openNLP".length()));
         //System.exit(-100);
@@ -190,7 +197,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         }
         System.out.println("query>>> " + query);
         //System.exit(-1);
-        JFrame frame = new JFrame("ProgressBarDemo");
+        /*JFrame frame = new JFrame("ProgressBarDemo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Create and set up the content pane.
@@ -204,7 +211,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         newContentPane.progressBar.setMinimum(0);
         newContentPane.progressBar.setMaximum(100);
         newContentPane.progressBar.setValue(3);
-
+        */
         ComparePhrases.keyWords.clear();
         ComparePhrases.keyWordsVerbOrAdjective.clear();
         String[] keyWordsArrayNouns = FindKeyWordsTest.getNouns(question).toLowerCase().split("[^\\w]+");
@@ -277,17 +284,18 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         int prevValue = 0;
         for (File result : listOfFiles) {
             try {
-                newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
+                //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
                 if (result.getName().toLowerCase().endsWith(".txt")
                         && !result.getName().toLowerCase().startsWith(".")
-                        &&
-                        !(Paths.get(statementsFileName).equals(result.toPath()))) {
-                    if((newContentPane.progressBar.getValue()-prevValue)>5
+                        && !(Paths.get(statementsFileName).equals(result.toPath()))
+                        ) {
+                    /*if((newContentPane.progressBar.getValue()-prevValue)>5
                             && newContentPane.progressBar.getValue()>40)
                     {
                         shouldCollect = true;
                         prevValue = newContentPane.progressBar.getValue();
                     }
+                    */
                     if(shouldCollect) {
                         double bytes = result.length();
                         double kilobytes = (bytes / 1024);
@@ -415,9 +423,9 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
 
         }
             boolean isNew = false;
-            newContentPane.progressBar.setMinimum(0);
-            newContentPane.progressBar.setMaximum(100);
-            newContentPane.progressBar.setValue(3);
+            //newContentPane.progressBar.setMinimum(0);
+            //newContentPane.progressBar.setMaximum(100);
+            //newContentPane.progressBar.setValue(3);
             int bookNumber = 0;
             ArrayList<TreeMap<Double, HashSet<AnswerPair>>> answerTree = new ArrayList<>();
             if (isNew && totalListOfTrees.size() > 0) {
@@ -425,7 +433,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                     match = new TreeMap<>(Collections.reverseOrder());
                     for (ParagraphInfo bigtextInfo : similarSet) {
                         String bigtext = bigtextInfo.getText();
-                        newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalListOfTrees.size())));
+              //          newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalListOfTrees.size())));
                         for (String paraBig : bigtext.split("[\\.\\?!]+"))
                             for (String para : paraBig.split("[\\.\\?!]+")) {
                                 String resultMeaningless = Integer.toString(1);
@@ -612,7 +620,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
             } else {
                 for (ParagraphInfo bigtextInfo : totalFinalfinalSetOfWords) {
                     String bigtext = bigtextInfo.getText();
-                    newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalFinalfinalSetOfWords.size())));
+                    //newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalFinalfinalSetOfWords.size())));
                     for (String paraBig : bigtext.split("[\\.\\?!]+"))
                         for (String para : paraBig.split("[\\.\\?!]+")) {
                             String resultMeaningless = Integer.toString(1);

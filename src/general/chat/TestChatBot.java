@@ -17,11 +17,11 @@ public class TestChatBot {
         // hard coded
         File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\localData.txt");
         // user input
-        String question  =  new java.util.Scanner(System.in).nextLine();
+        String question  =  "what is the canny edge detection";
 
-        System.out.println(getAnswer(file,question));
+        System.out.println(getAnswer(file,question,"openNLP\\"));
     }
-    public static String getAnswer(File file,String question) throws Exception {
+    public static String getAnswer(File file,String question,String openNLPDir) throws Exception {
         String answer = "No Result.";
         if(file!=null) {
             // Set up environment and DATA
@@ -32,7 +32,7 @@ public class TestChatBot {
                     0, file.getAbsolutePath().lastIndexOf('/') + 1);
             WikipediaInfoBoxModel2OldJune14_PERSONAL.dataDirectoryName = directory;
             local = name;
-            WikipediaInfoBoxModel2OldJune14_PERSONAL.changeStatementsFileName(local);
+            WikipediaInfoBoxModel2OldJune14_PERSONAL.changeStatementsFileName(directory,name,openNLPDir);
 
             // Give Q and A
             PrintStream dummyStream    = new PrintStream(new OutputStream(){
