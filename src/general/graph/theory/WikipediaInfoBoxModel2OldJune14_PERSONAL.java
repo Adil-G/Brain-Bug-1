@@ -387,7 +387,8 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         for (String y : biggestText.split("[\\.\\?!]+"))
                             for (String keyWord : newKeyWordsFullNouns) {
                                 System.out.println(y + "->" + keyWord);
-                                if (y.toLowerCase().contains(keyWord.toLowerCase())) {
+                                if (y.toLowerCase().contains(keyWord.toLowerCase())
+                                        && !keyWord.isEmpty()) {
                                     ParagraphInfo info = new ParagraphInfo(y, publicationName);
                                     sentsNouns.add(info);
                                     keywordsUsedAsNouns.add(keyWord.toLowerCase());
@@ -397,13 +398,13 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
 
                                 }
                             }
-                        System.setOut(MainGUI.originalStream);
-                        System.out.println("adsf" + sentsNouns.size());
-                        System.setOut(dummyStream);
-                        if (hasAnswer > 0) {
 
+                        if (hasAnswer > 0) {
+                            System.setOut(MainGUI.originalStream);
+                            System.out.println("adsf" + sentsNouns.size());
+                            System.setOut(dummyStream);
                         }
-                        if (hasAnswer > 0 && sentsNouns.size() > 0) {
+                        if (hasAnswer > 0) {
                             totalFinalfinalSetOfWords.addAll(sentsNouns);
                         }
                         else
@@ -452,7 +453,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
 
             }
             if(totalFinalfinalSetOfWords.size() == 0)
-                hasAnswer = 5;
+                hasAnswer++;
             else
                 hasAnswer = 5;
         }
@@ -468,7 +469,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                     for (ParagraphInfo bigtextInfo : similarSet) {
                         String bigtext = bigtextInfo.getText();
               //          newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalListOfTrees.size())));
-                        for (String paraBig : bigtext.split("[\\.\\?!]+"))
+                        for (String paraBig : bigtext.split("<92j8q9g93sajd9f8jqa9pf8j>"))
                             for (String para : paraBig.split("[\\.\\?!]+")) {
                                 String resultMeaningless = Integer.toString(1);
                                 String p12 = para.replaceAll("[\\.\\?!]+", "");
@@ -549,17 +550,17 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                                 HashSet<AnswerPair> dummy = match.get(compare);
                                                 if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
                                                         "his|they're|we|we're|that|this|thus)['\\s\\.\\?!].*?"))//thus?
-                                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                                 else
-                                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                                 match.put(compare, dummy);
                                             } else {
                                                 HashSet<AnswerPair> dummy = new HashSet<>();
                                                 if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
                                                         "his|they're|we|we're)['\\s\\.\\?!].*?"))
-                                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                                 else
-                                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                                 match.put(compare, dummy);
                                             }
                                         }
@@ -631,17 +632,17 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                             HashSet<AnswerPair> dummy = match.get(compare);
                                             if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
                                                     "his|they're|we|we're|that|this|thus)['\\s\\.\\?!].*?"))//thus?
-                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                             else
-                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                             match.put(compare, dummy);
                                         } else {
                                             HashSet<AnswerPair> dummy = new HashSet<>();
                                             if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
                                                     "his|they're|we|we're)['\\s\\.\\?!].*?"))
-                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                             else
-                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                             match.put(compare, dummy);
                                         }
                                     }
@@ -655,7 +656,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                 for (ParagraphInfo bigtextInfo : totalFinalfinalSetOfWords) {
                     String bigtext = bigtextInfo.getText();
                     //newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalFinalfinalSetOfWords.size())));
-                    for (String paraBig : bigtext.split("[\\.\\?!]+"))
+                    for (String paraBig : bigtext.split("<92j8q9g93sajd9f8jqa9pf8j>"))
                         for (String para : paraBig.split("[\\.\\?!]+")) {
                             String resultMeaningless = Integer.toString(1);
                             String p12 = para.replaceAll("\\[.*?\\]", "");
@@ -737,17 +738,17 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                             HashSet<AnswerPair> dummy = match.get(compare);
                                             if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
                                                     "his|they're|we|we're|that|this|thus)['\\s\\.\\?!].*?"))//thus?
-                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                             else
-                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                             match.put(compare, dummy);
                                         } else {
                                             HashSet<AnswerPair> dummy = new HashSet<>();
                                             if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
                                                     "his|they're|we|we're)['\\s\\.\\?!].*?"))
-                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                             else
-                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                                dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                             match.put(compare, dummy);
                                         }
                                     }
@@ -820,17 +821,17 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                         HashSet<AnswerPair> dummy = match.get(compare);
                                         if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
                                                 "his|they're|we|we're|that|this|thus)['\\s\\.\\?!].*?"))//thus?
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                         else
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                         match.put(compare, dummy);
                                     } else {
                                         HashSet<AnswerPair> dummy = new HashSet<>();
                                         if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
                                                 "his|they're|we|we're)['\\s\\.\\?!].*?"))
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                         else
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + bigtextInfo.getPub()));
                                         match.put(compare, dummy);
                                     }
                                 }
@@ -892,17 +893,44 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                     )]).getText();
                 }
                // TestChatBotMain.answersUsed.add(speakfull.toLowerCase());
+
                 if (speakfull.isEmpty())
                     speakfull = "Nothing found";
                 if (match.firstEntry().getKey() < 1.0 && match.firstEntry().getValue().size() < 1)
-                    return " I couldn't find anything on that.";
+                    return "I'm not sure.";
             /*else if(match.firstEntry().getKey()<1.0 && finalfinalSetOfWords.size()>0)
                 return speakfull;
                 */
-                else
-                    return speakfull.replaceAll("<92j8q9g93sajd9f8jqa9pf8j>","")
-                            .replaceAll("@[\\d\\w]+","");// +origionalQuestion.toLowerCase().matches(".*?how\\s.*?") +speakfull.replaceAll("\\[.*?\\]","").matches(".*?\\d+.*?");
+                else {
+                    String actualTweet = speakfull;
+                    boolean retrievedActualTweet = false;
+                    for(int i = 0;i < listOfFiles.length && !retrievedActualTweet; i++)
+                    {
+                        File file = listOfFiles[i];
+                        if (file.getName().toLowerCase().endsWith(".txt")
+                                && !file.getName().toLowerCase().startsWith(".")
+                                && !(Paths.get(statementsFileName).equals(file.toPath()))
+                                ) {
 
+                            String fileContents = FileUtils.readFileToString(
+                                    file, "utf-8");
+                            if (fileContents.toLowerCase()
+                                    .contains(speakfull.toLowerCase())) {
+                                for (String tweet :
+                                        fileContents.split("<92j8q9g93sajd9f8jqa9pf8j>")) {
+                                    if(tweet.toLowerCase().contains(speakfull.toLowerCase())) {
+                                        actualTweet = tweet;
+                                        retrievedActualTweet = true;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                    return (retrievedActualTweet+actualTweet).replaceAll("<92j8q9g93sajd9f8jqa9pf8j>", "")
+                            .replaceAll("@[\\d\\w]+", "")
+                            .replaceAll("&amp;", "&");// +origionalQuestion.toLowerCase().matches(".*?how\\s.*?") +speakfull.replaceAll("\\[.*?\\]","").matches(".*?\\d+.*?");
+                }
 
             } catch (Exception l) {
             /*
@@ -926,16 +954,89 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                 WikipediaInfoBoxModel2OldJune14_PERSONAL.dataDirectoryName;
         return WikipediaInfoBoxModel2OldJune14_PERSONALActualWorkingVersion.chatbot(question,origionalQuestion);
         */
+
+
+
         if(totalFinalfinalSetOfWords.size()>0) {
             String ans = "";
             for (ParagraphInfo answer : totalFinalfinalSetOfWords)
-                ans += answer.getText() + " ( " + answer.getPub() + " )\n";
-            return ans.split(" \\)\n")[0].replaceAll("<92j8q9g93sajd9f8jqa9pf8j>","")
-                    .replaceAll("@[\\d\\w]+","");
+                ans += answer.getText() + answer.getPub();
+            String finalAnswer = ans.split(" \\)\n")[0];
+            String actualTweet = finalAnswer;
+            boolean retrievedActualTweet = false;
+            for(int i = 0;i < listOfFiles.length && !retrievedActualTweet; i++)
+            {
+                File file = listOfFiles[i];
+                if (file.getName().toLowerCase().endsWith(".txt")
+                        && !file.getName().toLowerCase().startsWith(".")
+                        && !(Paths.get(statementsFileName).equals(file.toPath()))
+                        ) {
+
+                    String fileContents = FileUtils.readFileToString(
+                            file, "utf-8");
+                    if (fileContents.toLowerCase()
+                            .contains(finalAnswer.toLowerCase()))
+                    {
+                        for (String tweet :
+                                fileContents.split("<92j8q9g93sajd9f8jqa9pf8j>"))
+                        {
+                            if(tweet.toLowerCase().contains(finalAnswer.toLowerCase())) {
+                                actualTweet = tweet;
+                                retrievedActualTweet = true;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            return (retrievedActualTweet+actualTweet).replaceAll("<92j8q9g93sajd9f8jqa9pf8j>","")
+                    .replaceAll("@[\\d\\w]+","")
+                    .replaceAll("&amp;","&");
         }
         else
-        return "Either you are not giving me a lot to go on, or I don't have any info on this. Perhaps you can provide me with more detail?";
+        //return "Either you are not giving me a lot to go on, or I don't have any info on this. Perhaps you can provide me with more detail?";
+            if(keyWordsArrayVerbOrAdjective.length>0&&keyWordsArrayNouns.length>0
+                    &&(!keyWordsArrayVerbOrAdjective[0].isEmpty()
+            ||!keyWordsArrayNouns[0].isEmpty())) {
+                if(keyWordsArrayVerbOrAdjective[0].isEmpty())
+                    return "I don't think you can "
+                            +"do that"
+                            +" with "
+                            + keyWordsArrayNouns[0]+"s.";
+                else if(keyWordsArrayNouns[0].isEmpty())
+                    return "I don't think you can "
+                            + keyWordsArrayVerbOrAdjective[0]
+                        +" with "
+                        + "that.";
+                else
+                try {
+                    return "I don't think you can "
+                            + keyWordsArrayVerbOrAdjective[0]
+                            +" with "
+                            + keyWordsArrayNouns[0]+"s.";
+                }catch (Exception e)
+                {
+                    return "Is that a thing?";
+                }
 
+            }
+        else if(keyWordsArrayNouns.length>0
+                    &&(!keyWordsArrayNouns[0].isEmpty()))
+            {
+                return "I don't know what "
+                        +keyWordsArrayNouns[0]+"s"
+                        + " are";
+
+            }
+            else  if(keyWordsArrayVerbOrAdjective.length>0
+                    &&(!keyWordsArrayVerbOrAdjective[0].isEmpty()))
+            {
+                return "I don't know anything that can "
+                        + keyWordsArrayVerbOrAdjective[0]+".";
+            }
+        else
+                return "I don't know what that is.";
     }
 
 

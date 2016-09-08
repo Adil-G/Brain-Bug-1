@@ -17,6 +17,7 @@ public class ParagraphInfo {
     }
     public String getPub()
     {
-        return this.publication;
+        return new String();
+        //return " ( " + this.publication + " )\n\n";
     }
 }
