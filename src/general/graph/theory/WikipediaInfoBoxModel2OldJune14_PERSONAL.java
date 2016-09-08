@@ -384,7 +384,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         String publicationName = result.getName()
                                 .substring(0, result.getName().lastIndexOf("."));
 
-                        for (String y : biggestText.split("[\\.\\?!]+"))
+                        for (String y : biggestText.split("<92j8q9g93sajd9f8jqa9pf8j>"))
                             for (String keyWord : newKeyWordsFullNouns) {
                                 System.out.println(y + "->" + keyWord);
                                 if (y.toLowerCase().contains(keyWord.toLowerCase())
@@ -428,7 +428,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                 }
                             }
                         else// if(false &&hasAnswer > 0 )
-                            for (String y : biggestText.split("[\\.\\?!]+")) {
+                            for (String y : biggestText.split("<92j8q9g93sajd9f8jqa9pf8j>")) {
                                 int count = 0;
                                 for (String keyWord : newKeyWordsFullNouns) {
                                     System.out.println(y + "->" + keyWord);
@@ -902,7 +902,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                 return speakfull;
                 */
                 else {
-                    String actualTweet = speakfull;
+                    /*String actualTweet = speakfull;
                     boolean retrievedActualTweet = false;
                     for(int i = 0;i < listOfFiles.length && !retrievedActualTweet; i++)
                     {
@@ -927,7 +927,8 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                             }
                         }
                     }
-                    return (retrievedActualTweet+actualTweet).replaceAll("<92j8q9g93sajd9f8jqa9pf8j>", "")
+                    */
+                    return (speakfull).replaceAll("<92j8q9g93sajd9f8jqa9pf8j>", "")
                             .replaceAll("@[\\d\\w]+", "")
                             .replaceAll("&amp;", "&");// +origionalQuestion.toLowerCase().matches(".*?how\\s.*?") +speakfull.replaceAll("\\[.*?\\]","").matches(".*?\\d+.*?");
                 }
@@ -962,7 +963,9 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
             for (ParagraphInfo answer : totalFinalfinalSetOfWords)
                 ans += answer.getText() + answer.getPub();
             String finalAnswer = ans.split(" \\)\n")[0];
+            /*
             String actualTweet = finalAnswer;
+
             boolean retrievedActualTweet = false;
             for(int i = 0;i < listOfFiles.length && !retrievedActualTweet; i++)
             {
@@ -989,8 +992,8 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                     }
                 }
             }
-
-            return (retrievedActualTweet+actualTweet).replaceAll("<92j8q9g93sajd9f8jqa9pf8j>","")
+            */
+            return (finalAnswer).replaceAll("<92j8q9g93sajd9f8jqa9pf8j>","")
                     .replaceAll("@[\\d\\w]+","")
                     .replaceAll("&amp;","&");
         }
