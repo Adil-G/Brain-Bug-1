@@ -9,6 +9,7 @@ import general.chat.ProgressBarDemo;
 import general.comparePhrasesold_june7;
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.wordnet.SynonymMap;
+import sun.applet.Main;
 
 import javax.swing.*;
 import java.io.*;
@@ -215,12 +216,24 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         newContentPane.progressBar.setMaximum(100);
         newContentPane.progressBar.setValue(3);
         */
+        PrintStream dummyStream = new PrintStream(new OutputStream() {
+            public void write(int b) {
+                //NO-OP
+            }
+        });
         ComparePhrases.keyWords.clear();
         ComparePhrases.keyWordsVerbOrAdjective.clear();
+        System.setOut(MainGUI.originalStream);
         String[] keyWordsArrayNouns = FindKeyWordsTest.getNouns(question).toLowerCase().split("[^\\w]+");
         String[] keyWordsArrayVerbOrAdjective = FindKeyWordsTest.getVerbOrAdjective(question).toLowerCase().split("[^\\w]+");
+        System.setOut(dummyStream);
         ComparePhrases.keyWords = new HashSet<>(Arrays.asList(keyWordsArrayNouns));
         ComparePhrases.keyWordsVerbOrAdjective = new HashSet<>(Arrays.asList(keyWordsArrayVerbOrAdjective));
+
+        System.setOut(MainGUI.originalStream);
+        System.out.println( "wfse3 noun = "+ComparePhrases.keyWords);
+        System.out.println( "wfse3 adj = "+ComparePhrases.keyWordsVerbOrAdjective);
+        System.setOut(dummyStream);
         //String allText = FileUtils.readFileToString(result, "utf-8").toLowerCase();
         ComparePhrases.keyWordUniqueness.clear();
         /*for (String word : ComparePhrases.keyWords) {
@@ -285,16 +298,12 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         TreeMap<Double, HashSet<AnswerPair>> match = new TreeMap<>(Collections.reverseOrder());
         File[] listOfFiles = Paths.get(statementsFileName).getParent().toFile().listFiles();
         int index = 0;
-        PrintStream dummyStream = new PrintStream(new OutputStream() {
-            public void write(int b) {
-                //NO-OP
-            }
-        });
+
         long origionalFreeMemory = Runtime.getRuntime().freeMemory();
         boolean shouldCollect  =true;
         int prevValue = 0;
         int hasAnswer = 0;
-        while (hasAnswer <3) {
+        while (hasAnswer <4) {
             for (File result : listOfFiles) {
                 try {
                     //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
@@ -384,11 +393,69 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         String publicationName = result.getName()
                                 .substring(0, result.getName().lastIndexOf("."));
 
+                        if(hasAnswer>2)
+                        {
+                            for (String y : biggestText.split("<92j8q9g93sajd9f8jqa9pf8j>"))
+                            {
+                                for (String keyWord : newKeyWordsFullNouns) {
+                                    System.setOut(MainGUI.originalStream);
+                                    System.out.println(y + "->" + keyWord);
+                                    System.setOut(dummyStream);
+                                    if (y.toLowerCase().contains(keyWord.toLowerCase())
+                                            && !keyWord.isEmpty()
+
+                                            ) {
+                                        ParagraphInfo info = new ParagraphInfo(y, publicationName);
+                                        sentsNouns.add(info);
+                                        totalFinalfinalSetOfWords.add(info);
+                                        keywordsUsedAsNouns.add(keyWord.toLowerCase());
+                                        System.setOut(MainGUI.originalStream);
+                                        System.out.println("noun: " + keyWord.toLowerCase());
+                                        System.setOut(dummyStream);
+
+                                    }
+                                }
+                                for (String keyWord : newKeyWordsFullVerbsOrAdjectives) {
+                                    System.setOut(MainGUI.originalStream);
+                                    System.out.println(y + "->" + keyWord);
+                                    System.setOut(dummyStream);
+
+                                    if (y.toLowerCase().contains(keyWord.toLowerCase())
+                                            && !keyWord.isEmpty()
+
+                                            ) {
+                                        ParagraphInfo info = new ParagraphInfo(y, publicationName);
+                                        sentsNouns.add(info);
+                                        totalFinalfinalSetOfWords.add(info);
+                                        keywordsUsedAsNouns.add(keyWord.toLowerCase());
+                                        System.setOut(MainGUI.originalStream);
+                                        System.out.println("verb: " + keyWord.toLowerCase());
+                                        System.setOut(dummyStream);
+
+                                    }
+                                }
+                            }
+
+
+                        }
+
+
                         for (String y : biggestText.split("<92j8q9g93sajd9f8jqa9pf8j>"))
                             for (String keyWord : newKeyWordsFullNouns) {
                                 System.out.println(y + "->" + keyWord);
-                                if (y.toLowerCase().contains(keyWord.toLowerCase())
-                                        && !keyWord.isEmpty()) {
+                                if ((y.toLowerCase().contains(keyWord.toLowerCase())
+                                        && !keyWord.isEmpty()
+                                        && !keyWord.toLowerCase().equals("am")
+                                        && !keyWord.toLowerCase().equals("are")
+                                )
+                                        ||
+                                        (
+                                                y.toLowerCase().contains(keyWord.toLowerCase())
+                                                        && !keyWord.isEmpty()
+                                                        && hasAnswer >1
+                                        )
+
+                                        ) {
                                     ParagraphInfo info = new ParagraphInfo(y, publicationName);
                                     sentsNouns.add(info);
                                     keywordsUsedAsNouns.add(keyWord.toLowerCase());
@@ -406,6 +473,33 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         }
                         if (hasAnswer > 0) {
                             totalFinalfinalSetOfWords.addAll(sentsNouns);
+                            if(totalFinalfinalSetOfWords.size() < 1) {
+                                for (String y : biggestText.split("<92j8q9g93sajd9f8jqa9pf8j>"))
+                                    for (String keyWord : newKeyWordsFullVerbsOrAdjectives) {
+                                        System.out.println(y + "->" + keyWord);
+                                        if ((y.toLowerCase().contains(keyWord.toLowerCase())
+                                                && !keyWord.isEmpty()
+                                                && !keyWord.toLowerCase().equals("am")
+                                                && !keyWord.toLowerCase().equals("are")
+                                        )
+                                                ||
+                                                (
+                                                        y.toLowerCase().contains(keyWord.toLowerCase())
+                                                                && !keyWord.isEmpty()
+                                                        && hasAnswer >1
+                                                )
+                                            ) {
+                                            ParagraphInfo info = new ParagraphInfo(y, publicationName);
+                                            sentsNouns.add(info);
+                                            keywordsUsedAsNouns.add(keyWord.toLowerCase());
+                                            System.setOut(MainGUI.originalStream);
+                                            System.out.println("noun: " + keyWord.toLowerCase());
+                                            System.setOut(dummyStream);
+
+                                        }
+                                    }
+                                totalFinalfinalSetOfWords.addAll(sentsNouns);
+                            }
                         }
                         else
                         {
@@ -432,7 +526,19 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                 int count = 0;
                                 for (String keyWord : newKeyWordsFullNouns) {
                                     System.out.println(y + "->" + keyWord);
-                                    if (y.toLowerCase().contains(keyWord.toLowerCase())) {
+                                    if ((y.toLowerCase().contains(keyWord.toLowerCase())
+                                            && !keyWord.toLowerCase().equals("am")
+                                            && !keyWord.isEmpty()
+                                            && !keyWord.toLowerCase().equals("are")
+                                    )
+                                            ||
+                                            (
+                                                    y.toLowerCase().contains(keyWord.toLowerCase())
+                                                            && !keyWord.isEmpty()
+                                                            && hasAnswer >1
+                                            )
+
+                                            ) {
                                         count++;
                                     }
                                 }
@@ -452,8 +558,13 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                 }
 
             }
-            if(totalFinalfinalSetOfWords.size() == 0)
+            if(totalFinalfinalSetOfWords.size() == 0) {
                 hasAnswer++;
+                System.setOut(MainGUI.originalStream);
+                System.out.println("couldn't find anything: " +hasAnswer);
+                System.setOut(dummyStream);
+
+            }
             else
                 hasAnswer = 5;
         }
@@ -861,7 +972,8 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                 HashSet<AnswerPair> pairs = answeri.getValue();
 
                                 for (AnswerPair curPair : pairs) {
-                                    speakfull += curPair.getText() + ". ";
+                                    speakfull += curPair.getText()
+                                            + "\n-------------------------------------------------\n";
                                 }
                             }
                         }
@@ -871,13 +983,55 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                             HashSet<AnswerPair> pairs = answeri.getValue();
 
                             for (AnswerPair curPair : pairs) {
-                                speakfull += curPair.getText() + ". ";
+                                speakfull += curPair.getText()
+                                        + "\n-------------------------------------------------\n";;
                             }
                         }
                     }
                 speakfull = speakfull.trim();
                 System.out.println("query --> " + query);
                 System.out.println(ComparePhrases.mostcommon);
+                if(match.firstEntry()==null
+                        ||totalFinalfinalSetOfWords.size()>0) {
+                    String ans = "";
+                    for (ParagraphInfo answer : totalFinalfinalSetOfWords)
+                        ans += answer.getText() + answer.getPub() + "\n" +
+                                "-------------------------------------------------\n";
+                    String finalAnswer = ans;//.split(" \\)\n")[0];
+            /*
+            String actualTweet = finalAnswer;
+
+            boolean retrievedActualTweet = false;
+            for(int i = 0;i < listOfFiles.length && !retrievedActualTweet; i++)
+            {
+                File file = listOfFiles[i];
+                if (file.getName().toLowerCase().endsWith(".txt")
+                        && !file.getName().toLowerCase().startsWith(".")
+                        && !(Paths.get(statementsFileName).equals(file.toPath()))
+                        ) {
+
+                    String fileContents = FileUtils.readFileToString(
+                            file, "utf-8");
+                    if (fileContents.toLowerCase()
+                            .contains(finalAnswer.toLowerCase()))
+                    {
+                        for (String tweet :
+                                fileContents.split("<92j8q9g93sajd9f8jqa9pf8j>"))
+                        {
+                            if(tweet.toLowerCase().contains(finalAnswer.toLowerCase())) {
+                                actualTweet = tweet;
+                                retrievedActualTweet = true;
+                            }
+                        }
+
+                    }
+                }
+            }
+            */
+                    return (finalAnswer).replaceAll("<92j8q9g93sajd9f8jqa9pf8j>","")
+                            .replaceAll("@[\\d\\w]+","")
+                            .replaceAll("&amp;","&");
+                }
                 if (match.firstEntry().getKey() < 1.0)
                     System.out.println("Answer --> " + " I couldn't find anything on that.");
                 else
@@ -886,7 +1040,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
 
 
                 System.out.println(ComparePhrases.synMap);
-                if (true||!statementsFileNameEquals(MainGUI.web) && !statementsFileNameEquals(MainGUI.local)) {
+                if (false||!statementsFileNameEquals(MainGUI.web) && !statementsFileNameEquals(MainGUI.local)) {
                     speakfull = ((AnswerPair) match.firstEntry().getValue().toArray()
                             [new Random().nextInt(
                             match.firstEntry().getValue().size()
@@ -945,7 +1099,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                     .getText();
             System.out.println("Answer --> "+speakfull);
             */
-
+                l.printStackTrace();
             }
         /*WikipediaInfoBoxModel2OldJune14_PERSONALActualWorkingVersion.statementsFileName =
                 WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsFileName;
@@ -961,8 +1115,9 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         if(totalFinalfinalSetOfWords.size()>0) {
             String ans = "";
             for (ParagraphInfo answer : totalFinalfinalSetOfWords)
-                ans += answer.getText() + answer.getPub();
-            String finalAnswer = ans.split(" \\)\n")[0];
+                ans += answer.getText() + answer.getPub() + "\n" +
+                        "-------------------------------------------------\n";
+            String finalAnswer = ans;//.split(" \\)\n")[0];
             /*
             String actualTweet = finalAnswer;
 

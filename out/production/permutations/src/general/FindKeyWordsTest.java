@@ -399,8 +399,8 @@ public class FindKeyWordsTest {
         for(String word : noun)
             name += word + " ";
 
-        //for(String word : nnp)
-            //name += word + " ";
+        for(String word : nnp)
+            name += word + " ";
         /*for(String word : adjective)
             name += word + " ";
         for(String word : verb)
@@ -419,6 +419,7 @@ public class FindKeyWordsTest {
         ArrayList<String> adverb = new ArrayList<>();
         ArrayList<String> verb = new ArrayList<>();
         ArrayList<String> numbers = new ArrayList<>();
+        ArrayList<String> in = new ArrayList<>();
         for(String word : rawParsed)
         {
             String tag = word.substring(word.indexOf('_')).toLowerCase();
@@ -467,6 +468,12 @@ public class FindKeyWordsTest {
                 verb.add(partOfSpeech);
                 System.out.println("verb = " + partOfSpeech);
             }
+            else if(tag.contains("in"))
+            {
+                // This is an VERB
+                in.add(partOfSpeech);
+                System.out.println("in = " + partOfSpeech);
+            }
         }
         //ArrayList<String> names = findName(raw);
         //ArrayList<String> places = getPlaces(raw);
@@ -477,11 +484,17 @@ public class FindKeyWordsTest {
             */
         //for(String word : nnp)
         //name += word + " ";
+        for(String word : in)
+            name += word + " ";
         for(String word : numbers)
             name += word + " ";
         for(String word : adjective)
             name += word + " ";
         for(String word : verb)
+            if(!word.toLowerCase().equals("be")
+                    &&!word.toLowerCase().equals("do"))
+                name += word + " ";
+        for(String word : adverb)
             if(!word.toLowerCase().equals("be")
                     &&!word.toLowerCase().equals("do"))
                 name += word + " ";
