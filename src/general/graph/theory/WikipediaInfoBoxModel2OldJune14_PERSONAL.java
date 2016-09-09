@@ -35,7 +35,8 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
     public static String dataDirectoryName = "openNLP\\";
     public static String mainFileName = "";
     public static String mainFileDir = "";
-    public static String DELIMITER = "[\\.\\?!]+";
+    final public static String DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";
+   // public static String DELIMITER = "[\\.\\?!]+";
 
     final public static int HOW_MANY_IN_THE_TOP_X = 20;
     //final public static String statementsFileName = "statements_july6.txt";
