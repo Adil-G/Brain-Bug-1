@@ -2,6 +2,7 @@ package general.chat;
 
 import general.TestChatBotMain;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL;
+import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB;
 
 import java.io.File;
 import java.io.OutputStream;
@@ -16,7 +17,8 @@ import static general.chat.MainGUI.local;
 public class TestChatBot {
     public static void main(String[] args) throws Exception {
         // hard coded
-        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\local.txt");
+        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\pakalupapito\\local.txts");
+        WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";
         // user input
         //String question  =  "what is the canny edge detection";
         String question  =  (new Scanner(System.in)).nextLine();
@@ -25,8 +27,12 @@ public class TestChatBot {
     }
     public static String getAnswerWithGUI(String question) throws Exception {
         // hard coded
+
+        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\pakalupapito\\local.txts");
+        WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";//File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\pakalupapito\\local.txt");
+        WikipediaInfoBoxModel2OldJune14_PERSONAL.DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";//File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\pakalupapito\\local.txt");
+
         //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\local.txt");
-        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\local.txt");
 
         // user input
 

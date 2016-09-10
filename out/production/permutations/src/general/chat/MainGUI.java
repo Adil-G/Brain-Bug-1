@@ -174,7 +174,8 @@ public class MainGUI {
 
         System.setOut(originalStream);
 
-        chatBox.append("<" + chatbotName + ">:  " +  answer
+        chatBox.append("<" + chatbotName + ">:  " +  answer.split("- \\(  \\)|" +
+                "------------------------------------------------")[0]
                 + "\n");
         //new FreeTTS(answer).speak();
         /*
