@@ -16,7 +16,7 @@ import static general.chat.MainGUI.local;
 public class TestChatBot {
     public static void main(String[] args) throws Exception {
         // hard coded
-        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\localData.txt");
+        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\local.txt");
         // user input
         //String question  =  "what is the canny edge detection";
         String question  =  (new Scanner(System.in)).nextLine();
@@ -25,8 +25,8 @@ public class TestChatBot {
     }
     public static String getAnswerWithGUI(String question) throws Exception {
         // hard coded
-        //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\localData.txt");
-        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\person\\local.txt");
+        //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\local.txt");
+        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\local.txt");
 
         // user input
 

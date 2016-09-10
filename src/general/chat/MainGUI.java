@@ -27,7 +27,7 @@ public class MainGUI {
     int         size        = (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()*0.7);
     public static String personal = "personalChat.txt";
     public static String web = "webData.txt";
-    public static String local = "localData.txt";
+    public static String local = "local.txt";
     public static boolean useNewData = false;
     //public static String directory = "C:\\Users\\corpi\\Documents\\robot\\permutations-december-25\\AWS-permutations-june-19-2-current-build-as-of-july-17\\AWS-permutations-june-19-2-current-build-as-of-july-15\\AWS-permutations-june-19-2-current-build-as-of-june-24\\permutations-june-19-2\\permutations\\openNLP\\";
     public static void main(String[] args) {

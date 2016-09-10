@@ -448,7 +448,7 @@ public class FindKeyWordsTest {
                 properNoun.add(partOfSpeech);
                 System.out.println("proper noun = " + partOfSpeech);
             }
-            else if(tag.contains("rb"))
+            else if(tag.contains("rb") && !tag.contains("w"))
             {
                 // This is an ADVERB
                 adverb.add(partOfSpeech);

@@ -36,8 +36,8 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
     public static String dataDirectoryName = "openNLP\\";
     public static String mainFileName = "";
     public static String mainFileDir = "";
-    final public static String DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";
-    //public static String DELIMITER = "[\\.\\?!]+";
+    //final public static String DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";
+    final public static String DELIMITER = "[\\.\\?!]+";
 
     final public static int HOW_MANY_IN_THE_TOP_X = 20;
     //final public static String statementsFileName = "statements_july6.txt";
@@ -971,7 +971,19 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                 String speakThis = "";
                 index = 0;
                 String speakfull = new String();
-
+                try{
+                    System.setOut(MainGUI.originalStream);
+                    System.out.println("first key  = "+match.firstKey());
+                    System.setOut(dummyStream);
+                    //System.exit(0);
+                }
+                catch (Exception e)
+                {
+                    System.setOut(MainGUI.originalStream);
+                    System.out.println("NO FIRST KEY");
+                    System.setOut(dummyStream);
+                    //System.exit(0);
+                }
 
                 if (answerTree.size() > 0)
                     for (TreeMap<Double, HashSet<AnswerPair>> match2 : answerTree)

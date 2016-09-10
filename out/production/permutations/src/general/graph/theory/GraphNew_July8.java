@@ -143,7 +143,7 @@ public class GraphNew_July8 {
         }
         //score++;
         if(w2<ComparePhrases.EDGE_LENGTH)
-            score += 1 + depth;
+            score += 1 + depth + 10;
             //score += 1 + depth;
         else
         {
