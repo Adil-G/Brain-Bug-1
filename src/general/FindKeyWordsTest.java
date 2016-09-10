@@ -471,6 +471,7 @@ public class FindKeyWordsTest {
             else if(tag.contains("in"))
             {
                 // This is an VERB
+                if(partOfSpeech.toLowerCase().equals("like"))
                 in.add(partOfSpeech);
                 System.out.println("in = " + partOfSpeech);
             }

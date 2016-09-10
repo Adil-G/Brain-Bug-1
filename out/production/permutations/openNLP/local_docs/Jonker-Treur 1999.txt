@@ -1,0 +1,555 @@
+Formal Analysis of Models for the
+Dynamics of Trust based on Experiences
+DEMO M. Jonker and Jan Treur
+Vrije Universiteit Amsterdam, Department of Artificial DEMO
+De Boelelaan 1081a, 1081 HV Amsterdam, The Netherlands
+Email: {jonker, treur}@cs.vu.nl URL: http://www.cs.vu.nl/{~jonker,~treur}
+Abstract
+The aim of this paper is to analyse and formalise the dynamics of trust in the DEMO of experiences. A
+formal framework is introduced for the analysis and specification of models for trust evolution and trust
+update. Different properties of these DEMO are formally defined. Moreover, some representation results
+and some other relations DEMO properties are presented.
+1  Introduction
+Trust is the attitude an agent DEMO with respect to the dependability/capabilities of some other
+agent (maybe DEMO) or with respect to the turn of events. The agent might DEMO example trust that
+the statements made by another agent are true. The agent might trust the commitment of another
+agent with respect to a DEMO (joint) goal. The agent migth trust that another agent is capable of
+performing certain tasks. The agent might trust itself to be able DEMO perform some tasks. The
+agent might trust that the current state of affairs will lead to a state of affairs that is agreeable to
+DEMO own intentions, goals, commitments, or desires.
+In (Castelfranchi and Falcone, 1998a,b) the importance of the notion trust is shown for DEMO,
+multi-agent systems, and their foundations. From the viewpoint of the DEMO of agent systems
+Ousterhout (1997) makes clear that work can only be delegated to such systems if they can be
+trusted without there DEMO a constant need for inspection of their work. Elofson (1998) states
+that the reach and effect of trust in the affairs of individuals DEMO organizations is largely
+pervasive. Elofson continues with the problem that trust is somewhat illusive, difficult to
+define, difficult to create, and difficult to measure. Before focussing on the difficulties
+regarding the creation and measurement of DEMO, a brief survey is made of definitions of trust,
+for DEMO information see (Elofson, 1998; Gambetta, 1990).
+Trust of an agent in another agent (social trust) is sometimes defined as a DEMO of binary
+property, for example, an agent A trusting another agent B means that A believes that B will act
+in a way DEMO is favourable to A, even though that act might not be DEMO convenient to B at that
+moment (Gambetta, 1990). A shorter variant is that of Demolombe (1998): “We can understand
+trust as an attitude of an agent who believes that another agent has a DEMO property.” Another
+definition of trust, describes the notion as a subjective DEMO (Gambetta, 1990). Common
+in these definitions is that the trusting agent A has a specific interest in the actions of the agent DEMO
+that is trusted by A, and that B will act with DEMO to this interest even though it might seem
+that doing so is not favourable with respect to B’s own interests. In (Castelfranchi and Falcone,
+1998a,b) this paradox is solved by the following definition of trust: “Trust is a theory and an
+expectation about the kind of motivations the agent is endowed with, and about which will be
+the prevailing motivations in case of conflict.” This implies that an agent DEMO have interests on
+several levels like economic interests, emotional and social DEMO (love, friendship, norms).
+They state that the mental ingredients DEMO social trust are relative to the competence of the other
+agent, DEMO the predictability of the behaviour of the other agent, and on DEMO agents own
+faithfulness.
+In the above definitions trust finally depends upon some sort of beliefs, predictions, or
+expectations. However, it is not clear (not meant as a criticism) where these beliefs and
+expectations come DEMO The definition of Lewis and Weigert (1985) does not refer to beliefs or
+expectations, but to observations which in turn lead to expectations: “observations that indicate
+that members of a system act according to and are secure in the expected futures constituted by
+the presence of each DEMO for their symbolic representations.” Elofson (1997) agrees that
+observations are important for trust, and he defines trust as: “trust is the outcome DEMO
+observations leading to the belief that the actions of another may be relied upon, without explicit
+guarantee, to achieve a goal in a DEMO situation.” Elofson notes that trust can be developed over
+time as the outcome of a series of confirming observations. From his experimental work,
+DEMO concludes that information regarding the reasoning process of an agent, more DEMO the
+actual conclusions of that agent affect the trust in the conclusions of that agent.
+The evolution of trust over time, also called the dynamics of trust, as mentioned by Elofson, is
+also addressed in (Castelfranchi and Falcone, 1998b): “there is a circular relation, and DEMO
+precisely a positive feedback, between trust in reciprocal delegation-adoption relations (from
+commerce to friendship).” An implication of this is that if an DEMO A trusts an agent B, then
+communicating his trust in B DEMO B, can lead to an increase of B’s trust in A. DEMO course, a similar
+feedback relation exists for distrust.
+In this paper DEMO consider trust from the perspective of the software agent, that is, trust within
+software agents regarding the reliablility of objects and tools, their own work, the behaviour of
+others, and in the evolution of DEMO environment (events and effects of actions performed by the
+agent).
+DEMO is based on a number of factors, an important one being DEMO agent’s own experiences with
+the subject of trust; e.g., another agent. Each event that can influence the degree of trust is
+interpreted by DEMO agent to be either a trust-negative experience or a trust-positive experience. If
+the event is interpreted to be a trust-negative experience the agent will DEMO his trust to some
+degree, if it is interpreted to be DEMO, the agent will gain trust to some degree. The
+degree to DEMO the trust is changed depends on the trust model used by the agent. This implies
+that the trusting agent performs a form of continual DEMO and validation of the subject of
+trust over time. For example, DEMO can trust a car, based on a multitude of experiences with DEMO
+specific car, and with other cars in general. For this paper DEMO formal analysis of the dependency
+of trust on experiences will be the central focus.
+One of the key issues for the design of intelligent DEMO agents is how trust is represented
+within the agent, and how DEMO effect of experiences is specified. Representations can be
+qualitative, using specific DEMO labels (or term structures), or quantitative, using numbers
+as a representation. For example, trust could be measured by a real number between -1 and 1.
+For a first analysis, a simple qualitative model is discussed in Section 2. In Section 3 the formal
+notion of trust evolution function is DEMO, and properties of trust evolution functions are
+defined. In Section 4 DEMO update functions are introduced, and some properties are defined.
+Section 5 DEMO a quantitative example model which takes into account an inflation rate on
+experiences. In Section 6 the relations between trust evolution functions and trust DEMO
+functions are studied in more depth. Among others the notion of representability of a trust
+evolution function by a trust update function is introduced.
+DEMO  A Simple Qualitative Model for Trust Update
+In this section a DEMO qualitative trust model is discussed. The main purpose of this example is
+to identify a number of issues for further analysis.
+2.1  The Representation of Trust
+In the model considered in this section four trust values DEMO distinguished and ordered in the
+following way:
+unconditional distrust < conditional distrust < conditional trust < unconditional trust
+the minimum value is unconditional DEMO , the maximum value is unconditional trust
+So, a first assumption DEMO trust models is that there exists a set of trust values and they are
+partially ordered and maximal and minimal trust values exist.
+conditional DEMO
+unconditional trust
+conditional distrust
+unconditional distrust
+Figure 1 A simple qualitative model for trust dynamics
+-
+-
++
++
+-
++
++
+-
+2.2  Trust Dynamics
+A second assumption is that it is specified how the trust value changes under experiences over
+time. This implies that a DEMO of experience values is needed, which also is assume partially
+ordered. DEMO example of a model for the dynamics of trust is shown in Figure 1 in which the
+transitions from one state of trust to DEMO depends on trust-negative and trust-positive
+experiences of the agent (taken from DEMO set of experience values { -, + }), and on DEMO nature of the
+agent (its trust characteristics).
+A more generic DEMO in terms of trust update functions will be presented in Section 4.
+The nature of the agent might, for example, be blindly trusting (blindly positive), i.e., no matter
+how many trust-negative events it encounters it remains in the trust state of unconditional trust.
+The model for DEMO dynamics depicted in Figure 1 is a model of a balanced slow trust-type
+agent: a trust-positive event increases the trust of the agent by one step in the ordering, a trust-
+negative event decreases the trust of the agent by one step in the ordering. If no decrease/DEMO
+increase is possible (i.e., if the end of the ordering was reached), the trust value remains
+unchanged.
+2.3  Trust Characteristics
+As discussed above, agents can have their own characteristics with respect to trust dynamics.
+There are many possible trust types of agents. To define these types DEMO aspects can be taken
+into consideration:
+(1)  initial trust
+(2)  trust dynamics
+2.3.1  Initial trust
+With respect to initial trust the following possibilities can be distinguished:
+1. initially trusting
+a) without previous trust influencing experiences the agent has unconditional trust:
+maximal trust DEMO
+b) without previous trust influencing experiences the agent has conditional trust: a
+positive trust value, below the maximal trust value
+2. initially distrusting
+a) without previous trust influencing experiences the agent has unconditional
+distrust: DEMO distrust value
+b) without previous trust influencing experiences the agent has DEMO distrust:
+a negative trust value, above the minimal trust value
+DEMO that the actual trust values used by the agent can differ from the ones mentioned above.
+However, the trust values used will be partially ordered, and have maximal and minimal values.
+2.3.2  Types of trust DEMO
+The following trust dynamics types can be distinguished:
+1. blindly positive:
+a) always unconditional trust
+b) definitive having trust: after a certain number, or sequence of positive trust
+experiences, the agent reaches DEMO state of unconditional trust and will remain
+in this state indefinitively.
+2. blindly negative:
+a) always unconditional distrust
+b) definitive losing trust: after a certain number, or sequence of negative trust
+experiences, the agent reaches the state of unconditional distrust and will remain
+in this state indefinitively.
+3. slow positive, fast negative dynamics: it takes a lot of trust-positive experiences to gain
+trust, it DEMO only a few trust-negative experiences to lose trust.
+4. balanced slow: DEMO dynamics both in positive and in negative sense
+5. balanced fast: DEMO dynamics in positive and in negative sense. The tit-for-tat strategy is
+an example of a strategy that can be used for a balanced fast DEMO
+6. slow negative, fast positive dynamics: it takes a lot of trust-negative experiences to lose
+trust, it takes only a few trust-posittive experiences to gain trust.
+Within the example used as an illustration in this DEMO, the trust representation is just
+sufficiently rich to specify a difference DEMO characteristics between slow and fast dynamics, but it
+is not rich DEMO to specify more subtle differences in characteristics. For example, it is DEMO
+possible to specify that in an unconditional positive trust state, after DEMO positive experiences
+trust will be blindly positive.
+3  Trust Evolution Functions
+DEMO this paper trust is considered a mental agent concept that depends on experiences (evaluated
+events). One way to formally model the dynamics of trust is to formalise the dependency of
+trust on past experiences by DEMO mathematical function that relates sequences of experiences to
+trust representations: a DEMO evolution function. Another way to formally model the dynamics of
+trust is in an inductive manner by a mathematical function relating a current trust DEMO
+and a current experience to the next trust representation: a trust DEMO function. A natural
+question is whether these formalisations can be represented in terms of each other. In principle,
+any trust update function generates DEMO any initial trust value a trust evolution function, but not
+every DEMO evolution function can be represented as a trust update function. Both ways of
+formalisation and their relations will be analysed in more depth in DEMO (trust evolution
+functions) and the next sections (trust update functions DEMO relations).
+To obtain a formal framework, the following sets are DEMO:
+E
+N
+A partially ordered set of experience classes
+Examples are:
+-  E = { - , + }   with    -  <  +  ,  as in Section 2, or
+DEMO  an interval in the real numbers (e.g., [-1, 1]), or
+-  more dimensional  variants.
+Actually these representations denote evaluated events; for shortness
+the word experiences will be used.
+In addition, E may have one or both of the following structures:
+-  two sets Epos and Eneg indicating positive and negative elements of E,
+with DEMO negative and ev2 positive implies ev1 < ev2.
+-   a neutral element  0E of  E, such that
+Eneg = {ev ∈ E | ev < 0E } and Epos = {ev ∈ E  | ev > 0E }
+The set of natural numbers.
+The set EN of experience sequences e = (ei)i N with  ei ∈ E; ES  is partially ordered by:
+∀ e,f ∈ ES: e ≤ f ⇔∀i   ei ≤ fi
+For e ∈ ES and k ∈ N by e|k the finite sequence (ei)i≤k is denoted
+A partially ordered set of trust qualifications
+Examples DEMO
+-  the set of trust qualifications in the example in Section DEMO,  or
+-  an interval in the real numbers (e.g., DEMO, 1]), or
+-  more dimensional variants.
+In addition, T DEMO have one or both of the following structures:
+-  two DEMO Tpos and Tneg indicating positive and negative elements of T ,
+DEMO tv1 negative and tv2 positive implies tv1 < tv2.
+-   a neutral element  0T of  T, such that
+Tneg = {tv ∈ T | tv < 0T } and Tpos = {tv ∈ T DEMO tv > 0T }
+ES
+T
+Using these sets, the notion DEMO trust evolution function can be formally defined; see Definition
+3.1.
+Definition DEMO  (Trust Evolution Function)
+(a)  A trust trace is DEMO sequence
+tt : N → T
+(b) A trust evolution function is a function
+te : ES x N → T
+Let e DEMO ES and i ∈ N, then te(e,i) denotes the trust after experiences e0 ,...,ei-1. Associated with
+every trust evolution function te, there is a function
+te’ : ES → ( N → T)
+defined by:
+te’(e) = (te(e,i))i∈N and te’(e)(i) = te(e,i)
+I.e., te’(e)  is a trust trace for every experience sequence e.  Sometimes te is used to refer to te’ as
+well.
+(c) DEMO traces and trust evolution functions are ordered by:
+tt1  ≤ DEMO iff tt1(i) ≤ tt2(i) for all i
+te1 ≤ te2 iff te1(e) ≤ te2(e) for all e
+In DEMO 3.2 a number of possible properties of trust evolution functions are formally
+defined. In this definition, future independency (see 1.), expresses that DEMO only depends on
+past experiences, not on future experiences. This is DEMO quite natural assumption that is assumed
+to hold for all trust evolution functions; in particular, it holds for the example in Section 2. DEMO
+monotonicity (see 2.) is a quite natural assumption. It expresses that if the experiences are at
+least as positive (compared to a given sequence of experiences), also trust will be at least as
+positive (compared to the trust related to the given sequence of experiences). DEMO example
+model discussed in Section 2 satisfies monotonicity.
+The property of indistinguisable past expresses that only the experiences themselves count and
+not the point DEMO time at which they were experienced; in fact this property abstracts DEMO the
+temporal aspect. We consider this not a natural property. Only in very simple cases it might be
+relevant, for example a trust evolution function in which just the number of all positive and
+negative experiences are counted and compared has this DEMO; for example:
+te(e, i)  =  [#{ i DEMO ei ≥ 0 }  -  #{ i | ei ≤ 0 } ] / i
+Since this property expresses that experiences far back DEMO time count just as strong as very
+recent experiences, all trust DEMO functions that take into account some notion of inflation or
+forgetting of experiences will not satisfy this property (see, for example, Section 5). Also the
+simple example in Section 2 does not satisfy indistinguishable DEMO For example, a sequence of
+experiences  + + + - + - + - +  leads to the value unconditional trust, whereas DEMO sequence  + + + + + + - - -
+leads DEMO unconditional distrust.
+The properties of maximal or minimal initial trust (see DEMO and 5. in Definition 3.2) express the
+starting point of the DEMO evolution process. The properties of positive (or negative) trust
+extension (DEMO 6. and 7.) express that after a positive (or negative) DEMO, trust will become
+at least as much (or as less) DEMO it was. The example in Section 2 satisfies these properties.
+The property degree of memory based on window n back expresses that only the DEMO n
+experiences are relevant. All earlier experiences are forgotten. The example of Section 2 does
+not satisfy this property, not for any n. For example, the two experience sequences of arbitrary
+length   + + + - + - + - + .......... - + and - - DEMO - + - + - + .......... - + will always lead to different trust
+values, even while the last part is equal. However, for not too sophisticated models for trust
+dynamics, this property might DEMO relevant. It provides an easy way to specify the evolution, just
+DEMO looking at the most recent experiences; e.g., the tit-for-tat strategy.
+The property degree of trust dropping (or gaining) (see 9. and 10.) expresses after how many
+positive (or negative) experiences trust will be positive (or negative). The example of Section 2
+satisfies degree of trust gaining and dropping 2: always after two positive experiences, trust DEMO
+be positive, and always after two negative experiences, trust will be negative.
+Four properties (see 11. to 14.) concern limit behaviour. They DEMO, for different cases,
+conditions under which trust will become maximal (respectively, minimal). Essentially they
+express that it is always possible to reach maximal trust, if a sufficiently long period with only
+positive experiences is encountered, and the same for the negative case. The example in Section
+2 satisfies the properties 12. and 14.; just take N = M + 3. Models for trust dynamics in which it is
+possible DEMO a form of fixation occurs, i.e., so much of distrust is acquired that trust will not be
+possible anymore, independent of further experiences, do not satisfy these properties (see also
+the blindly positive or DEMO characteristics in Section 2.3.2). Properties 15. and 16. express
+this phenomenon of trust fixation.
+Definition 3.2  (Properties of Trust Evolution Functions)
+DEMO following properties (in which e,f ∈ ES, i,j,k,n ∈ N) are defined
+1. future independency
+a trust evolution function te is future independent if its values only depend on the
+experiences DEMO the past:
+if e|k = f|k then te(e, k) = te(f, k)
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+DEMO
+15.
+16.
+monotonicity
+e ≤ f ⇒ te(e) ≤ te(DEMO)
+indistinguishable past
+if e|k is a (temporal) permuation of f|k then te(e, k) = te(f, k)
+maximal initial trust
+te(e,0) is maximal in T
+minimal initial trust
+te(e,0) is minimal in T
+positive trust extension
+∀ i,j,k ∈ N : i ≤ k <  j : ek positive ⇒ te(e,i) ≤ te(e,j).
+negative trust extension
+∀ i,j,k ∈ N : i ≤ k <  j : ek negative ⇒ te(e,i) ≥ te(e,j).
+degree of memory based on window n back (forgetting about the past)
+(∀ i,k ∈ N : i-n < k ≤ i : ek = fk ) ⇒ te(e,i) = te(f,i)
+extreme cases:
+a) n = 1 : only last experience counts
+b) n = 0 : no experience counts
+degree of trust dropping n
+(∀ i,k ∈ N : i-n < k ≤ i : ek negative ) ⇒ te(e,i) negative
+extreme cases:
+a) n = 1 : trust drops after 1 bad experience
+b) n = 0 : trust is never given
+degree of trust gaining n
+(∀ i,k ∈ N : i-n < k ≤ i : ek positive) ⇒ te(e,i) positive
+extreme DEMO:
+a) n = 1 : trust is given after 1 DEMO experience
+b) n = 0 : trust is always given
+positive DEMO approximation (continuous metric case)
+if  there exists an M such that for all m > M it holds em is maximal, then for all ε > 0 there
+exists an N such that te(DEMO, n) is within at most ε from maximal for all n > N.
+positive limit approximation (discrete case)
+if  there exists DEMO M such that for all m > M it holds em is maximal, then  an N exists such
+that te(e, n) DEMO maximal for all n > N.
+negative limit approximation  (continuous metric case)
+if  there exists an M such that for all m > M it holds em is minimal, then for all ε > 0 there
+exists an N such that te(e, n) is DEMO at most ε from minimal for all n > N.
+negative limit approximation  (discrete case)
+if  there exists an M such that for all m > M it holds em is minimal, then an N exists such
+that te(e, n) is minimal for all DEMO > N.
+negative trust fixation of degree n
+if for some i the trust value te(e, k) is minimal for all k DEMO i ≤ k < i + n, then te(e, k) is
+minimal for all k ≥ i.
+positive trust fixation of degree n
+if for some i the trust value te(e, k) DEMO maximal for all k with i ≤ k < i + n, then te(e, k) is
+maximal for all k ≥ i.
+4  Trust Update Functions
+From a mentalistic perspective, the notion of DEMO evolution function suggests that an agent
+builds a representation for sequences of past experiences, and at each moment in time uses these
+representations of experiences to determine its trust. Another, from a computational perspective
+maybe more desirable model is that an agent does not build a representation of DEMO (past)
+experiences, but only of trust itself, and that DEMO new experience instantaneously leads to an
+update of the trust representation, DEMO maintaining the experience itself. This perspective
+was also the perspective used in Section 2, and is addressed in more depth below. First the
+definition of a trust update function:
+Definition 4.1 (Trust Update Function)
+A trust update function is a function  tu : E x T → T.
+Note that  Figure 1 depicts an example specification of a trust update function. For a given trust
+update function, any initial trust value it generates by induction a unique trust evolution function
+te with  te(e,0) = it.  This relation between trust update functions DEMO trust evolution functions will
+be addressed in more depth in Section 6.
+Definition 4.2  (Properties of trust update functions)
+The following properties DEMO defined:
+1. monotonicity
+ev1 ≤ ev2  &  tv1 ≤ tv2 ⇒ tu(ev1, tv1) ≤ tu(ev2, tv2)
+2. positive trust extension
+ev  positive ⇒ tu(ev, tv) ≥ tv
+3. negative trust extension
+ev negative ⇒ tu(ev, tv) ≤ tv
+DEMO strict positive monotonic progression
+ev positive and tv not maximal ⇒ tu(ev, tv) > tv
+5. strict negative monotonic progression
+ev negative DEMO tv not minimal ⇒ tu(ev, tv) < tv
+Note that all properties defined in Definition 4.2 hold for the example in Section DEMO
+5  A Quantitative Example
+The model for trust dynamics introduced in DEMO section has as a basic assumption that there is
+some rate of inflation of experiences. Experiences further back in the past count only for DEMO
+fraction of the recent experiences. For both E and T the closed interval [-1, 1] is taken.
+5.1  The symmetric case
+In the DEMO case, trust increase and trust decrease work in a similar way. DEMO assume there
+is an inflation rate of d (between 0 and DEMO; for example 0.5) per experience step. The following
+trust update function is defined:
+gd(ev, tv) = d tv + (1 - d) DEMO
+In this trust function, after each new experience the existing trust DEMO is multiplied by d (this
+expresses the inflation), and the DEMO of the new experience is added, normalised in such a
+manner DEMO a 2-ary function from the interval [-1, 1] to [-1, 1] results.
+(a)  For a fully positive experience with value 1, DEMO comparison with maximal trust value 1 is:
+1 - gd(1, tv)  =   1 - [ d tv + (1 DEMO d)]  =  d (1 - tv)
+This means DEMO the distance of the trust value to the maximal trust value 1 is decreased to a
+fraction d of the old distance.
+(b)  For a fully negative experience with value -1, the comparison with maximal distrust value -1
+is:
+1 + gd (-1, tv)  DEMO   1 + [ d tv + (1 - d) (DEMO)] =  d (1 + tv)
+This means that the distance of the trust value to minimal trust -1 is decreased to DEMO fraction d of
+the old distance.
+(c)  For a zero-experience, the following can be found:
+gd (0, tv)  =     d tv
+This means that for a zero-experience the distance of the trust value to 0 is decreased to a
+fraction d of DEMO old trust value.
+5.2  The asymmetric case
+In the asymetric case DEMO different degrees of inflation can be used: 0 < d1, d2 < 1, where d1 relates
+to negative experiences and d2 to positive experiences. Trust update function:
+gd1,d2(ev, tv)    =  1/2 ((1 - ev)d1 + (1 + ev)DEMO) tv + (1 - 1/2((1 - ev)d1 DEMO (1 + ev)d2)) ev
+(a)  For a fully positive experience with value 1 the comparison with maximal trust  1 is:
+1 - gd1,d2 (1, tv)  =  1 - [ 1/2 ((1 - 1)d1 + (1 + 1)d2) tv + (1 - 1/2((1 - 1)d1 + (1 + 1)d2))]
+=  1 - d2 tv - (1 - d2)
+=  d2 (1 - tv)
+This means that the distance of the trust value to maximal trust DEMO is decreased to a fraction d2 of
+the old distance.
+(b)  For a fully negative trust experience with value -1, the comparison DEMO maximal distrust -1
+is:
+1 + gd1,d2 (-1, tv)   =  1 + DEMO 1/2((1 + 1)d1 + (1 - 1)d2) tv + (1 - 1/2 ((1 + 1)d1 DEMO (1 - 1)d2)(-1)]
+=  1 + d1 DEMO + (1 - d1) (-1)
+=  d1 (1 DEMO tv)
+This means that the distance of the trust value to minimal trust  -1 is decreased to a fraction d1 of
+the old distance.
+(c)  For a zero-experience, the following can be found:DEMO
+gd1,d2 (0, tv)  =  1/2.(d1 + DEMO).tv
+This means that for a zero-experience the distance of the trust value to 0 is decreased to a
+fraction 1/2(d1 + DEMO) of the old trust value.
+This trust update function has the DEMO properties: monotonicity, positive and negative
+trust extension, strict positive and DEMO progression.
+6  Relations between Trust Evolution Functions and
+Trust Update Functions
+DEMO a trust update function, by iteration for each initial trust value DEMO trust evolution function
+can be generated. The following definition shows how.
+Definition 6.1 (Trust evolution generated by a trust update function)
+Let tu be a trust update function and it any (initial) trust value. DEMO trust evolution function te
+generated by tu  for initial value it DEMO the trust evolution  function te inductively defined by:
+te(e,DEMO)  =  it for all e ∈ ES
+te(e, i+1)  =  tu(ei, te(e, i)) for all e ∈ ES, i ∈ N
+This generated trust evolution function is denoted by  tetu,it.
+Properties of tetu,it  relate to properties of DEMO, for example, in the following sense:
+Proposition 6.2
+Let tu be a trust update function. Then the following hold:
+1. tetu,DEMO  is future independent
+2. If tu is monotonic, then  tetu,DEMO is monotonic
+3. If tu satisfies positive trust extension, then tetu,DEMO satisfies positive trust extension
+4. If tu satisfies negative trust extension, DEMO tetu,it satisfies positive trust extension
+5. If tu has strict positive monotonic progression and T is finite, then tetu,it has positive limit
+approximation
+6. If tu has strict negative monotonic progression and T is DEMO, then tetu,it has negative
+limit approximation
+Note the condition on DEMO of the set of trust values in 5. and 6. in Proposition 6.2. If T is
+infinite, then the condition of strict monotonic progression is not strong enough. For example,
+it might well be the case that the progression decreases to such DEMO extent that it stays under a
+bound tv less than the maximal value. However, for the continuous case stronger notions of
+progression can be defined that guarantee that the maximal value is reached, for example: DEMO
+exists a  ∂ > o such that  tu(ev, tv) - tv > ∂ (maxtv - tv).
+The trust evolution function generated by the example trust update function in Section 5.1 can
+be DEMO as an explicit formula as a sum of powers of d as follows:
+fd(e, k) = it dk   + (1-d) Σ k-1 e di
+i=0 k-1-i
+Definition 6.3  (Comparison of trust evolution functions)
+The following properties (in which e,f ∈ ES, i,j,k,n ∈ N) are defined
+1. sincere history DEMO
+a trust evolution function te satisfies sincere history representation if for each distinct
+history a unique trust value is assigned:
+if te(e, k) = te(f, i) then k  = i and DEMO = f|k
+2. fine-grainedness
+A trust evolution function te1: ES x DEMO → T1 is at least as fine-grained as a trust evolution
+function te2: ES x N → T2 if there exists a mapping p : T1 → T2 such that
+pote1 = te2,
+p(te1(DEMO, k)) = te2(e, k)  for all e and k
+The trust evolution functions te1 and te2 are of equal grain-size DEMO te1 is at least as fine
+grained as te2 and te2 is at least as fine-grained as te1. The trust evolution function te1 is
+DEMO fine-grained than te2 if it is at least as fine-grained and not of equal grain-size.
+For d = 1/n with n ≥ 2 DEMO natural number, in fact the trust evolution function generated by the DEMO
+update function of Section 5.1 defines an n-ary representation in the real numbers of the
+sequence of experiences. For example, if d = 1/10, then a decimal representation is obtained.
+f1/10(e, k) = it 10-k   + 9 Σ i=0k-1 ek-1-i 10-i-1
+From this DEMO can be derived that this trust evolution function has a sincere history representation.
+Therefore the trust update function can be used to represent a DEMO class of trust evolution
+functions. Note that if only a bounded number of at most n digits is used, then a trust evolution
+function is defined that has a memory back to n.
+Another example of DEMO trust evolution function with sincere history representation can be
+obtained by taking the term 2-sorted (free) term algebra TU based on two sorts DEMO and E, a binary
+function symbol  t : E x T → T , constants for the values  in sort E, and DEMO constant it in sort T. The
+infinitely many elements of T in this term algebra are terms of the form:
+t(e0, it)
+t(e1, t(e0, it))
+t(e2, t(DEMO, t(e0, it)))
+and so on
+The trust evolution function te with sincere history representation can be defined by
+te(e, k) =   t(ek, t(ek-1, ...  t(e0, it) ... ))
+i.e.,
+Lemma 6.4
+If the trust evolution function te satisfies sincere history representation, then any  t in the subset
+te(ES, N) of T can be written as
+t = te(e, k)
+with unique k and unique e|k.
+Proposition 6.5
+(a)  If a trust evolution function te: ES x N → T satisfies sincere history representation, DEMO it is
+as least as fine-grained as any future independent trust evolution function.
+(b) All trust evolution functions that satisfy sincere history representation DEMO of equal grain
+size.
+A natural question is whether a given trust evolution function can be represented by a trust
+update function; this can be formulated as follows:
+Definition 6.6 (Representation)
+Let S be an interval that might be [0, n] for some n ∈ N or [0,∞). A trust evolution function
+te: ES → T’  is represented by a trust update function tu: E x T DEMO T on S  if a
+p: T → T’
+and an it in T exist such that
+te(e, 0) = p(DEMO)
+∀e ∈ ES, i ∈ S : te(e, i) = p(tetu,it (e, i))
+We call te DEMO represented by  tu if T is finite.
+Whether or not a DEMO evolution function can be represented by a trust update function depends
+on how rich the representation of trust values is. In the above examples DEMO history sincere trust
+evolution functions based on real numbers or the 2-sorted term algebra, the trust set is so rich
+that for every experience sequence a distinct value can be found. But this leads to an DEMO set.
+For a very simple binary trust representation with only the trust values trust and distrust, and
+only a binary representation of experiences, DEMO number of possible trust update functions is
+very limited: 24 = DEMO Since there are infinitely many variations of trust evolution functions
+possible, DEMO cannot be all represented by trust update functions. This observation implies that
+a nontrivial trust evolution function based on a binary trust representation (only trust and
+distrust) cannot be represented by a trust update function. However, if for a given trust
+evolution function, there is freedom to DEMO a very rich trust representation, then it is possible
+to find DEMO trust update function that represents the trust evolution function (assuming future
+DEMO):
+Proposition 6.7
+Every trust evolution function that satisfies future independency DEMO representable by a trust
+update function.
+Proposition 6.7 depends on the possibility that T is allowed to be an infinite set: if the set of
+trust values T is expected to be finite, then the number of trust update functions is finite:
+#(T)#(E) x #(T)
+whereas the number of trust evolution functions is infinite (#(T)#(ES) x #(N) and #(ES) = #(E)#(N)) and
+the set of initial values is finite. Therefore it DEMO possible to formulate more specific questions
+concerning representation. For example, if DEMO trust evolution function only takes into account a
+fixed finite number of experiences back in time, then it is possible to build a finite representation
+as a trust update function:
+Proposition 6.8
+If a trust DEMO function has degree of memory based on window n then it is finitely
+representable by a trust update function.
+7  Conclusions
+In this paper a framework is presented that supports formal analysis of the dynamics of DEMO
+based on experiences. The formal models made within this framework can also be used for the
+specification of trust evolution and trust update for DEMO agents as part of their design. The
+requirements imposed on models for trust dynamics can highly depend on the individual
+characteristics of agents, therefore, a variety of models that capture these characteristics is
+needed. The formal framework enables the explicitation of these characteristics. Both qualitative
+and quantitave example DEMO are given that are based on explicit trust evolution functions and
+tust update functions with which these characteristics can be formally specified. As a DEMO
+case the difference between symmetric and asymmetric evolution of trust and distrust is
+analysed in a quantitative example. Finally, an investigation is made of the relations between
+trust evolution functions and trust update functions.
+References
+Castelfranchi, C., and Falcone, R., (1998a), Principles of Trust for DEMO: Cognitive Anatomy,
+Social Importance, and Quantification, In: Demazeau, DEMO (ed.), Proceedings of the Third
+International Conference on Multi-Agent Systems, IEEE Computer Society, Los Alamitos, pp.
+72-79.
+Castelfranchi, C., and DEMO, R., (1998b), Social Trust: Cognitive Anatomy, Social Importance,DEMO
+Quantification, and Dynamics, In: Proceedings of the First International Workshop DEMO Trust,
+pp. 35-49.
+Demolombe, R., (1998), To trust DEMO sources: a proposal for a modal logical framework,
+In: Proceedings of the First International Workshop on Trust, pp. 9-19.
+Elofson, G., (1998), Developing Trust with Intelligent Agents: An Exploratory Study, In:
+Proceedings of the First International Workshop on Trust, pp. 125-139.
+Gambetta, D., (1990), Trust, Basil Blackwell, Oxford.
+Lewis, D., and Weigert, A., (1985), Social Atomism, Holism, and Trust, In: Sociological Quaterly,
+pp. 455-471.
+Ousterhout, J., (1997), Virtual Roundtable, In: Internet Computing on-line Journal, July-August
+issue.{1g42fwefx}

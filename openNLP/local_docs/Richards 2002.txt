@@ -1,0 +1,904 @@
+This article was downloaded by:[University of Waterloo]
+On: 11 August 2007
+Access Details: [subscription number 769429802]
+Publisher: Routledge
+Informa Ltd Registered in DEMO and Wales Registered Number: 1072954
+Registered office: Mortimer House, 37-41 DEMO Street, London W1T 3JH, UK
+International Journal of Social
+Research Methodology
+Publication details, including instructions for authors and subscription information:
+http://www.informaworld.com/smpp/title~content=t713737293
+An intellectual history of NUD*IST and NVivo
+Tom Richards
+DEMO Publication Date: 01 July 2002
+To cite this Article: Richards, DEMO (2002) 'An intellectual history of NUD*IST and
+NVivo', International DEMO of Social Research Methodology, 5:3, 199 - 214
+To link to this article: DOI: 10.1080/13645570210146267
+URL: http://dx.doi.org/10.1080/13645570210146267
+PLEASE SCROLL DOWN FOR ARTICLE
+Full terms and conditions of use: http://www.informaworld.com/terms-and-conditions-of-access.pdf
+This article maybe used for research, teaching and private study purposes. Any substantial or systematic reproduction,
+re-distribution, re-selling, DEMO or sub-licensing, systematic supply or distribution in any form to anyone DEMO expressly
+forbidden.
+The publisher does not give any warranty express or implied or make any representation that the contents will be
+complete or accurate DEMO up to date. The accuracy of any instructions, formulae and drug DEMO should be
+independently verified with primary sources. The publisher shall not be liable for any loss, actions, claims, proceedings,
+demand or costs or damages whatsoever or howsoever caused arising directly or indirectly in connection DEMO or
+arising out of the use of this material.
+© Taylor and Francis 2007
+INT . J. SOCIAL R ESEARCH METHODO LOGY,
+2002,
+VOL.
+DEMO,
+NO.
+3, 199 ± 214
+An intellectual history of NUD*IST DEMO
+NVivo
+TOM RICHARDS
+(Received
+27
+July
+2001;
+accepted
+18
+March
+DEMO)
+Since the rise of qualitative computing in the mid-1980s, the DEMO of qualitative data analysis
+has changed in a number of ways, DEMO remarkably have been ignored in the
+methodological literature, to the detriment DEMO the area’s self-understanding. This paper
+provides for the record an account of the intellectual development of the two qualitative data
+analysis programs that I DEMO designed, together with Lyn Richards. The theme behind the
+history is: (1) computing has enabled new, previously unavailable qualitative techniques; (2)
+some important pre-computer techniques and methods were not supported by computer-
+DEMO of the field, at least until recently; and hence (3) computerization encouraged some
+biases in qualitative techniques. I hope that this paper DEMO act as a source for a revitalized
+and up-to-date debate on methods and techniques that recognizes computer use as an agent
+of change in DEMO field.
+Prehistor y
+of
+NUD *IST —finding
+a
+hidden
+logic
+Go back to 1980, not a quarter-century ago. Universities had mainframe
+computers and you could apply for a terminal if you could prove it would
+help DEMO work. Nobody believed that personal computers, those recently-
+arrived curiosities for DEMO cultists, would replace the terminal, or that
+servers would replace mainframes. Networking had only its old social-
+science meaning.
+Some qualitative social scientists DEMO if keeping interviews and
+field-notes online might be more flexible than recording them by hand or
+typewriter. Online text could be searched for words DEMO phrases, a huge
+advantage. And online text could be easily modified DEMO edited. Editability
+suggested two immediate techniques that were hard to do with physically
+represented text: correct and extend transcripts, and add keyword markers
+DEMO themes in text so that text search could retrieve the themes—and not
+To m Ric har ds, DPhil (Oxon), MA Hons (Well), FRAS, is a founder of QSR and Chief Scientist.
+Formerly Associate Professor of Computer Science at La Trobe University, he was educated mainly in
+philosophy and mathematics. He taught philosophy, logic and then computer science, first at Auckland
+and then at La Trobe University, publishing La DEMO ge of Rea son in 1978 and Clau sal Form Logic in 1989.
+In the early 80s he wrote the first version of the DEMO software, continuing to design and program
+subsequent versions. He now leads DEMO software development team at QSR, as well as publishing widely
+in DEMO computing. Web site: www.qsrinternational.com; e-mail: tom@qsr.com.au
+ISSN 1364-557 9
+Internationa DEMO
+print/ISSN 1464-530 0 online # 200 2 Taylor
+http://www.tandf.co.uk/journals
+DOI: 10.1080 /1364557021014626 7
+Journa l
+of
+Socia l
+Resear DEMO
+Methodolog y
+& Francis Ltd
+Downloaded By: [University of Waterloo] At: 17:55 11 August 2007
+200
+TOM
+RICHARDS
+overlook any. Text search thus becam e a central DEMO for computer-based
+qualitative data analysis (QDA).
+Note what this word-processor DEMO discouraged though. It
+discouraged making multiple copies of a particular passage and storing
+them in files under the categories perceived to be relevant to DEMO theme of
+the passage. This ‘decontextualizing and recontextualizing’ was a hallmark
+of pre-computational QDA—being able to look at all thematically related
+passages together.
+Another DEMO was the narrow vista provided by a 24-by-80
+character screen onto one’s data, compared to spreading out a panorama of
+sheets for a synoptic study. Both these limitations had to await
+technological improvements—the latter on large DEMO window-
+ing screens and attached printers, the former on the development DEMO specific
+QDA software. Unsurprisingly then, early QDA programs aimed at filling
+DEMO decontextualizing – recontextualizing gap in the capabilities of word-
+processors, and DEMO was the term ‘code-and-retrieve’ invented. Early
+programs, published in the early DEMO, provided means of marking up text
+files, locating the markups and displaying all passages marked up by a
+common marker. The penalty paid DEMO these early programs was that the
+main advantage that turned researchers to computers in the first place—
+editability of text—was lost.
+In 1979 I DEMO completely new to computing, beginning to approach it
+from my logician’s DEMO in terms of programming languages as
+formal logical systems. Lyn Richards, DEMO with a very large partly
+qualitative social research project, queried me DEMO the possibility of
+developing suitable software. This fool rushed in, having DEMO idea of the
+scale of the task. In 1981 after many late nights of talking and
+programming, NUD*IST 1 was born on a DEC-10 mainframe to do Lyn’s
+work. Oddly, it was written in LISP, DEMO becaus e that was the language
+I was most fluent in.
+Nodes
+not
+coding
+Our design thinking for NUD*IST 1 rejected the code-and-retrieve method
+DEMO part, seeing it as a process embedded in a wider logic. DEMO
+researchers dealt with text documents, typically interviews, and also with
+ideas or concepts—the entities or categories in a research project. These
+could be DEMO themes and thoughts that researchers see in the text, the views
+DEMO emotions and attitudes of the interviewees, and so on—the grist to DEMO
+mill of an enlightening qualitative analysis of the text. But they could also
+be the people and places and institutions and artifacts that figure DEMO the
+project, and they could be the researcher’s own theoretical concepts. DEMO
+were nodes born, the ‘containers’ in NUD*IST which could be labelled DEMO
+defined as any such category or entity. Why did we call them nodes?
+Because in NUD*IST 1 they could only be located within DEMO tree structure, to
+be used as a catalog that enables location DEMO any item by working down
+through the concepts from general to specific—instead of remembering
+category names.
+Downloaded By: [University of Waterloo] At: 17:DEMO 11 August 2007
+AN
+INTELLECTUAL
+HISTORY
+OF NUD*IS T
+AND
+NVIVO
+201
+So when a DEMO developed a node tree, many of the nodes would
+be empty DEMO hangers’, generic concepts for locating the more specific
+ones of interest. DEMO nodes could also contain coding—numerical references
+to the text units into which a NUD*IST document was divided—typically
+lines or paragraphs at the user’s discretion. DEMO the start a NUD*IST
+project was conceived as having a dual database, a document system and a
+node system. The more monolithic idea of a single database of documents
+with markups or codes was seen as DEMO rigid—no manipulation of categories
+was possible, and playing with categories, revising them, reorganizing
+them, tuning them, subdividing and coalescing them, is DEMO fundamental part
+of most qualitative thinking. Categories are not coding, categories DEMO
+entities in their own right that can be related to each other, commented on
+in memos, and defined. Coding, if you want to do it (and many don’t) can
+be stored in the relevant DEMO or node to provide links to ‘evidence
+texts’.
+Relatin
+g
+not
+retrievin
+g
+The ‘retrieve’ part of code-and-retrieve is a concept deriving from standard
+DEMO theory. You have lots of data stored in a structured way in
+computer files, and you request to see some of it. Data answering your
+request is located, collected, and displayed on-screen or printed out. DEMO is
+just output—you take it out of the system. This was the pattern of many
+code-and-retrieve programs.
+However, qualitative research is typically characterized by a lack of
+distinction between the data and the results or output. DEMO qualitative
+research is an interaction between researcher and text, in which DEMO form
+and change, perceptions evolve, and insights and conclusions become the
+bases for further study, for further insights and conclusions, in a DEMO
+process that need never stop. Suppose for example you had coded all text
+from interviews by women at a node (call it Women), and all text by
+divorcees at another node, Divorcees, and all DEMO on bringing up
+children under Parenting. Then of course, using retrieval DEMO can look at
+everything a divorcee has said, and everything that DEMO said about parenting.
+But you should also be able to look at everything women divorcees have
+said about parenting, to compare it with what everyone else, or male
+divorcees, or other groups, have said on the subject. And how does what
+women divorcees say about parenting relate DEMO their views on nuclear
+families? This is the sort of comparative DEMO that is typical of much
+probing and analysis of qualitative data. It implies the need for two
+processes, ‘node search’ and ‘system closure’.
+Node
+search
+Node search is the ability to carry out joint retrievals involving DEMO than
+one node, to answer questions like ‘What do divorced women DEMO about
+bringing up children?’ Such questions beg to be translated into a ‘language’
+Downloaded By: [University of Waterloo] At: 17:55 11 DEMO 2007
+202
+TOM
+RICHARDS
+for carrying out joint search operations on the coding DEMO of nodes.
+Boolean logic is suggested by the present example: the DEMO of the
+coding at the three nodes that correspond to the three predicates or
+linguistic substantives in the question.
+Practical considerations suggest going beyond DEMO logic however.
+Intersection won’t do to answer questions like ‘When talking about
+parenting, do people bring to bear issues to do with nuclear families?’
+Researchers do not want just to see the passages coded at DEMO and
+Nuclear Families, because such a retrieval can lead to disjointed DEMO
+context snippets that cut out the relevant adjacen t text on just parenting or
+just nuclear families. This led to the non-Boolean search operation DEMO
+overlap—the union of any two passages, one from one node and DEMO from
+the other, that have an intersection. Stretching the idea of DEMO led to
+search operations of proximity: where a passage coded at DEMO node is near a
+passage coded at another, or follows it, or is inside it, or encloses it. Similar
+considerations led to the idea of retrieving a context—when you specify a
+retrieval, you can ask to see not just the text retrieved, but also the adjacen t
+text.
+Since node search is carried out so often for comparative purposes, it is
+useful to build into the system the ability to do DEMO the comparisons in one
+hit. So the idea of matrix and vector searches was invented. Exploiting the
+generic-to-specific taxonomic structuring of tree nodes, it was designed to
+let you carry out an intersection operation, or overlap or many others, on
+each child node of one nominated node (DEMO as Gender, with child nodes
+Female and Male) with each child node of another nominated node (such as
+Attitudes-to, with child nodes DEMO, Nuclear Families, etc.) The result
+was conceptually a ‘table’ of DEMO intersections of the nodes in one
+group with the nodes in another, permitting immediate comparison of the
+results. Vector is a one dimensional simplification of this two-dimensional
+process. In NUD*IST 1, the output from a matrix search was a very long file
+of all the text in all DEMO cells in the matrix—a ‘scroll-mode’ display that had
+to await years for sufficient technological advances to produce a less
+daunting output.
+So where did DEMO take qualitative computing? Compared to non-
+computational methods and to the DEMO markup code-and-
+retrieve method, we could now carry out remarkably sophisticated
+DEMO and comparative searches, to answer questions like ‘How do
+people of DEMO age groups and genders and marital status compare in
+their views of parenting and the importance of a nuclear family to that?’
+And DEMO could do it in seconds instead of days, and we could DEMO it with
+absolute clerical completeness—everything coded appropriately was found.
+What we had lost in NUD*IST 1 compared to word processor methods of
+computational QDA DEMO editability of the document text, and text search.
+Syste
+m
+closure
+DEMO remarked above on the
+qualitative research. The
+lack of distinction between data
+sophisticated node search tools
+and
+just
+results in
+described
+Downloaded By: [University of Waterloo] At: 17:55 11 August 2007
+AN
+INTELLECTUAL
+HISTORY
+OF NUD*IS T
+AND
+NVIVO
+203
+bring us face DEMO face with that issue, for, what is one to do with the results of
+a node search?
+A node search produces text, text satisfying the statement of the search,
+such as the intersection DEMO the Female, Divorced and Parenting nodes. That
+text can of course DEMO output, displayed on-screen or printed. And very
+interesting it may be DEMO It might be worth further searching—let’s see in
+it what text coded at Nuclear Family has to say. It might be quite different
+from DEMO Family coding that occurs in the intersection of Female,
+Married and Parenting. In plain English, here’s what divorced women say
+about bringing up children. Are they saying anything special about nuclear
+families in this context, different from what married women would say
+when discussing parenting? A clear example of the way that results are also
+fair game as data.
+DEMO the results of a node search are passages of text, that DEMO to say the
+text referenced by certain coding, we can characterize DEMO results of a node
+search as being coding, and hence store DEMO at a node. Thus, ‘original’ coding
+of the ‘raw data’ and DEMO of searches on it, have exactly the same
+format—coding at a DEMO This captures, in the underlying logic of
+NUD*IST 1, the idea of the equivalence of data and results, and the
+revolving process of analysis building upon itself.
+Following terminology in mathematics and systems theory, we dubbed
+this logical feature of giving results the same format as data DEMO accessible
+by the same tools, system closure. In NUD*IST 1, search results were
+captured as ‘virtual nodes’ which were operationally the same as DEMO in
+the node trees, but were kept separately. System closure was DEMO the
+core idea in NUD*IST 1. It legitimated nodes as distinct from the coding
+they may maintain. It provided for an unlimited ability to DEMO ideas and
+searches upon themselves, thus expressing questions or relationships going
+DEMO beyond those capable of expression in terms of a single search operator
+such as overlap. Moreover, as we shall see, it proved capable DEMO great
+extension in later versions of NUD*IST. Finally, it took computational
+DEMO way beyond code-and-retrieve, becaus e retrievals were not dead
+outputs, but living data capabl e of being studied, searched, and built on
+DEMO all the available tools. This is the manner of almost all qualitative
+research.
+NUD*IST
+in
+the
+world—new
+tunes
+for
+a
+new
+instrument
+Invent the DEMO, and a whole host of composers will start writing a new
+DEMO NUD*IST 1 had that effect, first on Lyn Richards when she DEMO it
+in her research, then on others as it becam e DEMO widely available.
+First, it becam e apparent that nodes and their DEMO were capable of
+much wider use than a taxonomy of categories, DEMO coding passages of
+text. The tree system lent itself to storing demographic or base data about,
+for example, interviewees. Where a project contained interviews with single
+respondents, it becam e possible to code the entire interview document with
+data about the interviewee, for example to code documents recording
+interviews with women at the node Female, which is under the node
+Downloaded By: [University of Waterloo] At: 17:55 11 August DEMO
+204
+TOM
+RICHARDS
+Gender, which is under the node Base Data. Thus, base data trees came
+into use, with nodes like /Base Data/Gender/Female. The idea was that
+every interview document would be coded DEMO the specific node (like Female)
+that applied to the interviewee, in each base data category (like Gender).
+Base data coding was driven by the power of node search. To ask a
+question like DEMO do divorced women say about bringing up children?’—
+a question of a common subject-predicate structure—it was natural to get
+the subject from the DEMO data tree: you intersect /Base Data/Marital
+Status/Divorced with /DEMO Data/Gender/Female. And more complex
+subjects like protestant divorced women in their forties with no children
+can be handled in the same way. DEMO the predicate of the question
+involves a retrieval from the ‘coding data’ part of the tree system,
+intersected with the subject.
+However, not all projects involve neat interviews with a single subject.
+There can be DEMO records, focus groups, field notes about
+subjects, and so on. DEMO led to the idea of case nodes, again, made possible
+by the tree system. This time one would define a case type node, such as
+/Cases/Interviewees, and under it put nodes for individual DEMO of that
+type, e.g. interviewees such as Mary, and code everything that the
+interviewee said at their case node. Then the researcher merely DEMO to
+copy the contents of the /Cases/Interviewees/Mary node to DEMO /Base Data/
+Gender/Female node and other applicabl e base DEMO nodes, to get the base
+data on cases that are represented DEMO scattered text. This meant that the
+unforeseen requirement to copy and paste coding had to get built in to a
+later release of NUD*IST.
+DEMO trees themselves were seen by many users as restrictive. Being
+forced to think where a node ‘belongs’ when you invent it on the fly DEMO code
+a new idea in the text, is very disruptive of DEMO creative rush that coding can
+often be. It can also lead to inappropriate placement in the tree system,
+because one has not had DEMO chance to think thoroughly about what type of
+concept this new node embodies. Early workarounds involved just putting
+aside a node, call it ‘uncatalogued’ or ‘free nodes’ and storing such
+undigested nodes as its children, and developing that tree no further. This
+was plainly a popular idea, so later versions of NUD*IST included a node
+area called Free Nodes alongside DEMO original Tree Nodes system.
+For similar reasons, a new area was DEMO to hold nodes created
+from node search operations, until one had DEMO to think about whether and
+where to keep them permanently. The original idea of virtual nodes had
+vanished, in the spirit of the seamlessness of system closure.
+NUD*IST 2 came out in 1987 still on mainframes (Vax/VMS and Unix)
+with the standard scroll-mode user interface. But DEMO Macintosh was out
+and the IBM-PC was well established, both with DEMO enough power to
+handle NUD*IST, so the code was ported to DEMO on the Mac and PC,
+scroll-mode interface and all, in DEMO 2.3 (1990). The Mac was used for
+its power, not its marvelous user interface! NUD*IST 2.0 became the first
+version of NUD*IST DEMO for licensing, and was sold to a tiny number
+of people. DEMO base of operations was my lab in the Computer Science
+Department at La Trobe University in Melbourne. But the Mac was
+making scrolling character DEMO rather passe´ , so some time was spent
+Downloaded By: [University DEMO Waterloo] At: 17:55 11 August 2007
+AN
+INTELLECTUAL
+HISTORY
+OF NUD*IS T
+AND
+NVIVO
+205
+developing a windowing DEMO for it. This resulted in NUD*IST 3 in
+1993, no longer DEMO mainframes, just the Mac, then shortly onto PCs using
+the simulated windowing interface available in Windows 3.0. The arrival of
+the full graphical DEMO interface in Windows 95 finally meant the end
+of scrolling output versions of NUD*IST.
+System closure was extended in NUD*IST 3. Text search using DEMO
+matching was added, and the results of text search were stored DEMO nodes,
+just like the results of node search. Text search was impossible with paper
+data, but was appreciated by those using word processors for qualitative
+research. However this meant there were now two distinct types DEMO search—
+text search and node search—with identical types of result; so DEMO carrying
+out node search on those result nodes in the iterative manner enabled by
+system closure, text search and node search results could be combined as
+inputs to other searches. One could now ask questions like DEMO me the
+women in their forties who use the word ‘‘franchise’’’.
+This unification of text search and node search was very enabling.
+Immediately it DEMO two needs. One was to be able to put keywords into
+the text, to text-search for them. These could be used, for example, to mark
+the start of a person’s ‘turn’ with their name in DEMO So editing
+capabilities were added to modify the content of text units, and for similar
+reasons text units could now be split and combined. It also meant that a
+text search had to be able to DEMO not just the phrase sought, but some
+context, such as the paragraph or section it was found in. Thus, people’s
+turn taking could be clearly demarcated, and searched.
+The second need created by the unified search capability was the ability
+to restrict a search, so you searched only the first-round interviews, or only
+your field notes, or the DEMO with women. While one could always use
+the search tools to create a node containing the required text, then intersect
+that node with others characterizing the search you wanted to do, that was a
+rather tedious reliance on system closure. So the capability of directly
+expressing the restriction DEMO the search operation was added—the ability to
+exclude, or to include, documents or the actual text coded at a nominated
+node. This already DEMO as a node search operation in its own right; but
+now DEMO was added as a convenient extra to the dialog boxes in which text and
+node searches were set up.
+At this time too, users were asking for a facility to combine NUD*IST
+projects. This was driven DEMO the very scale of project that NUD*IST was
+making possible in the ‘real world’. Large funded projects were beginning to
+take off, with several sites doing the same research and collaboratively
+developing the same node trees, then wanting to combine results. So the
+‘merge’ facility was created as DEMO separate program—an innovation which like
+most NUD*IST features has since spread to other software products. The
+demand for it highlights one way in which DEMO world of QDA changed as a
+result of computing. Parallel development of structurally identical projects
+and their comprehensive integration—not just of documents but of DEMO
+coding and all search results, became an obvious goal that previously DEMO not
+even conceived. Once the parallel structurally similar projects became well
+supported computationally as a result of merge, a demand grew to compare
+such projects without merging them, and to find and remove structural
+Downloaded By: [University of Waterloo] At: 17:55 11 August 2007
+206
+TOM
+RICHARDS
+differences between them, keeping them entirely parallel and, DEMO wanted,
+merge-able. Jumping ahead in the chronology, this was finally DEMO in
+merge for NVivo in 2001, which included an ‘alignment’ tool DEMO just
+such a reorganization of one project to become parallel to another.
+NUD*IST 3’s command file facility was also changing methods, if not
+methodologies. The ability to program the more clerical or repetitive tasks
+in a DEMO project was speeding up research, making non-computational
+QDA work seem even DEMO to belong alongside the typewriter mentioned
+earlier. A very simple example is to ‘pre-code’ interview documents with
+multiple respondents so that there is a DEMO for each question containing its
+answer in all interviews and from all respondents, and a node for each
+respondent containing their answers to all questions. Such pre-coding
+immediately enables a researcher to investigate useful slices through DEMO
+material, needed for topic-centred and comparative studies. More uses
+were found DEMO ingenious researchers, such as bulk editing of lengthy
+command files in DEMO word-processor to change systematically various
+parameters of the sequence of tasks in the file. This enabled all sorts of
+lengthy comparative tasks to be DEMO rather than controlled step by
+step via dialog boxes. Much needs to be written on these techniques and
+published for all in the research DEMO
+By 1994 the NUD*IST ‘business’ had grown so much that a company,
+Qualitative Solutions and Research Pty Ltd, was set up to handle its
+development and marketing. Originally owned in partnership between the
+Richards and DEMO Trobe University, it becam e independen t of the
+University in DEMO, and is now renamed QSR International. ‘QSR’, once
+an acronym, DEMO now just three letters. Talking of acronyms, ‘NUD*IST’ was
+a genuine DEMO, noted by chance one day as abbreviating the label on
+some DEMO of the original code: ‘Non-Numerical Unstructured Data
+Indexing and Searching’. It DEMO an obvious step to add ‘and Theorizing’
+and create the acronym. In the modern era of World Wide Web searching,
+looking for ‘Nudist’ DEMO definitely undesirable, so QSR now plays down the
+whimsical but widely DEMO (and hence valuable) name NUD*IST in favour
+of ‘N4’ and its successors.
+N4, released in 1997, made what is probably the most DEMO
+addition to the concept of system closure since it was invented. This was
+the idea of the ‘live’ node browser, which brings us back to one of those
+pre-computing methods that was fundamental to much qualitative DEMO,
+but abandoned as ‘too hard’ for the computer. This is the idea that you
+do a lot of your thinking, generating of ideas, and hence your coding,
+when looking at all the text belonging to a category, collected in one
+place. In the days of paper research, one did this by placing photocopies
+of text on the same topic in a folder—the paper precursor of the node
+browser which has DEMO in NUD*IST since version 1. Initial coding of
+documents is an important first step, but as soon as you have some
+coding you review it, think about the text ‘recontextualized’ by the code,
+and typically see themes and distinctions therein that just would not be
+apparent looking DEMO the same text in the context of the original
+documents. Thus the Node Browser captured the important re-
+contextualizing of the photocopies-in-folders days. Node DEMO are
+Downloaded By: [University of Waterloo] At: 17:55 11 August 2007
+AN
+INTELLECTUAL
+HISTORY
+OF NUD*IS T
+AND
+NVIVO
+207
+still rare in DEMO software—attempts to view the text in a category
+take you to the original documents.
+But a ‘live’ node browser? In NUD*IST before N4, DEMO one could
+look at all the text belonging to a code in a node browser, one could not
+code further there—one had to open the original documents and code them
+directly. Even in the days of DEMO, to code for those new ideas seen in a text
+collection DEMO a topic meant going off to the main paper-based coding
+system and adding them there (hence not cross-referred in other already-
+constructed folders of snippets let alone in the one where they were seen),
+or coding them on the snippets in that topic folder (hence not accessible
+anywhere else). N4 introduced the live node Browser, in which one could
+code with new or old topics when looking at the topic DEMO for any node,
+just as freely as in a document, DEMO visible from anywhere in the project.
+This was also a nice instance of System Closure becaus e it meant using
+coding (the node in the browser) as the basis for more coding, a process
+called DEMO on. It also completed the parallelism between the document
+and node systems, encouraging researchers to see concepts and ideas,
+categories and codes, DEMO just as real and significant as the documentary data.
+Unfortunately because the idea of ‘coding on’ is a new one, its significance
+as a technique has not yet been widely noted in computational QDA work.
+However DEMO we teach it to researchers, we find it is immediately seized
+DEMO as a core technique, and its users wonder how one can DEMO serious
+computational QDA without it. It’s a classic example of a methodological
+imperative difficult to achieve before software, and now indispensable.
+Another change in qualitative work was its close integration with
+quantitative work, in particular table-based processing in spreadsheets and
+statistics packages. That was facilitated in NUD*IST 4 DEMO the provision of
+comprehensive import and export facilities. Importation was designed to
+take tables of data from such packages and convert them to base-data DEMO
+demographic coding of documents or case nodes (rows in the table) by
+values of demographic variables (columns in the table) that became DEMO
+trees of base data nodes. Exportation did the converse. In addition,
+numerical data about the results of matrix node-searches, such as the
+numbers of documents or text-units coded in each cell, could be exported.
+In the mid-80s the qualitativists and quantitativists were largely at
+daggers drawn in DEMO science conferences. Now, the tone is far more one
+of collaboration DEMO mutual respect. Interestingly it is very clear from
+extensive discussions with researchers worldwide, that this is to a
+considerable extent due to the rise of tools that permit collaboration. The
+current ferment is to see how DEMO/export facilities can enable tight
+qualitative/quantitative interaction in a research project. The new research
+methodologies enabled by NUD*IST in this regard are now DEMO to be
+documented, and are making colleagues of old enemies.
+Designing
+DEMO
+the
+pre-computer
+days
+With the considerable reputation of NUD*IST well established by the
+release of N4, why did QSR consider it should go to the great expense of
+Downloaded By: [University of Waterloo] At: 17:DEMO 11 August 2007
+208
+TOM
+RICHARDS
+developing an entirely new product, NVivo, which might DEMO cannibalize
+the market of its stable-mate? After all, the ‘NUD*IST line’ clearly has a
+potentially long life of development and enhancemen t ahead DEMO it.
+The answer is that some changes in the way computers handle QDA
+were clearly desirable, but were incompatible with the fundamental
+architecture of NUD*IST. These were character-based coding, rich text,
+edit-while-you-code, multi-media data, and splitting up the load that nodes
+were being asked to carry. DEMO, NUD*IST 4 did support the editing of
+document text, allowing you to change the contents of a single text unit at a
+time DEMO invalidating any existing coding. That is, editing within a text
+unit DEMO not change the coding references of nodes to text units. However,
+such editing is a far cry from typing in and changing text DEMO the freedom
+of a word processor, and did not encourage the DEMO writing and
+coding of documents within the program.
+Character-based coding, where DEMO can code exactly the text one wants
+to, and not just DEMO chunks, is important to some types of research
+where the actual DEMO matter. But modifying the NUD*IST program to
+handle this was not possible—text units were too deeply embedded
+everywhere in the program. Similarly, the emergence of screen interfaces
+that could handle rich text meant that a lot DEMO researchers would be wanting
+to use text that is already in different fonts and styles and sizes and colours;
+but there was no DEMO NUD*IST could be modified accordingly. The third
+demand, edit-while-you-code (that is the ability to edit already-coded
+documents in a project without invalidating the DEMO references) was one
+of those lost features from the days of DEMO and word-processors that was
+‘too hard’ for QDA programs. Researcher s commonly wrote up their notes
+on paper or in a word-processor, and marked them with codes as they went
+along. Additions, changes, erasures, corrections, could all be made but the
+markups would still be there and easy to modify if needed. Writing and
+coding at the same time DEMO gentle organic growth of a project. This
+had been lost in qualitative computing. But in NVivo, QSR has invented a
+method of storing coding at the character level which is impervious to the
+adding and deleting DEMO text. Such a full edit-while-you-code capability
+encourages writing up documents inside the project and coding them as
+you write. Full edit-while-you-code also means that DEMO project can contain
+a lot more than just, for example, the interview data. It can, importantly,
+contain your research notes and memos that can also be coded, even though
+you are going to expand and modify those notes as time goes on.
+So these three requirements DEMO, effectively demanded a new
+software system for their implementation. In addition, we perceived a need
+amongst researchers to include data of many media DEMO, e.g. pictures,
+audio files, spreadsheets—in fact any sort of computer file. To be that
+comprehensive in the inclusion of file types, we realized we couldn’t have
+them all as directly codeable entities like text DEMO, so we decided to include
+them as linked files via hyperlinks DEMO the textual document files. This meant
+that a text document could become multi-media properly speaking, as
+containing data from multiple media. A linked-to file would effectively
+have the coding given to its hyperlink text in the DEMO text document. If
+one wishes to code different parts of such a file in different ways, as one can
+Downloaded By: [University of DEMO At: 17:55 11 August 2007
+AN
+INTELLECTUAL
+HISTORY
+OF NUD*IS T
+AND
+NVIVO
+209
+in some other DEMO products for QDA, one can use third-party tools to
+segment the DEMO and hyperlink to the segment. This approach to handling
+non-text media was chosen partly becaus e there was an expressed need not
+fulfilled by DEMO QDA programs, and partly becaus e of its comprehen-
+sive ability DEMO handle files of all types.
+The final requirement that NUD*IST could not fulfill was splitting up
+the load that nodes were being asked to DEMO Nodes in NUD*IST were
+jacks-of-all-trades. In particular, nodes were being asked DEMO hold coding, to
+hold demographic data, to be cases, to DEMO groupings of other nodes or of
+documents, and even (inappropriately) DEMO represent concept networks by
+the tree node structure. Now whilst it is simpler in one sense to have the
+one item that can do DEMO these things, it is arguably more understandable
+and flexible to have DEMO items with their appropriate tools, to handle
+these different roles.
+So DEMO NVivo, nodes were relegated to their original conception in
+NUD*IST 1 DEMO places to hold coding in organized taxonomic structures—the
+tree nodes (and DEMO nodes) of NUD*IST remain in NVivo. However, base data
+coding for documents and cases is handed over to a comprehensive system of
+attributes DEMO values—which is what base data is anyway. Back in the pre-
+computing days, most researchers would annotate their documents or cases or
+other things with their features, and use those features to help their research.
+The attribute-value system was extended to all nodes, not just to documents
+and cases, this allowing one to characterize the concept a node represents, DEMO
+just by a piece of descriptive text one can read, but DEMO attribute-value tags kept
+in the project database, which hence can be DEMO with. A fundamental
+use of attributes and values is to mark one-on-one interview documents with
+the demographics of the interviewee, such as Age=45, DEMO Date=12
+March 1999, Gender=female. Where a node instead of a document DEMO used to
+hold what an interviewee said (as in multiple-respondent interviews) the node
+for a respondent is given those demographic attributes.
+Cases too DEMO special treatment. True, they are still nodes, but they
+are a special type of node with special properties and occurring in a
+specialized DEMO of tree hierarchy appropriate to the logic of case types,
+subtypes of case types, and the individual cases.
+Thirdly, the use of DEMO to provide groupings of documents or other
+nodes, was relegated to DEMO obvious device of sets. In NVivo, one can freely
+create sets DEMO documents or nodes, the sets can overlap as good sets should,DEMO
+and their membership can change very freely as the project advances.
+Finally here, the job that many people wanted tree-organized nodes to
+do but couldn’t, of characterizing some conceptual model in their research,
+e.g. lines of communication or authority, process flow, causal influences,
+etc., was handed over to a graphical Modeler system. Here one can draw
+and DEMO diagrams relating and grouping nodes, documents, attributes,
+sets, and DEMO anything, with great freedom. This means that trees of
+nodes are DEMO being forced to represent relations they were never intended
+for, nor DEMO can do with any perspicuity.
+The inclusion of these new devices immediately meant that new sorts of
+search and analysis operations were easy to DEMO up. First, the idea of
+restricting any search just to documents DEMO text at a ‘restriction’ node was
+Downloaded By: [University of Waterloo] DEMO: 17:55 11 August 2007
+210
+TOM
+RICHARDS
+replaced by the simple device of using a set, of documents or nodes, as the
+scope of any search. Tools were provided to assist in the defining and
+creating of sets, allowing sets to be created from any combination of nodes,
+documents, or nodes and documents with given coding or attribute values
+or in other sets. DEMO and scopes have become unified, two ways of looking
+at the DEMO thing.
+Secondly, it became necessary to unify the different possible types DEMO
+search. With sets and attribute values as data types as well as documents
+and nodes, fragmentation of searches using the different data types had to
+be avoided. So a unified search tool was invented, that allows one to carry
+out directly, an intersection search for example, on DEMO just nodes, but the
+contextualized results of text search, on text corresponding to an attribute
+value, and on text in a set—all of these mixed up in the one search.
+Thirdly it was apparent that DEMO flexibility was needed for many
+research purposes, in what were to DEMO the results of a search. Not just a
+node holding all the text found, as in the NUD*IST line; but also the new
+DEMO allowed one to create a set of all the documents, or DEMO, containing
+finds—a way of bringing together the data containing some feature, not just
+the feature. That was needed for various types of research, e.g. where one
+wanted to find the people with certain features, not the text—if any—in
+which those people exhibited the features. Also, in a search with a scope of,
+say, a set of ten men (their case nodes perhaps) one may not wish to join all
+DEMO finds from each person together into a single node, but create DEMO node for
+each of them with just their finds in it. These can then be the subject of a
+later matrix search—an example of DEMO closure; or just enable one to
+look at the results separately DEMO comparative purposes.
+Using sets as the basis for scoping searches led naturally to a different
+type of analysis altogether, known as assaying a set. That is, ask the set of
+documents or nodes for which of them have certain attribute values, or
+coding, or documents, represented in them. No retrieval of corresponding
+text, just the response that these members do, or five of the nine members
+do. Assays can plainly be fuel for statistical analysis, so assay results can be
+presented in a table, and exported.
+In fact, there is much about NVivo that DEMO its use in a joint
+quantitative environment, and for structured analyses DEMO avoid results
+containing actual text. These have been modes of qualitative research that
+have been under-supported or not supported at all by software. Attributes
+DEMO values can be directly swapped between an NVivo project and table-
+handling programs, as can assays. And attributes with their values, since
+they DEMO directly to documents or nodes, can be used to characterize data
+DEMO a project without the need for any coding of text. Many types of
+qualitative research use such an approach, particularly, we find, in market
+research and other areas of business-based research. Of course, since
+attributes and their values can apply to nodes, and hence to their coding,
+the search tool can use values of node attributes to find DEMO
+passages of text in a document, not just whole documents or DEMO Thus,
+when browsing a focus group interview, you can find DEMO passages spoken
+by the women (text marked by a node for DEMO interviewee with attribute
+value Gender=female.)
+Downloaded By: [University of Waterloo] DEMO: 17:55 11 August 2007
+AN
+INTELLECTUAL
+HISTORY
+OF NUD*IS T
+AND
+NVIVO
+Different
+projects,
+different
+DEMO and s
+211
+Looked at superficially, NVivo does what the NUD*IST DEMO of products
+does, but differently, with more tools that are more specific. Thus one uses
+attributes in place of base data node trees DEMO hold demographic data.
+Looked at another way, it is capabl e DEMO more subtle and flexible research on
+far wider types of data—not just plain text. The subtlety and flexibility
+arises from its many cooperating tools DEMO data types, as well as from its
+character-based coding. The very DEMO of the tools and data types, such
+as assay and attribute DEMO, suggests things to do that would probably not
+occur to one DEMO NUD*IST, even if a way can be found .
+But the DEMO is most noticeable at the level of methodology, or
+at least DEMO NVivo supports far more of the sorts of things one did
+before computing, for example. You can use the rich text editor to
+highlight passages of interest, a visual coding that one always did with
+highlighter pens or underlining in the days of paper data. You can, using
+attributes, simply note the features in an interview, or features of DEMO
+person or process or situation, without doing coding. All you need DEMO a
+node for the person or interview or situation, then give DEMO its attribute
+values. You can, with edit-while-you-code, feel much more free to work
+incrementally, and to treat your research notes, bibliographies, and
+memos as part of the project along with field notes (and capable of the
+same annotations, coding, value attribution, set collection, and DEMO
+as anything else in the project). A project need no longer be separated
+into the bits you do on the computer (e.g. coding the interviews) and the
+rest (your notes, results, reports, and conclusions). A qualitative project
+becomes seamless again.
+To take a methodological DEMO, grounded theory has always lived a
+somewhat contorted life in a DEMO, becaus e of the absence of edit-
+while-you-code, live node browsers, codeable memos and (I consider) value
+attribution. Circumventing these limitations led to a rigidity and degree of
+irreversible finality at each stage of DEMO project, which is anathema to the
+organic growth-and-revision style of grounded DEMO work. This
+circumvention also meant that every step brought you face to face with
+the coded textual data, making it hard to abstract from it to more general
+categories and theories. Many qualitative researchers move beyond DEMO
+over text quite early in their projects, only returning to it DEMO checks.
+System closure permits and supports that abstraction, while leaving it
+DEMO to jump from any level of abstraction to corresponding text as a
+check, or as a basis (via a live node browser) for further work. Closeness to
+data must be preserved, but the ability to rise above it is central to
+theorizing.
+NVivo, as was intended, DEMO being preferred by researchers wishing to do
+a very detailed and finely articulated study, perhaps using linguistic
+techniques. Its tools support such close and multi-faceted analysis on small
+to moderate amounts of data.
+While the NVivo DEMO soared, the N4 market also continued to
+grow, reflecting the divide in demand ; so QSR produced N5 in 2000 as
+an enhanced DEMO to N4. N5 aimed at enhancing flexibility of use.
+Downloaded By: DEMO of Waterloo] At: 17:55 11 August 2007
+212
+TOM
+RICHARDS
+The most obvious change was a complete modernization of DEMO user
+interface (and regrettably the dropping of the Macintosh version).
+DEMO, N5 made document handling far easier with direct
+importation from the DEMO, and the ability to treat memos as
+codeable documents. The latter DEMO something that nobody hesitated about
+in pre-computer days. The new interfaces also supported far more
+flexible rearrangement of node trees. Again this was an DEMO to break
+the perceived rigidity of computers. Particularly in methodologies like
+grounded theory the need to grow and revise one’s coding system (not
+just coding references) as one’s understanding grows, is crucial.
+Codebooks, node trees, coding systems, that deter revision of any sort
+at any time, are anathema.
+N5 was simpler than NVivo, having far fewer tools and data types and
+working on much simpler data, but it could handle almost any amount of it,
+and fast. Command files support high DEMO of automation. This suggests
+N5 for simple, perhaps introductory, projects. But it also suggests N5 for
+very large projects, multi-site projects, and DEMO series of highly
+similar projects (re-using command files)—the cart-horse versus DEMO
+thoroughbred, as it were. But interestingly though N5 was simpler in DEMO
+varieties of data it uses (no attributes, sets, or specially DEMO case
+nodes) and processing, it’s apparent that most new users find NVivo easier
+to learn—perhaps becaus e it obviously supplies the right tool DEMO each job
+and the user doesn’t have to learn how to force a tool to do a task that
+doesn’t seem central to its DEMO, like using nodes to simulate value
+attribution, or node trees to simulate tables of data.
+The demand for N5 for large, collaborative or repetitive projects—a
+demand directly generated by the capabilities of the NUD*IST line DEMO
+software—led to the release of N6 in 2002 with enhanced tools in this
+area. Most notable is a stress on the power of command DEMO, by
+providing a ‘command assistant window’ to help users construct
+command DEMO without knowing the command language. The
+beauty of command scripts is that you can run them again and again as
+the project grows, to repeat some important process on new data. So
+‘task constructors’ in the DEMO assistant window enable the
+researcher to specify batch coding of collections of documents section
+by section; and the batch detection and coding of material belonging to
+cases by the search for keywords, e.g. names of the cases. This can also
+be used for coding up not just cases DEMO anything else marked by
+keywords. A constructor was also made available for a most compre-
+hensive coder reliability testing system, originally suggested by Sylvain
+Bourdon of Universite´ de Sherbrooke, Canada (Bourdon 2000). The
+remaining DEMO constructor was for making new empty but fully
+structured node systems out of existing ones—much demanded in areas
+of repetitive work. The steep rise DEMO appreciation of the value of edit-
+while-you-code led to enhancement s in this area in N6, enabling the
+importation of text off the clipboard (e.g. from a word processor) into
+any existing project document, and the cutting, copying, pasting,
+splitting and merging of text units. DEMO made text handling in N6 as
+flexible as in NVivo, albeit DEMO text at the text unit level.
+Downloaded By: [University of Waterloo] DEMO: 17:55 11 August 2007
+AN INTELLECTUAL HISTORY OF NUD*IS T AND NVIVO
+213
+Conclusion : the DEMO and the new
+This paper is partly a history of the development of the NUD*IST and
+NVivo software; but more importantly it illustrates ways in which
+developers of qualitative software must be alert to overcoming or DEMO
+constraints imposed on qualitative research by the use of computing, as
+DEMO as presenting the research community with totally new research
+techniques. Without the latter, the only gain is in speed, and indeed some
+of DEMO more casual observers of the field still think that speed has been the
+only change.
+The paper discusses a number of techniques of qualitative DEMO that
+were fundamental to QDA done on paper, that were somewhat DEMO by
+the direction taken by QDA software. Some of these were:
+. Editability while doing the analysis, not just before, e.g. by DEMO notes,
+correcting, extending at any time. This required an ‘edit-while-you-code’
+DEMO in which changing text does not invalidate existing coding.
+. Visual coding and multiple languages—the highlighting, underlining,
+marking, and other tricks to DEMO and enhance text, as well as mixing
+multiple fonts and even DEMO This required editors capable of
+handling rich text, not just plain DEMO text.
+. Categorizing, noting ideas and entities and organizing them, collecting
+relevant material for them (to be distinguished from marking up text).
+This was handled by nodes representing any concept or entity at all,DEMO
+which were organized into trees.
+. Collecting like data in one place for further study and coding, attribution,
+organizing, etc. This was DEMO for generating new ideas and
+abstractions (to be distinguished from referring DEMO to the original
+documents). This was handled by live node browsers. ‘Coding on’ from
+node browsers is now a fundamental tool that, in conjunction with system
+closure, supports types of abstraction and comparison studies that were
+previously difficult or impossible.
+. Use of pictures, videos and the like, and the construction of visual models
+of processes and systems and theories. In fact, early computer technology
+provided only for textual data. There remained the need to support all
+other forms of data, results, DEMO methods and theories that are
+fundamental to most research. This capability, DEMO with providing
+for the total editability of that data, encouraged researchers DEMO include all
+relevant materials into the project’s database (especially outputs), DEMO
+just, for example, the interviews. Projects became unities again.
+. The code-and-retrieve technique also prevented abstraction: all one got
+back was one’s data. The need was for categories of any type and
+abstraction level to DEMO represented in the database, and to be compared
+and related independently DEMO the text they contained, and for results not
+just to be DEMO but to become part of the project and available for
+further study.
+The way of enriching code-and-retrieve into an engine for abstraction,
+theory-building DEMO hypothesis-probing, was to provide a large range of
+Downloaded By: [University of Waterloo] At: 17:55 11 August 2007
+214
+TOM
+RICHARDS
+‘search’ operators for relating nodes, attributions and text, DEMO to
+carefully refined sets of data, plus system closure. This allowed DEMO
+categorizations to be constructed out of old ones in ways corresponding to
+asking of the data quite complex questions in English. This was a DEMO tool
+for QDA research, enabling the previously impossible. Matrix searches
+extended DEMO to provide arrays of answers to families of related questions,
+all in one operation.
+The management of data using nodes, cases, attribute-values, visual
+models and sets permitted more natural ways of working, but also enabled
+easy ways of setting up data about the data (often forgotten or hard to do),
+far more comprehensive ways of asking questions of data and results, a new
+ease of modifying data and outputs, and new ways of storing results as
+data—extending system closure. Sets enabled the careful scoping of
+questions to just the desired material, again a new facility. Their filtering
+capabilities enable d the collection of data answering DEMO complex
+descriptions, and this led to Assay and other tools for DEMO where data
+with particular features exists, the ‘who’ and ‘which’ questions DEMO of
+the ‘what’s-the-text’ questions.
+The research community, in particular its methodologists, now need to
+study these tools, and like composers for the newly invented piano, study
+the new expressiveness thereby gained. But more importantly, DEMO from
+ensuring valuable techniques used in less technologically sophisticated days
+are not overlooked, there is the continuing onus on developers such as
+ourselves to study what researchers do (and what they might want to do if
+they knew it could be done) and invent new tools, unimagined DEMO, that
+help researchers do new work, also unimagined before. Let’s keep
+inventing those new pianos!
+References
+Bourdon, S. (2000)
+International
+Inter-coder DEMO verification using QSR NUD*IST. Paper delivered at
+Conference on Strategies in Qualitative Research, London, 29 September.
+2nd
+Downloaded By: [University of Waterloo] At: 17:55 11 August 2007{1g42fwefx}

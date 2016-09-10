@@ -1,0 +1,2343 @@
+Available online at www.sciencedirect.com
+Cognitive Systems Research 9 (2008) 252–273
+www.elsevier.com/DEMO/cogsys
+Neural aﬀective decision theory: Choices, brains, and emotions
+Action DEMO: Ron Sun
+Abninder Litt a,*, Chris Eliasmith b,c, DEMO Thagard b,d,e
+a Graduate School of Business, Stanford University, Stanford, CA 94305-5015, United States
+b Department of Philosophy, University of Waterloo, Ontario, Canada N2L 3G1
+c Department of Systems Design Engineering, University of Waterloo, Ontario, Canada N2L 3G1
+d Department of Psychology, University of Waterloo, Ontario, Canada N2L 3G1
+e Cheriton School of DEMO Science, University of Waterloo, Ontario, Canada N2L 3G1
+Received 25 DEMO 2007; accepted 29 November 2007
+Available online 14 April 2008
+Abstract
+DEMO present a theory and neurocomputational model of how speciﬁc brain operations produce complex decision and preference phe-
+nomena, including those explored in prospect theory and decision aﬀect theory. We propose that valuation and decision making are DEMO
+tional processes, involving interacting brain areas that include two expectation-discrepancy subsystems: a dopamine-encoded system for
+positive events and a serotonin-encoded system for negative DEMO The model provides a rigorous account of loss aversion and the shape
+of the value function from prospect theory. It also suggests multiple distinct DEMO mechanisms by which information framing may
+aﬀect choices, including ones involving DEMO pleasure. It further oﬀers a neural basis for the interactions among aﬀect, prior expec-
+tations and counterfactual comparisons explored in decision aﬀect theory. Along with predicting the eﬀects of particular brain distur-
+bances and damage, the model suggests speciﬁc neurological explanations for individual diﬀerences observed in choice and DEMO
+behaviors.
+ 2008 Elsevier B.V. All rights reserved.
+Keywords: Computational neuroscience; Decision making; Emotion; Framing; Prospect theory
+1. Introduction
+How do people decide what clothes to wear, what to eat
+for dinner, what DEMO to buy, or what kind of career to pur-
+sue? In traditional economics, the standard answer is that
+people decide by maximizing expected utility, but psychol-
+ogists have found many problems with this kind of decision
+theory as a description of human behavior (e.g., Camerer,
+DEMO; Kahneman & Tversky, 2000; Koehler, Brenner, &
+Tversky, DEMO; Rottenstreich & Hsee, 2001; Tversky &
+Kahneman, 1991). DEMO commonly take preferences
+as given, but from a psychological point of DEMO it should
+* Corresponding author.
+E-mail address: alitt@stanford.edu (A. Litt).
+1389-0417/$ - see front matter  2008 Elsevier B.V. All rights DEMO
+doi:10.1016/j.cogsys.2007.11.001
+be possible to explain how preferences arise from cognitive
+and aﬀective processes. Work in this spirit has made tre-
+mendous progress DEMO revealing key features and dynamics
+missed by theories disconnected from the study of cogni-
+tive, emotional and socially motivated phenomena, such
+as a DEMO hypersensitivity to losses over equivalent
+gains (Kahneman & Tversky, 1979) DEMO the aﬀective inﬂu-
+ence of prior expectations and counterfactual comparisons
+on preference judgments (Mellers, 2000). Moreover, with
+the rise of cognitive and aﬀective neuroscience, it should
+be possible to identify precise neural mechanisms underly-
+ing these behavioral-level explanations of why people make
+the choices that they DEMO
+We propose neural aﬀective decision theory as a psy-
+chologically and neurologically realistic account of spe-
+ciﬁc brain mechanisms underlying human preference and
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+DEMO
+decision. The theory consists of four principles, which we
+shall list DEMO and describe in detail later:
+1. Aﬀect. Decision making is a cognitive–aﬀective process,
+crucially dependent on emotional evaluation of poten-
+tial actions.
+DEMO Brain. Decision making is a neural process driven by
+coordinated dynamic interactions among multiple brain
+areas, including parts of prefrontal cortex as well as
+major subcortical systems.
+3. Valuation. The brain forms preferences via interacting
+but DEMO mechanisms for positive and negative out-
+comes, encoded primarily by dopamine DEMO serotonin,
+respectively.
+4. Framing. Judgments and decisions vary depending on
+how the context and manner of the presentation of
+information initiate diﬀerent neural DEMO patterns.
+There is substantial empirical evidence for each of these
+principles, DEMO when integrated in the precise manner we
+outline they can explain the ﬁndings of a wide range of psy-
+chological and neurological phenomena.
+In DEMO to connect these principles with experimental
+results in a mathematically and neurologically rigorous
+fashion, we have developed a neurocomputational model
+called ANDREA (aﬀective DEMO of decision
+through reward-based evaluation of alternatives). It oper-
+ates within the neural engineering framework (NEF) devel-
+oped by Eliasmith and Anderson (2003), using biologically
+realistic populations of neurons to encode and transform
+DEMO representations of relevant information.
+ANDREA simulates computations among several thou-
+sand neurons to model coordinated activities in seven
+major brain areas that contribute to DEMO and decision
+making: the amygdala, orbitofrontal cortex, anterior cin-
+gulate DEMO, dorsolateral prefrontal cortex, the ventral
+striatum, midbrain dopaminergic neurons, and serotoner-
+gic neurons centered in the dorsal raphe nucleus of the
+brainstem.
+DEMO successfully produces detailed neural-level
+simulations of behavioral ﬁndings explored in prospect the-
+ory (Kahneman & Tversky, 1979) and the decision aﬀect
+theory of Mellers and colleagues (1997). It shows how spe-
+ciﬁc neural processes can produce behaviors observed in
+both psychological experiments and real-world scenarios
+that DEMO provided compelling evidence for these prefer-
+ence and choice theories. In particular, ANDREA provides
+neurological explanations for the major hypothesis of pros-
+pect theory that losses have greater psychological force
+than gains, as well as for the fundamental claim of decision
+aﬀect theory that the evaluation (and subsequent potential
+choice) of an option is strongly inﬂuenced by its perceived
+relative pleasure, an emotional determinant that is depen-
+dant on expectations and counterfactual comparisons. In
+our concluding discussion, we compare ANDREA to other
+models in decision neuroscience, describe promising ave-
+nues of expansion for ANDREA and neural aﬀective
+decision theory, and suggest additional psychological phe-
+nomena that are likely to fall within the scope of our
+theory.
+2. Neural aﬀective decision DEMO
+We now examine in detail the four guiding principles of
+neural aﬀective decision theory, including connections to
+and supporting evidence provided by a diverse array of
+research in both psychology and neuroscience. The
+ANDREA implementation of DEMO theory we describe later
+provides the formal integration of these ideas necessary for
+our detailed simulation experiments.
+2.1. Principle 1. Aﬀect
+According to our DEMO principle, decision making is a
+cognitive–aﬀective process, crucially dependent on emo-
+tional evaluation of potential actions. This claim rejects
+the assumption of traditional DEMO decision the-
+ory that choice is a ‘cold’ process involving the calculation
+of expected values and utilities (Kreps, 1990; Von Neu-
+mann & Morgenstern, 1947). The original 19th-century
+concept of utility was a psychologically rich, aﬀective
+one based on pleasure and pain (Kahneman, Wakker, &
+Sarin, 1997). In contrast, 20th-century economics adopted
+the behaviorist DEMO that utilities are mathematical con-
+structions based on preferences revealed purely by behav-
+ior. There is no room in this view for ﬁndings observed DEMO
+both psychological experiments and everyday life that
+people’s decisions are often highly emotional, with prefer-
+ences arising from having positive feelings for some
+options and negative ones for others. While psychology
+has introduced a more complex DEMO of the
+cognitive processes underlying decision making, the spe-
+ciﬁc inﬂuence DEMO aﬀect on behavior has frequently been
+ignored. Rottenstreich and Shu (2004) argue that this
+neglect of aﬀect may stem from an original desire DEMO psy-
+chological decision researchers to minimize diﬀerences
+with the terminology and general themes of classical nor-
+mative decision theories.
+But there is increasing appreciation DEMO cognitive science
+that emotions are an integral part of decision making (DEMO
+Bechara, Damasio, & Damasio, 2000, 2003; Churchland,
+1996; Lerner & Keltner, 2000; Loewenstein, Weber, Hsee,
+& Welch, 2001; Sanfey, Loewenstein, McClure, & Cohen,
+2006; Slovic, DEMO, Peters, & MacGregor, 2002; Wagar
+& Thagard, 2004). DEMO (2003, p. 710) argues that
+‘‘there is compelling evidence for DEMO proposition that every
+stimulus evokes an aﬀective evaluation.” Common experi-
+ence suggests that emotions are both inputs and outputs
+of decision making. Preference for DEMO option over another
+depends strongly on their relative emotional interpreta-
+tions, DEMO the process of decision making can itself gener-
+ate emotions such as anxiety or relief. The relevance of
+emotion to decision making is consistent DEMO physiological
+theories that regard emotions as reactions to somatic
+254
+A. Litt et al. / Cognitive Systems Research 9 (2008) DEMO
+changes (Damasio, 1994; James, 1884). It also ﬁts with
+some cognitive theories of emotions, which regard them
+as judgments about the extent to which ones goals are
+being satisﬁed (Oatley, 1992). DEMO a neurological perspec-
+tive, it is easy to see how emotions DEMO be both cognitive
+and physiological, as there are numerous interconnections
+among DEMO relevant brain areas.
+2.2. Principle 2. Brains
+According to our second principle, decision making is a
+neural process driven by coordinated dynamic interactions
+among multiple brain areas, including parts of prefrontal
+cortex as well as major subcortical systems. In particular,
+activity in brain regions involved in assessing DEMO acting
+upon the appetitive or aversive nature of stimuli (com-
+monly DEMO as part of the brain’s reward system)
+seems most crucial to understanding judgment and choice
+behavior (for a review, see Sanfey et DEMO, 2006). Empirical
+neuroscientiﬁc investigation of the nature of preference
+and DEMO has been developing rapidly, and much work
+today is identifying speciﬁc DEMO areas involved in produc-
+ing decision-related behaviors (e.g., Bayer & Glimcher,
+2005; Breiter, Aharon, Kahneman, Dale, & Shizgal, 2001;DEMO
+Knutson, Taylor, Kaufman, Peterson, & Glover, 2005;
+McClure, York, & Montague, 2004; Montague & Berns,
+2002). This nascent ﬁeld of decision neuroscience represents
+an exciting frontier of deep exploration DEMO how and why
+people act, think and feel as they do DEMO choice and judg-
+ment scenarios (Shiv et al., 2005).
+But taking a neural approach to decision making allows
+for much more than DEMO identifying brain areas acti-
+vated in the subjects of behavioral studies. The develop-
+ment of biologically plausible theories of how brain areas
+interact to DEMO preferences and choices can provide
+more reﬁned mechanistic explanations of decision behavi-
+ors. Moreover, investigation at the neural level can suggest
+novel experiments, DEMO example the recent discovery that an
+odorless nasal spray preparation of the neuropeptide oxy-
+tocin increases trust in risky choice scenarios, including
+those involving monetary transactions (Kosfeld, Heinrichs,
+Zak, Fischbacher, & Fehr, 2005). Such a ﬁnding is one that
+decision neuroscience can reveal, but that would be missed
+by higher-level psychological study alone. Neuroscience
+can thus DEMO the development of more detailed predic-
+tions and richer understandings of behavioral-level
+observations.
+2.3. Principle 3. Valuation
+Our third principle states that the brain DEMO prefer-
+ences via interacting but distinct mechanisms for positive
+and negative outcomes, encoded primarily by dopamine
+and serotonin, respectively. There is extensive evidence DEMO
+midbrain dopamine neurons, such as those in the ventral
+tegmental area DEMO nucleus accumbens, are involved in
+the computation of a discrepancy between DEMO expected
+and actual rewarding nature of an outcome (e.g., Knutson
+et al., 2005; Schultz, 2000; Suri, 2002), although recent evi-
+dence suggests that this activity is only involved in the
+encoding of DEMO deviations from expectations, that is,
+getting more than one expected. (Bayer & Glimcher,
+2005). Daw, Kakade, and Dayan (2002) describe a plausi-
+ble alternative brain mechanism for situations in which one
+receives less than expected, arguing that serotonin innerva-
+tion from the dorsal raphe nucleus of the brainstem is cru-
+cial for producing characteristic reactions DEMO negatively
+valued stimuli and matters being considered (e.g., options
+in a choice scenario). There are thus neurobiological rea-
+sons for viewing gains DEMO losses as being encoded and sub-
+sequently assessed in a fundamentally diﬀerent manner by
+the brain, involving distinct neural circuits and activation
+patterns. This provides the basis for our explanation of
+the central ﬁnding of prospect DEMO that losses loom lar-
+ger than gains. Our neurocomputational model ANDREA
+simulates how interactions of the dopamine and serotonin
+systems with the amygdala and DEMO brain areas may
+enable this asymmetric assessment of positive and negative
+outcomes.
+2.4. Principle 4. Framing
+The last principle states that judgments and decisions
+DEMO depending on how the context and manner of the pre-
+sentation of information initiate diﬀerent neural activation
+patterns. The importance of framing is evident DEMO the
+long history of inﬂuential work by Tversky and Kahneman
+(1981, 1986; see also Kahneman & Tversky, 2000). They
+demonstrated that DEMO a decision in terms of either
+losses or gains can substantially aﬀect the choices that peo-
+ple make, and related phenomena have been observed in
+many real-life arenas such as the stock market and con-
+sumer DEMO (Camerer, 2000). We contend that framing
+can be understood even more deeply from the neural aﬀec-
+tive perspective we propose in our DEMO two principles. The
+simulation results we describe later show how this enriched
+conception of framing allows for the integration of diverse
+lines of behavioral DEMO research, as well as the postula-
+tion of important new predictions DEMO hypotheses.
+We take the concept of framing to encompass any
+potential eﬀects of the manner or context of presentation
+on decisions and judgments. Following DEMO characteriza-
+tion, such ﬁndings as preference reversals when outcomes
+are evaluated DEMO versus separately (e.g., Hsee, Loewen-
+stein, Blount, & Bazerman, 1999; Hsee, Rottenstreich, &
+Xiao, 2005) might also be DEMO to be framing results.
+Another such framing eﬀect is illustrated by the ‘trolley-
+footbridge’ dilemma (e.g., Greene, Sommerville, Nystrom,
+Darley, & Cohen, 2001): most people consider ﬂipping a
+switch to kill one person instead of ﬁve morally justiﬁed,
+but consider it immoral to DEMO push a person into
+the path of an oncoming trolley, killing DEMO person but
+preventing the trolley from killing ﬁve others. We will also
+explain some of the ﬁndings of the decision aﬀect theory of
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+DEMO and colleagues (1997) as framing eﬀects that diﬀer-
+entially activate speciﬁc neural systems.
+These four principles make strong claims about the pro-
+cesses DEMO constitute human decision making, but alone
+they are not suﬃciently precise DEMO explain particular experi-
+mental results. We now describe a rigorously deﬁned, DEMO
+logically realistic neurocomputational model that speciﬁes
+how diﬀerent brain areas might interact in a manner consis-
+tent with neural aﬀective decision theory to produce
+DEMO behavioral phenomena.
+3. The ANDREA model
+A neuropsychological theory consists of a set of hypoth-
+eses about how speciﬁc brain operations produce observed
+behaviors. DEMO of the complexity of the brain, compu-
+tational models are indispensable DEMO theoretical neurosci-
+ence, both for precisely specifying relevant neural
+structures and DEMO and for examining their implica-
+tions through appropriate simulation experiments. Litt,
+Eliasmith, and Thagard (2006) proposed a biologically
+detailed neural model of reward system substrates of valu-
+ation and decision. We describe here the DEMO func-
+tional components of this model, and introduce several
+explanatorily valuable DEMO regarding neural response
+characteristics and the complexity of emotional arousal
+encoding. This version of the model we call ANDREA,
+for aﬀective neuroscience of DEMO through reward-based
+evaluation of alternatives.
+Our model applies the neural engineering framework
+(NEF) developed by Eliasmith and Anderson (2003), and
+has been implemented in MATLAB using the NEF simula-
+tion software NESim (see Appendix A). Neural popula-
+tions (‘ensembles’) and their ﬁring activities are DEMO
+in the NEF in terms of mathematically precise representa-
+tions and transformations, with the dynamic characteristics
+of neural computations characterized using the tools of
+modern control theory. Appendix B outlines the exact
+mathematical nature of representation, transformation
+and dynamics as deﬁned by the NEF. This rigorous, gener-
+alized mapping of high-level mathematical entities and
+transformations onto biophysical phenomena such as DEMO
+patterns and currents allows for biologically constrained
+computations and dynamics to be implemented in physio-
+logically realistic neural populations, and has proven suc-
+cessful in modeling phenomena ranging from the
+swimming of lamprey ﬁsh (Eliasmith & Anderson, 2000)
+to the Wason card task from cognitive psychology (DEMO
+smith, 2005b).
+Fig. 1 shows the connectivity structure between the DEMO
+ferent brain regions we have modeled. A comprehensive
+examination of aﬀerent and eﬀerent transmission among
+these regions would feature many more connections than
+we DEMO included. The interactions shown represent partic-
+ular paths of coordinated activity that contribute to
+observed behaviors, rather than a full characterization of
+all relevant neural activity. Appendix A provides details
+AMYG
+OFC
+DLPFC
+5-HT
+VS
+DA
+DEMO
+ACC
+Fig. 1. Basic connectivity framework. Dotted arrows represent external
+inputs to the model. Abbreviations: 5-HT, dorsal raphe serotonergic
+neurons; ACC, anterior DEMO cortex; AMYG, amygdala; DA,
+midbrain dopaminergic neurons; DLPFC, DEMO prefrontal cortex;
+OFC, orbitofrontal cortex; VS, ventral striatum.
+regarding DEMO speciﬁc numbers of neurons used to model
+each of these brain areas, as well as the physiological
+parameters used to model individual neurons in each of
+these populations. Each input–output relation symbolized
+by a connection line DEMO Fig. 1 maps onto one or more spe-
+ciﬁc mathematical transformations, DEMO summarized in
+Appendix C. We now describe these coordinated neural
+computations as they are relevant to explaining decisions
+and valuations.
+3.1. Subjective valuation by DEMO modulation
+Valuation of alternatives and other information is an
+essential part of decision making. Central to the perfor-
+mance of this task by ANDREA DEMO an interaction between
+the amygdala and orbitofrontal cortex (Fig. 1). DEMO
+research has implicated orbitofrontal cortex in the valua-
+tion of stimuli (DEMO, Rolls, 2000; Thorpe, Rolls, & Maddi-
+son, 1983), particularly in light of its extensive connections
+with sensory processing areas of DEMO brain. Several recent
+studies have indicated an important role for orbitofrontal
+neurons in providing a sort of ‘‘common neural currency”
+(Montague & Berns, DEMO) which allows for the evaluation
+and comparison of ﬁgurative (or even literal) apples and
+oranges (Padoa-Schioppa & Assad, 2006). Recent studies
+of the amygdala have challenged its traditional association
+with mainly aversive stimulus DEMO, showing instead
+activation based on the degree to which stimuli are DEMO
+or arousing, rather than a speciﬁc valence type (for a
+review, see McClure et al., 2004). This has inspired a rein-
+DEMO of classic results as indicating that negatively
+appraised events may be in general more emotionally
+arousing than positive outcomes, perhaps because of a
+need to alter current behavior in response to aversive feed-
+back. In accord DEMO research on the role of the amygdala
+in emotional attention (Adolphs DEMO al., 2005) and multipli-
+cative scaling observations for visual attention (DEMO, Treue,
+256
+A. Litt et al. / Cognitive Systems Research 9 (2008) DEMO
+2001), ANDREA performs a multiplicative modulation by
+amygdala-encoded emotional arousal of the valuation
+computation performed in orbitofrontal cortex (Fig. 2).
+That is, orbitofrontal valuations are modeled as being mul-
+tiplicatively dampened or intensiﬁed, DEMO on
+whether the individual is in a lowered or heightened state
+of aﬀective arousal, respectively.
+Let V represent baseline orbitofrontal stimulus valua-
+tion, DEMO on initial sensory and cognitive processing
+and provided as an input in our model. Taking A to repre-
+sent amygdala-encoded emotional arousal, we characterize
+the output subjective valuation S at time t as
+SðtÞ¼ AðtÞ V DEMO:
+ð1Þ
+Thus, increased levels of emotional arousal will amplify the
+DEMO valuation of stimuli by orbitofrontal cortex,
+while lower arousal levels lead to valuation attenuation.
+As we discuss in our later account of prospect DEMO, AN-
+DREA also introduces realistic biological constraints im-
+posed by neural DEMO saturation that help to explain
+valuation behaviors observed in humans, an DEMO
+over our earlier reward system model (Litt et al., 2006).
+3.2. Surprise as deviation from expectations
+Fig. 2 shows that our model DEMO amygdala activity
+upsurges accompanying changes in the valuation input to
+orbitofrontal cortex, and that these upsurges are valence-
+asymmetric: negative changes in valuation (losses) produce
+greater aﬀective arousal increases than equivalent positive
+changes (gains)DEMO This neurological behavior is produced
+mainly through a modulation of amygdala-encoded emo-
+tional arousal by a reward prediction error signal. This is
+simply the DEMO between expected and actual stimu-
+a
+2
+1
+0
+–1
+–2
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+b
+c
+DEMO
+2.5
+2
+1.5
+1
+0.5
+0
+0
+2
+1
+0
+–1
+–2
+–3
+–4
+0
+0.1
+0.1
+0.2
+0.2
+0.3
+0.3
+0.4
+0.4
+0.5
+DEMO
+time
+0.6
+0.6
+0.7
+0.7
+0.8
+0.8
+0.9
+0.9
+1
+1
+Fig. 2. Arousal modulation of valuation. (a) The ‘‘emotionless” input signal to DEMO cortex consists here of positive and negative valuation
+changes of varying magnitude. The vertical axis can be interpreted as a sort of neural currency DEMO: upward steps in the graph thus represent gains, while
+stepping down indicates a loss. Positive/negative sign corresponds to appetitive/aversive valence. (b) Emotional arousal reﬂected in amygdala activity.
+Decoded output from spiking neuron populations (see Appendix B). Upsurges correspond to arousal increases coinciding with changes in the externally
+provided stimulus value signal in (a), demonstrating the role such changes play in inﬂuencing emotional engagement. (c) Multiplicative modulation DEMO the
+activity presented in (a) by that shown in (b)DEMO Emotional arousal can induce signiﬁcant changes in valuation from the baseline input signal.
+OFC output
+AMYG output
+OFC input
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+DEMO
+lus valuation, and as such represents the eﬀect of the sur-
+DEMO nature of a stimulus on how emotionally arousing
+it is.
+For this computation we employ the temporal diﬀerence
+(TD) model (Sutton & Barto, 1998), due to its simple math-
+ematical structure and robust correspondence with experi-
+mental neural activity observations (e.g., Schultz, 2000).
+TD computes reward prediction error (E) based on the dif-
+ference between DEMO latest reward valuation and a weighted
+sum of all previous rewards (DEMO). Using our arousal-modu-
+lated signal S as the input regarding current stimulus valu-
+ation, this leads to the modeled recurrent equations
+EðtÞ¼ SðtÞ Pðt 1Þð2Þ
+PðtÞ¼ Pðt 1Þþ a  EðtÞ; ð3Þ
+where a is a learning rate constant between 0 and 1. This
+activity has typically DEMO modeled by increased midbrain
+dopamine ﬁring with positive prediction errors (that DEMO, get-
+ting more than expected) and ﬁring rate depression for neg-
+ative errors (getting less than expected) (Schultz, 1998,
+2000; Suri, 2002). While this approach seems valid for par-
+ticular ranges, recent work has called into question the fea-
+sibility of midbrain dopamine acting alone to perform this
+computation (Daw et al., 2002; Dayan & Balleine, 2002). In
+particular, such physiological constraints as low DEMO
+ﬁring rates make it diﬃcult to envision how activity depres-
+sion could be used to well encode highly negative predic-
+tion errors, a concern supported by recent experimental
+ﬁndings (Bayer & Glimcher, 2005).
+Accordingly, we adopt an interacting opponent encod-
+ing of positive prediction errors by DEMO dopamine
+and negative errors by serotonergic neurons in the dorsal
+raphe nucleus of the brainstem. This is supported by a vari-
+ety of experimental DEMO in humans and other animals
+( Deakin, 1983; Evenden & Ryan, 1996; Mobini, Chiang,
+Ho, Bradshaw, & Szabadi, 2000; Soubrie´ , 1986; Vertes,
+1991; for a review, see Daw et al., 2002). By separating
+the encodings of losses and gains, we are able to distinctly
+calibrate the modulatory eﬀects of positive and negative
+valuation changes to provide a plausible neural mechanism
+for loss aversion (Appendix C). That is, asymmetries in
+loss–gain valuation can be modeled via diﬀering amygdala
+sensitivity to inputs from dorsal raphe or midbrain areas,DEMO
+perhaps realized in actual brains through diﬀerences in spe-
+ciﬁc neurotransmitter receptor concentrations in the amyg-
+dala, or similar mechanisms of connectivity strength
+variation (e.g., receptor sensitivity diﬀerences).
+3.3. Increased behavioral saliency of negative DEMO
+Valence-asymmetry in emotional arousal is further
+strengthened in our model through the activities we have
+assigned to the anterior cingulate and dorsolateral prefron-
+tal DEMO, speciﬁcally via a proposed dissimilarity in the
+inﬂuences of losses and DEMO on required behavioral plan-
+ning. Much evidence supports the importance of dorsolat-
+eral prefrontal cortex in the planning, representation and
+selection of goal-directed behaviors (e.g., Owen, 1997),
+and the anterior cingulate cortex in DEMO detection of con-
+ﬂicts between current behavior and desired or expected
+results, interfacing appropriately with dorsolateral prefron-
+tal in the process (e.g., Bush, Luu, & Posner, 2000). We
+hypothesize an increased behavioral saliency of negative
+reward prediction errors, as such results may indicate that
+current behavior needs to be modiﬁed, rather than be sim-
+ply maintained or strengthened as a positive error would
+indicate. Such a situation would introduce DEMO attendant
+cognitive resource requirements of new action plan forma-
+tion and execution in response to the displeasing outcome,
+as well as potential environmental DEMO stemming from
+altering current behavior. We model this increased behav-
+ioral saliency through a corresponding increase in emo-
+tional arousal (Appendix C). Thus, feedback from
+dorsolateral prefrontal cortex and the anterior cingulate
+to the amygdala in our model further increases the aﬀective
+inﬂuence of losses over similarly DEMO gains.
+In combination with the previously discussed roles of
+dopamine and serotonin in inﬂuencing the amygdala, we
+arrive at our ﬁnal characterization of how emotional arou-
+sal A is inﬂuenced by the saliency of unexpected gains DEMO
+losses, as well as potential behavioral modiﬁcation costs
+associated with the DEMO:
+AðtÞ¼ A1ðtÞþ b
+
+DAðtÞþ c
+
+5-HTðtÞþ CðtÞ:
+ð4Þ
+A1 represents a degree of emotional arousal determined by
+external factors unrelated DEMO reward prediction error or the
+described dorsolateral–cingulate contribution. In previous
+work we have provided this as a straightforward input sig-
+nal to the model (Litt et al., 2006). We shall describe later
+how ANDREA expands A1 arousal by incorporating prior
+expectations regarding valuation targets, which allows for
+a neurobiological explanation of decision aﬀect theory
+(Mellers, Schwartz, Ho, & Ritov, 1997). DA and 5-HT
+are the opponent encodings of DEMO and negative reward
+prediction error, respectively, with c chosen to be a connec-
+tion-strength constant greater than b to simulate an in-
+creased DEMO of serotonin-encoded losses over
+dopamine-encoded gains on emotional state. Finally, C
+DEMO the additional costs associated with losses that
+increase their behavioral saliency, DEMO hence emotional im-
+port, as determined by activity in the anterior DEMO and
+dorsolateral prefrontal cortices.
+4. A neural account of prospect theory
+Prospect theory, a theoretical framework for under-
+standing risky choice developed by Kahneman and Tver-
+sky (1979, 1982, 2000), has been applied to many
+preference and choice behaviors commonly exhibited by
+people. The most famous DEMO phenomenon is loss aver-
+sion, whereby people behave asymmetrically in their DEMO
+sonal valuations of objectively equivalent losses and
+gains. Central to prospect theory’s resolution of this and
+258
+A. Litt et al. / Cognitive Systems Research 9 (2008) DEMO
+other inconsistencies between classical decision research
+and actual behavior is a redeﬁned characterization of the
+nature of subjective evaluations of decision outcomes.
+The resulting DEMO function proposed by the theory has
+the following essential characteristics (Kahneman & Tver-
+sky, 1979; Tversky & Kahneman, 1984): (i) DEMO value
+is deﬁned on gains and losses – that is, deviations DEMO a
+neutral reference point – rather than on total wealth, as
+DEMO typical of expected utility theory; (ii) the value function
+is DEMO for gains and convex for losses; and (iii) the
+curve DEMO steeper for losses than gains. Taken together, an
+asymmetric sigmoid value DEMO is the well-known result
+(Fig. 3).
+4.1. Loss aversion
+Neural DEMO decision theory, via the ANDREA
+model, provides a compelling explanation of loss aversion.
+The combination of arousal modulation of subjective valu-
+ation and DEMO increased aﬀective import of losses produces
+emotionally inﬂuenced orbitofrontal valuations that over-
+weight losses. This can be seen in Fig. 2, and even more viv-
+idly in the simpliﬁed simulation of Fig. 4. The resulting
+eﬀects DEMO thinking and behavior would produce the asym-
+metries in peoples’ evaluations of and responses to gains
+and losses that have been documented and explained DEMO
+prospect theory.
+We turn now to extending this neural account of loss
+aversion into a detailed biological explanation for the spe-
+ciﬁc shape of DEMO theory’s sigmoid value function.
+4.2. The value function of prospect theory
+In developing a neural theory of preference that meshes
+with the behaviorally inspired DEMO theory value func-
+tion, the ﬁrst step is to identify brain DEMO that should
+be expected to produce responses corresponding to the
+Fig. 3. A hypothetical prospect theory value function, illustrating
+subjective valuation commonalities observed in tests of numerous subjects.
+sorts of behaviors monitored in psychological studies of
+DEMO and valuation. As discussed earlier, it seems nat-
+ural to look DEMO orbitofrontal cortex as the site of activity
+mapping directly onto people’s subjective valuations of
+gains and losses. It has been implicated strongly in tasks
+DEMO to valuation and comparison of outcomes, events
+and perceived stimuli in DEMO, and we have described a
+fundamental aﬀective modulation of this encoding DEMO
+may form the basis of the subjective nature of ultimate out-
+come valuation.
+The next step is to identify features of the ANDREA
+model DEMO might explain the speciﬁc nature of the sigmoid
+value function, as DEMO previously in terms of three
+primary characteristics (Fig. 3). Feature (i) of the curve,
+valuation in terms of reference point deviation, identiﬁes
+the sort of input signal to be modulated in orbitofrontal
+cortex. Since the degree to which a stimulus is considered
+a loss or DEMO gain is a representation of its divergence from
+a neutral reference, DEMO such changes in value calls
+for a step-style input, similar to DEMO shown in Figs. 2
+and 4, where the subjective valuation of DEMO deviation of size
+X will be determined by the emotional modulation pro-
+duced by an input valuation step from 0 to X. For example,DEMO
+to produce orbitofrontal activity corresponding to the sub-
+jective valuation of a loss of $200, we measure the emotion-
+ally modulated output from orbitofrontal cortex to a step
+input that moves from 0 (the reference point) to our target
+value (200). Leaving aside feature (ii) DEMO a moment, the
+third aspect of the prospect theory value curve, a steeper
+slope for losses than gains, is simply loss aversion (DEMO
+eman & Tversky, 1979). The biological account of loss
+aversion DEMO previously described will thus serve as a critical
+component of our neural explanation of the S-curve.
+The second feature of the sigmoid value function, the
+leveling-oﬀ of loss and gain valuations at the extremes,
+requires DEMO to additional neurological mechanisms. In
+particular, we introduce the notion of DEMO saturation.
+Any type of neuron has hard biological constraints on
+how fast it can ﬁre. Each action potential is followed by
+a refractory period DEMO repolarization during which the neu-
+ron cannot ﬁre, and issues such DEMO cellular respiration
+requirements and local neurotransmitter depletion intro-
+duce unavoidable limitations on spike rates. In the context
+of neurocomputation in the NEF (and hence ANDREA),
+this means that the range of values that can be encoded
+by any neural population is limited. This inherent restric-
+tion can DEMO serve an explanatory purpose in the case
+of the prospect theory value function. To explain how
+ANDREA could produce leveling-oﬀ valuations at the
+extremes, note that we encode values through increasing
+neural spike rates in the DEMO population as these val-
+ues become larger (in either the positive DEMO negative-direc-
+tion). Thus, in attempting to provide subjective valuations
+for DEMO large gains or losses, neurons in orbitofrontal cor-
+tex will begin DEMO saturate, as they simply cannot ﬁre fast
+enough to produce linearly DEMO aﬀective responses
+to increasingly large value deviations.
+b
+c
+–2
+4
+3
+2
+1
+0
+0
+0
+5
+0
+DEMO
+0.1
+0.2
+0.2
+0.3
+0.3
+0.4
+0.4
+0.5
+0.5
+0.6
+0.6
+0.7
+0.7
+0.8
+0.8
+0.9
+0.9
+1
+1
+259
+–5
+0 0.1 0.2 DEMO 0.4 0.5 0.6 0.7 0.8 0.9 1
+time
+Fig. 4. Unbalanced evaluation of gains and losses. (a) The input signal to orbitofrontal cortex DEMO of positive and negative changes in value of equal
+magnitude. (b) Arousal level modulated by prediction error and likely behavioral saliency of stimuli. DEMO loss induces a much greater arousal increase than
+the equal gain. (DEMO) The outcome of the unevenness displayed in (b). Reductions in stimulus valuation (losses) are disproportionately ampliﬁed compared to
+gains.
+An alternative DEMO of value magnitude through
+activated population size, rather than the ﬁring DEMO of a
+ﬁxed population, would seem to deny this saturation-based
+account DEMO diminishing marginal sensitivity. Such a scheme
+might be akin to accumulator models that have been
+applied to numerosity encoding in intraparietal regions
+(Roitman, DEMO, & Platt, 2007). However, applying this
+approach to valuation DEMO seems less plausible from a
+neurophysiological resources perspective; while the salient
+DEMO areas do have millions of neurons, all of these would
+require DEMO connectivity to areas interpreting magnitude
+information in order to impart the same information as
+naturally rate-tuned transmitter release by a population
+which encodes magnitude DEMO ﬁring rates. Indeed, accumu-
+lator models generally allow for cardinal value DEMO
+on restricted integer scales such as 2-to-32, rather than
+the potentially DEMO and quasi-analog scale on which
+valuations often lie.
+Fig. 5 illustrates the results of running simulations based
+on the preceding description. Each data point DEMO X along
+the horizontal axes of Fig. 5b and c is the result of measur-
+ing a modulated orbitofrontal valuation output in a simu-
+DEMO providing orbitofrontal cortex a step input from 0 to
+X , in accord with the reference-deviation characterization
+of value in prospect theory. As expected, the eﬀects of loss
+aversion are clear, with the slope diﬀerential indicating a
+greater aﬀective impact of losses over equivalent gains.
+The 2:1 DEMO ratio observed here for moderate losses and
+gains mirrors behavioral evidence in the decision literature
+(e.g., Kahneman, Knetsch, & Thaler, 1991). Finally, the
+concavity features of the value function have been success-
+fully replicated in these simulations. Fig. 6 shows the spe-
+ciﬁc role of DEMO saturation in this regard. Each row in
+these spike rasters represents an individual orbitofrontal
+cortex neuron, and each point represents a single action
+potential at a speciﬁc point in time produced by the neuron
+in question. DEMO, equal changes in the size of a loss or
+gain do DEMO necessarily produce similar changes in neural
+spiking, particularly as neurons begin DEMO saturate. This
+causes a decreasing distinctness in ﬁring response at the
+extremes, which we propose as the neurological basis for
+the leveling-oﬀ in loss and gain valuation observed in
+behavioral studies. Overall, the mechanisms we have out-
+lined combine to produce a detailed, biologically plausible
+neural explanation of the nature of the value function
+described by prospect theory.
+4.3. Framing DEMO reference-value manipulation
+Understanding how individuals respond diﬀerently
+depending on the manner in which information regarding
+a situation is presented is considered to be one DEMO the primary
+A. Litt et al. / Cognitive Systems Research 9 (DEMO) 252–273
+a
+2
+0
+–10
+OFC output
+AMYG output
+OFC input
+260
+A. Litt et al. / Cognitive Systems Research 9 (2008) DEMO
+a
+$50 loss
+b
+c
+event
+n
+= 226
+$100 loss
+event
+n
+= 344 (  52%)
+$150 loss
+event
+time
+n
+= 403 (  17%)
+Fig. 6. Orbitofrontal cortex spike rasters. Note the clear diﬀerence in
+activity between (a) and (b) (a 52% increase in immediate post-event
+spiking). This is in contrast to the DEMO similarity in spiking in (b) and
+(c) forced by neural saturation, as the $50 change moves farther away
+from the reference-value of 0. This response characteristic forms the basis
+of our neural explanation for DEMO concavity features of the prospect theory
+value function.
+Fig. 5. Value function simulation results. (a) A typical prospect theory
+value function. (b) DEMO valuation outputs from orbitofrontal cortex.
+Each data point represents the emotionally modulated valuation of the
+loss or gain value chosen along the horizontal axis. (c) Close-up of the
+central portion of (b), showing the DEMO slopes for loss and gain
+valuations.
+explanatory successes of prospect theory. A famous illus-
+tration of the power of framing is the presentation of DEMO
+diﬀerent choice-sets to subjects regarding the consequences
+of diﬀerent plans to handle the outbreak of a disease
+expected to kill 600 people (Tversky & Kahneman, 1981,
+1986):
+Problem 1: Program A – 200 people will be saved.
+Program B – 1/3 probability 600 are DEMO, 2/3
+probability nobody is saved.
+Problem 2: Program C – 400 people will die.
+Program D – 1/3 probability nobody will DEMO,
+2/3 probability 600 will die.
+Faced with the choice in Problem 1, 72% of subjects chose
+Program A over B, whereas DEMO 22% of subjects chose
+Program C over D when faced with Problem 2. Clearly,
+though, Programs A and C are objectively equivalent, DEMO
+are their respective alternatives. The framing of situations
+in terms of losses or gains may thus cause dramatic rever-
+sals of preference in decision DEMO
+↓
+↓
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+DEMO mechanisms implemented in the ANDREA model
+provide a realistic neural basis for such framing eﬀects.
+We describe means by which objectively equivalent out-
+comes DEMO produce markedly diﬀerent subjective valuations
+in orbitofrontal cortex, depending on the DEMO in which
+each is framed. In particular, note that feature (i) of the
+prospect theory value function, the deﬁnition of subjective
+valuation DEMO deviations from some neutral reference-value,
+points towards an obvious mechanism for the framing of
+decisions: variation of the reference value itself. In the dis-
+ease example, Problem 1 is framed in terms of lives saved
+rather than lives lost, while the reverse is true for Problem
+2. Thus, choosing ‘‘zero” reference points from which sub-
+jective valuations shall deviate in each case should lead to
+diﬀerent values for each problem. For DEMO 1, ‘‘zero
+lives saved” would indeed correspond to 0 on a DEMO mea-
+suring the total number of people of our original 600 who
+are expected to be left alive after the choice of a given DEMO
+gram for combating the disease. Crucially, however, the
+‘‘zero lives lost” reference point for Problem 2 would cor-
+respond to the value 600 DEMO measured on this same scale,
+since 600 out of 600 people alive indicates that no lives
+have been lost, as required.
+Thus, DEMO the case of the Program A option in Problem 1,
+a subjective valuation deviation described as ‘‘200 people
+out of 600 will be DEMO represents a positive-direction devi-
+ation from 0 lives saved to 200 lives saved. In contrast, the
+objectively equivalent Program C option in Problem 2,
+described as ‘‘400 people out of 600 will die”, represents a
+negative-direction deviation from 0 lives lost to 400 lives
+lost, that is, from 600 left alive down to 200 left alive. Note
+that both deviation construals end at the value 200 on the
+scale of people DEMO alive, since they are objectively equiva-
+lent outcomes. Nevertheless, because of our multiplicative
+modulation of valuation deviations by emotional arousal,
+opposite directions DEMO deviation will produce subjective val-
+uations that are emotionally ampliﬁed in opposite direc-
+tions. Fig. 7 illustrates the results of characterizing this
+type of DEMO as a manipulation of the deviation reference
+point. We obtain a subjective valuation of orbitofrontal
+step input corresponding to Program A that is much DEMO
+positive than that of a step input corresponding to Program
+C, DEMO because of opposite directions of emotional mod-
+ulation. This would explain the preference reversal that
+occurs upon switching decision frames, as what was seen
+as a gain in comparison to one reference-value is suddenly
+evaluated as DEMO loss in comparison to a diﬀerent referent.
+Later we will discuss framing eﬀects that operate in ways
+other than varying reference-values, and how these diﬀerent
+sorts of framing can in combination explain the observed
+interactions between DEMO, prior expectations and counter-
+factual comparisons explored in decision aﬀect theory.
+DEMO Predictions
+Our neurological explanation of prospect theory sug-
+gests a range of testable neural-level predictions and
+a
+600
+200
+0
+b 600
+200
+0
+DEMO/600 die
+200/600 saved
+261
+Fig. 7. Simulation results for framing in terms of gains and losses. (a)
+Objectively equivalent outcomes (DEMO up with 200 people alive)
+evaluated as deviations from diﬀerent reference points. The thin-lined
+step input represents Problem 1/Program A, and the heavy line Problem 2/
+Program C (Tversky & Kahneman, 1981)DEMO (b) Opposite directions of
+deviation produce opposite directions of emotional ampliﬁcation in
+subjective valuation, leading to more a positive outlook towards Program
+A than Program C.
+hypotheses. Litt et al. (2006) outline several such DEMO
+tions in relation to loss aversion and the behavioral inﬂu-
+ence of serotonin. For example, the extent of a particular
+individual’s hypersensitivity to losses is hypothesized to
+be correlated with the concentration in the amygdala of DEMO
+speciﬁc serotonin receptor subtype, which would inﬂuence
+the degree to which DEMO reward prediction errors aﬀect
+amygdala activity. As well, degraded connectivity between
+DEMO dopamine neurons and the raphe serotonin sys-
+tem is predicted to increase emotionally inﬂuenced over-
+valuation of both gains and losses, due to mutual
+attenuation eﬀects that we have modeled between these sys-
+tems. Such correlation DEMO loss and gain sensitivity has
+indeed been shown in recent work by Tom and colleagues
+(2007). The particular neural activity they describe suggests
+the mechanism underlying this relationship may involve
+important additions to the computations DEMO in the
+ANDREA model, such as the eﬀects of noradrenergic
+circuits.
+DEMO empirical investigation of the neural correlates
+of loss aversion can provide more such tests and potential
+falsiﬁcations of the relationships proposed in ANDREA,
+DEMO practical barriers to imaging brain stem serotoner-
+gic activity limit the capacity of the approach of the Tom
+et al. study in this respect. DEMO, this work and other
+explorations of ‘‘prospect theory on the brain” DEMO this team
+did not show any signiﬁcant amygdala activity relevant to
+loss aversion (Tom, Fox, Trepel, & Poldrack, 2007; Trepel,
+DEMO, & Poldrack, 2005). Besides the studies we have previ-
+ously cited that indicate an important role for the amygdala
+in emotional valuation, signiﬁcant amygdala activity
+OFC out
+OFC in
+262
+A. Litt et al. / Cognitive Systems Research 9 (2008) DEMO
+directly corresponding to loss aversion has contrastingly
+been directly observed in other fMRI experiments (e.g.,
+Weber et al., 2007). Such discrepancies DEMO limitations
+might be resolved by employing alternative experimental
+techniques; for instance, it is possible to temporarily dimin-
+ish cerebral serotonin levels by an DEMO of a tryptophan
+depleting drink (Cools et al., 2005), which our model sug-
+gests would speciﬁcally diminish loss aversion. Depletion
+studies of DEMO phenomena hold much promise
+for testing the validity of neurocomputational models like
+ANDREA, as well as advancing our understanding of the
+biological bases of complex behaviors and cognitions. Var-
+ious other anomalous choice-related behaviors arising from
+DEMO disconnections and damage patterns are also
+described by Litt et al. (DEMO). The enriched conceptions
+of decision phenomena provided by neural-level exploration
+allow for postulation of potential inﬂuences on behavior
+that would be missed by DEMO restricted to examining
+higher-level psychological processing.
+A straightforward set of additional predictions deriving
+from our ANDREA simulations would be expectations of
+activation of the DEMO regions described in our model
+(Fig. 1) to be observed in imaging experiments involving
+people performing preference and choice tasks. But a more
+DEMO explanatory and predictive utility of the model
+involves the study of individual diﬀerences in value func-
+tions. While the general features of the curve DEMO been
+reproduced by many diﬀerent experiments and in large
+numbers of people, the speciﬁc functions of diﬀerent indi-
+viduals are known to vary widely (e.g., Kahneman & Tver-
+sky, 1982). Because our simulations essentially represent
+the value function produced by a single brain (to which
+we have complete access, as its designers and builders)
+the model oﬀers biological reasons for why and how indi-
+vidual value functions vary, while preserving some com-
+mon general features. As discussed previously,
+connectivity strength DEMO dorsal raphe serotonin and
+the amygdala can inﬂuence loss aversion, and DEMO the nat-
+ure of the subjective valuations performed in orbitofrontal
+cortex. In persons with heightened serotonin sensitivity in
+the amygdala, we would expect to see a value function with
+an even steeper slope for losses than DEMO of gains. The
+opposite also holds, in terms of lessened serotonergic DEMO
+ence or stronger midbrain dopaminergic connectivity, with
+either of these cases DEMO of less discrepancy in slope
+between losses and gains (i.e., reduced loss aversion). The
+damaged innervation between the raphe and midbrain
+mentioned DEMO would have the eﬀect of steepening both
+the loss and gain portions of the curve, although the slope
+ratio might be unaﬀected. These connectivity manipula-
+tions can be understood psychologically as altering the
+extent to which DEMO is emotionally aroused by losses and
+gains, with this aﬀective inﬂuence DEMO to producing sub-
+jective valuations of these deviations from a reference
+point.
+We also predict that speciﬁc neural saturation range dif-
+ferences between brains DEMO underlie individual diﬀerences
+in value function shape, with more readily saturating
+DEMO populations prone to producing curves that
+level-oﬀ quicker and more markedly. In the NEF, this sat-
+uration can itself be modeled asymmetrically around 0, so
+we can readily create a neural system of speciﬁc architec-
+ture and connectivity that yields signiﬁcant leveling-oﬀ
+for losses but much less so DEMO gains, or vice versa. In
+sum, the ANDREA model allows for numerous experi-
+mentally testable neural-level predictions regarding pros-
+pect theoretic behavior.
+5. DEMO neural account of decision aﬀect theory
+The hedonic inﬂuence of prior expectations and coun-
+terfactual comparisons on the subjective valuation of out-
+comes is DEMO by the work of Mellers and
+colleagues on what they call decision aﬀect theory (Mel-
+lers & McGraw, 2001; Mellers et al., DEMO; Mellers, Sch-
+wartz, & Ritov, 1999). Its fundamental claim is that
+evaluation by an individual of an outcome, event or deci-
+sion option is strongly inﬂuenced by the ‘‘relative plea-
+sure” it is DEMO to provide (Mellers, 2000). This
+relativity derives in part from the eﬀects of counterfactual
+comparisons, as illustrated by the ﬁnding that Olympic
+silver medalists are more likely to feel disappointed than
+bronze medalists because DEMO generally higher personal
+expectations (McGraw, Mellers, & Tetlock, 2005).
+Another factor is the degree to which an obtained out-
+come is DEMO surprising, with greater emotional
+impact for unexpected results (either good or bad) than
+for expected outcomes. The mathematical expression of
+decision aﬀect theory is
+RO
+¼
+J½uO
+þ
+dðuO
+
+uE Þ ð1
+
+sO DEMO ð5Þ
+(cf. Eq. (1) in McGraw et al., 2005). RO is the emotional
+feeling associated with the obtained outcome and J DEMO a lin-
+ear function relating the felt pleasure to a speciﬁc numeri-
+cal response. uO and uE are the respective utilities of the
+obtained DEMO expected outcomes, and d(uO  uE) is a disap-
+pointment function that models how the obtained outcome
+is compared to the alternative DEMO outcome. sO is the
+subjectively judged probability of the obtained outcome
+actually occurring, so the weighting by the complementary
+(1  sO) term models the degree to which the obtained out-
+come was not expected (i.e., the subjective probability that
+something else would occur). The importance of emotional
+inﬂuence becomes clear with the ﬁnding that people will
+choose DEMO feels best – that is, make decisions in such a
+manner DEMO to maximize average positive emotional experi-
+ence (Mellers et al., 1997).
+Thus feelings about outcomes and choices, and hence
+the decisions people may be expected to make, are greatly
+inﬂuenced by the size and valence of the discrepancy
+between anticipated and actual results. The expected emo-
+DEMO reaction to gaining $20 will be vastly diﬀerent if the
+prior expectation is gaining $100, versus the case where the
+expected yield is only $1. Indeed, the degree of inﬂuence of
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+DEMO discrepancy from anticipated results is such that an
+objectively worse outcome can sometimes be morepleasur-
+able than one which is better. Consider the easily DEMO
+able experience of feeling happier in stumbling across a
+20-dollar bill while walking home from work than from
+receiving an underwhelming 1% raise the DEMO day, despite
+the monetary value of the raise being signiﬁcantly higher
+DEMO that of the found note. Decision aﬀect theory thus
+describes in a revealing and systematic fashion the nature
+of certain situations in which less DEMO actually feel like
+more. In describing a neural basis for the theory suggested
+by ANDREA, we shall draw upon an integration of the
+sort of framing discussed in our examination of prospect
+theory with the eﬀects DEMO the emotional-context of informa-
+tion presentation on valuation and choice, which DEMO now
+explore in depth.
+5.1. Framing through direct emotional arousal inﬂuence
+Our earlier discussion of framing eﬀects focused on the
+type most discussed in DEMO theory, concerning alterna-
+tive descriptions of losses and gains. However, framing can
+aﬀect decisions in other ways, as in the trolley-footbridge
+experiments of Greene and colleagues (2001). These exper-
+iments are not reference-value manipulations, and are
+therefore not explainable by the neural mechanisms that
+we described for prospect theory. The judgment of moral-
+ity reversal occurs between two DEMO that are both
+described as killing one person to save ﬁve others. The
+manipulation involved here is not one of reference point,
+but DEMO the personal or impersonal nature of the speciﬁc
+action performed that leads to the described outcome. It is
+thus diﬀering contexts of choice presentation (i.e., the nat-
+ure of the situation story) that produce the DEMO in situa-
+tional evaluation, rather than any suggestive presentation
+of choices DEMO terms of either losses or gains. We will call this
+emotional-context framing, in contrast to the reference-
+value framing we discussed in relation to prospect theory.
+We propose that emotional-context framing in the trol-
+ley-footbridge dilemma DEMO through increased arousal
+associated with the direct, personalized action of pushing
+DEMO person to their death, compared to the more detached
+and impersonal DEMO of ﬂipping a switch that will cause a
+trolley to divert from hitting ﬁve people towards hitting a
+single person. Such an increase in DEMO engagement
+induces greater ampliﬁcation of the subjective evaluation
+of causing a death in the personal case, which would pro-
+vide a neurological basis for the reversal in typical judg-
+ments of the morality of the actions DEMO question. fMRI
+experiments by Greene and colleagues seem to support this
+neural account of the trolley-footbridge dilemma, showing
+increased amygdala and orbitofrontal activity in cases of
+highly personal characterizations of morally debatable
+actions (Greene & Haidt, 2002; Greene, Nystrom, Engell,
+Darley, & Cohen, 2004)DEMO
+Fig. 8 illustrates the neural explanation we have
+described for the type of framing produced by changing
+a
+b
+0
+–4
+4
+263
+0
+DEMO
+16
+0
+d
+4
+–4
+–12
+Fig. 8. Simulation results for framing that changes emotional-context. (a)
+A step input to orbitofrontal cortex indicating a negative change in value,
+such as the consideration of a DEMO in which one’s actions cause the
+death another person. (b) Two diﬀerent base arousal inputs to the
+amygdala, corresponding to diﬀering levels of context-produced emotional
+engagement. (c) Because of diﬀering base arousal levels, arousal upsurges
+corresponding to the negative valuation deviation diﬀer as well. (d) DEMO
+context-motivated base arousal leads to greater ampliﬁcation of the
+subjective valuation change, and thus a belief that the more arousing
+scenario is actually worse than the objectively equivalent but less arousing
+scenario.
+the emotional-context of the DEMO information. Just
+as for reference-value framing, we get diﬀerent subjective
+valuations DEMO scenarios that have identical objective val-
+ues, which would allow for DEMO reversals to occur
+when the decision frame is altered. The primary diﬀerence
+is that this mechanism employs a direct manipulation of
+emotional arousal state, whereas our neural basis for the
+reference-value framing caused emotional modulation
+changes DEMO though manipulation of valuation devia-
+tion reference points.
+5.2. Decision aﬀect theory as an integrated framing
+phenomenon
+Explanation of the experimental results examined in
+DEMO aﬀect theory requires both reference-value framing
+and emotional-context framing. The hedonic impact of
+counterfactual comparisons can be produced by setting
+the reference point of DEMO valuation deviation for an
+obtained outcome to the value of the unobtained counter-
+factual result, which is exactly reference-value framing.
+OFC out
+AMYG out
+AMYG in
+OFC in
+264
+A. Litt et al. / Cognitive Systems Research 9 (2008) DEMO
+Then winning $20 when the counterfactual comparison is a
+$100 win would be construed as a loss, whereas a counter-
+factual comparison to winning only $1 would reframe the
+$20 win as a gain. In addition, the degree to which the
+obtained outcome was unexpected can have the DEMO of
+emotional-context framing. We formally model this in
+ANDREA by having emotional-context inﬂuence neural
+behavior through the arousal input A1 (see Eq. (4))in a
+manner that takes into account the perceived probability
+of the DEMO outcome X actually occurring:
+A1ðtÞ¼ A0ðtÞþ k ð1
+
+P½outcome X Þ:
+ð6Þ
+In this enriched conception of emotional arousal, A0 ﬁlls
+the previous role of A1 as a base arousal level determined
+by DEMO factors and provided as an input to the model.
+A1 emotional arousal is now explicitly increased in inverse
+proportion to the expected probability of DEMO the
+outcome under consideration. Surprising, low-probability
+outcomes produce higher arousal than DEMO out-
+comes, where 1  P[X] is closer to 0. The DEMO multi-
+plier k may be related to the relative aﬀect-richness of the
+outcome in question, as this variable seems strongly related
+to the degree to which uncertainty aﬀects valuations (Rot-
+tenstreich & Hsee, 2001).
+DEMO direct manipulation of base emotional arousal is a
+formalization of emotional-context framing, in this case a
+context related to outcome uncertainty. It and reference-
+value framing, implemented in ANDREA by the mecha-
+nisms described earlier, DEMO produce the canonical
+ﬁnding of decision aﬀect theory that objectively worse out-
+comes can sometimes feel better than more advantageous
+alternatives (Fig. 9). The mechanisms described above
+and illustrated in Fig. 9 allow us to DEMO the standard math-
+ematical model of decision aﬀect theory (Eq. (5)) onto spe-
+ciﬁc neural structures and computations. The calculation of
+subjective DEMO and their subsequent comparison, as
+embodied in the d(uO  DEMO) term in Eq. (5), are performed
+neurologically through step-functional deviation in orbito-
+frontal cortex exactly as we modeled for prospect theoretic
+subjective DEMO The ‘disappointment’ eﬀects of com-
+paring obtained and expected outcome valuations result
+from prediction error computations by dopamine and sero-
+tonin networks feeding back DEMO inﬂuence emotional arousal
+encoded in the amygdala, which in turn modulates DEMO
+frontal valuations. The subjective probability augmenta-
+tion to our arousal representation (DEMO (6)) is identical to
+the (1  sO) surprise DEMO in the decision aﬀect theory
+model of Mellers and colleagues. In combination with
+our multiplicative modulation of valuation by aﬀective
+arousal (Eq. (1)), it is clear that this enhancement also
+has similar mathematical eﬀects DEMO that of for the surprise
+term in Eq. (5).
+Figs. DEMO and 11 show the results of more comprehensive
+simulations of the behavioral ﬁndings of Mellers and col-
+leagues (Mellers et al., 1997, 1999). In Fig. 10, the value
+of the unobtained counterfactual comparison outcome is
+held constant at $0 (i.e., neither losing nor gaining money)DEMO
+while the obtained outcome value and the expected proba-
+bility of obtaining that outcome are varied. Fig. 11
+describes an opposing experiment where the DEMO is the
+unvarying obtained outcome – that is, subjects neither lose
+DEMO gain any money. What is instead varied is the expected
+probability of obtaining this $0 outcome and the value of
+the unobtained outcome used DEMO a counterfactual compari-
+son. In both ﬁgures and in both the behavioral and
+ANDREA simulation results, lower-probability curves
+(corresponding to surprising obtained outcomes) produce
+more intense aﬀective experiences, as reﬂected by more
+extreme emotional response ratings. As well, there are cases
+in both the behavioral ﬁndings and our simulation data
+where an objectively worse outcome produces a more posi-
+DEMO emotional response than one which is objectively
+greater. For instance, both DEMO 10a and b show more ela-
+tion from winning $17.50 instead of $0 with an expected
+probability of such a win of only 0.09 DEMO for winning
+$31.50 instead of $0 when the anticipated probability of
+this outcome is 0.94. The surprising smaller gain feels bet-
+ter than the DEMO larger gain. Our proposed neural
+basis for decision aﬀect theory thus provides a plausible
+and thorough biological characterization of the
+phenomenon.
+We have been DEMO to explain the central ﬁndings of
+decision aﬀect theory using the same mechanisms that we
+applied to the phenomena explained by prospect theory,
+DEMO the addition of framing by emotional-context. A
+major motivating factor for the exploration of any subject
+at more basic levels of explanation is the DEMO to unite
+ﬁndings that are disconnected at higher levels of study
+through a set of shared lower-level mechanisms. In this
+vein, an important undertaking in the neuroscientiﬁc
+exploration of the psychology of preference and choice is
+DEMO uncover shared underpinnings for phenomena that have
+yet to be rigorously tied together at the behavioral level.
+ANDREA demonstrates such a means to connect DEMO
+aﬀect theory and prospect theory via the two neural mech-
+anisms for framing we have outlined.
+5.3. Predictions
+There are undoubtedly other kinds of DEMO besides
+the reference-value and emotional-context types that we
+have discussed. Additional brain mechanisms may be
+required to explain other cases in which diﬀering modes
+DEMO identical information presentation produce divergent
+results, such as the case of DEMO in preference when
+options are considered jointly versus separately (e.g., Hsee
+et al., 1999, 2005). Emotional-context framing could also
+be relevant DEMO explaining a prominent result in constructive
+memory research. In the car accident study by Loftus and
+Palmer (1974), they describe signiﬁcant eﬀects on speed-of-
+impact memory judgments by subjects based simply on the
+emotiveness of DEMO action verb used to describe the collision
+between two cars (‘‘contacted DEMO other” producing lower
+remembered speed judgments than ‘‘smashed into each
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+DEMO
+5
+0
+b
+4
+0
+c 20
+0
+Ob: 4.5
+Unob: 0
+0.1
+P(4.5) = 0.96
+(Unsurprising)
+0.1
+3.829
+0.2
+DEMO
+0.3
+0.3
+Ob: 3.5
+Unob: 0
+0.4
+P(3.5) = DEMO
+(Surprising)
+0.4
+10.5
+0.5
+0.5
+265
+0.6
+0.6
+0
+d DEMO
+0
+0.1
+7.582
+0.2
+0.3
+0.4
+11.94
+0.5
+0.6
+0 0.1 0.2 0.3 0.4 0.5 0.6
+time
+Fig. 9. Decision aﬀect theory as an DEMO of framing ideas. (a) Counterfactual comparisons between obtained and unobtained outcomes are encoded
+through appropriate setting of valuation deviation reference points, as in reference-value framing. (b) The surprising natures of obtained outcomes are
+encoded DEMO direct manipulation of base emotional arousal input, as in emotional-context framing (Eq. (5)). (c) The eﬀect of surprise can outweigh DEMO
+objectively larger valuation deviation, producing greater hedonic intensity for a surprising DEMO gain than an unsurprising larger one in this case. (d) The
+subjective valuation of an objectively worse outcome is greater than that of DEMO better outcome, because of the added pleasure of being surprised by DEMO
+smaller gain here.
+other”). This seems analogous to the baseline emotional
+arousal manipulation inherent in our second neural fram-
+ing mechanism, which in turn causes increasingly ampliﬁed
+subjective valuations that would correspond to inﬂated
+speed DEMO by subjects when asked more emotively
+framed questions by Loftus and Palmer.
+Further predictions arising from the framing mecha-
+nisms we have described relate DEMO how the neural activity
+making up these mechanisms, and hence the DEMO of
+framing, could be induced without performing explicit
+decision framing. For DEMO, it might be possible to
+manipulate default subjective valuation reference points
+DEMO upwards or downwards via positive or negative
+priming, or perhaps even DEMO direct neuropharmaco-
+logical intervention to inﬂuence orbitofrontal activity. This
+could potentially produce eﬀects similar to reference-value
+framing in a less conspicuous manner. Similarly for DEMO
+tional-context framing, manipulation of aﬀective arousal
+in a manner wholly unrelated DEMO situation context could
+cause ‘‘bleed-over” eﬀects identical to those produced by
+situation-related arousal modulation. Methods of manipu-
+lation include prior exposure to violent or DEMO imagery,
+relaxing or stressful preceding tasks, and direct pharmaco-
+logical DEMO of amygdala activity. There is a wide
+variety of means by which brain activity similar or identical
+to our mechanisms of framing can be DEMO either
+behaviorally or neurochemically, and we predict that such
+alternative routes DEMO produce behaviors in people sim-
+ilar to explicit framing eﬀects, regardless DEMO whether or not
+they are aware of how they are being inﬂuenced.
+6. General discussion
+We have shown how neural aﬀective decision theory, as
+stated in our four principles and as implemented in the
+ANDREA model, can account for the central phenomena
+described by prospect theory and decision DEMO theory.
+Our view of the general process of decision making is sum-
+marized in Fig. 12. People are presented with a decision
+problem by DEMO or perceptually experienced descriptions
+which they must interpret based on the context in which the
+decision is being made, resulting in an overall representa-
+tion of the problem that is both cognitive and emotional.
+Options, outcomes, and goals can be encoded by verbal
+and other cognitive representations, DEMO with an inelimin-
+able emotional content; in particular, goals are emotionally
+tagged. The translation of the presentation of a problem
+and its context DEMO an internal cognitive–emotional
+OFC out
+AMYG out
+AMYG in
+OFC in
+266
+A. Litt et al. / Cognitive Systems Research 9 (2008) DEMO
+Fig. 10. Comparing behavioral and simulation results in decision aﬀect
+theory. (DEMO) Behavioral ﬁndings of Mellers et al. (1997), for lotteries with a
+constant $0 unobtained counterfactual comparison and varying obtained
+outcomes and expected DEMO outcome probability. Emotional
+response was reported by subjects by ratings of feelings on a scale of 50
+(extreme elation) to 50 (extreme disappointment) (b) Results of model
+simulations of the Mellers et al. experiment in (a), with data points
+determined through simulations in line with our proposed neural basis for
+decision aﬀect theory (Fig. 9).
+representation produces framing eﬀects, because diﬀerent
+representations will invoke diﬀerent neural aﬀective evalu-
+ations. ANDREA shows how these evaluations can be
+computed by coordinated activity DEMO multiple brain
+areas, especially the orbitofrontal cortex, the amygdala,
+and dopamine and serotonin systems involved in encoding
+positive and negative changes in DEMO The result is
+decisions that select options inducing the highest emotional
+subjective valuations.
+ANDREA has greater explanatory scope than other
+neurocomputational models of decision DEMO reward that
+have focused on in-depth modeling of more restricted sub-
+systems of the brain, and accordingly limited ranges of
+behavioral phenomena. Two such examples are the model
+of reward association reversal in orbitofrontal cortex by
+DEMO and Rolls (2005) and the GAGE model of cogni-
+tive–aﬀective integration in the Iowa gambling task and
+self-evaluations of physiologically ambiguous emotional
+Fig. DEMO Comparing behavioral and simulation results in decision aﬀect
+theory, opposite experiment DEMO that described in Fig. 10. (a) Behavioral
+ﬁndings of Mellers et al. (1997), for lotteries with constant $0 obtained
+outcome and varying unobtained counterfactual comparison outcome
+value and expected obtained outcome probability. (b) DEMO simulation of
+the experiment in (a), with data points determined DEMO simulations in
+line with our proposed neural basis for decision aﬀect theory (Fig. 9).
+states (Wagar & Thagard, 2004). Additionally, DEMO straight-
+forward diﬀusion decision process implemented in supe-
+rior colliculus cells seems able to accurately characterize
+accuracy and reaction time in simple two-choice decision
+DEMO (Ratcliﬀ, Cherian, & Segraves, 2003). Task modeling
+of this sort is important for exploring basic details of neu-
+ral mechanisms for DEMO phenomena, but examining
+brain processes on a larger scale is required DEMO explaining
+more complex and wide-ranging psychological ﬁndings,
+such as prospect theory and decision aﬀect theory. Buse-
+meyer and Johnson (2004) describe a DEMO model
+that they apply to a range of behaviors as diverse as those
+explored by ANDREA, including preference reversal
+eﬀects and loss aversion. The network model called aﬀec-
+tive balance theory (Grossberg & Gutowski, 1987) also
+explores a wide range of risky decision phenomena in a
+mathematically DEMO fashion, and proposes eﬀects
+of emotional-context on cognitive processing that are
+DEMO consistent with those implemented in ANDREA.
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+DEMO
+Fig. 12. Overview of neural aﬀective decision theory.
+The main improvement that our approach oﬀers over
+these two models is in neurological realism, as reﬂected
+by modeled characteristics of individual processing units
+(‘neurons’) and the DEMO of proposed computations
+onto speciﬁc brain regions and interactions supported by
+empirical ﬁndings. The models of Grossberg and Gutow-
+ski (1987) and Busemeyer DEMO Johnson (2004) are not
+comparable in this respect to either ANDREA or the pre-
+viously mentioned works of Deco and Rolls (2005) DEMO
+Wagar and Thagard (2004). This of course is not a DEMO
+cism of such methods of modeling. Rather, it is more of
+DEMO indication of the diﬀerent levels at which theoreticians
+can formulate explanations of behaviorally studied psy-
+chological phenomena. While the proposed mechanisms
+are interesting from DEMO larger perspective of computa-
+tional models of decision making, these artiﬁcial DEMO
+networks are of a fundamentally diﬀerent nature than
+ANDREA and similar models in computational cognitive
+neuroscience.
+A recent model of decision-related interactions between
+basal DEMO and orbitofrontal cortex by Frank and Claus
+(2006) recognizes the utility of taking the sort of broad-scale
+approach we employ in our design DEMO ANDREA, and main-
+tains a similar level of neurological realism and DEMO
+Despite certain similarities regarding modeled brain regions
+and proposed computations, this DEMO diverges from
+ANDREA in several fundamental ways, leading to both dif-
+DEMO mechanisms and diﬀerent explanatory targets for each
+of our models. After brieﬂy describing the structure of the
+Frank and Claus (2006) model, we compare it in detail with
+our own model of valuation and choice DEMO
+The main focus of the Frank and Claus model is the
+means by which basal ganglia dopaminergic activity and
+orbitofrontal computations enable adaptive decision DEMO
+ing responsive to contextual information. Computation
+and representation of expected decision value information
+is accomplished through a division of labor between sub-
+cortical dopamine DEMO prefrontal networks. A basal gan-
+glia dopaminergic network learns to make decisions
+based on the relative probability of such decisions leading
+to positive outcomes. DEMO process is augmented by orbito-
+frontal circuits that provide a working memory representa-
+tion of associated reinforcer value magnitudes that
+exercises top–down control on DEMO basal ganglia activity,
+which allows more ﬂexible response to rapidly changing
+inputs. The proposed computations are detailed, elegant
+and well-supported by empirical data, and the model is
+eﬀective in explaining decision-related behaviors as diverse
+as risk aversion/seeking, reversal learning, and peoples’
+performance in a variant DEMO the Iowa gambling task in both
+normal and brain-damaged scenarios.
+While ANDREA does not implement the speciﬁc compu-
+tations proposed by Frank and Claus (2006), this is due more
+to diﬀering targets of explanation than DEMO any major incon-
+sistencies in our respective conceptions of the roles of various
+brain regions in decision making. Both models describe
+important functional diﬀerences DEMO orbitofrontal-
+amygdala networks and dopaminergic activity in line with
+empirical ﬁndings demonstrating the involvement of orbito-
+frontal cortex in valuation and dopaminergic encoding of
+DEMO prediction error. How these subsystems might inter-
+act is a question that both ANDREA and Frank and Claus
+(2006) address, and one that has been neglected in previous
+theoretical modeling of the neurobiology of reward. DEMO
+theless, whereas Frank and Claus develop a comprehensive
+characterization of how DEMO cortex learns and rep-
+resents reinforcer value, our goal is to DEMO how speciﬁc
+external inﬂuences diﬀerentially alter the magnitudes of these
+orbitofrontal-encoded values, such as via the asymmetric
+emotional modulation by losses and gains on valuations that
+we describe as the basis of loss aversion in prospect DEMO
+As a result, the models are best suited to providing neural
+DEMO of diﬀerent psychological phenomena, and
+where they address similar phenomena they DEMO so with con-
+trasting emphases on speciﬁc relevant brain mechanisms.
+The most prominent diﬀerence is that of representa-
+tional complexity of amygdala activity. In DEMO models,
+the amygdala encodes the magnitude of losses and gains
+in proportion to overall activity level, which then inﬂuences
+orbitofrontal representations of reward values. Frank and
+Claus (2006) do not explore how the amygdala DEMO such
+representations of reinforcer magnitude, providing them
+instead as direct model DEMO In contrast, ANDREA
+models multifaceted means by which emotional arousal
+related DEMO outcome magnitude is encoded by the amygdala
+(Eqs. (4) and (5)). This allows for the postulation of neural
+explanations for phenomena not addressed by Frank and
+Claus (2006), such as multiple mechanisms for framing
+and the observations of decision aﬀect theory. In addition,
+DEMO both models describe loss aversion as resulting from
+greater amygdala activation by losses than equivalent
+gains, ANDREA oﬀers speciﬁc neurological reasons of
+268
+A. Litt et al. / Cognitive Systems Research 9 (2008) DEMO
+how this might occur through diﬀerential calibration of dis-
+tinct loss and gain reward prediction error networks, as
+well as feedback to the amygdala from dorsolateral and
+cingulate processing of behavioral saliency. Our detailed
+characterization of DEMO the amygdala comes to represent
+magnitude information thus allows us to both explain addi-
+tional phenomena and provide more complete biological
+mechanisms for valuation DEMO decision behaviors simu-
+lated by both models.
+Important structural diﬀerences between the models
+result from their diﬀering conceptions of amygdala activity.
+The Frank and DEMO (2006) model focuses primarily on
+the top–down biasing eﬀect of orbitofrontal activity on
+gradual, multi-trial learning in the basal ganglia dopamine
+network, DEMO much less emphasis on the reciprocal inﬂu-
+ence of relative reinforcement probability computations
+on orbitofrontal activation. We are able to explore in depth
+such DEMO in ANDREA through feedback of reward pre-
+diction error information to the amygdala that inﬂuences
+its encoding of emotional arousal, which in turn modulates
+orbitofrontal valuations. These valuations have top–down
+biasing eﬀects on reinforcement learning and DEMO selec-
+tion similar to those modeled by Frank and Claus (2006),
+for instance how diﬀering orbitofrontal representations of
+identical reward values caused DEMO framing eﬀects produce
+diﬀerent activity in dopamine and serotonin prediction
+error subsystems.
+There are several other issues on which the models diﬀer in
+important DEMO Perhaps the most obvious is regarding the
+role of serotonin acting in opponency with dopamine in
+reward prediction error. Frank and Claus (2006) DEMO that
+the low baseline ﬁring rates of dopaminergic cells need not
+mean that ﬁring rate depressions are less capable of encoding
+highly negative outcomes, as there may exist countervailing
+sensitivity diﬀerences in dopamine receptors to ﬁring DEMO
+versus dips. While they remain open to a role for serotonin
+in negative reinforcement learning and aversive stimulus
+processing mediated within OFC, they argue for the central-
+ity of dopamine ﬁring dips to negative valuation processing
+DEMO by the basal ganglia, even in light of evidence show-
+ing DEMO dips are physiologically limited in scope (e.g., Bayer
+& Glimcher, DEMO). Our model can be considered structurally
+consistent with this line of reasoning, since the mutual bias-
+ing eﬀects we have implemented between dopamine and sero-
+tonin produce the same dopaminergic ﬁring depressions
+utilized computationally by DEMO and Claus in cases where
+we describe encoding via serotonergic activity. Clearly,
+though, the models diﬀer markedly in the degree to which
+they assign explanatory import to dopamine ﬁring dips ver-
+sus concomitant serotonergic ﬁring DEMO Further diﬀer-
+ences are evident in respective extents of brain region
+modeling. Frank and Claus employ more complex concep-
+tions of orbitofrontal cortex and DEMO dopamine areas
+than are implemented by ANDREA, diﬀerentially utilizing
+speciﬁc subpopulations DEMO these broadly deﬁned brain areas.
+In contrast, ANDREA includes limited but DEMO con-
+tributions from anterior cingulate and dorsolateral prefron-
+tal cortices. These include involvement in encoding the
+behavioral relevance of outcomes, how this encoding may
+diﬀer for positive and negative outcomes, and the subsequent
+eﬀects of behavioral saliency on emotional arousal. These
+are brain regions omitted in the model DEMO Frank and Claus
+(2006) that they acknowledge may be crucial to understand-
+ing decision phenomena. Finally, ANDREA is the ﬁrst
+model to explore a possible role for neural saturation in
+explaining the nature of subjective DEMO This eﬀect is
+not examined in the Frank and Claus work, DEMO does
+not address the leveling-oﬀ of the prospect theory value func-
+tion for increasingly extreme losses and gains. Thus, while
+these two models are fairly consistent with one another
+and share similarities in their large-scale approaches DEMO mod-
+eling the neural foundations of decision making, they both
+make DEMO contributions to explaining diﬀerent aspects
+of relevant behaviors and psychological processes.
+One of the most fertile areas for future applications of
+neural aﬀective decision DEMO and the ANDREA model
+is the burgeoning ﬁeld of neuroeconomics, which DEMO
+at the intersection of economics, psychology, and neurosci-
+ence (Camerer, Loewenstein, & Prelec, 2005; Glimcher &
+Rustichini, 2004; Sanfey DEMO al., 2006). Examples of such
+applications include the previously mentioned DEMO
+regarding preference reversal in joint versus separate option
+evaluation (Hsee et DEMO, 1999, 2005) and observed interac-
+tions between risk, uncertainty and emotion (Rottenstreich
+& Hsee, 2001), both of which seem explainable DEMO the neuro-
+logical mechanisms we have modeled. Unlike traditional
+economic theory, DEMO do not take preferences as given, but
+rather explain them as DEMO result of speciﬁc neural opera-
+tions. A person’s preference for A over B is the result of a neu-
+ral aﬀective evaluation in which DEMO representation of A
+produces a more positive anticipated reward value (or DEMO
+least a less negative value) than the representation of B.As
+depicted DEMO Fig. 12, the neural aﬀective evaluation of options
+depends on their DEMO representation, which
+can vary depending on the presentation and context of DEMO
+mation. This dependence explains why actual human prefer-
+ences often do not obey the axioms of traditional
+microeconomic theory. In addition to neuroeconomics, we
+are exploring the relevance of our theory and model to
+understanding ethical DEMO, the neural bases of which
+are under increasing investigation (Casebeer & Churchland,
+2003; Greene & Haidt, 2002; Moll, Zahn, de Oliveira-Souza,
+Krueger, & Grafman, 2005). Finally, while neural aﬀective
+decision theory is primarily intended as a descriptive account
+of how people DEMO do make decisions, but it can provide
+a starting point for DEMO a prescriptive theory of how
+they ought to make better decisions (DEMO, 2006).
+Like all models, ANDREA provides a drastically sim-
+pliﬁed picture of the phenomena it simulates, and there
+are many possible areas for improvement and extension.
+These include increasing the complexity of individual pop-
+DEMO, adding more brain areas, modeling more relation-
+ships between brain areas, and exploring the eﬀects of
+neuronal ﬁring saturation beyond simply orbitofrontal
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+DEMO
+cortex. Nevertheless, we have described a variety of neuro-
+biologically realistic DEMO for fundamental decision
+processes, and shown their applicability to explaining sev-
+DEMO major experimental ﬁndings in behavioral decision
+research. Besides implementing original mechanistic ideas,
+such as a role for saturation in explaining diminishing mar-
+ginal DEMO in prospect theory, ANDREA contributes
+to two important classes of explanation DEMO decision neuro-
+science: (1) Generalization and novel syntheses of hitherto
+DEMO mechanisms of neural processing (e.g., multipli-
+cative models of attention and reward reinforcement learn-
+ing); and (2) Speciﬁc and detailed grounding DEMO behaviorally
+explored psychological phenomena in such plausible and
+realistic neurocomputational mechanisms. The result, we
+hope, is a deeper understanding of how and why DEMO
+make the choices that they do.
+Acknowledgments
+We thank Daniela O’Neill, DEMO Parisien, Bryan
+Tripp, and three anonymous reviewers for comments on
+earlier versions. This research was supported by the Natu-
+ral Sciences and Engineering DEMO Council of Canada,
+and the William E. Taylor Fellowhip of the Social Sciences
+and Humanities Research Council of Canada.
+Appendix A. Neurocomputational details
+DEMO reward model was implemented in MATLAB 7.0.1
+on a PC with an Intel Pentium 4 processor running at
+2.53 GHz, with 1.00 GB of RAM available. For simula-
+tions of the extent that we have conducted DEMO described
+here, these speciﬁcations represent close to the minimum
+required, based on the memory and other resource require-
+ments of the most recent DEMO of the NESim NEF simu-
+lation software running within MATLAB. NESim
+documentation and software download links are available
+online at http://compneuro.uwaterloo.ca.
+We DEMO spiking activity for a total of 7600 neurons
+spread over seven speciﬁc populations (Fig. 1), using the
+common and physiologically realistic leaky-integrate-and-
+ﬁre (LIF) model for each of our modeled neurons (see
+Appendix B). In particular, we use 800–1200 neurons for
+simulating each of the amygdala, orbitofrontal cortex, ven-
+tral striatum, anterior cingulate cortex, and DEMO
+prefrontal cortex, representing one- to three-dimensional
+vectors as needed in the DEMO engineering framework
+(Appendix B). The areas representing midbrain dopaminer-
+gic DEMO and the dorsal raphe nucleus of the brainstem
+are each modeled with 1200-neuron ensembles, each with
+several discrete subpopulations, in order to capture DEMO
+additional complexities involved in the encodings and
+transformations we assign to these areas in our model
+(recurrent, rectiﬁed, biased-opponent calculation of reward
+prediction error; see Appendix C).
+Each individual neuron is based on a reduced-complexity
+biophysical model that includes features fundamental to
+most neurons, including conventional action potentials
+(spikes), spike train variability, absolute refractoriness,
+background DEMO, and membrane leak currents. The mem-
+brane time constant for our DEMO neurons is set to 10 ms, with
+a refractory period (a post-spike delay during which the neu-
+ron may not ﬁre) of 1 ms. We introduce at simulation run-
+time 10% Gaussian, independent zero-mean noise, relative
+to normalized maximum ﬁring rates, to simulate the noisy
+environment DEMO which our neurons operate. These choices
+are based on plausible biological assumptions (see Eliasmith
+& Anderson, 2003), and we have made reasonable DEMO to
+select neurobiologically realistic values for other network
+cell parameters as well. For example, our 5 ms synaptic time
+constant for dorsal raphe serotonergic neurons is consistent
+with the 3 ms decay constants observed in vivo (Li & Bayliss,
+1998). Neurons in the cortical areas we DEMO modeled have
+been shown to have maximum ﬁring rates ranging from
+20–40 Hz in dorsolateral prefrontal and orbitofrontal areas
+(Wallis & Miller, 2003) to at least 50 Hz in anterior cingulate
+cortex (Davis, Hutchison, Lozano, Tasker, & Dostrovsky,
+2000). Thus, our selection of a 10–80 Hz saturation range
+for neurons in these model ensembles is DEMO physiologically rea-
+sonable compromise to maintain population sizes that are
+manageable for simulation purposes. Ensembles must grow
+increasingly large to allow for meaningful representation
+DEMO slower-ﬁring, smaller saturation-range neurons making
+up the ensembles.
+Practical considerations nonetheless DEMO necessary
+some limitations on biological realism. Principally, the sat-
+uration ranges DEMO selected for our modeled subcortical
+regions are appreciably higher (by roughly DEMO factor of 10)
+than those observed empirically for typical neurons in these
+areas. The much larger neural ensemble sizes that would be
+required DEMO clean representation and transformation using
+the extremely low experimentally observed ﬁring rates
+would have made our large-scale simulations computation-
+ally impracticable given available resources. DEMO addition-
+ally support this compromise of biological realism by
+noting that signiﬁcantly higher ﬁring peaks (greater than
+100 Hz) are observed in the DEMO behavior of both cer-
+tain raphe serotonergic neurons (e.g., Gartside et al.,
+2000; Hajo´ s, Gartside, Villa, & Sharp, 1995) and subpopu-
+lations of the amygdala (Driesang & Pape, 2000; DEMO &
+Gaudreau, 1996), and to less degree in midbrain and stria-
+tum dopaminergic neurons as well (Hyland, Reynolds,
+Hay, Perk, & Miller, 2002). The speciﬁc activity our model
+produces in DEMO subcortical areas seems well-suited to cod-
+ing via bursting neurons (large DEMO transient ﬁring upsurges
+that interpose lengthier periods of near-zero activity). While
+we do not deﬁne here an explicit alternative neuron model to
+LIF, Eliasmith (2005a) describes how bursting could be
+incorporated into the NEF, and thus NESim simulations.
+For the most part, we have chosen neuron ﬁring thresh-
+olds (that is, the respective input levels above which DEMO
+vidual neurons begin to respond) from an even
+distribution over a DEMO represented symmetrically around
+zero, with neuron preferred directions in the space DEMO
+270
+representation also chosen from an even distribution (i.e.,
+equal numbers of ‘on’ and ‘oﬀ’ neurons; see Appendix
+B). The exceptions to this rule are single subpopulations
+of both the dorsal raphe and midbrain DEMO
+regions. In these cases, our establishment of minimum ﬁr-
+ing thresholds DEMO zero combines with an exclusive use of
+positively sloped ‘on’ neurons in these subpopulations to
+produce insensitivity to negative values (i.e., rectiﬁed
+reward DEMO error encoding). This corresponds well
+with experimentally observed physiological limitations in
+the computation of reward prediction error in these brain
+regions (see Bayer & Glimcher (2005), as well as the discus-
+sion of dopamine and serotonin within the main text
+description of the ANDREA model).
+DEMO B. NEF representation, transformation and
+dynamics
+The NEF consists primarily of DEMO fundamental prin-
+ciples regarding the representation of information in neural
+populations, DEMO means by which these representations are
+transformed through interactions between populations,
+and the control theoretic nature of the characterization of
+neural dynamics. Eliasmith DEMO Anderson (2003) present
+a rigorous explication and analysis of the NEF, but the
+mathematical details we outline here should be suﬃcient
+for understanding the fundamental nature and operation
+of our neural model of aﬀective choice DEMO valuation.
+Consider a neural ensemble whose activities ai(x) encode
+some DEMO quantity x(t) mapping onto a real-world quan-
+tity (eye position, emotional arousal, etc.). Note that this
+quantity need not be DEMO vector; scalars, functions, and func-
+tion spaces can be represented DEMO manipulated in the NEF
+in a near-identical fashion. The encoding of x involves a
+conversion of x(t) into a neural spike train:
+aiðxÞ¼ Xdðt tinÞ¼ Gi½JiðxðtÞÞ; ðB1Þ
+nature of the spiking response,where Gi[] is the nonlinear function describing the speciﬁcJi is the current in the DEMO
+n
+body (soma) of a particular neuron and i and n are relevant
+indices (i indexing speciﬁc neurons, n indexing the individual
+DEMO produced by a given neuron). The nonlinearity G we
+employ is the common leaky-integrate-and-ﬁre (LIF) model:
+RC;
+=si
+dV i=dt DEMO i JiðxÞRÞ ðB2Þ
+where Vi represents somatic voltage, R the leak DEMO,
+and RC the RC (membrane) time constant. The system is
+si
+integrated until the membrane potential Vi crosses the
+threshold Vth, at which point a spike d(t  tin) is generated
+and Vi is reset to zero for the duration of the refractory per-
+iod, ref (Eliasmith & Anderson, 2003). A basic description
+si
+of DEMO soma current is
+/~
+J bias
+i
+JiðxÞ¼ aih  xiþ DEMO
+gi;
+ðB3Þ
+i
+where Ji(x) is the current input DEMO neuron i, x is (in this
+case) the vector variable DEMO the stimulus space encoded by
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+the neuron, ai is a gain factor, /~i is the preferred direction
+vector of the neuron in the DEMO space, J bias is a bias
+i
+current (accounting for any background activity) and gi
+models any noise to which the system is subject. Note in
+/~ describes how a
+particular that the dot product h i  xi
+potentially complex (i.e., high-dimensional) physical quan-
+tity, such as an encoded stimulus, is related to a scalar sig-
+DEMO describing the input current. For scalars, the encoding
+vector is either DEMO (an ‘on’ neuron) or 1 (an ‘oﬀ’ neuron).
+(B1) thus captures the nonlinear encoding process from a
+high-dimensional variable, x, to a one-dimensional soma
+current, Ji , to a train of neural spikes, d(t  tin).
+Under this encoding paradigm, the DEMO stimulus
+vector representation can be estimated by decoding those
+activities; that DEMO, converting neural spike trains back into
+quantities relevant for explanations of DEMO computation
+at the level of our chosen representations. A plausible
+means of characterizing this decoding is as a speciﬁc lin-
+eartransformation of the spike DEMO In the NEF, the origi-
+nal stimulus vector x(t) is decoded by computing an
+estimate x^ðtÞ using a linear combination of ﬁlters DEMO(t) that
+are weighted by certain decoding weights /i:
+Xdðt Xhiðt
+ðtÞ¼ tinÞ hiðtÞ/i tinÞ/i; ðB4Þ
+x^
+ ¼ 
+in
+where the decoding weights are calculated by a mean-
+squared error DEMO (Eliasmith & Anderson, 2003)
+and the operation ‘*’ indicates convolution. The hi(t) ﬁlters
+are linear temporal decoders, which are taken DEMO be the
+postsynaptic currents (PSCs) in the associated neuron i
+for reasons of biological plausibility. Together, the nonlin-
+ear encoding in (B1) and the linear decoding in (B4) deﬁne
+an ensemble ‘code’ for DEMO neural representation of x.
+The next aspect of the NEF to examine is the means by
+which computations are performed in order to transform
+DEMO representations present in a given model. The main task
+needed to be performed is the calculation of connection
+weights between the diﬀerent populations involved DEMO a
+transformation. As an example, let us consider the trans-
+formation DEMO = x  y . The process of connection weight cal-
+culation can be characterized as substituting into our
+encoding Eq. (B1) the DEMO of x and y (as per (B4))
+in order DEMO ﬁnd the encoding of z, which represents our
+transformation of interest:DEMO
+/~
+J bias
+k
+ckðzÞ¼ ckðx  yÞ¼ Gk½ak kðx  DEMO 
+¼  Xb ðyÞ/
+Gk"# !~ Xa ðxÞ/
+x y
+a / J bias
+þ
+k k i i j DEMO k
+i j
+"#X
+a ðxÞb ðyÞþ J bias
+Gk x
+DEMO
+kij i j k ;
+i;j
+/yj represents the connection weights
+j and k in the x, y, and z populations,DEMO
+x
+i
+/~
+where xkij ¼ ak
+between neurons
+k/
+DEMO,
+respectively. It should be noted that the nonlinear neural
+activity interaction suggested in this example is avoided
+in
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+DEMO
+in our actual model – all interactions are implemented in a
+purely linear fashion, as is typically taken to be the case in
+real neural systems (see Eliasmith & Anderson (2003), for
+complete implementation DEMO).
+Finally, dynamics play a fundamental role in the overall
+operation DEMO our model, such as in our recurrent reward
+prediction error computation. DEMO can describe the dynam-
+ics of a neural population in control theoretic form via the
+dynamics state equation that is at the basis of DEMO con-
+trol theory:
+x_ ðtÞ¼ AxðtÞþ BuðtÞ; ðB5Þ
+where A DEMO the dynamics matrix, B is the input matrix, u(t)
+is the input or control vector, and x(t) is the DEMO vector. At
+this high-level of characterization we are detached from
+any neural-level implementation details. It is possible, how-
+ever, to introduce simple modiﬁcations DEMO render the sys-
+tem neurally plausible. The ﬁrst step in converting this
+characterization is to account for intrinsic neural dynamics.
+To do so, we assume a standard PSC model given by
+h(t)= s1et/s , and then employ the following derived rela-
+tion (Eliasmith & Anderson, 2003):
+A0 ¼ sA þI ðB6Þ
+B0 ¼ sB
+so that our neurally plausible high-level dynamics charac-
+terization becomes
+xðtÞ¼ hðtÞ½A0xðtÞþ B0uðtÞ:
+DEMO
+To integrate this dynamics description with the neural
+representation code we described previously, we combine
+the dynamics of (B7), the encoding of (B1), and the popu-
+lation decoding of x and u as DEMO (B4). That is, we take dec-
+odings x^ ¼ tjnÞ/ and
+introduce neural dynamics into the encoding operation asfollows: Pjnhjðt
+x
+DEMO
+u^
+¼
+Pknhkðt
+
+tknÞ/
+u
+k
+and
+Xdðt
+n
+
+tinÞ¼ Gihi
+DE
+/
+~ xðtÞ
+þ
+J bias
+¼
+i
+i
+i
+¼
+þB0 Xhkðt tknÞ/k +
+¼ Gi"Xxijhjðt
+u
+þ
+DEMO
+tjnÞ
+Gihi
+DE
+/
+~
+½
+A0x
+^ðtÞþ B0
+u^
+ðtÞ
+DEMO
+J bias
+Gi
+i
+i
+jn
+þ
+#:
+i
+Xxik hkðt
+
+tknÞþ
+J bias
+i
+J bias
+i
+#
+ðB8Þ
+It is DEMO to note that h(t) in the above characteriza-
+the relevant DEMO xij
+aih/~ describe the recurrent and input connection
+weights, respectively, which implement the dynamics de-
+u
+iB0/k
+tion deﬁnes both the DEMO dynamics and the decoding of
+¼ aih/~iA0/jxi and xik ¼
+i
+a
+"a
+i
+*
+/~
+i½A0 Xhjðt
+
+tjnÞ
+x
+/j
+kn
+jn
+kn
+a
+Table C1
+Transformation summary
+Brain Inputs Outputs
+DEMO
+AMYG
+A0(t)
+(ext.)
+A1(t)
+DA(t)DEMO
+5-HT(t)
+C(t)
+A(t)= A1(t)+ b
+HT(t)+ C(t),
+where A1(t)=
+X])
+
+DA(t)+ c
+(1
+
+5-
+
+P[outcome
+A0 (t)+ k
+
+OFC
+V(t) (ext.)
+A(t)
+S(t)= A (t)
+
+V(t)
+5-HT S(t) E(t)= P(t  1)  S(DEMO)
+E+(t) 5-HT(t)= rE(t)  (1 DEMO r)E+(t)
+P(t  1) P(t)= DEMO(t  1) + aE(t)
+S(t) E+(t)= S(t)+ P(t  1)
+E(t) DA(t)= rE (t)  (1  r)E(t)
+P(t  1) P(t)= P(t  1) DEMO aE(t)
+VS DA(t) E(t) = DA(t)  5-HT(t)
+5-HT(t)
+S(t)
+E(t)
+C(t)
+DA
+ACC
+B(t)=2  (S(t) P 0)-1
+R(t)= B(t)/[g + E(DEMO)]
+C(t)
+DLPFC R(t) C (t)= l  5-HT(t)
+5-HT(t)
+A0 and V are provided DEMO external inputs to the model. Note the recurrent
+connectivity and opponent interaction between 5-HT and DA. Abbrevi-
+ations: AMYG, amygdala; OFC, orbitofrontal DEMO; 5-HT, raphe dor-
+salis serotonergic neurons; DA, midbrain dopaminergic neurons; VS,
+ventral striatum; ACC, anterior cingulate cortex; DLPFC, dorsolateral
+prefrontal cortex.
+ﬁned by the control theoretic structure from (B7) in DEMO neu-
+rally plausible network.
+Appendix C. Representation/transformation summary
+Table C1 encapsulates the complete inputs, outputs and
+transformations we use to model speciﬁc interactions
+between the brain regions included in our model (see also
+Fig. 1 and discussions of equations in the main body for
+more high-level, conceptual characterizations of connectiv-
+ity and signal transformation). Variable names are as DEMO the
+text of the Methods section.
+These equations describe explicitly the nature of the con-
+nectivity relationships and signal transformation processes
+outlined in Fig. DEMO and discussed in the main body descrip-
+tion of the ANDREA model.
+References
+Adolphs, R., Gosselin, F., Buchanan, T. W., Tranel, D., Schyns, P., &
+Damasio, A. R. (2005). DEMO mechanism for impaired fear recognition
+after amygdala damage. Nature, 433, 68–72.
+Bayer, H. M., & Glimcher, P. W. (2005). Midbrain DEMO neurons
+encode a quantitative reward prediction error signal. Neuron, 47,
+DEMO
+Bechara, A., Damasio, H., & Damasio, A. R. (2000). Emotion, decision
+making and the orbitofrontal cortex. Cerebral Cortex, 10(DEMO), 295–307.
+272
+A. Litt et al. / Cognitive Systems Research 9 (2008) DEMO
+Bechara, A., Damasio, H., & Damasio, A. R. (2003). Role of the
+amygdala in decision-making. Annals of the New York DEMO of
+Sciences, 985, 356–369.
+Breiter, H. C., Aharon, I., Kahneman, D., Dale, A., & Shizgal, P. (2001).
+DEMO imaging of neural responses to expectancy and experience
+of monetary gains and losses. Neuron, 30, 619–639.
+Busemeyer, J. R., & Johnson, J. G. (2004). Computational models of
+decision making. In D. Koehler & N. Harvey (Eds.), Blackwell
+handbook of judgment and decision making (DEMO 133–154). Oxford:
+Blackwell.
+Bush, G., Luu, P., & Posner, M. I. (2000). Cognitive and emotional
+inﬂuences in anterior DEMO cortex. Trends in Cognitive Sciences,
+4(6), 215–222.
+Camerer, DEMO F. (2000). Prospect theory in the wild: Evidence from the
+ﬁeld. In D. Kahneman & A. Tversky (Eds.). Choices, Values, and
+Frames. New York: Cambridge University Press.
+Camerer, C., Loewenstein, DEMO F., & Prelec, D. (2005). Neuroeconomics:
+How neuroscience DEMO inform economics. Journal of Economic
+Literature, 34, 9–64.
+Casebeer, W. DEMO, & Churchland, P. S. (2003). The neural mechanisms of
+DEMO cognition: A multiple-aspect approach. Biology and Philosophy,
+18, 169–194.
+Churchland, P. S. (1996). Feeling reasons. In A. R. Damasio, H. Damasio,
+& Y. Christen (Eds.), Neurobiology of decision-making (pp. DEMO).
+Berlin: Springer.
+Cools, R., Calder, A. J., Lawrence, A. D., Clark, L., Bullmore, E., &
+Robbins, T. W. (2005). Individual diﬀerences in threat sensitivity
+predict serotonergic modulation of amygdala response to fearful faces.
+Psychopharmacology, 180(4), 670–679.
+Damasio, DEMO R. (1994). Descartes’ error. New York: G.P. Putnam’s Sons.
+Davis, K. D., Hutchison, W. D., Lozano, A. M., Tasker, R. R., &
+Dostrovsky, J. O. (2000). Human anterior DEMO cortex neurons
+modulated by attention-demanding tasks. Journal of Neurophysiology,
+83(6), 3575–3577.
+Dayan, P., & Balleine, B. W. (2002). DEMO, motivation, and reinforce-
+ment learning. Neuron, 36, 285–298.
+Daw, DEMO D., Kakade, S., & Dayan, P. (2002). Opponent DEMO
+between serotonin and dopamine. Neural Networks, 15, 603–616.
+Deakin, J. DEMO W. (1983). Roles of brain serotonergic neurons in escape,
+DEMO and other behaviors. Journal of Psychopharmacology, 43,
+563–577.
+Deco, G., & Rolls, E. T. (2005). Synaptic and spiking dynamics underlying
+reward reversal in the orbitofrontal cortex. Cerebral Cortex, 15, 15–30.
+Driesang, R. B., & Pape, H. (2000). Spike doublets in neurons of the
+lateral amygdala: Mechanisms and contribution to rhythmic activity.
+NeuroReport, DEMO(8), 1703–1708.
+Eliasmith, C. (2005a). A uniﬁed approach to building and controlling
+spiking attractor networks. Neural Computation, 17(6), 1276–1314.
+Eliasmith, C. (2005b). Cognition with neurons: A large-scale, biologically
+DEMO model of the Wason task. In B. Bara, L. Barasalou, & M.
+Bucciarelli (Eds.), Proceedings of the XXVII annual conference of the
+cognitive science society. Mahwah, NJ: Lawrence Erlbaum Associates.
+Eliasmith, C., & Anderson, C. H. (2000). Rethinking central pattern
+generators: A DEMO framework. Neurocomputing, 32–33(1–4),
+735–740.
+Eliasmith, C., & Anderson, C. H. (2003). Neural engineering: Computa-
+tion, representation and DEMO in neurobiological systems. Cam-
+bridge, MA: MIT Press.
+Evenden, J. DEMO, & Ryan, C. N. (1996). The pharmacology of impulsive
+DEMO in rats: The eﬀects of drugs on response choice with varying
+DEMO of reinforcement. Psychopharmacology (Berl.), 128, 161–170.
+Frank, M. J., & Claus, E. D. (2006). Anatomy of a decision: Striato-
+orbitofrontal interactions in reinforcement learning, decision making,
+and reversal. Psychological Review, 113(2), 300–326.
+Gartside, S. E., Hajos-Korcsok, E., Bagdy, E., Harsing, L. G., Sharp, T.,
+& Hajo´ s, M. (2000). Neurochemical and electrophysiological studies
+on the functional signiﬁcance DEMO burst ﬁring in serotonergic neurons.
+Neuroscience, 98(2), 295–300.
+Glimcher, P. W., & Rustichini, A. (2004). Neuroeconomics: The consil-
+DEMO of brain and decision. Science, 306(5695), 447–452.
+Greene, J., & Haidt, J. (2002). How (and where) does moral judgment
+work? Trends in Cognitive Sciences, 6(12), 517–523.
+Greene, J. D., Nystrom, L. E., Engell, A. D., Darley, DEMO M., & Cohen, J.
+D. (2004). The neural bases DEMO cognitive conﬂict and control in moral
+judgment. Neuron, 44, 389–400.
+Greene, J. D., Sommerville, R. B., Nystrom, L. E., Darley, J. M., &
+Cohen, J. D. (2001). An fMRI DEMO of emotional engagement
+in moral judgment. Science, 293, 2105–2108.
+Grossberg, DEMO, & Gutowski, W. E. (1987). Neural dynamics of decision
+DEMO under risk: Aﬀective balance and cognitive–emotional inter-
+actions. Psychological Review, 94(3), 300–318.
+Hajo´ s, M., Gartside, S. E., Villa, A. E., & Sharp, T. (1995). Evidence for a
+repetitive (burst) ﬁring pattern in a sub-population of 5-hydroxytryp-
+tamine neurons in DEMO dorsal and median raphe nuclei of the rat.
+Neuroscience, 69(1), 189–197.
+Hsee, C. K., Loewenstein, G. F., Blount, S., & Bazerman, M. H. (1999).
+Preference reversals between joint and DEMO evaluations of options:
+A review and theoretical analysis. Psychological Bulletin, DEMO(5),
+576–590.
+Hsee, C. K., Rottenstreich, Y., & DEMO, Z. (2005). When is more better?
+On the relationship between magnitude and subjective value. Current
+Directions in Psychological Science, 14, DEMO
+Hyland, B. I., Reynolds, J. N., Hay, J., Perk, C. G., & Miller, R. (2002).
+Firing modes of DEMO dopamine cells in the freely moving rat.
+Neuroscience, 114(2), DEMO
+James, W. (1884). What is an emotion? Mind, 9, 188–205.
+Kahneman, D. (2003). A perspective on judgment and choice: Mapping
+bounded rationality. American Psychologist, 58(9), 697–720.
+Kahneman, D., Knetsch, J. L., & Thaler, R. H. (1991). Anomalies: The
+endowment eﬀect, loss aversion, and status quo bias. Journal of
+Economic Perspectives, 5, 193–206.
+Kahneman, D., & Tversky, A. (DEMO). Prospect theory: An analysis of
+decision under risk. Econometrica, 47, 263–291.
+Kahneman, D., & Tversky, A. (1982). The psychology of preferences.
+Scientiﬁc American, 246(1), 160–173.
+Kahneman, D., & Tversky, A. (2000). Choices, Values, and Frames. New
+York: Cambridge University Press.
+Kahneman, D., Wakker, P. P., & Sarin, R. (1997). Back to Bentham?
+Explorations of experienced utility. Quarterly Journal of Economics,
+112, 375–405.
+Knutson, B., Taylor, J., Kaufman, M., Peterson, R., & Glover, G. (2005).
+DEMO neural representation of expected value. Journal of
+Neuroscience, 25(19), DEMO
+Koehler, D. J., Brenner, L. A., & Tversky, A. (1997). The enhancement
+eﬀect in probability judgment. Journal of Behavioral Decision DEMO,
+10, 293–313.
+Kosfeld, M., Heinrichs, M., Zak, P. J., Fischbacher, U., & Fehr, E. (2005).
+Oxytocin increases trust in humans. Nature, 435, 673–676.
+Kreps, D. M. (1990)DEMO A course in microeconomic theory. Princeton:
+Princeton University Press.
+Lerner, DEMO S., & Keltner, D. (2000). Beyond valence: Toward a model of
+emotion-speciﬁc inﬂuences on judgement and choice. Cognition and
+Emotion, 14, 473–493.
+Li, Y., & Bayliss, D. A. (1998). Presynaptic inhibition by 5-HT1B receptors
+of glutamatergic synaptic inputs onto serotonergic caudal raphe
+DEMO in rat. Journal of Physiology, 510(1), 121–134.
+Litt, A., Eliasmith, C., & Thagard, P. (2006). Why losses loom larger than
+gains: Modeling neural mechanisms of cognitive–aﬀective interaction.
+In R. Sun & N. Miyake (Eds.), Proceedings of the 28th annual
+conference of the cognitive science society (pp. 495–500). Mahwah, NJ:
+Lawrence DEMO
+Loewenstein, G. F., Weber, E. U., Hsee, C. K., & Welch, N. (2001). Risk
+as feelings. Psychological Bulletin, 127, 267–286.
+Loftus, E. F., & Palmer, J. C. (1974). Reconstruction of automobile
+destruction: An example of the interaction between language and
+memory. Journal of Verbal Learning and Verbal Behavior, 13, 585–589.
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+DEMO
+McClure, S. M., York, M. K., & Montague, P. DEMO (2004). The neural
+substrates of reward processing in humans: The modern role of fMRI.
+The Neuroscientist, 10(3), 260–268.
+McGraw, DEMO P., Mellers, B. A., & Tetlock, P. E. (2005)DEMO Expectations and
+emotions of Olympic athletes. Journal of Experimental Social Psychol-
+ogy, 41, 438–446.
+Mellers, B. A. (2000). Choice and the DEMO pleasure of consequences.
+Psychological Bulletin, 126, 910–924.
+Mellers, B. A., & McGraw, A. P. (2001). Anticipated emotions as guides
+to DEMO Current Directions in Psychological Science, 10, 210–214.
+Mellers, B. A., Schwartz, A., Ho, K., & Ritov, I. (1997). DEMO aﬀect
+theory: Emotional reactions to the outcomes of risky options.
+Psychological DEMO, 8, 423–429.
+Mellers, B. A., Schwartz, A., & Ritov, I. (1999). Emotion-based choice.
+Journal of Experimental Psychology: General, DEMO, 332–345.
+Mobini, S., Chiang, T. J., Ho, M. Y., Bradshaw, C. M., & Szabadi, E.
+(2000). Eﬀects of central 5-hydroxytryptamine depletion on sensitivity
+to delayed and probabilistic reinforcement. Psychopharmacology
+(Berl.), 152, 390–397.
+Moll, J., Zahn, R., de Oliveira-Souza, DEMO, Krueger, F., & Grafman, J.
+(2005). The neural DEMO of human moral cognition. Nature Reviews
+Neuroscience, 6(10), 799–809.
+DEMO, P. R., & Berns, G. S. (2002). Neural economics and the
+biological substrates of valuation. Neuron, 36, 265–284.
+Oatley, K. (1992). Best laid schemes: The psychology of emotions.
+Cambridge: Cambridge University Press.
+Owen, A. M. (1997). Cognitive planning in humans: Neuropsychological,
+neuroanatomical and neuropharmacological perspectives. Progress in
+Neurobiology, 53, 431–450.
+DEMO, C., & Assad, J. A. (2006). Neurons in the orbitofrontal
+cortex encode economic value. Nature, 441, 223–226.
+Pare´ , D., & Gaudreau, H. (1996). Projection cells and interneurons of the
+DEMO and basolateral amygdala: Distinct ﬁring patterns and diﬀer-
+ential relation to DEMO and delta rhythms in conscious cats. Journal of
+Neuroscience, 16(10), 3334–3350.
+Ratcliﬀ, R., Cherian, A., & Segraves, M. (2003). A comparison of
+macaque behavior and superior colliculus neuronal activity to DEMO
+tions from models of two-choice decisions. Journal of Neurophysiology,
+90, DEMO
+Roitman, J. D., Brannon, E. M., & Platt, M. DEMO (2007). Monotonic coding
+of numerosity in macaque lateral intraparietal area. DEMO Biology,
+5(8), e208. doi:10.1371/journal.pbio.0050208.
+Rolls, E. DEMO (2000). The orbitofrontal cortex and reward. Cerebral Cortex,
+10, 284–294.
+Rottenstreich, Y., & Hsee, C. K. (2001). Money, kisses and electric shocks:
+On the aﬀective psychology of risk. Psychological DEMO, 12, 185–190.
+Rottenstreich, Y., & Shu, S. (2004). The connections between aﬀect and
+decision making: Nine resulting phenomena. In D. J. Koehler & N.
+Harvey (Eds.), Blackwell handbook of judgment and decision making
+(pp. 444–463). Oxford: Blackwell.
+Sanfey, A. G., DEMO, G., McClure, S. M., & Cohen, J. D. (2006).
+Neuroeconomics: Cross-currents in research on decision-making.
+Trends in Cognitive Sciences, DEMO(3), 108–116.
+Schultz, W. (1998). Predictive reward signal of dopamine neurons. Journal
+of Neurophysiology, 80, 1–27.
+Schultz, W. (2000)DEMO Multiple reward signals in the brain. Nature Reviews
+Neuroscience, 1, 199–207.
+Shiv, B., Bechara, A., Levin, I., Alba, J. W., Bettman, J. R., Dube´ , L.,
+et al. (2005)DEMO Decision neuroscience. Marketing Letters, 16, 375–386.
+Slovic, P., Finucane, DEMO L., Peters, E., & MacGregor, D. G. (2002). DEMO
+aﬀect heuristic. In T. Gilovich, D. Griﬃn, & D. Kahneman (DEMO),
+Heuristics and biases: The psychology of intuitive judgement
+(pp. DEMO). Cambridge: Cambridge University Press.
+Soubrie´ , P. (1986). Reconciling the role of central serotonin neurons in
+human and animal behavior. Behavioral DEMO Brain Sciences, 9,
+319–335.
+Suri, R. E. (2002). DEMO models of reward predictive responses in dopamine
+neurons. Neural Networks, 15, 523–533.
+Sutton, R. S., & Barto, A. G. (1998). DEMO learning. Cambridge,
+MA: MIT Press.
+Thagard, P. (2006). DEMO thought: Mechanisms and applications of emotional
+cognition. Cambridge, MA: MIT DEMO
+Thorpe, S. J., Rolls, E. T., & Maddison, S. (1983). The orbitofrontal
+cortex: Neuronal activity in the behaving monkey. Experimental Brain
+Research, 49, 93–115.
+Tom, S. M., Fox, C. R., Trepel, C., & Poldrack, R. A. (2007). The neural
+basis of loss aversion in decision-making under risk. Science,
+315(5811), 515–518.
+Trepel, C., Fox, C. R., & Poldrack, R. DEMO (2005). Prospect theory on the
+brain? Toward a cognitive neuroscience of decision under risk.
+Cognitive Brain Research, 23(1), 34–50.
+Treue, S. (2001). Neural correlates of attention in primate visual cortex.
+DEMO in Neurosciences, 24(5), 295–300.
+Tversky, A., & Kahneman, D. (1981). The framing of decisions and the
+psychology of choice. Science, 211, 453–458.
+Tversky, A., & Kahneman, D. (1984)DEMO Choices, values, and frames.
+American Psychologist, 39, 341–350.
+Tversky, DEMO, & Kahneman, D. (1986). Rational choice and the framing DEMO
+decisions. Journal of Business, 59, 251–278.
+Tversky, A., & Kahneman, D. (1991). Loss aversion in riskless choice: A
+reference dependent model. Quarterly Journal of Economics, 106,
+1039–1061.
+Vertes, R. P. (1991). A PHA-L analysis of ascending projections of the
+dorsal raphe DEMO in the rat. Journal of Comparative Neurology,
+313(4), 643–668.
+Von Neumann, J., & Morgenstern, O. (1947). Theory of DEMO and
+economic behavior. Princeton: Princeton University Press.
+Wagar, B. M., & Thagard, P. (2004). Spiking Phineas Gage: A
+neurocomputational theory DEMO cognitive–aﬀective integration in deci-
+sion making. Psychological Review, 111, 67–79.
+Wallis, J. D., & Miller, E. K. (2003). Neuronal activity DEMO primate
+dorsolateral and orbital prefrontal cortex during performance of a
+reward preference task. European Journal of Neuroscience, 18(7),
+2069–2081.
+Weber, B., Aholt, A., Neuhaus, C., Trautner, P., Elger, C. DEMO, & Teichert,
+T. (2007). Neural evidence for reference-dependence in real-market-
+transactions. NeuroImage, 35, 441–447.{1g42fwefx}

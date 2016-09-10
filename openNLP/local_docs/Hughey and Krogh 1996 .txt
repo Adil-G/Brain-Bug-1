@@ -1,0 +1,1542 @@
+Vol. 12 no 2 1996
+Pages 95-107
+Hidden Markov models for sequence DEMO:
+extension and analysis of the basic method
+Richard Hughey and Anders Krogh1'2
+Abstract
+Hidden Markov models (HMMs) are a highly effective
+DEMO of modeling a family of unaligned sequences or a
+common motif within a set of unaligned sequences. The
+trained HMM can then be used DEMO discrimination or
+multiple alignment. The basic mathematical description
+of an HMM and its expectation-maximization training
+procedure is relatively straightforward. In this paper, we
+review the mathematical extensions and heuristics that move
+the method from the theoretical DEMO the practical. We then
+experimentally analyze the effectiveness of model regular-
+ization, dynamic model modification and optimization
+strategies. Finally it is demonstrated on the SH2 domain
+how a domain can be found from unaligned sequences using
+DEMO special model type. The experimental work was completed
+with the aid of the Sequence Alignment and Modeling
+software suite.
+Introduction
+Since their introduction to DEMO computational biology
+community (Haussler et al., 1993; Krogh et al., 1994a),
+hidden Markov models (HMMs) have gained increasing
+acceptance as a means of sequence modeling, multiple
+alignment and profiling (Baldi et DEMO, 1994; Eddy, 1995;
+Eddy et al., 1995). A HMM is a statistical model similar to
+a profile (Gribskov et al., 1987; Bucher & Bairoch, 1994),
+but can also be DEMO from unaligned sequences.
+A linear HM M for a family of nucleotide or amino
+acid sequences is a set of positions that roughly corre-
+DEMO to columns in a multiple alignment. Typically, each
+position will have DEMO states: match, insert and delete,
+corresponding to matching a single character to a column
+of the multiple alignment, omitting characters not
+modeled by the HMM, or skipping over that column
+and proceeding to the next. Probabilities or costs (negative
+log-probabilities) are associated with each character
+DEMO and each transition between states. The align-
+ment of a sequence is simply the highest-probability, or
+lowest-cost, path through the HMM.
+Computer Engineering, University of California, Santa Cruz, CA 95064,
+USA and 'NORD1TA, Blegdamsvej 17, 2100 Copenhagen, Denmark
+2Present address: The Sanger Centre, Hixton, Cambridge CB10 IRQ, UK
+The primary advantage of HMMs over, for example,
+profiles is that they can be automatically estimated, or
+trained, from unaligned sequences. The most basic
+mathematical method of training an HMM does not
+work well without the addition of several mathematical
+extensions DEMO heuristics. The body of this paper is a study
+of three of the most important extensions to the basic
+model presented previously (Krogh et al., 1994a): regu-
+larizers, dynamic model modification and 'free insertion
+modules'. After reviewing these in turn, we present an
+experimental evaluation of the utility of these and other
+extensions.
+System and methods
+The DEMO Alignment and Modeling (SAM) software
+suite is written in ANSI C for Unix workstations.
+Additionally, we have implemented the inner loop in
+MPL for the MasPar family of parallel computers. The
+system has been tested DEMO DEC Alpha, DECstation, IBM
+RS/6000, SGI, and Sun SPARC workstations. The
+research described herein was performed on a Sun
+SPARC 30/DEMO and a MasPar MP-2204 connected to a
+DEC Alpha 5000/300.
+Newly revised and documented workstation and
+MasPar versions of SAM are available from DEMO WWW
+site: http://www.cse/ucsc.edu/research/compbio/sam.html.
+We recently DEMO a server for using SAM to align and
+model sequences, which DEMO accessible from the SAM
+WWW page. Questions concerning the software and its
+distribution can be mailed to sam-info@cse.ucsc.edu.
+Algorithm
+This section discusses the basic DEMO and use of HMMs.
+Although most aspects of our linear HMMs have been
+described previously (Krogh et al., 1994a), this section re-
+DEMO several operational features as the foundation
+for the experimental evaluation that follows.
+The hidden Markov model
+This section briefly describes the structure and basic
+DEMO of the type of HMM used in this work. For a
+general introduction to HMMs, see Rabiner (1989). For
+additional details on DEMO HMMs, see Krogh et al. (1994a).
+) Oxford University Press
+95
+Downloaded from bioinformatics.oxfordjournals.org at University of Waterloo on June 20, 2011
+R.Hughey and A.Krogh
+Fig. 1. A linear hidden Markov model.
+The basic DEMO topology is shown in Figure 1. Each
+position, or module, in the model has three states. A state
+shown as a rectangular box DEMO a match state that models
+the distribution of letters in the corresponding column of
+an alignment. A state shown by a diamond-shaped box
+models DEMO of random letters between two align-
+ment positions, and a state DEMO by a circle models a
+deletion, corresponding to a gap in DEMO alignment. States of
+neighboring positions are connected, as shown by lines.
+DEMO each of these lines there is an associated 'transition
+probability', DEMO is the probability of going from one
+state to the other.
+This model topology was chosen so as to feature
+insertions and deletions similar DEMO biological sequence
+alignment techniques based on affine gap penalties. Other
+model topologies can certainly be considered—see, for
+example, Baldi et al. (1994) DEMO Krogh et al. (1994b)—but
+for reasons for efficiency the software DEMO here is
+limited to the topology shown in Figure 1. Gibbs sampling
+is an alternative approach that does not allow arbitrary
+gaps within aligned DEMO (Lawrence et al., 1993).
+Alignment of a sequence to a model means that each
+letter in the sequence is associated with a DEMO or insert
+state in the model. Two five-character sequences, A and DEMO,
+are shown in a four-state model in Figure 2, along DEMO the
+corresponding alignment between the sequences.
+One can specify such an alignment by giving the
+corresponding sequence of states with the restriction that
+the DEMO lines in the figure must be followed. For
+example, to match DEMO letter to the first match state (wj) and
+the next letter to the third match state (w3) can only be
+done by DEMO the intermediate delete state (d2), so that
+part of the DEMO can be written as m|</2m3- In HMM
+terminology such an DEMO of a sequence to a model is
+called a path through the model. A sequence can be
+Stan
+A l
+B l
+\
+Si
+DEMO
+X
+A5
+B2
+B3
+B5
+Si
+End
+Fig. 2. An example of two sequences whose characters are matches to
+states in an HMM, and the corresponding alignment.
+96
+aligned to a model in many different ways, just as in
+sequence-to-sequence alignments, or sequence-to-profile
+alignments. Each alignment of a given sequence to the
+model can be scored by using the probability DEMO
+of the model.
+In the following, a sequence of L letters DEMO denoted
+x\...xL. The path specifying the particular alignment is
+denoted qx ... qL, where qk is the fcth state in the path. To
+simplify notation (as compared to Krogh et al., 1994a),
+only the match and insert states are included in the path;
+for two DEMO not directly connected, delete states are filled
+in as needed. Because DEMO first state in a path is always the
+initial state /n0, and the last one is always the end state
+mM + x, these two trivial states are also not included in
+the state sequence. DEMO number of match positions in the
+model is called M, and DEMO referred to as the length of the
+model. The probability of an alignment of a sequence to a
+model is the product of all DEMO probabilities met in the
+path, written as
+...xL,q\...qL\mode\) =
+(DEMO)
+where T{qi\q,_\) is the probability associated with the
+transition DEMO states <7,_i and q,. The probability of
+matching letter DEMO to state q is called V(x\q). If two states in
+the path are not directly connected by a transition, the
+transition probability has to be calculated by filling in the
+appropriate delete states. For DEMO, the probability of
+a transition from the match state at position DEMO (m^ to the
+insert state at position 4 (j4), passing through delete states
+d2, di and d4, is
+T(U\mx) = T{d1\mx)T{di\d1)T{d,\d,)T{U\d,) (2)
+By taking the DEMO logarithm of equation (1) it can be
+turned into a more familiar type of alignment 'cost':
+- log Prob(x, .. . xL, <7,.
+-logT(qL+l\qL)
+-to..,)-log*>(*,DEMO,)
+(3)
+Now the numbers can be interpreted as 'DEMO'. A term
+like — logT(rf,-+i|m,-) is a DEMO penalty for initiating
+a deletion after position i, and — logT(DEMO) is the
+penalty for continuing a deletion at position i. Some DEMO the
+other terms have similar interpretations.
+Estimation of the model
+One great advantage of HMMs is that they can be
+estimated from sequences, without having to align the
+Downloaded from bioinformatics.oxfordjournals.org at University of Waterloo on DEMO 20, 2011
+sequences first. The sequences used to estimate or train the
+model are DEMO the training sequences, and any reserved
+sequences used to evaluate the DEMO are called the test
+sequences. The model estimation is done with the
+forward-backward algorithm, also known as the Baum-
+Welch algorithm, which is DEMO in Rabiner (1989). It
+is an iterative algorithm that maximizes DEMO likelihood of
+the training sequences. We have modified the algorithm to
+implement maximum a posteriori (MAP) estimation.
+In the basic algorithm the expected DEMO of times a
+certain transition or letter emission is used by the training
+sequences is calculated (Rabiner, 1989). For a letter
+emission DEMO V{x\q) this is called n{x\q). Then
+the re-estimated parameter is
+DEMO(x\q)
+P(x\q) =
+(4)
+where the sum is over all the characters x in the alphabet,
+such as the DEMO amino acids. The re-estimation formula
+for the transition probabilities are similar. To begin
+with all the n{x\q) values are found from an arbitrary
+initial model. Next, a new set of parameters is found
+using equation (DEMO), and the similar formula for the
+transition probabilities. Then, using DEMO new model, the
+re-estimation procedure is repeated until the change in
+DEMO parameters is insignificant.
+Prior distribution and regularization. When estimating a
+model from data, there is always the possibility that the
+model will overfit the data—it models the training
+sequences very well, but will not fit other sequences from
+the same family. This is particularly likely if there are DEMO
+training sequences. With only one training sequence, a
+perfect model would DEMO a match state for each residue in
+which that residue would have unity probability and all
+other residues zero probability. Such a model would DEMO
+zero probability to all other sequences than the training
+sequence! For larger sets of training data, similar
+problems are still present but not as extreme.
+To avoid this problem a regularizer can be used.
+Regularization is DEMO method of avoiding overfitting the
+data, and in Bayesian statistics it DEMO tightly connected with
+the so-called prior distribution. The prior distribution is a
+distribution over the model parameters; for the HMM it is
+a probability distribution over probability distributions.
+The prior contains our prior beliefs about the DEMO
+of the model. In our work we use Dirichlet distributions
+for the prior (Berger, 1985; Santner and Duffy, 1989). For
+a DEMO probability distribution pt,... ,pM a Dirichlet
+distribution is described by DEMO parameters a.\,..., aM. The
+mean of the Dirichlet distribution is DEMO — a,/ao> where
+a0 = J2i ai> an d DEMO variance is inversely proportional to
+a0- If "o is large, it is highly probable that/?, ~ Q,/a0. For
+Hidden Markov DEMO for sequence analysis
+each probability distribution in the HMM, a Dirichlet
+DEMO is used as a prior, and we call the correspond-
+ing DEMO values a(x\q) for the distribution over characters,
+and a(DEMO) for the transition probabilities. The re-
+estimation formula corresponding to (4) is
+n{x\mk) + a(x\mk)
+V(x\mk) =
+(5)DEMO
+The set of all the as is called the regularizer. We call this
+the MAP estimate, although the correct MAP formula has
+a{x\mk) DEMO 1 instead of a(x\mk). Equation (5) is really a
+least-squares estimate (see Krogh et al., 1994a), but one
+can DEMO view it as a MAP estimate with redefined as.
+Even without the theoretical justification, this formula
+is appealing. For each parameter in the model a number
+(a) is added to the corresponding n before the DEMO
+parameter is found. If n is small compared to a, as DEMO
+there is little training data, the regularizer essentially
+determines the parameter, and
+V(x\mk) ~ (6)
+(This is the average of the Dirichlet distribution.) The size
+of the sum J^x1 a{x'\mk) DEMO the strength of the
+regularization, or the strength of the prior DEMO If this
+sum is small, say 1, just a few sequences will be enough to
+'take over' the model. On the other DEMO, if the sum is
+large, say 1000, then of the DEMO of 1000 training
+sequences will be needed to make the model differ
+significantly from the prior beliefs.
+This type of regularization is convenient when DEMO
+biological sequences because we have prior knowledge
+from conventional alignment methods. For example, in
+both pairwise and multiple alignments, the penalty for
+starting DEMO deletion is usually larger than for a continuing
+deletion. This 'prior DEMO that match-to-delete tran-
+sitions are less probable than delete-to-delete transitions
+can easily be built into an HMM by setting
+The SAM system can also DEMO the more complicated
+Dirichlet mixture priors for regularization. These priors
+include several different distributions for some number of
+different types of columns, such as hydrophobic and
+hydrophilic positions. For more information on these
+distributions, refer to our previous work (Brown et al.,
+1993).
+By normalizing the regularizer as in equation (6), a valid
+model is obtained. Since this model represents prior
+beliefs, it is natural to use it as the initial model for the
+estimation process. Usually noise is added to DEMO initial
+model for reasons discussed next.
+Problems with local maxima. A serious problem with
+97
+Downloaded from bioinformatics.oxfordjournals.org at University of Waterloo on June DEMO, 2011
+R.Hughey and A.Krogh
+any hill-climbing optimization technique is that it often
+ends DEMO in a local maximum. The same is true for the
+forward-backward procedure used to estimate HMMs by
+maximizing the likelihood (or the a posteriori model
+probability). In fact, it will almost always end up in a local
+maximum.
+To deal with this problem, we start the algorithm
+several times from different initial models. The resulting
+models then represent different DEMO maxima, and we pick
+the one with the highest likelihood. The DEMO initial
+models are obtained by taking the normalized regularizer
+and adding noise to all the parameters. The noise is added
+to a model in DEMO following way. A number R of sequences
+are generated from the regularizer model, stepping from
+state to state and generating characters according to the
+regularizer's transition and match distributions. Given a
+noise level N,, DEMO of these R paths through the model is
+added to the counts with a weight of N//R, before MAP
+re-estimation. By default, R is set to 50 random sequences.
+One can also add noise DEMO the models during their
+estimation and decrease the noise level gradually in a
+technique similar to the general optimization method
+called simulated annealing (Kirkpatrick and Vecchi,
+1983). The initial level of the noise in DEMO annealing
+process is called JV0 as above. During the estimation
+process the annealing noise is decreased by a speed
+determined by r. We have DEMO two methods for
+decreasing the noise:
+Linearly: If r > DEMO, the noise is decreased linearly to zero in
+r iterations, so in iteration i
+N, = N0(l - i/r) for DEMO < r and Nt = 0 for i > r
+Exponentially: DEMO r < 1, the noise is decreased exponen-
+tially by multiplying DEMO noise with r in each iteration
+Nt = Nor'
+An alternative and very elegant way of simulated
+annealing is described in Eddy (1995).
+Multiple sequence alignment
+The probability (1) or the score (3) can (in principle) be
+calculated for all possible alignments to a model, and thus
+the most probable (i.e. the best) can be found. There exists
+a dynamic programming technique, called the Viterbi
+algorithm (DEMO, 1989), that can find the best align-
+ment and its DEMO without going through all the
+possible alignments. It is this best alignment to the model
+that is used to produce multiple alignments of a DEMO of
+sequences. For each of the sequences the alignment to the
+model is found. The columns of the multiple alignment are
+then determined by DEMO match states. All the amino acids
+98
+matched to a particular match state are placed under each
+other to form the columns of the DEMO For
+sequences that do not have a match to a certain match
+state, a gap character is added (Figure 2).
+Searching
+By DEMO the probabilities of all the different align-
+ments of a sequence to a model, one can calculate the total
+probability of the sequence given that model
+.. . xjmodel )
+... qL\mode\) (7)
+where the sum is over all possible alignments (paths)
+q\ • •. qi, and the probability in the sum is given by
+equation (DEMO). This probability can be calculated efficiently
+without having to consider explicitly all the possible
+alignments by the forward algorithm (Rabiner, 1989). DEMO
+negative logarithm of this probability is called the negative
+log-likelihood score
+NLL(X] .. . .vjmodel) — - log Prob(xi .. . xjmodel )
+(8)
+Any sequence can be compared to a model DEMO
+calculating this NLL score. For sequences of equal
+length the NLL scores measure how 'far' they are from
+the model, and can be used to select sequences that are
+from the same family. However, the NLL score has a
+strong dependence on sequence length and model length
+(see Figure 3). One means of overcoming this length bias is
+DEMO Z-scores, or the number of standard deviations each
+NLL is away DEMO the average NLL of sequences of the
+same length, but which DEMO not part of the family being
+modeled, or do not contain DEMO motif being modeled.
+When searching a database like SwissProt (Bairoch &
+Boeckmann, 1994) with an HMM, the smooth average
+and the Z-scores are calculated as follows. For a fixed
+sequence length we assume that DEMO NLL scores are
+distributed as a normal distribution with some outliers
+representing the sequences in the modeled family. The
+smooth average should be the DEMO of the normal
+distribution, and it is found by iteratively removing DEMO
+outliers:
+1. For k larger than or equal to the minimum sequence
+length, find the minimum length ek > k such that the
+length interval [k,ek] contains at least K sequences.
+We usually use DEMO = 1000. For all such intervals,
+calculate the average sequence length tk and the
+average NLL score.
+2. For any integer length / DEMO smoothed average NLL
+score is found by linear interpolation of the average
+Downloaded from bioinformatics.oxfordjournals.org at University of Waterloo on June 20, 2011
+Hidden Markov models for sequence analysis
+6000
+1£00
+ieoo -
+400W90
+2000
+DEMO 0
+1000
+Sequence Length
+1500
+2000
+Fig. 3. NLL scores versus sequence length for a search of Swiss-Prot using a model of the SH2 DEMO described in the text. The + show the SH2
+containing sequences (DEMO training set), and dots show the ~30000 remaining sequences. All sequences containing the letter 'X' are excluded.
+NLLs corresponding to the closest DEMO < I and tk+i.
+For / either smaller than the smallest tk or larger than
+the largest tk, linear extrapolation from the two closest
+points is used.
+3. For each interval the standard deviation of the DEMO
+scores from the averages is found. For any integer
+length the smoothed standard deviation is found by
+linear interpolation or extrapolation as above.
+4. DEMO sequences with an NLL score more than a certain
+number of standard deviations (usually 4) from the
+smooth average are considered outliers and DEMO
+in the next iteration.
+5. If the excluded sequences are identical to the ones
+excluded in the previous iteration, the process is
+stopped. Otherwise it is repeated unless the maximum
+number of iterations have been performed.
+DEMO procedure often produces excellent results on a
+large database like SwissProt, DEMO there is no guarantee
+that it works. It is easy to detect when it is not working,
+because the sequences in the family, such as the training
+sequences, have low Z-scores. In this case, DEMO training
+sequences and other obvious outliers can be removed by
+hand, DEMO the above process repeated. This method always
+yields good results.
+In some sequences there are unknown residues that are
+indicated by special characters. A DEMO unknown
+residue is represented by the letter X in proteins and by N
+in DNA and RNA. For proteins the letters B, meaning
+amino acid N or D, and Z (Q or E) are also taken into
+account. For DNA and RNA the letters R for purine DEMO
+Y pyrimidine are recognized. All other letters that are not
+part of the sequence alphabet or equal to one of these
+wildcard characters are DEMO to be unknown, i.e. changed
+to X or N depending on DEMO sequence type. The probability
+of a wildcard character in a state of the HMM is set equal
+to the maximum probability of all the DEMO it represents.
+It has the unfortunate side effect that sequences with many
+unknowns automatically receive a large probability, and
+these sequences have to be inspected separately. Another
+solution would be to set the probability equal to DEMO
+average probability of the letters the wildcard represents,
+but then the opposite problem might occur. This can also
+be chosen as an option DEMO SAM.
+Model surgery
+It is often the case that during the course of learning, some
+match states in the model are used by few sequences, while
+some insertion states are used by many sequences. Model
+surgery is a means of dynamically adjusting the model
+during training.
+The basic DEMO of surgery is to delete modules with
+unused match states and to insert modules in place of
+overused insert states. In the default case, any match state
+used by fewer than half the sequences is removed, forcing
+99
+Downloaded from bioinformatics.oxfordjournals.org at University of Waterloo on June 20, 2011
+R.Hughey and A.Krogh
+those sequences to use an insert state or to DEMO
+significantly their alignment to the model. Similarly, any
+insert state used DEMO more than half the sequences is
+replaced with a number of match states approximating the
+average number of characters inserted by that insert state.
+DEMO surgery the model is retrained to adjust to the new
+situation. This process can be continued until the model is
+stable.
+For finer tuning DEMO the surgery process, the user can
+adjust the fraction of sequences DEMO must use a match
+state, the fraction of sequences that are DEMO to use an
+insert state, and the scaling used when replacing DEMO insert
+state with one or more match states. While the default
+50% usage heuristic stabilizes after a few iterations of
+surgery, careless setting of these fine-tuning parameters
+can result in a model that oscillates, switching back and
+forth between match and insert states.
+Modeling domains and motifs
+Imagine DEMO the same domain appears in several
+sequences. In that case, to DEMO an HMM of that
+domain and use it for searching or aligning requires a
+few extensions. We augment the HMM by insertion states
+on DEMO ends that have no preference for which letters are
+inserted (i.e. DEMO have uniform character distributions).
+The cost of aligning a sequence to such a model does not
+strongly depend on the position of the DEMO in the
+sequence, and thus it will pick up the piece DEMO the sequence
+that best fits the model. A new parameter then has to be
+set, namely the probability of making an insertion in these
+flanking insertion modules. If this probability is low,
+deletions in the DEMO part of the model are encouraged and
+insertions discouraged, whereas a DEMO insertion prob-
+ability encourages the opposite behavior, because it
+becomes 'expensive' to use the flanking insertion states.
+The setting of this parameter is most important when
+estimating a model like this, because there is a danger of
+finding a model in which, for instance, only the DEMO
+states are used if it is too 'cheap' to make insertion in the
+flanking modules. These flanking modules are called free
+insertion modules (FIMs), because the self-transition
+probability in the insert state is set DEMO unity. Other values
+can, of course, be used.
+FIMs are implemented by only using the delete state
+and the insert state in a DEMO module. All the
+transitions from the previous module go into the delete
+state, which is ensured by setting the other probabilities to
+zero. From the delete state there is a transition to the insert
+state with DEMO probability set to one. In the insert state all
+characters have the same probability and the probability
+of insert-to-insert is set to one. From DEMO delete and insert
+states there are transitions to the next module which have
+100
+Fig. 4. A model with a FIM in both ends DEMO one at module 4. The width
+of a line is proportional to the probability of the transition. This example
+uses the RNA alphabet, and the probabilities in the modules other than
+the FIMs are set according DEMO our standard regularizer, which strongly
+favors the transitions from match state DEMO match state and has a low
+probability of starting insertions or deletions.
+the same probabilities (delete-to-match and insert-to-
+match have the same probability, DEMO so on). Note that
+the probabilities do not sum up to one properly in such a
+module. A model with three FIMs is DEMO in Figure 4.
+These special modules can be used to learn, DEMO or
+discriminate domains that occur once per sequence.
+Typically, FIMs are DEMO at the beginning and the end
+of a model to allow an arbitrary number of insertions at
+either end. To train a model to DEMO several (different)
+domains, one can also add FIMs at different positions in
+the model. Note, however, that only domains always
+occurring DEMO the same order and the same number of times
+can be modelled this way. To model domains that come in
+different order or in DEMO variable number, a model with
+backward transitions is required, which is something that
+we might add to SAM at a later stage.
+There DEMO two different ways to model subsequences.
+The first method is to cut out the subsequences from their
+host molecules, build a model from these, and then add a
+FIM in both ends afterwards. The second method is to use
+the full sequence and train with the FIMs. The DEMO
+method is generally easier, but also slower in terms of
+CPU DEMO, especially if the sequences are much longer
+than the subsequences. In DEMO et al. (1994a) the first
+method was used to model the protein kinase catalytic
+domain and the EF hand domain, and in this paper the
+second method will be demonstrated on the SH2 domain.
+In DEMO and Reilly (1990) and Lawrence et al.
+(1993), two DEMO methods of automatically finding
+common patterns in a set of sequences are described.
+Those papers deal only with gap-less alignments, i.e.
+patterns without insertions or deletions. The method
+described here can be viewed as an extension DEMO alignments
+with gaps.
+Additional features
+Several additional features also aid the learning perfor-
+mance of the SAM system. First, SAM performs the first
+training pass (before any surgery occurs) on multiple
+models. The best of DEMO models is selected for the
+remaining surgery and training iterations. Second, DEMO
+Downloaded from bioinformatics.oxfordjournals.org at University of Waterloo on June 20, 2011
+Hidden Markov models for sequence analysis
+Table I. HMM training on various DEMO
+System
+Sun 3/110
+Sun 4/50
+DECstation 5000/240
+SGI 440VGX, 1 CPU
+DEC Alpha 3000/500
+C-Linda, 7 DECstation 5000s (240 and 125)
+Cray Y-MP, 1 CPU, vectorized
+8K MP-1, optimized
+4K MP-2, optimized
+Rel. Porting
+Difficulty
+0
+0
+0
+0
+0
+4
+g
+60
+60
+Performance
+(kCUPS)
+3.2
+37.1
+39.2
+59.0
+107
+147
+167
+1530
+1580
+Performance
+(Sun 4/50s)
+0.1
+1.0
+1.1
+1.6
+2.9
+4.0
+4.5
+41
+43
+also supports Viterbi training, in which the model is
+trained according to the best path of each sequence
+through DEMO model, rather than by the probability
+distributions over all possible paths. DEMO this is
+slightly faster, the results are generally not as good. DEMO,
+when models are derived from an alignment or an existing
+profile, training of a module's match table or transitions
+can be turned off and it can be insulated from the surgery
+procedure. This last DEMO was not used for the results of
+this paper, apart from DEMO related protection of FIMs from
+surgery.
+Implementation and performance
+The inner loop of the algorithm is an O(n2) dynamic
+programming algorithm that calculates the forward and
+backward values for each of the three states at DEMO given
+pair of model and sequence indices. The serial implemen-
+tation of this algorithm is straightforward. For Cray
+vectorization, the two inner loops were modified to
+calculate counter-diagonals in order (i.e. (0,1), (1,0),
+(0,2), (1,1), (2,0),... ) to make effective use of the vector
+pipelines.
+The MasPar DEMO processor features a two-dimen-
+sional mesh of processing elements (PEs) and a global
+router (Nickolls, 1990). For large numbers of sequences,DEMO
+the best algorithm mapping can be to perform a complete
+model-sequence dynamic programming in each PE;
+unfortunately, the 64 kbytes of local memory per PE is
+too small for such coarse-grain parallelism. Instead, the
+array is treated as collection of linear arrays of PEs, where
+each linear array contains one model. Thus, if the models
+are of length 100, 40 sequence-against-model calculations
+are performed at a time using 4000 of the 4096 processing
+elements.
+The linear arrays are used as follows. During the
+DEMO part of the dynamic programming, the (i, j) value
+is computed during step i +j in the rth PE of one of DEMO
+linear arrays. This calculation depends on values from
+(i— 1,7), {i,j- 1) and (i - \,j - 1), all of which have
+already been calculated in either PE, or PE,_!. The
+characters of the sequence are also shifted through the
+linear DEMO, one PE at a time, to ensure that character j is
+in PE, at time step / +j. During the backward calculation,
+this process is reversed, calculating each diagonal at time
+n2 — i -j. After all sequences have been compared to the
+model, the frequencies are combined using log-time
+reduction, and uploaded to the host computer for high-
+level processing such as surgery and noise injection.
+Performance can be DEMO in terms of dynamic
+programming cell updates per second (CUPS). DEMO
+both the forward and backward calculations at a single
+dynamic programming cell (one character from one
+sequence against one model node) is a DEMO update.
+The total number of cell updates, which depends greatly
+on DEMO settings, is the sum of model lengths over all
+re-estimation cycles DEMO by the total number of
+characters in all the sequences. For the experiments
+described in the next section, a typical training run on 50
+globins of average length 146 and a model length of 145
+with DEMO re-estimation cycles, required 50 s on our 4096 PE
+MasPar MP-2 DEMO ~7mi n on a DEC Alpha 3000/400
+(longer runs heighten DEMO difference between the two
+machines to factors of 10-15). Experiments based on 400
+training sequences and an earlier version of the code are
+DEMO in Table I.
+Results and discussion
+While several reports have shown the general effectiveness
+of HMMs (Brown et al., 1993; Baldi et al., 1994; Krogh et
+al., 1994a; Eddy, 1995; Eddy et DEMO, 1995), this section
+takes a close look at the effectiveness DEMO each extension to
+the basic method.
+We choose the globin family for the first of these
+illustrative experiments because of our previous familiarity
+with DEMO family. From a set of 624 globins, close homologs
+were removed DEMO a maximum entropy weighting
+scheme (Krogh & Mitchison, 1995) by DEMO all
+sequences with a very small weight (< 10~5), which DEMO
+101
+Downloaded from bioinformatics.oxfordjournals.org at University of Waterloo on June 20, DEMO
+R.Hughey and A.Krogh
+(a)
+(b)
+(c)
+Fig. 5. Test NLL scores (average over 117 test sequences) from running SAM DEMO times on 50 other globin sequences with (a) default noise, (b) random
+starting model lengths and (c) all heuristics including surgery. The solid vertical line at 334 is the average test sequence score DEMO any random
+heuristics (in this case, surgery has no effect on the non-random training routine).
+us with 167 globins. For the experiments, our group of 167
+sequences was randomly divided into a training set DEMO 50
+sequences and a test set of 117 sequences, except in DEMO
+experiments on training set size.
+The statistical goodness of an HMM is tied to the final
+probability result of the test set. SAM reports DEMO as a
+negative-log-likelihood (-In/*), or NLL, score. This
+section considers the effects of each of the more
+important extensions on NLL DEMO Ideally, we would
+like small NLL scores that, with multiple runs using
+different random seeds, are sharply peaked. Such a peaked
+distribution implies that far fewer than the thousands of
+runs performed in these experiments DEMO required to
+generate a good model.
+Noise
+To find default noise settings, we ran 50 random seeds for
+all combinations of nine annealing schedules and seven
+noise values. Average performance over the runs was
+typically 5% DEMO than without noise, while the best
+NLL score over the 50 DEMO was 12% better than without
+noise. Given that the typical mode of running SAM is to
+generate many models and pick the best, this 12% value is
+quite an improvement. Our chosen default is five
+sequences DEMO of noise using an exponential annealing
+schedule with factor 0.8. This is a somewhat arbitrary
+choice based on the range of scores obtained—no clear
+DEMO among the settings emerged. The tested setpoints
+added between 20% and 350% more re-estimation cycles
+over the noiseless case. If less time is available, we suggest
+a linear schedule with one noise sequence. In general, as
+many models should be created as possible, and then the
+best one further refined. This procedure is automated in
+SAM.
+The histograms in Figure DEMO show average test set NLL
+scores for 1000 training runs on 50 training globins with
+just default noise, random model lengths without noise
+and all heuristics (noise, random model lengths and
+surgery). The vertical DEMO at 334 indicates the NLL score
+for training without noise. Note in particular how the
+combination of noise and surgery both improves the test
+DEMO scores and sharpens their distribution, indicating that
+far fewer than 1000 DEMO are needed to generate good
+models.
+Regular izalion
+The effect of regularization is even more dramatic than
+the effects of noise and surgery. SAM DEMO both
+Dirichlet and Dirichlet mixture regularization. To gauge
+the effects of regularization, we compared no regulariza-
+tion to four other choices: the default DEMO regularizer,
+the original nine-component mixture (Brown el al.,
+1993), and more recent nine- and 21-component regular-
+izers (Karplus, 1995). Histograms of the test set NLL
+scores for these experiments, which used the noise
+settings determined in the previous experiments, are
+shown in Figure 6. Clearly, regularization is needed.
+With 50 training sequences, however, the distinction
+between the different regularizers is not high, as expected,
+since the model is built from a reasonably sized training
+set. Although the DEMO nine-component mixture
+appears to be the best, this mixture was in DEMO based
+on a globin alignment, and thus is at an advantage DEMO this
+experiment.
+Where regularization truly shines is with small training
+sets. Figure 7 shows the performance of the regularization
+methods for small training sets. DEMO this case, each test point
+represents the average test set NLL DEMO over 20 training
+runs, each based on a different random training DEMO of the
+indicated size.
+The Dirichlet mixture priors require additional running
+time, but have somewhat improved performance over the
+single-component prior. All four of these regularizers are
+available with the SAM distribution.
+102
+Downloaded from bioinformatics.oxfordjournals.org DEMO University of Waterloo on June 20, 2011
+Mr r I I 8 0
+Hidden Markov models for sequence analysis
+(d)
+(e)
+Fig. 6. NLL scores on the test set from running SAM 200 times on 50 globin sequences with no regularization (a), and single-component (b), original
+nine-component (c), revised DEMO (d), and 21-component (e) regularizers. The solid vertical line DEMO 334 is the score with no random heuristics
+and the default regularizer.
+Case-study: modeling the SH2 domain with FIMs
+In this section we demonstrate the use of FIMs for
+modeling domains. We stress that this is DEMO for
+illustrative purposes, so we will not go deeply into any
+DEMO implications of the model or alignment. We use
+the SH2 domain, DEMO is found in a variety of proteins
+involved in signal transduction, DEMO it mediates
+protein-protein interactions. For a review see Kuriyan
+and Cowburn (DEMO). The domain has a length of ~100.
+Initially a file was created with 78 SH2-containing
+proteins by searching SwissProt (release 30) for DEMO
+keyword 'SH2 domain' (see Table II). Fifty models of
+DEMO 100 were trained in batches of 10 with FIMs at both
+ends and without surgery. For each batch the model with
+the best overall DEMO was examined. Of these five models,
+the best-scoring one happened to cover the SH2 domain
+almost entirely. It started ~20 amino acids prior DEMO the
+domain and ended ~20 amino acids early as compared to
+the alignment in Kuriyan and Cowburn (1993). Some of
+the other models also covered part of the domain, whereas
+others had picked up a different signal. This signal was
+10 20 3 0 4 0 SO DEMO 70
+Nufrtar of tsMng MquwcM
+Fig. 7. The effect of training set size and regularization on model building. Especially for small training sets, regularization greatly improved modeling
+with respect to the larger test set. The differences DEMO test set scores between the available regularizers are shown in the blowup to the right.
+103
+Downloaded from bioinformatics.oxfordjournals.org at University of Waterloo on DEMO 20, 2011
+R.Hughey and A.Krogh
+Table II. All the sequences with a Z-score >7 using the first model
+ID
+Length
+Z 1
+Z 2
+ID
+Length
+DEMO 1
+Z 2
+KSRC.AVISS
+KSRC_AVIS2
+KSRC_AVIST
+KSRC_CHICK
+KYES_XENLA
+KSRC AVISR
+KSRC_RSVSR
+KSRC_RSVPA
+KSRC_HUMAN
+KSRN_MOUSE
+KYES_CHICK
+KHCK_MOUSE
+KFGR_MOUSE
+KFYNHUMAN
+KFYN_CHICK
+KYES_AVISY
+KHCK_HUMAN
+KFYN XENLA
+KYES_MOUSE
+DEMO
+KSR1_XENLA
+KSR2_XENLA
+KYRK_CHICK
+KSRC_RSVH1
+KFYN XIPHE
+KSRC_RSVP
+KLCK_HUMAN
+KLCK_MOUSE
+KLYN_HUMAN
+KFGR HUMAN
+KLYN MOUSE
+KLYN_RAT
+KYES_XIPHE
+KFGR FSVGR**'
+KBLK MOUSE
+KSTK_HYDAT
+KABL_MOUSE
+KABL_HUMAN
+DEMO
+KABL FSVHY"*
+KSR1_DROME
+PIP4_HUMAN
+PIP4_RAT
+PIP4_BOVIN
+568
+587
+557
+533
+537
+526
+526
+523
+536
+541
+541
+503
+517
+536
+533
+528
+505
+DEMO
+541
+543
+531
+531
+535
+526
+536
+526
+508
+508
+511
+529
+511
+511
+544
+545
+499
+509
+1123
+1130
+1520
+439
+552
+1290
+DEMO
+1291
+67.569
+66.610
+66.187
+63.475
+63.177
+63.007
+63.006
+62.815
+62.782
+62.609
+62.162
+62.012
+61.846
+61.811
+61.799
+61.798
+61.731
+60.899
+60.894
+60.808
+60.516
+60.320
+59.673
+DEMO
+59.610
+59.370
+58.265
+58.265
+58.265
+58.024
+57.843
+57.843
+57.477
+55.885
+55.812
+47.469
+47.440
+47.408
+46.822
+43.836
+43.509
+42.121
+41.892
+41.533
+57.941
+59.765
+56.073
+56.653
+DEMO
+57.519
+57 519
+58.016
+56.550
+56.243
+55.339
+51.266
+53.802
+52.437
+51.222
+55.872
+50.077
+51.891
+55.201
+54.594
+54.921
+54.793
+50.890
+54.652
+50.490
+53.892
+49.467
+49.287
+DEMO
+50.468
+49.468
+48.955
+50.010
+51.428
+45.981
+43.094
+46.331
+46.458
+41.191
+40.175
+38.564
+39.355
+39.526
+39.341
+PIP5_RAT
+PTNB_MOUSE
+PIP5_HUMAN
+KATK HUMAN
+PTNB_HUMAN
+GTPA HUMAN
+GTPA_BOVIN
+DEMO
+P85A_MOUSE
+P84A_BOVIN
+P85A_HUMAN
+KABL_MLVAB***
+KCSK-RAT
+CSW_DROME
+PTN6_MOUSE
+PTN6_HUMAN
+KLYK_HUMAN
+P85B_BOVIN
+KSR2 DROME
+SEM5_CAEEL
+SHC_HUMAN
+KABL_CAEEL" "
+KFES_FSVST*"
+KFES_HUMAN
+NCK_HUMAN
+GRB2_HUMAN
+KFES_FELCA
+VAV_MOUSE
+DEMO HUMAN
+KFES_FSVGA* "
+GAGC_AVISC
+VAV_HUMAN
+KFES_MOUSE***
+KSYK_PIG
+KAKT MLVAT
+KFPS_AVISP"»
+DEMO
+KRAC_MOUSE
+KTEC_MOUSE
+KRAC_HUMAN
+KRCB_HUMAN
+KFPS_DROME***
+SPT6_YEAST
+YKF1_CAEEL***
+1265
+585
+1252
+659
+593
+1047
+1044
+659
+724
+724
+724
+746
+450
+841
+595
+595
+620
+DEMO
+590
+228
+473
+557
+477
+822
+377
+217
+820
+845
+822
+609
+440
+846
+820
+628
+501
+533
+873
+480
+527
+480
+520
+803
+DEMO
+424
+41.204
+38.255
+38.087
+37.859
+37.700
+37.255
+36.794
+36.593
+35.106
+35.104
+35.042
+34.189
+34.115
+33.930
+33.681
+32.909
+32.546
+31.012
+30.245
+29.742
+28.570
+28.330
+28.243
+DEMO
+28.194
+27.546
+27.264
+25.937
+25.905
+25.838
+25.058
+24.997
+23.101
+22.652
+21.399
+21.396
+21063
+20.673
+20.547
+20.509
+16.613
+12.358
+9.461
+7.138
+41.236
+36.095
+38.653
+31.787
+DEMO
+35.081
+34.776
+31.475
+35.299
+35.299
+35.389
+44.282
+30.778
+36.004
+31.583
+30.885
+29.987
+34.030
+30.025
+25.657
+24.458
+32.172
+35.183
+40.554
+26.543
+24.833
+40.511
+29.161
+35.117
+DEMO
+24.473
+28.856
+38.987
+28.247
+18.600
+33.346
+36.728
+17.461
+26.322
+17.461
+16.221
+25.804
+13.805
+19.053
+The score is shown in the columns labelled 'Z 1'. All except the ones marked by '••• ' were part of the training set initially extracted from Swiss-Prot. All
+the ones marked by '***' were included in the training set. The column labeled 'Z DEMO shows the Z-scores for the new model. The first training set also
+contained the fragment KLCK_RAT of length 17. It had a Z-score of DEMO with the first model, and was then removed from the training DEMO
+probably the kinease catalytic domain of some of the
+proteins in the file. It is quite remarkable that the model
+can find the domain DEMO unsupervised, and that
+might not always be the case.
+Using this DEMO model, a search was made of the entire
+SwissProt database and DEMO sequences scoring better than a
+Z-score of 7 were examined (not DEMO sequences with
+many 'X' characters into account)—see Table II. All the
+sequences in the training set were among those high-
+scoring ones, except a fragment of length 17 which was
+then deleted from the DEMO set. Of these high-scoring
+sequences, 10 had Z-scores of 12 or DEMO, and by checking
+the alignment, we consider it to be certain that they
+contain SH2. The last sequence with a score of 7.1 DEMO also
+believe contains SH2. All these high-scoring sequences
+were now included in the data set. The old and new
+sequences in the training set DEMO listed in Table II, and all
+sequences with Z-scores >4 are shown in Table III.
+The model was then modified by deleting the DEMO 20
+modules and inserting 30 'blank' modules in the end, DEMO it
+104
+Downloaded from bioinformatics.oxfordjournals.org at University of Waterloo on June 20, 2011
+Hidden Markov models for sequence analysis
+Table III. All the sequences that DEMO a Z-score of >4, but not shown in Table II
+ID
+Length
+Z 1
+ID
+Length
+MYCN CHICK
+HLYA_SERMA
+PSBO_CHLRE
+MYSN_DROME
+MYCN SERCA
+DEMO
+DRRA STRPE
+COAT_RCNMV
+GLNA_AZOBR
+FIXL_BRAJA
+MIXIC_SHIFL
+ENL_HUMAN
+K2C1_XENLA
+RF3_SACUV
+TF3A_XENLA
+POL_SIVGB
+TBP1_YEAST
+ORA_PLAFN
+PIP1_DROME
+ATPF_BACSU
+TPM4_RAT
+ODO2_YEAST
+VSI1_REOVL
+ADX_HUMAN
+H2B EMENI
+HLY4_ECOLI
+UBC6_YEAST
+BNC3_RAT
+DEMO SPIOL
+RF3 YEAST
+MERA BACSR
+441
+1608
+291
+2017
+426
+707
+330
+339
+468
+505
+182
+559
+425
+476
+344
+1009
+434
+701
+1312
+DEMO
+248
+475
+470
+184
+139
+478
+250
+318
+332
+559
+631
+6.067
+5.507
+5.426
+5.187
+5.111
+4.994
+4.958
+4.937
+4.831
+4.654
+4.593
+4.592
+4.503
+DEMO
+4.467
+4.422
+4.421
+4.407
+4.347
+4.322
+4.294
+4.291
+4.285
+4.276
+4.241
+4.199
+4 164
+4.134
+4.094
+4.094
+4.078
+KFLK_RAT
+PI PI DROME
+MYSD_MOUSE
+GSPF_ERWCA
+DEMO
+NFL-COTJA
+MPP1_NEUCR
+CHLB CHLHU
+VG24_HSVI1
+UFO_MOUSE
+TPM SCHPO
+POL_MMTVB
+RM02 YEAST
+UFO_HUMAN
+RS15_PODAN
+RL9_ARATH
+SY61_DISOM
+ADX_HUMAN
+SYT1_RAT
+SYT1_HUMAN
+TTL_PIG
+DNIV_ECOLI
+TTL_BOVIN
+RL15_SCHPO
+323
+1312
+DEMO
+408
+330
+555
+577
+431
+333
+888
+161
+899
+371
+887
+152
+197
+426
+184
+421
+422
+379
+184
+377
+29
+The column labeled 'Z 1' contains the scores from the search with the first model and the one labeled 'Z 2' the scores with the second DEMO
+Z 2
+8.445
+5.432
+5.245
+5.227
+4.775
+4.750
+4.718
+4.603
+4.587
+4.521
+4.477
+4.413
+4.378
+4.364
+4.349
+4.336
+4.246
+4.215
+4.171
+4.149
+4.138
+4.084
+DEMO
+4.056
+could better fit the domain. Starting from this modified
+model, DEMO new models were trained on the new set of 88
+protein sequences, and the best one selected. This was the
+final model for the SH2 domain (see Figure 8). Using this
+model, a new DEMO was performed. The new model
+picked up all of the 88 sequences in the training set, and
+the smallest score was significantly higher than that of the
+first model (13.8 compared to 7.1)—see Table II. It also
+found a new one (KFLK_RAT) with a Z-score of DEMO that
+is a fragment and in SwissProt is described as containing
+part of the SH2 domain. All other sequences in SwissProt
+had Z-scores <5.5, and in the highest scoring ones (Table
+III) we did not see any signs of the SH2 domain.
+The SH2 domain often occurs DEMO times in the same
+protein, which is not modeled properly by DEMO a model
+(see above: Modeling domains and motifs). When train-
+ing, all domains in a given protein contribute to the model
+(DEMO all paths are taken into account), but when
+aligning, only DEMO occurrence matching the model best will
+be found. There are ways to find all occurrences by finding
+suboptimal paths or masking domains already found, the
+latter of which is currently being added to SAM.
+Conclusion
+In DEMO the HMM method is a simple and elegant way
+of modeling sequence families. For practical purposes,
+however, various problems arise, of which DEMO most
+important ones are discussed in this paper. A variety of
+heuristics and extensions to overcome the problems that
+are all part of the DEMO software package were presented.
+Most of these techniques were mentioned in our original
+paper (Krogh et al., 1994a), but here we have DEMO
+them in more detail, and treated them from a more
+practical DEMO, whereas we have not focused on the
+biological results at all.
+DEMO algorithm for estimating HMMs is a simple hill-
+climbing optimization technique which will very often find
+suboptimal solutions resulting in inferior models. Three
+methods DEMO introduced to deal with the problem. First,
+several different models can be trained and the best one
+selected, based on the overall NLL score. Second, noise of
+slowly decreasing size can be added during the estimation
+process in a fashion similar to simulated annealing. Third,
+the DEMO method for adding and deleting states from the
+105
+Downloaded from bioinformatics.oxfordjournals.org at University of Waterloo on June 20, 2011
+R.Hughey and A.Krogh
+© © ©
+•©©©©©©©©©©©© ©
+© Q
+© © DEMO © © ©...•©•-© ©©©©©©©©© ©
+•••© © © © €.
+o o <•>,<•>•.
+©©©©©
+© ©••••© ®
+©©©©©©©©©©©©©©©© 0
+©©©©©
+© ©—©•-©-©••-©• • •©•••©•-©••©"- © ©••• ©
+<•> <S
+© ® © •
+> . $ <•> <•>
+Fig. 8. The second (and final) model of the SH2 domain. The initial section, at a larger magnification is shown below the complete model. The unshaded
+DEMO correspond to secondary structure elements as given in Kuriyan and Cowburn (DEMO). These elements are 0A, aA,0B, f)C, (3D, (3E, f3F, aB and
+/3G. The figure (except the DEMO) was produced with the program drawmodel in SAM. It is almost DEMO to see the actual amino acid distributions
+at this scale, but DEMO most important things to notice are that the distributions are quite peaked and that the delete states are used rarely in the conserved
+secondary DEMO elements, both of which are indications of a good model.
+model DEMO shown also to help to obtain models with better
+NLL scores.
+The general theory for HMMs does not tell one how to
+choose the DEMO of the model. In our work we have
+chosen a model structure that we believe fits the biological
+sequences particularly well, and most of the probability
+parameters can be interpreted as penalties familiar from
+other alignment DEMO, such as gap penalties. For
+choosing the length of the model, the above-mentioned
+surgery heuristics was introduced, which deletes parts of
+the model not used very much and inserts more states
+where the existing states DEMO 'overloaded'.
+In any parameter estimation process overfitting is a
+danger, in particular when there are many parameters
+and little data. This can DEMO overcome using Dirichlet
+and Dirichlet mixture prior distributions to regularize
+the models. They are particularly useful because they
+incorporate prior biological information and insight DEMO
+the model but can be overcome by sufficient numbers of
+sequences.
+For the problem of modeling domains and other
+subsequences we introduced FIMs. These DEMO treat
+the part of the sequences outside the domain as completely
+random sequences, and by an example it was shown that
+an HMM can locate domains automatically. By using
+several FIMs one can model proteins with DEMO
+subdomains (always appearing in the same order). By
+using long DEMO transition, one can in principle
+model domains occurring several times in DEMO orders,
+but it is not currently implemented in the software
+package.
+SAM is an evolving system. Future additions will
+include repeated motif location, alternative scoring
+methods using null models, subsequence-to-submodel
+106
+Downloaded from bioinformatics.oxfordjournals.org at University of Waterloo on June 20, 2011
+Hidden Markov models for sequence analysis
+training, sequence weighting, an improved DEMO interface,
+and use of our new algorithm for parallel sequence
+alignment in limited space to greatly extend the capabil-
+ities of the MasPar DEMO (Grice et ai, 1995).
+Acknowledgements
+We would like to thank Saira Mian for many valuable
+suggestions, and David Haussler and the rest of the
+computational biology group at the Baskin Center for
+Computer Engineering DEMO Information Sciences at
+UCSC for many suggestions and contributions. We also
+thank the anonymous referees for their excellent sugges-
+tions. This research was supported DEMO part by NSF grants
+CDA-9115268 and BIR-9408579, a grant from CON-
+DEMO, Denmark, and a grant from the Novo-Nordisk
+Foundation. SAM source code, the experimental server
+and SAM documentation can be accessed on the World-
+Wide Web at http://www.cse.ucsc.edu/research/compbio/
+sam.html or by DEMO e-mail to sam-info@cse.ucsc.edu.
+References
+Bairoch.A. and Boeckmann,B. (1994) The SWISS-PROT protein
+sequence data bank: current status. Nucleic Acids Res., 22, 3578—3580.
+Baldi.P., Chauvin.Y., Hunkapillar.T. and McClure,M. (1994) Hidden
+Markov models DEMO biological primary sequence information. Proc.
+Natl Acad. Set. USA, 91, 1059-1063
+Berger,J. (1985) Statistical Decision Theory and Bayesian Analysis.
+Springer-Verlag, New York.
+Brown.M.P., Hughey.R., Krogh.A., Mian,I.S., Sjolander.K. and
+Haussler.D. (1993) Using Dirichlet mixture priors to derive hidden
+Markov models for protein families. In Hunter,L., Searls,D. and
+Shavlik.J. (eds), Proc. First DEMO Conference on Intelligent Systems for
+Molecular Biology. AAAI/MIT Press, Menlo DEMO, CA, pp. 47-55.
+Bucher.P. and Bairoch,A. (1994) A generalized profile syntax for
+biomolecular sequence motifs and its function in automatic sequence
+DEMO In Proc. Int. Conference on Intelligent Systems for
+Molecular Biology. AAAI/MIT Press, Stanford, CA, pp. 53-61.
+Eddy,S. (1995) Multiple alignment using hidden Markov models. In
+Proc. Int. Conference on Intelligent Systems for DEMO Biology.
+AAAI/MIT Press, Cambridge, pp. 114-120.
+Eddy.S., Mitchison,G. DEMO Durbin,R. (1995) Maximum discrimination
+hidden Markov models for sequence consensus. J. Comput. Bioi, 2,9-23
+Gribskov,M., McLachlan.A.D. and Eisenberg,D. (1987) Profile analysis:
+detection of distantly related proteins. Proc. Natl Acad. Sci. USA, 84,
+4355-4358.
+Grice.J.A., Hughey,R. and Speck.D. (1995) Parallel sequence alignment
+in limited space. In Proc. Third Int. Conference on Intelligent Systems
+for Molecular Biology. AAAI/MIT Press, Menlo Park, CA.
+DEMO, Krogh.A., Mian.I.S. and Sjolander.K. (1993) Protein
+modeling using hidden Markov models: Analysis of globins. In Proc.
+Hawaii International Conference on Systems Science. IEEE Computer
+Society Press, Los Alamitos, CA, Vol. 1, pp. DEMO
+Karplus,K. (1995) Regularizers for estimating distributions of amino
+acids from small samples. In Proc. Third Int. Conference on Intelligent
+Systems for Molecular DEMO AAAI/MIT Press, Menlo Park, CA.
+Full version available as UCSC Technical Report UCSC-CRL-95-11
+Kirkpatrick.S., Jr and Vecchi,M. (1983) Optimization by simulated
+annealing. Science, 220.
+Krogh,A. and Mitchison,G. (1995) Maximum entropy weighting of
+aligned sequences of proteins or DNA. In Proc. of DEMO Int.
+Conference on Intelligent Systems for Molecular Biology. AAAI/MIT
+Press, DEMO Park, CA.
+Krogh.A., Brown,M., Mian.I.S., Sjolander,K. and Haussler.D. (1994a)
+Hidden Markov models in computational biology: applications to
+protein DEMO J. Mol. Biol., 235, 1501-1531.
+Krogh.A., Mian,I.S. and Haussler.D. (1994b) A hidden Markov model
+that finds genes in E. coli DNA. Nucleic Acids Res., 22, 4768-4778.
+Kuriyan.J. and Cowburn.D. (1993) Structures DEMO SH2 and SH3 domains.
+Curr. Opin. Struct. Biol., 3, 828-837.
+Lawrence.C. and Reilly.A. (1990) An expectation maximization (EM)
+algorithm for the identification and characterization of common sites
+in unaligned biopolymer sequences. Proteins, 7, 41-51 .
+Lawrence.C., Altschul.S., Boguski.M., Liu.J., Neuwald.A. and Woot-
+ton.J. (1993) Detectable subtle sequence signals: a Gibbs sampling
+strategy for multiple alignment. Science, 262, 208-214.
+Nickolls,J.R. (1990) The design of DEMO Maspar MP-1: a cost effective
+massively parallel computer. In Proc. COMPCON DEMO 1990. IEEE
+Computer Society, Los Alamitos, CA, pp. 25-28.
+Rabiner,DEMO (1989) A tutorial on hidden Markov models and selected
+applications in speech recognition. Proc. IEEE, 77, 257-286.
+Santner,T.J. and Duffy,D.E. (1989) The Statistical Analysis of Discrete
+Data. Springer-Verlag, New York.
+Received DEMO July 24, 1995; accepted on October 23, 1995
+107
+Downloaded DEMO bioinformatics.oxfordjournals.org at University of Waterloo on June 20, 2011{1g42fwefx}

@@ -1,0 +1,1420 @@
+A Comparison of U.S. and European
+University-Industry Relations in
+the Life Sciences
+DEMO •MassimoRiccaboni •FabioPammolli •WalterW.Powell
+509 CERAS Building, Stanford University, Stanford, California DEMO
+University of Siena, EPRIS, Via Banchi di Sotto 55, Siena DEMO, Italy
+University of Florence, DSA, Faculty of Economics, Via Montebello 7, Florence 50123, Italy
+509 CERAS Building, Stanford University, Stanford, California 94305-3084
+jdos@stanford.edu • mriccaboni@unisi.it • pammolli@cln.it • woodyp@stanford.edu
+e draw on DEMO data sets to compare the institutional organization of upstream life
+W science research across the United States and Europe. Understanding cross-national
+differences in the DEMO of innovative labor in the life sciences requires attention to
+the structure and evolution of biomedical networks involving public research organizations
+(universities, government DEMO, nonproﬁt research institutes, and research hospitals),
+science-based biotechnology ﬁrms, and multinational pharmaceutical corporations. We use
+network visualization methods and correspondence analyses DEMO demonstrate that innova-
+tive research in biomedicine has its origins in regional clusters in the United States and in
+European nations. But the scientiﬁc DEMO organizational composition of these regions varies
+in consequential ways. In the United States, public research organizations and small ﬁrms
+conduct R&D across multiple therapeutic areas and stages of the development process. Ties
+within and across DEMO regions link small ﬁrms and diverse public institutions, contributing
+to the DEMO of a robust national network. In contrast, the European story is DEMO of
+regional specialization with a less diverse group of public research organizations working
+in a smaller number of therapeutic areas. European institutes develop local DEMO to
+small ﬁrms working on similar scientiﬁc problems, while cross-national linkages DEMO Euro-
+pean regional clusters typically involve large pharmaceutical corporations. We show that the
+roles of large and small ﬁrms differ in the United States DEMO Europe, arguing that the greater
+heterogeneity of the U.S. system is DEMO on much closer integration of basic science and
+clinical development.
+( University-Industry Relations; National Innovation Systems; R&D Networks; Spatial Clustering;
+Network Visualization)
+1. Introduction
+Universities in the United States and Europe are DEMO
+compared with respect to their divergent levels of
+involvement in the private economy. The U.S. uni-
+versity system, with its mix of both public and pri-
+vate institutions, has long played a signiﬁcant role
+Management Science © 2002 INFORMS
+Vol. 48, No. 1, January 2002 pp. 24–43
+DEMO conducting research that contributes to technolog-
+ical development and industrial performance (DEMO
+1988, Rosenberg and Nelson 1994). Historically, this
+“knowledge plus” orientation, in which high-quality
+public and academic research tends to be driven
+by “joint goals of understanding and use” (Stokes
+0025-1909/02/4801/0024$5.00
+1526-5501 electronic ISSN
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+1997, p. 15) was contrasted to the European DEMO,
+where universities were believed to contribute more
+to knowledge for its own sake and to the preservation
+of distinctive national cultures (Ben-David 1977).
+Over the past decade, the development of a number
+of key science and technology-based industries—most
+notably information and communication technolo-
+gies, and biotechnology—has helped spark economic
+growth. The United States has broad commercial lead-
+ership DEMO a number of these new areas, and com-
+mentators suggest that DEMO universities and research
+institutes played a signiﬁcant role in this process
+(DEMO and Nelson 1999, Mowery et al. 2001).
+The diverse interfaces DEMO U.S. research univer-
+sities and the private sector have been widely doc-
+umented (Link 1999, Mowery 1999). Patenting by
+U.S. universities increased DEMO sevenfold over the
+period 1976–1998 (Owen-Smith 2000) and licensing
+revenues from the sale of intellectual property have
+grown briskly as well. The science-based DEMO ﬁrm
+has been the cornerstone of the commercial ﬁeld of
+biotechnology, DEMO university researchers playing a
+signiﬁcant role as founders, consultants, and members
+of scientiﬁc advisory boards.
+In contrast, industry-university relations in Europe
+have lagged behind, in part because of legal prohi-
+bitions in some countries against faculty collabora-
+tion with commercial entities and cultural predisposi-
+tions against academic DEMO with commerce.
+Since the late 1980s, however, European attention has
+shifted to technology policy and academic technology
+transfer (Howells and McKinlay 1999). In a climate
+of strong anxiety about European Union competitive-
+ness in DEMO industries, programs developed
+following the Single European Act of 19871 encourage
+DEMO between universities and ﬁrms, placing par-
+ticular emphasis on quick delivery DEMO tangible com-
+mercial results (Peterson and Sharp 1998).
+Strong contrasts DEMO between European and U.S.
+research infrastructures, however. Consider, as an
+illustration, differences in university organization and
+1 The Single European Act provided, DEMO the ﬁrst time, a legal basis
+for European R&D programs (framework programs) developed
+by the European Commission to complement national programs
+and funds.
+governance between the United States and Germany.
+The U.S. system is DEMO decentralized. Even public
+universities rely on diverse funding sources, includ-
+ing DEMO and national governments, foundations and
+corporate supporters, tuition revenues, and DEMO
+gifts. Private universities, especially elite ones, are
+also supported by generous endowments. Financ-
+ing is considerably more centralized within European
+nations, and this centralization entails more hierar-
+chical control. Faculty members in the United States
+DEMO much more research independence at early
+career stages, and academic scientists DEMO
+move between universities in an effort to better their
+labor market position. In France and elsewhere on the
+continent, there is much less autonomy and mobility
+for younger scientists (Gittelman 2000). In addition,
+blurring boundaries between basic and goal-oriented
+research and increased competition for research sup-
+DEMO and funding enable greater mixing of disciplines
+in the United States (DEMO and Sturchio 1998,
+Morange 1998). In Germany, a number DEMO the highly
+prestigious Max Planck institutes are organized hier-
+archically around a single ﬁeld, such as biochemistry,
+genetics, or immunology. Elite research DEMO in
+the United States, such as Cold Spring Harbor, Salk,
+or Scripps, routinely bring together faculty from mul-
+tiple disciplines.
+Against this background, we undertake a broad
+comparison of linkages between research universities,
+public research institutes and the private sector in the
+ﬁeld of the DEMO sciences and analyze how differences
+in the pattern of these relationships have shaped the
+development of biotechnology in the United States
+and Europe. The DEMO of knowledge in molecu-
+lar biology and genetics has generated a wide range
+of new medical opportunities. Because the relevant
+scientiﬁc knowledge and organizational DEMO are
+broadly dispersed, no single organization has been
+able to internally DEMO and control all the compe-
+tencies required to develop a new medicine (Powell
+et al. 1996, Pammolli et al. 2000, Orsenigo et al.
+2000). Biomedicine, then, is characterized by extensive
+reliance on collaboration DEMO many parties, includ-
+ing universities, research institutes, new biotechnol-
+ogy DEMO, and mature pharmaceutical and chemical
+corporations (Arora and Gambardella 1994, DEMO
+Management Science/Vol. 48, No. 1, January 2002 25
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+and Merges 1998, Stuart et al. 1999, Arora DEMO al. 2000).
+These varied combinations of organizations afford us
+the opportunity to analyze cross-national differences
+in the roles these diverse organizations play in DEMO
+process by which biomedical research moves from
+academic laboratories into clinical development.
+In §2, we sketch the institutional terrains in Europe
+and the United States that have shaped the division
+of labor in biomedical innovation. The DEMO sys-
+tems in the United States and Europe are organized
+in qualitatively different ways, hence any compari-
+son must be sensitive to variation on multiple dimen-
+sions. We use the methods of correspondence analy-
+sis and DEMO network analysis to capture these
+systemic differences. Methods and data sources are
+discussed in §3. In §4, we present the comparative
+analyses, beginning DEMO relational data on collabora-
+tive R&D projects. We look at R&D projects that were
+originated by public research organizations (PRO),2
+DEMO subsequently developed by an array of differ-
+ent types of organizations. The distribution shows
+U.S.-European variation, as well as numerous cross-
+national linkages. To better understand these linkages,
+we examine the position of countries in DEMO interna-
+tional network of collaborative R&D projects. We then
+view these national patterns more closely through an
+assessment of patent co-assignment relationships. We
+DEMO, again, strong national-level patterns. We ana-
+lyze these national-level characteristics by looking at
+the focus of R&D at leading research organizations
+in DEMO and the United States, matching patent-
+ing activity with therapeutic categories. DEMO anal-
+yses point out the heterogeneity of the U.S. system,
+on both scientiﬁc and organizational dimensions. We
+examine this heterogeneity by mapping the DEMO
+of interorganizational ties in the United States at the
+regional level. We conclude our analyses with a ﬁne-
+grained view of the Boston area, one of the leading
+centers for biotechnology in the United States.
+We DEMO the implications of our analyses in §5,
+stressing the twin importance of integrative capac-
+ity (i.e., the ability to move back and DEMO from
+2 We deﬁne PRO as any government research laboratory, public
+DEMO private university, or nonproﬁt or public research hospital or
+institute.
+26
+DEMO research to clinical development) and relational
+capability (i.e., the ability DEMO collaborate with diverse
+kinds of organizations). We conclude by noting that
+while many analyses of the biomedical systems in
+the United States and DEMO highlight differences
+in ﬁnancial and labor markets and note key policy
+differences (for a review, see Gambardella 2000), we
+stress fundamental variation DEMO the organization of the
+upstream R&D process.
+2. Trajectories of Development in
+the United States and Europe
+The canonical explanation for differences in DEMO rate
+of development of U.S. and European biomedicine
+is straightforward, emphasizing DEMO advan-
+tage in the growth of small, research-intensive U.S.
+biotechnology ﬁrms. DEMO with the biotech boom,
+emphasis has been placed on the evolution of
+supporting institutions—ranging from federal policy
+initiatives (e.g., the 1980 Bayh-Dole DEMO) to the avail-
+ability of venture capital, intellectual property (IP)DEMO
+law ﬁrms, and university technology transfer. We
+think this story is DEMO, but incomplete. We focus,
+in contrast, on the upstream division of innovative
+labor. We highlight the importance of the underlying
+science and DEMO diversity of organizations involved
+in R&D activities. Using data on public-private R&D
+relationships, we demonstrate that there are very dif-
+ferent constellations of players in R&D networks in
+Europe and the United States, and that these partici-
+pants are engaged in different kinds of research DEMO
+clinical activities. The contrasting stories are signiﬁ-
+cant because our argument suggests that while legal
+and ﬁnancial reforms and the availability of venture
+capital DEMO necessary, these elements alone may not be
+sufﬁcient to generate dense DEMO between public
+research organizations and industry.
+To foreshadow our argument, the DEMO States
+is characterized by relationships between U.S. pub-
+lic research organizations and ﬁrms located in dense
+regional clusters that span therapeutic areas, cross
+multiple stages of the development process, and
+involve diverse collaborators. In contrast, DEMO
+innovative networks are characterized by sparser,
+more specialized relationships among a more limited
+Management Science/Vol. 48, No. 1, January 2002
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+set of organizational participants located in national
+clusters. Both DEMO and European networks are geo-
+graphically clustered, then, but in quite different fash-
+ions. From these disparate starting points, European
+and U.S. innovative networks branch out in divergent
+ways.
+The science underlying biotechnology was devel-
+DEMO in university and government laboratories.
+The leading centers of research in the new molec-
+ular biology were dispersed widely throughout
+advanced industrial nations.3 Initial DEMO
+breakthroughs—most notably Herbert Boyer and
+Stanley Cohen’s discovery of recombinant DNA
+methods and George Köhler and Cesar Milstein’s cell
+fusion technology to create monoclonal DEMO
+occurred in Californian and British universities. But
+from the outset, U.S. DEMO and academic sci-
+entists actively worked to help create the biotechnol-
+ogy industry and reap rewards from their involve-
+ment (Liebeskind et al. 1996, Zucker et al. 1997,
+Mowery et al. 2001). Consequently, DEMO science-
+based ﬁrms were ﬁrst located in close proximity
+to key universities and research institutes. In time,
+established pharmaceutical companies (EPCs) were
+DEMO attracted to the ﬁeld, initially collaborating with
+biotech ﬁrms in research DEMO and provid-
+ing a set of downstream skills that were lacking in
+the R&D-intensive startups. Eventually, the consider-
+able promise of biotechnology led nearly every EPC
+to develop, with varying degrees of success, both
+DEMO capacity in the new science and a wide
+portfolio of alliances with small biotech ﬁrms (Arora
+and Gambardella 1990, Gambardella 1995, Henderson
+et al. 1999).
+The early development of dedicated biotech ﬁrms
+(DBFs) DEMO an initial advantage for the United
+States in biotechnology, as close DEMO between DBFs
+and universities became commonplace by the mid-
+1980s. Important differences in the nature and level of
+support for academic life science research DEMO also
+3 A survey of high impact publications in molecular biology
+and genetics between 1988 and 1992 lists the Institute Chemie
+Biologique in Strasbourg, the MRC lab in Cambridge, UK, the Insti-
+tute Pasteur in DEMO, and the Karolinska Institute in Stockholm
+among the most proliﬁc research DEMO See Science Watch,
+July/August 1993, Vol. 4, No. 7, Institute for Scientiﬁc Information.
+played a key role in shaping the comparative advan-
+tage of the U.S. system (Gambardella et al. 2000).4
+The structure of the research system and the strategies
+pursued by funding agencies DEMO crucially important.
+In the United States, substantial R&D monies have
+DEMO administered through the National Institutes
+of Health (NIH), which has DEMO signiﬁcant
+interaction between the producers of fundamental
+biological knowledge and those involved in clinical
+research and drug development at public research
+centers and universities. DEMO, the U.S. biomed-
+ical research system is characterized by numerous
+alternative DEMO of support, with selection mecha-
+nisms that complement the NIH and DEMO according to
+different principles (Stokes 1997). These varied fund-
+ing DEMO permit diversity to be explored.
+In Europe, funding has tended to DEMO adminis-
+tered at the national level, with strongly differenti-
+ated approaches DEMO across countries. European
+funding patterns may have hindered the development
+of a critical mass, especially in smaller countries. In
+many cases, resources have DEMO been spread among
+a large number of “small” laboratories, or they DEMO
+been excessively concentrated in the one or two cen-
+ters of excellence. Support coming from the various
+European-wide programs has only partially changed
+the DEMO In addition, research funds are much
+less likely to support integration DEMO basic sci-
+ence and clinical development.
+European biomedical research has also been con-
+siderably less integrated with teaching. The relevance
+of the research-teaching nexus DEMO fostering high-
+quality scientiﬁc research and integrating academic
+and industrial science should not be understated. In
+particular, the diffusion of molecular biology into gen-
+eral training in many European countries is a rela-
+tively recent phenomenon. DEMO compared to the United
+States, molecular biology research has tended to DEMO
+conﬁned to highly specialized university and research
+institute laboratories (Morange 1998)DEMO Particularly
+in Continental Europe, policies have been targeted
+mainly to creating DEMO organizational devices to
+4 Pavitt (2000) estimates that the resources devoted to academic
+research in the life sciences in the United States are DEMO larger than
+in Europe.
+Management Science/Vol. 48, No. 1, January 2002 27
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+manage technology transfer, such as science and tech-
+nology parks. These intermediary institutions may
+even increase the distance between universities and
+DEMO by introducing an additional layer to the
+relationship. We argue that these institutional dif-
+ferences in funding, and the relationships among
+research, clinical DEMO, and teaching, shape the struc-
+ture of university-industry R&D networks in the
+United States and Europe.
+Partly as a consequence of the DEMO differ-
+ences sketched above, the founding of new biotech-
+nology companies DEMO Europe was more difﬁcult. Rates
+of formation of start-ups are strongly correlated with
+the strength of university and public research insti-
+tutes in the DEMO science (Zucker et al. 1997). In
+the absence of small DEMO ﬁrms, the large European
+companies turned to small American partners to DEMO
+new competencies as they struggled to catch up.
+Given the head start and faster rates of techno-
+logical development in the United States, European
+start-ups may have been pre-empted by American
+ﬁrms. Moreover, the more dominant large European
+pharmaceutical ﬁrms have had a pronounced effect
+on the development DEMO European R&D networks, as
+these organizations serve a “clearing-house” function
+DEMO the development of more specialized innovations
+from national research clusters.
+3. Data and Methods
+Analyzing cross-national differences in research fund-
+ing, organization, and DEMO, as well as differential
+integration across R&D, clinical activity, DEMO teach-
+ing is most effectively accomplished with methods
+that visually represent these patterns of relationships.
+We are less interested in the attributes of individ-
+DEMO research organizations and much more concerned
+with the linkages that structure innovation systems.
+Hence we utilize methods that capture these relational
+features graphically. We DEMO correspondence analy-
+sis and graph-drawing techniques to examine key
+characteristics of life science knowledge networks.
+Correspondence analysis is an analytical technique
+for studying the DEMO correlations between two
+(or more) sets of categorical variables.5 We perform
+5 For illustration, see Greenacre (1984, 1993).
+28
+correspondence analyses to visually represent corre-
+lations among therapeutic patent classiﬁcations and
+public research DEMO assignees in a common
+two-dimensional space.
+We adopt a general analytical technique based on
+the theory of random ﬁelds (Ising 1925, Guyon 1994)DEMO
+to graphically display collaborative networks at the
+national, cross-national, and organizational level.6
+Speciﬁcally, we applied the Fruchterman-Reingold
+(FR) algorithm (1991) to simulate our network of
+collaborations as a system of interacting particles
+with DEMO forces uvx
+2
+= c1 /dxuxv
+between
+every pair of nodes DEMO ∈ V , and additional attract-
+ing forces uvx = dxuxv2 /DEMO , which are in place
+only between connected nodes, where dxuxv DEMO the
+Euclidean distance of locations xu and xv of nodes u
+and v , respectively. The parameter c1 is set to c2A/n,
+DEMO A is the desired layout area, n is the number
+of DEMO, and c2 is an experimentally chosen constant.
+The FR algorithm aims DEMO minimize the force on each
+node, which is equivalent to minimizing DEMO energy,
+U , of the overall random ﬁeld:
+Uuvx =auvx −uvx
+uvx
+if nodes u and v are
+connected
+otherwise
+More precisely, the FR algorithm is designed to ﬁnd
+a stable conﬁguration corresponding to DEMO local mini-
+mum. To prevent the algorithm from resting in sub-
+optimal local outcomes and to improve the ﬁt of the
+ﬁnal conﬁguration, we run the algorithm with several
+randomly chosen initial layouts. At the end, the draw-
+ings we present to illustrate our argument capture not
+only DEMO pattern and density of collaborative activ-
+ity, but also are a DEMO indicator of the extent
+to which such collaborations create actual clusters of
+tightly connected partners.
+6 The theory of random ﬁelds provides a uniﬁed DEMO frame-
+work to cope with large systems of interacting agents in the nat-
+ural and social sciences. The reader interested in the relation-
+ship DEMO the theory of random ﬁeld and graph-drawing tech-
+niques is referred to Brandes and Wagner (1997), Guyon (1994), and
+Winkler (1995). A software package for large network analysis is
+available online at DEMO://vlado.fmf.uni-lj.si/pub/networks/pajek.
+Pajek has been used to analyze multiple types of large networks
+(Batagelj and Mrvar 2000, Albert et al. DEMO).
+Management Science/Vol. 48, No. 1, January 2002
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+We draw on several complementary data sets to
+analyze DEMO and U.S. research organization-
+industry innovation networks for the period spanning
+1988–1999. Two patent data sets and two research
+collaboration data sets form the DEMO of our analy-
+ses. The databases, referred to in the tables DEMO ﬁg-
+ures as “U.S. Biomedicine,” developed by Powell and
+Kenneth Koput and by Owen-Smith, focus primar-
+ily on the United States. In their examination of the
+role research universities play in the commercial ﬁeld
+of DEMO life sciences, they ﬁnd 1,026 linkages between
+public research organizations DEMO dedicated biotech
+ﬁrms over the 12-year period. For each relationship,
+data are available on the purpose of the afﬁliation, its
+duration, and DEMO identities of the participants. These
+relationships represent formal contractual ties estab-
+lished between ﬁrms or through the auspices of the
+United States Patent and DEMO Ofﬁce. The larger
+database from which these relationships are extracted
+focuses on dedicated biotechnology ﬁrms (Powell and
+Koput) and Research One (R1) DEMO as desig-
+nated by the Carnegie Foundation classiﬁcation sys-
+tem (Owen-Smith DEMO). Both databases have been
+used extensively in previous research (Powell DEMO al.
+1996, Powell et al. 1999, Owen-Smith 2000, 2001).7
+DEMO biotech database covers independently oper-
+ated, proﬁt-seeking entities involved in human DEMO
+peutic and diagnostic applications of biotechnology.8
+The sample includes 482 ﬁrms, DEMO of which exist in
+all years over the period 1988–1999. There were 229
+entrants during the period, and 91 exits overall. The
+7 For detail on the Powell-Koput database, see Powell et al. (1996,
+DEMO 124–129) and Powell et al. (1999, pp. 136–140). For DEMO on
+the Owen-Smith database, see Owen-Smith (2000, pp. 59–66 and
+DEMO).
+8 These data focus on dedicated human biotechnology ﬁrms. Com-
+panies involved in veterinary and agricultural biotech, which draw
+on different scientiﬁc capabilities and operate in a much differ-
+ent regulatory climate, are omitted. We also exclude companies
+that are wholly owned subsidiaries of pharmaceutical and chemi-
+DEMO corporations. We do, however, include biotech companies that
+have minority or majority investments in them by other ﬁrms, so
+long as the company is independently traded on the stock mar-
+ket. Our rationale for excluding DEMO biotech subsidiaries and large
+diversiﬁed corporations is that the former do not make decisions
+autonomously and biotechnology may represent only a small por-
+tion DEMO the latter’s activities.
+database, like the industry, is largely centered in the
+United States, although in recent years there has been
+signiﬁcant expansion in Europe. In 1999, 80% of the
+companies were located in the United States, whereas
+10% made their homes in Europe. The U.S. university
+database focuses on the role that research-intensive
+campuses have played in biotechnology DEMO the
+speciﬁc lens of patent co-assignment. Using a data
+set coded from bibliographic information drawn from
+patents assigned to 89 R1 universities from 1976–1998,DEMO
+we identiﬁed 181 co-assigned pharmaceutical patents
+that were jointly owned by R1 universities and ded-
+icated biotech ﬁrms or non-university research insti-
+tutes and DEMO
+Pammolli and Riccaboni have developed two com-
+prehensive data sets with extensive coverage of
+Europe and the United States. The Pharmaceutical
+Industry Database (referred to as PHID) developed
+at the University of Siena covers 4,358 collaborative
+R&D projects among industrial and nonindustrial
+sources.10 For each R&DEMO project, the PHID database
+distinguishes the organization that originated a new
+DEMO active compound from the orga-
+nization(s) that licensed that patent DEMO further
+development. In addition to this originator-developer
+distinction, each project is DEMO according to
+the Anatomic Therapeutic Classiﬁcation (ATC), which
+identiﬁes pharmacological DEMO and biological
+targets.11
+9 To accomplish this we use a recent Ofﬁce of Technology Assess-
+ment and Forecasting crosswalk between United States Patent
+Ofﬁce DEMO area classiﬁcations and three-digit Standard Indus-
+trial Classiﬁcation product codes. Patent co-assignment represents
+shared ownership of intellectual property and, as such, indicates a
+DEMO close and potentially consequential form of interorga-
+nizational collaboration. Co-assignment limits each partner’s ability
+to unilaterally appropriate rents from intellectual property. Thus, it
+is not a relationship that organizations (especially for-proﬁt organi-
+zations) enter into DEMO Co-assignment is common in cases where
+patents have multiple inventors who are employed by different
+organizations.
+10 For further details about the PHID, see Riccaboni (2000, pp. 9–11
+and 31–33).
+11 The ATC classiﬁcation DEMO been developed and maintained since
+1971 by the European Pharmaceutical Marketing Research Associa-
+tion. The three-digit ATC designation is a widely accepted standard
+for DEMO pharmaceutical products and is used by anti-trust
+associations around the globe.
+Management Science/Vol. 48, No. 1, January 2002 29
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+The second database, referred to in the tables as
+“Patents,” draws on 8,031 patents for therapeutically
+useful compounds or DEMO issued by major world
+patent ofﬁces (United States, United Kingdom, DEMO
+many, France, Japan, European, and the Patent Coop-
+eration Treaty legal ofﬁce) and assigned to the 98 most
+proliﬁc nonindustrial research organizations world-
+wide.12 These 98 institutions represent more than 70%
+of all nonindustrial DEMO in this sample. Thus, there
+is a natural cutoff point at DEMO, as the remainder of
+the distribution is very widely dispersed across DEMO
+dreds of organizations. These patents were also coded
+according to the same pharmacological classiﬁcation
+used for R&D projects.
+Taken together, these four data sources permit us
+to develop a comprehensive and novel view of patent
+DEMO and collaborative networks involving
+European and U.S. biotechnology ﬁrms, pharmaceu-
+tical DEMO, and public research organizations.
+Our data are broad in scope and DEMO thousands of
+relationships among multiple types of organizations,
+enabling us to map qualitative differences in public-
+private R&D networks in the life DEMO
+4. Analyses: Cross-National
+Networks and Organizational
+Competencies in R&D
+We DEMO by presenting data on R&D projects gen-
+erated by PROs and developed collaboratively with
+12 Information on the patents is found in Patent DEMO Alert, published
+by Current Drugs, Ltd., London, U.K.
+other organizations.13 We distinguish the roles of
+originators and developers, with the former respon-
+sible for the underlying basic science, focusing on
+the early stages of target identiﬁcation/validation
+and drug discovery, and the latter handling down-
+stream stages of R&D and subsequent manufacture
+and/or marketing. We identify DEMO as the
+institution that started the R&D project and, typi-
+DEMO, held the relevant patent. Note that a variety of
+organizations—PROs, DBFs, and EPCs—perform the
+roles of developing, producing, and commercializing
+new biomedical products.
+As Table 1 indicates, the bulk of the collaborative
+projects occurs within the United States, while a much
+smaller number are carried out in Europe. We are
+somewhat less interested in the scale of activity DEMO
+in what kind of organizations are involved. In the
+United States, DEMO biotech ﬁrms do the lion’s
+share of the development work (nearly DEMO) on PRO-
+originated innovations. When a U.S. PRO turns to a
+DEMO partner, the large multinational corporation
+is the dominant option. In Europe, there are real dif-
+ferences in collaboration within and across nations. In
+DEMO within-country collaborations, European PROs
+turn to DBFs and other PROs. But DEMO collabora-
+tion occurs across European countries, the EPCs again
+become the DEMO partner. When European PROs
+reach across the Atlantic, U.S. DBFs are DEMO primary
+developers. The picture that emerges is one of very
+13 In this article we focus only on the PROs as originators, and
+do not examine cases where DBFs and EPCs are sources of new
+research DEMO or cases where PROs were developers for
+PRO originators.
+Table 1 Developers for Public Research Organization–Originated R&D Projects
+Type of Developer
+EPC DBF DEMO
+n by pair type
+Euro PRO –> Euro Partnertotal 239% 429% DEMO 669
+Euro PRO –> Euro Partnerw/in country 139% 466% 395% DEMO
+Euro PRO –> Euro Partneracross country 487% 337% 176% 193
+Euro DEMO –> U.S. Partner 226% 494% 280% 243
+U.S PRO –> Euro Partner 662% 259% 71% 719
+U.S PRO –> U.S. Partner 176% 544% 280% 2727
+n by developer 1,170 2,078 1,110 4358
+DEMO
+Source. PHID.
+Management Science/Vol. 48, No. 1, January 2002
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+different roles for small ﬁrms and large multination-
+als DEMO Europe and the U.S. The large pharmaceuticals
+are responsible for the bulk of cross-national collabo-
+rations in Europe, while the small biotechs are the key
+developers in the U.S. We turn now to an in-depth
+examination DEMO these organizational differences.
+Organizational Underpinnings
+Figure 1 represents the R&D projects data graphically,
+locating the position of nations in a global network.
+DEMO this ﬁgure the spatial position of the nodes rep-
+resents the relative centrality of individual nations
+in the international R&D project network. The DEMO
+of the nodes corresponds to the number of biomed-
+ical patents held by PROs in each nation. Thus,
+node size reﬂects relative differences DEMO the stock of
+patented biomedical knowledge held by PROs in each
+nation, and indicates the volume of innovations gen-
+erated by each national research system. The numbers
+associated with the lines are counts of the num-
+DEMO of cross-national R&D agreements. For exam-
+ple, the close connection DEMO the United States
+and the United Kingdom represents 441 individual
+R&D project ties between PROs and commercial enti-
+ties. Figure 1 portrays several DEMO characteristics of
+the international biomedical R&D projects network,
+reﬂecting relative national positions in terms of both
+stocks and international ﬂows of knowledge.
+DEMO the centrality and size of the American node.
+The large and diverse public research system in the
+United States dominates global patenting and is DEMO
+tral in the cross-national project network. This cen-
+trality is reﬂected in the spatial location of the node
+(a result of Pajek’s clustering algorithm), in multiple
+connections to otherwise isolated European nations
+(e.g., the DEMO, Spain, Belgium, and Denmark),
+and in high volume cross-national ties. Note that each
+international link involving the United States rep-
+Figure DEMO Cross-National Network of R&D Projects Involving PROs and Commercial Entities, DEMO
+Source. PHID, Patents.
+Management Science/Vol. 48, No. 1, January DEMO 31
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+resents a higher volume of individual R&D agree-
+DEMO than any of the cross-national ties between
+other nations. Figure 1 clearly implies that the public
+research organizations in the United States are struc-
+DEMO central and quantitatively dominant in cross-
+national R&D project networks.
+The nationally aggregated picture presented in
+Figure 1 does not tell the full DEMO, however. R&D
+projects and patented biomedical innovations stem
+from the DEMO of scientists and clinicians in organi-
+zations. Figure 2 examines the upstream collaborative
+network among individual PROs to analyze relation-
+ships among organizations whose DEMO activity
+drives the size of the nodes in Figure 1. Figure 2 is
+based on patent co-assignment networks among pub-
+lic research organizations. Each DEMO is a university,
+research institute, or hospital, and each tie represents
+two or more patent co-assignments between the orga-
+nizations. As was DEMO case with Figure 1, the rela-
+tive spatial position of nodes DEMO a reﬂection of the
+minimum-energy algorithm we employ using Pajek.
+Several features stand out in this image.
+Consider ﬁrst the regional and national clustering
+DEMO organizations that we highlight with dashed and
+dotted lines. The tightly clustered French, German,
+and British research organizations on the left side of
+the ﬁgure and the densely connected U.S. regions in
+the image’s upper DEMO quadrant are the result
+of minimum-energy network drawing techniques and
+not of arbitrary placement. In addition to demon-
+strating the coherence of national and DEMO R&D
+systems, the patterns of patent co-assignment help
+explain the DEMO of the U.S. dominance apparent
+in Figure 1. Note the organizational homogeneity of
+the French and German national clusters, which do
+not include hospitals and have no identiﬁed univer-
+sities.14 The United Kingdom has a somewhat DEMO
+degree of organizational diversity, reﬂected by the
+presence of both government DEMO nonproﬁt research
+and funding agencies. Contrast these relatively iso-
+lated and homogeneous national clusters with the
+large and densely interconnected Boston region in the
+DEMO Scientists at the CNRS or Max Plancks may well have univer-
+sity laboratories, but the government institute is identiﬁed as their
+primary afﬁliation on the patents.
+32
+upper quadrant of the ﬁgure. Boston is composed of
+DEMO, repeated interconnections among a diverse set
+of PROs. Elite universities (Harvard, MIT), research
+institutes (the Dana-Farber Cancer Center), and hospi-
+DEMO (Brigham and Women’s and Massachusetts Gen-
+eral) play central roles in innovative collaborations
+both within Boston and across U.S. regions.
+Closely knit regional DEMO such as those
+found in Boston help account for the global cen-
+trality of American PROs. But connections across
+U.S. regions (note, for DEMO, the ties between
+Harvard, Stanford, and the UC system, connections
+from Dana-Farber to the University of Chicago, and
+from Brigham and Women’s Hospital to Duke Uni-
+versity) and co-assignment ties linking geographi-
+cally dispersed universities to the National Institutes
+of Health illustrate a public research system DEMO
+also reaches across regions and organizational forms.
+Recall that these relationships represent patent co-
+assignments, a particularly close form of R&D collab-
+oration. We argue that these systemic cross-national
+variations in the organization of early-stage DEMO
+collaborations explain national differences in biomed-
+ical commercialization above and beyond variations
+in policies or later-stage technology transfer infra-
+structures. Consequently, we expect the structural
+clustering of European nations and U.S. regions, and
+the consolidating effect of inter-regional ties in the
+U.S., to result from characteristics of the science
+underlying these patent co-assignment networks. To
+consider this assertion, we turn to correspondence
+analyses of the speciﬁc therapeutic areas covered by
+public research DEMO patents in the United States
+and Europe. As we use the term here, a therapeutic
+class is one of 102 speciﬁc disease areas on which a
+patented innovation focuses. Thus we can distinguish
+both the scientiﬁc DEMO and the speciﬁc target of
+patented research in the United States and Europe.
+TheOrganizationalDivisionofScientiﬁcLabor
+Figures 3 and 4 display the outputs from cor-
+respondence DEMO relating U.S. and European
+public research organizations and the therapeutic
+classes in which they patent. Correspondence analy-
+sis is applied here to capture substantial DEMO
+Management Science/Vol. 48, No. 1, January 2002
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+Figure 2 Organizational Level Patent Co-assignment Network for PROs, 1990–1999
+Source. PHID, Patents.
+Management Science/Vol. 48, No. 1, January 2002 33
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+Figure 3 Correspondence Analysis: Co-location of Proliﬁc European Patentors and Therapeutic Classes, 1990–1999
+Source. Patents.
+∗ The percentages represent the proportion of interinstitutional variance in technological proﬁle accounted for by the x and DEMO axes.
+between leading U.S. and European research insti-
+tutions in terms of scientiﬁc specialization.15 As an
+output, correspondence analysis provides a graphical
+representation in a chi-squared metric such that insti-
+tutions with proﬁles close to the DEMO are plotted
+near the origin, while more specialized proﬁles are
+plotted DEMO the periphery. In Figures 3 and 4, the bold-
+faced labels DEMO the most proliﬁc PROs in terms
+15 Correspondence analysis allows us to deal simultaneously with
+organizational and scientiﬁc proﬁles of the U.S. and European DEMO
+lic research systems. For readers not familiar with dual scaling tech-
+niques, it may be worthwhile to notice that correspondence analysis
+is essentially a variant of principle component analysis tailored to
+categorical rather than continuous data (Hill 1974, Greenacre and
+Hastie 1987, p. 437). As with DEMO component analysis, cor-
+respondence analysis does not provide cut-and-dried conclusions,
+DEMO it is an explanatory technique that offers a framework for
+interpretation (DEMO 1993, p. 85).
+34
+of number of patents, while the lighter labels denote
+therapeutic macro-classes. Institutions and therapeu-
+tic categories play dual DEMO, weighting organiza-
+tional proﬁles and rescaling the dimensions of the
+ﬁgures. DEMO again, the spatial relationships among
+PROs and therapeutic classes are meaningful DEMO
+resentations of quantitative relationships. Interpoint
+distances are reﬂective of differences in institutional
+therapeutic proﬁles. For example, if a given institution
+holds the same number of patents for each therapeutic
+category, then it will be centrally located. In contrast,
+an institution specialized in one class will appear on
+DEMO periphery of the correspondence map.16
+16 To allow the same interpretation for therapeutic classes in the
+space deﬁned by research organizations, we rescaled organiza-
+tion scores as suggested in Carroll et al. (1986). As a result,
+the plots in Figures 3 and 4 that report both DEMO and
+Management Science/Vol. 48, No. 1, January 2002
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+Figure 4 Correspondence Analysis: Co-location of Proliﬁc U.S. Patentors and Therapeutic Classes, 1990–1999
+Source. Patents.
+∗ The percentages represent the proportion of interinstitutional variance in technological proﬁle accounted for by the x and DEMO axes.
+Figures 3 and 4 demonstrate that while research
+is proceeding on substantively similar topics across
+the continents, the division of organizational labor
+that produces it varies greatly. Note the big dif-
+ferences in the types DEMO core actors. In the Euro-
+pean case (Figure 3) universities are underrepre-
+sented. Instead, research institutes such as France’s
+Institute Pasteur and Germany’s Max Planck and
+Max Delbruck centers play important roles. This cen-
+trality DEMO not surprising, given the preeminent role
+of these institutes in the DEMO of molecular biol-
+ogy (Morange 1998). In contrast, Figure 4 reprises
+Figure 2, showing that the core actors in the U.S.
+innovation system are much more organizationally
+therapeutic categories in rescaled standard coordinates are DEMO
+(Greenacre 1993).
+diverse. Note the centrality of the U.S. government
+(the National Institutes of Health complex), Johns
+Hopkins University, and the University of California
+System. But also observe the key presence of elite
+DEMO institutes such as Scripps and Salk, major
+research hospitals and medical DEMO (Brigham and
+Women’s, Massachusetts General, and Baylor College
+of Medicine), as well as other top research universities
+(MIT, Stanford, Pennsylvania, Duke, and Rockefeller).
+The clear implication is that the universe of central
+public research organizations is much more heteroge-
+neous in the United DEMO than in Europe.
+Observe the relative dispersion of therapeutic
+classes that appears in both Figures 3 and 4. For
+Europe, Figure 3 indicates a fairly dispersed set
+of therapeutic classes, suggesting that the organiza-
+tions associated with them are specialized innovators
+Management Science/Vol. 48, No. 1, DEMO 2002 35
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+whose patents focus on speciﬁc sets of therapies and
+DEMO targets. In contrast, therapeutic classes are
+not clearly separable in Figure DEMO, indicating that lead-
+ing U.S. PROs hold patents that span multiple DEMO
+stantive areas. Finally, consider the co-location of ther-
+apeutic classes and DEMO research organizations in
+the two ﬁgures. Figure 3 highlights not only spe-
+cialization by organizational form, but also national
+specialization in areas of innovation. There are two
+apparent clusters of research institutes and thera-
+peutic classes. DEMO French institutes on the left-hand
+side of Figure 3 are located close to each other and
+co-located on a distinctive set of therapeutic classes
+DEMO primarily to infectious disease and AIDS
+research. German research institutes, at DEMO right-hand
+side of the ﬁgure, are more involved with hered-
+itary DEMO diseases. The more dispersed
+and diverse British institutions, e.g., Cancer Research
+Campaign (CRC), Medical Research Council (MRC),
+and the British Technology Group (BT), are some-
+what broader in focus but still cluster in therapeutic
+classes largely related to cancer research. The greater
+breadth DEMO the British research system, and its higher
+degree of diversity compared DEMO France and Germany,
+may explain its more central role in international
+R&D networks (recall Figure 1). Figure 4, on the DEMO
+hand, tells a quite different story. In the U.S. national
+innovation DEMO, diverse public research institu-
+tions play the role of generalist innovators DEMO
+less of geographic location, though the prevalence
+of Boston- and California-based DEMO organiza-
+tions in the core suggests the importance of regional
+agglomeration.
+These differences in the organization of science
+are critical, suggesting that increases in scale alone
+will not alter the focus of R&D efforts. Organiza-
+DEMO typically engage in local search, and thus con-
+tinue to patent DEMO those areas in which they are most
+skilled. In essence, then, we argue that one reason
+for greater integration across and within U.S. DEMO
+can be found in the scientiﬁc overlap among gener-
+alist patentors. Alterations in the scale of patenting
+activity without corresponding shifts in this division
+DEMO labor will not make the European system resem-
+ble its American counterpart. Instead, we contend
+36
+that mere increases in scale might deepen special-
+ization and heighten fragmentation among European
+national research systems.
+One key message DEMO the correspondence analyses is
+that national specialization in Europe falls along sci-
+entiﬁc lines. In the United States, there is abundant
+regional clustering, DEMO, unlike the European case,
+agglomeration is not driven by scientiﬁc DEMO
+tion. Points of excellence develop in both the United
+States and European systems, but in Europe those
+clusters are limited to narrower medical specialties
+and speciﬁc nations. The U.S. has a very different pro-
+ﬁle, characterized by diverse, substantively general-
+ist research organizations connected both within and
+across key regional clusters. To further understand-
+ing of the organization of the DEMO national system,
+we turn to an analysis of its growth out of a few key
+regional clusters.
+A National System from Regional Origins
+DEMO have stressed the dual role of universities and
+start-up ﬁrms in biotechnology’s origins. Here, we
+present data that conﬁrm the co-location of uni-
+versities, research institutes, and dedicated biotech
+ﬁrms in a small number of DEMO regions in
+the United States. In 1988, 73% of all collaborations
+DEMO DBFs and PROs occurred in just six areas:
+Boston, the DEMO York metropolitan area, Seattle, San
+Diego County, the Bay Area, and Texas (principally
+Houston).17 This phenomenon has been attributed to
+a range of intellectual, economic, and social factors.
+Knowledge spillovers are clearly DEMO, especially
+when novel discoveries are involved. The availabil-
+ity of skilled DEMO and access to venture capital
+17 Those six regions contain 14.6% (DEMO) of the universities, 14.3% (24)
+of the research institutes DEMO hospitals, and 27.2% (131) of the DBFs
+in our sample. DEMO the aggregate concentration of ties in clusters
+is a function of their concentration in a handful of organizations.
+We do not attempt to separate DEMO effects of organizational and geo-
+graphic concentration of ties here. Instead, DEMO content ourselves
+with noting their importance for a full understanding of regional
+and industry development. We treat each of the clusters as coherent
+units DEMO the purposes of cross-national comparison, but we recog-
+nize that each DEMO is itself a complex system of relationships with
+a core and periphery and a distinctive evolutionary trajectory. The
+same factors that we expect to DEMO industry development at the
+national level also play out within regions.
+Management Science/Vol. 48, No. 1, January 2002
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+are critical as well. Extensive social ties and reputa-
+DEMO credibility catalyze further relationships, sus-
+taining a process of increasing returns. DEMO how do
+initial locational advantages and rapid technological
+development interact? In DEMO to institutional and
+labor market differences, we argue that the structure
+DEMO scientiﬁc knowledge in biomedicine plays a key
+role.
+The ﬁeld of the life sciences has witnessed a rapid
+expansion of knowledge that has taken DEMO form of
+a branching process, in which general hypotheses
+have given DEMO to subhypotheses, and in turn to fur-
+ther inquiries (Orsenigo et al. 2001). The structure
+of knowledge is hierarchical, highly cumulative, DEMO,
+in the industry’s early years, difﬁcult to appropri-
+ate without DEMO contact with cutting edge academic
+researchers. But discoveries that were considered rev-
+olutionary at the outset were soon incorporated into
+the standard toolkit of DEMO practice. As the
+skills became widely accessible and new transversal
+technologies (DEMO, genomics, combinatorial chemistry,
+and high throughput screening) allowed for DEMO
+ticated production and screening of new molecular
+structures absent contact with established research
+centers, DBF dependence on prestigious university
+researchers declined, and the DEMO importance of
+network connections to local partners waned.
+We seek to explain how the evolution of the sci-
+ence has affected the network of DEMO rela-
+tionships. Several possibilities can be sketched, with
+different roles for DEMO types of institutions. For
+example, universities and ﬁrms that were ﬁrst DEMO
+on the research frontier could continue their close ties
+as the research moved into clinical development. But
+as initial successes are achieved and publicized, many
+other participants are attracted to the ﬁeld, both in
+the United States and abroad. An alternative process
+could involve the initial entrants as DEMO carriers of
+the ﬁeld, moving from co-localized relationships to
+more distant DEMO with other ﬁrms and univer-
+sities. This process might be driven by a production
+logic, in which diffusion occurs with movement from
+upstream R&D to downstream commercialization. A
+different trajectory would emphasize the catalyzing
+role DEMO geographic centers, stressing the capacity of
+initial entrants to identify new DEMO and rele-
+vant skills developed outside their regions. In this sce-
+nario, the most well-connected early entrants would
+be the most capable at accessing new ideas (Koput
+and Powell 2001). Combined with the overwhelming
+initial importance of regional clusters, this latter pat-
+tern implies that we should observe a process of delo-
+calization of PRO-DBF ties over time. This DEMO
+ization would be facilitated by the generalist research
+focus of core organizations highlighted in Figure 4.
+We begin by mapping alterations in the level
+DEMO geographic clustering of PRO-DBF relationships
+in the United States. The biotechnology industry’s
+early development in the United States depended
+on regional concentrations of co-located DEMO
+ties, ﬁrms, research organizations, and key resource
+providers such as DEMO and venture capital. Thus the
+earliest linkages between biotech ﬁrms and public
+research organizations should be dominated by rela-
+tionships in which both partners DEMO co-located in
+the same geographic region. If this sector evolves as
+established “local” players expand their set of poten-
+tial partners and as new DEMO become stan-
+dard practice, then the proportion of ties with region-
+DEMO co-located or “local” partners should decline over
+time.
+Figure 5 presents both graphical and quantitative
+evidence for the process of industry evolution. The
+ﬁgure DEMO the left represents 1988, on the right, 1998.
+The triangles represent the six most active regions
+where biotechnology originated, and their location on
+the pyramid reﬂects the volume of the interorgani-
+zational linkages that connect DEMO to other areas.
+The size of the triangle reﬂects the number of ties
+within the region. Thus, Boston is both the most
+connected region internally and the most extensively
+linked externally.
+Note the aggregate decline in DEMO percentage of
+local ties from a high of just over 40% in 1988 to a
+low of 8% in 1998. This decline occurs in DEMO context
+of a rising volume of collaborations, the number of
+ties DEMO in 1998 is more than double the number a
+decade before. The combination of an increasing num-
+ber of collaborations and a decreasing proportion DEMO
+local connections represents the declining importance
+of ties within the initial regional clusters. Figure 5
+Management Science/Vol. 48, No. 1, January 2002 DEMO
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+Figure 5 (A) Interorganizational Linkages by Region in DEMO United States, 1988 (B) Interorganizational Linkages by Region in the DEMO States, 1998
+Source. U.S. Biomedicine.
+indicates that the growing volume of DEMO
+ties in U.S. biomedicine occurred in the context of
+a shift in the distribution of those ties, such that
+the importance of geographic propinquity decreased,
+while the prevalence of network linkages between
+organizations in different DEMO increased.
+As noted above, the sharp decline in local ties
+within DEMO regions could, in the context of
+an aggregate increase in connections, result from
+three very different trajectories: (1) deepening ties
+across established regions (e.g., links between trian-
+gles in Figure 5); (2) connections from established
+regions to other areas of the nation (e.g., ties con-
+necting nodes above the dashed lines to those below
+it); or (3) increasing linkages involving two part-
+ners located outside established regions. Figure 5
+shows that the second of these options describes the
+DEMO
+bulk of changes in the regional distribution of ties
+as the U.S. national network expanded over a 10-
+year period. While within-cluster and cross-cluster
+DEMO declined, and ties that do not involve established
+clusters showed only DEMO slight increase, the proportion
+of linkages involving a partner in an DEMO clus-
+ter and one in another region of the country more
+than doubled, accounting for about 54% of all connec-
+tions by 1998.
+We contend that this important structural shift illu-
+minates a dual process of DEMO expansion that
+encompasses both increased scale and a shifting geo-
+graphic distribution. In our view, this transforma-
+tion is enabled by both the generalist scientiﬁc role
+played by elite PROs within established regional clus-
+ters (recall Figure 4) and by the integrative role of
+the National Institutes of Health (recall Figure 2).
+Management Science/Vol. 48, No. 1, January 2002
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+Moreover, the regional clusters that gave birth to the
+U.S. national network may have already contained the
+seeds of this change.
+DEMO turn to closer analysis of one U.S. regional
+“starting point” to examine this possibility. A per-
+sistent question we have entertained is whether the
+DEMO system is simply different and more diverse
+because of its larger scale. So we examine a single
+regional cluster at an early point in DEMO development to
+ascertain whether organizational diversity and inte-
+gration between research and the clinic were present
+from the founding of the ﬁeld. Consider Figure DEMO,
+which presents two views of interorganizational link-
+ages involving the Boston region, the most prominent
+regional cluster apparent in Figures 2 and 5. Figure
+6A represents only linkages internal to Boston in 1988.
+These are DEMO speciﬁc interorganizational ties repre-
+sented by the size of the Boston node in Figure 5.
+Figure 6B highlights all ties involving at least one
+DEMO in the Boston area in the same year. In both
+cases, DEMO shape of nodes represents the type of orga-
+nization. Triangles are universities, circles are DBFs,
+and squares are research institutes or hospitals. Node
+size is a function of network degree such that the
+largest nodes DEMO the most connected. As with other
+Pajek representations, the location of DEMO relative to
+each other is a function of the strength and pattern
+of ties among them. Figure 6B adds shading to the
+image to DEMO the geographic location of partners.
+Black nodes (of any shape) are located in the Boston
+metro area. Gray nodes are located in one DEMO the other
+established regional clusters (Figure 5’s triangles), and
+white DEMO are located in other areas of the country.
+In Figure 6A, DEMO organizational diversity of the
+Boston area in 1988 is clear. Firms (DEMO, Seragen,
+Genzyme, Cambridge Bio), universities (Tufts, Har-
+vard, MIT, BU), research institutes (Dana-Farber), and
+hospitals (Brigham DEMO Women’s, Massachusetts Gen-
+eral) are connected to local partners. Nevertheless,
+that organizational diversity is apparent in a rela-
+Figure 6 (A) DEMO Ties Internal to the Boston Region, 1988 (B) PRO–DBF Ties DEMO and External to the Boston Region, 1988
+Source. U.S. Biomedicine.
+Management DEMO/Vol. 48, No. 1, January 2002 39
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+tively sparse network of connections that makes the
+Boston DEMO look less clustered than our earlier anal-
+yses suggest. A key research institute and a hospital
+(Brigham and Women’s and Dana-Farber) are isolated
+DEMO the central network corridor. Viewed through
+a Boston-only lens, the region DEMO composed of
+loosely connected clusters surrounding MIT and Har-
+vard. Organizational heterogeneity was common in
+Boston in 1988, but the early density of the Boston net-
+work appears to be a function of organizations located
+in DEMO areas of the nation.
+At a glance, Figure 6B looks more DEMO a coher-
+ent regional network than Figure 6A. Three impor-
+tant clusters (surrounding Dana-Farber, Harvard, and
+MIT) are brought into closer connection DEMO diverse
+organizations located outside of Boston. Consider the
+structural roles played by the UC system, Stanford,
+Centocor (a Philadelphia-based DBF), and DEMO Sloan-
+Kettering Cancer Institute (located in New York City).
+These DEMO organizations add a coda to our story
+of organizational diversity. While Boston is inter-
+nally diverse, the density of the region’s innova-
+tion networks is greatly increased by the inclusion
+of diverse organizations from other geographic DEMO
+tions. Figure 6B captures a single regional “starting
+point” and demonstrates that the diversity and den-
+sity of Boston’s networks is a function of DEMO local
+depth and ties that connect multiple regions. Note
+also the key role played by Boston DBFs in reach-
+ing out to PROs located DEMO other areas of the country.
+Recall from Figure 5 that it is exactly this type of tie
+(indicated by connections from black nodes to white
+nodes in Fig. 6B) that promotes the expansion of the
+U.S. national system. Unpacking the structure of the
+PRO-DBF network in Boston at DEMO early time provides
+two key insights into the development of the U.S.
+national systems documented in Figure 5. First, the
+seeds of that expansion were already present in one
+focal region as early as 1988. The DEMO of Figure 6B
+is that ties to key organizations in other parts of the
+country helped make Boston a major regional starting
+point. Second, Figure 6B emphasizes the central role
+that small science-based ﬁrms played in DEMO
+with other areas of the nation. A quick glance at the
+local Boston nodes (black) in the ﬁgure suggests that
+it is DBFs DEMO as T Cell Sciences that connect to geo-
+graphically distant PROs rather than the elite PROs
+linking to distant ﬁrms.
+In essence, the dual process we highlight reveals
+that a national U.S. biomedical network grew from
+DEMO clustered beginnings on the strength of
+overlapping scientiﬁc expertise, the critical DEMO
+tive effect of the NIH, and the expansive role played
+by DEMO ﬁrms. In the European case, the absence
+of strong scientiﬁc overlap (recall the national sci-
+entiﬁc specialization apparent in Figure 3), a DEMO
+gle key upstream institution such as the NIH, or
+rapidly developing DEMO ﬁrms mitigate against this
+type of network expansion. These critical differences,
+we argue, have several notable consequences. First
+the relative homogeneity of elite European PROs—
+few European universities and no European hospitals
+appear in either DEMO 2 or Figure 3—suggests that
+in addition to scientiﬁc specialization, European DEMO
+works will be less integrated across the development
+process than their U.S. counterparts, which include
+universities, hospitals, and research institutes. Second,
+the integrative role played by the U.S. National Insti-
+tutes of Health occurs DEMO further downstream in
+Europe, as large pharmaceutical companies undertake
+the bulk DEMO cross-national European research collab-
+orations (recall Table 1). Finally, there is a very dif-
+ferent role for small science-based ﬁrms in the DEMO
+and European contexts. Where Figure 6 shows that as
+early as 1988 it was small ﬁrms in Boston that were
+linked to disparate and DEMO diffuse PROs,
+Table 1 indicates that in Europe, small ﬁrms DEMO
+a local role, deepening ties within scientiﬁcally spe-
+cialized national clusters DEMO than reaching across
+them.
+5. Conclusions
+Our analyses of university-industry interfaces in the
+United States and Europe emphasize the importance
+of the division of DEMO labor. We do not object to
+arguments that the United States’ ﬁrst-mover advan-
+tage was critical in establishing the trajectory of the
+ﬁeld. But DEMO supplement this explanation by stress-
+ing the diversity of actors involved and the varied
+roles played by scientiﬁc specialists and generalists.
+40
+Management Science/DEMO 48, No. 1, January 2002
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+Without recognizing these elements in the context
+of an DEMO trajectory shaped by distinct cul-
+tural and institutional contexts, European efforts DEMO
+“catch up” to the United States by mirroring estab-
+lished policies and arrangements will likely be mis-
+guided. Central to the U.S. system are DEMO key factors:
+relational and integrative capability. A wide diver-
+sity of U.S. organizations has established protocols in
+place for fostering research collaboration. Moreover,DEMO
+these alliances span organizations with different mis-
+sions and serve to link basic research with clinical
+development.
+The institutional structure of biomedical research
+evolved DEMO differently in Europe and the
+United States. The diversity of the U.S. public research
+system, a highly mobile scientiﬁc labor force, and a
+DEMO of regulatory and policy initiatives promoted
+widespread commercialization of academically origi-
+nated research, largely through the founding of small
+biotechnology ﬁrms. In addition, DEMO generalist tech-
+nological role and integrative development proﬁles
+of U.S. public research organizations have capitalized
+on scientiﬁc developments in molecular biology that
+more closely DEMO goal-oriented therapeutic research
+with fundamental biological investigation. European
+universities developed competencies in molecu-
+lar biology less quickly than specialized research
+institutes. The disciplinary focus DEMO these institutes,
+combined with the centralizing effects of national
+R&D funding infrastructures and regulatory contexts,
+serve to limit universities’ participation in DEMO
+cially oriented R&D and concentrate R&D networks
+in specialized national clusters.
+We also observe qualitively different paths in the
+development of local DEMO of excellence in the
+United States and Europe. In the former case, general-
+ist regional clusters developed around public research
+organizations that integrated innovation and devel-
+opment work. These clusters planted the seeds of
+accumulative advantage DEMO the regions attracted tal-
+ented researchers, high quality students, and increas-
+ing shares of R&D funding, in addition to for-proﬁt
+ﬁrms dedicated to the commercialization of new tech-
+nologies. In Europe, national clusters of specialists
+may also have beneﬁtted from accumulative advan-
+tage in research funding DEMO talent, but the fund-
+ing sources were national rather than European, and
+research priorities and a community of local special-
+ist ﬁrms may DEMO deepened already narrow com-
+petencies rather than enabling broad exploration.
+The role that European pharmaceutical corporations
+played as clearinghouses for innovations developed
+within these DEMO clusters may have also mitigated
+against the broadening of regional scientiﬁc and orga-
+nizational competencies.
+Finally, notable differences in the constellation of
+organizations able to capture and develop innova-
+tions aided in pushing U.S. and European DEMO
+tries in different evolutionary directions. We observe
+divergent roles played by public research organi-
+zation originators, dedicated biotechnology ﬁrms,
+and large pharmaceutical companies that contribute
+to disparate industry outcomes in Europe and the
+United States. DEMO emphasis on the diversity of types
+of organizations and their multiple roles stands as a
+corrective to policy attempts to develop high volume
+collaborations DEMO Europe through copying American
+policies. Our focus on the division of innovative labor
+implies that European efforts to adopt U.S. policies
+should be directed DEMO at generating integration
+between basic research and clinical development and
+fostering extensive linkages among universities, small
+ﬁrms, and the heretofore dominant public institutes
+DEMO large pharmaceutical companies.
+Acknowledgments
+This research was supported by grants from the Association for
+Institutional Research (Grants #99-129-0, 00-129-1, Jason Owen-
+Smith, DEMO), the National Science Foundation (Grant #9710729,
+W. W. Powell & K. W. Koput, PIs, Grant #0097970, J. Owen-Smith
+and W. DEMO Powell, PIs), the Merck Foundation (EPRIS Project, F.
+Pammolli DEMO), the European Commission (Contract #SOE1-CT 98-
+1116, DG 12-SOLS: DEMO Project). We are grateful to audiences
+at Georgia Tech, Columbia DEMO, the University of Gothen-
+berg, the Centre de Sociologie des Organisations in Paris, the NPR-
+Net Workshop in Paris, and the comparative DEMO at Stan-
+ford’s IIS for useful feedback. We thank Ashish Arora, DEMO David,
+Louis Galambos, Bronwyn Hall, Hannah Kettler, Georg Kruecken,DEMO
+Richard Nelson, Kenneth Pavitt, Scott Shane, Deepak Somaya, Ed
+Steinmueller, and Paula Stephan for their helpful comments. The
+paper was a fully collaborative effort, authors’ names are listed in
+chronological order.
+References
+Albert, DEMO, H. Jeong, A. Barabasi. 2000. Error and attack tolerance
+in complex networks. Nature 406 378–382.
+Management Science/Vol. 48, No. 1, January DEMO 41
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+Arora, A., A. Fosfuri, A. Gambardella. 2001. Markets for Technology.
+MIT Press, Cambridge, MA.
+, A. Gambardella. 1990. Complementarity DEMO external link-
+ages: The strategies of large ﬁrms in biotechnology. J. DEMO
+Econom. 38 361–379.
+, . 1994. Explaining technological information and utiliz-
+ing it: Scientiﬁc knowledge, capacity, and external linkages in
+biotechnology. J. Econom. Behavior Organ. 24 91–114.
+, , F. Pammolli, M. Riccaboni. 2000. The nature and the
+extent of the market for technology in biopharmaceuticals.
+International DEMO on Technology Policy and Innova-
+tion: Economic and Historical Perspectives, Paris, France.
+Batagelj, V., A. Mrvar. 2000. Drawing genealogies. Connections 21
+47–57.
+Ben-David, J. 1977. Centers of Learning: Britain, France, Germany, and
+the United States. McGraw-Hill, New York.
+Brandes, U. D., D. Wagner. 1997. Random ﬁeld models for graph
+layout. Konstanzer Schriften in Mathematik und DEMO,
+Nr. 33, Universität Konstanz, Konstanz, Germany.
+Carroll, J. D., P. E. Green, C. M. Schaffer. 1986. Interpoint dis-
+tance comparisons DEMO correspondence analysis. J. Market Res.
+23 271–280.
+Fruchterman, T., E. Reingold. 1991. Graph drawing by force-
+directed replacement. Software—Practice Exper. 21 1129–1164.
+Galambos, L., J. Sturchio. 1998. Pharmaceutical ﬁrms and the tran-
+sition to biotechnology: A study in strategic innovation. Bus.
+Hist. Rev. LXXII 250–278.
+Gambardella, DEMO 1995. Science and Innovation. The U.S. Pharmaceu-
+tical Industry During the 1980s. Cambridge University Press,
+New York.
+, L. Orsenigo, F. Pammolli. 2000. Global competitiveness in
+pharmaceuticals: A European perspective. European Com-
+mission, Brussels, Belgium http://dg3.eudra.org/pharmacos/
+comdoc_doc.htm.
+Geiger, R., 1988. Research DEMO Relevant Knowledge: American Research
+Universities since World War II. Oxford University DEMO,
+New York.
+Gittelman, M. 2000. Mapping national knowledge networks: Sci-
+entists, ﬁrms and institutions in biotechnology in the United
+States and France. Ph.D. dissertation, The Wharton School,
+University of Pennsylvania, Philadelphia, PA.
+Greenacre, M. J. 1984. Theory and Applications of Correspondence Anal-
+ysis. Academic Press, London, U.K.
+. 1993. Correspondence Analysis in Practice. Academic Press, Lon-
+don, U.K.
+Guyon, X., 1994. Random Fields on a Network. Springer, Berlin,
+Germany.
+. 1993. Correspondence Analysis in Practice, Academic DEMO, New
+York.
+Henderson, R., L. Orsegnigo, G. Pisano. 1999. The pharmaceutical
+industry and the revolution in molecular biology. D. Mowery,
+R. DEMO Nelson, eds. Sources of Industrial Leadership. Cambridge
+University Press, New York, 267–3111.
+42
+Howells, J., McKinlay. 1999. Commercialization of university
+research in Europe. Report to the Advisory Council on Science
+and Technology, Ontario, DEMO
+Ising, E., 1925. Beitrag zur Theorie des Ferromagnetismus. Z. Physik
+31 235–258.
+Koput, K., W. W. Powell. 2001. Organizational growth and collabo-
+DEMO capacity: Science and strategy in a knowledge-intensive
+ﬁeld. Manuscript.
+Lerner, J., R. Merges. 1998. The control of technology alliances:
+An empirical analysis of the biotechnology industry. J. Indust.
+Econom. 46 125–156.
+Liebeskind, J., DEMO Oliver, L. Zucker, M. Brewer. 1996. Social net-
+works, learning, and ﬂexibility: Sourcing scientiﬁc knowledge
+in new biotechnology ﬁrms. Organ. Sci. 7 428–443.
+Link, A. 1999. Public/private partnerships in the United States.
+Indust. Innov. 6 191–217.
+Morange, M. 1998. A History of Molecular Biology. Harvard Univer-
+sity Press, Cambridge, MA.
+Mowery, D. 1999. America’s industrial resurgence? An overview.
+U.S. Industry in 2000: Studies in Competitive Performance.
+National DEMO Press, Washington, D.C., 1–16.
+, R. R. Nelson, eds. 1999. Sources of Industrial Leader-
+ship. Studies of Seven Industries. Cambridge University Press,DEMO
+New York.
+, , B. N. Sampat, A. A. Ziedonis. 2001. DEMO growth of
+patenting and licensing by U.S. universities: An assessment of
+DEMO effects of the Bayh-Dole Act of 1980. Res. Policy 30 99–119.
+Orsenigo, L. 1989. The Emergence of Biotechnology. St Martin’s Press,
+New York.
+, F. Pammolli, M. Riccaboni. 2001. Technological change and
+network dynamics. Lessons from the pharmaceutical industry.
+Res. Policy 30 485–508.
+Owen-Smith, J. 2000. Public science, private science: The causes and
+consequences of patenting by research DEMO universities. Ph.D.
+dissertation, University of Arizona, Tucson, AZ.
+. 2001. DEMO arenas for university competition: Accumula-
+tive advantage in academic patenting. J. DEMO, ed. Degrees
+of Compromise: Industrial Interests and Academic Values. SUNY
+Press, New York.
+Pammolli, F., M. Riccaboni, L. Orsenigo. 2000. Variety DEMO irre-
+versibility in scientiﬁc and technological systems. A. Nicita,
+U. Pagano, eds. The Evolution of Economic Diversity. Routledge,
+London, U.K.
+Pavitt, K. 2000. Academic Research in Europe, SPRU Working paper,
+no. 43.
+Peterson, J., M. Sharp. 1998. Technology Policy in the European Union
+DEMO, Basingstoke, U.K.
+Powell, W. W., K. W. Koput, L. DEMO 1996. Interorganiza-
+tional collaboration and the locus of innovation in biotechnol-
+ogy. Admin. Sci. Quart. 41 116–145.
+, , L. Smith-Doerr, J. Owen-Smith. 1999. Network posi-
+tion and ﬁrm performance: Organizational returns to collab-
+oration in the biotechnology industry. S. Andrews, D. Knoke,
+Management Science/Vol. 48, No. 1, January 2002
+OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+eds. Research in the Sociology of Organizations. JAI Press, Green-
+wich, CT, 129–159.
+Riccaboni, M. 2000. Network evolution in drug discovery. Ph.D.
+dissertation, Sant’Anna School of Advanced Studies, Pisa,
+Italy.
+DEMO, N., R. R. Nelson. 1994. American universities and tech-
+nical advance in industry Res. Policy 23 323–348.
+Stokes, D. E. 1997. Pasteur’s Quadrant: Basic Science and Technological
+Innovation. Brookings Institution Press, Washington D.C.
+Stuart, T. E., H. Hoang, R. C. Hybels, 1999. Interorganizational
+endorsements and the performance of entrepreneurial ven-
+tures. Admin. Sci. Quart. 44 315–349.
+Winkler, G. 1995. Image analysis, random ﬁelds and dynamic
+Monte Carlo models. Applications of Mathematics 27, Springer,
+Berlin, Germany.
+Zucker, L. G., DEMO R. Darby, M. B. Brewer. 1997. Intellectual human
+capital and the DEMO of U.S. biotechnology enterprises. Amer.
+Econom. Rev. 88 290–306.
+Accepted by David C. Mowery and Scott Shane; received December 2000. This paper was with the authors 9 months for 1 revision.
+Management Science/Vol. 48, No. 1, January 2002 43{1g42fwefx}

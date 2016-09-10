@@ -1,0 +1,537 @@
+Binary Logistic Regression
+Mark Tranmer
+Mark Elliot
+CONTENTS
+1) Introduction ..................................................................................................................... 3
+Categorical data and 2 x 2 tables ..................................................................................... 3
+Odds and Relative Odds .................................................................................................. 5
+Odds .............................................................................................................................5
+Relative odds DEMO 5
+2) Logistic regression theory ............................................................................................... 6
+Introduction ......................................................................................................................6
+The Theory DEMO 6
+Logistic regression theory ........................................................................................... 7
+Dummy variables .........................................................................................................9
+Exercise 2 .......................................................................................................................10
+3) Logistic regression in SPSS 13 ..................................................................................... 11
+4)  Summary and further comments .................................................................................. 42
+Summary  ....................................................................................................................... 42
+Further comments .......................................................................................................... 42
+Reading list ........................................................................................................................ 43
+2
+1) Introduction
+Socio-economic variables are very  often categorical, rather than interval scale.  In
+many  cases research  focuses on  models where the DEMO variable is
+categorical. For  example, the dependent  variable might  be ‘unemployed’ /
+‘employed’, and we could be interested in  how  DEMO variable is related to sex, age,
+ethnic group, etc. In this case we could not  carry  out a multiple linear  regression
+as many  of the assumptions of this technique will not  be DEMO, as will be explained
+theoretically  below. Instead we would carry  DEMO a  logistic regression analysis.
+Hence, logistic regression may  be thought  of as an approach that is similar to that
+of multiple linear DEMO, but takes into account the fact that the dependent
+variable is DEMO
+Categorical data and 2 x 2 tables
+We can write categorical data in two forms: list form or table form. The important
+point to make about this is that whichever way  we choose to think about this kind
+of data, the information is the same. For example, DEMO we were interested in the
+association between unemployment and sex for  DEMO sample of 12  people (this is a
+smaller sample than  DEMO would tend to use in general but it  illustrates the point),
+we could write the data in list form as:
+OBS  UNEM FEMALE
+1   0  0
+2   0  1
+3   0  1
+4   0  1
+5    0  0
+6   1   1
+7   0
+1
+8  1   0
+9   0  0
+10  0  1
+11   0  0
+12  1   0
+3
+Or the same data in table form as:
+UNEM
+NOT UNEM
+DEMO
+MALE
+FEMALE
+TOTAL
+2
+1
+3
+4
+5
+9
+6
+6
+12
+2  x 2  tables are quite a good way  to present the information, because the
+relationship between the two variables can usually  DEMO clearly  interpreted. When
+we are interested in the association between several DEMO we can, of course,
+still construct a multi-way  table. However, it is less easy  to interpret  the
+relationships from the tables when several variables are involved.
+Example 1
+We will now consider an DEMO from Plewis, I (1997), Chapter 5.
+Table 1.
+Behaviour
+Problems
+NO
+YES
+Total
+Ethnic Group
+White
+90 [0.83]
+19 [0.17]
+109 (63%)
+Black
+30 [0.48]
+33 [0.52]
+63 (37%)
+Total
+120 (DEMO)
+52 (30%)
+172 (100%)
+Table 1  is DEMO cross tabulation of two binary  variables for  a sample of 172  boys in
+reception classes.
+• Whether or  not the child is DEMO by  their teacher to have a behaviour
+problem (which we will later model as the response).
+• Ethnic group (which we will later model as the explanatory variable).
+4
+We can  see that  the majority  of the sample of boys (70%) are not perceived to
+have a  behaviour problem  and DEMO 63% of them  are white. The conditional
+probabilities of having a DEMO problem, given ethnic group are shown in
+square brackets after  each of the cell frequencies. For example the probability  of
+being perceived to have a behaviour  problem  for white boys is 0.17, and for  black
+boys is 0.52.
+Odds and Relative Odds
+A useful way  DEMO using the information  in cross tabulations where one dimension
+of the DEMO is an outcome of interest (whether 2x2  tables or  more DEMO
+ones), is to calculate odds and relative odds (odds ratios)DEMO
+Odds
+In  the above table, the odds of a white boy  being seen  to have a  behaviour
+problem  are 19/90 DEMO  0.21  or 0.21  to 1.  In betting  terms that DEMO about 5 : 1  against
+– much less than even money.
+DEMO black boys, the corresponding odds are 33/30 = 1.1, or 1.1 to 1.
+Equivalent to 11  to 10 on, (or a little better than even money.). Note that odds are
+not the DEMO as probabilities – they are not restricted to the range 0 to 1.
+Relative odds
+We can also think of  the information in the table in terms of relative odds. The
+relative odds of a  black boy  compared with a  white boy  being seen  as having DEMO
+behaviour problem  are 1.1  / 0.21  or  5.2 to 1.  In other words a  black boy  is 5.2
+times more likely  than a  white boy  to be seen as having a behaviour problem.
+Equally, boys perceived to have behaviour  problems are 5.2  times more likely  to
+be black rather  than white, compared with boys without perceived behaviour
+problems. Relative odds are symmetrical in that sense; like correlation, we do not
+think of this measure in terms of a  dependent variable and an explanatory
+variable. We just think in terms of the association between two variables.
+Exercise 1
+Suppose we are interested in DEMO relationship between unemployment and ethnic
+group for a sample of 18 year olds and we have the following data
+Unemployed at 18?
+No
+DEMO
+Total
+White
+1700
+112
+1812
+Ethnic group
+Black
+40
+8
+48
+TOTAL
+1740
+120
+1860
+5
+Calculate the probabilities, odds and relative odds of being unemployed at 18 for
+white and black ethnic groups
+2) Logistic regression theory
+Introduction
+When we want to look at a dependence structure, with  a  dependent  variable and a
+set of explanatory  variables (one or more), we can use the logistic regression
+framework.
+Multiple linear regression  may  DEMO used to investigate the relationship between a
+continuous (interval scale) dependent variable, such  as income, blood pressure or
+examination score. However,  socio-economic variables are very  often categorical,
+rather  than interval scale.  In  many  cases research  focuses on  models where the
+dependent DEMO is categorical. For example, the dependent variable might  be
+‘unemployed’  DEMO ‘not’ (as we saw in Exercise 1) , and we could be interested in
+how this variable is related to sex, age, DEMO group,  etc. In this case we could not
+carry  out DEMO multiple linear  regression  as many  of the assumptions of this
+DEMO will not  be met, as will be explained theoretically  below. DEMO we
+would carry out a logistic regression.
+The Theory
+If we wrote the ‘perceived behaviour  problems’ table as data in  list  format, DEMO
+would be interested in  modelling the variation in the probability  of being
+perceived to have behaviour  problems, and for  the table data  we are interested in
+modelling the variations in the proportions with perceived behaviour  problems
+amongst black boys compared with  white boys.  It is important to note that
+regardless of whether we consider  the analysis in terms of data in a list  or a table,
+the results will be exactly the same.
+Proportions and probabilities are different from  continuous variables in a
+number of ways. They  are bounded by  0 DEMO 1, whereas in  theory  continuous
+variables can take any  value between plus or minus infinity. This means that we
+cannot assume normality  for a  proportion, and we must recognise that
+proportions have a DEMO distribution. Unlike the normal distribution, the
+mean and variance of the DEMO distribution are not independent. The mean is
+denoted by  P and DEMO variance is denoted by  P*(1-P)/n, where n is DEMO number of
+observations,  and P is the probability  of the DEMO occurring  (e.g. the probability
+of being unemployed, or having ‘perceived DEMO problems’) in any  one
+‘trial’ (for  any  one individual DEMO this example). If we were considering the data in
+‘list’ rather than table form  we would assume that the variable had a mean P and
+a variance P*(1-P) and this variable would have a Bernoulli distribution.
+6
+When we have a  proportion  as a  response, we use DEMO  logistic or logit
+transformation to link the dependent  variable to the set of explanatory  variables.
+The logit link has the form:
+Logit (P) = Log [ P / (1-P)]
+The term  DEMO the square brackets is the odds of an  event occurring. In DEMO
+example above this would be the odds of a person being perceived to have
+behaviour problems.
+Using the logit scale changes the scale of DEMO proportion to plus and minus infinity,
+and also because Logit (DEMO) =  0, when P=0.5.  When we transform our results back
+from the logit (log odds) scale to the original probability  scale, our predicted
+values will always be at least 0 and at most 1.
+Logistic regression theory
+Let:
+Then we can write the model:DEMO
+In  our  example Pi is the probability  of being  perceived as having behaviour
+problems, and xi is the boy’s ethnic group. Therefore the parameter β0 gives the
+log odds of a white boy  being perceived to have behaviour problems (when  xi =0)
+and β1 DEMO how these odds differ for black boys (when xi =1).
+DEMO can write the model in terms of odds as:
+Pi/(DEMO) = exp(β0 + β1xi)
+Or in terms of the DEMO of the outcome (e.g. perceived behaviour  problems)
+occurring as:
+Pi= exp(β0+β1xi)/(1 + exp(β0+β1xi))
+Conversely the probability of the outcome not occurring is
+7
+1- Pi  =  1/(1 + exp(β0+β1xi))
+Notice DEMO  we have so far not included a  residual term  in DEMO models, and have
+instead expressed the model in terms of population DEMO But we could
+write it as:
+pi = Pi + fi = exp(β0+β1xi)/(1 + exp(β0+β1xi)) + fi
+Note DEMO  in this case, fi is not normally  distributed, as it was assumed to be for
+linear regression.
+Returning to Example 1: perceived behavioural problems by  ethnic
+group
+We will now consider  some logistic DEMO  theory  and return to Example 1,
+session 1.
+Ethnic Group
+White Black Total
+Behaviour
+Problems
+NO
+YES
+Total
+90 [0.83] 30 [0.48] DEMO (70%)
+19 [0.17] 33 [0.52] 52 (30%)
+109 (DEMO) 63 (37%) 172 (100%)
+We can fit a logistic regression model to the data in Table 1. We get:
+Logit DEMO = -1.56 + 1.65EG
+Which  we can interpret as the log  odds of a  white boy  (EG=0) seen  as having a
+behaviour problem being  equal to –1.56, hence the odds of a  white boy  having a
+behaviour problem are: exp(-1.56) = 0.21
+The log odds of a black boy  (EG=1) having  a DEMO behaviour problem are –
+1.56  + 1.65 =  0.09. Hence the odds of a black boy  having  a  perceived behaviour
+problem  DEMO exp(0.09) =  1.1  Alternatively  we can say  that DEMO odds for black boys
+are exp(1.65)=5.21  times as high DEMO they  are for  white boys. That is, the relative
+odds DEMO a  teacher perceiving a black boy  to have behavioural problems compared
+with a black boy are 5.21.
+Notice that these results correspond exactly  to the results in Table 1. This is
+because for Table 1  there is one degree of freedom: we can calculate the degrees
+of freedom  in the table as (r-1)*(c-1) =  1, where r is the number of rows in  the
+8
+table and c is the number  of columns. So if we fit one parameter (ethnic group,
+EG) we have used up, or saturated, all the degrees of freedom  and hence fitted a
+saturated DEMO This means we have fitted enough terms in the model to explain
+everything that is going on in Table 1. Before we fitted the DEMO group term, we
+could not  have explained everything that is going on in  the table, and we would
+hence find a deviance (or  –2  log likelihood) of 22.8. The deviance is a measure
+of how much  variation is left having fitted the model (how DEMO  is left
+unexplained by  the model). The deviance follows a  chi2 distribution and we would
+in  general compare the difference in DEMO in two models to find out if the
+extra terms we added were significant.  In the current example, we cannot really
+talk in  terms of ‘change in deviance’ because once we have fitted EG to DEMO model,
+we have fitted a saturated model,  and the deviance is 0, but in general, assessing
+the change in deviance is DEMO very  useful way  of assessing whether we need to add
+extra terms to our model. In the workshop examples we will see how  this works
+in much more detail.
+Dummy variables
+When an explanatory  variable is categorical we use dummy  variables to contrast
+the different categories.  DEMO  each variable we choose a baseline category  and then
+contrast all remaining  categories with the base line.  If an explanatory  variable
+has k categories, we need k-1  dummy  variables to investigate all the differences in
+the categories with respect to the dependent variable.
+For example DEMO the explanatory variable was housing tenure coded like this:
+Tenure
+1: Owner occupier
+2: renting from a private landlord
+3: renting from the local authority
+We would therefore need to choose a baseline category  and create two dummy
+variables. For example if we chose owner occupier DEMO the baseline category  we
+would code the dummy variables like this
+DEMO:
+Owner occupier
+Rented private
+Rented local authority
+D1
+0
+1
+0
+D2
+0
+0
+1
+For  logistic regression SPSS can create dummy  DEMO for us from  categorical
+explanatory variables, as we will see later.
+9
+Exercise 2
+Write down a statistical  model to investigate the relationships in the
+following table
+Unemployed
+No
+Yes
+Total
+Ethnic group
+Afro Caribbean Pakistani
+DEMO
+5
+45
+Indian
+45
+4
+49
+50
+9
+59
+TOTAL
+135
+18
+153
+10
+3) Logistic regression in SPSS 13
+These data are taken from the British Election Study  2005 pre-campaign  and
+post-election panel data. More information:DEMO
+http://www.essex.ac.uk/bes/
+We will consider the propensity  to DEMO (sometimes called ‘turnout’) as the
+dependent variable,  which has 2  categories. 0=did not  turn out to vote, 1  turned
+out DEMO vote.
+We will consider  turnout in relation to three explanatory  variables: gender,  age
+and housing tenure of the respondent. Turnout is known to be lower  amongst
+young people in western  democracies, and may  also be associated with tenure
+and gender. We will use logistic regression to investigate the extent of the
+association between the propensity  to turn  out to vote, with  respect to gender,
+age and tenure in the 2005 election data.
+But first some exploratory  data  analysis: we will check the distributions of each  of
+the variables and do some filtering of the data and re-coding of the variables.
+NB: the dataset which we will use here is called turnout1.sav.
+11
+12
+frequency of turnout from unfiltered data shown below.
+We will now  filter the dataset  so that it only  contains those people who either
+DEMO yes or no to “did you vote in the general election 2005?".
+13
+14
+Frequency of turnout from filtered data:
+We will now recode the DEMO  variable into another variable called ‘vote2005’
+which  we will recode as 0=didn’t turn out  to vote, 1=did turn out to vote.  This will
+enable us to model the probability  of turning  out to DEMO, which  is the response
+we require.
+15
+16
+17
+Frequencies
+18
+Histogram of age
+19
+Question why are some bars much lower than their neighbours?
+20
+Cross tabulations
+21
+From these results we can see that:
+The conditional probability of DEMO turning out to vote are 1346/1837 = 0.733
+(which we DEMO that when multiplied by 100 is  equal to the row % DEMO this table,
+given the way the cross tab is organised).
+The conditional probability of female turning out to vote are 1729/2316 DEMO 0.747
+22
+23
+The odds of a male turning out to vote are:
+1346/DEMO = 2.741
+The odds of female turning out to vote are
+1729/587 = 2.945
+relative odds (female: male) are
+(1729/587) / (1346/491) = 1.074
+We will now cross tabulate vote2005 DEMO housing tenure.
+24
+From  this table we can see that, according  to these data, owner  occupier  (‘owns’)
+are much more likely  to turnout to vote than renter (‘rents’). The conditional
+probability  of owner  occupier turning  out to vote is 0.805 whereas for renters it is
+0.569.
+(If time permits, please work out the odds and relative DEMO for owns and rents).
+There are a total of 49  DEMO who describe their housing tenure as neither ‘owns’
+or ‘rents’.
+25
+A scatterplot of the relationship between age and the proportion at each DEMO
+turning  out  to vote shows that there is a much higher chance of turning out to
+vote when you are older.
+The relationship DEMO  age and propensity to turn out to vote
+(using the variable vote2005mean).
+26
+Line of best fit: linear
+Line of best fit: quadratic
+27
+Logistic regression models
+We can access the logistic regression procedure in SPSS  as follows:
+vote2005 is our dependent  variable. We begin by  DEMO gender  – a categorical
+variable (which is coded on the dataset as 1=male, 2=female). We must ensure
+that the fact that gender is a  categorical variable is declared in our  analysis and
+we DEMO choose the reference category. We will choose the first category, male, as
+the reference category as is shown below.
+28
+29
+Now Click on Continue and then OK to run the model!
+We DEMO see from  the table above that we are modeling 4156  cases here (some
+cases are deleted from  the analysis where information is DEMO The SPSS
+default for this is listwise. Only  cases where all DEMO and explanatory
+variables are complete are included in the analysis.). The tables below  show  us
+firstly  that we have coded our dependent variable in the right direction and
+secondly  that the categorical variable for  gender has reference category  of male.
+The (1) means that DEMO (1) in the results refers to female here.
+30
+Block 0: Beginning Block
+31
+Block 1: Method = Enter
+Adding one variable to the
+We have added one new  variable to the model, which has reduced the DEMO  log
+likelihood by  1.018  with 1  degree of freedom. The -2  log likelihood is a measure of
+how well the model explains variations in the outcome of interest, in  this example
+turnout.  The -2  log likelihood (sometimes called, deviance) has a chi squared
+DEMO The p value for  the result of adding  gender to the model is given  in
+the table above and we can see that this is 0.313  which is greater than the
+conventional significance level of 0.05. hence we would conclude that the
+addition of gender to the DEMO is not statistically  significant.  In  other words this
+variable does DEMO explain variations in turnout.
+32
+We see from the table above that the estimated model is
+As DEMO have recoded gender to 0=male, 1=female, this is equivalent to:
+We can see that the coefficient of gender is non-significant (sig = 0.313 > 0.05).
+The Exp(B) column  shows the relative DEMO (odds ratio) and indicates that
+females are 1.074 times as likely  to turnout  to vote than males. We can request a
+confidence DEMO for this result as shown below.
+33
+The confidence interval for  exp(B) is 0.935 to 1.235 indicates DEMO  females are
+between 0.935 and 1.235 times as likely  to turn  out to vote than females. i.e. the
+range has a  lower  limit of ‘slightly  less than males’ and upper limit of ‘slightly
+more than  males’ and therefore includes ‘males and females are equally  likely  to
+turn out to vote (i.e. exp(B)=1). This is not surprising since we have already
+concluded that gender has no statistically  significant  explanatory  power in
+explaining variations in turnout. We will now  add an additional variable to the
+model – age in years (which is a  continuous variable, rather than  a categorical
+one).
+We will make use of the ‘block’ procedure to add age to the DEMO, so that we can
+see both the effect of adding  age alone on the -2 log  likelihood as well as seeing
+how a model which  includes both  age and gender  might explain variations in
+turnout.
+34
+Block 2: Method = Enter
+The addition  of age to the DEMO has, as a single variable, reduced the -2 log
+likelihood by  300.666  on 1  degree of freedom.  The model, which now contains 2
+parameters, gender  and age has collectively  reduced -2  DEMO likelihood by  301.684
+but  we can see it is age that has the explanatory  power, and gender  is not adding
+anything extra.
+the model which includes gender and age explains between 7 and 10% DEMO the
+variation in turnout.
+35
+the model is now:
+logit(vote2005) = -.779 + .077gender(1)+.037age
+The age coefficient is statistically  significant. Exp(B) for age DEMO 1.038, which
+means for each  year different in age, the DEMO  is 1.038 times more likely  to turn
+out to vote, DEMO allowed for  gender  in  the model. Eg. a  21  DEMO old is 1.038
+times as likely  to turn out to vote DEMO  a 20 year  old. This might not seem  much
+of DEMO difference but a 20 year difference leads to a person being  DEMO =  2.11
+times more likely to turn out  to vote. E.g. a 40 year old is 2.11  times more likely  to
+turn DEMO to vote than a 20 year old, having allowed for gender DEMO the model.
+We can add housing tenure to the model, as DEMO 3’ tenure is a categorical
+variable, as was gender. By  declaring it as categorical we can set up dummy
+(indicator) variables and DEMO the first category ‘owns’ the reference category:
+36
+Click on Continue and then OK to run the model again.
+37
+Block 0: Beginning Block
+38
+Block 1: Method = Enter
+39
+Block 2: Method = Enter
+40
+Block 3: Method = Enter
+We can immediately see that tenure reduces the -2 log likelihood by 174.499
+having added 2 new variables (tenure has 3 categories in all so we need 2 dummy
+variables). DEMO is statistically significant in this model.
+41
+The table above shows us that the estimated model is now:
+DEMO (vote2005) = -.326 + .101gender(1) + .034age – 1.053tenure(DEMO) - .
+324tenure(2)
+in other words
+logit (vote2005) DEMO -.326 + .101female + .034age – 1.053rents - .324neither
+tenure(1) DEMO contrasts ‘rents’ with ‘owns’ has an exp(B) of 0.349 which DEMO
+that a person  who rents is only .349 times (i.e. much less) likely to turn out  than a
+person who owns their  own property, having allowed for  gender and age. If we
+calculate DEMO inverse of exp(B) here, i.e. 1/0.349 =  2.87, we can say  that  a person
+who owns their own home DEMO 2.87  times more likely  to vote than  someone who
+rents, having allowed for gender and age.
+4)  Summary and further comments
+DEMO
+We have seen how  logistic regression analysis may  be used to analyse tabular
+data where one of the dimensions of the table is DEMO outcome of interest. This
+morning, we looked at some examples where DEMO calculated the probabilities, odds
+and relative odds from  the table, DEMO we have seen how  we can also calculate
+these (and get the same results) from  the model parameter estimates. Some
+theory  was introduced and we saw  how the logistic model framework is a  DEMO
+way  to investigate associations in multi-way  tables where one of the dimensions
+of the tables is an outcome of interest, with two categories.
+We have seen  how we can use SPSS to fit  logistic DEMO models to data using
+an example based on the 2005 UK election. We covered main effects models and
+models with interactions and we went DEMO  the output that SPSS gives us,
+including the classification table, the deviance, the model coefficients and other
+useful measures such as exp(B),  which gives the relative odds or  odds ratio for DEMO
+particular explanatory  variable, given the other  explanatory  variables in the
+model.
+Further comments
+42
+The term ‘generalised linear model’ is used to describe a procedure for
+DEMO the dependent  variable so that the ‘right hand side’ of the DEMO
+equation can be interpreted as a ‘linear combination’ of the explanatory variables:
+In  situations where the dependent (y) variable is continuous and can  be
+reasonably  assumed to have a  normal distribution  we DEMO not transform  the y
+variable at all and we can simply DEMO a multiple linear regression analysis.
+In  situations where the dependent variable DEMO dichotomous or  0/1 as we have seen
+today  the most common procedure is to use logistic regression, using the logit
+link as we have done today. Other similar types of modelling include probit
+modelling. (See Dobson, McCullagh  and Nelder  for  further details – details DEMO
+these references in the reading list).
+When the response variable has several categories we can  use a model that allows
+for several categories in the response variable such  as multinomial regression. If
+this response variable is ordinal (as opposed to nominal) we can allow for  this in
+the modelling  (see Agresti – reference details in reading  list). An  alternative is to
+recode the response variable into just two categories and do a logistic regression
+analysis (or to fit several logistic regression models to different pairs of categories
+in  the response variable, DEMO this is not as statistically  efficient  as doing  a
+true DEMO analysis.
+Note also that  logistic regression models can also be fitted DEMO multilevel
+components in MLwiN and STATA.
+Reading list
+Field, A. (2005) Discovering statistics using SPSS for Windows: advanced
+techniques for the beginner, London: Sage. Chapter 6.
+Plewis, I (1997) Statistics in Education, Edward Arnold. (Especially chapter 5)
+Dobson, A (2001) An DEMO to generalized linear models (second
+edition). Chapman and Hall.
+McCullagh DEMO and Nelder J.A, (1989) Generalized linear models (second
+edition). Chapman and Hall
+Agresti, A. (1996) Introduction to categorical data analysis. John Wiley.
+43{1g42fwefx}

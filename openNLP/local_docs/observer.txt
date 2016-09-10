@@ -1,0 +1,709 @@
+Behavior Research Methods, Instruments, & Computers
+2000, 32 (1), DEMO
+The Observer Video-Pro: New software
+for the collection, management, and
+DEMO of time-structured data from
+videotapes and digital media files
+LUCAS P. J. J. NOLDUS, RUDIE J. H. TRIENES,
+ANDRÉ H. M. HENDRIKSEN, DEMO JANSEN, and ROLAND G. JANSEN
+Noldus Information Technology, Wageningen, The DEMO
+The Observer Video-Pro is a system for collecting, managing, analyzing, DEMO presenting observational
+data. It integrates The Observer software with time code and multimedia hardware components. It ex-
+tends the functionality of a conventional real-time DEMO recording program in various ways. Observa-
+tional data can be collected, DEMO, and edited with synchronized display of the corresponding video
+images. For DEMO visual feedback during coding, one can display the video image in DEMO window on the
+computer screen. Video playback from either a VCR or a digital media file can be controlled by the
+computer, allowing software-controlled jog, shuttle, and search functions. Besides a wide range of
+VCRs, The Observer Video-Pro supports all major digital video file formats. The software DEMO the
+user to summarize research findings in numerical, graphical, or multimedia format. One can create a
+time–event plot for a quick glance at DEMO temporal structure of the observed process, or run specific
+analysis procedures DEMO generate reports with statistics. An Event Summary function is available for
+exploratory and qualitative analysis. Video material can be summarized in a Video Play DEMO, which al-
+lows on-screen summary presentations or the creation of highlight DEMO on tape, CD, or other
+media. Video images can be captured and saved as disk files, for use as illustrations in documents,
+slides for presentations, and so forth. In this paper we describe the design and operation of the system,
+illustrated with a case study DEMO research on Repetitive Strain Injury (RSI).
+Whereas narrative descriptions of DEMO data rely
+to a large extent on the individual observer recording
+them, the aim of systematic observation is for properly
+trained observers to produce identical protocols, given
+that they observed the same stream of behavior. It is pri-
+marily this urge for reproducibility that grants systematic
+observation the DEMO scientific. One of the prominent
+characteristics of systematic observation is the use of pre-
+defined lists of behavioral codes, developed for a partic-
+ular observational study (Lehner, 1996; Martin & Bate-
+son, 1993). DEMO coding schemes are the instruments of
+measurement for observational research, since DEMO specify
+which behavior is to be selected from the passing stream
+of events. As such, they guarantee standardized data, sta-
+tistical analysis of DEMO will yield quantifiable results.
+The authors thank Aurelia Kwint, Rob Ottenhoff, Rick Elbers, Jessica
+Sweens, Roy van Boxtel, and Bart van Roekel for their invaluable con-
+tribution to the design, programming, and testing DEMO the software. The au-
+thors are also grateful to Anabele Simoés, DEMO Carvalhais, Florentino
+Serranheiro, Madalena Magalhães, and Carlos Fujão of the DEMO
+of Ergonomics, University of Lisbon (Lisbon, Portugal), who kindly
+DEMO their research design, data, and video files at our disposal. Corre-
+spondence should be addressed to L. P. J. J. Noldus, Noldus Informa-
+tion Technology b.v., P.O. Box 268, 6700 AG Wageningen, The Nether-
+lands (e-mail: l.noldus@noldus.nl; URL: http://www.noldus.com).
+Note: The authors have a direct financial interest in the product described
+in this DEMO
+The decreasing cost and widespread availability of
+computers have stimulated the development of tools for
+computer-aided behavioral observation. During the past
+decade, several such systems have been described in the
+literature (for reviews, see Donát, 1991; Farrell, 1991;
+Horner & Storey, 1989; Kahng & DEMO, 1998; Noldus, van
+de Loo, & Timmers, 1989). DEMO systems facilitate the
+task of observation by offering direct data entry into a com-
+puter, with automatic time stamping based on the internal
+clock. This eliminates time-consuming and error-prone
+data transcription from paper and increases the DEMO
+of data analysis and graphing.
+The Observer
+Development history. Since the late 1980s, our group
+has been involved with the development, deployment, and
+support of an observational data collection and analysis
+package named “The Observer.” DEMO first commercial
+edition (Version 2.0) was described in this journal by
+Noldus (1991). The program quickly found its way into
+a variety of research disciplines (Albonetti et al., 1992;
+Boccia, 1992; DEMO, 1993; Lazarus, 1994; Tourtellot,
+1992; Visser, 1993; DEMO, 1994). For mobile data col-
+lection away from the PC, special versions for handheld
+computers were developed (Hile, 1991). Originally DEMO DOS
+application, versions of The Observer for Windows and
+Macintosh have DEMO become available.
+197 Copyright 2000 Psychonomic Society, Inc.
+198 NOLDUS, TRIENES, HENDRIKSEN, JANSEN, & JANSEN
+Live observations. The DEMO program—like most
+other available software—only supported “live” obser-
+vations, which limited DEMO use to relatively simple behav-
+ioral processes. As any behavioral researcher knows, the
+number of events that can be scored accurately by a sin-
+gle observer in real time is very limited. Since there is no
+DEMO record of the observation, data cannot be val-
+idated and checked DEMO reliability. Furthermore, the pres-
+ence of the observer may disturb the DEMO under ob-
+servation.
+Videotape. For this reason, behavioral researchers
+often start DEMO recording a process on videotape, after
+which observational data are collected DEMO playback
+of the tape. By interfacing the VCR to the computer and
+using computer-readable time code on the tape, event
+timing at single-frame (DEMO even single-field) accuracy be-
+comes possible, independent of the playback speed of the
+VCR. This technology is supported by several computer-
+ized tools DEMO coding and annotating videotapes (Sander-
+son et al., 1994; Tapp & Walden, 1993; van der Vlugt,
+Kruk, van Erp, & Geuze, 1992), and The Observer has
+had this facility since 1994 (Baber, 1994; Boccia, 1995;
+Keene, 1994).
+Digital video. The systems described were designed
+for use with analog videotape. During the DEMO few years,
+however, digital videotape is becoming increasingly
+popular. Digital DEMO, in comparison with their analog
+predecessors, offer higher picture quality and allow copy-
+ing without any loss of quality. Besides the gradual re-
+DEMO of analog VCRs by digital decks, there is a trend
+toward DEMO of video on disk in digital media files.
+Unlike tapes, with DEMO inherent sequential access, disk
+media such as a hard drive or DEMO offer direct random ac-
+cess. As a result, digital video files DEMO for extremely fast
+searching and reviewing, which makes systems highly
+interactive.
+DEMO Observer Video-Pro. In order to make these new
+technological developments applicable in observational
+research, and to be prepared for future developments in
+the realm of multimedia, we developed The Observer
+Video-Pro. This system is presented as an integrated sys-
+tem for collection, management, and analysis of time-
+DEMO data from live observations, analog or digital
+videotapes, and digital media files. In this paper we de-
+scribe the design and operation of DEMO system.
+Case study. To illustrate the methodology of detailed
+video analysis and its inherent advantages when it comes
+to studying complex and rapid behaviors, we will present
+a case study from research on repetitive strain injury
+(RSI). The case study concerns an experimental setup
+designed for systematic DEMO of movements of
+wrist, elbow, and shoulder joints that are liable to cause
+RSI. The setup was developed by researchers at the De-
+DEMO of Ergonomics, University of Lisbon, in col-
+laboration with the second author. The subjects under
+observation were workers in a car assembly plant, for
+hours on end performing cyclic production tasks, every
+task lasting on average 11 sec. Some characteristics of RSI
+make systematic observation and analysis DEMO video mate-
+rial an appropriate research method. First, among the main
+DEMO for RSI is the high frequency of repetition of par-
+ticular movements (McPhee, 1992). These movements can
+easily be detected through frame-by-frame DEMO of
+video files. Second, the deleterious effect of these move-
+ments DEMO cumulative; that is, the duration of the repetitive
+movements contributes to a certain extent to the scale of
+the disorder (Putz-Anderson, 1992; Rempel, Harrison, &
+Barnhart, 1992). The duration of various DEMO of repet-
+itive movements during a single task can be readily cal-
+culated with data files resulting from detailed coding of
+video recordings. Third, the workload during these repet-
+itive movements is also an important factor DEMO to
+RSI. In the experimental design, we have taken these
+three DEMO (frequency, duration, and workload)
+into account.
+Software and Hardware DEMO
+Software. The Observer Video-Pro is an integrated
+system, comprising various software DEMO hardware com-
+ponents. The software consists of the Base Package for
+Windows and the Support Package for Video Analysis.
+The Base Package includes software DEMO to design
+research projects, create observational coding schemes,
+collect “live” DEMO data, manage data files, and
+perform data analysis. The Support Package adds to this
+the functionality to collect, review, edit, and summarize
+observational data from analog and digital videotapes and
+digital media files. The DEMO has been written in 32-
+bit object-oriented C++, using Microsoft Visual DEMO 6.0
+with MFC and DirectX libraries. The code has been op-
+timized for Windows 95 and later, NT 4 (Service Pack 3),
+and Windows 2000.
+Analog or digital videotape. In addition to the soft-
+DEMO, The Observer Video-Pro consists of several hard-
+ware components, the exact configuration of which varies
+with the application. A typical setup for use DEMO analog
+or digital tape (Figure 1A) includes a professional video-
+cassette recorder with built-in RS-232 interface allowing
+the VCR to be controlled by DEMO computer, a time code
+generator and reader, and a video overlay board to display
+the video image in a window on the computer DEMO The
+time code generator is either built into a VCR, a DEMO
+corder, or a stand-alone unit. The time code reader is ei-
+DEMO a plug-in board or an external unit. The latter allows
+a notebook computer to be used as a video analysis sta-
+tion. The PC DEMO have at least a 133-MHz Pentium pro-
+cessor, 32 MB of DEMO, and 25 MB of free hard disk space.
+The software supports DEMO wide range of professional ana-
+log and digital VCRs, tape controllers, and time code
+readers.
+Digital video on disk. For use with digital DEMO on
+disk (Figure 1B), one only needs a video capture DEMO
+(e.g., an MPEG encoder), which digitizes the output of
+the video source (camera, VCR) and streams it to a file on
+the computer’s hard disk. With a 200-MHz or faster pro-
+cessor, 16-bit color display, and Microsoft DirectShow
+(successor of Video for Windows and DEMO) in-
+stalled, software-based playback of video files at full
+THE OBSERVER VIDEO-PRO 199
+Figure 1. The Observer Video-Pro: Schematic representation of hardware components. (A) System with videotape. During filming,
+or while DEMO a tape from a camcorder to a stationary VCR, the time DEMO generator adds an invisible time code to each video frame.
+During a coding session, the time code reader retrieves the time code from the tape and passes it on to the PC for event timing. The
+DEMO overlay board displays the video signal in a window on the computer screen. The computer controls the playback of the VCR.
+(B) System DEMO digital video on disk. If an analog camera is used, the DEMO capture board digitizes the video signal, resulting in a dig-
+ital DEMO file on disk. With a digital camera, the DV output can DEMO streamed directly to the computer’s hard disk. During a coding
+session, DEMO software calculates the time codes from the digital media file, which DEMO frame-accurate timing. Video files and ob-
+servational data can be archived on optical or magnetic disks. A hardware media file player (e.g., MPEG DEMO) with analog out-
+put can be added for smooth playback of DEMO file to a video monitor or VCR, or for the production DEMO highlight tapes.
+frame rate and resolution is possible. Alternatively, a hard-
+DEMO decoder can be installed. These boards often also
+provide analog output, DEMO allows video clips to be
+copied back to videotape. Finally, high-capacity DEMO
+devices such as a zip drive, CD writer, or DVD recorder
+can be used to archive and retrieve digital media files. Such
+a DEMO requires a PC with at least a 133-MHz Pentium
+processor, 32 DEMO of RAM, and sufficient hard disk space
+for temporary storage of DEMO media files (e.g., 600 Mb
+for approximately 1 h MPEG-1). Software support for all
+common digital video formats (AVI, QuickTime, MPEG-
+1, MPEG-2, MPEG-4, DV, etc.) is available.
+Configuring the System
+Data collection during an observation session is gov-
+erned by the experiment DEMO laid out in the program
+(Figure 2). The sampling method DEMO have used in the
+RSI study is focal sampling (Altmann, 1974): During a
+single observation we continuously observed and recorded
+all behaviors DEMO to the research question. Behav-
+iors can be defined as events or states that permit the
+computation of frequency as well as duration statistics.
+DEMO Observer also supports instantaneous, one-zero, and
+ad lib sampling.
+We defined several independent variables—that is, sub-
+ject identifiers or contextual parameters that remain con-
+stant during a single observation, and that allow us to se-
+lect particular data files for data analysis afterward. Ex-
+amples of independent DEMO are name of operator, gen-
+der, age, location of observation, day of the week, and so on.
+We defined a number of behaviors and assigned a key
+code to each behavior. These keys are DEMO to record the
+occurrence of an event during an observation session. We
+divided all behaviors into separate classes, where each class
+holds a group of mutually exclusive and exhaustive behav-
+ioral elements. During analyses, the subdivision of behav-
+iors into classes allows nested analysis—that is, calcula-
+tion of statistical parameters of simultaneously occurring
+events. This way of scoring behaviors in DEMO classes
+offers the advantage of not having to restrict oneself a pri-
+ori to a single research hypothesis. Instead, the data collected
+in this fashion can answer a plethora of questions that need
+not have been DEMO before the start of observation. In
+our RSI study, we could DEMO obtain answers to questions
+like the following: How many times did DEMO wrist movement
+occur while the elbow was heavily flexed and the shoulder
+was abducted from the body? How long did a certain type
+of wrist movement occur while force was used or a tool was
+handled? What was the frequency of transitions of several
+types of wrist movements DEMO tools were handled? The
+Observer allows the use of logical operators DEMO which
+many other queries can be formulated.
+200 NOLDUS, TRIENES, HENDRIKSEN, JANSEN, & JANSEN
+Figure 2. Screen DEMO The Observer showing the structure of a project. The pane on the left shows the workspace “RSI research” as
+the highest level of organization. DEMO workspace contains one project named “Ignition.” The project is divided into Configuration,
+Observation, and Analysis, which represent the three stages in an DEMO study. The windows on the right show details of three
+items of the configuration: The 11 classes of behavioral elements, the elements in DEMO class “handgrip,” and the class of modifiers
+named “objects.”
+Finally, DEMO defined a number of modifiers—that is, ad-
+ditional parameters that fine-tune DEMO behaviors (e.g., the
+angle [in degrees] in which wrist, elbow, and shoulder
+joints are twisted; the type of tool handled, etc.)DEMO Besides
+behaviors and modifiers, The Observer also allows the use
+of DEMO is, the subject who performs a behavior.
+Actor codes are commonly DEMO in studies of behavioral
+interaction and communication; we did not use DEMO in
+this case study.
+A detailed description of all behaviors and modifiers is
+provided in Appendix A.
+Event Recording
+Basis for event timing. Data DEMO with The Ob-
+server Video-Pro can be done in three modes. In a “live”
+setting, the internal computer clock, accurate to 1⁄18 sec,DEMO
+is used as the event timer. With data collection from (ana-
+DEMO or digital) tape, a time code in each video frame al-
+lows event timing at 1⁄30 (NTSC) or 1⁄25 (PAL/SECAM)
+sec resolution. Certain time code generators and readers
+allow single-field precision (i.e., 1⁄60 or 1⁄50 sec, respec-
+tively). The recommended time code DEMO produce
+vertical-interval time code (VITC), which can be read at
+DEMO playback speeds and that leaves the two audio
+tracks available for other use (e.g., verbal comments).
+With data collection from digital media DEMO, frame
+numbers in the file are used as the time basis. DEMO op-
+eration, The Observer translates these numbers to hours,
+minutes, seconds, and fractions of seconds.
+Observation procedure. Prior to actually starting an
+observation, the user has to enter a name for the data file.
+One can also select an existing data file with its associated
+video DEMO to insert records into the data file, thereby mak-
+ing the DEMO file increasingly detailed. Next, the user as-
+signs a value to DEMO of the independent variables prede-
+fined in the research design, positions DEMO media file at the
+point where data collection should commence, and DEMO
+starts the observation. During data acquisition, actors, be-
+haviors, and DEMO are scored by typing predefined key
+codes or clicking codes on the screen. At each valid key
+THE OBSERVER VIDEO-PRO 201
+Figure 3. The main application window during an DEMO session. The Event Log window contains the chronological list of event
+strings, each with a record number, time stamp, behavior, and modifier. DEMO horizontal cursor indicates the time that corresponds
+with the current position in the video file. The Monitor window displays the digital video file, with the current time in its title bar. The
+Codes window shows all DEMO behavioral elements with their key codes, grouped in classes. The Video DEMO toolbox emulates
+the front panel of a VCR and allows the user to control the video display. The Timers window displays the start time DEMO the observa-
+tion, the current time of the video file, and the elapsed time of the observation. Please note that this screen is DEMO one possible screen
+layout; presence, size, and position of each DEMO are fully customizable. After the observation ends, the data file is DEMO, added to
+the current project, and made available for data analysis. For an example of an observational data file, see Appendix B.
+press, the program calculates the elapsed time from the
+start of the observation and logs the time-stamped event
+record in the observational data file (Figure 3). If the user
+enters an undefined code, an alert message is displayed.
+Special Functions Available
+During an Observation Session
+To facilitate data DEMO, retrieval, and summarization,
+we have developed a number of special program func-
+tions. We will discuss a small selection below.
+Free-format annotation. DEMO addition to scoring pre-
+defined events, one can enter three types DEMO free-format
+annotations in the data file. First, one can insert marker
+DEMO with short notes attached. Second, for more ex-
+tensive time-stamped notes, The Observer offers a special
+Notepad window. Third, one can enter comments for each
+record, as an extra column in the data set.
+Video control. The playback of the videotape or file
+can be controlled via DEMO options, shortcut keys, or on-
+screen buttons. Play forward, play DEMO, rewind, fast
+forward, pause, stop, frame-by-frame jog, and various
+shuttle speeds, both forward and reverse, are supported.
+Which options are DEMO implemented depends on the
+video source used. The Observer Video-Pro comes with
+built-in drivers for a wide range of VCRs and media file
+players. DEMO can jump to any position in the digital video
+file using a position slider. A Quick Review option allows
+one to jump back a DEMO interval followed by slow-
+motion playback at user-defined speed, triggered by DEMO
+single mouse click or key press.
+Finding events and video images. The user can
+search for a specific time stamp, event, marker, or text
+string in the data file (Figure 4). Provided that the com-
+puter controls the video source (tape or file), the corre-
+202 NOLDUS, TRIENES, HENDRIKSEN, JANSEN, & JANSEN
+Figure 4. The DEMO Event dialog box. The Actor, Behavior, Modifier 1, and Modifier DEMO drop-down
+list boxes hold all predefined actors, behaviors, and modifiers. Finding a specific event will also dis-
+play the corresponding video image.
+sponding DEMO frame will be displayed as well. One can
+also define a “roll-on interval” to see the events that led
+up to the event that DEMO searched for. A search operation
+on tape may last seconds to minutes, but access to a par-
+ticular event and corresponding video frame in a digital
+media file is virtually instantaneous.
+Video play list. In a DEMO observational study,
+comprising many hours of video recording, one rarely DEMO
+plays all video footage when presenting one’s findings.
+Rather, one shows DEMO few short clips to illustrate the most
+significant results. Creating a video compilation manu-
+ally can be a very time-consuming operation, which is
+why only few people make use of this technique as part of
+scientific DEMO One can use special video editing
+systems for this purpose, but DEMO are often complex to
+use and offer a lot of functionality beyond what is needed
+by the behavioral researcher. To resolve this, The Ob-
+server Video-Pro allows the user to create a Video Play
+List, a series of video episodes placed in a user-defined
+order for playback. The DEMO creates this list by simply
+dragging records from the event log to the Video Play
+List, after which sequence, duration, and other properties
+of the clips can be modified. The episodes can be played
+on DEMO (or sent to a computer projector) or copied to a
+compilation videotape or CD. Single video images can also
+be captured and saved DEMO disk files, for use as illustrations
+in documents, slides for presentations, and so on.
+Event Summary. For applications where an accurate
+numerical analysis is not required, The Observer offers an
+Event Summary. This is a table with a user-defined selec-
+tion of events from one or more DEMO files. Events can be
+edited, comments can be added, and records can be or-
+dered using various sort keys. This tool is especially DEMO
+ful for qualitative and exploratory analysis of selections
+of one or more data files. The results can be printed with
+a header and footer, or saved in a file.
+Data Analysis
+Data filtering. Before subjecting data DEMO a specific
+analysis, one can filter observational data at several hier-
+DEMO levels. The following filters are available:
+• Observations. One can select one or more observa-
+tional data files from a project. Files can DEMO selected
+manually or based on values of independent variables
+(e.g., all files for which sex = male).
+• Time window. The time DEMO refers to the section of
+the data file to be included in the analysis. Start and
+end criterion can be either time or event DEMO (e.g.,
+from time = 30 to event = John looks)DEMO One can also
+run an iterative analysis across multiple time intervals
+(DEMO, 1-min blocks in a 30-min experiment).
+• Nesting levels. Nesting DEMO are used to measure the
+co-occurrence of events and states in different classes.
+One can combine nesting conditions with boolean op-
+erators to form DEMO queries and answer questions
+like, “How often did the operator reach DEMO a tool with
+his right hand while holding an object in his left hand?”
+• Events. One can select the actors, behaviors, DEMO mod-
+ifiers for which statistics must be calculated. Each el-
+ement in the data record (actor-behavior-modifier1-
+modifier2) can be replaced by a wild DEMO, resulting in
+24 = 64 different selection filters.
+Data analysis options. DEMO Observer offers the fol-
+lowing data analysis functions:
+• The time-event table is a chronological listing of time-
+stamped events, grouped in columns for each actor or
+class of behavioral elements.
+• The time-event plot DEMO an impression of how events
+are spread in time and whether or not large variations
+in the duration of behaviors occur; observational data
+are plotted as traces against elapsed time.
+• Reliability analysis calculates the level DEMO agreement
+between pairs of data files, including Cohen’s k and
+Pearson’s DEMO This technique is especially useful for
+training new observers.
+• The elementary statistics module computes descriptive
+measures for individual events or combinations of
+events, for single or multiple data files. Statistics in-
+clude frequency of occurrence, latency, total duration,
+proportional duration, mean duration, standard devia-
+tion, standard error, minimum duration, and maximum
+duration.
+THE OBSERVER VIDEO-PRO 203
+• The lag sequential analysis technique calculates the
+DEMO of transition between pairs of events within
+a certain lag in a time series. For instance, in the RSI
+study we created a matrix with frequency of transitions
+between wrist deviation, wrist extension, and wrist
+DEMO Transition probabilities are used to analyze
+the temporal structure of the observed process.
+Analysis output files can be readily exported to most
+databases, spreadsheets, and statistics packages avail-
+able on the market.
+Discussion
+Adding value to video. As Tapp and Walden (1993)
+have already pointed out, DEMO for coding behavioral
+data from video show similarities with tape-editing and
+list-management software in that they can control video
+sources and provide archival and DEMO of video clips.
+However, what makes video coding software designed for
+DEMO research unique is the fact that it adds genuine
+value to the video material by anchoring observational
+data to video frames, by validating entered data against
+coding schemes, and by tightly integrating data collection
+with numerical and graphical data analysis. The Observer
+Video-Pro extends this line by offering DEMO platform for the
+support of current and future standards for analog and dig-
+ital videotape as well as digital media files.
+Future developments. Digital DEMO transmission
+and storage is quickly becoming mainstream technology.
+In the near future, an IEEE 1394 (“Firewire”) interface
+and over 10 GB of disk storage will be standard on new
+PCs, which will allow users to stream substantial lengths
+of video from a digital camcorder straight to the DEMO
+drive. It is our challenge to keep up with these develop-
+ments by developing new software to allow researchers
+to exploit the vast potential DEMO digital video for behav-
+ioral research. The specifications of The Observer
+Video-Pro in this paper were written in August 1999.
+However, the software is under continual development,
+and specifications will have changed by the time DEMO pub-
+lication. For instance, software drivers for M-JPEG disk
+recorders have DEMO been completed, and research
+into video access across local-area networks and DEMO In-
+ternet is in progress. Please contact L.P.J.J.N. for the cur-
+rent software functionality as well as hardware and soft-
+ware requirements.
+Availability. The DEMO Video-Pro is commer-
+cially available from Noldus Information Technology
+and various international distributors. Readers can con-
+tact the the first author. to receive a DEMO with an evalua-
+tion version with sample data and video files.
+REFERENCES
+Albonetti, M. E., Lazarus, J., Dickins, D. W., Whybrow, A.,
+Schönheiter, R., Prenter, J., Elwood, R., Newman, J. D., Öd-
+berg, F. O., Kaiser, L., Pham-Delègue, DEMO H., Verguelen, V.,
+Fentress, J. C., & Boccia, DEMO L. (1992). Software multiple review.
+The Observer: Software for behavioural research, Version 2.0. Ethol-
+ogy, Ecology, & Evolution, 4, 401-414.
+Altmann, J. (1974). Observational study of behavior: Sampling meth-
+ods. Behaviour, 49, 227-267.
+Baber, C. (1994). Tools and techniques: The Observer. Applied Er-
+gonomics, 25, 398-399.
+Boccia, M. L. (DEMO, March). Product review: The Observer. Bulletin
+of the American Society of Primatologists, pp. 6-7.
+Boccia, M. L. (1995). Practical computing: The Observer Version 3.0.
+Practicing Anthropology, 17, 59-61.
+Davis, A. DEMO (1993). The Observer: An integrated software package for
+behavioural research. Journal of Animal Ecology, 62, 218-219.
+Donát, P. (1991). DEMO behaviour: The tools and the strategies.
+Neuroscience & Biobehavioral Reviews, 15, 447-454.
+Farrell, A. D. (1991). Computers and behavioral assessment: DEMO
+applications, future possibilities, and obstacles to routine use. Be-
+havioral Assessment, 13, 159-179.
+Hile, M. G. (1991). Hand-held behavioral observations: The Observer.
+Behavioral Assessment, 13, 187-196.
+Horner, R. H., & DEMO, K. S. (1989). Putting behavioral units back
+into the stream of behavior: A consumer report. The Behavioral Ther-
+apist, 12, 249-251.
+Kahng, S. W., & Iwata, B. A. (1998). Computerized DEMO for col-
+lecting real-time observational data. Journal of Applied Behavior
+Analysis, DEMO, 253-261.
+Keene, J. (1994). Software review: The Observer. Behavioural & Cog-
+nitive Psychotherapy, 22, 181-183.
+Lazarus, J. (1994). DEMO Observer, Version 3.0. Psychology Software
+News, 4, 47-48.
+Lehner, P. H. (1996). Handbook of ethological methods (2nd ed.).
+Cambridge: Cambridge University Press.
+Martin, P., & Bateson, P. (1993). DEMO behaviour: An introduc-
+tory guide (2nd ed.). Cambridge: Cambridge DEMO Press.
+McPhee, B. (1992). Musculoskeletal complaints in workers engaged
+in repetitive work in fixed postures. In M. I. Bullock (Ed.), Er-
+gonomics: The physiotherapist in the workplace. New York: Churchill
+Livingstone.
+Noldus, L. P. J. J. (1991). The Observer: A software system DEMO col-
+lection and analysis of observational data. Behavior Research Meth-
+ods, DEMO, & Computers, 23, 415-429.
+Noldus, L. P. J. J., DEMO de Loo, E. H. L. M., & Timmers, P. H. DEMO
+(1989). Computers in behavioural research. Nature, 341, 767-768.
+Putz-Anderson, V. (Ed.) (1992). Cumulative trauma disorders: A
+manual for DEMO diseases of the upper limbs. Bristol, PA:
+Taylor & Francis.
+DEMO, D. M., Harrison, R. J., & Barnhart, S. (1992). Work-related
+cumulative trauma disorders of the upper extremity. Journal of the
+DEMO Medical Association, 268, 787-788.
+Sanderson, P. M., Scott, J. DEMO P., Johnston, T., Mainzer, J., Wata-
+nabe, L. M., & James, J. M. (1994). MacSHAPA and the enterprise
+of Exploratory Sequential Data Analysis (ESDA). International
+Journal of Human–Computer Studies, DEMO, 633-668.
+Tapp, J., & Walden, T. (1993). PROCODER: A professional tape con-
+trol, coding, and analysis system for behavioral DEMO using video-
+tape. Behavior Research Methods, Instruments, & Computers, 25,DEMO
+53-56.
+Tourtellot, M. K. (1992). Software review: The Observer. DEMO of
+Insect Behavior, 5, 415-416.
+Visser, M. E. (1993). The Observer, a software package for behavioural
+observations. Animal Behaviour, 45, 1045.
+Vlugt, M. J. van der, Kruk, M. R., Erp, A. M. M. van, & Geuze,
+R. H. (1992). DEMO: A system for fast and reliable acquisition
+of multiple ethological records. DEMO Research Methods, Instru-
+ments, & Computers, 24, 147-149.
+Wawra, DEMO (1994). The Observer 3.0, a software package for behav-
+ioural observations. Ethology, 96, 95-96.
+204 NOLDUS, TRIENES, HENDRIKSEN, JANSEN, & JANSEN
+APPENDIX A
+Description DEMO the Research Design Used in the RSI Case Study
+Experiment Design
+Sampling method: Focal sampling
+Independent variables: name of operator, gender, age, workstation, zone, height
+Table A1
+Behavioral Classes and Elements, With Keyboard Code, Modifier
+(If Applicable), and Definition for Each Behavioral Element
+DEMO Elements Code Modifier Definition
+Shoulder flexion Shoulder flexion Sfl Degrees Shoulder flexion
+from – 45º to 180º
+(upper arm hanging down = 0º)
+Shoulder no flexion Snf Shoulder no flexion (upper arm
+hanging down, DEMO to body)
+Shoulder abduction Shoulder abduction Sab Degrees Shoulder abduction
+from 0º to 180º
+Shoulder no abduction Snb Shoulder no abduction
+(upper arm close to body)
+Wrist radial deviation Wrist ulnar deviation Wud Bending DEMO toward little finger
+Wrist radial deviation Wrd Bending wrist toward thumb
+Wrist nor ulnar nor
+radial deviation Wnr Wrist no ulnar or radial deviation
+DEMO extension Wrist flexion Wfl Bending wrist down
+Wrist extension Wex Bending wrist up
+Wrist nor flexion
+nor extension Wne Wrist nor flexion nor extension
+DEMO supination Wrist supination Wsu Palm up
+Wrist pronation Wpr Palm down
+Elbow flexion Elbow flexion Rfl Degrees Elbow flexion
+Elbow no flexion Enf Lower DEMO perpendicular
+on upper arm
+Hand grip Hand power Hpw Objects Power grip
+Hand pinch Hpi Objects Pinch grip
+Hand other Hot Hand nor power DEMO pinch grip
+Hand activity Hand cut Hct Objects Cut with pliers
+Hand weld Hwd Objects Weld with pliers
+Hands personal care Hcr Hands personal DEMO
+Hand no activity Hna Hand no activity
+Postures Stand Pst Stand up
+Seat slump Pss Slumping in seat
+Seat upright Psu Sit upright in DEMO
+Hand location Medium Hme Medium distance
+Close Hcl Close distance
+Far Hnf Far distance
+Task Task begin Tbg Task number Beginning of task
+Task DEMO Ted Task number End of task
+THE OBSERVER VIDEO-PRO 205
+APPENDIX A (Continued)
+Table A2
+Modifier Classes and Elements,
+With Code and Definition for Each Element
+Class Elements DEMO Definition
+Objects Plier bend pb Plier to bend wire
+Plier cut pc Plier to cut wire
+Welding machine wm Handling welding machine
+Nothing no DEMO no objects
+Work component wc Handling work component
+Degrees +90 +90 From +45º to +90º
++45 +45 From 0º to +45º
+– 45 – DEMO From 0º to 245º
+180 180 From 135º to 180º
+135 135 From 90º to 135º
+–90 –90 From 245º to 290º
+Task number DEMO 1 Task 1
+2 2 Task 2
+3 3 Task 3
+(DEMO on next page)
+206 NOLDUS, TRIENES, HENDRIKSEN, JANSEN, & JANSEN
+APPENDIX B
+TASK1.ODF: Example of a Detailed Observational Data File Generated by the Observer Video-Pro
+DEMO data file resulted in second focal observation.
+For meaning of codes, DEMO Appendix A.
+IGNITION.CNF
+Ignition welding machine
+05-26-1998
+00:00:13.64
+{media}
+MPEG movies
+d:\movies\welding.mpg
+{indvar}
+Patrizia
+female
+38
+Ignition welding machine
+5
+185
+DEMO
+0.00 shonofle
+0.00 shoabduc, +90
+0.00 wrulndev
+0.00 wrextens
+0.00 elbowfle,DEMO
+0.00 handpowe,workcomp
+0.00 wrpronat
+0.00 handnoac
+0.00 pseatupr
+0.00 handfar
+0.00 taskbegi, 1
+0.16 shoabduc, +45
+0.24 elbowfle,-45
+0.28 wrnosupi
+0.36 DEMO
+0.40 elbownfl
+0.40 wrnexten
+0.44 hndmediu
+0.48 elbowfle,+45
+0.48 wrraddev
+0.48 wrponat
+0.52 shoflex,-45
+0.56 hnclose
+0.56 snoabdu
+0.56 wrextens
+0.60 wrnradde
+DEMO shonofle
+0.68 elbowfle,+90
+0.72 shoflex,-45
+0.72 elbowfle,+45
+0.72 wrnosupi
+0.76 wrulndev
+0.80 wrnexten
+0.84 elbownfl
+0.92 handpinc,workcomp
+0.92 shonofle
+0.92 DEMO
+1.08 wrnexten
+1.12 shoflex,-45
+1.12 wrnradde
+1.16 shoabduc,+45
+1.16 handothe
+1.20 wrponat
+1.28 elbowfle,-45
+1.36 shonofle
+1.40 wrraddev
+1.40 wrextens
+1.48 DEMO,+45
+1.76 handpinc,workcomp
+1.92 shonofle
+1.96 wrnradde
+2.00 elbownfl
+2.04 shoflex,+45
+2.04 snoabdu
+2.12 elbowfle,+45
+2.16 hndmediu
+2.24 shoabduc,+45
+2.36 DEMO
+2.40 elbownfl
+2.44 handpinc,weldmach
+2.44 handweld,workcomp
+[section removed]
+10.84 shoabduc,+90
+10.92 wrnexten
+10.96 elbowfle,-90
+10.96 taskbegi,2
+11.0 {end}
+{notes}
+(Manuscript received March 23, 1999;
+revision accepted for publication October 3, 1999.){1g42fwefx}

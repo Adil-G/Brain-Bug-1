@@ -1,0 +1,1011 @@
+European Journal of Operational Research 163 (2005) 545–564
+www.elsevier.com/locate/dsw
+DEMO Applications
+Allocation of attention within venture capital ﬁrms
+Dean A. Shepherd a,*, Michael J. Armstrong b, Moren Levesque c,1
+a Leeds DEMO of Business, University of Colorado at Boulder, Campus Box 419, DEMO, CO 80309-0419, USA
+b Sprott School of Business, Carleton University, Ottawa, ON, Canada K1S 5B6
+c Weatherhead School of Management, Case Western Reserve University, Cleveland, OH 44106-7235, USA
+Received 6 May 2002; accepted 5 November 2003
+Available online 28 January 2004
+Abstract
+In this article we use a simple queuing network to model the process through DEMO entrepreneurs receive venture
+capital funding. Our model focuses in particular on the allocation of venture capitalists attention between pre- and
+post-investmentactivities,andonthedegreeofselectivityindecidingwhichventurestofund.Baseduponthismodelwe
+develop expressions DEMO the ﬁnancial performance of the venture capital process, both overall and DEMO from the per-
+spectives of the entrepreneurs, investors, managers, and DEMO capitalists involved. For these ﬁnancial measures we
+derive the optimal allocation of attention between pre- and post-investment activities, and the optimal proportion of
+venture proposals to accept. Further analysis shows how these diﬀerent ﬁnancial measures and DEMO values respond
+to changes in the business climate. More interestingly, our DEMO also shows where and to what extent the diﬀerent
+parties could be expected to agree or disagree on how best to manage the process.
+DEMO 2003 Elsevier B.V. All rights reserved.
+Keywords: Human resources; Venture capital; Productivity; Allocation decision
+1. Introduction
+Cooperative relationships between venture capitalists (VCs) and entrepreneurs are necessary for the
+success of VC backed companies (DEMO and Korsgaard, 1996; Steier and Greenwood, 1995; Cable and
+Shane, 1997). Timmons and Bygrave (1986) propose that the cooperative relationship between a VC and
+entrepreneur is more important to the success of DEMO business than the capital itself. While it appears that
+co-operation provides signiﬁcant beneﬁts, it does not characterise all VC–entrepreneur relationships
+(Sahlman,1990).ThereisadegreeofuncertaintythattheVCwillpursuehisorherownselfinterestsrather
+DEMO comply with the requirements of the contract for venture capital, i.e., VCs face agency risk (adapted
+* Corresponding author. Tel.: +1-303-7355423; fax: +1-303-4925962.
+E-mail addresses: dean.shepherd@colorado.edu (D.A. Shepherd), michael_armstrong@carleton.ca (M.J. Armstrong), moren.lev-
+esque@cwru.edu (M. Levesque).
+1 Tel.: +1-216-368-2117; fax: +1-216-368-4785.
+0377-2217/$ - see front matter  2003 Elsevier B.V. All rights DEMO
+doi:10.1016/j.ejor.2003.11.006
+546
+D.A.Shepherdet al./ EuropeanJournalof Operational Research163(2005)545–564
+from Fiet (1995)). This agency perspective oﬀers a description of the risks a principal (the VC) faces when
+dealing with an agent (the entrepreneur) and actions that the VC can take to ‘‘force’’ the entrepreneur to
+co-operate. DEMO example, the VC can introduce penalties for defection including a dilution DEMO the entre-
+preneur s equity in the venture (Sahlman, 1990), replacement of the entrepreneur with professional man-
+agement (Barney et al., DEMO; Hoﬀman and Blakely, 1987) and through compensation structures (Sahlman,
+1990).
+Therehasbeenlessresearch,however,abouttheincentivesforVCstopursueopportunisticbehaviourat
+the expense of co-operation (and at the expense of the entrepreneur). In this case the VC can be DEMO
+the agent and the entrepreneur the principal (Cable and Shane, 1997). For example, VCs may act
+opportunistically to harvest a venture (DEMO obtain their proﬁts) rather than reinvest in the ventures future
+products DEMO development (Sahlman, 1990), they may pressure the entrepreneur to seek short-term proﬁts
+(Gomez-Mejiaetal.,1990)eventothedetrimentoflong-termproﬁtabilityand/ortheVCsmayunderinvest
+in the venture (Cable and DEMO, 1997; Gorman and Sahlman, 1989; Bygrave and Timmons, 1991)DEMO For
+another example, VCs often face situations where they are ﬂooded DEMO entrepreneurs requests for
+ﬁnancing (in the form of lengthy business plans) and simultaneously need to assist current portfolio ven-
+tures in improving performance. DEMO more active VCs spend 35 hours per month per venture assisting the
+management team, while less active ﬁrms spend less than 7 hours per month per investment (Elango et al.,
+1995).
+Therefore, it DEMO that VCs may opportunistically manage the venture capital process in a way that
+advantages them and disadvantages the entrepreneur. Furthermore, entrepreneurs are not the only
+stakeholders of the venture capital process and the way that it DEMO managed likely impacts the desirability of
+the outcome for these other stakeholder groups. For example, scholars have relatively ignored the rela-
+tionship between VC ﬁrms and their funds providers (Robbie et al., 1997).
+Theimportantquestionishowshouldtime,DEMO/orresourceswithintheVCﬁrmbeallocated?The
+optimal allocation likely depends on the perspective taken. What is optimal for the VC might not be
+optimal for the entrepreneur or DEMO limited partners supplying the fund s capital to the VC. Therefore,
+rather than focus on the control mechanisms that a VC can use DEMO ensure the entrepreneur acts in a co-
+operative manner, this paper DEMO the way the VC process is managed and its impact on the
+desirability of the outcome, as perceived by the diﬀerent stakeholder groups.
+The above discussion leads to this paper s two key research questions. What DEMO the allocation of a VC
+ﬁrms attention (time, talent, and DEMO) between pre-investment activities and post-investment activities
+that is considered optimal across DEMO stakeholders? How and under what conditions is the allocation of
+attentionthatisoptimalfortheprocessoverall(DEMO)diﬀerentfromwhatmight
+be preferred by the various stakeholders (entrepreneurs, investors, managers DEMO employees)? We inves-
+tigate these important questions by using a queuing network model. A queuing network is a system of
+queues (waiting lines) where the departures from one queue become the arrivals at another. Queuing
+networks are useful models of systems that involve some form ofcustomer ﬂow(DEMO, of venture proposals)
+amongst various locations (e.g., stages in DEMO venture capital process) where the inherent variability of the
+ﬂow can DEMO to line-ups and delays at a given location (e.g., an overﬂowing stack of proposals to review).
+Despite the usefulness of this approach DEMO the investigation of the venture capital process it has yet to be
+used for this purpose, though it is often used to evaluate systems of machines in a factory (e.g., Papado-
+poulos et al., 1993) or the operations of health care service providers (e.g., Bretthauer and Cote, 1998).
+By addressing these important issues facing VC ﬁrms, DEMO present article makes a number of contri-
+butions to the literature. First, a VC ﬁrm (as all ﬁrms) has a number of stakeholders each with diﬀerent
+expectations and aspirations for the ﬁrm. This article provides DEMO deeper understanding of the trade-oﬀs
+amongst these stakeholder groups. Second,research on the VC process has made a signiﬁcant contribution
+to the literature, in particular Tyebjee and Bruno (1984), although such process research is limited in
+number. This article builds on these primarily descriptive studies, to provide a decision model with
+D.A. Shepherd et al. /EuropeanJournalof Operational Research163(2005)545–564
+547
+prescriptive beneﬁts. Such beneﬁts are likely to have important practical implications for the managers DEMO
+VC ﬁrms and may also beneﬁt other entrepreneurial ﬁnancing ﬁrms (e.g., the Small Business Development
+Corporation).
+Third,theallocationofattentionisanimportantissueasindividualVCshavelimitedtimeandenergyto
+allocate among the various DEMO of the venture capital process. To VC ﬁrms, VCs represent a DEMO re-
+sourcetoacquireandmaintain(i.e.,asubstantialﬁxedcostfortheVCﬁrm)andrepresentthebasisofaVC
+ﬁrms competitive advantage. Thus, VCs time DEMO valuable resource that needs to be eﬀectively managed.
+ThispaperprovidesprescriptionsonhowtheprocesscanbemanagedtoprovideahigherproﬁtfortheVC
+ﬁrm. But the support of stakeholders is also important and this paper provides some insight DEMO the
+possible reactions of diﬀerent stakeholder groups depending on how the process has been managed.
+The remainder of the paper proceeds as follows. We DEMO by reviewing the existing research on the VC
+process. We then describe our assumptions about the venture capital process in terms of operations and
+DEMO,weformulatemodelsofﬁnancialperformancefortheVCprocess
+from the diﬀerent viewpoints of the investors, managers, and VC employees. We analyse these diﬀerent
+measures of performance to investigate how they DEMO vary in response to changing business conditions,
+and more interestingly how the diﬀerent entities involved would likely agree or disagree regarding the
+management DEMO the process. We conclude with a discussion of the limitations of the model and suggest
+possible avenues for future research. Appendix A contains the DEMO of our mathematical analysis.
+2. Venture capital process
+The VCprocess can bethought ofasa series ofactivities orstagesthateachnew venture works through
+from the time the venture DEMO ﬁrst proposed, up until the time when the VC ﬁrm successfully DEMO from the
+venture and takes its proﬁt. For example, Tyebjee and DEMO (1984) proposed a model of the venture
+capital process with ﬁve such stages: deal origination, deal screening, deal evaluation, deal structuring DEMO
+post-investment.Becauseofourparticularfocusinthispaper,weuseabroaderclassiﬁcationwithonlytwo
+categories of VC activities that encapsulate the ﬁve stages proposed above.
+The ﬁrst category, ‘‘pre-investment activities’’, refers to all VC tasks DEMO to and including the signing of
+an investment contract: soliciting new DEMO proposals for submission to the VC ﬁrm, determining
+whether these proposals DEMO the ﬁrms broad screening criteria, conducting due diligence (more extensive
+research to determine the likely success of the venture), and then negotiating DEMO structuring a relationship
+with the entrepreneur. It should be noted that in the 1980s, most proposals that the VC ﬁrm received were
+referrals from third parties including other VCs and that VCs spent little time in DEMO for deals––the
+task was rather passive (Tyebjee and Bruno, 1984). However, more recently the industry can be charac-
+terised by greater competition between VC ﬁrms increasing the need for VC ﬁrms to be more DEMO in
+this task, i.e., allocate more time to it (cf. DEMO, 1991). VCs diﬀer in the screening criteria they use to
+DEMO ventures including type of industry, industry stage of development, geographic location, and size of
+investment required. These are detailed in lists of VCs, for example Pratt s Guide to Venture Capital
+Sources(1998).ThereisconsiderableresearchonhowVCsusetheinformationgatheredfromduediligence
+tomaketheirassessmentoflikelysuccess;e.g.,VCstypicallyusedecisioncriteriasuchasentrepreneur/team
+characteristics, product/service characteristics, and market and ﬁnancial DEMO (Zacharakis and
+Meyer, 1998). Eventually the relationship between the VC ﬁrm and the entrepreneur needs to be developed
+and formalised (i.e., DEMO terms of the venture capital contract need to be negotiated and agreed upon) in
+order for the venture investment, and hence the ‘‘pre-investment DEMO, to be completed.
+The second category, ‘‘post-investment activities’’, includes all DEMO by the VC ﬁrm after the initial
+investment deal has been signed. In general this involves providing guidance (and possibly additional
+funding)tohelpimprovetheperformanceoftheventure.Oneofthemostimportantbeneﬁtsarisingfroma
+548
+D.A.Shepherdet al./ EuropeanJournalof Operational Research163(2005)545–564
+relationship with a VC is access to their extensive network. This is often utilised to ﬁnd DEMO recruit top
+quality management, to ﬁnd other co-investors for immediate or DEMO up investment, to introduce the
+venture to important service providers such DEMO specialised accountants, and to help ﬁnd and develop
+necessary strategic alliances (Sandberg, 1986). Furthermore, VCs often serve as sounding board for
+DEMO ideas, and are a valuable source of strategic and operational advice (Lerner, 1994, 1995;
+Sweeting, 1991; Tyebjee and Bruno, 1984).
+Ultimately, the VCs ﬁnal action is to exit from the venture. The VC can exit from the venture using one
+of ﬁve vehicles: (1) an IPO exist where after an initial public oﬀering the DEMO sells the ﬁrms shares in the
+venture to the market (this DEMO occur some period after the IPO), (2) an acquisition exist where the VC,
+andallotherowners,selltheentireventuretoathirdparty,(3)asecondarysalewheretheVCﬁrmssellsits
+share in the venture to a third party but for this vehicle the entrepreneur and other DEMO do not sell their
+shares, (4) a buyback exit where DEMO VC ﬁrm sells it shares in the venture to the entrepreneur and/or the
+venture itself, and (5) a write-oﬀ exit, which DEMO involves the failure of the venture (Cumming and
+MacIntosh, 2003).
+3. Queuing network model and assumptions
+3.1. VC process––Operations
+We begin by DEMO a model of the operation of the VC process for a generic VC ﬁrm. For this
+purpose we have chosen to use an open DEMO network with three nodes (labelled N1, N2, and N3; see
+Fig. 1) through which ventures ﬂow. Node N1 represents the involvement of the proposed venture and a
+VC ﬁrm in ‘‘pre-investment activities’’; similarly, DEMO represents the involvement of a funded venture and a
+VC ﬁrm in ‘‘post-investment activities’’. Node N2 represents the development eﬀorts of a funded venture
+DEMO periods that do not require the responsible VC ﬁrm to be actively involved.
+Entrepreneurs with venture ideas that require ﬁnancing submit their proposals on DEMO unscheduled (i.e.,
+random) basis to the VC ﬁrm for consideration; on average, we suppose that k venture proposals arrive at
+nodeN1(DEMO)eachyear.Wewillphraseourdiscussionintermsofyears,butthis
+choice of time units is unimportant(onecould just as well use, e.g.,months). The amountof time it takes a
+VC to perform all of the pre-investment activities (e.g., screening, evaluation, structuring) varies from one
+venture to another; we shall assume that on average the VC ﬁrm can deal with sa proposals per year. We
+use DEMO torepresenttheproportionofVCattention(time,eﬀort,etc.)devotedtopre-investmentactivities(so s
+takes values between 0 and 1), and a as the average number of ventures the VCs DEMO handle per year if
+they devoted all of their attention to this category of activity. Note that depending on the rate at which
+proposals DEMO and the amount of attention devoted to working with them, a DEMO proposal may have to
+proposals
+λ
+N1
+Evaluation
+of New
+Ventures
+λ (1-p)
+λp
+rejections
+λpnf
+exit
+N3
+Assistance
+to Funded
+Ventures
+λpf
+N2
+Ventures in
+Development
+λplf
+λp(1-l-n)f
+failures
+Fig. 1. Venture DEMO process as an open queuing network.
+D.A. Shepherd et al. /EuropeanJournalof Operational Research163(2005)545–564
+549
+wait (DEMO in the VCs in-basket) before being looked at by the VC. DEMO assume that the average
+capacity sa is larger than the average total proposal submission rate k (otherwise work could pile-up
+withoutend).Giventheseassumptions,wecanmodelN1asasingleserverqueuewithservicerate sa.Once
+the VCs have ﬁnished processing a venture proposal at N1, the proposal has either successfully passed the
+screeningandevaluation(withprobability p )orithasfailed (withprobability 1 DEMO ).Ventures,whichpass,
+receive funding and proceed to N2; ventures, DEMO fail, are rejected by the VC and leave the system.
+Ventures DEMO node N2 (‘‘ventures in development’’) are in the ﬁrms funded portfolio and are undergoing
+development. This represents a period of time where the DEMO do not require a signiﬁcant assis-
+tance from the VC, i.e., entrepreneurs have their funding and are working to ﬁne-tune, produce, and DEMO
+theirnewproductorservice.Weassumethataventurespendsanaverageamountoftime c indevelopment
+before again requiring the VCs attention. Because no signiﬁcant VC assistance is required here, there is
+never a line-up of idle ventures; they are all busy with development. We can therefore model N2 as an
+inﬁnite server queue with service rate 1=c.
+Eventually a venture DEMO again require the attention of a VC at the ﬁrm, for DEMO of several possible
+reasons. The entrepreneur may simply require some management advice or other non-monetary assistance
+from the VC. The venture may be succeeding, so that the VCs attention is required to manage the exit
+process (IPO or trade sale); on the other hand, the venture may be failing, so that the VC may need to
+become involved in salvage eﬀorts. It is also possible that the venture may have spent DEMO of its previous
+rounds of capital and needs additional funding, or DEMO the reason, at this point the venture will leave
+this node DEMO and proceed to N3.
+VenturesatN3(‘‘assistancetofundedventures’’)arestillinthefundedportfolio,butareeitherreceiving
+assistance from the VC or are waiting their turn todo so; in either case, we DEMO that their development
+eﬀortsaretemporarilyonhold.WeassumethattheVCscanhandle tb venturesperyearatthisnode.Welet
+t indicate the proportion of VC attention devoted to post-investment activities (e.g., providing advice,
+arrangingextrafunding,managingtheexitprocess),and b indicatetheaveragenumberofventurestheVCs
+could dealwith in a year if they devoted all DEMO attention to post-investment work. Note that s þt ¼ 1.
+Like N1, we can also model N3 as a single server queue with service rate tb; we again assume that the
+average work capacity tb is larger than the average workload (which we later show to be kpf ). A venture
+which completes service at N3 either continues with its development eﬀorts (with probability n), achieves a
+successful exit (with DEMO l ), or fails outright (with probability m); note that l þm þn ¼ 1.
+Aventure thatleaves N3eitherdue toasuccessful exitorbecauseithasfailed is nolonger DEMO
+portfoliobutratherhasleftthesystem.Incontrast,aventurethatleavesN3toresumedevelopmentreturns
+to N2 and remains in the portfolio. The returning venture then carries on with its development eﬀorts until
+itonceagainneedsaVCsintervention.Werefertothisreturnpathasa‘‘feedbackloop’’,asaventuremay
+cycle many DEMO between development eﬀorts (at N2) and obtaining assistance (at N3)DEMO For later calcu-
+lations concerning this feedback of repeating ventures, it DEMO be convenient to deﬁne a feedback factor
+f ¼ 1=ð1 nÞ. This f is the average number of times a funded venture engages in DEMO eﬀorts at
+N2: one initial visit, plus (f  1)DEMO Due tothis feedback eﬀect, at anypointintimeonly some of
+the ventures at DEMO of N2 and N3 are there for the ﬁrst time. A smaller number are there for their ﬁrst
+repeat visit, and still smaller numbers are there for their second, third, etc. repeat visits.
+Deﬁned in DEMO way our model of the VC process forms a simple Jackson open queuing network with
+three nodes. This type of queuing network has a DEMO state distribution in product form, which allows the
+analysisofeachnodeandtheﬂowbetweennodestobehandledinarelativelysimplemanner(e.g.,Gelenbe
+DEMO Pujolle, 1987). The average ﬂows on each arc of the DEMO (in number of ventures per year) are
+derived in Appendix A and are shown in Fig. 1. These ﬂow rates can in turn DEMO used to derive the average
+number of ventures present at each node in the systems steady state (see Appendix A for details). The
+expectednumberofventuresundergoingorawaitingVCpre-investmentprocessingatN1is V1 ¼ k=ðsa  k)
+whiletheexpectedtotalnumberofventuresundergoingorawaitingVCpost-investmentassistanceatN3is
+550
+D.A.Shepherdet al./ EuropeanJournalof Operational Research163(2005)545–564
+V3 ¼ kpf =ðtb  kpf ). The expected number of ventures undergoing development (at DEMO) is given by
+V2 ¼ kpfc; of this total, kpc DEMO there for the ﬁrst time, while the remaining kpcðf 1Þ are DEMO, i.e.,
+this is their second or subsequent period of development DEMO
+It is worth emphasising that these expressions for venture ﬂows and status are all long-run averages; the
+actual number of ventures moving from N2 to N3 for example may vary greatly from year to year due DEMO
+variation in arrival and service times. It is this variation (or DEMO) that causes line-ups and delays at
+N1 and N3, in spite of the fact that each of these nodes has suﬃcient processing capacity DEMO handle its
+average workload.
+Although there is a fair amount of detail in this operating model of the VC ﬁrm and process, it is still of
+course a major simpliﬁcation of reality. For example, we have not made any distinction amongst senior
+VCs (partners in the ﬁrm), junior VCs (associates), and support staﬀ (such as administrative assistants) in
+regards to their productivity in working with ventures. Nor have we DEMO whether individual VCs
+specialiseinjust onetypeoftask(e.g.,screeningnewventureproposals)orareinsteadgeneralistswhodeal
+with theentireprocess.Wesimply consider theVCs inaggregate, andassumethat theﬁrm isabletoadjust
+its overall allocation of attention in some manner (by re-assignment of VCs, training and development,
+hiring and ﬁring, etc.).
+3.2. VC process––Revenues and expenditures
+We assume that each venture DEMO successfully completes the pre-investment activities (N1) and com-
+mencesdevelopment(atN2)receivesaninitial lump sumcapitalinvestmentofanaverageof I dollarsfrom
+the VC investment fund. Similarly, each time a venture recommences development (at N2) after receiving
+assistance from the VC DEMO post-investment (N3) it receives an additional capital investment of an
+average of J dollars; we expect that typically I P J P 0. Note that this follow-on investment can occur
+manytimes(sinceaventuremayvisitN2andN3manytimes)andthat J issimplytheaverageamount;DEMO
+ventures that merely require management advice would not receive any additional money at this point.
+A venture that successfully completes its development exits the DEMO (from N3). At this time the
+venture is assumed to DEMO attained a considerable value and could be sold to provide an average capital
+revenue(the‘‘proceedsfromharvest’’)of RðpÞ.Portion rRðpÞ isallottedtotheVCfund,whiletheremaining
+amounttreat these as lump DEMO received at time of exit, since a VCð1 rÞRðpÞ isretainedbytheentrepreneur,whereproportion DEMO return comes primarily from the selling ofr 2½0; 1.Formodellingpurposeswe
+equity in DEMO; insome cases they may representthe present value ofa futurerevenuestream(e.g., if
+the entrepreneur retains her equity stake rather than selling). Here we DEMO that the average revenue per
+exitis afunctionof thequality controlsthat theVCs use when they performtheir pre-investment activities.
+All else being equal, we would expect that the higher the proportion p of proposals that are accepted, the
+lower theaverage quality of these ventures and thus the lower theaverage revenue from DEMO eventual exit.
+To model this, we assume that the average revenue DEMO RðpÞ is decreasing in p at an accelerating rate,
+so RðpÞ0 6 0 and RðpÞ00 6 0. This revenue covers the investments in DEMO venture and other associated costs as
+well as providing a proﬁt. Ventures that fail at N3 also leave the portfolio but provide zero revenue. DEMO
+that here and in the rest of this paper for convenience we assume that all payments are measured on an
+after-tax basis.
+In addition DEMO these investment revenues and expenditures, the VC process involves a number DEMO other
+payments amongst participants. The investment fund (i.e., the limited partners or investors) pays the VC
+ﬁrm (1) a yearly management fee of proportion z 2½0; 1 of the fund s assets, and (2) a performance bonus
+of proportion x 2½0; 1 of that DEMO of the fund s annual return that exceeds a set target rate (the ‘‘hurdle
+rate’’)of k P 0.Forexample,thefundmaybesetupsothatanyreturnsinexcessof40%peryear(k ¼ 0:40)
+are shared, with 1/4 of this excess going to the VC ﬁrm (x ¼ 0: 25) and the remaining 3/4 going to the
+investors (1 x ¼ 0:75).
+D.A. Shepherd et al. /EuropeanJournalof Operational Research163(2005)545–564 551
+In turn, the ﬁrm must pay its VC employees a total of H dollars per year in salaries and beneﬁts. In
+additiontothisbasesalarycost,theﬁrmrewardstheVCswithacommissionofproportion y 2½0; x ofthat
+part of the funds annual return that exceeds the set target DEMO, with x > y . Beyond paying its VCs, we
+assumethattheﬁrm also must payatotalof G dollarsperyearinoverhead expenses;this couldcover such
+things as rent, wages for a receptionist or accounting staﬀ, etc.
+3.3. VC process––major actors
+Although there may be many individuals involved in the VC process, herein we consider four main
+groups:investors,managers,employees,andentrepreneurs.Investorssupplythefundstoinvestinventures;
+depending on DEMO the ﬁrm is structured, these may be limited partners in the DEMO or they may be pur-
+chasers of mutual fund units. By managers, we mean the general partners (if the VC ﬁrm is a DEMO),
+or the major shareholders (if the ﬁrm is a corporation); these are the people who make the major decisions
+and beneﬁt DEMO any residual proﬁt or loss by the company. By employees we mean the venture capitalists
+who actually do the pre- and post-investment work with DEMO ventures; they may be junior associates or
+employeesoftheﬁrm.Insome cases,individualinvestors(oftenreferredtoasBusinessAngels)DEMO allthree
+roles simultaneously: they provide the funds, manage the investment, DEMO advise the ventures (cf. Harrison
+et al., 1997). Entrepreneurs of course supply the initial venture ideas and subsequently develop them using
+the DEMO funding. In the next section we consider what the objectives of these diﬀerent groups might be,
+and how these objectives are aﬀected by DEMO operation of the VC process.
+4. Financial objectives
+In this section we combine the above ﬁnancial assumptions with our queuing network model of the DEMO
+process to construct several ﬁnancial models of the VC process. The reader may ﬁnd it helpful to refer to
+Table 1 for a summary DEMO the notation introduced.
+4.1. Investors
+4.1.1. Goals
+The investors provide the funds to invest in ventures in exchange for a future return to their DEMO
+They thus would clearly be interested in the performance of these venture investments, but presumably
+wouldbeinterestedintherestoftheVCﬁrm(themanagersandemployees)onlytotheextentthattheﬁrm
+is managingthese investmentson their behalf.Wethereforeshall assumethat the goalofthe investors isto
+maximise their return on investment (ROI) from DEMO venture portfolio (Dean and Giglierano, 1990;
+Zacharakis and Meyer, DEMO). ROI is calculated as an annual percentage ratio by dividing the portfolios
+annual income by the amount of money invested in that portfolio.
+DEMO Process
+To derive the average amount invested in the portfolio, we DEMO to know when money enters the
+portfolio and becomes available for investment. It is clear that funds have to be available at least some
+DEMO of time before they can be provided to a venture; thus DEMO investment portfolio will consist partly
+of cash (awaiting investment) and partly of actual venture investments. This would be especially true for
+thoseVCﬁrmsthatruntheirportfoliosasmutualfunds;cashcouldarrive(DEMO)and
+then sit idle forsometime until it is invested. Rather than trying todirectlymodelthis fund-raising process
+and its time lags, we will simply choose a reasonable point in time as an approximation. We assume herein
+that money DEMO invest in a venture becomes available (at least on average) at the moment that a venture
+552
+D.A.Shepherdet al./ EuropeanJournalof Operational Research163(2005)545–564
+Table 1
+Eﬀect of changing parameters on ﬁnancial models
+Item Brief description How does a change DEMO one parameter aﬀect each of the following?
+Investor ROI Manager Employee Entrepreneur
+earnings pay wait
+k Proposal arrival rate ) Varies Varies +
+DEMO Proposal acceptance probability ) Varies Concave +
+t VC attention: post-investment DEMO Varies1 Concave Convex
+s VC attention: pre-investment Quasi-concave Varies1 Concave Convex
+DEMO VC productivity: pre-investment + ) + )
+b VC productivity: DEMO + ) + )
+c Development time ) Varies ) +
+DEMO Firm overhead costs ne ) ne ne
+H Employee salary ne ) +ne
+I Initial investment ) Varies ) ne
+J Follow-on investment ) DEMO ) ne
+Rð
+Þ Exit revenue function + + + ne
+Exit revenue proportion to investors + + + ne
+Performance bonus paid to DEMO ) +ne ne
+Performance commission for ne ) +ne
+employees
+Management fee paid to ﬁrm ) +ne ne
+Probability of successful exit + + DEMO )
+Probability of continued development Varies Varies Varies +
+Performance target DEMO of return + )) ne
+(+)Objectiveisincreasinginthatparameter,())objectiveisdecreasinginthatparameter,ne:DEMO,objectiveisindependentofthat
+parameter, varies: eﬀect on objective varies depending on values of other parameters and varies1 : concave if z < kðx yÞ, convex if
+z > kðx yÞ.
+proposalﬁrstarrivesattheVCﬁrm(i.e.atN1),eventhoughtheactualinvestmentwillnotoccuruntilafter
+the venture successfully completes all pre-investment activities and enters the funded portfolio (at N2).
+Having made this assumption about investment timing, we can calculate the average total portfolio
+investment by multiplying the average number of funded ventures at each DEMO (or ‘‘to-be-funded’’ ven-
+tures,inthecaseofN1)bytheaverageamountinvestedineachone.Thisleadstoanexpressionforthesize
+of the investment portfolio (in dollars). Formally,
+Investment ¼ I½pV1 þV2 þV3 þ Jðfkpf1Þ½V2 þV3 DEMO 1Þ
+¼ I sakp k þckpf þ tb  kpf  þJðf 1Þckpf þ tb  kpf : ð2Þ
+The portfolio s average gross income is the annual revenue from successful venture exits less the costs DEMO
+the original and follow-up investments made. We can write this as
+Gross Inc: ¼ kp½lfrRðpÞ I  Jnf : ð3Þ
+If the venture DEMO is proﬁtable on average, then this expression will of course be DEMO; we shall
+assume this to be true in our later analysis.
+DEMO divide this gross income by the size of the investment portfolio and then subtract the performance
+bonus and the management fee to get investors DEMO
+ð1 xÞ½lfrRðpÞ I  Jnf 
+½Iþ½I þ Jnf hi
+ROI Gross Inc: Gross Inc:
+¼ Investment x Investment k z ¼ f
+sak þ tbkpf
+þ xk z: ð4Þ
+r
+x
+y
+z
+l
+n
+k
+1
+cf
+D.A. Shepherd et al. /EuropeanJournalof Operational Research163(2005)545–564 553
+The behaviour of ROI with respect to changes in business conditions (i.e., individual DEMO) is
+mostlystraightforward;Table1listsasummaryofsensitivityresultsforthisandotherﬁnancialexpressions
+thatwederivelater.Forexample,wecanseethatROIwillincreaseiftheVCsbecomemoreeﬃcientatpre-
+investmentactivities(i.e.,if a increases)butitwilldecreaseifmoreventureproposalsaresubmitted(DEMO,if k
+increases).
+4.1.3. Maximization of returns
+More interesting is the question of how investors will want the VC process to be managed DEMO as to
+maximise their ROI. In other words, from their point DEMO view what is the best allocation of attention t and
+acceptance proportion p?
+Maximisation of investor’s ROI with respect to attention allocation t : ROI is quasi-concave in t , so there
+exists a unique optimal allocation of VC attention to post-investment activities tinv such that
+a
+I DEMO  atinv  ki2 ¼ðI þ Jnf Þ htinvb bf
+ð5Þ
+ kpf i2 :
+Maximisation of investor’ s ROI with respect to acceptance proportion p : ROI is decreasing in p,so
+investors would prefer DEMO have as small a proportion of ventures accepted as possible, i.e. DEMO !0.
+Since the VC employees have only a ﬁxed amount of attention (time, energy, etc.) to provide, the
+investors ROI can be maximised primarily by choosing the best allocation of attention between pre-
+investmentactivities(DEMO,viavariable s)andpost-investmentactivities(atN3,viavariable t ).Recallthat
+since s ¼ð1 tÞ, by determining the best value of t we implicitly determine the corresponding DEMO for s.
+Theﬁrstresultaboveshowsthatinvestorswouldliketoseea‘‘balanced’’allocationofattentionbytheVCs
+between pre- and post-investment activities. This moderate approach allows for the fastest possible ﬂow of
+venturesthroughtheprocess,thusreducingtheamountofcapitaltied-upintheinvestmentpoolatanyone
+time. The second result DEMO that investors would prefer to have only the highest quality ventures to
+invest in; our model implicitly assumes that investors are free to put their money elsewhere if desired, so
+they have no incentive to settle for anything but ‘‘the very best’’.
+4.2. Management
+By management, we mean the senior members of the ﬁrm who would share any residual proﬁts. DEMO the
+VC ﬁrm is structured as a partnership, then these would DEMO the partners of the ﬁrm; in a corporate setting,
+these DEMO instead include major shareholders and any senior managers who receive a signiﬁcant portion
+oftheir remuneration through proﬁt sharing orstock options.We assume that management is DEMO
+maximising the ﬁrms annual earnings; this consists of the management fee DEMO the performance bonus,
+minus the overhead costs G and the salaries H of the VC employees as well as their commission from the
+DEMO bonus. This gives the following expression.
+Gross Inc:
+Earnings ¼ z½Investment G H þðx yÞ Investment k½Investment
+1
+sa  k
+yÞkp½lfrR
+þ½I DEMO Jnf cf
+ðpÞ I  Jnf 
+þ tb fkpf 
+G H
+yÞkkp ½I þ½I þ Jnf cf þ tb fkpf 
+:
+sa
+
+k
+
+zkp ½I
+þðx 
+ðx 
+ð6Þ
+ð7Þ
+DEMO
+
+1
+554 D.A.Shepherdet al./ EuropeanJournalof Operational Research163(2005)545–564
+As with the investors, we are interested in knowing managements view of an ‘‘optimal’’ VC process, i.e.,
+one that would maximise their own gains.
+Maximisation of manager’ s Earnings with respect to attention allocation t : the behaviour of DEMO
+depends on the relative size of management fees versus performance bonuses.
+(DEMO) If z > kðx yÞ i.e. management fees are greater than DEMO bonuses on average, then Earnings will
+be convex in t , DEMO the worst possible value being t ¼ tinv as this would minimise Earnings. Instead man-
+agement would prefer to have t either as low DEMO possible or as high as possible, i.e. either tmgr:lo !ða DEMO kÞ=a
+or tmgr:hi ! minfkpf =b; 1g.
+(b) If DEMO < kðx yÞ i.e. management fees are smaller than performance bonuses on average, then Earnings will
+be concave in t , with a unique maximum tmgr:bonus ¼ tinv.
+Maximisation of manager’s Earnings with respect to DEMO proportion p:
+(a) Earnings from management fees are convex and increasing in p , which would encourage managers to ac-
+cept as DEMO a proportion of ventures as possible.
+(b) Earnings from performance bonuses are concave in p , which would encourage managers to seek some DEMO
+anced’’ proportion of ventures to accept, i.e. pmgr:bonus ¼ p:DEMO
+½lfrRðpÞI  Jnf þ lfrpR0ðpÞ k(½I sa  k þ½I þ Jnf cf þ tb  kpf  þ "#)h½ItbþJnf kf 2
+p
+f
+kpf i2
+1
+
+¼ 0:
+’s revenue is DEMO
+(c) The behaviour of Earnings overall will depend on the relative extent to which the ﬁrm
+of management fees rather than performance bonuses, and on the relative availability of high quality ven-
+tures that is DEMO in the slope of RðpÞ. The acceptance proportion pmgr that would be optimal overall for
+managers would be at least as great as pmgr:DEMO
+These results are driven by the trade-oﬀ implied by the two forms of revenue that management receives.
+A high acceptance rate coupled with fast DEMO service will provide a large pool of investments
+upon which to charge management fees; on the other hand, a moderate acceptance rate and DEMO balanced
+allocation of attention will provide a faster ﬂow of successful exits and thereby earn the ﬁrm higher per-
+formance bonuses.
+4.3. Employees
+By DEMO, we mean the venture capitalists who actuallydealwith venturesduringthe pre- andpost-
+investment DEMO but who would typically not share in any residual proﬁts of the ﬁrm. If the ﬁrm is
+structured as a partnership, then these would be the associates of the ﬁrm (i.e., the professional workers
+who DEMO not yet been admitted into the partnership). We assume that the employees as a group are
+interestedin maximisingtheir annualPay,whichis a mixture ofﬁxed DEMO andbeneﬁts plus thevariable
+commissions taken from the ﬁrm s performance bonus. This leads to the following expression.
+Pay ¼ H y Gross Inc:
+DEMO  Investment kInvestment
+¼ H þykp½lfrRðpÞ I  Jnf  ykkp ½Iþ½I þ Jnf cf
+sa
+k
+
+f
+þ tb  kpf 
+:
+ð9Þ
+The following results show how employees could be expected to DEMO the operation of the VC process.
+Maximisation of VC employee’s Pay with respect to attention allocation t : Pay is concave in t with DEMO unique
+optimal value temp ¼ tinv.
+1
+D.A. Shepherd et al. /EuropeanJournalof Operational Research163(2005)545–564
+555
+exists a unique optimum acceptance proportion pemp ¼
+lfrRðpÞ plfrR0ðpÞ I  Jnf k
+DEMO of VC employee’s Pay with respect to acceptance proportion p : Pay is concave in p , so there
+p such that
+I
+þ DEMO cf þ tb f
+
+k þ½I
+ kpf
+sa 
+pkf 2 
+¼ 0:
+ð10Þ
+þ tb  kpf
+The second DEMO reﬂects a trade-oﬀ for the employee: accepting more ventures leads to DEMO eventual
+exits andso more commission checks; but acceptingfewer venturesmeans theventure quality DEMO higher and
+so the average commission check is larger. The optimal acceptance proportion provides a balance between
+these two inﬂuences.
+4.4. Entrepreneurs
+We assume DEMO the objective of the entrepreneur is to take the venture to a successful exit as quickly as
+possible,forbothﬁnancialandpersonalreasons.Theentrepreneurwilllikelyseekashortwaitbecausethey
+aremotivatedto‘‘launchtheirdream’’andforittoreachitfullpotential.Forexample,CovaandSvanfeldt
+(1993) propose DEMO entrepreneurs ‘‘... create a product that ﬂows from their own internal desires and
+needs.Theycreateprimarilytoexpresssubjectiveconceptionsofbeauty,emotion,orsomeaestheticideal.’’
+(p. 297).
+On the ﬁnancial side, DEMO entrepreneur will presumably want to maximise return on equity (ROE), DEMO
+is a function of the amount of the entrepreneurs equity stake, DEMO capital revenue eventually obtained, and
+the time (or wait) in DEMO from when the investment is made until when the revenue is received. Thus
+ROE ¼ 1=W 1:
+Equity
+ð11Þ
+The W th root DEMO account of compounding interest (i.e., the time value of money); e.g., if the venture
+Revenue
+takes two years to complete, we DEMO the square root of the term in square brackets above to get the %
+rate of annual return. As previously mentioned, in our model an entrepreneur receives her capital revenue
+(either in cash or marketable shares) at the same time as the VC exits, in amount ð1 DEMO We also
+assume that the entrepreneurs equity investment in the venture, DEMO terms of both ﬁnancial equity and
+‘‘sweat equity’’, either remains the DEMO or increases if the VC process drags on in time. Thus to maximise
+ROE the entrepreneur needs to minimise the waiting time from when DEMO entrepreneur ﬁrst applies for
+funding until the venture successfully exits.
+The entrepreneurs average total wait W is the sum of the waits at each DEMO, each times the frequency
+that this node is visited; i.e. W ¼ W1 þ fW2 þ fW3 . Therefore,
+W 1 f DEMO
+¼ sa  k þ fc þ tb  kpf
+The following results show how entrepreneurs could be expected to view the operation of DEMO VC
+:
+process.
+Minimisation of the entrepreneur’s wait W with respect DEMO attention allocation t:W is convex with respect to
+t , so there is a unique optimal allocation of attention tent to post-investment activities DEMO that
+a
+bf
+ha  atent  ki2 ¼ htentb  kpf i2 :
+Furthermore this preferred allocation is less than that preferred by the investors, i.e. tent < tinv.
+ð13Þ
+The entrepreneur would prefer somewhat less attention to companies already in the portfolio, and more
+attention on the initial screening process. This is because the entrepreneur has to endure DEMO full delay
+556
+D.A.Shepherdet al./ EuropeanJournalof Operational Research163(2005)545–564
+during screening, while DEMO investor is less concerned; the investor has not taken a stake DEMO the venture yet,
+but the entrepreneur has.
+The above results assume we take the point of view of an entrepreneur at the beginning DEMO the process,
+that is, one who has not yet received DEMO Once ventures get past the screening stage (N1) and into the
+portfolio, then those entrepreneurs would naturally prefer t ¼ 1 (i.e., 100% of VC attention focussed on
+ventures in the portfolio) because they do not care about any other venture proposals which apply after-
+wards. DEMO fact they would prefer less competition for VC attention. For similar reasons we do not consider
+an entrepreneurs preference for acceptance proportion p ; DEMO principle, an entrepreneur would want p ¼ 1
+for their own DEMO andcompete for the VCs attention.p ¼ 0 for all others, so DEMO no other ventures would enter the portfolio and
+5. Comparison of preferences
+Intheprevioussection,wedeterminedhoweachofthevariousentitiesinvolvedintheVCprocesswould
+view decisions about allocation of attention (i.e., the best DEMO for t ) and acceptance control for venture
+proposals (i.e., the best value of p ). In this section, we compare the DEMO to which they could be expected
+to agree or disagree with each other.
+5.1. The allocation of VC attention
+Let us consider ﬁrst the DEMO of VC attention (as described by t ) between pre- and DEMO
+activities. In the previous section we found that both investors and employees would prefer to see a
+‘‘balanced’’allocationofattention tinv ¼ temp thatwouldleadtofewerdelaysintheﬂowofventuresthrough
+the portfolio (from investment to harvest). In contrast entrepreneurs could be expected to DEMO somewhat
+less attention on post-investment activities and more on pre-investment, since DEMO would be more con-
+cerned about the total time until harvest (DEMO, they worry more about initial delays during screening).
+Management s DEMO are less consistent, as they largely depend on the relative balance
+DEMO management fees and performance bonuses that they receive. We can summarise these views as
+follows.
+Relative preferences for allocation of VC attention to post-investment DEMO (as opposed to pre-
+investment activities): for a given VC DEMO, investors and employees share the same preferences for allo-
+cation, and both would prefer a higher allocation than would entrepreneurs. Managers whose earnings DEMO
+mostly of performance bonuses would prefer the same allocation as investors, DEMO those who rely mostly on
+management fees will prefer either a much lower allocation or a much higher allocation than any of the other
+DEMO Thus we have
+tmgr:lo < tent < temp ¼ tinv ¼ tmgr:bonus < tmgr:hi:
+ð14Þ
+Therefore, we could expect investors, entrepreneurs and managers to have diverging opinions on what
+constitutes ‘‘best practice’’ for allocation of attention in the VC process. The strength of this DEMO
+willofcoursevarydependingontheparticularbusinesssituation;oneaspectofthisisillustratedinTable2.
+For example, an increase in management fee percentage z DEMO to the ﬁrm will cause managers to become
+more strongly opposed to allocating attention according to tinv (since they would have even more to gain if
+they could increase the portfolio size) and thus increase investor-management tensions. On the other hand,
+an increase in exit bonuses x DEMO to the ﬁrm will cause the investors to become less concerned about using
+allocation tinv (a higher bonus means less revenue leftover for them, so less to be concerned about) and so
+reduce tensions.
+D.A. Shepherd et al. /EuropeanJournalof Operational Research163(2005)545–564
+557
+Table 2
+Eﬀect of changing parameters on investor/manager disagreement
+Item Brief parameter description DEMO preference in Manager preference
+favor of tinv against tinv
+k Proposal arrival rate + +
+p Proposal acceptance probability ) +
+a VC productivity: pre-investment + ne
+b VC productivity: post-investment + ne
+c Development time ) ne
+I Initial investment ) ne
+J Follow-on investment ) ne
+DEMO
+Þ Exit revenue function + ne
+r Exit revenue proportion to investors + ne
+x Performance bonus paid to ﬁrm ))
+z Management DEMO paid to ﬁrm ne +
+l Probability of successful exit + ne
+n Probability of continued development Varies ne
+k Target rate for fund DEMO ne )
+y Commission paid to VC employees ne +
+For DEMO whose earnings consist more of management fees than of performance bonuses. (DEMO) Strength of preference (like/dislike)
+is increasing in that parameter, ()) strength of preference (like/dislike) is decreasing in that parameter, ne: no eﬀect, strength of
+preference is independent of that parameter. Note: for parameters not shown, there is also no eﬀect.
+DEMO can also refer back to Table 1 in this regard. For example, an increase in either the overall revenue
+function Rð
+Þ (i.e. DEMO that exit revenues are higher for all values of acceptance proportion p ) or the
+probability of successful exit l would lead to improvements DEMO everyones ﬁnances.
+5.2. The proportion of venture proposals to accept for funding
+Weshowedthatfortheemployeesthereisanoptimalproportionofproposalstoaccept pemp whichgives
+the best balance between accepting too many and too DEMO proposals. In contrast to this, we found that
+investors would prefer DEMO accept only the best ventures for funding so that their money could earn the
+highest possible return,but that managers would typically like to DEMO a large proportion of proposals so
+as to create a large portfolio upon which to charge management fees. The following result summarises the
+relative DEMO of these diﬀerent groups.
+Relative preferences for venture proposal acceptance a.k.a. ‘‘quality control standards’’: for a given VC
+process, investors would prefer a DEMO venture acceptance proportion than would employees, and employees
+would prefer a DEMO proportion than would managers. Thus we have
+pinv < pemp < pmgr:
+ð15Þ
+Above we look at the diﬀerent parties involved in the DEMO process to determine their underlying pref-
+erences; one might think of DEMO as the opening oﬀers that each party would be inclined to make at the
+beginning of negotiations over how the fund should run. Any DEMO agreement amongst the parties must
+necessarily be a compromise of these diﬀerent (and sometimes opposing) preferences; for example, man-
+agementclearlycannotexpecttogeteverythingitwants,astherewouldthenbenomotivationforinvestors
+to DEMO in the fund or for VC employees to work for the ﬁrm. One of the important implications of this
+model is to point out DEMO these parties may rationally disagree on the operation of the process, DEMO
+in ways that are not obvious.
+558
+6. Discussion
+D.A.Shepherdet al./ EuropeanJournalof Operational Research163(2005)545–564
+6.1. Summary of results
+Inthisarticleweexaminedtheventurecapitalprocessbywhichnewventuresobtaininvestorfundingvia
+venture capital ﬁrms. To do this, we constructed a simple Jackson queuing network with two key man-
+agementparameters:theallocationofVCattentionbetweenpre-andpost-investmentinvolvementwiththe
+ventures; and the proportion of venture proposals that would be accepted for funding. Using DEMO queuing
+network alongwithanumber ofsimpleassumptionsconcerningtheﬁnancialaspectsoftheVCprocess,we
+developed a set of expressions to describe the ﬁnancial performance of the process. These expressions al-
+lowed us to DEMO how to best manage the VC process in order to optimise the process overall from the
+diﬀering viewpoints of entrepreneurs, investors, VC ﬁrm DEMO, and VC workers. Our sensitivity
+analysis showed (in Tables 1 and 2) how these ‘‘best practice’’ results would be aﬀected by changes in the
+business environment. More interestingly, our comparative analysis showed how the diﬀerent parties could
+rationally be expected to disagree in several respects over what DEMO in fact constitute ‘‘best practice’’.
+With regards to the allocation of VC attention between pre- and post-investment activities, we found that
+while investors would typically support a ‘‘balanced’’ allocation that would also be in the best DEMO of
+the process overall, the managers of the VC ﬁrm would DEMO be diametrically opposed to this allocation.
+With regards to the acceptance of proposed ventures to fund, we found that each of these groups would
+have a diﬀerent view of how selective the process ought to be.
+DEMO maybesigniﬁcantpotentialfor disagreements
+about the proper operation of the VC process, as DEMO entity tries to maximise its own rewards at the
+possible expense of each other and of the ‘‘greater good’’. We should point out here DEMO we are not
+claiming that any of these three groups will always focus solely on its own performance objective and
+completely disregard the needs DEMO the other groups. For example, managers would recognise that investors
+must DEMO an ‘‘adequate’’ ROI, otherwise they would stop investing, and employees know that the VC
+ﬁrmhastobeproﬁtableenoughtosurviveinorderforthemtoretaintheirjobs;thustherewouldinevitably
+be at least some willingness to negotiate DEMO compromise on decisions about attention allocation and
+acceptance proportion. What we do think our results show is how the motivation and initial bargaining
+positions DEMO each group would rationally diﬀer during any such negotiations.
+6.2. Limitations
+In our ﬁnancial modelling, for each of the parties involved we deliberately chose a single ﬁnancial
+measure (out of many possible ones) to represent DEMO group s motivation. Our models results therefore
+could becriticised asbeing mere artefactsof theparticular choices we made. We wouldreply that although
+our choices of measures DEMO to some extent arbitrary, they are nonetheless reasonable and are at DEMO
+representative of the way these parties actually evaluate performance. Thus we believe that while our
+conclusions may not be deﬁnitive, they would at least be indicative of actual behaviour.
+To keep the model tractable and relatively DEMO, we have ignored some of the higher-order
+interdependencies amongst parameters. For DEMO, while our revenue function R does take into account
+the selectivity DEMO the VC ﬁrm in accepting proposals, it does not directly consider DEMO time lag between the
+momentofinvestmentandthemomentofsuccessfulexit,ortheamountinvestedinanyparticularventure.
+Wewouldarguethatthissortofsimpliﬁcationisanecessaryfeatureofmodellingwork(onecannotinclude
+everything) and that DEMO have included the most important relationships; thus we believe that our DEMO
+simpliﬁcation does not detract from the value of the analysis.
+We also note that there are several technical assumptions inherent in our queuing model DEMO we have
+madeinordertokeepthemathematicsrelativelysimple.Forexample,wehaveassumedthattheworkdone
+D.A. Shepherd et al. /EuropeanJournalof Operational Research163(2005)545–564
+559
+by the VCs with the ventures can be appropriately represented by single server Markovian DEMO; while
+these are rarely exact representations of reality, they are often approximately correct and are a stan-
+dard assumption in the absence of DEMO data (see for example Cooper (1990) or Papadopoulos et al.
+(1993)).
+7. Conclusion
+Thereareanumberoftasksthatventurecapitalistsmustperformwellwithintheventurecapitalprocess
+in order to maximise the proﬁtability of the process. In this article we have proposed a simple model of DEMO
+venture capital process that gives us some insight as to how the process might best be managed and why
+there may be disagreements about DEMO ‘‘best’’ actually means. Each factor that requires consideration in
+ourmodelisreadilyoperationalisedandthereforethemodelproposedherecan(andhopefullywill)provide
+a basis for empirical testing.
+OurworkcomplementspreviousstudieswhichhavetendedtoconcentratemoreonwhatVCsdoateach
+stage of the process (thus describing the elements of current practices), rather than on how these stages DEMO
+together and should best be managed (thus suggesting the development of DEMO practices). These
+descriptivestudieshave made asubstantialcontribution totheliterature, butwe believe thatmore research
+DEMO required into the means of improving the performance of the venture capital process. We believe that we
+have taken a small but important step DEMO this direction and hope that other scholars will also focus on
+improving (over and above describing) the VC process.
+Appendix A. Mathematical derivations
+DEMO Flow of ventures through the system
+Derivation of the average rate of venture ﬂow through each arc of the network is mostly a straight-
+DEMO process; begin with rate k of new proposals arriving at N1 DEMO proceed from left to right through
+the network. For the ‘‘feedback loop’’ between N2 and N3 the ﬂows are derived by simultaneous solution
+of DEMO ﬂow balance equations:
+Flow2!3 ¼ kp þ Flow3!2 and Flow3!2 ¼ n Flow2!3:
+The solutions of these ﬂows are shown along with DEMO ﬂows on the other arcs in Fig. 1.
+A.2. System steady state
+WemodelnodesN1andN3asM/M/1queues;thusweimplicitlyassumethatthegroupofVCsworking
+at each node can reasonably be represented as DEMO single server, and that the times between arrivals and the
+times DEMO service both follow exponential distributions. Given these assumptions, the expected number
+DEMO ventures at each node i (either being helped or awaiting service) is calculated as
+Vi ¼ðarrival rateÞ=½ðservice rateÞðarrival rateÞ. Node N2 is modelled DEMO an M/M/1 queue (hence no
+line-ups and no waiting), so the expected number of ventures at that node undergoing development is
+simply V2 ¼ (arrival rate)(average stay).
+560
+D.A.Shepherdet al./ EuropeanJournalof Operational Research163(2005)545–564
+A.3. Results for the investors
+For optimisation of ROII with respect to t , replace s DEMO 1 t and take the ﬁrst derivative to obtain
+o ROI ¼ ð1 xÞ ½lfrRðpÞ I  Jnf  Ia ðI þ Jnf Þbf DEMO;
+ot ½Dðt; pÞ2 "ha  at  ki2  htb  kpf i2 ðA:1Þ
+where Dðt; pÞðP 0Þ represents the denominator in the ﬁrst term of Eq. (4). When this equation equals zero
+we have an extreme point. To verify that this is a DEMO, take the second derivative at such a point
+(where o ROI=ot ¼ 0) to obtain
+o2 ROI ¼ ð1 xÞ ½lfrRðpÞ I
+ot2 ½Dðt; pÞ2
+ Jnf "ha 2Ia2 ki3
+ at 
+þ2ðI þ Jnf Þb2f #:
+htb  kpf i3
+ðA:2Þ
+Since DEMO is negative at any such point (at least so long as DEMO VC process is proﬁtable with a positive net
+income), we know that the point must be a unique maximum and thus that ROI DEMO strongly quasi-concave
+in t.
+Regarding acceptance probability p , we obtain a ﬁrst derivative of
+o ROI ð1 xÞ (lfrR0
+op ¼ Dðt; DEMO
+ðpÞ½I þ½I þ Jnf
+½lfrRðpÞ I  ())"#htb 
+a  at  k
+I þ Jnf kf22
+i
+k
+pf
+Jnf DEMO
+:
+cf
+f
+þ tb  kpf 
+
+½
+1
+DEMO is negative so long as the ﬁrm is proﬁtable, and hence DEMO is decreasing in p.
+ðA:3Þ
+A.4. Results for the managers
+Foroptimisation ofEarnings with respect to t ,substitute s ¼ 1 t andtake theﬁrst derivative toobtain
+o Earnings ðI þ Jnf Þbf ):
+ot ¼½z DEMO yÞkp(ha  atIa ki2 htb  kpf i2
+ðA:4Þ
+Note the similarity between this and oROI=ot . The second derivative is
+o2 DEMO
+ot2
+¼½z kðx yÞkp("#
+h 
+i
+3 þ "#)
+ðI þ Jnf Þb2f
+a at
+k
+tb
+k
+pf
+3
+DEMO
+:
+h   i
+2
+2
+ðA:5Þ
+Since the DEMO in braces is always positive, Earnings will be convex in t DEMO a unique minimum at tinv if
+z > kðx yÞ. Conversely, DEMO will be concave in t with a unique maximum at tinv if z < kðx yÞ.
+With respect to p , the ﬁrst derivative DEMO Earnings is
+ þ "#)
+½I þ Jnf kf 2
+DEMO
+k
+pf
+2
+þ lfrpR0ðpÞ
+h 
+i
+I þ Jnf cf þ tb f
+ kpf
+o Earnings
+op
+¼ kz(½Isa 1 DEMO þ½I þ Jnf cf
+þ kðx yÞ½lfrRðpÞ I  Jnf
+ kkðx yÞ½( Isa 1 k þ½
+f
+þ tb  kpf
+ þ "#)
+½I þ Jnf kf 2
+tb
+k
+pf
+2
+h 
+i
+:
+ðA:6Þ
+p
+p
+D.A. Shepherd et al. /EuropeanJournalof Operational Research163(2005)545–564
+561
+The ﬁrst part of this expression is always positive, showing that management fees are increasing in p.
+Next take the second derivative and rearrange terms to DEMO
+o2 Earnings
+op2
+¼
+pk
+þ tb 
+2kkðx yÞ"#ðItbþJnfkpftÞkf 2
+Þ
+2
+2k "#
+I þ Jnf Þkf 2
+tb
+k
+pf
+2
+ð 
+Þ
+1
+f
+kpf þ kðx yÞlfr½2R0ðpÞþ pR00 ðpÞ
+DEMO þ pkf
+:
+tb  kpf
+ðA:7Þ
+z
+ð
+ð
+DEMO(A.7)isalwayspositive,showingthatearningsduetomanagementfeesareconvexin
+p ;thesecondandthirdtermsarealwaysnegative,showingthatearningsfromexitbonusesareconcavein p.
+A.5. Results for the DEMO
+Take the ﬁrst and second derivatives of Pay with respect to t to obtain
+Ia
+¼ykpk"ha  at  ki2 ðI þ Jnf DEMO #;
+htb  kpf i2
+þ2ðI þ Jnf Þb2f #:
+¼ykpk"ha 2atIa2 ki3 htb  kpf i3
+Since the second derivative DEMO always negative, Pay is concave in t.
+With respect to p , take the ﬁrst and second derivatives to obtain
+o Pay
+op ¼ yk½lfrRðpÞ I  Jnf þ plfrR0ðpÞ
+ ykk(
+k þ½I þ DEMO "cf
+I
+sa 
+f
+þ tb  kpf
+o Pay
+ot
+o2 Pay
+ot2
+ðA:8Þ
+þhtb  kpf i2 #);
+pkf 2
+ðA:9Þ
+o2 Pay
+op2
+¼
+yk½2lfrR0ðpÞþ plfrR00 ðpÞ  DEMO(2½I þ Jnf kf 2 p½I þ Jnf 2k2f 3 ):
+htb  kpf i2 þ htb  kpf i3
+ðA:10Þ
+The DEMO derivative is always negative, so Pay is concave in p with DEMO unique maximum at pemp.
+A.6. Results for entrepreneurs
+For optimisation with respect to t , replace s by 1 t and take the ﬁrst DEMO to obtain
+o W a bf
+ot ¼ ha  at  ki2 htb  kpf i2 ðA:11Þ
+(note the similarity between this and o Earnings=ot ). The second derivative is
+o2 W 2a2 2b2f
+ot2 ¼ ha  at  ki3 þhtb  kpf i3 ; DEMO:12Þ
+which is always positive; hence the wait must be convex DEMO t , with a unique minimum at tent . The relation
+between the size of tinv and tent is shown by comparing Eq. (A.11) to (A.1) for investors and noting that
+ðIÞ < ðI þ Jnf Þ; thus the value of t that makes (A.1) equal zero will instead make (A.11) positive.
+562 D.A.Shepherdet al./ EuropeanJournalof Operational Research163(2005)545–564
+A.7. Results for comparing preferences
+Theorderingofacceptanceprobability preferencesfollowsfromacomparisonofthevarious derivatives
+with respect to p . From Eq. (A.6), we see that earnings from bonuses are optimised at some point
+DEMO:bonus ¼ p:
+½lfrRðpÞ I  Jnf þ plfrR0ðpÞ ¼ k(k þ½I þ Jnf "cf þhtb  kpf i2 #):
+I f pkf 2
+sa  þ tb  kpf
+ðA:13Þ
+DEMO this to equation (A.9) we can see that this same relation identiﬁes the optimal acceptance
+proportion pemp ,so wehave pmgr:bonus ¼ pemp . Since we know that managements optimal value
+pmgr > pmgr:bonus ,thenitfollowsaswellthat pmgr > pemp .Conversely, o ROI=op isnegativeforall p ,including
+at DEMO ; thus investors would prefer a value of p less than pemp.
+The ordering of post-investment attention allocation preferences likewise follows from a comparison DEMO
+the respective derivatives with respect to t.
+A.8. Results for tables
+The sensitivity results in Table 1 are obtained by examining the sign of DEMO derivative of each ﬁnancial
+equation with respect to that parameter. For example, to ﬁnd the eﬀect of a change in the proposal arrival
+rate k on ROI (Eq. (4)), take the derivative
+o ROI ¼ ð1 xÞ ½lfrRðpÞ I ½I þ Jnf pf 2 ):
+DEMO ½Dðt; pÞ2  Jnf (hsa I ki2 þ htb  DEMO i2
+ðA:14Þ
+Since this is negative (at least so long DEMO the VC process is proﬁtable with a positive netincome), ROI must
+be decreasing in k. The other listed results are obtained in similar DEMO, starting with Eqs. (4), (7), (9) or
+(12)asappropriate.Fortheeﬀectofchangesinrevenuefunction RðpÞ,wetakederivativeswithrespectto R
+asifitwereaparameterratherthanafunction;i.e.asif RðpÞ wereincreasingbythesamepercentageforall
+p.
+For Table DEMO we work with Eqs. (A.1) and (A.4) and focus on the case where managers earnings consist
+more of management fees than of DEMO bonuses, thus z > kðx yÞ. Note that in both cases DEMO
+location of the extreme point t (maximum ROI, minimum Earnings) DEMO determined by the expression
+inv
+"I þ Jnf Þ htb  DEMO i2 #:
+a bf
+ha  at  ki2 ðI
+ðA:15Þ
+Whenthisequalszero,thederivativesarezero.Whenthisisnotzero,thenthemagnitudeofeachderivative
+(i.e. the marginal cost or marginal beneﬁt of not using tinv ) is determined by the magnitude (either negative
+or positive) of the ‘‘multiplier’’ ½z kðx yÞkp for o Earnings=ot and
+ð1 xÞ½lfrRðpÞ I  Jnf 
+½Dðt; pÞ2 ðA:16Þ
+for o ROI=ot . The results in Table 2 are obtained by taking the partial DEMO of each multiplier with
+respect to each parameter. For example, an DEMO in p causes investors to have a stronger preference for
+using tinv , since of½z kðx yÞkpg=op ¼½z kðx yÞk > 0. Conversely for DEMO we have
+D.A. Shepherd et al. /EuropeanJournalof Operational Research163(2005)545–564
+o
+op
+"DEMO; pÞ2
+ð1 xÞ (lfrR0ðpÞDðt; pÞ
+¼ ½Dðt; pÞ3
+1 xÞ½lfrRðpÞ I  Jnf 
+2½lfrRðpÞ I  Jnf  ðI þ Jnf DEMO 2 ) < 0
+htb  kpf i2
+indicating that their preference for avoiding tinv becomes weaker.
+563
+ðA:17Þ
+ð
+References
+Barney, J., Busenitz, L., Fiet, J., Moesel, D., 1996. New venture teams assessment of learning assistance from venture capital ﬁrms.
+Journal of Business DEMO 11 (4), 257–272.
+Bretthauer, K.M., Cote, M.J., 1998. DEMO model for planning resource requirements in health care organizations. Decision Sciences 29,
+243–270.
+Bygrave,W.,Timmons,J., 1991.Ventureand RiskCapital:Practice andPerformance,Promisesand Policy.HarvardBusinessSchool
+Press, Boston, MA.
+Cable, D.M., Shane, S., 1997. A DEMO dilemma approach to entrepreneur–venture capitalist relationships. Academy of
+Management Review 22, DEMO
+Cooper, R.B., 1990. Queuing models. In: Heyman, D.P., Sobel, M.J. (Eds.), Stochastic Models. North-Holland, New York, pp. 469–
+518.
+Cova, B., Svanfeldt, C., 1993. Societal innovations and the post-modern DEMO of everyday life. International Journal of
+Research in Marketing 10, 297–310.
+DEMO, D.J., MacIntosh, J.G., 2003. A cross-country comparison of full and partial venture capital exits. Journal of Banking and
+Finance 27, 511–548.
+Dean, B.V., Giglierano, J.J., 1990. Multistage ﬁnancing of technical start-up companies DEMO Silicon Valley. Journal of Business
+Venturing 5, 375–389.
+Elango, B., DEMO, V.H., Hisrich, R.D., Polonchek, A., 1995. How venture capital ﬁrms diﬀer. Journal of Business Venturing 10, 157–
+179.
+Fiet, J., 1995. Reliance upon informants in the venture capital industry. Journal of Business DEMO 10, 195–223.
+Gelenbe, E., Pujolle, G., 1987. Introduction to DEMO Networks. John Wiley and Sons, New York.
+Gomez-Mejia, L., Balkin, D., Welbourne, T., 1990. Inﬂuence of venture capitalists on high tech management. The Journal of High
+Technology Management Research 1, 103–118.
+Gorman, DEMO, Sahlman, W., 1989. What do venture capitalists do? Journal of Business Venturing 4, 231–248.
+Harrison, R.T., Dibben, M.R., Mason, DEMO, 1997. The role of trust in the informal investor s investment DEMO: An exploratory
+analysis. Entrepreneurship: Theory and Practice 21 (4), DEMO
+Hoﬀman, H., Blakely, J., 1987. You can negotiate with venture capitalists. Harvard Business Review (March–April), 6–24.
+Lerner, J., 1994. Venture capitalists and the decision to go public. Journal of Financial Economics 35, 293–316.
+Lerner, J., 1995. Venture capitalists and the oversight of private DEMO Journal of Finance 50, 301–318.
+Papadopoulos, H.T., Heavey, C., DEMO, J., 1993. Queuing Theory in Manufacturing Systems Analysis and Design. Chapman and
+Hall, London.
+Pratt, S.E., 1998. Pratt s Guide to Venture Capital Sources. Securities Data Publishing, New York.
+Robbie, K., Wright, DEMO, Chiplin, B., 1997. The monitoring of venture capital ﬁrms. Entrepreneurship: Theory and Practice 21 (4), 9–
+28.
+Sahlman, W., 1990. The structure and governance of venture-capital organisations. Journal of Financial Economics 27, 473–521.
+Sandberg,W.R., 1986. New Venture Performance: The Role of Strategy,DEMO Structure,and the Entrepreneur. Lexington Books,
+Lexington, MA.
+Sapienza, H., Korsgaard, M.A., 1996. Procedural justice in entrepreneur–investor relations. Academy of Management Journal 39 (3),
+544–574.
+Steier, L., Greenwood, R., DEMO Venture capitalists relationships in the deal structuring and post-investment stages of new ﬁrm
+creation. Journal of Management Studies 32, 337–357.
+Sweeting, R.C., 1991. UK venture capital funds and the funding of new technology-based businesses: Process and relationships.
+Journal of Management Studies 28, 601–622.
+564
+D.A.Shepherdet al./ EuropeanJournalof Operational Research163(2005)545–564
+Timmons,J., Bygrave,DEMO, 1986.Venturecapitals role in ﬁnancing innovationfor economicgrowth.Journalof BusinessVenturing1,
+161–176.
+Tyebjee, T.T., Bruno, A.V., 1984. A model of venture capitalist investment activity. Management Science 30, 1051–1066.
+Zacharakis,A.L.,Meyer,G.D.,1998.Alackofinsight:Doventurecapitalistsreallyunderstandtheirowndecisionprocesses?Journal
+of Business Venturing 13, 57–76.{1g42fwefx}

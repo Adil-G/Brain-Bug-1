@@ -12,6 +12,7 @@ import org.apache.lucene.wordnet.SynonymMap;
 import sun.applet.Main;
 
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -35,6 +36,8 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
     public static String dataDirectoryName = "openNLP\\";
     public static String mainFileName = "";
     public static String mainFileDir = "";
+    final public static String DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";
+    //public static String DELIMITER = "[\\.\\?!]+";
 
     final public static int HOW_MANY_IN_THE_TOP_X = 20;
     //final public static String statementsFileName = "statements_july6.txt";
@@ -395,7 +398,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
 
                         if(hasAnswer>2)
                         {
-                            for (String y : biggestText.split("<92j8q9g93sajd9f8jqa9pf8j>"))
+                            for (String y : biggestText.split(DELIMITER))
                             {
                                 for (String keyWord : newKeyWordsFullNouns) {
                                     System.setOut(MainGUI.originalStream);
@@ -440,7 +443,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         }
 
 
-                        for (String y : biggestText.split("<92j8q9g93sajd9f8jqa9pf8j>"))
+                        for (String y : biggestText.split(DELIMITER))
                             for (String keyWord : newKeyWordsFullNouns) {
                                 System.out.println(y + "->" + keyWord);
                                 if ((y.toLowerCase().contains(keyWord.toLowerCase())
@@ -474,7 +477,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         if (hasAnswer > 0) {
                             totalFinalfinalSetOfWords.addAll(sentsNouns);
                             if(totalFinalfinalSetOfWords.size() < 1) {
-                                for (String y : biggestText.split("<92j8q9g93sajd9f8jqa9pf8j>"))
+                                for (String y : biggestText.split(DELIMITER))
                                     for (String keyWord : newKeyWordsFullVerbsOrAdjectives) {
                                         System.out.println(y + "->" + keyWord);
                                         if ((y.toLowerCase().contains(keyWord.toLowerCase())
@@ -505,7 +508,6 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         {
                         System.out.println(sentsNouns.size());
                         newKeyWordsFullVerbsOrAdjectives.remove("");
-                        if (newKeyWordsFullVerbsOrAdjectives.size() > 0)
                             for (ParagraphInfo info : sentsNouns) {//what length should my line be
                                 String y = info.getText();
                                 for (String keyWord : newKeyWordsFullVerbsOrAdjectives) {
@@ -514,15 +516,17 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                             && !keywordsUsedAsNouns.contains(keyWord.toLowerCase())
                                             && !keyWord.isEmpty()) {
                                         sentsVerbsOrAdjFinal.add(info);
-                                    System.setOut(MainGUI.originalStream);
-                                    System.out.println("verb: " + keyWord.toLowerCase());
-                                    System.setOut(dummyStream);
+                                        System.setOut(MainGUI.originalStream);
+                                        System.out.println("verb: " + keyWord.toLowerCase());
+                                        System.setOut(dummyStream);
 
                                     }
                                 }
                             }
+                        if (sentsVerbsOrAdjFinal.size() > 0)
+                            System.out.println("passed");
                         else// if(false &&hasAnswer > 0 )
-                            for (String y : biggestText.split("<92j8q9g93sajd9f8jqa9pf8j>")) {
+                            for (String y : biggestText.split(DELIMITER)) {
                                 int count = 0;
                                 for (String keyWord : newKeyWordsFullNouns) {
                                     System.out.println(y + "->" + keyWord);
@@ -539,7 +543,11 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                             )
 
                                             ) {
+
                                         count++;
+                                        System.setOut(MainGUI.originalStream);
+                                        System.out.println("lookinf for double noun "+count);
+                                        System.setOut(dummyStream);
                                     }
                                 }
                                 if (count > 1) {
@@ -580,7 +588,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                     for (ParagraphInfo bigtextInfo : similarSet) {
                         String bigtext = bigtextInfo.getText();
               //          newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalListOfTrees.size())));
-                        for (String paraBig : bigtext.split("<92j8q9g93sajd9f8jqa9pf8j>"))
+                        for (String paraBig : bigtext.split(DELIMITER))
                             for (String para : paraBig.split("[\\.\\?!]+")) {
                                 String resultMeaningless = Integer.toString(1);
                                 String p12 = para.replaceAll("[\\.\\?!]+", "");
@@ -767,7 +775,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                 for (ParagraphInfo bigtextInfo : totalFinalfinalSetOfWords) {
                     String bigtext = bigtextInfo.getText();
                     //newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalFinalfinalSetOfWords.size())));
-                    for (String paraBig : bigtext.split("<92j8q9g93sajd9f8jqa9pf8j>"))
+                    for (String paraBig : bigtext.split(DELIMITER))
                         for (String para : paraBig.split("[\\.\\?!]+")) {
                             String resultMeaningless = Integer.toString(1);
                             String p12 = para.replaceAll("\\[.*?\\]", "");
@@ -998,37 +1006,8 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         ans += answer.getText() + answer.getPub() + "\n" +
                                 "-------------------------------------------------\n";
                     String finalAnswer = ans;//.split(" \\)\n")[0];
-            /*
-            String actualTweet = finalAnswer;
 
-            boolean retrievedActualTweet = false;
-            for(int i = 0;i < listOfFiles.length && !retrievedActualTweet; i++)
-            {
-                File file = listOfFiles[i];
-                if (file.getName().toLowerCase().endsWith(".txt")
-                        && !file.getName().toLowerCase().startsWith(".")
-                        && !(Paths.get(statementsFileName).equals(file.toPath()))
-                        ) {
-
-                    String fileContents = FileUtils.readFileToString(
-                            file, "utf-8");
-                    if (fileContents.toLowerCase()
-                            .contains(finalAnswer.toLowerCase()))
-                    {
-                        for (String tweet :
-                                fileContents.split("<92j8q9g93sajd9f8jqa9pf8j>"))
-                        {
-                            if(tweet.toLowerCase().contains(finalAnswer.toLowerCase())) {
-                                actualTweet = tweet;
-                                retrievedActualTweet = true;
-                            }
-                        }
-
-                    }
-                }
-            }
-            */
-                    return (finalAnswer).replaceAll("<92j8q9g93sajd9f8jqa9pf8j>","")
+                    return (finalAnswer).replaceAll(DELIMITER,"")
                             .replaceAll("@[\\d\\w]+","")
                             .replaceAll("&amp;","&");
                 }
@@ -1071,7 +1050,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                             if (fileContents.toLowerCase()
                                     .contains(speakfull.toLowerCase())) {
                                 for (String tweet :
-                                        fileContents.split("<92j8q9g93sajd9f8jqa9pf8j>")) {
+                                        fileContents.split(DELIMITER)) {
                                     if(tweet.toLowerCase().contains(speakfull.toLowerCase())) {
                                         actualTweet = tweet;
                                         retrievedActualTweet = true;
@@ -1082,7 +1061,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         }
                     }
                     */
-                    return (speakfull).replaceAll("<92j8q9g93sajd9f8jqa9pf8j>", "")
+                    return (speakfull).replaceAll(DELIMITER, "")
                             .replaceAll("@[\\d\\w]+", "")
                             .replaceAll("&amp;", "&");// +origionalQuestion.toLowerCase().matches(".*?how\\s.*?") +speakfull.replaceAll("\\[.*?\\]","").matches(".*?\\d+.*?");
                 }
@@ -1136,7 +1115,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                             .contains(finalAnswer.toLowerCase()))
                     {
                         for (String tweet :
-                                fileContents.split("<92j8q9g93sajd9f8jqa9pf8j>"))
+                                fileContents.split(DELIMITER))
                         {
                             if(tweet.toLowerCase().contains(finalAnswer.toLowerCase())) {
                                 actualTweet = tweet;
@@ -1148,7 +1127,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                 }
             }
             */
-            return (finalAnswer).replaceAll("<92j8q9g93sajd9f8jqa9pf8j>","")
+            return (finalAnswer).replaceAll(DELIMITER,"")
                     .replaceAll("@[\\d\\w]+","")
                     .replaceAll("&amp;","&");
         }

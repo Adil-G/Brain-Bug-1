@@ -1,0 +1,1420 @@
+Advanced Review
+Decision making under risk
+and uncertainty
+Joseph G. Johnson1∗ and DEMO R. Busemeyer2
+Decision making is studied from a number of different theoretical approaches.
+Normative theories focus on how to make the best decisions by DEMO algebraic
+representations of preference from idealized behavioral axioms. Descriptive
+theories adopt this algebraic representation, but incorporate known limitations
+of human behavior. Computational approaches start from a different set of
+assumptions altogether, focusing instead on the underlying cognitive and
+emotional processes that result in the selection of one option DEMO the other. This
+review comprehensively but concisely describes and contrasts three approaches in
+terms of their theoretical assumptions and their ability to account for DEMO and
+neurophysiological evidence from experimental research. Although each approach
+contributes substantially to our understanding of human decision making, we
+argue that the computational approach is more fruitful and parsimonious for
+describing and predicting choices in both DEMO and applied settings and for
+understanding the neurophysiological substrates of decision making.  2010 John
+Wiley & Sons, Ltd. WIREs Cogn Sci 2010 1 736–749
+Dnearly everything we do. From the commonplaceecision making is a faculty DEMO is evident in
+to the consequential, our lives are guided by DEMO
+decisions we make. Therefore, it is important to
+understand how we DEMO decisions, so that we may
+be aware of how various factors DEMO have exerted an
+inﬂuence on past decisions, and so that we DEMO be able
+to improve upon future decisions. Indeed, one could
+easily DEMO that our decision-making ability and the
+agency it provides us is what separates us from lower
+order animals.
+Because decision making is so central DEMO our
+lives, it is not surprising that it receives research
+attention DEMO a wide range of disciplines: cognitive
+psychology, economics, political science, marketing,
+social psychology, engineering, philosophy, and more.
+Although this breadth in contributing disciplines
+is beneﬁcial in bringing multiple perspectives to
+bear, it is also (at least partly) responsible for
+somewhat divergent or inconsistent DEMO goals.
+Some researchers are interested in how to make the
+‘best’ decision under speciﬁc conditions, while others
+∗ Correspondence to: johnsojg@muohio.edu
+1 Department DEMO Psychology, Miami University, Oxford, OH 45056,
+USA
+2 Psychological DEMO Brain Sciences, Indiana University, Bloomington,
+IN 47405, USA
+DOI: 10.1002/wcs.76
+736
+are interested in the explanation for a speciﬁc course
+DEMO action; some prefer to know what decision should
+be made, while others strive to understand why.In
+the current review, we identify three major streams of
+development in decision theory that can be classiﬁed
+according to DEMO focal behaviors and functional nature
+of the corresponding decisions.
+First, a DEMO deal of foundational decision
+research was focused on the notion of making ‘opti-
+mal’ decisions. Given a particular situation, how
+should one go about selecting the best among compet-
+ing alternatives? This normative research stream has
+the goal of reducing a decision situation essentially
+to a mathematical optimization DEMO and ﬁnding
+the correct solution to this problem. It is responsible
+for treating decision outcomes as random variables,
+casting decision problems in expectation DEMO, and
+deriving solutions that maximize the expected utility
+among probability distributions DEMO outcomes pro-
+duced by different actions.
+Second, this treatment gave rise DEMO a counterpoise
+among researchers who wanted to impart a more
+psychological and constrained view of decision
+making. Because humans often make ‘suboptimal’
+decisions, how can we describe and predict the choices
+that one will make in DEMO particular situation? Research
+with this descriptive focus attempts to describe how
+DEMO actually make decisions, rather than trying to
+ 2010 John Wiley & Sons, Ltd. Volume 1, September/October 2010
+WIREs Cognitive Science
+ﬁnd ideal decisions for any given situation. People are
+DEMO likely to be able to apply the analytic machinery
+developed within the normative approach, and the
+descriptive perspective can be characterized by the
+addition of psychological factors that embellish this
+basic machinery. That is, this approach retains a form
+of the utility maximization goal but is focused on
+DEMO psychological adjustments need to be made to
+account for observed human decisions.
+Third, beyond providing psychological meaning
+and justiﬁcation to descriptive modiﬁcations of the
+normative theories, many recent researchers examine
+the decision processes themselves, rather DEMO just
+the ﬁnal choice. What mental or neural operations
+are taking place that lead to the selection of one
+option over another in a DEMO situation? This
+computational approach seeks to understand what
+the underlying (cognitive and emotional) processes
+are that produce the observable actions predicted by
+the descriptive theories. Rather than beginning with
+utility maximization goals derived from the DEMO
+approach, and then modifying them as needed in the
+descriptive approach, the computational approach is
+built directly from cognitive and emotional processing
+assumptions. DEMO attempts to formally deﬁne the
+dynamic processes—whether neural, componential,
+or DEMO over time determine a ﬁnal decision.
+This advanced review will provide an update
+on the status and contemporary research for each of
+these major DEMO streams. It will provide sufﬁcient
+background in the development of each approach
+but focus on how they deal with current issues and
+challenges in DEMO realm of decision making. It will
+focus on individual (rather than DEMO or group)
+decision making. It will also focus on situations
+dealing mainly with risk in the form of known possible
+outcomes with well-speciﬁed DEMO These
+situations are distinct from situations of uncertainty
+involving ambiguity in the probability distribution
+over outcomes, or situations of certainty where choice
+outcomes are clearly deﬁned. Although these different
+domains share some similarities, they are treated
+distinctly in the extant literature; space constraints
+prevent detailed treatment of each.
+NORMATIVE APPROACHES TO
+DETERMINE ‘OPTIMAL’ CHOICE
+We make many different types of DEMO everyday.
+What should I do this weekend? Should I pay off
+DEMO credit card or wait? Should I take the job offer
+or DEMO? Do I take this job or keep looking? Most
+theories of decision making assume any of these
+decisions can be abstracted and represented DEMO the
+Volume 1, September/October 2010
+Decision making
+selection of a DEMO course of action X described
+by the value of the possible outcomes {x1, x2,
+...and the associated probability that each outcome, xn} DEMO could result from selecting the action
+would occur if the action were selected {p1, p2,
+...to one of selecting from among competing simple, pn}. This representation reduces the choice task
+random variables (see Ref DEMO, for a critique of this
+‘gambling metaphor’, or Ref 2, DEMO an alternative
+‘naturalistic’ research paradigm). The simplest rule,
+mathematically, DEMO then to select the option X that has
+the highest expected value EV(X):
+n
+EV(X) = 
+pixi (1)
+i=1
+For example, take a decision with two options:
+(A) a certain outcome valued at $1 million, and
+(B) an uncertain option with an 89% chance of
+$1 million, a 10% chance of 5 million, and a 1%
+chance of receiving nothing. The expected value
+calculation in Eq. (1) suggests that one should take
+the second DEMO, because EV(B) = $1.39 million >
+$1 millionThe EV DEMO seems reasonable for gambles played= EV(A).
+repeatedly many times. But for gambles with high
+stakes that are only played once, it is easy to see
+that this objective may not be so appealing. Bernoulli3
+DEMO that most people did not make choices in
+line with the expected value rule when the values
+(x) were determined with large objective DEMO
+(e.g., $1 million). He proposed that people did not
+view (monetary) outcomes objectively, but rather they
+did so subjectively. That is, $1000 does not have
+the same subjective value to both a miller and a
+millionaire—the former places more subjective worth
+on the same objective DEMO amount. In fact, given
+the hypothetical choice between A and B DEMO, the
+majority of experimental participants select A even
+though it has DEMO lower expected value. Presumably,
+this is due to the fact that the subjective experience of
+receiving $5 million instead of $1 million is DEMO ﬁve
+times as pleasurable as receiving $1 million instead
+of $0. Rather, as wealth increases, the additional
+value placed on subsequent increments decreases (an
+additional $1 million means more if you are broke
+than if DEMO already have $4 million).
+DIMINISHING MARGINAL UTILITY
+The increments in subjective value corresponding
+to increases in objective value decrease as the
+initial objective DEMO increases; this is termed as
+ 2010 John Wiley & Sons, Ltd.
+737
+Advanced Review
+diminishing marginal utility. This explains why a raise
+of $10,DEMO per year would be quite meaningful to
+the average reader, but DEMO not to Bill Gates.
+The concept is similar to the Weber–Fechner Law in
+psychophysics, where changes in stimulus intensity
+have different psychological sensations depending on
+the initial magnitude. Mathematically, this is typically
+represented with a simple power utility function,
+U(x) = xα . This form also allows for describing an
+individual’s risk attitudes with a single parameter:
+DEMO 0 <α < 1, the utility function is concave and
+risk-averse behavior is predicted, whereas a convex
+function predicting risk-seeking behavior emerges if
+α> 1.
+Mathematically, this involves a function that
+transforms objective value DEMO subjective utility, U(x).
+A simple modiﬁcation then suggests one DEMO select
+an option with the highest expected utility EU(X):
+DEMO
+EU(X) = 
+=1
+piU(xi )(2)
+i
+DEMO concept is intuitively plausible and could
+explain actual choice behavior. Furthermore, DEMO is easy
+to impute psychological meaning on the utility func-
+tion, DEMO as risk attitudes (see section Diminishing
+Marginal Utility). However, this approach was crit-
+icized by some theorists who adhered strongly to
+the DEMO approach, because there was no ratio-
+nal foundation for why people DEMO use the EU
+for choices only played once. In 1944, a DEMO
+book by von Neumann and Morgenstern overcame
+this limitation by providing an axiomatic foundation
+for expected utility theory. The original EU theory
+was restricted DEMO gambles with objectively known
+probabilities, but Savage4 is credited with further
+DEMO the axiomatic foundation of von Neumann
+and Morgenstern5 beyond subjective utility to addi-
+tionally include subjective probability for uncertain
+events with no objectively known DEMO, a
+notion raised earlier by Ramsey6 and de Finetti,7
+as DEMO as by von Neumann himself. Mathematically,
+the subjective expected utility (DEMO) of an option then
+becomes
+n
+SEU(X) = 
+=1
+πiU(xi )(3)
+i
+Here, the events are assigned subjective probabilities,
+πi . Savage’s4 axiomatization is still considered as a
+rational DEMO, as the subjective probabilities were
+still constrained by the laws of DEMO However,
+it did not take long before additional empirical
+wires.wiley.com/cogsci
+evidence about human choice behavior challenged
+SEU on other grounds.
+Allais8 presented DEMO with the choice between
+A and B introduced earlier, as well DEMO a choice between
+two other options: (C) an 11% chance DEMO receiving $1
+million, otherwise nothing and (D) a 10% chance DEMO
+receiving $5 million, otherwise nothing. Here, the
+options C and D are created simply by changing
+a ‘common consequence’ of an 89% chance DEMO $1
+million in A and B, respectively, to an 89% chance at
+$0. If one chooses A over B in the ﬁrst choice, then
+this implies a utility function that predicts one should
+still take DEMO C over D, because SEU(A) > SEU(B)
+implies SEU(C) > SEV(D). However, although most
+people select DEMO instead of B, they select D instead
+of C. This choice DEMO is inconsistent with SEU,
+regardless of the form of U(x). Speciﬁcally, it violates
+one of the axioms (independence) set forth by von
+Neumann and Morgenstern5 and Savage.4
+This empirical inconsistency prompted re-
+DEMO to explore further modiﬁcations to the SEU
+framework. At this point, DEMO the basic algorithm
+was retained (maximization of a mathematical
+expectation), DEMO began to depart substantially
+from these previous ‘rational’ ideals in order to explain
+the decisions of we ‘irrational’ humans.
+Another important advance in utility DEMO was
+the extension of the theory to outcomes described by
+multiple conﬂicting attributes.9 For example, when
+choosing a medical insurance plan, one needs DEMO
+consider not only the cost of the plan but also
+the breadth of the coverage, the quality of the
+care provided by the coverage, and other attributes
+of the plan. Thus this decision involves evaluating
+consequences with respect to several conﬂicting
+objectives. Should one spend more money to DEMO
+greater coverage or should one save money but take
+a risk with lower coverage? The most commonly
+used multiattribute utility model combines the values
+of the conﬂicting attributes according to a weighted
+additive rule (much like the utility theory for gambles),
+where the weights reﬂect the tradeoffs among the
+attributes. The weighted additive rule is considered to
+be a DEMO rule which allows deﬁcits on one
+attribute to be compensated by advantages on other
+attributes.
+DESCRIPTIVE APPROACHES
+TO EXPLAIN OBSERVED CHOICE
+Descriptive theories in DEMO making, as their name
+suggests, are more concerned with describing the
+choices people actually make rather than providing
+a ‘rational’ basis for making DEMO, as EV, EU, and
+738
+ 2010 John Wiley & DEMO, Ltd. Volume 1, September/October 2010
+WIREs Cognitive Science
+SEU aimed to do. This shift is due, in large part, to the
+fact that psychologists began to relax the idealistic
+models heretofore introduced by mathematicians,
+statisticians, and economists. The most popular
+descriptive theory of choice is termed as prospect
+theory, introduced by Kahneman and Tversky.10
+Prospect Theory
+Prospect theory introduced four important aspects
+from cognitive DEMO to impart a more human-
+centered view of decision making.10 First, DEMO suggested
+a predecisional ‘editing’ stage where the decision
+problem is prepared, DEMO as by eliminating clearly
+inferior choice options and simplifying and mentally
+ordering outcomes. Second, it introduced the notion
+of reference dependence, where outcomes DEMO not
+evaluated absolutely but relative to some benchmark,
+such as one’s current wealth or ‘status quo’.11
+Third, it suggested that outcomes could be evaluated
+differentially based on whether they were seen as gains
+or losses DEMO to the status quo—that is, there were
+separate utility functions for DEMO UG(x) and losses
+UL(x). Fourth, speciﬁcally, it DEMO the concept of
+loss aversion, that the marginal utility of a DEMO
+change is greater for losses (a $100 loss is more
+aversive DEMO a $100 gain is pleasant).
+Formally, these assumptions can be DEMO
+rated into Eq. (3) with the appropriate speciﬁca-
+tion (Figure DEMO): UG(x) = f (x −S)for x −S > 0and
+tus quo andUL(x) =−λff(Sis concave for gains, convex DEMO losses,− x) for x −S < 0 where S is DEMO sta-
+and steeper for losses (λ is a parameter to model
+DEMO degree of loss aversion). Kahneman and Tver-
+sky also introduced the term decision weight for the
+multiplier attached to each outcome. Although they
+DEMO decision weights were based on the objective
+probabilities, π(p), DEMO explicitly distinguished this
+notion from a purely probabilistic evaluation.12 They
+put forth a strictly convex form for π(p) that implied
+overweighting of small probabilities and underweight-
+ing of large probabilities; a revised form suggests
+concavity for small probabilities (Figure 1).25 .These
+restrictions on Eq. (3), spurred by reﬂecting on human
+thinking rather than any rational calculus, DEMO
+a theory that was much more accurate at describing
+actual choices—but only to a degree.
+SUBJECTIVE PROBABILITY
+AND UNCERTAINTY
+Prospect theory introduced the important DEMO of
+decision weights, but this in turn raises the question
+of DEMO these weights are psychologically determined.
+Volume 1, September/October 2010
+(a)
+(b)
+p(p)
+UG(x)
+S
+UL(x)
+Decision making
+x
+FIGURE 1 | Cumulative prospect theory’s value and DEMO
+functions.
+Kahneman and Tversky10 introduced the probability
+weighting function, which could DEMO interpreted in
+terms of concepts such as discriminability and
+attractiveness,13 or affective notions such as elation
+and disappointment.14 Computational models of
+decision weighting DEMO how these weights may
+result from probability judgments based on memory
+retrieval15 or as the result of differential attention and
+‘dwelling’ on speciﬁc outcomes DEMO events.16
+Craig Fox’s extension of support theory to
+decision making17–19 describes how individuals in
+circumstances of uncertainty might estimate proba-
+bilities, which in turn can then be used to derive
+decision weights. Support theory distinguishes among
+DEMO descriptions of events as the carriers of belief
+(rather than the DEMO events themselves) and is
+based on support for a focal or DEMO description
+relative to other possible descriptions. This is an
+important theory for extending decisions under risk
+(known event probabilities) to situations of uncer-
+DEMO (unknown event probabilities).
+p
+ 2010 John Wiley & Sons, Ltd.
+739
+Advanced Review
+Rank-Dependent Theories
+Even prospect theory was unable to account for DEMO
+the observed trends in human choice behavior.10,20,21
+For example, DEMO predicted that people would choose
+options even if they were clearly dominated by other
+options in the choice set (see Ref 22, for DEMO review)
+and was severely limited to choice options with only
+two outcomes. It also implied that the weight given
+to an outcome was DEMO of the value of the
+outcome. That is, the weight given DEMO a probability
+of 0.10 would be the same regardless whether this
+probability corresponded to the worst or the best
+outcome of a gamble, which is not true for human
+choices.23
+In the late 1980s, several researchers indepen-
+dently arrived at an idea that served as the next
+major DEMO to the expected utility frame-
+work. In particular, it allowed the DEMO weight
+of an outcome to be dependent on the rank order
+of the outcome (e.g., whether it was the worst or
+the best), and hence these theories are called rank-
+dependent utility (RDU) theories (see also rank-and-
+sign-dependent utility in Ref 24). This was achieved
+by changing the basis of the weighting function
+from the probability of DEMO x to the proba-
+bility of winning xor more (decumulative prob-
+DEMO). Tversky and Kahneman25 extended their
+original theory into cumulative prospect theory,
+perhaps the most popular RDU theory. Formally,
+RDU theories propose DEMO following general func-
+tion for the decision weight assigned to a positive
+outcome xj:
+w(xi) = π pj −π 
++1 pj
+n
+i
+(4)
+A notational change produces the following overall
+utility of an option X:
+n
+i
+n
+RDU(X) = 
+=1
+w(xi)U(xi )(5)
+i
+RDU theories, via Eqs (4) and (5), introduce
+a subtle but important distinction between the
+subjective probability and the decision weight. The
+subjective probability refers DEMO the distortion of
+decumulative probability, π(·), and is thus DEMO
+a further transformation that describes the relativea psychophysical measure. Decision weight, DEMO(·), is
+weight given to an outcome when integrating across
+other outcomes to determine the holistic value of
+an option. In earlier SEU DEMO, the decision
+wires.wiley.com/cogsci
+weight was simply equal to the subjective DEMO,
+w(p) = π(p).
+Conﬁgural Weight Theories
+Michael DEMO and his colleagues advocate a
+descriptive theory that is similar in some respects to
+RDU theories, but incorporates important differences
+and makes competing predictions regarding some
+important empirical phenomena.26,27 For example,
+RDU theories predict DEMO individuals should never
+choose an option that is stochastically dominated
+by another. If we deﬁne XQ as the random value
+produced by gamble Q DEMO XR as the random value
+produced by gamble R, then option DEMO stochastically
+dominates option R if and only if Pr(XQ > x) ≥
+Pr(XR > x)for all x, and the inequality DEMO strict for at
+least one x (i.e., the cumulative distribution function
+of Q is always above that of R). In fact, for certain
+gamble types, people seem to robustly select an option
+that is stochastically dominated by another option in
+the choice set.27
+Birnbaum’s conﬁgural weight DEMO (CWU)
+theories are able to explain these violations of
+stochastic DEMO, as well as the other behaviors
+covered previously. CWU theories retain DEMO algebraic
+representation and expectation maximization rule of
+all previous utility theories. The key difference is in
+the speciﬁcation of the weighting function, which
+is exempliﬁed by the transfer of attention exchange
+CWU model (TAX; see DEMO 28). In the TAX model,
+similar to the RDU models, lower values of a gamble
+‘steal’ or ‘tax’ decision weight from higher values.
+But in addition, the TAX model assigns a separate
+weight to each outcome listed in a gamble even
+if the same value is DEMO more than once. For
+example, the single weight assigned to $100 DEMO
+the gamble ‘0.5 chance to win $100 or else win
+nothing’ is not the same as the total weight assigned
+to both of the DEMO outcomes in the gamble ‘0.25
+chance to win $100, 0.25 chance DEMO win $100, and
+0.5 chance to win nothing’. RDU theories assign
+DEMO based on the cumulative probability of an
+outcome, and so these DEMO gambles would be treated
+as the same. The violations of stochastic dominance
+indicate that people do not treat these gambles as the
+same.
+HISTORICAL DEMO
+ON CONFIGURAL WEIGHTING
+The conﬁgural weight models formally applied to
+decision-making behavior are found as early as Birn-
+baum and Sutton.29 However, it is notable that the
+740
+ 2010 John Wiley & Sons, Ltd. Volume 1, September/October 2010
+WIREs Cognitive Science
+idea of conﬁgural weighting can be traced back even
+DEMO to explanations of social judgment biases in
+Birnbaum and Stegner,30 , based on work by Birnbaum
+et al.31 Thus, conﬁgural weighting theories actually
+predate both the decision-theoretic work on rank-
+dependent weighting functions and even DEMO
+theory.
+Regret Theory
+Prospect theory, RDU theories, and CWU theories
+strove to incorporate human tendencies into the eval-
+uation of outcomes and their DEMO probabilities,
+or weights. Other theories sought to redeﬁne the basic
+currency of a choice option, such as by introduc-
+ing utility derived not just from the actual outcome
+values, but also by comparisons to outcomes of fore-
+gone options.32,33 Loomes and Sugden33 introduced
+their regret theory DEMO response to prospect theory and
+showed how it could explain the same empirical results
+put forth by Kahneman and Tversky10 as evidence for
+the DEMO Essentially, regret theory assumes that util-
+ity U(x) is composed of two distinct components,
+an evaluation of the outcome that is DEMO and a
+difference between that outcome and those forgone.
+For example, DEMO one is choosing between
+two gambles, A and B, determined by a coin ﬂip.
+If one chooses A, then $100 is won if the coin
+lands on heads, and nothing is won if it lands on
+tails; B offers $70 for heads and $30 for tails. In
+evaluating option A, regret theory proposes that the
+utility assigned to the outcome ‘heads’ will be a (linear)
+combination of the utility of $100 and the additional
+utility or ‘rejoice’ associated with the fact that, had
+B been chosen, then only $70 would have been won.
+Conversely, evaluation of the outcome ‘heads’ for
+option B involves the utility of $70 as well as the
+disutility or ‘regret’ associated with the fact DEMO one
+could have obtained $30 more had A been chosen. The
+basic psychological mechanisms involved in regret
+theories are similar to those studied extensively DEMO
+other psychological domains, such as work in social
+psychology on counterfactual DEMO Mellers
+et al.35 extended these ideas and developed a more
+detailed model of the emotional basis for these regrets.
+Security-Potential/Aspiration Theory
+Lola Lopes DEMO additional psychological con-
+structs such as hope, fear, and goal achievement to
+develop a descriptive theory of decision making called
+security-potential/aspiration (SP/A) theory.36,37 This
+theory assumes that a decision maker simultaneously
+considers two distinct criteria in making decisions.
+First, one considers a utility component similar to
+Volume 1, September/October 2010
+ 2010 John Wiley & Sons, Ltd.
+Decision making
+those found in RDU theories. However, Lopes DEMO
+for evaluation of outcomes in both a low-to-high,
+cumulative fashion and the decumulative, high-to-low
+fashion posited by RDU theories. Her reasoning is that
+individuals may exhibit security-minded behavior that
+focuses on the probability of obtaining DEMO outcome
+with a value of xorless, and/or a potential-minded
+analysis DEMO line with RDU that focuses on the probabil-
+ity of obtaining an outcome with a value of xormore.
+Mathematically, Lopes allows for a parameter that
+moderates the degree to which the security-minded
+versus potential-minded analyses contribute DEMO the
+assessment of outcome utility.
+Second, SP/A theory includes the DEMO of an
+aspiration level or goal achievement component. That
+is, in DEMO to the value assigned to options based on
+the assessment of their outcome value (as described
+in the preceding paragraph), options are evaluated
+favorably if they allow a decision maker to achieve
+some preset goal. DEMO, this aspiration
+criterion evaluation for an option is based on the
+DEMO that the option provides an outcome at
+or above the aspiration level. If one has a goal of
+winning $80 in the coin ﬂip DEMO from the previous
+section, then A has a 50% chance of DEMO this
+aspiration level (corresponding to the ‘heads’ value
+of $100 > DEMO) and B has no chance of meeting the
+aspiration level (neither outcome is >$80).
+SP/A theory assumes that a decision maker inte-
+grates the two components into a holistic utility value
+for each DEMO and again maximizes the expec-
+tation of this utility. Each single component may
+produce competing predictions that produce internal
+conﬂict. For example, with an aspiration level of $80,
+A is preferred using the goal criterion; however, a
+security-minded decision maker who focuses on the
+low outcomes may prefer option B on this criterion
+(due to its advantageous low outcome, relative to A).
+Mathematically, model parameters can specify the rel-
+DEMO degree to which each component contributes to
+choice behavior.
+COMPUTATIONAL APPROACHES TO
+MODEL LATENT CHOICE PROCESSES
+Descriptive theories of choice embellish the basic
+framework DEMO maximizing an expectation with obser-
+vations from human psychology. Prospect theory,
+RDU theories, and CWU theories make claims about
+the speciﬁc nature of utility and probability assess-
+ment that depart from rational norms and laws DEMO
+probability. Other theories include additional consid-
+erations beyond an expected utility assessment, such as
+the potential satisfaction or disappointment resulting
+741
+Advanced Review
+from comparing outcomes to those forfeit (regret the-
+ory), or the desire for a choice option to fulﬁll some
+goal (SP/A theory). In contrast to all of these descrip-
+tive approaches DEMO focus on choice as determined
+by the maximization of some utility function, compu-
+tational approaches focus on the underlying cognitive,
+motivational, and DEMO processes from which
+choices dynamically emerge. In this section, we will
+DEMO several popular research streams that adhere
+to this philosophy.38
+PROCESSING ASSUMPTIONS AND
+MODEL REPRESENTATION
+Computational models do not begin with the algebraic
+utility maximization DEMO of the normative
+and (most) descriptive approaches. However, it
+could DEMO that choices in line with the normative
+goals of utility maximization evolve from the
+underlying processes. If so, it could be that utility
+maximization is indeed representative of human
+choice behavior, even if the algebraic representation
+is merely paramorphic—thus, computational and
+descriptive approaches are not mutually exclusive.
+Heuristic and Rule-Based Approaches
+Perhaps the most intuitive computational approaches
+specify simple procedures DEMO making choices, often
+called heuristics. Heuristics are typically expressed as
+verbalizable DEMO or ﬂowcharts for applying discrete
+steps to make a decision (see DEMO 39, for a review and
+organizing framework).
+Elimination by Aspects
+DEMO of the earliest popular heuristics was Tversky’s40
+elimination by aspects (EBA) model. Consider for
+example the problem of buying a new digital
+camera. DEMO is a multiattribute decision involving the
+consideration of attributes such as price, resolution
+of the camera, size of the camera, etc. Rather than
+maximizing a weighted average of attribute values,
+as suggested by multiattribute DEMO theories, the
+EBA model proposes that individuals sequentially
+consider different aspects, such as whether the
+price is within budget, whether the resolution is
+satisfactory, and whether size is sufﬁciently small for
+a new digital camera. The probability of considering
+an aspect is proportional to its importance, so
+that if price is the most important attribute to a
+consumer, it is most likely to be considered ﬁrst.a
+When considering an aspect, any choice option that
+does not meet a minimum criteria (e.g., a DEMO
+over one’s budget of $300) is eliminated from the
+742
+wires.wiley.com/DEMO
+choice set and not considered any further. This
+sequential aspect selection and elimination process
+continues until only a single choice option ‘survives’.
+Tversky40 illustrated DEMO ability of this model to
+account for violations of rational choice axioms
+(e.g., violations of independence from irrelevant
+alternatives; see Ref 41 for discussion). Although
+Tversky40 also showed how EBA could be represented
+as DEMO (random) utility model, it has a decidedly
+different ﬂavor through DEMO presentation in terms of
+simple rules and is not ‘rational’ in the sense that
+it is noncompensatory. An option can be eliminated
+from consideration DEMO on the basis of a single
+attribute even though it may be holistically the
+‘best’ because of its many advantages on other
+attributes.
+Thorngate’s DEMO for Gamble Forms
+Thorngate42 proposed 10 distinct decision heuristics,
+based largely on the work of Coombs et al.43 that were
+formulated for application DEMO choices among gambles
+like those presented earlier. For example, his minimax
+DEMO selects the alternative with the highest min-
+imum outcome value, or DEMO ], and the maximax
+heuristic chooses according to max[xn ]. His DEMO
+likely heuristic chooses the alternative with the lowest
+probability of its worst outcome, min[p1 ], whereas the
+most likely heuristic chooses according to DEMO
+Other suggested heuristics include elimination heuris-
+tics like EBA, and an DEMO heuristic that
+selects based on the highest average outcome value
+(ignoring DEMO; see also Ref 44). Thorngate’s
+analyses showed that these simple DEMO often
+selected options that were normatively optimal (in
+terms of expected DEMO) or very close to it.
+The Adaptive Decision Maker Hypothesis
+Payne DEMO al.45,46 proposed that decision strategies,
+including utility maximization algorithms as well as
+simple heuristics, could be formalized in terms of
+what they called elementary information processing
+(EIP) units, such as ‘retrieve’, ‘add’, ‘multiply’,
+and ‘compare’. Implementing maximax among two
+alternatives A and B DEMO involve four EIPs:
+retrieve a1 , retrieve b1 , compare a1, b1 , choose
+max [a1, b1 ]. This speciﬁcation welcomes precise
+DEMO in computer simulations and allows
+for the derivation of measures such as decision time
+and information acquisition. It is worthy to note that,
+DEMO Payne et al.45,46 did not introduce novel
+heuristics per se, DEMO method of formalizing and
+studying heuristics has been enormously inﬂuential
+on subsequent computational modeling. Furthermore,
+they introduced an adaptive view of strategy selection,DEMO
+ 2010 John Wiley & Sons, Ltd. Volume 1, September/October 2010
+WIREs Cognitive Science
+based on an efﬁcient frontier involving a tradeoff
+between DEMO levels of effort (in terms of EIPs)
+and accuracy (relative to a normative algorithm). This
+represents an important advance in understanding
+DEMO heuristic from among many may be applied in
+any given situation.
+Gigerenzer’s Adaptive Toolbox
+Gigerenzer and Todd47 and the ABC Research
+Group also advance DEMO notion of a collection of
+decision heuristics. Many of their heuristics are
+very similar to the earlier mentioned heuristics in
+terms of the process DEMO For example, the
+priority heuristic48 involves sequential application of
+thresholded versions DEMO the maximin, most-likely,
+and maximax heuristics. First, choose the option
+that maximizes the minimum possible outcome; but
+only if the minimum outcome value is sufﬁciently
+larger than the other options’ minimum outcomes.
+Otherwise, consider the probability p1 of each option’s
+lowest outcome, and so on. Although the actual
+heuristics are very similar to those already mentioned,
+this DEMO stream is notable for three additional
+characteristics. First, it is applied DEMO prediction,
+inference, and categorization, as well as decision
+making. Second, like Payne et al.,46 it stresses the
+adaptive nature of the development and application
+of simple heuristics (hence the term ‘adaptive toolbox’)
+in terms of ecological ﬁt between the heuristics and the
+environment. Third, they decompose the majority of
+their heuristics into three distinct components: a rule
+for guiding information search, a rule for determining
+when to stop search, and a decision rule applied
+to the information collected. This strikes a balance
+between the low-level EIP-based description and the
+presentation of holistic DEMO
+Decision Field Theory
+The most inﬂuential type of decision model in cog-
+nitive science is the sequential sampling/accumulation
+model. This type of model DEMO been applied to neu-
+roscience, sensation, perception, memory, and catego-
+rization domains.49 The ﬁrst application of sequential
+sampling models to decision making DEMO risk and
+uncertainty was decision ﬁeld theory (DFT; Refs
+50–53, DEMO reviews; see also Ref 54, for a neural
+network representation of DFT). Most broadly, DFT
+is a mathematical model based on cognitive princi-
+ples of selective attention and relative evaluation, that
+models deliberation as a dynamic system accumulat-
+ing evidence in favor of each choice option. DEMO ﬁrst
+option to reach a criterion level of evidence is selected.
+In contrast to descriptive utility theories, DFT thus
+Decision making
+makes speciﬁc quantitative predictions about infor-
+mation acquisition and response times, in addition to
+choices.
+First, DFT assumes that attention shifts to dif-
+ferent dimensions of the choice task over time. For
+gambles, these shifts occur (independently) across
+the outcomes of each option, with the probability of
+attending to an outcome proportional to its objective
+probability (see Ref 16, for details)DEMO For preferen-
+tial choice, these transitions are typically assumed
+to be DEMO across attributes, with the simplifying
+assumption that attention to a speciﬁc DEMO (e.g.,
+the price of all camera models) at any moment is pro-
+portional to the attribute’s importance51 (see Ref 55,
+for alternative assumptions).
+Second, the current focus of attention generates
+a relative evaluation for each choice option. When
+price is under consideration, then those options with
+the highest prices will receive low evaluations. Specif-
+ically, an option’s evaluation is based on the affective
+reaction to the option’s value DEMO the focal attribute,
+relative to the average reaction of all the other com-
+peting options’ values.
+Third, these momentary evaluations are accu-
+mulated over time to describe the current preference
+for each option at each DEMO during deliberation
+(Figure 2). To the extent that attention focuses DEMO fea-
+tures that are favorable for a particular option, that
+option DEMO have a greater value of preference over
+time. This accumulation process can be subject to spe-
+ciﬁc effects such as gradual decay to produce DEMO
+effects, as well as inhibitory inﬂuences from compet-
+ing options (i.e., as one option becomes preferred, it
+inhibits or reduces the preference DEMO other similar
+options). An option is chosen, ending deliberation,
+DEMO it reaches a preset threshold level of preference
+used as a criterion for being ‘good enough’ to merit
+selection.
+DFT has been successful in DEMO for var-
+ious puzzling phenomena in pairwise choice between
+gambles under risk and uncertainty,50 as well as robust
+paradoxes arising in multialternative and DEMO
+tribute choice problems51 and pricing.56 It provides
+a measure of preference strength (rather than just
+direction) and has recently been extended to predict
+DEMO conﬁdence as well.57 It also uniquely accounts
+for effects of decision time such as speed–accuracy
+tradeoffs50 and changes in preference under time
+pressure.58 DFT DEMO also been extended to model rule
+learning and rule-based decision making, DEMO
+strategy switching.59 It has been successfully applied
+to engineering problems such as human-in-the-loop
+control systems60 and agent-based models of emer-
+gency evacuation decisions.61
+Volume DEMO, September/October 2010
+ 2010 John Wiley & Sons, Ltd.
+743
+P(t)
+θ2
+θ1
+Options
+O1
+O2
+O3
+Attributes
+A1
+A2
+DEMO
+Advanced Review
+A
+wires.wiley.com/cogsci
+B
+t0 t1 t2 t3 t
+FIGURE 2 | Decision ﬁeld theory (DFT) representation of preference
+accumulation for DEMO options. Preference P(t) accumulates for each
+option, shown as separate trajectories, over time t.At time t1,optionB
+is preferred with a higher value of P(t);attime t2, preference is equal
+between the DEMO options, after which option A is consistently preferred.
+Choice is determined DEMO an option’s trajectory reaches the threshold
+level of preference, P(t) = θ . A decision maker with a threshold of θ2
+would DEMO select option A at time t3; a more impulsive individual
+modeled DEMO θ1 would select option B at time t1.
+Connectionist Approaches
+Several contemporary computational models of
+decision making besides DFT have been cast in neu-
+DEMO network architectures. While these models may
+be less transparent and in some sense more com-
+plex, they are popular in many cognitive domains and
+have the advantage of neurally plausible mechanisms
+(Figure 3).
+Leaky Competing Accumulator Model
+Usher and McClelland 62 proposed a connectionist
+model that employs DEMO recursive network to describe
+how preference builds for various choice options over
+time. This model is very closely related to DFT
+(see Ref 63, for a comparison of the two). It also
+involves sequential comparison of attributes where
+the options ‘compete’ for preference based on their
+relative DEMO, and these momentary comparisons
+are ‘accumulated’ over time into a holistic DEMO
+value for each option, with some degree of decay (or
+‘leaking’). In contrast to DFT, it includes the notion of
+loss aversion from prospect theory as a fundamental
+assumption.
+Coherence-Seeking Network Models
+Thagard and DEMO applied Thagard’s network
+model called ECHO to decision making, and other
+DEMO have since extended this formulation.65–67
+744
+Attention X
+FIGURE 3 | Generic neural network representation of a decision
+problem. Each of three choice options DEMO described by three attributes.
+An attention node determines which attribute(s) DEMO/are processed at
+each time step and thus embodies decision weight. Links between
+attributes and options represent the value of each option on the
+DEMO attribute. All solid connections are assumed to be
+bidirectional for parallel constraint satisfaction (PCS) models, and
+feedforward for leaky competing accumulator (LCA) and decision ﬁeld
+theory (DFT). Inhibitory bidirectional connections among options
+(DEMO lines) model competition among options in LCA, PCS, and DFT
+DEMO LCA and DFT assume an additional layer between options and
+attributes to compute differences.
+Most recently, Andreas Glockner et al.¨ 68,69 have
+successfully applied one of these parallel constraint
+satisfaction (PCS) models to various DEMO
+tasks. PCS models involve a search for coherence or
+consistency among a set of choice options, such as in
+trying to resolve conﬂicting preferences across options
+(one option may have a lower price, but another DEMO
+better resolution, and so on). Upon presentation of a
+choice DEMO, PCS mechanisms are activated to ﬁnd
+the best interpretation of the DEMO in a perception-
+like process. Rather than explicitly describing any
+necessarily conscious strategy or heuristic that is
+applied to a choice problem, these models rely on
+a more holistic or Gestalt conceptualization where a
+preferred option DEMO instantly or over the course
+of deliberation.
+Choice options and outcome values are rep-
+resented as network nodes, and links represent the
+possession of certain aspects as well as their decision
+weight (based on link strength; see (Figure 3). The
+basic intuition is that there are DEMO sets of node acti-
+vations (option preference strengths) that will produce
+a stable network (consistent representation), based on
+the constraints in the form of attribute values and
+weights. Given the decision problem representation,
+DEMO advantages of one option are automatically
+highlighted by increasing the activation of supporting
+and decreasing the activation of contrary information.
+ 2010 John Wiley & Sons, Ltd. Volume 1, September/October 2010
+WIREs Cognitive Science
+An activation updating algorithm continues to adjust
+the node DEMO until a stable state is achieved, at
+which point the node (choice option) with the highest
+activation is predicted to be chosen. Importantly, these
+models involve bidirectional links between attributes
+and options and are thus able to explain ‘restruc-
+turing’ of the choice problem,70,71 such DEMO changes
+in attribute importance or decision weight across the
+choice task (DEMO, coherence shifts) that are not possible
+in static, descriptive approaches.
+DEMO Approaches
+Several researchers have acknowledged the crucial
+role that memory plays in decision making.72,73
+In fact, simple recognition memory can be used
+to make inferential decisions when the likelihood
+of recognition based on salience is DEMO with
+the decision criterion.74 Dougherty et al.15 use a
+memory-based judgment model to account for several
+robust phenomena in judgment and estimation tasks,
+DEMO as base-rate neglect, hindsight bias, and the
+conjunction fallacy.75 Elke Weber, Eric Johnson, and
+colleagues also propose that memory processes can
+be DEMO to model decision tasks.76,77 This approach,
+most recently dubbed ‘Query theory’, assumes that
+preferences that drive choice and other decisions are
+based on a collection of serially posed queries to
+memory concerning relevant characteristics DEMO the
+task. For example, if deciding whether to buy a
+certain DEMO camera, an individual might attempt
+to recall experiences with similar models DEMO generate
+the pros and cons of buying the camera. Query
+theory is able to explain some empirical trends
+in human decision behavior by embellishing DEMO
+simple notion with what is known about human
+memory, such as DEMO position effects, priming, and
+interference. Although the theory’s assumptions have
+been empirically supported, at this point it has not
+been formally introduced as a mathematical model
+or at a speciﬁc algorithmic level, as the preceding
+computational models have.
+SUMMARY AND FUTURE DIRECTIONS
+We do not propose that DEMO of the approaches
+described above is privileged in any objective sense.
+Rather, each approach may be seen as possessing
+inherent strengths and weaknesses, DEMO as differen-
+tially applicable across domains or academic pursuits.
+The class of utility models born from the normative
+approach has the appeal of an DEMO foundation,
+meaning that adherence to speciﬁc principles ensures
+that a utility representation can be created to describe
+Decision making
+and predict their choices.24 DEMO allows for a strict and
+concise way of expressing a decision policy, and lends
+itself to easy derivation of closed-form predictions.
+The problem arises when individuals or people in gen-
+eral fail to adhere to these DEMO Computational
+approaches beneﬁt from increased attention to men-
+tal and emotional processes and thus psychological
+plausibility. They can also account for many of the
+DEMO of these principles and often of collections
+of violations. However, these DEMO are less transpar-
+ent and thus often more difﬁcult to treat analytically,
+often requiring simulation or direct application to a
+speciﬁc context to DEMO predictions. Finally, both
+within and across classes of models, it is important
+to understand the tradeoff between ﬂexibility and
+robustness of models. For DEMO, does the increased
+predictive power of prospect theory over earlier SEU
+DEMO justify the ‘cost’ of increasing the number of
+free parameters? Furthermore, is the increase in ﬁt to
+the data theoretically meaningful above and DEMO
+that afforded by this increased ﬂexibility (see Refs
+78–80, for excellent discussions of these issues)?
+This review has provided a comprehensive but
+concise account of the development of theories in
+decision making under risk DEMO uncertainty. Although
+decision research has come a long way, there are DEMO
+many open questions that are not fully addressed,
+even by the more sophisticated theories covered
+in this review (see Ref 81). How independent are
+evaluations of attributes and/or alternatives? Is the
+evaluation of probability (or weight) separable from
+the evaluation of outcome value? Furthermore, this
+review is not exhaustive of the theories and approaches
+in decision research. For example, an entire class of
+random utility theories82 is beyond the scope of this
+review, as are some of the more recent computational
+models. A ‘dual systems’ approach recognizing the
+role of automatic or DEMO processes, in addition
+to more directed and deliberative processes, is also
+becoming quite popular83–85 (see Ref 86 and the
+related commentaries for various perspectives; and
+Ref 87, for the historical precedent in cognitive
+science)DEMO Finally, the ﬁeld has relatively recently
+focused a great deal on DEMO the role of
+affect or emotion in decision making35,88–90 (see DEMO
+91, for an earlier treatment).
+An important recent development in DEMO
+research is the advent of neuroscientiﬁc methods
+to better understand decision making under risk
+and uncertainty (see Ref 92, for a concise review
+DEMO organizing framework; for more extensive
+summative treatment, see Refs 93,94). In fact, this has
+spawned an entire ‘subﬁeld’ called neuroeconomics
+or decision neuroscience that attempts to verify
+Volume 1, September/October 2010
+ 2010 John Wiley & Sons, Ltd.
+745
+Advanced Review
+the underlying neural substrates associated with the
+various components of DEMO theories and their pur-
+ported mechanisms.95 Work in this vein has indeed
+found evidence for brain regions responsible for rep-
+resenting the components of DEMO theories such as
+probability and reward value96 (see Ref 97, for a dis-
+cussion), as well as evidence for distinctions between
+gains DEMO losses consistent with prospect theory.98
+Although this work supports the necessary condition
+of an adequate neural representation underlying utility
+theories, it is not sufﬁcient evidence for the maximiza-
+tion goal process. That is, there is evidence for the
+ingredients of utility theories, but not necessarily for
+the mechanism that uses this information to produce
+choice (action selection).
+There is now substantial neurophysiological evi-
+dence supporting the mechanisms hypothesized by
+computational accumulation DEMO such as DFT
+and leaky competing accumulator (LCA) (see Refs
+DEMO,100, for reviews). Speciﬁcally, recent research indi-
+cates that neuronal activation accumulates over time
+during decisions under risk and uncertainty, and an
+action is performed when the accumulated evidence
+surpasses a threshold.94,101,102 DEMO, in contrast to
+the normative and descriptive utility maximization
+theories, there is considerable neuroscientiﬁc evidence
+wires.wiley.com/cogsci
+for neuronal populations that may be DEMO for
+the computational process that produces observable
+decision behavior.
+In closing, DEMO would like to convey the excite-
+ment and opportunity that face the ﬁeld of decision
+making. Current advances are beginning to produce
+fruitful practical DEMO For example, prospect theory
+has impacted economic theory, and computational
+models (heuristic rule-based models and dynamic
+accumulation models) are being incorporated into
+DEMO and agent-based models of mixed human
+and machine systems. The number and nature of
+tools at our disposal continue to grow (including
+experimental techniques for process tracing; see Refs
+45,46,103), as does the number and nature of ﬁelds
+involved in studying decisions. As they do, we hope to
+better understand how people make decisions, predict
+what decisions might be made in given situations, and
+reﬂect and improve upon those already made.
+NOTES
+a Note that this model is closely related to DEMO earlier
+lexicographic models of Coombs104 and Fishburn.105
+These models, however, speciﬁed a deterministic order
+for attribute selection.
+REFERENCES
+1. Goldstein WM, Weber EU. Content and discontent:
+Indications and implications of domain speciﬁcity in
+preferential DEMO making. In: Busemeyer JR, Hastie
+R, Medin DL, eds. Decision Making from a Cognitive
+Perspective. The Psychology of Learning and Moti-
+vation, vol. 32. New York: Academic Press; 1995,
+83–136.
+2. Zsambok DEMO, Klein GA, eds. Naturalistic Decision
+Making. Mahwah, NJ: Lawrence Erlbaum Associates;
+1997.
+3. Bernoulli D. Specimen theorie novae de mensura sortis
+DEMO of a new theory of the measurement of
+risk]. Econometrica 1738/1954, 22:23–36.
+4. Savage LJ. The Foundations of Statistics.New York:
+John Wiley & Sons; 1954.
+5. von Neumann J, Morgenstern O. Theory DEMO Games and
+Economic Behavior. Princeton, NJ: Princeton Univer-
+sity Press; DEMO
+6. Ramsey, FP. Truth and probability. The Foundations
+of Mathematics and DEMO Logical Essays: Routledge &
+Kegan Paul; 1931.
+746
+7. de DEMO B. Foresight: its logical laws, its subjective
+sources. In: Kyburg DEMO, Smokler H, eds. Studies in Sub-
+jective Probability: New York: John Wiley & Sons;
+1937/1964.
+8. Allais M. Le comportement DEMO l’homme rationnel
+devant le risque: critique des postulats et axiomes de
+DEMO AmØricaine [The behavior of the rational man´
+facing risk: Critique of DEMO postulates and axioms of the
+American school]. Econometrica 1953, 21:503–546.
+DEMO Keeney RL, Raiffa H. Decisions with multiple objec-
+tives: Preferences and value tradeoffs. New York: John
+Wiley & Sons; 1976.
+10. Kahneman DEMO, Tversky A. Prospect theory: an anal-
+ysis of decision under risk. Econometrica 1979,
+47:263–292.
+11. Markowitz HM. Portfolio Selection. New York: John
+Wiley & Sons; 1959.
+12. Edwards W. Subjective probabilities inferred from deci-
+sions. Psychol Rev 1962, 69:109–135.
+13. Gonzalez R, Wu DEMO On the shape of the probability
+weighting function. Cognit Psychol 1999, DEMO:129–166.
+ 2010 John Wiley & Sons, Ltd. Volume 1, September/October 2010
+WIREs Cognitive Science
+14. Brandstatter E, K¨ uhberger A, Schneider F. DEMO cognitive-¨
+emotional account of the shape of the probability
+weighting function. J Behav Decision Making 2002,
+15:79–100.
+15. Dougherty MRP, Gettys CF, Ogden EE. MINERVA-
+DM: a memory process model for judgments of DEMO
+hood. Psychol Rev 1999, 106:108–209.
+16. Johnson JG, Busemeyer JR. Process weighting model.
+Unpublished manuscript [under review], 2009.
+17. Fox CR, DEMO A. A belief-based account of decision
+under uncertainty. Manage Sci 1998, DEMO:879–895.
+18. Fox CR. Strength of evidence, judged probability,
+and DEMO under uncertainty. Cognit Psychol 1999,
+38:167–189.
+19. Tversky A, DEMO CR. Weighing risk and uncertainty.
+Psychol Rev 1995, 102:269–283.
+20. DEMO J. A theory of anticipated utility. J Econ Behav
+Org 1982, DEMO:323–343.
+21. Yaari ME. The dual theory of choice under risk. Econo-
+metrica 1987, 55:95–115.
+22. Starmer C. Developments in non-expected utility the-
+ory: the hunt for a descriptive theory of choice under
+risk. JEcon Lit 2000, 38:332–382.
+23. Birnbaum MH, McIntosh WR. Violations of DEMO
+independence in choices between gambles. Organ
+Behav Hum Dec 1996, 67:DEMO
+24. Luce, RD. Utility of Gains and Losses:Mahwah,NJ:
+DEMO Erlbaum Associates; 2000.
+25. Tversky A, Kahneman D. Advances in prospect the-
+ory: cumulative representations of uncertainty. JRisk
+Uncertain 1992, 5:297–323.
+DEMO Birnbaum MH. New paradoxes of risky decision mak-
+ing. Psychol Rev 2008, 115:463–501.
+27. Birnbaum MH, Navarette JB. Testing descriptive utility
+theories: violations of stochastic dominance and cumu-
+lative independence. J Risk Uncertain 1998, 17:49–78.
+28. Birnbaum MH, Chavez A. Tests of theories of decision
+making: violations of branch independence and distri-
+bution independence. Organ Behav Hum Decis Process
+1997, 71:161–194.
+29. Birnbaum MH, Sutton SE. Scale DEMO and utility
+measurement. Organ Behav Hum Decis Process 1992,
+52:183–215.
+30. Birnbaum MH, Stegner SE. Source credibility in social
+judgment: bias, expertise, and the judge’s point of view.
+J Pers Soc Psychol 1979, 37:48–74.
+31. Birnbaum MH, Parducci A, Gifford RK. Contextual
+effects in information integration. J Exp Psychol 1971,
+88:158–170.
+32. Bell DEMO Regret in decision making under uncertainty.
+Oper Res 1982, 30:961–981.
+DEMO Loomes G, Sugden R. Regret theory: an alternative the-
+ory of rational choice under uncertainty. Econ J Nepal
+1982, 92:805–824.
+Volume 1, September/October 2010
+ 2010 John Wiley & Sons, Ltd.
+Decision DEMO
+34. Epstude K, Roese NJ. The functional theory of
+counterfactual thinking. DEMO Soc Psychol Rev 2008,
+12:168–192.
+35. Mellers BA, Schwartz DEMO, Ho K, Ritov I. Decision affect
+theory: emotional reactions to DEMO outcomes of risky
+options. Psychol Sci 1997, 8:423–429.
+36. Lopes DEMO Between hope and fear: the psychology of
+risk. Adv Exp Soc DEMO 1987, 20:255–295.
+37. Lopes LL. Algebra and process in the DEMO of risky
+choice. In: Busemeyer J, Hastie R, Medin DL, eds. Deci-
+sion Making from a Cognitive Perspective. San Diego,
+CA: Academic Press; 1995, 177–220.
+38. Busemeyer JR, Johnson JG. Computational models of
+decision making. In: Kohler DJ, Harvey N, eds. Black-
+well Handbook of Judgment and Decision Making.
+Oxford: Blackwell Science; 2004, 133–154.
+39. Shah AK, Oppenheimer DM. Heuristics made easy:
+an effort-reduction framework. Psychol Bull 2008,
+134:207–222.
+40. Tversky A. Elimination by aspects: a theory of choice.
+Psychol Rev 1972, 79:281–299.
+41. Rieskamp J, Busemeyer JR, Mellers BA. Extending the
+bounds of rationality: evidence and theories of prefer-
+ential choice. JEconLit 2006, 44:631–661.
+42. Thorngate W. Efﬁcient decision heuristics. Behav Sci
+1980, 25:219–225.
+43. Coombs C, DEMO R, Tversky A. Mathematical Psy-
+chology. Englewood Cliffs, NJ: Prentice DEMO; 1970.
+44. Dawes RH, Corrigan B. Linear models in decision
+making. Psychol Bull 1974, 81:95–106.
+45. Payne JW, Bettman JR, Johnson EJ. Behavioral decision
+research: a constructive processing perspective. Annu
+Rev Psychol 1992, 43:87–131.
+46. Payne JW, Bettman JR, Johnson EJ. The Adaptive Deci-
+sion Maker. New York: Cambridge University Press;
+1993.
+47. Gigerenzer G, Todd PM, the ABC Research Group.
+Simple Heuristics that make DEMO Smart.New York:
+Oxford University Press; 1999.
+48. Brandstatter E, Gigerenzer G, Hertwig R. Risky¨
+choice with heuristics: Reply to Birnbaum (2008),
+Johnson, Schulte-Mecklenbeck, and Willemsen (2008),
+and Rieger and Wang (2008). Psychol Rev 2008,
+115:281–290.
+49. Ratcliff R, Smith PL. A comparison of sequential sam-
+pling models for two-choice reaction time. Psychol Rev
+2004, 111:333–367.
+50. Busemeyer JR, Townsend JT. DEMO ﬁeld theory:
+a dynamic-cognitive approach to decision making
+in an uncertain environment. Psychol Rev 1993,
+100:432–459.
+747
+Advanced Review
+51. Roe RM, Busemeyer JR, Townsend JT. Multi-
+alternative DEMO ﬁeld theory: a dynamic connec-
+tionist model of decision-making. Psychol Rev DEMO,
+108:370–392.
+52. Busemeyer JR, Diederich A. Survey of decision DEMO
+theory. Math Soc Sci 2002, 43:345–370.
+53. Busemeyer JR, Johnson JG. Micro-process models of
+decision making. In: Sun R, ed. Cambridge DEMO
+book of Computational Psychology. Cambridge, MA:
+Cambridge University Press; 2008, 302–321.
+54. Busemeye JR, Jessup RK, Johnson JG. Townsend
+JTBuilding bridges between neural models and complex
+human decision making behavior. Neural Networks
+2006, 19:1047–1058.
+55. Diederich A. Dynamic stochastic models for decision
+making under DEMO constraints. J Math Psychol 1997,
+41:260–274.
+56. Johnson JG, DEMO JR. A dynamic, stochastic, com-
+putational model of preference reversal phenomena.
+Psychol Rev 2005, 112:841–861.
+57. Pleskac TJ, Busemeyer JR. Two-Stage DEMO Signal
+Detection: A theory of conﬁdence, choice, and response
+time. DEMO Review, 2009 In press.
+58. Diederich A. MDFT account of decision DEMO under
+time pressure. Psychon Bull Rev 2003, 10:157–166.
+59. Johnson DEMO, Busemeyer JR. Rule-based Decision Field
+Theory: a dynamic computational model of transi-
+tions among decision-making strategies. In: Betsch T,
+Haberstroh S, DEMO The Routines of Decision Making.
+Mahwah, NJ: Lawrence Erlbaum Associates; DEMO,
+3–20.
+60. Gao G, Lee JD. Extending the decision ﬁeld DEMO to
+model operator’s reliance on automation in supervisory
+control systems. IEEE Trans Syst Man Cybern 2006,
+36:943–959.
+61. Lee S, Son Y, Jin J. Integrated human decision making
+and planning model for evacuation scenarios under BDI
+framework. ACM Trans Model Comput Simulation
+(in press).
+62. Usher M, McClelland JL. Loss aversion and inhibition
+in dynamic models of multi-alternative choice. Psychol
+Rev 2004, 111:757–769.
+63. Busemeyer JR, Townsend DEMO, Diederich A, Barkan R.
+Contrast effects or loss aversion? Comment DEMO M.
+Usher, J. L. McClelland’s. (2004). ‘Loss aversion and
+inhibition in dynamical models of multi-alternative
+choice.’ Psychol Rev 2005, 112:253–255.
+64. Thagard P, Millgram E. Inference to the best plan:
+a coherence theory of decision. In: Ram A, Leake
+DB, eds. Goal-driven Learning. Cambridge, MA: MIT
+Press; 1995, 439–454.
+65. Guo FY, Holyoak KJ. Understanding similarity in
+choice behavior: A connectionist model. In: Gray DEMO,
+Schunn C, eds. Proceedings of the Twenty-Fourth
+Annual Conference of DEMO Cognitive Science Society.
+wires.wiley.com/cogsci
+Hillsdale, NJ: Lawrence Erlbaum Associates; DEMO,
+393–398.
+66. Holyoak KJ, Simon D. Bidirectional reasoning in deci-
+DEMO making by constraint satisfaction. J Exp Psychol
+Gen 1999, 128:3–31.
+DEMO Simon D, Krawczyk DC, Holyoak KJ. Construction
+of preferences by constraint satisfaction. Psychol Sci
+2004, 15:331–336.
+68. Glockner A, Betsch T. DEMO option and strat-¨
+egy choices with connectionist networks: towards an
+integrative DEMO of automatic and deliberate decision
+making. Judgm Decis Mak 2008, 3:DEMO
+69. Glockner A, Betsch T, Schindler N. Coherence shifts in¨
+probabilistic inference tasks. J Behav Decision Making
+(in press).
+70. Montgomery H. From cognition to action: the search
+for dominance in decision making. In: Montgomery H,
+Svenson O, eds. Process and Structure in Human DEMO
+sion Making. New York: John Wiley & Sons; 1989,
+23–49.
+71. Svenson O. Differentiation and consolidation theory of
+human decision making: a frame of reference for the
+study of pre- and post-decision processes. Acta DEMO
+(Amst) 1992, 80:143–168.
+72. Hastie R, Park B. The relationship between memory and
+judgment depends on whether the judgment is memory-
+DEMO or on-line. Psychol Rev 1986, 93:258–268.
+73. Weber EU, Goldstein WM, Barlas S. And let us not
+forget memory: the role DEMO memory processes and
+techniques in judgment and choice. In: Busemeyer JR,DEMO
+Hastie R, Medin DL, eds. Decision Making from the
+Perspective of Cognitive Psychology. Psychology of
+Learning and Motivation Series. New York: Academic
+Press; 1995.
+74. Goldstein DG, Gigerenzer G. Models of ecological
+rationality: the recognition heuristic. Psychol Rev 2002,
+109:75–90.
+75. Tversky A, Kahneman D. Extension versus intuititve
+reasoning: the conjunction fallacy in probability judg-
+ment. Psychol Rev 1983, 90:293–315.
+76. Weber EU, Johnson EJ. Constructing DEMO from
+memories. In: Lichtenstein S, Slovic P, eds. The Con-
+DEMO of New York, NY: Cambridge University
+Press. 2006, 397–410.
+77. DEMO EJ, Haubl G, Keinan A. Aspects of endow-
+ment: a DEMO theory of value construction. JExp
+Psychol Learn Mem Cogn 2007, 33:DEMO
+78. Myung IJ. The importance of complexity in model
+selection. J Math Psychol 2000, 44:190–204.
+79. Pitt MA, Myung IJ. When a DEMO ﬁt can be bad. Trends
+Cogn Sci 2002, 6:421–425.
+80. DEMO S, Pashler H. How persuasive is a good ﬁt?
+A DEMO on theory testing. Psychol Rev 2000,
+107:358–367.
+748
+ 2010 John Wiley & Sons, Ltd. Volume 1, September/October 2010
+WIREs Cognitive Science
+81. Hastie R. Problems for judgment and decision making.
+DEMO Rev Psychol 2001, 52:653–683.
+82. McFadden D. Econometric Models of DEMO
+Choice. In: Manski C and McFadden D, eds. Structural
+Analysis of Discrete Data with Econometric Applica-
+tions. Cambridge: MIT Press; 1981.
+83. DEMO SA. The empirical case for two systems of
+reasoning. Psychol Bull 1996, 119:3–22.
+84. Sloman SA. Two systems of reasoning. In: Gilovich DEMO,
+Grifﬁn D, Kahneman D, eds. Heuristics and Biases: The
+DEMO of Intuitive Judgment. Cambridge: Cam-
+bridge University Press; 2002.
+85. Kahneman D, Frederick S. Representativeness revis-
+ited: Attribute substitution in intuitive judgment. DEMO:
+Gilovich T, Grifﬁn D, Kahneman D, eds. Heuristics
+and DEMO: The Psychology of Intuitive Judgment.New
+York: Cambridge University Press; 2002, 49–81.
+86. Stanovich KE, West RF. Individual differences in rea-
+soning: DEMO for the rationality debate? Behav
+Brain Sci 2000, 23:645–665.
+87. Shiffrin RM, Schneider W. Controlled and automatic
+human information processing: II. DEMO learning,
+automatic attending, and a general theory. Psychol Rev
+1977, 84:127–190.
+88. Bechara A, Damasio H, Damasio AR. Emotion, deci-
+sion making, and the orbitofrontal cortex. Cereb Cor-
+tex 2000, 10:DEMO
+89. Damasio AR. Descartes’ Error: Emotion, Reason, and
+the Human DEMO New York: Grosset/Putnam; 1994.
+90. Lowenstein G, Lerner J. DEMO role of emotion in decision
+making. In: Davidson RJ, Goldsmith HH, Scherer KR,
+eds. Handbook of Affective Science. Oxford: Oxford
+University DEMO; 2003.
+91. Zajonc RB. Feeling and thinking: preferences need no
+inferences. Am Psychol 1980, 35:151–175.
+92. Rangel A, Camerer C, Montague PR. A framework
+for studying the neurobiology of value-based decision-
+making. Nat DEMO Neurosci 2008, 9:545–556.
+Decision making
+93. Camerer C, Lowenstein G, Prelec D. Neuroeconomics:
+How neuroscience can inform economics. JEcon Lit
+2005, 43:9–64.
+94. Gold JI, Shadlen MN. Representation of a perceptual
+DEMO in developing oculomotor commands. Nature
+2000, 404:390–394.
+95. Sanfey AG, Loewenstein G, McClure SM, Cohen
+JD. Neuroeconomics: cross-currents in research on
+decision-making. Trends Cogn Sci 2006, 10:108–116.
+96. Platt ML, Glimcher DEMO Neural correlates of deci-
+sion variables in parietal cortex. Nature 1999,
+400:233–238.
+97. Sanfey AG. Neural computations of decision utility.
+Trends Cogn DEMO 2004, 8:519–521.
+98. Tom S, Fox CR, Trepel C, Poldrack RA. The neural
+basis of loss aversion in decision making under DEMO
+Science 2007, 315:515–518.
+99. Schall JD. Neural basis of deciding, choosing and act-
+ing. Nat Rev Neurosci 2001, 2:33–42.
+100. Smith PL, Ratcliff R. Psychology and neurobiology of
+simple decisions. Trends Neurosci 2004, 27:161–168.
+101. Ratcliff R, Cherian A, Segraves M. A comparison of
+macaque behavior and superior colliculus neuronal
+activity to predictions from models DEMO simple two-
+choice decisions. J Neurophysiol 2003, 90:1392–1407.
+102. Schall DEMO Neural correlates of decision processes: eural
+and mental chronometry. Curr Opin DEMO 2003,
+13:182–186.
+103. Svenson O. Decision making and the search for funda-
+mental psychological regularities: What can be learned
+from a process perspective? Organ Behav Hum Decis
+Process 1996, 65:252–267.
+104. Coombs DEMO A Theory of Data.New York,NY: Wiley;
+1964.
+105. Fishburn DEMO Utility theory. Management Science 1968,
+14:335–378.
+FURTHER READING
+Brandstatter E., Gigerenzer G, Hertwig R. The priority¨ heuristic: making choices without trade-offs. Psychol
+Rev 2006, 113:409–432.
+Busemeyer JR, Jessup RK, Johnson JG, Townsend JT. Building bridges between neural models and complex
+decision making behavior. Neural Netw 2006, 19:1047–1058.
+Gold JI, Shadlen MN. The neural DEMO of decision making. Annu Rev Neurosci 2007, 30:535–574.
+Koehler D, Harvey N, eds. Blackwell Handbook of Judgment and Decision Making. Oxford, DEMO: Blackwell
+Science; 2004.
+Lichtenstein S, Slovic P, eds. The Construction of Preference. New York: Cambridge University Press; 2006.
+Volume 1, September/October 2010
+ 2010 John Wiley & Sons, Ltd.
+749{1g42fwefx}

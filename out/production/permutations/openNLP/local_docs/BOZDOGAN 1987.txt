@@ -1,0 +1,1488 @@
+PSYCHOMETRIKA--VOL.
+SEPTEMBER
+SPECIAL
+1987
+SECTION
+52, NO. 3, 345-370
+MODEL SELECTION DEMO AKAIKE'S INFORMATION
+CRITERION (AIC): THE GENERAL THEORY AND
+ITS DEMO EXTENSIONS
+HAMPARSUM BOZDOGAN
+UNIVERSITY OF VIRGINIA
+During the last fifteen years, DEMO's entropy-based Information Criterion (AIC) has had a
+fundamental impact in statistical model evaluation problems. This paper studies the general
+theory of the DEMO procedure and provides its analytical extensions in two ways without violating
+Akaike's main principles. These extensions make AIC asymptotically consistent and penalize
+overparameterization DEMO stringently to pick only the simplest of the "true" models. These
+selection criteria are called CAIC and CAICF. Asymptotic properties of AIC and DEMO extensions
+are investigated, and empirical performances of these criteria are studied DEMO choosing the correct
+degree of a polynomial model in two different Monte Carlo experiments under different con-
+ditions.
+Key words: model selection, Akaike'DEMO information criterion, AIC, CAIC, CAICF, asymptotic
+properties.
+1.
+Introduction and Purpose
+During the last fifteen years, Akaike's (1973) entropic information criterion, which is
+known as AIC, has had a fundamental impact DEMO statistical model evaluation problems.
+The introduction of AIC furthered the recognition of the importance of good modeling in
+statistics. As a result, many important statistical modeling techniques have been devel-
+oped in various fields of statistics, control theory, econometrics, engineering, psycho-
+metrics, and in many other DEMO
+Despite the accumulation of many successful results obtained by AIC, and DEMO its
+extreme popularity and growing school of adherents, the entropic criterion DEMO has been
+almost universally accepted in some areas of statistics, while DEMO other areas it is still not
+known or well understood.
+Since most of the material on AIC is scattered in a wide range of DEMO and
+proceedings, and Akaike's (1973) original paper is not DEMO available, the main purpose
+of this paper is to study the DEMO theory of his imaginative work, discuss its meaning
+and the basic DEMO, introduce its analytical extensions using the standard results
+established in mathematical DEMO without violating Akaike's basic principles, and
+show their asymptotic properties DEMO give the results on their inferential error rates.
+The author extends his deep appreciation to many people. These include Hirotugu Akaike, Donald E.
+Ramirez, Marvin Rosenblum, and S. James Taylor for reading and commenting on DEMO parts of this manu-
+script through various stages of its development. I especially wish to thank Yoshio Takane, Jim Ramsay, and
+Stanley L. DEMO for critically reading the paper and making many helpful suggestions. I also wish to thank
+Julie Riddleberger for her excellent typing of this manuscript.
+DEMO research was partially supported by NIH Biomedical Research Support Grant (BRSG) No. 5-24867 at
+the University of Virginia.
+Requests for reprints should be DEMO to the author at the Department of Mathematics, Math-Astronomy
+Building, University of Virginia, Charlottesville, VA 22903.
+0033-3123/87/0900-SS03 $00.75/0
+© DEMO The Psychometric Society
+345
+346
+PSYCHOMETRIKA
+As is well known, a fundamental difficulty in statistical analysis is the choice of an
+appropriate model, estimating and determining the order or dimension of a model. This is
+a common problem when a DEMO model contains many parameters. The main pur-
+pose of model evaluation is to "understand" the observed data. According to Parzen
+(1982), statistical data modeling is a field of statistical reasoning that seeks to fit DEMO to
+data without knowing what the "true" model is or might be.
+Consequently, one seeks to learn the model and study the quality of the model by a
+process which is called statistical model identification DEMO evaluation. In recent years, in the
+literature, the necessity of introducing the concept of model selection or model evaluation
+has been recognized and DEMO problem is posed how to choose the "best approximating"
+model DEMO a class of competing models with different numbers of parameters by a
+suitable model selection criterion given a data set. Also, there is presently a great deal of
+interest in simple criteria represented by parsimony of DEMO for choosing one of a
+set of competing models to describe a given data set. As discussed in ,Stone (1981),
+parsimony can take into account a variety of attributes of the selected model. One DEMO
+attribute is the cost of measuring the models required to implement the model. Measure-
+ment cost, which was emphasized by Lindley (1968), DEMO especially relevant in certain
+applications. A second attribute is the complexity of the selected model. The general
+principle is that for a given level DEMO accuracy, a simpler or a more parsimonious model is
+preferable to DEMO more complex one, known as Occam's Razor. Occam's Razor DEMO
+the desirability of selecting the accurate and parsimonious models of reality. Therefore,
+the best model is the one with least complexity, or equivalently the highest information
+gain. For example, in factor-analytic models, parameter parsimony DEMO that we
+choose the smallest number of factors such that the corresponding model fits the data.
+The selection of a parsimonious model, in general, is a nontrivial problem without the aid
+of model selection criteria. They are called "figures of merit" for competing models. That
+model, which optimizes the criterion, is chosen to be the best model.
+Akaike, DEMO a very important sequence of papers, including Akaike (1973, 1974, 1977,
+and 1981a), was perhaps one of the first who DEMO the foundation of the modern field of
+statistical data modeling, statistical DEMO identification or evaluation. He developed the
+information-theoretic, or entropic AIC criterion DEMO the identification of an optimal and a
+parsimonious model in data analysis from a class of competing models which takes model
+complexity into account. DEMO AIC criterion is a simple and versatile procedure which can
+be viewed as a relatively logical and predictable expression of earlier work of Neyman
+DEMO Pearson (1928, 1933), Wald (1943), and Kullback (1959), among others. It has enor-
+mous practical importance and is one DEMO demonstration of the importance of the
+likelihood ratio criterion in statistical inference.
+In the next section, section 2, we give the necessary theoretical DEMO needed
+for the development of AIC.
+2.
+Information Quantity as a Measure of Goodness of Fit
+2.1 Kullback-Leibler Information Quantity or Negentropy
+In any DEMO problem we are given a set of observations. These observations are
+the values of some random variables whose probability distribution is usually unknown
+to DEMO, or we have some knowledge of it. From the information provided DEMO the data, we
+draw inferences about the unknown aspects of the DEMO distribution, such as the
+unknown "true" parameter values of the DEMO which govern the generation of the
+observed data and also govern the generation of any future observations if we adopt the
+predictive point of DEMO
+HAMPARSUM BOZDOGAN
+347
+We shall express a model in the form of DEMO probability distribution and regard fitting
+a model to the data as estimating the true probability distribution from the data and treat
+the estimation and DEMO evaluation of a model together as one entity rather than separating
+them. In the statistical literature during the past fifty years, there has been a meaningless
+separation of estimation and testing which did not help the DEMO of a practical and
+successful statistical model selection and evaluation procedure (DEMO, 1974).
+If we had an objective measure (a metric) DEMO the distance between the model and the
+true distribution, a good DEMO procedure ought to make this distance as small as
+possible. One measure of this type is Boltzmann's (1877) generalized entropy, or the negen-
+tropy which is also known as the Kullback-Leibler (1951) information DEMO Hereafter,
+we refer to this as K-L information quantity for brevity.
+Even though the development of AIC has its origins in time series DEMO where its
+practical utility has been thoroughly studied. However, the major DEMO of AIC lies
+in the direct extension of an entropic or information-theoretic interpretation of the
+method of maximum likelihood. Its introduction is based on DEMO entropy maximization
+principle, or minimizing its negative; it is based on the minimization of the K-L infor-
+mation quantity.
+To develop this point DEMO, suppose X is an absolutely continuous random vector
+characterized by a DEMO density function f(x[0) which is known apart from the
+K-dimensional DEMO vector 0 = 0 r = (01, 02 .... , OK), OK ~ ff~r. Assume that there
+exists a true parameter vector DEMO of 0 with its probability density denoted by f(xl0*).
+Within this setup, it is required that we select 0 "closest" to the true parameter vector 0".
+Thus, we will measure the "DEMO," or the "goodness-of-fit," off(xl0*) with respect to
+f(x I 0) by the generalized entropy B of Boltzmann (1877), or K-L information quantity I:
+B(0*; 0) =
+- I(0"; O).
+This is defined by
+B(0*; 0) = E[log f(X I
+0) - log f(X I
+DEMO")]
+=  ftx 10,)logf(x,0)dx-
+ff(x,DEMO)logf(xl0*) dx
+(1)
+= n(0*; 0) -- n(0*; 0"),
+(2)
+where E denotes the DEMO with respect to the true distribution f(xl0*) of x,
+DEMO(0*; 0) = ~ f(xl0*) log f(xl0) dx is the cross-entropy which determines the goodness of
+fit off(xl0) to f(xt0*), H(0*; 0") --= H(0*) the DEMO Shannon negative entropy which is
+constant for a givenf(x I 0"), and where "log" means natural logarithm.
+Instead of maximizing the entropy criterion (2), we minimize the K-L information
+quantity:
+t(0*; 0) =
+- B(0*; 0)
+= H(0*; 0") - H(0*; 0).
+(3)
+Since H(0*; 0") = H(0*) is a constant in both (2) and (3), we only have to estimate the
+cross-entropy DEMO the expected log likelihood
+H(0*; 0) = E[logf(X 10)]
+= ff(x
+0.)
+I
+log f(x I
+o) dx.
+(4)
+Following Wilks (1962, p. 408), if we assume thatf(x 10) is regular with respect to its first
+348 PSYCHOMETRIKA
+and second partial derivatives for 0 E R r, then, under these conditions, H(0*; 0) in (4) can
+DEMO differentiated twice under the integral sign with respect to 0 and evaluated at 0 = 0",
+yielding
+H'(0*; 0") = 0,
+(5)
+/-t"(0*; 0") = - DEMO(0*),
+where J(0*) is the Fisher's (1922) amount of information pertaining to 0* per observation
+from f(xl0*). DEMO (5), we note that Fisher's information per observation is DEMO second
+derivative of the K-L information quantity. To put it another way, J(0*) essentially
+measures the curvature of the expected log likelihood DEMO(0*; 0) at its maximum value
+which occurs at 0 = 0". The quantity H(0*; 0) plays a crucial role DEMO the development of
+AIC, and is of basic importance in statistical DEMO theory.
+The analytic properties of I(0"; 0) are extensively DEMO by KuUback (1959). Here
+we list some of the important DEMO
+(i) I(0"; 0) > 0 wheneverf(xl0*) ~f(x[0),
+(ii) I(0"; 0) = 0, if and only iff(xl0*) =f(xl0) a.e. (almost everywhere) in DEMO possi-
+ble range of x, when the model is essentially true,DEMO
+(iii) if X 1, X 2, ..., X n DEMO independent and identically distributed (i.i.d.) random
+variables, then the K-L DEMO quantity for the whole sample is
+xn(0*; 0) = nl(0*; 0).
+This last property says that if the random variables are independent, the K-L information
+quantity is additive.
+We note that K-L information quantity is perhaps the most general of all infor-
+mation measures DEMO the sense of being derivable from minimal assumptions and it repre-
+sents a relative measure.
+As it stands, the K-L information quantity in (DEMO) is not directly observable or esti-
+mable. To see this, we give the following simple example as an illustration.
+Example 2.1.1. Let F DEMO the family of normal distributions {N(#, a2): --ov < DEMO < or,
+0 < a 2 < ~}. Letf(xl0*) DEMO N(#*, a .2) be the true distribution with the parameter vector
+0"= (~*, a,2), and let f(xlO)DEMO N(¢, a 2) be our model with 0 = (DEMO, tr2)-  Computing
+I(0"; 0) = l[f(xl DEMO);f(x I 0)], we obtain
+I o 2 (/~* - ~)2-I
+/(0.; o) = ~ log \ DEMO / ~-~ ~.i _1 (6)
+We see that the distance DEMO the means contributes to the K-L information quantity
+quadratically; while the DEMO of the variances is through the ratio tr*2/tr 2. Further,
+we note from this example, and in general, that the K-L DEMO quantity needs to be
+estimated from the observed data since it depends on the true distribution, and conse-
+quently on the unknown true and model parameters. The important question we need to
+answer is: How can we make the K-L information quantity operationalized, or approxi-
+mated, from DEMO observed data so that we can use it to compare the goodness of fit of
+various models, measure the distance or deviation of the fitted model from the "true"
+model?
+HAMPARSUM BOZDOGAN
+349
+2.2 Mean Log Likelihood as an Estimate of K-L DEMO Quantity
+or Negentropy
+In this section we introduce the concept of mean log likelihood as a measure for the
+goodness of fit of a DEMO and state entropy maximization principle (EMP) according to
+Akaike (1977)DEMO
+Suppose that the generation of data is described by a model given by a probability
+density function f(x]0). Given n independent observations DEMO the same distribution
+regarded as a function of a vector-valued parameter, DEMO = (01, 02, ..., OK), k = t, DEMO, ..., K,
+the likelihood function for the set of data is
+n
+L(O) =f(x 1
+..... x, 10) = 1-If(x, 10).
+(7)
+t=1
+The log likelihood function, d(0) (often called the support), is the natural logarithm DEMO L(0)
+and is defined by
+d(O) -- log DEMO(O) = ~. log f(x~ I
+0),
+(8)DEMO
+i=l
+regarded as a random variable, is the sum of i.i.d, random variables log f(xtlO), i = I, 2,
+..., n.
+We define the average or mean log likelihood of the sample by
+_1 d(0) =
+n
+= :.(0),
+(DEMO)
+which can be interpreted as an estimator of the "distance" between the true probability
+densityf(x I 0") and the modelf(DEMO 10).
+As we discussed in the previous section, the K-L DEMO quantity is not observ-
+able. However, it can be consistently estimated DEMO the observed data and oper-
+ationalized.
+Let ]'(0"; 0) denote an estimator of the K-L information quantity I(0"; 0)DEMO Then (3)
+becomes
+1
+-
+n
+log L(0) =
+1
+-
+/, log f(x~]O )
+hi= 1
+r(O*; O) --/7(0"; 0") --/7/(0*; 0),
+(10)
+or
+R(0*, 0) -- --I(0"; e) +/7(0*; e*).
+(I1)
+This tells DEMO that maximizing the expected log likelihood /~(8"; 0) is asymptotically
+equivalent to minimizing the K-L information quantity, ~0", 0), and it is not necessary to
+know/7(0*; 0") =/7(0"), since it is an additive constant and can be dropped. However,
+we will retain it for the clarity of our DEMO
+Assuming that a sample of n observations x = (xx, x 2 ..... x~) is used to provide an
+estimate 0 = 6(x) of 0, we observe that the mean log likelihood in (9) is a natural esti-
+mator of/-7(0*; e), DEMO expected log likelihood. That is,
+Z(0) ~ EI1 d(DEMO)l =/~(0"; 0)= E[log f(X 10)],
+(12)
+where again the expectation is taken relative to the true distributionf(x ] 0") of x, and that
+the maximum likelihood estimator (MLE) 0 is a natural estimator for 0", DEMO (10) can then
+350
+PSYCHOMETRIKA
+be consistently estimated by
+~(0"; ~}) =//(O*) -- 1 ~ log
+f(xi t
+O)
+/~" i=1
+or
+1:(6) = I(O* ;~l) +/-7(DEMO).
+?'/
+(14)
+Certainly, one approach to measure DEMO well the maximum likelihood modelf(xi I(})
+"matches" the data would be to test the hypothesis that the K-L information quantity
+DEMO(0"; 0) = 0. Such a test might be based DEMO (n)X/2r(0*; 6), but establishing the asymptotic
+closed form expression of the distribution of this statistic is a nontrivial problem (White,
+1982). It is for this reason that we need DEMO appeal to the asymptotic behavior of the mean
+log likelihood and also to asymptotic approximations to derive AIC.
+From Property (ii) in section DEMO, we have seen that 1(0"; 0)= 0, if and only if,
+f(xl0*) =f(xl0) a.e. in the DEMO range of x, when the model is essentially true. Hence,
+DEMO (9), we note that asymptotically the maximum of :~(0) = 1/n log/_,(0) (the mean log
+likelihood) will be H(0*) --= S f(x I 0") log f(x I 0") dx, the negative Shannon entropy, and
+DEMO will be attained when f(x[0*) =f(x [0) a.e. This result can also be obtained from the
+property of the function z(DEMO) or/7(0"; 0), the expected log likelihood in (12) which is: z(0)
+or//(0"; 0) attains its maximum value at 0 = 0", and if distributions DEMO the sample space
+corresponding to different parameters are essentially different, then DEMO no other 0 is z(0)
+equal to z(0*) (Silvey, 1975, p. 74).
+Since our estimation of K-L information DEMO is based on the mean log likeli-
+hood (which is also DEMO estimate of the expected log likelihood), and since the maximum
+likelihood estimates are biased, then there is the inevitable risk of error of estimation of
+the K-L information quantity when the maximum likelihood estimators of DEMO parameters
+of the model is used.
+In the case where 0 is a real parameter, for large n, we depict the general behav-
+DEMO exhibited by the mean log likelihood 1/n:(O) and the expected log likelihood z(O)=
+E[1/n:(O)] = E[log f(X [ O)] in Figure 2.1.
+From Figure 2.1, we see that /-7(0*; 0) assumes its maximum value at 0", and that
+1/n:(O) is uniformly near /-7(0*; 0) ensures that 1/n¢(O) assumes its maximum value at a
+point near 0", that is, O(x) near 0* DEMO discussed in Silvey (1975). In other words, for finite
+n, we would like to have the observed values of the mean log likelihood (dashed lines) to
+behave like the theoretical points (solid line) of Figure 2.1. To achieve this, the bias
+introduced by the DEMO likelihood estimates of the parameters needs to be adjusted
+or corrected.
+Empirical justification of the behavior of the mean log likelihood plotted against the
+DEMO of parameters are illustrated in detail by Atilgan (1983), and DEMO and Bozdo-
+gan (1987) in smoothing and density estimation under various basis functions including
+those of B-splines, normal kernels, and logistic density DEMO
+Since the quantity H(0*; 0) is not directly observable, DEMO of the mean log
+likelihood is carried out, and asymptotically an DEMO estimator of the mean expected
+log likelihood is searched by correcting the bias of the observed mean log likelihood, En(6).
+Indeed, DEMO defining AIC, Akaike (•973, 1974) has exactly this consideration of the bias
+=
+.,q(o*) -
+-~ :(6),
+DEMO
+(13)
+.//-
+*,,
+0-0
+|
+351
+Plot of H(o*;DEMO), expected log likelihood
+(solid line) and ~ ~(O), mean log likelihood
+n
+(dashed line) (Silvey, 1975, p. 76).
+by penalizing extra parameters when the maximum likelihood estimates are used DEMO
+estimating the expected log likelihood by the mean log likelihood.
+Now we are in a position to give the definition of entropy maximization principle
+DEMO by Akaike (1977) which is quite different from (and should DEMO be confused
+with) Jayne's (1957) maximum entropy principle.
+Definition DEMO: Entropy maximization principle (EMP). Formulate the object of statis-
+tical inference as the estimation of the true distributionf(x I 0") DEMO the data x = (x 1, x 2 ,
+.... DEMO,) and try to search for an approximate model f(xl0) DEMO will maximize expected
+entropy:
+Ex[B(O*; 0)] = f DEMO(O*; O)f(x I
+0") dx
+= ExrH(O*; 0)1
+= Ex{E[logf(XlO)] }.
+Equivalently, we minimize the expected K-L information quantity.
+(15)
+Large expected log likelihood E[logf(XI0)] means large entropy, and it also means
+that the model f(xl0) is a good fit to f(xl0*), or, equivalently, the low value of I(0"; 0)
+means that the model DEMO(x t 0) is a good fit to f(x I DEMO"). Thus, it is by the mean of B(0*; DEMO),
+1(0"; 0), or the mean expected log DEMO over the sampling distribution of the esti-
+mator of 0 that we will judge a particular model and measure our ignorance about the
+true DEMO of the model.
+This definition will play an important role in that, since entropy or negentropy is
+nothing but a log odds ratio between the fitted model f(x t0) and the true distribution
+f(xl0*), it can be used as a loss function, and its expected value can be used as a risk
+function to measure the average DEMO error of the fitted model from the true one as
+suggested by Akaike (1973).
+Next, we derive AIC in detail as a DEMO sample estimate of E[logf(XI0)], the
+expected log likelihood.
+HAMPARSUM DEMO
+352
+PSYCHOMETRIKA
+"K
+/
+/
+S
+~ /
+/ /
+I
+I
+I
+I
+I
+/
+~.
+Parametric estimation
+projection
+interpreted
+from ~K to ~k.
+as Euclidean
+3.
+Akaike's Information Criterion (AIC) DEMO an Estimate of Negentropy
+Suppose that we have a general model f(. 10) from which all the K competing
+models are generated by simply restricting the general parameter vector 0. In terms of the
+parameters, we represent the full model with K parameters by
+MODEL(K): DEMO(. [0),
+0 =
+O r
+= (01, 02 DEMO Ok, Ok+l ..... Or).
+(16)
+We denote the "DEMO" value of the parameter vector 0 by 0* with 0* e DEMO ~. Following
+Akaike (1973), the problem of statistical model identification DEMO be formulated as the
+problem of selecting a model f(x 10k) based on n observations. In terms of parameters, Ok
+is restricted DEMO the space with O + 1 = Ok+ 2 ..... O K = 0, or equal to a prescribed value
+of 0 k , and that a particular restricted model with k parameters is given by
+DEMO(k): f(. 10k), Ok = (01, 02 ..... Ok, 0, 0
+..... 0).
+(17)
+Often k, DEMO number of free parameters of MODEL(k), is called the dimension or order of
+the model. If werepresent parametric estimation geometrically in terms DEMO a Euclidean
+projection shown in Figure 3.1, we denote the maximum DEMO estimate of O r by Or
+both of which lie in R r (the K-dimensional Euclidean space). We let 0* denote the true
+parameter vector with 0 e R x, and define 0~' as DEMO parameter vector of the best fitting or
+approximating mbdel with 0f ~ R ~ (k-dimensional parametric subspace R k of the original
+space Rr). We note that the parameter vector 0f is the projection of DEMO true parameter
+vector O* in the subspace R k. Next, we DEMO 0 k denote the restricted maximum likelihood
+estimator of Ok of MODEL(k) which lies in R ~, and which is also the DEMO of 0x in
+R k. Thus, geometrically (0f- Ok) will DEMO our random error. It can be viewed
+k
+353
+HAMPARSUM BOZDOGAN
+approximately as the projection of (0" - 0x) into the subspace ~k. On the other hand,
+(0" - DEMO') is deterministic and is the bias due to selecting an approximate parameter space.
+To elaborate further, following Clergeot (1984), if for DEMO values of k, subspaces
+R k are chosen so that R DEMO c R k+l, the bias, which is the distance of 0* to the subspace R k,
+is a nonincreasing function of k, while the random error increases monotonically with k.
+Thus, our goal here will be to find some optimal value of k so that the DEMO
+between bias and random error will give the smallest estimation error.
+The AIC statistic which we next state in the form of a proposition DEMO sketch its
+derivation is designed to approximate the real model by a lower dimensional model so as
+to minimize the average estimation error.
+Proposition DEMO: Akaike's information criterion (AIC): Let {Mk: k = DEMO, 2 ..... K} be a set
+of competing models indexed by DEMO = 1, 2, ..., K. Then the criterion
+AIC(k) = -2 log L(0k) + 2k, (18)
+which is minimized to choose a model M k over the set of models DEMO a natural sample
+estimator of twice the negentropy, 2E[I(0*; Ok)'] , or minus twice the expected log likeli-
+hood, - DEMO f(X I Ok)], of the true distribution with respect DEMO a model with the param-
+eters determined by the method of maximum likelihood.
+Proof. Following Akaike (1973, 1974, 1976), and Kitagawa (DEMO), we first assume a
+model which specifies a probability density function f(xlOk) of n observations with a free
+parameter vector O and then find the MLE 0 k of 0 k with O e DEMO k by maximizing the
+likelihood function
+L(Ok IX) = L(DEMO Ix1, x2 ..... xn) ---- l~I f(xilOk) , (19)
+i=1
+with respect to O k . By taking the natural DEMO of the likelihood function, and divid-
+ing by the sample size DEMO, we get
+l(0k ) _----1 log C(0k I x) =--1 ~ log f(x, I Ok), (20)
+n DEMO n i=l
+the average or mean log likelihood which is a natural consistent estimator of
+E[logf(XI0k) ] = f 1ogf(xl0k)f(xl0k) dx, (21)
+the expected log likelihood.
+Since the purpose of estimating the parameters of the true model f(xl0*) is to base
+our decision onf(x 16) where 0 -= 0r is an estimate of 0", then the discussion in section 2
+suggests the use DEMO K-L inform~ion quantity
+I(0"; O) = - B(O*; O) = I r 'xo"]
+~T-~ J(x 0") DEMO, (22)
+as the loss function, and
+Ex[l(0* ; DEMO)] = f I(0"; 0)f(x I 0") dx (23)
+as the risk function according to Definition 1 EMP of Akaike (1977).
+Expanding I(0"; 0) in a DEMO series with respect to its second argument around 0",
+k
+DEMO Lf(x
+k
+354
+PSYCHOMETRIKA
+we have an approximation (see, e.g., also Kullback, DEMO) given as follows.
+1(0"; 0* + A0) - ½11
+A0 112,
+(24)
+where
+tt no Jt2 = II
+o - o* I12 = (0 - 0*)'J(0 - o*)DEMO
+(25)
+and J is the (K x K) Fisher DEMO matrix which is positive definite and defined by
+As shown in Figure 3.1, we next restrict 0 to lie in k-dimensional restricted parameter
+space, O k, while the true parameter vector, 0*, lies in DEMO K-dimensional full parameter
+space t~ K, where k < K. Denoting DEMO 0* the projection of 0* onto O k and using the
+maximum likelihood estimate Ok  of 0* in O k, we have
+21(DEMO"; Ok) ~ 21(0"; Ok),
+(27)
+DEMO that using the approximation in (3.7), we have
+21(0"; 0~) ~ II
+0* - 0k 112
+II 0* -
+0~' 112 +
+II 0~' -
+Ok 112
+by the Pythagorean theorem.
+Thus, for large n, a measure of the average estimation error is DEMO by the expecta-
+tion of the K-L information quantity:
+2nE[I(O*;
+Ok)] -~ E[n II 0* -
+0~' 112 + n 11
+0* - Ok 1123
+=
+n II 0*
+-
+0~' 112 + E[n II 0~' -
+0k
+IIs], 2
+(28)
+where the first term in (28) is the bias and the second DEMO is a measure of the variance of
+the random error (0*- DEMO)- For the second term, that is, for n II 0*- 04112 under the
+expectation, for sufficiently large n, we have
+n DEMO 0* -- Ok  1I
+2 = I1
+(n)l/2(O*
+a.d.
+-- Ok)II2  "" Z 2
+(29)
+with k degrees of freedom, and a.d. stands for asymptotically distributed. Since E(Z
+its degrees of freedom, then (28) for large n approximately becomes
+2) = k,
+2nE[l(O*; Ok)
+] g n DEMO 0* -
+0~' 112 + k
+6 + k.
+(30)
+Equation (30) represents the overall risk of statistical modeling which measures DEMO
+extent to which Ok deviates from the true parameter vector 0". As we note, it is composed
+of two components; one which DEMO 6 = n tl 0* - 01' 112, is the error or bias due to
+selecting an approximate parameter space for the restricted DEMO space for 0*, and
+the other which involves k, is a measure of variance or the random error due to estimating
+the specified DEMO vector.
+Of course, it is impossible to minimize (30) directly DEMO the bias 6 = n 110* - 0f It 2 is
+unknown, but it is deterministic. It needs to be estimated in practice with finite samples.
+Akaike (1973) cleverly estimates 6 using Wald's (1943) results on the asymptotic distri-
+bution of the log likelihood ratio statistic, namely, that when x is a vector of observations
+of independently DEMO distributed random variables under certain regularity con-
+HAMPARSUM BOZDOGAN
+355
+ditions the likelihood ratio statistic
+kl']K =
+--
+DEMO log/1 = LR(x) =
+"
+-- 21~1°g--2-1
+f(xi 10k)
+Jt'xi [ uJ~'x"
+(3t)
+is used to estimate I(0"; Ok), since the mean log likelihood DEMO a consistent estimate of
+I(0"; Ok), and that (DEMO) is asymptotically distributed as a noncentral X 2 random variable.
+That DEMO,
+a.d.
+kt/K = --2 Iog 2 ~
+Z. (6)DEMO
+,Z
+(32)
+with v = K -- k degrees of freedom and the noncentrality parameter 6 = n I1
+Since
+0* - DEMO' 113.
+E[x,
+,2
+(a)] = 6 + v,DEMO
+(33)
+and since
+kttr = --2 log /t --~ E[--2 log 2] = E[Z~z(6)] = 6 + v,
+(34)
+solving for 6, we have
+6 =
+n II 0* -
+0f
+II
+2 ~
+--2 log/1 - v
+=-21og/1-(K-k)DEMO
+(35)
+It follows that (30) becomes
+- 2 nEEB(DEMO; O~)] = 2nEEIEO*; 0k)]
+-~ -2 log/1 - (K -- k) + k.
+(36)
+Simplifying the right hand side of (36), we have
+so that
+-21og/1+2k-K=--21og~r)
+L(Ok) +2k-K
+= --2[log t(Ok) -- log L(0r)
+DEMO + 2k -- K
+= -2 log L(Ok) + 2k DEMO 2 log L(0x) -- K,
+-
+2ng[B(O*; 0k)] = 2neU(o*; 0k)]
+--2 log L(Ok) + DEMO + 2 log L(Or) - K,
+kt/r + DEMO -- K.
+(37)
+(38)
+It follows from the above discussion that if the K-L information quantity, I(8"; Ok), is
+adopted as the loss function in our model building with the DEMO risk function (i.e.,
+the expected loss), then from (36) we note that
+~((OK;
+Ok )
+= 1 (DEMO log/1 + 2k - K)
+._n
+(39)
+serves DEMO a useful estimate of this risk function, namely, E[I(O*; DEMO)I, at least for the case
+where n is sufficiently large, and K and k are relatively large integers. In practical appli-
+cations, K sometimes may happen to be very large, or conceptually infinite integer, and
+356 PSYCHOMETRIKA
+may not be defined clearly. Even under such circumstances we DEMO limited number of
+k's, assuming K to be equal to DEMO larger hypothesized value of k. Since we are only
+concerned with finding out the Ok  which will give the minimum of ~(rr; DEMO) in (39), or
+equivalently, the minimum of 2nE[I(O*; 0k)] in (38), we have only to compute either
+f(x, I 0~________)))
+kVr=kr/r+2k=--2~ ,= 1 log f(DEMO 10K) + 2k, (40)
+or, ignoring the constant terms in (38) common to every model, we reduce the form of
+AIC to a much simpler form
+n
+AIC(k) = - 2 ~ log f(x i [ Ok) + 2k
+i=1
+= --2 log L(Ok) + 2k, (41)
+and choose the minimum of AIC over k = 1, 2 ..... K.
+This completes the derivation of AIC and the sketch of the proof of the proposition.
+DEMO
+We note that AIC(k) in (41) is an unbiased DEMO of minus twice the mean
+expected log likelihood, or equivalently -½ DEMO(k) is asymptotically an unbiased esti-
+mator of the mean expected DEMO likelihood. This result suggests that asymptotically a
+reasonable definition of the likelihood of a model is
+L(k) = exp {-- ½ AIC(k)} (k = 1, 2 ..... K). (42)
+In fact, with the assumption of equal prior probability for the models, DEMO distribution of
+(42) defines the posterior distribution of models. If there are several models with almost
+equal values of AIC, it is useful to consider the averaged model by using (42) as the
+"likelihood" of each model as discussed in Akaike (1978, 1979).
+We interpret the result in (41) as follows. The first term in (41) is a measure of
+inaccuracy, badness of fit, or bias when the maximum likelihood estimators of the param-
+eters of the model DEMO used. The second term, on the other hand, is a measure of
+complexity or the penalty due to the increased unreliability or compensation DEMO the bias
+in the first term which depends upon the number of parameters used to fit the data.
+Thus, when there are several competing models the parameters within the models are
+estimated by the method of DEMO likelihood and the values of the AIC's are com-
+puted and compared to find a model with the minimum value of AIC. This DEMO is
+called the minimum AIC procedure and the model with the minimum AIC is called the
+minimum AIC estimate (MAICE) and is chosen DEMO be the best model. Therefore, for us the
+best model is DEMO one with least complexity, or equivalently, the highest information gain.
+In applying AIC, the emphasis is on comparing the goodness of fit of various models with
+an allowance made for parsimony.
+4. Consistent Akaike's DEMO Criterion: CAIC(k)
+As we saw in the derivation of DEMO in the previous section, one of the important
+virtues of AIC DEMO the penalty represented by the term 2 x (number of free DEMO)
+clearly demonstrates the necessity of choosing a class of models, DEMO least one of which will
+be able to provide a good approximation to the distribution of the data without adjusting
+too many parameters. However, in the literature, the particular specifications put on the
+crucial structure-dependent term in AIC, that is, the so-called "magic number" 2, has been
+HAMPARSUM BOZDOGAN
+357
+questioned unfairly as being coincidental or arbitrary (Rissanen, DEMO). If one follows the
+derivation of AIC in section 3, DEMO emergence of the magic number 2 is hardly debatable.
+The debating questions should be: Is the magic number 2 enough, should it be DEMO
+than 2, how do we choose such a number, or on what does it depend, and so forth?
+Based on the frequency of choice of the correct model from a simulation study, many
+authors, including Bhansali and Downham (1977), in a time series model, arbitrarily
+considered the range of the magic number to be between 1 DEMO 4. The propriety of such a
+choice has been criticized by both Akaike (1979) and Atkinson (1980) on the grounds of
+lack DEMO objectivity and the need for more explicit analytical formulation.
+Objections have been raised that minimizing AIC does not produce an asymp-
+totically consistent estimate DEMO model order (Bhansali and Downham, 1977; Schwarz,
+1978; Woodroofe, 1982; and others). However, consistency is an asymptotic property, DEMO
+any real problem has a finite sample size n as stated in Sclove (1987). Certainly, from a
+mathematical point of view, consistency is an attractive asymptotic property to expect
+from a model selection procedure, but any consideration of consistency presupposes that
+there exist "true" order DEMO a model. In the case of real data, the concept of DEMO true order is
+not known and is suspect.
+Even though the AIC procedure is not claimed to be consistent and is not designed
+to DEMO such (Akaike, 1981b; Quinn, 1980), its inconsistency is not necessarily a defect in the
+method, and the virtue of consistency should not be exaggerated (Hannah, 1986). Shibata
+(1983) extensively studied DEMO asymptotic behavior of AIC procedure and its variants in
+terms of asymptotic efficiency under a quadratic loss function. He found that AIC actually
+achieves DEMO implicit goal that motivated Akaike--it does the best that any model-
+selection procedure can do in minimizing negentropy, or the expected log likelihood, DEMO
+least for a large sample size n (Larimore & Mehra, 1985).
+In general, the major dilemma here is how to balance optimally the underfitting and
+overfitting risks, or how to optimally adjust the bias in the log likelihood ratio when the
+maximum likelihood estimates are used.
+DEMO violating Akaike's principles, using the established results in mathematical
+statistics, we improve and extend AIC analytically in two ways. These extensions make
+DEMO asymptotically consistent, and that we penalize overparameterization more strin-
+gently to DEMO the simplest of the true models whenever there is nothing to be lost in
+doing so.
+In section 2.2, we discussed the fact that when the mean log likelihood is used to
+estimate the K-L information DEMO, the bias introduced by the maximum likelihood
+estimates of the parameters DEMO to be adjusted or corrected. In the derivation of AIC,
+this bias comes out as a noncentrality parameter, 6, which is a DEMO large unknown but
+deterministic constant. It depends not only on the number of observations but also the
+specific estimation method used. For example, in our case this method is the maximum
+likelihood (ML) method. Moreover, the distributional change in 6 for different sample
+sizes is also crucial DEMO justify the correction of the bias further. That is, we do DEMO want to
+have a very large 6, since it varies with DEMO basic model. As is well known, noncentrality
+parameters determine the power DEMO test procedures, and the estimation of 6 on the basis of
+DEMO data may be necessary to choose among competing models.
+We note from (35) that one such correction in 6 is already given in DEMO AIC, that
+is, 6 - -2 log 2 - (K DEMO k). Also we note that this correction factor v = (DEMO - k) is inde-
+pendent of the sample size n. However, in testing a null hypothesis (or a model) dis-
+tinguished from DEMO alternative hypothesis (or hypotheses) by the value of a parameter, DEMO
+the test statistic has a noncentral chi-square distribution which is the case here, then the
+358
+PSYCHOMETRIKA
+degrees of freedom is an increasing function of the sample DEMO n (Kendall & Stuart, 1967).
+This suggests that to make AIC consistent, the multiplier of the number of free parame-
+ters in the penalty term must be made to depend on the sample size DEMO setting
+v = a(nXK - k),
+(43)
+where a(n) is an increasing function of n. In AIC, we DEMO that a(n) = 1. As discussed in
+Davis and Vinter (1985), the selection of the function a(n) is important, DEMO it should be
+chosen so that it has various desirable properties for the corresponding estimates. Recap-
+itulating Davis and Vinter (1985), the properties of a(n) which might be required are:
+(i) high probability of choosing the correct dimension of the model, or order for finite
+data sets; and
+(ii) consistency, that is, asymptotically correct choice of k as n--} ~,
+Presently, in the literature there is no theory available as to how to choose the
+correct dimension DEMO a model with high probability. On the other hand, consistency holds
+DEMO surely for certain choices of a(n) including the choice a(DEMO) = log n, where "log"
+denotes the natural logarithm. DEMO, we choose a(n)= !og n since it provides a
+DEMO increasing function of the sample size n, such that a(n)/n---, 0 as n---} oo (see
+also, e.g., Akaike, 1978). We shall denote this type of modified AIC by a generic DEMO,
+CAIC. So if we take v = (K - k) log n, then we have the following proposition.
+Proposition 2.
+CAIC(k) = -2 log L(6k) + k[(log n) + 1].
+(44)
+Since CAIC estimates the
+mation, then
+Proof. Recall from (30) that
+2nEll(O*; Ok)] ~ 6 + k.
+Since
+DEMO ~- --2 log 2 -- v,
+and since v = (DEMO - k) log n, then
+6 ~ -2 log A - (K - k) log n.
+Substituting this into (46) and DEMO, we get
+2nE[/(O*; Ok)] --~ --2 log L(DEMO) + k log n
++ k + 2 log L(@r,) -- K log n.
+quantity 2nE[l], that is, twice the expected Kullback
+CAIC(k) = -2 log L(@k)
++ k log n + k + 2 log L(0r) - K log n.
+(45)
+(48)
+infor-
+(49)
+(46)
+(47)
+Since the constants do not effect the results of comparison of DEMO, we drop the additive
+terms and reduce the form of CAIC(DEMO) to a much simpler form, namely
+CAIC(k) = -2 DEMO L(Ok) + kl-(log n) + 1].
+[]
+(50)DEMO
+This shows that AIC can be fairly easily extended to make it consistent, even though
+a practical difficulty is that consistency is a weak property (Atkinson, 1980). Note that
+CAIC(k) is similar to the Schwarz's (1978) Criterion of k log n, and that the term
+[k log n + k] has the effect of increasing DEMO "penalty term." Consequently, the mini-
+HAMPARSUM BOZDOGAN 359
+mization of CAIC leads, in general, to lower DEMO models than those obtained by
+minimizing AIC.
+In the literature, Hannan DEMO Quinn (1979) proposed a(n) = c log log n, where c > 2.
+Their objective was to provide a consistent criterion DEMO which a(n) increases with n but at
+as slow a DEMO as possible. If we let k < k(n), where k is an upper bound of k, possibly
+depending on n, other DEMO of a(n) are:
+a(n) = (log n) l+b and k(n) = (log n) c, (51)
+where b and c are arbitrary strictly positive constants.
+Next, we give yet another analytical extension of AIC which will unify all these
+procedures.
+DEMO Consistent AIC with Fisher Information: CAICF(k)
+In this section, exploiting the large sample asymptotic distributional properties of the
+maximum likelihood estimators, we propose a different estimator for minus twice the
+expected entropy to DEMO AIC analytically to make it consistent without deviating from
+Akaike's original premise. In this manner we penalize overparameterization more
+strongly, in particular, DEMO large samples. Therefore, instead of dropping the term
+2 log L(DEMO) in (38) as we do in simplifying the expression to DEMO a simple form for AIC,
+we retain this term and propose a different approximation to L(Or) which estimates the
+likelihood function L(0*) of the true model. This means that one can specify the true
+model to be the most general of the models to be DEMO and consider the fact that the
+observations are generated by the true density f(xl0* ) instead off(xl0~). This way we
+can DEMO the unknown parameters of the true and approximate models by using the
+maximum likelihood estimators and their properties, and obtain the following proposi-
+tion.
+Proposition 3.
+CAICF(k) = -2 log L(Ok) + k[(DEMO n) + 2] + log I J(0k) l
+-- mIf(k) + k log n + log I J(0k) l. (52)
+To show the derivation of this proposition, we consider x i.i.d., and we assume that
+the true parameter vector 0* satisfies the restrictions set by the following model in terms
+of the parameters:
+DEMO(k): Ok  = (01, 02 ..... O k, 0, .... 0), (53)
+and that Ok* -- 0k = DEMO(n- 1/2), where O denotes the "order of."
+DEMO the properties of the maximum likelihood estimates for regular models, it DEMO
+well known that the MLE Ok of 0~' is, at least asymptotically, a sufficient statistic for 0~'.
+This can be shown easily by the factorization theorem of the likelihood of the kind to
+establish DEMO (Cox & Hinkley, 1974). Assuming that 0 k is at least asymptotically
+sufficient for 0~, under this assumption, it is easy DEMO establish the following theorem for
+asymptotic normality.
+Theorem 1. A maximum likelihood estimator Ok is asymptotically distributed as
+multivariate normal with mean vector 0f DEMO covariance matrix (n J)- 1. That is,
+a.d.
+Ok  ,'~ Nk(Ok*; (nd(0*))- 1). (54)
+360
+PSYCHOMETRIKA
+So the asymptotic multivariate normal density of Ok  is given by
+g(0k) ~ I n J(0*)I"
+exp {
+-- {(O
+k -- 0*)'n
+J(0")(0
+k -- 0")},
+(55)
+where Ok is the maximum DEMO estimate of 0* and inverse covaraince matrix is
+c(0,)
+DEMO -
+2 log
+d0*)] =- nJ(O*),
+0000'
+DEMO
+where d(e*) is the Fisher information matrix at 0* with DEMO to one observation.
+(56)
+For large samples, we approximate the likelihood off(x 10*) the true density at 0* by
+L(e*; 0k) = O(e*)L(0*) = O(0*) exp DEMO L(0*)}, using Taylor series expansion of 9(0*) and
+exp {log L(0*)} around the ML estimate Ok . Taking DEMO product of two Taylor series
+expansions and using the leading terms, DEMO obtain
+L(O*; Ok) - (nk I
+(27t)k/2 J(0D
+I)1/2 exp {
+-- }(O
+k
+- DEMO ) *'
+nJ(O
+k * ^ )(O
+k - 0,)} [1 + O(n- 1/2)].
+(57)
+DEMO, using asymptotic sufficiency, we can write
+L(0*) = h(DEMO)C(0*; Ok)
+(58)
+by the factorization criterion, DEMO h(x) is independent of the particular parameter vector
+0 we DEMO, and the second factor L(0*; Ok) depends on x DEMO through the value of
+Ok  - 0k(X), which is DEMO for 0".
+Now, in (38) we replace L(OK) by L(0,) given in (58) assuming that 0* (the true
+parameter vector) is situated near 0" (the restricted or pseudotrue parameter vector) and it
+"almost" satisfies the restrictions set in (DEMO) and get
+kt/K = --2 log L(fik) + 2 log L(O*).
+(59)
+So, from (58) and (57), we have
+log L(0,) = log h(x) + log L(0*; Ok)
+k k
+= log h(x) + ~ log n + x2  log I J(ODI - DEMO log (21t)
+-- ½(0 k -
+a*)'nJ(a*)(O k -- 0") + log [1 + O(n- x/z)].
+(60)
+Now, multiplying both sides of (60) DEMO 2, we get
+2 log L(0*) = 2 log h(x) + k log n + log I
+J(0*)l-k log (2n)
+-- (O
+k -- Ok)nJ(O
+,t
+k)(O
+, ,
+k --
+0") + 2 log I-1 DEMO O(n-112)].
+(61)
+Since log [1 + O(n-1/DEMO)] is about of order n-a/2, since (e* - Ok) is of order n-x/2,
+nd(O*) is of order DEMO, which implies (O k -0~,')'nJ(0*)(0k- 0,) is of order O(1), then (61)
+reduces to
+2 log L(0*) = 2 log h(x) + k DEMO n + log I
+J(0*)l -k log (2x) + O(n-I/2).
+(62)
+Thus, the approximation involves an DEMO of order n-x/2.
+In Equation (62), by ignoring the DEMO terms, the term involving x, and O(n-x/2),
+DEMO have
+2 log L(O*) = k log n + log DEMO(O*)l.
+(63)
+HAMPARSUM BOZDOGAN
+361
+Hence, (59) reduces to
+~K = --2 log L(0k) + k log n + log I
+J(0*)l
+(64)
+Now estimating J(0*) by J(Ok) in (DEMO) where O k is the MLE of Ok*,
+result into (38), we obtain
+and substituting the
+2nE[l(O*; Ok)'] DEMO --2 log L(Ok)
++ k log n + log I
+J(0~)I + 2k - K
+= --2 log L(0k) + k[(log n) + 2] + log I
+J(0~)I - g.
+(65)
+Simplifying (65) further, we have
+= DEMO(k) + k log n + log I
+J(0k) l.
+J(0k) l
+(66)
+We note that if we take DEMO first two terms in (66), CAICF is similar to CAIC DEMO
+section 4, and also Schwarz's criterion (SC, 1978).
+DEMO, this way, without relying on the arbitrary frequency of choice of the correct
+model to modify AIC heuristically, we can analytically extend AIC to make it consistent.
+In this manner we penalize the overparameterization more DEMO, in particular, for
+large samples. Note that we have not deviated from Akaike's original principle: we are
+still estimating minus twice the expected entropy. Also, note that we have not followed a
+Bayesian approach.
+The incorporation of the Fisher information matrix J(Ok) within the penalty compo-
+nent of CAICF has many practical and theoretical importance. Generally, when we are
+using model-selection criteria, we fit the models under a specified parametric probability
+distribution of the model. The correct specification of the probability DEMO is a sufficient,
+but by no means a necessary condition. For example, even when the true distribution is
+not normal, we still DEMO the maximum likelihood estimators under the assumption of
+normality which yields consistent estimates of the mean and the variance. But it is the
+consistency DEMO the mean log likelihood which ensures us the basis for robust estimation,
+and that it provides us the basis for constructing specification tests. DEMO, we need to
+check or test first whether the probability model DEMO misspeeified or not before we actually
+fit and evaluate the models. This is very important in practice which is often ignored. For
+this reason, following White (1982), we give a simple test of information matrix equivalence
+to check the misspecification of a model. First, we define the following matrices
+CAICF(k) = -2 log L(0g) + kE(DEMO n) + 2] + log I
+J.(0*) =--{~
+~
+c~2 l°gf(x'10k*)~
+R.(0*) =
+n,
+0log:( ,,0 )alogf( ,10 )}
+d0,
+dO
+'
+s
+(DEMO)
+,o1
+If the expectations exist, we define
+a0, o0s
+(68)
+R(Ok*)= {E[.a l°gf(XlO*) . O
+l°gf(XlO*)}
+where both in (67) and (68), r, s DEMO 1, 2
+.... , k.
+362 PSYCHOMETRIKA
+When the appropriate inverses exist, we define
+Cn(O*) DEMO J.(Ok*) - 1 Rn(Ok*)J~(Ok*) - 1 ---- Jn- 1 R. J~- 1,
+(69)
+C(0*)= ,DEMO j(Ok) R(Ok)J(O , k) ,-1 - DEMO IRj 1,
+where J(0*) is the Fisher's information DEMO which is positive-definite, and C(0*) is the
+covariance matrix. When the model is correctly specified and certain assumptions hold as
+in White (1982, p. 6), we have the following result.
+Theorem 2: DEMO matrix equivalence. If f (x)-f(xt0*) for 0* in f~r, then
+0* = 0~' and J(0*) = R(0~'), so that the covariance C(0~') = J(0~')- DEMO = R(0~')- 1
+Note that, in general, J(DEMO) will not equal R(0~') when the model is misspecified.
+DEMO, when the model is correctly specified, then this theorem says that the infor-
+mation matrix can be expressed in either Hessian form, J(0*), or outer product form,
+R(0*), giving equivalently,DEMO
+J(O*) -- R(O*) = O. (70)
+The DEMO in (70) is not directly observable, but we can consistently DEMO it by
+J(Ok) -- g(Ok) = 0, (71)
+and construct an appropriate test statistic to test whether a model DEMO or not.
+For example, if the equality in (71) fails, then this indicates that the probability model is
+misspecified. In practice, this misspecification may have many serious consequences when
+the classical inferential procedures are DEMO Furthermore, the failure of information
+matrix equivalence might also indicate misspecifications DEMO render the MLE to be
+inconsistent for particular parameters of interest. Therefore, (71) is a useful indicator of
+misspecifications which cause either parameter or covariance matrix estimator inconsist-
+ency.
+If we find that J(0k), the estimated information matrix, is singular (or nearly singular)
+and so indefinite, we have an indication that the K-L information quantity has no unique
+minimum at 0", the true parameter vector. Therefore, CAICF as a large sample asymp-
+totic estimator of the mean K-L information DEMO will not have a unique minimum
+also. Furthermore, this in practice DEMO that there are parameter vectors 0 ¢ 0* such
+that the expected mean log likelihood z(0) = z(0*) given in (12), and this in turn means
+that there are different parameters yielding DEMO same distribution so that 0 is not identifia-
+ble. Thus, lack DEMO identifiability of 0 implies singularity of information matrix and vice
+versa (DEMO, 1975, p. 82). Near singularity of the information matrix will also give us an
+indication of high variances for the estimators which DEMO not preferred. In either case, the
+parameters may not be estimated DEMO any high degree of accuracy. In this respect, one
+advantage of DEMO CAICF in (66) is that it generalizes and unifies model selection
+procedures, and that, whenever possible, one should compute J(Ok), test whether the
+model is correctly specified or not, and then proceed with model fitting and evaluation.
+Indeed, if we cannot achieve a unique minimum by using CAICF, then this should be an
+indication that we have problems in identifying the parameters. In that case, we should
+bring in a priori information in order to impose restrictions on the model DEMO tackle the
+problem with reparametrizing the model.
+As discussed in Sclove (DEMO), Kashyap (1982), taking the Bayesian approach, took
+the asymptotic expansion of the logarithm of the posterior probabilities a term further
+HAMPARSUM BOZDOGAN
+363
+than did Schwarz (1978) and obtained the criterion DEMO given by
+KC(k) = -2 log L({Jk)
+-- DEMO f(0~) + k log n + log [
+n(lJ~)DEMO,
+(72)
+where f(0~') is the prior probability DEMO on the parameter vector 0~'. B((Jk) is the
+negative of the matrix of second partials of log L(0k), evaluated DEMO the maximum likeli-
+hood estimates. In Gaussian linear models, this is DEMO covariance matrix of the maximum
+likelihood estimates of the regression coefficient; DEMO general, the expectation of B({Jk),
+evaluated at the true parameter values, is Fisher's information matrix. If we assume equal
+probabilities for f(0*), the term togf(0~') in (72) DEMO be ignored, and thus we can see the
+relationship between KC DEMO our extension of AIC, i.e., the CAICF given in (66)DEMO Similar
+results are also given in Haughton (1983) by extending the Schwarz's criterion for ex-
+ponential families a term further than did DEMO
+6.
+Asymptotic Properties and Inferential Error Rates of the Criteria
+It is well known that the classical theory of hypothesis testing is concerned with DEMO
+problem: Is a given observation consistent with some stated hypothesis or DEMO it not? In the
+hypothesis testing tradition, frequently ignoring power considerations, we choose an arbi-
+trary significance level ~, for example, the celebrated 5%, 2.5%, or 1%, and then we try to
+determine (at least approximately) a critical value from the standard tables of DEMO test
+procedures to make our decision. Almost automatically, we also apply DEMO hypothesis
+testing procedures to the situation where actually multiple decision procedures are re-
+quired. However, this involves the choice of a number of dependent significance levels
+without knowing what the overall error rate might be. Also, test procedures do not have
+the provision to penalize overparameterization since usually DEMO unstructured saturated
+model is always used as a reference (Akaike, 1987).
+On the other hand, when we use the information-theoretic model selection criteria,
+we do not specify what the arbitrary significance level ~ DEMO be or ought to be. This is
+due to the fact that in using model selection criteria, the situation is totally the opposite of
+the classical inferential procedures. In this case, we are concerned with: DEMO a
+critical value which then determines, approximately, what the significance level is or
+might be. Therefore, the significance level is implicitly incorporated within the model
+selection criteria which depends on the specific functional form of DEMO penalty component
+of the criteria and on the number of observations.
+In general, for model selection criteria, the inferential error rate decreases exponen-
+DEMO as we increase n, the number of observations. Following Efron (1967), suppose we
+are given n independent and identically distributed (i.i.d.) DEMO x 1, x 2 ..... x, of a
+random variable X having probability density functionf(x). Suppose we are asked to test
+DEMO simple hypothesis:
+vs.
+Ho: f(x) -~
+fo(x)
+(73)
+nt:
+f(x) =-ft(x)
+at some DEMO level ~, 0 < ~ < 1. It is well known DEMO the most powerful test which
+rejects H o for large values of the likelihood ratio
+2 = fi fl(x~)
+~°1 fo(x,)
+(74)
+has an "error of the second kind," DEMO is, fl = P{Type II error} (probability of mistakenly
+364
+PSYCHOMETRIKA
+accepting the null hypothesis) satisfying
+/~(~)
+lim DEMO
+n
+= --I,
+where I is the K-L information quantity
+(DEMO)
+(76)
+From this, we have the following:
+L
+Theorem 3. For a specified level of significance ct, 0 < at < 1, under the null hypoth-
+esis in (73), we DEMO
+fl(~) = P{Type II error} = exp {--nI + O(DEMO)}.
+(77)
+The Converse of this result is also true DEMO we try to minimize ct = P{Type I error}
+(probability of DEMO rejecting the null hypothesis), keeping fl only fairly small satis-
+fying
+lim
+n~oo
+~(/~)
+= -I.
+n
+(78)
+So, following ~encov (1982, p. 122), we state the following:
+DEMO 4. For a specified fl, 0 < fl < 1, under the null hypothesis in (73), we have
+~t(fl) = DEMO I error} = exp {-nI + O(1)}.
+(79)
+DEMO means that both 0t and fl cannot tend to zero faster than the exponential rate
+where lim,_.~ 0(1) = 0. Thus, DEMO example, ~t is small when the K-L information quantity
+is large, and vice versa. This rate of convergence to zero of ct can DEMO be used as a
+criterion for evaluating the asymptotic performance of the information-theoretic pro-
+cedures. Typically, for consistent criterion, this rate is exponential DEMO stated in the above
+theorems.
+To show the Type I error for AIC and CAIC, suppose that the "true' dimension is
+obtained when k = k*. We consider what happens to the probability of choosing DEMO
+dimension k' > k* asymptotically by these criteria.
+For AIC, this means
+P{AIC(k') < AIC(k*)}
+= P{2[log L(Ok, ) -- log L(Ok,)] > 2(k' -- k*)DEMO
+-+ P{Ztk,-k*) > 2(k' -- k*)}
+as n-+ oo
+> 0.
+(8o)
+2
+For CAIC, this means
+P{CAIC(DEMO') < CAIC(k*)}
+= P{2[log L(Ok, ) -- DEMO L(Ok,)] > (k' -- k*)(log n + 1)}
+P(Z~k,-k*) > ~}
+as n~ o0
+--0.
+(DEMO)
+HAMPARSUM BOZDOGAN 365
+Therefore, using AIC it is possible to choose a dimenison k' > k* (the true dimen-
+sion), the probability DEMO Type I error stays positive but decreases exponentially as
+(k' - k*) gets larger and the critical value (i.e., 2) of DEMO test remains finite n ~ oo. So, even
+asymptotically, there is a positive probability of overestimating the true dimension or the
+size of DEMO model. Therefore, model selection criteria, including AIC, which have this
+DEMO are often called dimension inconsistent. On the other hand, with CAIC DEMO
+CAICF, the probability of Type I error goes to zero as DEMO oo. It also decreases exponen-
+tially as (k'-k*) gets larger, but at a much faster rate. Therefore, asymptotically, the
+probability of overestimating the true dimenson or size of the model with these criteria
+DEMO zero, making them dimension consistent. (For more on the properties of model
+selection criteria, we refer the reader to Ter~isvirta & Mellin, DEMO; and Woodroofe, 1982.)
+Without going into detailed proofs, we DEMO state the following results.
+Result 1. Using CAIC or CAICF if k' < k*, where k* is the true dimension of the
+model, the probability of underfitting a model goes to zero as n---~ oo.
+DEMO 2. Using CAIC or CAICF if k' > k*, the probability of overfitting a model
+disappears as n ~ ~.
+Note that when DEMO use AIC, CAIC, and CAICF, the "level of significance" DEMO adjusted
+in such a way that the corresponding probability of rejection of the simpler model
+decreases as the degrees of freedom or complexity increase. DEMO procedures, therefore,
+have tendencies to adopt simpler models compared with DEMO chi-square test procedure as
+the degrees of freedom increase. Comparing to AIC, for CAIC, the implied ~ values
+rapidly decrease as the degrees DEMO freedom increase. The same is also true for CAICF.
+However, this DEMO of decrease depends on n, the number of observations. For large
+DEMO, as the degrees of freedom increase, the implied ~ values for these criteria decrease
+very sharply.
+This connection between model selection criteria and DEMO level of significance ~,
+provides us a way to test the validity of different restrictions of a model. Also, it gives us a
+yardstick in comparing every possible model and choosing the model giving the DEMO
+probability of rejection to be the best fitting model. This fact justifies the comparison of
+the model selection criteria in a class of models DEMO cannot necessarily be compared by
+the classical goodness of fit test. We can use these results to decide what the level of
+significance should DEMO per complexity or restriction when we do classical hypothesis
+testing rather than arbitrarily deciding what ct should be on a priori grounds. Thus, in the
+sense of Theorem 3 and 4, these model selection procedures can be called inferential-error-
+rate consistent.
+7. A Numerical Example
+In this section, to demonstrate the practical utility and to show the empirical per-
+formances DEMO the model selection criteria, we provide a Monte Carlo example in DEMO
+ing the degree of a polynomial model in one variable. Choosing the degree of a poly-
+nomial model is a major problem that arises DEMO the relationship between y and x is
+considered to be curvilinear. Fitting a polynomial with the maximum degree K is a
+multiple decision problem DEMO is often formulated in terms of a sequential hypothesis
+testing to test whether the coefficients are zero, starting with the highest specified degree.
+Following Graybill (1976), we consider the polynomial model of degree K given by
+Yi = flo + fllx~ + f12 X2 --I- "'" DEMO flK Xi
+K .4- e i = 1, 2, ..., DEMO > K + 1,
+(82)
+366
+PSYCHOMETRIKA
+TABLE 7.1
+gre~e~cy of Chooslr~ the Correct Degree o1" a PoJynomlol
+Model In 100 l~pJ~catlon~ ol" the Monte CnrJo Bxperl~ent
+for Varying n and Residual Variance 0 2
+i
+i,ili
+i
+i uJ,DEMO,,,,,,it
+Estimated
+Degree
+Proportion
+of
+Experiment
+Criterion
+1
+2
+DEMO
+4
+5
+6
+0verflttlng
+Under
+fitting
+n ; 50
+1.
+~2 = 0.25
+AIC
+CAIC
+CAICF
+0
+0
+0
+0
+86
+0
+99
+0 DEMO
+14
+1
+0
+0
+0
+0
+0
+0
+0
+.14
+.01
+0
+0
+0
+0
+0
+0
+0
+NOTB:
+S
+Correct
+degree.
+y DEMO l+Sx-l.25x2+0.15x3~.,
+0
+0
+0
+t
+~
+N(0,¢2).
+where K is a specified positive integer. We assume that the degree of DEMO polynomial
+model in (82), say k, is less than or equal to K (given), and the problem is to determine the
+exact degree. As we mentioned, the procedure is to test the hypothesis Ho:/~ = 0, then
+test ilK- 1 = 0, then test ilK- 2 = 0, and so on against the alternative of nonzero coefficient
+until a hypothesis is rejected. Suppose /~k = 0 is the first hypothesis that is rejected, then
+we declare that the model of degree k is the correct model. If no H 0 is DEMO, then we
+declare the simple model Yi = flo + e~ DEMO the correct model.
+It has been shown by Anderson (1962) that this procedure for determining the degree
+of a polynomial model has some DEMO optimality properties. However, as we know,
+application of test procedures DEMO such multiple-decision problems involves the choice of a
+number of dependent significance levels. This creates the problem of how to control the
+overall error DEMO of the test procedures for determining the correct degree of a poly-
+nomial model. As an alternative to the classical inferential procedures, here we propose
+the use of model selection procedures to determine the degree of DEMO polynomial model.
+To demonstrate this, we carried out a Monte Carlo DEMO under the true cubic
+polynomial model given by
+y = 1 + 5x-- 1.25x
+2 + O.15x
+3 + 5,
+(83)
+2.
+3.
+n = 100
+~2 ,
+0.50
+n =
+~2 .
+200
+1.00
+The true
+cubic
+AIC
+CAIC
+CAICF
+AIC
+CAIC
+CAICF
+polynomial
+0
+DEMO
+0
+0
+0
+0
+0
+81
+0
+98
+0 100
+0 80
+0 97
+0 100
+model
+Is:
+19
+2
+0
+20
+3
+DEMO
+0
+0
+0
+0
+0
+0
+.19
+.02
+0
+.20
+.03
+0
+0
+0
+0
+0
+0
+0
+HAMPARSUM BOZDOGAN
+TABLE 7.2
+367
+1,
+2.
+3.
+NOTE:
+The DEMO cubic polynomial Is:
+y = 1+5x-1.25x2+O.15x3+¢,
+where G2 = 5.
+Frequency of Choosing the Correct Degree of a Polynomial
+Model In I00 DEMO of the Monte Carlo Experiment
+Eor Varying n and Sasne Residual Variance 0 2
+iii,
+Experiment Criterion
+Estimated Degree
+1 2 3* 4 DEMO
+6
+14
+10
+11 9 0
+5 2 0
+0 0 0
+12 0 0
+6 0 0
+0 0 0
+n =
+50
+DEMO = 100
+n = 200
+AIC
+CAIC
+CAICF
+AIC
+CAIC
+CAICF
+AIC
+CAIC
+CAICF
+77
+3 0
+4 0
+0
+0 0
+0 0
+DEMO 0
+0 0
+0 0
+0 0
+73
+81
+23
+80
+93
+100
+88
+94
+100
+10
+5 0
+0 0 0
+.~
+Proportion
+DEMO
+Overflttlng gnderflttlng
+¢ ~ N(O,G2),
+.24
+.15
+0
+DEMO
+.07
+0
+.~2
+.06
+0
+.03
+.04
+.77
+0
+0
+0
+0
+0
+0
+0
+8
+Correct degree.
+where it is assumed that e DEMO N(0, a2). In the first design of the Monte DEMO study, we
+both varied n, the number of observations, and DEMO 2, the residual variance simultaneously
+across three different experiments in choosing DEMO correct degree of k = 3, and in studying
+the relative DEMO of AIC, CAIC, and CAICF by fitting the polynomial models of
+degree ranging from 1 to 6. In the second design of the DEMO Carlo study, we increased
+the residual variance a 2, but kept it the same and varied the sample size n across three
+different DEMO in studying the relative performances of AIC, CAIC, and CAICF.
+All the computations are carried out using our POLYREG algorithm in double
+precision DEMO one of the PRIME 750 computers of the University of Virginia. The results
+are given in Table 7.1 and 7.2 as follows.
+Looking at DEMO 7.1, we see that AIC has the tendency to overfit the DEMO degree
+of the polynomial as the sample size n gets large and the residual variance 62 varies. This
+suggests that a stronger penalty for DEMO complexity could be beneficial as we discussed
+before. For CAIC, there DEMO to be a slight tendency to overfit the correct degree of the
+polynomial model, but this is very insignificant. On the other hand, DEMO all the three
+368
+PSYCHOMETRIKA
+experiments, the condition for the consistency of order determination by CAICF holds
+perfectly.
+Looking at Table 7.2, we note that the results are different from that of Table 7.1.
+This is due to the DEMO that we increased the residual variance t72 to 5 in 100 replications of
+the Monte Carlo Experiment. For n = 50, AIC and CAIC are performing much better
+than CAICF in choosing the correct degree (k = 3) of the polynomial model. In fact, the
+proportion of DEMO for CAICF is 77%. However, for CAICF, the underfitting
+diminishes as n, the sample size, gets large and the condition of consistency DEMO These
+results suggest that when n is small and residual variance ~2 is large, CAICF might have
+the tendency to underfit the true order of a polynomial model. But, as we saw, this
+behavior of DEMO disappears as n gets large. We emphasize the fact that this was the
+only extreme example for CAICF when n = 50 among many DEMO of the Monte
+Carlo experiment.
+Overall, we observe that AIC, CAIC, and CAICF are powerful tools to determine the
+best fitting model. They are superior to classical inferential methods in terms of their
+computational simplicity, in terms of not arbitrarily specifying a significance level ~, and
+not worrying what the overall inferential error rate might be or ought to DEMO in determin-
+ing the degree of a polynomial model, and in DEMO
+8.
+Conclusions and Discussion
+In this paper, we studied the general DEMO of the AIC procedure, presented its
+mathematical derivation and showed the DEMO of the magic number 2 in its deri-
+vation. We provided analytical extensions of AIC in two ways without violating Akaike's
+main principles DEMO make AIC asymptotically consistent and penalize over-
+parameterization more stringently rather than relying on the heuristic or arbitrary modifi-
+cations.
+We investigated the asymptotic DEMO of AIC and its analytical extensions. We
+studied the inferential error rates of these procedures for testing the validity of different
+complexities. The preference DEMO one or the other of these criteria in a given situation
+depends on how "conservative" or "liberal" we want to be in DEMO of setting the level of
+significance a per complexity and avoid overfitting and underfitting risks.
+If we want to avoid overfitting a model, then we should use the consistent criteria:
+CAIC and CAICF, sometimes at the cost of underfitting a model in finite samples, which
+leads to a significant increase in bias. Of course, as the number of observations gets large,
+for the consistent criteria, the probability of underfitting and overfitting a model will
+diminish. This suggests that one should use these DEMO criteria for large samples. If
+we want to avoid underfitting a model, then we should use AIC.
+There is no single criterion which will play the role of a panacea in model selection
+problems. Presently, however, AIC has become part of a general movement away from a
+purely inferential and restrictive approach to model selection. As a consequence, it pro-
+vided us a new and modern way of thinking of how to DEMO many important statistical
+modeling problems. For this reason, the profession is DEMO in debt to Akaike for
+repeatedly calling our attention to the very important model evaluation and selection
+problem.
+References
+Akaike, H. (1973). DEMO theory and an extension of the maximum likelihood principle. In B. N. Petrov &
+B. F. Csaki (Eds.), Second International Symposium on DEMO Theory, (pp. 267-281). Academiai Kiado:
+Budapest.
+HAMPARSUM BOZDOGAN
+369
+Akaike, H. (1974). A new look at DEMO statistical model identification. IEEE Transactions on Automatic Control,
+AC-19, 716-723.
+DEMO, H. (1976). Canonical correlation analysis of time series and the use of an information criterion. In R. K.
+Mehra & D. G. DEMO (Eds.), System identification (pp. 27-96). New York: Academic DEMO
+Akaike, H. (1977). On entropy maximization principle. In P. R. Krishnaiah (Ed.), Proceedin#s of the Symposium
+on Applications of Statistics (DEMO 27-47). Amsterdam: North-Holland.
+Akaike, H. (1978). On newer DEMO approaches to parameter estimation and structure determination. Inter-
+national Federation of Automatic Control, 3, 1877-1884.
+Akaike, H. (1979). A Bayesian extension DEMO the minimum AIC procedure of autogressive model fitting. Bio-
+metrika, 66, 237-242.
+Akaike, H. (1981a). Likelihood of a model and information DEMO Journal of Econometrics, 16, 3-14.
+Akaike, H. (1981b). Modern development of statistical methods. In P. Eykhoff (Ed.), Trends and pro#tess in
+system identification (pp. 169-184). New York: Pergamon Press.
+Akaike, H. (1987). Factor Analysis and AIC. Psychometrika, 52.
+Anderson, T. W. (1962). The choice of the degree of a polynomial regression as a multiple decision problem.
+Annals of Mathematical Statistics, 33, 255-265.
+DEMO, T. (1983). Parameter parsimony, model selection, and smooth density estimation. Unpublished doctoral
+dissertation, Madison: University of Wisconsin, Department of Statistics.
+Atilgan, T., & Bozdogan, H. (1987, June). Information-theoretic univariate density estimation under different
+basis functions. A paper presented at the First DEMO of the International Federation of Classification
+Societies, Aachen, West Germany.
+Atkinson, A. C. (1980). A note on the generalized information criterion DEMO choice of a model. Biometrika, 67,
+413-418.
+Bhansali, R. J., & Downham, D. Y. (1977). Some properties of the order of an autoregressive model selected by
+a generalization of Akaike's FPE DEMO Biometrika, 64, 547-551.
+Boltzmann, L. (1877). t2ber die Beziehung zwischen dem zweitin Hauptsatze der mechanischen W/irmetheorie
+und der Wahrscheinlichkeitsrechnung respective DEMO S~itzen fiber das W,~irmegleichgewicht. Wiener
+Berichte, 76, 373-435.
+t~encov, DEMO N. (1982). Statistical decision rules and optimal inference. Providence, RI: American Mathematical
+Society.
+Clergeot, H. (1984). Filter-order selection in adaptive maximum likelihood estimation. IEEE Transactions on
+Information Theory, IT-30 (2), DEMO
+Cox, D. R., & Hinkley, D. V. (1974). Theoretical statistics. London: Chapman and Hall.
+Davis, M. H. A., & Vinter, R. B. (1985). Stochastic modelling and control. New York: Chapman and Hall.
+Efron, B. (1967). The power of the likelihood DEMO test. Annals of Mathematical Statistics, 38, 802-806.
+Fisher, R. A. (1922). On the mathematical foundations of theoretical statistics. Royal Society of DEMO Philo-
+sophical Transactions (Series A), 222, 309-368.
+Graybill, F. DEMO (1976). Theory and application of the linear model. Boston: Duxbury Press.
+Hannan, E. J. (1986). Remembrance of things past. In DEMO Gani (Ed.), The craft ofprobabilistic modellin#. New
+York: Springer-Verlag.
+Hannah, E. J., & Quinn, B. G. (t979). The determination DEMO the order of an autoregression. Journal of the Royal
+Statistical Society, (Series B), 41, 190-195.
+Haughton, D. (1983). On the choice of a model to fit data from an exponential family. Unpublished DEMO
+dissertation, Massachusetts Institute of Technology, Department of Mathematics, Cambridge, MA.
+Jaynes, E. T. (1957). Information theory and statistical mechanics. Physical DEMO, 106, 620-630.
+Kashyap, R. L. (1982). Optimal choice of AR and MA parts in autoregressive moving average models. IEEE
+Transactions on DEMO Analysis and Machine Intelhgence, 4, 99-104.
+Kendall, M. G., & Stuart, M. A. (1967). The Advanced Theory of Statistics, Vol. 2, Second Edition. New York:
+Hafner Publishing.
+Kitagawa, G. (1979). On the use of AIC for the detection of outliers. Technometrics, 21, 193-199.
+Kullback, S. (1959). Information theory and statistics. New York: John Wiley & Sons.
+Kullback, S., & Leibler, R. DEMO (1951). On information and sufficiency. Annals of Mathematical Statistics, 22,
+79-86.
+Larimore, W. E., & Mehra, R. K. (1985, October). The problems of overfitting data. Byte, pp. 167-180.
+Lindley, DEMO V. (1968). The choice of variables in multiple regression (with discussion). Journal of the Royal
+Statistical Society (Series B), 30, 31-36.
+Neyman, J., & Pearson, E. S. (1928). On the use and interpretation of certain test criteria for purposes of
+statistical DEMO Biometrika, 20A, 175-240 (Part I), 263-294 (Part II).
+Neyman, J., & Pearson, E. S. (1933). On the DEMO of the most efficient tests of statistical hypotheses. Royal
+Society of London. Philosophical Transactions. (Series A), 231, 289-337.
+370
+PSYCHOMETRIKA
+Parzen, E. (1982). Data modeling using quantile and DEMO functions. In J. T. de Oliveira & B. Epstein
+(Eds.), DEMO recent advances in statistics (pp. 23-52). London: Academic Press.
+Quinn, B. G. (1980). Order determination for a multivariate autoregression. Journal DEMO the Royal Statistical
+Society (Series B), 42, 182-185.
+Rissanen, DEMO (1978). Modeling by shortest data description. Automatica, 14, 465-471.
+DEMO, G. (1978). Estimating the dimension of a model. Annals of Statistics, 6, 461-464.
+Sclove, S. L. (1987). Application of DEMO criteria to some problems in multivariate analysis. Psycho-
+metrika, 52.
+Shibata, R. (1983). A theoretical view of the use of AIC. In O. D. Anderson (Ed.), Time series analysis: Theory
+and practice, Vol. 4 (pp. 237-244). Amsterdam: North-Holland.
+Silvey, S. D. (DEMO). Statistical inference. London: Chapman and Hall.
+Stone, C. J. (DEMO). Admissible selection of an accurate and parsimonious normal linear regression model.
+Annals of Statistics, 9) 475-485.
+Ter~isvirta, T., & Mellin, L (1986). Model selection criteria and model selection tests in regression models.
+Scandinavian Journal of Statistics, 13, 159-171.
+Wald, A. (1943). DEMO of statistical hypotheses concerning several parameters when the number of observations
+is large. Transactions of the American Mathematical Society, 54, 426-482.
+White, H. (1982). Maximum likelihood estimation of misspecified models. Econometrica) 50, 1-26.
+Wilks, S. S. (1962). Mathematical Statistics. New York: John Wiley & Sons.
+Woodroofe, M. (1982). On model selection and the DEMO sine laws. Annals of Statistics, 10, 1182-1194.{1g42fwefx}

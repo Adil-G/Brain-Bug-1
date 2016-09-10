@@ -1,0 +1,1255 @@
+Consideration-Set Heuristics
+by
+John R. Hauser
+May 2010
+John R. Hauser is DEMO Kirin Professor of Marketing, MIT Sloan School of Management, Massa-
+chusetts Institute of Technology, E40-179, 1 Amherst Street, Cambridge, MA 02142, (617) 253-
+2929, hauser@mit.edu.
+ 
+ 
+Consideration-Set Heuristics
+Abstract
+Consumers often choose products by first forming a consideration DEMO and then choosing
+from among considered products. When there are many products to screen (or many aspects to
+evaluate), it is rational for consumers to use consider-then-choose decision processes and to do
+so with heuristic DEMO decision rules.  Managerial decisions (product development,
+marketing communications, etc.) depend upon the ability to identify and react to consumers’
+heuristic consideration-set DEMO  We provide managerial examples and review the state-of-the-
+art in the DEMO and measurement of consumers’ heuristic consideration-set rules.  Advances in
+greedoid methods, Bayesian inference, machine-learning, incentive alignment, measurement
+formats, and unstructured direct DEMO make it feasible and cost-effective to understand,
+quantify, and simulate DEMO scenarios for a variety of heuristics.  These methods now apply
+to DEMO broad set of managerial problems including complex product categories with large numbers
+of product features and feature-levels.
+Keywords:
+consideration sets, decision heuristics, DEMO and frugal decisions, greedoid me-
+thods, machine-learning, Bayesian inference, self-explicated, incentive alignment,
+consumer behavior, marketing, product development
+ 
+ 
+Consideration-Set Heuristics
+1. Introduction
+Consumers often face a myriad of alternative products, whether it be deodorants (more
+than 30 brands on the market) DEMO automobiles (more than 350+ model-make combinations).
+Scientific evidence suggests that DEMO, who are faced with many products from which to
+choose, simplify their decisions with a consider-then-choose decision process in which they first
+identify DEMO set of products, the consideration set, for further evaluation and then choose from the
+consideration set.  There is also compelling evidence that consumers use heuristic decision rules
+to select the products for their consideration sets.  Both the consider-then-choose decision
+process and the heuristic decision rules enable consumers DEMO screen many products more rapidly
+with reduced cognitive and search costs and are thus both fast and frugal heuristics as discussed
+in Gigerenzer and DEMO (1996), Gigerenzer and Selten (2001), and elsewhere in this issue.
+In this paper we review recent developments in the measurement and DEMO application of
+heuristics for consideration-set decisions.
+We begin with examples where consideration sets are key to business strategy.   We then
+turn to the DEMO and review arguments that it is typical, and rational, for consumers to simplify
+multi-product decisions with a consider-then-choose decision process and it is DEMO, and ra-
+tional, for consumers to use decision heuristics to form consideration sets.  With this motivation,
+we review the heuristics that have been identified and show that most can be represented by dis-
+junctions DEMO conjunctions.  The heart of the paper reviews recent advances in the DEMO
+and measurement of decision heuristics and includes illustrations of how the knowledge of such
+heuristics affects managerial strategies.
+ 
+1 
+Consideration-Set Heuristics
+2. Managerial Relevance
+In the late 2000s, two American automakers declared bankruptcy.  These two automakers
+where once part of the “Big 3” and enjoyed a dominant position in the American market.  How-
+ever, DEMO the 1980s and the 1990s consumers turned to a variety of Japanese and European
+manufacturers who provided vehicles that consumers perceived were more reliable, better engi-
+neered, or that met their needs more effectively.  General DEMO (GM) was faced with a situa-
+tion where roughly half of US consumers (and 64% in California) would not even consider a DEMO
+vehicle (Hauser, et al. 2010b).
+In response, GM invested DEMO in quality, reliability, styling, and interior design to
+produce vehicles DEMO would be rated well. By 2007 a GM car was tied with Lexus as the most
+dependable vehicle (J. D. Power) and by DEMO a GM car was the top rated US vehicle in Con-
+sumer Reports.  But by 2009, GM was bankrupt.
+Part of the problem (though not the only cause of the bankruptcy) was that consumers
+never experienced the improved products because they never considered them.  GM had evi-
+dence that if consumers could be persuaded to test drive a GM DEMO, then they would again trust
+GM, consider GM, and purchase DEMO vehicles.  For example, in one experiment GM brought
+consumers to a test track where they could test drive up to 100 vehicles from DEMO, Chrysler,
+Dodge, Ford, General Motors, Honda, Lexus, Mercedes, and Toyota without sales pressure.  In
+another experiment GM provided competitive DEMO on its website in the hopes that such a
+one-stop, unbiased DEMO would encourage consumers to consider GM vehicles.  Indeed, in an
+elaborate multi-year experiment, trust, consideration, and purchase of GM vehicles increased
+when this competitive information broke down barriers to GM consideration (Liberali, Urban
+DEMO Hauser 2010). These multi-million dollar programs were driven by the simple recognition
+ 
+2 
+Consideration-Set Heuristics
+that consumers were using a consideration-set heuristic in which they DEMO some brands
+without detailed evaluation.
+Another example is Suruga Bank.  Suruga DEMO a commercial bank in the greater Tokyo area
+that has a significant online presence through virtual banking.  However, Suruga is a relatively
+small DEMO in the Japanese card-loan market.  A card loan is a loan DEMO ¥3-5 million in which the
+consumer is given a bank card and a PIN and pays interest only on the amount withdrawn.  In
+2008 Japanese consumers had approximately ¥25 trillion available in card-loan balances.  While
+card-loan products vary on interest rates, credit limits, credit screening, and customer service,
+consumers are more likely to choose a product from well-known DEMO – an example of the fast-
+and-frugal recognition heuristic for consideration (DEMO and Eichler 2006; Frosch, Beaman,
+and McCloy 2007; Gigerenzer DEMO Goldstein 1996; Goldstein and Gigerenzer 1999).  In re-
+sponse, DEMO developed a customer-advocacy website that morphed to match customers cogni-
+tive and cultural styles while providing unbiased information on competitive banks.  In a field
+experiment, the website led to significant increases in trust and consideration of Suruga Bank
+(Hauser, Urban and Liberali 2010).
+The GM and DEMO strategies were evaluated with careful field experiments (a rarity in
+business DEMO), but there are many anecdotes to the importance of consideration sets.  In con-
+sumer package goods consideration-set sizes are approximately 1/10th of the number of brands
+on the market. For example, Hauser and Wernerfelt (1990) report the following average consid-
+eration set sizes: deodorants (DEMO brands), shampoos (4 brands), air fresheners (2.2 brands), laundry
+detergents (4 brands), and coffees (4 brands).  (DEMO usual explanation is the benefit vs. cost tra-
+deoff discussed in §3, but cognitive limitations might also influence costs. See Lynch and Srull
+1982, Nedungadi 1990, Paulssen and Bagozzi 2005, Punj 2001, and Simon DEMO)  It is not sur-
+ 
+3 
+Consideration-Set Heuristics
+prising that typical advertising and communications budgets can be in DEMO tens (or even hun-
+dreds) of million dollars for a new consumer package good.  Advertising drives consideration.  If
+a brand is in DEMO consideration set, all else equal, the firm has reduced the odds of a sale from,
+say, 1-in-40 to 1-in-4.  For example, in deodorants Hauser (1978) showed that 80% of the uncer-
+tainty DEMO predicting consumer choice is resolved simply knowing each consumers’ consideration
+set.  DEMO fact is used by pretest market forecasting methods which rely upon consideration-set
+measurement to increase their forecasting accuracy (Ozer 1999; Urban and Hauser DEMO).
+Advertising gains recognition and to the extent that consumers use a recognition heuristic
+to form their consideration sets (e.g., Marewski, et al. 2010), the recognition heuristic is key to
+managerial strategy.  Of course, other decision heuristics matter as well.  The recent introduction
+of many DEMO or “organic” products represents a reaction to decision heuristics in which
+consumers eliminate brands that do not have these aspects.  (Following Tversky 1972, we use
+“aspect” to mean a level of a product feature.)
+DEMO return to managerial issues in a §7, but first we review DEMO both consideration sets
+and decision heuristics are rational for consumers.
+3. Consideration Sets are Rational
+In seminal observational research Payne (1976) identified that DEMO use consider-
+then-choose decision processes.  This phenomenon is firmly rooted in DEMO the experimental and
+prescriptive marketing literature (e.g., Bronnenberg and Vanhonacker 1996; Brown and Wildt
+1992; DeSarbo et al., 1996; Hauser and DEMO 1990; Jedidi, Kohli and DeSarbo, 1996; Meh-
+ta, Rajiv, and Srinivasan, 2003; Montgomery and Svenson 1976; Roberts and Lattin, DEMO;
+Paulssen and Bagozzi 2005; Shocker et al. 1991; Wu and Rangaswamy 2003).  While there are
+many potential explanations for the consideration-set phenomenon, the most-common explana-
+ 
+4 
+Consideration-Set Heuristics
+tion is based on arguments that it is rational for DEMO to form consideration sets.  Like
+many decision heuristics, consideration sets are consistent with a benefit-vs.-cost tradeoff.
+Suppose that the utility that a consumer DEMO from choosing product
+݆
+is
+ݑ෤௝ .  Prior to
+detailed evaluation DEMO utility is a random variable.  If evaluation were perfect and the DEMO
+considered
+݊
+products, the consumer would choose the maximum utility from DEMO set of
+݊
+prod-
+ucts.  Thus, prior to evaluation, the DEMO utility is the expected value of the maximum of the
+݊
+random variables,
+ܧሾmaxሼݑ෤
+ଵ
+,ݑ෤
+ଶ
+,…,ݑ෤
+௡ ሽሿ
+.  We expect this maximum value to be a concave
+function of
+݊
+DEMO shown in Figure 1.  For example, if each
+ݑ෤௝ is an independently normally distri-
+buted random variable with mean,
+ߤ
+, and DEMO,
+given by
+ߤ൅ ߪ݁௡
+where
+݁௡
+is a concave tabled function for
+ߪ ଶ, then this expected maximum value is ݊൒ 1
+(DEMO 1958, 131; Stigler
+1961, 215).  Even if the consumer cannot choose the best of the set with certainty, the expected
+maximum value is just
+ߤ൅ ߩܴߪ݁௡
+where
+ߩ
+and
+ܴ
+are the validity DEMO reliability of the consum-
+er’s ability to choose the maximum utility from a set (Gross 1972).  These formulae describe sit-
+uations when DEMO consumer chooses the
+݊
+products randomly from the set of available products.
+If the consideration-set decision heuristic is even moderately effective the consumer will DEMO
+effectively such that better products are more likely to be included in the consideration set. Even
+a moderately-effective heuristic reinforces the concavity in
+݊
+DEMO a consideration set.
+of the expected utility of choosing
+On the other hand, the costs of evaluation are likely to be convex (Figure DEMO) – although
+the benefit-vs.-cost arguments also apply if costs are linear DEMO
+݊
+.  We expect convexity because
+more comparisons likely mean more DEMO and more products must be compared to select the
+best of
+݊
+products.  (Recall that the decision within the consideration set is likely DEMO more exhaus-
+tive evaluation than the heuristic screening used to decide which products are in the considera-
+ 
+5 
+Consideration-Set Heuristics
+tion set.)
+When the benefit curve is concave and DEMO cost curve is convex then either they diverge
+from the beginning and the consumer considers no products or they cross and there is a DEMO at
+which the evaluation costs exceed the benefit from the chosen product.  The optimal size of the
+consideration set is the
+݊
+that maximizes the difference between the benefits and costs.  The op-
+timal consideration-set size is shown as
+݊כ
+in Figure 1.  While there is no guarantee that
+݊כ
+is
+less than the total number of products available, the empirical evidence is strong that it is less.
+4. Consideration-Set Heuristics are DEMO
+Experimental studies have long demonstrated that decision heuristics are common and
+represent reasonable benefit-vs.-cost tradeoffs (e.g., Bettman, Luce and Payne 1998; Brandstaet-
+DEMO et al. 2006; Dawkins 1998; Einhorn and Hogarth 1981; Gigerenzer DEMO Goldstein 1996; Gige-
+renzer, Hoffrage and Kleinbolting 1991; Gigerenzer and DEMO 2001; Gigerenzer and Todd
+1999; Hogarth and Karelaia 2005; Hutchinson DEMO Gigerenzer 2005; Johnson and Payne 1985;
+Lichtenstein and Slovic 2006; Martignon and Hoffrage 2002; Payne, Bettman, and Johnson
+1988, 1993; Simon 1955; Shugan 1980).  Recent comparative measures suggest that, for many
+consumers, decision heuristics predict as well or better than additive models and often better than
+models that are constrained to be truly compensatory (Bröder 2000; Dieckmann, Dippold and
+Dietrich 2009; Ding, et al. DEMO; Gilbride and Allenby 2004; Jedidi and Kohli 2005; Kohli and
+DEMO 2007; Marewski, et al. 2010; Yee, et al. 2007).  Expanding the arguments of §3, we argue
+that decision heuristics, when used, are rational for consideration-set decisions.
+In Figure 2 we repeat the benefit and cost curves for comprehensive evaluation within the
+consideration set.  See the lighter lines to the left of Figure 2.  Now suppose a consumer uses a
+decision heuristic to select the products for his or DEMO consideration set.  It is likely that the deci-
+ 
+6 
+Consideration-Set Heuristics
+sion heuristic compromises his or her ability to select the DEMO utility product from the consid-
+eration set, but empirical evidence suggest DEMO this compromise is slight. This is shown as the
+heavier benefit line to the right in Figure 2.
+On the other hand, some decision heuristics, such as the recognition heuristic or simple
+conjunctive heuristics (screen DEMO a few “must have” features) clearly cost less to implement.
+These DEMO can be cognitive, but they might also include search costs.  For example, to evaluate
+fully an automobile make-model consumers must search the Internet, talk to friends, and read
+reviews.  Visiting dealers for test drives is even more costly.  The heuristic costs are shown as a
+heavier line to the left in Figure 2.  Repeating the arguments of the previous section we see an
+illustrative case where the net benefit obtained DEMO the heuristic (heavy dotted line) is greater
+than the net benefit of comprehensive evaluation.  In Figure 2 the consumer is better off using an
+heuristic within the consideration set.
+Fortunately, the arguments in Figure 2 apply recursively to the consideration-set decision.
+We replace the horizontal axis with DEMO number of products screened (
+݊௦ ሻ
+and change the benefit
+DEMO to the benefit from screening
+݊௦
+products for consideration.  Because the DEMO with-
+in the consideration set itself maximizes the benefit-to-cost difference, the DEMO de-
+cision need only succeed at including a high-benefit product as one of
+݊
+eration set while screening
+݊௦
+products.
+products in the consid-
+DEMO, the comparison between a comprehensive evaluation and an heuristic evalua-
+tion DEMO depend upon the specific parameters of the product category.  For example, if there are
+relatively few products and each product is particularly easy DEMO evaluate, the cognitive and search
+costs for exhaustive evaluation will be DEMO and the consumer might evaluate all products.  On
+the other hand, if the number of products is large and each product is difficult DEMO evaluate exhaus-
+ 
+7 
+Consideration-Set Heuristics
+tively, then it is likely that a decision heuristic will provide the best benefit-to-cost tradeoff.  Fig-
+ure 2 illustrates situations where it is reasonable that the benefits and costs are such that a deci-
+DEMO heuristic is best for consumers.  This is consistent with the empirical DEMO: decision heu-
+ristics are common is all but very simple product DEMO  We now describe common decision
+heuristics.
+5. Common Consideration-Set Decision Heuristics
+DEMO heuristic decision rules have been studied in the marketing literature (e.g., Bettman
+and Park 1980a, 1980b; Chu and Spires 2003; Einhorn 1970, 1971; Fader and McAlister 1990;
+Fishburn 1974; Frederick (2002), Ganzach and Czaczkes 1995; Gilbride and Allenby 2004,
+2006; Hauser 1986; Hauser et al. 2010; Jedidi and Kohli 2005; Jedidi, DEMO and DeSarbo 1996;
+Johnson, Meyer and Ghose 1989; Leven and Levine 1996; Lohse and Johnson 1996; Lussier and
+Olshavsky 1986; Mela and Lehmann 1995; Moe 2006; Montgomery and Svenson 1976; Naka-
+mura 2002; Payne 1976; Payne, Bettman, and Johnson 1988; Punj 2001; Shao 2006; Svenson
+1979; Swait 2001; Tversky 1969, 1972; DEMO and Sattath 1987; Tversky and Simonson 1993;
+Vroomen, Franses and van Nierop 2004; Wright and Barbour 1977; Wu and Rangaswamy 2003;DEMO
+Yee et al. 2007).  We describe the heuristics that appear DEMO be the most common and are the most
+likely to affect managerial decisions in product development, advertising, and other communica-
+tions strategies.  We describe these heuristics using the terms common in the marketing literature
+pointing DEMO where these heuristics are similar to those described in the “adaptive toolbox” litera-
+ture.  The heuristics are conjunctive, disjunctive, subset conjunctive, lexicographic, elimination-
+by-aspects, and disjunctions of conjunctions.
+Managerially-Relevant Heuristic Decision Rules
+Conjunctive. A consumer using a conjunctive rule screens products with a set of “must
+DEMO
+8 
+Consideration-Set Heuristics
+have” or “must not have” rules.  For example, Hauser, et. al. (2010a) describe “Maria” whose
+consideration set consists of a DEMO coupe with a sunroof, not black, white or silver, stylish,DEMO
+well-handling, moderate fuel economy, and moderately priced.”  In a conjunctive DEMO, all of the
+must-have and all of the must-not-have rules must DEMO satisfied.  In the formal definition of a con-
+junctive rule all DEMO have minimum levels, but the minimum levels can be set so DEMO as to
+not eliminate any products.  These non-critical aspects are often DEMO mentioned in the rule.
+Disjunctive. A consumer using a disjunctive rule accepts products if they satisfy at least
+one “excitement” rule.  If a consumer says she will consider any hybrid sedan, then she is apply-
+ing a disjunctive rule.  Another example is a consumer who will consider any crossover vehicle.
+The rule is also disjunctive if the consumer will consider DEMO hybrids and all crossovers.
+Subset conjunctive. Because consumers evaluate considered products in greater detail
+after forming a consideration set, some screening rules allow greater initial variation than either
+conjunctive or disjunctive rules.  In a subset conjunctive rule, consumers consider any product
+that satisfies
+ܵ
+must-have or must-not-have rules.  For example, Maria stated nine conjunctive
+constraints but she might be DEMO to consider a car that satisfies seven of the nine.  An DEMO
+A5 does not have a sunroof and is not moderately priced, DEMO Maria might be willing to consider
+it.  Formally, the subset conjunctive model implies consideration if any set of
+ܵ
+the conjunctive rules.
+features DEMO
+Lexicographic. A consumer using a lexicographic rule first ranks the aspects.  DEMO ex-
+ample, Maria might rank the aspects as sporty coupe, sunroof, not black, white or silver, stylish,
+well-handling, moderate fuel DEMO, and then moderately priced.  She ranks first all sporty
+coupes, DEMO among the sporty coupes all those that have a sunroof, and DEMO among all sporty
+coupes with sunroofs those that are not black, DEMO or silver, and so on until all cars are ranked.
+ 
+DEMO
+Consideration-Set Heuristics
+Any car that is not a sporty coupe is ranked DEMO sporty coupes but, within non-sporty-non-
+coupes she uses the other lexicographic DEMO to rank the cars.  As defined, lexicographic rules
+rank all products, but we are only interested in the consideration decision.  That is, we are focus-
+ing on decision rules that distinguish between considered and DEMO products.  To make
+a consideration decision, the consumer must decide on a consideration-set-size cutoff,
+݊כ
+, using
+arguments such as those in DEMO 1 and 2.  However, given a consideration-set-size cutoff, a
+lexicographic DEMO is empirically indistinguishable from a conjunctive rule.
+Different data, say ranking DEMO the consideration set, might distinguish a lexicographic
+rule from a conjunctive DEMO  See, for example, Yee, et. al (2007).  However, when we observe
+consider vs. not consider, all orderings of distinguishing DEMO lead to the same consideration
+set. The high-ranked distinguishing aspects become equivalent to must-have aspects.
+Elimination by aspects (EBA).  A consumer using DEMO (deterministic) EBA rule selects
+an aspect and eliminates all products that do not have that aspect.  The consumer continues se-
+lecting aspects and eliminating products until the consideration set is formed.  For example, Ma-
+DEMO might first eliminate all non-sporty-coupes, then sporty coupes that do not DEMO a sunroof,
+then black, white, and silver sporty coupes with sunroofs, etc.  Tversky (1972) proposed EBA as
+a probabilistic rule DEMO consumers select aspects proportional to their measures, but most ap-
+plications DEMO a deterministic EBA with aspects in a fixed order (Johnson, Meyer and Ghose
+1989; Montgomery and Svenson 1976; Payne, Bettman, and DEMO 1988; and Thorngate
+1980).  EBA is primarily a choice rule; for consideration sets deterministic EBA is empirically
+indistinguishable from a conjunctive rule.  (EBA degenerates to a conjunctive consideration heu-
+ristic for the same DEMO that lexicographic degenerates to a conjunctive consideration heuris-
+tic.)
+ 
+10 
+Consideration-Set Heuristics
+Disjunctions of conjunctions (DOC). A DOC rule generalizes subset conjunctive rules
+to allow any combination of conjunctions.  For example, Maria DEMO consider any sporty coupe
+that has a sunroof and handles well and she might consider any sporty coupe with moderate fuel
+economy.  (Notice DEMO the first conjunction has three aspects and the second conjunction has two
+aspects; the conjunctions need not have exactly
+ܵ
+aspects.)  It is easy to show that a DOC rule
+generalizes conjunctive rules (a DOC rule with just one conjunction), disjunctive rules (a DOC
+rule with each conjunction having one aspect), and subset conjunctive rules.  As argued above
+DOC rules also generalize lexicographic and EBA rules.
+Compensatory. Compensatory rules DEMO usually classified as comprehensive evaluation
+rules rather than heuristics, but we DEMO them here for completeness.  In a compensatory rule
+some aspects (sporty coupe) can compensate for the lack of other aspects (moderate price)DEMO  Typ-
+ically, a compensatory rule is an additive rule in which the consumer assigns “partworths” to
+every aspect and sums the partworths to DEMO an overall utility for the product.  (Formally, the
+utility model DEMO include interactions, but interactions are not commonly modeled.) As defined,
+the (additive) partworth ratios must be such that good aspects can DEMO compensate for bad
+aspects (formal conditions given later in this section)DEMO  In a compensatory rule a consumer con-
+siders every product above DEMO threshold in utility.
+Relationship to Adaptive Toolbox Heuristics
+The adaptive toolbox hypothesis and fast and frugal decision rules apply to decisions and
+judgments in DEMO  For example, prototypical examples include judging the size of German
+cities or deciding which candidate for whom to vote (Gigerenzer and Goldstein 1996, Marewski,
+et al. 2010).  We expect a relationship between DEMO adaptive toolbox heuristics and consideration-
+set heuristics.  (After all, consideration-set DEMO are still decisions.) For example, the recog-
+ 
+11 
+Consideration-Set Heuristics
+nition heuristic is disjunctive rule in which the consumer considers DEMO products which he or
+she recognizes.  There are many parallels.  Early applications of simulated stores for forecasting
+new product sales used aided or DEMO awareness to estimate consideration (Silk and Urban
+1978, Equations 22-23).  Gilbride and Allenby (2004, 401) report that “consumers screen alter-
+DEMO using attributes that are well known, as opposed to the new DEMO novel.”
+The take-the-best (TTB) heuristic ranks cues by their validities in discriminating among
+alternatives (Gigerenzer and Goldstein 1996).  As Martignon (2001) argues, TTB is basically a
+lexicographic rule and, hence, for DEMO sets, TTB is a DOC rule.  The “minimalist” al-
+gorithm is a form of EBA with equal aspect measures and, hence, in DEMO more-deterministic form is
+also a DOC rule.  There are many other DEMO  There is also strong evidence that consumers
+choose different consideration-set heuristics DEMO upon context (e.g., Payne, Bettman, and
+Johnson 1993).
+Cognitive Simplicity and Ecological Regularity
+DOC rules generalize other proposed heuristics, but they are, in a sense, too general.  If
+we seek to infer a DOC rule based on an observed consideration set, many DOC rules are consis-
+tent with the observed consideration.  One such DOC rule is the trivial rule in which each of
+݊
+conjunctions matches on of DEMO
+݊
+considered products.  To make DOC rules more relevant and to
+DEMO DOC rules consistent with the research cited in §3 and §4, DEMO impose cognitive
+simplicity.  For example, Hauser, et al. (2010b) DEMO each conjunction to have no more than
+ܵ
+aspects or no more than
+ܲ
+conjunctions.  These simpler DOC(
+ܵ, ܲ
+) rules DEMO the spirit of a
+fast-and-frugal heuristic that balances benefit with cognitive (DEMO search) costs.
+Chase, Hertwig and Gigerenzer (1998) argue further that simple rules have evolved be-
+cause they work well in environments in DEMO consumers make decisions.  Such rules “capital-
+ 
+12 
+Consideration-Set Heuristics
+ize on environmental regularities to make smart inferences (p. 209).”  By extension, when we try
+to identify heuristics to explain DEMO consideration sets, we should give more weight to heu-
+ristics that DEMO common among consumers.
+Curse of Dimensionality in Aspects
+In subsequent sections we review recent advances in the ability of researchers to identify
+decision heuristics DEMO in vivo consideration-set decisions.  It is a paradox that the identification
+DEMO a decision heuristic from observed data is substantially more difficult than established me-
+thods to identify additive decision rules.  The challenge arises because decision heuristics are
+defined on a discrete space of potential rules.  While additive rules are defined on a continuous
+space – the values of the
+DEMO
+partworths, the best-fit optimization problem requires only that we
+identify the DEMO of
+ܯ
+(or fewer) partworth values where
+ܯ
+is the number of aspects.  Realistic
+problems can have as many as
+ܯൌ 53
+aspects as in the Ding, et al. (2010) automotive applica-
+tion.  DEMO such large
+ܯ
+’s present an empirical challenge, advanced hierarchical Bayes DEMO
+make it feasible to infer the
+ܯ
+or fewer parameters per consumer needed for additive rules.
+On the other hand, the search for the best-fit heuristic requires that we solve a combina-
+torial optimization problem.  For example, there are
+ܯ!
+lexicographic rules – on the order of
+10଺ଽ
+potential rules for
+ܯൌ 53
+.  To choose the best-fitting, most-general DEMO model, we
+would have to search over all feasible combinations of
+DEMO
+conjunctions (about 9 quadrillion
+rules).  Fortunately, when we impose DEMO simplicity we reduce greatly the number of po-
+tential decision rules making the combinatorial search feasible.  Cognitive simplicity becomes a
+form of complexity control, a method in machine learning that imposes constraints to prevent
+best-fit optimizations from exploiting unobserved random error (Cucker and Smale 2002; Evge-
+niou, Boussios and Zacharia 2005; Hastie, Tibshirani and Friedman 2003; Langley 1996; Vapnik
+ 
+13 
+Consideration-Set Heuristics
+1998).  Ecological regularity further restricts our search for decision rules and has as an analogy
+shrinkage to population means as used DEMO hierarchical models in Bayesian statistics (e.g., Rossi
+and Allenby 2003).
+Additive and Compensatory are not Equivalent
+A final challenge in identifying decision DEMO from observed consideration-set deci-
+sions is the generality of the additive model.  As Bröder (2000), Jedidi and Kohli (2005), Kohli
+and Jedidi (2007), Olshavsky and Acito (1980), and Yee, et al. (2007) illustrate, an additive
+model can represent many decision heuristics.   For example, with
+ܯ
+aspects, if the partworths
+have the DEMO,
+2ெିଵ,2ெିଶ,…,2,1
+, then the additive model is indistinguishable empirically
+from a lexicographic model.  Similarly, if
+ܵ
+partworths have DEMO value of
+ߚ
+and the remaining
+partworths a value of
+0
+, and if the utility cutoff is
+ܵߚ
+, then the model will DEMO indistinguishable
+from a conjunctive model.
+Bröder (2000) exploits this equivalency by classifying respondents as either lexicograph-
+ic or compensatory depending upon the estimated DEMO of the partworths.  (This method works
+well when
+ܯ
+is small, but is extremely sensitive to measurement error when
+ܯ
+is large as in the
+automotive example which requires ratios of
+10଺ଽ
+to
+al. (2007) generalize Bröder’s analysis by defining a
+ݍ1
+.) To address this DEMO, Yee, et
+-compensatory model in which no impor-
+tance value is more than
+ݍ
+times as large as any other importance value.  (DEMO importance value is
+the difference between the largest and smallest partworth for a feature.)  When this constraint is
+imposed on the additive benchmark, we can compare the predictive ability of an heuristic to a
+compensatory DEMO  Otherwise, comparisons are indeterminate.  If an additive model does as
+DEMO as an heuristic, the consumer might still be using an heuristic.
+DEMO
+14 
+Consideration-Set Heuristics
+6. Recent Developments in Identifying Consideration-Set Heuristics
+Marketing scientists have DEMO to the managerial importance of consideration-set heu-
+ristics by developing models and measurement methods to identify which heuristics consumers
+use to screen products for DEMO sets.  These approaches fall into three basic categories:
+•
+consideration-set DEMO as latent; identify consider-then-choose processes by observ-
+•
+•
+ing final DEMO
+consideration-set decisions observed; identify heuristics as those that best describe ob-
+DEMO consideration-set decisions
+ask consumers to describe their heuristics (with incentives to DEMO so accurately).
+We review each in turn while reporting empirical comparisons and predictive success.  In
+§7 we return to managerial applications.
+Consideration-Set Heuristics as Latent
+When the number of aspects is small-to-moderate and the decision DEMO are assumed to
+be relatively simple (e.g., conjunctive), the number of parameters that must be estimated to iden-
+tify consideration-set heuristics is DEMO  In these cases, researchers can model consideration
+as a latent, DEMO intermediate stage in the consider-then-choose decision and estimate the
+parameters that best describe observed choices.  For example, Gilbride and Allenby (2004) as-
+DEMO either conjunctive, disjunctive, or linear screening rules for the consideration stage and ad-
+ditive decision rules for choice from the consideration set.  They derive the data likelihood for
+their model and infer the best description DEMO the latent rules.  With their streamlined model they
+find that 92% DEMO their respondents are likely to have used a conjunctive or disjunctive screening
+rule for consideration-set decisions.  See also Gensch (1987), Gensch and DEMO (1995a, 1995b),
+Gilbride and Allenby (2006), and van Nierop, et al. (2010).
+ 
+15 
+Consideration-Set Heuristics
+Choice-set explosion is another common latent method when the number DEMO products,
+ܰ
+,
+is small.  In choice-set explosion, researchers DEMO that each of the
+2ே
+choice sets is possible
+with probabilities given by the screening rules.  For example, some methods assign a probability
+DEMO each aspect to represent the likelihood that it is used in a conjunctive rule.  These aspect prob-
+abilities imply data likelihoods for each choice set.  Researchers assume further that consumers
+choose within the consideration set based on an additive model.  Together these assumptions
+imply a data likelihood from which both the conjunctive probabilities (consideration decision)
+and the partworths (DEMO within the consideration set) are inferred.  See Andrews and Srini-
+vasan (1995), Chiang, Chib and Narasimhan (1999), Erdem and Swait (2004), Punj and Staelin
+1983, and Swait and Ben-Akiva (1987).  Choice-set explosion works best in product categories
+where there are a few dominant brands, but quickly becomes infeasible as
+ܰ
+increases.  Some
+DEMO methods relax this choice-set curse of dimensionality by asking consumers to self state
+the consideration-set probabilities (Swait 2001).
+Infer Heuristics from Observed Consideration Sets
+For over forty years researchers have asked consumers to state their DEMO sets.
+Measures exhibit high reliability and validity and forecast well (Brown DEMO Wildt 1992; Hauser
+1978; Silk and Urban 1978; Urban and DEMO 1983).  With the advent of web-based interviewing,
+new formats DEMO been developed and tested (Ding, et al. 2010; Gaskin, et al. 2007; Hauser, et
+al. 2010b;Yee, et al. 2007.)  The “bullpen” format is particularly realistic.  The computer screen
+is divided into three areas and product profiles are displayed as icons in a “bullpen” DEMO the left.
+When the consumer rolls a pointing device over an icon, the product and its features are dis-
+played in a middle of the screen.  The consumer states whether he or she will consider, DEMO con-
+sider, or replace the profile.  Considered profiles are displayed to the right of the screen and the
+ 
+16 
+Consideration-Set Heuristics
+consumer can toggle between considered or not-considered profiles and, at any time, move a pro-
+file among the considered, not-considered, or to-be-evaluated sets.  See Figure 3 for two exam-
+ples.  After consumers DEMO a consideration task, we have an observation as to whether or
+DEMO each product was considered (and a list of aspects describing each DEMO).  From these data
+we seek to infer the decision rule DEMO classifies some products as considered and the remainder
+as not considered.
+Greedoid methods. When a consumer use a lexicographic heuristic for the considera-
+tion DEMO, a forward-induction “greedoid” dynamic program can infer an aspect order that DEMO
+consistent with the most pairwise comparisons (Dieckmann, Dippold and Dietrich 2009; Ding, et
+al. 2010; Gaskin, et al. 2007; Kohli and Jedidi 2007; Yee, et. al 2007).  The algorithm requires
+2ெ
+steps (rather than an exhaustive search of
+ܯ!
+rules) and is DEMO for problems up to about
+20 aspects.  Results have varied, but all researchers report that many consumers are fit better
+with a lexicographic DEMO than with an additive model.  In comparison with a
+ݍ
+-compensatory
+DEMO, either more consumers are fit better with a lexicographic model (Yee, et al.) or a lexico-
+graphic model fits better on average (Ding, et al.; Gaskin, et al.).
+Bayesian inference.  The DEMO, conjunctive, and subset conjunctive models each
+imply a data likelihood for observed consideration.  See, for example, Jedidi and Kohli (2005, p.
+485) for the subset conjunctive model.  To estimate disjunctive or conjunctive DEMO research-
+ers either constrain the Jedidi-Kohli likelihood or modify the Gilbride-Allenby (DEMO) likelihood
+to focus on the consideration-set decision.  Hauser, et al (2010b) provide examples and compari-
+sons for a product category described by 16 binary aspects.  The advantage of Bayesian methods
+over traditional maximum-likelihood methods is that the data likelihood can be specified as a
+hierarchical model DEMO which population information is used to shrink consumer-level parameters
+ 
+17 
+Consideration-Set Heuristics
+to the population means (implicitly implementing a form of ecological regularity).  Although
+Bayesian methods are the most common, likelihood or DEMO methods are also feasible (e.g.
+Jedidi and Kohli 2005).
+Most DEMO of Bayesian (and related) methods suggest that consideration-set heu-
+ristics predict comparably to additive models and better than
+ݍ
+-compensatory models.  In com-
+paring heuristics, each inferred by Bayesian methods, results have been mixed.  For example, in
+an application to Handheld Global Positioning Systems (GPSs), the best-predicting heuristic
+among conjunctive, disjunctive, and subset conjunctive heuristics depends upon the criterion be-
+ing used to evaluate predictions (Hauser, et DEMO 2010b).  The conjunctive heuristic predicted best
+on a hit-rate criterion DEMO the subset-conjunctive heuristic predicted best on an information crite-
+rion.
+Bayesian inference works best when the number of aspects is moderate (
+ܯ൑ 20
+).  Heu-
+ristics so estimated predict as well as additive models (Jedidi and Kohli) and sometimes better
+than
+ݍ
+-compensatory models (Hauser, et al.).  To the best of our knowledge, Bayesian methods
+DEMO not yet feasible for DOC(
+ܵ, ܲሻ
+models with
+ܵ, ܲ ൐ 1
+.
+Machine learning.  Machine learning is particularly suited to the pattern-matching task
+that is necessary to select the best-fitting heuristic.  We are aware of three methods that have
+been used: logical analysis of data, mathematical programming, and decision trees (Boros, et. al.
+1997; 2000; Breiman, et. al. 1984; Currim, Meyer and Le 1988; Evgeniou, Pontil and Toubia
+2007
+;
+Hastie, Tisbshirani, and Friedman DEMO). The basic ideas of machine learning involve an
+optimization problem (DEMO search over rules to find the best-fit) and a set of DEMO to impose
+cognitive simplicity and ecological regularity.
+ 
+18 
+Consideration-Set Heuristics
+For example, logical analysis of data seeks to distinguish “positive” events (consider)
+from “negative” events (not consider) subject to enforcing cognitive simplicity by limiting the
+search to at most
+terns of length
+DEMO ܵܲ
+patterns of size at most
+ܵ
+.  A “bottom-up” approach DEMO minimal pat-
+that match some considered profiles.  If the patterns are DEMO contained in a
+non-considered profile, they are retained.  The algorithm recursively adds aspects until it gene-
+rates positive patterns. Next a greedy criterion DEMO the
+ܲ
+positive patterns that fit the data best.
+When more than one set of patterns fit the data best, logical analysis of data breaks ties by choos-
+ing the shortest pattern (cognitive simplicity) and, if patterns are still tied, by choosing patterns
+that occur most frequently in the observed population (ecological regularity).   The net result is a
+cognitively-simple, ecological-regular, best-fitting DOC(
+ܵ, ܲ
+) heuristic.  DEMO constrained,
+logical analysis of data also estimates disjunctive, conjunctive, and subset conjunctive heuristics.
+For conjunctive, disjunctive, and subset conjunctive heuristics, predictive abilities of
+machine-learning methods are comparable to Bayesian inference.  Both methods predict well;
+the comparison between machine learning and Bayesian inference depends upon DEMO heuristic
+and the product category.  The one key exception is DOC(DEMO
+ܵ, ܲ
+) heuristics which, to date, can on-
+ly DEMO estimated with machine-learning methods.  In the GPS category, Hauser, et DEMO (2010b) re-
+port that DOC(
+ܵ, ܲ
+) heuristics DEMO substantially better than conjunctive, disjunctive, and sub-
+set conjunctive heuristics.  DEMO, this best predictive ability is driven by the approximate-
+ly 7% DEMO the respondents who use more than one conjunction in their heuristic consideration-set
+screening rules.  To the best of our knowledge, this is the DEMO test of DOC(
+date.
+ܵ, ܲ
+) heuristics to
+19 
+DEMO
+Consideration-Set Heuristics
+Ask Consumers to Describe their Heuristics
+Asking consumers to describe DEMO decision rules has a long history in marketing with
+applications beginning in the 1970s and earlier.  Such methods are published under names such
+as self-explication, direct elicitation, and composition.  Reviews include Fishbein and Ajzen
+(DEMO), Green (1984), Sawtooth (1996), Hoepfl and Huber (DEMO), and Wilkie and Pessemier
+(1973).  The accuracy of asking consumers to describe additive rules has varied.  Relative com-
+parisons to inferred additive rules depend upon the product category and upon the specific me-
+DEMO being compared (e.g., Akaah and Korgaonkar 1983; Bateson, Reibstein and Boulding
+1987; Green 1984; Green and Helsen 1989; Hauser and Wisniewski 1982; Huber, et al. 1993;
+Leigh, MacKay and Summers 1984, Moore and Semenik 1988; Srinivasan and Park 1997).
+Until recently, attempts to ask consumers to describe screening heuristics have met with
+less DEMO because respondents often subsequently choose profiles which have aspects that they
+have previously said are “unacceptable” (Green, Krieger and Banal 1988; Klein 1986; Srinivasan
+and Wyner 1988; Sawtooth 1996).  Two recent developments have brought these direct-
+elicitation methods back to the fore: incentive alignment and introspective learning.
+Incentive alignment.  Incentive alignment motivates consumers to think hard and accu-
+rately.  The consumer must believe that it is in his or her best interests to answer accurately, that
+there is no obvious way to “game” the system, and that the incentives are sufficient that the re-
+wards to thinking hard exceed the costs of thinking hard.  Incentive aligned measures are now
+feasible, common, and provide data that is DEMO to non-incentive-aligned data (Ding 2007;
+Ding, Grewal and Liechty 2005; Ding, Park and Bradlow 2009; Park, Ding and Rao 2008; Prelec
+2004; Toubia, Hauser and Garcia 2007; Toubia, et al. DEMO; Toubia, et al. 2004).  Researchers
+commonly reward randomly chosen DEMO with a product from the category about which
+consumers are asked to state their decision rules.  Specifically, the researcher maintains a secret
+ 
+DEMO
+Consideration-Set Heuristics
+list of available products that is made public after the DEMO  The consumer receives a product
+from the secret list and the DEMO product is selected by the decision rules that the consumer
+states.  DEMO measure consideration-set heuristics, incentive alignment is feasible, but requires fi-
+nesse in carefully-worded instructions.  Finesse is required because the consumer receives only
+one product from the secret list as a prize (Ding, et al. DEMO, Hauser, et al. 2010b, Kugelberg
+2004).  For expensive durables incentives are aligned with prize indemnity insurance: research-
+ers buy (publicly DEMO) insurance against the likelihood that a respondent wins a substantial
+prize DEMO as a $40,000 automobile.
+Introspection.  Stating decision heuristics is difficult.  Typically consumers are asked to
+state heuristics will little training or warm-up.  Consumers are then faced with a real decision,
+whether it be DEMO or choice, and they find that some products are attractive even DEMO
+they have aspects that the consumer had said were unacceptable.  The DEMO is simple.  Re-
+search suggests that consumers can describe their decision DEMO much better after they make
+a substantial number of incentive-aligned decisions.  DEMO example, in Ding, et al. (2010), the in-
+formation DEMO by self-stated decision heuristics, as measured by Kullback-Leibler diver-
+gence (1951) on decisions made one week later, almost doubled if consumers stated DEMO deci-
+sion rules after making consideration-set decisions rather than before making consideration-set
+decisions.  Such introspection learning is well-established in the adaptive-toolbox literature.  See
+DEMO discussions in Betsch, et al. (2001), Bröder and Newell (DEMO), Bröder and Schiffer
+(2006), Garcia-Retamero and Rieskamp (2009), Hensen and Helgeson (1996, 2001), Newell, et
+al. (2004), and Rakow, et al. (2005), among others.
+Structured versus unstructured methods.  Casemap is perhaps the best-known me-
+thod to elicit conjunctive decision heuristics (Srinivasan 1988; Srinivasan and Wyner 1988).  In
+ 
+21 
+Consideration-Set Heuristics
+Casemap, consumers are presented with each aspect of a product and asked whether or not that
+aspect is unacceptable.  In other structured methods consumers are asked to provide a list of rules
+that an DEMO would follow if that agent were to make a consideration-set decision for the con-
+sumer.  The task is usually preceded by detailed examples of rules that consumers might use.
+Structured methods have the advantage that they DEMO either coded automatically as in Casemap,
+or are relatively easy to code by trained coders.
+In contrast unstructured methods allow the consumer more DEMO in stating decision
+rules.  For example, one unstructured methods asks the consumer to write an e-mail to an agent
+who will select a DEMO for the consumer.  Instructions are purposefully brief so that the con-
+DEMO can express him- or herself in his or her own words.  DEMO coders then parse the
+statements to identify conjunctive, disjunctive, or compensatory statements.  Ding, et al. (2010)
+provide the following example:
+Dear friend, I want to buy a mobile phone recently …. The following are some require-
+ment of my preferences. Firstly, my budget is about $2000, the price should not more
+than it. The brand of mobile phone is better Nokia, Sony-Ericsson, Motorola, because I
+don't like much about Lenovo. I don't like any mobile phone in DEMO color. Also, the mo-
+bile phone should be large in screen DEMO, but the thickness is not very important for me.
+Also, the camera resolution is not important too, because i don't always take photo, but it
+should be at least 1.0Mp. Furthermore, I prefer DEMO and rotational phone design. It is
+hoped that you can help me to choose a mobile phone suitable for me. [0.5 Mp, pink, DEMO
+small screen were coded as conjunctive (must not have), slide DEMO rotational, and Lenovo
+were coded as compensatory.  Other statements were judged sufficiently ambiguous and
+not coded.]
+Unstructured methods are relatively nascent, but appear to overcome the tendency of res-
+pondents to state too many unacceptable DEMO  When coupled with incentive alignment and
+introspection, unstructured methods predict significantly better than structured methods and as
+well as (mobile phones) or DEMO than (automobiles) Bayesian inference and machine-learning
+ 
+22 
+Consideration-Set Heuristics
+methods.  Unstructured methods are particularly suitable for product categories with large num-
+bers of aspects
+ܯب 20
+.
+Summary of Recent Developments DEMO Identifying Consideration-Set Heuristics
+Managers in product development and marketing have begun to realize the importance of
+understanding heuristic consideration-set decision rules. To serve those DEMO, researchers
+have developed and tested many methods to identify and measure DEMO heuristics.
+When only choice data are available, latent methods are the DEMO feasible approaches, but they
+are limited to either small numbers of DEMO or to categories with small numbers of brands.
+When the number of aspects is larger, but still moderate (
+ܯ൑ 20
+), greedoid methods, Bayesian
+inference, and machine-learning can each infer decision rules from DEMO consideration-set
+decisions.  Empirical experience suggests that these methods identify many consumers DEMO using
+heuristic decision rules and that heuristic models often predict well.  DEMO date, the best we can say
+is that the best method DEMO upon the product category, the decision heuristics being mod-
+eled, and researchers’ familiarity with the methods.  (Future research might enable us to DEMO
+best methods with greater reliability.) For product categories with large numbers DEMO aspects
+(
+ܯب 20
+), such as automobiles, it is DEMO feasible and accurate to ask consumers to state their
+heuristics directly.  DEMO product categories with moderate numbers of aspects, the choice of direct
+DEMO vs. inferential methods depends upon the researcher.
+We note one final development.  Very recently methods have begun to emerge in which
+consideration-set questions are chosen adaptively (Dzyabura and Hauser 2010; Sawtooth 2008).
+Adaptive questions DEMO the information obtained from each question to the respondent.
+ 
+These methods are promising and should relax the aspect limits on inferential methods.  For ex-
+ample, Dzyabura and Hauser (2010) estimate DOC rules in a category with
+ܯ ൌ 53
+aspects.
+23 
+Consideration-Set Heuristics
+7.  Example Managerial Applications
+Models of additive preferences, known DEMO conjoint analyses, are the most-widely used
+quantitative marketing research methods, second overall only to qualitative discussions with
+groups of consumers (focus groups).  Conjoint analyses provide three key inputs to managerial
+decisions.  First, estimated partworths indicate which aspects are most important to which seg-
+ments of DEMO  Product development teams use partworth values to select features for new
+DEMO revised products and marketing managers use partworth values to select the features to com-
+municate to consumers through advertising, sales force messages, and DEMO marketing tactics.
+Second, by comparing the relative partworths of product features (aspects) to the relative part-
+worths of price, managers calculate the DEMO to pay for features and for the product as a
+whole.  DEMO estimates of willingness to pay help managers to set prices for products (as bun-
+dles of features) and to set incremental prices for DEMO (say a sunroof on an automobile).
+Third, a sample of partworths for a representative set of consumers enables managers to simulate
+how DEMO market will respond to price changes, feature changes, new product launches, competitive
+entry, and competitive retaliation.
+Models of heuristic consideration-set decision rules DEMO only now being applied more
+broadly to provide similar managerial support. These models often modify decisions.  Conjunc-
+tive (must-have or must-not-have) rules tell managers how to select or communicate product fea-
+tures to maximize the DEMO that consumers will consider a firm’s products.  For example,
+Yee, et al. (2007) find that roughly 50% of the consumers in DEMO rejected a smart phone that
+was priced in the range of $499; 32% required a flip smart phone and 29% required a small smart
+phone.
+A sample of heuristic rules from a representative set of consumers DEMO managers to
+simulate feature changes, new product launches, competitive entry, DEMO competitive retaliation.
+24 
+ 
+Consideration-Set Heuristics
+For example, Ding, et al. (2010) simulate how DEMO Hong Kong consumers would respond to
+new mobile telephones. They project that “if Lenovo were considering launching a $HK2500,
+pink, small-screen, thick, rotational phone with a 0.5 Mp camera resolution, the majority of
+young consumers (67.8%) would not even consider it.  On the other hand, almost everyone (all
+but 7.7%) would consider a Nokia, $HK2000, silver, large-screen, slim, slide phone with 3.0 Mp
+camera resolution.” If price is included in the heuristic rules (as it often is), heuristic-based simu-
+lators estimate the numbers of consumers who will screen out DEMO product at a given price point or
+estimate the number of consumers who will consider a product because it has an attractive price.
+In DEMO cases, heuristic-rule summaries and simulators provide information that com-
+plements additive-partworth DEMO  However, there are instances where managerial implica-
+tions are different.  DEMO example, Gilbride and Allenby (2004, 400) report that, for DEMO, price
+and body style play an important role in the consideration-set DEMO, but not in the final choice
+from among considered products.  Jedidi and Kohli (2005, 491) provide examples in the market
+for personal computers where, because price is used as a screening heuristic, market DEMO pre-
+dictions vary by as much as a factor of two (DEMO vs. 36%) between simulators.  They obtain
+quite different predictions with a subset-conjunctive-rule simulator versus an additive-rule simu-
+lator.
+Hauser, et al (2010b) provide two examples.  One of the GPS brands, Magellan, has, DEMO
+average, slightly higher brand partworths, but 12% of the consumers screen on brand and 82% of
+those consumers must have the Garmin brand.  As a result, DOC(
+ܵ, ܲ
+)-based analysis predicts
+that Garmin is substantially less sensitive to price changes than would be predicted DEMO an addi-
+tive-partworth analysis.  In a second example, “additive rules predict that an ‘extra bright’ dis-
+play is the highest-valued feature improvement yielding DEMO 11% increase for the $50 price.
+ 
+25 
+Consideration-Set Heuristics
+However, DOC(
+ܵ, ܲ
+) rules predict a DEMO smaller improvement (2%) because many of the con-
+sumers who screen on ‘extra bright’ also eliminate GPSs with the higher price.”
+Finally, Urban, et al. (2010) demonstrate how to cluster conjunctive rules to identify
+segments of automotive consumers who respond differently to changes in vehicle availability.
+DEMO identify four segments of automotive consumers who vary on selectivity and focus.  One
+type of consumer is very selective and uses tight screening rules considering a relatively few
+brands, body types, fuel economy levels, engines, and price ranges.  Another type is not very se-
+lective.  The third and fourth types exhibit moderate selectivity overall, but limit their considera-
+tion sets by either brand or body type.  Each segment is divided further based on the specific as-
+pects they use to form consideration DEMO  Together the twenty sub-segments identify attractive
+opportunities for new vehicle development.
+DEMO Discussion and Summary
+Research in the behavioral theories of decision making has led to insights about the deci-
+sion rules that consumers use when DEMO which products (and services) to purchase.  Evi-
+dence is strong DEMO consumers first limit product evaluations to consideration sets and often do
+so with heuristic decision rules.  Heuristics screen products efficiency and, when used, are ra-
+tional because they represent the best tradeoff between the benefit DEMO considering more prod-
+ucts and the cost of searching for and evaluating information on those products.  Because consid-
+er-then-choose heuristics describe consumer behavior, DEMO is not surprising that predicted out-
+comes (considered products or chosen DEMO) depend upon whether or not these heuristics are
+modeled accurately.  Not every managerial decision will change if heuristic decision-rule models
+rather than additive DEMO are used, but many will.  We’ve provided examples from the litera-
+ture and from our own experience.
+ 
+26 
+Consideration-Set Heuristics
+In response to managerial need, the past few years have led to the explosion of practical
+measurement and estimation methods to infer DEMO heuristics.  It is now feasible to
+develop accurate models based on DEMO observing consumers’ consideration sets or asking con-
+sumers (with aligned incentives DEMO introspection) to state their heuristic decision rules.  The
+models have survived a number of scientific tests and often predict as well or better DEMO tradi-
+tional additive or
+ݍ
+-compensatory models.  While not all consumers DEMO all categories are de-
+scribed best by consideration-set heuristics, the evidence DEMO compelling that many consumers are
+best described by these models.  We DEMO the performance of these models to improve with
+further application.  (For example, the leading supplier of software for “conjoint analysis” now
+incorporates the measurement of consideration-set heuristics in “adaptive choice-based conjoint
+analysis.”) We also expect that further application and further research will lead to a better un-
+DEMO of which models are best for which product categories and which managerial deci-
+sions.  Many research and application challenges lie ahead, but we DEMO optimistic that these chal-
+lenges will be met.
+ 
+27 
+Consideration-Set Heuristics
+References
+Akaah, Ishmael P. and Pradeep K. Korgaonkar (1983), “An Empirical Comparison of the Predictive Va-
+lidity of Self-explicated, Huber-hybrid, Traditional Conjoint, and Hybrid Conjoint Models,”
+Journal of Marketing Research, DEMO, (May), 187-197.
+Andrews, Rick L. and T. C. Srinivasan (1995), “Studying Consideration Effects in Empirical Choice
+Models Using Scanner Panel DEMO,” Journal of Marketing Research, 32, (February), 30-41.
+Bateson, John E. G., David Reibstein, and William Boulding (1987), “Conjoint Analysis Reliability and
+Validity: A Framework for Future Research,” Review of Marketing, Michael Houston, Ed., pp.
+451-481.
+Betsch, Tilmann, Babette Julia Brinkmann, Klaus Fiedler and Katja Breining (1999), “When Prior Know-
+DEMO Overrules New Evidence: Adaptive Use Of Decision Strategies And The Role DEMO Beha-
+vioral Routines,” Swiss Journal of Psychology, 58, 3, DEMO
+Bettman, James R. and L. W. Park (1980), “Effects of Prior Knowledge and Experience and Phase of the
+Choice Process on Consumer DEMO Processes: A Protocol Analysis,” Journal of Consumer
+Research, 7, DEMO
+------, Mary Frances Luce and John W. Payne (1998), “Constructive Consumer Choice Processes,” Jour-
+nal of Consumer Research, 25, (December), 187-217.
+Boros, Endre, Peter L. Hammer, Toshihide Ibaraki, and DEMO Kogan (1997), “Logical Analysis of
+Numerical Data,” Mathematical Programming, 79:163--190, August 1997
+------, ------, ------, ------, Eddy Mayoraz, and Ilya Muchnik (2000), “An Implementation of Logical Anal-
+ysis DEMO Data,” IEEE Transactions on Knowledge and Data Engineering, 12(2), 292-306.
+Brandstaetter, Eduard, Gerd Gigerenzer and Ralph Hertwig (2006), DEMO Priority Heuristic: Making
+Choices Without Trade-Offs,” Psychological Review, 113, DEMO
+Breiman, Leo, Jerome H. Friedman, Richard A. Olshen, and Charles J. Stone (1984), Classification and
+Regression Trees, (Belmont, CA: Wadsworth).
+Bröder, Arndt (2000), “Assessing the Empirical Validity of DEMO “Take the Best” Heuristic as a Model of
+Human Probabilistic Inference,” Journal of Experimental Psychology: Learning, Memory, and
+Cognition, 26, 5, 1332-1346.
+------ and Alexandra Eichler (2006), “The Use Of Recognition DEMO And Additional Cues In Infe-
+rences From Memory.” Acta Psychologica, 121, 275–284.
+------ and Ben R. Newell (2008), “Challenging Some Common Beliefs: Empirical Work Within the Adap-
+tive Toolbox Metaphor,” Judgment and Decision Making, 3, 3, (March), 205-214.
+------ and Stefanie Schiffer (2006), “Adaptive Flexibility and Maladaptive Routines in Selecting Fast and
+Frugal DEMO Strategies,” Journal of Experimental Psychology: Learning, Memory and Cogni-
+ 
+28 
+Consideration-Set Heuristics
+tion, 34, 4, 908-915.
+Bronnenberg, Bart J., and Wilfried R. Vanhonacker (1996), “Limited Choice Sets, Local Price Response,DEMO
+and Implied Measures of Price Competition,” Jour. of Marketing Research, DEMO (May), 163-173.
+Brown, Juanita J. and Albert R. Wildt (DEMO), “Consideration Set Measurement,” Journal of the Academy
+of Marketing Science, 20 (3), 235-263.
+Chase, Valerie M., Ralph Hertwig, and Gerd Gigerenzer (1998), “Visions of Rationality,” Trends in Cog-
+nitive Sciences, 2, 6 (June), 206-214.
+Chiang, Jeongwen, Siddhartha Chib and Chakravarthi Narasimhan (1999), “Markov Chain Monte Carlo
+and Models of Consideration Set and Parameter Heterogeneity,” Journal of Econometrics, 89,
+223-248.
+Chu, P.C. and Eric E. Spires (2003), “Perceptions of Accuracy DEMO Effort of Decision Strategies,” Orga-
+nizational Behavior and Human Decision Processes, 91, 203-14.
+Cucker, Felipe, and Steve Smale (2002), “On the Mathematical Foundations of Learning,” Bulletin of the
+American Mathematical Society, 39(1), 1-49.
+Currim, Imran S., Robert J. Meyer, and Nhan T. Le (1988), “Disaggregate Tree-Structured Modeling of
+Consumer Choice Data,” Journal of Marketing Research, 25(August), 253-265.
+Dawkins, Richard (1998), Unweaving the Rainbow: Science, Delusion, and the Appetite for Wonder,
+(Boston, MA: Houghton Mifflin Company).
+DeSarbo, Wayne DEMO, Donald R. Lehmann, Gregory Carpenter, and Indrajit Sinha (1996), “A Stochastic
+Multidimensional Unfolding Approach for Representing Phased Decision Outcomes,” Psychome-
+DEMO, 61(3), 485-508.
+Dieckmann, Anja, Katrin Dippold and Holger DEMO (2009), “Compensatory versus Noncompensatory
+Models for Predicting Consumer Preferences,” DEMO and Decision Making, 4, 3, (April),
+200-213.
+Ding, Min (2007), “An Incentive-Aligned Mechanism for Conjoint Analysis,” Journal of Marketing Re-
+search, 54, (May), 214-223.
+------, Rajdeep Grewal, and John Liechty (2005), “Incentive-Aligned Conjoint Analysis,” Journal of Mar-
+keting Research, 42, (February), 67–82.
+------,  John Hauser, DEMO Dong, Daria Dzyabura, Zhilin Yang, Chenting Su, and Steven Gaskin
+(2010), “Unstructured Direct Elicitation of Decision Rules,” forthcoming the Journal of Market-
+ing Research.
+------, Young-Hoon Park, and Eric T. Bradlow (2009) “Barter Markets for Conjoint Analysis” Manage-
+ment Science, 55 (6), 1003-1017.
+Dzyabura, Daria and John R. Hauser (2010), “Active DEMO for Consideration Heuristics,” (Cambridge,
+ 
+29 
+Consideration-Set Heuristics
+MA: MIT Sloan School of Management).
+Einhorn, Hillel DEMO (1970), “The Use of Nonlinear, Noncompensatory Models in Decision Making,” Psy-
+chological Bulletin, 73, 3, 221-230.
+------ (1971), DEMO of Non-linear, Non-compensatory Models as a Function of Task and Amount DEMO In-
+formation,” Organizational Behavior and Human Performance,6, 1-27.
+------ DEMO Robin M. Hogarth (1981), “Behavioral Decision Theory: Processes of Judgment and Choice,”
+Annual Review of Psychology, 32, 52-88.
+Erdem, Tülin and Joffre Swait (2004), “Brand Credibility, Brand Consideration, and Choice,” Journal of
+Consumer Research, 31 (June), 191-98.
+Evgeniou, Theodoros, Constantinos Boussios, and Giorgos Zacharia (2005), “Generalized Robust Con-
+joint Estimation,” Marketing Science, 24(3), 415-429.
+------, Massimiliano Pontil, and Olivier Toubia (2007), “A Convex Optimization Approach to Modeling
+Heterogeneity in Conjoint Estimation,” Marketing Science, 26, 6, (Nov.-Dec.), DEMO
+Fader, Peter S. and Leigh McAlister (1990), “An Elimination by Aspects Model of Consumer Response
+to Promotion Calibrated on UPC Scanner Data,DEMO J. of Marketing Research, 27 (August), 322-32.
+Fishbein, Martin DEMO Icek Ajzen (1975), Belief, Attitude, Intention, and Behavior, (Reading, MA: Addi-
+son-Wesley).
+Frederick, Shane (2002), “Automated DEMO Heuristics,” in Thomas Gilovich, Dale Griffin, and Daniel
+Kahneman, DEMO, Heuristics and Biases: The Psychology of Intuitive Judgment, (Cambridge, DEMO:
+Cambridge University Press, chapter 30, 548-558.
+Frosch, Caren A., C. Philip Beaman and Rachel McCloy (2007), “A Little Learning Is A Dangerous
+Thing: An Experimental Demonstration Of Recognition-Driven Inference,” The Quarterly Jour-
+nal of Experimental Psychology, 60, 1329–1336.
+Ganzach, Yoav and Benjamin Czaczkes (1995), “On Detecting Nonlinear Noncompensatory Judgment
+Strategies: Comparison of DEMO Regression Models,” Organizational Behavior and Human
+Decision Processes, 61 (February), 168-76.
+Garcia-Retamero, Rocio and Jörg Rieskamp (2009). “Do People DEMO Missing Information Adaptively
+When Making Inferences?,” Quarterly Journal of Experimental DEMO, 62, 10, 1991-2013.
+Gaskin, Steven, Theodoros Evgeniou, Daniel Bailiff, and John Hauser (2007), “Two-Stage Models: Iden-
+tifying Non-Compensatory Heuristics for the Consideration Set then Adaptive Polyhedral Me-
+thods Within the Consideration DEMO,” Proceedings of the Sawtooth Software Conference, Santa
+Rosa, CA, DEMO 17-19, 2007.
+Gensch, Dennis H. (1987), “A Two-stage Disaggregate DEMO Choice Model,” Marketing Science, 6
+(Summer), 223-231.
+ 
+30 
+Consideration-Set Heuristics
+------ and Ehsan S. Soofi (1995a), “Information-Theoretic Estimation of Individual Consideration Sets,”
+International Journal of Research in Marketing, 12 (DEMO), 25-38.
+------ and ------ (1995b), “An Information-Theoretic Two-Stage, Two-Decision Rule, Choice Model,” Eu-
+ropean Journal of Operational Research, 81, 271-80.
+Gigerenzer, Gerd and Daniel G. Goldstein (1996), “Reasoning the DEMO and Frugal Way: Models of
+Bounded Rationality,” Psychological Review, 103 (4), 650-669.
+------ Ulrich Hoffrage, and H. Kleinbölting (1991), “Probabilistic Mental Models: A Brunswikian Theory
+of Confidence,” Psychological Review, DEMO, 506-528.
+------ and Reinhard Selten, Editors (2001), Bounded Rationality: The Adaptive Toolbox, (Cambridge, MA:
+The MIT Press)
+------, Peter M. Todd, and the ABC Research Group (1999), Simple Heuristics That Make Us Smart, (Ox-
+ford, UK: Oxford University DEMO).
+Gilbride, Timothy and Greg M. Allenby (2004), “A Choice Model with Conjunctive, Disjunctive, and
+Compensatory Screening Rules,” Marketing Science, 23, 3 (Summer), 391-406.
+------ and ------ (2006), “Estimating Heterogeneous EBA and Economic Screening Rule Choice Models,”
+Marketing Science, 25 (September-October), 494-509.
+Goldstein, Daniel G., and Gerd Gigerenzer (1999), “The Recognition Heuristic: How Ignorance Makes
+Us Smart,” In G. DEMO, P. M. Todd, & the ABC Research Group, Simple Heuristics DEMO
+Make Us Smart,” (New York, NY: Oxford University Press)DEMO
+Green, Paul E., (1984), “Hybrid Models for Conjoint Analysis: An Expository Review,” Journal of Mar-
+keting Research, pp. 155-169.
+----- and Kristiaan Helsen (1989), “Cross-Validation Assessment of Alternatives to Individual-Level Con-
+joint Analysis: A Case Study,” Journal of Marketing Research, pp. DEMO
+-----, Abba M. Krieger, and Pradeep Bansal (1988), “Completely DEMO Levels in Conjoint Analy-
+sis: A Cautionary Note,” Journal of DEMO Research, 25, (Aug), 293-300.
+Gross, Irvin (1972), "The Creative Aspects of Advertising," Sloan Management Review, 14 (Fall), 83-
+109.
+Gumbel, E. J. (1958), Statistics of Extremes, (New York, NY: Columbia University Press).
+Hastie, Trevor, Robert DEMO, Jerome H. Friedman (2003), The Elements of Statistical Learning,
+(New York, NY: Springer Series in Statistics).
+Hauser, John DEMO (1978), "Testing the Accuracy, Usefulness and Significance of Probabilistic DEMO: An
+Information  Theoretic Approach,"  Operations Research, Vol. 26, DEMO 3, (May-June), 406-421.
+------ (1986), "Agendas and Consumer Choice," Journal of Marketing Research, 23 (August), 199-212.
+------, Songting Dong, and Min Ding (2010a), “Learning to Construct Decision DEMO,” (Cambride, MA: MIT
+ 
+31 
+Consideration-Set Heuristics
+Sloan School of Management, Cambridge, MA.)
+------, Olivier Toubia, Theodoros Evgeniou, Daria Dzyabura, and Rene Befurt (2010b), DEMO Simplicity
+and Consideration Sets,” Journal of Marketing Research, 47, (DEMO), 485-496.
+------, Glen L. Urban, and Guilherme Liberali (2010), “When to Morph,” (Cambridge, MA: MIT Sloan
+School of DEMO)
+------ and Birger Wernerfelt (1990), “An Evaluation Cost Model DEMO Consideration Sets,” Journal of Con-
+sumer Research, 16 (March), 393-408.
+------ and Kenneth J. Wisniewski (1982), "Dynamic Analysis of DEMO Response to Marketing  Strat-
+egies," Management Science, 28, 5, (May), 455-486.
+Hensen, David E. and James G. Helgeson (1996), “The Effects of Statistical Training on Choice Heuris-
+tics in Choice DEMO Uncertainty,” Journal of Behavioral Decision Making, 9, 41-57.
+_______ (DEMO), “Consumer Response to Decision Conflict from Negatively Correlated Attributes: Down
+DEMO Primrose Path of Up Against the Wall?,” Journal of Consumer DEMO, 10, 3, 159-169.
+Hoepfl, Robert T. and George P. Huber (1970), “A Study of Self-Explicated Utility Models,” Behavioral
+Science, DEMO, 408-414.
+Hogarth, Robin M. and Natalia Karelaia (2005), “Simple DEMO for Multiattribute Choice with Many
+Alternatives: When It Does and Does DEMO Pay to Face Trade-offs with Binary At-tributes,” Man-
+agement Science, DEMO, 12, (December), 1860-1872.
+Huber, Joel, Dick R. Wittink, John A. Fiedler, and Richard Miller (1993), “The Effectiveness of DEMO
+tive Preference Elicitation Procedures in Predicting Choice,” Journal of Marketing Research, pp.
+105-114.
+Hutchinson, John M. C. and Gerd Gigerenzer (2005), “Simple Heuristics And Rules Of Thumb: Where
+Psychologists And Behavioural Biologists Might Meet,” Behavioural Processes, 69, 97-124.
+Jedidi, Kamel and Rajeev Kohli (2005), “Probabilistic Subset-Conjunctive Models for Heterogeneous
+Consumers,” Journal of Marketing Research, 42 (4), 483-494.
+------, ------ and Wayne S. DeSarbo (1996), “Consideration Sets in Conjoint Analysis,” Journal of Market-
+ing Research, 33 (August), 364-372.
+Johnson, Eric J., Robert J. DEMO, and Sanjoy Ghose (1989), “When Choice Models Fail: Compensatory
+DEMO in Negatively Correlated Environments,” Journal of Marketing Research, 26, (DEMO),
+255-290.
+------ and John W. Payne (1985), “Effort and Accuracy in Choice,” Management Science, 31, 395-414.
+Klein, Noreen M. (1988), “Assessing Unacceptable Attribute Levels in Conjoint Analysis,” Advances in
+Consumer Research vol. XIV, pp. 154-158.
+Kohli, Rajiv and Kamel Jedidi (2007), “Representation and Inference of Lexicographic Preference Mod-
+ 
+32 
+Consideration-Set Heuristics
+els and Their Variants,” Marketing Science, 26 (May-June), 380-99.
+Kugelberg, Ellen (2004), “Information Scoring and Conjoint Analysis,” Department of Industrial Eco-
+nomics and Management, Royal Institute of Technology, DEMO, Sweden.
+Kullback, Solomon, and Leibler, Richard A. (1951), DEMO Information and Sufficiency,” Annals of Ma-
+thematical Statistics, 22, 79-86.
+Langley, Pat (1996), Elements of Machine Learning, (San Francisco, CA: Morgan Kaufmann).
+Leigh, Thomas W., David B. MacKay, DEMO John O. Summers (1984), “Reliability and Validity of Con-
+joint DEMO and Self-Explicated Weights: A Comparison,” Journal of Marketing Research, 21,
+4, (November), 456-462.
+Leven, Samuel J. and Daniel S. Levine (1996), “Multiattribute Decision Making in Context: A Dynamic
+Neural DEMO Methodology,” Cognitive Science, 20, 271-299.
+Liberali, Guilherme, Glen L. Urban, and John R. Hauser (2010), “ Does Providing Competitive DEMO
+to Your Own Customers Increase Sales?,” (Cambridge, MA: MIT Sloan School of Management).
+Lichtenstein, Sarah and Paul Slovic (2006), The Construction of Preference, Cambridge, UK: Cambridge
+University Press.
+Lohse, Gerald J. and Eric J. Johnson (1996), “A Comparison of Two Process Tracing Methods for Choice
+Tasks,” Organizational Behavior and Human Decision DEMO, 68 (October), 28-43.
+Lussier, Denis A. and Richard W. DEMO (1997), “Task Complexity and Contingent Processing in
+Brand Choice,” DEMO of Consumer Research, 6 (September), 154-65.
+Lynch, John G. DEMO Srull, Thomas K. (1982), “Memory And Attentional Factors In Consumer Choice:
+Concepts And Research Methods,” Journal of Consumer Research, 9, 1, (June), 18–36.
+Marewski, Julian N., Wolfgang Gaissmaier, DEMO J. Schooler, Daniel G. Goldstein, and Gerd Gigerenzer
+(2010), DEMO Recognition to Decisions: Extending and Testing Recognition-Based Models for
+Multi-Alternative Inference,DEMO forthcoming, Psychonomic Bulletin and Review (Theory & Review
+Section).
+Martignon, Laura (2001), “Comparing Fast and Frugal Heuristics and Optimal Models,DEMO in Gigerenzer,
+Gerd and Reinhard Selten, Editors (2001), Bounded Rationality: The Adaptive Toolbox, (Cam-
+bridge, MA: The MIT Press).
+------ and Ulrich Hoffrage (2002), “Fast, Frugal, and Fit: Simple Heuristics for Paired Comparisons,”
+Theory and Decision, 52, 29-71.
+Mehta, Nitin, Surendra Rajiv, and Kannan Srinivasan (2003), “Price DEMO and Consumer Search:
+A Structural Model of Consideration Set Formation,” Marketing Science, 22(1), 58-84.
+Mela, Carl F. and Donald DEMO Lehmann (1995), “Using Fuzzy Set Theoretic Techniques to Identify Prefe-
+DEMO Rules From Interactions in the Linear Model: An Empirical Study,” DEMO Sets and Sys-
+ 
+33 
+Consideration-Set Heuristics
+tems, 71, 165-181.
+Moe, Wendy W. (2006), DEMO Empirical Two-Stage Choice Model with Varying Decision Rules Applied
+to Internet Clickstream Data,” Journal of Marketing Research, 43 (November), 680-692.
+Montgomery, H. and O. Svenson (1976), “On Decision Rules and Information Processing Strategies for
+Choices among Multiattribute Alternatives,” Scandinavian Journal of Psychology, 17, 283-291.
+Moore, William L. and Richard J. Semenik (1988), “Measuring Preferences with Hybrid Conjoint Analy-
+sis: The Impact of a Different Number of Attributes in the Master Design,” Journal of Business
+Research, 16, 3, (May), 261-274.
+Nakamura, Yutaka (2002), “Lexicographic Quasilinear Utility,” Journal of Mathematical Economics, 37,
+157-178.
+Nedungadi, Prakash (1990), “Recall and Consumer Consideration Sets: Influencing Choice without Alter-
+ing Brand Evaluations,” Journal of Consumer Research, 17, (December), 263-276.
+Newell, Ben R., Tim Rakow, Nicola J. Weston and David R. Shanks (2004), “Search Strategies in Deci-
+sion-Making: The Success of DEMO,” Journal of Behavioral Decision Making, 17, 117-137.
+Olshavsky, Richard DEMO and Franklin Acito (1980), “An Information Processing Probe into Conjoint
+DEMO,” Decision Sciences, 11, (July), 451-470.
+Ozer, Muanmmer (DEMO), “A Survey of New Product Evaluation Models,” Journal of Product Innovation
+Management,  16, (January), 77–94.
+Park, Young-Hoon, Min DEMO and Vithala R. Rao (2008), “Eliciting Preference for Complex Products: A
+Web-Based Upgrading Method,” Journal of Marketing Research, 45 (October), 562-574.
+Paulssen, Marcel and Richard P. Bagozzi (2005), “A Self-Regulatory Model of Consideration Set Forma-
+tion,” Psychology & Marketing, 22 (DEMO), 785-812.
+Payne, John W. (1976), “Task Complexity and Contingent Processing in Decision Making: An Informa-
+tion Search,” Organizational Behavior and Human Performance, 16, 366-387.
+------, James R. Bettman, and Eric DEMO Johnson (1988), “Adaptive Strategy Selection in Decision Making,”
+Journal DEMO Experimental Psychology: Learning, Memory, and Cognition, 14, 534-552.
+------, ------, and ------ (1993), The Adaptive Decision Maker, (Cambridge, UK: Cambridge University
+Press).
+Prelec, Dražen (2004), “A Bayesian Truth Serum for Subjective Data,” Science, 306, (Oct. 15), 462-466.
+Punj, Brookes (2001), “Decision Constraints and Consideration-Set Formation in DEMO Durables,”
+Psychology & Marketing,18 (August), 843-863.
+Punj, Girish and Robert Moore (2009), “Information Search and Consideration Set Formation in a Web-
+based Store Environment,” Journal of Business Research, 62, DEMO
+Rakow, Tim, Ben R. Newell, Kathryn Fayers and Mette Hersby (2005), “Evaluating Three Criteria for
+ 
+34 
+Consideration-Set Heuristics
+Establishing Cue-Search Hierarchies in Inferential Judgment,” Journal Of Experimental DEMO
+ogy-Learning Memory And Cognition, 31, 5, 1088-1104.
+Roberts, John H., and James M. Lattin (1991), “Development and Testing of a DEMO of Consideration
+Set Composition,” Journal of Marketing Research, 28 (November), 429-440.
+Rossi, Peter E., Greg M. Allenby (2003), “Bayesian Statistics and Marketing,” Marketing Science, 22 (3),
+304-328.
+Sawtooth Software, Inc. (1996), “ACA System: Adaptive Conjoint Analysis,” ACA Manual, (Sequim,
+WA: Sawtooth Software, Inc.)
+------ (2004), “The CBC Hierarchical Bayes Technical Paper,” Sequim, WA: Sawtooth DEMO, Inc.
+------ (2008), “ACBC Technical Paper,” (Sequim WA; Sawtooth Software, Inc.)
+Shao, Jun (1993), “Linear Model Selection by Cross-Validation,” Journal of the American Statistical As-
+sociation, 88, DEMO, (June), 486-494.
+Shocker, Allan D., Moshe Ben-Akiva, Bruno DEMO, and Prakash Nedungadi (1991), “Consideration
+Set Influences on Consumer Decision-Making and Choice: Issues, Models, and Suggestions,”
+Marketing Letters, 2(DEMO), 181-197.
+Shugan, Steven (1980), “The Cost of Thinking,” Journal of Consumer Research, 27(2), 99-111.
+Silk, Alvin J. DEMO Glen L. Urban (1978), “Pre-test Market Evaluation of New Packaged DEMO: A Model
+and Measurement Methodology,” Journal of Marketing Research, 15 (May), 171-191.
+Simon, Herbert A. (1967), “Motivation and Emotional Controls of Cognition,” Psychological Review, 74,
+1, 29-39.
+Srinivasan, V. (1988), “A Conjunctive-Compensatory Approach to The Self-Explication of Multiattri-
+buted Preferences,” Decision Sciences, 295-305.
+------ and Chan Su Park (1997), “Surprising Robustness of the Self-Explicated Approach to Customer
+Preference Structure Measurement,” Journal of Marketing Research, 34, (May), 286-291.
+------ and Gordon A. Wyner (1988), “Casemap: Computer-Assisted Self-Explication of Multiattributed
+Preferences,” DEMO W. Henry, M. Menasco, and K. Takada, Eds, Handbook on New Product Devel-
+opment and Testing, (Lexington, MA: D. C. DEMO), 91-112.
+Stigler, George J. (1961), "The Economics of DEMO," J. of Political Economy, 69 (June), 213-225.
+Svenson, DEMO (1979), “Process Descriptions of Decision Making,” Organizational Behavior and DEMO
+Performance, 23, 86-112.
+Swait, Joffre (2001), “A Noncompensatory Choice Model Incorporating Cutoffs,” Transportation Re-
+search, 35, Part B, 903-928.
+------ and Moshe Ben-Akiva (1987). "Incorporating Random Constraints in Discrete DEMO of Choice
+Set Generation," Transportation Research, 21, Part B, DEMO
+ 
+35 
+Consideration-Set Heuristics
+Thorngate, W. (1980), “Efficient Decision Heuristics,” Behavioral DEMO, 25 (May), 219-225.
+Toubia, Olivier, Duncan I. Simester, DEMO R. Hauser, and Ely Dahan (2003), “Fast Polyhedral Adaptive
+Conjoint Estimation,” Marketing Science, 22 (3), 273-303.
+------, John R. Hauser and Rosanna Garcia (2007), “Probabilistic Polyhedral Methods for Adaptive Choice-
+Based Conjoint Analysis: Theory and Application,” Marketing Science, 26, 5, (September-October),
+596-610.
+------, John R. Hauser, and Duncan Simester (2004), “Polyhedral Methods for Adaptive Choice-based Con-
+joint Analysis,” Journal of Marketing Research, 41, 1, (February), 116-131.
+Tversky, Amos (1969), “Intransitivity of Preferences,” Psychological Review, 76, 31-48.
+------ (1972), “Elimination by Aspects: a Theory of Choice,” Psychological DEMO, 79 (4), 281-299.
+------ and Shmuel Sattath (1979), DEMO Trees,” Psychological Review, 86, 6, 542-573.
+------ and Itamar DEMO (1993), “Context-Dependent Preferences,” Management Science, 39 (Octo-
+ber), 1179-1189.
+Urban, Glen L., Jong Moon Kim, Erin MacDonald, John R. Hauser and Daria Dzyabura (2010),” Devel-
+oping Consideration Rules DEMO Durable Goods Markets.” INFORMS Marketing Science Confe-
+rence, Cologne, Germany, DEMO
+------ and John R. Hauser (1993), Design and Marketing of DEMO Products, Prentice-Hall, Second Edition.
+------ and Gerald M. Katz (1983), “Pre-Test Market Models: Validation and Managerial Implications,”
+Journal of Marketing DEMO, 20 (August 1983), 221-34.
+van Nierop, Erjen, Bart Bronnenberg, Richard Paap, Michel Wedel, and Philip Hans Franses (2010), DEMO
+trieving Unobserved Consideration Sets from Household Panel Data,” Journal of Marketing Re-
+search, 47, (February), 63-74.
+Vapnik, Vladimir (1998), Statistical Learning Theory, (New York, NY: John Wiley and Sons)DEMO
+Vroomen, Björn, Philip Hans Franses and Erjen van Nierop (2004), “Modeling Consideration Sets And
+Brand Choice Using Artificial Neural Networks,” European Journal of Operational Research,
+154, 206-217.
+Wilkie, William L. and DEMO A. Pessemier (1973), “Issues in Marketing’s Use of Multi-attribute Attitude
+DEMO,” Journal of Marketing Research, 10, (November), 428-441.
+Wright, Peter and Fredrick Barbour (1977), “Phased Decision Making Strategies: Sequels DEMO an Initial
+Screening,” TIMS Studies in the Management Sciences, 6, 91-109
+Wu, Jianan and Arvind Rangaswamy (2003), “A Fuzzy Set DEMO of Search and Consideration with an
+Application to an Online Market,” Marketing Science, 22 (Summer), 411-434.
+Yee, Michael, Ely Dahan, John R. Hauser, and James Orlin (2007), “Greedoid-Based Noncompensatory
+Inference,DEMO Marketing Science, 26 (July-August), 532-549.
+ 
+36 
+Consideration-Set Heuristics
+Figure 1
+Consideration Sets are Rational
+Benefit or Search  Costs
+Benefit from n products
+DEMO products
+Maximum net  benefit
+ 
+n*
+Number of products  evaluated
+Figure 2
+Decision Heuristics are Rational
+Benefit or Search  Costs
+Benefit from n products
+exhaustive Search
+Search cost for n products
+Exhaustive Search
+Maximum net benefit
+exhaustive Search
+Benefit from n DEMO
+heuristic  search
+Maximum  net  benefit
+heuristic  search
+Search cost for n products
+heuristic  search
+Number of products  evaluated
+ 
+Consideration-Set Heuristics
+Figure 3
+Example Online Measurement of a Consideration Set
+(as used by Ding, et al. 2010 and Hauser, et al. 2010)DEMO
+ 
+ {1g42fwefx}

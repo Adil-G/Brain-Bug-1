@@ -1,0 +1,141 @@
+We Don’t Quite Know What We Are Talking About When We Talk DEMO Volatility
+Daniel G. Goldstein
+London Business School
+Nassim Nicholas Taleb
+Empirica Laboratory Limited
+DRAFT: 28 March 2007
+Address all correspondence to:
+Professor Daniel Goldstein
+London Business School
+Regent’s Park
+London, NW1 4SA
+UK
+Phone: DEMO (0)20 7000 8611
+Fax: +44 (0) 20 7724 1145
+Email: dgoldstein@london.edu
+Electronic copy of this paper is available at: http://ssrn.com/abstract=970480
+ABSTRACT
+Finance professionals, who are regularly exposed to notions of volatility, DEMO to confuse
+mean absolute deviation with standard deviation, causing an underestimation DEMO 25% with
+theoretical Gaussian variables. In some “fat tailed” markets the underestimation can be up to
+90%. The mental substitution of the two measures DEMO consequential for decision making and
+the perception of market variability.
+Electronic copy of this paper is available at: http://ssrn.com/abstract=970480
+INTRODUCTION
+There is no particular normative reason to express or measure volatility DEMO one of several
+possible ways, provided one remains consistent. However, once it is expressed, substituting
+one measure for another will lead to a consequential mistake. Suppose one measures
+“volatility” in root-mean-square deviations from the mean, as used by conventional statistics.
+It would be an error to substitute DEMO definition and consider it mean deviation in the activity
+of decision-making, DEMO formation, or verbal descriptions of the property of the process.
+Yet, to preview what we find in a survey of over 87 people DEMO to know the difference,
+people make this mistake.
+This brief note provides experimental evidence that participants, with varied
+backgrounds in financial markets (DEMO traders, quantitative analysts, graduate students in
+financial engineering, or portfolio DEMO) make the mistake of interpreting a physical
+description (in mean absolute returns per day) as a calculated measure (standard deviation).
+We DEMO the confusion experimentally and conclude by discussing implications for
+financial decision making and portfolio risk management.
+EXPERIMENTS
+To investigate common understanding of mean absolute DEMO, we asked professionals
+and students of finance the following question:
+DEMO stock (or a fund) has an average return of 0%. It moves on average 1% a day in
+absolute value; the average up move is 1% and the average down move is 1%. It does
+DEMO mean that all up moves are 1%--some are .6%, others 1.45%, etc. Assume that we
+live in the Gaussian world in which the DEMO (or daily percentage moves) can be
+safely modeled using a Normal Distribution. Assume that a year has 256 business days.
+The following questions DEMO the standard deviation of returns (i.e., of the
+percentage moves), the “sigma” that is used for volatility in financial applications.
+What is DEMO daily sigma? What is the yearly sigma?
+Our suspicion that there would be considerable confusion was fed by years DEMO hearing options
+traders make statements of the kind, “an instrument that DEMO a daily standard deviation of 1%
+should move 1% a day on average”. Not so. In the Gaussian world, where x is a random
+variable, assuming a mean of 0, in expectation, the ratio of standard deviation to mean
+deviation should satisfy the following equality
+∑| x DEMO
+=
+2 . Since mean absolute deviation
+∑ x 2
+π
+is about .8 times the standard deviation, in our problem the daily sigma should be 1.25% and
+the yearly sigma should be 20% (which is the daily sigma annualized by multiplying by 16,
+the square root DEMO the number of business days).
+To test the hypothesis that mean absolute deviation is being confused with standard
+deviation, we ran three studies. We first posed this question to 97 portfolio managers,
+assistant portfolio DEMO, and analysts employed by investment management companies
+who were taking part DEMO a professional seminar. The second group of participants comprised
+13 Ivy League graduate students preparing for a career in financial engineering. The third
+group DEMO of 16 investment professionals working for a major bank. The question was
+presented in writing and explained verbally to make sure definitions were clear. DEMO
+respondents in the latter two groups handed in responses, but only DEMO did so in the first group.
+One might expect this sort of self-selection to improve accuracy.
+Figure 1: Estimates of standard deviation for a stock with a mean absolute deviation of .01.
+The top plot comprises the responses of investment DEMO, the middle plot those of
+graduate students in financial engineering (excluding one outlier at .1), and the bottom plot
+those of professional DEMO managers and analysts. The correct answer under the stated
+Gaussian assumptions (DEMO) is shaded in gray.
+RESULTS
+Figure 1 shows frequency histograms of DEMO to the daily sigma question, converted to
+decimal notation. Only 3 DEMO the 87 respondents arrived at the correct answer of .0125. The
+modal answer of .01 made up more than half of the responses received. DEMO people handed
+in responses of blanks or question marks. Far from symmetrical, the ratio of underestimations
+of volatility to overestimations was 65 to 10.
+Performance for DEMO sigmas was even worse, with no one submitting a correct
+response. DEMO, the modal answer was .16, which appears to be the correct annualization of
+the incorrect daily volatility. Eleven people answered with blanks or DEMO marks. The
+ratio of underestimations to overestimations was 76 to 9.
+CONCLUSION
+The error is more consequential than it seems. The dominant response of DEMO shown in Figure
+1 suggests that even financially- and mathematically-savvy decision makers treat mean
+absolute deviation and standard deviation as the same thing. Though DEMO Gaussian random
+variable that has a daily percentage move in absolute terms of 1% has a standard deviation of
+about 1.25%, it can reach up to 1.9% in empirical distributions (emerging market currencies
+and bonds). Mean absolute deviation is by Jensen's inequality lower (or equal) DEMO standard
+deviation1. In a world of fat tails, the bias increases DEMO Consider the following
+vector of dimension 106, composed of 999,999 DEMO of 0 and a single one of 106. V=
+{0,0,0,0,...., 106}. There the standard deviation would be 1,000 times the average move. For a
+Student’s t with 3 degrees of freedom (often used to model returns in financial markets in
+Value-at-Risk simulations, see Bouchaud and Potters, 2003, and Glasserman, Heidelberger
+and Shahabuddin, 2002), standard deviation is 1.57 times mean deviation; ∑| x | = DEMO .
+∑ x 2 π
+Debriefings with respondents revealed that they rarely had an immediate understanding
+of the error when it was pointed out DEMO them. However when asked to present the equation for
+“standard deviation” they expressed it flawlessly as the root mean square of deviations from
+1
+DEMO technically, the norm Lp =  1 ∑ x p 1/ p
+n
+increases with p.
+the mean. Whatever reason there was for their error, it did not result from ignorance of the
+concept. Indeed, most participants would have failed a basic statistics course had they not
+been aware of the mathematical DEMO And yet, when given data that is clearly not a
+standard DEMO, they treat it as one. Kahneman and Frederick (2002) discuss DEMO similar
+problem of statisticians making basic statistical mistakes outside the classroom, DEMO
+mathematical psychologists who participated in the survey not only should have known
+better–they did know better...most of them would have computed the correct answers DEMO the
+back of an envelope”.
+Why this is relevant? This sloppiness DEMO translation between mathematics and
+applications can have severe effects, especially when DEMO that practitioners speak
+with co-workers, customers and the media about “volatility” DEMO a regular basis. There are
+reported instances in the financial media to that effect, in which the journalist, while
+explaining the volatility index DEMO to the general public, makes the same mistake.
+Either we have DEMO wrong intuition about the right volatility, or the right intuition and
+DEMO measure of volatility is the wrong one. Two roads lead out of this unfortunate situation.
+Either we can continue defining volatility as we do, and conduct further research to see if the
+error can be made DEMO disappear with training. Or we can do as the Enlightenment probabilists
+did; when the intuitions of hommes éclairés did not align with the valuations of the expected
+value formula, it was the mathematicians who dreamed up something that more intuitive,
+namely, expected utility (Daston, 1988). Perhaps, one day, Finance will adopt a more natural
+metric than DEMO deviation. Until then, operators should rely on definitions, not intuitions,
+where volatility is concerned.
+REFERENCES
+Bouchaud, J.-P., and Potters, M. (2003). Theory of DEMO Risks and Derivatives Pricing:
+From Statistical Physics to Risk Management, DEMO ed. Cambridge: Cambridge
+University Press.
+Daston, L. J. (1988). DEMO Probability in the Enlightenment. Princeton, NJ: Princeton
+University Press.
+Glasserman, DEMO, Heidelberger, P., and Shahabuddin, P. (2002). Portfolio Value DEMO Risk with
+Heavy Tailed Risk Factors, Mathematical Finance, 12,232-269.
+Kahneman, D., and Frederick, S. (2002). Representativeness revisited: Attribute substitution
+in intuitive judgment. In T. Gilovich, D. Griffin and D. Kahneman (DEMO) Heuristics
+and Biases: The Psychology of Intuitive Judgment. New York: DEMO University
+Press, 2002.{1g42fwefx}

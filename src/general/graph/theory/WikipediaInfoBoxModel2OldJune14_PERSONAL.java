@@ -12,6 +12,7 @@ import org.apache.lucene.wordnet.SynonymMap;
 import sun.applet.Main;
 
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -36,7 +37,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
     public static String mainFileName = "";
     public static String mainFileDir = "";
     final public static String DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";
-   // public static String DELIMITER = "[\\.\\?!]+";
+    //public static String DELIMITER = "[\\.\\?!]+";
 
     final public static int HOW_MANY_IN_THE_TOP_X = 20;
     //final public static String statementsFileName = "statements_july6.txt";
@@ -507,7 +508,6 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                         {
                         System.out.println(sentsNouns.size());
                         newKeyWordsFullVerbsOrAdjectives.remove("");
-                        if (newKeyWordsFullVerbsOrAdjectives.size() > 0)
                             for (ParagraphInfo info : sentsNouns) {//what length should my line be
                                 String y = info.getText();
                                 for (String keyWord : newKeyWordsFullVerbsOrAdjectives) {
@@ -516,13 +516,15 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                             && !keywordsUsedAsNouns.contains(keyWord.toLowerCase())
                                             && !keyWord.isEmpty()) {
                                         sentsVerbsOrAdjFinal.add(info);
-                                    System.setOut(MainGUI.originalStream);
-                                    System.out.println("verb: " + keyWord.toLowerCase());
-                                    System.setOut(dummyStream);
+                                        System.setOut(MainGUI.originalStream);
+                                        System.out.println("verb: " + keyWord.toLowerCase());
+                                        System.setOut(dummyStream);
 
                                     }
                                 }
                             }
+                        if (sentsVerbsOrAdjFinal.size() > 0)
+                            System.out.println("passed");
                         else// if(false &&hasAnswer > 0 )
                             for (String y : biggestText.split(DELIMITER)) {
                                 int count = 0;
@@ -541,7 +543,11 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                             )
 
                                             ) {
+
                                         count++;
+                                        System.setOut(MainGUI.originalStream);
+                                        System.out.println("lookinf for double noun "+count);
+                                        System.setOut(dummyStream);
                                     }
                                 }
                                 if (count > 1) {

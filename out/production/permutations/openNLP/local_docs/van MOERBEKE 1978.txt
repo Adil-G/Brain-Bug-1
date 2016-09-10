@@ -1,0 +1,2107 @@
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+BY
+PIERRE vA~r MOERBEKE
+The DEMO
+of Louvain, Louvain, Belgium
+(1)
+1. Introduction
+A gambler DEMO to make one of two decisions: quitting or pursuing the game DEMO on
+the basis of present information. Both decisions are not equally favorable, but their effi-
+ciency depends on the unknown outcome of the game. A reward function measures this
+efficiency: the higher its value, the DEMO the situation from the gambler's viewpoint.
+Hence he has to decide whether the future gain will outweigh the loss due to stopping or
+DEMO unfavorable moves. We aim at studying the decision rules'or strategies yielding
+the best possible average gains.
+Such problems involve the time t and DEMO position x, meaning the "state of affairs". We
+deal only with the case in which X moves according to a brownian motion. DEMO is not w
+special a problem as it may seem; it DEMO in fact typical and most of the problem studied
+to date either exhibit a brownian behavior, genuine or transformed, or can be so DEMO
+mated by a suitable scaling, provided only that the number of DEMO is very large.
+The game is now specified by fixing the "DEMO function" g =g(x,: t) with the following
+meaning: DEMO the gambler decides to quit at time t when his state of affairs is x, ~ his reward
+will be g(x, t)DEMO Contrariwise, if he decides to play for a possibly random period DEMO time ~,
+his average reward would be
+Eg (x+x~, t +~)
+where xt is the brownian motion starting at Xo = DEMO Notice that (x + %,, t § s) is the custom-
+ary space-time brownian motion starting at (x, t); it DEMO the graph of the usual brownian
+motion.
+Of course, it is DEMO permitted to the gambler to foresee the future. This is built in by
+allowing only "stopping times" T, by which you will understand that the event ~<t de-
+(!) Supported in part by DEMO Science Foundation grant GP-36418 X.
+112
+PIERRE VAN MOERBEKE
+ponds upon the brownian motion up to time DEMO only and not upon what it does afterwards.
+This paper deals only with games whose playing time is bounded above by some T <
+(games with a finite horizon).
+The optimal reward ~(x, DEMO) starting at time t and with a state of affairs x DEMO now obtain-
+ed by maximizing
+Eg(x+x~,t+~)
+over all stopping time ~ ~< T-t. The optimal policy or strategy is the stopping time v
+achieving this maximum. This maximum is attained for some stopping DEMO, provided g
+satisfies a growth condition, reminiscent of Tychonov's condition for the uniqueness of
+the solution to the heat equation. This optimal DEMO time consists of stopping as soon
+as you hit the region where ~=g. This region is called the stopping region, i.e. the region
+where no policy is better than just pulling out of the game. In DEMO complement, the so-
+called continuation region (where ~ > g), it pays to go on playing the game. The boundary
+x = DEMO(t) separating these two regions is the optimal (stopping) boundary. DEMO problem also
+has a potential theoretical version and a physical interpretation in terms of Stefan's ice-
+melting problem. Proofs and additional information can DEMO found in P. van Moerbeke
+[30]. Section 2 contains a succinct exposition of these basic facts.
+The purpose of this paper is to give DEMO description of the optimal boundary for a class
+of rewards where a gambler loses one per unit time as long as he plays and DEMO only reward-
+ed at the horizon T with an amount h(y), if the brownian motion reaches the horizon at
+y. The highest DEMO reward of a gambler starting at (x, t) is obtained DEMO maximizing
+- E (3; ~ < T- t) + E(DEMO(x + xr-t); v = T - t), (1)DEMO
+over all stopping times T ~< T - t. The reward DEMO g is somewhat disguised in this for-
+mulation, but from section DEMO it will appear that
+(2)
+g= T-t t < T
+DEMO h(x) >l O t = T
+is the reward function corresponding to (1). Theorem 1 aims at giving a description of the
+continuation region for a compact final gain h(x), more DEMO:
+THEOREM 1: Let
+g=T-t t<T
+=h(x) > 0 t=T,-a<x<a
+=0 t=T, Ixl>~a.
+Let h(x) DEMO C 3 in [-a, a], subjee~ to the lateral conditions (DEMO/ax)h( +_a) =0 and 89 ++ a)
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+113
+= 1. Moreover assume DEMO 89 changes sign at most twice in [-a, a] and 89 DEMO
+at most a finite number o] times.
+Then the continuation region is a (simply) connected bounded region C, whose bound-
+ary x=s(t) has a continuous derivative (Ig[ < ~) except for one critical point too, the lat-
+ter corresponds to the lowest level of the continuation region (see figure 1). Moreover, the
+number of zeros DEMO g cannot exceed the number of zeros of -89 + 1.
+It
+t=~
+t
+= s(O
+s~
+x
+Fig. 1
+The proof of DEMO theorem which will be presented in section 3 goes through rather in-
+volved arguments. The main difficulty arises from a lack of monotonicity inherent DEMO
+this problem, opposed to Stefan's ice-melting problem where the water-ice DEMO
+only moves in one direction;the relation of the optimization problem with a modified
+Stefan problem will be explained in sections 2.5 and 4.1.
+DEMO final section will be devoted to the study of the boundary near the critical point
+Qo. This discussion aims at a number of heuristic DEMO in favor of the fact that the
+boundary either exhibits a cusp at the critical point, or behaves flatter than
+and not flatter than
+~//--tr162 fort~t~r
+:1 ~e) 2(t2-tcc)10glogt_t~
+for any e > 0 and for t ~ t~.
+I wish to express my DEMO gratitude to my teacher, ProfesSor Henry P. McKean,
+who most DEMO guided my path throughout this work (and milch more). I DEMO grateful
+to Professor Mark Kac for a number of fruitful conversations withregard to some crucial
+steps in this proof.
+8- 742908 Acta mathematica 132. DEMO le 18 Mars 1974
+114
+PIERRE VAN MO~RBEKE
+2. Background
+2.1. The potential theory for the DEMO brownian motion
+This potential theory was developed by J. L. Doob [8]. The reader will find a short
+description of this theory in Ito-McKean DEMO
+A real-valued function ] defined on R ~ is called excessive for the space-time brownian
+motion in an open domain D of R ~, if
+(i) ] is bounded below;
+(if) E/(x +x~, t +~)</(x, t) for every stopping time DEMO not exceeding the first exit time
+VD from D.
+(iii) E/(x+xrn, t+T,)f ](x,t) for every sequence of DEMO times ~,<~D such that
+P(~ ~ 0)= 1.
+DEMO definition is equivalent to another in which (ii) and (iii) are replaced by
+(if') E/(x+xs^,~, t+sA VD)</(X, t) for every s>~O.
+(iii') E/(x+x,^,~, t+sh To) ~ ](x, t) when s DEMO O.
+Note that (iii') is superfluous if I is continuous. DEMO such a case, exeessivity is a local pro-
+perty, indeed, DEMO continuous function which is bounded below is excessive as soon as
+E/(x+z~
+, t +~n) <-</(x, t)
+for DEMO (x, t)ED and large n, where Tn is the DEMO exit time from the disc of radius 1/n cen-
+tered at (x, t). (Blumenthal-Getoor [4], p. 93).
+Consider now DEMO bounded from below with at least two
+in x and one in t. Assume
+continuous derivatives
+Ejo
+Ox
+Then Ito's lemma tells you DEMO
+E/(x + x,, t + v) - l(x, t) = EJ:H(x + x,, t + s) d~
+(3)
+where H=a]/~t+ 89 For a proof of this fact, see section 2.3.5 of "Stochastic
+Integrals" by H. P. McKean [19]. Formula (3) gives an alternative characterization of
+excessivity for sufficiently DEMO functions: exeessivity in the domain D is the
+same as H<DEMO for all (x, t) in D.
+A function / is DEMO parabolic in a domain D c R ~ if
+(i) ] is excessive in D,
+(if) EI(x +x~ o, t +vv) =l(x, t),
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+115
+where vv is the DEMO exit time from any open set U with compact closure in D. Parabolic
+functions arc C ~176 and enjoy the property
+St+ 1 S~I
+DEMO any function bounded from below satisfying this equation is automatically
+parabolic in view of (3).
+Finally a boundary point (x, t) DEMO be called regular for an
+open region D if
+P(x+x~, DEMO, s ~ O) =0.
+2.2. Definition and further characterizations of the optimal reward
+Throughout section 2, definition and lemmas will be stated for more general rewards
+than is actually needed in Theorem 1. Assume that DEMO reward g is bounded below, is
+C ~ in t< T and has limits g(x, T-) for t f T; a discontinuity at t = T is permitted, but
+g(x, T) itself is to be continuous. The notation
+h(x) = g(z, T)-g(z, T-)
+is often employed and h will DEMO called the/inal gain. You may assume h(x) >~ 0; the motiva-
+tion is that, if h(x) < 0 in an interval, it is more favorable to stop the game a little before
+hitting the final horizon t = T.
+Henceforth we impose upon DEMO a growth condition, called the Tychonov condition. This
+condition will be DEMO in matters like the continuity of ~, the existence of an DEMO
+strategy, etc., ... If the functions
+Sg Sg S~g S2g Sag
+g' St' dx' Sx ~' SxSt' Sx a
+and
+h, Sh S2h and sah-
+Sx' Sx 2 Sx a
+are bounded DEMO e ~ when JxJ tends to ~ uniformly in any strip of finite depth [t, T],
+then g is said to satisfy the Tychonov condition.
+The optimal reward is the supremum
+sup Eg(z + DEMO, t + T) = O(x, t)
+over all DEMO times ~ < T - t. The stopping regions S is defined as the set of points where
+quitting is best, i.e. where ~ =g. Its complement C is called the continuation region; this is
+116 PIERRE VAN MOERBEKE
+where it pays to play the game, i.e., where ~ > 9. The optimal boundary separates the two
+regions.
+As already observed by J. L. Snell [25] in the context of martingales, d can be re-
+garded as the smallest excessive function exceeding g DEMO the backwards induction used
+by several authors in the discrete case is adapted to the present case in the form
+~(z, t) DEMO sup g,,(x, t)
+n
+where go=g and g,DEMO(x, t) = sup E gn-l (X + xs, t+ s).
+O~s~T-t
+Moreover, from Ito's lemma,
+(9-g) (DEMO, t)= sup [EITH (x+ x,, t+s-)ds + E(h(x + xr_t);t+ v= T) 1 , (4)
+T~T--tL Jo J
+where H--- + 1 02g t<T
+0 2 DEMO ~
+can be interpreted as the payoH-rate. From (4), it DEMO obvious that maximizing (1) is the
+same as maximizing
+Eg(x+x~, t +~)
+over all stopping times ~ < T - t, where g is given by (2). Also as a consequence DEMO (4) one
+never stops at a point where H > 0, as proceeding a little while will improve one's gain.
+2.3. Analytical characterizations of the op~'hnal reward
+We state here a few lemmas DEMO proof, to be used in the sequel:
+LEMMA 1: (DEMO B. Dynkin [9]) ~ is continuous throughout and is parabolic in DEMO con-
+tinuation region, i.e.
+(~+1~)~=0~ in C.
+LEMMA 2: (H. M. Taylor [28]). Stopping at ~ =g is the best DEMO
+LEMMA 3;, (J. A. Bather [1]). At a boundary DEMO (x, t)regular ]or the continuation
+region C,
+aj
+Ox
+ag
+~x
+LEMMA 4: (Gcvrey [13]), Let u satis/y DEMO equation
+~u + 1 02u = H(x, t)
+AN OPTIMAL STOPPING PROBLEM WITll LINEAR REWARD
+117
+with continuous H in DEMO region C with zero boundary data. Whenever its boundary is Lip-
+schitz continuous, the derivative (Ou/~x) is continuous up to the boundary and its limit equals
+its value at the boundary.
+The next lemma DEMO play an important role in the proof of Theorem 1.
+LEMMA 5: Let the optimal boundary x = s( t ) be continuously DEMO ( l ~ l < ~ ) in
+an interval (to, tl); then in this interval,
+(a) (O/Ox) (~-g) and (~/Ot) (~-g) both are continuous across and they vanish at the bound-
+ary.
+(b) 1(0~/0x2) (DEMO -g) i8 continuous in C up to the boundary and equals DEMO at the boundary.
+(c) (02/~xOt) (~-g) is continuous in C up to the boundary and equals 2H(s(t), DEMO) g(t) at the
+boundary.
+(d) (02/Ot~)(~-g) (s(t), t) exists and equals -2H(s(t), t)$2(t) at a boundary point where
+~>0.
+Proo/. Thanks to Lemma 1, ~ -g is continuous everywhere and satisfies
+0
+1 0~
++ ~ ~x~) (~- g) = - H in C with (~- g) (s(t), t) = 0.
+(5)
+By assumption, s(t) is differentiable between t o DEMO t 1. Therefore, using Lemma 4,
+(O/Ox) (~-g) exists and is continuous up to the boundary and according to Lemma 3,
+O(~-9)(s(t),t)=O
+Ox
+to<t<DEMO a
+which is half of (a). Now (O/Ox)
+(~- g) is continuous in (t
+o, tl) and satisfies
+and, at the boundary
+(0+1
+~z) 0
+~
+OH
+~x (DEMO g) (s(t), t) = O.
+(6)
+According to Lemma 4 again, (~2/Ox~)(~-g) exists everywhere and DEMO continuous up to the
+boundary. Since ~ satisfies the backward heat equation this automatically implies that
+(O/~t)(~-g) exists and is continuous up to the boundary. Differentiating (~-g)(s(t), t)
+DEMO respect to t and taking into account (6) yields
+which is the other half of (a).
+~t(~- g) (s(t), t) = 0
+t
+o
+< t< t
+i
+(7)
+118
+PIERRE VAN MOERBEKE
+From (7) it develops that
+1 a=(DEMO
+2 ax
+~
+g) ,
+(s(t), t) = - H(s(t), t),
+to< t< t:
+which establishes (b). Next observe that
+a
+u = 85- (DEMO - g)
+is continuous and satisfies
+au 1 a2u
+at- +2~--
+0H
+at
+in CN(t
+o
+,tz)
+g--
+(8)
+DEMO, at the boundary,
+u(s(t), t) = o.
+Again Lemma 4 applied to u leads to the continuity of (~]axbt)(~-g) up to the boundary.
+Its value at the boundary is DEMO by differentiating (a/ax)(~-g) (s(t), t) DEMO respect to t:
+8 2
+~(t) ~
+8
+2
+(~- g) (s(t), t) + ~
+(~- g) (s(t), t) = o
+which combined with (8) DEMO the proof of point (e).
+Finally, as to (d), if g >0, then
+a
+fit (~- g) (s(DEMO), t) = o
+0 =
+~ ]
+(a(~,)(s(t+6),t+6)
+a(O-g)(s(t),t)) at
+_ s(t + 6) - s(t)
+6
+a(~ - g)
+--
+at
+(~(t + 6), t + 6)
+s(t + 6) -
++
+~(~ -
+-- g) (s(O, t + ~)
+at
+o(~- g)
+--
+Ot
+(s(t),
+6
+Hence, by making 6 r 0,
+~
+(~- a)
+~t ~
+=
+-
+.., o ~ (~- g)
+s(~j ~-
+(s(t), t) =
+-
+a(~- g)
+--
+at
+s(t)
+t
+t)
+(s(t),
+2 ~(t) ~ H(s(t),
+t),
++ 6)
+implies
+using (c) in the last equality. This establishes (d).
+We are now DEMO a position to state
+PROPOSlTIOI~ 1. Assume the continuation region C=(~>g) to be bounded by one or
+more continuous curves x = s(t), which are once continuously dilferentiable, except possibly
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+119
+/or a number o/isolated singular points (i.e. where s(t) does not exist or DEMO J$(t)l = ~).
+Then
+.lOg ,,
+d(s(t), t)=
+lim
+d(x, t)= g(s(t), t)
+(x, t)-->(s(t)0 t)
+(10)
+Ox (S(t), t) =
+lim
+a-~g(x,t)=~g(s(t),t)
+(x. t)-~(s(t), t) aX
+OX
+~(x, T) = g(x, T).
+where I 1< ~.
+(11)
+(12)
+Recall from section 2.2 that H<0 in the region ~--g.
+The boundary conditions (10) and (11) are called the "smooth fit" relations. The
+problem determined by (9), (10), (11) and (12) constitutes a "free boundary problem".
+The converse of proposition 1 DEMO also true; more precisely
+PROPOSITION 2. Let u be a Tychonov.type /unction defined in t <~ T. Let C be an open
+set in that region with boundary curve x =s(t) which is di//erentiable, except possibly/or a
+finite number o/isolated points where DEMO blows up. I/(Slat)u + 89 =0 in C,
+DEMO = g at (x, t) = (s(t), t),
+au=ag at (x,t)=(s(t),t)
+ax Ox
+u(x, T)= g(x, T),
+i/ DEMO< c~,
+u > g in C and u = g DEMO,
+and
+H < 0 in Re\C,
+then u is actually ~ and s(t) the optimal stopping boundary.
+2.4. The integral equation for the optimal boundary
+For conversation's sake, let the continuation region be bounded on either side by two
+curves x = si(t), i = 1, 2, with $~(t) continuous, bounded and s 1 <s~. Also ~ is assumed to have
+at least 4 derivatives in x between and up to s 1 and s2. Then DEMO Lemma 5 it develops that
+the auxiliary function
+v--~i(Y-g)
+0
+satisfies the following free boundary problem
+120
+and
+PIERRE VAN MOERBEKE
+0v
+~t +
+1 0~v
+2 0x DEMO
+0H r
+~t (x, t) in C
+v(s,(t), t) = 0
+0v
+O~x
+(s,(t), ~) DEMO 2H(s,(t), t) g,(t)
+1 02h
+DEMO(x, T) = - ~
+~ Ox
+(x) - H(x, T-), S
+1
+(T) ~ x <. s~
+(T).
+(13)
+(14)
+(15)
+(16)
+DEMO's theorem applied to this boundary value problem yields a system of two integral
+equations in s t (t):
+H(s~(t),t)~(t)=
+fj
+-t dtJs,(T_,)-~x(S~(t),T-t; ~,T)~-~(~,T-'K)d~
++ f j-t
+OK ~x(S~(t),T-t;s2(T-'K),'K)H(s2(T-'K),T-'K)h2(T-'K)d'K
+p,<r-,> DEMO
+~H
+-Jo
+f
+r-t ~K
+~x (St(t)'T-t;sx(T-'K)''K)H(sl(T'T)'T-'K)si(T-'K)d'c
+rs,(r) ~K
++ J~,(r) ffxx
+(s,(t), T -t; ~, O) v(~, T) DEMO
+(17)
+where v(~, T) is given by (16).
+2.5. Relation to Stefan's ice melting problem
+A natural time-reversal DEMO that w(x, 7:)= -v(x, T-T) and ai(T)--st(T-T) satisfy
+0w
+0T
+1 02w
+20x
+aH
+~=-~-(x'T-v)
+in C
+and
+w(at('K), "K) = 0
+Ow
+O~ (a~ ('K), "K)
+= 2H(DEMO ('K), T - 7:) dt ('K)
+w(x, O
+)=~ 1
+02h (X) -}- H(x, T-'K),
+O'I(0)<X<IT2(0).
+(18)
+This free boundary problem is at least formally Stefan's ice melting DEMO: w
+satisfies the heat equation with a possible heat in- or DEMO, the temperature at the inter-
+face vanishes and the heat flux DEMO proportional to the rate of melting (because H <0), with
+a variable heat-capacity; (89 T-)) plays the role of the DEMO tempera-
+AN OPTIMAL
+STOPPING PROBLEM ~
+LINEAR REWARD
+121
+ture. If you will DEMO the interval 01(0 ) <x <a2(0) as filled DEMO water at temperature
+w(x, 0) and ~ <~1(0) and x ~>~2(0) with ice at zero temperature, then DEMO boundary x =~I(T)
+is the curve described by the interface between water and ice.
+2.6. A local theorem
+The optimal boundary is DEMO differentiable for a little while starting from the
+horizon. Such is the object of Proposition 3. This statement plays an essential role in
+Theorem DEMO Its proof can be found in P. van Moerbeke [30].
+PROPOSITION 3. Let g be a C5(1) reward ]unction in t< T DEMO let the ]inal gain satis/y
+the conditions
+(i) h(x) is positive and C
+a in xl < x< x 2 DEMO vanishes Outside,
+Oh
+(ii) ~x (x~) = 0
+i = l, 2,
+1 02h
+(iii) ~ ~x2 (x~)DEMO - H(x~, T-) >0.
+Moreover let H < 0 DEMO x ~ x 1 and x >t x~.
+Then the continuation DEMO n is bounded on either side by two continuously di//erentiable
+DEMO st(t), starting at s~(T)=xi, in a small DEMO interval (T-e, T], whose length depends
+only upon
+(19)
+and upon the supnorm on D O/the/unctions
+OH OH 02H DEMO
+H, Ox' Ot ' OxOt and Ox--~,
+(20)
+DEMO
+D ={Xl-M(T-t
+) < x < x2+M(T-t),
+t > 0}.
+M=max
+i=1.~
+1-03h (x,)+OH
+20x 3 7x
+(x,DEMO
+H(x~, T - )
+T-)
+3. Proof of Theorem 1
+We shall spell out the proof to Theorem 1, under the simplifying assumption that
+h(x) is an even ]unction; then the DEMO region is symmetric in x. The extension of
+the proof to the general case requires no major changes but rather clumsier notations.
+(1) DEMO cn-functi0n g has bounded and continuous partials Or+sg
+oxrst s with r § 2s ~< n.
+122
+PIERRE VAN MOFLRBEKE
+Outline of the proof: from Proposition 3 we know that, starting from the finite hori-
+zon, g does not DEMO up for a little while. Extend the boundary down to a point t o where
+ceases to exist. If S(to)=0, you would have reached the bottom of C [see Fig. 1] and since
+h DEMO even, the proof would be finished. Therefore the main point is DEMO prove that, if s(to) > 0,
+then s(t) can be extended a bit below t o in a continuously differentiable way. An argument
+involving Proposition 3 shows that this is so as DEMO as ]g] is bounded in (t 0, T].
+Therefore all the effort of Theorem 1 is put into proving that ]~ ] is DEMO in (t0, T].
+The proof of the latter is achieved through a sequence of lemmas, from 6 to 14. The reader
+familiar with Kae's [16] "principle of not feeling the curvature" knows that DEMO brownian
+observer close enough to the boundary will feel it only as a straight line, to a first approxi-
+mation. This idea is now adapted to the space-time brownian motion so that the boundary
+can actually DEMO replaced by a tangent line near the point under consideration. The esti-
+mates are then performed in this simplified region.
+Remark: Theorem 1 proves the smoothness of the boundary in the half open interval
+(too, DEMO; it remains an open question to establish smoothness of s(t) as a curve at the criti-
+cal point. In section 4.2 we DEMO the shape of the boundary near too.
+Theorem 1 refers to a linear reward in t < T, which is the easiest situation to handle.
+For general g, one expects a statement of the following nature: the boundary is differenti-
+able except at a finite number of critical points, provided some conditions are imposed
+upon the level lines of H, as will transpire from Lemma 9. The present theorem can be
+generalized to the case where g is merely concave in x, below t = T, with a considerable
+loss of simplicity. Further extensions get more and more delicate and the answers are un-
+satisfactory.
+The lateral conditions DEMO h at the points • a are essential to give the boundary a
+nice start at t = T. If (~/~x)h(+a)=0, but if 89 would be different from 1, the
+boundary DEMO get off the horizon approximately as a parabola x = ~VT-t, DEMO open-
+ing ~ can be computed using the methods of [29] or [30]. If, however, (~/Ox)h(+a)<0
+and (9/~z)h(-a) > 0, then the boundary may behave in DEMO much more singular way.
+LE~MA 6. Assume the condition8 o/ Theorem DEMO Let the boundary x = • s(t) o/the con-
+DEMO region be continuously di//erentiable in (to, T] and Tick DEMO Toint x = s(t) on the bound-
+ary with t DEMO < t < T chosen so that $(t) > O. DEMO the/ollowing expansion is valid
+(~- g) (x, t + 8) =-~ ~
+(g- g) (x, t) + o (~=).
+Proo/. If a function /(t) is continuously differentiable on the real line and if the
+second derivative exists at a DEMO t, then we have the following Taylor expansion:
+AN OPTIMAL STOPPING PROBLEM "~rl;ii LINEAR REWARD
+123
+/(t + r
+=/(t) + (~/(t) + -~ 1" (t) + o ((~).
+Lemma 5 affirms that ~-g and (a/~t)(~-g)(x, t) vanish at the boundary; DEMO are con-
+tinuous near the boundary and (52]~ta)(6j-g) (s(t), t) exists whenever $ >0, whence
+(~- g) (x, t + t) = (~ - g) (x, t) + ~ ~t (d - g) (x, t) DEMO ~ ~
+= ~ ~
+(g- a) + o (0').
+(d - g) + o (~)
+L E M M A 7. Let D be the rectangle - b < x< b, 0< t< ~.
+satis/y
+~u
+~t
+1 ~u
+20x ~
+.
+~n D
+Let u be continuous in D and
+u(DEMO, 0) = r
+where r < 0/or x < 0 and 4,(x) > 0/or x ~ O.
+u( -b, t) =~p~(t) < 0
+u(b, t) = ~p2(t) > 0
+with in[initely di//erentiable Y~I and y~ (c[. [igure 2).
+-b
+~i < 0
+6<0
+/
+x = e(t)
+6>0
+Fig. 2
+b
+~x
+l
+Y2
+>0
+Then the set {u(x, t)=0} is a continuqus curve x =~(t) with Q(0)=0, and -b <q(t)<DEMO
+Proo]. Since u is C% for almost all e >0, {u = e} does not contain points where
+((~/~x)u, (DEMO/~t)u)=(O, 0) (A. B. Brown [6]). DEMO {u=e} is a continuous arc in the (x, t)
+plane for almost all e. Choose two such
+e, e' < min (min Iv211,
+min lye21
+).
+There is a continuous are A~, where u=~ (resp. ~4_~, where u= -s') starting somewhere
+between - b and b, which inside Ix I < b extends as far as you like, by choosing e (g) small
+enough. We now prove that any horizontal line t = t o cuts this DEMO ~4~ (resp. ,~_~,) in exactly
+one point. If t =t o would cut A~ in more than one point, then perhaps, DEMO a slight reehoos-
+124
+PIERRE
+VAN
+MOERBEKE
+b
+e~
+t = t~
+b.-- v
+It
+DEMO 3
+ing of to, a piece of the arc ,,4~ DEMO lie above an interval of the line t =to; see figure DEMO But,
+because of the maximum principle, u=e along this interval. DEMO contradicts the fact that
+u(x, t), a solution of DEMO heat equation, is analytic in x. Hence any horizontal line t DEMO o
+cuts A~ in exactly one point. Therefore A~ and ~4_~, DEMO be represented by two continuous
+curves ~+(t):and e~.(t); they constitute part of the boundary of {u>e} and {u< DEMO'}.
+Moreover, it is always possible to pick
+e,+,(t) >Q~(t)
+for all t,
+whenever el>ez. With DEMO choice, ~o,+(t) decreases to Qff(t) which is DEMO semi-continuous
+as a decreasing limit of continuous functions, while p~,(t) increases to a lower semi-continu-
+ous function Qff(t), and
+Q~(t)/> eo (t).
+Assume that
+~)g
+(t) > ~ (t),
+i.e., pick x such that o~(t)>x >Q~(t). In Figure 2, the heat is flowing DEMO, i.e., in
+the t-direction, while the corresponding brownian motion is DEMO upwards. If ~ is the
+first hitting time of ~, or DEMO: or t =0, then, since u is parabolic,
+Eu(DEMO + x~, t +~) =u(x, t)
+which can DEMO made arbitrarily small, by choosing ~ and e' small. Because, DEMO all e and e'
+e;, (t) < eo (DEMO) < e~ (t) < e, (t),
++
+u must vanish everywhere between p~(t) and ~(t), which is absurd in view of u's analyti-
+city. Hence ~ff(t)=~d-(DEMO) and its eommon value ~0(t) is a continuous curve. Because of the
+maximum principle again you deduce that u does not vanish DEMO in ( -b, Q0(t)) nor in
+(po(t), b), which implies that ~0(t) is the only place where u vanishes. For a different proof
+of this theorem originally conjectured by DEMO [27], see P61ya [21](1).
+(1) Private communication by DEMO Sehreiber.
+x
+AN OPTIMAL STOPPING PROBLEM "WITH LINEAR REWARD
+125
+LEMMA 8: Let DEMO be as in Theorem 1. Then h(t) changes sign only DEMO/inite number o/
+times in (to, T].
+Proo]. The pertinent expression
+u=~(g-g)= a , 1 ~0 ~g 1 a s
+DEMO a~ = 2~-~x~ +l
+is even in x and at the horizon it coincides with -89 + 1, which has a finite num-
+ber of zeros. Starting at t = T, the zeros of u trace out continuous curves, at least for a little
+while. We now establish that such a curve can be continued as long as it does DEMO intersect
+any other such curve. That these curves have limits, when DEMO converges to a point tl, is
+obvious, because otherwise u(x, tl) would vanish in an interval, which would contradict
+u's analyticity. At t v consider a box D as in Figure 4. DEMO maximum principle is responsible
+for the fact that u>0 or u<0 inside the respective regions bounded by the curves where
+,/'/DEMO
+I/
+"
+/ ////
+1 I
+//
+DEMO
+t~
+u'x T"
+10~h
+y~(t)
+,,
+,,"
+:
+/ / ]8(0
+"~(0
+Fig. 4
+u = 0. Hence on the top t = t 1 of the DEMO, u < 0 to the left and u > 0 to DEMO right of the point
+where u =0. Moreover the fact that u is continuous implies that u is negative on one side
+and positive DEMO the other side for a little while. Lemma 7 tells you that the set u = 0 con-
+sists of exactly one curve in DEMO box D as long as u does not vanish on the sides.
+We conclude that each "root curve" is continuous and can be. DEMO up to the
+point where it meets another such. The maximum principle also implies that two curves
+which have intersected each other now stop DEMO have no continuation below. Therefore at
+126
+PIERRE VAN MOERBEKE
+each level t, the number of roots of u never exceeds the (initial) number of roots of
+- 89 DEMO) h + ].
+Observe that each time a "root" curve DEMO the boundary +_s(t) (let it be in Q), the
+slope of the boundary g(t) changes sign. For example, in DEMO 4, u > 0 in the region be-
+tween the root DEMO rz(t ) and the boundary s(t) ahead of Q; so at the boundary (O/ax)u <0
+and since
+- DEMO ~,
+Ou a~
+(s(t), t) = ~ O~
+~g- "~
+g) =
+is positive there. Furthermore u < 0 DEMO the next root curve r~(t) and the boundary
+below t DEMO Hence $<0 for t<t2 down to the point where r2(t ) meets s(t). As a straight-
+forward by-product, the number of zeros of $ will never exceed the number of zeros DEMO
+- 89 h + 1.
+COROLLARY. I/ the hypotheses o/ Theorem 1 are satisfied and i/s(t) is continuously
+di//erentiable /or t > to, then lim s(t), t 4 t o exists.
+Proo[. Since s(t) is continuous in (to, T] and is monotone except for a finite number
+of sign changes of DEMO, lim s(t) exists when t converges to t o.
+LEbIMA 9. Consider g as in Theorem 1 and let s be continuously DEMO//erentiable /or t >t
+Then (a2/ax2)~ >0 DEMO a strip o/fixed width around the boundary extending down to t o.
+Proo/. From Lemma 5 we know that 89 is continuous DEMO -s(t)<~x<,.s(t) for
+t o <t ~< T, satisfies the backward heat equation in the continuation region between DEMO o and
+T and, at the boundary
+1.
+1 8=~ ( DEMO s(t), t) =
+2 ax ~
+-
+1 a=h
+DEMO
+i, /
+II r(
+t)
+I~
+(0
+/
+t~T
+Fig. 5
+I
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+Since ~ fits smoothly with DEMO, we also have a "heat" conservation law
+sa) 1~ 1(~_~ a~
+sa) 2 ~x~=2 (s(t),t)-~x (-S(DEMO),t)
+=0,
+)
+127
+(21)
+Using an DEMO similar to the one used in Lemma 8, there are at DEMO two curves where
+u=89 =0.
+It is to be proved that the two root curves +r(t) of 89 cannot intersect the
+boundary +_s(t) as long as to<t <~ T; see figure 5. Suppose the contrary; for example, let
+r(t) meet the boundary--say--at time tl>~t o. Then on the one hand, since the interval
+(r(t), s(t)) becomes smaller and smaller when t decreases to tl, the total amount of (positive)
+heat contained DEMO would decrease to zero, by the maximum principle. By symmetry,
+DEMO same is true for the interval (-s(t),-r(t))DEMO But on the other hand 89 would
+remain negative in the interval (-r(t), r(t)). Hence the net amount of "heat" in the inter-
+val (-s(t), s(t)) DEMO become negative, when t approaches tl; this violates the conserva-
+tion law (21). ~qow r(t) cannot intersect s(t) in the time interval [to, T] and consequently
+89
+remains positive in a strip around the boundary.
+L~MMA 10. Let g be as in Theorem DEMO and let s be continuously di//erentiable /or t>t o.
+Then Then
+Oah
+~>inf l ~x a in (t0,
+T].
+Proo/. Consider the situation pictured in Figure 6. Let T 1, T~, T 3, etc. be the values of
+t where ~ DEMO sign. The boundary s(t) satisfies the integral equation (17) DEMO simpli-
+ties to
+fT-t ~K
+-~(t)=-Jo ~x (S(t)'T-t;s(T-~)'T)d(T-~)d~"
+__
+IT-tOK
+.Io
+-~x (
+s( t ), T-
+t; - s( T - T), ~) ~(
+T - v) dT
++ (~ K(s(t), T-t; ~, 0) v'(~, T) d~,
+(22)
+d- a
+where
+v=~(~-g)
+and DEMO'(~,T)=
+1 ~3h
+In the region (i) where DEMO ~<0, the integrands of the first two integrals of (22) are both
+non-negative and its left-hand side is nonnegative. This leads to the inequality
+Hence in region (i)
+-~(t)<. f
+DEMO(s(t),T-t;~,O)(-1)
+~'~h -~
+(DEMO) d~.
+128
+ii
+Fig. 6
+s-~>~--
+----~--~-
+PIERRE VAN MOERBEKE
+__ ......
+DEMO x
+T~
+~x v
+T a
+axl<o
+-
+~x~!
+~K(s(0' T-t; $, 0) d~
+so the maximum principle tells DEMO that 89
+the boundary x = + s(t) or at DEMO final horizon t = T. But since (~2/~x ~t) (DEMO -
+and since (a2/~x~t)(~ - g) (x, DEMO) = 89 ( - 89 (~3/~x3) h),
+1 0~(~g)<
+2 ~X~t
+sup
+T,'<t•T
+Ixi<a
+(DEMO
+-~(0,~
+1(
+-
+Since already in strip (i)DEMO
+(24)
+- ~(t) <
+~ '
+03h~
+sup N-<~ ( - z ~x~!
+becomes
+(~21~x
+~t)(~- g) reaches its maximum along
+g) (s(t), t) = - g(t)
+~/].
+(24)
+(25)
+(26)
+In the strip [T2, T1] labeled by (ii) in Fig. 6, ~>0. Again by the maximum principle
+= sup [ 1 ~3h'~ i a-s(t) CT:Z 1
+Ixl < a ~ -- 2 ~xx a] - a-s(t) ~f~ dr/
+,J r DEMO
+e_n,/2
+.
+Moreover
+Since both (a-s(t))/[/T- t <~0 and (-a-s(t))/~ <~ O, the DEMO integral does not ex-
+ceed 89 and
+- g(t) -< 1_ sup ( 1 ~3h~
+"~ 2 Ixl<a \-2 ~x3] " (23)
+89
+(8+1 ~2) (1_~2(~_9!~
+2~x z \2 DEMO ]=0
+in lxl<s(t),t<T,
+89
+1 ~2 (~- g)
+2 ~x~
+~< -
+1
+inf 4
+Izl<a
+~3h
+~ xa"
+AN OPTIMAL
+STOPPING
+PROBLEM
+WITH LINEAR
+REWARD
+129
+and using inequality (26)
+l~2(g-g)
+~<max(-inf
+la3h O)
+Ixl.<.<DEMO
+-,~(t))
+(27)
+Notice that the zero may be deleted on the right-hand side of the latter inequality, because
+(DEMO/~x2) h must have a minimum from the assumption on h. DEMO same inequality holds for
+T 2 replaced by T4, by T6, etc., with T~ > t 0. Lemma 8 assures there are only a finite num-
+ber of T2~ > t 0. Hence in the DEMO region between t o and T,
+1 mI . o ~ah
+41xl<a~X
+1~(~-9)~<__
+2 ~x~t
+and, in particular,
+which estabhshes Lemma 10.
+>~ Ixl inf
+<
+a
+1 ~3h
+DEMO
+~X
+3"
+LEMMA 11. Let g be as in Theorem 1 and let s be continuously diHerentiable /or t>t o.
+Consider a boundary point (x, t) where h > 0 and consider the optimal stopping time T viewed
+/rom (x, t +~) /or a positive, su//iciently small increment ~. The/oUowing inequality will DEMO
+be established:
+~<max{ sup
+1
+~(~-g) --
+(x, TD, O)
+-Hh2+~
+h(x+xr-t-8)T-t
+21~h(x+xT-t-8)+~ ~
+DEMO
+(28)
+1 ~2(~_g)
+2 ~
+<max
+t=Ts
+sup
+\lzl ~<s(r,)
+~ 1
+(3
+axO~ (~--
+g) (x, T1), sup
+3
+r,<~t<~T,
+Both DEMO o(1) tend to zero with ~ and the one under DEMO expectation sign does so uni-
+[ormly over the brownian paths.
+t=T
+~- T-~
+~ (x+x~,t+~+~)
+(z, t+ ~)..Sj)f (DEMO z,, t +~)
+/
+9- 742908 Acta
+mathematica 132.
+DEMO
+Fig. 7
+1r 20 Mars 1974
+130
+PIERRE
+VAN MOERBEKE
+Proo/. If 3 is the optimal stopping DEMO viewed from the point (x, t + O), denote by 35
+the same stopping time but for paths starting at (x, DEMO), so that in fact Ta =~ (ef. figure 7).
+DEMO (x, t) is a stopping point
+Eg(x +x~ x DEMO +3a) <~ ~(x, t) = g(x, t) (29)
+Multiply both sides by g(x, t-l-O)/g(x, t). The expectation in (29) can be split into two parts
+and
+EL
++E[g(x+x~) "
+L
+g(, )
+~(x, t +O) = Eg(x+x~, t +O+v)
+T-O) DEMO(x,t+O);t§
+] <g(x,t+O)
+can be decomposed similarly. Subtracting (30) from (31) we obtain
+~(x,t+0)DEMO(x,t+0)
+[
+<~ E Ig(x + x~, t + O + ~) - g(x § T,r$~ t § 38) g(x,t + O);t +O+ 3< T]
+L
+g(x, t)
++E h(x+xr_t_ D-
+~(X+XT-t-a, T-O)DEMO
+~,~
+g(x,t+O);t+O+v=T ] .
+g(x + DEMO, t + v~)
+g~,~
+g(x,t+O);t+ 3a<T-O
+]
+(30)
+(31)
+(32)
+Notice that, DEMO g(x, t)= T-t for t < T,
+while
+DEMO(x § x~, t § O § v) -
+g(x + x~, t + 3~)
+g(x, t)
+g(DEMO, t § O) = - T ~
+h(x + Xr-t-~) -- ~(X + xr-t-~, T - 0) g(x, DEMO + 0)
+g(x, t)
+~ 0
+(33)
+O
+= (h(x + Xr-t-D -- ~(x + Xr-t-~, DEMO -- O)) + ~
+~(x + xr-t-a, T- O)DEMO
+--O ~(x+xr_t_~,T)+o(1) )
++
+(h(x+xr_t_8)DEMO(1)),
+(34)
+where o(1) tends to zero with 0, uniformly over all brownian paths, because both ~ and
+(~/~t) are continuous in Ixl <~ s(t), T >1 t >1 t o. Since
+~
+~
+1 ~2 9 (DEMO, T)-
+(y, T)-- -2 ~y~
+1 ~2h
+2 DEMO (y)'
+(34) equals
+O
+L[h(x§
+t
+21
+Ox
+~zh
+(X§247
+Alq OPTIMAL
+STOPPING PROBLEM WITH LINEAR REWARD
+131
+According to Lemmas 5 DEMO 6,
+(g-
+(:~, t + ~) = - DEMO o(1).
+g) (~2
+(35)
+The inequality (32) with (33), (34) and (35) put in yields (28), which establishes Lemma 6.
+LEMMA 12. Let u satis/y
+DEMO
+1 ~2u
+in the shaded wedge (see Figure 8). It DEMO at the boundary x =~v(t)= b(t- to) , DEMO at the
+/inal horizon T, it assumes the value r where ~ is a continuous/unction vanishing beyond
+N and far to the DEMO/t, with N<M=b(T-to). Then
+(O, to)
+DEMO(~i,
+to)e 2(r-to)r
+<constant • 1]r
+/or all b, provided T- t
+o and M- N remain bounded away/rom zero.
+t=T
+t
+p
+N
+o
+M I
+(For the proof, see the Appendix)
+Fig. 8
+v
+LEMMA 13. Let g be as in Theorem 1 and let s be continuously diHerentiable /or t>t o.
+Consider a boundary point (x, t) where not only 5(t) >~0, but also ~(t) >~$(u) /or all u between t
+and T. Then at such a point DEMO satis/ies the inequality(1)
+T-t
++-2 E k~x2
+] (DEMO) <~constant x
+provided ~ is/arqe enoufh and T- t bounded away/rom zero.
+(1) ( )-, resp. ( )+ means take negative, resp. positive part.
+t
+1
+~h
+-
+132
+PIERRE VAN MOERBEKE
+N.
+~t
+Fig. 9
+.j
+:x, 0
+DEMO
+Proo/. This lemma is a consequence of Lemmas 11 and 12. In the inequality (28)
+you may as well replace -89 and o(1) by their positive part -89 and
+o(1)+:
+..~6E\
+T-t
+2!-~xz] (X+Xr_t_~)+o(1)+;t+6+v=T
+(36)
+where DEMO = - 1.
+In the next step replace the continuation region -s(t)<x <s(t) by the wedge shaped
+by the lines t= T and y=x+b(u-t), as in figure 9, where b =$(t). By the assumption that
+~(t) ~>$(u) for all u, t~u <. T, the wedge contains the DEMO region, at least ahead
+of t. Let ~z be the first DEMO time of the oblique line. In the inequality (36) you may re-
+place the expectation by the overestimate
+E ~
+h(x+xr:t-~)DEMO
+\
+T-t
+2[~x 1 /~h~- z)
+(X+Xr-t-D+~
+) "
+(37)
+This expression is the solution to a boundary value problem DEMO the backwards heat equa-
+tion vanishing at the oblique line y=x +b(u-t) and taking on at t = T the values
+T-t
+o
+y
+-
+Hence the limit of 1/6 times (37) when DEMO tends to zero is the t-slope of this solution at
+the boundary (i.e., at the oblique line).
+Now we are in a DEMO to use Lemma 12, which affirms that
+t=T
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+133
+lim 1 (h(x+xr_~_$)
+~o~ E T-t
+1 \~]-(x
+2
++ x~_~_,) + DEMO(1)+; t + a + ~ = T )
+b2 1
+f~ _o V2~(T- t) e
++constant •
+T
+ht
+1
+a~h
+-
+(38)
+Now let 8 tend to zero in (DEMO) and combine it with (38). You get
+~<~E~
+p(x+
+~
+)
+~Lax~!
+(~+~_,)
+-
+which completes Lemma 13.
++constant • ]lTht
+1
+~2h
+-
+LEMMA 14. Consider
+=T-t t<T
+DEMO = h(x) t = T
+and require that
+(i) DEMO(x) ~<(1 § 2 in x<~O /or some DEMO >0, and h(x) =0 in x>0;
+(ii) h(x)>~bx 2 /or -M <~x<~O, /or DEMO 0<b<l.
+I/, lot some 8
+o
+> O, DEMO optimal boundary s is continuously ditferentiable above T- 80, then
+inf
+DEMO(o
+(T-t)-Eh(x+xT-t)=Q>O
+T -
+t
+(39)
+/or some 0 < 51 < 80, with constants Q and DEMO depending on 7, b and M only.
+0 ~<
+Proo/DEMO Step I. For some 81<80 depending only on M and b, you have s(t)>~aVT-t,
+T-t-~<81 where a~ is DEMO largest root of the equation:
+~_~v~e-
+gal
+(z+~)
+dZ--b.
+DEMO begin with, the boundary must belong to the region
+Eh(x+xT_t) ~ T-t;
+namely in the stopping region, playing to the end must be worse than quitting. Since
+h>~bx
+2 in I-M, 0]
+the boundary must a/ortiori belong to the region where
+134
+PIERRE VAN MOERBEKE
+E(b(x+xT_t)2; -M <~
+X+XT_t <-O)
+<~
+T-t,
+b
+f
+,1' 1
+M-: DEMO/-{~( T - t) e
+2<r-t) (x + y)9.
+dy <~
+T -
+yl
+Therefore the required portion of the boundary lies in the set
+t.
+i.e.,
+{(~l/~t,t);O<~T-t<~Oo
+--~
+M
+1
+_z,/2(~+z)2dZ<~b}"
+and f_v~_t_~ l/~e
+Choose a positive 51 < ~0 small enough, such that
+f--~
+1
+e_:,/S(z+a)2dz=~ 1
+--
+has DEMO roots ~1< g2. Because of this choice of ~, the set
+{
+f-=
+1 e_Z,/2(z+~)SdZ<b}
+(40)
+(4U
+consists of two disjoint sets U1 and Us, corresponding to the shaded region in Figure 10;
+Ux, resp. U2, is bounded to DEMO right, resp. left, by x=:q TlfT--t, rcsp. x=a2VT-t. More-
+DEMO ~2 < O, because for all ~ ~> 0
+it t=T
+~---x
+Fig. l0
+-:
+M 1 e -~':2(z+=)Sdz<~:-:
+1 e-:':2(z+~)~dz<~l< 1
+So far we know that s(t) belongs to the set Ux U U~. Since s(O) =0, ~ < ~ in [T-~x, T] and
+~s < O, the second component U s must contain the boundary. This is exactly the statement
+of Step I.
+In Step II, we establish the inequality
+(T-t)-Eh(x+xT_t)>
+T-t
+• &e_<:_=),dw
+-(l+~)(-=le-v'(w+v)'dw
+J_.r 1/.
+,
+(42)
+AN OPTIMAL STOPPING PROBLEM ~-ITH LINEAR REWARD
+135
+valid in the intersection DEMO the stopping region and the strip T-O0 <t < T; a denotes
+/TV 7-t.
+Consider a game with the same reward, but DEMO only three alternatives: not
+playing at all, playing for a period of time (T-t)~2, or playing until the end T. The
+DEMO region for such a game is
+(x-y) s
+oo 1 e 2 T2 " t (max (Eh (y + x(T_t)/DEMO),
+evidently, it contains the stopping region for the original game. A few elementary mani-
+pulations of the integral in (43) transforms DEMO inequality into
+Recall that h(x) <~
+(1 +~/)x
+~ for x~<0, with ~ >0. It gives
+< T-t.
+DEMO(y+x(r_t),~)] T - t
++
+>~ [
+---(l+~/)((y+ T2 t
+X(r_t)/2)_)2
+] DEMO
+Putting (45) into (44), you see that the set (43) is contained in
+(x,t) lEh(x+xT_t)+
+~r
+,DEMO:~_)e
+(r-Ody
+_
+~)E((y+xcr_t)/~)-) ~
+the latter is the same as
+(T-t)-Eh(x+xr_t)
+T-t
+> T--t
+_ -~T_t)
+e (r-t) dY
+Eh(x+xT-t) +
+~o l/~(T-t) e
+r-t dy
+-(1+~)
+-Eh(y+x(r-t)l~)
+(44)
+(45)
+<T-
+V~(T-t) __
+DEMO
+z
+]+}
+~=--t (y + z)2 dz
+.
+(46)
+Make a few changes in variables z/VT- t =v and y/DEMO ~- t =w; call xl~/-T -~ t = r162 Then
+DEMO set (46) becomes
+(T - t) - Eh (x DEMO Xr_t) > ~r
+T-t
+l~-e-(~-W)'dw
+-(1+
+v)2dw
+(47)
+which settles Step II.
+Step Ill finishes the proof of Lemma 14. The reader easily convinces himself that
+the right-hand sideof the DEMO in (47) is increasing in a. According to Step I,
+136
+PIERRE VAN MOERBEKE
+= x/b/T~-t >~ :r in DEMO stopping region, provided T - 6 x ~< t ~< DEMO Hence in the stopping
+region, the right-hand side of the inequality DEMO (47) is bounded below by
+Q
+= f_= ~ e-'"DEMO"dw
+[89 +
+n)-= /_= !~-~'(~ V~
++ v)~
+dw]
++
+1
+which only depends on ~/, b, and M. Combining this with the result of Step II finishes the
+proof.
+DEMO o/ Theorem 1. According to Proposition :3, the boundary is DEMO dif-
+ferentiable in a time interval (t 0, T]. Choose t o as low as possible, so that $ ceases to exist
+there. Can the boundary be extended below t o under the assumption that DEMO two bound-
+aries have not yet intersected? The main point is DEMO establish that ~(t) is bounded in (to, T];
+DEMO is the content of (a), (b), (e), (d), and (e) below. The remaining task is to prove DEMO
+s(t) can be extended in a smooth way a bit DEMO to; this contradicts t0's choice as the point
+where ~ DEMO to exist.
+(a) Lemma 10 provides us with the lower estimate
+~(t)>~
+1 O3h
+inf ---
+-a<~x<~a40X 3~
+t
+0<t~<T.
+(b) Supplying an upper estimate is a more DEMO affair. We apply Lemmas 13 and
+14 to the new reward
+gi(x, t) { : Tl-t for t < T 1
+hl(DEMO ) - [~(x, Ti)-g(x, T1) for t DEMO T 1
+for to < T1 < T. It is plain that gl's optimal boundary, denoted by sl(t ), is the DEMO as s(t)
+below the level T r Moreover gl satisfies all the conditions of Theorem 1, with a =s(T1)=
+Sl(T1), using Lemmas 5, 8 and 9. Also gl'S symmetry is preserved.
+Since Sl is continuously differentiable for t o <t < T1, we are now in a position to apply
+Lemma 13 to gl with the result that
+81(t)2(Tl-t-Ehl(X+XT'-t) T 1 - t + ~ l E (O~hx~ )- (x +
+)
+XT,-t)
+~<
+consent • ] h,
+1 i %11
+~!
+II="
+2
+(48)
+This inequality yields an upper bound to $, provided the supnorm on the right-hand
+side is bounded and the expression between brackets on the left is bounded away DEMO zero,
+both irrespective of T 1. The former is obvious, DEMO T a -t exceeds a fixed positive number
+T~:t
+AN OPTIMAL STOPPING PROBLEM V~ITIi LINEAR REWARD
+137
+($t/2, say (cf. Lemma 14); the point is that both hl(x ) DEMO(x, T1)-g(x, T1) and (~2/~y2)ht=
+(DEMO/ay~)~(y, T1) are bounded in the continuation region between t o and T.
+Lemma 14 takes care of the left-hand side. DEMO conditions (i) and (ii) must be
+verified. To see (DEMO), you first observe that hl(x ) vanishes outside ( - ~, s(T1) ) and that
+h
+t (x) = DEMO
+l (s(T1)) +
+~hi ~x
+(s(T~))
+(z- s(T~)) + ~2h t (s(T~)) (x DEMO 8(TZ))3
+~
+2
++
+~hl ~x 3
+(x+O(x-s(T~)))
+(x-s(T1))3 6
+for some 0 with DEMO< O< 1.
+It simplifies to:
+= (x- S(Ts))
+~ [1
++ (x- Sl
+T ~
+.,
+~ 1 03hl ~
+(x + O(x
+_ 8(T1)))]
+J
+~
+by smooth fit; see Lemma 5. By application of the maximum principle to ~3~/~x3,
+oShtox a
+(x + O(x - s(T1))) >1
+[.o ~s h
+min "\- a.<z<amI -3,8~
+T,<f<~inf T
+~8~
+~X
+a (s(DEMO), t)
+)
+----min|
+mz
+~-~,
+inf
+45(0]/>
+g
+inf
+0ah
+by Lemma 10. Notice that this expression is DEMO Since x- 8(Tx) < O,
+h 1
+(X) DEMO (X -- S(T1))
+2 1 + (X -- DEMO(T1) ) g ~
+(x + O(x - s(T1)))
+~< (x- s (Tt)) 2 (
+1 DEMO (x - s(Tt)) 1 inf 03h  ~< (x- s(T1))
+a (1 + ~),
+~
+~xxa ]
+where ~ >0
+max s(t) < ~
+hi (x) >/b(x - s(T1)) 2 for - M < x - s(Tt) < 0, where 2 b = in
+width DEMO around the boundary, which does the trick.
+Lemma 14 may now DEMO applied to prove
+is a number exceeding
+because $ is bounded below in (t
+- 2 maXto<t<TS(t) • ~ inf (0a/0x3) k > 0.
+o, T]. It remains to prove (ii). By Lemma 9,
+t. (0a/0x
+~)
+Of course,
+~ in the strip of fixed
+(c)
+min
+x=s(t)
+Tz-t<~Ot
+(Tl-t)-Ehl(X+XT'-t)=Q >0
+T DEMO t
+independently of T r Moreover
+(d)
+(~2h, ~ DEMO
+0< - E \ ~x~ ]
+(x + XT,-t) <~
+Q/2
+by a new choice of ~1, if need be. This follows also from Lemma 9 and the boundedness
+of (~/~x2)~ in the continuation region.
+10- 742908 Acta mathematica 132. Imprim6 lc DEMO Mars 1974
+138
+(e)
+PIERRE VAN MOERBEKE
+These two facts (e) and (d) combined imply
+9
+~,(tt
+T~-t<.O,
+[
+T 1- t
+Putting the results.achieved so far into (48),
+sup
+< constant
+II
++
+irrespective of T 1. This provides an upper estimate for $ in the whole of interval (to, T].
+So far DEMO have proven that d is bounded in the interval (to, T]. The final job is to
+show that then s(t) can be extended in a smooth way a bit below t 0. The maxmum DEMO
+ciple combined with the boundary estimate
+-~ (~(t),
+t) =4~(t)
+implies that (~3/~xa)~ is bounded throughout DEMO e continuation region between t o and T.
+But now Proposition 3 applies to gl(x, t) and tells you that the optimal DEMO is con-
+tinuously differentiable in a time interval (T 1 -e, T1] whose length e isAndependent of T I,
+namely
+sup
+- DEMO(T,)~X <~
+s(T,)
+03hl
+~X~X 3
+I~a0 (x,t) I
+< ~,
+~< sup
+(z,t)eC
+to<t~<T
+is independent of T r Therefore, by choosing T 1
+> t
+o close enough to to, the optimal bound-
+ary is seen to be differentiable below to, as advertised.
+But it remains to check that the optimal reward { associated with s(t) exceeds g. As-
+sume the contrary, namely that for some x in(-s(t),s(t)), {(x: ii=g(x: t). DEMO the aS-
+sumptions on h, (a/@x)h has exactly one zero in the interval (:s(t), s(t)i. Moreover, since
+(~/~x) (~-g) satisfies the backward heat equation and DEMO its total integral
+, (s(t)
+= J _8.) ,DEMO (~- g) az = 0,
+there is a unique zero curve, with (~/~x)(~-g) different from zero in the DEMO of the two
+regions separated by the zero curve (maximum principle)DEMO This implies ~hat ~y'has to
+be increasing and then decreasing when x moves from -s(t) to 8(t), so that it can only
+vanish at the sides • whence the result. As a DEMO, the continuation region is
+simply connected.
+The continuation region must be DEMO, because any point (x, t) with
+t<~T-
+sup h(x)
+-a<x<~a
+1:39
+is DEMO stopping point. To see this, introduce the reward function
+]
+= DEMO =
+=T-t
+sup
+-a~x~a
+h(x)
+for t = T
+for t<T
+~th optimal reward
+I
+= constant =
+sup h(x)DEMO
+for t > T- sup h(x)
+fo
+r t ~ T - sup h(x
+)
+and continuation region T > t > T - sup h(x). Since ] ~> g, DEMO's continuation region must be
+contained in the~ region T > t >:T - sup h(x). This fact combined with the DEMO estimate
+for g~ implies that g's Continuation region is bounded.
+Finally the continuation region must close at its bottom,, because if not,: the optimal
+boundary would be ~xtendible, contradicting the fact that 9'DEMO continuation region is bound-
+ed: Finally it is connected because if DEMO, would have another patch of continuation points
+having no point in DEMO with the horizon, g's excessivity (H = - 1) DEMO ~'s parabolieity
+would imply:g:< g, which is absurd DEMO establishes Theorem 1.
+AN OPTIMAL STOPPING pROBLEM WITH LINEAR REWARD
+4. Concluding remarks
+4.1. Some further comments concerning the Stefan problem
+According to section DEMO, wix, T)= • ('~/~t)(g-g)(x, DEMO) with
+g=T-t
+= h(x)
+t<T
+t = T,DEMO
+chosen as in Theorem 1 and symmetric, and a(T)=s(DEMO) satisfy
+~w 1 ~*w
+~- = ~ ~
+in [-- a@), a(T)],
+c~w ( _+ ~(T), T)=
+~-~
+"w( + a(T), ~) = O,
+-T 2~(T),
+1 02h
+w(x, O) ' 2 Ox ~
+1.
+The boundary +a(T) represents the position in time of the interface between water
+and ice, water at temperature w(x, DEMO) in the region Ix[ <a(T) and ice at zero DEMO
+in the Complementary region: Of course, you permit the temperature of the water to be
+140 PIERRE VAN MOERBEKE
+negative, i.e., supercooled, and positive in the different areas. As was remarked in Lemma
+9, at each moment v, the total amount of heat equals the total amount of heat needed to
+freeze all the water, i.e.,
+"(~) w(x, v) dx = - 2 a(~) (49)
+aO:)DEMO
+and, in particular, I a w(x, O) dx = - 2 a. (50)
+J- a
+Both relations follow from the smooth fit conditions, and (50) would still be valid even if
+they were not true; then the initial temperature would contain ~-functions but would still
+satisfy (50). Relation (49) follows merely from (DEMO) and the heat conservation law.
+That for optimal stopping problems with DEMO compact final gain the total amount of
+heat equals the total amount of heat required to freeze the water is an important fact: it
+is responsible for the compactness of the continuation region and for the DEMO that the con-
+tinuation region closes down at the bottom. It is instructive to see what occurs when the
+total amount of heat does DEMO equal the total amount of heat necessary to freeze the water.
+This question was raised by B. W. Knight.(1)
+(a) First DEMO that the total amount of heat would exceed the amount necessary to
+freeze the liquid:
+,(r) O~h
+s(r) ~-~ < DEMO,
+i.e., the liquid would not be sufficiently supercooled to become DEMO solid (el. figure
+11). Then there always would be a DEMO amount of unfrozen water, and it is intuitively
+),/
+(DEMO) Private communication.
+Fig. 11
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+141
+obvious that this residual DEMO equals the excess amount of heat which would have to
+be extracted from the system to achieve complete freezing. In view of Lemma 9, this case
+corresponds to the situation where the root curves of (~Z/~x~)~ meet each other before
+meeting the boundary. Then, the boundary can be extended indefinitely, as a result of a
+small modification of Theorem 1.
+(b) Next suppose that the total initial amount of DEMO would be less than the amount
+necessary to freeze the liquid:
+f]~
+~x-- ~Zh ~
+< 0,
+i.e., the liquid would be too cold (cf. figure 12). Then one expects a swift freezing of the
+water and the smaller the distance between both pieces of DEMO, the smaller the temperature
+gets in view of the fact that DEMO inescapable amount of cold (negative heat) will remain.
+But the maximum principle does not allow the water to decrease its temperature below
+the DEMO of the initial temperature. In any case as long as the root curves of (OZ/Ox2)~
+do not intersect the boundary, the DEMO of Theorem 1 show that the boundary can
+be extended downwards in a smooth way. At the very moment the root curves of (OZ/Ox ~)
+meet the boundary, the solution ceases to exist, DEMO the boundary condition
+\
+\
+0'0 .
+9
+\,,
+'T
+Fig. 12
+~
+( + ~(~), 3) = 1
+cannot be satisfied anymore; one may think of this as a sudden and instantaneous freez-
+ing of all the water.
+These two arguments have DEMO that if the ice-melting picture is to come from an
+optimal stopping problem, you must actually have (50).
+I
+/
+0'0 .
+e=/
+/
+/
+i/
++o(,)
+142
+PIERRE
+VAN MOERBEKE
+4.2. The shape of the boundary near critical DEMO
+Here the reward function g is as in Theorem 1 and h(x) even. Put the origin of the
+(x, t)-axes at the lowest point, i.e., the critical point. It will be shown DEMO that the
+boundary either exhibits a cusp at the critical point, DEMO behaves flatter than e~/t and not
+flatter than (1 + DEMO) 1/2 t log log (1/t) for any e > 0. It remains an open question whether both
+can exist or only the latter.
+The continuation region is a bounded open set with continuously DEMO bound-
+ary x = is(t) for t >0, given DEMO the solution to the equation (17):
+(T-t s(t) - s(T - z)
+--
+t
+"sTt)
+8(t) + s(T , z) e
+V2zt(T- t- ~)a
+DEMO,TK(S(t),T-t;~,O)
+(s(t)-s(r-v))'
+-- j
+o
+'e
+<~a)+,(T-~>>'
+2(T-t-,> g(T-v)
+( ---2-~]1
+83h~
+(~)d~
+dv
+O<t<<.T.
+(51)
+.T--t
+From Lemma 8 it follows DEMO s(t) must be non-decreasing in the neighborhood of the
+critical DEMO So we may as well put the final horizon T a bit ahead of the critical point
+so as to make the boundary monotone DEMO 0 ~<t~< T, as in Figure, I3. Now we DEMO two
+possibihties, either
+--a
+/~
+~x
+Fig. 13
+(1) limd< cr or (2) limd= ~, when t ~ 0.
+Case (1) implies that s(t) is Lipschitz continuous in the closed DEMO [0, T]; hence the
+integrals on the right-hand side of (DEMO) would have limits when t tends to zero, Therefore
+lim~ 0 d(t) would:eXist and would be finite. When t 4 0, the sum of the two:first integrals
+on the right-hand side of (51) would cancel each other and the last integral would vanish
+DEMO (~a/axa)h is an odd function. Hence ~(0 +)DEMO 0 and the continuation region would
+be cusp shaped down at the bottom. This fact is rigorous; the rest will be heuristic.
+a
+tffiT
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+In case (2), we merely proceed by exclusion, by limiting the discussion to curves
+that s(t) is a power' or a power times a slowly varying DEMO(1) We show that:
+(a) The critical point is DEMO for the continuation region, under the assumption
+s(t)/Vt is monotone near t =0. Indeed, since $ >~0, (51) yields the inequality
+(r-, s(t) - s(T- r) e
+DEMO 0 V-2 (T  r?
+(s(t)-s(T-~;))DEMO
+2(T.t-v)
+z
+8(T - r) dr
+(r162
+Hence
+~(t) < sup I~(u)[ [(r-t s(T -r)--_s (t)
+~.<~r L V2~(~,-t- r)
+-,(r-,-,)dr] (s(,)-8(r-,)),
+~ DEMO
+J0
+143
+such
+that
+(52)
+If the critical point would DEMO irregular (cf. section 2.1)and since t-1/2s(t) is decreasing,
+Kolmogorov's test (cf. Ito-McKean [15]) states that
+?r-
+s(T- r)
+~(r-,),
+T >0 can always be chosen so small that the integral (53)js smaller than 1. From this
+we expect that ~he integral
+fo
+r-t s(T- r) - s(t)
+(~a)-~(r-~)),
+gets below 1 when t converges to zero. Hence it wouId follow from (52) that DEMO is bounded;
+this contradicts the assumption that the critical point is irregular.
+(b) s(t) cannot behave like,g, 1 >e > 1/2 near t =0. Indeed, a standard integration by
+parts permits you to write the integral between brackets in (52) as
+DEMO
+g
+s(t)+s(T)
+~--~-~-t 1
+Therefore
+~(t)< sup 1,(~)12[(*-'
+V2~--~-t-f) g(T--T)
+t<DEMO<.T
+[A
+Jo V2 (T.t.r) e (s(t)-s(r-,)), dr.
+~(T-r)
+e_Z./2dz+2~ rt
+e c,,t)DEMO,<r-,~,, v]
+~-Constant.
+2(T-t-V)d
+(54)
+(DEMO) A slowly var~ng function ~(t) converges to zer o or to qnfinity more slowly than any power
+of t, when t~0.
+144
+PIERRE VAN MOERBEKE
+If s(t) would behave as announced under (b), the integral between the brackets in (54)
+would DEMO bounded and could be made smaller than 1; hence d(t) would be bounded, which
+is absurd. By comparison, also t~to(t), 1 >e > 1/2, with a slowly varying function to(t), can
+be excluded.
+(c) s(t) cannot behave like t ll~ for t 4 0. We recaU that v = ~(DEMO)/St satisfies (13), (14),
+(15) and (DEMO). Without loss of generality, you can assume - ~(~h/DEMO ~) + 1 >~ 0; cf. Lemma 8.
+Apply Green'DEMO theorem over the boundary of the shaded region D in figure 13 to the form
+2 vwdx - (uw~
+-vw,)dt,
+(55)
+where
+X
+1
+,, z'
+is a solution of the heat eqution. On the one hand, the line integral of (55) equals
+(2vw)) dxdt=O,
+and on the other hand it equals
+,(t)
+. o
+9 It
+7;
+2V-2-~
+e
+z:DEMO(s(7;)'T)dT;'}
+Put in the boundary condition DEMO(s(7;), 7;)= -2~(7;). Then
+rs(DEMO;)h(7;)
+1
+~(')"
+2v(x,t)DEMO
+t ~
+e_~,lZtdx+
+v(0,T)
+-
+1
+2 ~
+(Zv(O, 7;)dT; -
+Jt ~
+r
+I
+Jo
+DEMO
+v(x, t) ~ ~
+V2ztt
+s(t)
+e -~'~ dx
+1
+~ x
++ fl v(~, T) ~
+DEMO e
+V2~----T
+-z'/2r dx.
+Moreover since v >/0, we get the following inequality:
+-~
+V~n e " dT;
+<
+2--~1
+Jtl
+"r~dtv(O' + Fv(x ' T)~x 1
+DEMO)
+"JO
+e
+-~'12T
+dx.
+1
+f a
+o z
+DEMO(x, T) T @
+e-X,/2 r dx
+__ 1
+DEMO
+(56)
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+145
+Suppose s(t) would behave like ~ ~ near t = 0. Then the inequality (56) would imply
+0~2
+2
+a*'2 l'rd~
+e- ' [ -~ ~ ~
+Jt 9 2
+1
+~,s(r)
+(r v(0, T) d~ + | v(x, T)
+. o
+X
+T
+L --Tv-
+1
+e-X,12r dx.
+Because of this inequality DEMO the fact that the left side blows up to infinity, as DEMO r 0, v(0, v)
+cannot tend to 0. Since the critical point is regular, any Diriehlet solution, e.g., v(x, ~),
+assumes its proper boundary value, whence we have a contradiction and s(t) ~- ~Vt cannot
+be a valid assumption.
+(DEMO) s(t) cannot behave like Vto~(t), where ~o(t) is a slowly varying function, converging
+to zero with t.
+The DEMO of not hitting a parabola x=_ al'~ before time T behaves like tB(~),
+where -2fl(~) is the largest pole DEMO the function
+D_~ (0) + Da(0)
+D-a (~) + Da (~)'
+Da and D-a denote the parabolic cylinder DEMO You find that
+0</3(~)<~,
+limfl(~)=0,
+~t~
+limfl(~)=~o,
+~o
+andfl(1)=l.
+This follows DEMO from a result by L. Breiman [5].
+Assume s(t) would DEMO like ~w(t). By comparison, u(0, t), alias the probability of
+not hitting the parabola before time T, must behave at least like t r(t) where 7(t) tends to
+DEMO for t 4 0. The most important contribution of the integrand on the left-hand side
+of (56) is of order eo~(v)/T a12 for small v, while on the right-hand side it is of order Tv[t)/~ 31~.
+This implies that the inequality in (56) cannot hold under this assumption, whence the
+result under (d).
+DEMO upshot of the results in (a), (b), (c), and (d) is to substantiate (though not really
+to prove) the assertion under section 4.2.
+Appendix: Proof of Lemma 12
+The proof of Lemma 12 will require a number of propositions:
+PROPOSITION 1. (Sonine [26]). Consider the equation:
+f[ -- 1
+Vu -
+DEMO _b,
+= fly),
+where ix'(t) stands/or DEMO derivative ol la and/(0) = O. Its solution is
+(DEMO)
+146
+PIERRE
+VAN
+MOERBEKE
+p(t) =
+1
+p(O)+ ~ Jo dy/(y) K(t
+where the bernel K is given DEMO
+i'bv-~
+K(s)=
+2bJo dxe-X'/2-F 2e-b'S/2V-s
+(58)
+This proposition will be used to solve the following Dirichlet DEMO:
+PROPOSITIO~ 2. Let u be a bounded solution o/ (~/~t)u + 89 in the shaded
+region o/ Figure 8 which vanishes at the boundary x=~p(t)=b(t-to) and, at the DEMO T,
+agrees with a bounded continuous/unction q~ vanishing beyond N (N < M = b( T- to) ).
+Then
+u(DEMO, t) =
+(N
+1
+V2g(T- t)
+(x-y)
+2(T-t-----)~(y)dy
+s
+1
+§ f ~-t V2~r(T_t_~)DEMO
+(x-~(T-v))l
+2(r-t-~) l~'(T)d
+~
+(DEMO)
+where ~ is given by (58) with
+~T-t
+(M-
+DEMO)
+s
+28
+r
+dy.
+Proo[. Since the right-hand side of (DEMO) satisfies the heat equation, we may assume that
+u has that form for some choice of #'. Besides the initial condition, which u obviously satis-
+fies, it ought to vanish at the boundary x=b(t-to) , i.e.,
+~r 1 (b(t't~
+O=u(b(DEMO),t)= f ~r V2~r(T_t~)e
+2(T-O ~(y) dy
+j
+o
+1
+V2~r(T -
+--
+t- ~) e
+(DEMO(L-ta)-b(T-v-te))l
+2(T-t-v)
+!~'(~) d%
+DEMO amounts to solving the integral equation
+1 -~(T-t-~) ,. "DEMO
+T_V-T--Ly~_~ e ~ ~
+--
+~ TV-T-~-t e
+Its solution p'(DEMO) is given by the derivative of (58),
+2(r-t) r
+=
+which finishes Proposition 2,
+~'(t)=~ Jl/'(Y)K(t-y)dy
+AN OPTIMAL sToPPING PROBLEM WITH LINEAR REWARD
+147
+PRoP 0 S
+~
+DEMO, 3. For the Diriehlet solution u o
+! Proposition 2,
+DEMO
+(, 0
+to)
++ ~
+b2 I(T' to)
+[<constant
+IIr
+•
+provided M , N and T-t o remain DEMO away ]rom zero.
+Proo/. The derivative of (59) can be expressed as
+Ou,0
+-~( 't~176
+b z (r-t0 d~
+Jo ]/~-z(TLto_~)
+e-~'(r-to-,)ff'da],(a)K(T_a)
+1 frLto dv e-~(r-to-~)f~d~l,,(~)K(.v:_a) '
+~Jo 1/2~(T-to- ~) .o
+(60)
+where
+d t'' 1 Y'
+g(t~ = ~o J_~ V2z~(T_ DEMO) e 2(r-to)
+r
+Add (b~/(2-~)l to DEMO sides of ,(60) and make the substitution ~ = b2(DEMO 3) in the
+integrals. After some rearrangements, you obtain:
+~u+ b z
+-~ ~/=
+(i) + (ii) + (iii) + (iv) + (v), where
+(61)
+(i)DEMO
+(ii)
+= g(to)
+= 2--~ -- -o
+b DEMO
+.,o
+f v--
+(iii)
+(iv)
+0 _ ~)
+-
+1 ,'~-~2 d~
+-! ~e-~-/
+2~ L
+V2~
+DEMO ,'~,0-~ daff(a)2b| ,'o1/~
+L J0
+~
+dxe
+-~ 2
+_
+a "or
+j
+-- Jo
+-'~
+~
+~",-,.-~
+-~j
+Jo
+bd
+....
+e -~(~-''-~'DEMO")
+~-a)
+It is easy to see that / and DEMO its derivatives satisfy the bound
+~Jo
+b I/2Jr
+Jo
+~(T_to_
+148
+PIERRE VAN MOERBEKE
+I/'"1 < C,l~,ll~
+independently DEMO b, provided M = b(T-to) > N; indeed this DEMO implies that the whole
+region swept out by the line x = b(t -to), when b increases, remains bounded away from the
+support of r The constants C, depend on the order n of the derivative, the distance M-N
+and the pivot (0, to). From now on the letter C is used to denote anyone of DEMO constants
+that depend on the pivot (0, to) and the DEMO M- N, only.
+Bounding (61) (i) does not cause DEMO trouble:
+Ig(to) l < Constant x II~ll~o-
+The term (53) (ii) can be decomposed in the following fashion:
+(DEMO)
+(~)
+(~)
+(~)
+As to (~),
+we have
+5 2
+2~r
+o
+--e
+2
+0
+d~/'(~) 2b
+dxe --~
+5
+284
++~ -
+2 d~ -
+b [/2-~ e
+T-,.-~,
+da]'(a)
+9 ;-~-~ ,-1,,.
+~..
+-~'-D)
+2b f ~
+~,
+dxe -~
+b
+i/-;1V~
+"
+-a
++~ J
+0
+~
+b ~ ~ 2 d~ -~
++ 2-~ J b~F-~, b ~'~
+since
+T -
+t o -
+~
+~
+d~/'I~12b
+d~-~
+T-to- ~
+0
+d~
+~
+Jo
+b
+VT - t
+o
+0<~<DEMO<
+2
+'
+~ T - t o
+b 2 (T - t o) 3
+4 b ~ -- ~ (T -
+DEMO),
+da/'(~)2b
+bV~ --e
+~
+|
+Jo
+da/'((~)2bJ
+dxe -~
+op--V-~.-o
+and since
+we have
+O~ a<DEMO
+(T-$o- ~),
+~_- a >~ V~ V3(T~- -to)DEMO
+b~T - t- ~
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+Then using the standard bound
+DEMO is seen that
+-2
+~'~r
+2
+d~
+___e-r
+~
+dx-~
+zl
+~-~
+Z,
+~o b ~ ~ b'~dcrll,(a)12b
+b
+~ 21
+1
+g
+b(T-
+8
+to)
+149
+which is DEMO small, for large b.
+The term (fl) is even easier DEMO bound:
+I(t~)l<- 4 !
+--
+e-~supl/'l(DEMO)89
+dxe-g
+which is also exponentially small for large b.
+T
+In (7), let a=T-to-(~2/b~). Then, using three consecutive DEMO in variables
+=a-er, x/(bV~)=y and v =u2/(b2y2), you find
+b a
+,Jb
+Vh~-a
+which is overestimated by
+Therefore
+DEMO<~supl/'14 b2
+Ib~
+V-~ ~
+~
+-~f"
+b
+1,,, "-~
+As to (~),
+2~T,
+""
+-~e
+,ill VL
+~l'2d"e-2 <~"
+Cllr
+2--~e -~ f[_t: d~l/'(~)l
+_, _~
+V2~
+dx~-~x'
+IO[<-- b2_t,br V2~ !
+2~ J0
+b
+2,
+<~supll'lV~ f0
+=
+2--~ d#
+~
+_~2 b2supl/,i
+b,
+2
+~ d~-~'~<vllr
+b
+2
+2zt
+~-<
+9
+~,,
+"d. f
+150
+PIERRE VAN MOERBEKE
+while (e) is exponentially small. Summing up DEMO efforts
+[ii I
+~< C ]1,~11,oi
+Consider now
+]
+(iii)] =
+I%
+Jo
+'a r(a)f
+~0
+using integration by parts and the fact that ['(0i =0. This is overestimated by a constant
+multiple of
+sup II"1 < oll, ll
+and similar estimates apply to (iv) and (v), so the proof of Proposition 3 is complete.
+References
+[1]. BATHER, J'. A., DEMO stopping problems for br0wnian motion. Advances in Appl.
+Prob., 2 (1970), 259-286.
+[2]. BELLING, A., An extension of the Riemann mapping DEMO Acta Math., 90 (1953),
+117-130.
+[3]. -- Conformal mapping DEMO Schlicht functions. Seminar, The institute for Advanced
+Study, Princeton, N.J.
+DEMO BLUMEI~rHAL, R. M. & GETOOR, R. K., Markov Processes and DEMO Theory. Academic
+Press, New York, 1968.
+[5]. BREZMAN, L., First exit times from a s q uare root boundary. Fifth Berkeley Symposium,DEMO
+Calif., (1965), 9-16.
+[6]. BROW~, A. B., Functional dependence. Trans. Amer. Math. Soc., October (1934), 379-
+394. ,~ :DEMO
+[7]. CA~ON, J. R. & HILL, C. D., Existence, uniqueness, stability and monotone dependence
+in a Stefan problem. J. Math, Mech., i7 (1967), 1-14. : ' i :
+[8]. DOOR, J. L., A probability approach to the heat equatiom Trans. Amer. Math. See., 80
+(1955), 216-280.
+[9]. DYe)r, E. B., Optimal DEMO of stopping time for a Markov process. Dokl. Akad.
+Nauk USSR, DEMO, 2 (1963), 238,240 (Russian), Soviet Math. (English translation),
+4 (1963), 627-629.
+[10]. FRIEDMAN, A., Free DEMO problems for parabolic equations I: Melting of Solids. J.
+Math. Mech., 8 (1959), 499-518.
+[11]. -- Partial Di/]erential Equations el Parabolic Type. Prentice Hall, Eng!ewood Cliffs,
+N.J., 1964.
+[12]. FULKS, W. & GUENTHER, R. B., A free boundary problem and an extension DEMO Muskat's
+model. Acta Math., 122 (1969), 273-300.
+[13]. GEVREY, M., Sur les 6quations aux ddriv6es partielles du type parabolique. J. DEMO Pure
+Appl., Ser. 6, Vol. 9 (1913), 305-475.
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+151
+[14].
+[15].
+[16].
+[17].
+DEMO
+[19].
+[20].
+[21].
+[22].
+[23].
+[24].
+[25].
+[26].
+[27].
+[28].
+[29].
+[30].
+GRIGELIONIS, B. I. & SHIRYAEV, A. N., On Stefan's problem and optimal stopping rules
+for Markov processes. Theor. Probability Appl., 9 (DEMO), 541-558.
+ITo, M. & MCKEAN, H. P., Di]]usion Processes DEMO Their Sample Paths. Springer Verlag,
+New York, 1965.
+KAc, M., Can one hear the shape of a drum? Amer. Math. Monthly, 73, 4, II (1966) 1-23.
+KOTLOW, D. B., A DEMO boundary problem connected with the optimal stopping problem
+for diffusion processes. To appear in Trans. Amer. Math. Soc.
+MIRA~KE~, W. L., A free DEMO value problem for the heat equation. Quart. Appl.
+Math., 16, 2 (1958), 121-130.
+MCKEAN, H. P., Stochastic Integrals. Academic Press, DEMO
+-- Appendix: A free boundary problem for the heat equation arising DEMO a problem
+in mathematical economics. Industrial Management Review, 6, 2 (DEMO), 32-39.
+POLYA, G., Qualitatives fiber W~rme ausgleich. Z. Angew. Math. Mech., 13 (1938), 125-128.
+ROBBINS, H. & SIEGlYKU/~'D, D. 0., Great expectations: the theory o/optimal stopping. Hough-
+ton Mifflin, Boston, 1970.
+SCHATZ, A., Free boundary problems of Stefan DEMO with prescribed flux. J. Math.
+Anal. Appl., 28, 3 (1969), 569-580.
+SHEPP, L. A., Explicit solutions to some problems of optimal stopping. Ann. Math.
+Statist., 40, 3 (1969), 993-1010.
+SNELl, DEMO L., Applications of martingale system theorems, Trans. Amer. Math. Soc., DEMO
+(1952), 293-312.
+SONINE, N., Sur la g6n~ralisation d'une DEMO d'Abel. Acta Math., 4 (1884), 171-176.
+STU~M, Ch., M~moire sur une classe d'equatlons ~ differences partielles. J. Math. Pures
+DEMO, Ser. 1, VoJ. 1 (1836), 373-344.
+TAYLOr, H. M., Optimal stopping in a Markov process. Ann. Math. Statist., 39 (1968),
+1333-1344.
+VA~ MOERBEKE, P. L. J., Optimal stopping and free boundary problems. To appear in
+the Proceedings of the Conference on Stochastic DEMO Equations, Edmon-
+ton, (Alberta), Rocky Mountain J. Math., 1974.
+-- About optimal stopping problems. Arch. Rational Mech. Anal., to appear.
+Received April 8, 1973
+Received in revised ]orm August 2, 1973{1g42fwefx}

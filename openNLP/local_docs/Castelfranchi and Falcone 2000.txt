@@ -1,0 +1,1093 @@
+Applied ArtiÐcial Intelligence, 14 : 799 È823, 2000
+Copyright 2000 Taylor & Francis
+0883-9514 /00 $12.00 .00
+TR US T
+A
+DI A
+DEMO
+L ECTI
+ND
+CONTR OL
+C L I NK
+:
+CRISTIANO
+DEMO
+National
+Unit of ``AI, Cognitive
+Roma, Italy
+CASTELFRANCHI
+Research
+Council-Institute
+Modelling,
+and
+AND
+RINO
+of
+Psychology,
+Interaction,’’
+T he relationship DEMO trust and control is quite relevant both for the very notion of trust
+and for modelling and implementing trust-control relations with autonomous systems, but it
+is not trivial at all. On the one side, it is true that where/when there is control there is no
+trust, and vice versa. However, this refers to a restricted notion of trust : i.e., ““trust in y,ÏÏ
+which is just a part, a DEMO of the global trust needed for relying on the action of
+another agent. It is claimed that control is antagonistic of this strict form DEMO trust ; but also
+that it completes and complements it for arriving to a global trust. In other words , putting
+control and guarantees DEMO trust-building ; it produces a sufficient trust, when trust in yÏs
+DEMO willingness and competence would not be enough . It is also argued that control
+requires new forms of trust : trust in the control DEMO or in the controller, trust in y as for
+being monitored DEMO controlled ; trust in possible authorities, etc. Finally , it is DEMO that,
+paradoxically , control could not be antagonistic of strict trust in y, but it can even create
+and increase it by making y more willing or more e†ective. In conclusion, depending on the
+circumstances , control makes y more reliable or less reliable ; control can DEMO decrease or
+increase trust. T wo kinds of control are also analyzed , characterized by two di†erent
+functions : ““pushing or inÑuencing controlÏÏ aimed DEMO preventing violations or mistakes,
+versus ““safety, correction, or adjustment controlÏÏ aimed at preventing failure or damages
+after a violation or a mistake DEMO A good theory of trust cannot be complete without a theory of
+control.
+The relation between trust and control is very important and perhaps DEMO
+deÐnitory ; however, it is everything but obvious and linear.
+On DEMO one side, some deÐnitions delimit trust precisely, thanks to
+control as its opposite. But it is also true that control and guarantees make
+DEMO more conÐdent when one does not have enough trust in oneÏs partner ;
+and what is conÐdence if not a broader form of trust ?
+This research has been supported by the IST Programme ALFEBIITE (DEMO Logical Framework for
+Ethical Behaviour between Infohabitants in the Information Trading Economy of the Universal Informa-
+tion Ecosystem) contract IST-1999-10298.
+Address correspondence to Rino Falcone, IP-CNR, Viele Marx, 15-00137, Roma, Italy. E-mail :
+DEMO ip.rm.cnr.it
+799
+800
+C. Castelfranchi and R. Falcone
+On the other side, it appears that the ““alternativeÏÏ between control and
+trust is one of the main DEMO in several domains of IT and computer
+science, from human computer DEMO (HCI) to multiagent systems
+(MAS), electronic commerce (EC), virtual organizations, and so on, precisely
+as in human social interaction.
+DEMO, for example, the problem to mediate between two diverging
+concepts as control and autonomy (and the trust on which the autonomy is
+based) in the design of human-computer interfaces (Hendler, 1999).
+““One of the most contentious issues in the design of human-computer
+interfaces arises from DEMO contrast between “direct manipulationÏ interfaces
+and autonomous agent-based systems. The proponents of direct manipula-
+tion argue that a human should always be in controlÈsteering DEMO agent
+should be like steering a carÈyouÏre there and youÏre active the whole time.
+However, if the software simply provides the interface, for DEMO, to an
+airlineÏs booking facility, the user must keep all needs, constraints, and pref-
+erences in his or her own head. . DEMO . A truly e†ective internet agent needs to
+be able to work for the user when the user isnÏt directly in control.ÏÏ
+Also consider DEMO naive approach to security and reliability in computer-
+mediated interaction, just DEMO on strict rules, authorization, cryptography,
+inspection, control, etc. (DEMO, 2000), which can, in fact, be self-
+defeating for DEMO EC, virtual organization, and cyber-communities
+(Nissenbaum, 1999).
+The problem is that the trust-control relationship is both conceptually
+and practically quite complex DEMO dialectic. An attempt will be made to
+explain it both at the conceptual and modelling level, and in terms of their
+reciprocal dynamics.
+WHAT
+TRUST
+IS :
+A
+COGNITIVE
+APPROACH
+Let us recapitulate the cognitive approach and deÐnition of trust
+(Castelfranchi & Falcone, 1998, 2000). The word ““trustÏÏ is ambiguous : it
+denotes both the simple trustorÏs evaluation DEMO trustee before relying on it
+(this will be called ““core trustÏÏ), the same plus the decision of relying on
+trustee (this part DEMO the complex mental state of trust will be called ““reli-
+anceÏÏ), and the action of trusting, depending upon trustee (this meaning
+really DEMO with ““delegationÏÏ (Castelfranchi & Falcone, 1998b) and the
+term ““trustÏÏ DEMO not be used for this).
+In Figure 1, it will DEMO shown how these three steps of the trust concept
+are causally related. In fact, there may be several evaluations of other agents
+(y DEMO z in the Ðgure) about a given task (t in the Ðgure) ; each of these
+evaluations is based on various parameters/components (see below) ; the
+match among these evaluations permits one to DEMO if and which agent to
+rely on. One should consider also external constraints that could inÑuence
+T rust and Control : A Dialectic L ink
+801
+FIGURE 1.
+DEMO decision to trust : Comparing two trustees.
+the preferences/conveniences and then this decision (for example, an obli-
+gation to take a decision DEMO if nobody has had a good evaluation). Then,
+the decision permits one to make (or not) a delegation action.
+Trust is, Ðrst of all, a mental state, an attitude toward another agent
+(usually a social attitude). The three-argument predicate -Trust(x y t ) will be
+used (where x and y are the trustor and DEMO trustee, respectively, and t
+(a ,g) is the task, the pair action-goal) to denote a speciÐc mental state com-
+pound of other more elementary mental attitudes (beliefs, goals, etc.), while
+one uses a predicate Delegate (x y t ) to denote the action and the resulting
+relation between x and y.
+Delegation should necessarily be DEMO action, the result of a decision, and
+it also creates and is a (social) relation among x, y, and t . DEMO external,
+observable action/behavior of delegating either consists of the action of pro-
+voking the desired behavior, convincing and negotiating, charging and
+DEMO, or just consisting of the action of doing nothing (omission),DEMO
+waiting for and exploiting the behavior of the other. Indeed, trust DEMO reli-
+ance are used only to denote the mental state preparing and underlying
+delegation (trust will be both : the small nucleus and the whole).
+T here may be trust without delegation : either the DEMO of trust is not suffi-
+cient to delegate , or the level of trust will be sufficient but there are other
+reasons preventing delegation ( for example, prohibitions , see Figure 1).
+So, trust is normally necessary for delegation, 1 but it is not sufficient :
+DEMO requires a richer decision that contemplates also conveniences
+and preferences. As a state, trust is the most important part of the mental
+counterpart of delegation, i.e., that it is a structured set of mental attitudes
+DEMO the mind of a delegating agent/trustor.
+The decision to delegate has no degrees : either x delegates or x does not
+delegate. Indeed, trust has degrees : x trusts y more or less relatively to DEMO .
+And there is a threshold under which trust is not enough for delegating.
+802 C. Castelfranchi and R. Falcone
+Basic Beliefs in Trust
+The basic DEMO of the mental state of trust begin to be identiÐed.
+To have trust it is necessary that the trustor has got a goal. In DEMO, x has a
+goal g that x tries to achieve by DEMO y : This is what x would like to
+““delegate toÏÏ y, its task.
+In addition, x has some speciÐc basic beliefs :
+1. ““CompetenceÏÏ belief : a positive evaluation of y is necessary ; DEMO should
+believe that y is useful for this goal of its, DEMO y can produce/provide the
+expected result, that y can play DEMO a role in xÏs plan/action, that y has
+some function.
+DEMO ““DispositionÏÏ belief : Moreover, x should think that y not only DEMO able and
+can do that action/task, but y will actually DEMO what x needs. With cogni-
+tive agents this will be a belief relative to their willingness : this makes
+them predictable.
+These are the DEMO prototypical components of trust as an attitude
+toward y. They will be enriched and supported by other beliefs, depending
+on di†erent kind of delegation and di†erent kinds of agents ; however, they
+are the real cognitive kernel of trust. As will be seen later, even the goal can
+be varied (in negative expectation and aversive forms of ““trustÏÏ) but DEMO
+these beliefs.
+Esteem and Expectation
+The nature of the above basic beliefs about y can be stressed. They are,
+after the decision step (see Figure 1), evaluations and positive expectations ,
+not ““neutralÏÏ beliefs. In trusting y, x believes that y has the right qualities,
+power, ability, competence, and disposition for g. Thus, the trust DEMO x has
+in y is (clearly and importantly) part of (DEMO is based on) its esteem, ““image,ÏÏ
+and reputation (Dasgupta, 1990 ; Raub & Weesie, 1990).
+There is also a ““positive expectationÏÏ about yÏs power and performance.
+A positive expectation is the combination DEMO a goal and belief about the future
+(prediction ) : x DEMO that both g and x desires/intends that g. In this case : x
+believes that both y can and will do ; and DEMO desires/wants that y can and will
+do.
+Trust and Reliance
+The kernel ingredients we
+ing at a delegation or reliance
+for this :
+have just identiÐed are not enough for arriv-
+disposition. At least a DEMO belief is necessary
+T rust and Control : A Dialectic L ink 803
+3. Dependence DEMO : x believes to trust y and delegate to it that either x
+needs it, x depends on it (strong dependence ) (Sichman et al., 1994), or at
+least that it is better to x to rely rather than to not rely on it (weak
+dependence (Jennings, 1993)).
+In other terms, when x trusts on DEMO, x is in a strategic situation
+(Deutsch, 1973) : x believes that there is interference (Castelfranchi, 1998) and
+that its rewards, the results of its projects, depend on the actions of another
+DEMO y. These beliefs (plus the goal g) deÐne its ““trusting yÏÏ or its ““trust in
+yÏÏ in delegation. However, another crucial belief arises in xÏs mental state,
+supported and implied by the previous ones.
+DEMO FulÐllment belief : x believes that g will be achieved (thanks DEMO y in this
+case). 2 This is the ““trust thatÏÏ g.
+Thus, when x trusts y for g, it has also some DEMO that g. When x decides
+to trust, x also has the DEMO goal that y performs a , and x rely on yÏs a in its
+plan (delegation). In other words, on the basis DEMO those beliefs about y, x
+““leans against,ÏÏ ““count on,ÏÏ DEMO upon,ÏÏ ““relies on,ÏÏ in other words x
+practically ““trustsÏÏ y. WhereÈnoticeÈ““to trustÏÏ not only means those basic
+beliefs (the core), but also the decision (the broad mental state) and the act of
+DEMO (see Figure 1). To be more explicit : on the DEMO of those beliefs
+about y, x decides to not renounce to DEMO, not personally bringing it about , not
+searching for alternatives to DEMO, and to pursue g through y.
+Using Meyer, van Linder, DEMO van der HoekÏs logics (Meyer & van der
+Hoek, 1992 ; van Linder, 1996), and introducing some ““ad hocÏÏ predicate
+(like DEMO), one can summarize and simplify the mental ingredients of
+trust as in Figure 2. In this Ðgure, PE means positive expectation, B DEMO the
+believe operator (the classical doxastic operator), and W is DEMO wish operator
+(a normal modal operator). 3
+FIGURE 2.
+Basic DEMO ingredients of trust.
+804 C. Castelfranchi and R. Falcone
+Wishes are the agentsÏ desires ; DEMO model the things that the agents like
+to be the case ; the di†erence between wishes and goals consists in the fact
+that goals DEMO selected wishes. The fulÐllment belief derives from the formu-
+las in the above schema.
+Of course, there is a coherence relation between these two aspects of
+trust (core and reliance) : the decision of betting DEMO wagering on y is
+grounded on and justiÐed by these beliefs. More than this : the degree or
+strength (see later) of trust DEMO be sufficient to decide to rely and bet on y
+(Marsh, 1994 ; Snijders & Keren, 1996). The trustful beliefs about y (core) are
+the presupposition of the act of trusting y.
+Risk, Investment, and Bet
+Any act of trusting and relying implies some bet and some risk
+(Luhmann, 1990). In fact, x might eventually be disappointed, deceived, and
+betrayed by y : xÏs beliefs may DEMO wrong. At the same time x bets something
+on y. First, DEMO renounced to (search for) possible alternatives (for example,
+other DEMO) and x might have lost its opportunity : thus x is DEMO on y
+the utility of its goal g (and of its DEMO plan). Second, x had some cost in
+evaluating y, in waiting for its actions, etc. and x wasted its own time and
+resources. Third, perhaps x had some cost to induce y to do what x wants or
+to have y at its disposal (for example, x paid for y or for its service) ; now this
+DEMO is a real bet (Deutsch, 1973) on y. Thus, to be precise we can say
+that : W hen x trusts y DEMO are two risks :
+a) the risk of failure, the DEMO of g (possibly forever, and possibly of the
+entire plan containing g) ; 4
+b) the risk of wasting the e†orts.
+Not DEMO x risks to miss g (missed gains ) but x also DEMO to waste her invest-
+ments (loss).
+The act of trusting/DEMO is a real wager, a risky activity : it logically
+presupposes DEMO uncertainty, but it also requires some predictability of y,
+and DEMO some degree of trust in y. This subjective perception of risk and
+degree of trust can either be due to lack of knowledge, incomplete informa-
+tion, dynamic world, or to favorable and adverse probabilities. As DEMO will
+see this makes some di†erence in reasons and functions for control.
+When applied to a cognitive, intentional agent, the ““disposition belief ÏÏ
+DEMO be articulated in and supported by a couple of other beliefs :DEMO
+2a. Willingness belief : x believes that y has decided and intends to do a . In
+fact, for this kind of agent to do something, it must intend to do it. So
+trust requires modeling the mind of the other.
+T rust and Control : A Dialectic L ink
+805
+2b.
+Persistence DEMO : x should also believe that y is stable enough in its
+intentions, which has no serious conÑicts about a (otherwise, it might
+change its mind), or that y is not unpredictable by character, etc. 5
+Internal (Trustworthiness) Versus External Attribution of Trust
+One should DEMO distinguish between trust ““inÏÏ someone or something
+that has to act and produce a given performance thanks to its internal char-
+acteristics, and the global trust in the global event or process and its result,
+DEMO is also a†ected by external factors like opportunities and interferences
+(see DEMO 3).
+Trust in y (for example, ““social trustÏÏ in strict sense) seems to consist in
+the Ðrst two prototypical beliefs/evaluations identiÐed as the basis for reli-
+ance : ability/competence (that with cognitive agents includes self-conÐdence),
+and disposition (that with cognitive agents is DEMO on willingness, persist-
+ence, engagement, etc.). Evaluation about opportunities DEMO not really an
+evaluation about y (at most the belief about DEMO ability to recognize, exploit,
+and create opportunities is part of DEMO trust ““inÏÏ y). An evaluation should
+also be added about the probability and consistence of obstacles, adversities,
+and interferences. One will call this part of the global trust (the trust ““inÏÏ y
+relative to its internal powersÈboth motivational powers and competential
+powers) internal trust or subjective trustworthiness . In fact, this trust is based
+on an ““internal causal attributionÏÏ (to y) on the causal factors/probabilities
+of the successful DEMO unsuccessful event.
+FIGURE 3.
+The decision to trust : Internal and external factors.
+806
+C. Castelfranchi and R. Falcone
+Trust can be said to consist DEMO or better to (either implicitly or explicitly)
+imply the subjective DEMO of the successful performance of a given
+behavior a , and it is on the basis of this subjective perception/evaluation of
+risk and DEMO that the agent decides to rely or not, to bet or DEMO on y.
+However, the probability index is based on derivations from DEMO beliefs
+and evaluations. In other terms the global, Ðnal probability of DEMO realiza-
+tion of the goal g, i.e., of the successful performance of a , should be decom-
+posed into the probability of y DEMO the action well (that derives from
+the probability of willingness, persistence, engagement, competence : internal
+attribution ) and the probability of having DEMO appropriate conditions
+(opportunities and resources external attribution ) for the performance DEMO its
+success, and of not having interferences and adversities (external attribution ).
+Strategies to establish or increment trust are very di†erent, depending DEMO
+the external or internal attribution of your diagnosis of lack of trust. If there
+are adverse environmental or situational conditions, your intervention will
+be in establishing protection conditions and guarantees, preventing inter-
+ferences and obstacles, DEMO rules and infrastructures ; if you want to
+increase your trust in your contractor you should work on its motivation,
+beliefs, and disposition toward yourself, or on its competence, self-
+conÐdence, etc. 6
+Environmental and situational trust (which are claimed to be so crucial
+in electronic commerce and computer mediated interaction) (see, for
+example, Castelfranchi and DEMO, 2000 ; Rea, 2000) are aspects of the external
+trust. DEMO is important to stress that when the environment and the speciÐc
+circumstances are safe and reliable, less trust in y (the contractor ) DEMO necessary
+for delegation ( for example, for transactions ).
+Vice versa, when x strongly trust y, his capacities, willingness, and faith-
+DEMO, x can accept a less safe and reliable environment (with less external
+monitoring and authority). This ““complementarityÏÏ between the internal
+and the DEMO components of trust in y for g is accounted for in given
+circumstances and a given environment.
+However, as will be seen later, DEMO should not identify ““trustÏÏ with
+““internal or interpersonal or social trustÏÏ and claim that when trust is not
+there, there is something that can replace it (for example, surveillance, con-
+tracts, etc.). It DEMO just a matter of di†erent kinds or better facets of trust.
+Formal DeÐnition of Trust
+When x relies on y for yÏs action, x is taking advantage of yÏs indepen-
+dent goals and intentions, predicting yÏs behavior on such a basis, or x is
+itself inducing such goals in order to exploit yÏs behavior. In any case, x not
+only believes that y is able to do and can do (opportunity), but also that y
+T rust and Control : A Dialectic L ink
+807
+will do DEMO it is committed to this intention or plan (not necessarily to
+DEMO).
+Let one simplify and formalize this : one might characterize social trust
+mental state as follows :
+Trust(X,Y,t )
+DEMO : PracPossY (
+a
+,g)
+Goal X g B X PracPossY (a ,g)
+BX Prefer X (Done Y (a ,g), Done X (a ,g))
+(B X (Intend Y (a ,g) PersistY (a ,g))
+(Goal X (Intend Y (a ,g) PersistY (a ,g)))
+DEMO Y (a ) g AbilityY (a ).
+In other words, trust is a set of mental attitudes characterizing the ““dele-
+gatingÏÏ agentÏs DEMO, which prefers another agent doing the action. Y is a
+cognitive DEMO, so x believes that y intends to do the action and DEMO will persist
+in this.
+Consider eventually that some kind of delegation, DEMO of the social
+sciences, (where there is agreement, promise, etc.), are, in fact, based on yÏs
+awareness and implicit or DEMO agreement (compliance) ; they presuppose
+goal -adoption by y. Thus, DEMO trust y in this case means to trust its agreement
+and willingness to help/adopt (social commitment) and in its motives for
+doing DEMO This level of trust presupposes beliefs about the social mind and
+attitudes of the trustee. 7
+Degrees of Trust
+In this model, the degree of trust of x in y is grounded in the cognitive
+components DEMO xÏs mental state of trust. More precisely, the degree of trust
+(DoT ) is a function of the subjective certainty of the relevant DEMO One uses
+the degree of trust to formalize a rational basis for the decision of relying
+and betting on y. Also one claims that DEMO ““quantitativeÏÏ aspect of another
+basic ingredient is relevant : the value or importance or utility of the goal g. In
+sum, the quantitative dimensions of trust are based on the quantitative dimen-
+sions of its cognitive DEMO .
+For oneself trust is not an arbitrary index with an operational impor-
+tance, without a real content, but is based on the DEMO certainty of the
+relevant beliefs, which support each other and the DEMO to trust.
+T rust-attitudes will be called that operator which, when DEMO to two
+agents (Ag 1 and Ag2 ), a task (DEMO ), and a temporal instant (t), returns the set of
+beliefs and goals (of Ag 1 on Ag2 about t at the time t) useful to the trust
+relation. One can imagine that each of the beliefs included in trust-attitudes
+(Ag 1 Ag2 t t) DEMO have a particular weight : a degree of credibility (DoC(Bi ))
+with 0 DoC(Bi ) 1.
+808 C. Castelfranchi and R. Falcone
+One considers here the resulting degree DEMO trust of Ag 1 on Ag2 about t at
+time t, DEMO the simple multiplication of all these factors (indeed one has also
+DEMO the possibility of saturation e†ects for each of the factors
+included in the multiplication and the possibility to introduce di†erent
+parameters for each factor (Castelfranchi & Falcone, 2000).
+If one calls Eval-DoT the function, DEMO when applied to a set of
+mental states returns the result of the product of the weights of these mental
+states, one can say :
+t t))
+DoTA g
+Eval-DoT(Trust-Attitudes(Ag 1 Ag
+DEMO
+1 ¸ A g2 ¸ ¸ t (0 DoT A 1)DEMO
+g 1 ¸ g ¸ ¸
+A 2 t
+In order that Ag 1 trusts Ag2 about t at the time t, and then delegates that
+task, it is not only necessary that the DoTA g 1 ¸ A g2 ¸ ¸t exceeds a given (Ag 1 Ïs)
+threshold, but also that it constitutes the better solution (compared DEMO the
+other possible solutions). So one should consider the abstract scenario 8 ¸9 of
+Figure 4.
+The analysis of this scenario produces one DEMO these possible choices :
+i) Ag 1 tries to achieve the goal by itself ;
+ii) Ag 1 delegates the achievement of DEMO goal to another agent (Ag2 , . . . ,
+Agn ) ;
+iii) Ag 1 does nothing (relatively to this goal), i.e., renounces it.
+It is possible to determine a trust choice starting from each combination
+of credibility degrees { DoTA g 1 ¸ DEMO gi ¸ ¸ t} with Ag i { Ag 1 , . . . ., Ag n} of
+the main beliefs included in trust-attitudes (Ag 1 Ag i t t) , and from a set DEMO
+Ag 1 Ïs utilities { U p +¸ t , Up ¸ t , Ud i +¸ t , Ud i ¸ t , DEMO ¸ t} U(Ag 1 , t), with i { 2,
+. . . , n } .
+It is possible thatÈonce DEMO the set of utilities and the kind and degree
+FIGURE 4.
+The decision scenario.
+T rust and Control : A Dialectic L ink 809
+of controlÈdi†erent DEMO of credibility degrees of the main beliefs
+produce the same choice. However, in general, changing the credibility
+degree of some beliefs more should DEMO the Ðnal choice about the dele-
+gation (and the some holds DEMO the utilities and the control). Obviously, at
+di†erent times one DEMO have di†erent sets of beliefs and utilities and then a
+di†erent decision about the delegation.
+WHAT CONTROL IS
+The control is a (meta) DEMO aimed at : a) ascertaining whether another
+action has been successfully DEMO or if a given state of the world has
+been realized or maintained (feedback, checking) ; and b) dealing with the
+possible DEMO and unforeseen events in order to positively cope with
+them (intervention)DEMO
+When the client is delegating a given object-action, what about its
+DEMO actions ? Considering for the sake of simplicity, that the control
+DEMO is executed by a single agent when delegates (Ag 1 Ag2 DEMO ) there are at
+least four possibilities :
+i) Ag 1 delegates the control to Ag2 : the client does not (directly) DEMO the
+success of the delegated action to the contractor ;
+ii) Ag 1 delegates the control to a third agent ;
+iii) DEMO 1 gives up the control : nobody is delegated to control the success of a ;
+iv) Ag 1 maintains the control for DEMO
+Each of these possibilities could be explicit or implicit in the delegation of
+the action, in the roles of the agents (if they DEMO part of a social structure), in
+the preceding interactions between the client and contractor, etc.
+To understand the origin and functionality of control it is necessary to
+consider that Ag 1 can adjust the run-time DEMO its delegation to Ag2 if it is in
+condition of : a) receiving in time the necessary information about Ag2 Ïs per-
+formance ( feedback) ; b) intervening on Ag2 Ïs performance to change it
+DEMO its completion (intervention ).
+In other words, Ag 1 must DEMO some form of ““controlÏÏ on and during
+Ag2 Ïs task realization. Control requires feedback plus intervention (Figure
+FIGURE 5.
+Control channels for the clientÏs adjustment.
+810 C. Castelfranchi and R. Falcone
+5). 1 0 Otherwise, no adjustment is possible. Obviously, the feedback useful for
+a run-time adjustment must be provided timely for the intervention. In
+general, the feedback activity is the precondition for an intervention ;
+however, it is also possible DEMO either only the feedback or the intervention
+hold.
+Feedback can be provided by observation of Ag2 Ïs activity (inspection,
+surveillance, monitoring), DEMO sent messages by Ag2 to Ag 1 , or by the
+fact that Ag 1 receives or observes the results/products of Ag2 Ïs DEMO or
+their consequences.
+As for Intervention one considers Ðve kinds of intervention :
+È stopping the task (the delegation or the adoption process DEMO suddenly
+interrupted) ;
+È substitution (an intervention allocates part of (or the whole) task to the
+intervening agent) ;
+È correction of delegation (after the intervention, the task is partially or
+totally DEMO) ;
+È speciÐcation or abstraction of delegation (after the intervention, the task is
+more or less constrained) ;
+È repairing of DEMO (the intervention leaves the task activity unchanged,
+but it introduces DEMO actions necessary to achieve the goal(s) of the task
+itself ).
+Each of these interventions could be realized through either a communication
+DEMO or a direct action on the task by the intervening agent.
+The frequency of the feedback on the task could be :
+È purely temporal (when the monitoring or the reporting is independent of
+the structure of the activities in the task, they only depend on a temporal
+choice) ;
+È linked with the working phases (when the activities of the task are divided
+in phases and the monitoring or the DEMO is connected with them).
+Client and contractor could adjust the frequency of their feedback activ-
+ity in three main ways :
+È by changing the temporal intervals Ðxed at the start of the task delegation
+(in the case in which the monitoring/reporting was purely temporal) ;DEMO
+È by changing the task phases in which the monitoring/reporting is realized
+with respect to those Ðxed at the start of the task DEMO (in the case in
+which monitoring/reporting was linked with the DEMO phases) ;
+È by moving from the purely temporal monitoring/reporting to the working
+phases monitoring/reporting (or vice versa).
+T rust and Control : A Dialectic L ink
+811
+FIGURE 6.
+DEMO, delegation, and control.
+The frequency of intervention is also relevant. As explained above, the
+intervention is strictly connected with the presence of the monitoring/
+reporting on the task, even if, in principle, both the intervention and the
+monitoring/reporting could be independently realized. In addition, the fre-
+quencies of intervention and monitoring/reporting are also correlated. More
+DEMO, the frequency of intervention could be :
+1)
+2)
+3)
+never ;
+just sometimes
+task) ;
+at any phase or
+(phase or time, a special case of this is at DEMO end of the
+at any time.
+Figure 6 integrates the schema of Figure 3 with the two actions : control
+and execution of the DEMO Plans typically contain control actions of some of
+their actions (Castelfranchi & Falcone, 1994).
+CONTROL REPLACES TRUST AND TRUST
+CONTROL SUPERFLUOUS ?
+As was said before, a perspective of duality between
+very frequent and at least partially valid (Tan & Thoen,
+example, this deÐnition DEMO trust :
+MAKES
+trust and control is
+1999). Consider, for
+The willingness of a party
+based on the expectation
+action important to DEMO trustor, irrespective of the ability to monitor
+control that other party. (Mayer et al., 1995) 1 1
+to be vulnerable to the DEMO of another party,
+that the other party will perform a particular
+or
+812 C. Castelfranchi and R. Falcone
+This captures a very intuitive and DEMO use of the term trust (in
+social interaction). In fact, it is trueÈin this restricted senseÈthat if you
+control me ““you donÏt DEMO me !ÏÏ ; and it is true that if you do not trust me
+enough (for counting on me) you would like to DEMO, control, and enforce
+me in some way.
+In this view, DEMO and normative ““remediesÏÏ ““have been described as
+weak, impersonal substitutes for DEMO (Sitkin & Roth, 1993), or as ““function -
+al equivalent . . . mechanismsÏÏ (Tan & Thoen, 1999) : ““to reach a minimum
+level of conÐdence in cooperation, partners can use trust and control to
+complement each otherÏÏ (Beamish, 1988). 12
+With respect DEMO this view, there are some problems :
+On the one side, it is correct, it captures something important. However,
+in such DEMO complementariety, how the control precisely succeeds in aug-
+menting conÐdence, is not really modelled and explained.
+On the other side, there is something reductive and misleading in such a
+position :
+È it reduces trust to a strict notion and loses some important use and
+relations ;
+È it ignores di†erent and additional aspects of trust also in the DEMO ;
+È it misses the point of considering control as a DEMO of increasing the
+strict trust in the trustee.
+It will be argued that :
+È control is antagonistic to strict trust ;
+È DEMO requires new forms of trust and builds the broad trust ;
+DEMO control completes and complements it ;
+È control can even create DEMO increase the strict trust.
+A Strict Trust Notion (Antagonist of Control) and a Broad Notion
+(Including Control)
+As was said, there DEMO agreement with the idea that (at some level) trust
+and control are antagonistic (one eliminates the other) but complementary.
+This notion of DEMO, as deÐned by Mayer, is considered too restricted. It
+represents the notion of trust in strict sense, i.e., applied to the agent (and, in
+particular, to a social agent and a process or DEMO), and strictly relative to
+the ““internal attribution,ÏÏ to the internal factor. In other words, this rep-
+resents the ““trust in yÏÏ (DEMO for action a and goal g). But this trustÈwhen is
+enough for delegationÈ implies the ““trust thatÏÏ (g will be achieved or
+T rust and Control : A Dialectic L ink
+813
+maintained) ; and, anyway, it is part of a broader trust (or nontrust) that g. 1 3
+Both forms of trust are considered. Also the trust (or conÐdence) in y is, in
+fact, just the DEMO (expectation) that y is able and will appropriately do the
+action a (that I expect for its result g). But the problem is : are such an ability
+and willingness (the ““internalÏÏ factors) DEMO for realizing g ? What about
+conditions for successfully executing a (DEMO, the opportunities) ? What about
+other concurrent causes (forces, actions, causal process consequent to yÏs
+action) ? If my trust is DEMO for delegating to y, this means that I expect,
+trust DEMO g will probably be realized.
+A broader notion of trust is proposed including all the expectations
+(about y and the world) such that DEMO will be eventually true thanks (also) to
+yÏs action ; and a strict notion of trust as ““trust inÏÏ y, relative only to the
+internal factors (see Figure 7).
+This strict notion is similar to that deÐned by Mayer (apart from the
+lack of the competence ingredient), and it is in contrast, in conÑict with the
+notion of control. If there is control then there is no trust. But DEMO the other
+side, they are also two complementary parts, as for the broad/global trust :
+control supplements trust. 1 4 In this model, trust in y and control of y are
+antagonistic : where there is trust there is no control, and vice versa ; the
+larger the trust the less room for control, and vice verse. But they are also
+supplementary : one remedies to the lack of the DEMO ; they are parts of one
+and the same entity. What is this attitude that can either be built out of trust
+or out DEMO control ? It is conÐdence, i.e., trust again, but in DEMO broader sense, as
+we formalized it.
+In this view one needs DEMO two levels and notions of trust. In this
+perspective, notice that DEMO is both antagonist to (one form of trust) and
+constituent of (another form of ) trust.
+Obviously, this schema is very simplistic DEMO just intuitive. This idea will
+be made more precise. However, it DEMO immediately remarkable that this is not
+the only relation between strict trust and control. Control is not only aimed
+at supplementing and ““completingÏÏ trust (when trust in y would not be
+FIGURE 7.
+Control complements strict DEMO
+814
+C. Castelfranchi and R. Falcone
+enough) ; it can also be aimed precisely at augmenting the internal trust in y,
+yÏs trustworthiness.
+DEMO on Control and Bonds Requires Additional Trust
+To this account of trust, one might object that the importance of trust is
+overstated in social actions such as contracting and organizations since
+everything is based on delegation DEMO delegation presupposes enough trust.
+In fact, it might be argued within DEMO duality framework that people put
+contracts in place precisely because they do not trust the agents they dele-
+gate tasks to. Since there is DEMO trust, people want to be protected by the
+contract. The key DEMO these cases would not be trust but the ability of some
+authority to assess contract violations and to punish the violators. Analo-
+gously, in organizations people would not rely on trust but on autho-
+rization, permission, obligations, and so forth.
+In this view (Castelfranchi & Falcone, DEMO) this opposition is falla-
+cious : it seems that trust is DEMO relative to the character or friendliness, etc.
+of the trustee. In DEMO in these cases (control, contracts, organizations) one
+just deals with a more complex and speciÐc kind of trust. But trust is always
+DEMO
+Control is put in place because it is one believed that the trustee
+will not avoid or trick monitoring, but will accept possible interventions,
+and be positively inÑuenced by control. One puts a contract in DEMO only
+because one believes that the trustee will not violate the contract, etc. These
+beliefs are nothing but ““trust.ÏÏ
+Moreover, when true contracts DEMO norms are there, this control-based
+conÐdence requires also that x trusts DEMO authority or its own ability to
+monitor and sanction y (see DEMO & Falcone, 1998a, on three party
+trust). X must also trust procedures and means for control (or the agent
+delegated to this task).
+How Control Increases and Complements Trust
+As one saw, control in a sense complements and surrogates trust and
+makes a broad trust DEMO (see Figure 7) sufficient for delegation and
+betting. How does this work ? How does control precisely succeed in aug-
+menting conÐdence ?
+One basic idea is that strict trust (trust in y) is DEMO the complete scenario ;
+to arrive from the belief that ““brings DEMO about that action a ÏÏ (it is able and
+willing, etc.) to the belief that ““eventually g,ÏÏ something is lacking : the other
+component of the global trustÈmore precisely, the trust in the ““environ-
+mentÏÏ (external conditions), including the intervention of the trustor or of
+T rust and Control : A Dialectic L ink
+815
+FIGURE 8. DEMO in the action VÏs trust in the result.
+somebody else. Control can be aimed at Ðlling this gap between yÏs intention
+and action and DEMO desired result ““that gÏÏ (Figure 8).
+However, does control augment only the broad trust ? Not true : the
+relationship is more DEMO It depends on the kind and aim of control. In
+fact, DEMO is important to understand that trust (also trust in y) is not a ante-hoc
+and static datum (either sufficient or insufficient for delegation before the
+decision to delegate). It is a dynamic entity ; DEMO example, there are e†ects,
+feedback of the decision to delegate DEMO its own precondition of trusting y.
+Analogously, the decision to put DEMO can a†ect the strict trust whose
+level makes control necessary !
+Thus, the schemaÈtrust controlÈis rather simplistic, static, a-
+dialectic, since the DEMO of control can modify and a†ect the other
+parameters. There are indeed two kinds and functions of control
+T w o K i n DEMO s o f C o n t r o l ¹
+5
+Pushing or InÑuencing : Preventing V iolations or Mistakes. The Ðrst
+kind DEMO function of control is aimed at operating on the ““ trust in yÏÏ and,
+more precisely, at increasing it. It is aimed in fact at reducing the probability
+of yÏs defaillance, slips, mistakes, deviations, or violation, i.e., at preventing
+and avoiding them. The theory behind this kind of surveillance is at least
+one of the following beliefs :
+i) If y is (knows to be) surveilled its performance will be better because it
+will either put more attention, e†ort, DEMO care, etc. in the execution of the
+delegated task ; in DEMO words, it will do the task better , or
+ii) If y is (knows to be) surveilled it will be more reliable, more faithful to its
+commitment, less prone to violation ; in other words, it most probably will
+do the task.
+Since x believes this, by deciding to control y (and letting y knows about
+this), x increases its own evaluation /expectation (i.e., its trust) about yÏs will-
+ingness, persistence, and quality of work. As one can DEMO in Figure 9, one of
+816
+C. Castelfranchi and R. Falcone
+FIGURE 9.
+The expectation for control DEMO the decision of trusting.
+the control results is to just change the core trust of x on y about
+formally one can write
+t DEMO
+More
+Bel(y Control(x y
+t ))
+Attitudes-under-External-Control( y
+DEMO ).
+(a)
+In other words, if y believes that DEMO controls it about
+will be introduced by y during its performance of t .
+In addition, if
+t
+a set of yÏs attitudes
+Bel(x Bel( y Control(x y
+t ))
+Attitudes-under-External-Control( y DEMO )),
+(b)
+then
+(DoT*
+x¸
+y
+¸
+DoTx DEMO
+y
+¸
+),
+where DoT*
+control. For
+e†ort, care, reliability,
+negative, or null contribution to the xÏs degree of trust of y about t
+(depending from the expectation of x).
+This form of control is essentially monitoring (inspection, surveillance,
+reporting, etc.), and can work also without any possibility of intervention .
+Indeed, it necessarily requires that y knows about being surveilled. 1 6 This can
+DEMO just a form of ““implicit communicationÏÏ (to let the other see/DEMO that
+one can see him, and that one know that he DEMO, etc.), but frequently the
+possibility of some explicit communication on DEMO is useful (““donÏt forget
+y¸ is the
+example,
+xÏs degree DEMO trust of y about t with the presence of
+these additional attitudes can change yÏs attention,
+correctness, etc. and, consequently, produce a positive,
+x ¸
+T rust and Control : A Dialectic L ink
+817
+that I DEMO you !ÏÏ). Thus also some form of intervention can be necessary : a
+communication channel.
+Safety Correction or Adjustment Control : Preventing Failure DEMO
+Damages. This control is aimed at preventing dangers due to yÏs violations
+or mistakes, and, in general, more is aimed at having the possibility of
+adjustment of delegation and autonomy of any type (Falcone & Castel-
+franchi, 2000). In other words, it is not only DEMO repairing but for correction,
+through advice, new instructions and speciÐcation, changing or revoking
+tasks, direct reparation, recover, or help, etc.
+DEMO this reason this kind of control is possible only if some intervention
+is allowed, and requires monitoring (feedback) run-time. More formally,
+Control(x y
+t )
+Ability-Intervention( x y
+t )
+and, DEMO general, x
+sible to intervene
+Pr(achieve( g)) :
+DEMO that the
+-Pr*(achieve(g))-
+probability to achieve
+is greater
+DEMO
+than without
+Bel(x (Pr*(achieve( g)))
+(Pr(DEMO( g)))).
+(c)
+when it is pos-
+this DEMO
+This distinction is close to the distinction between ““control for preventionÏÏ
+and ““control for detectionÏÏ used by Bons et al. (1998). However, DEMO mainly
+refer to legal aspects of contracts, and, in general, DEMO violations. The distinc-
+tion is related to the general theory of action (the function of control
+actions) and delegation, and is more general. The Ðrst form/Ðnality of
+control is preventive not only of violations (in case of norms, commitments,
+or contracts) but also of DEMO execution or mistakes (also in weak dele-
+gation where there are DEMO obligations at al). The second form/Ðnality is not
+only for sanctions or claims, but for timely intervening and preventing addi-
+tional damages, or remedying and correcting (thus also the second can be
+for DEMO but of the consequences of violation). ““DetectionÏÏ is just a
+means ; the real aim is intervention for safety, enforcement, or com-
+DEMO 1 7
+Moreover, we argue that an e†ect (and a function/aim) of the second
+form of control can also be to prevent violation ; this happens when the
+controlled agent knows or believesÈbefore or DEMO his performanceÈthat
+there will be ““control for detectionÏÏ and worries about this (sanctions, repu-
+tation, lack of autonomy, etc.).
+Filling the DEMO Between Doing Action and Achieving Results
+/
+/
+Let one put the problem in another perspective. As was said, trust is the
+background for delegation and reliance, i.e., to ““trustÏÏ as a decision and DEMO
+action, and it is instrumental to the satisfaction of some goal. DEMO the trust
+818
+C. Castelfranchi and R. Falcone
+in y (sufficient for delegation) DEMO the trust that g (the goal for which x
+counts on DEMO) will be achieved.
+Given this, two components or two logical step scenarios, one can say
+that the Ðrst kind of control is pointing to, is impinging on the Ðrst step
+(trust in y), DEMO is aimed at increasing it ; while the second kind of control is
+pointing to the second step and is aimed at increasing it, by making more
+sure the achievement of g also in case of DEMO of y.
+In this way the control (monitoring plus intervention) complement the
+trust in y, which would be insufficient for achieving g and for delegating ; this
+additional assurance (the possibility to correct work in progress yÏs activity)
+makes x possible to delegate to y g. DEMO fact, in this case x is not only
+counting on y, but x counts on a multiagent possible plan that includes
+possible actions DEMO it.
+As one can see from formula (a) the important thing is that y believes
+that the control holds, and not if it really holds. For example, x could not
+trust enough y and communicate to it the control : this event modiÐes the yÏs
+mind and DEMO xÏs judge about trusting y.
+Thus, in trust reliance, without the possibility of intervention for correc-
+tion and adjustment, there is only one possibility for achieving g and one
+activity (yÏs activity) x bets DEMO (Figure 10).
+While there is control for correction/adjustment, the achievement of g is
+committed to yÏs action plus xÏs possible action (intervention), x bets on this
+combination (Figure 11).
+Very similar complementing or remedying roles are guarantees, protec-
+tions, and assurance. One DEMO not trust the action enough, and one puts
+protections in place DEMO be sure about the desired results. For example, one
+does not DEMO driving a motorcycle without a crash helmet, but one trusts
+doing DEMO with it.
+FIGURE 10.
+The gap between action and expected results.
+FIGURE 11.
+Intervention in the gap.
+T rust and Control : A Dialectic L ink
+819
+The Dynamics
+DEMO is important to underline that the Ðrst form/aim of control is oriented
+at increasing the reliability of y (in terms of Ðdelity, DEMO, keeping
+promises, or in terms of carefulness, concentration and attention), and then
+it is a way of increasing xÏs trust in y, which should be a presupposition not
+an e†ect of my decision :DEMO
+x believes that (if x surveils y)
+reliable ; i.e., the strength of xÏs
+trust in y are improved.
+y will be DEMO
+trust beliefs in
+y
+committed, willing, and
+and thus xÏs degree of
+This is very interesting social (moral and pedagogical) strategy. In DEMO, it is
+in opposition to another well-known strategy aimed at increasing DEMO
+trustworthinessÈi.e., ““trust creates trust !ÏÏ 1 8 In fact, precisely the reduction/
+renouncement to control is a strategy of ““responsibilityÏÏ of y, aimed at
+making it more reliable, more committed.
+Those strategies are in conÑict with each other. When and why do we
+choose to make DEMO more reliable and trustworthy through responsibility
+(renouncement to surveillance), and DEMO through surveillance ? A detailed
+model of how and why trust creates/increases trust is necessary to answer
+this question.
+Should we make our DEMO agents (or our cyberpartners) more
+reliable and trustworthy through responsibility or through surveillance ?
+There will not be this doubt with artiÐcial agents, since their ““psychologyÏÏ
+will be very simple and their e†ects will not be very dynamic. At least for the
+moment with artiÐcial agents, control will complement insufficient trust and
+perhaps (known control) will increase commitment. DEMO, those subtle
+interaction problems will be relevant for sure for computer-mediated DEMO
+interaction and collaboration.
+Control Kills Trust
+Control can be bad and self-defeating, in several ways :
+There might be misunderstandings, mistakes, and DEMO and
+wrong intervention by the controller (““who does control controllers ?ÏÏ) (in
+this case Pr*(achieve( g)) Pr(achieve( g)).
+Control might have the opposite e†ect than function (A), i.e., instead of
+improving performance, it might make performance worse. For example,DEMO
+by producing anxiety in the trustee or by making him waste time and
+concentration in preparing or sending feedbacks (case in which
+DoT* DoT).
+820 C. Castelfranchi and R. Falcone
+It can produce a breakdown of DEMO Instead of reinforcing com-
+mitment and willingness, control can disturb it DEMO of reaction or
+rebellion, or because of delegation conÑicts (Castelfranchi & Falcone,
+1997) and need for autonomy, or because of the DEMO that distrust creates
+distrust (also in this case DoT* DoT).
+DEMO, one cares mainly of the bad e†ect of control on trust ; thus let us
+see these dynamics. As trust virtuously creates trust, DEMO the trust of
+y in x, which can be very relevant DEMO his motivation (for example, in case of
+exchange and collaboration), can decrease because x exhibits not so much
+trust in y (by controlling y).
+È X is too diffident. Does this mean that DEMO is malicious and machiavellic ?
+Since x suspects so much about DEMO others would be ready for deception ?
+Thus, if x distrusts y, y can become diffident about x.
+È Otherwise, x is DEMO rigid, not the ideal person to work with. 1 9
+È DEMO, if the agents rely on control, authority, norms, they relax the
+moral, personal, or a†ective bonds, i.e., one of the DEMO bases for
+interpersonal trust. Increasing control procedures in organizations and
+community can destroy trust among the agents, and then make coopera-
+tion, market, organization very bad or impossible, since a share of risk
+acceptance and trust is unavoidable and vital.
+In sum, as for the dynamics of such a relation, it was explained how
+xÏs control of y denounces and derives from a lack of xÏs trust in y ;
+xÏs control of y can increase xÏs trust in y ;
+xÏs control of y increases xÏs trust in deciding to delegate to y (his global
+trust) ;
+control of y by x can both increase DEMO decrease yÏs trust in x ; in case
+control decreases yÏs trust in x, this should also a†ect xÏs trust in y (thus
+DEMO e†ect is the opposite of the second) ;
+xÏs control of y improves yÏs performance or makes it worse ;
+xÏs control of y improves yÏs willingness or makes it demotivated.
+CONCLUSIONS
+Does control reduce DEMO increase trust ? As one saw, relationships between
+trust and control DEMO rather complicated. On the one side, it is true that
+where/DEMO there is trust there is no control, and vice versa. But DEMO is a
+T rust and Control : A Dialectic L ink
+821
+restricted notion DEMO trust : it is ““trust in y,ÏÏ which is just a part, a component
+of the whole trust needed for relying on the action of another agent. Thus it
+was claimed that control is antagonistic DEMO this strict form of trust, but that
+it also completes and DEMO it for arriving at a global trust. In other
+words, putting DEMO and guarantees in trust-building. It produces a suffi-
+cient trust, when DEMO in yÏs autonomous willingness and competence would
+not be enough. It has also been argued that control requires new forms of
+trust ; trust DEMO the control itself or in the controller, trust in y for DEMO
+monitored and controlled, trust in possible authorities, etc.
+Finally, it DEMO been shown that, paradoxically, control could not be
+antagonistic of strict trust in y, but it could even create, increase the trust DEMO
+y, making y more willing or more e†ective. In conclusion, depending on the
+circumstances, control makes y more reliable or less reliable.
+Two kinds of control were also analyzed, characterized by two di†erent
+functions : pushing or inÑuencing control aimed at preventing violations or
+mistakes, versus safety, correction, or adjustment control aimed at preventing
+failure or damages after DEMO violation or mistake.
+NOTES
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+There may be delegation without trust : these are exceptional cases DEMO which either the delegating
+agent is not free (coercive delegation) or he has no information and alternative to delegating, so that
+he must just make a trial (blind delegation).
+The trust that g does not necessarily require the trust in y. One must ignore which are DEMO causal
+factors producing or maintaining g true in the world ; nevertheless, one may desire, expect, and trust
+that g happens or continues. The trust that g, per se, is just aÈmore or less DEMO
+certain positive expectation (belief conform to desire) about g.
+We use the classical modal logic operators and the constructs of dynamic logic. In DEMO, the
+belief about practical opportunity borrows from dynamic logic the construct DEMO (a ) g that means
+that agent i has the opportunity DEMO perform action a in such a way that g will result from this
+performance.
+Moreover, there might not only be the frustration of g, the missed gain, but there might be additional
+damages as e†ect DEMO failure, negative side e†ects : the risks in case of failure DEMO not the simple
+counterpart of gains in case of success.
+Beliefs 2a and 2b imply some beliefs about yÏs motives : intention is due DEMO these motives and persist-
+ence is due to preferences between motives.
+To be true, we should also consider the reciprocal inÑuence between external and internal factors.
+When x trusts the internal powers of y, it also trusts its abilities to create positive opportunities for
+success, to perceive and react to the external problems. Vice versa, when x trusts the environment
+opportunities, this valuation could change the trust about y (x could DEMO that y is not able to react
+to speciÐc external problems).
+In all forms of adoption-based trust, beliefs about adoptivity and motives for adoption are particu-
+larly crucial.
+U(Ag 1 )t , is the Ag 1 Ïs utility
+success performance ; U(Ag
+a successful delegation DEMO
+U(Ag 1 )di ¸ t the utility of
+delegated action) ; U(Ag
+More precisely, we
+[Performance(Ag 1 t)]
+1 )p ¸
+the
+1
+a
+)0 ¸t
+have :
+U(Ag 1 )
+Additional
+function at the time t, and, speciÐcally : U(Ag
+, the utility of the Ag 1 Ïs failure performance ; U(Ag
+agent i (the utility due to the success of DEMO
+failure delegation to the agent
+the utility to do nothing.
+Value(g)
+Damage
+t
+p
++
+¸
+t
+for
+Cost
+failure,
+1
+)p
++
+¸
+t
+i
+(the damage due to the failure
+[Performance(Ag
+U(Ag 1 )di
+1
+t)],
+U(Ag
+1
+)
+p
+¸
+t
++
+¸
+t
+, the utility of the Ag 1 Ïs
+1 )di +¸ t the utility of
+delegated action) ;
+Value(g)
+Cost
+of the
+Cost
+[Dele-
+822
+C. Castelfranchi and R. Falcone
+10.
+11.
+12.
+13.
+14.
+15.
+DEMO
+17.
+18.
+19.
+gation(Ag 1 Ag i t t)], DEMO(Ag 1 )di ¸ t Cost [Delegation (Ag 1 Ag i t t)] Additional Damage for
+failure, where it is supposed that it is possible to attribute a quantitative value (importance) to the
+DEMO and where the costs of the actions (delegation and performance) are supposed to be negative.
+Control activity will be called the combination of DEMO more speciÐc activities : monitoring and inter-
+vention.
+This is a remarkable deÐnition. The authorsÏ analytical account is rather close to it : ““a DEMO
+action important to the trustorÏÏ means that the trustor has some goal and is relying on such an
+action of the trustee for such DEMO goal (delegation) ; trust is a ““willingness,ÏÏ a decision to bet on some-
+body, to take some risk, then to be DEMO,ÏÏ but is based on expectations about the willingness
+of the other party. One just considers ““trustÏÏ as ambiguous : able to designate on DEMO one side the
+decision and the action of relying ; on the other side, the mental attitude toward that party that is
+presupposed by such a decision, i.e., those ““expectations.ÏÏ Moreover, one takes into account not only
+the willingness but also the competence (and even the external opportunities). Finally, one does not
+put the restriction of ““irrespective to control,ÏÏ because the deÐnition is more general and goes beyond
+strict DEMO/personal trust in the other. Here, one clariÐes precisely this point DEMO proposing a strict
+and broad notion of trust.
+Of course, as DEMO and Thoen (1999) noticed, control can be put in place DEMO default, not because of a
+speciÐc evaluation of a speciÐc partner, but because of a generalized rule of prudence or for lack of
+DEMO (See later, about the level of trust as insufficient either for uncertainty or for low evalu-
+ation.)
+Somebody, call this broader trust ““conÐdence.ÏÏ But, in fact, they seem quite synonymous : there is
+DEMO in y and conÐdence that p.
+ControlÈespecially in collaborationÈcannot be completely eliminated and lost, and delegation and
+autonomy cannot be complete. This is not only for reasons of conÐdence and trust, but for reasons of
+distribution of goals, knowledge, competence, and for an e†ective collaboration. The trustor usually
+has to know at least whether and when the goal has DEMO realized or not.
+There is a third form of control (or DEMO of monitoring) merely aimed at y evaluation. If this mere
+monitoring (possibly hidden to y) is for a future adjustment o†-line (for DEMO or revocating the
+delegation next time), this form of control becomes of B kind : control for adjustment, for correction.
+It is also necessary that y cares about xÏs evaluation. Otherwise, this control has no efficacy. A bad
+evaluation as some sort of ““sanction,ÏÏ however, is not an ““interventionÏÏÈexcept if x can communi-
+cate it to y during DEMO work, since it does not interrupt or a†ect yÏs activity.
+Di†erent DEMO of delegation allow for speciÐc functions of this control. There will be neither com-
+pensation nor sanctions in weak delegation (no agreement at all), while there will be intervention for
+remedy.
+Trust creates trust in DEMO senses and ways. The decision to trust y can increase xÏs trust in a way,
+via several mechanisms : cognitive dissonance ; because DEMO believes that y will be responsible ; because x
+believes that y will feel more self-conÐdent ; because x believes that y will trust DEMO and then bring more
+goodwill. The decision to trust y can increase yÏs trust in a way, via several mechanisms : y has power
+over x that makes himself vulnerable and dependent; y feels that if x is not diffident he is probably
+not malicious ; y perceives DEMO positive social attitude by x and this elicits his goodwill, etc. DEMO,
+this is not the right place for developing this theory.
+Control could also increase yÏs trust in x, as a careful person, DEMO a good master and boss, etc.
+REFERENCES
+Beamish, P. 1998. Multinational joint ventures in developing countries. London : Routledge.
+Bons, R., F. DEMO, R. Lee, and Y. H. Tan. 1998. A formal speciÐcation of automated auditing of
+trustworthy trade procedures for open electronic commerce. Autonomous Agents DEMO W orkshop on
+““Deception, Fraud and T rust in Agent Societies,DEMO Minneapolis, MN, May 9, 21È34.
+Castelfranchi, C. 1998. Modeling social action for AI agents. ArtiÐ cial Intelligence 103 : 157È182.
+Castelfranchi, C. 2000. Formalizing the informal ? Invited talk International Workshop on Deontic Logic
+(DEON 2000) Toulouse.
+T rust and Control : A Dialectic L ink
+823
+Castelfranchi, C., and R. Falcone. 1994. Towards a theory of single-agent into multi-agent plan trans-
+formation. T hird PaciÐc Rim International Conference on ArtiÐcial Intelligence (PRICAI94), Beijing,
+China, 16 È18 August, 31È37.
+Castelfranchi, C., DEMO R. Falcone. 1997. Delegation conÑicts. In Multi-agent rationality , eds. M. Boman
+and W. Van de Velde. L ecture Notes in ArtiÐcial Intelligence, 1237 : 234 È254. New York : Springer-
+Verlag
+Castelfranchi, C., and DEMO Falcone. 1998a. Principles of trust for MAS : Cognitive anatomy, social DEMO
+tance, and quantiÐcation. In Proceedings of the International Conference on Multi-Agent DEMO
+(ICMASÏ98), Paris, July, 72È79.
+Castelfranchi, C., and R. DEMO, 1998b. Towards a theory of delegation for agent-based systems. In
+Robotics DEMO autonomous and systems, Elsevier Editor 24(3 È 4) : 141 È157.
+Castelfranchi, C., and R. Falcone. 2000. Social trust : A DEMO approach. In Deception, fraud and trust
+in virtual societies, eds. C. Castelfranchi and Yao-Hua Tan. Norwell, MA : Kluwer Academic Publi-
+sher (DEMO press).
+Castelfranchi, C., and Y.-H. Tan. 2000. Introduction. In Deception, fraud and trust in virtual societies eds.
+C. Castelfranchi and Y.-H. Tan. Norwell, MA : Kluwer Academic Publisher (in press).
+Dasgupta, P., 1990. Trust as a commodity. In T rust, ed. D. Gambetta, Chapter 4, 49 È72. Oxford : Basil
+Blackwell.
+Deutsch, M. 1973. DEMO he resolution of conÑict. New Haven, CT : Yale University Press.
+DEMO, R., and C. Castelfranchi. 2000. Levels of delegation and levels of adoption as the basis for
+adjustable autonomy. L ecture Notes in ArtiÐcial DEMO 1792 : 285 È296.
+Hendler, J. 1999. Is there an intelligent DEMO in your future ? http ://helix.nature.com/webmatters/agents/
+agents.html
+DEMO, N. R. 1993. Commitments and conventions : The foundation of coordination DEMO multi-agent
+systems. T he Knowledge Engineering Review 3 : 223 È250.
+Luhmann, N. 1990. Familiarity, conÐdence, trust : Problems and alternatives. In T rust, ed. D. Gambetta,
+Chapter 6, 94 È107. Oxford : DEMO Blackwell.
+Marsh, S. 1994. Formalising trust as a computational concept, Ph.D. thesis, Department of Computing
+Science, University of Stirling, Scotland.
+Mayer, DEMO C., J. H. Davis, and F. D. Schoorman. 1995. An integrative model of organizational trust.
+Academy of Management Review 20(3) : 709 È734.
+Meyer, J. J., and W. van der Hoek. 1992. A DEMO logic for nonmonotonic reasoning. In Non-monotonic
+reasoning and partial semantics, eds. DEMO van der Hoek, J. J. Ch. Meyer, Y. H. Tan, DEMO C. Witteveen,
+37È77. Chichester : Ellis Horwood.
+Nissenbaum, H. 1999. DEMO trust be secured online ? A theoretical perspective. http ://www.univ.trieste.it /
+dipÐlo/etica– e– politica/1992 – 2/ nissenbaum.html
+Raub, W., and J. Weesie. 1990. Reputation and efficiency in social interactions : An DEMO of network
+e†ects. American Journal of Sociology 96 : 626 È 654.
+Rea, T. 2000. Engendering trust in electronic environmentsÈRoles for a trusted third party. In Deception,
+fraud and trust in virtual societies, eds. C. Castelfranchi and Y.-H. Tan. Norwell, MA : Kluwer Aca-
+demic Publisher (DEMO press).
+Sichman, J., R. Conte, C. Castelfranchi, and Y. Demazeau. 1994. A social reasoning mechanism based on
+dependence networks. In Proceedings DEMO the 11th European Conference on ArtiÐ cial Intelligence
+(ECAI).
+Sitkin, S. B., and N. L. Roth. 1993. Explaining the limited e†ectiveness of legalistic ““remediesÏÏ for trust/
+distrust. Organization Science 4 : 367È392.
+Snijders, C., and G. Keren. August 1996. Determinants of trust. In Proceedings of the W orkshop in Honor
+of Amnon Rapoport , University of North DEMO at Chapel Hill, 6 È7.
+Tan, Y.-H., and W. Thoen. DEMO Towards a generic model of trust for electronic commerce. Autonomous
+Agents Ï99 W orkshop on ““Deception, Fraud and T rust in Agent Societes,ÏÏ Seattle, WA, May 1,
+117 È126.
+van Linder, B. 1996. Modal logics for rational agents , Ph.D. thesis, Department of Computing Science,
+University of Utrecht.{1g42fwefx}

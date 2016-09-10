@@ -1,0 +1,1787 @@
+Classification and Regression Trees: A Powerful Yet Simple Technique for Ecological Data
+Analysis
+Author(s): Glenn De'ath and Katharina E. Fabricius
+Source: Ecology, Vol. 81, No. 11 (Nov., 2000), pp. 3178-3192
+DEMO by: Ecological Society of America
+Stable URL: http://www.jstor.org/stable/177409 .
+Accessed: 04/10/2011 21:18
+Your use of the JSTOR archive indicates your acceptance of the Terms & Conditions of Use, available at .
+http://www.jstor.org/page/info/about/policies/terms.jsp
+JSTOR DEMO a not-for-profit service that helps scholars, researchers, and students discover, DEMO, and build upon a wide range of
+content in a trusted DEMO archive. We use information technology and tools to increase productivity and facilitate new forms
+of scholarship. For more information about JSTOR, please contact support@jstor.org.
+Ecological Society of America is collaborating with JSTOR to digitize, preserve and extend access to Ecology.
+http://www.jstor.org
+Ecology, 81(11), 2000, pp. 3178-3192
+? 2000 by the DEMO Society of America
+CLASSIFICATION AND REGRESSION TREES: A POWERFUL YET SIMPLE
+DEMO FOR ECOLOGICAL DATA ANALYSIS
+GLENN DE'ATH1 AND KATHARINA E. FABRICIUS2
+1Tropical Environment Studies and Geography, James Cook University, Townsville, Qld 4811, DEMO
+2Australian Institute of Marine Science, P.M.B. 3, Townsville, Qld 4810, Australia
+Abstract. Classification and regression trees are ideally suited for the analysis DEMO com-
+plex ecological data. For such data, we require flexible and DEMO analytical methods,
+which can deal with nonlinear relationships, high-order interactions, and missing values.
+Despite such difficulties, the methods should be simple to understand and give easily
+interpretable results. Trees explain variation of a single DEMO variable by repeatedly
+splitting the data into more homogeneous groups, using DEMO of explanatory var-
+iables that may be categorical and/or numeric. Each group is characterized by a typical
+value of the response variable, the number of observations in the group, and the values of
+the explanatory variables that define it. The tree is represented graphically, and this aids
+exploration and understanding.
+Trees can be used for interactive exploration and for DEMO and prediction of
+patterns and processes. Advantages of trees include: (1) the flexibility to handle a broad
+range of response types, including DEMO, categorical, ratings, and survival data; (2)
+invariance to DEMO transformations of the explanatory variables; (3) ease and ro-
+bustness DEMO construction; (4) ease of interpretation; and (5) the ability to handle missing
+values in both response and explanatory variables. Thus, trees complement or represent an
+alternative to many traditional statistical techniques, including multiple regression, analysis
+of variance, logistic regression, log-linear models, linear discriminant DEMO, and survival
+models.
+We use classification and regression trees to analyze DEMO data from the Australian
+central Great Barrier Reef, comprising abundances of DEMO coral taxa (Cnidaria: Octocorallia)
+and physical and spatial environmental information. Regression tree analyses showed that
+dense aggregations, typically formed by three taxa, were restricted to distinct habitat types,
+each of which was defined by combinations of 3-4 environmental variables. The habitat
+definitions were consistent with DEMO experimental findings on the nutrition of these taxa.
+When used separately, DEMO and spatial variables were similarly strong predictors of
+abundances and lost little in comparison with their joint use. The spatial variables are thus
+effective DEMO for the physical variables in this extensive reef complex, where infor-
+DEMO on the physical environment is often not available.
+Finally, we compare DEMO use of regression trees and linear models for the analysis of
+these data and show how linear models fail to find patterns uncovered by DEMO trees.
+Key words: analysis of variance; CART; classification tree; coral reef; Great Barrier Reef; habitat
+characteristic; Octocorallia; regression tree; soft coral; surrogate.
+by one or more explanatory variables. The response
+variable is usually either categorical (classification
+trees) or numeric (regression trees), and the explana-
+tory variables can be categorical and/or numeric. The
+tree DEMO constructed by repeatedly splitting the data, de-
+fined by a simple DEMO based on a single explanatory
+variable. At each split the data is partitioned into two
+mutually exclusive groups, each of which is as ho-
+mogeneous as possible. The splitting procedure is then
+applied to each group DEMO The objective is to
+partition the response into homogeneous groups, but
+DEMO to keep the tree reasonably small. The size of a
+tree equals the number of final groups. Splitting is con-
+tinued until an overlarge DEMO is grown, which is then
+pruned back to the desired size. DEMO group is typically
+characterized by either the distribution (categorical re-
+sponse) or mean value (numeric response) of the re-
+3178
+INTRODUCTION
+Ecological DEMO are often complex, unbalanced, and
+contain missing values. Relationships between vari-
+ables may be strongly nonlinear and involve high-order
+interactions. The commonly used DEMO and sta-
+tistical modeling techniques often fail to find mean-
+ingful ecological patterns from such data. Classifica-
+tion and regression trees (Breiman et al. 1984, Clark
+and Pregibon 1992, Ripley 1996) are modern statistical
+techniques ideally suited for both exploring and mod-
+eling such data, but have seldom been used in ecology
+(Staub et al. 1992, Baker 1993, Rejwan et al. 1999).
+Trees explain variation of a single response DEMO
+Manuscript received 16 November 1998; revised 4 November
+1999; accepted 6 November 1999.
+November
+2000
+CLASSIFICATION
+AND REGRESSION
+TREES
+3179
+sponse variable, group size, DEMO the values of the ex-
+planatory variables that define it.
+The way that explanatory variables are used to form
+splits depends on their type. DEMO a categorical explan-
+atory variable with two levels, only one split DEMO pos-
+sible, with each level defining a group. For categorical
+variables DEMO >2 levels, any combinations of levels
+can be used to form a split, and for k levels, there are
+2k-I - 1 DEMO splits. For numeric explanatory var-
+iables, a split is defined by DEMO less than, and greater
+than, some chosen value. Thus, only DEMO rank order of
+numeric variables determines a split, and for u DEMO
+values there are u - 1 possible splits. From all possible
+splits of all explanatory variables, we select the one
+that maximizes the homogeneity of the two resulting
+groups. Homogeneity can be defined in many ways,DEMO
+with the choice depending on the type of response var-
+iable.
+Trees are represented graphically, with the root node,
+which represents the undivided data, at the top, and the
+branches and leaves (each leaf represents one of the
+final groups) beneath. Additional information can be
+displayed on the tree, e.g., summary statistics of nodes,
+or distributional DEMO
+We will show how trees can deal with complex eco-
+logical data sets using soft coral (Cnidaria: Octocor-
+allia) survey data from the Australian central Great
+Barrier Reef. This, together with a detailed exposition
+of trees, follows this introduction. First, we describe
+the soft coral survey DEMO, and ecological issues that
+we investigate with trees. We then illustrate DEMO basics
+of classification and regression trees with two analyses
+of a soft coral species. A more detailed discussion of
+trees follows, and includes: (1) exploration, descrip-
+tion, and prediction of data; (2) DEMO aspects of
+growing trees with different splitting criteria; (3) prun-
+DEMO trees to size by cross-validation; and (4) data trans-
+formations, missing values, and tree diagnostics. Tree
+analyses of the soft coral data then address the follow-
+ing ecological issues: (1) relationships between phys-
+ical and spatial environmental variables, (2) habitat
+characteristics associated with aggregations of three
+soft coral taxa, and (3) comparison of physical and
+spatial variables as predictors of soft coral abundance.
+Finally, we compare the performance of trees to equiv-
+alent linear model analyses.
+THE SOFT CORAL DEMO
+Soft corals (class Anthozoa, Octocorallia: Order Al-
+cyonacea) occur in high abundances on many types of
+coral reefs. They can numerically dominate DEMO in
+turbid nearshore regions, as well as in clear water reefs
+DEMO from coastal influences (Dinesen 1983, Fabricius
+1997). Abundances of soft corals are strongly related
+to their physical environment (Fabricius and De'ath
+1997), but their role in reef communities is not well
+understood.
+DEMO analyze three groups of taxa: (1) Efflatounaria
+(family Xeniidae) DEMO three species (Gohar
+1939, Versefeldt 1977) which are not reliably DEMO
+guished; (2) Sinularia spp. (family Alcyoniidae; Ver-
+sefeldt 1980) comprises five ill-defined species with
+very similar morphology and distribution, and includes
+S. capitalis and S. polydactyla; and (3) the distinct
+species Sinularia flexibilis (Versefeldt 1980).
+Efflatounaria is locally dominant in clear offshore
+waters, whereas Sinularia spp. and S. flexibilis are high-
+ly abundant and conspicuous nearshore taxa. They can
+form dense aggregations, to the extent of monopolizing
+space and excluding the reef-building hard corals on
+the scale of thousands DEMO square meters (Fabricius
+1998).
+Additionally, we use Asterospicularia laurae (DEMO
+Asterospiculariidae; Utinomi 1951) as an example of
+an uncommon species. It is one of the few soft corals
+that are reliably identified to DEMO level in the field.
+Zonations along the gradients of depth and distance
+to land have been extensively used to explain patterns
+in abundances of DEMO taxa on the Great Barrier
+Reef (Done 1982, Dinesen 1983). However, spatial var-
+iables are only proxies for a range of physical envi-
+ronmental variables, with which they are highly cor-
+related. The relationships between spatial and physical
+variables are often complex. Hence the question of
+DEMO physical variables determine the distribution of
+a taxon often remains unresolved-a question we at-
+tempt to address in this study.
+Data comprising abundances of DEMO genera of soft
+coral, four physical and five spatial variables (Table 1),
+were collected during surveys of 374 sites at 92 lo-
+cations on 32 reefs within the Australian central Great
+Barrier Reef (Table 1 and Fig. 1). Each site was visually
+surveyed by one DEMO observer (K. Fabricius),
+by scuba diving over typically 300-500 m (- 900-
+2000 m2), for 15-20 min, within each of DEMO defined
+depth ranges. The distribution of sites was highly un-
+balanced with respect to their defining characteristics
+(Table 2).
+EXAMPLES
+AND REGRESSION
+OF CLASSIFICATION
+TREES
+A regression tree example
+As an illustrative example, we use the ratings of
+abundances (row 1 of Table 1) of Asterospicularia DEMO
+rae as the numeric response variable (Fig. 2a). The
+species DEMO uncommon, occurring on 15% of sites (mean
+rating = 0.241, DEMO = 373) with <1% of sites having a
+rating >2. DEMO explanatory variables used in the model
+are cross-shelf position, location, and depth; all of
+which appear in the tree. Splits minimize the sums of
+squares (ss) within groups. The first split is based on
+DEMO position, with inner- and mid-shelf reefs in the
+left branch, and outer-shelf reefs in the right branch.
+The left node is strongly homogeneous, and is not sub-
+sequently divided, forming a leaf with mean rating of
+3180
+GLENN
+DE'ATH AND KATHARINA
+E. FABRICIUS
+Ecology, Vol. 8
+1, No. II
+TABLE 1. Description of the variables used in the soft coral study. The character of variables
+is denoted by B = biotic, P = physical, or S = spatial; and the type by DEMO = numeric or C
+= categorical.
+Variable
+Abundances of soft
+corals (DEMO taxa)
+Sediment
+Visibility
+Wave action
+Slope angle
+Cross-shelf position
+Reef type
+Within-reef location
+Depth zone
+Reef identity
+Note: Four of the 38
+variables.
+Character
+B
+Type
+N
+C
+N
+C
+N
+C
+C
+C
+C
+DEMO
+Values
+0 (absent), 1 (few), 2 (uncommon), DEMO (com-
+mon), 4 (abundant), 5 (dominant)
+0 (none), 1 (thin), 2 (moderate), 3 (thick)
+1-33 m
+0 (none), 1 (moderate), 2 (strong)
+0-90? in 5? increments
+Inner, mid-, or outer shelf
+Fringing DEMO islands or platform
+Front, back, channel, flank
+0-1, 1-3, DEMO, 8-13, 13-18 m
+32 levels
+P
+P
+P
+P
+S
+S
+S
+S
+S
+soft coral taxa were analyzed in terms of the DEMO and spatial
+0.038. For regression trees, the proportion of the total
+DEMO of squares explained by each split is important
+information, and could DEMO displayed on the tree. How-
+ever, we can also represent this DEMO by the rel-
+ative lengths of the vertical lines associated with each
+split (Fig. 2a); a practice we use for all trees in this
+paper. Continuing with the right branch comprising all
+outer reefs, it is now divided into back and flank reef
+locations to the left DEMO front locations to the right;
+there are no channel sites on outer-shelf reefs. The
+splitting process is repeated, separating front-reef sites
+of depths above and below 3 m, which completes the
+tree with four leaves, and 49.2% of the total sum of
+squares is explained. The bar charts at each leaf show
+the distribution of observed ratings (0-3). They show
+A. laurae to be relatively common on the fronts of
+DEMO reefs, particularly at depths ?3 m, but vir-
+tually absent DEMO inner- and mid-shelf reefs.
+Shelf
+Inner-shelf
+A classification tree example
+For the example in Fig.,2b, the response variable is
+the presence-absence of A. laurae. In this case, the tree
+is identical in structure to the regression tree, but the
+splits have relatively different strengths, as represented
+DEMO their vertical lengths. Splits are based on the pro-
+portions of presences and absences in the groups. The
+leaves of the tree are characterized DEMO their dominant
+category (present or absent), and the proportion of DEMO
+of that category; e.g., for the leftmost leaf, A. laurae
+DEMO absent on 97% of inner and mid-shelf reefs (n =
+263)DEMO When the response has more than two categories,
+leaves are characterized by their dominant category and
+the proportions in each category. A classification DEMO,
+treating the ratings of A. laurae as four distinct cate-
+gories (not shown), gave identical leaves to the pres-
+ence-absence tree, DEMO had a stronger split for depth.
+Mid-shelf
+Outer-shelf
+Reef type
+Location
+Chan
+FIG. 1. Schematic representation of cross-shelf position (inner, mid, and outer), reef type (platform or fringing), and types
+of site location on the reef (front, backe, flank, and channel). Fringing DEMO form around islands, whereas platform reefs rise
+from the sea floor. DEMO the survey area fringing reefs occurred only on the inner shelf. Fronts of reefs face the prevailing wind,
+and backs are on the DEMO side, the two being joined by flanks. Channel sites occur on DEMO reefs between closely
+located islands and typically have high currents.
+November 2000
+CLASSIFICATION AND REGRESSION TREES
+3181
+TABLE 2. Spatial distribution of DEMO survey sites in terms of cross-shelf position (inner, mid, and DEMO), reef type (fringing
+or platform), reef location (Ch = channel, Bck = back, Flnk = flank, and Frnt = front), and depth (m).
+Shelf position and reef type
+Depth Inner-fringing Inner-platform Mid-platform Outer-platform
+(m) Ch Bck Flnk Frnt Bck Frnt Bck DEMO Frnt Bck Flnk Frnt
+0-1 5 7 1 4 3 3 2 1 3 6 0 2
+1-3 19 17 3 8 3 4 DEMO 2 8 13 1 7
+3-8 18 20 2 12 3 4 9 2 10 16 1 10
+8-13 3 12 0 8 4 DEMO 6 2 9 14 1 12
+13-18 4 7 0 6 1 3 3 1 7 11 1 15
+Notes: Due to the varying structure of reefs and survey constraints, the distribution of sites with respect to these four
+spatial characteristics is highly unbalanced. In particular: (1) fringing reefs, and thus channel sites, occur only on the inner
+DEMO, (2) flanks are underrepresented, (3) depths of 1-8 m are overrepresented on inner fringing reefs, and (4) depths of >DEMO
+m are overrepresented on outer reefs.
+The proportion of total ss explained by the tree is
+useful for summarizing regression trees, but, for DEMO
+sification trees, misclassification rates are used. For the
+whole tree, 34 out of 373 cases were misclassified,
+giving an error rate of DEMO This compares with 50%
+for "blind guessing," and 15% when DEMO use the "go
+with the majority rule," in this case DEMO A. laurae
+to be absent on all sites.
+TREES: WHAT THEY DEMO DO AND How THEY Do IT
+Exploration,
+description,
+and prediction
+of data
+It is useful to think of statistical analyses as explo-
+DEMO and modeling of data, with the former often pre-
+ceding the DEMO Exploration comprises both graphical
+and numerical techniques, and trees, which have both
+of these characteristics, are an effective way to explore
+Asterospicularia laurae
+a)
+B
+0.30
+(64)
+b)
+0.038
+(263)
+DEMO: Inner,
+Mid [
+0.24
+(373)
+Shelf:
+Outer
+Shelf: Inner,
+Mid J
+Shelf:
+Outer
+Absent
+0.97
+(263)
+DEMO: Back, Flank
+Location: Front
+Depth < 3m
+Depth > 3m
+,
+1
+1.33 ,
+1
+0.67
+(9)
+1.49
+(37)
+Absent
+0.78
+(64)
+Depth < 3m
+I
+Absent
+0.56
+(9)DEMO
+Depth 2 3m
+I
+Present
+0.81
+(37)
+49.2% variance explained
+DEMO
+rates: Null = 15%, Model = 9%
+FIG. 2. (a) Regression tree analysis of the abundance of the soft coral species Asterospicularia DEMO rated on a 0-5
+scale; only values 0-3 were observed. The DEMO variables were shelf position (inner, mid, and outer), site DEMO
+(back, flank, front, and channel), and depth (m)DEMO Each of the three splits (nonterminal nodes) is labeled with the variable and
+its values that determine the split. For each of the DEMO leaves (terminal nodes), the distribution of the observed values of
+DEMO laurae is shown in a histogram. Each node is labeled with the mean rating and number of observations in the group (italic,
+in parentheses). A. laurae is least abundant on inner- and mid-reefs (mean rating = 0.038) and most abundant on front outer-
+reefs at depths -3 m (1.49). The tree explained 49.2% of the total ss, and the vertical depth of each split is proportional to
+the variation explained. (b) Classification tree on the presence-absence of A. laurae. Each DEMO is labeled (classified) according
+to whether A. laurae is predominantly present or absent, the percentage of observations in that class, and the DEMO of
+observations in the group (italic, in parentheses). The misclassification rate of the model was 9%, compared to 15% for the
+null model (guessing with the majority, in this case the 85% of DEMO).
+Location: Back, Flank
+Location: Front
+0.73
+(110)
+3182
+GLENN
+DE'ATH AND KATHARINA
+E. FABRICIUS
+Ecology,
+Vol. 81, No. 11
+complex relationships in data. Modeling often has one
+of two DEMO: (1) description, in the sense that a
+model represents the systematic structure of the data
+as simply as possible, and (2) prediction, in that a mod-
+el accurately predicts unobserved data. Trees can be
+used for both description and prediction.
+Modeling requires the selection of DEMO or more likely
+models from a range of possible alternatives, e.g., se-
+lecting which variables to include in a linear regression
+model. The DEMO available for model selection are
+numerous (Ripley 1996, Anderson and Burnham 1998),
+and depend on whether the objective is description or
+prediction.
+Descriptive models can be selected by the two fol-
+lowing methods:
+DEMO) Iterative comparison of nested models using hy-
+pothesis tests; e.g., DEMO, backward, and stepwise
+regression. Though a widely used method, the DEMO of
+hypothesis tests for model selection has been increas-
+ingly questioned (DEMO and Sellke 1987, Draper
+1995, Stewart-Oaten 1996, Johnson 1999). DEMO ex-
+ample, linear regression models selected by iterative
+hypothesis tests consistently DEMO too many explan-
+atory variables (Draper 1995).
+2) Selection of the model with lowest true error
+(Breiman et al. 1984); also known as prediction error
+(Efron and Tibshirani 1993, Ripley 1996). DEMO least
+squares regression, the prediction error of a model is
+defined DEMO the expected squared error for new predic-
+tions, and for classification DEMO the probability of mis-
+classifying new observations. Obtaining realistic esti-
+mates of prediction error can be difficult. For example,
+the mean square error DEMO least squares models (the re-
+substitution estimate of prediction error) gives over-
+optimistic estimates of error; an optimism that increas-
+es with model complexity. To counter this problem, we
+can either: (a) add DEMO penalty for complexity; selection
+criteria such as Akaike's Information Criteria (AIC)
+(Sakamoto et al. 1986) and Bayes Information Criteria
+(BIC) (Schwarz 1978) adopt this approach; or (b) ob-
+tain DEMO accurate estimates of the prediction error;
+cross-validation (Ripley 1996) and bootstrapping (Ef-
+ron and Tibshirani 1993) are widely used for this DEMO
+proach.
+Predictive models are selected on their accuracy of
+predictions for new data. Although we can select a
+single best model, predictive accuracy can be improved
+by averaging weighted predictions over several models,
+with the DEMO being the plausibility of the individual
+models (Draper 1995, Ripley 1996). Cross-validation
+(Breiman et al. 1984, Ripley 1996) is a widely used
+technique for selecting predictive models.
+Growing trees and splitting criteria
+The DEMO of nodes is defined by impurity, a
+measure which takes the DEMO zero for completely ho-
+mogeneous nodes, and increases as homogeneity de-
+DEMO Thus maximizing the homogeneity of the
+groups is equivalent to minimizing their impurity.
+Many measures of impurity (splitting criteria) exist,
+and enable DEMO to analyze many types of responses.
+There are five commonly used measures (Breiman et
+al. 1984); three for classification trees and two for re-
+gression trees.
+For classification trees, impurity is defined in terms
+the proportions, c, of responses in each category. The
+three common criteria (indices) are:
+1) The information (entropy) index takes the DEMO
+-E c ln(c), where E indicates summation over cate-
+gories. This index is identical to the Shannon-Weiner
+diversity index, and forms groups by minimizing the
+within-group diversity.
+2) The Gini index takes the form I 1 - c2. At each
+split, the Gini index tends to split off the largest cat-
+egory into a separate group, whereas the information
+index tends to form groups comprising more than one
+category in DEMO early splits.
+3) The twoing index can be used for more DEMO two
+categories. It defines two "super categories" at each
+split, DEMO which the impurity is defined by the Gini
+index. It can also be used for ordered categories.
+For regression trees, the two common forms of im-
+purity are:
+1) Sums of squares about the group means. This is
+equivalent to least squares linear models.
+2) Sums of absolute deviations about the median.
+This gives a robust tree (Breiman et al. 1984). However,
+for ecological data dominated by zeros, this criterion
+can be ineffective, especially when the explanatory var-
+iables are categorical. In such cases all possible splits
+may result in groups with zero DEMO, and no splits
+will be formed.
+Although the above measures are DEMO commonly
+used, others include: (1) rank statistics, which result DEMO
+invariance of the tree to any monotonic transformation
+of the response variable (Segal 1988), and (2) survival
+statistics for censored data (DEMO 1988; T. Therneau,
+unpublished manuscript).
+Trees can also be DEMO as statistical models,
+akin to linear, generalized linear and generalized DEMO
+ditive models (Clark and Pregibon 1992). In this ap-
+proach, splits are based on an explicit statistical model,
+the deviance of DEMO defines the dissimilarity mea-
+sure. For classification trees, they use a DEMO
+model, equivalent to the information index, with the
+deviance defined by the multinomial log-likelihood.
+For regression trees, Clark and Pregibon (1992) use the
+Gaussian model, and the deviance for a node is simply
+the sums of squares about the mean. Summing over all
+leaves gives the DEMO deviance for the tree.
+Pruning trees
+A natural way of using a splitting criterion to grow
+a tree is to continue splitting until the DEMO
+due to additional splits is less than a prespecified cutoff,
+and then take this as the best tree. The foundational
+November
+2000
+CLASSIFICATION
+AND REGRESSION
+TREES
+3183
+work of Breiman et al. (1984) points out two weak-
+nesses of this approach. First, if DEMO stopping rule is
+based on too small an improvement, then an DEMO
+tree will result. Second, if the criterion is too large,
+DEMO splits based on interactions between explanatory
+variables will not be discovered unless at least one of
+the associated main effects is large enough to DEMO
+a split.
+Breiman et al. (1984) introduce three basic ideas to
+solve the problem of finding the best tree. The first idea
+is DEMO pruning: rather than stop growth in progress,
+they grow an DEMO tree and then seek ways to cut
+it back. This can be computationally infeasible, since
+the number of sub-trees is usually very large. To over-
+come this problem, their second idea is to find a se-
+quence of nested trees of decreasing size, each of which
+is the best of all trees of its size. For this they use the
+DEMO estimate of error, R(T), which can be ei-
+ther DEMO overall misclassification rate or the total re-
+sidual ss, dependent on DEMO type of tree. They show
+that, for any number a (?DEMO) there is a unique smallest
+tree that minimizes R(T) + |T|I, where |TI is tree size
+(number of leaves). By DEMO a to increase from 0
+to large, we obtain the desired DEMO of nested trees
+of decreasing size, beginning with the initial overlarge
+DEMO and ending with the root tree with no splits at all.
+Since each tree in this sequence is the best of its size,
+DEMO the best tree is reduced to the task of choosing
+the best size, a much simpler task than comparing all
+possible subtrees. R(T) is not suitable for this choice
+because it will always be minimized by the largest tree
+(just as adding more explanatory variables reduces the
+residual ss of a regression). Thus, to complete the pro-
+cess, we require better estimates of error, and the third
+idea of DEMO et al. (1984) is to obtain "honest"
+estimates of DEMO by cross-validation, as described in
+Selecting tree size by cross-validation. This DEMO be
+computationally demanding, but is now feasible since
+we only have DEMO consider one tree of each size, i.e., the
+trees of the nested sequence.
+has the smallest estimated error and is the best esti-
+DEMO predictive single tree.
+Cross-validation can be implemented in two ways.
+First, DEMO enough data are available, we select a random
+subset of the DEMO, typically comprising one-half to two-
+thirds of all data, and, DEMO only this data, build the
+sequence of nested trees. For each DEMO, predict the
+response of the remaining data, and calculate the error
+from the predictions and the observed values. The tree
+with the smallest DEMO error is then selected. One
+drawback of this technique is that there are often in-
+sufficient data to build good trees using only a DEMO
+of the data. The second way is to use V-fold cross-
+validation as follows: (1) divide the data into a number,
+V, of mutually exclusive subsets (typically V = 10) of
+approximately equal size; (2) drop out each subset in
+turn, build a DEMO using data from the remaining subsets,
+and use it to predict the responses for the omitted sub-
+set; (3) calculate the estimated error for each subset
+(e.g., for a sums of squares regression DEMO, the error
+is the sum of squared differences of the observations
+DEMO predictions), and sum over all subsets; (4) repeat
+steps (2)-(3) for each size of tree; and (5) DEMO the
+tree with the smallest estimated error rate. The subsets
+can be chosen randomly, but stratification into groups
+according to the value of the response variable gives
+smaller and more accurate estimates of the true error
+DEMO (Breiman et al. 1984).
+When we have subsampling in the DEMO, e.g., when
+we make repeated observations on the sampling units,
+then subsamples within units are usually correlated. V-
+fold cross-validation needs to DEMO modified for such
+data, otherwise: (1) predictions of error rates are over-
+optimistic (Fig. 3), due to the fact that we would be
+using observations within a sampling unit to predict
+other values DEMO the same unit; and (2) tree sizes tend
+to be DEMO (Fig. 3). We can overcome this
+problem by selecting only DEMO sampling units in our
+subsets, and thus units are predicted from DEMO units.
+If the number of sampling units is large, each subset
+DEMO contain several complete units, but if the number
+is -< V, then each subset will comprise a single complete
+unit. Bootstrap procedures (DEMO and Tibshirani 1993)
+have been modified in this way, but DEMO our knowledge,
+cross-validation procedures have not.
+For the nested sequence of trees, the difference be-
+tween resubstitution and cross-validated estimates of
+error often increases with tree size (Fig. 3), with the
+latter often rapidly dropping to a minimum followed
+by a slow increase. If this plateau DEMO occurs, the
+tree size corresponding to the minimum error is im-
+DEMO estimated.
+Breiman et al. (1984) suggested the 1-SE rule where-
+by the best tree is taken as the smallest tree such that
+its DEMO error rate is within one standard error of
+the minimum. The standard error of the estimate (Brei-
+man et al. 1984) can be DEMO for each tree size
+(Fig. 3). Use of the 1-SE DEMO can result in a much
+Selecting tree size by cross-validation
+We have noted that descriptive models can be based
+on: (1) iterative comparisons between models, (2) mod-
+el fit with a penalty for complexity, or (3) accurate
+estimates of prediction error. Selection of trees by ei-
+ther iterative comparisons or penalized complexity is
+ineffective (Clark and Pregibon 1992, Venables and
+Ripley 1999), and thus we require a method that ac-
+curately estimates prediction error.
+Breiman et al. (1984) use DEMO to obtain
+honest estimates of true (prediction) error for trees of
+a given size. For the sequence of trees, these estimates
+of error can be plotted against tree size, and the size
+with the minimum error selected. A single tree selected
+by cross-validation can be used for DEMO and/or
+prediction. It should be interpreted as the tree which
+3184
+GLENN
+DE'ATH AND KATHARINA
+E. FABRICIUS
+Ecology,
+Vol. 81, No. 11
+a 1.0
+I
+0
+0.816 1
+O1 0.7-
+0
+0.545 DEMO
+0.4-
+1 of3 2a series 50 cross-validations. 4 (most6 8 The DEMO
+Size of tree
+FIG. 3.
+relative
+fied
+(Fig. 2). The DEMO
+10-fold under cross-validation the necessary (gray) include and
+single selected -SE rule and
+each tree size. The resubstitution
+modal 16
+20
+tree 24
+DEMO (white circles) and cross-validation
+error (gray circles, unstratified; black DEMO, strati-
+by reef) for the regression tree Asterospicularia of laurthe
+relative error plots are for a
+to-S minimum eestimates rules for
+error decreases (white) monotoni-
+cally with tree size, as will always be the DEMO, reaching a
+minimum of 0.45 for largest the possible tree of DEMO 24. Under
+unstratified cross-validation, a tree of size five is selected DEMO
+the -SErule, whereas to for cross-validation stratified by reef,
+a DEMO of size four is selected. At the bottom of the plot, DEMO
+bar chart shows the relative proportions of trees each of Size
+selected under the 1-SE rule (gray) and minimum (white) rules
+from DEMO series of 50 cross-validations. The modal tree (most
+likely) 1best-SE the under rule has leaves, and four the under
+minimum rule a five-leaf tree is marginally more likely than
+the four-leaf tree.
+0.94-
+smaller tree DEMO suggested n by minimum the cross-val-
+idated-error, but with minimal increase DEMO the estimated
+error rate (at most comprE). <1 Irrsingespective whether of the
+minimum or 1 SE rule is used, inspection of the cross-
+validated is necessary to th ensure at the se-
+quence trees DEMO has been grown enough. large For both
+the minimum and 1-SE rule, the size of the selected
+tree will vary under repeated cross-validation (DEMO 3),
+and it is advisable to run several cross-validations in
+DEMO to assess the degree variation of in the sizes of
+the best tree, and ensure the chosen tree is not atypical.
+If a single tree is required for description, and the
+data set is not overlarge, then either of the following
+strategies could be used. Each is basendard of
+cross-validations, comprising perhaps 50 sets of 10-
+fold cross-validations. For the first strategy: (1) select
+the tree size from each cross-validation of the series
+according to either the minimum or 1-SE rule; and (DEMO)
+from the distribution of selected tree sizes, select the
+most DEMO occurring (modal) size. For the second,
+the estimated errors and their standard errors can be
+averaged over the cross-validations. This gives a
+DEMO
+series a
+2
+3
+4
+5
+20 24
+for the largest possible tree of size 24. Under
+miimum
+smoother cross-validation curve from which the DEMO
+size can be selected according to either rule. We prefer
+the latter strategy, but it is difficult to implement for
+the available software.
+If the objective of the analysis is prediction, then
+averaging over a collection of trees gives better per-
+formance (Ripley 1996). This can be done using these
+steps: (1) run a series of cross-validations, (2) select a
+tree from each cross-validation according to the min-
+imum rule, (3) for each tree predict for the new data,
+and (4) average the predictions over the trees.
+Transformations
+For a DEMO explanatory variable, x, only its rank
+order determines a split, DEMO, the groups are defined by
+x > Xs and x < DEMO, where xs maximizes their homoge-
+neity. Trees are thus invariant to DEMO transfor-
+mations of numeric explanatory variables. Hence, we
+do not have DEMO deal with the difficult issue of the form
+of relationship between the response and numeric ex-
+planatory variables (e.g., linear-linear, log-log, linear-
+DEMO). However, for a strong linear (or smooth)
+relationship, DEMO trees will not perform as well
+as linear regression (or non- DEMO semiparametric smooth-
+ers). For some splitting criteria, e.g., those based on
+ranks, trees are also invariant to monotonic transfor-
+mations of the response variable (Breiman et al. 1984,
+Segal 1988). For regression trees based on sums of
+squares or sums of absolute deviations, residual plots
+are useful to check for outliers, and to show how var-
+iation of the response is related to mean values of the
+groups. DEMO variation gives greater weight to
+data with higher variation, and therefore DEMO is often
+desirable to transform the response variable.
+Missing values and surrogate variables
+Missing data are a common occurrence in ecological
+studies, and for many types of models they can be
+problematic (Little and Rubin 1987). Cases with miss-
+ing responses, or with missing explanatory variables
+are often deleted. This results in loss of information
+and possible bias. Alternatively, missing data can be
+replaced by some form of imputation, e.g., DEMO
+by the mean value, but this too can result in bias. DEMO
+handle missing data in a variety of ways. For regression
+trees, DEMO with missing responses are deleted, but for
+classification trees, the missing responses can be treat-
+ed as a special category (Clark and Pregibon 1992),
+thereby providing information on response bias. If an
+explanatory variable used to form a split has missing
+values, we can either stop cases with missing values
+at the split, and give them the characteristic response
+value of all cases that pass through that node; or send
+them further down the tree, using an explanatory var-
+iable with nonmissing values for these cases. We
+choose the variable that best agrees with DEMO original
+splitting variable, and quantify its performance by the
+percentage agreement DEMO the allocation of cases to the
+November 2000
+CLASSIFICATION AND REGRESSION TREES
+4.9
+(83)
+Loc:
+14.2
+(74)
+29.0
+(110)
+56.4%
+variance
+1.67
+(21)
+explained
+2.63
+(19)
+d)
+66.7%
+variance
+explained
+> 1
+0
+-oc:
+L
+C,FI Loc:
+B,Fr
+I
+l
+3.8
+(55)
+9.4
+(134)
+B,FI,Fr
+Shelf:
+I
+5.9
+(DEMO)
+Slope
+I
+Depth
+Shelf:
+< 1m Depth
+M,O
+Shelf: M Shelf:
+m
+3185
+Sediment
+M,O I Shelf: I
+DEMO)
+0.32
+(14)
+0.58 1.30 1.22 1.64
+(24) (53) (55) (47)
+34.1% variance explained 39.3% variance explained
+FIG. DEMO Regression trees relating the distributions of the four physical variables (sediment, visibility, waves, and slope) to
+the four spatial variables (shelf DEMO, location, reef type, and depth). The figures are labeled DEMO described in Fig. 2. The
+regression trees for sediment and waves were similar, explaining 56.4% and 34.1% of the total ss, respectively. Visibility DEMO
+the best-explained physical variable, followed by sediment, and finally, slope DEMO waves. For all four physical variables, the
+strongest effects were due DEMO cross-shelf position, followed by depth. The effects of location and reef DEMO were relatively small.
+21.5
+(68)
+35.0
+(102)
+two groups. The use of such variables, known as sur-
+rogate variables (Breiman DEMO al. 1984), minimizes the
+information loss, which can render the DEMO deletion
+approach unworkable when a large proportion of data
+are missing.
+Alternative
+splits
+The use of alternative splits can be used both as an
+DEMO technique, and also to generate alternative
+trees. For each split, we can compare the strength of
+the split due to the selected variable DEMO the best splits
+of each of the remaining explanatory variables. A
+strongly competing alternative variable can be substi-
+tuted for the original variable, and this can sometimes
+simplify a tree by reducing the number of explanatory
+DEMO, or, as we show later, lead to a better tree.
+DEMO, though not always, the best surrogate variable
+3186
+GLENN DE'ATH AND KATHARINA E. FABRICIUS
+Ecology, Vol. 81, DEMO 11
+a)
+Efflatounaria
+2
+C Z?
+C
+?.
+CO
+'-
+b)
+d)
+1.0 -
+0
+0.6-
+-
+0.2-
+\
+DEMO
+\
+1 2
+3
+I
+(c
+Shelf: I,M | Shelf: 0
+0.63
+4
+5
+I
+6
+8 11 13 14 15
+(DEMO)
+Size of tree
+Shelf:
+I
+0.005
+(189)
+| DEMO
+(263)
+Shelf:
+l1.86
+..1
+0.38
+(74)
+M
+/DEMO
+. ...
+Depth
+(110)
+Slope
+> 35
+Slope < 35
+DEMO
+0.76
+(29)
+|
+1.7
+(40)
+2.26
+(81)
+'l
+2.8
+(41)
+< 3m
+Depth
+variance
+explained
+> 3m
+Sinularia spp.
+.
+._
+5
+U,
+O
+o
+e)
+__0<
+DEMO 0 r
+0.60.
+(35)
+|(101)
+(29)
+18
+.
+1.3
+2.7
+(72)
+58.0%
+variance
+explained
+60
+FIG. 5. Regression trees explaining the abundances of the soft coral taxa Efflatounaria, Sinularia spp., and Sinularia
+flexibilis in terms of the four spatial variables (shelf DEMO, location, reef type, and depth) and four physical variables
+(DEMO, visibility, waves, and slope). At the bottom of the DEMO plots (a, d, g), the bar charts show the DEMO
+proportions of trees of each size selected under the 1-SE rule (DEMO) and minimum rules (white) from a series of 50 cross-
+DEMO For Efflatounaria (a), a five-leaf tree is most likely by DEMO the 1-SE or the minimum rule. For Sinularia spp.
+(d), DEMO to eight-leaf trees have support, and for S. flexibilis (g), five- to nine-leaf trees have support. Cross-validation plots
+(a, d, g), representative of the modal choice for each taxa according to the DEMO rule, are also shown. For all three taxa, a
+five-leaf tree was selected (c, f, i). The shaded ellipses enclose nodes pruned from the full trees (b, e, h), each of which
+accounted for >99% of the total ss.
+1.0-
+08-
+0.6-
+0.4-
+IM
+U
+\
+\
+-1BrB-pv r
+ri |
+1
+2
+3
+4
+DEMO
+6
+8
+9 10 11 13
+Size of
+tree
+f) Visibility>DEMO
+08-\?0.78
+14m [
+(373)
+Visibility <
+14m
+Visibility <DEMO
+6.5m Visibility>
+6.5m
+.....
+0.061
+(163)
+1.35
+(210)
+0.38
+74)
+Depth > 8m Depth < 8m
+1.88
+(136)
+Sediment < 0.5 Sediment> 0.5
+.(,
+;
+November
+2000
+CLASSIFICATION
+AND REGRESSION
+TREES
+g)
+0
+a) 1.0-
+a)
+ED 0.8-
+Co
+.o
+^
+co
+0
+0.6-
+,1, I
+DEMO 2
+Sinularia
+i[I
+t
+P
+r r I
+3 5 6 7 8 9 10 11 13
+Size of tree
+flexibilis
+3187
+54.3%
+0.86
+(29)
+variance
+2.4
+(37)
+explained
+FIG. 5. Continued. For Efflatounaria the pruned nodes represent 33.3% of the total ss and show little DEMO, as can be
+seen from the vertical lengths that are proportional DEMO the ss explained by each split. For Sinularia spp. and for S. flexibilis,
+the pruned nodes represent a greater loss of ss explained (42.0% and 45.7% respectively). Also some evidence of further
+useful splits DEMO evident in the full trees, for the left and right branches, respectively. The habitats with highest levels of
+Efflatounaria were deep sites (?DEMO m) of moderate slope (< 35?) on outer reefs (DEMO rating = 2.8). For Sinularia spp.,
+moderate visibility (6.5-14 DEMO) sites at moderate depth (<8 m) with at least some sediment were favored, and for S. flexibilis,
+channel sites had the highest levels of abundance.
+will also give the best alternative split. Inspection DEMO
+alternative splits and surrogate variables can lead to a
+more complete understanding of dependencies and re-
+lationships within the data.
+STATISTICAL
+ANALYSES
+All data DEMO presented in this paper used S-Plus
+statistical software (Statistical Sciences, 1999). The li-
+brary of tree routines (RPART: Recursive PARTition-
+ing) developed by T. Therneau (unpublished manu-
+script) was used for all DEMO and regression
+tree analyses. For all tree analyses, models were se-
+DEMO by cross-validation. For each tree, we ran a series
+of 50 DEMO cross-validations and chose the most fre-
+quently occurring tree size using the 1-SE rule (see
+Selecting tree size by cross-validation above). Typical
+cross-validations are shown in the results, each se-
+lecting the modal-size tree.
+For all tree analyses, reefs were the sampling units,
+and hence reef identity was not used in the same way
+as other spatial and DEMO variables. Reefs
+were not included in the models as explanatory vari-
+ables, but were used to form the subsets for the cross-
+validations (DEMO Selecting tree size by cross-validation
+above).
+ANALYSIS
+OF THE SOFT CORAL DATA USING TREES
+Exploring relationships between physical
+and spatial variables
+Classification and DEMO trees were used to an-
+alyze the relationships between each of the four phys-
+ical variables and the four spatial variables. The re-
+sponses DEMO sediment and wave action were analyzed
+using both types of tree. For both responses, the clas-
+sification and regression trees were highly similar, DEMO
+gesting the categories were behaving as numerical var-
+iables. Only the regression trees are presented in the
+results (Fig. 4a and c). The data for visibility and slopes
+were fourth-root and square-root transformed, respec-
+tively, to stabilize the variance at the leaves. The means
+of these variables shown on the trees (Fig. 4b and d)
+were back transformed to assist interpretation.
+Visibility and sediment levels were best explained
+(R2 = 66.7 and 56.4% respectively) by the spatial var-
+iables, whereas wave DEMO and slope were less well
+explained (R2 = 34.1 and 39.3%) (Fig. 4). This is pos-
+sibly due to high temporal variation of waves and high
+local variation in slopes. Cross-shelf position, followed
+by depth, were consistently the strongest explanatory
+variables of the physical variables (DEMO 4).
+3188
+GLENN
+DE'ATH AND KATHARINA
+E. FABRICIUS
+Ecology, Vol. 81, DEMO 11
+Predicting abundances and habitat characteristics
+of taxa
+We used regression trees to relate abundances of Ef-
+fiatounaria, Sinularia spp., and S. flexibilis DEMO the spa-
+tial and physical environmental variables. For each of
+these taxa, cross-validation using the 1-SE rule selected
+a five-leaf tree (Fig. 5a, d, and g). The choice for Ef-
+flatounaria was clear from both the cross-validation
+plot and the full tree (Fig. 5a and b), with the selected
+tree explaining 67.7% of the total ss. For DEMO
+spp. and Sinulariaflexibilis the evidence was less clear-
+cut, with trees DEMO four to ten leaves receiving support
+(Fig. 5d and e). DEMO trees were selected for both
+taxa, which explained 58.2% of the DEMO ss for Sinu-
+laria spp., and 55.4% for Sinularia flexibilis. The DEMO
+that a particular size of tree was not favored over all
+others for Sinularia spp. is not a weakness of the cross-
+validation procedure, but simply reflects the fact that
+several models were almost equally plausible. DEMO sit-
+uation also occurs for other types of statistical models,
+such as linear models, and neatly illustrates that blind
+adherence to any single model selection procedure, be
+it 1-SE for trees, or P < DEMO for linear models, is not
+the most informative strategy. Both the DEMO
+and the full tree plots are useful in assessing the cer-
+tainty with which a particular model is chosen.
+High abundances of all three DEMO were restricted to
+a narrow set of environmental conditions. Efflatounaria
+occurred on only one of 189 inner-reef sites (Fig. 5c)
+and was relatively rare on mid-shelf sites (mean rating:
+0.38, n = 74), compared with outer-shelf sites (1.86,
+n = 110). Abundance DEMO highest (2.8, n = 41) on
+outer-shelf sites of -3 DEMO water depth on terraces with
+slopes < 35?. Sinularia spp. was most abundant (mean
+rating = 2.7, n = 72) on sites of intermediate visibility
+(6.5-14 m), with depths <8 m, and at least some sed-
+iment (Fig. 5f). These are largely inner-shelf sites (Fig.
+4b). Sinularia flexibilis (Fig. 5i) was most abundant in
+channels (mean rating = 3.04, n = 49). These DEMO inner-
+shelf sites with gentle slopes (Fig. 4d) and low wave
+action (Fig. 4c). It also had high abundances (mean
+rating DEMO, n = 37) at intermediate depths (1-8 m) on
+fringing reefs where visibility was -5.5 m.
+Surrogates and alternative splits were examined DEMO
+better understand the relative effects of physical and
+spatial variables. Visibility was a strong surrogate and
+alternative split for shelf position and vice versa, in
+agreement with Fig. 4b. For example, dropping shelf
+from the Efflatounaria model resulted in a five-leaf tree
+with the same splits (Fig. 5c), but with visibility re-
+placing shelf, and explained only marginally less of the
+total ss (65.4 vs. 67.7%). The surrogate and alternative
+splits relating other physical and spatial variables were
+weaker and less consistent.
+DEMO of alternative splits led to a stronger tree
+for Sinularia spp.. The initial tree used reef type for
+the first split, however, visibility DEMO a strong alter-
+TABLE 3. Comparison of regression tree analyses of Effla-
+tounaria, Sinularia spp., and S. flexibilis using either phys-
+ical and DEMO predictors (P + S), only physical predictors
+(P), or only spatial predictors (S).
+Taxa
+Efflatounaria
+Sinularia spp.
+S. flexibilis
+Predictors
+P + S
+S
+P
+P + S
+S
+P
+P + DEMO
+S
+P
+Size of Predicted
+tree Error (%) error (%)DEMO
+5 32 38
+4 37 44
+6 40 46
+5 46 55
+5 54 61
+5 48 58
+5 45 61
+5 49 63
+DEMO 44 61
+Notes: The trees were selected using the modal tree DEMO
+50 cross validations and the 1-SE rule. The error is the per-
+centage of unexplained variance, and the predicted error is
+estimated error rate of predictions standardized by the total
+variance. The use of only physical DEMO only spatial predictors
+compared to joint use shows little difference for Sinularia
+spp. and S. flexibilis, and a moderate effect for Efflatounaria.
+native split, and when reef type was dropped from the
+model, the resulting DEMO better explained the data (58.0
+vs. 53.5%) for a same-size tree.
+The analyses above clearly identified habitats of high
+abundance. They also showed DEMO examination of sur-
+rogates and alternative splits can lead to a more com-
+plete understanding of competing explanatory vari-
+ables and better (or simpler) models when explanatory
+variables with strong surrogates are dropped from the
+models.
+Physical or spatial determinants of abundance?
+In order to explore the DEMO to which the groups
+of physical and spatial variables separately explained
+abundance, the three taxa were also analyzed using
+regression trees based on each group of variables sep-
+arately. The comparisons (Table 3) show that DEMO of
+size five were selected for most analyses, differing at
+most DEMO one from this size. Spatial variables both ex-
+plained and predicted Efflatounaria marginally better
+than the physical variables, whereas for Sinularia spp.
+and S. flexibilis the reverse was true. The degree to
+which either of the DEMO or the spatial data ex-
+plained the abundances of all three taxa was on average
+only 4% less than the combined physical-spatial data.
+The DEMO strength of the physical variables
+could be improved by additional physical data (e.g.,
+light levels and currents), and by long-term measure-
+ments (e.g., waves were poorly estimated due to their
+high temporal variability)DEMO None were available due to
+the large-scale nature of the study. However, the finding
+of similar explanatory strength by the two groups of
+spatial and physical variables does suggest that the ob-
+served physical variables are DEMO major determi-
+nants of soft coral abundances and that, in the DEMO
+of observations on the physical data, the more easily
+available spatial DEMO could be used as surrogates.
+November 2000
+CLASSIFICATION
+AND REGRESSION
+TREES
+TABLE 4.
+Analysis of variance for DEMO abundances of the soft coral species A. laurae.
+Source
+Shelf
+Reef(Shelf)
+Location
+Depth
+Shelf X Location
+Shelf X Depth
+Location X Depth
+DEMO X Location X Depth
+Residuals
+df
+2
+28
+3
+4
+4
+8
+12
+13
+298
+ss
+37.8
+20.8
+9.15
+0.82
+11.5
+1.98
+2.37
+5.86
+DEMO
+MS
+18.9
+0.74
+3.05
+0.20
+2.87
+0.25
+0.20
+0.45
+0.17
+F
+22.8
+4.25
+17.5
+1.17
+16.5
+1.42
+1.13
+2.58
+P
+<0.001
+<0.001
+<0.001
+0.323
+<0.001
+0.189
+0.333
+0.002
+Notes: The fixed effects are shelf DEMO, location of site, and depth; and reefs were treated
+as DEMO effects. The sums of squares are sequential. The total treatment degrees of freedom
+are 46 (i.e., the number of non-empty cells minus 1)DEMO
+3189
+We have noted that only visibility and shelf position
+were strong surrogates for each other, and that for many
+splits of the three physical-spatial trees, there were no
+strong surrogates or alternative splits. Coupled with the
+strong explanations given by the physical and spatial
+models separately, this suggests that, for other than
+visibility and shelf position, the splits DEMO by
+spatial factors are equivalent to complex combinations
+of physical factors, DEMO vice versa.
+COMPARISON
+OF TREES AND LINEAR MODELS
+Example one: mixed DEMO analyses of variance
+In this example we use A. laurae to show how re-
+gression trees can be used to interpret complex analysis
+of DEMO tables. Analysis of variance is widely used
+by ecologists, and, in the context of a well-designed
+balanced study, is an effective method for determining
+which factors affect a numeric response. However, as
+the number of explanatory variables and the complexity
+of the data increase (e.g., high-order DEMO, lack
+of balance, empty cells), then analysis of variance and
+linear models become less effective. The inclusion of
+random effects also greatly DEMO to the complexity of
+the analysis, especially for unbalanced designs.
+In DEMO introductory example, we used a regression
+tree to explain the abundance DEMO A. laurae (Fig. 2a) in
+terms of shelf position (inner, mid, outer), location
+(front, back, channel, flank), depth (five levels) and
+reefs (32 levels). The data were highly unbalanced
+since channel locations only occur on inner reefs, flank
+locations were underrepresented and inner reefs were
+overrepresented (Table 2). Thus of the 60 possible cells
+generated by the three fixed factors, only 47 occurred
+in the data. In the mixed effects analysis of variance,
+shelf, location, and depth were fixed effects, and reefs
+nested in shelf DEMO random effects and used as the
+error term for shelf position. Sequential sums of
+squares were used (Table 4). The analysis shows strong
+effects of shelf, location, and shelf by location; a mod-
+erate interaction between shelf, location, and depth; and
+strong variation between reefs (Table 4).
+Interpretation of the analysis is difficult due to the
+significant high-order interaction with many levels and
+empty cells. Tabulations of means DEMO down by
+shelf position, location, and depth, showed the strong
+DEMO and location effects, but failed to clearly identify
+the three-way interaction. DEMO comparison, the regres-
+sion tree analysis led to a simple interpretation (Fig.
+2a). The four-leaf tree explained 49.2% of the total ss
+DEMO to 55.4% explained by the full tree, or equiv-
+alently, the analysis of variance with reef effects omit-
+ted. The three splits were (1) inner- and mid-shelf reefs
+vs. outer-shelf reefs; (2) within DEMO reefs, flanks
+and back vs. front (there are no channel sites on outer-
+shelf reefs); and (3) within front locations on DEMO
+shelf reefs, shallow (<3 m) vs. moderate to deep (DEMO
+m). Only the sites of split (3) had moderate or high
+abundances, with the 37 deep sites having highest
+abundances. The full tree (omitted) showed two strong
+splits, one moderate split, and DEMO additional 20 minor
+splits. Each split represents a one-degree-of-freedom
+contrast among the 47 cell means. The 24 leaves of the
+full tree indicate there DEMO only 24 unique cell means.
+We assessed the information missed by the regres-
+sion tree in two ways. First, we analyzed the residuals
+from the tree using the same analysis of variance model
+as for the DEMO data set. Other than reef effects, no terms
+were significant (P > 0.05). Second, we note the var-
+iation not explained by the four-leaf tree, but explained
+by the full tree (or analysis DEMO variance without reef
+effects) was nonsignificant (F20326 = 1.07, P DEMO 0.620).
+Thus, we conclude the three one-degree-of-freedom
+contrasts of the DEMO adequately explained all fixed ef-
+fects of the analysis of variance.
+By comparison with the analysis of variance, the
+regression tree was far simpler. The splits of the tree
+represent an optimum set of one-degree-of-freedom
+contrasts, as defined by the splitting process. The ad-
+vantages of the tree DEMO, in its simplicity and ease
+of interpretation are clear; advantages that increase as
+the number of explanatory variables and complexity
+increase.
+Example two: linear regression
+In this example, we compare the effectiveness of
+regression trees and linear regression models in ex-
+3190
+GLENN DE'ATH AND KATHARINA E. FABRICIUS
+Ecology, Vol. 81, DEMO 11
+TABLE
+5. Linear regression analyses of Efflatounaria.
+Source
+Shelf
+Depth
+Slope
+Shelf X Depth
+Shelf X Slope
+Depth X Slope
+Shelf X Depth DEMO Slope
+Residuals
+df
+2
+4
+1
+8
+2
+4
+7
+343
+ss
+245.9
+22.9
+1.8
+38.1
+4.3
+10.8
+15.8
+127.2
+Model 1
+F
+331
+DEMO
+4.9
+12.8
+5.7
+7.3
+6.1
+P
+<0.001
+<0.001
+0.028
+<0.001
+DEMO
+<0.001
+<0.001
+df
+2
+1
+1
+2
+2
+1
+2
+361
+ss
+Model 2
+F
+245.9
+20.3
+4.0
+17.6
+1.9
+9.0
+3.6
+141.9
+DEMO
+50.9
+10.2
+44.7
+4.8
+23.1
+9.3
+P
+<0.001
+<0.001
+0.001
+<DEMO
+0.009
+<0.001
+<0.001
+Notes: For Model 1, shelf and depth are three- and five-level factors, respectively, and slope
+is numeric. For DEMO 2, shelf, depth, and slope are three-, two-, and DEMO factors, re-
+spectively. Models were built by forward inclusion based on DEMO's Cp, and taking into
+account interaction hierarchies. Sequential sums of DEMO are displayed to assist comparison
+with the corresponding regression trees.
+plaining the abundances of Efflatounaria, Sinularia
+spp., and S. flexibilis in terms of DEMO physical and spatial
+variables. Given the number and type of explanatory
+variables in these data, which are not atypical, building
+linear models is DEMO We needed to include high-
+order interactions in our models, and DEMO for the
+hierarchy of interactions. Models were constructed by
+forward inclusion, DEMO P < 0.01 to be conservative.
+An interaction was considered for inclusion only when
+all lower order terms contained by it had been included
+DEMO the model. Forward inclusion based on Mallow's Cp
+(Venables and DEMO 1999) was also used (results not
+shown) and gave the DEMO final model for Efflatoun-
+aria, but slightly more complex models for DEMO
+spp. and S. flexibilis. The effects of reef, which should
+be DEMO as random, were not included due to the
+complexity of determining DEMO error terms.
+For Efflatounaria the final model (Model 1) com-
+prised two factors, cross-shelf position and depth,
+crossed with the numeric variable reef slope, which
+resulted in 15 intercept and 14 slope parameters (DEMO
+slope parameter was not estimable because one cell had
+constant reef slopes). Examination of parameter esti-
+mates failed to reveal patterns. One solution DEMO the
+problem of interpretation was to group reef slope into
+two categories, reduce the number of categories for
+depth, and then cross tabulate DEMO mean abundance by
+these reduced factors (Model 2 of Table 5, Table 6).
+The regression tree (Fig. 5c) was used to DEMO the
+split points: -35? for slope and -3 m for depth. This
+reduction was effective, and showed a similar pattern
+to the regression tree with high abundance in medium
+to deep sites (?3 m) in outer reefs, particularly on flat
+sites
+(<35?
+slope).
+Comparing
+the reduced
+model
+(Model 2) against the full model (Model 1), showed
+that the simplification resulted in the loss of significant
+DEMO (F17,344 = 2.23, P = 0.003, Table 5). DEMO
+2, with 11 degrees of freedom (df), explained 68.2%
+of the total ss, almost identical to 67.7% for the tree
+with only five leaves (equivalent to 4 df). Fitting an
+eight-leaf tree, DEMO which there is support under cross-
+validation (Fig. 5a), accounted DEMO the depth effect
+within mid-shelf reefs (Table 6), and slope DEMO with-
+in mid-shelf reefs in the deep and outer-shelf reefs in
+the shallow (not shown). This tree accounted for 71.1%
+of the total ss compared to 72.6% for the full model,
+the difference being DEMO (F21,344 = 0.950, P
+- 0.473).
+For Sinularia spp. and S. flexibilis the final linear
+models were extremely complex, and due to that com-
+plexity, uninterpretable. The model for Sinularia spp.
+involved six of the eight environmental variables, and
+five first-order interactions, and for DEMO fiexibilis five of
+the eight environmental variables, and five first-order
+and DEMO second-order interaction.
+These analyses highlight some difficulties in using
+iterative selection (DEMO, backward, and stepwise
+methods) of linear models for complex data. DEMO re-
+sulting models will often include many interactions be-
+tween quantitative and categorical variables, which
+make interpretation difficult. Regression trees can help
+in the selection of a simpler regression model as was
+case with Efflatounaria. Given DEMO problem of liberal
+inclusion of variables, when using iterative selection
+based DEMO hypothesis tests (Draper 1995), and the dem-
+onstrated performance of DEMO trees, we suggest
+TABLE
+6. Mean ratings (N; 1 SE) of Efflatounaria abundance from Model 2 (see Table 5).
+Slope <DEMO
+Slope >35
+Position
+Inner-shelf
+Mid-shelf
+Outer-shelf
+Depth <3 m
+0 (DEMO; 0)
+0.04 (23; 0.04)
+0.52 (21; 0.16)DEMO
+Depth -3 m
+Depth <3 m
+Depth -3 m
+0.01 (103; 0.01)
+0.59 (39; 0.13)
+2.78 (41; 0.20)
+0 (4; 0)
+0 (2; 0)
+1.38 (8; 0.38)
+0 (9; 0)
+0.40 (10; 0.27)
+1.73 (40; 0.12)
+November 2000
+CLASSIFICATION
+AND REGRESSION
+TREES
+3191
+the latter will often identify DEMO models for
+complex ecological data more effectively than linear
+regression models.
+established to determine reasons for the observed dis-
+tributions of these three taxa, and their ability to es-
+tablish dense aggregations.
+Classification and regression trees DEMO powerful tools
+for analysis of complex ecological data. Their features
+include: (1) the ability to use different types of response
+variables; (2) the capacity for interactive exploration,
+description, and prediction; (3) invariance to transfor-
+mations of explanatory variables; (4) easy graphical
+interpretation of complex results involving interac-
+tions; (5) model selection by cross-validation; and (6)
+procedures for handling missing values. In summary,
+DEMO and regression trees are a valuable ad-
+dition to the statistical toolbox of every ecologist and
+environmental scientist.
+DISCUSSION
+AND CONCLUSIONS
+We have outlined DEMO fundamentals of classification
+and regression trees, and have shown how they DEMO
+model complex ecological data. Trees were used to
+determine the environmental characteristics associated
+with high abundances of three taxa. The analyses in-
+dicated that, for these taxa, the ability to establish dense
+aggregations and monopolize space was restricted to
+clearly defined types of reef habitat.
+Effiatounaria occurred mainly DEMO deep clear water
+sites on the outer-shelf. These sites are also low in
+sediment, and have the lowest wave action of the outer-
+shelf. Sinularia spp. occupies mainly shallow inner-
+shelf habitats of relatively high visibility, low wave
+action, and high sediment levels. Sinularia flexibilis
+occurs on channel sites that have the highest visibility
+of the inner-shelf, are shallow, DEMO have low wave ac-
+tion and moderate sediment levels. These findings are
+consistent with previous studies that indicate that nu-
+trition plays an important DEMO in determining abun-
+dances of soft corals.
+The photosynthetic efficiency in zooxanthellate soft
+corals is generally low (Fabricius and Klumpp 1995).
+This has two important consequences for the distri-
+bution of soft coral taxa. Firstly, light levels are only
+high enough to saturate photosynthesis either in clear
+DEMO, or at shallow depth in turbid water. Secondly,
+additional heterotrophic DEMO intake is essential for
+supplementing the phototrophic carbon supply, and for
+DEMO nutrients. The two main food sources for soft
+corals are suspended particulate matter and dissolved
+nutrients. Members of the families Alcyoniidae (which
+includes Sinularia) and Nephtheidae are efficient sus-
+pension feeders that feed on small suspended partic-
+ulate matter (Fabricius et al. 1995a, b, Fabricius and
+Domisse 2000). The highest concentrations of sus-
+pended particulate matter are found DEMO the inner-shelf,
+due to import by rivers and resuspension from the shal-
+low sea floor (Revelante and Gilmartin 1982). In con-
+trast, members of the family Xeniidae (which includes
+Efflatounaria) efficiently take in dissolved nutrients
+(Schlichter 1982), concentrations of which can be high
+on the outer-shelf due to periodic upwelling of nutrient-
+enriched deep water bodies (Wolanski 1994). The hab-
+itats of Sinularia are thus rich in DEMO particulate
+matter for suspension feeding, but also moderately
+good for photosynthesis DEMO to their shallow depth.
+Conversely, habitats of Efflatounaria are rich in DEMO
+solved nutrients, good for photosynthesis due to the
+clear water of DEMO outer-shelf, and protected from ex-
+treme wave action of the outer-shelf DEMO being deep
+sites.
+Surveys can, of course, only indicate relationships,
+not causality, and follow-up experiments have been
+SOFTWARE
+Classification and regression trees are now available
+in some statistical packages. Three sources, which we
+have used, are listed here.
+1. CART (1998) is specialized classification and re-
+gression tree software, and includes many advanced
+features of tree construction. It is powerful and easy
+to use.
+2. S-Plus (Statistical Sciences 1999) is a high-level
+statistical programming language, which includes
+many tree routines. DEMO more difficult to use than
+CART, it has greater flexibility and DEMO users to
+develop their own applications.
+3. SYSTAT (SPSS Inc. 1997) includes classification
+and regression tree routines and, though they are quite
+limited, they can serve as a useful introduction to the
+topic.
+Other tree software is available but has not been
+examined by the authors.
+ACKNOWLEDGMENTS
+DEMO manuscript greatly benefited from substantial input
+from Allan Stewart-Oaten. Critical comments of Steve De-
+lean, and two anonymous referees are also appreciated.
+Thanks are due to Terry Therneau for the development of the
+RPART library. This DEMO was funded by the Cooperative
+Research Centre for Great Barrier Reef World Heritage Area,
+and the Australian Institute of Marine Science.
+LITERATURE
+CITED
+DEMO, D. A., and K. P. Burnham. 1998. Model selection
+and inference; a practical information-theoretic approach.
+Springer-Verlag, New York, New York, USA.
+DEMO, F. A. 1993. Classification and regression tree analysis
+for assessing hazard DEMO pine mortality caused by Hetero-
+basidion annosum. Plant Disease 77:(2)DEMO
+Berger, J. O., and T. Sellke. 1987. Testing a point hypothesis:
+the irreconcilability of P values and evidence (with dis-
+cussion). Journal of the American Statistical Association
+82:112-139.
+Breiman, L., J. DEMO Friedman, R. A. Olshen, and C. G. Stone.
+1984. Classification and Regression Trees. Wadsworth In-
+ternational Group, Belmont, California, USA.
+CART. 1998. Salford Systems, San Diego, California, USA.
+Clark, L. A., and D. Pregibon. 1992. Tree-based models.
+Pages 377-420 in J. M. Chambers and DEMO J. Hastie, editors.
+3192
+GLENN DE'ATH AND KATHARINA E. FABRICIUS
+Ecology, Vol. 81, DEMO 11
+Statistical models in S. Wadsworth and Brooks, Pacific
+Grove, California, USA.
+Dinesen, Z. D. 1983. Patterns in the distribution of soft DEMO
+across the central Great Barrier Reef. Coral Reefs 1:229-
+236.
+Done, T. J. 1982. Patterns in the distribution of coral com-
+munities across the central Great Barrier Reef. Coral Reefs
+1:95-107.
+Draper, D. 1995. Assessment and propagation of model un-
+certainty (with discussion). Journal of the Royal Society
+series B 57:45-97.
+Efron, B., and R. DEMO Tibshirani. 1993. An introduction to the
+bootstrap. Chapman and Hall, New DEMO, New York, USA.
+Fabricius, K. E. 1997. Soft coral abundance DEMO the central
+Great Barrier Reef: effects of Acanthaster planci and the
+DEMO environment. Coral Reefs 16:159-167.
+Fabricius, K. E. 1998. Reef invasion DEMO soft corals: Which
+taxa and which habitats? Pages 77-90 in J. G. Greenwood
+and N. J. Hall, editors. Proceedings, Australian Coral Reef
+DEMO 75th Anniversary Conference, Heron Island, Oc-
+tober 1997. School of Marine Science, The University of
+Queensland, Brisbane, Australia.
+Fabricius, K. E., Y. Benayahu, A. Genin. 1995a. Herbivory
+in asymbiotic soft corals. Science 268:90-92.
+Fabricius, K. E., and G. De'ath. 1997. The effects DEMO flow,
+depth and slope on cover of soft coral taxa and growth
+forms on Davies Reef, Great Barrier Reef. Pages 1071-
+1076 in H. A. Lessios, editor. Proceedings of the Eighth
+International Coral Reef Symposium. Smithsonian Tropical
+Research Institute, Balboa, Republic of Panama.
+Fabricius, K. E., M. Dommisse. 2000. Depletion of sus-
+pended particulate matter over coastal reef communities
+dominated by zooxanthellate soft corals. Marine Ecology
+Progress Series 196:157-167.
+DEMO, K. E., A. Genin, Y. Benayahu. 1995b. Flow-de-
+pendent herbivory DEMO growth in asymbiotic soft corals.
+Limnology and Oceanography 40:1290-1301.
+Fabricius, DEMO E., D. W. Klumpp. 1995. Wide-spread mixo-
+trophy in reef-inhabiting soft DEMO: the influence of depth,
+and colony expansion and contraction on DEMO
+Marine Ecology Progress Series 125:195-204.
+Gohar, H. A. F 1939. DEMO a new xeniid genus Efflatounaria.
+Annals and Magazine of Natural History 11:32-36.
+Johnson, D. H. 1999. The insignificance of statistical sig-
+nificance testing. Journal of Wildlife Management 63:
+(3)763-772.
+Little, R. J. DEMO, and D. B. Rubin. 1987. Statistical analysis
+with missing data. Wiley, New York, New York, USA.
+Rejwan, C., N. C. Collins, L. J. Brunner, B. J. Shuter, M. S.
+Ridgway. 1999. Tree DEMO analysis on the nesting
+habitat of smallmouth bass. Ecology 80:341-348.
+Revelante, N., and M. Gilmartin. 1982. Dynamics of phy-
+toplankton in the DEMO Barrier Reef Lagoon. Journal of
+Plankton Research 4:47-76.
+Ripley, B. DEMO 1996. Pattern recognition and neural networks.
+Cambridge University Press, Cambridge, UK.
+Sakamoto, Y., M. Ishiguro, and G. Kitagawa. 1986. Akaike
+information criterion statistics. D. Reidel Publishing Com-
+pany, New York, New York, USA.
+Schlichter, D. 1982. Nutritional strategies in cnidarians: the
+absorption, translocation, DEMO utilization of dissolved nu-
+trients by Heteroxenia fuscescens. American Zoologist 22:
+659-669.
+Schwarz, G. 1978. Estimating the dimension of a model.
+Annals of Statistics 6:461-464.
+Segal, M. R. 1988. Regression trees for censored data. Bio-
+metrics 44:35-47.
+Statistical Sciences. 1999. S-PLUS, version 2000 for Win-
+dows. Mathsoft Inc., Seattle, Washington, USA.
+Staub, J. E., L. D. Knerr, D. J. Holder, and B. May. 1992.
+Phylogenetic relationships DEMO several African Cucumis
+species. Canadian Journal of Botany 70:509-517.
+Stewart-Oaten, DEMO 1996. Goals in environmental monitoring.
+Pages 17-28 in R. J. Schmitt and C. W. Osenberg, editors.
+Detecting ecological impacts. Academic Press, San Diego,DEMO
+California, USA.
+SPSS Inc. 1997. SYSTAT Version 7.0 for Windows. Prentice
+DEMO, New Jersey, USA.
+Utinomi, H. 1951. Asterospicularia laurae, n. gen. et n. sp.,
+the type of a new family of alcyonarians DEMO stellate spic-
+ules. Pacific Science 5:190-196.
+Venables, W. N., and B. D. Ripley. 1999. Modern applied
+statistics with S-Plus. Third Version. Springer DEMO, New
+York, New York, USA.
+Versefeldt, J. 1977. Australian Octocorallia (Coelenterata).
+Australian Journal of Marine and Freshwater Research 28:
+171-240.
+Versefeldt, J. 1980. A revision of the genus Sinularia May
+(Octocorallia, Alcyonacea). Zoologische Verhandelingen,
+Rijksmuseum van Natuurlijke Histstorie te Leiden 179:DEMO
+166.
+Wolanski, E. 1994. Physical oceanographic processes of the
+Great Barrier DEMO CRC Press, London, UK.{1g42fwefx}

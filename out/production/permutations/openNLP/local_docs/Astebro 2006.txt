@@ -1,0 +1,1538 @@
+MANAGEMENT SCIENCE
+Vol. 52, No. 3, March 2006, pp. 395–409
+issn 0025-1909! eissn 1526-5501! 06! 5203! 0395
+informs®
+doi 10.1287/mnsc.1050.0468
+©2006 INFORMS
+DEMO Effectiveness of Simple Decision Heuristics:
+Forecasting Commercial Success for
+Early-Stage Ventures
+Thomas Åstebro
+Joseph L. Rotman School of Management, University of Toronto, DEMO St. George Street,
+Toronto, Ontario M5S 3E6, Canada, astebro@rotman.utoronto.ca
+DEMO Elhedhli
+Department of Management Sciences, University of Waterloo,
+Waterloo, Ontario N2L 3G1, Canada, elhedhli@engmail.uwaterloo.ca
+e investigate the decision heuristics used by DEMO to forecast that early-stage ventures are subsequently
+W commercialized. Experts evaluate 37 project characteristics and subjectively combine data on all cues by
+examining both DEMO ﬂaws and positive factors to arrive at a forecast. A conjunctive model is used to describe
+their process, which sums “good” and “bad” cue counts separately. This model achieves a 91.8% forecasting
+accuracy of the experts’ DEMO forecasts. The model correctly predicts 86.0% of outcomes in out-of-sample,
+out-of-time tests. Results indicate that reasonably simple decision heuristics can perform well in DEMO natural and
+very difﬁcult decision-making context.
+Key words : judgment; heuristic; forecast; decision making; statistical prediction; early-stage ventures
+History : Accepted by Detlof von Winterfeldt, decision analysis; received September 30, 2004. This paper was
+with the authors 3 months for 2 revisions.
+1. Introduction
+Linear DEMO statistical models of the form !1X1 +
+!dict outcomes than experts’ implicit decision rules2X2 + ··· + !nXn have been shown to better pre-
+DEMO many different decision environments, rais-
+ing the issue of whether “experts” DEMO experts at all
+(Dawes et al. 1989). The increased professionalization
+DEMO decision making, however, has made people more
+reliant on expert opinion in areas such as law, science,
+accounting, and health care. DEMO a large extent, experts
+in these areas still rely on decision DEMO There-
+fore, understanding just how experts make decisions
+in deliberate, thoughtful decision-making contexts is
+useful.
+While most people use heuristics to simplify deci-
+DEMO making (Tversky and Kahneman 1974), these
+methods have caused decision DEMO to deviate
+signiﬁcantly from optimal decisions (Kahneman and
+Tversky 1979). DEMO, others argue that heuristics
+might provide fast and reasonably accurate decisions
+(Holte 1993, Gigerenzer and Goldstein 1996). Research
+on the accuracy of heuristics has implications for the
+amount and type of training received by DEMO and
+decision makers. On a more fundamental level, the
+research also DEMO our understanding of how peo-
+ple make calculated decisions. For example, DEMO
+uals tend to do poorly in situations with little or no
+395
+information feedback on outcomes, where there is a
+large number of cues to consider, or where there are
+selection effects that bias the ability to observe all out-
+comes (Goldberg 1968).
+Analysts at the Canadian Invention Assistance Pro-
+gram (IAP) are continually faced with the task DEMO
+judging the commercial quality of inventions sub-
+mitted to the program by independent inventors;
+this pool represents a particularly difﬁcult decision-
+making context. DEMO were therefore surprised to ﬁnd
+that, contrary to expectations based on DEMO large num-
+ber of studies, IAP analysts could correctly forecast
+the DEMO that an invention would reach the mar-
+ket as often as or more often than a linear additive
+statistical model (Åstebro and Koehler 2004).
+This paper takes these results as its starting point
+and seeks DEMO ﬁnd the reasons behind the success of the
+IAP experts. Are the decision heuristics they use sim-
+ple and robust or very complicated? What are those
+decision rules, and can we explain why these heuris-
+tics perform so well?
+We explore the decision heuristics typically em-
+ployed DEMO the IAP analysts through interviews with
+their main analyst, who has DEMO to 20 years of
+experience with the organization. We formalize this
+heuristic with a conjunctive model that sums a sub-
+set of all “good” DEMO “bad” cue counts separately.
+396
+We ﬁrst test the ability of the heuristic to replicate the
+DEMO forecasts. Secondly, we examine how well
+this model predicts project outcomes. DEMO we
+capture the apparent heuristics used by the decision
+makers through an optimization procedure, we do not
+claim to capture their actual thought processes.
+Our study differs from many reports of memory-
+choice or choices made DEMO a menu of information in
+laboratory experiments in two ways: (1) We use real
+experts as subjects and analyze their actual decisions,
+and (2) Considerable deliberation over each judgment
+occurs in the decision-making DEMO
+2. Decision Heuristics and Statistical
+Prediction
+Using Heuristics
+Most decision makers use heuristics to simplify deci-
+sions (Tversky and Kahneman 1974) because heuris-
+DEMO lessen complexity by decreasing the number of
+choices and cues, thus DEMO the computational
+effort involved. The degree to which heuristics are
+used depends on the decision-making context. People
+often use heuristics when there are many DEMO
+tives (Payne et al. 1993). When faced with decisions
+involving DEMO two or three alternatives and a limited
+number of cues, people DEMO process all information
+and look at trade-offs between different cue values
+(DEMO and Raiffa 1976).1 While heuristics typically
+lead to deviations from optimal decisions (Tversky
+and Kahneman 1974), they may still be efﬁcient under
+the assumption that there are multiple objectives,
+including both the desire DEMO be accurate and the desire
+to conserve cognitive processing (Payne et DEMO 1993).2
+Experts seem to use heuristics differently than lay
+people and may therefore have higher forecasting
+accuracy.3 Shanteau (1988) argued that experts DEMO
+down larger problems into smaller parts, solve them,
+and then DEMO together the partial solutions. Labo-
+ratory studies have found that experts, DEMO using
+the same amount of cues as students, utilize infor-
+mation DEMO better than students (Ettenson et al.
+1987, Shanteau et al. 1991). Shanteau (1992) reported
+that expert auditors are not inﬂuenced by DEMO
+information while more inexperienced auditors are.
+1 We focus the review on deliberate thoughtful decision-making
+contexts rather than social or affective contexts.
+2 Herbert DEMO termed such a decision-making strategy “satisﬁc-
+ing,” thereby combining two goals: that of satisfying a predeﬁned
+level of accuracy and that of using sufﬁcient mental computational
+processing for a rational decision maker (Simon 1956, DEMO).
+3 In our setting, the decision maker can accurately be DEMO
+as an “expert” in the meaning ascribed by Webster’s Dictionary
+(1979): “having, involving, or displaying special skills or knowl-
+edge derived from training or experience.”
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial DEMO for Early-Stage Ventures
+Management Science 52(3), pp. 395–409, ©2006 DEMO
+On the other hand, many studies have shown that
+experts, while better than novices, are less able to
+forecast/diagnose than simple linear additive models
+(for reviews, see Goldberg 1968, Dawes et al. 1989,
+Grove and Meehl 1996). Goldberg summarized a host
+of studies DEMO that the amount of professional
+training and experience does not generally relate to
+judgment accuracy and that the information available
+to the decision maker DEMO not related to the accuracy
+of resulting inferences. Additional research demon-
+strated that experts and lay people alike suffer from
+the same judgmental biases (Ben-Shakhar et al. 1998,
+Chapman and Chapman 1982, Einhorn and Hogarth
+1978).
+Using Statistical Models
+While heuristics can be efﬁcient, a vast body of lit-
+erature nevertheless has shown that statistical (actu-
+arial) DEMO are at least equal and mostly superior
+to judgmental decision making (DEMO et al. 1989,
+Grove and Meehl 1996). This conclusion holds true
+across a number of decision-making contexts in both
+real and experimental DEMO and for both experts
+and less-experienced decision makers. There are sev-
+eral reasons for this common human failure, includ-
+ing the difﬁculties of processing large amounts of data
+in parallel, distinguishing between valid and invalid
+information, and dealing with sample selection bias
+and data truncation. Other reasons are the tenden-
+cies to let judgments be affected by recent events and
+DEMO bias, to seek only conﬁrmatory data, to not
+apply internal models consistently, and to be overcon-
+ﬁdent (e.g., Chapman and Chapman 1967, Faust 1984,
+Fischhoff 1975, Fischhoff and Beyth 1975, Tversky
+and Kahneman 1974, Skov and Sherman 1986). There-
+fore, past evidence DEMO not generally supported the
+claim that judgmental decision heuristics have supe-
+rior value.
+Hammond and Summers (1965) summarized re-
+search showing that for DEMO considerable number of
+decision situations, a simple linear additive model
+replicates DEMO adequately judgments made—despite
+reports that decision makers were using highly com-
+plex, nonlinear, and interactive rules. Hoffman (1960),
+Goldberg (1968), and Camerer (1981) argued that
+being able to capture someone’s choices DEMO way does
+not mean capturing their actual thought processes—
+only that for prediction purposes such thought pro-
+cesses can in most cases be reduced DEMO a linear additive
+model.
+Characterizing Decision Heuristics
+A number of decision heuristics have been reported
+on and investigated in cases where people make
+deliberate DEMO (Payne et al. 1993). We brieﬂy
+review the most commonly DEMO and note that
+they may be combined.
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial Success for Early-Stage DEMO
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+397
+The DEMO complex rules are those that combine
+a large number of cues interactively and nonlin-
+early. Goldberg (1968) found that, when prodded,
+experts often claim to use such rules to make deci-
+sions. The second DEMO complex rule in terms of
+information use and processing complexity uses sta-
+tistically optimized cue weights. While deriving the
+rules involves complex optimization, their applica-
+tion is rather straightforward, involving the multi-
+plication of a vector of cue weights with a vector
+of cue values. However, Dawes (DEMO) reported that
+equal weights are often as accurate as statistically
+derived DEMO The reason is that the likelihood
+function is often relatively ﬂat over many different
+combinations of weights. Other rules similar to equal
+weights are DEMO that sum counts (e.g., Alba and
+Marmorstein 1987, Russo and DEMO 1983). (Sums of
+counts imply equal weights across cues and DEMO val-
+ues of either zero or one.) In one study of DEMO accuracy
+of equal versus statistically derived weights, Dawes
+and Corrigan (1974, p. 105) concluded, “The whole
+trick is to decide what variables to look at and then to
+know how to add.” Although this DEMO sound sim-
+ple, ﬁnding which cues are most important involves
+some DEMO of optimization across the cues. If such
+methods are possible, then DEMO appears inefﬁcient not to
+also compute the weights using optimization. Never-
+theless, even if statistically derived weights are avail-
+able, they might not DEMO used in practice because they
+require a greater cognitive burden compared to sum-
+ming counts of cues.
+The next class of heuristics is those DEMO use only
+the most important cue, possibly followed by the next
+DEMO important, and so on. Some of these heuris-
+tics include “elimination-by-aspects,DEMO “take-the-best,”
+“lexiographic,” or “1-rule” (Holte 1993, Payne et al.
+1993, Tversky 1972). Gigerenzer and Goldstein (1996)
+claimed that DEMO only the best classifying cue saves
+tremendously on information processing. The ﬁnal
+class of rules is that which follows some random rule,
+i.e., uses a random cue or selects the choice most
+favored.
+Simulations have DEMO that simple heuristics have
+accuracies close to more complex rules (Czerlinski
+DEMO al. 1999, Gigerenzer and Goldstein 1996, Holte 1993,
+Makridakis and Hibon 2000, Thorngate 1980, Weiss
+et al. 1990). However, they do not show how decision
+makers actually use these rules—if at all—and DEMO
+the rules perform in natural settings.
+3. The Decision-Making Context
+A Canadian IAP using the system originally devel-
+oped by Gerald G. Udell was DEMO at the
+Canadian Innovation Centre (CIC) in Waterloo in 1976
+(DEMO and Bernhardt 1999, Åstebro and Gerchak
+2001). Since 1982, the IAP has used full-time, in-house
+analysts and continuously revised and improved its
+evaluation methods. The IAP evaluated more than
+13,000 projects between 1976 DEMO 2000.
+The IAP evaluates potential entrepreneurs and their
+projects on 37 different cues and provides a recom-
+mendation. The cues and their deﬁnitions employed
+DEMO the study period are described in Appendix A.
+To have a project evaluated, the entrepreneur ﬁlls out
+a questionnaire and pays a fee. In addition to back-
+ground information about the entrepreneur, the ques-
+tionnaire asks for a brief description of the idea and
+supplementary documentation such as DEMO appli-
+cations, sketches, and test reports. The in-house ana-
+lyst compares the project with similar projects in
+their library of previous reviews and DEMO vari-
+ous relevant information. He or she avoids personal
+contact with the entrepreneur beyond the provided
+documentation. A particular salient feature is the use
+DEMO the vast library of past reviews to do case-based
+comparisons. The analyst uses this method of case-
+based comparison to sort the inventions into DEMO
+nal rankings without considering class-based data
+such as base rates. Similar decision-making rules that
+focus on the case at hand rather than on class-based
+DEMO have been shown to produce biased choices in
+experiments (Kahneman and DEMO 1973, Tversky
+and Kahneman 1983). Edwards and von Winterfeldt
+(1986), however, argued that such case comparisons
+might work well. For example, diamond evaluators
+reduce the decision problem to assessing similarities
+and differences with other remembered or currently
+available diamonds on key criteria, a way of using
+anchoring and adjustment.
+The analyst uses these data to subjectively rate DEMO
+project on 37 cues. There are three scores for the
+37 cues: A—very good, B—average, and C—a crit-
+ical ﬂaw. The analyst determines an overall score
+for the project using intuitive summary judgment.
+Because the DEMO of assessing the joint effect of
+the cues is judgmental, the DEMO assessment might
+differ across evaluations and evaluators even though
+data are identical. The ﬁve possible overall scores are
+reported in Table 1. Note that DEMO judgment is one of
+ordinal rankings, not a probabilistic forecast. Further,DEMO
+the analyst conducts the forecast without any knowl-
+edge of the base rate probability of success.4 The judg-
+ment can be completely ignored by DEMO client, and
+the review does not necessarily provide any particu-
+lar DEMO in terms of preferred treatment from third
+parties.
+4 Data on the base rates were ﬁrst presented to the IAP in 1997
+(Åstebro 1997). However, the senior analyst reported that the suc-
+cess rate was considered to be “less than 10%.”
+398
+Interviews with the senior analyst at the IAP indi-
+cated that DEMO overall assessment is a mixture of two
+decision rules. If a project is critically ﬂawed on one
+or more cues, either the lowest or next-to-lowest over-
+all score is provided: D or E (i.e., noncompensatory
+weighting).5 If, however, there are no (or few) crit-
+DEMO ﬂaws, then the scores on the cues are usually
+assessed in DEMO additive fashion.6 In addition to the
+review by a single expert, DEMO group meeting is con-
+ducted where the evaluating expert presents a sum-
+mary, and a ﬁnal overall score is agreed upon. The
+evaluation process typically takes 5–7 hours and can
+stretch over several weeks as the DEMO collects infor-
+mation from various sources. A report is delivered to
+the entrepreneur consisting of scores on the 37 cues,
+a verbal representation DEMO the overall score, and a rec-
+ommendation on commercialization options.
+The DEMO situation contains a large number of
+cues that can only be qualitatively assessed, and
+the outcome to be predicted is extremely uncertain,
+suggesting that accuracy will be low. Furthermore,
+decision-relevant information is uncertain and DEMO
+easily be quantiﬁed. Many of the cues have to be fore-
+casted, for example, “New Competition.” The average
+time-to-event outcome, if successful, DEMO approximately
+1.5 years indicating a long forecasting horizon and
+associated larger error than for shorter horizons such
+as weather forecasting (Murphy and Winkler 1984).
+The IAP collects information about ventures that have
+gone through the DEMO by clipping out newspaper
+articles that they might ﬁnd. Feedback on the pre-
+diction is therefore biased and spotty. All these con-
+ditions suggest DEMO difﬁculties in making accurate
+predictions (Goldberg 1968).
+On the other DEMO, there seem to be many con-
+ditions and processes in place DEMO are suggested by
+researchers to promote good decision making (Fis-
+chhoff DEMO). First, there is ample time to form an
+opinion. Also, the IAP uses a highly structured and
+standardized procedure involving problem decompo-
+DEMO where all cues are individually scored and a
+record is kept of all scores. Furthermore, the IAP
+employed the same senior analyst between 1981 and
+2000, and all evaluators were trained by that per-
+son in the evaluation procedure; the initial training
+took about two days followed by close supervision
+over two weeks. The group meeting at the end of
+DEMO review might also mitigate potential erroneous
+classiﬁcations. In addition, the IAP DEMO paid signiﬁcant
+amounts enforcing considerable deliberations. Finally,
+5 The overall score D is typically assigned to projects that have little
+or no novelty DEMO (i.e., where similar products are already avail-
+able on the market). The score E is reserved for those with obvious
+technical ﬂaws DEMO the IAP believe cannot be corrected.
+6 The senior analyst could not provide any further general rules.
+Åstebro and Elhedhli: Simple Decision Heuristics: DEMO Commercial Success for Early-Stage Ventures
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+Baker and Albaum (1986) test the reliability of the
+instrument used by the IAP across 86 judges and six
+products and DEMO Cronbach alphas ranging from 0.84
+to 0.96, implying high reliability for DEMO personnel.
+4. Sampling and Data
+4.1. Sampling
+The sample frame consisted of all 8,797 valid records
+of inventions submitted to the IAP for DEMO dur-
+ing 1976 to 1994. We obtained 1,091 usable responses
+from 1,465 randomly sampled entrepreneurs who
+could be reached by telephone and DEMO to partici-
+pate in the survey, representing an adjusted response
+rate DEMO 75%. (For details on sampling plan and sam-
+pling bias tests, see Åstebro 2004.) We further added
+52 projects to the sample that had gone through the
+IAP program and, in addition, had been DEMO by
+the IAP through newspaper clippings as potentially
+successful. We added these because we were con-
+cerned that the number of successful ventures would
+DEMO too small to estimate meaningful models. Thirty-
+three of these projects were reported by the inven-
+tors as successfully reaching the market. The addition
+DEMO the choice-based observations increases the sam-
+ple mean probability of commercialization from 0.07
+to 0.11. We, however, ﬁnd no changes in the under-
+DEMO distribution of data with the addition of the
+choice-based observations. Therefore, DEMO is no bias
+in parameter estimates or classiﬁcation accuracy, only
+a DEMO in the intercept. We nevertheless examine
+the impact of these added observations on estimates
+in sensitivity analyses. The data set for analysis was
+ultimately DEMO to 561 projects containing 499 fail-
+ures and 62 commercial successes spanning the period
+1989 to 1994.7
+4.2. Data
+The telephone interview script contained DEMO questions,
+one of which is used in this study: “Did DEMO ever start
+to sell "NAME# or a later, revised, or DEMO version
+of this invention?” Responses deﬁne a binary variable
+that takes unity if an invention ever obtained sales
+revenue, and 0 otherwise. We refer to this outcome as
+7 Twenty observations were dropped for the DEMO analysis
+because they had no data on the predictors. Data spanned two sub-
+mission periods with somewhat different evaluation procedures,
+with the ﬁrst DEMO from 1976 to early July 1989 and the second
+from July 21, 1989, to January 1994. Because both evaluation cri-
+teria and scales DEMO substantially across the two periods, we
+decided to use only data DEMO July 1989 onward. The addition of
+the 52 choice-based observations did not change the distribution of
+observations across ratings for the 1989 to 1994 DEMO ("2 =
+6the inclusion of the choice-based sample did not have a signiﬁcant#34, d.f. = 4, n.s.). In addition, the change in period covered and
+effect on the distribution of the probability of DEMO
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial Success for Early-Stage DEMO
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+Table 1 DEMO Rates of the Overall Scores and the Probability of Commercial Success
+1989–1994 Sample
+Percent Rate of return
+Overall score Frequency Percent (%) commercial (%) for commercial (%)
+(1) (2) (3) (4) (5)
+A—recommended for development 28 5 71 26!0
+B—may DEMO forward, but need to collect more data 39 7 26 26!0
+DEMO to go forward, returns likely modest 83 15 20 −13!2
+D—doubtful, further development not recommended 341 61 4 −28!5
+E—strongly recommend to stop DEMO development 70 12 1 N/A
+Total 561 100 11 −7!3
+Note. Data in columns 2–4 are from Åstebro (2004), and data in column 5 are from Åstebro (2003).
+399
+the probability of commercialization. This is the vari-
+able against which the decision rules and the DEMO
+model will be calibrated.
+Evaluation information in the CIC record included
+ratings for each of the 37 cues as well as the venture’s
+overall DEMO Data on the independent variables
+were consequently collected before outcomes were
+observed and are independent of this study. We there-
+fore avoid any potential DEMO bias (Campbell and
+Fiske 1959, Fischhoff 1975). We convert the scores on
+the 37 cues into numerical data according to the fol-
+DEMO: A = 1 (positive); B = 0 (neutral); DEMO C =−1
+(negative).
+Table 1 (columns 2 and 3) DEMO the frequency
+distribution of the responses over the IAP’s overall
+rating. A large majority (73%) of ventures (rating D
+and E) were DEMO to terminate efforts. Five per-
+cent received the most favorable overall score (A),
+7% were advised to collect additional market or tech-
+DEMO analysis (B), and 15% were advised that the
+project was DEMO to launch as a limited (i.e., part-
+time) effort (C). Table 1 (column 4) also reports the
+probability of commercialization DEMO each of the dif-
+ferent overall scores. As seen, the probability DEMO com-
+mercialization increases with the IAP overall score.
+Åstebro (2003) computed the median internal rate of
+return (IRR), conditional on successful commercializa-
+tion for the ﬁve classes of inventions. These data are
+reported in DEMO 1 (column 5). As shown, the IRR is
+also correlated with the IAP overall judgment.
+To measure the predictive accuracy of the DEMO
+forecast we convert the overall rating into the follow-
+ing scheme: DEMO, B, and C are assumed to be a forecast
+of “success,” while D and E are assumed to be a fore-
+cast DEMO “failure.” This allows us to compare the fore-
+cast against the actual outcome in a 2-by-2 matrix and
+to compute the classiﬁcation accuracy of DEMO forecasts.
+The sample mean probability of reaching the mar-
+ket while excluding the nonrandom sample is 0.07.
+In comparison, the probability of commercial success
+of conducting R&D in established ﬁrms is approx-
+imately 0.37 (Mansﬁeld et al. 1977). The average
+development time in calendar years is DEMO years for
+successful inventions and 0.5 years for unsuccessful
+inventions (Åstebro DEMO). The average development
+costs for successful versus unsuccessful inventions
+are $87,553 and $5,798, respectively (Åstebro 2003).
+A conservative estimate DEMO the mean yearly sales is
+CDN$257,500 (1995 values), with DEMO median located
+between CDN$5,000 and $24,999 (Åstebro 1998). DEMO
+expected survival time for the inventions that reach
+the market is approximately 11 years (Gerchak and
+Åstebro 2000). The average pretax IRR on a portfo-
+lio investment in these inventions is 11.4% (Åstebro
+2003). This is higher than the contemporary risk-free
+rate of 4.2% but lower DEMO the long-run return on
+high-risk securities, which is approximately 18%–23%.
+Nevertheless, the median IRR conditional on commer-
+cialization is negative, indicating a skew distribution.
+Spearman rank-order correlations and percentage
+high scores (“A”s) are shown DEMO Table 2. The forecast
+of successful commercialization is most strongly cor-
+related with the cue “proﬁtability” $r =0#64% p < 0#01&.
+This cue DEMO also most strongly correlated with the
+likelihood of commercialization $r = 0#31% p < 0#01&.
+Cues measuring “payback period,” “potential sales,”
+DEMO of investment,” “development risk,” “function,”
+and “functional performance” all have correlations
+with the forecast between 0.41 and 0.55 and correla-
+tions DEMO commercialization likelihood between 0.19
+and 0.25. The IAP therefore seems to use roughly the
+same cues for their forecasts as those that indeed are
+DEMO of future commercial success. The bottom
+four cues are used in a much more discriminating
+way than most other cues. Only 2% receive the DEMO
+est “A” rating on “proﬁtability.” Few also are expected
+to have short payback period (3%), large potential
+sales (5%), and a DEMO investment (6%).
+5. Analysis and Results
+Our approach to modeling DEMO decision-making pro-
+cess by the analysts is based on the ideas that decision
+makers tend to use simple rules and tend to focus on
+400
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial Success for DEMO Ventures
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+Table DEMO Bivariate Spearman Rank-Order Correlations and Percentage High Scores
+Proportion of Correlation with
+observations Correlation with judged
+receiving highest probability of commercialization
+rating (A) DEMO quality
+Variable Legend p(A) q1 score
+Probability of commercialization q1 DEMO
+Overall judged commercialization quality score 0.39 1.00
+Technical feasibility 1 0.72 0.15 0.34
+Functional performance 2 0.57 0.19 0.41
+Research and development 3 0.37 DEMO 0.35
+Technology signiﬁcance 4 0.08 0.08 0.28
+Safety 5 0.30 0.01 0.10
+Environmental impact 6 0.28 0.05 0.11
+Technology of production 7 0.65 0.13 DEMO
+Tooling cost 8 0.18 0.12 0.28
+Cost of production 9 0.11 0.17 0.30
+Need 10 0.18 0.16 0.32
+Potential market 11 0.27 0.01 0.12
+DEMO of demand 12 0.20 0.15 0.23
+Duration of demand 13 0.37 0.09 0.16
+Demand predictability 14 0.08 0.12 0.16
+Product line potential 15 0.06 DEMO 0.19
+Societal beneﬁts 16 0.77 0.08 0.21
+Compatibility 17 0.40 0.15 0.31
+Learning 18 0.45 0.02 0.12
+Visibility 19 0.34 0.07 0.24
+Appearance 20 DEMO 0.18 0.39
+Function 21 0.29 0.23 0.45
+Durability 22 0.17 0.14 0.23
+Service 23 0.06 0.10 0.18
+Price 24 0.09 0.18 0.32
+Existing competition DEMO 0.06 0.09 0.24
+New competition 26 0.08 0.06 0.09
+Marketing research 27 0.11 0.16 0.22
+Promotion cost 28 0.02 0.12 0.30
+Distribution 29 0.08 DEMO 0.24
+Legality 30 0.52 0.09 0.14
+Development risk 31 0.17 0.24 0.47
+Dependence 32 0.30 0.08 0.19
+Protection 33 0.07 0.18 0.36
+Size of DEMO 34 0.06 0.21 0.50
+Potential sales 35 0.05 0.25 0.54
+Payback period 36 0.03 0.23 0.55
+Proﬁtability 37 0.02 0.31 0.64
+Notes. Correlations larger DEMO 0.082 are signiﬁcant at least at p<0!05, correlations larger than DEMO are signiﬁcant
+at least at p<0!01, n = 561.
+q1 DEMO 1 if invention reach market, else 0.
+Overall score = [A DEMO 5, B = 4, C = 3, D = 2, E = 1] = forecast.
+a subset of cues. The extreme approach DEMO be to cally agree with the decisions of the analysts and/or
+focus on a single criterion, as in the “take-the-best” the actual outcomes.
+heuristic (Todd 1999). The idea of narrowing down Our approach starts with a description of the rules
+the cue space is also used DEMO the categorization-by- used by the analysts in order to formulate a gen-
+elimination heuristic (Berretty et al. 1997) and in the eral data DEMO approach. Analysts indicated that
+elimination-by-aspects heuristic (Tversky 1972). Nar- if DEMO project is critically ﬂawed on one or more cues,
+rowing down the cues is an integral part of our pro- either the lowest DEMO next-to-lowest overall score is
+posed heuristic. We do not, however, employ it for typically provided. If no critical ﬂaws exist, however,
+the sake of analyzing the efﬁciency of an a priori then the scores DEMO the cues are usually assessed in
+preferred rule as in Czerlinski et al. (1999). Rather, we some unknown subjective additive fashion. To DEMO
+use the data to eliminate cues that do not systemati- a model of these rules, we use a conjunctive decision
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial Success for Early-Stage DEMO
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+rule that DEMO the number of positive and negative
+cues to make a forecast based on these two counts.
+The rule takes this form: If the number of positives is
+greater than or equal to p and the number DEMO negatives
+is less than or equal to n, we classify the DEMO as
+having future commercial success. The best values for
+n and p and the best selection of cues are those that
+maximize a certain DEMO We pursue two objec-
+tives: (1) We try to match DEMO analysts’ forecasts, and
+(2) we try to predict the actual DEMO outcomes.
+Suppose that the possible values for n and p are
+'DEMO 1% 2% 3% 4( and '5% 6% 7% 8% 9% 10(, respectively. Given
+37 cues, the number of possible combinations is in the
+order of four billion.8 Going through all of the com-
+binations DEMO be very time-consuming. Instead, we
+use an iterative nested procedure that DEMO with the
+generation of all possible combinations of a prespeci-
+ﬁed length (say 35 or 36 cues). We then evaluate each
+against the objective for all possible $n% p& values. The
+combination that achieves the highest objective value
+for that subset of cues is retained and used DEMO gen-
+erate further combinations of smaller sizes (say, 33
+or 32). The procedure continues until the total num-
+ber of remaining cues DEMO less than a prespeciﬁed value
+(e.g., 20). For a technical step-by-step description, see
+Appendix B.9
+Following the goal of the IAP to provide accurate
+forecasts to all clients, it seems reasonable to mini-
+mize the total cost of misclassiﬁcation. This general
+objective can be described with
+DEMO')1P1V1 +)2P2V2 (%
+(1)
+where )1 is the sample proportion of successes, P1 is
+the probability of correctly classifying a success, V1
+is the value of classifying a success correctly, )2 is
+the sample proportion of failures, P2 is the probability
+of correctly classifying a failure, and V2 is the value
+of correctly classifying a failure. We choose a rela-
+tive value of correct classiﬁcation of 10 DEMO 1 between
+V2 and V1 , meaning that it is 10 times as valuable
+to classify a success correctly compared to classifying
+a failure DEMO This implies that the objective to be
+maximized is
+max'10S1 +S2 (% (1.1)
+8 The number of possible subsets, excluding the empty set, is 237 − 1,
+so the number of possible combinations is 5 × 6 × $237 − 1& =
+4#12 × 1012.
+9 For example, suppose we start the procedure by looking at combi-
+nations of size 35. This leads to a total of 666 DEMO, each of
+which is tested against each of the 30 $n% DEMO& possibilities. The best
+combination is retained. The procedure is then restarted DEMO those
+35 retained cues. Suppose we generate all possible combinations of
+length 33. This results in a total of 595 new combinations, each of
+which is tested against every $n% p& possibility. The best combina-
+tion is again identiﬁed, and the procedure is restarted.
+401
+where S1 is the number of successes classiﬁed cor-
+rectly and S2 is the number DEMO failures classiﬁed
+correctly. This goal seems commensurate with the
+behavior of the analysts at the IAP. It also seems to
+match the goals of DEMO actors in this area. For
+example, venture capitalists (VCs) are DEMO interested
+in whether or not the venture they invest in will
+obtain spectacular returns. They are not as concerned
+with what happens to those DEMO reject.
+Replicating the Analysts’ Forecasts
+Analysts at the Canadian IAP made 150 forecasts of
+success and 411 forecasts of failure between 1989 and
+1994. DEMO these forecasts, the IAP could correctly
+classify 47 out of 62 DEMO successes (75.8% accuracy),
+and 396 out of 499 true failures (79.4% accuracy) for
+an overall forecasting accuracy of 443/561 (79.0%),
+indicating that analysts are approximately equal in
+their ability to identify successes and failures. As we
+later split the sample into an estimation DEMO and
+a prediction sample, we report the classiﬁcation accu-
+racy of DEMO IAP for these two subsamples in Table 3,
+column 1.
+The analysts are, however, poorer at making correct
+forecasts than applying much DEMO rules. An alter-
+native would be to forecast all projects to be failures.
+The overall classiﬁcation accuracy of this rule is high:
+499/DEMO (88.9%). However, the percentage of correctly
+classiﬁed successes is low: 0% (0 out of 62). Inventors
+would not be interested DEMO paying for a service that
+provides the stock response “you will fail,” so we dis-
+count this as an irrelevant rule. Another simple DEMO
+would be to use the base rate of 11% success to fore-
+cast 62 randomly chosen projects to be successes (the
+probability matching rule). This rule correctly classi-
+ﬁes 444 of 499 failures (90.0%) DEMO 7 out of 62 suc-
+cesses (11%) for an overall classiﬁcation accuracy of
+80.3%. However, while the overall classiﬁcation accu-
+racy is strong, this rule also fails to correctly classify
+successful projects.
+In describing their decision rules, we aim to repli-
+cate only the experts’ correct forecasts. We focus on
+these because there is random variation in the abil-
+DEMO of decision makers to forecast outcomes (Goldberg
+1968). Trying to DEMO the incorrect forecasts with
+a model might make some sense if one is interested
+in explaining poor performance, but in this case our
+objective is the reverse. Also, the number of incorrect
+forecasts is too small on which to apply optimiza-
+tion techniques. To test the robustness of DEMO, we
+split the sample into two groups. The ﬁrst covers the
+DEMO from 1989 to 1992 and is used as an estima-
+tion sample. The second covers the period from 1993
+to 1994 and is used DEMO making out-of-sample predic-
+tions. There are 383 observations in the 1989 to 1992
+402
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial Success for DEMO Ventures
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+Table DEMO Replicating the Analysts’ Correct Forecasts
+Heuristics based only on correct
+IAP forecasts
+Conjunctive model with cues
+1 2 3 4 5 6 7 8 DEMO 11
+12 13 14 16 17 18 19 20 21
+22 23 24 25 26 27 29 30 31
+32 34 35 36 37
+DEMO
+IAP forecasts
+n =2" p =6
+(1) (2)
+# correct % correct (%) # correct % correct (%)
+Estimation sample (1989 to 1992)
+Total 296 out of 383 77!
+Predicted to be a success 30 out of 39 76!
+Predicted to be DEMO failure 266 out of 344 77!
+Prediction sample (1993 to 1994)DEMO
+Total 147 out of 178 82!
+Predicted to be a success 17 out of 23 73!
+Predicted to be a failure 130 out of DEMO 83!
+Notes. Column (1) contains data on the ability of the IAP analysts to correctly forecast whether a project reaches
+the market or DEMO during two time periods: 1989–1992 and 1993–1994. For example, during 1989 to 1992, they
+correctly predicted 30 out of 39 actual successes correctly.
+Column (2) contains an estimation based on the subset of all DEMO observations where the IAP made correct
+forecasts. The 1989–1992 time period is used to calibrate n, p , and the cues to use, DEMO the 1993–1994 time period
+is used to test the forecasting accuracy of the heuristic using the previously calibrated values of n, p , and the cues
+to use. For example, in the prediction sample, the DEMO correctly predicts 14 out of 17 actual successes that were
+correctly classiﬁed by the IAP analysts.
+n : threshold value for the number of DEMO #≤n$.
+pFor concordance between cue numbers and names, see Table 2.: threshold value for the number of positives (≥p$.
+8 277 out of 296 93!
+92 28 out of 30 93!
+33 249 out of DEMO 93!
+58 135 out of 147 91!
+91 14 out of 17 82!
+87 121 out of 130 93!
+6
+3
+6
+8
+4
+DEMO
+pool (39 successes and 344 failures), and 178 observa-
+tions DEMO the 1993 to 1994 pool (23 successes and 155
+failures). DEMO are displayed in Table 3, column 2.
+As shown in column DEMO of Table 3, the heuristic
+that keeps 33 and ignores 4 DEMO with $n% p& = $2% 6&
+replicates 30 out of DEMO 39 correct forecasts of suc-
+cesses (93.3%) and 266 out of their 344 correct fore-
+casts of failures (93.6%), reaching an overall accuracy
+of 93.6% (277 out of 296) in the estimation sample.10
+DEMO replication accuracy is well over what is expected
+as reasonable (about DEMO) using linear additive mod-
+els (Goldberg 1968). Indeed, an DEMO probit with
+linear additive terms had a replication accuracy of
+91.6%, DEMO that the conjunctive model with
+equal weights better describes the decision-making
+process than a model with linear terms of unequal
+weights. In terms of DEMO ability of the ana-
+lysts’ judgments, the conjunctive heuristic correctly
+predicts DEMO out of their 17 correct forecasts of suc-
+cesses (82.3%) and 121 out of their 130 correct fore-
+casts of failures (93.1%), reaching an overall accuracy
+of 91.8% (135 out of 147) in DEMO prediction sample
+(Table 3, column 2)
+10 To save space in Tables 3 and 4, we write out legends rather than
+cue names. See Table 2 for their concordance.
+The best conjunctive heuristic that DEMO their
+forecasts eliminates 4 of the 37 cues (Table 3, col-
+umn 2). That is, approximately 33 cues appear to be
+used by the analysts when forming their decisions.
+This is far from using DEMO single criterion as in the sim-
+ulations by Todd (1999) or Czerlinski et al. (1999). In
+fact, our replication analysis appears DEMO conﬁrm our
+interviews with the senior analyst as well as the work
+by Goldberg (1968). But a single criterion heuristic
+may perform approximately equal to the more com-
+plex heuristic apparently employed by the IAP’s DEMO
+lysts. It might be that even a randomly chosen cue
+will perform well. We examine these questions in the
+next section where we explore DEMO accuracy of various
+heuristics in predicting project outcomes.
+Predicting Commercial Success
+Under this objective, we seek a decision rule that
+correctly predicts the commercial success of projects.
+To test the robustness of results we split the DEMO
+as in the previous analysis. Consistent with the pre-
+vious analysis, DEMO calibrate the optimization on the
+goal described in Equation (1.1). DEMO 4 displays the
+predictions by the IAP (column 2), a DEMO that
+considers all 37 cues (column 3), the best conjunctive
+DEMO (column 4), and two log-linear (logit) regres-
+sion model (columns 5 and 6).
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial Success for Early-Stage DEMO
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+403
+Table DEMO Within and Out-of-Sample Classiﬁcation Accuracy for Analysts and Decision Rules
+Conjunctive heuristic
+Total
+(1)
+Cue
+2 6 8 10 11
+13 16 17 18 Log-linear regression model
+19 20 21 24
+25 27 31 32 DEMO
+33 34 35 37 12 15 18 21
+All cues; included; 27 31 36 37
+IAP n =4" p =6 n =2" DEMO = 5 included; All cues
+(2) (3) (4) (5) (6)
+# % # % # % # % DEMO %
+Estimation sample (1989 to 1992)
+Overall predictive accuracy 383 DEMO 77!3 275 71!8 296 77!
+Correctly predicts success 39 30 76!9 29 74!4 32 82!
+Correctly predicts failure 344 266 77!3 246 71!5 264 DEMO
+Prediction sample (1993 to 1994)
+Overall predictive accuracy 178 147 DEMO 143 80!3 153 86!
+Correctly predicts success 23 17 73!9 20 87!0 19 82!
+Correctly predicts failure 155 130 83!9 123 79!3 134 86!
+DEMO 293 76!5 296 77!
+0 31 79!5 28 71!
+7 262 76!2 268 77!
+0 140 78!6 125 77!
+6 15 65!2 15 65!
+DEMO 125 80!6 110 71!
+3
+8
+9
+2
+2
+0
+Notes. Column (1): Total number of projects split by two time periods: DEMO + 178 = 561. The totals for each time period are further split by successes and
+failures (e.g., 39 successes and 344 failuresColumns (2)–(6): #: the number of projects classiﬁed correctly, DEMO: the percentage of column (1).= 383 projects during 1989–1992).
+Column (2) repeats from Table 1 data on the ability of DEMO IAP analysts to correctly forecast whether a project reaches the market or not during two time
+periods: 1989–1992 and 1993–1994.
+Columns (3)–(DEMO) contain model estimations on all 561 observations. The 1989–1992 time period DEMO used to calibrate the various models, and the 1993–1994
+time period DEMO used to test the forecasting accuracy of the various models. Since the estimation sample contains all observations (not just the correctly
+forecasted observations by the IAP as in Table 3) and the objective is now to try to predict the actual commercial outcomes (rather than the IAP decisions) the
+results on optimal n, p , and cues are different DEMO those reported in Table 3.
+Column (3) reports estimation and prediction results where we did not eliminate any cues but simply calibrated the DEMO optimal values of n and p.
+Column (4) reports estimation and prediction results where we calibrated the most optimal values of n, p , and cues included.
+Column (5) reports estimation and prediction results DEMO a log-linear regression model where cues were selected using backwards variable elimination with
+a p -value of 0.10.
+Column (5) reports estimation and DEMO results of a log-linear regression model where all cues were retained.
+n : threshold value for the number of negatives #≤n$.
+pFor concordance between DEMO numbers and names, see Table 2.: threshold value for the number of positives #≥p$.
+The best heuristic is that which keeps 21 and
+DEMO 16 cues with n = 2, p = 5 (column 4). The
+heuristic has an overall out-of-sample predictive accu-
+racy of 86.0%. DEMO that the best heuristic, the regres-
+sion model with all cues, and the IAP all make
+the same overall number of correct classiﬁcations
+(296) in the estimation sample. However, the con-
+junctive heuristic correctly DEMO two more suc-
+cesses (32 versus 30), while the IAP DEMO classiﬁes
+two more failures (266 versus 264) and the regression
+model correctly classiﬁes four more failures (268 ver-
+sus 264).11 These differences are not signiﬁcant in a
+statistical sense. But it is notable that DEMO conjunctive
+11 The conjunctive model could easily exceed the 296 correctly clas-
+siﬁed projects at the expense of making very few correct classiﬁ-
+cations DEMO successes. For example, if n and p are set to 0 DEMO 15,
+respectively, then the heuristic will correctly classify 347 projects,DEMO
+correctly predicting all the failures but only 3 successes (of 39)DEMO We
+reiterate that such a calibration is not a reasonable objective as it
+defeats the purpose of the service provided by the IAP.
+heuristic DEMO predicts more successes because
+the value of correctly classifying successes is approx-
+imately 10 times higher than the value of correctly
+classifying failures, as noted above.12
+The IAP experts, on the other hand, correctly pre-
+DEMO 17 successes (73.9%) and 130 failures (83.9%)
+for an DEMO forecasting accuracy of 82.6%, lower
+than the best heuristic we found. DEMO, the differ-
+ence of proportions between the conjunctive heuris-
+tic and DEMO IAP experts is not signiﬁcant $z = 0#873%
+p>Notice that the cues used to forecast outcomes are0#10% n = 178&.
+different than DEMO cues used to replicate the analysts’
+forecasts. To replicate the analysts’ forecasts as closely
+as possible, the procedure included 33 out of 37 cues.
+However, only 21 cues are included when forecasting
+future successes and failures. The conjunctive fore-
+casting rule eliminates 12 cues and includes 1 cue DEMO
+12 That the overall accuracy for the IAP, the decision heuristic, and
+the full regression model is the same is pure coincidence.
+404
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial Success for DEMO Ventures
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+the DEMO that the analysts seem to use. That is, com-
+mensurate with DEMO ﬁndings, the analysts are
+likely to use too much invalid information DEMO compar-
+ison with the optimal conjunctive rule that forecasts
+successes.
+While we follow a “minimalist” strategy of elimi-
+nating cues that are not useful DEMO of their low
+consistency with the forecasts, it is possible that DEMO
+cues are still occasionally meaningful. One can envi-
+sion cues that are typically identical across a num-
+ber of projects but in a few DEMO contain important
+“broken-leg” cues.13 In column 3 of Table 4, we DEMO
+fore test the forecasting accuracy of a decision heuris-
+tic that uses all 37 variables, with n and p being 4
+and 6, DEMO This heuristic predicts one more
+success but 11 less failures than the best heuristic that
+uses a reduced set of cues. It appears that DEMO full-
+information heuristic does not predict as well as a
+heuristic that takes into account the important, but
+not all, cues. Many of DEMO cues eliminated are those
+that tend to make analysts provide incorrect fore-
+casts. The cues eliminated also tend to degrade the
+classiﬁcation accuracy of DEMO best conjunctive rule if
+included.
+We now illustrate the difference between the con-
+junctive model and a typical benchmark used in
+similar studies: a linear additive statistical model. A
+logistic regression model is ﬁtted on the DEMO
+sample (Table 4, top three data rows of column 5).14
+We narrow down the cues by using backward vari-
+able elimination with DEMO p -value of 0.10 to determine
+inclusion of the statistically most important cues. The
+resulting model contains eight of the 37 cues. As
+before, we calibrate forecasts on the prediction sample
+using Equation (1.1). In the out-of-sample test (bottom
+three data rows of column 5), the regression model
+correctly forecasts 15 of the 23 successes (65.2%) and
+DEMO of the 155 failures (80.6%), reaching an overall
+accuracy of DEMO Inconsistent with previous results
+(Dawes et al. 1989) and thus surprisingly, analysts
+at the IAP are better at forecasting outcomes than a
+log-linear additive regression model. The difference of
+proportions between the IAP experts (82.6%) and the
+regression model (78.6%) is, however, not signiﬁcant
+$z = 0#939% p > 0#10% n = 178&. The regression model
+DEMO performs worse than the conjunctive decision
+13 This term comes from Paul Meehl who argued that a regression
+model will not recognize an infrequent DEMO such as a broken leg,
+but the analyst will be able to predict with high certainty that the
+professor won’t go to the DEMO if his leg is broken.
+14 Even though we decided to use the logistic speciﬁcation, a num-
+ber of link functions are available when outcomes are discrete.
+Rather than arbitrarily selecting one function, three alternative link
+functions were explored: logit, normit (also called probit), and gom-
+pit (also called complementary log-log). Regressions showed that
+all three types generated the same cues as signiﬁcant.
+heuristic. The difference of proportions between DEMO
+conjunctive model (86.0%) and the regression model
+(78.6%) is signiﬁcant $z = 1#805% p < 0#05% n = 178&.
+Apparently there DEMO predictive nonlinear decision
+rules captured by the conjunctive model but not cap-
+tured by the linear additive regression model.
+As a ﬁnal comparison, we investigate the model ﬁt
+and the out-of-sample accuracy of a regression model
+DEMO all variables (see Table 4, column 6). Compared
+to the regression model with a reduced set of cues, the
+out-of-sample prediction accuracy goes down indicat-
+ing overﬁtting on the estimation sample and support-
+ing DEMO idea that narrowing down the cue space is
+effective.
+We also test the sensitivity of the best conjunctive
+heuristic against deviations in the choices DEMO n and p
+by altering the values of n and p . The analysis reveals
+that the conjunctive decision rule is more sensitive
+to DEMO in n than to changes in p , reﬂecting the
+nature of the decision environment as primarily an
+elimination process based on the number DEMO nega-
+tive cues. We further test the sensitivity of results to
+the exclusion of 52 observations that were included
+because of information collected by DEMO IAP that these
+projects might be successful. The conclusions do not
+change using this alternative and smaller set of obser-
+vations. In addition, we analyze how accurate the
+take-the-best cue heuristics perform in this context.
+The DEMO single cue is “proﬁtability.” The most effec-
+tive take-the-best heuristic is that which classiﬁes an
+observation as a success if it receives either an DEMO
+or B rating on this cue with an overall classiﬁcation
+accuracy of 88.6%. However, this result is deceptive
+because the heuristic can correctly identify only 5 out
+of 62 successes. The reason is the very low DEMO
+ity of the cue—it simply uses too little information
+and so cannot be accurately calibrated on both suc-
+cesses and failures simultaneously (details available
+from the author).
+A ﬁnal concern is that the data might DEMO affected
+by a self-fulﬁlling prophecy that might affect estima-
+tion results. The advice provided by the IAP may
+affect inventors’ efforts. If the cues DEMO completely
+uninformative of commercialization likelihood while
+the recommendation turns out to be highly correlated
+with commercialization efforts (for example, due to
+affectation), DEMO would observe positive and biased
+correlations between cues and the likelihood of com-
+mercialization. The self-fulﬁlling prophecy, however,
+does not bias results on the relationship between cues
+and judgments. That is, our analysis that derives the
+experts’ decision rules is unaffected.
+Åstebro and Chen (2004) followed DEMO work by
+Manski (1995) and Angrist (2000) to estimate the
+average treatment effect, deﬁned as the average effect
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial Success for Early-Stage DEMO
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+405
+of DEMO judgment on the probability of commercializa-
+tion, controlling for the expected DEMO quality
+of the invention. The expected quality of the inven-
+tion is estimated econometrically by an index mea-
+suring the likelihood of reaching the DEMO, while
+controlling for the selection bias. A more colloquial
+way of DEMO this (and a restricted case) is that they
+estimate the degree to which there is a bias in the
+relationship between cues and DEMO if the out-
+comes are 100% determined by the IAP recommenda-
+tion, and not at all by the underlying quality of their
+inventions. The authors ﬁnd that most of the inven-
+tors’ efforts are driven by DEMO underlying quality of
+their inventions and that the IAP advice accurately
+reﬂects this quality. The most likely bias is a rather
+small increase (decrease) in the inventor’s expectation
+of the probability of success as a function of a positive
+(negative) review by the IAP, while controlling for the
+expected quality of the invention. The detected bias
+is not large DEMO to invalidate the conclusion that
+the statistically estimated log-linear model describ-
+ing the relation between the cues and the probability
+of commercialization is relatively DEMO for most
+inventions.
+6. Concluding Remarks
+Summary
+Most decision makers use simplifying heuristics when
+making judgments. These heuristics have been found
+to cause decision DEMO to deviate from optimal
+decisions (Tversky and Kahneman 1974, Dawes et al.
+1989). However, simpliﬁed decision rules may pro-
+vide fast and reasonably accurate decisions that might
+not deviate much from what is optimal (Gigerenzer
+and Goldstein 1996). Previous studies of both claims
+have been DEMO lab- or simulation-based, raising
+the question of how decision makers actually DEMO
+heuristics and how observed heuristics perform in
+real settings.
+We investigate the type and efﬁcacy of simple-
+decision heuristics used by experts in a DEMO setting
+to forecast that early-stage R&D projects are commer-
+cialized. The decision situation contains a large num-
+ber of cues (37), and the outcome to be predicted
+is extremely uncertain. At the same time, feedback
+on the prediction is biased and spotty, and decision-
+relevant information is uncertain and not easily quan-
+tiﬁed. However, there is ample time to form an
+opinion, for which the experts are highly paid.
+In a previous paper (Åstebro and Koehler 2004), it
+was found that the experts had a forecasting accu-
+racy equal to or surpassing a DEMO statistical model,
+something that is rarely supported by the literature
+(DEMO et al. 1989). Contrary to most other results, the
+experts DEMO a high forecasting accuracy, in particu-
+lar of the successful projects DEMO especially consider-
+ing the difﬁcult decision-making environment. Given
+this ﬁnding, it DEMO important to understand their
+decision-making rules. Are they simple and robust
+or complicated? Can we explain why their heuristics
+perform so well?
+Through interviews, we discovered that to arrive at
+a forecast, the experts DEMO use a consistent (although
+subjective) method of scoring a ﬁxed set of cues. They
+then tend to follow a heuristic where they subjec-
+DEMO combine data on all cues by examining both
+critical ﬂaws as well as positive factors. We formal-
+ize this heuristic with a conjunctive model DEMO sums
+a subset of all “good” and “bad” cue counts sepa-
+rately and achieves a 91.8% forecasting accuracy of
+the experts’ correct forecasts. We DEMO compare pre-
+dictions derived from the conjunctive model and the
+analysts’ forecasts as well as a log-linear additive sta-
+tistical model with future R&DEMO project commercial-
+izations. The conjunctive model predicts 86.0% and
+experts correctly predict 82.6%, a close second, while
+a log-linear additive statistical model correctly DEMO
+dicts 78.6% in out-of-sample, out-of-time tests. The
+difference in proportions between DEMO conjunctive
+model and the statistical model was signiﬁcant at less
+than 5%.
+The conjunctive model that replicates the experts’
+forecasting rules uses 33 out DEMO 37 possible cues.
+The model forecasting project successes, however, use
+21 cues. These results point to experts who appear
+to use considerably more DEMO than what we
+found optimal and allow this to incorrectly affect their
+forecasts. Indeed, those models that use all cues do
+not perform as well as those that use a selected set of
+cues. Nor is DEMO “take-the-best” rule as effective at pre-
+dicting as a rule that considers a selected set of cues.
+Outcome data are potentially affected by the DEMO
+ments and therefore require adjustments or at least
+analysis of potential treatment effects. This “treat-
+ment effect” might lead to a self-fulﬁlling prophecy
+of DEMO It could bias upward the estimated pre-
+dictive ability of the judges. It could also cause a pos-
+itive bias in regressions between cues DEMO outcomes.
+The self-fulﬁlling prophecy, however, does not bias
+the reported results on the relationship between cues
+and judgments. Our analysis that derives the DEMO
+decision rules remains unaffected.
+We refer to work by Åstebro and Chen (2004), who
+used the same data to estimate the treatment effect.
+They found that the most likely treatment bias is a
+small increase (decrease) in the entrepreneur’s expec-
+tation of the probability of success as a function of a
+positive (negative) review by the IAP, while control-
+ling for the expected quality of the invention. This
+bias was DEMO large enough to invalidate the conclusion
+406
+that the estimated statistical model is relatively unbi-
+ased for most DEMO We assume that because the
+bias of the log-linear model is small, the bias for the
+conjunctive decision model is also small.
+Discussion
+The conjunctive model that we use to derive the best
+heuristic contains a DEMO, complex optimization pro-
+cedure. One should not, however, equate the DEMO
+plexity of the derivation of the decision rule with
+the complexity of the use of the rule. Other decision
+rules, such as using a linear additive model or the
+take-the-best rule, also require optimization methods.
+The take-the-best rule relies on a rank-ordering of all
+cues based on cue DEMO, a well-deﬁned mathemat-
+ical construct. Complex analysis of data is required DEMO
+form such a rank-ordering. To derive a linear addi-
+tive model requires computing the sum of squared
+errors. Our speciﬁc optimization procedure was moti-
+DEMO by discussions with the decision makers, which
+revealed an apparent conjunctive DEMO, p rule.
+We conclude from our analysis that the rules ana-
+DEMO appear to use are simple in that they per-
+form straightforward sums of counts, but complex in
+the sense that they use signiﬁcantly more cues than
+what is typically observed in other decision-making
+contexts. Processing information DEMO the large num-
+ber of cues is likely made simpler by the analysts
+using a form in which all cues are listed and scores
+DEMO recorded and by the case-based comparison that
+anchors judgments.
+Notice that in the conjunctive model, cue weights
+are either 1 or 0. However, DEMO is still a better fore-
+caster than the linear statistical model, DEMO has
+nonequal weights. These results are not due to overﬁt-
+ting of the statistical model on the estimation sample.
+The different results might instead DEMO due to differ-
+ent cues picked out by the conjunctive and statistical
+model. However, we ﬁnd this an unlikely explana-
+tion because analysis showed that there was a whole
+set of conjunctive models with varying sets DEMO cues
+that all performed better than the statistical model.
+Instead, we DEMO that the reason for the difference is
+the conjunctive model’s noncompensatory nonlinear
+structure. In the conjunctive model, a large number
+of good cue scores can never “save” a project where
+there are more than three bad DEMO In the additive
+linear statistical model, such compensation is possi-
+ble. DEMO noncompensatory feature might be particu-
+larly appropriate in decision-making situations where
+a project that does not meet a set objective cannot
+go forward. For DEMO, no matter how large the
+demand, a perpetuum mobile will not make it to the
+market.
+Our results agree with previous literature ﬁnd-
+DEMO that a “bootstrap” model replicating experts’
+Åstebro and Elhedhli: Simple Decision DEMO: Forecasting Commercial Success for Early-Stage Ventures
+Management Science 52(3), DEMO 395–409, ©2006 INFORMS
+judgments typically does better at forecasting than
+the DEMO themselves. This is probably because the
+model consistently applies the same rules, whereas
+there is typically less reliability in human judgment
+(e.g., Goldberg 1968). However, in this case, the linear
+additive bootstrap model DEMO “beaten” by the deci-
+sion makers, who in turn are beaten DEMO the con-
+junctive decision heuristic. We believe these results
+also agree with previous results. The data and the
+decision-making context are more complex, so the lin-
+ear additive regression model is simply not sufﬁcient
+to describe DEMO nonlinearities present. Once we dis-
+covered and encoded the experts’ rules, DEMO model
+applies these rules with greater consistency than the
+experts, thereby DEMO the forecasting accuracy above
+the experts’ average accuracy.
+We highlight that the models (and judgments) are
+based on scores representing subjective estimates of
+DEMO information. Two issues arise from this con-
+sideration: (1) Are DEMO subjective estimates accurate?
+(2) How does one become proﬁcient at making such
+estimates?
+Addressing the ﬁrst point, we note that Einhorn
+(1972) showed that humans are better able to con-
+sistently measure DEMO than they are at evaluating
+these measurements for summary judgments. In addi-
+tion, Baker and Albaum (1986) found high Cronbach
+alphas for raters of these speciﬁc cues. We also note
+that the predictive accuracy of DEMO conjunctive model
+is relatively high in an absolute sense (Goldberg 1968)DEMO
+Furthermore, the distance to the accuracy of the prob-
+ability matching DEMO, which uses no cue information
+(at 80.3% accuracy), indicates that the cues indeed
+contain valuable information.
+But because the cues are subjectively DEMO,
+some uncertainty remains regarding the transferabil-
+ity of the results to practice. Our results do not inform
+others how to perform the subjective DEMO of
+the cues, only how to make a reasonably accurate
+judgment DEMO a simple way once the cues have been
+scored. However, with DEMO training by individuals
+knowledgeable about the IAP’s process, it should be
+DEMO to use such a model by assessors at, for exam-
+ple, venture capital ﬁrms focused on seed and early-
+stage investments. One indication DEMO training judges
+in cue assessment is relatively easy is obtained from
+Baker and Albaum (1986). They trained decision mak-
+ers familiar with the context to use the instrument
+through written instructions in a mail survey, obtain-
+ing high reliability.
+Venture capital (VC) decision making might be DEMO
+area containing some signiﬁcant biases in judgment
+that may proﬁt extraordinarily from the application
+of decision-support tools such as the one developed
+here. Indeed, Zacharakis and Meyer (2000) conducted
+an experiment in which 51 experienced DEMO received
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial Success for Early-Stage DEMO
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+407
+several DEMO of information about 25 actual invest-
+ments that had subsequently achieved either suc-
+cess or failure. Approximately 57% of the investments
+were in the DEMO and early stages. The VCs were
+requested to evaluate the ventures on four cues, as
+they would during the initial screening stage. Their
+predictions were then compared to the actual out-
+comes, and the percentage of correctly classiﬁed out-
+comes was computed. This study showed that VCs
+have DEMO low ability to correctly forecast the outcomes
+of ventures—at best, one DEMO had a classiﬁcation accu-
+racy of approximately 40% while a bootstrap model
+of their decisions had a classiﬁcation accuracy of 60%
+(the base rate was 50%). The more information about
+the venture provided to the DEMO, the less able they
+were at predicting outcomes. When information about
+DEMO track record of the team and competition was
+included, their average DEMO accuracy was
+reduced to 31%, and when additional information
+about the DEMO and product was introduced, the clas-
+siﬁcation accuracy declined to 17%. DEMO results indi-
+cated that VCs are rather poor at making investment
+decisions and that they suffer from some signiﬁcant
+decision-making biases.
+The results should DEMO support for the argument
+that simple, but not extremely simple, decision rules
+can perform well, especially because this test was per-
+formed on a large number of nonexperimental deci-
+sions. The results also deviate signiﬁcantly DEMO past
+simulations, indicating that single decision cues are
+effective. The single-best-cue DEMO cannot be calibrated
+to perform any better because of a lack of granularity
+in predictor values, so it is not a useful rule in this
+context.
+Acknowledgments
+Åstebro acknowledges partial ﬁnancial support from the
+Natural Sciences DEMO Engineering Research Council of
+Canada, grant #RGPIN 183683-00 and in-kind support DEMO
+the Canadian Innovation Centre. Elhedhli acknowledges
+partial support from the National Science and Engineer-
+ing Research Council of Canada, grant #RGPIN 249491-02.
+The authors thank Baruch Fischhoff, Shane Frederick, Scott
+Jeffrey, Derek Koehler, and DEMO Winter for comments
+and suggestions.
+Appendix A. Explanations of Cues
+Cue Explanation
+Technical
+feasibility
+Functional
+performance
+Research and
+development
+Technology
+signiﬁcance
+Is the technical DEMO sound and complete?
+Does this innovation work better than the
+alternatives?
+How great a burden is the remaining research
+and development required DEMO bring the
+innovation to a marketable stage?
+How signiﬁcant a contribution to technology
+or to its application is proposed?
+Safety Are potential DEMO or undersirable side
+effects expected?
+Environmental
+impact
+Technology of
+production
+Will the innovation lead to pollution, litter,
+misuse of natural resources, DEMO the like?
+Are the technology and skills required to
+produce the invention available?
+Tooling cost How great a burden is the cost DEMO production
+tooling required to meet the expected
+demand?
+Cost of Does production at a reasonable cost level
+production appear possible?
+Need Does DEMO innovation solve a problem, ﬁll a
+need, or satisfy a want for the customer?
+Potential market How large and how enduring is DEMO total
+market for all products serving this function?
+Trend of
+demand
+Duration of
+demand
+Demand
+predictability
+Product line
+potential
+Societal beneﬁts Will the DEMO be of general beneﬁt to
+society?
+Compatibility Is the innovation compatible with current
+attitudes and ways of doing things?
+Learning How easily DEMO the customer learn the correct
+use of the innovation?
+Visibility How evident are the advantages of the
+innovation to the prospective customer?
+DEMO Does the appearance of the innovation convey
+a message of desirable qualities?
+Function Does this innovation work better than the
+alternatives or fulﬁll DEMO function not now
+provided?
+Durability Will this innovation endure “long usage”?
+Service Will this innovation require less servicing or
+less costly servicing DEMO alternatives?
+Price Does this innovation have a price advantage
+over its competitors?
+Existing Does this innovation already face competition
+competition in the DEMO that will make its entry
+difﬁcult and costly?
+New Is this innovation likely to face new
+competition competition in the marketplace from other
+DEMO that must be expected to threaten
+its market share?
+Marketing How great an effort will be required to deﬁne
+research the product and DEMO that the ﬁnal market
+will ﬁnd acceptable?
+Promotion cost Is the cost and effort of promotion to achieve
+market acceptance of the innovation DEMO line
+with expected earnings?
+Distribution How difﬁcult will it be to develop or access
+distribution channels for the innovation?
+Will the demand DEMO such an innovation be
+expected to rise, remain steady, or fall in the
+lifetime of this idea?
+Is the demand for the DEMO expected to
+be “long term”?
+How closely will it be possible to predict
+sales?
+Can the innovation lead to other proﬁtable
+products DEMO services?
+408
+Legality Does the invention meet the requirements of
+applicable laws, regulations, and product
+standards and avoid exposure product
+liability?
+Development What degree of uncertainty is associated with
+risk complete, successful development from the
+present condition of the innovation to the
+market-ready state?
+Dependence To what DEMO does this innovation lose
+control of its market and sales due to its
+dependence on other products, processes,
+systems, or services?
+DEMO Is it likely that worthwhile commercial
+protection will be obtainable for this
+innovation through patents, trade secrets, or
+other means?
+Size of DEMO the total investment required for the project
+investment likely to be obtainable?
+Potential sales Is the sales volume for this particular
+innovation likely DEMO be sufﬁcient to justify
+initiating the project?
+Payback period Will the initial investment be recovered in the
+early life of the innovation?
+DEMO Will the expected revenue from the innovation
+provide more proﬁts than other investment
+opportunities?
+Appendix B
+Algorithm
+1. Initial set of cues is DEMO cues, call it S.
+2. Generate all combinations of size !S!−2.
+DEMO For each n in '0% 1% 2% 3% 4( and each p in
+'5% 6% 7% 8% 9% 10(:
+a. Find DEMO set of cues with the highest objective
+(10S1 +S2 where S1 DEMO S2 are the number of
+successes and failures classiﬁed correctly,
+respectively). Call it S∗.
+b. If the overall objective is improved
+i. DEMO the best objective and the overall best set
+of cues
+4. If !S∗! >a certain prespeciﬁed value (e.g., 20).
+a. S becomes S∗.
+b. Go to step 1.
+5. Else, stop
+References
+Alba, DEMO W., H. Marmorstein. 1987. The effects of frequency knowl-
+edge on DEMO decision making. J. Consumer Res. 14(1)
+14–25.
+Angrist, J. DEMO 2000. Estimation of limited-dependent variable mod-
+els with dummy endogenous regressors: DEMO strategies for
+empirical practice. Technical working paper, National Bureau
+of Economic DEMO, Boston, MA.
+Åstebro, T. 1997. The economics of invention and DEMO assis-
+tance programs. Report to the Canadian Innovation Centre,
+Waterloo (DEMO 12), Waterloo, Canada.
+Åstebro, T. 1998. Basic statistics on the success rate and proﬁts for
+independent inventors. Entrepreneurship Theory Practice 23(2)DEMO
+41–48.
+Åstebro, T. 2003. The return to independent invention: Evidence
+of unrealistic optimism, risk seeking or skewness loving?
+Econom. J. 113 226–239.
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial Success for Early-Stage DEMO
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+Åstebro, T. 2004. Key success factors for technological entre-
+preneurs’ R&D projects. IEEE DEMO Engrg. Management 51(3)
+314–321.
+Åstebro, T., I. Bernhardt. 1999. The social rate of return to Canada’s
+inventor’s assistance program. Engrg. Econom. DEMO(4) 348-361.
+Åstebro, T., G. Chen. 2004. Statistical decision-making models DEMO
+treatment effects. Manuscript, University of Toronto, Toronto,
+Ontario, Canada.
+DEMO, T., Y. Gerchak. 2001. Proﬁtable advice: The value of infor-
+DEMO provided by Canada’s entrepreneur’s assistance pro-
+gram. Econom. Innovation New Tech. 10(1) 45–72.
+Åstebro, T., D. Koehler. 2004. Calibration accuracy of a judgmen-
+tal process that predicts the commercial success of inventions.
+Manuscript, University of Toronto, Toronto, Canada.
+Baker, K. G., G. S. Albaum. DEMO Modeling new product screening
+decisions. J. Product Innovation Management 3(1) DEMO
+Ben-Shakhar, G., M. Bar-Hillel, Y. Bilu, G. Sheﬂer. 1998. Seek and
+ye shall ﬁnd: Test results are what you hypothesize they are.
+J. Behavioral Decision Making 11(4) 235–249.
+Berretty, P. M., P. M. Todd, P. W. Blythe. 1997. Categorization
+by elimination: A fast DEMO frugal approach to categorization.
+M. G. Shafto, P. Langley, eds. Proc. Nineteenth Annual Conf.
+Cognitive Sci. Soc., Lawrence Erlbaum Associates, Mahwah, NJ,
+43–48.
+Camerer, C. 1981. General conditions for the success of bootstrap-
+ping models. Organ. Behavior Human Decision Processes 27(3)
+411–422.
+Campbell, D. T., D. W. Fiske. 1959. Convergent and discriminant
+validation by the multi-trait-multi-method matrix. Psych. Bull.
+56 81–105.
+Chapman, L. J., J. P. DEMO 1967. Genesis of popular but erro-
+neous psychodiagnostic observations. J. Abnormal Psych. 72(3)
+193–204.
+Chapman, L. J., J. P. Chapman. 1982. DEMO results are what you think
+they are. D. Kahneman, P. Slovic, A. Tversky, eds. Judgment
+Under Uncertainty: Heuristics and Biases. Cambridge University
+DEMO, New York, 239–248.
+Czerlinski, J., G. Gigerenzer, D. G. DEMO 1999. How good are
+simple heuristics? G. Gigerenzer, P. M. Todd, and the ABC
+Research Group. Simple Heuristics That Makes Us Smart. Oxford
+University Press, New York, 97–118.
+Dawes, R. 1979. The robust beauty of improper linear models. Amer.
+Psychologist 34.
+Dawes, R., B. Corrigan. DEMO Linear models in decision making.
+Psych. Bull. 81 95–106.
+Dawes, R. DEMO, D. Faust, P. E. Meehl. 1989. Clinical versus actuarial
+judgment. Science 243 1668–1674.
+Edwards, W., D. von Winterfeldt. 1986. Cognitive illusions and DEMO
+implication for the law. Southern California Law Rev. 59 225–276.
+Einhorn, DEMO 1972. Expert measurement and mechanical combina-
+tion. Organ. Behavior Human Performance 7 86–106.
+Einhorn, H. J., R. M. Hogarth. 1978. Conﬁdence in judgment: Per-
+sistence in the illusion of validity. Psych. Rev. 85 395–416.
+Ettenson, R., J. Shanteau, J. Krogstad. 1987. Expert judgment: Is
+more information better? Psych. Rep. 60 227–238.
+Faust, D. 1984. The Limits of DEMO Reasoning. University of
+Minnesota Press, Minneapolis, MN.
+Fischhoff, B. 1975. DEMO is not equal to foresight: The effect of
+outcome knowledge on DEMO under uncertainty. J. Experi-
+ment. Psych.: Human Perception Performance 1(3) 288–299.
+Fischhoff, B. 1982. Debiasing. D. Kahneman, P. Slovic, A. Tversky,
+eds. Judgment under Uncertainty: Heuristics and Biases. Cam-
+bridge University Press, Cambridge, UK, 422–445.
+Fischhoff, B., R. Beyth. 1975. “I knew it would happen”: Remem-
+bered probabilities of once-future things. Organ. Behavior
+Human Decision Processes 13(1) 1–16.
+Åstebro and Elhedhli: Simple Decision Heuristics: Forecasting Commercial Success for Early-Stage DEMO
+Management Science 52(3), pp. 395–409, ©2006 INFORMS
+409
+Gerchak, Y., T. Åstebro. 2000. Calculating the expectation and vari-
+ance of the present value for a random proﬁt stream of uncer-
+tain duration. The DEMO Economist 45(4) 339–349.
+Gigerenzer, G., D. G. Goldstein. 1996. DEMO the fast and fru-
+gal way: Models of bounded rationality. Psych. DEMO 103(4)
+650–669.
+Goldberg, L. R. 1968. Simple models or DEMO processes? Some
+research on clinical judgments. Amer. Psychologist 23 483–496.
+Grove, W. M., P. E. Meehl. 1996. Comparative efﬁciency of informal
+(subjective, impressionistic) and formal (mechanical, algorith-
+mic) prediction procedures: The clinical-statistical controversy.
+Psych., Public Policy, Law 2(2) 293–323.
+Hammond, K. DEMO, D. A. Summers. 1965. Cognitive dependence on
+linear and nonlinear cues. DEMO Rev. 72(3) 215–224.
+Hoffman, P. J. 1960. The paramorphic representation of clinical
+judgment. Psych. Bull. 57 116–131.
+Holte, R. C. 1993. Very simple classiﬁcation rules perform well on
+most commonly used datasets. Mach. Learn. DEMO(11) 63–91.
+Kahneman, D., A. Tversky. 1979. Prospect theory: An analysis of
+decisions under risk. Econometrica 47 263–291.
+Keeney, R. L., DEMO Raiffa. 1976. Decisions with Multiple Objectives.
+Cambridge University Press, Cambridge, UK.
+Makridakis, S., M. Hibon. 2000. The M3-Competition: Results, con-
+clusions DEMO implications. Internat. J. Forecasting 16 451–476.
+Manski, C. F. 1995. Identiﬁcation DEMO in the Social Sciences.
+Harvard University Press, London, England.
+Murphy, DEMO H., R. L. Winkler. 1984. Probabilistic of precipitation
+forecasts: A review. J. Amer. Statist. Assoc. 79 391–400.
+Payne, J. W., J. R. DEMO, E. J. Johnson. 1993. The Adaptive Decision
+Maker. Cambridge University Press, New York.
+Russo, J. E., B. A. Dosher. 1983. Strategies for DEMO
+binary choice. J. Experiment. Psych.: Learning, Memory Cognition
+9 676–696.
+Shanteau, J. 1988. Psychological characteristics and strategies of
+expert decision makers. Acta Psych. 68 203–215.
+Shanteau, J. 1992. How much information does an expert use? Is it
+relevant? Acta Psych. 81 75–86.
+Shanteau, J., M. DEMO, J. Johnson, E. Berner. 1991. Teaching deci-
+sion making skills to student nurses. J. Baron, R. Brown, eds.
+Teaching Decision Making to DEMO Erlbaum, Hillsdale, NJ.
+Skov, R. B., S. J. Sherman. 1986. Information-gathering processes:
+Diagnosticity, hypothesis-conﬁrming strategies, and perceived
+hypothesis conﬁrmation. J. DEMO Soc. Psych. 22 93–121.
+Thorngate, W. 1980. Efﬁcient decision heuristics. Behavioral DEMO 25
+219–225.
+Todd, P. M. 1999. Simple inference heuristics versus complex DEMO
+sion machines. Minds Mach. 9 461–477.
+Tversky, A. 1972. Elimination by DEMO: A theory of choice. Psych.
+Rev. 79(4) 281–299.
+Tversky, DEMO, D. Kahneman. 1974. Judgment under uncertainty:
+Heuristics and biases. Science DEMO 1124–1131.
+Tversky, A., D. Kahneman. 1983. Extensional versus intuitive rea-
+soning: The conjunction fallacy in probability judgment. Psych.
+Rev. 90(4) 293–315.
+DEMO, G. 1989. Invention evaluation services: A review of the state
+of the art. J. Product Innovation Management 6 157–168.
+Weiss, S. M., DEMO S. Galen, P. V. Tadepalli. 1990. Maximizing the pre-
+dictive value DEMO production rules. Artiﬁcial Intelligence 45 47–71.
+Zacharakis, A. L., G. D. Meyer. 2000. The potential of actuarial deci-
+sion models: Can they improve the venture capital investment
+decision? J. Bus. Venturing 15(4) 323–346.{1g42fwefx}

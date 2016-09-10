@@ -1,0 +1,1882 @@
+Vol. 23, No. 3, Summer 2004, pp. 391–406
+issn 0732-2399 eissn 1526-548X 04 2303 0391
+informs®
+doi 10.1287/mksc.1030.0032
+©2004 INFORMS
+A Choice DEMO with Conjunctive, Disjunctive, and
+Compensatory Screening Rules
+Timothy J. Gilbride
+Mendoza College of Business, University of Notre Dame, Notre Dame, Indiana 46556, Timothy.J.Gilbride.2@nd.edu
+Greg M. Allenby
+Fisher College of Business, 2100 Neil Avenue, Ohio State University, Columbus, Ohio 43210, allenby.1@osu.edu
+any theories of consumer behavior involve thresholds and discontinuities. In this paper, we investigate
+M consumers’ use of screening rules as part of a discrete-choice model. Alternatives that DEMO the screen are
+evaluated in a manner consistent with random utility theory; alternatives that do not pass the screen have a zero
+probability of being chosen. The proposed model accommodates conjunctive, disjunctive, and compensatory
+screening DEMO We estimate a model that reﬂects a discontinuous decision process by employing the Bayesian
+technique of data augmentation and using Markov-chain Monte Carlo methods DEMO integrate over the parameter
+space. The approach has minimal information requirements and can handle a large number of choice alterna-
+tives. The method is DEMO using a conjoint study of cameras. The results indicate that 92% of respondents
+screen alternatives on one or more attributes.
+Key words : conjoint DEMO; noncompensatory decision process; hierarchical Bayes; revealed choice; attribute
+screening; DEMO sets; elimination by aspects
+History : This paper was received October DEMO, 2002, and was with the authors 1 month for 1 revision;
+processed by Kannan Srinivasan.
+1. Introduction
+Many theories of consumer behavior DEMO thresh-
+olds and discontinuities. The amount consumers are
+willing to pay for a lottery ticket is different than the
+amount they will pay to DEMO against a commensu-
+rate loss. A threshold occurs at the point where a gain
+turns into a loss. Consumers in the market for a DEMO
+minivan may not consider offerings above a certain
+price because they exceed their budget constraints, or
+because past experience has taught them that higher-
+priced vehicles are not a good value. When going out
+for dinner, the restaurants considered may be very
+different than those considered at lunch. DEMO the-
+ory, microeconomics, reference prices, and considera-
+tion sets all DEMO abrupt behavior changes under
+certain discrete circumstances.
+Thresholds and discontinuities are problematic for
+empirical researchers because they can lead to a
+likelihood surface that DEMO not differentiable. In a
+discrete-choice model, the presence of a consideration
+DEMO leads to abrupt changes in the choice probability
+as items move into and out of the set. Gradient-based
+estimation procedures, such as Newton-Raphson and
+the method of scoring, are not appropriate in these
+situations because they require a continuous and dif-
+ferentiable likelihood function. Researchers have used
+various DEMO to “smooth out” the likelihood by
+391
+introducing additional parameters and error terms
+into the model. We propose an alternative approach
+that deals directly DEMO the irregularity of the likeli-
+hood surface, preserving the thresholds and DEMO
+nuities that are implied by theory.
+In this paper we investigate consumers’ use of
+screening rules as part of a discrete-choice model.
+Alternatives that DEMO the screen are evaluated in
+a manner consistent with random utility theory;
+alternatives that do not pass the screen have a
+zero probability DEMO being chosen. Behaviorally, con-
+sumers adopt a “rule” to screen alternatives; this rule
+may be the result of previous learning, information-
+processing constraints, or solving some previous con-
+strained optimization problem. The reduced-form
+model we propose is consistent with various theories
+presented in the consideration set and DEMO
+processing literature.
+The proposed model accommodates conjunctive,
+disjunctive, and compensatory DEMO rules. It is
+formulated for revealed choice data when process
+measures or other data, such as acceptable alterna-
+tives or attributes, are not DEMO A primary contri-
+bution of this paper is the formulation and estimation
+of a choice model that reﬂects a discontinuous deci-
+sion process. Our DEMO employs the Bayesian
+392
+technique of data augmentation and uses Markov-
+chain Monte Carlo methods DEMO integrate over the
+parameter space. The approach has minimal informa-
+tion requirements and can handle a large number of
+choice alternatives.
+The organization of DEMO paper is as follows. In §§2
+and 3 we discuss two-stage decision processes and
+how they relate to screening rules. In §4 we describe
+DEMO modeling approach and how it overcomes difﬁ-
+culties associated with a discontinuous likelihood sur-
+face. Section 5 introduces an empirical example in the
+context DEMO a choice-based conjoint study for a new
+camera type. Results are presented in §6, where we
+ﬁnd that 92% of the survey respondents use some
+form of noncompensatory screening when choosing
+among the choice options. Implications DEMO directions
+for future research are discussed in §7.
+2. Two-Stage Decision Processes
+Consumers use various decision rules to simplify
+complicated decision tasks. The choice DEMO pro-
+posed in this paper is consistent with two-stage
+decision processes wherein a subset of product
+alternatives is selected from the universal set, and
+the ﬁnal product choice is from the reduced set.
+Theoretical motivation for DEMO two-stage process can
+be found in the consideration set and information-
+processing literatures.
+The term “consideration set” has been used in var-
+ious ways DEMO the marketing literature. Shocker et al.
+(1991, p. 183) deﬁne DEMO sets as being “pur-
+posefully constructed and can be viewed as con-
+sisting of those goal-satisfying alternatives salient or
+accessible on a particular occasion.” DEMO, consid-
+eration sets are linked to usage occasion. Alterna-
+tively, Hauser and Wernerfelt (1990) deﬁne consider-
+ation sets as a subset of DEMO that receive serious
+consideration during the purchase occasion. Regard-
+less of its use, researchers in marketing have gen-
+erally operationalized consideration sets as compris-
+ing alternatives that survive a screening process (see
+Häubl and Trifts 2000).
+Consideration sets have been modeled as the solu-
+tion to a DEMO optimization problem. Hauser and
+Wernerfelt (1990) provide a model where the expected
+utility of consumption must exceed the cognitive cost
+of evaluation for DEMO alternative to be considered.
+Roberts and Lattin (1991) operationalize this approach
+using survey data, and Mehta et al. (2003) extend
+this structural approach to scanner panel data where
+explicit information on consideration sets is DEMO avail-
+able. These approaches assume that the overall utility
+of the offering determines inclusion in the considera-
+tion set (see also Montgomery et al. 2003).
+An information-processing view of the consumer
+leads to consideration sets DEMO by product
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, DEMO INFORMS
+attributes, not overall utility. These models typi-
+cally have a DEMO effortful ﬁrst stage, followed by a
+more comprehensive second stage. Payne (1976) and
+Bettman and Park (1980) provide evidence that the
+formation of the consideration set is linked to a sub-
+set of attributes DEMO that the ﬁnal selection is more
+holistic. Bettman et al. (1998) provide an overview
+of consumer decision strategies, including the use of
+various conjunctive (i.e., intersection) and disjunctive
+(i.e., union) rules that DEMO be used for set formation.
+Bettman (1979), Shugan (1980), and Bettman et al.
+(1990) show that adopting a screening rule DEMO on
+a subset of attributes is a rational outcome for a deci-
+sion maker willing to tradeoff accuracy against cog-
+nitive effort.
+Our model DEMO entirely on revealed choices
+and can accommodate holistic (i.e., overall utility)
+and attribute-based screens. It does not incorporate
+information that can be DEMO to determine the process
+by which “seriously considered” alternatives are iden-
+tiﬁed, nor does it require respondents to identify the
+set of alternatives that pass the screen. Hence, it is
+a reduced-form model that is consistent with the lit-
+erature on consideration sets. To minimize confusion
+with prior DEMO, we refer to the set of alternatives
+that pass the screening DEMO in a given context as the
+choice set.
+3. Screening Rules
+The screening rules restrict the set of alternatives
+that are evaluated for ﬁnal DEMO The alternatives
+included in the choice set are identiﬁed with an indi-
+cator function, Ixj , that equals one if the decision
+rule DEMO satisﬁed and equals zero otherwise. The choice
+model can then be written in general form as
+Pri = PrVi + i >Vj + j for all j such that (1)
+where Vi denotes the deterministic portion of utilityIxj  =1
+of choice alternative i	i is the stochastic DEMO and
+it is assumed that the stochastic terms are distributed
+independently, DEMO denotes a generic argument of an
+indicator function (I) that reﬂects the decision rule
+applied to the j th offering. Alternative screening rules
+DEMO be investigated with the indicator function rela-
+tionship, Ixj  = DEMO Flexibility exists in the speciﬁca-
+tion of this relationship because its complexity does
+not increase the complexity of estimating the choice
+model, as discussed in §4.
+For example, if price is used to screen the alter-
+natives so that only offerings above a lower thresh-
+old are considered, then Ixj  = Ipricej >.If
+an upper threshold for price is present, then neg-
+ative price can be used as an argument, DEMO  =
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+393
+I−pricej >. Here,  is a parameter to be esti-
+mated. DEMO formulation allows for dynamic choice
+sets when an attribute (e.g., price) changes over the
+choice history.
+A compensatory screening rule is one where the
+deterministic portion of the utility of the offering
+must exceed a DEMO value to be acceptable.
+Compensatory Rule: IVj >=1
+(2)
+DEMO screening rule is consistent with considera-
+tion sets based on consumer optimization models (see
+especially Roberts and Lattin 1991). Assuming that
+the stochastic portion of utility has an expected value
+of 0Vj is the expected DEMO from the offering and 
+the cognitive cost of considering an offering.
+Two noncompensatory screening rules consistent
+with the information-processing literature are also
+modeled: conjunctive and disjunctive. Choice sets
+formed by a conjunctive decision rule require DEMO an
+alternative be acceptable on all relevant attributes for
+it to be included. A conjunctive rule is formed by mul-
+tiplying indicator functions across DEMO attributes m
+of an offering:
+Conjunctive Rule: Ixjm >m =1
+(3)
+m
+where xjm is the level of attribute m for choice alter-
+native j . The cutoff value, m , is the smallest level
+of the attribute that needs to be present for the DEMO
+sion maker to consider the offering. If the cutoff value
+is smaller than all levels of the attribute, then the
+attribute is not used to screen. For nominally scaled
+attributes (i.e., 0, 1 attributes), a cutoff value greater
+than zero indicates that the attribute is required. DEMO
+of the product m , results in a conjunctive combina-
+tion of the factors where all components must be sat-isﬁed for the combination to DEMO satisﬁed.
+The conjunctive screening rule is consistent with an
+elimination-by-aspects screening process. One might
+hypothesize that a consumer identiﬁes her most
+important attribute and DEMO any alternatives
+not exceeding a certain threshold. Then she may move
+onto her second-most important attribute, eliminat-
+ing any alternatives not exceeding a certain level on
+that attribute, etc. Note that the order in which the
+attributes are examined doesn’t matter: The end result
+is that each attribute must be above a speciﬁc thresh-
+old to be considered. This is DEMO to the conjunc-
+tive screening rule used in the model.
+A disjunctive decision rule is one where at least one
+of the attribute levels DEMO acceptable:
+Disjunctive Rule: Ixjm >m ≥1
+(4)
+We DEMO that the conjunctive and disjunctive screen-
+ing rules directly relate the choice set to speciﬁc levels
+m
+of the attributes. Estimates of m will DEMO which
+attributes, and what levels, are critical to consumers.
+Screening rules consistent with consumer optimiza-
+tion (compensatory) and information-processing (con-
+junctive and disjunctive) theories have been proposed
+to represent two-stage decision making. Our reduced-
+form model, Equation (1), however, does not require
+that consumers form a choice set ﬁrst, and then
+choose from that set. The mathematical representa-
+tion is silent on any speciﬁc procedure. However, it
+does capture the sharp discontinuity in the underly-
+ing behavioral model: Alternatives with unacceptable
+attribute levels (or combinations of attributes) have a
+zero probability DEMO selection. A method for estimating
+the model is discussed next.
+4. Estimating Choice Models with
+Screening Rules
+Consideration or choice-set models have been applied
+DEMO a variety of domains, including the analysis of sur-
+vey data (Gensch 1987), scanner panel data (Manrai
+and Andrews 1998), and data collected in laboratory
+settings (Johnson and Meyer 1984). Johnson et al.
+(1989) and Andrews and Manrai (1998) demonstrate
+that parameter DEMO and incorrect inferences result
+when the decision process is not correctly modeled.
+Choice sets induce a complicated structure in the
+likelihood function. Consider, for example, a simple
+discrete-choice model without choice sets. The choice
+probability is
+Pri = PrVi + i >Vj +
+= Pr	j <Vi −Vj DEMO
+j for all j
+i for all j
+Vi −Vm+ i
+··· −
+d	mf
+i
+f	j  ···
+d	i 
+=
++ Vi −Vj DEMO
+−
+−
+i
+f	md	j ···
+(5)
+where Vi denotes the DEMO portion of util-
+ity of choice alternative i, i is the DEMO portion,
+and it is assumed that the stochastic terms are dis-
+tributed independently. The probit model is obtained
+by assuming that the stochastic DEMO are distributed
+normal, and the logit model is obtained when the
+DEMO terms are distributed extreme value. The
+discrete-choice probabilities are derived by partition-
+ing the domain of the error space corresponding to
+a choice outcome, and integrating the error densities
+over the corresponding region. The regions for DEMO sim-
+ple discrete-choice model are indicated in the upper
+and lower limits of the integrals.
+The likelihood for an observed sequence of choices
+is DEMO product of the choice probabilities:
+V  data ≡ data  V =Pri
+(6)
+i
+394
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+The likelihood surface for simple discrete-choice
+models is continuous and globally concave (Maddala
+1983). Small changes in the deterministic portion of
+utility V DEMO in small changes in the limits of
+integration and small changes in the resulting choice
+probabilities. Moreover, unique values of the deter-
+ministic portion exist that maximize the probability of
+the observed choices. The regularity of DEMO likelihood
+surface allows use of gradient-based methods (e.g.,
+Newton-Raphson) to solve for values of the determin-
+istic portion V that maximize the DEMO
+The presence of choice sets destroys the regular-
+ity of the likelihood function. As choice alternatives
+enter and leave the set, the choice probabilities are
+obtained by integrating over an error space of chang-
+ing support. DEMO an alternative (k ) to the choice
+set results in an DEMO factor in Equation (5),
+with an additional stochastic error ( k and appropri-
+ate limits of integration. The likelihood surface for a
+DEMO model is therefore discontinuous and not
+necessarily globally concave.
+Researchers have dealt with the nonregularity of
+the likelihood surface by writing the probability as
+DEMO product of a (conditional) second-stage probabil-
+ity and a marginal choice-set probability:
+PriC = Pri  C × PrC
+(7)
+where C denotes the choice set that reduces the
+number of alternatives in DEMO (5). The likeli-
+hood function is “smoothed out” by summing DEMO
+choice sets:
+Pri = Pri  C × PrC
+(8)DEMO
+C
+This approach, coupled with the assumption that the
+values of DEMO deterministic components Vi  are con-
+stant across the choice sets, DEMO in a smooth and
+globally concave likelihood surface.
+The estimation of choice-set models using Equa-
+tion (8) has historically been approached sequen-
+tially, sometimes with independent data. Jedidi et al.
+(1996) and Roberts and DEMO (1991) have respon-
+dents indicate the acceptability of alternatives in a
+survey. Ben-Akiva and Boccara (1995) also use sur-
+vey data and DEMO a logit model for the choice-set
+probability. When independent data are available to
+identify the acceptability of an offering, the evaluation
+of choice-set models can employ standard maximum-
+likelihood techniques.
+If independent data are not available DEMO identify the
+choice set, it becomes a latent construct that must DEMO
+simultaneously estimated with the observed choices.
+Complications arise in the evaluation of the choice
+probabilities because the partition of the error space
+described in DEMO (5) must also be partitioned
+with respect to the choice set (see Mehta et al. 2003).
+Only one realization of the error vector, , is associ-
+ated with each observation, and it is DEMO appropri-
+ate to estimate the two components in Equation (7)
+DEMO assuming that each are associated with a different
+realization.
+An alternative to partitioning the error space is to
+parameterize and estimate the point mass DEMO each
+choice set in Equation (8). Andrews and Srinivasan
+(1995) use this approach on scanner panel data,
+where the probability for each of the 2J − 1 pos-
+sible choice sets is enumerated. DEMO and
+Vanhonacker (1996) propose a different likelihood
+function where only J (one for each brand) additional
+probabilities must be computed. Each of DEMO mod-
+els employs a compensatory function to determine
+choice-set probability.
+One method of dealing with the dimensionality of
+the problem is to place a DEMO limits on the allow-
+able choice sets. Fader and McAlister (1990) assume
+the choice set is either the set of previously purchased
+brands DEMO on promotion or all previously pur-
+chased brands, and they estimate DEMO probability of
+each being the actual choice set. Siddarth et al. (DEMO)
+also restrict the number of choice sets to two: the
+DEMO set or a subset of brands stochastically
+determined based on past purchases.
+Chiang et al. (1999) consider Equation (7) as a
+hierarchical DEMO model, where the 2J − 1 sets are
+assigned a prior DEMO and posterior estimates
+of set composition are obtained. While this approach
+avoids the complications involved with identifying
+suitable partitions of the error space to DEMO prob-
+abilities, the choice sets are not linked to the charac-
+DEMO of the offerings other than through the fact
+that the chosen brand is an element of the set. Choice
+sets with high posterior probabilities DEMO offer-
+ings that have been chosen and exclude offerings that
+have not been chosen.
+By contrast, our reduced-form model, Equation (1),
+DEMO on screening rules and not on the enumera-
+tion of choice sets. The size of the universal set is
+not a concern, nor is it necessary to specify a pri-
+ori which attributes are being used DEMO screen (e.g.,
+price in Mehta et al. 2003 or promotion DEMO Fader and
+McAlister 1990) or place limits on the number of DEMO
+choice sets. Swait (2001) proposes a different reduced-
+form model that is structurally a compensatory model
+but mimics various decision rules depending on DEMO
+actual parameter estimates. A strength of Swait’s
+(2001) model is that it can be estimated using stan-
+dard maximum-likelihood techniques. However, it
+requires individuals to identify “unacceptable” levels
+of attributes, and it cannot estimate the prevalence of
+screening in the sample.
+Our model structure allows for screening DEMO
+natives based on the attribute levels and/or the
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+overall value of the offering. Attribute level screen-
+ing can employ either conjunctive DEMO disjunctive
+rules. We navigate the complicated partitioning of
+the error space by employing data augmentation and
+Markov chain Monte Carlo methods (MCMC). We
+next describe the use of data augmentation to evalu-
+ate the standard DEMO model in Equation (5) above.
+We then show how this method can be used to esti-
+mate choice models with screening rules.
+Data DEMO
+Direct evaluation of the probability in Equation (5)
+can be DEMO in a Bayesian approach to estimation
+if the parameters V are augmented with a vector of
+latent variables, z (see Tanner and Wong DEMO), where
+zi =Vi + i 	i ∼ Normal0 1 (9)DEMO
+and the model is written hierarchically:
+y  z (10a)DEMO
+z  V (10b)
+where y denotes the observed choice DEMO Equa-
+tion (10a) reﬂects the censoring of the continuous
+variables z, where only the offering with the maxi-
+mum value of z is revealed to the researcher by the
+choice data. Equation (10b) reﬂects DEMO assumption
+that the latent variables are normally distributed, with
+the mean DEMO each element equal to Vi and variance
+one. In marketing applications of the probit model,
+the mean is typically parameterized Vi =xi . DEMO
+chain Monte Carlo estimation of the probit model pro-
+ceeds by drawing iteratively from the two conditional
+distributions:
+z  yV = Truncated DEMO (11a)
+V  z = Normal ¯ /n (11b)
+where “” is the identity matrix, and the trunca-
+tion in Equation (11a) corresponds to the alternative
+selected being the maximum draw. DEMO Vi is parame-
+terized as xi , then the mean and DEMO in Equa-
+tion (11b) would correspond to the OLS regression
+estimate and covariance matrix. Detailed treatments
+of estimating the probit model with data DEMO
+tion can be found in Albert and Chib (1993), McCul-
+DEMO and Rossi (1994), Allenby and Rossi (1999), and
+Edwards and Allenby (2003).
+The upper limits of the integral in Equation (5)
+that complicate the evaluation of the choice proba-
+bility are replaced with a much simpler procedure
+that involves drawing from a truncated DEMO dis-
+tribution. The truncation points correspond to the
+limits of integration, DEMO the Markov chain is used
+to navigate the domain of the error space consis-
+tent with the observed data to arrive at the pos-
+DEMO distribution of model parameters. Thus, data
+augmentation provides a clever way DEMO avoiding the
+estimation of the integral.
+z
+395
+Application to Choice Models with
+Screening Rules
+If an alternative is in the choice set, then its choice
+probability is determined relative to the other offer-
+ings in DEMO set. If an alternative does not satisfy the
+screening rule, then DEMO choice probability is zero. The
+choice model can be written hierarchically as
+y  z Ix (12a)
+z  V (12b)
+DEMO iteratively from the conditional distributions:zi =Vi + i , and estimation proceeds by draw-
+(13a)
+z  y V Ix
+  y z x
+V  z
+(13b)
+(13c)
+The DEMO distribution in Equation (13a) is a
+truncated normal distribution for those items in the
+choice set. That is, the element of z for the chosen
+alternative is greater than the elements of z that cor-
+DEMO to the alternatives not chosen, given that
+they are in the DEMO set. If an alternative is not in
+the choice set, which DEMO determined by the indica-
+tor function Ix, then z is drawn DEMO a nontrun-
+cated distribution. Here we assume that Ix does
+not involve the deterministic component of utility, V;
+changes to the hierarchy to accommodate this screen-
+ing rule are discussed below.
+The conditional distribution for DEMO cutoff param-
+eters,  , in Equation (13b) is dependent DEMO the
+observed data, y , and the augmented parameter, z.
+The conditional distribution takes the form of an
+indicator function because Equation (12a) is a deter-
+ministic function that censors the continuous latent
+variables z, identifying the considered offering with
+the highest value. Variation in the value of the cutoff
+parameter changes the set of considered alternatives.
+Permissible values DEMO the cutoff parameters are those
+that lead to a choice set where the maximum of the
+augmented variable, z, corresponds to the observed
+DEMO If a value of the cutoff leads to a choice set
+where the alternative with the maximum z is not the
+alternative chosen, then the cutoff parameter is not
+permissible. This can happen because some values
+DEMO the augmented parameter in Equation (13a) are
+drawn from a truncated distribution while others are
+not. Variation in z results in different choice DEMO by
+deﬁning the permissible values of the cutoffs.
+Finally, the conditional DEMO in Equa-
+tion (13c) is identical to Equation (11b). DEMO nor-
+mal distribution theory can be used to generate the
+draw of V .If V is parameterized as a regression func-
+tion, V = X, then draws of  are generated from a
+396
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+normal distribution with mean and covariance matrix
+corresponding to the standard OLS DEMO Details
+of the estimation routine for our empirical study,
+reported below, are provided in the appendix.
+The Markov chain deﬁned by Equations (DEMO)–
+(13c) generates draws from the full conditional dis-
+tribution of model parameters despite the irregularity
+of the likelihood surface. Given the cutoffs,  , the
+model (Equation (1)) becomes a standard discrete-
+DEMO model. Given the set of augmented variables,
+z, some values DEMO the cutoff are acceptable and oth-
+ers are not. Across multiple draws of the augmented
+variables, however, the acceptable range of  varies,DEMO
+and the Markov chain converges in distribution to the
+full conditional distribution of all model parameters.
+The augmented variable z reﬂects a single error DEMO
+that gives rise to the joint probability of the consider-
+ation set and the resulting choice.
+Recall that our model does not rely on DEMO data
+or respondents indicating which alternatives or which
+attribute levels are acceptable. Intuitively, the logic for
+identifying acceptable levels of the attributes relies
+on the revealed choices. If a respondent chooses an
+alternative, then the screening rule must be satisﬁed.
+The presence of attributes that are common to DEMO
+than one choice alternative allows identiﬁcation of
+the cutoff parameter,  DEMO Across all alternatives and
+choice occasions, there is a set of DEMO, V s, and  s that
+are consistent with the revealed choices. We use the
+Markov chain to explore the posterior distribution of
+DEMO allowable values of these parameters.
+The compensatory decision rule requires a change
+in the hierarchical model. Because the deterministic
+portion of utility, V , is used to determine both the
+choice set and the ﬁnal choice, the hierarchy is
+z  y V IV
+  y z DEMO
+V  z y
+(13a )
+(13b )
+(13c )
+The exact form of these conditional distributions
+and the estimation algorithm DEMO contained in the
+Appendix.
+In addition to the form of the screening rule,
+researchers can specify that the cutoff parameters ()
+take on a limited range of values. If an attribute, x,is
+continuous (e.g., price), then  can also be continuous.
+However, if the attribute takes on a restricted number
+of values, then the cutoff is not well identiﬁed over an
+unrestricted range. In a conjoint analysis, for example,
+there are rarely more than four or ﬁve levels DEMO an
+attribute. In these cases one can assume that the cutoff
+parameter takes on a small number of ﬁnite values by
+a prior assumption DEMO  is distributed multinomial
+over a grid of value and estimate the posterior dis-
+tribution of the multinomial mass probabilities. Next,
+we explain DEMO approach in the context of our empir-
+ical application.
+5. Data and Models
+The screening rule model is illustrated in the context
+of a DEMO conjoint study of consumer pref-
+erences for the features of a new camera format, the
+advanced photo system (APS). This photographic sys-
+DEMO offers several potential advantages over standard
+35-mm ﬁlm systems, including midroll DEMO change,
+camera operation feedback, and a magnetic layer on
+the DEMO that offers the ability to annotate the picture
+with titles and dates. These data have previously been
+described in Allenby et al. (2002).
+Respondents were screened and recruited by tele-
+phone and interviewed at ﬁeld DEMO in nine
+metropolitan areas. A total of 302 respondents partic-
+ipated. The screen was designed to exclude individu-
+als who had little or no DEMO in photography, and
+retained approximately 55% of the population con-
+tacted. DEMO compares to approximately 67% of the
+population that owns still cameras (DEMO 1997).
+Individuals participating in the study were therefore
+assumed to be good prospects for cameras in the price
+range of the new APS DEMO and representative of
+the APS camera market.
+Respondents were asked to evaluate 14 buying
+scenarios. The order of the buying scenarios was
+randomized. Each DEMO contained full proﬁle
+descriptions of three compact 35-mm cameras, three
+new DEMO cameras, and a seventh no-buy option.
+Table 1 lists the attributes DEMO describe each of the
+cameras and identiﬁes the attributes that are new and
+speciﬁc to APS cameras. The order of the attributes
+was the DEMO in each scenario. Table 1 also displays
+restrictions on the availability of certain attributes. For
+example, the 4x zoom lens was available only on the
+“high” body style. Prices ranged from $41 to $499,
+the DEMO price for APS cameras was $247, and the
+average price of DEMO compact 35-mm cameras was
+$185.
+Each buying scenario requires the respondent to
+engage in a complex decision. With six offerings
+described on eight attributes, plus the no-buy option,
+we consider this to be a good DEMO with which
+to investigate the use of screening rules. The no-buy
+option was selected 14.7% of the time or an average
+of 2.1 times DEMO the 14 choice tasks. One of the APS
+camera offerings was chosen 39.9% of the time, and
+one of the 35-mm cameras was selected 45.4% of the
+time. In the analysis that follows, 12 choice tasks per
+respondent were used to calibrate the model and the
+ﬁnal two DEMO for predictive testing. This results
+in 3,624 observations for model estimation and 604
+for hold-out validation.
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+Table 1 Camera Attributes and Levels
+Available Available in Available
+in “low” “medium” DEMO “high”
+Attribute/level body style body style body style
+A. Basic body style and
+standard features
+A1. Low
+A2. Medium
+A3. High
+B. Midroll DEMO
+B1. None
+B2. Manual
+B3. Automatic
+C. Annotation∗
+C1. None
+C2. Preset list
+C3. Customized list
+C4. Custom input method 1
+C5. Custom input DEMO 2
+C6. Custom input method 3
+D. Camera operation feedback∗
+D1. No
+D2. Yes
+E. Zoom
+E1. None
+E2. 2x
+E3. 4x
+F. Viewﬁnder
+DEMO Regular
+F2. Large
+G. Camera settings feedback
+G1. None
+G2. LCD
+G3. Viewﬁnder
+G4. Both LCD & viewﬁnder
+∗ UniquetoAPScameraatthetimeofthestudy;allotherfeaturesavailable
+on both APS DEMO 35-mm cameras at the time of the study.
+Five models are ﬁt to the data. See Table 2 for a
+summary of the models. DEMO each model we make the
+assumption that the no-buy option is always in the
+choice set. “Not buying” is always an option, both in
+Table 2 Model Results
+Predictive
+In sample
+Model LMD∗
+Hit∗∗ Hit∗∗∗
+probability DEMO
+HB probit −346880391 266
+Compensatory −344960393 267
+Conjunctive −299080418 276
+Disjunctive −35862039 267
+Structural heterogeniety −301290417 277
+∗ Log marginal density of the data DEMO using the importance-
+sampling method of Newton and Raftery (1991, p. 21).
+∗∗ Posterior mean of predicted probability for selected alternative. Calcu-
+DEMO from a sample of 300 posterior point estimates.
+∗∗∗ Posterior mean of correct predictions for two observations for each
+respondent; a total of 604 holdout choice sets. Calculated from a sample of
+300 posterior point estimates.
+DEMO
+×
+×
+×××
+×
+×××
+×××
+×××
+×××
+×
+××
+×
+×××
+×
+×××
+××
+×
+×××
+×
+×
+×××
+××
+××
+397
+the DEMO conjoint study we use and in real mar-
+kets. The ﬁrst model is a heterogeneous probit model
+that assumes all choice options are considered DEMO the
+respondent. For identiﬁcation, effects-level coding is
+used for the nonprice DEMO, with the lowest level
+of each attribute (except for body style) set to zero.
+Price is parameterized as a natural logarithm. For the
+no-buy option, all attributes are set to zero (including
+the natural DEMO of price). The effects-level cod-
+ing results in 18 parameters, DEMO corresponding to
+binary indicator variables and the 18th corresponding
+to ln(price). To ﬁx the scale in the probit model, the
+error term is assumed to be independent and iden-
+tically distributed across choice tasks DEMO unit vari-
+ance. The latent continuous variable in our model
+setup is therefore
+Prjhi = Przhij >zhik for all k
+zhi =Xhih + hi	hi ∼ Normal0 
+h ∼ Normal ¯ 
+(14)
+(15)DEMO
+ (16)
+where h indexes the respondent, i is the index for the
+buying scenario, and j and k indicate the alternatives
+within the buying scenario.
+The second model assumes that the choice set DEMO
+prises alternatives with the deterministic value of
+utility (Vhi =Xhih ) DEMO than a threshold value, h.
+That is, the selected alternative has greatest utility of
+the options for which Vhik >h:
+Prjhi = Przhij >zhik for all k (17)
+We allow for heterogeneity DEMO the cutoff value,such that IVhik >h =1 
+h
+through DEMO normal distribution:
+2
+∼ Normal ¯  
+h  (DEMO)
+A weakness in our modeling approach is that sep-
+arate “weights” for the screening rule and ﬁnal selec-
+tion component of the model DEMO not statistically
+identiﬁed. By identifying a separate error term along
+with appropriate identiﬁcation restrictions and using
+Equation (8), other researchers have allowed for the
+“consideration utility” to be different than the “selec-
+tion utility” (cf. Andrews and Srinivasan 1995). While
+our approach for the compensatory screen DEMO consis-
+tent with consumer optimization models, it is less
+ﬂexible than DEMO models.
+The third model assumes that the choice set is
+formed using a conjunctive screening rule over the m
+attributes for each alternative:
+DEMO = Przhij >zhik for all k
+such that m Ixhikm >hm =1
+(19)
+398
+where xhikm is the level of the attribute for respon-
+dent DEMO in buying scenario i for alternative k and
+attribute m. hm is a respondent-level parameter repre-
+senting the threshold, or acceptable level, of DEMO
+m for respondent h. We employ two alternative het-
+erogeneity distributions for the threshold parameters.
+When attribute m is continuously distributed (e.g.,
+price), then we employ a normal distribution to allow
+for heterogeneity:
+DEMO
+∼ Normal ¯mm
+hm (20)
+When an attribute takes on DEMO small number of discrete
+levels, we assume that the threshold parameter DEMO dis-
+tributed multinomial. For example, consider the zoom
+lens attribute in DEMO 1 taking on values of none, 2×,
+and 4×. We DEMO the attribute levels (e.g., 0, 1, 2)
+and specify a grid of possible cutoffs (e.g.,1.5, 2.5), where the DEMO cutoff value indicates that−0 5, 0.5,
+all attribute levels are DEMO, and the highest level
+indicatesthatnoneofthelevelsisacceptable.Fornom-
+inally scaled attribute levels where a DEMO ordering
+is not obvious (e.g., color), the grid has three points
+(−0 5, 0.5, 1.5). The full set of attributes, levels, and
+cutoffs is contained in Table 5. The distribution of DEMO
+erogeneityofthecutoffparameterswithdiscretelevels
+is
+(21)
+hm ∼ Multinomial m
+where m is DEMO vector of multinomial probabilities
+associated with the grid for attribute m.
+The fourth model assumes that the choice set is
+formed using a disjunctive DEMO rule:
+Prjhi = Przhij >zhik for all k such that
+DEMO >hm ≥1
+(22)
+m
+The upper and lower grid points specify the role of
+the attribute in determining the choice set, depend-
+ing on the decision rule. An attribute determines
+membership in the choice DEMO only if it changes the
+value of the alternative indicator function. For the
+conjunctive model, if the threshold for attribute k is
+equal to −0 5, then Ixhijk >hk always equals one
+and the value DEMO different levels of the attribute do not affectm Ixhijm >hm does DEMO change.
+choice sets, we conclude that attribute k is not being
+DEMO to screen alternatives. For the disjunctive model,
+if hk = 2 5, then Ixhijk >hk always equals zero,
+and the value DEMO m Ixhijm >hm does not change
+across different levels of attribute DEMO . For the disjunc-
+tive model, the upper value of the DEMO implies
+no screening based on that attribute. Figure 1 illus-
+trates the procedure and the interpretation.
+The ﬁfth model assumes that consumers are either
+DEMO a conjunctive (Equation (19)) or a disjunctive
+(Equation (22)) screening rule. That is, we allow for
+Gilbride and Allenby: DEMO Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+the presence of structural heterogeneity (Yang and
+Allenby 2000):
+Prjhi =! Pr
++1
+−
+where DEMO is the portion of the sample using the con-
+junctive decision rule and (1 −!) is the portion using
+the disjunctive decision rule. DEMO concise listing of the
+models is provided in Table 2.
+Inference is conducted via Bayesian MCMC meth-
+ods. The chain converged quickly in all DEMO Con-
+vergence was assessed by inspecting time-series plots
+from multiple starting points. The chain was run for
+10,000 iterations, with the ﬁnal 5,000 iterations used to
+estimate the moments of the posterior distributions.
+Details DEMO the estimation algorithms for all models are
+provided in the Appendix.
+6. Results
+The results indicate that the conjunctive model ﬁts
+the data best. DEMO and predictive ﬁts of the ﬁve
+models are presented in Table 2. The log marginal
+density is computed using the GHK estimator (Keane
+1994, Hajivassilious et al. 1996) and the importance
+sampling method of Newton DEMO Raftery (1994). Hit
+probability is deﬁned as the average probability DEMO
+ciated with the observed choices. Hit frequency is
+the number of times the predicted choice matches the
+actual choice. The parameters reported below for DEMO
+conjunctive model result in 30% of the alternatives
+screened out of the ﬁnal choice set, which averaged
+ﬁve (out of seven) alternatives, DEMO the no-buy
+option.
+Fit results for the other models are as follows. The
+ﬁt for the disjunctive model is slightly worse than the
+standard DEMO model, with parameters that lead to
+only 2% of the alternatives DEMO from ﬁnal consid-
+eration. The slight decrease in the log marginal den-
+sity for the disjunctive model is from the increase in
+the dimension DEMO the model due to the cutoff param-
+eters. Although the compensatory model screened out
+23% of the alternatives to form the choice set and
+DEMO a slightly better in-sample ﬁt than the probit
+model, its predictive DEMO is nearly identical. The
+structural heterogeneity model assigned nearly all the
+respondents (99%) to the conjunctive screening rule
+model as opposed to the DEMO model, so the
+ﬁt statistics closely match those of the conjunctive
+DEMO
+The results provide evidence that the conjunctive
+model is superior to both the standard probit and
+zhij >zhik
+mI
+for all k such that
+xhikm >hm =1
+Pr for all k such that
+! zhij >DEMO
+mIxhikm
+>  ≥1
+(23)
+hm
+
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+Figure 1 Example for Specifying Cutoffs for Conjunctive and Disjunctive Model Discrete Attributes
+DEMO #1:
+Attribute
+Zoom Lens
+Levels
+None
+2x
+4x
+Recoded
+Values (DEMO)
+0
+1
+2
+Possible
+Cutoffs
+γ(1)= -0.5
+γ(2)= 0.5
+γ(3)= 1.5
+γ(4)= 2.5
+Screening
+rule:DEMO
+I(x  > γ ) = 1
+Probability
+of Each
+Cutoff
+DEMO
+(1)
+θ
+(2)
+θ
+(3)
+θ
+(4)
+If γ = -0.5: I(0 > -0.5) = 1
+DEMO(1 > -0.5) = 1
+I(2 > -0.5) = 1
+All attribute levels
+are acceptable
+For the conjunctive model, if γ = -0.5, then Zoom Lens is not
+being used to screen alternatives.
+Scenario #3:
+Screening
+rule:
+I(x  > γ ) = 1
+If γ =  1.5: I(0 >  1.5) = 0
+DEMO(1 >  1.5) = 0
+I(2 >  1.5) = 1
+Camera must have 4x
+zoom lens to be considered
+the respondents DEMO not screening alternatives based
+on “Body Style,” 2 = 0 324 implies that 32.4% of
+the respondents screen out offerings with the low
+DEMO style, 3 =0 059 implies that 5.9% of the respon-
+dents DEMO out offerings with low and medium body
+style, and 4 =0 DEMO implies that 1.5% of the respon-
+dents screen on all alternative levels. Estimates of
+equal to approximately 2% reﬂect the inﬂuence of the
+prior DEMO and can be disregarded for practical
+purposes.
+The use of screening rules to form choice sets is per-
+vasive among the respondents in this DEMO Anal-
+ysis of the individual-level cutoff values indicates
+that 92% of respondents form choice sets using the
+conjunctive screening rule; 58% are forming choice
+sets based on a single attribute, 33% are using
+two attributes, DEMO 2% are using three attributes.
+A strength of the Bayesian approach outlined in
+this paper is the ability to make individual-level
+inferences and estimate DEMO only what attributes are
+important in forming choice sets, but also DEMO is
+using screening rules.
+Consider, for example, an aggregate analysis of the
+effect of the price threshold, estimated to be equal to
+nonconjunctive models. The conjunctive model has
+the largest value of the log marginal DEMO Despite
+the addition of 11 cutoff parameters per respon-
+dent, the DEMO model performs as well as or
+better than more parsimonious models in the hold-out
+sample. This establishes the predictive validity of the
+choice model DEMO a conjunctive screening rule.
+Tables 3 and 4 report part-worth estimates for the
+probit and conjunctive models. Table 3 displays the
+mean and covariance DEMO of the part-worths for
+the probit model, and Table 4 reports DEMO same statis-
+tics for the conjunctive model. Substantive differences
+exist in the part-worth estimates for body style, zoom,
+camera setting feedback, and DEMO The conjunctive
+model estimates are much smaller for these attributes,
+with the average price coefﬁcient moving to zero. The
+reason for this difference DEMO discussed below.
+The cutoff parameters are reported in Table 5. For
+discrete attributes, the cutoffs are reported in terms of
+multinomial point mass probabilities associated with
+the grid described in Figure 1. The probabilities indi-
+cate DEMO fraction of respondents with a cutoff param-
+eter ( ) that DEMO out choice alternatives. For the
+conjunctive model, 1 =0 598 indicates DEMO 59.8% of
+399
+Scenario #2:
+Screening
+rule:
+I(x  > γ ) = 1
+If γ = 0.5: I(0 >  0.5) = 0
+I(1 >  0.5) = 1
+I(2 >  0.5) = 1
+Camera must have
+2x zoom lens to DEMO considered
+Scenario #4:
+Screening
+rule:
+I(x  > γ ) = 1
+If γ = 2.5: I(0 >  2.5) DEMO 0
+I(1 >  2.5) = 0
+I(2 >  DEMO) = 0
+None of the attribute levels
+are acceptable
+For the DEMO model, if γ = 2.5, then Zoom Lens is not
+being used to screen alternatives.
+400
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+Table 3 Part-Worth Estimates for the Probit Model
+Attribute Level Beta Posterior DEMO
+Attribute Level Beta Posterior mean
+Body style Low body 1 0325
+Medium body 2 2843
+High body 3 2224
+Midroll change Manual change 4 DEMO
+Automatic change 5 0178
+Annotation Preset list 6 0362
+Customized list 7 0678
+Input method 1 8 −1036
+Input method 2 9 0767
+Input DEMO 3 10 −0985
+Camera operation feedback Operation feedback 11
+Zoom 2× zoom 12
+4× zoom 13
+Viewﬁnder Large viewﬁnder 14
+Settings feedback LCD 15
+DEMO 16
+LCD & viewﬁnder 17
+Price ln(price) 18
+0357
+1122
+DEMO
+−0158
+0759
+0757
+0902
+−0710
+Covariance Matrix—
+1 2 3 4 5 6 7 89101112 13 14 151617 18
+1 19605
+2 17952 20258
+DEMO 15303 17674 17845
+4 −0548 −0906 −1218 1803
+5 −2077 −2232 −2153 0507 1.400
+6 −0575 −0309 −0333 0097 0.171 0629
+7 −0584 −0366 DEMO 0147 0.231 0255 0685
+8 −8252 −7975 −6735 0371 1.134 0300 0387 5392
+9 −1921 −1520 −1285 0139 0.395 0237 0260 0974 1096
+10 DEMO −5628 −4753 0432 0.854 0238 0224 2734 0726 3315
+11 −0808 −0670 −0665 0061 0.173 0019 0033 0494 0225 0347 1055
+12 −0207 0651 DEMO −0009 0.022 0106 0121 0134 0167 −0056 0115 1420
+13 −0811 0540 1080 −0225 -0.080 0225 0173 0418 0251 −0021 −0008 1070 2210
+14 DEMO −1054 −0859 −0011 0.149 0051 −0021 0592 0231 0487 0064 0122 0130 0947
+15 −0434 0060 0324 −0075 0.040 0106 0120 0167 0181 0040 DEMO 0343 0454 0141
+16 −0289 0035 0161 0011 0.044 0083 0067 0129 0179 0083 0123 0298 0336 0119
+17 −0472 −0042 0120 0019 0.057 DEMO 0118 0255 0173 0084 0106 0321 0427 0074
+18 −2789 −3459 −3278 0144 0.287 −0045 −0054 1220 0120 0923 0046 −0412−0520 0142
+Note. Estimates DEMO bold have more than 95% of the posterior mass away from 0.
+0966
+0525 0976
+0526 0538 0937
+−0216 −0206 −0192 1079
+−6 269. DEMO corresponds to an average price thresh-
+old of $527. Because the maximum price of an APS
+camera is $499, this implies that, on DEMO, respon-
+dents are not screening on price. However, such anal-
+ysis masks the tail behavior of the distribution of
+cutoff values. As displayed DEMO Figure 2, 10% of the
+respondents will only consider cameras under DEMO,
+20% will only consider cameras under $356, etc. In
+all, 41% of the respondents are screening alternatives
+based on price.
+Figure 3 DEMO the proportion of respondents
+screening on each of the attributes. Body style,
+zoom, camera settings feedback, and price are the
+attributes most DEMO used to screen alternatives.
+These attributes are available on both 35-mm and
+APS cameras, and as a result respondents are more
+fully aware of their beneﬁts. In contrast, none of the
+new APS attributes (e.g., midroll ﬁlm change) is being
+used to screen alternatives. In addition, DEMO attributes
+used to form choice sets have substantively differ-
+ent part-worths in Tables 3 and 4. Our results indi-
+cate that once the choice DEMO is formed, the price and
+body style do not play a DEMO in the ﬁnal decision.
+The zoom and camera feedback features, however,DEMO
+continue to play a role in the ﬁnal selection of a
+camera beyond just screening. Previous authors have
+hypothesized that an attribute plays either DEMO role in
+the screening phase or the choice phase (Bronnenberg
+and DEMO 1996) or that once an attribute is
+deemed acceptable it will DEMO no role in the ﬁnal
+selection process (see Bettman 1979); DEMO results pro-
+vide evidence on this issue.
+The participants in the survey were recruited and
+qualiﬁed by industry standards so that they were a
+DEMO for cameras in the price range of the APS
+offering. Despite this prequaliﬁcation, some 41% of
+respondents used price to screen alternatives and
+excluded those cameras above a particular thresh-
+old. Exploratory analysis revealed no relationship
+DEMO the posterior estimate of the price threshold
+value and demographic variables, DEMO income.
+However, replies to the question “Typically, when
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+401
+Table 4 Part-Worth Estimates for the Conjunctive Model
+Attribute Level Beta Posterior DEMO
+Body style Low body 1 −0340
+Medium body 2 0577
+High body 3 0024
+Midroll change Manual change 4 0257
+Automatic change 5 0169
+DEMO Preset list 6 0289
+Customized list 7 0604
+Input method 1 8 −0369
+Input method 2 9 0655
+Input method 3 10 −0619
+Attribute DEMO Beta Posterior mean
+Camera operation feedback Operation feedback 11
+Zoom 2× zoom 12
+4× zoom 13
+Viewﬁnder Large viewﬁnder 14
+Settings feedback LCD 15
+DEMO 16
+LCD & viewﬁnder 17
+0413
+0841
+1231
+−0139
+0374
+0373
+0520
+Price ln(price) 18 0056
+Covariance Matrix—
+123456789 10 11 12 13 14 15 16 17 18
+1 16183
+2 15035 15918
+3 14839 DEMO 16419
+4 −1350 −1218 −1398 1880
+5 −1903 −1821 −1854 0625 1523
+6 −0637 −0527 −0591 0117 0148 0632
+7 −0667 −0531 −0604 0198 DEMO 0241 0742
+8 −6744 −6458 −6301 0653 0956 0349 0399 4828
+9 −2246 −2069 −2022 0319 0481 0229 0260 1191 1269
+10 −5420 −5306 DEMO 0662 0876 0318 0305 2752 1073 3892
+11 −0641 −0479 −0589 0100 0169 0007 0009 0451 0205 0287 1122
+12 0443 0499 0491 0035 DEMO −0005 0006 −0119 −0048 −0161 0126 1056
+13 0106 0427 0387 −0101 −0179 0112 0080 0084 0014 −0234 −0015 0557 1653
+14 −1292 −1256 DEMO 0057 0154 0065 −0047 0616 0281 0695 0022 −0049 −0112 1213
+15 −0648 −0611 −0494 0005 0070 0045 0079 0280 0125 0186 0087 0097 DEMO 0102 0864
+16 −0650 −0745 −0736 0125 0104 0043 0059 0341 0143 0302 0065 0105 0056 0065 0365 0903
+17 −0662 −0717 −0704 0150 DEMO 0088 0113 0381 0141 0285 0077 0122 0161 0014 0380 0422 0878
+18 −2338 −2463 −2464 0137 0233 0048 0042 0957 0258 0813 0057 DEMO −0250 0209 0007 0011 0026 0774
+Note. Estimates in bold have more than 95% of the posterior mass away from 0.
+you attend informal DEMO gatherings away from
+your home, how often do you take a DEMO along
+with you?” were associated with the price thresh-
+old (DEMO = 0 0362). Those respondents that indi-
+cated they “almost always” take their camera (44%
+of respondents) have an average price threshold DEMO
+higher than respondents who take their camera less
+frequently. Although exploratory in nature, this analy-
+sis shows that other variables correlate with the price
+threshold and may be used in conjunction with the
+model to better DEMO prospects in the marketplace.
+The empirical results support the conjunctive
+screening rule model. Better in-sample and out-of-
+sample ﬁt, despite the large increase in the num-
+ber of parameters, argue for the use of the screening
+rule model over the more parsimonious probit. Con-
+sumers tend to screen DEMO using attributes
+they are already familiar with, and an exploratory
+analysis DEMO conducted to demonstrate how the price
+threshold can be associated with other variables in a
+posterior analysis. After controlling for their effect in
+forming DEMO sets, the importance of the screening
+attributes in the ﬁnal choice DEMO acceptable alter-
+natives is smaller than that indicated by a standard
+probit model.
+7. Discussion
+In this paper we have proposed a model to DEMO
+with an inherently discontinuous model of con-
+sumer behavior: two-stage decision DEMO Our
+reduced-form model incorporates screening rules that
+are consistent with various consideration set and
+information-processing theories of consumer behav-
+ior. We ﬁnd support for DEMO use of screening rules and
+for the conjunctive model in particular. The use of
+screening rules is pervasive, with 92% of respondents
+using this heuristic to manage the complexity of the
+choice problem. The empirical results DEMO show that
+consumers screen alternatives using attributes that
+are well known, DEMO opposed to the new and novel
+attributes also included in this study. Some attributes
+402
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+Table 5 Threshold Estimates for the Conjunctive Model Posterior Means
+Recoded Possible DEMO of Recoded Possible Probability of
+Attribute Levels values cutoffs each cutoff Attribute Levels values cutoffs each cutoff
+Continuous
+attribute: −ln(price)
+11 =−6269
+1 =
+2 =
+3 =
+4 =
+5 =
+6 =
+DEMO =
+8 =
+9 =
+10 =
+11 =
+12 =
+13 =
+14 =
+15 =
+16 =
+17 =
+18 =
+Note. DEMO estimates have more than 95% of the posterior mass away from 0.
+Body style Low 0
+Medium 1
+High 2
+Midroll None 0
+change DEMO 1
+Auto 2
+Annotation 1 None 0
+Preset 1
+Custom 2
+Annotation 2 None 0
+Input 2 1
+Annotation 3 None 0
+Input 3 DEMO
+11 =−05
+12 =05
+13 =15
+14 =25
+21 =−05
+22 =05
+23 =15
+24 =25
+31 =−05
+32 =05
+33 =15
+34 =25
+DEMO =−05
+42 =05
+43 =15
+51 =−05
+52 =05
+53 =15
+0598 Annotation 4 None 0
+0324 Input #4 1
+0059
+0015
+0926 Operation DEMO 0
+0027 feedback Feedback 1
+0028
+0020
+0940 Zoom lens None 0
+1
+2
+0022 2×
+0018 4020 ×
+0
+0960 Viewﬁnder Regular 0
+DEMO Large 1
+0020
+0961 Settings None 0
+0019 feedback LCD 1
+0020 Viewﬁnder 2
+Both 3
+
+
+
+
+
+
+
+
+DEMO
+
+
+
+
+
+
+
+
+
+61 =−05
+62 =05
+63 =15
+71 =−05
+72 =05
+73 =15
+81 =−05
+82 DEMO
+83 =15
+84 =25
+91 =−05
+92 =05
+93 =15
+101 =−05
+102 =05
+103 =15
+104 =25
+104 =35
+20
+19 =
+=
+DEMO
+=
+=
+=
+=
+=
+=
+=
+=
+=
+=
+=
+=
+=
+=
+=
+0961
+0019
+0020
+0947
+0034
+0020
+0808
+0140
+0032
+DEMO
+0961
+0019
+0019
+0783
+0157
+0021
+0020
+0019
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+DEMO to be used only in forming choice sets, while
+others are DEMO in both screening and ﬁnal product
+choice. Although previous research has documented
+the improved ﬁt of choice-set models and statistical
+biases that result from DEMO them, our method can
+apply a variety of screening rules and DEMO realis-
+tically sized problems. Our ability to capture a non-
+compensatory screening process and make attribute-
+level inferences for individuals is due to the DEMO
+model formulation and estimation technique.
+A key element in our model is accurately navigat-
+ing the likelihood of the data where only the ﬁnal
+DEMO is observed. Past researchers have attempted
+Figure 2 Distribution of Price Threshold
+70%
+Conjunctive Model
+60%
+10%
+20%
+30%
+41%
+<$276 <$356 <$425 <$499 >$499
+50%
+40%
+30%
+20%
+10%
+0%
+59%
+to isolate DEMO consideration-set probability PrC in
+Equation (7) to create a smooth likelihood surface.
+This approach requires a complex partition of the
+error space corresponding DEMO the 2J − 1 consideration
+sets and the choice probability within each set (see
+Mehta et al. 2003). Alternatively, the consideration-set
+probability DEMO be estimated by treating each of the
+2J − 1 partitions as a model parameter (see Chiang
+et al. 1999). By parameterizing the screening rules,
+using data augmentation to accurately partition the
+error space, and using the Markov chain to navigate
+the posterior distribution of all DEMO, we can
+estimate a model that has a discontinuous likelihood
+function.
+DEMO research highlights the beneﬁts and the
+potential of research on extended models of choice
+(Ben-Akiva et al. 1999). In this research we have
+demonstrated that the data are consistent with a two-
+stage decision process DEMO decision heuristics
+to form choice sets. In an exploratory analysis we
+show that the level of the price threshold was related
+to a camera DEMO question thought to encompass
+varying concerns and interests related to pursuing
+photography. It may very well be that the use of any
+decision heuristic, which decision heuristic (conjunc-
+tive or disjunctive), and/or which attributes to screen
+are also related to individual concerns and interests
+that may DEMO within an individual across usage occa-
+sions or choice contexts. For example, choosing a cam-
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+403
+Figure 3 Proportion of Respondents Screening on Each Attribute
+45%
+40%
+8%
+DEMO Model
+41%
+40%
+35%
+30%
+25%
+22%
+20%
+15%
+10%
+5%
+0%
+6%
+4% 4% 4%
+19%
+4%
+5%
+Note. ∗ Indicates attributes only DEMO on APS cameras at the time of the study.
+era as a gift for a loved one may result in more
+effortful decision making DEMO less reliance on deci-
+sion heuristics; choosing a single-use camera to DEMO
+to the beach may be entirely characterized by a single-
+stage lexographic decision process (e.g., the cheapest).
+The method proposed in this DEMO can be used to
+test various discontinuous decision-making processes
+using revealed choice data.
+The current study contains several limitations. As
+noted earlier, the compensatory model requires the
+deterministic component of utility to be the same in
+DEMO screening rule and in the compensatory part of
+the model. More ﬂexible representations that allow
+for a “screening utility” and a “choice utility” may DEMO
+the data better. Our empirical application may also be
+more prone to identifying screening rules than actual
+market situations. The large number of choice DEMO
+ios (14), the consistency of the universal set (six alter-
+natives plus “none”), and the size of the universal set
+may DEMO contribute to the adoption of screening rules
+by respondents. In these data, there was very little
+evidence that consumers used a disjunctive screening
+rule. It may be that more than 12 observations per
+individual are necessary DEMO identify the parameters in
+this very ﬂexible model.
+The methodology presented in this paper can be
+extended. Attribute-level thresholds or the propen-
+sity to DEMO one decision process over another in the
+structural heterogeneity model can be parameterized
+as functions of explanatory variables. The Bayesian
+hierarchical model would then DEMO expanded by
+another level. The conjoint exercise used in this paper
+involved six alternatives described on eight attributes,
+plus a “none” option. Conjoint DEMO may be
+interested to know if the number of alternatives or
+attributes inﬂuences respondents’ use of a screen-
+ing rule; this question can be studied using the
+proposed model and an experimental design that
+varies the DEMO of attributes and alternatives. The
+model can also be applied to scanner panel datasets
+or any other panel dataset that captures repeated
+purchase behavior DEMO identiﬁes common attributes
+with unique levels. Such a study would reveal the
+importance of individual attributes and/or the use of
+screening rules in DEMO actual market setting.
+Managers frequently deﬁne markets based on par-
+ticular attributes (e.g., body style) or price points,
+recognizing that certain consumers will only con-
+sider offerings with speciﬁc attribute levels, regardless
+of other elements of the product offering. Past meth-
+ods of identifying these attributes DEMO levels have
+tended to rely on compensatory models that may not
+be good representations of the decision process. While
+compensatory models can often predict DEMO well as
+nonlinear models, inferences for strategic decisions
+are often biased. DEMO model overcomes the statistical
+Body Style
+Mid-Roll Change*
+Annotati
+on1*
+Annotati
+on2*
+Annotation3*
+Annotation4*
+Op. Feedback*
+Zoom
+Viewfinder
+Settings
+Price
+404
+and practical problems of estimating discontinuous
+choice models with attribute-level screening DEMO
+Acknowledgments
+The authors thank Mike Lotti and Eastman Kodak Com-
+pany for providing the data used in this study.
+Appendix. Estimation Algorithm
+Equations (13a)–(13c) list the conditional distributions for
+estimating the choice model in (12a)–(12b). The estima-
+tion for the conjunctive screening process, Equation (3), is
+described ﬁrst. Extension to the disjunctive process, Equa-
+tion (4), is straightforward. Changes necessary to estimate
+the compensatory process, Equations (2) and (13a )–(13c ),
+are then described. The standard hierarchical Bayes probit
+model (Rossi et al. 1996) and structural heterogeneity mod-
+els (Yang and Allenby 2000) have been described elsewhere.
+The augmented data problem for the conjunctive model is
+yhij DEMO 1if zhij >zhik for all k such that Ixhikh =1 (A.1)
+zhij =xhij h + hij 	∼ Normal0 =1 (A.2)(A.3)DEMO
+Ixhij h = 1if Ixhijm >hm =1
+m
+where h indexes DEMO respondent, i the choice set, j the
+alternative in the choice set, and m the attributes in each
+alternative. Heterogeneity on the individual household
+parameters is introduced hierarchically with the following
+distributions:
+h ∼ DEMO 
+∼
+
+ m1  mn
+hm Multinomial
+for discrete attributes 1 10
+h11 ∼ forNormal11 a continuously scaled attribute¯ 2
+The hierarchy DEMO completed by specifying the prior distribu-
+tions on the hyperparameters:
+
+
+where IW is the inverted Wishart distribution, # =k+ 8, DEMO
+$possible values for=# . m is a vector of dimensionm and % is a conforming vector withn where n indexes the
+each element set DEMO to six. IG is the inverted gamma
+distribution andA Gibbs-type sampler is constructed to draw from thea = 10 and b =0 1.
+conditional DEMO described in (9a)–(9c) as well as the
+distributions for heterogeneity.
+1. Generate zhi  yhi, Xhi,IXhih, h,  = 1 for i =
+1I and h =1 H.
+Start withif yhij DEMO 1 thenj = 1, zhij ∼ TNxhij h,  = 1, zhij >zhjk
+for all k such that Ixhikh =1,
+if DEMO = 0 and Ixhij h = 1 then zhij ∼
+TNxhij h,  = 1, zhij <zhik , where yhik =1,
+else zhij ∼ Normalxhij h,  =1,
+increment j and return to top.
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+¯ ∼ MVN0 100 ∼ IW#$
+m ∼ corresponding to discrete attributesDirichlet% DEMO m=1 10
+¯ ∼ Normal0 1002 ∼ IGab
+for 11 continuous attribute
+
+2. Generate hm  zh, yhXh for m = 1 10 (discrete
+attributes) andConditioned on the current values forh =1H. zh and DEMO
+observed data, the set of allowable a must be identiﬁed
+hmn
+DEMO the set of possible hmnp . Here, n indexes the possible
+DEMO of  for each attribute as listed in Table 5 (e.g., N =4
+hmn is a mem-
+for Body Style). Let Ia DEMO
+ber of the set of allowablehmn =hm1 indicate that.
+Start with n = 1, test each j =1 J , i =1I,
+1 and I >hm∗  =
+0 and >hm∗  = 1, then
+>zhik y = 1, then Ia 
+0, then Ia 
+hmn = 0,
+if yhij =
+if yhij =
+if DEMO
+mm xxhijmhijm
+hmn = 0.
+where
+hik
+Else, Ia
+incrementhmnnand return DEMO the top.= 1,
+p
+hmn
+Here ∗ includes for the appropriate attribute. Now
+choose hm from hmna using a Metropolis-Hastings-type
+step:
+with DEMO Ia  mn
+a hmn
+= hmn
+hm
+n Ihmna  mn
+This is an example of the “Griddy Gibbs” as described by
+Tanner (1993).
+3. Generate h11  zh, yhXh for (continuous attribute) h =
+1H.
+This is a more traditional random-walk Metropolis-
+Hastings step, but the candidate hn11 , must be checked to
+make sure it DEMO a member of the allowable set.
+Let hn11 = ho11 + e where e ∼ Normal0e = 0 5. The
+value e is chosen DEMO ensure the acceptance rate is approx-
+imately 50%. ho11 is the value of h11 from the previous
+iteration of the Gibbs sampler. Determine Ihna11 DEMO following
+na n o .If
+the steps outlined in 2; if DEMO n h11  = 0, then h11 = h11
+Ih11  DEMO 1, then accept h11 with probability:
+n
+min exp −22−1 DEMO −h112  1
+4. Generate h  expXh, −22−1 ¯ − DEMO
+o
+h11
+zh for h =1H.
+h ∼ MVNbXhXh +−1−1 
+b = XhXh +−1−1 Xhzh +−1 ¯
+
+100−1−1
+b 
+H
+1 DEMO +100−10
+ 
+h=
+
+H
+ ∼ IW# + H$+h1 h − ¯ h − ¯ 
+7. Generate m  hm for DEMO = 1 10 (discrete attrib-
+= 1if hm =hmn or shmn DEMO 0, otherwise. Then,
+utes).
+Deﬁne shmn
+H H
+∼ DEMO 1 shmn +%n
+1 shm1 +%1  h
+
+m
+h= =
+See Allenby et al. (1998) for additional details on drawing
+m.
+DEMO
+I
+6. Generate   h, ¯.
+2
+
+
+
+DEMO
+ 
+5. Generate ¯  h .
+¯ =
+¯ ∼ MVN¯  /H−1 +
+/H−1 +100−1−1−1
+=
+
+b
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+405
+8. Generate ¯  h11, 2.
+
+
+¯ ∼ Normalcd
+
+2
+ /H
+2
+ /H+ 1000+
+1002 /H
+100 hH=1 h
+ H 11 
+c =  + 100
+2 /H
+
+
+d= + 100
+2  h11, ¯.
+2 /H
+DEMO
+9. Generate 
+
+a 1 1 H 
++ b + 2 h11 − ¯ 2−1
+H
+2 ∼ IG 2 h=1
+We DEMO describe the changes necessary to estimate the
+compensatory consideration-set model. In our application
+of the model, the deterministic component of utility Vhij =
+xhij h and (A.3) from above equal
+Ixhij h = 1ifIxhij h >h =1 (A.3)
+where h is a continuous scalar for each household with
+heterogeneity and prior distributions:
+2
+∼ Normal ¯  DEMO ¯ ∼ Normal0 100 2 ∼ IGab
+h
+Steps 3 and 7 from the previous procedure are no longer
+needed. Only Steps 2 and DEMO need to be altered:
+2a.Again, conditioned on the current values DEMO h  zh, yhXhh for h =1H. zh and h
+and DEMO observed data, the key is to draw h from the set
+DEMO allowable values. The allowable values of h deﬁne con-
+sideration sets such that the chosen alternative always has
+the maximum value of z.
+If DEMO =1 then xhij h >h/
+let B∗ = minxhij h DEMO all i and j where yhij =1
+If yhij = 0 and zhij >zhik where yhik =1 then xhij h <h/
+let DEMO = maxxhij h for all i and j with yhij =0
+and zhij >zhik where yhik =1
+Then A∗ <h <B∗ deﬁnes the allowable range for h. A∗
+requires that all chosen alternatives be part DEMO the consider-
+ation set. B∗ requires that any alternative that is not chosen
+but has a value of z greater than the chosen alternative, be
+excluded from the consideration set.
+Following Chib and Greenberg (1995), we perform a
+Metropolis-Hastings step by drawing h directly from the
+allowable DEMO of the prior; in our case the prior is the
+heterogeneity DEMO and we draw from the truncated
+normal distribution:
+2
+h ∼ TN ¯  A∗ <h <B∗ 
+4a. Generate h  DEMO, Xh, zh for h =1H.
+Generate a candidate h:
+c
+h ∼ MVNbXhXh +−1−1 
+b = XhXh +−1−1 Xhzh +−1 ¯
+DEMO A∗ and B∗ as in Step 2a with hc .If A∗ >DEMO reject hc ,
+draw a new candidate. If A∗ <B∗ , then h =c . This is an
+example of acceptance/rejection sampling. DEMO
+References
+Albert, James H., Siddhartha Chib. 1993. Bayesian analysis of
+binary and polychotomous response data. J.Amer.Statist.
+Assoc. 88 669–679.
+Allenby, Greg M., DEMO E. Rossi. 1999. Marketing models of con-
+sumer heterogeneity. J.Econometrics 89 57–78.
+Allenby, Greg M., Neeraj Arora, James L. Ginter. 1998. On the het-
+erogeneity of demand. J.Marketing Res. 35(August) 384–389.
+Allenby, Greg, Neeraj Arora, Chris Diener, Jaehwan Kim, Mike
+Lotti, Paul Markowitz. DEMO Distinguishing likelihoods, loss
+functions, and heterogeneity in the evaluation of marketing
+models. Canadian J.Marketing Res. 20 44–59.
+Andrews, Rick L., Ajay K. DEMO 1998. Simulation experiments in
+choice simpliﬁcation: The effects of task and DEMO on fore-
+casting performance. J.Marketing Res. 35(May) 198–209.
+Andrews, Rick L., T. C. Srinivasan. 1995. Studying consideration
+effects in empirical choice models using scanner panel data.
+J.Marketing Res. 32(February) 30–41.
+Ben-Akiva, Moshe, Bruno Boccara. 1995. Discrete choice models
+with latent choice sets. Internat.J.Res.Marketing 12 DEMO
+Ben-Akiva, Moshe, Daniel McFadden, Tommy Garling, Dinesh
+Gopinath, Joan DEMO, Denis Bolduc, Axel Borsch-Supan,
+Philippe Delquie, Oleg Larichev, Taka Morikawa, Amalia
+Polydoropoulou, Vithala Rao. 1999. Extended framework for
+modeling choice DEMO Marketing Lett. 10 187–203.
+Bettman, James R. 1979. An Information Processing DEMO of Con-
+sumer Choice. Addison-Wesley, Reading, MA.
+Bettman, James R., C. Whan Park. 1980. Effects of prior knowledge
+and experience and phase DEMO the choice process on consumer
+decision analysis: A protocol analysis. J.Consumer DEMO
+7 234–248.
+Bettman, James R., Eric J. Johnson, John W. DEMO 1990. A com-
+ponential analysis of cognitive effort in choice. Organ.Behavior
+Human Decision Processes 45 111–139.
+Bettman, James R., Mary Frances Luce, John W. Payne. 1998.
+Constructive consumer choice processes. J.Consumer Res.
+25 187–217.
+Bronnenberg, Bart J., Wilfried R. Vanhonacker. 1996. Limited choice
+sets, local price DEMO, and implied measures of price com-
+petition. J.Marketing Res. 33(May) 163–173.
+Chiang, Jeongwen, Siddhartha Chib, Chakravarthi Narasimhan.
+1999. Markov chain Monte Carlo and models of consideration
+set and parameter heterogeneity. J.Econometrics 89 223–248.
+DEMO, Sid, Edward Greenberg. 1995. Understanding the Metropolis-
+Hastings algorithm. Amer.Statist. 49(4) 327–335.
+Edwards, Yancy D., Greg M. Allenby. Multivariate analysis of mul-
+tiple response data. J.Marketing Res. 40(August) 321–334.
+Fader, Peter DEMO, Leigh McAlister. 1990. An elimination by aspects
+model of consumer response DEMO promotion calibrated on UPC
+scanner data. J.Marketing Res. 27(August) 322–332.
+DEMO, Dennis H. 1987. A two-stage disaggregate attribute choice
+model. Marketing Sci. DEMO(3) 223–239.
+Hajivassiliou, V., D. McFadden, P. Rudd. 1996. Simulation of mul-
+tivariate normal rectangle probabilities and their derivatives.
+J.Econometrics 72 85–134.
+DEMO, Gerald, Valerie Trifts. 2000. Consumer decision making in
+online shopping environments: The effects of interactive deci-
+sion aids. Marketing Sci. 19(1) DEMO
+Hauser, John R., Birger Wernerfelt. 1990. An evaluation cost model
+of consideration sets. J.Consumer Res. 16(March) 393–408.
+Jedidi, Kamel, Rajeev Kohli, Wayne S. DeSarbo. 1996. Consideration
+sets in conjoint analysis. J.Marketing Res. 33(August) 364–372.
+Johnson, Eric J., Robert J. Meyer. 1984. Compensatory choice mod-
+els of noncompensatory processes: The effect of varying con-
+text. J.Consumer Res. 11 528–541.
+Johnson, Eric J., Robert J. Meyer, Sanjoy Ghose. 1989. When choice
+models fail: Compensatory models in negatively correlated
+environments. J.Marketing Res. 26(August) 255–270.
+Keane, M. 1994. A computationally practical simulation DEMO
+for panel data. Econometrica 62 95–116.
+
+
+406
+Gilbride and Allenby: A Choice Model with Conjunctive, Disjunctive, and Compensatory Screening Rules
+Marketing Science 23(3), pp. 391–406, ©2004 INFORMS
+Maddala, G. S. 1983. Limited Dependent and Qualitative Variables in
+Econometrics. Cambridge University Press, New York.
+Manrai, Ajay K., Rick L. Andrews. 1998. Two-stage choice models
+for scanner panel data: An assessment of process and assump-
+tions. Eur.J.Oper.Res. 111 193–215.
+McCulloch, Robert, Peter E. Rossi. 1994. DEMO exact likelihood analy-
+sis of the multinomial probit model. J.Econometrics 64 207–240.
+Mehta, Nitin, Surendra Rajiv, Kannan Srinivasan. 2003. Price uncer-
+tainty and consumer search: A structural model of considera-
+tion set formation. Marketing Sci. 22(1) 58–84.
+Montgomery, Alan J., Katrik Hosanagar, Ramayya Krishnan, Karen
+B. Clay. 2003. Designing a better shopbot. Working paper,
+Carnegie DEMO University, Pittsburgh, PA.
+Newton, Michael A., Adrian E. Raftery. 1994. Approximating
+Bayesian inference with the weighted likelihood bootstrap.
+J.Roy.Statist.Soc.B 56 3–48.
+Payne, John W. 1976. Task complexity and contingent processing in
+decision making: An information search and protocol analysis.
+Organ.Behavior Human Performance 16 366–387.
+Roberts, John H., James M. Lattin. 1991. Development and testing
+of a model of consideration set compostion. J.Marketing Res.
+28(November) 429–440.
+Rossi, Peter E., Robert E. McCulloch, Greg M. Allenby. 1996. The
+value of purchase history data in target marketing. Marketing
+Sci. 15(4) 321–340.
+Shocker, Allan DEMO, Moshe Ben-Akiva, Bruno Boccara, Prakash
+Nedungandi. 1991. Consideration set inﬂuences DEMO consumer
+decision making and choice: Issues, models, and suggestions.
+Marketing DEMO 2(3) 181–197.
+Shugan, Steven M. 1980. The cost of thinking. J.Consumer Res.
+7(September) 99–111.
+Siddarth, S., Randolph E. Bucklin, DEMO G. Morrison. 1995. Mak-
+ing the cut: Modeling and analyzing choice DEMO restriction in
+scanner panel data. J.Marketing Res. 32(August) 255–266.
+Simmons DEMO of Media and Markets. 1997. Choices II Version
+5.28.98. Simmons Market Research Bureau, Tampa, FL.
+Swait, Joffre. 2001. A non-compensatory model incorporating
+attribute cutoffs. Transportation Res.Part B 35 903–928.
+Tanner, Martin A. 1993. Tools for Statistical Inference. Springer-Verlag,
+New York.
+Tanner, M. A., W. Wong. DEMO The calculation of posterior dis-
+tributions by data augmentation. J.Amer.Statist.Assoc. 82
+528–549.
+Yang, Sha, Greg M. Allenby. 2000. A model for observation, struc-
+tural, and household heterogeneity in panel data. Marketing
+Lett. 11 137–149.{1g42fwefx}

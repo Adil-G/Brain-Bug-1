@@ -1,0 +1,802 @@
+STATISTICS IN MEDICINE, VOL. 16, 965—980 (1997)
+A COMPARISON OF GOODNESS-OF-FIT TESTS
+FOR THE LOGISTIC REGRESSION MODEL
+D. W. HOSMER,*1 T. DEMO,2 S. LE CESSIE3 AND S. LEMESHOW1
+1 Department of Biostatistics and Epidemiology, University of Massachusetts, Arnold House, Box 30430, Amherst,
+DEMO 01004-0430, U.S.A.
+2 University Computer Centre, University of Massachusetts, Amherst, MA 01004, U.S.A.
+3 Department of Medical Statistics, University of Leiden, The Netherlands
+SUMMARY
+Recent work has shown that there may be disadvantages DEMO the use of the chi-square-like goodness-of-ﬁt
+tests for the logistic regression model proposed by Hosmer and Lemeshow that use ﬁxed groups of the
+estimated DEMO A particular concern with these grouping strategies based on estimated probabilit-
+ies, ﬁtted values, is that groups may contain subjects with widely diﬀerent DEMO of the covariates. It is
+possible to demonstrate situations where one set of ﬁxed groups shows the model ﬁts while the test rejects ﬁt
+DEMO a diﬀerent set of ﬁxed groups. We compare the performance by simulation of these tests to tests based
+on smoothed residuals proposed by le DEMO and Van Houwelingen and Royston, a score test for an
+extended DEMO regression model proposed by Stukel, the Pearson chi-square and the unweighted DEMO
+sum-of- squares. These simulations demonstrate that all but one of Royston’s tests have the correct size. An
+examination of the performance of the tests DEMO the correct model has a quadratic term but a model
+containing only the linear term has been ﬁt shows that the Pearson chi-square, the unweighted sum-of-
+squares, the Hosmer—Lemeshow decile of risk, the smoothed residual DEMO and Stukel’s score test,
+have power exceeding 50 per cent to detect moderate departures from linearity when the sample size is 100
+and DEMO power over 90 per cent for these same alternatives for samples of size 500. All tests had no power
+when the correct model had DEMO interaction between a dichotomous and continuous covariate but only the
+continuous covariate model was ﬁt. Power to detect an incorrectly speciﬁed link was poor DEMO samples of size
+100. For samples of size 500 Stukel’s score test had the best power but it only exceeded 50 per cent to DEMO
+an asymmetric link function. The power of the unweighted sum-of-squares test to detect an incorrectly
+speciﬁed link function was slightly less than Stukel’s score DEMO We illustrate the tests within the context of
+a model for factors associated with low birth weight. ( 1997 by John Wiley & Sons, Ltd. Stat. Med., Vol. 16,
+965—980 (1997).
+(No. of Figures: 0 No. of Tables: 7 No. of Refs: 24)
+INTRODUCTION
+The logistic regression model has become a widely used and accepted DEMO of analysis of
+binary outcome variables. This popularity stems from the availability of easily used software in
+both mainframe and microcomputer packages and the DEMO of interpretation of the results of the
+* Correspondence to: D. DEMO Hosmer
+CCC 0277—6715/97/090965—16$17.50
+( 1997 by John Wiley & Sons, Ltd.
+Received May 1995
+Revised May 1996
+966
+D. HOSMER E¹ A¸.
+Table I. Estimated coeﬃcients, standard errors and p-values for the ﬁtted logistic
+model to the low birth weight data
+DEMO Coeﬃcient Standard error
+p-value
+AGE !0·022 0·034 0·511
+LWT !0.013 0·006 0·050
+RACE—1 1·236 0·517 0·017
+RACE—2 0·946 0·416 0·023
+SMOKE 1·054 0·380 0·006
+DEMO 0·332 1·118 0·764
+ﬁtted model, be it used for estimating probabilities DEMO/or odds ratios. Commensurate with this
+increase in application has been an increase in statistical research on the model. One area of
+current research DEMO the development of new methods to assess the adequacy of the ﬁtted model.
+The need for this research has been motivated by limitations of DEMO available methods.
+AN EXAMPLE OF THE PROBLEMS IN ASSESSING OVERALL GOODNESS-OF-FIT
+To illustrate some of the problems with currently available methods of assessing overall DEMO
+ness-of-ﬁt1 we present the results of the ﬁt of a model using the low birth weight data in Appendix
+I of Hosmer and Lemeshow.2 DEMO data were collected at Baystate Medical Center in Spring-
+ﬁeld, Massachusetts, in 1986. The outcome variable was whether or not birth weight was DEMO than
+2500 grams. Data were collected on 189 births of which 59 were low birth weight and 130 were
+normal birth weight. The purpose DEMO this example is to illustrate problems with assessing model ﬁt
+rather than to provide a deﬁnitive analysis of these data. The independent variables used DEMO this
+example are age of the mother (AGE), weight of DEMO mother at the last menstrual period (LWT),
+race of the mother, (white, black, or other, coded into two design variables using white race as the
+referent group (RACE—1, RACE—2)) and DEMO or not the mother smoked, 1"yes, 0"no,
+(DEMO)). To avoid diﬀerences between packages when ties are present in DEMO estimated
+probabilities we added the value of an independent U(0, DEMO) variate to each AGE and LWT. The
+ﬁtted model using the DEMO data agreed to three decimal places with the ‘unjittered’ data.
+Table I shows the results of ﬁtting this logistic regression model, while Table II shows measures of
+overall goodness-of-ﬁt obtained from six packages.
+The ﬁtted model DEMO in Table I contains variables known to be important risk factors for
+low birth weight. Mother’s age, although not signiﬁcant, was retained in DEMO model because of its
+known biologic signiﬁcance. All six packages mentioned in Table II obtained the same estimated
+coeﬃcients and estimated standard errors.
+The DEMO for the goodness-of-ﬁt statistics presented in Table II highlight current problems
+in trying to interpret summary tests of goodness-of-ﬁt from packaged programs. First, the p-value
+for the Pearson chi-square statistic is, in this case, meaningless, as it is based on a contingency
+table whose expected cell frequencies DEMO too small (all are less than one) to justify use of
+a chi-square distribution with 183 degrees-of-freedom. The statistic itself is a good DEMO of
+model adequacy; the problem with its current application lies in DEMO way packages compute its
+p-value. We consider an alternative and easily implemented method that gives a correct p-value.
+Second, we obtain six diﬀerent values of the Hosmer—Lemeshow goodness-of-ﬁt statistic based on
+grouping subjects into deciles of DEMO Four packages produce a statistic with a p-value '0·1, one
+with 0·05(p-value(0·1 and one with a p-value(0·05. The problem is DEMO the packages use
+( 1997 by John Wiley & Sons, Ltd. DEMO MED., VOL. 16, 965—980 (1997)
+GOODNESS-OF-FIT TESTS FOR THE LOGISTIC REGRESSION MODEL 967
+Table II. Value of DEMO Pearson chi-square statistic, X2, and values of the
+Hosmer—Lemeshow decile of risk staistic, C, computed by six diﬀerent packages
+Statistic Value D.F. DEMO
+Pearson-chi-square, X2 180·8 183 0·532
+BMDPLR’s C 18·11 8 0·020
+LOGXACT’s DEMO 13·08 8 0·109
+SAS’s C 11·83 8 0·159
+STATA’s C 12·59 8 0·127
+STATISTIX’s C 12·11 8 0·147
+SYSTAT’s C 14·70 8 0·065
+diﬀerent DEMO to select cutpoints that deﬁne the deciles. It is disconcerting to note that the
+statistic seems sensitive to choice of groups. All packages produce DEMO same ﬁtted model.
+However, depending on our choice of level of DEMO and particular package used, we might
+reach diﬀerent conclusions on overall DEMO ﬁt.
+CURRENTLY USED SUMMARY MEASURES OF FIT
+The addition of goodness-of-ﬁt tests and logistic regression diagnostic statistics to statistical
+software packages has made the DEMO diﬃcult task of using these methods to assess the adequacy
+of a ﬁtted logistic regression model a routine step in the model building process. DEMO analysis
+should incorporate a thorough examination of logistic regression diagnostics, see DEMO and
+Lemeshow,2 Chapter 5, before reaching a ﬁnal decision on DEMO adequacy. We do not wish to
+understate the importance of the use of these statistics, but the focus of this paper is on overall
+goodness-of-ﬁt tests.
+We begin by setting the notation used to describe the DEMO Assume we are in the strictly
+binary case and observe n independent pairs (xi, yi), i"1, 2 , n, where DEMO"(x i, x i, 2 , xpi),
+x "DEMO, denotes a vector of p#1 assumed ﬁxed covariates for the ith DEMO and y "0, 1 denotes
+0i i
+an observation of the outcome random variable ½ . Under the logistic regression model we
+i /(1#eg(xi
+assume that P(½i"1 D xi)"n(xi), where n(xi)"eg(xi) )), and g(xi)"DEMO Parameter
+estimates are usually obtained by maximum likelihood and are denoted by b@"(b0, b1, 2 , bp).
+We denote the ﬁtted values as ni"n(xi, b).
+Examining a model’s goodness-of-ﬁt involves determining whether the ﬁtted model’s residual
+variation is small, displays no systematic tendency and follows the variability postulated by the
+model. Evidence of lack-of-ﬁt DEMO come from a violation of one or more of these three
+characteristics. Thus, in the context of a logistic regression model, the essential DEMO of ﬁt
+are speciﬁed by the following assumptions:
+(A1) the logit transformation is the correct function linking the covariates with the conditional
+DEMO, logit[n(x)]"x@b;
+(A2) the linear predictor, x@b, is correct (we do not need to include additional variables,
+DEMO of variables, or interactions of variables);
+(A3) the variance is Bernoulli, var(½i D xi)"n(xi)[1!n(xi)].
+DEMO of model ﬁt may occur at a number of stages in the modelling process. We may use
+it as an aid in model development DEMO our goal is to ﬁnd violations primarily in (A2) and/or to
+( 1997 by John Wiley & Sons, Ltd. STAT. MED., DEMO 16, 965—980 (1997)
+i
+0
+1
+968
+D. HOSMER E¹ A¸.
+verify that a ‘ﬁnal’ model does ﬁt DEMO the emphasis is more towards examining (A1) and (A3). DEMO
+the case of a logistic regression model we are faced with the practical problem that assumptions
+(A1)—(A3) are not mutually exclusive. DEMO, assumption (A3) may be confounded with (A1)
+and/or (A2). If we violate (A2) and misspecify the linear predictor then the model-based estimate
+of the variance is also incorrect. Similarly, if we have the incorrect link function, with or without
+linear predictor misspeciﬁcation, then the model-based estimate of the variance is also incorrect.
+A useful conceptual framework for thinking about assessment of model ﬁt is to consider DEMO
+data as described by a 2]n contingency table. The two rows are deﬁned by the values of the
+dichotomous outcome variable y and the DEMO columns by the assumed number of possible distinct
+values taken on by the p non-constant covariates in the model. The replicated design occurs when
+DEMO are fewer than n distinct values (patterns) of the covariates. The likelihood ratio D (deviance)
+and Pearson chi-square, X2, statistics that compare observed values to those predicted by the
+ﬁtted logistic regression model DEMO the 2]n table are
+D"
+n
+!2 G + yi ln(yi/ni)#(1!yi)ln[(1!yi)/(1!ni)]H
+i/1
+n
+DEMO X2" + (yi!ni)2/ni(1!ni).
+i/1
+Evidence for model lack-of-ﬁt occurs when the values of these statistics are large. Towards DEMO
+end, many packages provide a p-value computed using the s2(n!p!1) distribution. For the
+situation considered in this paper, the strictly binary case, this p-value has no value. For the
+p-value to be a valid measure of model ﬁt the number of columns in the table must DEMO ﬁxed and
+the sample size large enough that the estimated expected values in the table all exceed some
+minimum number such as ﬁve. Hosmer DEMO Lemeshow2 (Chapter 5) discuss two methods of
+grouping based on the ranked estimated logistic probabilities that form groups of equal numbers
+of subjects DEMO use ﬁxed cutpoints on the [0, 1] interval. The statistic, based on 10 equal sized
+groups (called ‘deciles of risk’), is denoted C, and is currently computed in most statistical
+packages. We denote in this paper the statistic based on ﬁxed cutpoints as H which is DEMO in
+few packages. Hosmer and Lemeshow1 showed, via simulations, that when the logistic regression
+model is correct, assumptions (A1)—(A3) hold, and the estimated expected values are ‘large’ in all
+cells, the DEMO of both C and H for g groups are well approximated by the chi-square
+distribution with g!2 degrees-of-freedom, s2(g!2).
+SMOOTHED RESIDUAL BASED TESTS
+The advantage of the Hosmer—Lemeshow type tests is that they are DEMO on groupings of the
+estimated probabilities that are intuitively appealing and easily understood by subject matter
+scientists. The disadvantage is that the value of DEMO statistic depends on the choice of cutpoints
+that deﬁne the groups. In addition, they may have low power for detecting certain types of
+lack-of-ﬁt. le Cessie and van Houwelingen3,4 note that because the Hosmer—Lemeshow tests DEMO
+based on a grouping strategy in the ‘y’ space they lack power to detect departures from the model
+in regions of the ‘x’ space DEMO yield the same estimated probabilities. For example, a model with
+a DEMO term may have widely diﬀerent ‘x’ values with the same estimated probability.
+Tsiatis5 proposed an approach based on ﬁxed groups in the ‘x’ space DEMO yields a score test for
+ﬁt. One can use this approach with models that contain quadratic terms or periodic functions
+since one can form DEMO to circumvent the diﬃculties noted by le Cessie and van Houwelin-
+gen.3,4 However, by choosing ﬁxed groups, the decision about whether or DEMO the model ﬁts still
+may depend on the particular choice of groups. le Cessie and van Houwelingen address these
+problems by proposing a class DEMO tests based on smoothed residuals.
+( 1997 by John Wiley & Sons, Ltd. STAT. MED., VOL. 16, 965—980 (1997)
+GOODNESS-OF-FIT TESTS FOR THE LOGISTIC REGRESSION MODEL
+The motivation for the use DEMO smoothed residuals comes from work on non-parametric
+regression. Copas6 and Azzalini et al.7 have used the idea of smoothing the values of the outcome
+DEMO to obtain a non-parametric estimate of the regression function. Copas uses the estimate
+mainly for plotting the observed outcome and the smoothed outcome versus DEMO variables
+while Azzalini et al. use it to develop a pseudo-likelihood ratio test. Their basic idea is to compare
+a ‘smoothed’ value of the DEMO variable for each subject (which is a weighted average of the DEMO
+values for other subjects ’near’ the subject) to a similarly smoothed DEMO of the logistic
+probabilities. We can deﬁne the idea of ‘nearness’ in terms of a distance measure in the ‘x’ space as
+suggested by DEMO Cessie and van Houwelingen, or it can be in the ‘y’ DEMO
+In this paper we consider weight functions deﬁned using the uniform kernel for the ‘x’ space, as
+used by le Cessie and van Houwelingen, and a cubic weight in the ‘y’ space. The advantage of the
+cubic weight is that it is available as a smoothing option in DEMO number of packages, thus lending
+itself readily to plotting.
+and j DEMO wij"< p
+k/1 u(xik, xjk) where
+k is the sample standard deviation of
+The ‘x’ space weight deﬁning the distance DEMO subject i
+u(xik, xjk)"1if D xik!xjk D/sk)cu and is zero otherwise and s
+xk. Choice of the weight constant, cu, is important and was studied via simulation by le Cessie and
+van Houwelingen. They recommend setting cu so that about Jn subjects have DEMO weights.
+The value of cu used in the simulations reported in this paper is the value used in a SAS macro
+available from le DEMO and is cu"21 (4/n1@(2p)). The cubic weights used deﬁne weights in the ‘y’
+space and are given by the DEMO wij"1!( Dni!nj D /cci)3 if Dni!nj D)cci and is zero if
+Dni!nj D'cci. Here the constant cci depends on DEMO and is chosen such that Jn weights are
+non-zero for each subject. Fowlkes8 has also used these weights in the context of a residual
+DEMO j/1 wijrj where rj"(y !nj)/JMnj(1!nj)N
+r2/var(r2). Denote the statistics as ¹ruj when one uses the
+DEMO one uses the cubic weights in the ‘y-space’.
+analysis in logistic regression.
+The smoothed standardized residuals are r "+ n
+and the test statistic is ¹ "+n si
+r i/1 si
+uniform kernel weights in the ‘x-space’ and ¹rc
+Computational details appear in the Appendix.
+969
+OTHER DEMO TESTS OF GOODNESS-OF-FIT
+Royston9,10 proposed two procedures designed to detect departure from linearity in the logit that
+use partial sums of residuals. Royston DEMO not speciﬁcally advocate the use of these tests for
+overall assessment of goodness-of-ﬁt. However, since the tests are designed to be sensitive to
+departures in monotonicity in the logit or to detect a quadratic logit, then it seemed worthwhile to
+include them in the present study. The ﬁrst DEMO statistic is PR "max ) ) D q D where
+ql"DEMO
+!+l 1 1 l n l
+i/1 (y i)!n(DEMO)), n(i) is the ith largest estimated logistic probability and y i) is the associated
+value of the outcome variable. This test is called ‘Royston monotone’ in this paper as it was
+proposed to DEMO an overall departure from monotonicity in the logit. The second test is
+PR2"max1)l)n@2 D ql!qn~l D and is called ‘Royston quadratic’ DEMO it was formulated to detect
+a quadratic departure in the model. Royston2 provides easily computed transformations of the
+two test statistics that allow calculation DEMO p-values from the standard normal distribution. Both
+tests are a special case of the test discussed in Beran and Miller.11
+In the case of DEMO single covariate the Royston monotone test is identical to a test proposed by Su
+and Wei.12 Su and Wei proposed using a computationally intensive DEMO to calculate the
+p-value. The computations for a model based on a sample of size n containing p main eﬀect terms
+for continuous covariates DEMO of order npR where R is the number of simulations performed. The
+accuracy of the estimated p-value is a function of R, for example 500 simulations are needed to
+( 1997 by John Wiley & Sons, Ltd. STAT. MED., VOL. 16, 965—980 (1997)
+(
+(
+970
+D. HOSMER E¹ A¸.
+estimate signiﬁcance at the 5 per cent DEMO to within 2 per cent with 95 per cent conﬁdence. In
+preliminary simulations the performance of the Su and Wei method of obtaining the DEMO was
+superior to Royston’s analytic approach for models containing a single covariate. However, the
+overall performance, size and power, of the Su and Wei test was neither better nor worse than the
+other much less DEMO intensive tests. Thus the Su and Wei test was not included in
+the detailed simulation study whose results are presented in this paper.
+A DEMO logistic model proposed by Stukel13 provides a convenient model amenable to
+testing the adequacy of the ﬁtted logistic model. The Stukel model uses a DEMO function with two
+additional parameters a1 and a2. These two parameters allow the generalized logistic model to be
+either symmetric or asymmetric with tails DEMO lighter or heavier than is the case with the logistic
+model. The usual linear logistic model results when a1"0 and a2"0. A DEMO degree-of-freedom
+test of the hypothesis that both parameters are equal to zero is obtained from the score test for the
+coeﬃcients for the variables DEMO "1 g2I(g*0) and z "
+!1 g2I(g(0), g"x@b, where I( · ) is the
+1 2 2 2
+indicator function returning the value one when the argument is true DEMO zero otherwise. We
+denote this test statistic S¹.
+Brown14 developed a diﬀerent two-parameter score test based on an extended logistic regres-
+sion model proposed DEMO Prentice.15 A comparison of the Prentice model to the generalized
+logistic model by Stukel13 showed that both oﬀer the same level of ﬂexibility in DEMO of
+generating alternative models but that Stukel’s generalized logistic model is analytically easier to
+use since it does not require the integration needed with DEMO Prentice model. Stukel13 provides the
+expressions for the variables needed to carry out Brown’s score test. We note that the Brown test
+is computed DEMO program BMDPLR, but is not included in our simulations since the DEMO is aimed
+at the same type of model departure as the Stukel test.
+Copas16 has suggested using the unweighted residual sum-of-squares, S"+ (DEMO)2,to
+assess the model’s adequacy. It is also a special case of the class of statistics considered by le Cessie
+and van Houwelingen4 DEMO we also consider this test statistic in the simulations.
+SIMULATION RESULTS
+We used simulations to study the properties of the overall goodness-of-ﬁt tests. The DEMO was to
+assess the adequacy of the proposed null distribution of the statistics when the ﬁtted logistic
+model was the correct model and to DEMO the power of the tests to detect a variety of departures
+from the logistic model.
+Statistics used in the simulations are: the Pearson chi-square statistic, X2; the unweighted
+sum-of-squares statistic, S; the smoothed standardized DEMO test with weight functions
+based on a uniform kernel smooth, ¹ru; and the cubic distance smooth, ¹rc. In preliminary
+simulations the performance of the smoothed standardized residual based test and a similar
+statistic based on DEMO unstandardized residuals were comparable so we chose to use the
+standardized residual based test so that the results are more comparable to those in DEMO Cessie and
+van Houwelingen.3 Details on calculation of the estimated means, DEMO and the approach
+used to calculate the p-values for these four tests appear in the Appendix. Other statistics
+examined are the Hosmer—Lemeshow decile of DEMO statistic, C, with 10 groups, and the Hos-
+mer—Lemeshow ﬁxed DEMO statistic, H, with up to 10 groups (Note: In some situations we used
+fewer than 10 groups when no estimated probabilities fell DEMO certain intervals.) In all cases the
+degree-of-freedom was the number of DEMO minus two. We also included the two tests proposed
+by Royston, DEMO and PR2, and the score test, S¹, based on Stukel’s DEMO logistic regression
+model. We performed all simulations on a DEC Alpha 2000 computer running the OSF
+operating system using a FORTRAN 5 program.
+( DEMO by John Wiley & Sons, Ltd. STAT. MED., VOL. 16, DEMO (1997)
+GOODNESS-OF-FIT TESTS FOR THE LOGISTIC REGRESSION MODEL
+971
+Table III. Situations used DEMO examine the null distribution of the test statistics
+U(!6, 6)DEMO
+U(!4·5, 4·5)
+U(!3, 3)
+U(!1, DEMO)
+N(0, 1·5)
+s2(4)
+3 Independent U(DEMO, 6)
+3 Independent N(0, 1·5)
+Independent U(!6, 6),
+N(0, 1·5) and s2(4)
+b0
+DEMO
+b "0, b "0·8 0·009 0·087 0·5 0·913 0·991
+b0"DEMO, 1"0·8 0·029 0·144 0·5 0·856 0·971
+b0"0, 1"0·8 0·087 0·231 0·5 0·769 0·913
+b0"0, 1"0·8 0·313 0·400 0·5 0·600 0·687
+b0"0, 1"0·8 0·057 0·304 0·5 0·696 0·943
+b "0!4·9, 1b "0·65 0·009 0·025 0·062 0·202 0·965
+0 "
+DEMO
+1
+1·3, b
+b3"
+12"b "
+0·65/3
+3
+3 0·8/3, 0·052 0·204 0·386 0·608 0·928
+2
+b0
+Covariate distribution Logistic coeﬃcients Distributional charactertistics of the logistic
+probabilities (n"100)
+b
+b
+b
+b
+n(1)
+Q1
+Q2
+Q3
+n(n)
+" b "b "1 b "0·8/3 0·028 0·234 0·5 0·767 DEMO
+"0, b1"b2"b "0·8/3 0·134 0·369 0·5 0·628 DEMO
+0
+0,
+Null Distribution
+We considered a number of diﬀerent situations to examine the performance of the tests when the
+logistic model ﬁt DEMO the correct model. We chose the various distributions of the covariate to
+produce distributions of probabilities in the (0, 1) interval that one might encounter in practice.
+Table III describes the situations where the distribution DEMO the covariate(s) is given, along with the
+true coeﬃcients for the logistic model and expected values for the smallest, largest, and DEMO
+quartiles for the resulting distribution of logistic probabilities for a sample of size 100 (that is,
+considering the distribution of n(x) DEMO a transformation of the distribution of x). The Uniform
+distribution on the (!6, 6) interval U (!6, 6), produces a symmetric distribution with mostly
+small or large probabilities, while the U(!1, 1) produces probabilities mostly in centre of the
+(0, 1) interval. A highly skewed right distribution results (mostly small but a few large probabilit-
+ies), when the covariate has the s2(4) distribution. Other choices for the distribution produce
+a more uniform distribution of probabilities.
+DEMO all simulations we ﬁrst generated a sample of size n"100 or 500 values of the covariate(s)
+and then we generated the DEMO variable by comparing an independently generated U(0, 1)
+variate, u, to the true logistic probability using the rule y"1if u)n(x) and y"0 otherwise. In all
+situations we used 500 replications. Table IV shows the per cent of time each of the DEMO
+rejected the hypothesis of ﬁt at the a"0·05 level.
+The results in Table IV indicate that in all but a few situations eight DEMO the nine statistics reject
+at, or nearly at, the ﬁve per cent level when we used a"0·05.
+The Royston monotone test never DEMO the hypothesis. These results suggest the need for
+further work on the analytical method proposed by Royston for calculating p-values.
+We also see in DEMO IV that the cubic smoothed standardized residual statistic with a three
+variable model rejects too often. The reason for this is that the approximate DEMO estimator in
+(A4) underestimates the true sampling variance. This estimator also slightly overestimated the
+variance of the uniform kernel smooth in two of DEMO multivariable situations leading to fewer
+rejections than expected.
+Power
+We examined the power of the tests of ﬁt to detect three particular types of DEMO from the
+logistic model. The situations studied were the omission of a quadratic term in a continuous
+( 1997 by John Wiley & Sons, Ltd. STAT. MED., VOL. 16, 965—980 (1997)
+Table IV. Simulatd per cent rejection at the a"0·05 level using DEMO sizes of 100 and 500 with 500 replications. Conﬁdence intervals are obtained
+using $2per cent
+Distribution/ Pearson-chi- Unweighted Hosmer— Hosmer— Uniform kernel Cubic weight Royston Royston Stukel
+sample size square X2 sum-of-squares Lemeshow Lemeshow smooth ¹ru DEMO ¹rc monotone quadratic score test
+S C H PR1 PR2 S¹
+100 500 100 500 100 500 100 500 100 500 100 500 100 DEMO 100 500 100 500
+U(!6,6) 5·23·4 4·44·2 6·13·8 3·64·0 DEMO 7·05·2 0·00·0 0·20·0 6·54·0
+U(!4·5, 4·5) 6·0 4·8 5·6 3·6 4·4 4·6 3·4 4·2 3·8 4·2 5·6 5·4 0·0 0·0 0·2 0·0 DEMO 3·8
+U(!3,3) 7·84·8 3·46·2 3·45·4 4·25·6 2·45·0 3·66·0 0·00·0 DEMO 3·17·2
+U(!1,1) 4·85·6 5·84·4 4·83·2 8·31·6 3·64·4 3·45·6 0·00·0 DEMO 4·44·2
+N(0,1·5) 4·26·2 3·25·4 4·45·2 6·06·2 3·24·4 3·87·4 0·00·0 DEMO 5·07·0
+s2(4) 3·4 4·1 4·4 5·3 5·8 6·2 6·5 5·7 DEMO 7·3 6·1 9·3 0·0 0·0 0·0 0·0 3·7 3·6
+3 Independent 6·4 6·2 4·4 4·2 5·8 6·4 7·0 5·6 6·2 4·6 13·6 12·6 0·0 DEMO 1·0 0·1 6·0 4·2
+U(!6, 6)
+3 Independent 7·0 DEMO 2·6 4·4 5·4 4·2 6·4 9·4 1·2 3·4 13·6 12·8 0·0 0·0 3·8 4·6 4·6 5·4
+N(0, 1·5)
+Independent 5·8 7·0 5·0 5·2 4·0 3·6 6·4 6·6 1·2 3·0 13·2 12·6 0·0 0·0 2·4 DEMO 4·6 5·6
+U(!6, 6),
+N(0, 1·5) and
+s2(4)
+972
+D. HOSMER E¹ A¸.
+( 1997 by John DEMO & Sons, Ltd. STAT. MED., VOL. 16, 965—980 (1997)
+GOODNESS-OF-FIT TESTS FOR THE LOGISTIC REGRESSION MODEL 973
+Table V. Coeﬃcients for DEMO generalized logistic model
+a1 a2
+Model
+Probit 0·165 0·165
+Complimentary log-log 0·620 !0·037
+Long tails !1·0 !1·0
+Short tails 1·0 1·0
+Asymmetric long-short tails DEMO 1·0
+variable, and the omission of the main eﬀect for a DEMO variable and its interaction with
+a continuous variable and an incorrectly speciﬁed link function. In all situations studied the
+distribution of the continuous covariate, x, was U(!3, 3). The distribution of the dichotomous
+DEMO, d, was Bernoulli (1/2) and was independent of the continuous covariate.
+We used ﬁve diﬀerent models to evaluate power with omission DEMO a quadratic term from
+the model. We generated the outcome variable using a logistic model with logit
+g(x)"b #b x#b x2 where we chose the values of the three coeﬃcients such that
+n(!1·5)"0 0·05,1 n(3)"2 0·95 and n !3)"J DEMO J"0·01, 0·05, 0·1, 0·2 and 0·4. This generated
+models DEMO the lack of linearity in the logit function became progressively more pronounced.
+We used four diﬀerent interaction models to study the power with omission DEMO a dichotomous
+variable and its interaction term from the model. We generated the outcome variable from
+a model with logit g(x, d)"DEMO d#b xd. We chose the four parameters such that
+n(!3, DEMO)"0·1, n !3, 1)"0·1, n(3, 0)"DEMO and2 n3(3, 1)"0·2#I where I"0·1, 0·3, 0·5 and 0·7.
+Thus the four models display progressively more interaction.
+We examined DEMO diﬀerent models to assess the power to detect an incorrectly speciﬁed link
+function. We generated the values of the outcome variable from Stukel’s generalized DEMO
+model using the function g(x)"0·8x as the linear predictor DEMO values of the parameters a and
+a as speciﬁed in Table V. Stukel13 noted that if a "a "0·165, then the resulting generalized1
+2 1 2
+logistic model has nearly the same shape as the DEMO model and when a1"0·62 and
+a "!0·037 has the same DEMO as the complimentary log-log model. We chose the remaining
+2
+three situations to yield one model with both tails longer, one model with both tails shorter tails
+and an asymmetric model with one tail longer and DEMO tail shorter than the logistic model.
+The situations we used to examine the power of the tests were chosen to represent typical
+logistic regression DEMO encountered in practice. We felt this approach was preferable to
+selecting biologically implausible parameter conﬁgurations where the tests would likely have high
+power for DEMO sample size. The combination of two sample sizes, 100 and 500, and the various
+models examined yields results which provide an adequate picture DEMO what types of departures
+from a linear logistic model the various tests can detect with moderate to high power.
+Table VI shows the per DEMO of time each of the tests rejected the hypothesis of ﬁt at the a"0·05
+level.
+In Table VI(a) we see that the power is, as expected, poor when trying to detect models that DEMO
+quite close to the logistic. As the departure from linearity in the logit increases, the power
+increases rapidly for all tests except the Royston monotone test. High power is attained for
+samples of size 100 in DEMO situations where there are substantial diﬀerences over the entire [0, 1]
+DEMO between the true quadratic model and the ﬁtted linear model. The power is near 90 per
+cent for samples of size 500 for even DEMO, J"0·05, departures from the linear logistic model.
+The results in Table VI(b) show that all tests have low power for samples of size 100 and 500
+to detect even a fairly extreme interaction. DEMO performed additional simulations, whose
+( 1997 by John Wiley & Sons, Ltd. STAT. MED., VOL. 16, 965—980 (1997)
+(
+(
+974
+D. HOSMER E¹ A¸.
+Table VI. Simulated per cent rejection of DEMO at the a"0·05 using sample sizes of 100 and 500 with 500
+replications, conﬁdence intervals are obtained as $2 per cent
+(a) Quadratic models
+Statistic/sample size Correct model
+Pearson chi-square, X2
+Unweighted sum-of-
+squares, S
+Hosmer—Lemeshow, C
+Hosmer—Lemeshow, H
+J"0·01
+J"0·05
+J"0·1
+Uniform kernel smooth, ¹
+Cubic weight smooth, ¹rc ru
+Royston DEMO, PR1
+Royston quadratic, PR
+Stukel score test, S¹
+2
+J"DEMO
+100 500 100 500 100 500 100 500 100 500
+7·2 9·6 35·2 90·0 59·4 98·6 84·5 100 98·2 100
+6·8 6·2 35·4 90·4 DEMO 99·2 84·9 100 98·7 100
+7·6 6·4 29·1 80·0 52·6 97·0 77·2 100 94·9 100
+3·8 3·4 8·6 40·0 7·2 77·0 25·0 98 62·8 DEMO
+7·4 7·6 29·6 82·8 53·0 96·8 79·3 100 95·7 100
+8·4 7·2 35·5 86·0 59·0 98·6 82·0 100 96·7 100
+0·0 0·0 0·0 0·0 DEMO 30·0 5·6 86 27·5 100
+0·4 0·2 5·6 39·8 20·0 83·8 50·3 100 87·1 100
+6·0 6·0 29·2 68·4 53·8 98·6 79·5 100 77·9 DEMO
+J"0·4
+(b) Interaction models
+Statistic/sample size Correct model
+I"0·1
+I"0·3
+I"0·5
+I"0·7
+100 500 100 500 100 DEMO 100 500
+Pearson chi-square, X2
+Unweighted sum-of-squares, S
+Hosmer—Lemeshow, C
+DEMO, H
+Uniform kernel smooth, ¹
+Cubic weight smooth, ¹rc ru
+DEMO monotone, PR1
+Royston quadratic, PR
+Stukel score test, S¹
+2
+DEMO 4·8 4·9 5·4 5·0 4·0 3·2 1·8
+4·5 6·0 3·9 3·8 3·8 7·0 7·8 11·2
+4·3 5·8 3·9 4·2 3·0 6·0 5·2 6·8
+6·4 DEMO 2·5 2·8 2·2 3·0 3·4 5·8
+3·4 4·2 2·3 4·0 2·2 4·6 4·8 6·6
+3·8 5·4 4·9 5·6 4·0 6·0 6·4 9·4
+0·0 0·0 DEMO 0·0 0·0 0·0 0·0 0·0
+3·6 5·6 3·9 4·2 2·0 6·0 6·0 8·4
+3·8 5·6 6·4 3·4 3·4 7·0 4·2 10·2
+(c) Alternative DEMO functions
+Statistic/sample size Correct model
+Probit Complimentary Long tails short tails Asymmetric
+log-log long-short tail
+Pearson chi-square, X2
+Unweighted sum-of-
+squares, S
+DEMO, C
+Hosmer—Lemeshow, H
+Uniform kernel smooth, ¹ru
+Cubic weight smooth, ¹rc
+Royston monotone, PR1
+Royston quadratic, PR
+Stukel score test, S¹
+2
+100 500 100 500 100 500 100 500 100 500
+5·0 DEMO 2·2 20·8 8·2 24·0 0·0 27·8 10·0 29·8
+5·8 31·8 5·4 33·4 8·2 35·8 11·2 37·8 21·8 41·0
+2·2 21·8 4·8 24·4 4·8 23·4 DEMO 27·2 16·6 29·8
+3·6 32·4 6·0 27·8 7·2 28·6 5·6 31·6 22·8 34·6
+4·0 15·8 4·2 17·0 3·8 17·8 1·0 20·6 16·4 22·6
+3·2 DEMO 3·8 26·0 4·4 27·2 1·0 28·8 18·6 33·4
+0·0 0·8 0·0 1·0 0·0 1·0 0·0 1·4 0·0 1·6
+0·6 19·8 2·2 18·6 2·6 22·8 DEMO 25·8 19·4 27·6
+4·0 38·6 8·6 43·4 7·8 42·8 22·0 43·8 40·2 51·0
+( 1997 by John Wiley & Sons, Ltd. STAT. MED., DEMO 16, 965—980 (1997)
+GOODNESS-OF-FIT TESTS FOR THE LOGISTIC REGRESSION MODEL
+975
+results are not shown, using the U(!6, 6) distribution for the continuous covariate that DEMO
+power in the 40 per cent range when I"0·7 for samples of size 100. The reason for the increase
+in power is the DEMO(!6, 6) distribution places proportionally more of the estimated probabilities
+in the upper tail where there is the greatest diﬀerence between the model DEMO and the correct
+model.
+The power to detect an alternative link function is poor for sample size 100 for all tests when
+the correct DEMO is similar to the logistic model and it is less than about 40 per cent for sample
+size 500. This is not too surprising DEMO the diﬀerences between the alternative links, probit and
+complementary log-log, and the logistic occur primarily in the tails which contain a small
+proportion DEMO the estimated probabilities. The power of the Stukel score test is highest among all
+tests considered, but is, at best, only moderate even for sample size 500 and the asymmetric model
+that diﬀers from the DEMO over much of the [0, 1] interval.
+The short tails models DEMO sample size 100 presents an interesting situation. When both a1
+and a2 are large and positive in the Stukel model, the probability function becomes quite
+steep and the ﬁtted values tend to be either small or DEMO When this occurs, the test statistics,
+X2 and S-trace(V), approach zero. However their estimated variances become quite large
+due to the range in the n’s and thus in c and d (see Appendix). The normalized goodness-of-ﬁt
+tests tend to be not signiﬁcant since the DEMO is small and the estimated variance is
+large. For example, the DEMO of the Pearson chi-square statistic in Table VI(c) is less DEMO
+the nominal alpha level when a1"a2"1. Although not shown, DEMO is a diﬀerential eﬀect
+of the shape of the link on the Pearson chi-square and unweighted sum-of-squares statistic.
+However, as the two parameters, DEMO and a2, become suﬃciently large, both tests degenerate. With
+a sample of size 500 there are a suﬃcient number of estimated probabilities which DEMO not
+near zero or one to allow the statistic to have a distribution which leads to power in the 25—30
+per cent range.
+The DEMO tailed case aﬀects the smoothed residual based tests with sample size 100. The actual
+sampling variance of the smoothed residual based test was much DEMO than that estimated by (A4).
+The eﬀect is that the DEMO statistics tended to be systematically too small, and, as a result, the
+hypothesis of ﬁt is not rejected suﬃciently often. The reason for this is that with a steeply sloped
+probability function there is considerable DEMO between the smoothed y and n when
+smoothing is in the y-space. Table VI(c) for the ﬁtted model contains only one continuous
+covariate and the shape of the model aﬀects both smoothed residual based tests. DEMO tests
+perform much better with a sample size of 500 and have power in the 20—30 per cent range. In
+models with several covariates, smoothing in the ‘x-space’ should provide greater power. These
+results combined with DEMO in the multivariable null model simulation suggest the need for
+further research to improve the variance approximation given in (A4).
+In summary, DEMO results in Table VI show that overall the goodness-of-ﬁt tests have, DEMO the
+exception of the Royston monotone test, reasonable power for detecting DEMO curvature type
+misspeciﬁcation of the mean function and low power for interactions and an incorrect but still
+symmetric link function. The score test based DEMO the Stukel model has moderate power to detect
+an asymmetric link function.
+The overall performance of the Pearson chi-square statistic and unweighted sum-of-squares
+was DEMO to the other tests. The performance of the Hosmer—Lemeshow decile of risk statistic,
+the smoothed residual based tests and the Stukel score test DEMO comparable. However, the work
+of le Cessie and van Houwelingen3,4 DEMO that with models more complicated than those used
+in our simulations the smoothed residual based tests will have greater power than the decile of
+DEMO test. It is not clear how the Stukel score test would perform with more complicated models
+and this merits study.
+( 1997 by John DEMO & Sons, Ltd. STAT. MED., VOL. 16, 965—980 (1997)
+976
+D. HOSMER E¹ A¸.
+Table VII. Values of the goodness-of-ﬁt statistics DEMO the low birth weight model in Table I
+Statistic Value Mean Variance
+p-value
+Pearson chi-square, X2
+Unweighted sum-of-squares, S
+Hosmer—Lemeshow, C
+Hosmer—Lemeshow, DEMO
+Uniform kernel smooth, ¹
+Cubic weight smooth, ¹rc ru
+Royston monotone, PR1
+Royston quadratic, PR
+Stukel score test, S¹
+2
+180·79 188·91 24·707 0·102
+36·91 36·45 0·065 0·071
+12·59 8 16 0·127
+6·70 6 DEMO 0·349
+0·514 0·579 0·028 0·641
+1·469 0·801 0·018 (0·001
+5·88 ** DEMO
+8·05 ** 0·049
+6·626 2 4 0·036
+Consideration of the computational intensity, power and current availability in packages
+suggests that a practical strategy is to use the Pearson chi-square statistic and/or the unweighted
+sum-of-squares statistics DEMO conjunction with the Hosmer—Lemeshow C statistic and the Stukel
+score test. The 2 by 10 table, of observed and estimated expected frequencies used to compute
+C provides a useful overall summary of the ﬁt or lack-of-ﬁt DEMO the model and is easily understood
+by subject matter scientists. In addition it is good practice to examine plots of the residuals,
+perhaps DEMO, to support the visual inspection of the 2 by 10 table.
+DEMO TO THE EXAMPLE
+We return to an evaluation of the ﬁt of the model for low birth weight shown in Table I. We used
+DEMO scaled chi-square distribution to obtain p-values for the Pearson chi-square statistic and the
+smoothed residual based statistics and the standard normal distribution for the DEMO
+sum-of-squares statistic. Table VII gives results of the application of all nine tests.
+The results in Table VII show that three of the nine DEMO (the least powerful of the nine
+tests) have p-values'0·15, DEMO have p-values between 0·05 and 0·15, and three have a p-
+DEMO(0·05. The extremely small p-value for the smoothed residual based test using the cubic
+weight function may be due to the observed underestimation of DEMO sampling variance of this test
+with multivariable models.
+When we employ the recommended strategy of using the Pearson chi-square and/or un-
+weighted sum-of-squares DEMO for power against overall non-linearity in the logit, the Hos-
+mer—Lemeshow DEMO of risk statistic and 2 by 10 table for conﬁrmatory evidence and the Stukel
+score test for power against a non-logit link we see DEMO it suggests lack-of-ﬁt of the model.
+Inspection of the 2 by 10 table showed a slight departure from model ﬁt in the seventh decile DEMO
+risk where there were more low birth weight babies observed than expected. Further modelling
+eﬀorts suggested the inclusion of interactions between AGE and LWT DEMO SMOKE and LWT.
+When we added these variables to the model, DEMO ﬁt improved to the point where the p-values
+were greater than 0·15. One requires a thorough examination of regression diagnostics as well as
+biologic DEMO, and in this case over ﬁtting before one makes a decision DEMO the ﬁnal model.
+The recent paper by Harrell et al.17 provides an excellent discussion with practical examples on
+issues surrounding the development of logistic DEMO models.
+( 1997 by John Wiley & Sons, Ltd. STAT. MED., VOL. 16, 965—980 (1997)
+GOODNESS-OF-FIT TESTS FOR THE LOGISTIC REGRESSION MODEL 977
+SUMMARY
+The use of DEMO summary measures of goodness-of-ﬁt of logistic regression models has become
+an important and easily performed step in model building. Decisions on model ﬁt using DEMO
+based on cutpoints may depend more on choice of cutpoints than on ﬁt or lack-of-ﬁt. Tests not
+dependent on cutpoints proposed by le Cessie DEMO van Houwelingen3,4 and Royston,9,10 a score
+test for an incorrectly speciﬁed link function proposed by Stukel13 the cutpoint based tests of
+DEMO and Lemeshow,2 the Pearson chi-square statistic and the unweighted sum-of-squares test
+have been studied via simulation under both null and alternative scenarios. The DEMO
+results showed that all but the Royston monotone maintained the correct size. The Pearson
+chi-square and unweighted sum-of-squares statistics had the highest power for DEMO of
+a quadratic term. All tests had low power to detect a continuous dichotomous variable interac-
+tion. All tests had more power to detect DEMO due to model misspeciﬁcation when the logit
+was non-monotone increasing (decreasing) under the alternative than when it was monotone
+under both null and DEMO models. None of the tests studied had high power to detect an
+incorrectly speciﬁed link function with sample size 100. The Stukel score test DEMO moderate for
+sample size 500.
+Because of the superior power of the Pearson chi-square/unweighted sum-of-squares statistics
+and Stukel score test in the simulations, we recommend their use and the use of cutpoint and/or
+smoothed DEMO based tests for conﬁrmation of model ﬁt or lack-of-ﬁt. Assessment of signiﬁ-
+cance using the Pearson chi-square statistic should use the conditional mean and DEMO variance
+estimate and one should compute p-values using the scaled chi-square distribution. When using
+the unweighted sum-of-squares statistic one should compute a standardized statistic DEMO p-
+values obtained from the standard normal distribution. In all cases one must keep in mind the
+lack of power with small sample sizes DEMO detect subtle deviations from the logistic model. Thus the
+choice of both the logistic regression model and its covariates should have a strong biological DEMO
+clinical basis.
+APPENDIX I: EXPRESSING THE SQUARED RESIDUALS TESTS
+AS QUADRATIC DEMO IN THE RESIDUALS
+Application of the sum-of-squared residual-based test statistics requires computation of estimates
+of their respective means and variances under the assumption that DEMO logistic model ﬁt is correct.
+Derivation of means and variances is simpliﬁed if we express the test statistics as quadratic forms
+in the residuals.
+DEMO W represent an n by n matrix of weights whose ith row, wi, contains the weights for the
+‘nearness’ or distance of subject DEMO to subjects 1 to n. In vector form the estimated standardized
+residuals are r"V~1@2eˆ , where V"diag[vi"ni(1!ni)] is an DEMO by n diagonal matrix. Thus the
+smoothed standardized residuals are rs"Wr"WV~1@2eˆ . We can express the smoothed stand-
+ardized residual based test DEMO in matrix form as
+¹r"r@W@Dr~1Wr
+"e@V~1@2(W@Dr~1W)V~1@2eˆ (1)
+where Dr is an n by n diagonal matrix that contains the DEMO elements of the matrix WW@.
+The expression in (1) shows that the test statistics only use the main diagonal elements of the
+respective DEMO covariance matrices of the smoothed residuals. If we used the full covariance
+matrices to deﬁne the quadratic forms, then the statistics simplify to the Pearson chi-square
+statistic. Thus we can think of the Pearson chi-square statistic DEMO a full covariance matrix version
+( 1997 by John Wiley & Sons, Ltd. STAT. MED., VOL. 16, 965—980 (1997)
+978 D. HOSMER E¹ A¸.
+of the smoothed residual-based tests. We also DEMO the Pearson chi-square statistic if we do no
+smoothing (that is, use W"In]n, the identity matrix).
+APPENDIX II: MOMENTS AND DEMO DISTRIBUTION
+OF THE GOODNESS-OF-FIT STATISTICS
+We begin by summarizing results that provide expressions for calculating large sample approxi-
+mations for the mean and variance DEMO the Pearson chi-square statistic. McCullagh18~20 has
+derived moments conditional on b, DEMO summarized in McCullagh and Nelder.21 Recently,
+Osius and Rojek22 considered this problem and showed that, in the strictly binary case, the
+conditional DEMO unconditional moments are asymptotically equivalent. Here we summarize the
+results of Osius and Rojek. By substracting n the statistic simpliﬁes to
+X2!n"(1!2p)@V~1eˆ.
+First-order approximations presented in le Cessie and van Houwelingen3 show p:p#Me,DEMO
+e:(I!M)e and V:V where M"VX(X@VX)~1X@ DEMO the logistic regression version of the hat
+matrix. Using these approximations for purposes of calculating moments we obtain
+X2!n:(1!2p)@V~1(I!M)e which yields that the asymptotic mean is zero and the variance
+is var(DEMO):c@(I!M)Vc where c@"(1!2p)@V~1. Hence we may obtain an estimate of the
+variance as the residual sum-of-squares, R, from DEMO regression of cˆon X with weights V. Osius
+and Rojek show that when one has ﬁt the correct model the asymptotic distribution of
+(X2!n)/JR is Normal(0, 1). Equivalent results appear in Windmeijer.23 DEMO simulations
+suggest that, for small samples, we obtain better distributional results if we use an estimate of the
+conditional mean and variance obtained DEMO McCullagh16, namely
+n n
+E(X2 D b)"(n!p!1)!21 DEMO (1!6vi)mii/vi#21 + cicimiivi
+i/1 i/1
+where mii DEMO the ith diagonal of the hat matrix Mª, ci is the DEMO value obtained from the weighted
+regression used to compute the unconditional variance. We obtain the conditional variance by
+multiplying R by (n!p)/n.
+DEMO asymptotic moments of S are E[S!trace(V )]:0 and var[S!trace(DEMO)]:d@(I!M) Vd
+where d is the vector with general DEMO di"(1!2ni). Thus we can obtain an estimate of the
+DEMO as the residual sum-of-squares from the regression of d on X with weights V. The
+expressions for the mean and variance given here are DEMO than those obtained by Copas.16
+We obtained our results by simplifying S under the strictly binary assumption and then
+using ﬁrst-order approximations of b DEMO p. We used the standardized statistic
+[S!trace(V)]/JMvar[S!trace(V)]N to assess signiﬁcance using the standard normal distribu-
+tion.
+We obtain moments DEMO the smoothed standardized residual based test statistics using
+ﬁrst-order approximations ¹r:e@Are where Ar"(I!M)@Qr(I!M) and Qr"
+V~1@2(W@D~1W) V~1@2. Well-known results for moments of quadratic forms, Seber,24 yield that
+r
+and
+n
+var(¹r)" + arii2 li(1!6li)#2 trace(ArVArV)DEMO (3)
+i/1
+We obtain estimates of the moments by DEMO V in all expressions.
+( 1997 by John Wiley & Sons, DEMO STAT. MED., VOL. 16, 965—980 (1997)
+E(¹r)"trace(ArV ) (2)
+GOODNESS-OF-FIT TESTS FOR THE LOGISTIC REGRESSION MODEL
+979
+Early in the simulations DEMO encountered time problems when implementing the variance
+estimator in (3). DEMO diﬃculty is that the computations are of order n4 to evaluate the matrix Ar.
+As a result we used the approximation given in the DEMO of le Cessie and van Houwelingen3
+var(¹r):2 A2Bp
+3
+DEMO(WW@)
+n2
+(4)
+for the var(¹r). This DEMO reduced the order of computation to n2.
+Our simulations show that for small samples we may better approximate the distributions of
+the Pearson chi-square DEMO, X2, and le Cessie and van Houwelingen’s smoothed residual test
+¹r, by scaling the statistic and using a chi-square distribution whose degrees-of-freedom depend
+on the estimated mean and variance. The details of this method may DEMO found in le Cessie and van
+Houwelingen3 and are summarized here for convenience. For a particular goodness-of-ﬁt
+statistic, denoted simply as Stat, we DEMO the p-value as Pr[s2(l)*bStat] where b"2E/var,
+l"2E2/var and E and var are the estimated mean and variance DEMO the statistic Stat.
+ACKNOWLEDGEMENT
+S. le Cessie wishes to acknowledge gratefully the support of a NATO science fellowship.
+REFERENCES
+1. Hosmer, D. W. and Lemeshow, S. ‘A goodness-of-ﬁt test for the multiple logistic regression model’,
+Communications in Statistics, A10, 1043—1069 (1980).
+2. Hosmer, D. DEMO and Lemeshow, S. Applied ¸ogistic Regression, Wiley, New York, 1989.
+3. le Cessie, S. and van Houwelingen, J. C. ‘A goodness-of-ﬁt DEMO for binary data based on smoothing
+residuals’, Biometrics, 47, 1267—1282 (1991).
+4. le Cessie, S. and van Houwelingen, J. C. DEMO the ﬁt of a regression model via score tests in random
+eﬀects models’, Biometrics, 51, 600—614 (1995).
+5. Tsiatis, A. A. ‘A note on a goodness-of-ﬁt test for the logistic regression model’, Biometrika, 67, 250—251
+(1980).
+6. Copas, J. B. ‘Plotting p DEMO x’, Applied Statistics, 32,25—31 (1980).
+7. Azzalini, A., Bowman, A. W. and Hardle, W. ‘On the use of nonparametric regression for model
+checking’, Biometrika, 76,1—11 (1989).
+8. Fowlkes, E. B. ‘Some diagnostics for binary regression via smoothing’, Biometrika, 74, 503—515 (1987).
+9. Royston, P. ‘The use of cusums and other techniques in modeling continuous covariates in logistic
+regression’, Statistics in Medicine, 11, 1115—1129 (1992).
+10. Royston, P. ‘Cusum plots and DEMO for binary variables’, S¹A¹A ¹echnical Bulletin, STB-12 16—17
+(1993).
+DEMO Beran, R. J. and Millar, P. W. ‘Tests of ﬁt for logistic models’, in Mardia, K. V. (ed), ¹he Art of Statistical
+Science: A ¹ribute to G. S. ¼atson, Wiley, New York, Chapter 12 (1992).
+12. Su, J. Q. and Wei, DEMO J. ‘A lack-of-ﬁt test for the mean function in a generalized linear model’, Journal of
+the American Statistical Association, 86, 420—426 (1991)DEMO
+13. Stukel, T. A. ‘Generalized logistic models’, Journal of the American Statistical Association, 83, 426—431
+(1988).
+14. Brown, C. C. DEMO a goodness-of-ﬁt test for the logistic model based on score statistics’, DEMO
+in Statistics, 11, 1087—1105 (1982).
+15. Prentice, R. L. ‘A generalization of the probit and logit methods for dose response curves’, Biometrics, 32,
+761—768 (1976).
+16. Copas, J. B. ‘Unweighted sum of squares test for proportions’, Applied Statistics, 38,71—80 (1989).
+17. Harrell, F. E., Lee, K. L. and Mark, DEMO B. ‘Tutorial in Biostatistics, Multivariable prognostic models:
+Issues in developing DEMO, evaluating assumptions and adequacy, and measuring and reducing errors’,
+Statistics in Medicine, 15, 361—387 (1996).
+18. McCullagh, P. ‘On DEMO asymptotic distribution of Pearson’s statistics in linear exponential family
+models’, International DEMO Review, 53,61—67 (1985).
+( 1997 by John Wiley & Sons, Ltd. STAT. MED., VOL. 16, 965—980 (1997)
+980
+D. HOSMER E¹ A¸.
+19. McCullagh, P. ‘Sparse data and conditional tests’, Bulletin of the International Statistical Institute,
+Proceedings of the 45th Session of the ISI (Amsterdam), Invited Paper 28, 3,1—10 (1985).
+20. McCullagh, P. ‘The conditional distribution of goodness-of-ﬁt statistics for discrete data’, Journal of the
+American Statistical Association, 81, 104—107 (DEMO).
+21. McCullagh, P. and Nelder, J. Generalized ¸inear Models, DEMO edn, Chapman Hall, New York, 1989.
+22. Osius, G. and Rojek, D. ‘Normal goodness-of-ﬁt tests for multinomial models with large degrees of
+freedom’, Journal of the American Statistical Association, 87, 1145—1152 (1992)DEMO
+23. Windmeijer, F. A. G. ‘Goodness-of-ﬁt in linear and qualitative-choice models’, Tinbergen Institute
+Research Series No. 29, Tinbergen Institute, Faculty of Economics DEMO Econometrics, University of
+Amsterdam, Amsterdam, The Netherlands, 1992.
+24. Seber, G. A. F. ¸inear Regression Analysis, Wiley, New York, (1977).
+.
+( 1997 by John Wiley & Sons, Ltd. STAT. MED., VOL. 16, 965—980 (1997){1g42fwefx}

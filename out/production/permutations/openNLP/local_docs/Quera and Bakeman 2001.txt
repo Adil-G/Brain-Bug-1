@@ -1,0 +1,581 @@
+GSEQ for Windows: New software for the analysis of interaction sequences
+Vicenç Quera
+University of Barcelona
+Roger Bakeman
+Georgia State University
+July 6, 2001
+Authors’ addresses and affiliations:
+Vicenç Quera, PhD
+Departamento de Metodología de las Ciencias del Comportamiento
+(Department of Behavioral Science Methods)
+Facultad de Psicología, Universidad de Barcelona
+Paseo Valle de Hebrón, 171, E-08035 Barcelona, Spain
+E-mail: vquera@psi.ub.es
+Roger Bakeman, PhD
+Department of Psychology
+Georgia State University
+Atlanta, Georgia 30303-3083, USA
+E-mail: bakeman@gsu.edu
+GSEQ for Windows
+1
+Abstract
+A new Windows version of GSEQ, a general purpose software for analyzing sequences of
+interactive behavior, is introduced. GSEQ for Windows (GSW) is a major update of SDIS-
+GSEQ, a  previously published version that ran under DOS. In this paper, an DEMO of
+the new features and steps for managing and analyzing sequential data using GSW is
+presented, and some examples of analyses are shown.
+GSEQ for Windows 2
+GSEQ for Windows: New software for the analysis of interaction sequences
+Sequential questions
+Systematic observation of interaction in dyads, groups, or families usually provides data
+that represent sequences of behaviors as they unfold in time. Depending on the specific
+research questions in mind, sequences can either be simple series of codes or categories that
+represent behaviors DEMO the order they occur, or complex series of codes that may DEMO
+and for which onset and offset times are provided. If, for DEMO, we want to know
+whether husband complains tend to follow wife DEMO more in distressed than in non-
+distressed couples, then the couples’ DEMO interaction can be represented by series of
+codes representing verbal utterances from each member of the dyad; in this case, we are not
+DEMO in how, or whether, their verbal behaviors overlap in time, DEMO in the durations of
+the behaviors, but only in which behaviors DEMO used by each member of the dyad when
+responding to the other member.
+On the other hand, if, for example, we want to know whether 3 month olds tend to
+cry more while their mothers DEMO cradling them than when they are not, then the dyads’
+interaction DEMO be represented by series of concurrent codes  together with their onset DEMO
+offset times, because we are interested in the precise amount of DEMO those behaviors occur
+simultaneously. In that example, we could also ask DEMO cradling is more likely to occur
+before crying, than crying before DEMO, and thus gather evidence as to which behavior
+may be actually DEMO and which consequent.
+Software for sequential analysis
+We have developed GSEQ, DEMO general-purpose program that analyzes behavioral sequences.
+It represents, analyzes, recodes, DEMO plots behavioral sequences, a kind of data commonly
+used in a DEMO of research fields, such as the study of interaction in clinical DEMO
+educational settings, social behavior in animals, communication processes, children’s play,DEMO
+and so on.  All these phenomena have a prominent feature:  DEMO process under study
+GSEQ for Windows 3
+unfolds in time and can be observed objectively DEMO systematically. GSEQ is an essential
+toolbox for performing sequential and synchronic analysis of sequences of concurrent and
+non-concurrent behavioral codes. Previous versions of GSEQ DEMO been described
+elsewhere (Bakeman & Quera, 1992, 1995; Quera & Bakeman, 2000); examples and
+applications of GSEQ to the analysis of interaction can be found in Bakeman (2000),
+Bakeman & Casey (1995), and Bakeman, Deckner, & Quera (in press).
+We have also proposed a standard format for sequential data, which makes it
+possible to represent the various kinds of sequences that are recorded by DEMO researchers
+using systematic observation. SDIS (Sequential Data Interchange Standard) is both a data
+format and a data language, with specific syntax rules and conventions. It is presented and
+fully explained in the publications cited, an also in Bakeman & Gottman, 1997.
+GSEQ reads sequential data written in SDIS, and can perform a variety of analyses
+on them: Data DEMO simply be described, obtaining measures like frequency, duration, rate,
+DEMO frequency, average duration, etc., for every behavioral code in the DEMO  Lag
+sequential and co-occurrence analyses can be carried out by defining DEMO tables for
+given and target codes, specifying lags, and requesting sequential statistics, like chi-square,
+adjusted residuals, or Pearson's phi.  Users specify which codes must be included in the
+sequential tables and how DEMO must be analyzed, and they can request that results are
+provided DEMO pooled combinations of design variables. Those statistics make it possible to
+address research questions related both to sequential and synchronic associations among
+behaviors, and to global differences among dyads, respectively.  GSEQ permits also several
+interesting DEMO modifications, like RECODE and WINDOW, which create new codes that
+can be subsequently analyzed using sequential techniques.  New, more global codes can DEMO
+created from the existing ones using RECODE or LUMP, for example.
+DEMO paper presents an overview of the new Windows version of GSEQ, DEMO
+illustrates it with some examples. For details regarding the SDIS language and advanced
+GSEQ analysis commands, the reader should refer to Bakeman and Quera's (1995) book,
+and visit the authors' web pages
+www.ub.es/comporta/sg.htm).
+A brief history of GSEQ
+GSEQ for Windows
+4
+on the GSEQ software (www.gsu.edu/∼psyrab/sg.htm and
+The first version of GSEQ ran under DOS, and was called SDIS-GSEQ 1.0. That was the
+initial version distributed on a DEMO disk and included with Bakeman and Quera's (1995)
+book. DEMO updates of the DOS version appeared until 1997, and were made DEMO on
+the web pages. Since 1997 a prototype Windows version, called DEMO for Windows 3.x,
+was developed and made also available on the web. Finally, GSW (GSEQ for Windows)
+version 4.0 was completed DEMO 2001. This version runs under the various 32-bit flavors of
+Windows (DEMO, 2000, NT), and has a typical Windows user interface, DEMO is, a main menu
+with submenus, and several icon buttons pointing to the most commonly used functions.
+Opening and saving files, and copying, cutting, and pasting text are standard. Figure 1
+shows GSW main DEMO Version 4.0 is trilingual English, Spanish, and Italian, and
+includes DEMO new help system.  Since the initial DOS version, many new features have been
+included both in the SDIS language and the analysis and DEMO capabilities of GSEQ
+itself.
+Insert Figure 1
+Preparing SDIS data
+Sequential data must be entered using the GSW text editor, and following SDIS language
+conventions. Alternatively, sequential data can be acquired and recorded using video-
+analysis software such as The Observer (Noldus, Trienes, Hendriksen, Jansen, & Jansen,
+2000) and ObsWin32 (Martin, Oliver, & Hall, S. 1999).  In the former case, data recorded
+by The Observer DEMO be converted into SDIS files by means of the OTS (Observer-to-SDIS)DEMO
+program. OTS is described in Bakeman & Quera (2000a), and DEMO be downloaded from the
+authors' web pages. In the latter case, ObsWin saves data files in SDIS format directly by
+default. In both DEMO, data are represented as timed event sequences.
+GSEQ for Windows 5
+SDIS represents the different kinds of sequences of DEMO codes commonly
+obtained in interaction studies. Several data formats are permitted by SDIS, each
+corresponding to a type of behavioral sequence, with different DEMO of complexity.  Five
+types of sequential data are defined:
+(a) Event Sequential Data (ESD) are the simplest, and consist of DEMO of mutually
+exclusive and exhaustive (ME&E) codes without information about their occurrence times.
+Example:
+Run Walk Run Sit Walk Sit
+A DEMO SDIS file containing ESD can be seen in Figure 2.
+Insert Figure 2
+(b) Multievent Sequential Data (MSD) are series of (multi-)events for which one or more
+concurrent codes are used. Thus, codes are not mutually exclusive, as more than one code
+can characterize each event. Like in ESD, no onset and offset times for the multievents are
+provided. Example (periods separate multievents):
+Wife Emp Pos. Husb DEMO Pos. Wife Comp Neg. Husb Emo Pos. Husb Emo Pos
+Note that previous DOS versions of SDIS, such as the one described in Bakeman and
+Quera (1995), did not include multievent sequences.
+(c) State Sequential Data (SSD) are series of single- or multiple-stream states.  Onset and
+offset times are provided for each state, and states within a stream are ME&E while states
+in different streams can co-occur. Example:DEMO
+,10:15  ParallelPlay,10:15 SolitaryPlay,10:23 Observe,10:25
+ParallelPlay,10:31 & AdultIn,10:15 AdultOut,10:24 AdultIn,10:DEMO
+,10:40
+(d) Timed event Sequential Data (TSD) consist DEMO a mixture of  momentary behaviors,
+whose occurrence times are known, and duration behaviors (or states), which have onset
+and offset times. In TSD, codes are not necessarily ME&E, that is, there can be time units
+GSEQ for Windows 6
+when no code occurs at all, but also time units when more than one code occur
+simultaneously. Example:
+MRed,DEMO:00-01:07 MPas,01:25- MAct,01:37 MPas,01:48- MAct,02:12-02:27
+MPas,03:19- MAct,03:33- MPas,04:24-04:DEMO MPas,05:28- MRed,05:30- &
+IAct,00:00- IQui,DEMO:25- IAct,01:44  IQui,01:48-02:14 IAct,02:27-04:DEMO
+IAct,05:28- ,05:45
+(e) Interval Sequential Data (ISD) represents behavior as series of intervals, such as those
+used when DEMO is observed using a time sampling technique. Each interval can contain
+one code, several codes (which can be interpreted as occurring simultaneously, provided
+that the time interval is small enough), or no codes at DEMO Example (commas separate
+intervals):
+Give, Receive, Receive, Sit+ DEMO, Object Give, , , Sit- Play, Receive
+It must be DEMO, though, that time sampling is considered an inaccurate technique, and
+DEMO video-analysis is making this recording technique progressively obsolete.
+Overview of SDIS syntax
+All the data to be analyzed must be entered in a single DEMO file. Figure 3 shows the GSW
+editor window containing a sample data file with timed event sequences. Data type must be
+declared at the DEMO Depending on the data type, either codes, codes plus times, DEMO
+intervals are permitted. In that example, codes are followed by a DEMO and their onset and
+offset times. Codes usually represent behaviors, but DEMO also be used for representing
+contextual variables, behavior modifiers, individuals present, and so on. Units of analysis
+can be dyads (as in DEMO example), families, groups, or simply individuals. Data for a unit
+may consist of one or several observation sessions, and design, or DEMO, variables
+can be declared at the outset, and units be assigned to a combination of their conditions.
+Insert Figure 3
+The data example DEMO Figure 3 contains timed event sequences representing
+interaction between mothers and their infants. Six codes were defined, three for the mothers
+--passive attending (DEMO), active attending (MAct), redirecting (MRed)--, and three DEMO
+GSEQ for Windows 7
+the infants –quiet (IQui), active attending (DEMO), and fussing (IFus)--. Mother codes are
+ME&E, and infant codes too, but mother and infant codes can co-occur. One independent
+variable (Experience) with two levels (No and Yes) was defined.
+DEMO and error checking
+Once data are entered, they must be verified, and compiled into an MDS (for modified
+SDIS) file. During the DEMO entering process, data may be verified for syntactical
+correctness without compiling DEMO MDS files are binary files that are easier for GSW to
+analyze. When the compiler finds errors in the data, errors can be easily spotted and fixed
+by clicking on an error messages window that is DEMO below the data (see Figure 4). A
+compilation summary, or log file, can be saved by GSW if requested. If no errors were
+found, the log file contains a description of the data, DEMO it contains a list of the errors
+found.
+Insert Figure 4
+Analyzing data
+Once sequential data have been entered and compiled, GSW can finally analyze them in
+order to obtain descriptive and sequential statistics, modify the original data by defining
+new codes, and exporting results for subsequent analyses using standard statistical packages
+or spreadsheets, such as SPSS and Excel, DEMO Other functions of GSW include
+producing time plots for the data, DEMO computing interobserver agreement. Figure 5 shows
+the common steps for data management and analysis.
+Insert Figure 5
+To run a data analysis, first a sequence of commands written in GSEQ command
+language must be specified. Then, commands are run by GSW in batch mode, and results
+are displayed and saved to a file. Commands are composed by selecting them from DEMO
+dynamic list, which may change depending on the last commands selected. DEMO way, the
+GSEQ for Windows
+8
+program enforces syntactical correctness on the commands. Upon DEMO a command,
+specific options are displayed to be selected by the user. Figure 6 shows the command
+composer command. Command are selected from DEMO left pane, and command options are
+then shown on the upper DEMO pane.  Codes, sets, or variables to which the command may
+DEMO applied are shown on the right pane. Upon selecting the command and its options, it is
+composed and displayed on the lower middle pane, which can be edited manually if
+desired. As shown in that example, the first command identifies the data file to be analyzed,
+and subsequent commands tell GSW how to analyze them. In the example, commands for a
+descriptive analysis are being composed. First, sessions for all units will be pooled over.
+Also, all units sharing the same variable conditions will be pooled over. Then, descriptive,
+or Simple, statistics are DEMO They include frequencies, durations, average durations,
+average onset-to-onset durations, DEMO so on.
+Insert Figure 6
+Both descriptive and sequential analyses may be requested in a single run. Also, all
+or some of the results may be exported to an external file to be analyzed by other DEMO
+programs. Figure 7 shows a complete sequence of commands, ready to DEMO submitted for
+analysis. Simple statistics requested were frequencies, rates, probabilities (DEMO of
+time codes are present), total durations, average and minimum DEMO, and average and
+minimum gaps (offset-to-onset durations). Some of those statistics were then requested to
+be exported (Send command) to a DEMO, which can be read and analyzed further with
+standard statistical packages DEMO as SPSS. Sequential statistics (Stats command) requested
+were joint observed frequencies, adjusted residuals, chi-square, and phi. A lag zero
+contingency table was then defined, with mother codes (MPas, MAct, and MRed) as Target,
+and infant codes (IQui, IAct, and IFus) as DEMO Code & is a residual code, which makes
+both target and DEMO lists temporally exhaustive. Statistics for that lag zero table will
+indicate whether mother and infant behaviors tend to occur simultaneously (chi-square),
+and, if so, which pairs of mother and infant codes tend to co-occur more, and which do not
+tend to co-occur (adjusted residuals, phi). Adjusted residuals were then requested to be
+Exported to a file, to be analyzed further by some statistical program.
+GSEQ for Windows
+9
+Insert Figure 7
+Browsing results. Upon analyzing the DEMO, GSW displays results either in HTML format
+(like a web page) or in simple ASCII format. In both cases, the output file DEMO be open by a
+word processor such as Microsoft Word, and DEMO A section of the HTML output file
+from the analysis requested in Figure 7 can be seen in Figure 8. In this example a DEMO of
+Simple statistics is shown.  A variable, mother's previous Experience with children, was
+defined in the data, with two conditions, Yes and No.  For this particular analysis, the user
+requested that all DEMO for which the Experience condition was identical were pooled over,
+resulting in two tables, one for Yes, another for No. The table DEMO frequencies, rates, total
+durations, proportions of total time, average durations, minimum durations, average gap
+durations, and minimum gap durations for each code. Rates are expressed in number of
+occurrences per 60 time units; e.g., in that case, rate for code MPas was 0.5190 per DEMO
+Proportions of total time are computed by dividing the code’s total duration by the total
+observation time; e.g., MPas occurred 14.71% of the DEMO A total PROB greater than 1.0
+indicates that codes overlapped each other. A gap is defined as the time elapsed from code
+offset to DEMO immediately next onset.
+Insert Figure 8
+Results for the lag 0 analyses are shown in Figure 9. Observed lag frequencies
+pooled over all dyads DEMO which Experience is No are shown on the left. As data is Timed
+event sequential, tallies are time units (seconds). For example, codes IQui and MPas co-
+occurred for 133 seconds out of a DEMO of 3,099 seconds. Adjusted residuals and Chi-square
+corresponding to those observed frequencies are shown on the right. Chi-square indicates
+that there is a DEMO lag 0 global association between mother and infant behaviors. In
+other words, mother and infant behaviors show some degree of synchronicity. Adjusted
+residuals are distributed as normal z scores, and indicate which mother and infant behaviors
+tend to co-occur more and less than expected (if there were no association). For example,
+IAct and MRed tend to co-occur significantly DEMO than expected (19.64), while IQui and
+GSEQ for Windows 10
+MRed tend to co-occur significantly less than expected (-8.21). In order to compute chi-
+squares and adjusted residuals, GSW first computes expected frequencies under the null
+hypothesis of no association. Expected DEMO are computed differently depending on
+the data type, whether structural zeros DEMO in the table, etc. In this particular example, as
+column sums are unevenly distributed, some adjusted residuals might not be normally
+distributed.
+Insert Figure 9
+Plotting data
+Once data are compiled, time event plots can be requested for them. All the codes defined
+in the data, or a subset of them, can be plotted against time. Plots are useful for detecting
+possible sequential and synchronicity patterns by visual inspection, which should then be
+tested using sequential analysis. A section of the mother-infant interaction DEMO presented
+before is plotted in Figure 10. Time units (seconds) are shown left to right, and letters
+indicate when codes were present.
+Insert Figure 10
+Modifying data
+New codes can be defined from existing ones DEMO data modification commands, and
+modified data can be saved for further DEMO Once modified, data can be analyzed, and
+new codes can be used exactly as the original ones. Figure 11 shows an example of
+DEMO requesting two data modifications. Command And defines a new code for all
+time units when several old codes occur simultaneously. Thus, the command,  And Act =
+MAct IAct;   defines new code Act and assigns it to every time unit when both mother and
+infant attend actively. DEMO Or defines a new code for all time units when at least one
+of several old codes occur. Thus, Or NoIAct = IQui IFus;  defines new code NoIAct and
+GSEQ for Windows 11
+assigns it to every time unit when the DEMO is either quiet or fussing, or is both quiet and
+fussing DEMO
+Insert Figure 11
+Data files containing data modifications can also be plotted in order to inspect
+possible patterns in which the new codes are DEMO Figure 12 shows how codes Act and
+NoIAct were created when GSW processed commands And and Or, respectively. Other
+data modification commands defined in GSW are Recode, Lump, Chain, Not, Nor, Xor,
+Window, Remove, and Event.
+Insert Figure 12
+The Window command is specially DEMO, as it creates a new code by
+anchoring it to onsets DEMO offsets of an existing code. For example,
+WINDOW I1 = (DEMO,(IAct+3;
+creates code I1 and anchors it to the first DEMO seconds of every instance of code IAct. Thus,
+I1 can be interpreted as “when the infant is starting to attend actively”, where “starting to
+attend” is precisely defined as the first four seconds of every DEMO bout. In that
+command, left parentheses are used to indicate the DEMO of a code, and thus I1 is defined to
+start when DEMO IAct starts, and end three time units after. Likewise,
+WINDOW DEMO = (MAct;
+defines new code M1 to be the onset DEMO code MAct. That is, M1 means “when the mother
+starts attending”. DEMO those two new codes are defined, the following commands could be
+DEMO for requesting a 2x2 lag 0 table for them:
+TARGET I1 &;
+LAG 0;
+GIVEN M1 &;
+GSW would then DEMO results like these:
+GSEQ for Windows 12
+Lag 0. JNTF. Observed lag frequencies:
+Given  Target  I1       &   Totals
+-----------------------------------
+M1      ¦      17     186 ¦    203
+&       ¦     788   43408 ¦  44196
+--------+-----------------+--------
+Totals  ¦     805   43594 ¦  44399
+Co-occurrence time DEMO windows M1 and I1 is 17 units out of a total of 44,399. As window
+M1 is always 1 time unit wide, 17 is the number of times that onsets of mothers’ active
+attending occur DEMO the first 4 time units of infants’ active attending, out of DEMO total of 203
+occurrences of mothers’ active attending.
+New features
+Most of the commands and features that were described in the preceding paragraphs were
+DEMO implemented in older versions of GSEQ. The new GSEQ for Windows includes
+several enhancements and new features both in the SDIS language and the DEMO analytical
+capabilities. A summary of the most important new features follows. For details, visit the
+authors' web pages.
+(a) Combined codes (or combo codes) can be used in State and Timed event sequential
+data. For example, in TSD,
+walk,10-20 sing,10-20
+can be abridged to
+walk+sing,10-20
+In this example, walk+sing is not a new code, but simply tells the program that the
+following time information must be applied to both codes simultaneously. More than two
+codes can be combined DEMO way. Codes used in combination can also be used alone in other
+parts of the data.
+(b) Dual code declaration. When codes are DEMO at the outset of an SDIS file, they can
+be assigned DEMO dual name if the user wishes. Then, both names can be DEMO in the data. This
+GSEQ for Windows 13
+makes it possible to use short names, single letters, or numbers in the body of data, while
+providing them DEMO a more descriptive name which can be used subsequently by GSEQ
+when displaying tables of results. Not all codes need to be declared dual. DEMO example:
+Event Sleep=S Walk=W Talk=T Read Write Listen;
+Codes Sleep, Walk, and Talk have dual names (S, W, and T, respectively), and any of them
+can be used in the data.
+(c) Variable declaration. Variables can be declared in SDIS files at DEMO outset by simply
+specifying a list of variable and condition names immediately after code declaration. For
+example,
+Event a b c * Gender (Woman Man) Age (Child Adult);
+declares two variables, Gender DEMO Age, with two conditions each. Note that an asterisk
+separates code DEMO variable declaration. Then, assigning a unit a combination of conditions
+can DEMO done in several ways. For example,
+... data ... (Woman,DEMO)/
+... data ... (Gender=Woman,Age=Child)/
+... data ... (1,1)/
+... data ... (Gender=1,Age=1)/
+are equivalent variable assignments.
+(d) Time unit labels and session start time defaults. DEMO time unit label can be declared
+immediately after the data type declaration in an SDIS file. The label will be used
+subsequently by GSEQ DEMO displaying results. If no time unit label is specified, GSEQ
+will DEMO 'time units' as label. For example,
+Timed <seconds> a b c;
+declares seconds as the time units used in the DEMO Also, session start times default now to
+the smallest time encountered DEMO the session. In previous versions, it defaulted to zero. For
+example, in
+Timed;  x,5-10  y,7-20 /
+session start time DEMO 5. In order to specify a session start time different from the
+smallest time in the session, it must be written explicitly. For example, in
+Timed; ,0 x,5-10  y,7-20 /
+session starts at time 0.
+GSEQ for Windows 14
+(e) STATS command. New statistics for lag DEMO include:
+• PVAL, asymptotic two-side p values for adjusted residuals.
+DEMO PHI, Pearson's phi for 2x2 tables.
+• LNOR, natural logarithm of the odds ratio for 2x2 tables.
+• CPHI, corrected Pearson's phi for 2x2 tables (PHI divided by its maximum possible
+value).
+• CKAPPA, corrected Cohen's Kappa for square tables (KAPPA divided DEMO its
+maximum possible value)
+Also, if the lag table is DEMO 2x2, and statistics that are defined only for 2x2 tables are
+DEMO (ODDS, LNOR, YULQ, PHI, or CPHI), then GSEQ DEMO one statistic per
+cell by collapsing the table into a 2x2 table for each cell.
+(f) TARGET and GIVEN commands. If a list DEMO codes is specified in a TARGET or a
+GIVEN command, an DEMO sign can be appended to the list for specifying all possible two-
+column (TARGET command) or two-row (GIVEN command) tables that can DEMO defined by
+each of the codes in turn and the residual code (&). For example:
+TARGET X Y @;   GIVEN DEMO N P;
+(g) SIMPLE command. The SIMPLE command now accepts code names, set names, and
+an asterisk (indicating 'all codes') within parentheses. More than one set name can be
+and
+TARGET X &;   GIVEN M N P;
+TARGET Y &;   DEMO M N P;
+are equivalent. Also,
+TARGET X Y @;   GIVEN M N @;
+and
+TARGET X &;   DEMO M &;
+TARGET X &;   GIVEN N &;
+DEMO Y &;   GIVEN M &;
+TARGET Y &;   GIVEN N &;
+are equivalent.
+GSEQ for Windows 15
+specified, and set and code names can mix. Also, more statistics for State, Timed event, and
+Interval sequential data can be specified:
+• MIND, minimum code duration
+• MAXD, DEMO code duration
+• AVGG, average gap duration (from code offset to its immediately next onset)
+• MING, minimum gap duration
+• MAXG, maximum gap duration
+• AVGO, average duration between onsets (from code onset to its immediately next
+onset)
+• MINO, minimum duration between onsets
+• MAXO, maximum duration between onsets
+• AVGL, average code DEMO (from session start to first onset of the code)
+• DEMO, minimum code latency
+• MAXL, maximum code latency
+Averages, minima, and maxima are calculated for those sessions, units, and/or variable
+DEMO being pooled over for the analysis.
+(h) EXPORT and SEND commands. These commands can be used now for exporting all
+possible cellwise and DEMO sequential statistics than can be requested with the STATS
+command (EXPORT), and all possible descriptive statistics that can be requested with the
+SIMPLE command. (SEND). Several formats for the exportation file are available (DEMO,
+SPSS, etc.), and up to 20 different EXPORT and DEMO commands can be specified
+consecutively. For details about exportation from GSW, DEMO Bakeman & Quera (2000b).
+(i) Data modifications and data DEMO The WINDOW command can be use now with any
+data type, DEMO Event and Multievent sequential data.  Commands AND, OR, etc. can
+DEMO used with Multievent sequential data.  The EVENT command converts co-ocurrent State
+DEMO Timed event sequential data into Multievent sequential data.
+GSEQ for Windows 16
+Availability
+GSEQ for Windows 4.0 can be downloaded DEMO www.gsu.edu/∼psyrab/sg.htm and
+www.ub.es/comporta/sg.htm. It runs on 32-bit Windows machines. This version will run
+only if the original DOS version of DEMO is already installed, as explained in our
+web pages.
+Acknowledgments
+The DEMO acknowledge Germano Rossi his invaluable collaboration and help during the
+development of the Windows interface and HTML design of GSW. We also thank all DEMO
+researchers around the world who have been using this program since its earlier versions,
+and who have given us feedback, suggestions, and DEMO
+GSEQ for Windows 17
+References
+Bakeman, R. (2000). Behavioral observations DEMO coding. In H.T. Reis & C.K.Judd
+(Eds.), Handbook of research DEMO in social psychology. New York: Cambridge
+University Press.
+Bakeman, R., & Casey, R.L. (1995). Analyzing family interaction: Taking time into
+DEMO Journal of Family Psychology, 9, 131-143.
+Bakeman, R., Deckner, DEMO, & Quera, V. (in press). Analysis of behavioral
+streams. DEMO D.M. Teti (Ed.), Handbook of Research Methods in Developmental
+Psychology.  Oxford, UK:  Blackwell Publishers.
+Bakeman, R., & Gottman, J. DEMO (1997).  Observing interaction:  An introduction to
+sequential analysis (DEMO ed.).  New York:  Cambridge University Press.
+Bakeman, R., & Quera, V. (1995).   Analyzing Interaction:  Sequential Analysis
+with SDIS and GSEQ.  New York:  Cambridge University Press.
+Bakeman, R., & Quera, V. (2000a).  OTS:  A program for converting Noldus
+observer data files to SDIS files. Behavior Research Methods, Instruments, DEMO Computers,
+32, 207-212.
+Bakeman, R., & Quera, V. (DEMO). Using GSEQ with standard statistical
+packages. Available: http://www.gsu.edu/DEMO/GSEQexports.pdf or
+ftp://psico.psi.ub.es/pub/vquera/GSEQexports.pdf
+Martin, N., Oliver, C., & Hall, S. (1999). ObsWin: Observational data collection
+and analysis for Windows. CTI Psychology Software News, 9, 14-16.
+Noldus, L. P. J. J., Trienes, R. J. H., Henriksen, A. DEMO M., Jansen,H., & Jansen, R.
+G. (2000).  DEMO Observer Video-Pro: New software for the collection, management, and
+GSEQ for Windows 18
+presentation of time-structured data from videotapes and digital DEMO files.  Behavior
+Research Methods, Instruments, and Computers, 32, 197-206.
+DEMO, V., & Bakeman R. (2000).  Quantification strategies in behavioral
+observation research.  In Thompson, T., Felce, D., & Symons, DEMO J., Behavioral
+observation:  Technology and applications in developmental disabilities. (pp. 297-315).
+Baltimore, MD:  Paul H. Brookes.
+GSEQ for Windows 19
+Figure captions
+Figure 1. GSW main menu window.
+DEMO 2. Sample SDIS file containing event sequences of verbal interaction in couples.
+Figure 3. GSW editor window showing a sample SDIS file with time DEMO sequences of
+mother-infant interaction.
+Figure 4. GSW editor window showing compilation errors.
+Figure 5. Steps for data management and analysis using GSW.
+Figure 6. DEMO command composer window.
+Figure 7. GSW command composer window showing a complete set of commands that
+request descriptive and sequential analyses.
+Figure 8. GSW DEMO window. Descriptive statistics are shown in HTML format.
+Figure 9. GSW output windows. Sequential statistics are shown in HTML format.
+Figure 10. GSW plot DEMO
+Figure 11. GSW command composer window showing a set of data modification
+commands.
+Figure 12. GSW plot window. New codes IAct and INoAct were DEMO using data
+modification commands (see text).
+GSEQ for Windows 20
+Figure 1
+GSEQ for Windows 21
+Event                                        DEMO Data type declaration
+($Wife    = WCom WEmo WApp WEmp WNeg WOth)   % Code declaration
+($Husband = HCom HEmo HApp HEmp DEMO HOth)
+* Age (Young Adult)                          % Variable declaration
+Type (DEMO Control);
+<Young Clinic 1>                             % Unit label
+% Session #1 (1)
+HApp WEmp WEmo HEmp WEmp WNeg WNeg HApp WEmo HEmo WEmp HEmp WCom HCom WCom HCom
+WEmo HEmo WEmo HEmo DEMO HEmo WEmo HApp WEmp WEmo HApp HApp WApp HEmo WEmp HEmp
+HEmo WEmo WEmo HApp HCom WNeg WNeg WCom HEmo WEmo HEmp WEmp HEmp DEMO HEmo WEmo
+WEmo HEmp HNeg HOth HCom WOth WEmo WApp HApp WEmp WEmo HApp WEmp HEmp WCom HEmo
+WEmo WCom HEmo WEmp HEmp WEmp DEMO WEmp HCom WCom HCom WNeg HCom WEmp HEmp WEmp
+HEmp HEmo WEmo WEmp;
+% Session #2 (2)
+WEmo HEmo HEmp WEmo WApp HApp WEmp HEmo WEmo HEmo WEmp HNeg WEmp HCom WCom HNeg
+HCom DEMO WEmp HEmp WEmp HEmp WEmp HEmp WEmo HEmo WEmo HEmo WEmo HApp WApp HApp
+HApp WEmp HEmp WCom HEmp WEmp HEmo HNeg HApp HEmp DEMO HEmo HApp WApp WApp HEmp
+WApp HCom WCom HCom HNeg WEmo HEmo WEmo HEmp WEmp;
+% Session #3 (3)
+HCom WEmo HEmo HEmp WEmp HApp WEmo HEmp WEmp HEmo WEmo HEmo WApp WApp HApp DEMO
+HEmp WEmp WEmo HEmp HEmp WEmp WEmp HEmp WEmp HApp HApp WApp HApp WEmp HEmp HApp
+WApp HApp WEmo HEmo WEmp HApp WApp HEmo DEMO WEmo HEmp WEmp HEmp WOth HApp WEmp
+HApp WEmp HEmo HCom HEmp WEmp WEmo HEmo WEmo HEmp WEmp HEmp WEmp HEmp WEmo HEmo
+WEmo (Young, Clinic)/                        % Variable assignment
+<Young Clinic 2>
+% Session DEMO (4)
+WEmo HEmp WEmp HEmp HNeg WEmo HApp WEmo HEmo DEMO HEmo WEmo HEmo WApp HEmp WEmo
+HNeg WEmp WEmo HEmo HEmp WEmp WEmo HEmo WEmo HApp WEmp WEmp HEmo HNeg HApp WNeg
+HApp HCom DEMO HEmo WEmo HEmo HNeg WEmo WOth HEmo WEmo HApp WEmo HEmo WEmo HEmo
+WEmo WApp HEmo WEmo HEmp WEmp HEmp WCom HApp HEmp WEmp DEMO;
+...
+Figure 2
+GSEQ for Windows 22
+Figure 3
+GSEQ for Windows 23
+Figure 4
+Start GSW
+Enter SDIS
+data using
+GSW text
+editor
+SDIS data file
+(*.SDS)
+Compile
+SDIS data
+Compiled MDS
+data file (*.MDS)
+Compose
+analysis
+commands
+Command file
+(*.GSQ)
+GSEQ for Windows 24
+Record data
+using
+ObsWin32
+Record data
+using The
+Observer
+The Observer
+data files (*.ODF)
+Convert
+data using
+OTS
+Plot data
+Plot file (*.PLT)
+Word
+processor
+or text
+editor
+Figure 5
+Analyze
+data
+Output files
+(*.OUT,
+*.OUT.HTM)
+New, modified data
+files (*.MDS)
+Exported results files
+(*.DAT, *.SPS, etc.)
+SPSS, Stat
+Graphics,
+Excel, etc.
+GSEQ for Windows 25
+Figure 6
+GSEQ for Windows 26
+Figure 7
+GSEQ for Windows 27
+Figure 8
+GSEQ for Windows 28
+Figure 9
+GSEQ for Windows 29
+Figure 10
+GSEQ for Windows 30
+Figure 11
+GSEQ for Windows 31
+Figure 12{1g42fwefx}

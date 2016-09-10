@@ -1,0 +1,1655 @@
+The Dynamic and Stochastic Knapsack Problem with Deadlines
+Author(s): Jason DEMO Papastavrou, Srikanth Rajagopalan, Anton J. Kleywegt
+Source: Management Science, Vol. 42, No. 12 (Dec., 1996), pp. 1706-1718
+Published by: DEMO
+Stable URL: http://www.jstor.org/stable/2634548 .
+Accessed: 20/06/2011 08:14
+Your use of the JSTOR archive indicates your acceptance DEMO JSTOR's Terms and Conditions of Use, available at .
+http://www.jstor.org/page/info/about/policies/terms.jsp. JSTOR's Terms and Conditions of Use provides, in part, that unless
+you have obtained prior permission, you may not download an entire issue of a journal or multiple DEMO of articles, and you
+may use content in the JSTOR archive DEMO for your personal, non-commercial use.
+Please contact the publisher regarding any DEMO use of this work. Publisher contact information may be obtained at .
+http://www.jstor.org/action/showPublisher?publisherCode=informs. .
+Each copy of any part DEMO a JSTOR transmission must contain the same copyright notice that appears on the screen or printed
+page of such transmission.
+JSTOR is a not-for-profit DEMO that helps scholars, researchers, and students discover, use, and build upon a wide range of
+content in a trusted digital archive. We DEMO information technology and tools to increase productivity and facilitate new forms
+of scholarship. For more information about JSTOR, please contact support@jstor.org.
+INFORMS is collaborating with JSTOR to digitize, preserve and extend access to Management Science.
+http://www.jstor.org
+The
+Dynamic
+and
+Stochastic
+Knapsack
+Problem
+with
+Deadlines
+Jason D. Papastavrou * DEMO Rajagopalan * Anton J. Kleywegt
+School of Industrial Engineering, Purdue University, West Lafayette, Indiana 47907-1287
+I n this paper a dynamic and stochastic model of the well-known knapsack problem is developed
+and analyzed. The problem DEMO motivated by a wide variety of real-world applications. Objects
+of random weight and reward arrive according to a stochastic process in time. The weights DEMO
+rewards associated with the objects are distributed according to a known probability distribution.
+Each object can either be accepted to be loaded into the DEMO, of known weight capacity, or
+be rejected. The objective is to determine the optimal policy for loading the knapsack within a
+fixed time DEMO so as to maximize the expected accumulated reward. The optimal decision
+rules are derived and are shown to exhibit surprising behavior in some cases. DEMO is also shown that
+if the distribution of the weights is concave, then the decision rules behave according to intuition.
+(Dynamic Programming; Sequential Stochastic Resource Allocation)
+1. Introduction
+The knapsack problem is one of DEMO most studied prob-
+lems in operations research (Martello and Toth 1990)DEMO
+There are two primary reasons this problem is of inter-
+est: (1) even though it is a simple problem to describe,
+it is hard to solve, and (2) it has many practical appli-
+cations, for example in resource allocation problems.
+The knapsack problem is a static and deterministic ap-
+proximation of a problem that often is both DEMO
+and stochastic. Requests for the resource arrive one-by-
+one stochastically in time, and must either be accepted
+or be rejected on the spot (DEMO) without the benefit
+of complete information, which includes the arrival
+times, the amounts requested, and the associated re-
+wards of all future DEMO This lack of complete in-
+formation is a critical factor in the determination of op-
+timal policies.
+In this paper the Dynamic and Stochastic DEMO Prob-
+lem with Deadlines is defined and analyzed. This problem
+has the following characteristics:
+a. The resource is limited (i.e., the knapsack DEMO a
+fixed capacity).
+b. Requests for the resource (i.e., objects to be in-
+cluded in the knapsack) arrive in time according to a
+stochastic process.
+1706
+MANAGEMENT
+SCIENCE/Vol. 42, No. 12, December DEMO
+c. The demands for the resource (i.e., weights) and
+their DEMO rewards are random, and become
+known upon arrival.
+d. A time DEMO exists after which requests cannot
+be accepted.
+e. If a demand is rejected, it cannot be recalled.
+f. Decisions on the acceptance or rejection of de-
+mands have to be made in real-time.
+g. The objective DEMO to maximize the expected reward
+accumulated by the deadline.
+Applications that motivated this research, because
+they can be modeled as dynamic and stochastic resource
+allocation problems, include:
+1. Loading containers and vehicles. Requests for the
+transportation of loads arrive randomly. If the load is
+accepted it is DEMO in the container, otherwise it is
+serviced by another carrier. Usually DEMO exists a time
+deadline after which loading stops because the con-
+tainer has to be shipped. The objective is to determine
+the optimal policy DEMO accepting requests as they arrive,
+or for setting the transportation fees, in order to maxi-
+mize the expected profit accumulated by the deadline.
+The optimal policy is a function of the state of the sys-
+DEMO For example, the policy usually becomes more le-
+nient as the DEMO approaches. Moreover, the larger
+0025-1909/96/4212/1706$01.25
+Copyright C)
+DEMO, Institute for Operations Research
+and the Management Sciences
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Kinapsack Probleml zwith Deadlinies
+the size (weight or volume) of a load, the larger the
+reward should be DEMO the load to be accepted.
+2. Selling real-estate and selling cars. Consider the case
+of a land developer trying to sell the lots in DEMO new sub-
+division, or a real-estate agent trying to sell condomin-
+DEMO in a new apartment complex. The developer or the
+agent would like to sell the units within a given time
+period. The arrival process DEMO potential buyers is ran-
+dom, as is the amount that each DEMO offers for a
+unit. The objective is to determine and set the optimal
+prices for each unit, and also to determine the optimal
+policy for accepting offers from potential buyers. Again
+the optimal policy is a DEMO of the state of the sys-
+tem. A similar problem is faced by car dealers who need
+to decide on the offers they are DEMO to accept. The
+policies depend on the popularity of the model, DEMO
+number of cars in stock at the dealership, and the time
+DEMO the next year's models come out.
+3. Accepting loan requests. Consider a bank that has
+a given amount of funds to invest in DEMO card loans,
+mortgages, and personal loans. Requests for credit and
+DEMO arrive according to some stochastic process, and
+the bank officers have DEMO decide which should be ac-
+cepted and for what amount. The bank strives to max-
+imize its expected return taking into account the yield
+DEMO each loan bears. The bank has to adjust its policies
+to reflect changes in the economy, the interest rates, and
+the amount of DEMO available.
+4. Taking reservations at a restaurant. The advan-
+tages of taking reservations are that (a) they increase
+the probability that parties interested DEMO dining out
+show up, and (b) they reduce the uncertainty DEMO the
+number of customers; thus the management can better
+estimate the DEMO of waiters and cooks that will be
+needed on a particular night. The disadvantage is that
+the utilization of tables is lower, and that can lead to
+lost profits. If reservations are not accepted, the poten-
+tial customers will likely go to a different restaurant.
+The management would DEMO to determine the optimal
+policy for accepting reservations for different sized
+parties. The policy should depend not only on the size
+of the party (larger parties mean larger profits), but
+also on the number of DEMO already accepted (if
+too many reservations are accepted, then walk-in cus-
+tomers will be dissatisfied because they will have to
+wait too long)DEMO
+5. Selling tickets for air travel and for sports events. Air-
+lines offer different fares depending on the number of
+available seats and the DEMO until departure. A limited
+number of super-saver fares are available if reservations
+are made at least two to three weeks prior to departure
+because DEMO reservations help the airlines to schedule
+their fleets more efficiently, as DEMO as cover some of the
+fixed costs of the flights. Moreover, DEMO an airline does not
+offer special fares ahead of time, potential DEMO will
+make reservations with a competitor. On the other
+hand, as DEMO number of available seats decreases, the
+airlines are less willing to DEMO special prices because
+they expect to sell a sufficient number of tickets at reg-
+ular prices. Some airlines also offer special prices with
+stand-by DEMO for seats that would otherwise have
+been empty. The objective for an airline is to determine
+a policy to maximize the expected profit. A DEMO prob-
+lem is encountered by (popular) sports teams that have
+to decide (a) how many season tickets to sell, (b) how
+many promotional discounts should be offered and for
+which games, and (DEMO) how the different tickets should
+be priced.
+6. a batch processor. DEMO the problem
+faced by the scheduler of a batch processor with fixed
+capacity. Jobs arrive over time, and the capacity require-
+ments and rewards of jobs are unknown before arrival.
+Fixed schedules and commitments lead to DEMO
+The objective is to determine a policy for accepting jobs
+in order to maximize the expected profit. The manager
+would also like to know DEMO the optimal policy and the
+expected profit will be affected by changes in the op-
+erating conditions; for example, the manager may want
+DEMO study the effects of acquiring a larger processor be-
+fore deciding to proceed with this investment.
+Static versions of the stochastic knapsack problem
+have DEMO studied. In these, the set of objects is known
+and the DEMO and / or weights are random (Carra-
+way et al. 1993; Henig 1990; Sniedovich 1980, 1981;
+Steinberg and Parks 1979). DEMO objective typically is to
+maximize the probability of attaining some prespecified
+level of utility or reward.
+Dynamic versions of the stochastic knapsack problem
+have DEMO been considered. Objects arrive over time and
+the rewards and/or weights are unknown prior to ar-
+rival. Some stopping time problems and optimal DEMO
+tion problems are similar to our problem (Bruss 1984;
+MANAGEMENT
+DEMO/Vol. 42, No. 12, December 1996
+1707
+Scheduling
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Knapsack Problem with Deadlines
+Freeman 1983; Nakai 1986; Presman and Sonin 1972;
+Sakaguchi 1984a; Stewart 1981; Tamaki 1986a, b; Yasuda
+1984). A well-known example is the secretary DEMO
+where candidates arrive one at a time. The objective is
+to maximize the probability of selecting the best candi-
+date or group of candidates, or to maximize the ex-
+pected value of the selected candidates from DEMO given or
+random set of candidates.
+Another related problem is the Sequential Stochastic
+Assignment Problem (SSAP). Derman et al. (1972) de-
+fined the problem as follows: a given number n of per-
+sons, DEMO known values pi, i = 1, ..., n, are to be as-
+signed sequentially to n jobs, which arrive one at a time.
+The jobs have values xj, j = 1, ..., n, which are un-
+known before arrival, but become known upon arrival,DEMO
+and which are independent and identically distributed
+with a known probability distribution. If a person with
+value pi is assigned to a job with DEMO xj, the reward is
+pixj. The objective is to maximize the DEMO total re-
+ward. Different extensions of the SSAP were studied by
+Albright (1974), Sakaguchi (1984b, c), Nakai (1986b, c),DEMO
+Kennedy (1986) and Righter (1989).
+Many investment problems are DEMO of the
+model studied in this paper. For example, Prastacos
+(1983) studied the problem of allocating a given amount
+of resource before a deadline to irreversible investment
+opportunities that arrive according to a geometric pro-
+DEMO Prastacos assumed that each investment opportu-
+nity is large enough to absorb all the available capital;
+but in our problem the sizes of DEMO opportunities
+are given, and cannot be chosen.
+A class of problems DEMO to the dynamic and sto-
+chastic knapsack problem is known as Perishable Asset
+Revenue Management (PARM) problems (Weatherford
+and Bodily 1992), or as yield management problems. An-
+other type of PARM problem, which occurs when a per-
+ishable inventory has to be sold before a deadline, has
+been studied by Gallego and Van Ryzin (1994). In their
+problem demands arrive according to a Poisson process
+with price dependent rate. DEMO major difference with
+our model is that in our model offers arrive, and the
+offers can be accepted or rejected, as is typical DEMO large
+contracts such as selling of real estate, whereas in the
+DEMO of Gallego and Van Ryzin prices are set and all
+demands are accepted as long as supplies last, which is
+typical in retail.
+Hassin and Henig (1986) studied a dynamic control
+problem where demand and DEMO offers arrive ac-
+cording to a Poisson process, and can be DEMO or
+rejected. The objective is to maximize the difference be-
+tween the discounted demand offers and the discounted
+supply offers. They show that the DEMO policy is to
+accept or reject an offer depending on whether its value
+is above or below a critical value, which depends on the
+state of the system. Similar versions of the dynamic and
+stochastic knapsack DEMO have been studied for
+communication applications (Kaufman 1981, Ross and
+Tsang 1989, Ross and Yao 1990).
+Kleywegt and Papastavrou (1995) studied a problem
+similar to the one in this paper with demands arriving
+DEMO continuous time, and including a waiting cost.
+The Dynamic and Stochastic DEMO Problem with
+Deadlines is analyzed as follows: It is shown that DEMO
+optimal policy is a threshold type policy. These thresh-
+olds are analyzed to characterize their behavior under
+a variety of operating conditions (i.e., DEMO the remaining
+capacity, the time, the weights and rewards change).
+Several cases of the problem are considered.
+In the first case, objects have equal weights, but ran-
+dom rewards. This situation describes, for DEMO, the
+selling of tickets for air travel where each passenger re-
+DEMO one seat, but potential passengers are willing to
+pay different fares. DEMO is shown that the optimal decision
+rules are "well-behaved," that DEMO, according to intuition,
+the optimal policy becomes more lenient as DEMO capacity
+of the knapsack increases and as the deadline ap-
+proaches. The case where all objects have the same re-
+ward, but different weights is considered next. This de-
+scribes the situation encountered in truck leasing, where
+trucks are leased at a fixed rate, irrespective of the load
+to be transported. Then the general model is considered
+where both the DEMO and the weights are random.
+This models the problem faced by the manager of an
+LTL trucking operation. The sizes and rewards of the
+DEMO that will be received are random. Finally the spe-
+cial case is considered where the reward is proportional
+to the weight. This describes the DEMO faced by the
+loan department of a bank; the interest collected DEMO the
+bank is proportional to the amount of the loan. In the
+last three cases, the weights of the objects are not equal,
+and this causes the optimal decision rules to exhibit sur-
+prising counterintuitive DEMO in some cases. It is
+1708
+MANAGEMENT
+SCIENCE/Vol. 42, No. DEMO, December 1996
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Knapsack Problem with Deadlines
+also shown that DEMO optimal decision rules become
+"well-behaved" if the distribution of the weights satis-
+fies some special conditions (i.e., the conditional prob-
+ability distribution DEMO the weights given the rewards is
+concave in weight for all positive weights and rewards).
+In colloquial terms, the implication of this condition is
+that "a bird in the hand is worth two in the bush."
+Some comments are in order before proceeding. Since
+both the DEMO of equal weights and the case of equal
+rewards are special cases of the general model, their
+analyses could have followed the analysis of the general
+model. But it was decided to present them before the
+DEMO model because (1) the optimal policy for the
+case with equal weights is intuitive and establishes what
+we call "well-behaved" decision rules, and (2) it facili-
+tates the interested reader who desires to DEMO the
+proofs because the proofs for the case with equal re-
+wards are simpler versions of the proofs for the general
+model. All the DEMO can be found in Papastavrou et
+al. (1994).
+The rest DEMO the paper is organized as follows: The Dy-
+namic and Stochastic DEMO Problem with Deadlines is
+defined in ?2. In ?3, it DEMO established that the optimal
+policy is a threshold type policy. The case with equal
+weights is analyzed in ?4, and the case with DEMO re-
+wards is considered in ?5. The model with random
+weights DEMO random rewards is studied in ?6, and the
+case where the reward is proportional to the weight
+is investigated in ?7. Our concluding remarks follow
+in ?8.
+2. Model Description
+Consider a knapsack of given weight capacity. Objects
+arrive over a time horizon of T discrete periods. DEMO
+periods are numbered from 1 to T, with T being the DEMO
+period in the horizon. In every period there is a constant
+probability p of one object arriving, and probability 1
+- p of no arrivals. The weights and rewards of different
+arrivals are independent. As soon DEMO an object arrives,
+its weight W and reward R become known. The weights
+and rewards are positive random variables, and are dis-
+tributed according to a known joint probability distri-
+bution FWR(W, Whenever an object is rejected, that
+object is "lost" (i.e., it cannot be recalled at a later time).
+Of course, an arriving object can be accepted only if its
+weight is less than or equal DEMO the remaining capacity
+of the knapsack. The objective is to determine decision
+rules for accepting or rejecting objects in order to max-
+imize the DEMO reward accumulated at the end of
+the time horizon.
+Let I1 denote the class of policies that take only past
+events into account, and that prescribe the acceptance
+or rejection of arrivals as they occur. Therefore DEMO "look-
+ahead," postponement of decisions or recall are al-
+lowed. DEMO restrict attention to this class of policies. Be-
+cause the weights and rewards of different arrivals are
+independent, the expected reward accumulated from
+(DEMO including) period t until the deadline, if the re-
+maining capacity is c and policy wr E n is implemented,
+depends only DEMO t, c and 7r, and not on the full history
+of the process. Let E[V 17 r] denote this expected accu-
+mulated reward. DEMO EVc denote the optimal expected
+accumulated reward, i.e.,
+EVC = DEMO {E[VcJ7r]
+7En
+For the same reason, we can further restrict attention DEMO
+the class of policies that map the appropriate set of 4-
+tuples (t, c, w, r) into the action space {accept, DEMO).
+3. General Results
+In this section, some general preliminary results DEMO pre-
+sented.
+LEMMA
+(ii) EVc
+1. (i) EVc is a nondecreasing
+is a nonincreasing
+function
+function of t.
+of c.
+THEOREM
+pacity
+DEMO a threshold
+1. Suppose
+is c, and a reward
+rule
+that, at time t, the remaining
+r arrives.
+defined
+by:
+The
+optimal
+decision
+ca-
+rule
+r*(t,
+c, w, r)
+accept DEMO r + EV"7I'L EVc+1 and w c c,
+(DEMO if r + < EVc+1 or w > c.
+Note that the quantity r + EVc-z7, which depends on
+both the reward and the weight of the incoming object,
+is compared to the constant threshold DEMO Moreover,
+if r + EV" = EVc+1, it is equally beneficial to accept
+and to reject the object. It was decided to DEMO
+break the ties by accepting the object.
+EVc-1''
+MANAGEMENT
+SCIENCE/DEMO 42, No. 12, December 1996
+1709
+r).
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Knapsack Problem uwith Deadlines
+COROLLARY 1. The
+DEMO
+recursively
+optimal
+from:
+accumulated
+reward
+can be
+EV"
+= P[W < c, R + EVc-w 2 EVc+1]
+x E[R +
+EVc-w l
++ {P[R + EV'4w < EVc+1,
+W < c, R + EVc4w
+W < c]
+2 EVc+1]
++ P[W > c]IEVct+
+with DEMO
+condition:
+EVc =O
+Vc and t > T.
+The optimal decision rule of Theorem 1 can also be
+expressed as follows:
+COROLLARY DEMO Suppose that, at time period t, the re-
+maining capacity is c and that an object of weight w arrives.
+The optimal decision DEMO is the threshold rule:
+7r*(t,
+c, w, r) =
+accept
+if r 2 Rc(W),
+reject
+if
+r < Rc(w),
+where
+the
+critical reward Rc(w) is given by:
+w
+Rc(w)=
+EVc+
+-
+EV"i'i,
+DEMO,
+w
+c,
+w > c.
+COROLLARY 3.
+maining
+The
+capacity
+optimal
+Suppose
+is c and that
+decision
+that, at time period
+an object
+rule is the threshold
+of reward
+rule:
+t, the re-
+r arrives.
+r
+*(t, c, w, r)=
+where the critical weight
+{
+(accept if
+reject if
+w C5 Wc (r),
+w > Wc(r),
+Wc(r) is given by:DEMO
+Wc(r)
+Fsup{w ? cIEVc+i - EV"7iv < rI,
+c > 0,
+LO,
+c = 0.
+COROLLARY 4. Rc(DEMO) is a nondecreasing function of w
+for all t and c.
+DEMO 5. Wc(r) is a nondecreasing function of r
+for all DEMO and c.
+4. Equal
+Weights
+In this section, a special case DEMO the stochastic knapsack
+problem is considered where objects have equal weights
+w. Without loss of generality, let w = 1. Assume that in
+every period exactly one object arrives (i.e., p = 1). As DEMO
+be explained later the results also hold for the case where
+arrivals occur with probability p < 1 in each period.
+The problem with DEMO = 1 is a special case of the Se-
+quential Stochastic Assignment Problem studied by
+Derman et al. (1972). This is obtained by letting the re-
+maining number of men n in their problem be DEMO to
+the remaining number of time periods until the deadline
+T - t + 1; letting pi = 1 for min{c, nI of DEMO men, and
+pi - 0 for max{ O, n - cJ men; and letting the job value
+x be equal to the value of the reward r that arrives in
+period t. We study the DEMO of the optimal expected
+accumulated reward and critical reward as functions of
+time (or n) and remaining capacity. These issues were
+not addressed DEMO Derman et al. (1972).
+Since the weights are equal (w = 1), the optimal de-
+cision rules of Corollary 2 reduce DEMO:
+qr*(t,
+c, r) =
+{
+[accept t
+if r 2Rc,
+reject if
+r < RC,
+where the critical DEMO is defined by:
+EVc+1 EVc-1, t+(1) c 2 1,
+0oo c<l.
+Note that Rc is nonnegative from Lemma 1. DEMO,
+using Corollaries 1 and 2, the expected reward can be
+DEMO from:
+Rt =
+-
+EVC =
+f
++
+f
+EVc+,dFR(r)
+(r + EVc+4)dFR(r)
+=
+EVc+IFR(Rc) DEMO
+EV`4[1 - FR(Rc)]
++
+f
+rdFR(r)
+= EVc-1 + RcFR(Rc)
++
+rdFR(r)
+(2)
+with boundary condition:
+EVc =O
+Vc and
+t > T.
+(3)
+The following results characterize the behavior of the
+critical reward and the expected DEMO reward.
+THEOREM 2. If objects have equal weights, then
+(i) DEMO is a concave nondecreasing function of c for all t.
+(ii) EVc is a concave nonincreasing function of t for all c.
+(iii) Rc is nonincreasing with c for all t.
+(iv) Rc is nonincreasing with t for all c.
+1710
+MANAGEMENT
+SCIENCE/Vol. 42, No. 12, December 1996
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Knapsack Problem with Deadlines
+Figure
+1
+50
+DEMO
+40-
+35
+c
+30
+~o 25-
+20-
+15-
+10
+5-
+Expected
+maining
+Exponentially Distributed Rewards
+T= 10
+Accumulated
+Capacities
+Reward
+c, for Objects
+Against
+Time
+of Equal
+(E[R] = 5), and Deadline
+for Different
+Weight
+Re-
+(w = 1),
+'''s c=10
+'
+,
+l
+c-4
+1
+2
+3
+4
+5
+6
+Time Period
+7
+8
+DEMO
+10
+11
+A few remarks about the significance of the above
+results are in order. The optimal policy becomes more
+lenient as the deadline DEMO This can be seen by
+the critical reward that is non-increasing with time.
+Moreover, extra capacity also makes the optimal policy
+more lenient (DEMO reflected by the nonincreasing thresh-
+old values). The two concavity results are according to
+intuition. The concavity of the expected accumulated
+reward with DEMO to time implies that having extra
+time is more beneficial closer to the deadline (i.e., the
+marginal expected accumulated reward of time in-
+DEMO as the deadline approaches). Similarly, the con-
+cavity of the DEMO accumulated reward with respect
+to capacity implies that extra capacity is of greater ben-
+efit when the available capacity of the knapsack is
+smaller (i.e., the marginal expected accumulated reward
+of capacity decreases with increasing capacity).
+Furthermore, the sequential investment problem with
+revenue being a convex function of the amount invested
+(Prastacos 1983) is a special case of DEMO problem; the
+decision to accept an object is equivalent to investing
+DEMO entire capital available at that point in time (i.e., the
+weight of each incoming object is always equal to the
+remaining capacity). DEMO revenue being a convex in-
+stead of a concave function of the amount invested
+makes the optimal decision rule completely different.
+Suppose that an DEMO occurs during a time period
+with probability p < 1. The expression for the expected
+accumulated reward becomes:
+EVC= pL EVc+,dFR(r)DEMO
++ (r + EVc7i)dFR(r)
++ (1 -)EV+l
+The critical reward and the boundary condition are
+given by Eqs. (1) and (3).
+When an object arrives, the expected accumulated re-
+ward is obtained by conditioning on the acceptance or
+rejection of the DEMO When no arrival occurs (proba-
+bility 1 - p), the DEMO accumulated reward is
+EVc+1. It can be shown that EVc is a convex combination
+of two concave monotonic functions of c and t, and
+hence it is concave and monotonic with c and t as stated
+DEMO Theorem 2. Thus, the general form of the solution
+remains the DEMO This should be intuitive because this
+case is equivalent to the case where an object arrives
+during each time period with probability 1, and the re-
+ward of the object is 0 with probability 1 - DEMO
+4.1. Numerical Results
+The expected accumulated reward and critical reward
+can be computed recursively using Eqs. (1) and (2), for
+all capacities and time periods. Figures 1 and 2 show
+the expected accumulated reward DEMO critical reward as
+Figure 2 Critical Reward Against Time for Different Remaining Capac-
+ities c, for Objects of Equal Weight, (w = 1), Exponentially
+Distributed Rewards (E[R] = 5), and Deadline T= 10
+12
+10_
+8 -
+.
+6 -
+4
+2
+0
+1
+c=4\
+DEMO
+2T3
+""-,
+4
+"\,
+5
+Time
+6
+Period
+DEMO
+\
+8
+9
+10
+MANAGEMENT
+SCIENCE/Vol. 42, No. 12, December 1996
+1711
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Knapsack Problem with Deadlines
+a function of DEMO for the case with exponentially dis-
+tributed reward with mean E[R] = 5 and deadline T
+= 10. Recall that the problem has been DEMO in dis-
+crete time; the discrete points of each "curve" DEMO been
+joined only for clarity. It was found that the shapes of
+these graphs do not change drastically if the reward dis-
+tribution is DEMO to some other commonly used dis-
+tributions, such as the uniform, normal and triangular
+distributions.
+5. Equal Rewards
+In this section, the special case of the stochastic knap-
+sack problem is considered where objects have DEMO
+rewards r. Thus objects differ only in weight. If an object
+with weight greater than the remaining capacity arrives,
+the object is rejected. DEMO the rewards are equal, the
+optimal decision rule of Corollary 3 DEMO to:
+tcw)
+if w - W',
+Iaccept
+reject DEMO
+w > Wc,
+where the critical weight is given by:
+W= rsuptw ? cIEV'?1 - EV"4V ? r), c > 0, (4)
+LO, c = 0.
+Since r > 0, Wc is nonnegative. Moreover, using Cor-
+ollaries 1 and 3, the optimal expected reward EVc may
+be obtained from:
+=
++ DEMO
+- Fw(Wc)]
+with boundary condition:
+(5)
+EVc
+DEMO 0 Vc
+and
+Vt > T.
+(6)
+Because the weights DEMO not equal, both the expected
+accumulated reward and critical weight are DEMO neces-
+sarily "well-behaved" functions of capacity and time,
+as stated in the following proposition.
+rFw(Wc) +
+f
+EV+-'VdFw(w)
+EVC
+=
+f
+(r +
+rw,
+EV"uiv)dFw(w) DEMO
+EVc+,dFw(w)
+o
+w,
+PROPOSITION. a. EVc does not have to be a concave
+function of c.
+b. Wc does not DEMO to be a nondecreasing function of c.
+c. EVc does not have to be a concave function of t.
+d. Wc does not have DEMO be a nondecreasing function of t.
+The validity of the above proposition will be dem-
+onstrated by the following example. Suppose that the
+deadline DEMO T = 8, the capacity of the knapsack is 14, and
+the probability mass function of the weight is:
+[0.80 w= 1,DEMO
+fw(w) =
+0.19 w = 5,
+10.01 w = DEMO
+The problem is recursively solved using Eqs. (4), (5),DEMO
+and (6). The results for periods 1 through 8 are DEMO
+sented in Table 1.
+a. EVc is not a concave function of c, since EV'8
+= EV4 < EV5 = EV6
+b. Wc is not a nondecreasing function of c, since
+W'3 = 7 > 5 = W14. That is, if an object of weight w = 7
+arrives in time period t = 2, it is accepted if the remain-
+ing capacity is 13 and is rejected if the DEMO capac-
+ity is 14. Thus, the optimal policy can become stricter DEMO
+the remaining capacity increases.
+c. EVc is not a concave function of t, since EV6
+- EV6 = 0.778 < 0.796 = EV6 - EV6.
+d. W14 is not a nondecreasing function of t, since
+W24 = 5 < 7 = W14. Therefore, an object of weight w
+= 7 is accepted at t = 1 and is rejected at DEMO = 2. Thus,
+the optimal policy can become stricter as the deadline
+approaches.
+The results are interesting because they are so coun-
+terintuitive. DEMO suggests that the optimal policy
+should become more lenient as the deadline approaches
+or as the capacity increases. This surprising behavior is
+attributed to DEMO combinatorial nature of the problem;
+that is, the way that DEMO different weights interact to fill
+the remaining capacity of the knapsack.
+Fortunately, not all the results obtained are "nega-
+tive." If some structure is imposed on the distribution
+of the weight, the expected accumulated reward and the
+critical weight become "well-behaved," and some in-
+tuitive results are obtained. Henceforth, the analysis is
+1712
+MANAGEMENT
+SCIENCE/Vol. 42, DEMO 12, December 1996
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Knapsack Problem with Deadlines
+Table 1 Expected DEMO Rewards and Critical Weights
+t c 1 2 3 4 5 6 7 8 9
+8 EV8 0.800 0.800 0.800 0.800 0.990 0.990
+W8 DEMO 1 1 1 5 5
+7 EV7 0.960 1.600 1.600 1.600 1.639 1.943
+WM 1 1 1 1 5 5
+6 EV6 0.992 1.888 DEMO 2.400 2.408 2.504
+WM 1 1 1 1 1 5
+5 EVc 0.998 1.971 2.794 3.200 3.201 3.227
+WM 1 1 1 1 1 DEMO
+4 EV4 0.999 1.993 2.935 3.672 4.000 4.005
+wM 1 1 1 1 1 1
+3 EV3 0.999 1.998 2.981 3.882 4.538 4.801
+wM DEMO 1 1 1 1 1
+2 EV2 0.999 1.999 2.994 3.961 4.813 5.390
+W2 1 1 1 1 1 1
+1 EV' 0.999 1.999 2.998 3.988 4.932 5.729
+wi4 1 1 1 1 1 1
+restricted DEMO the case where the following Consistency
+Condition holds:
+CONSISTENCY CONDITION. The probability distribution
+of the weight Fw is concave on (0, oo)DEMO
+This condition implies that a nonincreasing density
+fw exists. Several commonly used distributions satisfy
+this condition, such as the exponential, uniform, and
+some triangular, Weibull and beta distributions. Theo-
+rem 3 characterizes the behavior of the critical weight
+and the expected accumulated reward.
+THEOREM 3. If the DEMO distribution of W is con-
+cave on (0, oo), then
+(i) EVc is a concave nondecreasing function of c for all DEMO
+(ii) EVc is a concave nonincreasing function of t for all c.
+(iii) Wc is a nondecreasing function of c for all DEMO
+(iv) W' is a nondecreasing function of t for all DEMO
+The Consistency Condition makes the optimal decision
+rules behave according to intuition. The policy becomes
+less lenient (critical weight decreases) further away from
+DEMO deadline, and more lenient as the capacity increases.
+Concavity of the DEMO accumulated reward with re-
+spect to time implies that the marginal reward of addi-
+tional time increases as the deadline approaches. Simi-
+larly, concavity with respect to capacity implies that the
+MANAGEMENT SCIENCE/Vol. 42, No. 12, December 1996
+1.000
+7
+1.944
+5
+2.868
+5
+3.380
+5
+4.053
+1
+4.815
+1
+5.604
+1
+6.233
+1
+1.000
+7
+1.960
+7
+2.869
+DEMO
+3.769
+5
+4.262
+5
+4.895
+1
+5.631
+1
+6.409
+1
+1.000
+7
+1.960
+7
+2.888
+7
+3.770
+5
+4.651
+5
+5.144
+5
+5.745
+1
+DEMO
+1
+10
+1.000
+7
+1.996
+7
+2.895
+7
+3.792
+7
+4.652
+5
+5.517
+5
+6.022
+5
+6.600
+1
+11
+1.000
+7
+1.996
+7
+2.982
+DEMO
+3.817
+7
+4.677
+7
+5.519
+5
+6.371
+5
+6.896
+5
+12
+1.000
+7
+1.999
+7
+2.983
+7
+3.955
+7
+4.727
+7
+5.552
+7
+6.376
+DEMO
+7.215
+5
+13
+1.000
+7
+1.999
+7
+2.992
+7
+3.956
+7
+4.912
+7
+5.631
+7
+6.420
+7
+7.225
+5
+14
+1.000
+7
+2.000
+7
+DEMO
+7
+3.971
+7
+4.915
+7
+5.854
+7
+6.516
+5
+7.283
+7
+marginal reward of capacity increases as the knapsack is
+filled. These results parallel DEMO results obtained for
+search problems (Prastacos 1983, Saario 1985).
+5.1. Numerical Results
+Numerical results are shown for two weight distribu-
+tions. These DEMO computed using Eqs. (4), (5), and (6).
+DEMO deadline is T = 10, and the constant reward of each
+DEMO is r = 1.
+In the first case, the weights are DEMO distributed:
+(4)U
+1e4
+,
+(w -1)!
+with DEMO E[W] = 5. The Consistency Condition is not
+satisfied. The expected accumulated reward as a func-
+tion of capacity for different time periods are DEMO in
+Figure 3. It is clear that the expected accumulated re-
+ward is not concave with respect to capacity at time t
+= 10. (At time t = T = 10, EVT = FW(c), which is not
+concave with respect to c). The nonmonotonic behavior
+DEMO the critical weight can be seen in Figure 5, where
+Wc' decreases from t - 4 to t = 6 with c = DEMO
+In the second case the weights are distributed accord-
+ing to the following triangular probability density func-
+tion:
+fw(w)=
+W
+=1,DEMO,3,
+fw(w) = 2 (15 - w),
+DEMO c w c 15
+1713
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Knapsack Problem with Deadlines
+Figure
+3
+3.5
+DEMO
+2.5-
+2-
+a
+15
+051
+0.
+1
+Expected
+Time
+Distributed
+with E[
+Periods,
+Accumulated
+for
+Weights (Consistency Condition
+W] = 5, and DEMO
+Objects
+Reward
+with
+Against
+Equal
+T = 10
+Rewards
+Capacity
+(r DEMO 1
+Not Satisfied)
+for Different
+), Poisson
+t
+2
+/t
+3
+~~~~~~~~~~~~~~~~~~~~~--------------------
+4
+5
+6 7
+Capacity
+8
+9
+10
+1
+1
+DEMO
+Figure
+4
+5
+4.5 -t=l
+4-
+3 -
+-o
+2.5-
+2
+1.5 -
+Expected
+Time
+angular
+with E[
+Periods,
+Distributed
+W] = 5, and Deadline
+Accumulated
+for Objects
+Weights
+Reward
+Against
+with Equal
+(Consistency
+T= 10
+Capacity
+Rewards
+Condition
+for Different
+(r = 1), Tri-
+Satisfied)
+1
+2
+3
+4
+5
+6
+Capacity
+7
+8
+9
+10
+DEMO
+12
+with mean E[W] = 5. This probability density function
+is nonincreasing for w 2 0, hence the Consistency Con-
+dition is satisfied. The expected accumulated reward is
+concave nondecreasing with capacity (Figure 4) and DEMO
+critical weight is nondecreasing with time (Figure 6).
+6. Random DEMO and Random
+Rewards
+The general version of the problem, where both DEMO re-
+wards and the weights are random, is analyzed. In the
+DEMO section it was shown that if all objects do not
+have the same weight, the expected accumulated re-
+ward and the critical weight are not necessarily "well-
+behaved," unless the distribution of the weight is con-
+cave. This condition is generalized as follows:
+CONSISTENCY CONDITION. The DEMO distribution
+of the weight given the reward FwlR(w r) is DEMO with
+w on (0, oo) for all r.
+This implies DEMO a non-increasing conditional density
+fwtR(w I
+is the case when
+condition reduces to the condition in ?5. Theorem 4
+states that if the Consistency Condition holds, the optimal
+decision rules behave according to intuition.
+1714
+THEOREM
+W given R is concave with w on (0, oo) for all r, then
+(i) EVc is a concave nondecreasing function of c for all t.
+(ii) EVc is a concave nonincreasing DEMO of t for all c.
+(iii) Wc(r) is a DEMO function of c for all t and r.
+(iv) Wc(r) is a nondecreasing function of t for all c and r.
+(DEMO) Rc(w) is a nonincreasing function of c for all t and w.
+(vi) R (w) is a nonincreasing function of DEMO for all c and w.
+4. If the
+conditional
+probability
+distribution
+of
+Figure
+5
+25
+c=20
+z
+15
+(
+10
+10~~
+.
+s.. .........,.
+. , , , , , , ,,,. . , , ,, . ... . --. ,
+c .
+..S
+1
+DEMO
+3
+4
+5 6
+Time Period
+Critical
+jects with
+(Consistency
+Deadline
+DEMO
+Rewards
+Condition
+T= 10
+Against
+Equal
+Time
+(r = 1
+Not DEMO) with E[
+for Different
+), Poisson
+Capacities
+Distributed
+for Ob-
+Weights
+W] = 5, and
+20
+.~~~~~~~~~------- --
+,.'
+c=20.,
+DEMO
+7
+.
+8
+,c,O,
+~~
+9
+10
+............
+I
+DEMO) exists. Also, if W and R are independent (as
+objects DEMO equal rewards), the above
+MANAGEMENT
+SCIENCE/Vol. 42, No. 12, December 1996
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Knapsack Problem with Deadlines
+Figure
+6
+16
+DEMO
+12
+10 ,/
+8 -
+Critical
+jects with Equal Rewards (DEMO = 1), Triangular
+Weights (Consistency
+and Deadline
+Weight
+Against
+Time
+DEMO Different
+T= 10
+Condition
+Satisfied) with E[
+Capacities
+Distributed
+W] = DEMO,
+for Ob-
+,=0
+....
+c=l0
+1
+2
+3
+4
+5 DEMO
+Time Period
+7
+8
+9
+10
+If the Consistency Condition holds, DEMO optimal policy
+becomes more lenient with increasing capacity and in-
+creasing time (i.e., critical weights increase and critical
+rewards decrease). Also, the concavity results imply
+that the marginal reward of time increases as the DEMO
+line approaches, and the marginal reward of capacity
+increases as the DEMO is filled.
+6.1. Numerical Results
+In the first example, the weight DEMO distributed according
+to the following Poisson distribution:
+(19)7'- DEMO 19
+fw(w) =(w -1)!, 3
+with mean E[W] = 20. The conditional probability den-
+sity function of the reward given DEMO weight is expo-
+nential:
+fR w(rIw)=
+e
+r > 0
+with E[R I = w] = lOw; thus, E[R] = DEMO The deadline
+is T = 20. The Consistency Condition is not satisfied. In
+Figure 7, EV' is shown as a function of c DEMO different
+values of t. It can be seen that EVc is not a concave
+function of c. In Figure 9, Rc (w) is shown as a function
+of c, for different weights w, for DEMO = 1. The critical re-
+ward is not monotonic with respect to capacity. The crit-
+W
+ical reward increases until the capacity is approximately
+DEMO to the sum of the weight of the object and the
+average weight. For capacities less than this, if the object
+is accepted, DEMO remaining capacity is less than the av-
+erage weight, and thus DEMO probability that another ob-
+ject will arrive and fit into the knapsack is relatively low.
+Also, even if such an object arrives, the DEMO re-
+ward will be relatively low (since the expected reward
+is DEMO to the weight). Hence, the policy be-
+comes less lenient. DEMO the other hand, if the capacity is
+greater than the sum DEMO the weight of the arriving object
+and the average weight, there DEMO sufficient capacity to
+accept the object and still have enough capacity to ac-
+cept another object in the future with a high probability.
+Thus, the admission policy becomes more lenient. This
+pattern is also observed for DEMO that are close to
+multiples of the average weight (but not DEMO dramati-
+cally) as demonstrated by the peaks of the curves.
+In DEMO second example, the rewards are uniformly dis-
+tributed between 0 and DEMO:
+1 -
+fR(r) = 400'
+0 c r DEMO 400
+-
+with mean E[R] = 200. The conditional probability den-
+sity function of the weight given the reward is decreas-
+ing triangular:
+DEMO
+7
+2000
+1800 -
+1600 -
+1400
+6
+12800- 1000
+6000
+400-
+200
+0
+0
+5
+Expected
+Time
+tially Distributed
+dition
+Periods,
+Accumulated
+DEMO
+Not
+Reward
+Poisson
+Rewards
+Satisfied), with Deadline
+Against
+Distributed
+Given
+T= 20
+Capacity
+Weights
+Weights
+for Different
+and
+(Consistency
+Exponen-
+Con-
+/
+/
+-
+t=5
+.
+.uX
+-
+t-20
+10 15 20 25 30 DEMO 40 45 50 55 60 65 70 75 80 85 90 95 100
+Capacity
+MANAGEMENT
+SCIENCE/Vol. 42, No. 12, December 1996
+1715
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Knapsack Problem with Deadlines
+Figure
+8
+2000
+DEMO -
+1600 -
+1400 -
+1200 -
+1000
+800 -
+600-
+400
+200
+Expected
+Time Periods, with Uniformly
+creasing
+sistency Condition
+Triangular
+Accumulated
+Distributed
+Distributed
+Satisfied),
+Reward
+Rewards
+Weights
+with Deadline
+Against
+Capacity
+and De-
+Rewards
+T= 20
+Given
+for Different
+(Con-
+,
+-
+-- _ DEMO - - - -
+t=20
+5
+10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 DEMO
+Capacity
+fwIR(wIr) =200
+9r 2
+(3r -
+10
+W} w
+0 0:5w:
+3r
+fWR(Jr
+with E[WI R = r] DEMO r/10; thus, E[W] = 20. The deadline
+is again T = 20. This time the Consistency Condition is
+satisfied. The effects of DEMO condition are clearly dem-
+onstrated in Figures 8 and 10. EV' DEMO a concave nonde-
+creasing function of c (Figure 8), and DEMO(w) is nonin-
+creasing with c (Figure 10).
+7. Weight Proportional
+to Reward
+In most cases of practical interest, the reward increases
+when the weight increases. For this reason, the special
+case where the reward of an object is proportional to its
+weight (i.e., r DEMO kw, where k is a positive constant) is
+considered. Since the scale of the capacity of the knap-
+sack is arbitrary, let k = 1, without loss of generality.
+Also, note that the Consistency DEMO is not satis-
+fied, since the conditional distribution of the weight
+DEMO the reward is a step function, with unit step along
+the DEMO w = r, and hence is not concave.
+From Theorem 1 DEMO Corollary 1, the optimal deci-
+sion rule is given by:
+DEMO(t,
+c, r)
+Iaccept r + EVt+- EV'+1 DEMO r c c,
+if
+2
+1716
+reject
+if r + EV
+c-r
+< EVc+1 or r > c.
+Figure 9 Critical Reward Against DEMO for Objects of Different
+Weights, with Poisson Distributed Weights and Exponentially
+DEMO Rewards Given Weights (Consistency Condition
+Not Satisfied), at Time t DEMO 1, with Deadline T = 20
+650 . -
+600 -
+DEMO -
+500-
+450-
+*~400-
+S 350
+300
+U 250 ----------250
+200
+w\--
+---------------
+w= 15
+150
+100 I=
+/
+50
+5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 DEMO 90 95 100
+Capacity
+Intuition suggests that if the distribution of R is "rea-
+sonable," an optimal policy is to accept any object that
+arrives, as long as there is sufficient remaining capacity
+in the knapsack. This is established in the next theorem.
+THEOREM 5. If the DEMO are proportional to the re-
+wards and the reward distribution FR is concave on (0, oo),
+then
+Figure 10 Critical Reward Against Capacity for Objects of Different
+Weights, with Uniformly Distributed Rewards and Decreasing
+Triangular Distributed Weights Given Rewards (Consistency
+Condition Satisfied) at Time t DEMO 1, with Deadline T = 20
+400 . . E . DEMO
+350
+300 -
+] 250 0 20
+'i 200
+150
+""DEMO
+100
+50~~~~~~~~~~~~~=
+50
+.
+50
+5 10 15 20 25 30 35 40
+MANAGEMENT
+SCIENCE/Vol. 42, No. 12, December 1996
+"''
+..............
+= 10
+~~~~~~~~~~~~~~~~~~..............
+.
+.
+.
+.-
+45 50 55 60 DEMO 70 75 80 85 90 95 100
+Capacity
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Knapsack Problem with Deadlines
+(i) the DEMO policy is to accept any object that fits into
+the knapsack.
+(DEMO) EV' is a concave nonincreasing function of t for all c.
+The expected accumulated reward is neither a con-
+cave nor a convex DEMO of c, as will be shown with
+an example in ?7.1.
+7.1. Uniform Distribution for the Weight and
+Reward
+Suppose that the rewards DEMO uniformly distributed on
+[0, r*]. This distribution satisfies the condition of DEMO
+orem 5; thus, it is optimal to accept all objects that fit
+into the knapsack. For this case, we obtained a closed-
+form expression for the expected accumulated reward.
+THEOREM 6. If the reward is DEMO distributed on
+[0, r*I and the weights are equal to the DEMO, then the
+expected accumulated reward n periods from the deadline T
+DEMO remaining capacity c (c c r*) is given by:
+Since the derivative of the expected accumulated re-
+ward with respect to capacity DEMO less than 1, it is optimal
+to accept an object, as long as there is sufficient capacity
+in the knapsack.
+The expected accumulated DEMO is neither concave
+nor convex with respect to capacity, as can DEMO seen from:
+EVT=
+fc2/2r*,
+lr*/2,
+c < r*,
+c 2 r*.
+8. Concluding Remarks
+A new model for DEMO and stochastic resource al-
+location problems is presented, that strives to DEMO
+the dynamic and stochastic characteristics of the envi-
+MANAGEMENT
+SCIENCE/Vol. 42, No. 12, December 1996
+E
+VT,
+=
+c
+*
++ DEMO
+i
+-
+Vcr
+ronment in which real-world systems operate. Several
+diverse areas of applications are presented where the
+dynamic and stochastic knapsack problem with DEMO dead-
+line is appropriate.
+The optimal policy is a threshold type policy. If all
+objects have the same weight, the decision rules behave
+according to intuition as the remaining capacity of the
+knapsack changes, or as the deadline approaches. If the
+weights are not equal, the decision rules may exhibit
+counterintuitive behavior. But, if the distribution of the
+weight satisfies a "consistency condition," the decision
+rules become "well-behaved." The case where items
+have equal rewards, the general model with random
+rewards and random weights, and the case where the
+rewards are proportional to the weights were also an-
+alyzed. Numerical results were used to complement the
+DEMO results.
+Several interesting and challenging opportunities for
+related research exist: the DEMO with arrivals in contin-
+uous time, and a waiting cost for DEMO that have al-
+ready been accepted, have been studied in Kleywegt
+DEMO is straightforward to show that rO + EVc--i7i and Papastavrou (1995)DEMO Also, recall can be introduced,
+2 EV-,I for all DEMO ? c c r* confirming Theorem 5. For
+capacities greater than r*, the result may be obtained
+inductively from:
+dEVcTZ dEVi,
+1
+(
+c )'1+ 1
+Vc ---r* and
+d
+=11i-a
+at a cost, for items that have been rejected. The variation
+of the problem where only the reward or the weight
+become known upon arrival has DEMO applications;
+for example, when a reservation is made at a DEMO,
+the manager knows the number of people in the party,
+but can only guess the amount of money that the party
+will DEMO at the restaurant.'
+1 This research was supported by the National Science Foundation un-
+der grant DDM-9309579.
+References
+Albright, S. C., "Optimal Sequential Assignments with Random Ar-
+rival Times," Management Sci., 21 (DEMO), 60-67.
+Bruss, F. T., "A Unified Approach to a DEMO of Best Choice Problems
+with an Unknown Number of Options," Ann. Probability, 12
+(1984), 882-889.
+Carraway, R. L., R. L. DEMO, and L. R. Weatherford, "An Algorithm
+for Maximizing Target Achievement DEMO the Stochastic Knapsack
+Problem with Normal Returns," Naval Res. Logistics,
+161-173.
+Derman, C., G. J. Lieberman, and S. M. Ross, "A Sequential Stochastic
+Assignment Problem," Management Sci., 18 (1972), DEMO
+Freeman, P. R., "The Secretary Problem and its Extensions. A DEMO,"
+International Statistical Rev., 51 (1983), 189-206.
+1717
+40, 2 (1993),
+dEV,
+dc
+I
+o
+dEVtl dE_c_r
+dc
+DEMO(r)
+c 1 Vc > r*.
+dEV,
+PAPASTAVROU, RAJAGOPALAN, AND KLEYWEGT
+Knapsack Problem with Deadlines
+Gallego, G. and G. van Ryzin, "Optimal Dynamic Pricing of Invento-
+ries with Stochastic DEMO over Finite Horizons," Management
+Sci., 40 (1994), 999-1020.
+Hassin, R. and M. Henig, "Control of Arrivals and Departures in a
+State-Dependent Input-Output System," Oper. Res. Letters, 5
+(1986), 33-36.
+DEMO, M., "Risk Criteria in a Stochastic Knapsack Problem," Oper.
+DEMO, 38 (1990), 820-825.
+Kaufman, J. F., "Blocking in DEMO Resource Environment," IEEE
+Trans. Commntnications, 29 (1981), 1474-1481.
+Kennedy, D. P., "Optimal Sequential Assignment," Math. Oper. Res.,
+11 (1986), 619-626.
+Kleywegt, A. J. and J. D. Papastavrou, "DEMO Dynamic and Stochastic
+Knapsack Problem," Technical Report, School of Industrial DEMO
+gineering, Purdue University, West Lafayette, IN, August 1995.
+Martello, DEMO and P. Toth, Knapsack Problems. Algorithms and Compluter
+Implementations, John Wiley & Sons, West Sussex, England, 1990.
+Nakai, T., "An DEMO Selection Problem for a Sequence with a Ran-
+dom Number of Applicants per Period," Oper. Res., 34 (1986a),
+478-485.
+, "DEMO Sequential Stochastic Assignment Problem in a Partially Ob-
+servable Markov Chain," Math. Oper. Res., 11 (1986b), 230-240.
+"A Sequential Stochastic Assignment Problem in a Stationary
+Markov Chain," Mathematica Japonica, 31 (1986c), 741-757.
+Papastavrou, J. D., S. Rajagopalan, and A. J. Kleywegt, "The Dynamic
+and Stochastic Knapsack Problem with Deadlines," Technical Re-
+port, School of Industrial Engineering, Purdue University, West
+Lafayette, IN, April 1995.
+Prastacos, G. P., "Optimal Sequential Investment Decisions Under
+Conditions of Uncertainty," Management Sci., 29 (1983), 118-134.
+Presman, E. L. and I. M. Sonin, "The Best Choice Problem for a Ran-
+DEMO Number of Objects," Theory of Probability and Its Applications,
+17 (1972), 657-668.
+Righter, R., "A Resource Allocation Problem in DEMO Random Environ-
+ment," Oper. Res., 37 (1989), 329-338.
+Ross, K. W. and D. H. K. Tsang, "The Stochastic Knapsack Problem,"
+IEEE Trans. on Commiunications, (1989), 740-747.
+and D. D. Yao, "Monotonicity Properties of the Stochastic Knap-
+sack," IEEE Trans. DEMO Information Theory, 36 (1990), 1173-1179.
+Saario, V., "Limiting DEMO of the Discounted House-Selling Prob-
+lem," European Oper. Res., 20 (1985), 206-210.
+Sakaguchi, M., "Best Choice Problems for Randomly Arriving Offers
+During a Random Lifetime," Mathematica Japonica, 31 (1984a),
+107-117.
+, "A Sequential Stochastic Assignment Problem Associated with
+a Non-homogeneous Markov Process," Mathematica Japonica, 31
+(1984b), 13-22.
+, "A Sequential Stochastic Assignment Problem with an Unknown
+Number of Jobs," Mathematica Japonica, 31 (1984c), 141-152.
+Sniedovich, M., "Preference Order Stochastic Knapsack DEMO:
+Methodological Issues," J. Oper. Res. Society, 31 (1980), 1025-
+1032.
+, "Some Comments on Preference Order Dynamic Programming
+Models," J. Math. Analysis & Applications, 79 (1981), 489-501.
+Steinberg, E. and M. S. Parks, "A Preference Order Dynamic Program
+for a DEMO Problem with Stochastic Rewards," J. Oper. Res.
+Society, 30 (1979), 141-147.
+Stewart, T. J., "The Secretary Problem with an Unknown Number of
+Options," Oper. Res., 29 (1981), 130-145.
+Tamaki, M., "A Full-Information Best-Choice Problem with Finite
+Memory," J. Applied DEMO, 23 (1986a), 718-735.
+, "A Generalized Problem of Optimal DEMO and Assignment,"
+Oper. Res., 34 (1986b), 486-493.
+Weatherford, L. R. and S. E. Bodily, "A Taxonomy and Research
+Overview DEMO Perishable-Asset Revenue Management: Yield
+Management, Overbooking, and Pricing," Oper. DEMO, 40 (1992),
+831-844.
+Yasuda, M., "Asymptotic Results for the Best-Choice Problem with a
+Random Number of Objects," J. Applied DEMO, 21 (1984),
+521-536.
+37
+J.
+Accepted
+by Linda
+V. DEMO;
+received
+September
+1994. This
+paper
+has been
+with the
+auithors 3
+weeks
+for 2 revisions.
+1718
+MANAGEMENT
+SCIENCE/Vol. 42, No. 12, DEMO 1996{1g42fwefx}

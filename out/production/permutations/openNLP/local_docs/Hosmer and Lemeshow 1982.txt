@@ -1,0 +1,1547 @@
+AMBHICAN JOURNAL or EPIDEMIOLOGY
+Copyright © 1982 by The Johns Hopkins University DEMO of Hygiene and Public Health
+All rights reserved
+Vol. 115, No DEMO
+Printed m UJSA.
+A REVIEW OF GOODNESS OF FIT STATISTICS FOR USE
+IN THE DEVELOPMENT OF LOGISTIC REGRESSION MODELS1
+STANLEY LEMESHOW AND DAVID W. DEMO, JR.
+Lemeshow, S. (U. of Massachusetts, Amherst, MA 01003), and D. W. Hos-
+mer, Jr. A review of goodness of DEMO statistics for use in the development of
+logistic regression models. Am J Epidemiol 1982;115:92-106.
+Several statistics have recently been proposed for the DEMO of assess-
+ing the goodness of fit of an estimated logistic regression model. These sta-
+tistics are reviewed and compared to other, less formal, procedures in the
+context of applications In epldemlologlc research. One statistic Is recom-
+mended for use and Its computation Is Illustrated using data from DEMO recent
+study of mortality of Intensive care unit patients.
+Intensive care units; mortality; regression analysis; risk; statistics
+Over the past decade, use of the multi-
+ple logistic regression model (logistic
+model) has progressed DEMO a specialized
+tool to the point where the model is now
+regarded as a standard method for data
+analysis in epidemiologic studies. The
+model DEMO most frequently used in studies
+in which a dichotomous outcome variable
+(DEMO, presence or absence of disease) is re-
+lated to a number of independent vari-
+ables. Its widespread application is prob-
+ably due to DEMO ease of interpretation as
+well as its relationship to log-linear anal-
+ysis of contingency tables and linear dis-
+criminant function analysis. Recent re-
+search DEMO Holford et al. (1), Breslow et al.
+(2), Farewell (3), and Prentice and Pyke
+(4) has extended the methodology for
+application of the logistic model in co-
+Received for publication January DEMO, 1981, and in
+final form May 26, 1981.
+1 From DEMO Biostatistics/Epidemiology Program,
+Division of Public Health, School of Health DEMO,
+University of Massachusetts, Amherst, MA 01003
+(Send reprint requests DEMO Dr. Lemeshow at this
+address.)
+The authors express their appreciation to Drs.
+Daniel Teres and Richard Brown of Baystate Medi-
+cal Center, Springfield, MA, for making their data
+on intensive care unit patients available DEMO the
+analyses in this paper Computer tune was made
+available by a grant from the University of Massa-
+chusetts Academic Computing Center, Amherst, DEMO
+92
+hort studies to case-control studies, both
+matched and unmatched.
+In DEMO paper, the form of the logistic
+model to be used is DEMO follows: let Y denote
+a dichotomous outcome variable, which is
+assigned the value 1 if the disease is pres-
+ent and 0 if DEMO Let x = (xi^2, • •• ,
+xp) denote the vector of p known or sus-
+pected risk factors and possible confound-
+DEMO and effect modification variables. This
+collection of variables will be called the
+covariates. The logistic model then hy-
+pothesizes that the probability of the DEMO
+ease being present conditional on a value
+of x is
+P(X =
+exp - (/3
+n
+(1)
+Given a sample of n observations {yt, x(),
+i = 1, . . DEMO ,n, two methods have tradition-
+ally been used to estimate the unknown
+parameters /30,/3,, . . . ,/3p. Specifically,DEMO
+these estimators are usually referred to
+as the discriminant function and maxi-
+mum likelihood estimators. The method
+of choice in epidemiologic research is usu-
+DEMO the maximum likelihood approach
+since the underlying assumptions which
+make this technique appropriate are less
+GOODNESS OF FIT TESTS FOR LOGISTIC REGRESSION
+restrictive. (See the studies by Halperin
+et al. (5), Efron (6) and O'Hara et al. (7).)
+After the estimates of the coefficients
+have been obtained, an estimate of the
+probability of the presence of disease may
+be calculated for each individual in the
+study. Procedures which have been DEMO
+to assess the adequacy of the fitted logis-
+tic model in describing the relationship
+between the probability of occurrence of
+disease (Y = 1) and the values of the co-
+variates (x) are, for DEMO most part, rather
+informal. Documentation of their statis-
+tical properties has DEMO been published.
+Recent research on the problem of devel-
+oping a goodness of fit statistic by Halte-
+man (8), Hosmer and Lemeshow (DEMO), Shil-
+lington (10), and Tsiatis (11) has resulted
+DEMO a collection of chi-square-like statistics
+whose properties have been studied both
+theoretically and by computer simulation
+techniques. The objectives of the present
+paper are DEMO) to compare the proposed sta- j
+tistics from the point of DEMO of applica-
+tion in epidemiologic research, and 2) to
+illustrate the computations necessary to
+apply the statistics proposed by Hosmer
+and Lemeshow (9).
+A REVIEW OF METHODS FOR
+ASSESSMENT OF FIT
+Additional notation is DEMO to review
+the methods of assessment of fit. Let bn,
+bu . . . ,bv be the estimates of the param-
+eters /DEMO, . . . ,&, of the logistic model in
+equation DEMO, either discriminant function
+or maximum likelihood. Let P(x() be DEMO
+estimated probability of disease for sub-
+ject i defined as
+P(x,) = l/{l + exp - (60 + (2)
+DEMO the values of P(x,), P(xs), . . DEMO ,
+P(xH) one informal approach has been to
+rank order these n values and establish
+"deciles of risk." That is, the first decile
+contains the smallest n/10 values of P(x(),DEMO
+etc. If n/10 is not integer valued, the 10
+93
+DEMO will have slightly different num-
+bers. In the discussion of goodness of fit in
+this paper it will be assumed that n/10 is
+DEMO valued. Intuitively, if the model
+presented in equation 1 holds, then the
+P(X|) for those individuals who have the
+disease should fall into the upper deciles.
+With this in mind, procedures have been
+proposed which compare the observed
+number of persons who have the disease
+(o) with an estimated expected number (e)
+of persons for each DEMO The expected
+number has most often been calculated as
+the sum of the estimated probabilities for
+all persons in a particular decile. For no-
+DEMO convenience let
+(3)
+e, = 1 P(x(), (4)
+I = 1,.. . ,10, and where D, denotes the
+(n/10) individuals in the Zth decile of risk.
+DEMO pairs (o(,e,) I = 1, .. . ,10 have been
+analyzed in several ways. Graphically,
+the 10 points can DEMO plotted to see if they
+follow a line with slope 1 and intercept 0.
+Examples of this approach can be found
+in the papers DEMO Brand et al. (12) and
+the Coronary Drug Project Research
+Group (13).
+A statistic which has been used to com-
+pare these values is
+V2 _ (5)
+x ~
+The distributional properties of X2 have
+never been studied but it is often com-
+pared to DEMO chi-square with degrees of free-
+dom equal to 10 - (p DEMO 1). Obviously, if
+(p + 1) > 10 then DEMO groups would
+have to be used. Gordon et al. (14) discuss
+the use of this statistic and they conclude
+that, because its distribution has not been
+specified, about all that one can say is
+that a small value is better than a large
+value. The statistic X2, with similar terms
+94
+added for those without disease, does have
+a chi-square distribution when the num-
+ber of response pattern s formed by the
+variables are DEMO enough so that the data
+may be tabulated in a contingency table
+prior to estimation of the coefficients. For
+example, if there were only two dichoto-
+mous independent variables, then there
+are only four different values of (xb x2)
+and there is one degree of freedom for test-
+ing lack of fit. In this rather restrictive
+situation the theory DEMO estimation of the
+coefficients of the multiple logistic regres-
+sion model and testing for fit follows from
+the usual methods for contingency tables.
+In DEMO epidemiologic applications the
+number of possible response patterns is
+usually large relative to the sample size.
+In fact this was the primary motivation
+for DEMO et al. (15) to apply the logistic
+regression model. Despite the lack of jus-
+tification, the deciles of risk approach has
+been widely used. Examples of this may
+be found in Truett et al. (15), Kleinbaum
+et al. (16), Wilhelmsen et al. (17), DEMO
+Keys et al. (18).
+Another approach which has been in-
+DEMO used as a goodness of fit statistic
+is the likelihood ratio chi-square statistic
+for testing the hypothesis that the coeffi-
+cients are zero (i.e., Ho: /3j = 0, for some or
+all,/). DEMO method utilizes an appropriate
+comparison of the likelihood of two differ-
+ent models. In one model /3j = 0 while in
+the other /DEMO = bj. Another method uses
+the score functions (Rao (19))DEMO Each pro-
+cedure only tests whether >3j = 0 and is
+DEMO a true goodness of fit test. This is anal-
+ogous to testing for no slope using the F
+statistic in multiple linear regression, yet
+goodness of fit is more appropriately
+assessed through the use offl*. Several DEMO
+type statistics have been proposed. For
+maximum likelihood estimate s one of
+these is
+1 / .
+where /] is the log-likelihood evaluated at
+LEMESHOW AN D HOSMER
+(&oA> • • • ,bP) and l0 is the log likelihood
+evaluated at 6, = 0,,/ DEMO 1, . . . ,p. A second
+statistic which is discussed in Gordon et
+al. (14) is the average proportion of varia-
+DEMO explained (AVPE) where
+AVPE =
+PQ ~
+PQ
+where P, DEMO P(xt), Q, = 1 - P,, P =
+DEMO Q = 1 - P. The problem with the
+average proportion of variation explained
+statistic is that the upper bound for the
+statistic may DEMO widely different values
+depending on assumptions about the dis-
+tribution of P(x) (see Gordon et al. (14)).
+Efron (20) DEMO studied the general prob-
+lem of measures of residual variation of
+regression with zero-one data. In this
+paper a number of measures were devel-
+DEMO which could be useful in formulating
+other R2-type measures.
+Pregibon (21) proposes using modifica-
+tions of the graphical techniques used to
+assess the DEMO of multiple regres-
+sion models. These methods may be diffi-
+cult to use unless one has available a com-
+puter package such as generalized DEMO
+interactive modeling (GLIM) (22), which
+gives the user considerable DEMO over
+the analysis.
+The wise use of the logistic regression
+model and the problems associated with
+previously described methods have pro-
+vided the impetus DEMO developing a "good
+method" for assessing fit. Within the last
+two years contributions have been made
+by Halteman (8), Hosmer and Lemeshow
+(9), Shillington (10) and Tsiatis (11). Each
+of DEMO authors used a slightly different
+approach and formulated a chi-square-
+like statistic and derived its distribution.
+A brief comparison of these statistic s
+follows.
+DEMO (8) and Tsiatis (11) have pro-
+posed the same statistic which compares
+a vector of differences between observed
+and estimated frequencies, for example,
+{(o, - e,), (o2 - e2), . . . , (o10 - e10)}, to an
+GOODNESS OF FIT TESTS FOR LOGISTIC REGRESSION
+estimate of its variance-covariance ma-
+DEMO Evaluation of the test statistic re-
+quires the computation of a generalized
+inverse of the estimated variance-covari-
+ance matrix or the inverse of the DEMO
+of appropriately reduced dimension.
+Halteman (8) provides the technical de-
+tails which prove that the statistic follows
+a chi-square distribution with g — DEMO de-
+grees of freedom, x2C? ~ D> where g is DEMO
+number of groups in the covariate space
+induced by the partitioning of the P(x()'s
+into g intervals. This result is indepen-
+DEMO ofp (number of covariates) and holds
+under fairly general regularity condi-
+tions. The theory behind this test is easily
+understood by considering it DEMO be a score
+test as discussed by Tsiatis (11). From DEMO
+point of view, the Halteman-Tsiatis proce-
+dure is a test for DEMO intercept (/30) in
+the g groups. In practical terms, the pre-
+cision of the result is offset by the compu-
+tations needed DEMO evaluate the statistic.
+The use of generalized inverse matrices
+may be familiar to most statisticians, but
+this type of matrix calculation is unfamil-
+iar to many epidemiologists. In addition,
+the statistic does not lend itself DEMO to
+subsequent analysis to determine poten-
+tial sources of significant differences.
+The test can be calculated using a com-
+puter program which performs iterative-
+DEMO least squares for generalized
+linear models. The computer package
+GLIM (22) was used to perform the calcu-
+lations for the Halteman-Tsiatis statistic
+in DEMO paper.
+The statistic proposed by Shillington
+(10) requires that the data be placed into
+fixed groups (cells) before estimation. This
+amounts to DEMO the formation of
+groups of risk before computing bo,blt . . . ,
+bp, which is clearly impossible in most
+practical applications. DEMO has not
+derived the exact distribution of the sta-
+tistic for the case of using maximum like-
+lihood from ungrouped data, but the dis-
+tribution is bounded by a x2(& - p - 1)
+DEMO x2(£ ~ 1), where g is chosen so g > p
+95
++ 1. The theoretical work done by Hos-
+mer and DEMO (9), Halteman (8), and
+Durst (23) could probably be used to relax
+the assumption of fixed-in-advance groups
+required by Shillington.
+DEMO and Lemeshow (9) used a con-
+tingency table type of approach to develop
+several statistics (#*, ti%, C* and C*)
+which are no more difficult to compute than
+the usual chi-square test of DEMO
+They derived the exact distribution of
+these statistics and used computer simu-
+lations to support a conjecture that the
+exact distribution may be approximated
+DEMO a x2(g — 2) distribution. Other statis-
+tics which were DEMO (Jiu, Ha, Cu and
+Cu) require significantly more computer
+assistance in calculation and, while dem-
+onstrated to be distributed as x2(2g - 5),
+do not appear to be viable choices for the
+practicing epidemiologist. Hence, it would
+appear that the best choice for the epide-
+miologist is between one of the former
+Hosmer-Lemeshow statistics and the
+DEMO statistic. A comparison
+of the computer simulations in Halteman
+(8) and Hosmer and Lemeshow (9) shows
+about the same degree of adherence DEMO
+small samples of the Halteman-Tsiatis
+statistic to the x2(g ~ D &n(i of the Hos-
+mer-Lemeshow statistics to the x2(g ~~ 2)
+distribution. These statistics have sam-
+pling distributions with means, variances
+and tail probabilities which are close to
+the proven or conjectured chi-square DEMO
+tribution. Hence, any of these could be
+used to test the DEMO of the logistic model
+with a specified type I error. None of the
+statistics demonstrates a great deal of
+power against reasonably competitive
+models DEMO the logistic. An exception to
+this is the statistic fiu proposed by Hos-
+mer and Lemeshow (9). This statistic did
+demonstrate power; DEMO, as men-
+tioned previously, it is more difficult to
+evaluate than the other suggested sta-
+tistics.
+In summary, the computer simulations
+show that there is little difference be-
+96
+twee n th e actual performance of the
+Halteman-Tsiatis statistic and DEMO
+Lemeshow statistics. We recommend the
+use of one of the Hosmer-Lemeshow sta-
+tistics by epidemiologists because of the
+associated computational simplicity. The
+quantities needed DEMO the calculations are
+obtained from contingency-type tables
+making the availability of special pro-
+grams unnecessary. Easily performed sub-
+sequent analyses are also possible which
+DEMO be used to locate potential sources
+of significant deviation from the fit of the
+logistic model.
+In the next section the details necessary
+to DEMO and compute the Hosmer-
+Lemeshow statistics are presented.
+COMPUTATION OF THE
+HOSMER-LEMESHOW STATISTICS
+Before discussing the details of their cal-
+culations, a rationale for the statistics will
+be developed beginning with the statistic
+X2 given in DEMO 5. That statistic can
+be thought of as resulting from a table of
+observed and estimated expected values,
+as shown in table 1.
+DEMO should be reemphasized tha t ouo2,
+.. . ,oio as DEMO in equation 3 are the
+observed numbers of persons among the
+n/10 subjects in each decile with the dis-
+ease (Y = 1). Theei,e2, . . . ,e,0 are sums of
+DEMO of disease present for all nllO
+subjects falling within each decile. It
+should be noted at this point that while
+most applications of this DEMO have
+used g = 10 groups, there is no reason for
+DEMO using fewer or more than 10 groups.
+The theoretical development given by
+Hosmer and Lemeshow (9) requires only
+that g > (p + 1). For the sake of con-
+TABLE 1
+Observed and expected DEMO in each decile '
+of risk for subjects with disease present
+DEMO of risk
+1 2 3 10
+Observed Ot 0, Oio
+Expected DEMO e. «10
+LEMESHOW AND HOSMER
+tinuity the discussion will continue using
+g = 10.
+Table 1 uses only observed data on
+those subjects with DEMO disease present
+(Y = 1). Considerable information is po-
+tentially DEMO by not considering the (n/10
+- Oi) individuals in each decile (/ = 1,2,
+. . . ,10) with the disease absent (Y = 0).
+Hosmer and Lemeshow (9) suggest using
+table 2 which summarizes the numbers of
+subjects with the DEMO present or ab-
+sent within each decile.
+To assess goodness of fit, estimated ex-
+pected values must be calculated for each
+of the 20 cells in table 2. These observed
+and estimated expected frequencies are
+obtained DEMO modifying equations 3 and 4
+as follows:
+On =
+(6)DEMO
+= S (i -
+feilj
+itL>i
+(7)
+(8)DEMO
+an d
+feO;
+(9)
+A statistic which compares observed DEMO
+estimated expected frequencies is
+1 10
+'•>»* — - Y DEMO Y Z p (°A< ~
+(10)
+lt-0 J-l *'DEMO
+A comparison of X2 as defined in equation
+5 and C% as defined in equation 10 shows
+that C*u uses all the available subjects DEMO
+assessing fit, whereas X1 uses only those
+subjects with disease present. DEMO
+and Lemeshow (9) have shown via com-
+puter simulations that if the number of
+covariates plus one is less than the num-
+ber DEMO groups (i.e.,p + 1 <g), then the sta-
+tistic C% has a distribution which is close-
+ly approximated by a chi-square DEMO
+tion with g — 2 degrees of freedom when
+GOODNESS OF FIT TESTS FOR LOGISTIC REGRESSION
+TABLE 2
+Observed frequencies in DEMO decile for subjects with disease present or disease absent
+Disease status
+Present (Y = 1)
+Absent (Y = 0)
+Total
+1
+DEMO
+Ooi
+n/10
+2
+On
+Deciles of nsk
+3
+Ol3
+10
+Oi.i o
+Oo.lO
+n/10
+n/10
+n/10
+97
+Total
+n,
+DEMO
+n
+Ho is true. Hence if p + 1 < 10, DEMO C%
+as given in equation 10 will be distributed
+approximately chi-square with 8 degrees
+of freedom. As mentioned previously, the
+distributional properties of X2 have not
+been established.
+The statistic C% is computed using the
+empirical DEMO This decile of risk meth-
+od is the one which has been most fre-
+quently reported in the epidemiologic lit-
+erature. One positive feature DEMO this ap-
+proach is that it assures that each group
+has a reasonable number (rc/10) of sub-
+jects. A negative feature of DEMO approach
+is that the actual values of the estimated
+probabilities of developing the disease are
+ignored. As an alternative strategy, Hos-
+mer and Lemeshow (9) suggest forming
+groups based on fixed cutpoints. For ex-
+ample, one might use as cutpoints 0.1,
+0.2, . . . ,DEMO These cutpoints would pro-
+duce a table of observed values (o'), as
+shown in table 3.
+The observed (o') and associated esti-
+mated expected (e') values in table 3 are
+defined as in equations 6- 9 where D, now
+contains the m, individuals DEMO esti-
+mated probabilities fall in the Zth interval
+for / = 1, 2, . . . , 10. Let H* denote the
+statistic DEMO using these intervals
+as follows:
+k-0 1-1
+(11)
+The DEMO simulations reported in
+Hosmer and Lemeshow (9) indicated that
+H*a was more powerful than C*u and hence
+may be the preferred statistic. However,DEMO
+one disadvantage of H*u is that, when the
+total sample size DEMO is small, m, could be
+small for some intervals. These simula-
+tions along with subsequent, as yet un-
+published, ones suggest that DEMO does not
+adversely affect the distributional proper-
+ties of the statistic.
+One additional statistic which has been
+studied by Hosmer and Lemeshow (9) DEMO
+the table of observed values given above
+but the estimated expected values are cal-
+culated in a different manner. The devel-
+opment of expressions DEMO these expected
+values involves the assumption that the
+covariates are multivariate normally dis-
+tributed within the two subpopulations
+defined by Y = 0 and DEMO = 1. Under these
+assumptions, determination of the esti-
+mated expected DEMO involves using
+numerical integration procedures. This
+statistic, denoted Hu, seemed to have bet-
+ter power than H*o or C%. However, simu-
+lations performed by Korn (24) suggest
+some sensitivity to the distributional as-
+TABLE DEMO
+Observed frequencies for subjects with disease present or disease absent m intervals based on fixed cutpoints
+Disease status
+Present (Y = 1)
+Absent ( Y = 0)
+Total
+[0-0.1)
+Oil
+oi,
+m,DEMO
+[0 1-0 2)
+o\.
+Oa
+m,
+[0.9-10]
+Oi.io
+oi.io
+"DEMO
+Total
+n,
+n0
+n
+9 8
+LEMESHOW AND HOSMER
+sumptions when all the covariates are Table DEMO presents the patient condition
+discrete. Simulations (Hosmer and Leme- and treatment DEMO to be used
+show (9)) suggest that if p + DEMO < g, then in the predictive model of mortality. It
+the DEMO of flu may be closely ap- should be noted that those variables hav-
+proximated by a chi-square with 2g - 5 ing three outcome DEMO were recoded
+degrees of freedom. The degrees of free- using dummy variables.
+dom of 2g - 5 are due to the way in which DEMO indicated in table 4, 97 of the 558 pa-
+the expected DEMO are calculated. tients (17.4 per cent) died prior to hospital
+It should be noted that while the pre- discharge. The objective of the DEMO is
+vious discussion has defined statistics to obtain an estimate of the probability
+usin g maximum likelihood estimates, that a patient will die conditional on the
+any of the goodness of fit statistics could characteristics associated DEMO that pa-
+be used with discriminant function esti- tient's experience in the intensive care
+mates of the logistic coefficients. In the unit. The DEMO chosen for this analysis is
+work by Hosmer and Lemeshow (9), sta- the multiple logistic regression model.
+tistics computed using the discriminant From the original set of 23 independent
+function estimates are C%, R*o, DEMO fla. variables (X'u . . . ,X'2^), a smaller set was
+In the next section an example is pre- sought DEMO inclusion into the logistic mod-
+sented which illustrates the use and in- el. Two methods were available for the
+terpretation of the statistics tiu, £[*0, and identification of this subset. The first,
+C%. The Halteman-Tsiatis statistics cor- stepwise discriminant analysis, is avail-
+responding to the partitions used in form- able in package form at most computing
+ing ft* and DEMO are denoted HT* and tlTC*. centers and can be used at nominal cost.
+The second, stepwise logistic regression
+A N ILLUSTRATIVE EXAMPLE using maximum likelihood, is not yet
+A total of 558 patients were studied available in package form at many com-
+prospectively in the two intensive care DEMO centers. For example, the stepwise
+units at the Baystate Medical Center DEMO logistic regression program BMDPLR
+Springfield, Massachusetts. The data (25) was DEMO available prior to the Au-
+were collected during the months of April, gust, 1979, release and few computer cen-
+October, and November, 1978. The Spring- ters have this program operational at
+field campus, staffed by residents 24 hours present. The program described by Hos-
+each day, had 341 intensive care unit ad- mer et al. (26) is DEMO widely used. Step-
+missions while the Wesson Memorial wise selection using maximum likelihood
+campus, a community hospital without is too costly and time consuming to run on
+fixed resident coverage in the intensive a large data DEMO
+care unit, had 217 admissions during this The decision was made DEMO first use step-
+time period. wise discriminant analysis to identify
+Five infection control nurses collected those variables to be included in a pre-
+the DEMO which involved keeping detailed liminary logistic regression model. Pro-
+records on each patient from date of ad- gram BMDP7M, Dixon and Brown (25),
+mission to the unit to date of discharge was run with DEMO F-to-enter value of 2 and
+from the unit as well as discharge status an F-to-remove value of 1.9. Of the original
+from the hospital (alive or dead). Vari- 23 variables, 14 were selected for entry
+ables were collected dealing with each pa- into the model using these DEMO and
+tient's condition, therapy and infection F-to-remove criteria.
+status. Of DEMO original 558 patients, 18 Fourteen variables were thought to be
+were DEMO from analysis as data were too many to provide a useful and easily
+missing on some key variables. interpreted model. In order to further DEMO
+GOODNESS OF FIT TESTS FOR LOGISTIC REGRESSION
+99
+duce the number of DEMO, odds ratios
+were calculated for each of the 14 covar-
+iates DEMO thejnitial subset. These are ob-
+tained as OR) = eff.j = DEMO, . . . ,14. Confi-
+dence intervals were then constructed
+about each of these estimates as follows:
+g(6j - 1 96SEU>DEMO
+QR
+96SE(6j)).
+If the resulting confidence interval con-
+tained DEMO between 0.5 and 2.0, the co-
+variate was eliminated. That is, only
+those covariates which demonstrated very
+high (OR > 2 or < 0.5) association with
+mortality were kept in the model. Three
+(Shock DEMO, Coma, CPR) of the originally
+identified 14 covariates satisfied this
+DEMO In addition, age was added
+because of its potential as a DEMO con-
+founding variable. The maximum likeli-
+hood estimates were obtained for the
+model containing these four covariates.
+Table 5 presents the estimates for the DEMO
+variates in this "main effects" model along
+with the estimated odds ratio and confi-
+dence interval for the odds ratio of each.
+Note DEMO the original requirement that
+OR > 2 or < 0.5 does not necessarily hold
+once the maximum likelihood estimates
+were recalculated on the smaller DEMO of
+covariates.
+In addition to the model including these
+variables, the DEMO for interaction be-
+tween them was also considered by the
+formulation of a second logistic model.
+The interactions eligible for inclusion
+were determined by DEMO all possi-
+ble three-way contingency tables where
+mortality was cross-classified with two
+treatment or condition variables. Vari-
+ables were selected for potential inclusion
+in DEMO interaction form if the
+three-way table displayed a significant
+(p < DEMO) second order interaction. Twen-
+ty pairs of variables were so identified
+DEMO of these, only three pairs actually
+entered the model after forcing DEMO the 14
+main effect variables, using the previous-
+ly described stepwise DEMO analy-
+sis approach.
+The 17 variables so identified were fur-
+ther reduced using the same procedure as
+described above for the "main effects"
+model. Of the original 17 variables, five
+(Shock 2, CPR, DEMO 2 x Coma, Shock 1
+x Coma, Shock 2 x Coma) met the stated
+criterion and were included in the model
+along with age. Maximum likelihood esti-
+mates were recalculated on this reduced
+set of DEMO covariates. The resulting coef-
+ficients estimates, estimated odds ratios,
+and DEMO intervals for the odds ra-
+tios are presented in table 5 for each of
+the variables in this "interactive" model.
+Tables 6- 8 DEMO the contingency
+tables used to evaluate the fit of these two
+models. Computation of the previously
+defined statistic X2 as in equation 5 would
+DEMO comparison of the observed and
+estimated expected frequencies in the
+Y = 1 (die) row of the tables used in the
+evaluation of DEMO Since the distributional
+properties of this statistic are unknown,
+the computation of X2 will not be pre-
+sented here. Alternatively, a plot of the
+10 points representing the observed and
+expected frequencies in each cell DEMO the
+Y = 1 row could be examined to see if they
+follow a line through the origin with slope
+1. This procedure, as with most graphic
+procedures, can be useful as an adjunct
+to formal testing procedures using the
+two statistics tl% and C% discussed earlier.
+These DEMO show that the main ef-
+fects model fits but not well (DEMO = 14.87,
+df = 8,j = 0.06; C* = DEMO, df = 8^ =
+0.16;HT* = 16.56, df=9,p = 0.06;HTC*
+= 15.57, df = 9, p = 0.08). DEMO inclusion
+of interaction terms into the model ap-
+pears to improve the fit. (The resulting
+statistics are: fi% = 12.45, df =^8,p = 0.13;
+C* = 8.40, df = 8, p = DEMO; HT* = 14.61,
+df = 9, p = 0.10; DEMO/rc * = 12.13, df = 9,
+p = 0.21.) Based on these results, one
+might conclude that it is helpful to in-
+clude the interactions in the model for
+the estimation of the DEMO of sur-
+vival given the patient condition and
+treatment variables.
+TABLE 4
+Summary of outcome, condition and treatment characteristics m 558 patients in two intensive care units (ICUs) at
+Baystate Medical Center, Springfield, Massachusetts, April, October, November, 1978
+Outcome characteristics
+Y mortality
+Z length of stay in ICU
+Condition characteristics
+X, Age
+Xt No of infections
+X, Renal failure
+X, Shock
+Xt Coma
+Xa Granulocytopenia
+X, Cardiac arrest
+(CPR in the ICU)
+Xe Fever
+Code
+0
+1
+LIVE
+DIE in hospital
+Stay in ICU in days
+Age in years
+DEMO
+1
+2
+0
+1
+2
+No infections
+1 infection
+2 or more infections
+BUN <70 and CREAT <4
+BUN 70-9 0 or CREAT DEMO 6
+BUN >90 or CREAT >6
+502
+17
+25
+(90 DEMO)
+( 3.0)
+( 4 5)
+0 BP >90, HR <150 no vasopressors 322 (57.7)
+1 BP *90 or DEMO >150 for 3 hrs, no 140 (25 1)
+vasopressors
+DEMO BP *90 and HR >150 for 3 hrs 96 (17.2)
+or vasopressors
+0 None or coma <48 hours 505 (90.5)
+DEMO Coma >48 hours 53 ( 9.5)
+0 WBC >1500 and PMN >1000 537 (96.2)
+1 WBC <1500 and/or PMN <1000 21 ( 3.8)
+0 No CPR in ICU 515 (DEMO)
+1 CPR in ICU 43 ( 7 7)
+0 Temperature <40 C 535 (95.9)
+1 Temperature >40 C on 2 occasions 23 ( 4.1)
+No
+461
+97
+(%
+>
+(82.6)
+(17 4)
+Mean
+4.2
+54.9
+365
+120
+58
+(65 DEMO)
+(21.5)
+(10 4)
+SD
+4.6
+18 5
+Variables recoded*
+Xi
+x\
+0
+0
+1
+0
+1
+0
+0
+1
+0
+DEMO',
+0
+1
+Xi
+X'.
+Y'
+X'n
+0
+DEMO
+1
+Xj_
+0
+0
+©
+O
+O
+I
+i
+X, Myocardial infarction 0
+1
+Xlo Coagulopathy
+Treatment characteristics
+Xn Campus
+No MI other than admitting D,
+MI other than admitting Dx
+Platelets >50,000 and PTT <100
+Platelets <50,000 and/or PTT >100
+or DIC
+Springfield (resident covered) 341 (61.1)
+Wesson (DEMO physician covered) 2177 (38.9))
+538
+20
+508
+50
+(96.4)
+( 3.6)
+(910)
+( 9.0)
+x;3
+xu
+X,j Mechanical
+ventilation
+X,3 No. of lines
+Xu Hemodialysis
+X18 DEMO operations
+X,6 Hepann (therapeutic, 0
+not prophylactic) 1
+No DEMO <24 hours
+MVENT 1-4 days, no PEEP
+MVENT s>5 days or PEEP
+<7 tubes, drains, catheters
+5=7 tubes, drains, catheters
+No
+Yes
+No
+Yes (excluding gastrostomy,
+tracheostomy, A-V shunt)
+DEMO given or given >q6°
+Given q6° or continuously
+396
+99
+63
+DEMO
+114
+541
+17
+515
+43
+486
+72
+(710)
+(17 7)
+(112)
+(79 6)
+(20.4)
+(97 0)DEMO
+( 3 0)
+(92.3)
+( 7 7)
+(87 1)
+(12 9)
+x; 7
+y
+3
+Y'
+DEMO IB
+50
+5
+o
+o
+X17 Blood infusion 0- 4 units 429
+5- 9 units 69
+s=10 units 57
+X,» Lidocaine infusion No DEMO
+Yes 106
+• Names assigned to recoded variables: X\ = Age; Xi = Inf 1; Xj = Inf 2, X't = DEMO 1; Xi = Renal 2, X'e = Shock 1, DEMO'7 = Shock 2; Xi = Coma;
+X; = WBC; X|o = CPR, X|, = Fever, X[, = MI, DEMO, = Coag, X'lt = Campus; X;5 = MVent DEMO, X;8 = MVent 2, Xi7 = Lines; XI8 = DEMO;
+X;9 = Mult Op; XJo = Hep; X{, DEMO Blood 1; XJ, = Blood 2; Xi, = Lidocaine.
+(DEMO 9)
+(12.4)
+(10 2)
+(81.0)
+(19 0)
+0
+1
+0
+Xi,
+0
+0
+1
+{g
+o
+DEMO
+102
+LEMESHOW AND HOSMER
+For comparative purposes, the statistics
+AVPE and R] were evaluated. For the
+main effects model AVPE = 0.427 while
+for DEMO interactive model AVPE = 0.453.
+R'2, = 0.762 for the DEMO effects model and
+0.771 for the interactiv e model. With
+eithe r statistic, the interactive model
+demonstrates negligible improvement in
+fit over the main effects model although
+it is unlikely that the improvement is sta-
+tistically DEMO The actual values of
+these two statistics are difficult to inter-
+pret since well-defined upper bounds are
+not available or depend on the distribu-
+DEMO of P(x) in the population.
+The statistic tlu discussed by DEMO
+and Lemeshow (9) was also calculated.
+Table 8 shows the contingency tables used
+in calculating fiu with the two models.
+(For the main effects model, fia = 97.22,
+df = 15, p < DEMO while for the interac-
+tive model tla = 106.55, df = DEMO, p <
+0.001.) Clearly, with either model the sta-
+tistic fiu indicates the fit of the logistic
+model is poor. What appears DEMO be hap-
+pening is that the estimated frequencies
+(e's) are much larger than the observed
+frequencies (o's) for the middle DEMO
+The meaning of the large values of tla in
+this example is not clear because of the
+previously noted sensitivity of its distri-
+bution DEMO discrete covariates. Hence, this
+statistic is not generally recommended for
+use DEMO models containing predominantly
+discrete covariates.
+DISCUSSION
+Goodness of fit statistics proposed over
+the last two years have been reviewed. A
+number of statistics (fl*B and C%) have been
+suggested as being most easily applied to
+epidemiologic research. These statistics
+were used to assess the fit of an estimated
+DEMO regression model to mortality
+data on 540 patients in two intensive care
+units. It would appear that these good-
+ness of fit statistics have DEMO potential
+for objectively evaluating the fit of the
+TABLE 5
+Maximum likelihood estimates, estimated variances, estimated odds ratios (OR) and
+confidence interval DEMO the odds ratios for main effects and interactive models
+ft
+SE(ft)
+/\
+OR
+Confidence
+interval
+for OR
+Mam effects model
+Constant
+Age
+Shock 2
+Coma
+CPRt
+-4.58
+0.03
+13 5
+3 12
+2 59
+DEMO
+0.0O9
+0.348
+0.446
+0.485
+1.38*
+3 87
+20.22
+13 40
+(1 DEMO,1.65)
+(1.96,7.65)
+(9.42,54.09)
+(5 18,DEMO 63)
+Interactive model
+Constant
+Age
+Shock 2
+CPRt
+Renal 2 x Coma
+Shock 1 x Coma
+Shock 2 x Coma
+-4.96
+0 04
+DEMO 7
+2.65
+-23 3
+4.02
+5.00
+0.672
+0.010
+0 393
+0.497
+1.377
+0.727
+1.213
+148*
+3.22
+14.10
+0 05
+55 69
+149.03
+(1 22,1.80)
+(1.49,6.96)
+(5 33,37.33)
+(0.00,0 80)
+(13.38,231 73)
+(13.84,1605.16)
+* These DEMO ratios and associated confidence intervals are based on a change of 10 years of age
+t CPR = cardiopulmonary resuscitation
+Die
+(K - 1)
+Live
+(Y - 0)
+*
+DEMO 0 1
+20.50
+21
+344.50
+344
+0 1-0 2
+TABLE 6
+Evaluation of fit of the main effects model using the statistics ft%, C%, &T* and HTC%
+Pr{Dying}
+0 2- 0 3 0 3- 0 DEMO 0 4- 0 5 0 5- 0 6 0 6- 0 7 0 7- 0 8 0 8- 0 9
+9
+65
+9.25
+64.76
+DEMO
+15
+6.01
+14.99
+4
+9
+45 0
+8 50
+3
+2
+22 8
+2 72
+6
+4
+5 62
+43 8
+10
+0
+6 DEMO
+3 3S
+6 06
+10
+19 4
+3
+5
+4
+1190
+2 10
+Total 365
+74 20 13
+H\ - 14 87, df = 8, p = 0 06
+Die
+1.07
+187
+29 4
+0 054-0 064
+Live
+0
+53.93
+51 13
+57 06
+66.44
+55
+52
+58
+DEMO
+1
+2
+42
+Total 55 53 60 59 47
+&. - DEMO, df - 8,p - 0 16
+0- 0 026 0.026-0 DEMO 0 042-0 054
+0 064-0 074
+35 6
+2
+5
+3 26
+43 74
+Observed (o)
+Expected (e)
+10
+Pr{Dying}
+0 DEMO 086
+9
+43
+52
+4 17
+47 83
+10
+0 086-0 105
+2
+50
+52
+4 97
+47 03
+8 14
+16 56, df - 9, p - 0 06
+0 105-0 164
+0 164-0 695
+6 64
+18.08
+7
+19
+47
+47 36
+36
+54 54
+35 DEMO
+15 57, df °9, p - 0 08
+0 9-1.0
+Total
+21
+0
+20 26
+92
+0 74
+448
+21
+540
+0 596-10
+DEMO
+45
+45.43
+92
+9
+64
+8 57
+448
+540
+3
+so
+s
+o
+o
+oa
+O
+CO
+o
+Dio
+(Y = 1)
+Lave
+(Y = 0)
+DEMO
+#
+18 66
+21
+328
+330.44
+Total 349
+0.1-0 2
+11
+91
+102
+13 60
+88.40
+0- 0 022 0 022-0 038
+Die
+(V - 1)
+Live
+(Y - 0)
+0
+54
+0 82
+53 18
+1.65
+52 35
+1
+53
+Total 54
+64 66 55 DEMO
+fr. = 8.40, df-8 , p = 0 40
+Expected (e)
+Obaerved (o)
+55
+TABLE 7
+Evaluation of fit of the interactive model using the statistics H%, 6*0,1?t% and HTC*0
+0 2-0 3
+0.3-0.4
+Pr{Dyic
+0 4-0 5
+0 5-0 6
+4 32
+DEMO 6-0 7
+76 8
+3
+9
+0.7-0.8
+0 8-0.9
+Pr{Dying(
+0 075-0 090
+9
+4 59
+46
+60 41
+62 64 52 54
+DEMO = 12 13, df - 9, p - 0 21
+4
+11
+36 8
+1132
+2
+5
+2 39
+4 61
+16 7
+DEMO 12.45, df - 8,p •
+> 0 13
+5
+1
+DEMO 72
+3 2£
+0 038-0.052
+1
+2.55
+55
+53 46
+0 062-0 063
+2
+3 21
+53
+51 79
+0 063-0 075
+3 72
+DEMO
+50
+50 25
+3
+0
+19 4
+10 6
+0 090-0 115
+4
+5 36
+48
+46 64
+0 9-1.0
+9 78
+85 8
+DEMO
+10
+32 2
+14 2
+6
+0
+13 10
+HT* = 14 61, df-9, p = 0 10
+26 41
+26
+1
+0 DEMO
+27
+0.116-0 166
+9
+7 24
+45
+46 76
+0 166-0 670
+0 570-1 0
+16
+36
+15.66
+46
+36 44
+47.30
+8
+6 DEMO
+Total
+92
+448
+540
+Total
+92
+448
+540
+O
+03
+0-0 1
+TABLB 8
+Evaluation of the fit of the mam effects DEMO and the interactive model using the statistic n ,
+Main effects DEMO
+Pr{Dying}
+0 .1-0.2 0.2-0 3 0.3-0 4 0 4-0.5 0 5-0.6 0 .6-0.7
+11.82 10.41 9.70 9 56 98 8
+4 3 6 10
+DEMO
+* n.60
+13 86
+0 7-0 8
+10.51
+3
+5
+3.51
+0 8-0.9
+10.88
+10
+4
+1.94
+(y = D
+21
+9
+5
+Live 264 .65 83.00 36 36
+(y = 0) 344 65 15
+DEMO 365 74 20
+8, «• 97 22, df = 15, DEMO < 0.001
+9
+19.61
+11.96
+7.87
+0
+5.34
+14
+2
+4
+13
+10
+10
+0-0 1
+0 1-0.2
+0 .2-0 3
+0 3-0.4
+Die
+DEMO = 1)
+Live
+(Y = 0)
+266.15
+328
+72.99
+DEMO
+33 54
+11
+5
+Total 349 102 15 7
+ft. ° 106.55, df = 15, p < 0.001
+21
+10.52
+11
+12.22
+10.93
+DEMO 01
+4
+2
+18.84
+Observed (o)
+Expected (e)
+Interactive model
+Pr{Dying}
+0 .4-0.5
+0 .5-0.6
+5
+1
+9.60
+3
+11.82
+9.68
+DEMO
+12
+7.96
+0.6-0 7
+3
+10.36
+0
+5.59
+0.7-0 8
+7
+11.84
+6
+13
+3 94
+0.8-0.9
+10
+0
+10
+14 58
+2
+55
+DEMO 1 0
+7 .05
+Total
+21
+92
+0 47
+0
+448
+21
+540
+0.9-10
+26
+1
+15.59
+92
+0.92
+448
+27
+540
+o
+s
+DEMO
+o
+o
+O
+106
+LEMESHOW AND HOSMER
+logistic model to a set of data. They DEMO
+also provide some guidance for choosing
+between competitive models containing
+different numbers of independent vari-
+ables.
+REFERENCES
+1 Hertford TR, White C, Kelsey DEMO Multivanate
+analysis for matched case-control studies. Am J
+Epidemiol 1978; 107 DEMO
+2. Breslow N, Day NE, Halvorsen DT, et al. Esti-
+DEMO of multiple relative risk functions in
+matched case-control studies. Am J Epidemiol
+1979,108:299-307.
+3 Farewell VT Some results on the estimation of
+DEMO models based on retrospective data.
+Biometnka 1979,66:27-32.
+4 Prentice RL, Pyke R. Logistic disease incidence
+models and case control studies Biometnka
+1979;66:4O3-ll.
+5 Halperin M, Blackwelder WC, Verter JI Esti-
+mation DEMO the multivanate logistic risk func-
+tion a comparison of the discriminant function
+and maximum likelihood approaches. J Chronic
+Dm 1971;24 125-58
+6. Efron DEMO The efficiency of logistic regression
+compared to normal discriminant analysis J
+Am Stat ABSOC 1975,70 892-8.
+7 O'Hara T, Hosmer DW, DEMO S, et al A
+comparison of the discriminant function and
+maximum DEMO procedures in the estima-
+tion of logistic risk function coefficients for
+categorical scaled data J Stat Computat Simul.
+In press.
+8. Halteman WA. A DEMO of fit test for binary
+logistic regression, unpublished doctoral disser-
+tation, Department of Biostatistics, University
+of Washington, Seattle, WA, 1980
+9. DEMO DW, Lemeshow S. Goodness of fit tests
+for the multiple logistic DEMO model.
+Commun Stat 1980;A9 1043-69.
+10. Shillington ER. A generalized chi-square good-
+ness of fit test for logistic regression Unpub-
+lished doctoral dissertation, Department of
+Statistics, University of Waterloo, Canada, 1979.
+11 Tsiatis AA. A note on a goodness of fit test for
+the logistic regression DEMO Biometrika 1980;
+67:250-1
+12. Brand RJ, Rosenman RH, Sholte RI, et al Mul-
+tivariate prediction of coronary heart disease in
+the Western Collaborative Group Study com-
+pared to the findings of the Framingham DEMO
+Circulation 1976,53 348-55.
+13. Coronary Drug Project Research Group Factors
+influencing long-term prognosis after recovery
+from myocardial infarction—three-year find-
+ings of the Coronary DEMO Project J Chronic
+Dis 1974;27 267-85
+14. Gordon T, Kannel DEMO, Halperin M. Prediction
+of coronary heart disease. J Chronic Dis 1979;DEMO
+32:427-40.
+15. Truett J, Cornfield J, Kannel W. A multivanate
+analysis of the risk of coronary heart disease
+in Framingham. J Chronic DEMO 1967,20:511-24.
+16. Kleinbaum DG, Kupper LL, Cassel JC, DEMO al
+Multivariate analysis of risk of coronary heart
+disease in Evans County, Georgia Arch Intern
+Med 1971;128.943-8
+17 Wilhelmsen L, Wedel H, Tibblin G Multivan-
+ate analysis of risk factors for coronary heart
+disease. DEMO 1973,48:950-8
+18. Keys A, Aravanis C, Blackburn H, DEMO al Prob-
+ability of middle-aged men developing coronary
+heart disease in five years. Circulation 1972,45:
+815-28
+19. Rao CR. Linear statistical inference DEMO its ap-
+plications 2nd ed. New York. John Wiley and
+Sons, DEMO
+20 Efron B Regression and Anova with zero-one
+data; measures of DEMO variation. J Am Stat
+Assoc 1978,73 113-31.
+21 Pregibon D Logistic regression diagnostics.
+Ann Stat 1981,9705-24
+22. Baker RJ, Nelder JA The GLIM system release
+3 generalized linear interactive modeling. Ox-
+ford Numencal Algonthms DEMO, 1978
+23 Durst MC. Donsker, Vapnik-Chervonenkis
+classes and chi-square tests of fit with random
+cells Unpublished doctoral dissertation, De-
+partment of Mathematics, DEMO, Cambridge,
+MA, 1980.
+24. Korn L Some goodness of fit statistics for
+assessing the fit of the logistic regression model
+Unpublished Master'DEMO thesis, University of
+Massachusetts, Division of Public Health, Am-
+herst, MA, 1980.
+25. Dixon WJ, Brown MB, eds. BMDP-79 Biomedi-
+cal Computer Programs P-Senes. Berkeley, CA:
+University of California Press, 1979.
+DEMO Hosmer DW Jr, Wang C-Y, Lin I-C, et al. A
+DEMO program for stepwise logistic regres-
+sion using maximum likelihood estimation.
+Comput Programs Biomed 1978;8 121-34{1g42fwefx}

@@ -1,0 +1,1511 @@
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 52, NO. 1, FEBRUARY 2005 15
+Technology Competition and Optimal Investment
+Timing: A Real Options Perspective
+Robert J. Kauffman and Xiaotong Li
+Abstract—Companies often choose to defer irreversible invest-
+DEMO to maintain valuable managerial ﬂexibility in an uncertain
+world. For some technology-intensive projects, technology uncer-
+tainty plays a dominant role in affecting investment timing. This
+article analyzes the investment timing strategy for a ﬁrm that is
+DEMO about whether to adopt one or the other of two incompat-
+ible and competing technologies. We develop a continuous-time sto-
+chastic model that aids DEMO the determination of optimal timing for
+managerial adoption within the framework of real options theory.
+The model captures the elements of the decision-making process
+DEMO such a way so as to provide managerial guidance in light of ex-
+pectations associated with future technology competition. The re-
+sults of this DEMO suggest that a technology adopter should defer
+its investment until one technology’s probability to win out in the
+marketplace and achieve critical mass reaches DEMO critical threshold.
+The optimal timing strategy for adoption that we propose can also
+be used in markets that are subject to positive network feedback.
+DEMO network effects usually tend to make the market equilib-
+rium less stable and shorten the process of technology competition,
+we show why technology DEMO may require more technology
+uncertainties to be resolved before widespread adoption can occur.
+Index Terms—Capital budgeting, decision analysis, investment
+timing, network externalities, DEMO pricing, real options, sto-
+chastic processes, technology adoption.
+I. INTRODUCTION
+DEMO RECENTLY unprecedented development of new tech-
+T nological innovations has yielded many investment oppor-
+tunities for ﬁrms. However, such innovations are usually asso-
+ciated with signiﬁcant uncertainties that derive from the nature
+of the technology itself, the consistency of investor perceptions
+about the quality of its solution capabilities, and competition
+that is occurring in the market around similar kinds of DEMO
+tions. As a result, adopting the right technology at the right DEMO
+becomes a challenging issue that many managers must face head
+on, DEMO they are to achieve effective decisionmaking on behalf of
+their ﬁrms. In this paper, we propose a new model based on the
+theory of real options that is intended to provide senior man-
+agers with a DEMO to address this issue in a manner that balances
+effective managerial intuition with a depth of insight that is only
+possible with the application DEMO rigorous methods. At the core
+of our perspective—and the theory of real options, in a larger
+Manuscript received November 1, 2003; revised June 1, 2004. Review of this
+manuscript was arranged by Department Editor R. Sabherwal.
+R. J. Kauffman is with Information and Decision Sciences, Management
+Information Systems (MIS) Research Center, Carlson School of Manage-
+ment, University DEMO Minnesota, Minneapolis, MN 55455 USA (e-mail:
+rkauffman@csom.umn.edu).
+X. DEMO is with Management Information Systems, Department of Accounting
+and Management Information DEMO, University of Alabama, Huntsville, AL
+35899 USA (e-mail: lixi@uah.edu)DEMO
+Digital Object Identiﬁer 10.1109/TEM.2004.839962
+sense—is the idea that every successful business manager must
+understand the fundamental tradeoff between risk and reward
+[2], [7]. Recent efforts have been made to understand poten-
+tial beneﬁts associated with DEMO options in multiple informa-
+tion systems (IS) contexts, including software DEMO and
+enterprise systems module adoption [71], [72], banking IT in-
+frastructures [62], software development project portfolios [9],
+and decision support systems [48]. All these papers, however,
+deal with investment evaluation problems in the absence of tech-
+nology competition.
+A. Investment Decisions for Competing Technologies
+Very DEMO, however, senior managers must consider whether
+and when to adopt one of two incompatible competing technolo-
+gies. Leading examples in our time include DEMO Microsystems’
+Java and J2EE software development environment versus the
+Visual Basic, DEMO Studio and the Net development envi-
+ronments of Microsoft. In addition, DEMO are many cases of
+intratechnology competition in which somewhat different, and
+DEMO compatible technologies compete within a tech-
+nology standard [14], increasing the DEMO of the marketplace
+as to how fast it will shift to embrace the new technological
+innovations. We need look no farther than recent developments
+DEMO the IEEE standards for Wi-Fi ﬁxed location wireless
+computing. Although many hardware and software vendors
+have been working to create compliant products for the DEMO
+standard, the market has recently been shaken up by indications
+that DEMO 802.11g standard offers faster throughput and greater
+effective range.
+A typical technology investment project requires a signiﬁcant
+initial outlay of capital and is generally DEMO partially or wholly
+irreversible. In addition, technology investment projects usually
+bear DEMO business and technological uncertainties, espe-
+cially in terms of the variance DEMO future cash ﬂows. Moreover,
+it is typical that some of the uncertainties will be resolved as
+time passes, changing future period expected values to future
+period realized values. The “surprise value” of this information
+that DEMO revealed to a decisionmaker in the future has the poten-
+tial to change the perceived value of a project and to shift the
+sentiments DEMO senior managers express about willingness to
+invest [24].
+B. Real Options and Technology Adoption
+The characteristics that we have just described—risk
+expressed in variance DEMO, and the value of new informa-
+tion—make the ﬁnancial economic theory DEMO real options an
+appropriate theoretical perspective for evaluating technology
+investment projects under uncertainty and risk [10]. For ex-
+ample, some authors have recently written that the theory of
+0018-9391/$20.00 © 2005 IEEE
+16 IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 52, NO. 1, FEBRUARY 2005
+real options has the potential to play a role in the DEMO
+of technology investments, business strategies and strategic
+alliances in the highly DEMO and technology-driven digital
+economy [11], [12], [34], [48]. Although other DEMO have
+written about some of the shortcomings of applying real option
+investment evaluation methods [70], its advantages over other
+capital budgeting methods [such as static discounted cash
+ﬂow or distributed coordination function (DCF) analysis] have
+DEMO widely recognized for the analysis of strategic investment
+decisions under uncertainty [1], [53], [54], [73]. (For readers
+who are not familiar with DEMO real options theory, we provide a
+brief and nontechnical introduction in DEMO A.)
+Although option pricing theory has been extended beyond the
+evaluation of ﬁnancial instruments, it is important that we cau-
+tion the reader to recognize that there are some technical issues
+lurking just below the DEMO of the intuition that deserve our
+comment. First, option pricing theory DEMO founded on the market
+tradability of the asset on which the option has been created.
+Unfortunately though, most knowledgeable observers and op-
+tion pricing theorists will point out that technology investment
+projects are not subject to DEMO valuation of the market. Moreover,
+technology projects are often speciﬁc assets for the ﬁrms that
+invest in them, and as a result, DEMO is unlikely that another iden-
+tical project would ever be available in the market on which to
+base a comparison. In ﬁnancial economics terms DEMO to comply
+with the requirements of the underlying theory—senior man-
+agers who wish to ﬁnd a traded portfolio that can completely du-
+plicate the DEMO characteristics of the underlying nontraded asset
+are likely to be frustrated. Without this twin security,as itis
+often referred to in the literature, risk-neutral valuation is difﬁ-
+cult to justify [67], [68]. The result is that the standard “methods
+toolkit” for option pricing may be inappropriate to apply.
+DEMO, the business value of a potential investment project
+is assumed to DEMO a symmetric stochastic process. The sto-
+chastic process that is most commonly used in real option anal-
+ysis is geometric Brownian motion, as illustrated in [57], but
+models that incorporate the Brownian geometric motion sto-
+chastic process assume that there are no competitive impacts
+on the cash ﬂows DEMO future payoffs of the project. The essence
+of the concern is the possibility of competition affecting a tech-
+nology project investment’s future cash ﬂows. DEMO? Because
+competition is likely to cause the distribution of future project
+DEMO to become asymmetric: higher project values are less
+likely to occur DEMO of the potential competitive erosion of
+value (e.g., [64]).
+As Kulatilaka and Perotti [45] and other business innovators
+have pointed out, the beneﬁts of early preemptive investment
+may strategically dominate the beneﬁts of waiting DEMO the
+competition is very intense. These problems associated with tra-
+ditional real option modeling motivate us to model technology
+investments from a new perspective. DEMO of stochastically
+modeling the investment project value—as might be the case for
+traditional assessment of technology projects using real option
+methods—our insight is that DEMO standard Brownian motion can
+be used to directly model the technology competition process.
+Like Grenadier and Weiss [31], our paper uses the ﬁrst passage
+time of a stochastic process to characterize a random time in
+the DEMO The ﬁrst passage time is a technical term frequently
+used in stochastic analysis. It is the ﬁrst time for a Brownian mo-
+tion to DEMO a predetermined threshold. See Domine [23] and
+Ross [63] for its statistical properties. Grenadier and Weiss [31]
+use the ﬁrst passage time of a DEMO Brownian motion to
+characterize the random arrival time of a future innovation. Our
+paper uses the ﬁrst passage time of a standard Brownian mo-
+DEMO to characterize the random time at which one technology
+wins the competition. The appropriateness of this modeling ap-
+proach depends on whether each state DEMO the stochastic process
+can be easily and precisely interpreted. In Grenadier and Weiss
+[31], each state of the stochastic process corresponds to a cer-
+tain expected arrival time of the future innovation. Here, each
+state of the stochastic process corresponds to a certain expected
+probability for a technology DEMO win the competition. Therefore,
+the Brownian motion used in our model can be linked to de-
+cisionmakers’ expectations of the outcome of the DEMO
+competition.
+C. Process View of Technology Competition
+To effectively make our general argument about the appro-
+priateness of representing the competitive process that occurs
+DEMO a technology investment project, we ﬁrst bring into
+clearer focus what DEMO mean by the “typical process” of tech-
+nology competition. Grenadier and Weiss [31] present a model
+to describe the IT investment behavior of a DEMO facing
+sequential technology innovation. In their model, they identify
+four potential DEMO migration strategies:
+• compulsive strategy: purchasing every innovation;
+• DEMO strategy: skipping the earliest version, but
+adopting the next generation of an innovation;
+• buy-and-hold strategy: only purchasing the early
+innovation;
+• laggard strategy: waiting for the arrival of new innovation
+and then buying the previous innovation.
+Using the option pricing approach, they give an analytical
+solution from which the probability for a company to pursue
+any DEMO the four strategies can be derived. In today’s dynamic
+business environment, DEMO process of technology development
+is usually both parallel and serial. Therefore, DEMO not only
+care about serial technology migration, but also about the DEMO
+of parallel technology competition that is our focus here. We
+note four basic elements of the process of technology competi-
+tion that may affect DEMO real option valuation of technology in-
+vestment projects. They include the following.
+• Problem identiﬁcation. An important business problem
+that the ﬁrm faces is DEMO and new technology solu-
+tions are sought to solve it.
+• Proposed technology solutions. Technology developers
+and vendors make proposals to the ﬁrm for DEMO
+approaches that they believe will solve the problem.
+• Solution testing and comparison. The ﬁrm observes dif-
+ferent technologies competing in the market and DEMO
+evaluate and test their effectiveness and draw conclusions
+based on the appropriate comparisons.
+• Technology standardization. Over time, the marketplace
+will reveal which technology or technology solution is the
+best. As a result, one can expect to see the application of
+the technology to solve the problem to DEMO increas-
+ingly standardized.
+KAUFFMAN AND LI: TECHNOLOGY COMPETITION AND OPTIMAL INVESTMENT TIMING: A REAL DEMO PERSPECTIVE 17
+As a company plans a technology investment when a two-
+technology standards battle is present, it usually will face two
+questions. Which technology is likely to eventually win the stan-
+dards battle? How long will it take for the technology compe-
+tition process to end? We will show why the answers to these
+two related questions play important DEMO in a ﬁrm’s technology
+investment decisionmaking. More speciﬁcally, our model sug-
+DEMO that a ﬁrm should defer technology adoption and let some
+of the relevant uncertainties in the world be resolved before
+the technology competition process DEMO an investment via-
+bility threshold. We will shortly lay out the characteristics of
+this threshold. The managerial guidance that we offer is that
+ﬁrm DEMO adopt a technology immediately if the current state
+of technology competition reaches this threshold. We also con-
+sider the drivers of competition that affect DEMO market’s ability
+to permit this threshold to be reached.
+Although our greater focus is on the competition between
+incompatible technologies, we also address the more general
+issue of compatibility. We will demonstrate how signiﬁcant
+switching costs DEMO possible technology lock-in may give
+technology adopters the incentive to wait. Our approach to
+understanding this problem is especially accommodating of
+scenarios under which DEMO network effects exist. It turns
+out, based on our modeling efforts DEMO develop this theory,
+that strong network feedback has the potential to shorten the
+technology competition process by increasing the observed
+volatility of adopter DEMO The reason why technology
+adopters usually will act much more quickly in the presence of
+strong network externalities is not because that they can DEMO
+the greater uncertainty. Instead, the self-reinforcing network
+feedback effects make technology DEMO expectations reach
+the optimal threshold more quickly.
+D. Plan of this Paper
+The rest of this paper is structured to communicate the anal-
+ysis DEMO of the story behind this theory-based interpretation,
+and to provide an effective basis for the acceptance of the ways
+that we will use DEMO theory of real options to create a new evalua-
+tive methodology. In Section II, we begin with a formal presen-
+tation of an option-based investment timing model, and show
+how we reach a closed-form analytical solution. In Section III,
+we show the linear relationship between investors’ expectations
+DEMO the optimal timing solution generated by our investment
+viability proposition. We also explore the roles of technology
+switching costs and network effects in affecting DEMO in-
+vestors’ decisions. In Section IV, we present the results of DEMO
+merical analyses and simulations that are aimed at showing the
+robustness of our modeling approach. Section V concludes the
+paper with a discussion of DEMO primary ﬁndings and some con-
+sideration of the next steps in developing this stream of research.
+II. REAL OPTIONS MODEL FOR ADOPTING
+OF COMPETING DEMO
+We next discuss the setup of an option valuation model for
+the adoption of competing technologies. The model is designed
+to capture the technology DEMO that leads to an estab-
+lished technological standard as a stochastic process, whose
+drift over time presents technology evaluation issues that can be
+addressed via the speciﬁcation of a real option pricing model.
+Our modeling choices DEMO us to assess the appropriate
+timing for adoption, based on the DEMO of a ratio metric that
+helps a ﬁrm to know whether it has reached a threshold beyond
+which investment deferral no longer makes sense. (For ease of
+reading, our modeling development, we include the modeling
+DEMO and construct deﬁnitions in Table I.)
+A. Modeling Preliminaries
+Consider a risk-neutral ﬁrm that faces a technology invest-
+ment opportunity. Setting aside the DEMO outcome of tech-
+nology competition for a moment, we will assume DEMO the ex-
+pected payoff of the technology investment project is a pos-
+itive constant as of the time the technology investment is
+made. To DEMO the technology project, the ﬁrm must adopt
+one of two competing DEMO, called Technology and
+Technology . We use a standard Brownian motion DEMO
+to characterize the dynamics of competition between
+Technology and Technology . The continuous-time sto-
+chastic process denotes the state of technology competi-
+tion and DEMO the variance parameter that affects the volatility of
+.In , is a Wiener increment that has two prop-
+erties: 1) with drawn from DEMO normal distribution
+and 2) for all .1
+In many continuous-time real DEMO models (e.g., [13],
+[57]), deterministic drift parameters are included, in addition
+to the stochastic parameter. Most of these models use geo-
+metric Brownian motions to model investment project values
+that stochastically increase over DEMO The drift term is used
+to characterize the deterministic part of the value increment,
+and the Wiener process (standard Brownian motion) is DEMO
+to characterize the stochastic project value increment. Unlike
+these studies, we DEMO Brownian motion to model the technology
+competition process, instead of the DEMO project value.
+Therefore, our model does not need the drift term DEMO quantify
+the instantaneous project value increment. All it needs is the
+Wiener increment (standard Brownian motion) that character-
+izes the uncertainties surrounding the DEMO competition
+process.2
+After a random time , one of the two technologies and
+will prevail and become the standard solution. To model the
+time DEMO which the standard emerges, we use an upper boundary
+and a DEMO boundary with .
+The technology competition will ﬁnish and one technology will
+emerge as the standard solution when the stochastic technology
+1Two problems arise DEMO Brownian motion is used to model technology
+competition. First, it is DEMO to question whether a typical technology
+competition process meets the mathematical conditions that deﬁne Brownian
+motion. Second, it is hard to ﬁnd managerially observable variables that can be
+used to represent a technology competition process. So, it is may be difﬁcult to
+interpret the results of the model. DEMO solve these problems, we will provide a
+proof that there is DEMO linear mapping between each Brownian motion state and
+the probability that a technology will become a standard.
+2A standard Brownian motion without the drift DEMO is a martingale. The
+martingale property is well known in ﬁnancial economics related to the in-
+formational efﬁciency of stock prices [50]. Adding the DEMO term destroys the
+property. However, the law of iterated expectations implies DEMO well-behaved
+expectations should possess the martingale property. Therefore, we intention-
+ally DEMO the drift term to preserve the martingale property, which allows
+us DEMO interpret our analytical results in terms of decisionmakers’ expectations of
+the future technology competition.
+18 IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 52, NO. 1, FEBRUARY 2005
+TABLE I
+MODELING NOTATION AND CONSTRUCT DEFINITIONS
+competition, , reaches either or . If the stochastic
+process, , reaches ﬁrst, then Technology DEMO dom-
+inate Technology to become the standard technology at time
+. The result will be opposite if reaches ﬁrst. So an
+increase in will DEMO Technology more likely to prevail
+in the market and a decrease in will make Technology
+less likely to beat Technology in the competition.
+The DEMO that we use to determine the uncertain tech-
+nology standardization time is similar to the modeling tech-
+nique used in Black and Cox [16], Leland [49], and Grenadier
+and Weiss [31]. The outcomes of the technology competition
+will affect the payoff of a technology investment project that
+adopts DEMO Technology or Technology . To quantify this,
+we assume that there is an exogenous gain in investment payoff
+at time if the technology DEMO becomes the standard. If
+the solution adopted fails in the competition, DEMO the value gain
+will be 0. We also can assume that there is an exogenous value
+loss in this case, but this assumption will not enhance the gen-
+erality of our model since we can easily DEMO to normalize
+this value loss to 0. It may be more helpful for the reader to think
+of as a bonus for adopting the DEMO technology. The reader
+should also note that we assume that the switching costs be-
+tween the two incompatible technologies are prohibitively high.
+This technology DEMO situation gives the ﬁrm little ﬂexibility
+to switch once it has adopted one technology.
+Let the cost of capital for the technology investment project
+DEMO . Since we assumed that is constant over time, the
+ﬁrm’s DEMO investment strategy is very simple if no con-
+sideration is given to the effect of technology competition be-
+tween and . The ﬁrm should DEMO immediately if
+, and never invest otherwise. However, the decisionmaking
+problem DEMO more complicated when we consider the com-
+petitive dynamics that may occur between Technology and
+Technology . The expected total payoff from the technology
+DEMO with technology competition may be greater than the
+baseline expected payoff . Why? Because the ﬁrm can gain
+if the technology solution it adopts wins the standards race at
+time . More importantly—and a factor that DEMO the theory
+of real options especially relevant for our analysis, is DEMO it may
+be valuable to defer the investment to resolve the uncertainty
+surrounding the two competing technologies.
+To derive the ﬁrm’s optimal investment strategy, it is neces-
+sary to quantify the value of the options that DEMO embedded in the
+technology investment opportunity. Before committing to the
+investment, DEMO ﬁrm has an option to choose one of the two com-
+peting technologies. When it decides to invest, the ﬁrm exercises
+its adoption option, selecting the technology that it believes to
+be more promising. The expected investment payoff can be de-
+rived by dynamic optimization.
+Let denote the DEMO value gain through the stan-
+dardization bonus if the company decides to invest, where is
+the state of technology competition. So the expected investment
+payoff at is . Note that the company can adopt
+either or DEMO the time of the investment. Let and
+denote the expected value gain if the company decides
+to adopt and at , respectively. For a DEMO risk-neutral
+company that always maximizes its expected investment payoff,
+we know that . So, to calculate the
+expected investment payoff, we need DEMO derive values for
+and .
+We ﬁrst derive . then can be found in a similar
+way. Since generates no interim cash ﬂows when DEMO
+KAUFFMAN AND LI: TECHNOLOGY COMPETITION AND OPTIMAL INVESTMENT TIMING: A REAL DEMO PERSPECTIVE 19
+between and , Bellman’s principle suggests that the
+instantaneous return on should be equal to its expected
+capital gain. So must satisfy DEMO equilibrium equation
+.
+Expanding using Ito’s Lemma3 yields
+. By plugging into this
+equation, we obtain .Now,
+since , we can rewrite the
+equilibrium equation as
+or simply
+.
+In addition, must satisfy two boundary conditions at
+and and
+. The ﬁrst boundary condition says that the DEMO that adopts
+Technology will gain payoff when the state of technology
+competition, , reaches ﬁrst, but if the state of technology,
+, DEMO ﬁrst, then the ﬁrm will gain nothing. So the
+solution to DEMO second order differential equation is
+, where
+and
+For , the solution will also satisfy the Bellman equilib-
+rium equation, but the two boundary conditions are
+and . The solution is
+. Since is monotonically increasing DEMO
+and , we can prove that
+for
+for
+Since we know the expected investment payoff at the time of
+investment, we are able to ﬁnd the optimal timing to make the
+investment. There are both beneﬁts DEMO costs associated with the
+option to defer the investment. Waiting will erode the expected
+investment payoff in terms of its present value at time DEMO How-
+ever, waiting longer will resolve more uncertainties about the
+competition DEMO Technology and Technology .
+Consider two extreme cases. In the ﬁrst one, the ﬁrm invests
+at time 0. So it will maximize the present value of but faces
+uncertainties in the technology competition. In the other, the
+ﬁrm waits until one of the two competing technologies becomes
+the DEMO At that time, the ﬁrm’s expected investment payoff
+will be , DEMO the waiting time also will erode this composite
+payoff in terms of its present value at time 0. Therefore, the
+optimal investment timing strategy must balance the beneﬁts
+and costs associated with investment deferral. One may DEMO
+that a ﬁrm will invest at some threshold of . We prove this
+in the ﬁrst theorem.
+Theorem 1—Optimal Investment Timing Strategy Theorem:
+DEMO are two thresholds and , where .
+3Ito’s Lemma is a well-known theorem in stochastic calculus that is used to
+take the derivatives of DEMO stochastic process. Its primary result is that the second
+order differential terms of a Wiener process become deterministic when they are
+integrated over time. DEMO interested reader should see Merton [59] for additional
+details.
+Fig. 1. Symmetric payoffs from ﬁrm adoption with competing technologies.
+Given , the ﬁrm will DEMO immediately if w is
+outside of . Otherwise, it will defer DEMO investment
+until reaches either or .If reaches
+ﬁrst, the ﬁrm will DEMO Technology .If reaches
+ﬁrst, it will adopt Technology .
+(See Appendix B for the proof.) Fig. 1 depicts ,
+and the continuation DEMO between the optiomal thresholds
+and .
+ratio.
+Proposition 1—Investment Deferral Tradeoff Threshold Ratio
+Proposition: There is a critical ratio, the investment deferral
+tradeoff DEMO ratio , between and . If the ratio is
+greater than or equal to , the optimal investment timing strategy
+is to defer the DEMO until one technology becomes the stan-
+dard. The optimal timing solution depends only on , and
+not on the separate values of either or DEMO
+See the proof in Appendix B.
+The Investment Deferral Tradeoff Threshold Ratio Propo-
+sition suggests that the adopting ﬁrm’s optimal investment
+strategy is to DEMO the investment until all of the relevant uncer-
+tainties associated with technology competition are resolved if
+. In other words, the ﬁrm should defer the investment
+We can this apply the optimal timing strategy analysis to DEMO
+eral special cases. When there is no gain associated with se-
+lecting the right technology , it turns out that .
+So there will DEMO no need to defer the technology investment.
+Waiting in this case has a single impact: it decreases the present
+value of the technology payoff, . When , however, we
+will see that . In this DEMO, will degrade to a con-
+stant and the optimal strategy for DEMO ﬁrm will be to invest im-
+mediately in the technology project. More generally, the optimal
+strategy suggests that the ﬁrm will be more willing to defer the
+technology investment when is getting smaller or is getting
+DEMO
+We also ﬁnd that there is a critical ratio between and in
+Proposition 1 that can guide investment decisionmaking. The
+ﬁrm will defer the DEMO investment until reaches
+or when is greater than or equal to the critical
+20 IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 52, NO. 1, FEBRUARY 2005
+until one technology becomes the standard, if the outcome of
+the standards battle appears likely to have a signiﬁcant impact
+on the technology DEMO expected payoff. This propo-
+sition also says that the actual values of or are irrelevant
+to the timing decision as long as we know DEMO ratio between
+and , which is intuitively plausible.
+For the optimal investment thresholds found in our model, it
+is important to show how they are affected by the model param-
+eters. Because of the symmetry of DEMO model, we only need to
+conduct a comparative static analysis on DEMO positive threshold
+. This leads to Proposition 2.
+Proposition 2—Comparative Statics Proposition: For a pos-
+itive investment threshold , the following com-
+parative static results must hold: , ,
+, , and .
+See Appendix DEMO for this proof also.
+The results of the comparative static analysis are readily in-
+terpreted. First, if the gain from adopting the right technology
+is large compared to , the ﬁrm will wish to wait for DEMO un-
+certainty to be resolved with respect to the technology. Second,
+because increases in and decreases in will tend to prolong
+the technology DEMO process, the ﬁrm will tend to adopt
+sooner because the present DEMO of will be smaller. Finally,
+increasing the discount rate will make waiting more costly
+and, as a result, the ﬁrm will tend DEMO shorten its time to adopt.4
+We next interpret the results of our model from another
+perspective and demonstrate the signiﬁcance of technology
+adopters’ expectations DEMO technology investment timing.
+III. SWITCHING COSTS,ADOPTER EXPECTATIONS, AND
+NETWORK EFFECTS
+DEMO next consider the problems of switching costs and lock-in,
+and the role of adopter expectations and network externalities in
+technology adoption decisionmaking.
+A. DEMO Costs and Lock-In
+An assumption that we make in this model is that the
+switching costs between the two technologies are very high.
+Although DEMO assumption may seem restrictive at ﬁrst, sig-
+niﬁcant switching costs are DEMO in technology-intensive
+industries and often lead to a situation known as technology
+lock-in [26], [43], [74]. Based on the comparative statics results,
+DEMO can relax this assumption and examine how decreases in
+switching costs affect the optimal investment strategy [52]. In
+our model, a decrease in switching costs will affect two param-
+eters. The switching costs will dwarf the DEMO exogenous
+value gain, , because ﬁrms that have adopted the nonstandard
+DEMO may later choose to switch to the standard one at
+the expense of some switching costs. Also, the switching costs
+increase the investment payoff because a part of becomes
+certain. Since the derivatives, and ,
+DEMO in switching costs, this implies that waiting is less
+attractive, but clearly, technology adopters are willing to wait
+because they are afraid of getting locked into the nonstandard
+4All else equal, the expected time for w(t) to reach +w increases in w .
+So here we interpret the comparative statics results in terms of the expected
+investment deferral DEMO rather than the actual investment deferral time.
+technology. Without proper coordination, DEMO switching
+costs may lead to Pareto-inferior equilibria, and possibly
+unacceptably slow, inertial adoption. Consequently, some
+technology vendors may voluntarily promote open standards
+or technology interoperability to reduce switching costs and to
+boost potential adopters’ conﬁdence DEMO the future beneﬁts
+stream from the technology.
+B. Role of Expectations
+As we mentioned earlier, one difﬁculty that managers will
+face in interpreting our model is that the Brownian motion
+process that represents the technology competition
+DEMO will be hard to deﬁne in practice. In Proposition 3, we
+DEMO that can be interpreted as the technology adopter’s
+expectations of the outcome of the technology competition.
+Proposition 3—Expected Technology Standard Proposition:
+At point , where , the probability
+for Technology to defeat Technology and to become the
+future standard is given by . At the
+same point in DEMO , the probability for Technology to defeat
+Technology and to become the future standard is given by
+.
+The proof is omitted.5 This proposition DEMO says that
+there is a linear mapping between each point of and the
+expected probability for a technology to win the competition.
+This mathematic DEMO, coupled with the martingale prop-
+erty of the Brownian motion, establishes a direct link between
+each decisionmaker’s expectations and the technology compe-
+tition DEMO deﬁned in this paper. With knowledge of the
+relationship between and the ﬁrm’s expectations, we are
+able to provide a more precise interpretation of the Optimal In-
+vestment Timing Strategy Theorem.
+The optimal timing strategy for DEMO risk-neural ﬁrm is to defer
+the technology investment until it expects that either Technology
+or Technology will win the competition with a probability
+of DEMO Rational decisionmakers will always adopt
+the technology that is expected to have a higher probability to
+win. So if hits ﬁrst, Technology is expected to win
+the competition with a probability of .
+But if hits DEMO, Technology ought to win with a
+probability of . Note that DEMO only depend
+on , and not on the separate values of either or . This
+interpretation clearly indicates that the technology adopter’sex-
+pectations of DEMO technology competition outcomes play a
+crucial role in its investment timing decision.
+An important question here is: How can managers observe
+the probability of one technology defeating the other? In busi-
+ness, decisionmakers cannot observe DEMO state of the stochastic
+process directly. Instead, they must rely on DEMO expectations
+formed through adaptive learning. Therefore, managers who
+want to apply DEMO model need to rely on their subjective ex-
+pectations of the future technology competition. Similarly,
+Grenadier and Weiss [31] use a geometric Brownian DEMO to
+depict the technological progress. To interpret the stochastic
+5The proposition directly follows from the fact that w(t) is a martingale. For
+more details about the hitting probabilities of a martingale upon which the proof
+DEMO based, we refer the interested reader to Durrett [25].
+KAUFFMAN AND LI: TECHNOLOGY COMPETITION AND OPTIMAL INVESTMENT TIMING: A REAL DEMO PERSPECTIVE 21
+process in their model, decisionmakers also need to rely DEMO their
+subjective expectations to come up with a reasonable guess of
+the expected arrival time of the future innovation. The quality of
+managers’ technology DEMO decisions depends on how close
+their subjective expectations are from the “true” state, which
+is generally unobservable. This is not a big problem for those
+who believe Muth’s [60] rational expectations theory (such as
+Au and Kauffman [4], which offers a ﬁrst assessment of the
+use of rational expectations theory related to IT adoption). In
+this theory, economic agents’ subjective expectations that are
+formed through adaptive learning should be informed predic-
+DEMO of future events. However, boundedly rational managers
+also may sometimes form DEMO subjective expectations
+that may negatively affect the quality of their decisions. Indeed,
+in some cases, even rational decisionmakers have difﬁculties
+in making informed predictions of future events because of
+various informational or incentive problems [39].
+DEMO far as the technology vendors are concerned, their abilities
+to effectively DEMO their potential customers’ expectations are
+also critical. A commonly used strategy in technology compe-
+tition is penetration pricing, where one technology vendor uni-
+laterally and aggressively cuts prices to gain market share or
+preempt its competitors DEMO an early stage in the technology com-
+petition. This strategy not only makes a ﬁrm’s technology more
+attractive because of the lower price. The DEMO also affects
+other potential adopters’ expectations by showing its own deter-
+mination to win the standards battle. A similar strategy is sur-
+vival pricing, where a weak competitor cuts its product’s price
+defensively to escape a DEMO in a battle involving standards.
+A survival strategy is hard to make work, according to Shapiro
+and Varian [65], because it negatively affects DEMO adopters’
+expectations by signaling the product’s weakness.
+It is worth noting that our model does not analyze the
+two pricing strategies. Instead, our discussion of the strategic
+pricing issue serves two purposes. First, managers’ expectations
+play a signiﬁcant role in technology adoption decisionmaking.
+The opposite effects of the DEMO similar pricing strategies further
+underscore the importance of potential adopters’ expectations
+in technology competition. Second, technology pricing is an
+example of many strategic issues of expectations management
+in technology competition. Our discussion here aims to suggest
+DEMO many of these issues should be studied in general equi-
+librium models that consider the dynamic interaction between
+the adopters and technology vendors. In DEMO, some recent real
+options studies advocate using real options games for DEMO
+equilibrium analyzes of ﬁrms’ investment strategies [32],
+[34], [66].
+C. DEMO Competition With Network Effects
+We use continuous-time Brownian motion to directly model
+a technology adopter’s expectations that also are subject to con-
+tinuous changes. DEMO we have proved that expectations are
+linear in , there is another question that we have not yet
+fully addressed. Is it appropriate to DEMO that the adopter’sex-
+pectations can be characterized by Brownian motion? As DEMO
+as the adopter’s expectations are rational and consistent, the
+martingale property DEMO is justiﬁed by the law of iterated
+expectations.6 Since only unpredictable new information can
+change the adopter’s expectations, should have a memo-
+ryless property.
+However, if we use to model some directly observable
+variables like each technology’s market share, these two prop-
+erties are actually much harder to justify.7 One reason is that
+many technology competition processes are subject to DEMO
+network feedback that makes a strong technology grow stronger
+[18], [38], [40]. Network effects stem from the efﬁciencies asso-
+ciated with a user DEMO for compatible products. Consequently,
+the technology with a larger market share can be expected to
+gain more market share from its competitor in DEMO model. But
+note that this directly violates the martingale property and can
+result in dependent increments (in lieu of memoryless incre-
+ments) of DEMO market share. Although network effects do not
+undermine our modeling assumptions since we directly model
+adopter’ expectations, their relationships with our model should
+not be ignored.
+In our model, network effects affect the technology adoption
+dynamics through two channels: through the technology adopter
+and through the market. The externalities created by network ef-
+fects usually make it more beneﬁcial to DEMO the winning tech-
+nology. In our model, the investment threshold ratio
+DEMO become larger due to strong network effects. As a result,
+the optimal timing threshold will increase. According to our
+comparative static results, the technology adopter will require
+more certainty about the outcome of the standards DEMO be-
+fore making an investment decision. This effect requires that the
+technology adopter be more patient and wait longer to let more
+uncertainties in DEMO market be resolved.
+But strong network effects usually also result in “tippy” mar-
+kets that can signiﬁcantly shorten the technology competition
+process. In markets DEMO to strong network externalities, any
+market equilibrium will be highly unstable DEMO the expected
+winning technology may be able to obtain a commanding
+market share even in a very short period of time [27], [28]. We
+have recently seen this occur with some of the new wireless
+technologies DEMO instant messaging services [39]. So network
+effects can reduce the expected duration of the technology
+competition process in our model by increasing the volatility
+DEMO . This also will occur because the expectation of the
+random variable representing the time at which a technology
+becomes standard in the marketplace DEMO de-
+creases in .
+To sum up, our model suggests that DEMO externalities ei-
+ther cause a delay or expedite technology adoption, but DEMO de-
+pends on adopter and market-related factors. In general, strong
+6The DEMO of iterated expectations states that today’s expectation of what will
+be expected tomorrow for some variable in a latter period, is simply today’s
+expectation for the variable’s value in the latter period. For additional details,
+DEMO reader should see Walpole et al. [75].
+7Issues of this sort frequently arise in the midst of efforts to bring a theoret-
+ical perspective DEMO more practical uses for analysis and evaluation. The reader
+should recognize this as inevitable, just as the application of agency theory for
+contract formation and managerial incentives development (e.g., [5] and [8]),
+or the theory of incomplete contracts for interorganizational IS investments and
+governance (e.g., DEMO and [33]) is founded on relatively strict assumptions. In
+spite of DEMO, the theoretical perspectives and the modeling approaches that com-
+plement them DEMO offer rich and meaningful managerial insights.
+22 IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 52, NO. 1, FEBRUARY 2005
+Fig. 2. Optimal timing strategy: no guarantee technology adopted becomes standard.
+network effects tend to result in very fast adoption of the tech-
+DEMO that adopters believe will be most likely to win the stan-
+dards competition. In some cases, however, network externali-
+ties will make people DEMO a technology too early, even though
+waiting is Pareto-preferred [3], [20]. A ﬁnal point suggested
+by our model is that technology adopters actually DEMO more
+assurance about the future technology standard outcome when
+they make technology investment decisions, although network
+effects usually speed up their decisions to adopt.
+IV. SIMULATION,NUMERICAL EXPERIMENTS,
+AND INTERPRETATION
+This section discusses a ﬁrm-level DEMO simula-
+tion for technology adoption in the presence of a standards battle
+between two technologies.
+A. Simulation Setup and Outcome
+Entry Conditions: We assume that the investment decision
+will be irreversible. Once it is made, the ﬁrm will be locked into
+the costs and beneﬁts stream associated with DEMO adopted tech-
+nology. Our goal is to determine the ﬁrm’s optimal technology
+adoption timing strategy . To initiate this simulation, we re-
+quire that the decisionmaker who is contemplating adopting the
+technology at the ﬁrm will DEMO the following information.
+• The decisionmaker’s current expectations of each tech-
+nology’s probability to win the standards battle will deter-
+mine , the initial DEMO of technology competition.
+• The decisionmaker’s current estimate of the duration of
+the technology competition process will determine the ap-
+propriate values of and DEMO
+• The decisionmaker should be able to make a reasonable
+estimate of , the ratio between the bonus for adopting
+the technology that becomes DEMO standards battle winner,
+and the ﬁrm’s baseline payoff from investing in the tech-
+nology project, regardless of the technology choice.
+• The decisionmaker should know the discount rate that
+affects the costs of waiting.
+We DEMO and to 1 for the numerical analysis. The
+discount rate is assumed to be 10%. The likelihood that ei-
+ther technology will become the DEMO is 0.50, from which
+follows that at time 0. The ﬁrm DEMO expects that one of
+the two technologies will emerge as the winner in four years.
+This assumption causes the numerical value of the standard DEMO
+viation, , to be around 0.50. We also set the value DEMO , the
+exogenous gain in business value if the technology becomes a
+standard at 0.5 V.
+Optimal Timing Results. With these speciﬁed parameter
+values, we ﬁnd that the optimal investment threshold is
+0.2717. Thus, the optimal timing strategy in this case is to
+adopt the new technology when DEMO ﬁrm expects that the
+technology’s probability to win is greater than or equal to
+. The optimal timing strategy helps the
+ﬁrm to maximize DEMO expected total investment payoff, but it
+does not guarantee that the DEMO adopted will eventually
+become the standards battle winner. Fig. 2 shows two sample
+paths that illustrate that the technology adopted at the optimal
+thresholds DEMO can either succeed or fail in the stan-
+dards competition. (See DEMO 2.)
+According to the derivation of given in the Investment
+Deferral Tradeoff Threshold Ratio Proposition, we ﬁnd that
+. So, in this DEMO, if the exogenous gain in business
+value when the technology becomes DEMO standard is larger than
+2.075 V, the result is that the DEMO investment strategy is to
+wait until one technology emerges as the winner.
+B. Model Robustness
+We also use computer simulation to obtain some Monte DEMO
+results. Because a closed form solution is given in our model,
+the primary goal of computer simulation is to test its robustness
+rather DEMO to generate numeric solutions. We used ANSI C to
+code the simulation. With 0.03 as an increment in , we draw
+the 100 000 DEMO average investment payoffs as a function of
+in Fig. 3. We set the number of sample paths used in our simu-
+lation to be DEMO large to make sure that these sample av-
+erage payoffs are very close to the expected investment payoffs.
+Fig. 3(a) is a benchmark simulation where no parameter noise
+has been introduced. It shows that the DEMO average payoff
+function achieves its maximum at , which is very
+close to the closed-form solution , given that the
+increment in is 0.03 DEMO the simulation. Fig. 3(b) shows the av-
+erage sample payoffs DEMO is uniformly distributed between
+0 and 1. Again, the payoff function DEMO its maximum at
+. We let and both be uniformly distributed and
+KAUFFMAN AND LI: TECHNOLOGY COMPETITION AND OPTIMAL INVESTMENT TIMING: A REAL DEMO PERSPECTIVE 23
+Fig. 3. 100 000 sample average investment payoff as a function of w.
+draw the sample average payoff function in Fig. 3(DEMO). Here, we
+also let be randomly drawn between 0.4 and DEMO: so the ex-
+pected duration of technology competition could range from
+DEMO years to 6.3 years in our simulation. We intentionally set
+this wide range to test the limits of our model’s robustness. The
+payoff curve DEMO its peak at . The second highest
+payoff is reached at , which is only 0.017% less than
+the highest payoff.
+V. DISCUSSION,IMPLICATIONS, AND CONCLUSION
+Since the dynamics of the technology competition process
+play an DEMO role in technology adoption, we proposed a
+continuous-time real options model DEMO explore this issue. We
+next provide a managerial interpretation of the main ﬁndings of
+this research, as a basis for assessing the usefulness of the ideas
+in a variety of technology competition and adoption contexts.
+We DEMO will discuss the limitations of our approach, and the
+agenda they DEMO for future research.
+A. Interpretation and Applicability of the Main Findings
+Interpretation of the Managerial Contribution. Unlike
+traditional real options models that stochastically model DEMO
+investment project’s value, our model uses a Brownian mo-
+tion stochastic DEMO to simulate changes over time in a
+technology adopter’s expectations. This modeling approach
+enjoys several distinctive advantages. First, decisionmakers’
+expectations are continuously changing in the presence of new
+information from the environment in which decisionmaking
+24 IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 52, NO. 1, FEBRUARY 2005
+occurs. Unfortunately, multistage discrete-time models usu-
+ally cannot accommodate this feature of the decisionmaking
+process. Second, the information that arrives typically does so
+in random fashion. But so long as managerial expectations are
+rational and DEMO, the memoryless and martingale proper-
+ties of the stochastic process that DEMO discussed turn out to be not
+too hard to justify. So, DEMO spite of some initial concerns that we
+pointed out, we believe DEMO our use of the standard Brownian
+motion representation is a suitable modeling tool. Third, many
+observers believe that managerial decisionmakers’ expectations
+play a fundamental role in many strategic decisionmaking
+processes. By characterizing managers’ expectations directly,
+DEMO incorporating them into a decisionmaking model for com-
+peting technologies, the DEMO approach that we used may
+create power to analyze other decisionmaking problems under
+uncertainty.
+A major implication of our model is that a ﬁrm’s DEMO
+adoption decisions are directly affected by what senior man-
+agement decisionmakers expect to happen in the future. Since
+waiting is usually expensive in a DEMO environment, a
+technology adopter needs an investment timing strategy to bal-
+DEMO the tradeoff between waiting and preemption. Our model
+shows that in a partial equilibrium setting the optimal invest-
+ment time can be directly expressed DEMO a function of the deci-
+sionmaker’s expectations about the outcome of the standards
+battle.
+We also addressed the issues of technology switching costs
+and DEMO within the context of technology investment timing.
+If competing technologies are more compatible or they compete
+within an open standard, the technology uncertainties may be
+signiﬁcantly reduced and ﬁrms may become more aggressive in
+adopting new DEMO The major results of our model are
+especially applicable to technology competition processes sub-
+ject to strong network externalities. We have argued that tech-
+DEMO adopters’ expectations may become more volatile in a
+“tippy” market, and DEMO this is caused by positive network feed-
+back. Consequently, waiting may DEMO more beneﬁcial to adopters
+because the technological uncertainties will be resolved sooner
+due to the increase in the volatility of expectations. The actual
+waiting DEMO, as a result, may be signiﬁcantly shortened because
+the competition process itself usually ends much more quickly.
+Breadth of Application. This approach to DEMO about
+technology competition and adoption has ready application in a
+number of interesting new business environments involving IT.
+For example, in the domain of digital wireless phone technolo-
+gies, we currently see a proliferation of technology standards
+around the world. Kauffman and Techatassanasoontorn [41],
+[42] report empirical DEMO at the national level of adoption
+among countries throughout the world to show that the pres-
+ence of multiple wireless standards slows down diffusion. DEMO
+this context, there are problems that exist at the level of DEMO
+ﬁrm, where the kind of managerial decisionmaking issues
+arise that we DEMO described. However, there is another aspect:
+technology policymaking by regulators DEMO government admin-
+istrators may affect the technology economy. In the presence
+of uncertainty about the outcome of technology competition,
+these decisionmakers will be DEMO with the possibility of
+creating technology adoption distortions through policymaking
+that lead to inefﬁcient growth and diffusion, as the information
+they tap into and their expectations blend together. The primary
+fear is that inappropriate expectations, possibly ampliﬁed by
+the regulator’s distance from the actual process of ﬁrm-level
+decisionmaking, may drive inefﬁcient economic outcomes.
+The same can be said for what DEMO happen when ﬁrm-level
+decisionmakers are unable to effectively process information
+about competing technologies, and end up with inappropriate
+expectations about the likely outcome. Kauffman and Li [39]
+argue that there is a risk of rational herding, when decision-
+makers at potential technology adopting ﬁrms misinterpret the
+signals that DEMO sent and received in the marketplace. Au and
+Kauffman [4] further argue that this is a problem of rational
+expectations, in which the information for technology adoption
+decisionmaking is not able to be assembled all at DEMO Instead,
+decisionmakers obtain impressions that are later weakened or
+consolidated, DEMO on their interactions with other potential
+adopters in the marketplace, as DEMO as vendors and other third
+parties that may play an important role in the outcome. They
+point out that the problem of gauging the DEMO of competing
+technologies to achieve the status of de facto standard has oc-
+curred with electronic bill payment and presentment technolo-
+gies diffusion in DEMO United States, slowing diffusion in the ab-
+sence of an acknowledged DEMO
+A similar problem has been occurring with the diffusion of
+ﬁxed location wireless telephony, the so-called “Wi-Fi” tech-
+nologies, but here also, we see an environment in the United
+States characterized by the near simultaneous DEMO in
+time of multiple standards (including 802.11b, 802.11a, and
+802.11g, etc.). The difﬁculties arise for manufacturers of
+electronics products who wish DEMO embed compatible wireless
+technologies into their products, including handheld computers
+and DEMO, sound electronics, electronic shelf management
+technologies, computer peripherals, and wireless routers and
+network equipment. They are faced with making uncertain
+decisions about DEMO aspects of the wireless standards: which
+ones will become widely accepted DEMO potential consumers of
+the products they make, and how long the DEMO will be in
+use before they are supplanted by the next innovation. Although
+our model does not directly address this issue of “standards
+stability,DEMO the reader should recognize that the value of the real
+options that an adopter possesses by making a commitment to a
+current version of DEMO standard is affected by a variety of market,
+vendor, and DEMO innovation issues that are beyond the
+managerial control of adopting ﬁrms. Indeed, this is generally
+true in many technology adoption settings.
+B. Limitations and Future Research
+Limitations. We note three limitations of this research that de-
+DEMO comment before we close out our discussion. First, even
+though the DEMO mathematics of the competing technolo-
+gies analysis that we present are fairly complex, the concepts
+that we have presented are relatively straightforward in concep-
+tual terms for use by senior managers. Some may argue that
+our DEMO concerns should be with the technical details of the
+modeling formulation—in particular, ensuring that the assump-
+tions that go along with a standard Brownian motion stochastic
+process with martingale features are precisely met. We chose a
+KAUFFMAN AND LI: TECHNOLOGY COMPETITION AND OPTIMAL INVESTMENT TIMING: A REAL DEMO PERSPECTIVE 25
+different approach though. Our goal was to ﬁnd a way to make
+an analogy between the technical details of the decision model
+DEMO the exigencies of its application in an appropriate manage-
+rial context. We offered a technical argument to assuage the
+reader’s fears that some of DEMO model’s assumptions are too
+stringent. However, we believe that the single DEMO way to think
+about our approach is in terms of the new capabilities it opens
+up in support of managerial decisionmaking.
+Second, although we have done some initial numerical anal-
+ysis with our model to gauge DEMO robustness across a number
+of parameter values, there is a higher DEMO test for robustness
+that our model still has not measured up to: construct robust-
+ness in various applied settings. Even though additional anal-
+ysis work is beyond the scope of the present work, it will be ap-
+propriate to conduct additional tests to see whether other issues
+involving DEMO that affect adoption decisionmaking can
+be incorporated. Several related questions immediately come to
+mind. What will happen when signals on the state of the DEMO
+nology relative to its becoming a standard in the market are ﬁl-
+tered or garbled or misread by an adopter, or are misrepresented
+by a technology vendor? How can the model handle changes
+in the key parameters, such as changed estimates of volatility,
+or shifting perceptions of the adoption time line that ﬁrms face,
+over the duration of DEMO adoption period? Clearly, there is ad-
+ditional evaluative work to be done with respect to the general
+aspects of the modeling approach that DEMO have presented.
+Third, we have not yet fully validated this approach DEMO a
+real world test—something which also is beyond the scope of
+the present work. This is desirable because we will need to ﬁnd
+ways DEMO simplify the approach so that senior management de-
+cisionmakers can work with the modeling parameters and con-
+cepts. In prior work on the application DEMO real options, for ex-
+ample, Benaroch and Kauffman [12] found that managers did
+not understand the concept of risk variances and the distribu-
+DEMO mechanics that represent stochastic outcomes. This puts
+a limitation on the application of the methods, since senior man-
+agement decisionmakers need to be able to work within the
+modeling constructs of a recommended evaluation approach to
+DEMO their understanding of the technology adoption val-
+uation issues in an applied, real world context. Understanding
+risks and variances is critical to successful use of the approach
+that we propose.
+Future Research. Since technology vendors can DEMO
+inﬂuence adopters’ timing decisions, an interesting direction
+for future research is DEMO address the timing issue in a general
+equilibrium model, to determine DEMO for adopting ﬁrms in a
+multipartite (i.e., with multiple vendors and adopters) competi-
+tive context. In such a model, game theory is DEMO the ideal
+tool, as suggested by Huisman [34], Grenadier [32], DEMO Zhu
+[76], and the role of strategic expectations should be the DEMO
+point. Once vendors’ strategies become endogenous to a deci-
+sionmaking model, DEMO information asymmetry between tech-
+nology adopters and vendors will emerge, affecting DEMO manner
+in which each approaches a decision about when to adopt and
+when to push toward the next standard. In most cases, tech-
+nology vendors will hold private information about their ﬁrms’
+plans with the technology, the schedule for releasing the next-
+generation versions, the speed of development, and so on. As a
+result, informational asymmetry should be built DEMO adopters’
+expectations. Game-theoretic real options analysis can also be
+applied to situations where the competitive dynamics between
+technology adopters signiﬁcantly impact their equilibrium in-
+DEMO strategies. For example, the technological innovation
+investment model in Grenadier and DEMO [31] is generalized
+by Huisman and Kort [35] to a duopolistic real options game.
+Huisman and Kort [36] further extend their duopolistic game
+to DEMO where the future technology arrives stochastically.
+Their insightful works clearly indicate one promising direction
+in which our model can be extended. Speciﬁcally, future studies
+should consider not only the technology competition as mod-
+eled here, but also the business competition among technology
+adopters whose investment strategies dynamically interact DEMO
+each other.
+This paper only models the dynamics of competition between
+two technologies, but we believe that there are at least two ap-
+proaches that can help extend our model to the more general
+scenario, where a manager tries to adopt one of competing
+technologies. The ﬁrst approach DEMO the use of a multidi-
+mensional Brownian motion. The increment of such a Brownian
+motion has an -dimensional normal distribution. A band can
+be DEMO on each axis, and a winning technology will emerge
+the ﬁrst DEMO when the coordinates of the Brownian motion go
+beyond the band associated with the technology. Mathemati-
+cally, the bands deﬁned on the axes can establish a compact
+set. Each point in this set can represent a DEMO of probabilities
+, where is the probability for technology
+to win the competition. So the Brownian motion can stochasti-
+cally characterize the uncertainties surrounding DEMO competition
+among the technologies. The advantage of this approach is
+that the standard properties of multidimensional Brownian mo-
+tion can be applied. For example, the martingale property of
+multidimensional Brownian motion can still be used to DEMO it
+to decisionmakers’ expectations.8
+The second approach only needs a standard Brownian motion
+deﬁned in a two-dimensional Euclidean space, but it requires
+some geometric manipulation. For example, the trajectory of a
+standard Brownian motion in a triangle, as in Fig. 4, can be used
+to depict the DEMO process of three technologies.
+Mathematically, each point in such a triangle DEMO charac-
+terize the expected probability and time for each technology
+to win the competition. For both approaches, we doubt that
+closed-form optimal threshold solutions are derivable in most
+situations. However, recent advances in computation power and
+optimization algorithms should make it relatively straightfor-
+ward to ﬁnd numerical solutions.
+DEMO it is impossible to give closed-form solutions for
+many complicated real options models, computer simulations
+and other computationally intensive approaches are suitable re-
+search tools [19], [29]. Although we derived a closed-form so-
+lution in this study of competing technologies, the reader should
+recognize that closed-from solutions are very difﬁcult to de-
+rive in many other situations where real options DEMO is ap-
+propriate. Fortunately, the newly available capabilities of com-
+8See DEMO [25] for a proof. The downside of this approach is that rigor-
+ously applying multidimensional martingales requires mathematical knowledge
+beyond a ﬁrst graduate course DEMO real analysis (e.g., [69]).
+26 IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 52, NO. 1, FEBRUARY 2005
+its expected return from the $100 000 investment project. Ac-
+cording DEMO the company’s estimation, the new OS has a 50%
+chance to DEMO widely accepted next year. In this case, the ex-
+pected increased DEMO inﬂow from this investment is estimated
+to be $15 000 a year. In the case that the OS is not popular next
+year, the expected annual net cash inﬂow from this project will
+be $7000. Further DEMO that the discount rate for this invest-
+ment project is 10%, DEMO net present value (NPV) of this project
+can be calculated as
+Fig. 4. Brownian motion characterization of the standards battle among three
+competing DEMO
+puting resources make it possible, consistent with widespread
+advances in methodologies DEMO computational ﬁnance, statistics
+and econometrics, to do numerical experiments and simulations
+that would not have been cost-effective only a few years ago.
+These DEMO computationally intensive methods permit us to ask
+new and more reﬁned research questions involving real options
+valuation in important applied settings. The answers that DEMO are
+now able to obtain will help to guide senior management de-
+cisionmaking related to technology adoption and advance the
+frontiers of management science DEMO decisionmaking under un-
+certainty.
+APPENDIX A
+UNDERSTANDING REAL OPTIONS:A BRIEF INTRODUCTION
+The seminal works of Black and Scholes [15] and Merton
+[58] offer DEMO a standard pricing model for ﬁnancial options. To-
+gether with another colleague at MIT, Stewart Myers, they rec-
+ognized that option pricing theory DEMO be applied to real as-
+sets and nonﬁnancial investments. To differentiate options on
+real assets from ﬁnancial options traded in the market, Myers
+coined the term “real options.” Today, that term has been widely
+accepted in the academic and business world. Many observers
+believe that the real options DEMO can play an important role
+in ﬁnancial evaluation related to projects that are undertaken in
+the highly uncertain and technology-driven digital economy. We
+will DEMO a simple example to give readers some useful intu-
+ition and an illustration of the value associated with real options
+and their signiﬁcance in DEMO budgeting.
+A. Real Options Example: This Year or Next Year?
+DEMO that a software company is facing a new investment
+opportunity. It plans to spend $100 000 to make its best-selling
+database system compatible with DEMO emerging operating system
+(OS) in the market, but new OS DEMO still in its infancy, so the com-
+pany is not sure DEMO it will be widely accepted in the future.
+Suppose that uncertainty about the new OS can be totally re-
+solved next year, and that the company is trying to maximize
+Since the NPV of this project DEMO positive, it seems that the
+ﬁrm should go ahead with this DEMO However, the conclusion
+is incorrect. Why? It does not account for the value of the option
+to defer the investment to the next DEMO Next, suppose that the
+company waits one year to watch the DEMO reaction to the
+new OS. If a favorable situation occurs, then DEMO will proceed to
+invest; otherwise, it will no longer pursue the project. Then, the
+NPV of this project will be
+Evidently, it DEMO better to take the option of deferring the
+investment to the next year. The value of this option is
+$22 727 $10 000 $12 DEMO Let us further suppose that
+someone in the company argues that the investment costs will
+increase in the next year. But still, further calculation shows
+that the option will be valuable even if the costs rise DEMO high as
+$127 000 in the next year. Basically, this simple DEMO shows
+the value of an option of deferring investment.
+We now review the basic tools and concepts of option pricing
+theory, beginning with a deﬁnition. An option is the right, but
+not the obligation, to DEMO (a call) or sell (a put) an asset at a
+prespeciﬁed price on or before a speciﬁed date. For ﬁnancial
+option contracts, the underlying assets are usually stocks. Until
+the late 1960s, researchers in Finance were unable to ﬁnd a rig-
+orous method to price options DEMO stock. However, Black and
+Scholes [15] and Merton [58], using methods from inﬁnitesimal
+calculus and the concept of dynamic portfolio hedging, success-
+fully speciﬁed the fundamental partial differential equation that
+must be satisﬁed by the DEMO of the call option, which permitted
+them to give the analytical DEMO known as the Black–Scholes
+formula for the value of an option.
+Following the revolution in option pricing theory that the
+Black–Scholes model caused, many researchers recognized the
+new potential of this theory in capital budgeting. Traditional
+DEMO methods were recognized for their inherent limitations:
+they did not yield effective estimates of value related to project
+investments with strategic options and DEMO uncertainties.
+Myers [61] showed that a ﬁrm’s discretionary investment
+options are components of its market value. Mason and Merton
+[55] discussed the role of DEMO pricing theory in corporate
+ﬁnance. Kulatilaka and Marks [44] also discuss the strategic
+value of managerial ﬂexibility and its option like properties.
+Table II DEMO the similarities between an American call option
+on a stock and a real option on an investment project. Despite
+KAUFFMAN AND LI: TECHNOLOGY COMPETITION AND OPTIMAL INVESTMENT TIMING: A REAL DEMO PERSPECTIVE 27
+TABLE II
+COMPARISON BETWEEN AN AMERICAN CALL OPTION AND A REAL OPTION ON A PROJECT
+the close analogy, some still question the applicability of option
+pricing theory to real options that usually are not DEMO in a
+market. However, Cox, et al. [21] and McDonald and Siegel
+[56] suggest that a contingent claim on nontraded assets can be
+DEMO with the adjustment of its growth rate by subtracting a
+dividend-like risk premium.
+Based on this solid theoretical foundation, many researchers
+have investigated the valuation of various real options in the
+business world. One of the DEMO basic real options models was
+developed by McDonald and Siegel [57]. In their model, they
+discuss the optimal time for a ﬁrm to invest in a proprietary
+project whose value evolves according to a stochastic process
+DEMO geometric Brownian motion. Their results suggest that the
+option to defer an investment may be very valuable under some
+circumstances. Ingersoll and Ross [37] DEMO discussed the option
+of waiting to invest and its relation with uncertainty. Brennan
+and Schwartz [17] examined the joint decisions to invest and
+abandon DEMO project. Kulatilaka and Trigeorgis [46] adopted real
+option theory to value the managerial ﬂexibility to switch inputs
+and outputs. Grenadier [30] discussed how to DEMO lease con-
+tracts by real options theory. The interested reader should see
+Li [51] for additional details on the applications of real options
+theory DEMO technology related business problems.
+APPENDIX B
+MATHEMATICAL PROOFS OF KEY FINDINGS
+A. Proof of Theorem 1—Optimal Investment Timing Strategy
+Theorem
+Before a company invests DEMO a new technology project, it will
+have an option to invest DEMO the project. This value of this op-
+tion is denoted by . It must satisfy a Bellman equilibrium
+differential equation, , in the con-
+tinuation region, where there are values of for which it is not
+optimal to invest.
+Note that we need three conditions to solve the DEMO
+equation. The reason is that the optimal investment threshold
+is a free boundary of the continuation region. The ﬁrst con-
+dition is a value-matching DEMO , which
+says that upon investing, the expected payoff will be DEMO
+The second condition is a smooth-pasting condition,
+, that is necessary to guarantee that the threshold point
+is the true optimal exercise point DEMO the real option [22].
+The third is a symmetry condition , which
+comes directly from the symmetric structure of our model’s
+speciﬁcation.
+We note DEMO, in some cases, will be outside .
+This means that the continuation region goes beyond the de-
+cision region, and so the optimal strategy is to invest when
+reaches either or , the boundaries of DEMO decision re-
+gion. To satisfy the equilibrium differential equation and the
+third condition, it turns out that the solution must take the form
+. In this expression, is
+a constant to be computed and values of occur within the con-
+tinuation region. The other two conditions can be DEMO to solve
+for the two remaining unknowns, the constant and the DEMO
+timal investment threshold . The positive optimal investment
+threshold and constant must also satisfy the equations
+shown at the bottom of the page, where and are deﬁned
+where we derive . The solution to the system DEMO equations
+is given by
+The reader should note that we assume
+, otherwise. Similarly, the negative threshold
+be solved as follows:
+, and
+and
+can
+The negative optimal investment threshold will be
+is beyond
+thresholds
+DEMO of
+technology once
+.If
+reaches either
+if
+. We also know the values of the two
+and , where . So for a given
+, the ﬁrm should invest immediately if is out-
+, the ﬁrm should adopt a
+or .If reaches
+28 IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 52, NO. 1, FEBRUARY 2005
+ﬁrst, then the ﬁrm will adopt Technology
+, but if it reaches
+adopted because
+since
+ﬁrst, then Technology
+.
+will be
+B. Proof of Proposition 1—Investment Deferral Tradeoff
+Threshold Ratio Proposition
+From Theorem 1, we know that the optimal investment
+threshold is or if the following inequality,DEMO
+,
+holds. Since is monotonically increasing, the inequality
+is equivalent to
+. The term , can be simpliﬁed as
+. This inequality will DEMO if
+. Otherwise, the inequality will be
+equivalent to .
+As DEMO
+We prove that the optimal investment threshold will be-
+come and when is greater than or equal to ,
+where . The
+remainder of the proposition directly follows from the fact
+that
+. This com-
+pletes DEMO proof.
+C. Proof of Proposition 2—Comparative Statics Proposition)
+We know that for any ,wehave
+.In
+the proof for Proposition 1, we showed DEMO the term, , can
+be simpliﬁed as . From
+this, we can prove that ,
+, and . Since ,
+and is DEMO increasing, we can further
+deduce that , , and .
+In DEMO, we know that and
+. This permits us to
+conclude that DEMO . This completes
+the proof.
+ACKNOWLEDGMENT
+Early versions of this paper have been circulated at Case
+Western Reserve University, INSEAD, University of Michigan,DEMO
+University of Texas at Dallas, Drexel University, University
+of Wisconsin, DEMO of Minnesota and University of
+Mississippi. The authors thank I. Bardhan, DEMO Conlon, Q. Dai,
+W. Lovejoy, J. Johnson, J. Smith, P. Tallon, V. Wang, K. Womer,
+and K. Zhu for DEMO suggestions and comments. They also
+appreciate the input of the Senior Editor, R. Sabherwal, and
+anonymous reviewers. R. Kauffman acknowledges the MIS
+Research DEMO for partial support.
+REFERENCES
+[1] M. Amram and N. Kulatilaka, Real DEMO: Managing Strategic In-
+vestment in an Uncertain World. Cambridge, MA: DEMO Business
+School Press, 1999.
+[2] M. Amram, N. Kulatilaka, and DEMO C. Henderson, “Taking an option on
+IT,” CIO Enterprise Mag., vol. 12, no. 17, pp. 46–46, 1999.
+[3] Y. Au and R. J. Kauffman, “Should we wait? Network externalities, com-
+patibility and electronic billing adoption,” J. Manage. Inf. Syst., vol. 18,
+no. 2, pp. 47–64, 2001.
+[4] , “What do you know? Rational expectations in information tech-
+nology adoption and investment,” J. Manage. Inf. DEMO, vol. 20, no. 2,
+pp. 49–76, 2003.
+[5] R. DEMO Austin, “The effects of time pressure on quality in software devel-
+DEMO: An agency model,” Inf. Syst. Res., vol. 12, no. DEMO, pp. 195–207,
+2001.
+[6] J. Y. Bakos and B. R. DEMO, “Ownership and investment in electronic
+networks,” Inf. Syst. Res., vol. 8, no. 4, pp. 321–341, 1997.
+[7] P. Balasubramian, N. DEMO, and J. C. Storck, “Managing informa-
+tion technology investments using a real options approach,” J. Strategic
+Inf. Syst., vol. 9, pp. DEMO, 1999.
+[8] R. D. Banker and C. F. Kemerer, “Performance evaluation metrics for
+information systems development: A principal-agent model,” Inf. Syst.
+Res., vol. 3, no. 4, pp. 379–401, 1992.
+[9] I. Bardhan, S. Bagchi, and R. Sougstad, “Prioritization of a portfolio of
+IT DEMO projects,” J. Manage. Inf. Syst., vol. 21, no. 2, DEMO
+[10] M. Benaroch, “Managing information technology investment risk: A
+real options perspective,” J. Manage. Inf. Syst., vol. 19, no. 2, pp. 43–84,
+2002.
+[11] M. Benaroch and R. J. Kauffman, “A case for using real options pricing
+analysis to evaluate information technology project investment,DEMO Inf.
+Syst. Res., vol. 10, no. 1, pp. 70–86, 1999.
+[12] , “Justifying electronic banking network expansion using real op-
+tions analysis,DEMO MIS Quart., vol. 24, no. 2, pp. 197–225, 2000.
+[13] A. Bernardo and B. Chowdhry, “Resources, real options and corporate
+strategy,DEMO J. Financial Econ., vol. 63, no. 2, pp. 211–234, 2002.
+[14] S. Besen and J. Farrell, “Choosing how to compete: Strategies DEMO tactics
+in standardization,” J. Econ. Perspectives, vol. 8, no. 2, pp. 117–131,
+1994.
+[15] F. Black and M. Scholes, “The DEMO of options and corporate liabili-
+ties,” J. Pol. Econ., vol. DEMO, no. 3, pp. 637–659, 1973.
+[16] F. Black and J. DEMO Cox, “Valuing corporate securities: Some effects of
+bond indenture provisions,” J. Finance, vol. 31, no. 2, pp. 351–367,
+1976.
+[17] M. Brennan and E. Schwartz, “Evaluating natural resource investments,”
+J. Bus., vol. 58, no. 2, pp. 135–57, 1985.
+[18] E. Brynjolfsson DEMO C. Kemerer, “Network externalities in microcom-
+puter software: An econometric analysis of the spreadsheet market,”
+Manage. Sci., vol. 42, no. 12, pp. 1627–1647, 1996.
+[19] D. Calistrate, M. Paulhus, and G. Sick, “Real options for managing risk:
+Using simulation to characterize gain in value,” Dept. Math., Univ. Cal-
+gary, Calgary, CA, Working DEMO, 1999.
+[20] J. P. Choi and M. Thum, “Market structure and the timing of technology
+adoption with network externalities,” Eur. Econ. Rev., vol. 42, no. 2, pp.
+225–244, 1998.
+[21] J. Cox, DEMO Ingersoll, and S. Ross, “An intertemporal general equilibrium
+model of asset prices,” Econometrica, vol. 53, no. 2, pp. 363–84, 1985.
+DEMO D. Dixit and R. Pindyck, Investment Under Uncertainty. Princeton,
+NJ: Princeton Univ. Press, 1994.
+[23] M. Domine, “Moments of the ﬁrst DEMO time of a wiener process
+with drift between two elastic barriers,” J. Appl. Probability, vol. 32,
+pp. 1007–1013, 1995.
+[24] B. DEMO Dos Santos, “Justifying investments in new information technolo-
+gies,” J. DEMO Inf. Syst., vol. 7, no. 4, pp. 71–90, 1991.
+[25] R. Durrett, Brownian Motion and Martingales in Analysis. Belmont,
+CA: DEMO, 1984.
+[26] J. Farrell and C. Shapiro, “Optimal contracts with lock-in,” Amer. Econ.
+Rev., vol. 79, no. 1, pp. 51–68, DEMO
+[27] J. Farrell and M. Katz, “Competition or predation? Schumpeterian ri-
+valry in network markets,” Univ. California, Berkeley, Berkeley, CA,
+Working Paper, 2001.
+[28] J. Farrell and P. Klemperer, “Coordination and DEMO: Competition with
+switching costs and network effects,” in Handbook of DEMO Organ-
+ization, M. Armstrong and R. H. Porter, Eds. Amsterdam, DEMO Nether-
+lands: Elsevier, 2004, vol. 3.
+[29] A. Gamba, “Real options valuation: A Monte Carlo simulation ap-
+proach,” Faculty of Management, Calgary, CA, Working Paper, 2002.
+[30] S. Grenadier, “Valuing lease contracts: A real options approach,” J. Fi-
+nancial Econ., vol. DEMO, no. 3, pp. 297–331, 1995.
+[31] S. Grenadier and A. DEMO, “Investment in technological innovations: An
+option pricing approach,” J. Financial Econ., vol. 44, no. 3, pp. 397–416,
+1997.
+[32] S. Grenadier, “Option exercise games: An application to the equilibrium
+investment strategies DEMO ﬁrms,” Rev. Financial Studies, vol. 15, no. 3, pp.
+DEMO, 2002.
+KAUFFMAN AND LI: TECHNOLOGY COMPETITION AND OPTIMAL INVESTMENT TIMING: A REAL DEMO PERSPECTIVE 29
+[33] K. Han, R. J. Kauffman, and B. R. Nault, “Information exploitation and
+interorganizational systems ownership,” J. Manage. Inf. Syst., vol. 21,
+no. 2, 2004.
+[34] K. Huisman, Technology Investment: A Game Theoretic Real Options
+Approach. Dordrecht, The Netherlands: Kluwer, DEMO
+[35] K. Huisman and P. Kort, “Strategic investment in technology innova-
+DEMO,” Eur. J. Oper. Res., vol. 144, no. 1, pp. DEMO, 2003.
+[36] , “Strategic technology adoption taking into account future tech-
+DEMO improvements: A real options approach,” Eur. J. Oper. Res.,
+DEMO
+[37] J. Ingersoll and S. Ross, “Waiting to invest: Investment and uncertainty,”
+J. Bus., vol. 65, no. 1, pp. 1–29, DEMO
+[38] M. Katz and C. Shapiro, “System competition and network effects,DEMO J.
+Econ. Perspectives, vol. 8, no. 2, pp. 93–115, 1994.
+[39] R. J. Kauffman and X. Li, “Payoff externalities, informational cas-
+DEMO and managerial incentives: A theoretical framework for IT
+adoption herding,” DEMO Proc. 2003 INFORMS Conf. Inf. Syst. Technol.,
+A. Bharadwaj, S. DEMO, and R. Santhanam, Eds., Atlanta, GA,
+2003. Available on CD-ROM.
+[40] R. J. Kauffman, J. J. McAndrews, and Y. Wang, “Opening the ’Black
+box’ of network externalities in network adoption,” Inf. DEMO Res., vol.
+11, no. 1, pp. 61–82, 2000.
+[41] R. J. Kauffman and A. Techatassanasoontorn, “International diffusion
+of digital mobile technology: DEMO coupled hazard approach,” Inf. Technol.
+Manage., 2004a.
+[42] , “Does DEMO standard promote faster growth? An econometric anal-
+ysis of the international DEMO of wireless technology,” in Proc. 37th
+Hawaii Int. Conf. Syst. Sci., R. Sprague, Ed., Kona, HI, 2004b.
+[43] P. Klemperer, DEMO when consumers have switching costs: An
+overview with applications to industrial DEMO, macroeconomics
+and international trade,” Rev. Econ. Studies, vol. 62, DEMO 4, pp. 515–539,
+1995.
+[44] N. Kulatilaka and S. Marks, “The strategic value of ﬂexibility: Reducing
+the ability to compromise,” Amer. Econ. Rev., vol. 78, no. 3, pp. 574–580,
+1988.
+[45] N. Kulatilaka and E. Perotti, “Strategic growth options,” Manage. Sci.,
+vol. 44, no. 8, pp. 1021–1030, 1998.
+[46] N. Kulatilaka and L. Trigeorgis, “The general ﬂexibility to switch: Real
+options revisited,” DEMO J. Finance, vol. 6, no. 2, pp. 778–98, 1994.
+[47] R. Kumar, “A note on project risk and option values of investments
+in information technologies,” J. Manage. Inf. Syst., vol. 13, no. DEMO, pp.
+187–193, 1996.
+[48] , “Understanding DSS value: An options DEMO,” OMEGA:
+Int. J. Manage. Sci., vol. 27, no. 3, pp. 295–304, 1999.
+[49] H. E. Leland, “Corporate debt value, DEMO covenants, and optimal capital
+structure,” J. Finance, vol. 49, DEMO 4, pp. 1213–1251, 1994.
+[50] S. F. LeRoy, “Efﬁcient capital DEMO and martingales,” J. Econ. Liter-
+ature, vol. 27, pp. 1583–1621, 1989.
+[51] X. Li, “Optimal timing for a brokerage to go DEMO: A real options
+approach,” Ph.D. dissertation, School of Bus. Admin., Univ. Mississippi,
+Oxford, MS, 2001.
+[52] X. Li and J. Johnson, “Evaluate IT investment opportunities using real
+options theory,” Inf. Resource Manage. J., vol. 15, no. 3, pp. 32–47,
+2002.
+[53] T. Luehrman, “Investment opportunities as real options: Getting started
+with the DEMO,” Harvard Bus. Rev., pp. 51–64, Jul.–Aug. 1998a.
+[54] , “Strategy as a portfolio of real options,” Harvard Bus. Rev., pp.
+89–99, Sep.–Oct. 1998b.
+[55] S. Mason and R. Merton, “The role of DEMO claims analysis in cor-
+porate ﬁnance,” in Recent Advances in Corporate Finance, E. I. Altman
+and M. G. Subrahmanyam, Eds. Homewood, IL: Richard D. Irwin,
+1985.
+[56] R. McDonald and D. Siegel, DEMO pricing when the underlying asset
+earns a below-equilibrium rate of return: DEMO note,” J. Finance, vol. 39,
+no. 1, pp. 261–65, 1984.
+[57] , “The value of waiting to invest,” Quart.J. Econ., vol. 101, no. 4,
+pp. 707–27, 1986.
+[58] R. C. Merton, “Theory of rational option pricing,” Bell J. Econ. Manage.
+Sci., vol. 4, no. 1, pp. 141–183, 1973.
+[59] , Continuous DEMO Finance. Cambridge, MA: Basil Blackwell,
+1990.
+[60] J. Muth, DEMO expectations and the theory of price movements,”
+Econometrica, vol. 29, no. 3, pp. 315–335, 1961.
+[61] S. Myers, “Determinants of corporate borrowing,” J. Financial Econ.,
+vol. 5, no. 2, pp. DEMO, 1977.
+[62] S. Panayi and L. Trigeorgis, “Multi-Stage real options: DEMO case of in-
+formation technology infrastructure and international bank expansion,”
+Quart. Rev. Econ. Finance, vol. 28, pp. 675–692, 1998.
+[63] S. Ross, Introduction to Probability Models, 8th ed. New York: Aca-
+demic, DEMO
+[64] M. Shackleton, A. Tsekrekos, and R. Wojakowski, “Strategic entry DEMO
+market leadership in a two-player real options game,” J. Banking Fi-
+nance, vol. 28, no. 1, pp. 179–202, 2004.
+[65] C. DEMO and H. Varian, Information Rules: A Strategic Guide to
+Network Economy. Cambridge, MA: Harvard Business School Press,
+1999.
+[66] H. Smit, “Infrastructure investment as a real options game: The case
+of European airport expansion,” Financial Manage., pp. 27–57, Winter
+2003.
+[67] J. Smith DEMO K. McCardle, “Valuing oil properties: Integrating option
+pricing and decision analysis approach,” Oper. Res., vol. 46, no. 2, pp.
+198–218, DEMO
+[68] , “Options in the real world: Some lessons learned in DEMO oil
+and gas investments,” Oper. Res., vol. 47, no. 1, pp. 1–15, 1999.
+[69] D. Stroock and S. Varadhan, Multidimensional Diffusion Pro-
+cesses. New York: Springer-Verlag, 1979.
+[70] P. Tallon, R. J. Kauffman, H. C. Lucas, Jr., A. Whinston, and K. Zhu,DEMO
+“Using real options analysis for evaluating uncertain investments in in-
+formation technology: Insights from the ICIS 2001 debate,” in Proc.
+Commun. AIS, DEMO 9, 2002, pp. 136–167.
+[71] A. Taudes, “Software growth options,DEMO J. Manage. Inf. Syst., vol. 15, no.
+1, pp. 165–185, 1998.
+[72] A. Taudes, M. Feuerstein, and A. Mild, “Option analysis of software
+platform decisions: A case study,” MIS Quart., vol. DEMO, no. 2, pp.
+227–243, 2000.
+[73] L. Trigeorgis, Real Options. Cambridge, MA: MIT Press, 1997.
+[74] H. Varian, “Economics of DEMO technology,” in Raffaele Mattioli
+Lecture. Milano, Italy: Bocconi Univ., DEMO
+[75] R. E. Walpole, R. H. Myers, S. L. Myers, DEMO Ye, and K. Yee, Probability
+and Statistics for Engineers and Scientists, 7th ed. Englewood Cliffs,
+NJ: Prentice-Hall, 2002.
+[76] K. Zhu, “Strategic Investments in Information Technologies,” Ph.D. dis-
+sertation, Ind. Eng. DEMO Res., Stanford Univ., Stanford, CA, 1999.
+Robert J. Kauffman received the Ph.D. degree from
+the Graduate School of Industrial Administration,
+Carnegie-Mellon DEMO, Pittsburgh, PA.
+He is Director of the Management Information
+Systems (DEMO) Research Center, and Professor and
+Chair in the Information Decision Sciences Depart-
+ment, Carlson School of Management, University of
+Minnesota, Minneapolis. He served on the faculty
+of the Stern School of Business, New York Univer-
+sity and the Simon Graduate School of Business,
+University of DEMO, Rochester, NY. His current
+research focuses on senior management issues in technology strategy and busi-
+ness value, technology infrastructure investments and adoption, DEMO,
+and electronic markets.
+Xiaotong Li received the Ph.D. degree in business
+administration from the School of Business Admin-
+istration, University of Mississippi, DEMO, in 2001.
+He is an Assistant Professor in the Department of
+DEMO and Management Information Systems
+(MIS), University of Alabama, Huntsville. His
+research involves strategic information sharing in
+supply chain management, game theoretic modeling
+of e-business, the economics of information and net-
+work externalities in the IT market, and real options
+modeling of technology competition. His papers
+appear in Communications of the ACM, Marketing Science and elsewhere, and
+has DEMO seed grants for research on supply chains and IT adoption.{1g42fwefx}

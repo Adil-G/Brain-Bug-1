@@ -1,0 +1,863 @@
+Finding Patterns in Sequences: Applying
+Sequence Comparison Techniques to Study
+Behavior Processes
+Mark Fichman1
+Graduate School of Industrial Administration
+Carnegie-Mellon University
+Pittsburgh PA 15213-3890
+DEMO
+e-mail:mf4f@cmu.edu
+fax:412-268-7064
+Electronic Submission Identiﬁcation #-11727
+Division: Research Methods
+DEMO 8, 1999
+1Thanks to Laurie Weingart for sharing her data on DEMO person interaction
+in negotiations. Thanks to the Citicorp Behavioral Science Research Council for
+providing partial support for this research.
+Abstract
+Finding Patterns in Sequences: Applying Sequence Comparison Techniques
+to Study Behavior Processes
+Studying sequences of behaviors is one way to better understand the
+DEMO which generate behavior. Techniques for sequence comparison
+and analysis developed in computational biology can have broad application
+to the study of behavioral sequence data. DEMO illustrate the application of
+dynamic programming methods from computational biology for global and
+local alignment of sequences. Such techniques can allow us to compare DEMO
+quences to determine if sequences are similar. Using data on two person
+interaction, the application of these techniques is illustrated. The value of
+such techniques and critical decisions that need to be made in applying such
+DEMO are illustrated and discussed. Such techniques have great promise
+in helping understand behavior processes and their ordering.
+Key Words - measurement, methods, dynamic DEMO
+A fundamental interest in studying behavior are the mechanisms gener-
+ating a DEMO of behavioral observations. Two parties negotiate, reaching
+an impasse. Two ﬁrms DEMO in a sequence of strategic actions, leading to
+some joint action. DEMO child has a conversation with an adult. A supervi-
+sor and subordinate discuss a problem they are having. A distributed work
+group exchanges a DEMO of e-mail messages while performing a task. All
+these situations can be characterized as a stream of behaviors. Such behav-
+iors or sequence of DEMO by one or more (interacting) actors can help
+us understand the mechanisms and processes inﬂuencing behavior. In eﬀect,
+analysis of such sequences DEMO answer the question ‘How did they do that?’
+(Weingart, 1997). One approach to such sequences is to determine if there
+are DEMO sequential patterns in a set of such behavior streams.
+Introduction
+Statistical treatments of coded sequences of behavior have been developed
+and applied in these DEMO domains. Markov and semi-Markov models
+(Gottman & Roy, 1990; Weingart, Prietula, Hyder & Genovese, 1997), lag
+sequential models (Bakeman & Quera, 1995; Bakeman et al., 1997), and log-
+linear modeling treatments (Gottman and Roy, 1990, Bakeman & Quera,
+1995) DEMO such sequential data have been developed (See Gottman and Roy,
+DEMO for a review of these developments). All consider the stream of behavior
+with attention to the sequential ordering of the elements of the DEMO of
+behavior. The temporal ordering information is preserved in the analysis.
+Much of this work has developed in the context of multiperson interaction,
+DEMO as communication. A Markov process characterization of a sequence
+of behavior can also be applied to the behavior of a single actor. One can
+DEMO a stream of behaviors of an individual and model its sequential
+character using these techniques. Such analyses can provide real insight into
+process and DEMO mechanisms.
+Time ordered data can be studied as sequences, but sequences DEMO not
+be time ordered. Abbott (1992) observed that sequence comparison methods
+(see Sankoﬀ and Kruskal (1983) for a review) are potentially DEMO to
+studying time ordered social processes. He applied several sequence analysis
+techniques to the study of individual careers and to the development of pro-
+DEMO While formally related to Markov modeling approaches de-
+veloped to study interaction (Gottman and Roy, 1990), the focus in sequence
+1
+comparison is diﬀerent. The goal is not to characterize the mechanism gen-
+DEMO a sequence of elements, but on characterizing the similarity between
+two DEMO more strings.
+Work on sequence comparison has been done in computer science (e.g.,
+comparing string elements in ﬁles, or comparing two ﬁles DEMO see if they are
+identical), ethology (e.g., how similar are two or more bird songs), molecular
+biology (e.g., how similar DEMO two or more DNA or protein sequences) and
+other areas where DEMO (are two voice segments the same) and deter-
+mination of degree of diﬀerence are an issue (e.g., error correction in vocal or
+DEMO transmission). Abbott (1992, 1997) identiﬁed the potential for apply-
+DEMO sequence comparison methods from computational biology to problems
+in the social sciences. In particular, these techniques can aid in the building
+of process models of behavior, rather than variance models of behavior (Ab-
+bott, 1992)1. Sequence comparison methods can help identify patterning and
+changes in patterning DEMO temporal sequences of behavior which can comple-
+ment the sequential analytic techniques currently in use (Gottman and Roy,
+1990; Bakeman et al. DEMO)
+In this paper, we identify and describe some basic, useful methods from
+computational biology for sequence comparison, illustrating their value for
+identifying patterns in sequences in behavioral data. These techniques have
+been or can DEMO implemented as computer programs and can be readily ap-
+plied to behavioral sequence data. We ﬁrst outline and review the types
+of sequence analysis DEMO that can be applied to problems in sequence
+analysis and comparison. These methods are illustrated with applications to
+data. We conclude by identifying some DEMO questions and opportuni-
+ties suggested by this family of sequence analysis techniques.
+Dynamic programming approaches to sequence
+analysis2
+The sequence comparison problem is to DEMO if two or more sequences
+are the same. One might ask if two phone numbers are the same or three
+1See Lieberson, 1985; DEMO, 1982; and Fichman, 1997 for arguments on the contrast
+between DEMO two types of modeling approaches and the value of a process modeling
+perspective.
+2Much of this discussion is based on Kruskal & Sankoﬀ (1983) and Boguski (1992),
+which treat sequence analysis in much greater detail than we do here.
+2
+books have the same title. These are relatively simple tasks. “Sequence
+comparison DEMO with the more diﬃcult comparison that arise when the
+correspondence is not known in advance.” (Kruskal, 1983, in Kruskal and
+Sankoﬀ, p. DEMO). Sequences can be continuous or discrete. In the continuous
+case, DEMO sequence is some continuous function of time, such as a voice DEMO
+ing, where there is a continuous physical signal which can be DEMO as
+a mathematical function. We will not be considering continuous sequences3.
+We focus on discrete sequences such as s where
+s =(a1,... ,an)(1)
+with length l = n. s will be composed of elements ai constructed from an
+alphabet A. A alphabet could be DEMO set of 4 nucleic acids which encode
+DNA (A-denine, C-ytosine, DEMO and T-hymine), the 26 letters of the
+alphabet for word strings, or codes in a behavioral observation coding scheme
+(e.g., codes for the 12 Bales categories for coding group interaction).
+Two sequences s1 DEMO s2 may be compared to each other to determine if
+they are identical. If every element an in s1 and s2 are identical and DEMO
+ordered, and ls1 = ls2,then s1 = s2. However, when s1 = s2, we compare the
+two sequences to determine how they are diﬀerent from each other. How can
+sequences diﬀer? If one considers s1 and s2, then comparison begins by asking
+what steps would be required to transform s1 to s2. Diﬀerences can arise
+due to the DEMO deletions, insertions, substitutions,and transpositions
+or swaps. Insertions and deletions are often called indels. Fundamentally,
+in any comparison between two sequences s1 DEMO s2 at any position yields
+either an identity or a diﬀerence. Given a diﬀerence, one can determine what
+operation(s) are required to DEMO a diﬀerence to an identity.
+Suppose s1 =(a, n, y)and s2 =(a, n, d), then s1 = s2.Let DEMO indicate
+element ai in sn. In this example, substituting y for DEMO in s2 in the third po-
+sition in each sequence eliminates the diﬀerence between the two sequences.
+This substitution of s23 for s13 results DEMO s1 = s2. One can take any pair of
+sequences s1 and s2, determine if they are identical, and if they are not DEMO
+tical, identify a set of operations such that the two sequences DEMO identical.
+By allowing spaces or gaps in our alphabet, we can DEMO sequences of
+diﬀerent lengths. For example, one could compare sequences PS DEMO PA.
+3In many cases, continuous sequences are dealt with by discretizing DEMO continuous
+stream into a set of discrete units.
+3
+PS = PS Y C H O L O G Y 
+DEMO = P A T H OL OG Y 
+One can now ask what operations will be required to transform PA
+PS. One can DEMO the task up as follows. First, align the two sequences.
+(2)
+(3)
+to
+PS Y C H O L O G Y 
+P. A T H O L O G Y
+(4)
+The operations required are:
+1. . → S - substitution
+DEMO A → Y - substitution
+3. T → C - substitution
+We can estimate the magnitude of the diﬀerence between PS and PA as
+DEMO function of the number of steps required to complete this transformation.
+Given this notion of distance, one can try to ﬁnd the minimum number of
+steps to transform one sequence into another. Depending on the application,DEMO
+operations may be equally weighted so that indels are weighted equally with
+substitutions, or diﬀerent operations may be diﬀerentially weighted to reﬂect
+assumptions about or knowledge of the processes generating operations and
+their associated likelihoods. In DEMO applications, it is usually assumed
+that there are diﬀerential costs associated DEMO how big an insertion has to
+be done at a particular point. Some mutations are found empirically to be
+less likely than others. Once DEMO costs are introduced into the alignment
+of two sequences, diﬀerent paths DEMO align one sequence to another can have
+diﬀerent costs. This can be treated as a minimization problem; take two
+sequences a and b, DEMO them, and identify the minimum set of operations
+subject to cost DEMO to transform a to b. Thisisdone using dy-
+namic programming to estimate the similarity or distance between sequences
+(Kruskal, 1983, Boguski, 1992)DEMO In molecular biology, the concept was ﬁrst
+developed by Needleman & DEMO (1970) and has been widely applied in
+that area. Abbott (DEMO) discusses applications in sociology, and Poole and
+Holmes (1995) applied this technique (referred to as optimal matching) to
+characterizing decision making DEMO
+4
+Let us illustrate the dynamic programming algorithm to align the two
+sequences DEMO as PS and PA. One sets up the two sequences along the
+two axes of lattice L as in Figure 1. Starting in the DEMO left hand corner,
+the algorithm traces from the upper left corner to the lower right corner,
+making insertions, deletions and substitutions when needed to determine the
+distance between the two sequences. There may be DEMO paths that can
+be traced to do this. These represent diﬀerent possible ways to calculate
+distance. To ﬁnd the shortest distance, the paths are traced back from the
+lower right hand corner to the upper left DEMO corner.
+Figure 1
+P
+A
+T
+H
+O
+L
+O
+G
+Y
+0.0
+P
+S
+Y
+C
+H
+O
+L
+O
+G
+Y
+Following DEMO (1983), one can develop a weight for insertion, dele-
+tion, and substitution which is assigned at each stage of the alignment. For
+sequences a to b, Kruskal develops the following notation and analysis. Se-
+quences a to b have lengths m and n and entries ai DEMO bj. Null spaces
+or gaps are denoted by φ. Weights are deﬁned for substituting ai for bj as
+w(ai,bj); for inserting DEMO as w(φ, bj); and for deleting ai as w(DEMO,φ). These
+weights will help determine which is the minimal distance path.
+We set the initial cost at 0 at a0,b0. For DEMO segment a with length m,
+the segment is written as am. Distance between a and b is d(am, bn)..At
+any point during the application of the algorithm when it is at am, bn.,then
+distance is d(am, bn)... The algorithm moves recursively forward, and indices
+i and j increase until the algorithm reaches location am,bn. At each forward
+5
+Figure 2
+w(ai−1,bj−1)
+w(φ, bj−1)
+w(ai,bj−1)
+w(φ, bj−1)
+w(ai−1,φ)
+d
+Z
+~Z
+w(ai,φ)
+d -
+w(ai−1,bj)
+w(DEMO, bj)
+w(ai,bj)
+w(φ, bj)
+w(ai−1,φ)
+d
+?
+w(ai,φ)
+d
+step the algorithm is executed as illustrated in Figures 2 and 3, which shows
+a section of a matrix such as the matrix in Figure 1. DEMO equation governing
+the recursion is
+d(ai, bj )= min
+
+d(ai−1, bj )+w(ai,φ)
+d(ai, bj )DEMO(ai,bj)
+i
+j
+(5)
+ d(a , DEMO )+w(φ, bj)
+The recursion equation speciﬁes that in Figures 2 and 3, the following
+paths will be followed to determine the distance d. Starting at a0,b0,with
+d = 0, one can move down one cell to (a1,b0), or to the right one cell to
+(a0,b1), or down one cell and to the right one cell to (a1,b1). Which cell is
+chosen depends on the which of the 3 terms is the minimum value DEMO Eqn.
+( ??). When (ai)=(bj), no cost is incurred since there is a match. Otherwise
+Eqn. ( ??) DEMO to updating the value of d. This ﬁrst move would hold
+if the upper left corner in Figures 2 and 3 was the initial (a0,b0) cell, and
+then the only value in it would DEMO 0. Once these computations are done, the
+algorithm has moved from DEMO (0, 0) cell in the upper left of the matrix DEMO
+the (m, n) in the lowerleftof the matrix.
+Let us DEMO the example of aligning PAT HOLOGY and PSY CHOLOGY .
+When the algorithm is applied with costs of 1 for indels (insertions or dele-
+tions) and costs of 1 for substitutions, we get the following DEMO in
+the cells of Figure 1, yielding Figure 4. If one DEMO back from cell (11, 12)
+along the path back to cell (0, 0) where each step is the minimum score,
+one ﬁnds the optimal alignment. Using globalD routine from the Sequence
+Analysis DEMO 2.0 (Hardy & Waterman, 1997)4, one gets the following
+DEMO on the Internet at http://www-hto/usc/seqaln/
+6
+Figure 3
+substitution deletion
+insertion d
+substitution deletion
+insertion d -
+substitution DEMO
+insertion d
+?
+substitution deletion
+insertion d
+Z
+~Z
+output.
+P---ATHOLOGY
+DEMO ||||||
+PSYC--HOLOGY
+The traceback is read through the following cells in Figure 4, proceeding
+from right to left.
+(1, 1), (3, 1), (3, 4), (4, 5), (5, DEMO), (6, 7), (7, 8), (8, 9), (9, 10) (6)
+What has happened is each DEMO the matching letters are aligned and gaps
+have been inserted to align the two sequences. We have assigned equal scores
+to insertions (w(φ, bj)), deletions (w(ai,φ)) and substitutions (w(DEMO,bj)). We
+do not have to do that. We can DEMO another scoring system if that is
+more theoretically appropriate. In biology, DEMO can be generated
+by mutations, where one protein or nucleotide replaces DEMO by muta-
+tion. Chemically, certain substitutions are less likely than others. DEMO can
+be determined analytically (by examining the structure of a protein) or em-
+pirically based on the frequency of mutations of certain protein DEMO in
+related protein sequences. In a word such as QUIT , certain substitutions
+(e.g., arising from errors) would be more likely (T DEMO Z forming QUIZ)
+than others (U → A forming QAIT ). In an analysis of typing, adjacent
+letters would be more likely substitutions (e.g., t for y) than others (e.g.,
+t DEMO l). The technique in sequence analysis is to develop a scoring matrix
+for the alphabet being used, where unlikely substitutions would generate a
+7
+Figure 4
+0 1 2 3 4 5 6 7 8 9 DEMO
+P S Y C H O L O G Y
+00 1 2 3 4 5 6 7 8 9 10
+1 P 1 DEMO 1 2 3 4 5 6 7 8 9
+2 A 2 1 1 2 3 4 5 6 7 8 9
+3 T DEMO 2 2 2 3 4 5 6 7 8 9
+4 H 4 3 3 3 3 3 4 5 6 7 8
+5 DEMO 5 4 4 4 4 4 3 4 5 6 7
+6 L 6 5 5 5 5 5 4 3 4 5 8
+DEMO O 7 6 6 6 6 6 5 4 3 4 5
+8 G 8 7 7 7 7 7 6 5 4 3 DEMO
+9 Y 9 8 8 8 8 8 7 6 5 4 3
+The column numbers are immediately above the word PSYCHOLOGY and
+the DEMO numbers are immediately to the left of the word PATHOLOGY.
+higher cost. Abbott (1992) gives an example where he constructs a linear
+cost DEMO when aligning numeric sequences composed of digit strings,
+where the substitution cost is the absolute value of the diﬀerence between
+two digits ai DEMO bj. In Morse code recognition, there is a reliable pattern to
+DEMO (Shepard, 1962; Kruskal and Wish, 1978) and one could DEMO the
+confusions matrix generated by paired comparisons of Morse codes to gener-
+ate a scoring matrix for substitutions. Such scoring matrices are frequently
+used DEMO biological sequencing. In the alignment problem of PAT HOLOGY
+and PSY CHOLOGY above, we implicitly used an identity scoring matrix.
+Any matches were scored 1 and any mismatches were scored 0.
+A scoring matrix is a DEMO nxn matrix, where n is the number of dis-
+tinct letters DEMO the alphabet A in which the sequences are written. A protein
+scoring matrix would be 20x20, while a nucleotide matrix would be 4x4.
+A Morse code substitution scoring matrix for letters in the English alphabet
+(ignoring case) would be 26x26. In biology, identity matrices are viewed as DEMO
+8
+sensitive to subtle diﬀerences between distantly related sequences (Boguski,
+1992) DEMO more sensitive scoring systems were developed based on empir-
+ically determined probabilities of mutations from known related sequences.
+The method generally used is to DEMO mutations as ﬁrst order Markov chains,
+where a series of mutations are treated as uncorrelated, independent events.
+Boguski (1992) notes that “the statistical properties of biological sequences
+are quite diﬀerent from those of English DEMO and phrases” (Boguski, 1992,
+p. 104). He suggests that if one is using alignment software with biologi-
+cal scoring matrices, one should be conservative in identifying statistically
+signiﬁcant alignments. Statistical tests have been DEMO which compare
+the likelihood of obtaining a particular alignment to random shuﬄes of the
+same sequences. These statistics are computed as Z scores. For DEMO se-
+quences, he suggests that “extensive experience has indicated that Z DEMO(s)
+in the range of 3 to 6 may not be signiﬁcant, whereas scores greater than
+6 usually are.” Our experience is that robust non-biological sequences are
+detected even when biological scoring matrices are used. DEMO of the tech-
+niques presented below do not require scoring matrices, DEMO scoring matrices
+can enhance the application of sequence alignment techniques. This will be
+illustrated below.
+First, we want to apply this technique to a sample of behavioral data.
+We will analyze interaction sequences in two person DEMO studied by
+Weingart and her colleagues (Weingart, Hyder & Prietula, DEMO; Weingart
+et al., 1997)5. In this laboratory study, tactics DEMO by negotiators in a two
+person negotiation with multiple issues were examined. The focus was on
+integrative and distributive behaviors. 90 dyads were studied DEMO two condi-
+tions. In one condition (Knowledge condition), subjects were DEMO the use
+of certain negotiation tactics, such as trading oﬀ across DEMO (an integrative
+tactic), appearing ﬁrm (a distributive tactic) and DEMO information (a
+tactic that can serve both distributive and integrative ends)DEMO In the control
+condition (No Knowledge condition) subjects were not taught about negoti-
+ation tactics (see Weingart et al., 1996 for details)DEMO As subjects negotiated,
+their interactions were videotaped. The videotapes were coded for the use of
+these tactics. For each dyad, the data are a sequence of codes which can be
+analyzed to see what regularities DEMO occur in the interactions. One nego-
+5Thanks to Laurie Weingart for kindly providing the data for analysis and for working
+with me to understand DEMO processes underlying both the coding and prior analyses of the
+data.
+9
+tiator took position H (for Hamlin Bakery) and the other took DEMO J (for
+Jacqui’s Florist). Weingart et al. (1996) developed DEMO behavior codes. In the
+results we will report, we use the DEMO deﬁned and coded by Weingart
+et al. (1996)6. Since there DEMO two negotiators, there were 22 behavior codes
+developed, 11 for the H position and 11 for the J position. Codes for each of
+DEMO categories are outlined in Table 1. Tactics fall into 3 broader categories
+of tactic types. These tactic types are distributive behaviors (D), integrative
+behaviors (I) and behaviors which are neither I or D (coded N). Each of the
+22 possible combinations is given a single DEMO code7. For details on the
+negotiation materials and results, see Weingart DEMO al. (1996).
+Here are the two sequences. td25 is 66 DEMO, td27 is 144 codes long.
+td25 =
+VHWNPGFNFNVGVNFNFIWNYQPRMIWGPDMRWRVWATIPGWNPISGWIVIWIWNFAYAPDYGYG
+td27 =
+RYNFEFNYDTNTNFIPAYGWMDPDPEYDFRVNYRMNKDWNPNMRRYRYQSGFIFEYNYEMRYQYNW
+DEMO
+FGWIYIYIYIY
+6Deﬁnitions are quoted directly from Weingart et al., 1996, Appendix C
+7Single letter codes are used since in some sequencing and alignment DEMO, there
+is a restriction on letter codes to single alphabetic letters.
+DEMO
+Table 1
+Tactic
+Multi-issue oﬀer
+Single-issue oﬀer
+Information sharing
+priorities
+Information sharing
+DEMO
+Substantiation
+Questions-prioritiesa
+Questions-preferences
+Questions-
+substantion
+Positive reactions
+Procedural comments
+Other
+Deﬁnition
+“Make an oﬀer on two or
+more issues under
+discussion”
+“Make an oﬀer DEMO
+one issue”
+“State which issues are
+more or less important to
+oneself”
+- “State preferred level
+within an issue”
+“Make arguments for own
+position DEMO other’s
+arguments”
+“Ask which issues are
+more or less
+important to other party”
+“Ask for preferred level
+within an issue”
+Questions asking for
+substantiation
+DEMO reactions”
+“Suggest addressing one
+issue at a time” or
+“Suggest a compromise or
+willingness to concede
+on an issue”
+“Oﬀ task and low
+frequency DEMO ”
+Tactic
+type
+I
+D
+D
+I
+D
+D
+I
+D
+N
+N
+D
+N
+J
+Position
+C
+A
+A
+R
+N
+D
+#
+DEMO
+E
+G
+H
+I
+H
+Position
+L
+K
+K
+M
+F
+P
+#
+T
+S
+Y
+V
+W
+aThis category was deleted from the DEMO because it occurred with extremely low
+frequency.
+11
+Let us apply the same procedure that we applied to the word DEMO
+PAT HOLOGY and PSY CHOLOGY to a negotiation interaction sequence.
+We will globally align the two sequences using the globalD program (see
+Waterman, DEMO; pp.192-198 for an analysis of this algorithm). We need to
+DEMO a scoring system for the alignment. There are 4 scores which have
+to be assigned. They are:
+1. match - the score when DEMO letters match
+2. mismatch - the penalty when two letters do not match
+3. α - the penalty for a gap
+4. β - DEMO penalty for additional insertions, lengthening a gap
+Gaps and gap extensions DEMO or may not have meaning in a particular
+application. They do have meaning in biological applications, but we need to
+judge on an application by application basis what these scores and penalties
+should be to do DEMO alignment. The results can be very sensitive to these
+choices. We illustrate with two interaction sequences from Weingart et al.
+which are taken from DEMO Knowledge condition. In globalD, we speciﬁed 3
+parameters to create a DEMO score. With a match getting a score of 0,
+we need to set a mismatch, α and β score. For a k length indel, one would
+calculate a score of α +(β) × (k
+−
+1). For α =1 and β = 1, a5letter indel
+would get a score of 5. For α =1 and β DEMO .5, a 5 letter indel would get a
+score of 3. DEMO two interaction sequences, td25 and td27, we estimated 5
+12
+global distances d(td25,td27) while varying parameters for mismatch, α DEMO
+β. The results are as follows.
+1. mismatch = 1, α DEMO,β =1. d(td25,td27) = 113
+Score: 113 at (DEMO)[0..65] : (td27)[1..144]
+0 ---VHWN--PGFNF--NVG-----------VN--FNFIW--N-----YQPRMI--WGPDM 31
+||| | || ||||| DEMO |
+1 RYNFEFNYDTNTNFIPAYGWMDPDPEYDFRVNYRMNKDWNPNMRRYRYQSGFIFEYNYEM 60
+32 R----W-RVWATIPGWN--PI--------------SG----WI--VIWI---------W- 54
+| | || | || || | ||| |
+61 RYQYNWISDPILIPIYNFIPIPDPNMAPNFAYCWCSGLMMALILGYIWIWEYEYEYEYWM 120
+55 ----NFAYAPDY--G------Y-G 65
+|| | DEMO
+121 RVIVCYEYCYEYEFGWIYIYIYIY 144
+2. mismatch = 5, α =2,β =1. DEMO(td25,td27) = 174
+Score: 174 at (td25)[0..65] : (td27)[2..144]
+0 --VHWNPGF-NFN---VGVN-FNFI----W-----------NYQPRM--IWGPD----MR 32
+|||| | ||| | |||| | ||
+DEMO RY---N--FE-FNYDT---NT-NFIPAYGWMDPDPEYDFRVNY--RMNK----DWNPNMR 44
+33 WR--------------------VW------ATIP--GWN--PI--------------SG- 47
+||||||| ||
+45 -RYRYQSGFIFEYNYEMRYQYN-WISDPIL--IPIY--NFIPIPDPNMAPNFAYCWCSGL 98
+48 ---------WI------------VI------------WIWNFAY---APDY-GYG 65
+|| || || | | |
+99 MMALILGYIWIWEYEYEYEYWMRVIVCYEYCYEYEFGWI----YIYI---YI-Y- 144
+3. mismatch DEMO 5, α =20,β =1. d(td25,td27) = 247
+Score: 247 at (td25)[0..65] : (td27)[144..144]
+0 ------------------------------------------------------------ 0
+1 RYNFEFNYDTNTNFIPAYGWMDPDPEYDFRVNYRMNKDWNPNMRRYRYQSGFIFEYNYEM 60
+0 ------------------------------------------------------------ 0
+61 RYQYNWISDPILIPIYNFIPIPDPNMAPNFAYCWCSGLMMALILGYIWIWEYEYEYEYWM 120
+0 ------------------------VHWNPGFNFNVGVNFNFIWNYQPRMIWGPDMRWRVW 36
+121 DEMO 144
+13
+37 ATIPGWNPISGWIVIWIWNFAYAPDYGYG 65
+144 ----------------------------- 144
+4. mismatch = 5, α =1,β =1. d(td25,td27) = 139
+Score: 139 at (td25)[0..65] : (td27)[1..144]
+0 --VHWNPGF-NFN---VGVN-FNFI----W-----------NYQPRM---IW-GP-DM-- 31
+|||| | ||| | |||| | | |
+1 RY---N--FE-FNYDT---NT-NFIPAYGWMDPDPEYDFRVNY--RMNKD-WN-PN-MRR 45
+32 -R-------------WR----VW------ATIP--GWN--PI--------------S--- 46
+||| ||||| |
+DEMO YRYQSGFIFEYNYEM-RYQYN-WISDPIL--IPIY--NFIPIPDPNMAPNFAYCWCSGLM 99
+47 -----G--WI------------VI------------W--IWNFAY-APDY-GYG 65
+||||||||||
+100 MALILGYIWIWEYEYEYEYWMRVIVCYEYCYEYEFGWIYI----YI---YI-Y- 144
+5. mismatch = 1, α =40,β =1. d(td25,td27) = 287
+Score: 287 at (td25)[0..65] : (td27)[144..144]
+0 ------------------------------------------------------------ 0
+1 DEMO 60
+0 ------------------------------------------------------------ 0
+61 RYQYNWISDPILIPIYNFIPIPDPNMAPNFAYCWCSGLMMALILGYIWIWEYEYEYEYWM 120
+0 ------------------------VHWNPGFNFNVGVNFNFIWNYQPRMIWGPDMRWRVW 36
+121 RVIVCYEYCYEYEFGWIYIYIYIY------------------------------------ 144
+37 ATIPGWNPISGWIVIWIWNFAYAPDYGYG 65
+144 ----------------------------- 144
+The ﬁrst striking feature is DEMO alignments 3 and 5 show no alignments
+at all; the distances DEMO extremely high. This is due to the high gap penalties
+in the α scoring parameter. If the gap for penalties is high, the distance
+calculated here is very high. The second feature is how few long DEMO
+there are in this data. We do see some sequences which recur a few times
+14
+(refer to Table 1 for codes), such as NF (J DEMO H sharing information),
+SG (a question asking for substantiation followed by a positive reaction),
+IWI (sequences of oﬀ-task comments), DEMO (oﬀ task comments followed by
+substantiation), and YGY (sequence of positive reactions, which occur rather
+unsurprisingly at the end of the negotiation). Alignments 1 and 4 have many
+gaps and are similar. Alignment DEMO, with a higher α, has fewer gaps. Note
+that with a mismatch score of 1, alignment 1 ‘merely’ stretches out td25 over
+td27, introducing no gaps in td27.
+The alignments show some reasonable patterning but are unsatisfying
+in several respects. First, global alignment requires us to align the entire
+sequences, and this may or may not be appropriate depending on our pur-
+poses and the underlying processes generating the sequence (in this case,
+interaction between two people in negotiation).
+Local alignment
+DEMO the interactions from Weingart et al. (1996) we aligned the entire se-
+quence. One could argue that interactions can have sets of subprocesses,DEMO
+each of which has certain characteristic interaction patterns, but that these
+DEMO do not necessarily occur in any particular order and do not
+necessarily have similar amounts of interaction occurring between each sub-
+process. For example, one could suggest that early in the interaction there is
+a period DEMO people become acquainted and share information and prefer-
+ences, but sometimes DEMO may just sit down and start bargaining without
+15
+even an introduction to each other. If this were the case, then global align-
+ment would not be appropriate, but local alignment(s) DEMO be appropriate,
+where a particular local sequence occurs at diﬀerent points in each sequence.
+We hope to capture some of the local features DEMO allowing the applica-
+tion of dynamic programming techniques which allow for gaps, indels and
+transpositions.
+Smith & Waterman (1981) introduced local alignment methods, modify-
+ing global alignment methods to ﬁnd similar segments of two sequences. The
+key modiﬁcation to global alignment dynamic programming methods was to
+allow DEMO scores for mismatches (Boguski, 1992). By allowing negative
+scores, DEMO a region of similarity ends and mismatches begin, the overall
+similarity DEMO decreases, allowing regions of similarity to be distinguished.
+Boguski (1992) DEMO that “Local alignment programs are probably the
+method of choice for unknown sequences, since they will ﬁnd something close
+to a global alignment if the sequences are highly similar, or the region of high-
+est similarity if they are not. Global alignment of distantly related sequences,
+on DEMO other hand, may entirely miss their similarity.” (Boguski, 1992, p.
+132). We use the localS routine (Hardy & Waterman, 1997), which iden-
+tiﬁes local alignments between two sequences using the Smith & Waterman
+(1981) algorithm (see Waterman, 1995, section 9.6 for derivations). Similar-
+ity and distance are closely related and can be thought DEMO interchangeably
+here. “When full sequences are aligned by distance (similarity) in global
+alignments, there is a similarity (distance) algorithm that gives the same
+set of optimal alignments; that is, ﬁnding similarity and distance DEMO
+16
+are dual problems.” (Waterman, 1995, p. 200). However, for DEMO similar-
+ity, there is no dual local distance measure. Using localS, we again specify
+scores for mismatch, α and β as they were deﬁned before. We now must
+also specify scores for a match. The DEMO will be calculated by cumulating
+match scores and subtracting mismatch, α DEMO β. We speciﬁed the same
+parameters for td25 and td27 as for global distance above, with a match
+score that was double the mismatch score. We can search for more than one
+local alignment in any DEMO of sequences. Here are the results when we search
+for two local alignments. We report the alignments and the similarity scores
+(where higher scores mean greater similarity; in the distance analyses, higher
+distance scores mean DEMO similarity and we tried to minimize distance).
+1. match=2, mismatch DEMO 1, α =1,β =1.
+Score: 11 at (td25)[43..61] : (td27)[65..83]
+43 NPISGWIVIWIWNFAYAPD 61
+| || | | | || DEMO
+65 NWISDPILIPIYNFIPIPD 83
+Score: 10 at (td25)[20..34] : (td27)DEMO
+20 NYQPRM--IWGPDMRWR 34
+|| || | | || |
+32 NY--RMNKDWNPNMR-R 45
+2. match = 10, mismatch = 5, α =2,β =1.
+DEMO: 198 at (td25)[4..64] : (td27)[3..116]
+4 NPGF-NFN---VGVN-FNFI----W-----------NYQPRM---IW-GP-DMRWR---- 34
+DEMO | ||| | |||| | | |||
+3 N--FE-FNYDT---NT-NFIPAYGWMDPDPEYDFRVNY--RMNKD-WN-PN-MR-RYRYQ 49
+35 ----------------VW------ATIP--GWN--PI--------------SG-----WI 49
+| || | || || |
+50 SGFIFEYNYEMRYQYN-WISDPIL--IPIY--NFIPIPDPNMAPNFAYCWCSGLMMAL-I 103
+50 ---VIWIW-NFAY-APDY-GY DEMO
+|||| | | |
+17
+104 LGY-IWIWE---YE---YE-Y 116
+Score: 167 at (td25)[3..64] : (td27)[39..142]
+3 WNP---------GF-NF--N-------VGVN-----------FNFIWNYQPRMIWGPD-- 30
+||| || | | | ||| | | ||
+DEMO WNPNMRRYRYQSGFI-FEYNYEMRYQY---NWISDPILIPIY-NFI----P--I--PDPN 85
+31 MRWRVWATIPGWN-------------PI-SG--WI------------VI----------- 51
+| | || || || ||
+86 M-----A--P--NFAYCWCSGLMMAL-IL-GYIWIWEYEYEYEYWMRVIVCYEYCYEYEF 134
+52 -WIWNFAY-APDY-GY 64
+|||||
+135 GWI----YI---YI-Y 142
+3. match = DEMO, mismatch = 5, α =20,β =1.
+Score: 55 at (td25)[43..61] : (td27)[65..83]
+43 NPISGWIVIWIWNFAYAPD 61
+| || | | | || ||
+65 NWISDPILIPIYNFIPIPD 83
+Score: 45 at (td25)[7..18] : (td27)[4..15]
+7 FNFNVGVNFNFI 18
+| || | |||
+4 FEFNYDTNTNFI DEMO
+4. match = 10, mismatch = 5, α =1,β =1.
+Score: 233 at (td25)[4..64] : (td27)[3..116]
+4 NPGF-NFN---VGVN-FNFI----W-----------NYQPRM---IW-GP-DM---R--- 32
+|||| | ||| | |||| | | | |
+3 N--FE-FNYDT---NT-NFIPAYGWMDPDPEYDFRVNY--RMNKD-WN-PN-MRRYRYQS 50
+DEMO ----------WR----VW------ATIP--GWN--PI--------------SG-----WI 49
+|| || ||| || |
+51 GFIFEYNYEM-RYQYN-WISDPIL--IPIY--NFIPIPDPNMAPNFAYCWCSGLMMAL-I 103
+50 ---VIWIW-NFAY-APDY-GY 64
+|||| | | |
+104 LGY-IWIWE---YE---YE-Y 116
+Score: 196 at (DEMO)[1..64] : (td27)[31..142]
+1 V-------HWNP---------GF-NF--N-------VGVN-----------FNFIWNYQP 23
+| ||| || | DEMO | ||| |
+31 VNYRMNKD-WNPNMRRYRYQSGFI-FEYNYEMRYQY---NWISDPILIPIY-NFI----P 80
+18
+24 RMIWGPD--M-------RW------RVWA-TI-PG--WNPI---------SGW---IV-- 50
+| ||| | | | ||| | ||
+81 DEMO 126
+51 ---------IWIWNFAY-APDY-GY 64
+|| | | |
+127 EYCYEYEFG-WI----YI---YI-Y 142
+5. match = 10, mismatch = 5, α =40,β =1.
+Score: 55 at (td25)[43..61] : (td27)[65..83]
+43 NPISGWIVIWIWNFAYAPD 61
+| DEMO | | | || ||
+65 NWISDPILIPIYNFIPIPD 83
+Score: 45 at (td25)[7..18] : (td27)[4..15]
+7 FNFNVGVNFNFI 18
+| || | |||
+4 FEFNYDTNTNFI 15
+In these results, we see several features. First, DEMO have speciﬁed in localS
+that we want the two highest scoring local alignments. Alignments 1,3 and 5
+are short alignments and are very DEMO They are short because the scoring
+system speciﬁes that the ratio of match to α is relatively small (between 1
+4
+and 2) DEMO for alignments 2 and 4, the match to α ratio is DEMO higher (5
+for alignment 2 and 10 for alignment 4). DEMO the relative cost for gaps rises,
+the alignments are shorter with fewer gaps. We see similar patterns to the
+global alignments, but they are clearer, particularly in the short alignments.
+In alignments 1,3, DEMO 5, we see interspersed I’s and N’s with some F’s
+with DEMO and D. This is information sharing and elements of substantiation,
+reasonable types of behaviors relatively early in a negotiation (after 42 and
+64 speaking turns). the second local alignment starts earlier, at position 20
+19
+and 32 respectively in alignment 1, at positions 7 and 4 in alignments 3 and 5.
+In this early local alignment in alignments 3 DEMO 5, we see F’s and N’s, again
+information sharing which is appropriate early in a negotiation. The local
+alignment scoring 10 in alignment DEMO has alternating N’s and Y’s as well as M
+and R. Again, this is information sharing about preferences and priorities, the
+sort of DEMO likely to occur early in the interaction. In this sample local
+alignment, we see that the choice of scoring parameters (in this case DEMO
+on the relative penalty for gaps) inﬂuences the kind of alignment DEMO identify.
+Alignments 2 and 4 are essentially the same, and all DEMO are close to the global
+alignments identiﬁed earlier. We get an overall alignment without breaking
+out the shorter relatively homogeneous alignments in 1,3 DEMO 5. The primary
+diﬀerence between the highest scoring and second highest scoring alignment
+is that in the highest scoring alignment, the alignment puts the start of the
+interaction in closer alignment, dropping oﬀ the end of td27, which had much
+more positive reactions at the end of the negotiation (Y is very frequent from
+one party at the end of td27). The second best local alignment drops the
+beginning of td27 DEMO bring the end of td27 in closer alignment with td25.
+However, DEMO higher match to α ratio resulted in local alignments relatively
+similar to the global alignments reported earlier. Clearly, with the proper
+choice of scoring parameters, local alignments are more informative here.
+We have only illustrated pairwise comparisons in this negotiation data
+set, but one could construct distance measures between all pairs of sequences,
+generating a distance matrix amongst all DEMO One could then use such
+a matrix as input into a multidimensional scaling or clustering algorithm to
+20
+ﬁnd groupings of dyads with similar patterns of behavior. One could also
+DEMO the number of local alignments of diﬀerent kinds by condition. For
+example, do local alignments showing information sharing about preferences
+occur with diﬀering frequency in the Knowledge and No Knowledge condi-
+tions in Weingart et al. (1996)? Such questions can be addressed using these
+measurement procedures.
+Choosing DEMO Global or Local Alignment Ap-
+proach
+The choice of local versus global alignment requires consideration of at least
+2 issues. First, theoretically, which DEMO a more appropriate way to think about
+the particular sequence, globally DEMO locally. For example, are interaction se-
+quences composed of subsequences which DEMO have diﬀerent orderings? If so,
+then local alignment is a DEMO appropriate technique. On the other hand, if
+one needs to look DEMO the entire sequence as one process, global alignment may
+be more DEMO Second, what do you want to look for in the sequence?DEMO
+In our example, theoretically, one can expect a negotiation to proceed in
+stages with information sharing occurring early, oﬀers and counteroﬀers oc-
+curring later on and the negotiation ending with the exchange of reactions
+(positive if the negotiation is successful; possibly negative otherwise). In fact,
+even if the negotiating parties walk away without a deal and this DEMO the best
+alternative for both parties (a BATNA or Best Alternative DEMO Negotiated
+Agreement), there may still be positive reactions. This theoretical argument
+21
+suggests that local alignments may be a better choice for this task. DEMO,
+even if one felt a global alignment was called for, DEMO a local alignment
+might be useful if one wants to closely examine aspects of an overall process.
+An illustration of this choice is available DEMO Dijkstra & Taris (1995), who
+examined career sequences using a DEMO of distance between career his-
+tories, a nice application of sequence DEMO They used a global alignment
+measure, studying the entire career. Abbott (1995), in a critique of the
+Dijkstra & Taris analysis, notes that in a career there may be a need for “al-
+gorithms DEMO speciﬁcally weight important periods in careers ... One might
+wish to weight important transition moments more heavily than periods be-
+fore or since, and one might wish to do this without necessarily knowing
+ahead of time DEMO these moments fall. ldots In algorithmic terms, this
+constitutes the problem DEMO ﬁnding the best common subsequence. In theo-
+retical terms, it arises DEMO of the notion that careers and life courses consist
+of regular local units assembled in potentially random ways into larger whole
+lives.” (Abbott, DEMO, p. 241) If one takes the random assembly of stable
+subsequences view, local alignment is an appropriate method. If one takes
+the view that careers have stable courses, global alignment may capture the
+overall ﬂow of a career, and local alignment may capture stable subcompo-
+nents (DEMO and apprenticeship, early job movement until a stable job
+is identiﬁed DEMO so on).
+22
+Conclusion
+We have introduced and illustrated the application of some basic techniques
+DEMO computation biology which can be useful in assessing sequence similarity.
+In particular, we have illustrated how both global and local alignment of
+two sequences can be conceived and computed using variants of a dynamic
+programming algorithm DEMO estimate distance or similarity between two se-
+quences. Applications to two person interactions suggest both the issues
+involved in choosing the appropriate technique and DEMO system, as well
+as some insights that can be obtained when DEMO such techniques. There is
+a great deal of promise in these applications, and much work has been done
+and is continuing to be done in this area which promises to provide behavioral
+researchers with very useful DEMO for studying sequences of behaviors.
+References
+Abbott, A. (1992). From causes to events. Sociological Methods and Research,
+20(4):428–455.
+Abbott, A. (1995). Sequence analysis: New methods for old ideas. In Annual
+Review of Sociology, volume 21, pages 93–113. Annual Reviews, Inc.,
+Palo Alto.
+Abbott, A. & Barman, E. (1997). Sequence comparison via alignment and
+gibbs sampling: A formal analysis of the emergence of the modern so-
+ciological article. In Raftery, A., editor, Sociological Methodology,vol-
+23
+ume 27, pages 47–87. Blackwell (for the American Sociological Associa-
+tion), Boston MA.
+Bakeman, R. & Quera, V. (1995). Analyzing DEMO: Sequential Analysis
+with SDIS and GSEQ. Cambridge University Press, Cambridge.
+Bakeman, R., Quera, V., McArthur, D. & Robinson, B. F. (1997). De-
+tecting sequential patterns and determining their reliability with fallible
+DEMO Psychological Methods, 2(4):357–370.
+Boguski, M. S. (1992). Similarity and homology. In Devereux, M. G. . J., ed-
+itor, Sequence Analysis Primer, pages 90–157. Oxford University Press,
+New York.
+Dijkstra, W. & Taris, T. (1995). Measuring the agreement between sequences.
+Sociological Methods and Research, 24(2):214–231.
+Fichman, M. (1997)DEMO Explanatory theory and explaining variance: Knowing
+the diﬀerence. unpublished paper, Carnegie-Mellon University.
+Gottman, J.M., & Roy, A.K. (1990). Sequential Analysis: A guide for behav-
+ioral researchers. Cambridge University Press, Cambridge.
+Gribskov, DEMO & Devereux, J., editor (1992). Sequence Analysis Primer.
+UWBC DEMO Resource Series. Oxford University, New York.
+Hardy, Paul & Waterman, DEMO S. (1997). The sequence alignment software
+library at usc.
+24
+Kruskal, J. B. (1983). An overview of sequence comparison. In DEMO, D.
+S. . J., editor, Time Warps, String Edits, DEMO Macromolecules: the The-
+ory and Practice of Sequence Comparison, pages 1–44. Addison-Wesley,
+Reading, Massachusetts.
+Lieberson, S. (1985). Making It Count: The Improvement of Social Research
+and Theory. University of California, Berkeley.
+DEMO, L. B. (1982). Explaining Organizational Behavior. Jossey-Bass, San
+Francisco.
+DEMO, S.B. & Wunsch, C. (1970). A general method applicable DEMO
+the search for similarities in the amino acid siequences of two proteins.
+Journal of Molecular Biology, 48:443–453.
+Poole, M.S. & Holmes, M. (1995). Decision development in computer-assisted
+group decision making. Human Communications Research, 22(1):90–
+127.
+Sankoﬀ, David & Kruskal, J. B., editor (1983). Time Warps, String Edits,
+and Macromolecules: The theory and practice of sequence comparison.
+Addison-Wesley Publishing, Reading, Massachusetts.
+Shepard, R. (1962). The analysis of proximities: multidimensional scaling
+with an DEMO distance function. Psychometrika, 27:125–140,219–
+246.
+25
+Smith, T.F. & Waterman, M. (1981). The identiﬁcaiton of common molecular
+subseqeunces. Journal of Molecular Biology, 147:195–197.
+Waterman, M. S. (1995). Introduction to Computational Biology. Chapman
+& Hall, Cambridge UK.
+Weingart, L. (1997). How did they do that? the ways and means of studying
+group process. In Cummings, B. S. . L. L., editor, Research in Orga-
+nizational Behavior, volume 19, pages 189–239. DEMO Press, Greenwich
+CT.
+Weingart, L.R., Hyder, E.B., & Prietula, M.J. (1996). Knowledge matters:
+The eﬀect of tactical descriptions on negotiation behavior and outcome.
+Journal of Personality and Social Psychology, 70(6):1205–1217.
+Weingart, L.R., Prietula, M.J., Hyder, E.B. & Genovese, C. R. (1997). Tacti-
+cal knowledge and the process of negotiation: A markov chain analysis.
+unpublished paper, Carnegie-Mellon University.
+26{1g42fwefx}

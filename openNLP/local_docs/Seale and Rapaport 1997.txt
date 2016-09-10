@@ -1,0 +1,1243 @@
+ORGANIZATIONAL BEHAVIOR AND HUMAN DECISION PROCESSES
+Vol. 69, No. 3, March, pp. 221–236, 1997
+ARTICLE NO. OB972683
+Sequential Decision Making with Relative Ranks:
+An Experimental Investigation of the “Secretary Problem”
+DARRYL A. SEALE
+University DEMO Alabama, Huntsville
+AND
+AMNON RAPOPORT
+University of Arizona
+The “secretary problem” DEMO a class of optimal
+stopping decision tasks in which the binary decision
+to either stop or continue the search only depends on
+relative ranks. DEMO present this problem in a computer -
+controlled experiment designed to investigate sequen-
+tial observation and selection behavior in the context
+of employer hiring DEMO Our principal objectives
+are to test the descriptive power of the optimal decision
+policy; characterize and competitively test simple deci-
+sion rules, or DEMO, that individuals might use
+in optimal stopping decision tasks; and examine the
+sensitivity of the various decision rules by computer
+simulation. Our simulation DEMO show that the opti-
+mal policy is insensitive to moderate deviations from
+the optimal cutoff value, and that a simple, non-optimal
+decision rule DEMO counts the number of successive non-
+candidates performs remarkably well. Model compari-
+sons show that simple cutoff decision rules account
+for the decisions of DEMO majority of the subjects. The
+observed tendency to stop the search too early is ac-
+counted for by postulating an endogenous cost of time
+DEMO in the search. q 1997 Academic Press
+Our objective in this paper is to characterize and
+study several simple decision rules, or heuristics, DEMO
+individuals may use to maximize the probability of se-
+lecting the best alternative from a finite set of alterna-
+tives that are inspected sequentially. DEMO each new
+inspection, the decision maker (DM) must either choose
+DEMO of the available alternatives or exercise an option
+to inspect another alternative; there is no recall of previ-
+ous alternatives.
+Address correspondence and reprint requests to Darryl A. Seale,
+Department of Management and Marketing, College of Administra-
+tive Science, University of Alabama in Huntsville, Huntsville, AL
+35899-0376, E-mail:dseale@ email.uah.edu.
+To illustrate this class of optimal stopping decision
+problems and motivate our study, consider two exam-
+ples from entirely different domains. The first example
+(Stewart, 1981) concerns a prospecting company, DEMO
+resources to develop a single mine, which commences
+exploration in a DEMO region. Mineral deposits are scat-
+tered throughout the region and are assumed to be
+discovered in a random order. When a deposit is discov-
+DEMO, a claim option can be taken out. As is often the
+DEMO, the decision as to whether to work the claim has
+to DEMO made within some prescribed amount of time. If
+this time is relatively short in comparison with the time
+between discoveries, then effectively a decision on one
+option has to be made before the next discovery is DEMO
+On the other hand, if the option is allowed to lapse
+DEMO is a high probability that some other company
+will take up the option.
+The second example—the one actually investigated
+in the present study—concerns the DEMO of the best
+secretary from a fixed pool of potential employees
+applying for a job vacancy (e.g., Ferguson, 1989). The
+employer is assumed to interview the applicants se-
+quentially; following each interview, she DEMO decide
+whether to select the current applicant, thereby termi-
+nating the DEMO process, or reject the current appli-
+cant and interview another applicant. DEMO assume that
+rejected applicants cannot be recalled (this assumption
+can and DEMO been relaxed). This assumption applies in
+situations in which interviews are spaced far apart and
+there is strong competition for secretaries, so that the
+probability that a rejected applicant is still available is
+practically zero.
+DEMO and related sequential decision problems have
+been modeled by the so-called “secretary problem” in
+probability theory. Although there is some obscurity as
+to the DEMO of this problem, it is generally agreed
+221
+0749-5978/97 $25.00
+DEMO q 1997 by Academic Press
+All rights of reproduction in any form reserved.
+222
+SEALE AND RAPOPORT
+maximize the probability that the item selected is, in
+fact, the best of all the n items available (or, equiva-
+lently, assuming a 0-1 payoff function, maximize the
+expected gain DEMO search).
+The standard SP can be formulated in terms of six as-
+sumptions:
+1. There is only one position available.
+2. The DEMO of applicants, n, is finite and known
+by the DM.
+3. The n applicants are interviewed sequentially, one
+at a time, in DEMO random order; consequently, each of the
+n! orders is equally likely.
+4. The DM can rank all the n applicants from best
+to DEMO without ties. The decision to either accept or
+reject an applicant in a given period is based only on
+the relative ranks of those DEMO interviewed so far.
+5. Once rejected, an applicant cannot later be DEMO
+called.
+6. The DM is satisfied with nothing but the best.
+(DEMO payoff is 1, if he chooses the best of the n DEMO,
+and 0 otherwise.)
+It has been recognized that these features place more
+severe constraints on the problem than would usually
+apply in DEMO This may be one of the main reasons
+why the standard SP has not attracted attention in the
+that the first statement of the DEMO appeared in experimental investigation of individual choice behav-
+print in the February 1960 column of Martin Gardner
+in Scientific American. Lindley (1961) seems DEMO be the
+first to solve the problem in a scientific journal (DEMO
+guson, 1989). An important problem left open in Lin-
+dley’s DEMO was subsequently solved by Chow, Mori-
+guti, Robbins, and Samuels (1964). A more basic paper
+by Gilbert and Mosteller (1966) DEMO the basic
+secretary problem in several important directions. This
+paper, more DEMO the others, is responsible for the explo-
+sion of ideas, generalizations, and effort that have im-
+pacted this area since 1972 and that continues strongly
+today (for a partial review of the theoretical develop-
+ments until 1983 see Freeman, 1983).
+In the standard version of the secretary problem (SP),
+a fixed and known number, n, DEMO items (alternatives)
+are presented to the DM, one at a time, in a random
+order. Time is discrete. At any period, DEMO DM is able
+to rank order all the items that have been observed
+in terms of their desirability or quality. As each item
+(alternative) is inspected (interviewed), the DM must
+either accept it, in which case the observation process
+is terminated, or reject it, in DEMO case the next item
+in the (random) order is presented and the DM faces
+the same problem as before. The DM’s objective is DEMO
+bility distribution of the item’s quality is known in ad-
+vance, DEMO that it can be learned during the interview
+process (e.g., Sakaguchi, 1961, 1978; Gilbert & Mos-
+teller, 1966; DeGroot, 1970; Stewart, 1981; Petrucelli,
+1982). Possibly the most restrictive of DEMO six assump-
+tions is Assumption 5 that has been generalized in sev-
+eral different ways. One generalization introduces the
+possibility that an applicant, if selected, has some prob-
+ability of not being available (Smith, 1975). Another
+generalization allows the DM to recall one of the last
+DEMO rejected applicants (m , n); if available, the applicant
+can be selected, otherwise, the DM continues the inter-
+view process (Corbin, 1980; Yang, 1974). Finally, both
+of these generalizations can DEMO combined (Petrucelli,
+1981). The sixth and final assumption can DEMO be gener-
+alized in several ways. The special utility function im-
+plied by the formulation of the standard SP that takes
+on the value DEMO, if the best applicant is selected, and 0,
+otherwise, DEMO been generalized by assuming that the
+DM receives utility ui if the applicant selected is the
+ith best. Special cases of this generalization have DEMO
+examined by Lindley (1961), Chow et al. (1964), Gilbert
+and Mosteller (1966), and Mucci (1973).
+Experimental investigations of DEMO variants of the
+standard SP, which relax Assumption 1 by allowing DEMO
+rather than one position and Assumption 2 by pres-
+enting the subject information about the probability
+distribution of n, rather than the exact value of n, have
+ior or in the vast literature on human resource manage-
+ment. However, although the formulation of the stan-
+dard SP is rather simple in nature, its assumptions and
+non-trivial solution provide some insight into the type
+of decision which can provide an appropriate response
+to DEMO dilemma faced by the DM between committing
+resources to an attractive proposition or deferring the
+decision in the hope of obtaining a better opportunity
+DEMO (Stewart, 1981).
+More importantly, each of the six assumptions DEMO
+can be relaxed offering more realistic formulations of
+the standard SP. Rather than assuming a single posi-
+tion (Assumption 1), one may consider SPs in which
+several positions are available (Gilbert & Mosteller,
+1966; Sakaguchi, 1978). Rather than assuming that the
+number of applicants DEMO known with precision (Assump-
+tion 2), it may be assumed DEMO the DM only knows the
+distribution of the value of n (DEMO, Gianini-Pettit, 1979;
+Pressman & Sonin, 1972; Rasmusen & Robbins, 1975).
+The assumption of random arrival of applicants (As-
+sumption DEMO) can be replaced by other assumptions that
+are better suited to DEMO specifics of the problem (e.g.,
+that applicants are interviewed at DEMO points of a Pois-
+son process as in Cowan & Zabezyk, DEMO). Assumption
+4 can be replaced by other assumptions that the proba-
+DECISION MAKING WITH RELATIVE RANKS
+223
+been conducted by Seale (1996). The present article study makes no distribution assumptions about the
+reports a DEMO study on the most restrictive version quality of the alternatives that are sequentially in-
+of the SP in an attempt to formulate, study, DEMO compet- spected (proficiency of candidates being interviewed for
+itively test alternative DEMO rules that the subject a job), nor does it permit the subjects to gather any
+may be using in this class of optimal DEMO decision information about this distribution during the search.
+problems. More realistic versions of the standard SP, The assumption of ordinal rather than cardinal infor-
+which capitalize on the simulation and experimental mation is obviously weaker. In DEMO cases it is more
+findings of the present study, will be DEMO in subse- realistic. Moreover, it can be implemented experimen-
+quent articles. DEMO without violating the assumptions of the model
+(see Method below) in contrast to the cardinal informa-
+PREVIOUS RESEARCH tion case that requires assessment DEMO the subject’s
+knowledge of the distribution of alternatives.
+While there have been no experimental studies of the
+SP which strictly adhere to its six DEMO, there BEHAVIORAL DECISION RULES
+have been related experiments on optimal stopping DEMO
+violate Assumption 4 by introducing incomplete or com- We propose to study this class of sequential observa-
+plete information about the quality of the DEMO tion and selection problems experimentally in the con-
+under inspection. Kahan, DEMO, and Jones (1967) text of employee hiring decisions. Although we DEMO
+conducted a similar experiment to ours with n 5 200. below the optimal decision policy for the standard SP,
+In violation of Assumption DEMO and in contrast to our we have no particular reason to expect naive subjects
+experiment, the subject recorded the actual value of the to behave optimally in this class of problems. Instead,
+item she inspected DEMO than being presented with our primary focus is on formulating and competitively
+its rank relative to the items already inspected and testing alternative decision DEMO, or heuristics, that
+rejected. Consequently, although information about the subjects DEMO use to solve the standard SP and related
+distribution of the quality of the alternatives was not sequential decision problems.
+explicitly provided at the DEMO of the experiment, When rules of thumb, or heuristics, are DEMO to solve
+partial information could be gradually acquired as sub- complicated decision problems, they necessarily imply
+jects observed and recorded the actual values of the some loss of effectiveness. By definition, in the present
+alternatives. No attempt to account for this learning SP heuristics will not result in DEMO the probabil-
+process was attempted. ity of selecting the best of all n items; this probability
+In a subsequent experiment conducted by Rapoport is yielded by the optimal policy. We report below the
+and Tversky (1970), subjects were presented sequen- results of extensive simulation studies conducted in
+DEMO with offers drawn randomly from a normal distri- order to study the sensitivity of the optimal policy and
+bution whose parameter values were known. DEMO each assess the effectiveness of the different decision rules
+trial, the DEMO could either pay a fixed cost and sam- under experimental examination. These simulation re-
+ple another offer or stop the search and receive a DEMO sults complement the experimental results of our tests
+equal to the value of the last offer minus the total cost of the various decision DEMO
+of search. Rapoport and Tversky found that a cutoff
+type model stipulating that the subject stops the search The optimal policy. Before describing the DEMO
+once an offer exceeds some fixed cutoff (threshold) value rules, DEMO behavioral models, under investigation, we
+organized their data quite well. However, on the aver- first describe the optimal policy for the standard SP. In
+age, their subjects stopped the search (by choosing a the DEMO SP, we describe the state of the decision
+smaller cutoff point DEMO predicted) earlier than pre- process at each period (stage) by DEMO integers (r, s),
+dicted by the optimal solution for DEMO problem under where r is the number of items so far presented and s
+the assumption of risk-neutrality. is the apparent rank of the DEMO, last presented item. If
+In yet another study of optimal stopping, Kogut s Þ 1, there is obviously no point in accepting the rth
+(1990) presented his subjects with the task of searching item, as it cannot possibly be the best. After the next
+for the DEMO price of a product randomly drawn from item has been presented, DEMO new state of the decision
+a known distribution of prices. Like Rapoport and Tver- process will be (r 1 1, s8), where DEMO is equally likely to
+sky, he assumed constant cost of search, perfect recall, be any one of the integers 1, 2, ..., r 1 1. If s 5 1, we
+and risk-neutrality on DEMO part of his subjects. His find- shall say that this item is a candidate for acceptance.
+ings, too, show that subjects systematically selected DEMO probability that it is in fact best of all the n items
+prices too early. is r/n. One can then write an equation DEMO the maximum
+In contrast to these previous studies, the present probability DEMO choosing the best item, when the state of
+224
+SEALE AND RAPOPORT
+ar 5 1/r 1 1/(r 1 1) 1 ... 1 1/(n 2 1).
+Then the DEMO decision in state (r, 1) is to stop if ar
+, 1 and continue if ar . 1. Thus, if r* is DEMO integer r
+for which ar21 $ 1 . ar, the optimal DEMO has the
+following very simple form:
+“reject the first r* 2 1 items and then accept the first
+item thereafter that is better DEMO all previous items.”
+Stated differently, the optimal policy is of a DEMO form,
+where the first r* 2 1 applicants are rejected and the
+first candidate is accepted thereafter.
+The probability of winning associated with DEMO opti-
+mal policy is
+(r* 2 1)ar*21/n.
+As n DEMO }, r*/n → 1/e 5 0.368. Similarly, the probability
+of choosing the best item also approaches 1/e as n → DEMO
+Convergence to 1/e 5 0.368 is reached rather quickly.
+For example, r*/n 5 0.4, 0.4, 0.4, and 0.375 for n DEMO 10,
+20, 40, and 80, respectively. The probabilities of DEMO
+associated with these four values of n are 0.3987,
+0.3842, DEMO, and 0.3719 (Gilbert & Mosteller, 1966).
+The asymptotic results, though perhaps not the form
+of the cutoff policy, seem highly counterintuitive to indi-
+viduals presented with the standard SP for the first
+time. DEMO, the standard SP is one of the best exam-
+ples to DEMO that probability theory may yield
+results that are not all intuitive. In numerous class
+presentations and other informal demonstrations we
+have found that individuals DEMO the probability of
+winning—choosing the best of n applicants—to de-
+crease monotonically in n.
+Alternative decision rules. There is no particular
+reason to expect DEMO the optimal policy will account
+for the decision behavior of inexperienced subjects in
+SPs that differ from one another in the value of n.
+DEMO of our preliminary and informal studies in
+which subjects were interrogated about the decision
+rules they were using to solve the standard SP have
+DEMO three alternative decision rules, or heuris-
+tics, of a relatively simple nature.
+the decision process is (r, s) and solve it by dynamic chooses the first candidate after observing at least k
+programming (Lindley, 1961). Define consecutive non-candidates following the last candi-
+date.
+We justify the term “heuristics” in this context by
+noting that all three decision DEMO, or behavioral mod-
+els, make minimal requirements on the DM’s cognitive
+system. Each requires the DM to merely count the num-
+ber of DEMO “events” and compare this number to
+some fixed parameter value. Under the cutoff rule, the
+DM has only to count the number of applicants and
+then stop on the first candidate once this number ex-
+ceeds DEMO constant r 2 1. Under the candidate count
+rule, he has DEMO to count the number of candidates
+before deciding to stop, once DEMO number is equal to or
+larger than some constant j. And under the successive
+non-candidate rule, after observing a candidate the DM
+has only to count the number of successive non-candi-
+dates and stop on the DEMO candidate, once this number
+is equal to or larger than some DEMO k. The relative
+effectiveness of these rules with respect to the optimal
+policy will be studied by simulation below. Because each
+rule is characterized DEMO a single parameter (r, j, and k),
+a straightforward statistical comparison of the models,
+which is not complicated by differences DEMO the number
+of free parameters, is possible.
+SIMULATION RESULTS
+A series DEMO computer simulations were conducted to
+assess the sensitivity of the optimal policy, and the
+effectiveness of the three decision rules. Each of the
+three decision rules, cutoff, candidate count, and succes-
+sive non-candidates, was DEMO for the standard SP
+with either n 5 40 or n 5 80 applicants. Each possible
+variant or form of the three decision rules DEMO repli-
+cated (simulated) 10,000 times. All the replications fol-
+lowed a similar pattern. First, a set of n applicants was
+assembled using a random number generator, where
+the relative ability or rank of the applicants could be
+determined with certainly. Next, the applicants were
+presented to the decision rule one at a time in a random
+order. If DEMO applicant was a candidate and met the
+other criteria of the decision policy under evaluation,
+the candidate was selected; otherwise, interviewing
+continued. DEMO a candidate was selected, the ranks
+of the remaining applicants were DEMO If the candi-
+date remained the top ranked, a correct selection DEMO
+1. A cutoff rule, where the DM rejects the first noted.
+DEMO 2 1 applicants and then chooses the next top-ranked The simulations yielded two important statistics: the
+applicant (candidate). (Note that this decision rule in- number of correct selections out of 10,000 replications
+cludes DEMO optimal policy as a special case, if r 5 r*.) and the number of selections made. The first statistic
+2. A Candidate count DEMO, where the DM chooses allows for a straightforward calculation of the DEMO
+the jth candidate (1 # j , n). ity of DEMO selection, which can be compared directly
+3. A Successive non-candidate rule, where the DM to the maximum probability under the optimal policy.
+DECISION MAKING WITH RELATIVE RANKS
+225
+From the second statistic we calculated DEMO probability
+tha t the decision rule finds some candidate, regar dless
+DEMO t his ca ndida te rem ains t op-ra nked a t the end of t he
+sequence. This statistic is interesting for sever DEMO rea -
+son s. Fir st, we show below t hat DEMO rules vary from
+each other not only in the pr obability of corr ect selection,
+but also in the probability of can didat DEMO selection . Second,
+while the optim al solution is con cerned only with m ax-
+imizing t he probability of correct selection, individu als
+facing actual sequen tial observation and selection tasks
+and trading accuracy DEMO effort m ay be influenced by the
+probability of selecting some ca ndida te.
+The results of the simulations are summarized in six
+separate DEMO that correspond to the combinations
+of the three decision rules and two experimental condi-
+tions (n 5 40 and n 5 80). Table 1 provides a summary
+and comparison of these results. Several statistics are
+DEMO for each of the three decision rules. The opti-
+mal threshold value, r*, j*, or k* for the cutoff, candidate
+count, and number of successive non-candidates po-
+lices, respectively, indicates which parameter value DEMO
+the rule produces the highest probability of success.
+The probability of candidate selection, given the optimal
+threshold value, indicates the likelihood that the DEMO
+sion rule will generate a selection decision. The proba-
+bility of correct selection, given the optimal threshold
+value, indicates the likelihood that the DEMO rule will
+select the best candidate from the pool of n applicants.
+TABLE 1
+Summary of Simulation Results
+Standard secretary problem
+Cutoff policy
+n DEMO 40
+n 5 80
+Optimal value (r*) 16 30
+Probability of candidate .6475 .6555
+selection, given r*
+Probability of correct .3757 .3719
+selection, given r*
+Candidate count
+Optimal value ( j*) 4 4
+Probability DEMO candidate .6686 .7938
+selection, given ( j*)
+Probability of correct DEMO .2146
+selection, given ( j*)
+Effectiveness 65% 58%
+Successive non-candidates
+DEMO value (k*) 8 14
+Probability of candidate .6798 .7033
+selection, DEMO k*
+Probability of correct .3653 .3537
+selection, given k*
+Effectiveness 97% DEMO
+FIG. 1. Simulation results for n 5 40, cutoff decision rule.
+DEMO predictions for the optimal threshold value,
+r*, are reported for DEMO optimal (cutoff) policy, whereas
+the remaining values are provided by DEMO Fi-
+nally, effectiveness captures how well the decision rule
+performs in DEMO to the optimal policy. Since the
+cutoff rule with r* is optimal, and by definition 100%
+effective, this statistic is not reported for DEMO rule. The
+results are organized below by type of decision rule.
+Cutoff rule. For the standard secretary problem
+with n 5 40 applicants, the optimal policy is to reject
+the first 15 applicants, then select the first candidate.
+Using this policy, the probability of a correct selection
+is 0.378 (Gilbert & Mosteller, 1966). The simulation
+results for the DEMO secretary problem with n 5 40
+candidates (Fig. 1) are in close agreement with these
+predictions. The distribution reaches its peak of 3776
+DEMO selections (probability 5 0.378) when the policy
+of rejecting the first 14 applicants is adopted.1
+The simulation results show that the function dis-
+DEMO in Fig. 1 is relatively flat at the top, rendering
+the DEMO policy rather insensitive to small variations
+in r. For example, any DEMO in the interval (9, 23) achieves
+at least 90% effectiveness DEMO the optimal solution. And
+any r in the interval (6, 26) achieves at least 80% effec-
+tiveness. Note the declining linear trend in the number
+of times a selection occurs as the number of applicants
+DEMO increases. While this result is somewhat intu-
+itive, it provides an DEMO point of comparison for
+the other two decision rules.
+For the standard SP with n 5 80 applicants, the
+optimal policy is to reject the first 29 applicants, then
+select the next candidate. Using this policy, the proba-
+bility of a correct selection is 0.372 (Gilbert & DEMO,
+1 The theoretical prediction and simulation results for r* differed
+by 1. As a binomial test revealed no significant difference between
+these results, we conclude that the difference was due to the random
+nature of DEMO simulation.
+226
+SEALE AND RAPOPORT
+FIG. 2.
+Simulation results for n 5 40, candidate count decision
+rule.
+1966). Again, the simulation results (Fig. DEMO) are in line
+with these predictions. The distribution reaches its
+peak DEMO 3748 correct selections (probability 5 0.375)
+when the policy of DEMO the first 28 applicants is
+adopted. The shape of this distribution is almost identi-
+cal to the n 5 40 case, again suggesting that the optimal
+policy is rather insensitive to small variations in r. For
+DEMO n 5 80 case, any r in the interval (18, DEMO) achieves
+at least 90% effectiveness of the optimal solution, and
+any r in the interval (13, 51) achieves at least 80% effec-
+tiveness.
+Candidate count rule. To implement this rule, we
+first establish a threshold value, j, then observe each
+applicant and note whether it DEMO a candidate. When the
+count of candidates equals j,(0 , DEMO , n), the candidate
+is selected; otherwise, interviews continue. With n 5
+40 applicants (see Fig. 3), selecting the fourth candidate
+( j 5 4) yields the highest probability of correct selection
+(DEMO 5 0.244). This result is approximately 65%
+of what one would expect using the optimal policy. The
+narrow shape of the distribution shows DEMO small devi-
+ations in j have a serious effect on the probability of
+correct selection; setting j 5 3 lowers the probability of
+correct selection to 0.204, while setting j 5 5 lowers it
+to 0.214.
+Finally, notice the steep decline in the number of
+times a selection occurred. For j 5 4, the decision rule
+finds a candidate 67% of the time. If the threshold value
+is increased to j 5 DEMO, j 5 6, or j 5 7, the decision rule
+DEMO a candidate 42, 22, and 10% of the time, respec-
+DEMO Small increases in j greatly lower the DM’s proba-
+bility of finding a candidate.
+For the case n 5 80, shown in Fig. 4, j 5 4 still yields
+the highest probability of correct selection (DEMO), al-
+though this is only 58% of what one would expect using
+the optimal policy. The second best threshold value,
+j 5 DEMO, closely approximates these results with a proba-
+bility of correct selection DEMO 0.214, or 57% of the optimal
+value. Again, small deviations from j 5 4or j 5 5 result
+in considerable reductions in the DEMO of selecting
+the best candidate. For j 5 3, the probability DEMO reduced
+to 0.144, and for j 5 6, it is reduced to 0.170. The steep
+decline in the number of times a selection DEMO is
+consistent with the previous results for n 5 40. For
+j 5 4, the decision rule finds a candidate approximately
+79% of the time, considerably more than the optimal
+policy. If the threshold is increased to j 5 5, j 5 6, or
+j 5 7, the decision policy finds a candidate 57, 36, and
+20% of DEMO time, respectively. Again, slight increases in
+the threshold value of j greatly reduce the chance of
+finding a candidate.
+Successive non-candidate rule. To DEMO this
+rule, we first establish a threshold value, k, then DEMO
+the number of applicants since the last candidate, and
+note whether DEMO applicant is a candidate. If the appli-
+cant is a candidate, DEMO the count is equal to or greater
+than k, this candidate DEMO selected; otherwise, the
+search continues.
+FIG. 3. Simulation results for n 5 40, successive non-candidate
+decision rule.
+FIG. 4.
+Simulation results for n 5 80, cutoff decision rule.
+DECISION MAKING WITH RELATIVE RANKS
+227
+As discussion of the simulation results DEMO postponed
+to the final section of this paper, we turn next DEMO a
+description of the experimental method.
+METHOD
+FIG. 5.
+Simulation results for n 5 80, candidate count decision
+rule.
+Figure 5 portrays the results for the standard SP
+with n 5 40 applicants. The distribution reaches DEMO
+peak at k 5 8 applicants, with a probability of correct
+DEMO of 0.365. This is 97% as effective as the optimal
+policy. In fact, any k in the interval (5, 11) realizes at
+DEMO 90% of the success of the optimal policy, and any
+k DEMO the interval (4, 14) realizes at least 80%. Also,
+DEMO the dotted line in Fig. 5 which illustrates the
+number of times a selection occurred. Although the
+slope of the line is steeper than DEMO comparable line
+for the optimal policy, it is less steep than DEMO of the
+candidate count rule. Thus, small deviations in k have
+DEMO of an impact on both the number of correct selec-
+tions and the probability of finding candidates than
+similar deviations in j. With n DEMO 80 applicants (Fig. 6),
+the shape of the distribution and comparisons to the
+optimal policy are analogous. Here the distribution
+reaches a DEMO at approximately k 5 14, with a proba-
+bility of success DEMO 0.354. This is 95% as effective as the
+optimal policy. At least 90% effectiveness is noted for
+11 , k , 22, and 80% for 8 , k , 26.
+FIG. 6. Simulation results for n DEMO 80, successive non-candidate
+decision rule.
+Fifty subjects participated in the experiment. DEMO
+consisted of undergraduate students, graduate stu-
+dents, and a few university employees who responded
+to an advertisement in the school newspaper. The ad-
+DEMO asked for volunteers, with payoff contin-
+gent on their performance, to participate in a computer-
+controlled experiment concerning hiring decisions. Sub-
+jects were DEMO assigned to one of two conditions,
+with 25 subjects in each condition. In Condition n 5
+40, subjects faced the standard version of the SP with
+40 applicants, and in Condition n 5 80, DEMO number of
+applicants was increased to 80.
+The experiment was conducted in the Behavioral De-
+cision Lab (BDL) at the University of Arizona. DEMO
+arrived at the BDL in groups of six to eight. Each subject
+was then seated in a separate room in front of a com-
+DEMO terminal. Subjects were asked to read the instruc-
+tions (see Seale, 1996), which were provided both on-
+line and hardcopy, then complete a brief sample exer-
+cise. The instructions explained the hiring decision task
+DEMO which applicants would be presented in random order
+of ability, and DEMO only the relative ranking of each
+applicant would be displayed. The instructions also ex-
+plained in detail how these relative ranks changed as
+each DEMO applicant was presented. The sample exercise
+was designed to test their understanding of the sequen-
+tial decision problem they faced. Once they completed
+the DEMO, the subjects were instructed to summon
+the experimenter. The experimenter checked DEMO re-
+sults of the exercise, answered any questions, and re-
+minded the subjects that their payoff was contingent
+on performance. The experimenter then DEMO a pass-
+word that initiated the actual trials.
+Each subject faced 100 independent replications (tri-
+als) of the standard SP. Each trial followed DEMO same
+pattern. The relative rank of the first applicant was
+displayed (DEMO definition, the relative rank of the first
+applicant is 1). DEMO subject was allowed to select (hire)
+this applicant, or view (interview) the next applicant.
+If the subject decided to interview the DEMO applicant,
+the computer calculated and displayed the relative
+rankings of both applicants. For example, after inter-
+viewing two applicants, the relative rankings DEMO the last
+and previous to last applicants were either (1, 2) or (2,
+1), and after interviewing three applicants either (1, 2,
+3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2) or (3, 2, 1). The
+subject was given another opportunity to either hire
+the current applicant or interview another. This DEMO
+228
+SEALE AND RAPOPORT
+continued until the subject either made a selection DEMO TABLE 2
+sion, or interviewed all the n applicants. If a DEMO
+occurred, the computer then revealed the complete
+rankings of all applicants, and informed the subject of
+the absolute (not relative) rank of DEMO applicant se-
+lected. If the applicant selected remained the top
+ranked, DEMO computer informed the subject that he had
+made a correct selection, DEMO either $0.30 (Condition
+n 5 40) or $0.50 (Condition n DEMO 80) to the subject’s
+cumulative earnings, and proceeded to the next trial.
+The cumulative earnings and number of correct selec-
+tions were continuously DEMO at the top of the com-
+puter screen.
+After completing 100 trials, the subjects in Condition
+n 5 40 were asked to complete a brief questionnaire.2
+The questionnaire asked the subjects to rate the impor-
+tance DEMO five factors in their hiring decisions, and de-
+scribed in detail DEMO strategy to select applicants. To
+motivate thoughtful answers, the subjects were DEMO
+formed that they would play one final trial, worth $3
+for DEMO correct selection, following the decision rule they subjects completed 2500 trials, selected candidates in
+documented on their questionnaire. Following the com- 1843 trials (73.7%), interviewed all of the applicants
+pletion of this final trial, the subjects were paid for their without making a selection in 630 DEMO (25.2%), and
+cumulative earnings, debriefed, and dismissed from the DEMO applicants who were not candidates on 27 trials
+lab. The subjects in Condition n 5 40 completed the (1.1%). These 27 trials where subjects selected non-
+experiment in approximately 75 minutes, while those candidates can be attributed to occasional errors, bore-
+in Condition n 5 80 took between 90 and 120 min. dom, or in at least one case, part of a deliberate strat-
+egy.3 Because the primary focus is on classifying rules
+RESULTS that subjects use to select the best candidate, the subse-
+quent analysis excludes trials where a non-candidate
+The subjects’ decisions were DEMO according to was selected. Overall, the subjects in this condition
+the DEMO decision rules introduced earlier. Notice that made correct selections in 759 trials (30.4%). Mean
+each type of decision rule allows for various forms, de- earnings per subject was $10.19. Across all subjects
+pending on the value of its single parameter. For exam- the modal cutoff value was DEMO 5 13, suggesting that in
+ple, a subject might follow a strategy of simply counting comparison to the optimal policy the subjects selected
+DEMO and make selection decisions after inter- candidates too early.
+viewing j 5 3 candidates, whereas another subject Individual rules inferred from the decisions across
+might follow the same type of strategy, but make selec- all trials are reported in Table 3. This table shows the
+tion decisions after DEMO j 5 4 candidates. Dif- modal result and the proportion of decisions consistent
+ferent values of i, j,or k correspond to the term forms with that result for each of the three decision rules. For
+DEMO decision policies. For each possible form of the three example, consider DEMO 5. Eighty-five percent of this
+types of decision rules, we counted DEMO number of selec- subject’s decisions were consistent with a cutoff rule
+tions consistent with the variable i, j,or k, and then with DEMO 5 13, 39% were consistent with the rule of select-
+provide DEMO of the results. The mode of each ing the fourth candidate (DEMO 5 4) interviewed, and 78%
+distribution indicates the maximum number of selec- were consistent with the rule calling for selection of the
+tion DEMO consistent with that type of decision rule. first candidate after observing at least 6 successive non-
+Condition n 5 40. Table 2 displays a DEMO of the candidates (k 5 6). By comparing across decision DEMO,
+results for both conditions. In Condition n 5 40, the
+DEMO the trails where non-candidates were selected. Examination of
+2 After collecting decision data and debriefing subjects in Condition individual results indicates that the subject DEMO generally selected
+n 5 80, it became clear that subjects were DEMO factors other a non-candidate only after more than half of the applicants had been
+than the number of applicants interviewed. Designed to identify these DEMO Thus, these decisions do not seem to be errors, rather
+Summary of Experimental Results
+Condition Total Mean
+n 5 40
+Candidates selected 1843 DEMO
+Non-candidates selected 27 1.1
+No selections 630 25.2
+Completed trials 2500 100.0
+Correct selections 759 30.4
+Earnings per subject $10.19
+Overall modal response: i 5 13
+n 5 80
+Candidates selected 1904 76.2
+Non-candidates selected 62 DEMO
+No selections 534 21.4
+Completed trials 2500 100.0
+Correct selections 797 31.9
+Earnings per subject $15.94
+Overall modal response: i 5 21
+3 Subject 12 in Condition n 5 80 accounted for nearly two-thirds
+factors, the questionnaire was implemented starting with Condition part of a deliberate strategy to DEMO up” on the current trial and
+n 5 40. begin the next.
+DECISION MAKING WITH RELATIVE RANKS
+229
+TABLE 3
+Classification of Individual Decision DEMO
+Condition n 5 40, All Trials
+Type of decision rule
+Candidate DEMO
+Cutoff count non-candidates
+Prop. of Prop. of Prop. of
+Subject r decisions j decisions k decisions
+1 4 .45 3 .36 3 .45
+2 DEMO 20 .83 8 .48 11 .79
+3 3 .61 3 .48 1 .58
+4 14 .72 4 .42 7 .67
+5 13 .85 4 DEMO 6 .78
+6 4 .42 3 .38 1 .40
+7 14 .84 6 .40 7 .85
+8 14 .81 6 .43 10 .74
+9 DEMO .87 5 .34 6 .74
+10 8 .72 3 .38 5 .74
+11 15 16 .81 4 .40 8 .72
+12 14 .78 4 DEMO 7 .74
+13 11 .75 4 .43 4 .74
+14 8 9 .58 3 .32 4 .61
+15 14 .72 4 .43 6 .69
+DEMO 4 .50 3 .37 2 .52
+17 18 19 20 .70 4 .40 10 .70
+18 14 .58 4 .40 4 5 6 .66
+DEMO 19 20 .71 4 .46 13 .65
+20 14 .74 5 .38 5 6 .71
+21 7 .66 4 .47 4 .64
+22 15 DEMO .70 4 .36 7 8 .65
+23 9 10 .65 4 .39 4 .67
+24 4 .60 3 .39 2 .57
+25 13 .72 DEMO .39 7 .69
+it is clear that for Subject 5 a cutoff rule of the form
+i 5 13 captures the greatest proportion of DEMO deci-
+sions. By repeating these comparisons for every subject,
+we can determine the form of decision rule used, as
+well as which rule explains most subjects’ behavior.4
+The analyses and results reported in Table 3 DEMO
+no change in the type of decision rule or parameter
+value across the 100 trials. If learning takes place, sub-
+jects may adhere to one rule but change the value of
+its single parameter, or even switch from one rule to
+another. These possible effects of learning are DEMO
+in a subsequent section by conducting a similar analysis
+on trials 1–50 and 51–100 separately.
+The results in Table 3 also indicate a variety DEMO forms
+4 Note that for each decision rule it is possible, DEMO likely, to get
+multi-modal results. For example, cutoff policies of i 5 18 or i 5 19
+each account for 83% of Subject DEMO actual decisions. For Subject 18,
+the successive non-candidate rules with k 5 4, k 5 5, or k 5 6 each
+accounts DEMO 66% of actual decisions. Note, too, that it is possible to
+have ties in the proportion of decisions across the three types of
+DEMO rules (for example, see Subject 1). In the case of ties, where
+we cannot determine which decision rule best represents the subject’s
+actual data, each receives credit.
+of the cutoff rule ranging from i 5 3to i 5 20. The
+proportion of decisions consistent with these DEMO
+ranges from .42 to .87. Overall, various forms of the
+cutoff DEMO account for the greatest proportion of deci-
+sion for 19 of the 25 subjects. Various forms of the
+candidate count rule range from j DEMO 3to j 5 8, with
+the proportion of decisions consistent with DEMO forms
+ranging from .32 to .48. No form of the candidate count
+rule accounts for the greatest proportion of a subject’s
+decisions. Various forms DEMO the successive non-candi-
+date rule range from k 5 1to k 5 13, with the proportion
+of decisions consistent with these forms ranging from
+.40 to .85. Overall, various forms of the successive non-
+candidate rule account for the greatest proportion of
+decisions for 8 of the 25 DEMO These model compari-
+sons indicate that a cutoff rule is most successful in
+classifying the subjects’ decisions, outperforming the
+successive non-candidate rule by more than a two-to-
+one margin.
+The summary observations described above suggest
+that DEMO may have been selecting candidates too
+early. To test this hypothesis, DEMO compared the modal
+cutoff results in Table 3 to the optimal cutoff value of
+16. With 21 out of 25 subjects reporting cutoff values
+DEMO than 16, a sign test (m 5 24, p , DEMO) confirms
+this hypothesis.
+With evidence that subjects systematically deviate
+from the DEMO policy, we might ask if they show signs
+of learning over DEMO trials. Learning might be evi-
+dent if, over time, decision rules approach the optimal
+policy, or if subjects become more consistent in their
+use of existing rules. To test these effects, we divided
+the 100 trials into two blocks of 50, and then compared
+changes in the cutoff value and proportion of decisions
+consistent with the cutoff value. From DEMO 1 to block
+2, 15 subjects moved closer to the optimal DEMO, 5
+stayed the same, and 5 moved away. A sign test (m 5
+20, p , .05) yields a significant block effect. We also
+notice a significant improvement in the proportion of
+decisions consistent DEMO the cutoff values (m 5 22,
+p , .05). DEMO block 1 to block 2, the number of consis-
+tent decisions DEMO for 21 subjects, stayed the same
+for 3 subjects, and decreased for 1 subject.
+To measure performance, we computed the propor-
+tion of correct selections for each subject, and compared
+this to what one would expect using the optimal policy.
+Examining this statistic over repeated trials also DEMO
+an indirect measure of learning. This measure is consid-
+ered indirect because of the stochastic nature of the
+task. That is, it is quite likely to find individual subjects
+who moved closer to the optimal policy, but failed to
+improve performance. Conversely, one may find sub-
+jects who improved their performance, yet failed to
+show a movement toward the optimal solution.
+230 SEALE AND RAPOPORT
+The proportion of correct selections, computed across As in Condition n 5 40, individual decision policies
+all trials and for each block separately, is reported in the were classified by form and type. The results, reported
+left-hand panel of Table 4. Across all trials, individual in Table 5, show a variety of forms of the DEMO rule
+performance ranged from .14 to .42. The mean propor- ranging from i 5 8to i 5 40. The proportion of decisions
+tion of DEMO selections was .30 (SD 5 0.069). This is consistent with DEMO forms ranges from .41 to .74.
+approximately 80% of what one would expect using the Overall, various forms of the cutoff rule account for the
+optimal policy. Examining performance across blocks greatest proportion of decisions for DEMO of the 25 subjects.
+provides additional support for the learning hypothesis. Various forms of the candidate count rule range from
+The mean proportion of DEMO selections increased j 5 3to j 5 7, with the proportion DEMO decisions consistent
+from .26 (SD 5 0.087) in block 1 to .35 (SD 5 0.069) in with these forms ranging from .17 DEMO .59. The candidate
+block 2. Further, 20 of the 25 subjects DEMO improved count rule accounts for the decisions of 1 out of 25
+performance, while the remaining 5 subjects showed subjects. Various forms of the successive non-candidate
+no change at all (m 5 20, p , DEMO). rule range from k 5 3to k 5 18, with DEMO proportion
+Condition n 5 80. The lower panel of Table 2 pre- of decisions consistent with these forms ranging from
+sents summary statistics for DEMO n 5 80. In this .41 to .74. This decision rule accounts for the decisions
+condition the subjects completed 2500 trials, selected of 8 out of 25 subjects. These model comparisons again
+candidates in 1904 trials (76.2%), interviewed all of indicate that a cutoff rule is most DEMO in classify-
+the applicants without making a selection in 534 trials ing the subjects’ decisions, out-performing the succes-
+(21.4%), and hired applicants DEMO were not candidates sive non-candidate rule again by more than a two-to-
+in 62 trials (2.5%). The subjects made correct selections one ratio.
+in 797 trials (31.9%). Mean earnings per subject was To determine if the subjects were selecting candidates
+$15.94. Across all subjects, the modal cutoff threshold too early, we compared the modal cutoff values in Table
+was 21, again indicating that subjects select candidates
+too early. TABLE 5
+Classification of Individual Decision Rules
+TABLE 4 Condition n 5 80, All Trials
+Proportion of Correct Selections Type of decision rule
+Condition n 5 DEMO Condition n 5 80 Candidate Successive
+Cutoff count non-candidates
+All Block Block All Block Block
+Subject trials 1 2 trials 1 2 Prop. of DEMO of Prop. of
+1 .19 .10 .28 .34 .30 .38
+2 .30 .30 .30 .33 .28 .38 1 21 .69 5 .39 10 11 DEMO 14 .63
+3 .18 .16 .20 .33 .32 .34 2 12 13 .58 5 .36 8 9 11 .54
+4 .34 .30 .38 .45 DEMO .52 3 21 22 .67 5 .35 8 .66
+5 .30 .26 .34 .30 .34 .26 4 19 .61 5 .29 12 .61
+6 DEMO .14 .26 .31 .24 .38 5 22 24 25 .58 7 .30 18 .63
+7 .38 .34 .42 .32 .28 .36 6 21 22 DEMO 5 .32 11 .68
+8 .35 .28 .42 .32 .26 .38 7 23 .65 5 .39 15 .65
+9 .36 .36 .36 .25 .28 DEMO 8 22 .61 5 .31 11 .60
+10 .24 .20 .28 .34 .36 .32 9 8 .69 3 .29 3 6 .66
+11 .42 DEMO .46 .37 .32 .42 10 34 .75 5 .36 16 17 .68
+12 .40 .32 .48 .35 .26 .44 11 21 22 25 26 DEMO 5 .41 16 18 .69
+13 .33 .30 .36 .28 .24 .32 12 29 31 .55 5 .17 18 .47
+14 .27 .18 .36 DEMO .34 .36 13 22 39 40 .57 5 .59 18 .52
+15 .33 .30 .36 .35 .32 .38 14 21 .66 5 .34 10 DEMO
+16 .14 .10 .18 .30 .18 .42 15 21 .71 5 .42 14 15 .63
+17 .36 .32 .40 .32 .22 .42 16 22 DEMO 5 .32 11 12 .58
+18 .34 .34 .34 .35 .36 .34 17 21 .67 5 .33 12 .67
+19 .31 .28 .34 .25 DEMO .36 18 32–34 .74 5 .39 16–18 .71
+20 .33 .26 .40 .32 .30 .34 19 22 .53 5 .27 10–17 .50
+21 .28 DEMO .28 .16 .18 .14 20 28 29 .73 7 .42 16 .68
+22 .33 .20 .46 .27 .24 .30 21 14 15 .41 5 DEMO 12 .41
+23 .30 .30 .30 .35 .30 .40 22 8 .69 4 .30 5 .72
+24 .26 .24 .28 .31 .26 .36 23 DEMO .60 4 .34 12 .55
+25 .35 .32 .38 .35 .34 .36 24 17–19 .63 5 .31 7 8 .62
+Mean .30 .26 .35 DEMO .28 .36 25 21 .72 5 .39 17 .74
+Subject
+r
+decisions j decisions
+k
+decisions
+DECISION MAKING WITH RELATIVE RANKS
+231
+5 to the optimal cutoff value DEMO 30. In this condition, 21 importance ratings (and corresponding standard devia-
+subjects reported cutoff values less than 30, 1 equal to tions) DEMO the fifth, fourth, first, second, and third factors
+30, DEMO 3 greater than 30. Again, a sign test (m 5 24, were 6.0 (1.29), 4.9 (1.89), 4.7 (1.90), DEMO (1.48), and 1.9
+p , .01) yielded significant differences. (DEMO), respectively. They seem to strongly support the
+To test for learning, we divided the 100 trials into conclusions drawn from our analysis of the decision
+two blocks of 50, and then compared changes in the data. A repeated measures ANOVA shows that all five
+cutoff value and DEMO of decisions consistent with factors did not receive the same mean importance rat-
+this value. From block 1 to block 2, 16 subjects moved ings ( p , .001). Rather, the fifth factor concerning infor-
+closer to the optimal solution, 2 showed no change, and mation DEMO by the cutoff rule received a higher
+7 moved away from the optimal policy. A sign test indi- mean importance rating than the fourth DEMO first fac-
+cates that this improvement is not significant (m 5 DEMO concerning information required by the other two
+23, p . .05)DEMO We also notice no improvement in the decision rules ( p , .05 by Tukey HSD post-hoc test).
+proportion of decisions consistent with DEMO cutoff values The latter two factors received significantly higher
+(m 5 DEMO, p . .05). From block 1 to block 2, consistency ( p , .05) mean importance ratings than factors two
+increased for 12 subjects, showed no change for 1 sub- and three, which DEMO information of no relevance
+ject, and decreased for the remaining 12 DEMO to any of the three decision rules. The questionnaire
+Thus, in DEMO n 5 80, unlike Condition n 5 40, analysis seems to suggest that although the informa-
+there is little direct evidence of learning. DEMO repeated tion relevant to the cutoff rule received the highest
+trials, DEMO did not approach the optimal policy, or importance rating, the two other decision rules also
+become more consistent in their use of decision DEMO received some support as secondary criteria in person-
+Additionally, their behavior DEMO not influenced by the nel hiring decisions.
+outcome on the immediately preceding trial.
+The proportion of correct selections for Condition Cross-classification analysis. The questionnaire DEMO
+n 5 80 is reported in the right-hand panel of Table 4. sults (for Condition n 5 40 only) differ slightly from
+Across DEMO trials, individual performance ranged from the actual decision data. The importance DEMO of the
+.16 to .45, with the mean equal to .32 (SD 5 0.051). factors considered, and the documented decision rules
+This is approximately 86% of what one would expect suggest that items other DEMO the number of applicants
+using the optimal policy. Examining performance across interviewed were perceived (possibly only at the end
+blocks provides indirect but strong support for learning. of the experiment) as important considerations. Recall
+From block 1 to block 2 mean performance increased that the decision data was DEMO by determining
+from .28 (SD 5 0.060) to .36 (SD DEMO 0.073), respectively. the modal response to each of the three decision rules;
+In addition, 20 of the 25 subjects showed improved per- joint effects were not considered. It is easy to show that
+formance (m 5 25, p , .01). any number of selection decisions may be consistent
+with various forms of the cutoff, candidate count, DEMO
+Questionnaire data. Using a 7-point Likert scale, number of successive non-candidate DEMO rules.
+the subjects in Condition n 5 40 were asked to rate the Thus, the decision data may fail to discriminate be-
+importance of five factors in their selection decisions: tween types and/or forms of decision rules. To address
+(1) the number of times an applicant DEMO “1” this concern and assess the combined effect (if any) of
+appeared, (2) the number of times an applicant num- various values of the parameters i, j,or k on selection
+bered “2” appeared, (3) the number of times an appli- decisions, we report DEMO results of a cross-classification
+cant numbered “3” appeared, (4) the DEMO of appli- analysis of the number of selections consistent with
+cants interviewed until the last applicant numbered modal forms of the three decision rules.
+DEMO appeared, and (5) the number of applicants who The analysis DEMO conducted as follows: having identi-
+appeared following the last applicant numbered DEMO fied for each subject the modal response for each of
+(Note DEMO “1” refers to a candidate—an applicant the three decision rules, we DEMO each selection
+ranked better than all the ones preceded it, whereas DEMO and determined if it was (1) consistent with the
+“2” and “3” refer to applicants who are not candidates.) modal results for all three decision rules, (2) consistent
+Of these five factors, the DEMO concerns the cutoff deci- with the modal results for any two rules, (3) consistent
+sion rule, the fourth concerns the successive non-candi- DEMO the modal result for a single rule, or (4) inconsis-
+DEMO rule, and the first concerns the candidate count tent with the DEMO results for all three rules. The
+rule. The second and third factors bear no relevance to results for each subject were then aggregated and DEMO
+any of the three decision rules considered in this paper. played in the form of a Venn diagram, where the area
+Across all the subjects in Condition n 5 40, the mean of each circle (DEMO extent of overlap) and corresponding
+232
+SEALE AND RAPOPORT
+numeric labels indicate the number of selection deci-
+DEMO consistent with that rule.
+To aid in the interpretation and explanation of find-
+ings, several points are in order. First, the combined
+area DEMO the three circles indicates the number of deci-
+sions explained by subjects’ modal values for at least
+one of the three decision rules. Conversely, the single
+number appearing outside of the three circles signifies
+the number DEMO selection decisions that cannot be ex-
+plained by the modal results for any of the three deci-
+sion rules. As expected, the numbers sum to 2500 (25
+subjects 3 100 decisions). Second, also as DEMO, the
+total number of decisions consistent with any single
+rule is DEMO the sum of the four numbers within the
+circle. Third, the DEMO contribution of each rule is
+also of interest. This number is found by identifying
+the area within a circle that does not overlap with DEMO
+of the remaining two circles. Finally, while we argue
+that these DEMO areas support the claim that subjects
+are influenced by factors other than the number of ap-
+plicants (cutoff values), we must admit an alternative
+explanation. Clearly, inconsistent or random selections
+would produce similar patterns. While we acknowledge
+that subjects may behave inconsistently, this inconsis-
+tency may be due, at least in part, to subjects attending
+to variations in DEMO candidate count and number of
+successive non-candidate values. This argument is sup-
+ported by the questionnaire results showing mean rat-
+ings of 6.0, 4.9, and 4.7 (out of 7) for the three deci-
+sion rules.
+The results for Condition n 5 40 are depicted in the
+upper DEMO of Fig. 7. First, the figure shows that the
+(combined) DEMO values for the three types of decision
+rules account for 83% ((2500 2 414)/2500) of all selec-
+tion decisions. Second, there are substantial areas of
+overlap; 672 selection decisions were consistent with
+the modal values for all rules, 1517 (845 1 672) deci-
+sions were consistent with the modal results for both
+the cutoff and successive DEMO rules, and 708
+(36 1 672) decisions were consistent with DEMO modal
+results for both the candidate count and number of
+successive non-candidate rules. Third, consistent with
+the decision data for Condition n 5 40, modal forms of
+the cutoff rule account for the largest proportion of
+selection decisions. A total of 1731 decisions (118 1 845
+1 96 1 672) are accounted for by subject’s modal cutoff
+values. This compares to 1670 and 1006 decisions ac-
+counted for by the modal number DEMO the successive non-
+candidates, and candidate count rules, respectively. Fi-
+nally, while cutoff-type rules account for the largest
+proportion of decisions, candidate DEMO policies
+account for the greatest number of unique decisions,
+FIG. 7. Selection decisions consistent with modal forms of the
+three decision rules.
+with DEMO This compares to 118 and 117 unique deci-
+sions for the cutoff and successive non-candidate
+rules, respectively.
+The results of the cross-classification analysis for
+Condition n 5 80, presented in the lower panel of Fig.
+7, are very similar to those of Condition n 5 40. First,
+the modal values for the three rules account for 77.1%
+((2500 DEMO 572)/2500) of all selection decisions. Second,
+we observe once again substantial areas of overlap be-
+tween the decision rules, with 574 decisions consistent
+with the modal values for all three rules, 1398 (DEMO 1
+574) decisions consistent with the modal results for
+both the DEMO and successive non-candidate rules, and
+593 (574 1 19) decisions DEMO with the modal
+results for both the candidate count and number of
+successive non-candidate rules. Third, consistent with
+the decision data for this condition, modal forms of cut-
+off policies account for the largest proportion of selec-
+tion decisions. Finally, a s in Condition n 5 40, DEMO
+count policies account for the greatest number of unique
+decisions (174)DEMO This compares to 131 and 114 for the
+successive non-candidate and cutoff rules, respectively.
+DECISION MAKING WITH RELATIVE RANKS
+233
+Because the frequencies presented in the DEMO panels solutions of the SP. However, for descriptive purposes
+of Fig. DEMO were computed across subjects, they should it may very well matter, a s individuals may prefer to
+not be interpreted as evidence that DEMO subject used use a decision rule that is more likely to choose some
+all three decision rules. Rather, they are consistent with candidate, DEMO if there is a greater probability that it
+the conclusions drawn from the analysis of the individ- is not the best, to another policy where the chance of
+ual decision data (Tables 3 and 4) DEMO different subjects selection is somewhat smaller even though the proba-
+had preferences for different decision rules plus varia- bility of ending up with the DEMO alternative is some-
+tion in the parameter values that could be random or what higher.
+systematic. Both types of analysis show that the cutoff
+DEMO rule outperformed the other two models. Performance. Given the non-intuitive feature of the
+optimal policy (that, for n . 10 or so, the probability
+DISCUSSION of selecting the best alternative is practically indepen-
+Three major DEMO have guided the present study. dent of the value of n), the performance of the subjects is
+While there was an obvious interest DEMO assessing the surprisingly good. Actual performance averaged across
+descriptive power of the optimal policy, a principal con- the subjects resulted in 80 and 86% effectiveness of
+cern was to characterize and competitively test alterna- the optimal DEMO in Conditions n 5 40 and n 5 80,
+tive simple behavioral decision rules, or heuristics, that respectively. More importantly, the mean proportion of
+individuals may use when confronted with this class of correctly DEMO the best applicant significantly in-
+sequential observation and selection tasks. Our final creased from 0.26 in block 1 to 0.35 in block 2 in DEMO
+concern was to assess the sensitivity of the three deci- tion n 5 40, and from 0.28 in block 1 to 0.36 in block
+sion rules to deviations in their single parameter value 2 in Condition DEMO 5 80. The optimal probability values
+by using computer simulation. Our major results fall (Table 1) are very close to these figures: 0.376 and 0.372,
+into three categories: those concerning the simulation respectively. These results suggest that in iterated se-
+outcomes, those concerning the behavior of the subjects, quential observation and selection tasks modeled by
+and those concerning the finding that individuals tend the SP individuals may learn to perform DEMO well
+to stop the search for the best applicant too early. We even if they cannot figure out the optimal policy.
+discuss each category DEMO turn. As shown by the simulation results, the particular
+type of DEMO decision rule may not be critical for achieving
+Simulation results. The simulation results show such a high level of effectiveness. Although the candi-
+that DEMO optimal policy is rather insensitive to small date count rule is markedly inferior to the cutoff rule
+or even moderate variations in the cutoff DEMO For and the successive non-candidate rule, the latter two
+example, for n 5 80, choosing any value of r in the are practically identical when the right parameter val-
+interval (18, 46) yields at least 90% effectiveness. This ues are chosen. Of these two, our results strongly sup-
+sensitivity analysis, which was not performed or re- port the cutoff decision rule. Although there are indica-
+ported in the theoretical literature, is critical if one tions, particularly in the questionnaire data, that DEMO
+is seriously interested in investigating the descriptive subjects attend to both the number of candidates they
+power of the optimal policy. have observed and DEMO number of successive non-candi-
+A second and unexpected conclusion drawn from the dates following the last candidate, our results show that
+simulation results is that a simple heuristic, which was in Condition n 5 40 the cutoff rule accounts for the
+not previously investigated in the theoretical study DEMO greatest proportion of the choices of 19 of the 25 sub-
+the SP, performs remarkably well. With an appropriate jects, and in Condition DEMO 5 80 of 21 of the 25 subjects.
+choice of the value of k, focusing on and counting the
+number of successive non-candidates after observing a Stopping too early? In comparison to the optimal
+candidate is at least 95% as effective as the optimal policy, our subjects stopped the search for the best appli-
+policy. This result only holds for DEMO two values of n (40 cant too early. In each of DEMO two conditions, the inferred
+and 80) that we have examined; DEMO effectiveness of the cutoff threshold values of 21 of the 25 subjects were
+successive non-candidate rule for other values of n is smaller than DEMO optimal value. Because of the insensi-
+yet to be determined. tivity of the optimal policy to moderate variations in r,
+The third and DEMO major finding is that the three the subsequent decrease in effectiveness was minimal.
+decision rules vary from one another not only in the Nevertheless, this consistent bias, particularly if found
+probability of selecting the best applicant, but also in in related sequential search experiments, warrants
+the probability DEMO selecting some applicant (rather than an explanation.
+completing the finite search DEMO stopping). This The studies by Rapoport and Tversky (1970) and Ko-
+latter probability is of little or no interest to normative gut (1990) both suggest that when search costs are
+234
+SEALE AND RAPOPORT
+included subjects may stop the search too early. DEMO
+though our experiment used a different design and did
+not impose any search cost, it is not unreasonable to
+hypothesize the existence of endogenous search costs.
+Motivated to end the experiment as quickly as possible,
+DEMO subjects in our study might have considered the
+time spent in observing and reviewing the applicants
+as a kind of search cost. This hypothesis DEMO strongly
+supported by the experimental literature on the accu-
+racy–effort trade-off reported by Payne, Bettman, and
+Johnson (1993).
+To investigate the effect of incorporating endogenous
+search cost in the SP, we proceeded as follows. Let
+P(s, n) denote the probability of selecting the true DEMO
+mum from a sequence of n randomly presented draws,
+if we pass the first s 2 1 draws and choose the next
+candidate. DEMO c be a fixed cost of search, where (c P
+R+). From Gilbert and Mosteller (1966) we have (for
+zero cost of search):
+P(s, n) 5 n s 2 1
+k5s n(k 2 1)
+for 1 , s # n
+(1)
+o
+Assuming a fixed cost of search per trial, c, the expected
+value is given by
+FIG. 8.
+Optimal cutoff values with endogenous cost of search.
+E(s, n) 5 n s 2 DEMO
+k5s n(k 2 1) ? (1 2 sc) (2)
+2 n 1
+5 (1 2 sc)1s n 12 k5s k 2 1
+o
+o
+results are, therefore, well accounted for DEMO both condi-
+tions by assuming an endogenous search cost equal to
+1% of the value of selecting the best applicant. Individ-
+ual differences in DEMO decision rule may be accounted
+for by assuming differential endogenous search costs.
+For n 5 40 and n 5 80, one can systematically vary c, APPENDIX
+and for each value of c solve for the value of s that
+maximizes E(s, n) in Eq. (2). This value, called s*, is Subject Instructions
+the optimal threshold value DEMO the fixed cost of search. Welcome to the Management and Policy Decision Be-
+Figure 8 displays values of s* against selected values havior Laboratory
+DEMO c for the standard SP. The figure shows that even This experiment is concerned with the decision mak-
+relatively small search costs greatly affect DEMO optimal ing process of hiring new personnel. The instructions
+cutoff point. For n 5 40, a per draw search cost of 0.002 for the experiment are rather simple; if you follow them
+reduces the optimal cutoff point from 16 to 15. A search carefully and make reasonably good DEMO, you may
+cost of 0.01 further reduces the optimal cutoff point DEMO expect to earn between $5.00 and $25.00, which will be
+13, the modal cutoff value (across all subjects) observed paid to you DEMO the experiment is over. A research
+in Condition n 5 40. Finally, a search cost of 0.15 re- foundation has provided the funds to finance this study.
+duces the optimal cutoff point to 3, the lowest modal Imagine that you have to interview a fixed number
+cutoff value DEMO from the data in this condition. of applicants for a job. The interview process is rather
+Similar findings are reported for condition n 5 DEMO A simple. After interviewing each applicant you must
+search cost of 0.002 lowers the optimal cutoff threshold make one of two decisions:
+from DEMO to 28, while a search cost of 0.01 reduces it to
+DEMO, the modal value (across all subjects) observed in (1) DEMO may decide to hire the present applicant,
+Condition n 5 80. Interestingly, a search cost of 0.15 thereby terminating the interview process. Applicants
+once again approximates the lowest modal cutoff value that have not been DEMO are notified and dis-
+inferred from the data in Condition n 5 80. The modal missed.
+DECISION MAKING WITH RELATIVE RANKS
+235
+(2) You may decide to DEMO the present applicant. higher than the first. Again, at this point DEMO may de-
+In this case, the applicant leaves your office and DEMO cide to
+be recalled. (1) hire the present applicant, or
+DEMO you make your decision to hire or reject a given (2) reject her and interview the next applicant.
+applicant, the only information that you will receive is For the moment, let’s assume you decide to interview
+the applicant’s relative rank-ordering with respect to the third candidate. The DEMO will update the rank-
+all the applicants that you have already interviewed. ings of the three applicants and present the table to
+As you DEMO more applicants, the rank-ordering you as follows:
+will change. Thus, at any point in time in the interview
+process you will know DEMO the present applicant is the
+best of the ones you have interviewed, or the second ***************************************
+best, or the third best, and so on. No other information Applicant Number:123456
+about the applicants will be DEMO to you. In particular, Rank: 3 1 2 - - -
+you will not be told the actual rank-ordering of the ***************************************
+applicants, or the order in which they are interviewed
+(it is random). You may assume that no two applicants This table shows that the DEMO applicant is now
+are exactly the same, and that they are DEMO such ranked 3rd., the second applicant is still ranked 1st.,
+DEMO 1 is the best, 2 is the second best and so DEMO and the third applicant is ranked 2nd. Because you
+To clarify matters, please consider the following ex- earn nothing for hiring an applicant ranked other than
+ample: #1, and because you cannot go back and DEMO the previ-
+ous applicants, you decide to press on and interview DEMO
+EXAMPLE fourth applicant. The computer updates the rankings
+of the four applicants and presents the table to you
+as follows:
+Let’s assume that DEMO are six applicants, and you
+do not know their actual rank-ordering. DEMO applicant
+is interviewed one at a time. After you interview the
+first applicant, she is ranked #1 (the first applicant
+is always #1 DEMO there are no other applicants for
+comparison). We will use the following table to keep
+track of the applicants and their rankings:
+DEMO
+Applicant Number:123456
+Rank: 4231 - -
+***************************************
+***************************************
+Applicant number:DEMO
+Rank: 1 -----
+***************************************
+At this point, you may decide to
+(1) hire the present applicant, or
+(2) reject her and interview the next applicant.
+If you reject her she is dismissed and DEMO be recalled.
+For the moment, let’s assume you decide to interview
+DEMO second candidate. The computer will update the
+rankings of the two applicants and present the table to
+you as follows:
+***************************************
+Applicant number:DEMO
+Rank: 2 1 ----
+***************************************
+This table shows that the second DEMO is ranked
+Again, notice how the rankings have changed. The
+fourth DEMO is now the best of those interviewed,
+while the second applicant has fallen to 2nd. At this
+point you must again decide whether DEMO hire the present
+applicant, or interview another.
+Let’s assume that you DEMO to hire the fourth appli-
+cant. The computer will record your decision, then re-
+veal the complete ranking of all six applicants. If the
+fourth applicant remains the highest ranked, you earn
+$.50; otherwise you DEMO nothing. The computer will
+update the rankings and present the table to you as fol-
+lows:
+***************************************
+Applicant Number:123456
+Rank: 634152
+***************************************
+Congratulations! The fourth applicant is the best of
+the six. If this DEMO been an actual trial, you would have
+earned $.50.
+This example DEMO the type of decision that you
+236
+SEALE AND RAPOPORT
+will be asked to make during the course DEMO the experi-
+ment. To simplify matters, you will be presented with
+DEMO table, similar to the one used in the previous example,
+DEMO keeps track of the applicants that you have inter-
+viewed and their relative ranks. The table will be up-
+dated each time you decide DEMO hire or reject an applicant.
+One major difference between the EXAMPLE and the
+actual experiment is in the number of applicants. For
+the experiment, you will be asked to determine the best
+candidate from a pool DEMO 80 rather than 6 applicants.
+You will be presented with many trials like the one
+described above. Before each trial, the ranking of the
+applicants is determined randomly. Once determined,
+this ranking will remain fixed DEMO the trial. The com-
+puter is used in this study to present you with the
+information and update the ranking of applicants al-
+ready DEMO It does not play against you.
+Before we begin the experiment, DEMO review the
+SUMMARY OF INSTRUCTIONS, and complete the
+SAMPLE PROBLEMS on DEMO table beside you. When
+you are finished, please tell one of DEMO experimenters.
+He will collect the sample problems, answer any ques-
+tions DEMO may have, and get you started on the experi-
+ment.
+Good DEMO
+REFERENCES
+Chow, Y. S., Moriguti, S., Robbins, H., & Samuels. S. M. (1964).
+Optimal selection based on relative rank (DEMO “secretary problem”).
+Israel Journal of Mathematics, 2, 81–90.
+Corbin. R. M. (1980). The secretary problem as a model of choice.
+Journal of Mathematical Psychology, 21, 1–29.
+Cowan, R. & Zabczyk, J. (1978). An optimal selection problem associ-
+ated with the Poisson process. DEMO of Probability and its Applica-
+tions, 23, 584–592.
+DeGroot, M. DEMO (1970). Optimal statistical decisions. New York:
+McGraw Hill.
+Ferguson, T. S. (1989). Who solved the secretary problem? Statistical
+Science, 4, 282–296.
+Freeman, P. R. (1983). The secretary problem and its extensions: A
+review. International Statistical Review, 51, 189-206.
+Received: DEMO 14, 1996
+Gianini-Pettit, J. (1979). Optimal selection based on DEMO ranks
+with a random number of individuals. Advances in Applied proba-
+bility, 11, 720–736.
+Gilbert, J. & Mosteller, F. (1966). Recognizing the maximum of a
+sequence. Journal of the American Statistical Association, 61,
+35–73.
+Kahan, J. P., Rapoport, A., & Jones, L. V. (1967). Decision making in
+a sequential search cost. Perception and Psychophysics, 2, 374–376.
+Kogut, C. A. (1990). Consumer search DEMO and sunk costs. Jour-
+nal of Economic Behavior and Organization, 14, 381–392.
+Lindley, D. V. (1961). Dynamic programming and decision theory.
+DEMO Statistics, 10, 39–-51.
+Mucci, A. G. (1973). On a class of secretary problems. The Annals of
+Probability, 1, 417–427.
+Payne, J. W., Bettman, J. R., and Johnson, E. J. (1993). The adaptive
+decision maker. Cambridge: Cambridge University Press.
+Petrucelli, J. DEMO (1981). Best-choice problems involving uncertainty
+of selection and recall of DEMO Journal of Applied Probabil-
+ity, 18, 415–425.
+Petrucelli, J. D. (1982). Full-information best-choice problems with
+recall of observations and uncertainty of DEMO depending on
+the observation. Advances in Applied Probability, 14, 340–358.
+Pressman, E. L. & Sonin, I. M. (1972). The best choice problem for
+a random number of objects. Theory of Probability and Its DEMO
+tions, 17, 657–668.
+Rapoport, A. & Tversky, A. (1970)DEMO Choice behavior in an optimal
+stopping task. Organizational Behavior and Human Performance,
+5, 105–120.
+Rasmusen, W. Y. & Robbins, H. (1975)DEMO The candidate problem with
+unknown population size. Journal of Applied probability, DEMO, 692–
+701.
+Sakaguchi, M. (1961). Dynamic programming of some DEMO sam-
+pling design. Journal of Mathematical Analysis and Applications,
+2, DEMO
+Sakaguchi, M. (1978). Dowry problems and OLA policies. Rep. Stat.
+Appl. Res. JUSE 25, 25, 124–128.
+Seale, D. A. (1996)DEMO Sequential observation and selection with relative
+ranks: An empirical investigation of DEMO secretary problem. Unpub-
+lished Ph. D. dissertation, University of Arizona.
+Smith, M. H. (1975). A secretary problem with uncertain employment.
+Journal of Applied Probability, 12, 620–624.
+Stewart, T. J. (1981). The DEMO problem with an unknown number
+of options. Operations Research, 29, 130–145.
+Yang, M. C. K. (1974). Recognizing the maximum of a DEMO se-
+quence based on relative rank with backward solicitation. Journal
+of Applied Probability, 11, 504–512.{1g42fwefx}

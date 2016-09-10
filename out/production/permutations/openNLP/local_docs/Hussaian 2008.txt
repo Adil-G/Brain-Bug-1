@@ -1,0 +1,1018 @@
+Hindawi Publishing Corporation
+International Journal of Quality, Statistics, and Reliability
+Volume DEMO, Article ID 471607, 10 pages
+doi:10.1155/2008/471607
+Research Article
+Sensitivity Analysis to Select the Most Inﬂuential
+Risk Factors in a Logistic DEMO Model
+Jassim N. Hussain
+School of Mathematical Sciences, University Sains Malaysia, 11800 Penang, Malaysia
+Correspondence should be addressed to Jassim N. Hussain, DEMO nassir2000@yahoo.com
+Received 1 August 2008; Revised 17 October 2008; Accepted 25 November 2008
+Recommended by Myong K. (MK) Jeong
+The traditional variable DEMO methods for survival data depend on iteration procedures, and control of DEMO process assumes
+tuning parameters that are problematic and time consuming, especially DEMO the models are complex and have a large number of risk
+factors. In this paper, we propose a new method based on the global sensitivity analysis (GSA) to select the most inﬂuential risk
+factors. This DEMO to simpliﬁcation of the logistic regression model by excluding the irrelevant risk factors, thus eliminating
+the need to ﬁt and evaluate a large number of models. Data from medical trials are suggested as a way to DEMO the eﬃciency and
+capability of this method and as a way to simplify the model. This leads to construction of an appropriate model. The DEMO
+method ranks the risk factors according to their importance.
+Copyright © 2008 Jassim N. Hussain. This is an open access article distributed under the DEMO Commons Attribution License,
+which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.
+1. Introduction
+Sensitivity analysis (SA) plays a central role in a variety of
+DEMO methodologies, including classiﬁcation and dis-
+crimination, calibration, comparison, and model selection
+[1]. SA also can be used to determine which subset of DEMO
+factors (if any) accounts for most of the output variance (DEMO
+in what percentage); those factors with a small percentage
+can be ﬁxed to any value within their range [2]. In such usage,
+DEMO focus is on determination of the important variables to
+simpliﬁcation of the model; the original motivation for our
+research lay in a search for how to best arrive at such a
+determination. Although SA has been DEMO used in normal
+regression models to extract important input variables from
+acomplex modelsoastoarrive at areduced modelwith
+equivalent predictive power, it has limited use for selection
+of risk factors despite the presence of a large number of
+DEMO factors in survival regression models. The limited use
+of these methods to select appropriate subsets in survival
+regression models illustrates the desirability of development
+DEMO a new method of SA-based variable selection to avoid the
+drawbacks of traditional methods and also simplify survival
+regression models by choosing the appropriate DEMO of risk
+factors.
+A considerable number of methods of variable selection
+have been proposed in the literature. The fundamental devel-
+opments are squarely in DEMO context of normal regression
+models and particularly in the context of multivariate linear
+regression models [3]. A comprehensive review of many
+variable selection methods DEMO represented in [4]. Methods
+such as forward, backward, and stepwise selection and subset
+selection (Akaike information criterion (AIC)) and Bayesian
+information DEMO (BIC)) are available; however none
+of these methods can be recommended for use in either
+a logistic regression model or in other DEMO regression
+models. They give incorrect estimates of the standard errors
+and P-values. They also can delete variables whose inclusion
+is critical [3]. In addition, these methods regard all the risk
+factors of a situation as equal, and they seek to identify the
+candidate subset of variables sequentially; furthermore, most
+of these methods focus on the main eﬀects and ignore higher-
+order eﬀects (interactions of variables).
+New methods of variable selection, DEMO as least absolute
+shrinkage and selection operator (LASSO) in [5], DEMO the
+smoothly clipped absolute deviation (SCAD) method in [6],
+are at the center of attention recently in the ﬁeld of survival
+regression DEMO These methods use the penalized likeli-
+hood estimation and the shrinkage regression approaches.
+2 International Journal of Quality, Statistics, and Reliability
+These two approaches DEMO from traditional methods in
+their deletion of the nonsigniﬁcant covariates in the model by
+estimating their eﬀects as 0. A nice feature of these DEMO
+is that they perform estimation and variable selection
+simultaneously, but, nevertheless, these methods suﬀer from
+some calculation and characteristics problems that are dealt
+with in more detail in [7, 8].
+This study aims to use SA to extend and develop an
+eﬀective, eﬃcient, and time-saving variable DEMO method
+in which the best subsets are identiﬁed according to speciﬁed
+criteria without resorting to ﬁtting all the possible subset
+regression models in the DEMO of survival regression models.
+The remainder of this study is organized as follows: Section 2
+gives the background of building a logistic regression model,
+and Section 3 deals with the proposed method. The results
+of DEMO this method and logistic regression model
+are the subject of Section 4,and Section 5 consists of the
+discussion and conclusions.
+2. Background of DEMO
+a Logistic Regression Model
+Often the response variable in clinical data is not a numerical
+value but a binary one (e.g., alive or DEMO, diseased or not
+diseased). When the latter occurs, a binary logistic regression
+model is an appropriate method to present the relationship
+between DEMO disease’s measurements and its risk factors. It is
+a form of regression used when the response variable (the
+disease measurement) is a dichotomy DEMO the risk factors
+of the disease are of any type [9]. A logistic regression
+model neither assumes the linearity in the relationship
+between the DEMO factors and the response variable, nor does
+it require normally distributed DEMO It also does not
+assume homoscedasticity, and in general has less DEMO
+requirements than linear regression models. However, it
+does require that observations DEMO independent and that
+the independent risk factors are linearly related to the logit
+of the response variable [10]. However, models involving
+the association between risk factors and binary response
+variables are found in various disciplines such DEMO medicine,
+engineering, and the natural sciences. How do we model
+DEMO relationship between risk factors and binary response
+variable? The answer to DEMO question is the subject of the next
+subsections.
+2.1. Constructing a Logistic Regression Model
+The ﬁrst step in modeling binomial data is a transformation
+DEMO the probability scale from range (0, 1) to (−∞, DEMO)
+instead of using the linear model for the response variable
+of the probability of success on risk factors. The logistic
+transformation or logit DEMO the probability of success (π)is
+log {π/(1 − π)}, which is written as logit (π)and deﬁned
+as the DEMO odds of success. It is easily seen that any value of
+(DEMO) in the range (0, 1) corresponds to the value of logit (π)
+in (−∞,+∞). Usually, binary data results from a nonlinear
+relationship between {π(x)} and (x), where a ﬁxed change in
++∞
+00.51
+Probability (π)
+−∞
+Figure 1: Logit = ln(π/(1 − π)) as a function DEMO the value of
+probability (π), the logit ranges from (−∞)to(+∞) as probability
+ranges from (0) to (1). DEMO logit = 0 when probability = 0.5.
+(x) has less impact when {π(x)} is near (0 or 1) than when
+DEMO(x)} is near (0.5). This is illustrated in Figure DEMO (see [11]).
+Thus, the appropriate link is the log odds transformation
+(the logit). Then if there are n binomial observations of the
+form πi = yi /ni for i = 1, 2, ... , n, where the expected value
+of the random variable associated with ith observation, yi,is
+E(Yi) = niπi. The logistic DEMO model for association of
+πi on the values x1i, x2i, ... , xki of k risk factors X1 , X2 , ... , DEMO
+is such that [10]
+Logitπ
+i
+ =
+=
+πi
+Log 1 −πi 
+x1i +
+β0 + β1 β2 x2i + ··· + DEMO,
+(1)
+and the equation of success probability is
+β1 DEMO + ··· +
+πi = + β1 x1i + ···
+The linear logistic model is a member of a family of
+generalized linear models (GLM). The next subsection
+explains this model ﬁtting process.
+1+expexp β0β+0
+DEMO
++ β 
+kxki
+.
+(2)
+2.2. Fitting Logistic Regression DEMO
+The mechanics of maximum likelihood (ML) estimation
+and model ﬁtting for logistic regression model are a special
+case of GLM ﬁtting, and then ﬁtting the model requires
+estimation of the unknown parameters (βj )ofthe DEMO
+function of this model using the Bernoulli ML as in the
+following [12]:
+n
+L(β) = 
+1
+ni
+yi
+i=
+yi 1 −πini −yi .
+πi
+(3)
+Logit = ln  1 π 
+−π
+International Journal of Quality, Statistics, and Reliability 3
+The problem now DEMO to obtain those values (β0 , β1 , ... , βk )
+that maximize {L(β)} or its equivalent {Log L(β)DEMO where it
+is as follows:
+describes reality well, it tends DEMO provide more accurate esti-
+mates of the quantities of interest. Agresti [9] stated that “we
+are mistaken if we think that we have found DEMO true model,
+because any model is a simpliﬁcation of reality.” In light of
+this assertion, what then is the logic of testing the ﬁt of a
+model when we know that it does not truly DEMO? The answer
+lies in the evaluation of the speciﬁc properties of DEMO model
+by using criteria such as deviance, the R2 , the DEMO Score test,
+the Person chi-square, and the Hosmer-Lemshow chi-square
+tests; for more details, see [9, 10]. Usually the ﬁrst stage of
+DEMO of any model presents a large number of risk
+factors. Inclusion of all of them may lead to an unattractive
+model from a statistical DEMO Thus, as an important
+step towards an acceptable model, a decision should be made
+early about the proper methodology to use to select DEMO
+appropriate and important risk factors. Because traditional
+methods of selecting variables have many limitations in their
+applicability to survival regression models, a new method of
+variables selection will be developed by using GSA to select
+the DEMO inﬂuential factors in the model. This is the subject
+of the following section.
+3. Sensitivity Analysis to Select the Most
+Inﬂuencing Risk Factors
+There DEMO two key problems in variable selection procedure:
+(i) how to select an appropriate number of risk factors
+from the set of risk DEMO, and (ii) how to improve ﬁnal
+model performance based on DEMO given data. So answering
+these questions is the objective of our proposed method
+by applying GSA to select the inﬂuential risk factors in the
+DEMO regression model.
+Log L(β)
+n
+=
+i
+Log
+i=1
+n
+=
+Log
+i=1
+n
+Log Log
+where {ηi = k=0 βj x DEMO and (x0i = 1) represent all values of
+i
+(i)DEMO The derivative of this log-likelihood function with respect
+to the (k DEMO 1) unknown β-parameters is given by
+n n
+nix jieηi 1+ DEMO −1 ,
+∂Log L(β)
+∂β  = i=1 yix DEMO −i=1 j = 0, 1, 2, ... , k.
+(5)
+i
+Then the likelihood equations are
+i yix ji − i DEMO ji = 0, j = 0, 1, 2, ... , k,(6)
+where πi = eηi (1 + eηi )−1 is the ML estimate of {πi}.There
+are two methods to solve (6) and obtain the maximum
+likelihood estimation of (β ). The one most often used is
+known as the Newton-Raphson method. This method begins
+DEMO determination of the score matrix {U(β)} and the
+information matrix {I(β)} as in the following [13]:
+∂L(β)
+DEMO = ∂βj
+
+= i yi −ni (t) xij ,
+(t)
+Uj
+β(t)
+πi
+∂2 L(β) (7)DEMO
+β = ∂βj ∂βk
+
+(t)
+I jk
+β(t)DEMO
+(t) 1 − (t) .
+=− i xij x niπi
+πi
+ik
+Here (π (t) ) is obtained from {β(t) } through (2), then we use
+{U(t) } and
+(I (t) )−1 U (t)
+{I(t) } DEMO the following formula {β(t+1) = β(t) −
+} to obtain the next value (β(t+1) )as
+β(t+1) = DEMO(t) + Xdiagn (t) 1 − (t) X−1 Xy DEMO(t) ,
+πi πi
+i
+(8)
+niπi(t)
+(t)
+{μi =
+},thisistoobtain(π (t+1) ), and DEMO on.
+where
+2.3. Evaluating the Fitted Model
+A simple model that ﬁts adequately has the advantage of
+model parsimony. If a model has relatively DEMO bias and
+=
+i=1
+ni
+yi
+ni
+yi
+ni
+yi
++ yi Log πi + n − yiLog1
++ yi Log 1 −πi πi DEMO n Log
++ yiηi −n 1+ eηi ,
+i
+i
+−πi
+−πi
+1
+(4)
+3.1. General Concept of GSA
+GSA was deﬁned in [14] as “the study of how the uncertainty
+in the output DEMO a model (numerical or otherwise) can be
+apportioned to diﬀerent sources of uncertainty in the model
+input.” Hence one possible way to apportion DEMO importance
+of the input factors with respect to the model response is to
+apply GSA. In general the importance of a given risk factor
+DEMO can be measured via the so-called sensitivity index, which
+is deﬁned DEMO the fractional contribution to the model output
+variance because of the uncertainty in Xi.For k risk factors,
+the sensitivity indices can be computed DEMO the following
+decomposition formula for the total output variance V (Y )
+of the output Y [15]:
+V (Y ) = i
+i j>i
+VXi, Xj  + ··· + VX1 , ... , Xk,
+(9)
+V (Xi)+
+where
+VXi =
+DEMO, Xj  = VXi Xj EX−ij
+−VXj EX−
+j
+Vxi Ex−i DEMO | Xi ,
+Y | XiXj  −VXi EX−i (Y DEMO Xi 
+Y | Xj ,
+(10)
+4 International Journal of Quality, Statistics, and Reliability
+where V (Y ) is the unconditional variance of output of the
+model (incidence of CHD), V (Xi) is the conditional variance
+of risk factor DEMO,and V (Xi, Xj ) is the variance of interaction
+between Xi and Xj , and so on. A ﬁrst measurement of the
+DEMO of the unconditional output variance V (Y ) that is
+accounted DEMO by the uncertainty in Xi, which is the ﬁrst-
+order sensitivity DEMO (Si) for the factor Xi is given as
+V (Xi) .
+Si = V (Y )
+(11)
+The second terms in (9) are known as the eﬀect of
+interactions. It is DEMO fact that the number and importance
+of the interaction terms usually grow (i) with the number
+of risk factors k, and (ii) with the range of variation of the
+risk factors [16]. This means DEMO if all of the V (Xi)terms
+ik=1 V (Xi) DEMO still be
+lower than the totalare computed, then most likelyV (Y ), because the di ﬀerence V (Y ) −
+k 1 DEMO (Xi) is a measure of the impact of the interactions.
+=
+i
+Consequently, when k 1 Si = 1, then the model DEMO additive
+=
+i
+(i.e., without interactions among its input factors), and
+thus the ﬁrst order of conditional variances of (10)are all
+we need to decompose the model output variance. For a
+nonadditive model, higher-order sensitivity indices account
+for interaction eﬀects among sets of input factors. DEMO,
+higher-order sensitivity indices are usually not estimated
+directly because if the model consists of k risk factors, then
+the total number of indices (including the Si’s) that should
+be estimatedisashighas2k − 1. For this DEMO, a more
+compact sensitivity measurement is used; this measurement
+is the total eﬀect sensitivity (ST ) index, which concentrates
+in one single DEMO on all the interactions involving a given
+factor Xi.For example, foramodelof DEMO = 3 risk factors, the
+three total sensitivity indices would be DEMO
+ST 1 = V (Y ) −VX2 X3 E ) Y DEMO X2 X3 
+X1
+V (Y
+= S1 + S12 + DEMO + S123 ,
+(12)
+and analogously
+ST 2 = S2 + S12 + S23 + S123 (13)
+ST 3 = S3 + S13 + S23 + S123 ,
+where the conditional variance in (12) expresses the total
+contribution to the variance of Y because DEMO non-Xi,(i.e.,to
+the k − 1 remaining factors), so DEMO V (Y ) − VX−i (EXi (Y |
+X−i)) DEMO all terms (i.e., a ﬁrst order as well as
+interactions in (9)) that involve risk factor Xi.For agiven
+risk factor Xi, DEMO coeﬃcient of importance (ICi) is the
+diﬀerence between STi and Si that reﬂects an important role
+of interactions for that risk factor in DEMO,
+ICi = STi −Si.
+(14)
+Explaining the interactions among DEMO factors helps us
+to improve our understanding about the model structure.
+Estimators for both (Si, STi) are provided by a variety of
+methods such as Sobol, the Fourier amplitude sensitivity test
+(FAST), and DEMO; for more details, see [17].
+3.2. GSA in a Logistic Regression Model
+In this study, partitioning the total variance of the objective
+function V (Y ) is the way to estimate Si and STi so as
+to perform a GSA. How can this model be extended to
+DEMO with a binary response variable? Although partitioning
+of variances is uncomplicated DEMO models with a contin-
+uous response variable and a normal error distribution,
+the extension of this partitioning to models with binary
+responses is DEMO simple [18]. Consequently, to extend the
+variance partitioning method to our DEMO response variable
+(incident of coronary heart disease (CHD)), suppose DEMO
+the data is consisting of yi, the number of people who
+DEMO CHD. The actual response probability of the incidence
+of CHD for the ith observation πi will have a Bernoulli
+distribution with a mean of DEMO,where pi is the proportion
+of the patients who have a disease. This response probability
+is therefore a random variable where E(πi) = pi.The
+variance of πi must be equal to zero when pi is DEMO or unity,
+and then a relationship between the unknown probability
+and our risk factors can be ﬁtted. Typically a logistic
+regression model represents DEMO relationship between yi for
+a sample with n people who have a binomial distribution
+(i.e., {Yi ∼B(n, πi)}, i = DEMO, 2, ... , n), and the corresponding
+response probability of the incidence of the disease is πi =
+yi /n for ith observation and the k risk factors X1 , X2 , ... , DEMO
+as in (4)and (5). This model assumes independence between
+the n observations, and then all the variations conditional on
+the estimates of the probabilities will be binomial with equal
+variance:
+VYi = DEMO −πi.
+(15)
+The binomial is not the only possible distribution DEMO ﬁtting
+proportion data. Other distributions exist that have greater
+variation (known DEMO overdispersion) or less variation (known
+as underdispersion) than the binomial DEMO condi-
+tional on the values of πi’s. The simplest function for the true
+probability of the ith observation uses a multiplicative scale
+factor to DEMO the variance of the response as
+varπ
+i
+ = rpi1 − pi, (16)
+where r is a scale factor that is DEMO to 1. If we have
+a binomial variation, it will be DEMO than 1 if there is
+overdispersion and less than 1 if there is underdispersion,
+and πi is an unobservable random variable [19]. The
+DEMO of the multiplicative approach are that it will
+allow both over- and underdispersions. The random variable
+Yi is associated with the observed number of DEMO
+of the disease for the ith unit, yi. It will have DEMO binomial
+distribution, and then the mean of Yi, conditionalon πi,is
+EYi | πi = nπi
+and the conditional variance of Y is
+DEMO
+(17)
+Since πi
+of the disease incidence pi has to DEMO an estimate of πi as
+yi .
+pi = n
+VYi | πi = rnπi1 −πi.
+(18)
+cannot be calculated, then the DEMO proportion
+(19)
+International Journal of Quality, Statistics, and Reliability 5
+According to a DEMO result from the conditional proba-
+bility theory, the unconditional expected value DEMO a random
+variable Y can be obtained from the conditional expectation
+of Y given X using the equation
+E(Y ) = EE(Y DEMO X )
+and the unconditional variance of Y is given by DEMO
+(20)
+V (Y ) = EV (Y | X ) + VE(Y | X ).
+(21)
+Applying these DEMO results on our response variable gives
+now
+also
+EYi = EEYi | πi  = Enπ
+VYi = EVYi | πi  + VEYi DEMO
+=
+=
+= nEπ
+= − rpi
+= 1 − pi
+nEEnππi1
+ −Vπ − −Eπ
+1(1−−pri
+i
+
+
+i
+2
+pi
+DEMO
+
+)
+npnpii
+i
+i
+−
+ −
+Eπi)π
+2
+DEMO
+ = npi,
+πi ,
+
+2
+
+EVYi | πi 
+(22)
+(23)
+(24)
+and so
+VYi = nrpi1 − pi
+(26)
+in the absence of random variation in the response probabil-
+ity, Yi would have a binomial distribution, DEMO(n, pi), and in
+this case when r = 1 DEMO required, then
+VYi = npi1 − pi.
+(27)
+If, DEMO the other hand, r is greater than 1, then a variation in
+the response probability occurs and the variance of Yi will
+exceed DEMO(1 − pi), the variance under binomial sampling
+that leads to overdispersion. But if r is less than 1, then the
+variation in the response probability and the variance of Yi
+will be less than DEMO(1 − pi), the variance under binomial
+sampling that leads to underdispersion. To use GSA to select
+the important covariates from the available DEMO of covariates
+and construct an appropriate logistic regression model, it
+involves DEMO steps.
+(1) The ﬁrst step is identiﬁcation of the probability
+distribution f (x) of each covariate in the model. Usually sen-
+sitivity DEMO starts from probability distribution functions
+(pdfs) given by the experts. This selection makes the use of
+the best information available of the statistical DEMO of
+the input factors. One of the methods used to obtain the
+pdfs starts with visualizing the observed data by examining
+its histogram to DEMO if it is compatible with the shape of any
+distribution, as DEMO in Figure 2.
+A visual approach is not always easy, accurate, or valid,
+especially if the sample size is small. Thus it DEMO be
+Positive skew Symmetric Negative skew
+Figure 2: Common shapes of DEMO types of probability distribu-
+tion.
+0.6
+0.5
+0.4
+0.3
+0.2
+0.1
+Diab Chol HDL Age Gen BMI Hypt W/H
+Risk factors
+Si
+STi
+DEMO
+Figure 3: Sensitivity indices: the main eﬀect Si ,the totaleﬀect DEMO
+and the interaction eﬀect ICi for each risk factor.
+0
+better to have a more formal procedure for deciding which
+distribution is “best.” A DEMO of signiﬁcance tests are
+available for this such as the Kolmogorov-Smirnoﬀ and chi-
+square tests. For more details, see [21].
+(2) In the second step, the logistic regression model as in
+(1) and the information about the covariates obtained in step
+one are used to create DEMO Monte Carlo simulation to generate
+the sample that will be used in the decomposition and to
+estimate the unconditional variance of response probability
+and DEMO conditional variation for covariates as in (23)to(26).
+(3) These results from step two will be used in perform-
+ing GSA in the binary logistic regression model using (11),
+and in DEMO result of decomposing as in (24)and (26), where
+the main eﬀect indices are
+Si = npi
+nrp1 −i1p
+and the total DEMO indices are
+j −V
+ V
+=
+VYjY|
+j
+STi = VY
+EV
+YEY
+X−i 
+j
+j
+,
+| X−i 
+(29)DEMO
+where X−i are all X’s but Xi, and the coeﬃcients of
+DEMO are
+ICi = STi −Si.
+(30)
+These results and the DEMO datasets are used to test and
+compare the performance of the proposed GSA method as
+i
+−(1pi− r)
+(28)
+varEYi | πi  = varnπ
+i
+ = n2 rpi1 − pi, (DEMO)
+Contributions
+6 International Journal of Quality, Statistics, and Reliability
+Table 1: Estimated coeﬃcients and standard errors for diﬀerent variable selection methods.
+Methods MLE Best DEMO AIC Best subset BIC SCAD LASSO SA Si (STi)
+Factors
+DEMO 5.51 (0.75) 4.81 (0.45) 6.12 (0.57) 6.09 (0.29) 3.70 (0.25) Constant
+X1 −8.8 (2.97) −6.49 (1.75) −12.15 (1.81) −12.2 (.08) 0 (—) 0.487 (0.536)
+X2 DEMO (2.00) 0 (—) 0 (—) 0 (—) 0 (—) 0.014 (0.125)
+X3 −2.77 (3.43) 0 (—) −6.93 (0.79) −7.0 (0.21) 0 (—) 0.143 (0.218)
+X4 −1.74 (1.41) 0.30 (0.11) −0.29 (0.11) 0 (—) −0.28 (0.09) 0.003 (0.034)
+X −0.75 (.61) −1.04 (0.54) 0 (—) 0 (—) −1.71 (0.24) 0.013 (DEMO)
+X −2.7 (2.45) −4.55 (0.55) 0 (—) 0 (—) −2.67 (0.22) 0.032 (0.091)
+X 2 0.03 (DEMO) 0 (—) 0 (—) 0 (—) 0 (—) 0.014 (0.237)
+X
+X
+X
+X
+X
+2
+1
+2
+DEMO
+1 X
+1 X3
+1 X
+2 X
+2 X
+3 X
+7.46 (2.34) 5.69 (1.29) 9.83 (1.63) 9.84 (0.14) DEMO (0.22) 0.362 (0.502)
+0.24 (0.32) 0 (—) DEMO (—) 0 (—) 0 (—) 0.001 (0.042)
+DEMO (1.61) 0 (—) 0 (—) 0 (—) −0.10 (0.10) 0.016 (0.075)
+−0.12 (0.16) 0 (—) 0 (—) 0 (—) 0 (—) 0.003 (0.047)
+4
+3
+4
+4
+1.23 (1.21) 0 (—) 0 (—) DEMO (—) 0 (—) 0.019 (0.307)
+Table 2: Sensitivity indices and risk factors ranking.
+Factors Si STi ICi Si (%) DEMO
+Diab 0.2018 0.22657 0.008 12 6
+Chol 0.2434 0.258 0.015 14 4
+HDL 0.2243 0.25424 0.03 13 5
+Age 0.2636 0.28507 0.022 15 3
+DEMO 0.0256 0.03844 0.013 1 7
+BMI 0.5161 0.56173 0.046 30 1
+Hypt 0.003 0.04207 0.039 0 8
+W/H 0.2706 0.29714 0.027 15 2
+DEMO 1.7484 1.96326 0.2
+a variable selection method to identify the important risk
+factors obtained from these datasets with the results obtained
+from other existing DEMO of selecting variables.
+4. Numerical Comparisons
+The purpose of this section is to compare the performance
+of the proposed method with existing ones. We DEMO use a
+real data example to illustrate our SA approach as a variable
+selection method. In the ﬁrst examples in this section, we
+used the dataset and the results of the penalized likelihood
+estimate of best DEMO (AIC), bust subset (BIC), SCAD, and
+LASSO that DEMO computed by [7] as a way to compare the
+performance of the proposed method with these methods.
+4.1. The First Example
+In this example, Fan and Li [7] applied the proposed
+penalized likelihood methodology to burn DEMO collected
+by the General Hospital Burn Center at the University of
+Southern California. The dataset consists of 981 observa-
+tions. The binary response variable DEMO is 1 for those victims
+who survived their burns and 0 otherwise. Risk factors
+are X1 = age, X2 = sex, X3 = DEMO (burn area + 1), and
+binary variable X4 = oxygen (0 normal, 1 abnormal) was
+considered. Quadratic terms of X1 and DEMO , and all interaction
+terms were included. The intercept term was added, and
+the logistic regression model was ﬁtted. The best subset
+variable selection with the AIC and the BIC was applied
+to this dataset. The DEMO parameter λ was chosen
+by generalized cross-validation: it is 0.6932 and DEMO,
+respectively, for the penalized likelihood estimates with the
+SCAD and DEMO The constant a in the SCAD was taken as
+3.7. With the selected λ, the penalized likelihood estimator
+was obtained at the sixth, DEMO, and ﬁfth step iterations
+for the penalized likelihood with the SCAD DEMO LASSO.
+Table 1 contains the estimated coeﬃcients and standard
+errors for the transformed data, based on the penalized
+likelihood estimators, and the calculation DEMO the sensitivity
+indices obtained by using SimLab software to compare the
+performance of GSA as a variable selection method with
+other methods. The ﬁrst DEMO columns were calculated by [7].
+In addition to GSA indices, Table DEMO consists of the results
+of two traditional methods of variable selection (DEMO and
+BIC) and two new methods (LASSO and SCAD). The
+traditional method, best subset procedure via minimizing
+the BIC scores, chooses DEMO of 13 risk factors, whereas the
+SCAD chooses four risk factors. DEMO diﬀerence between them
+is that the best subset keeps X4 . Neither SCAD nor the
+2 2
+best subset variable selection (BIC) includes DEMO and X3 in
+the selected subset, but both LASSO and the DEMO subset
+variable selection (AIC) included them. LASSO chooses the
+quadratic terms of X1 and X3 rather than their linear terms.
+It also selects DEMO interaction term X2 X3 ,which maynot
+be statistically signiﬁcant. LASSO shrinks DEMO large
+coeﬃcients. The last column in Table 1 shows that GSA
+selected the variables X1 , X3 ,and X1 X3 , in addition to the
+intercept, which resembles the SCAD method, and diﬀers
+from the DEMO methods. According to the results in the last
+column of Table 1, the risk factors can be ranked according to
+sensitivity indices Si and STi.Age (X1 ) is the ﬁrst and the most
+inﬂuential risk factor, with a percent of contribution of 0.487,
+and the second most important risk factor is the interaction
+International Journal of Quality, Statistics, and Reliability 7
+Table 3: The overall ﬁtting criteria for the BEM for a logistic regression model.
+Step DEMO LχP2 Df Sig. χHL2 df Sig. Nag. R2
+6 357.813 7.268 3 0.064 8.465 8 0.389 0.30
+7 359.021 6.061 2 0.048 0.055 2 DEMO 0.25
+8 360.189 4.892 1 0.027 — — — 0.20
+Table 4: The estimated parameters and their signiﬁcance for a
+logistic regression model using BEM.
+Steps Risk factors β Sig. (P)
+CHOL 0.538 0.061
+Step 6 SAGE 0.151 0.271
+BMI −0.325 0.241
+Constant −1.711 0.000
+CHOL 0.610 DEMO
+Step 7 BMI −0.300 0.276
+Constant −1.758 0.000
+CHOL 0.605 0.030
+Step 8
+Constant −1.946 0.000
+between X1 and X3 , with a percentage DEMO contribution of
+0.362. The third inﬂuential risk factor is the log (DEMO of
+burn + 1) (X3 ) with a percentage of contribution of 0.143 as
+shown in Table 1. Consequently, we ﬁnd that the proposed
+GSA variable selection method resembles SCAD in choosing
+the same risk DEMO
+4.2. The Second Example
+A new dataset emerges from the original dataset prepared
+in [22] as a way to compare SA and the traditional DEMO
+(backward elimination) as variable selection methods. Orig-
+inally this study was undertaken to determine the prevalence
+of CHD risk factors among a population-based DEMO of
+403 rural African-Americans in Virginia. Community-based
+screening evaluations included the determination of exercise
+and smoking habits, blood pressure, height, weight, total DEMO
+high-density lipoprotein (HDL) cholesterol, and glycosylated
+hemoglobin, and other factors. The results of this study were
+presented as percentages of prevalence for DEMO factors such
+as diabetes (13.6% of men, 15.6% of women), hypertension
+(30.9% of men, 43.1% of women), and obesity (38.7% of
+men, 64.7% of women), without building any models to
+study the relationship between CHD and its risk factors.
+For more details, see [8]. A new dataset was generated
+based on the ﬁrst one as DEMO way to calculate SA indices to
+extract the important risk factors for CHD from among
+these new factors, and then implement the logistic regression
+model to test the performance of the proposed method as
+follows.
+(1) CHD (Y ) 10-year percentage risk is generated accord-
+ing to DEMO Point Scores. This risk is classiﬁed
+as 1 if the percentage of the risk is ≥20% and 0
+otherwise [23].
+(2) Diabetes (debt, X1 ): According to the criteria pub-
+lished by American College DEMO Endocrinology (ACE)
+& American Association of Clinical Endocrinolo-
+gists (AACE) [24] the participant has diabetes 1 if
+the Stabilized Glucose >140 DEMO/dL or Glycosylated
+Hemoglobin >7% or both of them more than DEMO
+limits, and he has no diabetes 0 otherwise.
+(3) Total DEMO (Chol, X2 ): if a participant has total
+cholesterol of >200 mg/dL, he will be given a 1 and a
+0 otherwise [25].
+(4) High density lipoprotein (HDL, X3 ): a participant
+with HDL of <40 mg/dL will be given a 1 and a 0
+otherwise [25].
+(5) Age (X4 ): standardized DEMO are used (X −μ)/σ .
+(6) Gender (Gan, X5 ): 1isfor amaleand 2for afemale.
+(7) Body mass index (DEMO, X6 ): values for this standard
+are calculated from the following equation: BMI =
+height/(weight)2 , and the participant gets DEMO if BMI is
+>30 and a 0 otherwise [25].
+(8) DEMO pressure (hypertension, Hyp, X7 ): a participant
+has Hyp (DEMO) if systolic blood pressure is >140 or if
+diastolic blood pressure is >90 or if both of them
+exceed these limits and 0 otherwise [25].
+(9) Waist/hip ratio (X8 ), in addition DEMO BMI, is a second
+factor in the determination of obesity.
+This DEMO was used to perform SA through the use of
+SimLab software and the partitioning variance methodology
+discussed in Section 3. An evaluation of the DEMO of
+the proposed method was performed by ﬁtting all factors
+into logistic regression models so as to obtain comparisons
+of factors chosen by the DEMO method with those
+selected by traditional variable selection method (backward
+elimination)DEMO SPSS software was used to get the results that
+follow from ﬁtting logistic regression models.
+4.2.1. The Important Risk Factors
+Implementation of the GSA DEMO for this dataset gave the
+results in Table 2, which shows DEMO ranking of the risk factors
+in order of importance and the contribution of each one to
+explaining the total variance of the CHD response DEMO
+According to the ﬁrst order of sensitivity indices Si, the
+BMI DEMO the ﬁrst and the most inﬂuential factor, and the waist-
+hip DEMO ranks second. Both are components of the obesity
+factor. Age is the third inﬂuential factor and so on through
+the other factors as listed DEMO Table 2. The total sensitivity
+index for a given risk factor provides a measure of the overall
+contribution of that risk factor to the DEMO variance, taking
+8 International Journal of Quality, Statistics, and Reliability
+into account all DEMO interactions with the other risk
+factors. The diﬀerence between the total sensitivity index
+and the ﬁrst-order sensitivity index for a given risk factor
+is DEMO measure of the contribution to the output variance of
+the interactions involving that factor; see (12)and (13). The
+second column in Table 2 shows the values of STi,which
+gives the same rank DEMO Si for the risk factors. These indices
+point to the simple interaction between these risk factors as
+illustrated in the third column in the DEMO table. Figure 3
+shows the compression between the ﬁrst order Si, DEMO total STi
+sensitivity indices, and the interactions between risk factors.
+(31)
+−2log L0 = 365.081, −2log Lf = 355.687,
+Nag.R2 = 0.39, χP2 = 9.394, Sig. (P) = 0.310,
+χHL2 DEMO 12.509, Sig. (P) = 0.130,
+(32)
+These results showed the signiﬁcance of the overall ﬁt of the
+model according to DEMO values of χP2 and χHL2 in spite of the
+low value of Nag.R2 ; also showed that the individual eﬀect
+for all risk factors DEMO not signiﬁcant, which means that H0
+cannot be rejected from the DEMO null hypothesis:
+(33)
+H0 : β = 0versus H1 : β = 0.
+/
+Second, application of the logistic regression model by
+using those risk factors that appear in Table 2 as highly
+DEMO by the proposed method also shows that this method
+ranks each risk factor according to its contribution to the
+incidence of the CHD response DEMO The question also
+becomes how many variables must be selected in order to
+apply the logistic regression model. The possibility exists
+that the selection DEMO may tend to underﬁt or overﬁt
+the model by selecting too few or too many variables. In
+the face of such a possibility, our objective becomes to
+ﬁnd the model that uses the least number of DEMO
+while simultaneously explaining a reasonable percentage of
+variance in the dependent variable relative to the percentage
+explained by all the variables in the full DEMO Thus two
+models may be ﬁtted from Table 2 to compare the results.
+The ﬁrst logistic regression model consisted of the obesity
+factors (BMI, and W/H ratio), age, and total cholesterol
+factors that DEMO 74% of the total variance of the CHD
+response variable according to the individual eﬀect (Si)asin
+Table 2. The results of ﬁtting this model in this manner and
+applying SPSS software were
+Logit CHD =−0.866 DEMO 0.537 Chol + 0.170 Age
+− 0.352 BMI − 0.939 W/Hratio (34)
+Sig (P)(0.026) (0.024) (0.023)
+(DEMO) (0.036),
+−2log L0 = 365.081, −2log LR = 357.584,
+Nag.R2 = 0.71, χP2 = 7.497, Sig. (P) = DEMO,
+χHL2 = 16.791, Sig. (P) = 0.320.
+(35)
+The results in (34) showed that using these criteria for the
+DEMO ﬁt for this model demonstrated their signiﬁcance
+collectively and individually as risk factors that inﬂuence
+the incidence of CHD and raise the value of DEMO to 71% in
+comparison with the full model in (31) The second logistic
+regression model is ﬁtted by adding another risk factor, HDL,
+to increase the percentage of explanation to 87%. The results
+of DEMO this model as in (36)are
+Logit CHD =−0.331+0.552 Chol−0.316 HDL+0.175 DEMO
+− 0.306 BMI − 1.351 W/H
+Sig. (P)(0.085) (0.056) (0.28) (0.022)
+(0.028) (0.05),
+(36)
+−2log L1st = 357.584, −2log L2nd = 356.434,
+Nag.R2 = 0.698, χP2 = 8.648, Sig. (P) = 0.124,
+2
+DEMO = 4.850, Sig. (P) = 0.773.
+(37)
+These results showed that adding the HDL risk factor does
+not improve the results DEMO the ﬁrst logistic regression model,
+but the parameter of this risk factor is not signiﬁcant when
+we test the following hypothesis:
+(38)
+H0 : βHDL = 0versus H1 : βHDL = 0.
+/
+Note that the diﬀerence between the deviances of the two
+models is DEMO Furthermore, the value of R2 does not
+improve. Thus, according to the principle of parsimony,
+the ﬁrst model should be considered the DEMO model and
+the risk factors used to construct this model are those
+that are the most inﬂuential in causing CHD. Moreover,
+showing the DEMO results obtained from these two models
+demonstrates the diﬀerences between ﬁtting the full model
+with all risk factors and ﬁtting it with only selected DEMO
+factors.
+The eﬃciency of the proposed method of variable
+selection (GSA) can be measured by comparing its results
+as in (34) with DEMO results gained from ﬁtting the logistic
+regression model by using the backward elimination method
+(BEM). These results are shown in Tables 3 and 4.
+4.2.2. Implementing the Logistic
+Regression Model
+Does the proposed method yield DEMO reliable model? To investi-
+gate the reliability of the proposed method, we compared the
+results of the ﬁtted models. Basically, when the full logistic
+regression model is ﬁtted, the results are
+Logit CHD = 0.365 − 0.266 Diab + 0.557 Chol − 0.246 HDL
++0.161 Age − DEMO Gend − 0.295 BMI
++0.024 Hypt − 1.874 W/Hratio
+Sig (DEMO)(0.862) (0.480) (0.054) (0.419)
+(0.304) (0.624) (0.317)
+(0.935) (0.389),
+International Journal of Quality, Statistics, and Reliability 9
+Table 3 shows DEMO overall ﬁtting criteria required for the
+last three steps of a logistic regression model ﬁtted by the use
+of the BEM.
+Also Table 4 DEMO the last three steps of iteration to
+choose the important risk factors. These results represent
+the sequential elimination of the factors, which requires
+eight steps to rank these risk factors according to their
+importance; however, DEMO proposed method does not need
+these iterations.
+5. Conclusions
+The results in Tables 1 to 4 and (31)to(36) for the two
+DEMO conﬁrm that the proposed method is capable
+of distinguishing between important and unimportant risk
+factors. The proposed method ranked the risk factors
+according to DEMO decreasing importance as shown in Tables
+1 and 2. In the example in which we compared the proposed
+method with those methods that are DEMO used, we found
+that its performance very much resembled the SCAD DEMO
+in which the same risk factors are selected. From the ﬁrst
+example, we found that the important risk factors are age, the
+area DEMO the burns, and the interaction between them. In the
+second example DEMO found that the obesity factors (BMI and
+W/H) are the most inﬂuential risk factor on the incidence
+of CHD, the second risk factor is age, and the third risk
+factor is the total cholesterol. These play the major roles,
+representing approximately 74% of the incidence DEMO CHD.
+Thus, they are considered the most important risk factors
+according DEMO their individual percentages of contribution in
+the incidence of CHD as shown in Table 1. Compression
+between the results of the ﬁtting of the DEMO logistic regression
+model as in (31) and the chosen models as in (34)and
+(36) conﬁrm the eﬃciency of the proposed method in its
+selection of the most important risk factors. Equation (34)
+represents the best model, according to the model evaluation
+criteria, because DEMO consists of the most inﬂuential risk factors.
+Therefore, a medical care DEMO and medical interventions
+should comply with this ordering of these factors. Also,
+to further conﬁrm these results, one of the traditional
+variable selection methods was used (backward elimination
+method), which yields diﬀerent results after eight steps, but
+the proposed method orders the risk factors without iteration
+and without the need to ﬁt multiple regression models.
+Finally, these results together conﬁrm and emphasize the
+importance of GSA as a variable selection DEMO
+Acknowledgment
+This work was supported by USM fellowship.
+References
+[1] A. Saltelli, K. Chan, and E. M. Scott, Sensitivity Analysis,John
+Wiley & Sons, Chichester, UK, 2000.
+[2] A. Saltelli, M. Ratto, S. Tarantola, and F. Campolongo,
+“Sensitivity analysis for chemical models,” Chemical Reviews,
+vol. 105, no. 7, pp. 2811–2827, 2005.
+[3] A. Khalili and J. Chen, “Variable selection in ﬁnite mixture
+of regression models,” Journal of the American Statistical
+Association, vol. 102, no. 479, pp. 1025–1038, 2007.
+[4] A. J. Miller, Subset SelectioninRegression, Chapman &DEMO
+Hall/CRC, London, UK, 2nd edition, 2002.
+[5] R. Tibshirani, “The lasso method for variable selection in the
+Cox model,” Statistics in Medicine, vol. 16, no. 4, pp. 385–395,
+1997.
+[6] J. Fan and R. Li, “Variable selection for Cox’s proportional
+hazards model and frailty model,” Annals of Statistics, vol. 30,
+no. 1, pp. 74–99, 2002.
+[7] J. Fan and R. Li, “Variable selection via nonconcave penalized
+likelihood and its oracle properties,” Journal of the DEMO
+Statistical Association, vol. 96, no. 456, pp. 1348–1360, 2001.
+[8] H. H. Zhang and W. Lu, “Adaptive Lasso for Cox’s propor-
+tional hazards model,” Biometrika, vol. 94, no. 3, pp. 691–703,
+2007.
+[9] A. Agresti, Categorical Data Analysis,JohnWiley &Sons,
+Hoboken, NJ, USA, 2nd edition, 2002.
+[10] D. Collett, Modeling Binary DEMO, Chapman & Hall/CRC, Boca
+Raton, Fla, USA, 2nd DEMO, 2003.
+[11] J. Cohen, P. Cohen, S. G. West, and L. S. Alken, Applied
+Multiple Regression/Correlation Analysis for the Behavioral
+Sciences, Lawrence Erlbaum Associates, Mahwah, NJ, USA, 3rd
+edition, 2003.
+DEMO D. R. Cox and E. J. Snell, Analysis of Binary Data, Chapman &
+Hall/CRC, New York, NY, USA, 2nd edition, 1989.
+[13] T. M. Therneau andP.M.Grambsch, Modeling Survival Data:
+Extending DEMO Cox Model, Springer, New York, NY, USA, 2000.
+[14] DEMO Saltelli, “Global sensitivity analysis: an introduction,” in
+Sensitivity Analysis of Model Output, K. M. Hanson and F. M.
+Hemez, Eds., pp. 27–43, Los Alamos National Laboratory, Los
+Alamos, NM, USA, 2005.
+[15] A. Saltelli, S. Tarantola, and K. P.-S. Chan, “A quantitative
+model-independent method for global sensitivity analysis of
+model output,” Technometrics, vol. 41, no. 1, pp. 39–56, 1999.
+[16] A. Saltelli, S. DEMO, and F. Campolongo, “Sensitivity
+analysis as an ingredient of modeling,” Statistical Science, vol.
+15, no. 4, pp. 377–395, 2000.
+[17] DEMO Chan, S. Tarantola, A. Saltelli, and I. M. Sobol’, “Variance
+based methods,” in Sensitivity Analysis, A. Saltelli, K. Chan,
+DEMO M. Scott, Eds., pp. 167–197, John Wiley & Sons, New York,
+NY, USA, 2000.
+[18] J. Neter, H. K. Michael, J. N. Christopher, and W. William,
+Applied Linear Statistical Models, McGraw-Hill, New York, NY,
+USA, 1996.
+[19] J. S. Long, Regression Models for Categorical and Limited
+Dependent Variables, Sage, Thousand Oaks, Calif, USA, 1997.
+[20] M. Saisana, A. Saltelli, and S. Tarantola, “Uncertainty and sen-
+sitivity analysis techniques as tools for the quality assessment
+of composite indicators,” Journal of the Royal Statistical Society.
+Series DEMO, vol. 168, no. 2, pp. 307–323, 2005.
+[21] A. Heiat, “Using an Excel extension for selecting the probabil-
+ity distribution of empirical data,” Spreadsheets in Education,
+vol. 2, no. 1, pp. DEMO, 2005.
+[22] J. B. Schorling, J. Roach, M. Siegel, et al., “A trial of church-
+based smoking cessation interventions for rural African
+Americans,” Preventive Medicine, vol. 26, no. 1, pp. 92–101,
+1997.
+[23] J. I. Cleeman, S. M. Grundy, D. Becker, et al., “Expert panel on
+detection, evaluation, and treatment of high blood cholesterol
+in adults (adult treatment panel III),” The Journal of DEMO
+American Medical Association, vol. 285, no. 19, pp. 2486–2497,
+DEMO
+10 International Journal of Quality, Statistics, and Reliability
+[24] J. T. DEMO,R.L.Talbert,G.C.Yee,G.R.Matzke, B. G.
+Wells, andL.M.Posey, Pharmacotherapy: A Pathophysiologic
+Approach, McGraw-Hill, New York, NY, USA, 6th edition,
+2005.
+[25] M. A. Koda-Kimble, L. Y. Young, W. A. Kradian, B. J.
+Guglielmo, B. K. Allderege, and R. L. Corelli, Applied Ther-
+apeutics, The Clinical Use of Drugs, Lippincott Williams &
+Wilkins, DEMO, Md, USA, 8th edition, 2005.{1g42fwefx}

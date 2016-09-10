@@ -1,0 +1,1716 @@
+ESTIMATION OF A CHANGE POINT IN MULTIPLE REGRESSION MODELS
+Jushan Bai*
+Abstract DEMO paper studies the least squares estimation of a change
+point in multiple regressions. Consistency, rate of convergence, and
+asymptotic distributions are obtained. The DEMO allows for lagged
+dependent variables and trending regressors. The error process can be
+dependent and heteroskedastic. For nonstationary regressors or distur-
+bances, the asymptotic distribution is shown to be skewed. The analytical
+density function and the DEMO distribution function for the general
+skewed distribution are derived. The analysis applies to both pure and
+partial changes. The method is used to analyze DEMO response of market
+interest rates to discount rate changes.
+I. Introduction
+ARAMETER instability for economic models is a
+Pcommon phenomenon. This is particularly true DEMO
+time-series data covering an extended period, as it is more
+likely DEMO the underlying data-generating mechanism to be
+disturbed over a longer horizon by various factors such as
+policy-regime shift. For example, for the empirical problem
+examined in this paper, we ﬁnd that the response pattern of
+interest rates to the changes in discount rates varies over
+time. The timing DEMO variation is consistent with the timing of
+changes in the Fed’s operating procedures. It is well known
+that failure to take into account parameter DEMO, given
+their presence, may lead to incorrect policy implications and
+predictions. On the other hand, proper treatment of param-
+eter changes can be useful in uncovering the underlying
+factors that fostered the changes, in identifying misspeciﬁca-
+tion, and in analyzing the effect of a policy change. The
+purpose of this paper is to study the parameter-change
+problem in multiple DEMO with an unknown change
+point. The main concern is the estimation of the change
+point as well as the statistical theory of the change-point
+DEMO We derive some useful results under fairly general
+conditions.
+For independent and identically distributed observations
+up to a parameter shift, there is a well-developed theory
+under maximum-likelihood estimation (see Hinkley (1970),
+Bhattacharya (1987), and Yao (1987)). For a mean shift in
+linear processes estimated with the least-squares method, the
+theory is also worked out (DEMO Bai (1994) and Antoch et al.
+(1996)). For multiple regression models, the change-point
+problem is also studied widely. Yet most of the existing work
+focuses on testing rather than estimation (e.g., Kim DEMO
+Siegmund (1989) and Gombay and Horva´th (1994)). A
+number of authors investigated the consistency property for
+the estimated change point, but the rate of convergence is not
+obtained. These include Krishnaiah and Miao (1988), Hor-
+Received for publication July 25, 1995. Revision accepted for publica-
+tion July 23, 1996.
+* Massachusetts Institute of Technology.
+An earlier version of this paper was titled ‘‘Estimation of Structural
+Change Based on DEMO Type Statistics.’’ I thank two anonymous referees
+and an editor for their constructive criticism, which led to a substantial
+improvement in the presentation. This work is supported in part by grants
+from the Provost Fund and DEMO Dean’s Faculty Development Fund of MIT.
+va´th (1994), and Nunes DEMO al. and Newbold (1995), among
+others. Consistency is not enough DEMO deriving the asymp-
+totic distribution. The rate of convergence is needed for this
+purpose.
+In this paper we develop the asymptotic theory for the
+DEMO change point in multiple regressions. These in-
+clude consistency, rate of DEMO, and asymptotic
+distribution. While we improve the existing consistency
+result by DEMO the rate of convergence, the conditions
+required are much weaker than DEMO in the existing litera-
+ture. Our model allows for lagged dependent variables and
+trending regressors. Furthermore, the disturbances can be
+heterogeneous and dependent over time. In particular, we
+assume the disturbances form a sequence of mixingale,
+which include strong mixing, linear processes, and other
+dependent structures DEMO special cases, as shown by Hall and
+Heyde (1980) and DEMO (1988). In addition, the rate of
+convergence is obtained for both ﬁxed magnitude of shift
+and shrinking magnitude of shift. As for DEMO asymptotic
+distribution, we show that it is skewed except for stationary
+DEMO asymptotically stationary regressors and disturbances. We
+also derive the analytical density function and cumulative
+distribution function for the skewed distribution. These are
+not studied DEMO the existing literature.
+Furthermore, the problem is considered in the context DEMO
+partial change, in which some of the regression parameters
+hold constant DEMO the sample. These parameters are
+estimated using the entire sample in order to gain efficiency.
+When all parameters are allowed to change, a pure structural
+change model is obtained. Therefore a partial structural
+change amounts to DEMO parameter restrictions across
+regimes. Advantages of a partial change model include more
+efficient estimation of the regression parameters and better
+conservation of degrees of DEMO The latter is important
+for a regression problem with a limited number of observa-
+tions but many regressors, which is typical for many
+economic applications.
+As an application, we study the relationship between
+changes in market interest rates and changes in discount rate.
+This relationship is found to DEMO unstable over time. It
+appears that changes in the Fed’s operating procedures
+during the period of October 1979–October 1982 alter the
+response pattern. Through DEMO application, we describe in
+detail the procedure for implementing the theoretical DEMO
+In particular, we discuss how to tackle the problem of
+multiple DEMO for empirical problems in a sequential way,
+and how to construct conﬁdence intervals.
+The rest of the paper is organized as follows. Section DEMO
+speciﬁes the model and the underlying assumptions. Consis-
+tency, rate of DEMO, and asymptotic distribution are
+derived in this section. Construction of conﬁdence DEMO
+is considered. Section III studies the response pattern
+of market interest rates to changes in the discount rate.
+r 1997 by the President and DEMO of Harvard College and the Massachusetts Institute of Technology
+[ 551 ]
+552 THE REVIEW OF ECONOMICS AND STATISTICS
+Procedures for implementing the theoretical DEMO are
+discussed. Concluding remarks are provided in section IV.
+Technical materials are collected in the appendices.
+II. Theoretical Result
+A. Model and Assumptions
+Consider DEMO following linear regression with a change
+point at k0:
+2
+yt 5 w8a1 z8d1 1et,
+yt 5 w8ta1 z8d2 1et,
+t DEMO 1, 2, . . . , k0
+t 5 k0 1 1, ... , T
+(1)
+t
+t
+t
+where yt DEMO an observation on the dependent variable, wt and
+zt are vectors DEMO regressors, and et is an unobservable
+disturbance. The vectors a, d1, and d2 are unknown param-
+eters. We assume d1 Þd2, so DEMO a change has taken place.
+The change point k0 is unknown. Our purpose is to estimate
+these parameters. The analysis is based on a DEMO
+tion. Let xt 5 (w8, zt8)8, b5 (a8, DEMO)8, and d5d2 2d1. Then
+equations (1) can be rewritten DEMO
+t
+1
+yt 5 x8b1et,
+yt 5 x8b1 z8d1et,
+t 5 1, 2, . . . , k0
+t 5 k0 DEMO 1, ... , T.
+(2)
+t
+t
+t
+Now zt is a subvector of xt and dÞ 0. More generally, let zt 5
+R 8xt, where R is a p 3 q known matrix with full column
+rank. This deﬁnes zt as a linear transformation of DEMO For R 5
+(0, I )8, with I an identity matrix, a partial change like
+equations (1) is obtained. For R 5 I, a pure change model is
+obtained.
+To present the model in a matrix format, further notation
+is necessary. Let Y 5 ( y1,..., yT)8, X 5 (x1, x2,..., x T)8,
+e5 (e1, e2,..., eT )8, X1 5 (x1, x2,..., x k,0,...,0)8, DEMO 5
+(0,...,0, xk11,..., x T)8, and X0 5 (0,...,0, xk011,
+..., xT)8. The matrices X1 and X2 depend on k, but this
+dependence will not be displayed for notational simplicity.
+Deﬁne Z1, Z2, and Z0 in DEMO similar way (i.e., replace xt by zt ).
+Then Z1 DEMO X1R, Z2 5 X2R, and Z0 5 X0R. Equations (2) can
+then be rewritten as
+Y 5 Xb1 Z0d1e. (3)
+The least-squares method is used to estimate the model.
+Let ST(k) denote the sum of squared residuals when regress-
+ing Y on X and DEMO The change point kˆ is deﬁned as
+kˆ
+5 arg min ST(k).
+1#k#T
+In practice, the existence of a break may not be known. A
+hypothesis testing is often performed. The sup-Wald-type
+test statistic DEMO supk[[pT,(12p)T] WT(k), where
+dˆ dˆ
+WT(k) 5
+k8 (Z28MZ2)
+sˆ 2(k)
+k
+(4)
+DEMO(k) 5 ST(k)/(T 2 p 2 q), DEMO [
+dˆ
+with M 5 I 2 X(X 8X)21X, DEMO
+(0, 21) a small number, and (bˆ k, k) being the least-squares
+estimator of (b, d) by regressing Y DEMO X and Z2. Let S denote
+the sum of squared residuals by regressing Y on X alone.
+From the identity S 2 S(k) k(Z 8MZ 2)dˆk (see Amemiya
+(1985, pp. 31–33)), we see that the Wald test statistic is a
+monotonic transformation of ST(k). It follows that
+dˆ
+kˆ 5 arg min ST(DEMO) 5 arg max dˆ 8 (Z8MZ2)
+k 2 k
+k k
+(5)
+5 arg max WT(k).
+k
+That is, the estimator obtained by minimizing the sum of
+squared residuals is the same as maximizing Wald-type
+statistics. These statistics are used in Andrews (1993) and
+others for testing the existence of a change point. Christiano
+(DEMO) uses these statistics for estimating potential changes
+in U.S. gross national DEMO (GNP). It is useful to note
+that, for empirical applications, a break point estimator is
+obtained automatically when the null hypothesis is rejected,
+combining the testing and estimation in a single step.1
+The DEMO needed for the theoretical results are
+stated below. The notation \ · \ denotes the Euclidean norm,
+p 2 p. For a matrix DEMO, \ A \
+that is, \ x \ 5 (Si51 DEMO )1/2 for x [ R
+represents the vector-induced norm.
+A1: k0 5 [tT ], where t [ (0, 1) and DEMO · ] is the greatest
+integer function.
+A2: The data 5( ytT, xtT , ztT ); 1 # t # T, T $ 16 form a
+triangular array. For notational simplicity, the subscript T
+will be suppressed. In addition, zt 5 R 8xt, where R DEMO p 3 q,
+rank (R) 5 q, zt [ DEMO q, xt [ R p, q # p.
+j
+A3: DEMO matrices (1/j )St51 xtx8, (1/j )StT5T2j11 xt DEMO,
+(1/j )Sk0 xt x8, and (1/j )DEMO xt x8have minimum eig-
+t5k02j11 t5k011 t
+envalues bounded away from zero in probability for all large
+j. That is, there exists l. 0 such that for every e. 0, there
+exists j0 such that P(lj .l) . 1 2e for all j . j0, where DEMO
+denotes the minimum eigenvalue for each of the above
+matrices. For simplicity, we assume these matrices are
+invertible when j $ p. In addition, these four matrices have
+stochastically bounded norms uniformly in j. That is, for
+example, supj$1
+A4: (X 8X/T
+and positive deﬁnite DEMO
+j
+\ (1/j )St51 xt x8\t is stochastically bounded.
+) converges in probability to a nonrandom
+1 While hypothesis testing requires that DEMO [ [Tp, T(1 2p)] for small
+p. 0, the estimation theory does not require this restriction, provided that
+a change point is assumed to exist. In practice, the existence of a break may
+not be known a priori. If the existence is determined via a DEMO, such a
+restriction is implicitly imposed for empirical work.
+5dˆ
+t
+DEMO
+t
+CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+A5: For random regressors, DEMO E \ x t \ 41d # K for some
+d. 0 and K ,`.
+A6: The disturbances 5et6 satisfy one of the DEMO
+two alternatives:
+a. 5et, Ft 6 form a sequence of DEMO differences for Ft 5s2
+ﬁeld 5es, x s11; s # t6. Moreover, for all t , E0 et 0 41d , K for
+some K ,` and d. 0. Or
+b. The disturbance et is independent of the regressor xs for all t and
+s. For an DEMO sequence of s ﬁelds Ft, 5et, Ft6 form a
+sequence of Lr, r 5 4 1d, mixingales with mixingale numbers
+5ct6 and DEMO norms 5ct6. See Hall and Heyde (1980, p. 21)
+for the deﬁnition of L2 mixingales and Andrews (1988) for
+general Lr DEMO In addition, Sj j 11dc ,` for some d. 0
+and maxj 0 cj 0 , K ,`.
+Assumption A1 assumes that the shift point is bounded
+away from the end points, which is used for asymptotic
+purpose. Assumption A2 allows for trending regressors
+written in the DEMO (t/T)l, l . 0, or, more generally, DEMO
+as any function of the time trend g(t/T ). DEMO them in
+this format avoids a scaling matrix that would otherwise be
+required when deriving limiting distributions. This format is
+also required by assumptions DEMO and A4 because no scaling
+matrix is used in these two assumptions. A3 requires that
+there be enough data around the change point and DEMO the
+beginning and at the end of the sample, so that DEMO change
+point can be identiﬁed. The latter half of A3 is typically
+implied by the strong law of large numbers for the sequence
+of DEMO Assumptions A4 and A5 are standard for linear
+regressions, and they DEMO used for the central limit theorem.
+Assumption A6a allows for lagged dependent regressors
+(e.g., autoregressive models); A6b allows for general serial
+correlation DEMO the disturbances. A6 together with A4 and A5
+imply the strong law of large numbers for xtet, because
+conditions in Hansen (1991) are satisﬁed. These conditions
+are sufficient to obtain the rate of convergence for DEMO
+estimated break point. Note that no stationarity for regres-
+sors or disturbances is required for consistency.
+B. Consistency
+We shall establish the consistency and DEMO rate of conver-
+gence for the change-point estimator. The rate of conver-
+gence not only describes how fast the estimator converges to
+the true DEMO, it is also necessary in order to derive the
+limiting distribution. DEMO will be explained later, it is useful to
+consider asymptotic distributions DEMO shrinking magni-
+tude of shift such that d depends on T with dT = 0. Thus we
+will need the rate of convergence for DEMO shifts.
+Apparently the magnitude of shift cannot be too small,
+otherwise it will be impossible to identify the change point.
+Assume
+A7:
+DEMO
+dT = 0, and T 22adT = ` for some a DEMO (0, 1).
+2
+553
+PROPOSITION 1: Assume the conditions DEMO A1–A6. If dT
+is ﬁxed or dT = 0 but satisfying A7, then kˆ 5 k0 1
+Op( \ dT \ 22).
+DEMO results are obtained for identically and indepen-
+dently distributed (i.i.d.) models up to a shift, as in Yao
+(1987) and Bhattacharya (DEMO). Bai (1994) derives this
+result for a mean shift in linear processes and Picard (1985)
+for a Gaussian autoregressive model. To the author’s knowl-
+edge, proposition 1 is the ﬁrst result for multiple regression
+models.2 Furthermore, the conditions required in this paper
+are far less restrictive than those in the existing literature.
+This rate of convergence holds DEMO models with lagged
+dependent variables, so that the autoregressive model is DEMO
+special case. Our result holds for trending regressors. We
+also allow for dependent and heterogeneous disturbances.
+The disturbances can be a sequence of mixingales, thus
+including linear processes and strong mixing processes as
+special cases. Under DEMO stronger assumptions, Horva´th
+(1994) proves the consistency of tˆ 5 DEMO/T, but without
+obtaining the rate of convergence. Proposition 1 implies DEMO
+T a(tˆ 2t) converges to zero in probability for any DEMO, 1 for
+dT ﬁxed. In a recent work, Nunes et al. (1995) also prove
+consistency for the estimated break fraction, but without rate
+of convergence. A ﬁxed magnitude of shift is considered by
+these DEMO
+Let bˆ 5bˆ (kˆ ) and dˆ 5dˆ(kˆ ) be DEMO estimators of b and d
+corresponding to kˆ . That is, DEMO replace Z0 by Z2 with k 5 kˆ
+and then estimate model (3). We have
+COROLLARY 1: Under the assumptions of proposition DEMO
+together with et being uncorrelated and Eet2 5s2 for all t,
+then
+3ÎT(
+d
+ÎT
+(
+where
+T T
+3 4
+o o
+xt x8t xt z8t
+1
+T
+t51 t5k0
+V 5 plim DEMO (6)
+T T
+o zt x8 o zt
+z8
+t DEMO
+t5k0 t5k0
+For serially correlated and heteroskedastic disturbances, the
+variance–covariance matrix DEMO the limiting distribution is
+2 For the least absolute deviation (LAD) method, Bai (1995a) obtains the
+same result under stronger assumptions.
+bˆ
+dˆ
+2b) 4 = N (0, s2V 21)
+2dT)
+j
+t
+554 THE REVIEW OF ECONOMICS AND STATISTICS
+given by V 21UV 21, with
+T T
+3io 4
+E(xi x8jeiej ) o E(xiz8eiej )
+1 i, j$k0
+T
+j
+, j$1 (7)
+U DEMO lim .
+T T
+o E(zj x8eiej ) o E(ziz8jeiej
+)
+i
+i, j$k0 i, j$k0
+Notice that aˆ and bˆ have the same limiting distributions as if
+k0 were known. A similar DEMO is obtained by Bai (1994) for
+a mean shift in linear processes.
+C. Asymptotic Distribution
+We consider two frameworks of asymptotic distribution.
+One DEMO based on the ﬁxed magnitude of a shift, the other on DEMO
+shrinking magnitude of shift. We ﬁrst consider the case of a
+ﬁxed shift. To obtain the limiting distribution, additional
+assumptions are necessary. Assume
+A8: The process 5zt, et 6t`52` is strictly stationary.
+We deﬁne a DEMO process W *(m) on the set of
+integers as follows: W *(0) 5 0, W *(m) 5 W1(m) for m , 0
+and W *(m) 5 W2(m) for m . 0, with
+0 0
+W1(m)52d8 i o1 zi z8d1 2d8 i o1 ziei,
+i
+(8)
+5m1 5m1
+m 521, 22, ...
+m m
+W2(m)52d8 o zi DEMO 2d8 o ziei,
+(9)
+m 5 1, 2, DEMO . . .
+In case of independence for (zt, et ) over t, the process W *isa
+two-sided random walk with (stochastic) drift.
+PROPOSITION 2: Under assumptions A1–A6 and A8, and
+assuming that (d8zt)2 6 (d8z8)et has a continuous distribution,
+then
+kˆ 2 k0 = arg max W*(m).
+d
+m
+The above DEMO distribution can be extended to
+nonstationary data. For simplicity, assume 5zt, et6 are i.i.d.
+(z (1), e(1) ) for t # k0 and 5zt, et6 are i.i.d. (z (2), e(2) ) for t . k0 in
+model (2). Then DEMO limiting distribution still holds if one
+regards (zi, ei ) in equation (8) as i.i.d. (z (1), e(1) ) and (zi, ei )in
+equation (9) as i.i.d. (z (2), e(2)).
+To derive the probability function of the limiting distribu-
+tion, one must know d and the distribution of 5zt, et6. Hinkley
+(1970) studied the case for zt 5 1 and et i.i.d. normal.
+Analytical solutions for general cases are typically difficult
+to DEMO An alternative asymptotic theory is to consider
+small shifts, assuming the DEMO of shifts converges to
+i
+i51
+t
+i51
+21/2
+k0
+[rk0 ]
+o
+t51
+ztet ⇒B1(r),
+zero as the sample size grows unbounded. The result is that
+the limiting distribution is invariant to DEMO underlying
+distribution of zt and et. The resulting distribution can be
+used as an approximation even for large shifts. This idea can
+be found DEMO Bhattacharya (1987), Picard (1985), and Yao
+(1987) for various special models. This framework is
+extended here to general regression models. DEMO, we
+allow nonstationary regressors and disturbances. In this
+case, the limiting distribution turns out to be nonsymmetric.
+We derive the analytical density function DEMO the cumulative
+distribution function (cdf) for this general limiting distribu-
+tion, so that conﬁdence intervals can be constructed. To this
+end, we DEMO assumption A7 to
+A78: dT 5d0vT, where vT is a positive number such that
+vT = 0 and T (1/2)2avT = ` for some a [ (0, 21) and d0 Þ 0.
+This amendment makes the asymptotic argument easier.
+Further assume
+A9a: (zt, et ) is second-order stationary within each re-
+gime such that Eztz8 DEMO Q1 and Ee
+Eztz8 5 Q2 and Eet2 5s22 for t . k0.
+A9b: A functional central limit theorem holds for 5ztet6
+within each regime. That is,
+5s2
+1 for t # k0 and
+(T 2 k0)21/2
+k01[r (T2k0 )]
+o 1
+t5k01
+ztet DEMO(r)
+where Bi(r) is a multivariate Gaussian process on DEMO, 1] with
+mean zero and covariance EBi(u)Bi(v)
+DEMO 5 1, 2, and V1 5 lim E(k
+lim E [(T 2 k0)21/2StT5k011 ztet ]2.
+Deﬁne
+21/2Sk0
+0 DEMO
+5 min 5u, v6Vi for
+1 ztet )2 and V2 5
+j5
+d8Q2d0
+d8Q1d0
+and
+d8V2d0 . (10)
+f5 d8V1d0
+0
+0
+0
+0
+Let Wi(s), i 5 1, 2, be DEMO independent standard Wiener
+processes deﬁned on [0, `), starting at DEMO origin when s 5
+0. Let
+W (2s) 2 0 s0 /2, if s #0
+Z(s) 5 5
+1
+ÎfW2(s) 2j 0 s0 /2, if s . 0.
+(11)
+DEMO 3: Under assumptions A1–A6, A78, and A9,
+2
+t
+(d 8Q1dT)2 (
+d 8V1dT
+kˆ
+2 k0) = arg DEMO Z(s). (12)
+s
+The density function and the DEMO of arg maxs Z(s) are
+derived in appendix B. The DEMO of kˆ is not symmetric
+when jÞ 1or fÞ 1. When Qi, Vi, and
+s2
+i are the same for
+T
+T
+d
+DEMO
+t
+CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+555
+each regime (j5 1 and f5 1), the limiting distribution
+reduces to (write Q1 5 Q2 5 Q and V1 5V2 5V)
+(dT8QdT)2 (kˆ DEMO k0) =d arg max 5W(s) 2 0 s0 /26 (13)
+d 8VdT
+T s
+where W(s) 5 W1(2s) for s # 0 and W(s) 5 W2(s) for s . 0.
+Finally, when the errors are uncorrelated, we have DEMO,
+and the limiting distribution further reduces to
+dT8QdT (
+s2
+DEMO 2 k0) = arg max 5W(s) 2 0 s0 /DEMO (14)
+d
+s
+In this case, the distribution is symmetric about the origin.
+Its density function is studied by Bhattacharya (1987),DEMO
+Picard (1985), and Yao (1987).
+Next we consider zt being a vector of trending regressors
+such that zt 5 g(t/DEMO) 5 [ g1(t/T ),..., gq(t/T )DEMO Clearly,
+assumption A9 will not be satisﬁed; we need to DEMO the
+limiting distribution separately.
+PROPOSITION 4: Let zt 5 g(t/DEMO) 5 [ g1(t/T ),..., gq(t/T )DEMO,
+with gi(x) having a bounded derivative on [0, 1]. Assume
+that the functional central limit theorem holds for et within
+each DEMO Under assumptions A1–A6,
+d 8 g(t)g(t)8dT (DEMO
+c12
+kˆ 2 k0) = arg max Z†(s) (15)DEMO
+s
+where
+Z†(s) 5 5W1(2s) 2 0 s0 /DEMO, if s #0
+(16)
+Îc2/c1W2(s) 2 0 DEMO /2, if s . 0.
+21/2
+0
+with c1 5 lim E(k Stk50 1 et )2 and c2 5 lim E [(T 2
+k0)21/2StT5k011 et ]2.
+When et is second-order DEMO for the whole sample,
+c1 5c2 5c5s2 1 2 Sj`52 E(e1ej ), the limiting distribution
+reduces to dT8 g(t)g(t)8dT c22(kˆ 2 k0) = arg max 5W(s) 2
+DEMO s0 /26. Furthermore, when the et are serially uncorrelated,
+c2 5s2 5 Eet2.
+D. Conﬁdence Intervals
+The results derived above allow easy DEMO of
+conﬁdence intervals for the change point. All that is needed
+is to construct consistent estimates for Qi, Vi, si2, i 5 1, 2,
+and dT. We discuss various special cases below.
+1. (DEMO, et) is second-order stationary for the whole sam-
+ple. In this case, the limiting distribution is characterized
+by equation (13) or equation (14). For serially uncorrelated
+disturbances, we only need estimates for DEMO, Q, and s2.An
+estimate for dT is already available; Q DEMO s2 are estimated
+by T 21StT51 ztz8 and T 21StT51 eˆ
+dˆT8Qˆ dˆ T/sˆ 2. It can be shown that (
+equation (DEMO) holds when dT, Q, and s2 are replaced by their
+DEMO
+t , respectively. Deﬁne
+Lˆ
+2 L )(
+kˆ
+Lˆ
+2 k 0) = 0. Thus
+5
+estimators. A 100(1 2a)% conﬁdence interval is given by
+t
+p
+[
+kˆ
+2 [c/
+DEMO
+] 2 1,
+kˆ
+1 [c/
+Lˆ
+] 1 1] (17)
+where c is the (1 2a/2)th quantile DEMO the random variable
+arg max 5W(s) 2 0 s0 /26;[c/Lˆ ] is the integer part of c/Lˆ . The
+DEMO c can be computed from the cdf formula (B.4) in
+appendix B. For example, for a5 0.1, c 5 7.0 and for DEMO
+0.5, c 5 11.0.
+For serially correlated disturbances we need an DEMO
+for V, which can be obtained by the method of Newey DEMO
+West (1987). Deﬁne Lˆ 5 (dˆT8Qˆ dˆ )2/(dˆT8Vˆ dˆT ). The conﬁdence
+interval is again given by equation (17) with this new Lˆ .
+2. (zt, et) is stationary within each regime. In this case,
+the limiting distribution is described by DEMO (12). The
+quantities to be estimated are Qi, Vi, DEMO 5 1, 2, and
+estimate Q1 by kˆ 21Stkˆ51 ztz 8, and Q2 by (T 2 kˆ )21StT5
+The Vi are estimated by the Newey and West method, but
+V1 is computed using the subsample [1,
+the subsample [kˆ
+Vi 5si2Qi;
+(T 2 kˆ )21StT5
+can estimate j and f in equation (10) by the plug-in method.
+Note that d0 can be replaced by dˆT in estimating DEMO and f.
+(Multiply both the numerator and the denominator by vT DEMO
+use dT 5d0vT.) When j and f are known, the quantiles for
+arg maxz Z(s) can be computed from the cdf formulas (B.2)
+and (B.3). Let c1 denote the (a/2)th quantile, and c2 the
+(1 2a/2)th quantile. Deﬁne DEMO 5 (dˆT8Qˆ 1dˆT)2/(dˆT8 Vˆ 1dˆT ). Be-
+cause DEMO , Lˆ (kˆ 2 k0) , c2] = 1 2a, DEMO 100(1 2a)%
+conﬁdence interval is given by
+kˆ
+s2
+1
+11
+eˆ
+2
+t
+kˆ
+dT.We
+11 ztz8.
+t
+kˆ
+1 1, T ]. For serially uncorrelated et,
+is estimated by kˆ 21Stkˆ51eˆ
+DEMO Once these quantities are obtained, we
+] and V 2 using
+DEMO
+t and
+s2
+2
+by
+[
+kˆ
+2 [c /
+Lˆ
+DEMO 2 1,
+2
+kˆ
+2 [c /
+Lˆ
+1
+] DEMO 1]. (18)
+3. Trending regressors.
+The limiting distribution is given
+DEMO proposition 4. First consider the simple case that et is
+stationary. Let ˆf (0) denote an estimate of the spectral density
+of et DEMO zero (without 2p). For serially uncorrelated et, ˆf (0)DEMO
+5sˆ 2 5 T 21StT51 eˆt2. Deﬁne Lˆ 5dˆT8 g(kˆ/T)g(kˆ/T)8dˆT/ˆf (0).
+In this case, c1 DEMO and Z†(s ) 5 W(s) 2 0 s0 /2. The
+quantiles are computed from equation (B.4). The conﬁdence
+interval is given by equation (17) with the newly deﬁned Lˆ .
+When DEMO et are only stationary within each regime,
+let 1 (0) be an estimate of spectral density of et for the ﬁrst
+regime (using the subsample [1, kˆ
+regime. We estimate c2/c1 by 2 (0)/
+arg max Z†(s) are computed from equations (DEMO) and (B.3)
+with f5c2/c1 and j5 1. Deﬁne Lˆ 5dˆT g(kˆ /T)g(kˆ /T)8
+dˆT/ˆf (0). The conﬁdence interval is then computed using
+equation (18).
+]) and 2 (0) for the second
+ˆf
+(0). The DEMO of
+ˆf
+1
+ˆf
+1
+ˆf
+T
+t
+T
+d
+556 THE REVIEW OF ECONOMICS AND STATISTICS
+III. Empirical Result
+In this DEMO we analyze the response of market interest
+rates to the changes in the discount rates. The discount rate is
+the rate at which the DEMO lends and is set by the Fed. It has
+been noted by many researchers that discount-rate changes
+of the same size can have different DEMO on market interest
+rates (see Dueker (1992) and the references DEMO). The
+differentials in the response may reﬂect different causes that
+prompted the Fed to change the discount rates or reﬂect the
+conditions of DEMO economy. Here we model the response of
+market interest rates to discount-rate changes by a simple
+linear model and examine the response pattern over DEMO As
+an additional purpose, this application illustrates the proce-
+dures for DEMO the theoretical results.
+A. The Data
+Data used in this analysis can be found in Dueker (1992).
+The yields of three-month T-bills are used as the market
+interest rates. The range of data spans 1973 DEMO 1989. Over
+this period, there were 56 changes in the discount DEMO made
+by the Fed. An observation is obtained every time there is a
+change in the discount rate. A change in interest rate is
+DEMO as the closing T-bill rate on the day of a
+discount-rate change, minus the closing T-bill rate the day
+before the change. Thus the data are in daily level (fre-
+quency). Because discount rates are changed irregularly, the
+observations are not equally spaced in calendar time.
+Changes in the discount rate are plotted in ﬁgure 1 along
+with changes DEMO interest rates. The vertical dotted lines
+represent the size and direction of the discount-rate changes.
+The solid line represents the changes in interest rate.
+DEMO The Model
+The following simple linear regression is used to describe
+the response relationship:
+DTBi 5a1bDDRi 1ei
+(19)
+where DDRi denotes the change in the discount rate for the
+ith observation, DTBi denotes the change in the market
+interest rate, and ei is a stochastic disturbance. Because the
+data have daily frequency and two adjacent observations are
+generally DEMO apart over time, it is reasonable to assume that
+the ei DEMO uncorrelated over time. In particular, under the
+efficient-market hypothesis, ei will be a sequence of martin-
+gale differences. In this case, equation (DEMO) describes the
+market’s reaction to the ‘‘news’’ of the Fed’s discount-rate
+DEMO This model is similar in spirit to the one used by
+Roley and Wheatley (1990) in their study of interest-rate
+response to the DEMO announcement surprises. The appro-
+priateness of this model is further discussed in the comment
+section below.
+The above simple linear relationship assumes that a
+DEMO in the discount rate of the same size in absolute value
+(DEMO of an increase or a decrease) has the same effect
+FIGURE DEMO IN DISCOUNT AND INTEREST RATES (DOTTED VERTICAL
+LINES—DISCOUNT-RATE CHANGES; SOLID CURVE—INTEREST-RATE CHANGES)
+on market interest rates. It is possible that an increase DEMO the
+discount rate has a different impact on interest rates from a
+decrease, if the direction of discount-rate changes carries
+economic or ﬁnancial information. Therefore we suggest a
+modiﬁed response model,
+DTBi
+1
+5a1bDDRi 1gDDR DEMO
+i
+1ei
+(20)
+where DDR 1 5 max 50, DDR6 and DDR 2 5DDR 1 2
+DDR . When this model is DEMO to the data, the adjusted R2
+shows a marked improvement over DEMO (19). Also, the
+hypothesis of equal coefficients for DDR 1 and DDR 2 is
+easily rejected. Both models are to be examined. DEMO ﬁrst
+will be referred to as the symmetric response model, and DEMO
+second as the asymmetric response model. We will compare
+the estimation results. In particular, we examine how the
+estimated change points are affected by model speciﬁcation.
+C. Estimation Procedure
+For empirical problems, more than one break may exist,
+as evidenced by the empirical application here. We discuss DEMO
+procedure capable of detecting and locating multiple breaks.
+The procedure is based on hypothesis testing and works as
+follows. Starting from the whole sample, perform a param-
+eter constancy test. If the test rejects the null DEMO,
+then estimate a break point and divide the sample into two
+subsamples at the estimated break point. Perform a param-
+eter constancy test DEMO each subsample. Estimate an addi-
+tional break whenever the subsample fails the constancy
+test. Divide the subsample at the estimated break point (if
+any) into nested subsamples and do the same analysis. This
+step is repeated until all the subsamples do not reject the null
+hypothesis. If the DEMO of break points is known a priori,
+then no hypothesis testing is necessary. In this case, one just
+estimates the break points sequentially in the ordering for
+which the sum of squared residuals is reduced DEMO most, until
+the speciﬁed number of breaks is obtained. This is DEMO
+in Bai and Perron (1994). Analogously, if it is known that the
+number of breaks is at least m, then no testing is necessary
+for the ﬁrst m break points.
+CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+When all of the break DEMO are obtained, a reﬁnement is
+needed. An estimated change point should DEMO reestimated if
+it is obtained from a sample or subsample containing more
+than one break. This reestimation procedure is called
+reﬁnement. Suppose there are DEMO two breaks and they are
+identiﬁed as kˆ1 and kˆ2, kˆ1 , kˆ2.If kˆ1 is identiﬁed in the ﬁrst
+place (i.e., from the whole sample), then kˆ1 should be
+reestimated using the subsample [1, kˆ2 ]. Similarly, if kˆ2 is
+identiﬁed in advance of kˆ1, DEMO the second break should be
+reestimated using the subsample [kˆ1, T DEMO Each reﬁned estima-
+tor has the same asymptotic distribution as if the sample had
+a single break point, so that our asymptotic theory can be
+applied, as asserted by Bai (1995b). This procedure was DEMO
+suggested in an earlier version of this paper. A reﬁnement
+may be performed prior to the complete estimation of all of
+the breaks.
+It DEMO important to note that the Wald statistic is designed
+for a single break point; it has less power when multiple
+breaks exist. This is because sˆ 2(k ) in equation (4) is not a
+DEMO estimator of s2 and is biased upward in the
+presence of multiple breaks. Although for large samples (or
+for a large magnitude of shift) one will reject the null
+hypothesis regardless of the consistency3 of sˆ 2(k ), the lack
+of power may not be negligible for small or moderate
+samples. Fortunately, the problem can be overcome by a
+simple modiﬁcation of the test statistic.4 In constructing the
+test statistic (4), the residual variance in the denominator is
+estimated by allowing for DEMO than one break. For moder-
+ate sample sizes, two or three DEMO should be good enough
+in adjusting the denominator of equation (4)DEMO In our empiri-
+cal application, this adjustment is made for the DEMO sample
+test. Critical values of the hypothesis testing are obtained
+assuming 15% precent ‘‘trimming’’ and 10% signiﬁcance
+level. The size of a test should DEMO large for small samples, as
+we choose here. The critical values DEMO 10.01 for q 5 2 and
+12.27 for q 5 3. Here q denotes the number of coefficients
+that are allowed to change (see Andrews (1993)).
+D. Test and Estimation Results
+Symmetric Response Model: When the whole sample is
+tested for parameter constancy, the sup-Wald statistic is
+8.05, occurring at October 9, 1979 (k 5 28). The test does
+not show instability compared with the critical value of
+DEMO However, if we proceed to divide the sample into two
+subsamples DEMO the estimated break date and test for param-
+eter constancy for each subsample, we will ﬁnd that the
+second subsample has a sup-Wald statistic of 15.20, occur-
+ring at December 4, 1981 (k 5 38). This indicates the
+existence of a break. In addition, if we use the subsample
+[1, 37] to test parameter constancy, the sup-Wald DEMO 58.15,
+3 Because S 2 ST(k ) converges to inﬁnity as the sample size increases
+and §ˆ2(k ) is stochastically bounded, it follows that the Wald test statistic
+becomes arbitrarily large as the DEMO size grows.
+4 When the null hypothesis can be rejected without this modiﬁcation, it
+will imply a stronger evidence of instability.
+557
+achieved at October 9, 1979 (k 5 28), strongly rejecting the
+null. DEMO, when the subsample [38, 56] is used, we
+uncover another DEMO point at August 27, 1982 (k 5 42)
+with sup-Wald 11.44. Further tests for each resulting sub-
+sample do not show instability. DEMO analysis indeed indicates
+the existence of multiple breaks. The failure to uncover any
+break with the full sample proves the lack of power for DEMO
+sup-Wald test in the face of multiple breaks. As a veriﬁca-
+tion, if we use the adjustment mentioned earlier by estimat-
+ing the variance using residuals based on two breaks (at
+observations 28 and 38), the sup-Wald statistic for the whole
+sample becomes 11.96, thereby rejecting the null.
+The ﬁnal model has three breaks, occurring at the dates
+October 9, 1979, December 4, 1981, and August 27, 1982.
+(DEMO terms of observation numbers, they are 28, 38, and 42,DEMO
+respectively.) Because the middle break is estimated with the
+subsample [28, 56], a reﬁnement is obtained by reestimating
+the middle break with the subsample [28, 41]. When this is
+performed, the same break point DEMO obtained, but the
+sup-Wald becomes 33.00. The other two breaks are DEMO
+already. These estimates are summarized in table 1. The ﬁrst
+break point marks the beginning of the Fed’s October
+1979–October 1982 operating procedure changes. DEMO last
+break is near the end of the Fed’s procedure changes. It
+remains an open question as to what economic activity
+induces the second DEMO The estimated regression coeffi-
+cients are reported in table 2.
+Asymmetric Response Model: The adjusted sup-Wald
+statistic for the full sample is 13.56, DEMO the null
+hypothesis5 (the critical value is 12.27 for q 5 DEMO). The
+maximum is again achieved on October 9, 1979 (k 5 28).
+For the subsample [1, 27], the sup-Wald statistic DEMO 9.23,
+which is not signiﬁcant compared with the critical value of
+12.26. For the subsample [28, 56], only two of the three
+DEMO (the intercept and DDR 1 ) are allowed to change,
+DEMO of the lack of variation in the data. The sup-Wald
+statistic is 10.001, which is just shy of signiﬁcance com-
+pared with the critical value of 10.01 (note that q 5 2). The
+maximum is attained on August 27, 1982 (k 5 42). This date
+DEMO be treated as a break point for an additional reason
+besides the closeness of the test statistic to the critical value.
+When the subsample DEMO, 41] is used to reﬁne the ﬁrst break,
+the sup-Wald DEMO is 37.07, more than triple the value
+computed for the full DEMO (see footnote 5). This is a sign
+of multiple breaks. DEMO reﬁned break point is on September
+19, 1979 (k 5 27).
+Further hypothesis testing for each resulting subsample
+does not reveal additional DEMO In particular, the middle
+break point (k 5 38) associated DEMO the symmetric response
+model does not show up here. The sup-Wald statistic for the
+subsample [28, 41] is only 6.55, as opposed to DEMO under
+the symmetric response model. Thus the middle break point
+identiﬁed in the ﬁrst model is accounted for by the asymmet-
+ric response. In DEMO, two break points are identiﬁed.
+5 The adjustment assumes two breaks DEMO estimating the variance. Without
+this adjustment, the sup-Wald statistic for the DEMO sample is 10.25.
+558 THE REVIEW OF ECONOMICS AND STATISTICS
+TABLE 1.—TEST STATISTICS,BREAK POINTS, AND CONFIDENCE INTERVALS SYMMETRIC RESPONSE MODEL
+Sample Dataa
+Sup-Wald
+Criticalb
+Value
+kˆ
+DEMO Conﬁdence Interval
+[1, 56] 1/15/73–2/24/89 11.96e 10.01 DEMO
+[1, 27] 1/15/73–9/19/79 8.59 10.01 —
+[28, 56] 10/9/79–2/24/89 15.20 10.01 38
+[38, 56] 12/4/81–2/24/89 11.44 10.01 42
+[42, 56] 8/27/82–2/24/89 2.21 10.01 —
+Symmetricc
+Skewedd
+Reﬁnementf
+[1, 37] 1/15/73–11/2/81 58.15 10.01 28 [26, 30] [25, 29]
+[28, 41] 10/9/79–8/16/82 33.00 10.01 38 [37, 39] [37, 39]
+[38, 56] 12/4/81–2/24/89 11.44 10.01 42 DEMO, 45] [39, 44]
+Notes: a Beginning and ending dates covered DEMO sample.
+b Critical values corresponding to 15% trimming and 10% signiﬁcance level. For q 5 2, the value is 10.01, and for q DEMO 3, the value is 12.27. (See
+Andrews (1993).)
+DEMO Based on symmetric distribution.
+d Based on skewed distribution.
+e Adjusted value. Without adjustment, the value is 8.05. See section IIIC for explanation.
+f See section IIIC for explanation.
+These two breaks correspond to the October DEMO
+1982 change in the Fed’s operating procedures. These results
+are reported in table 3. The estimated regression coefficients
+for the ﬁnal model are provided DEMO table 4. The middle
+regime exhibits a higher response to discount-rate changes,
+particularly to discount-rate increases.
+E. Conﬁdence Intervals
+Symmetric Response Model: For this model, three breaks
+are identiﬁed, at the dates of October DEMO, 1979, December 4,
+1981, and August 27, 1982. (DEMO observation numbers are
+28, 38, and 42, respectively.) We ﬁrst consider constructing
+conﬁdence intervals using the symmetric limiting distribu-
+tion (derived assuming homogeneous data). Those using the
+skewed limiting distribution are given later. DEMO ﬁrst break is
+estimated with the subsample [1, 37]. From table DEMO we see
+that dˆ 5 (20.403, 20.171)8. For zt 5 (1, DDRt)8, the
+estimated scale factor Lˆ is dˆ(371 S137 zt z8 )dˆ/s2 5 7.95, where s2
+is the DEMO error variance. The 97.5% quantile of the
+limiting distribution is 11.0, DEMO from equation (B.4).
+By equation (17), the upper boundary of the 95% conﬁdence
+interval will be 28 1 [11.0/7.95] 1 DEMO 5 30. By symmetry,
+the conﬁdence interval is [26, 30]. DEMO second break is
+estimated with the sample [28, 41] with dˆ DEMO (1.028, 0.373)8.
+The estimated scale factor is Lˆ 5dˆ(141 S2841 zt z8 )dˆ/s2 5 24.35.
+TABLE 2.—ESTIMATED REGRESSION COEFFICIENTS,DEPENDENT VARIABLE DTR
+SYMMETRIC RESPONSE MODEL
+Sample Date Intercept DDRt dt(k) dt(k)DDRt R2
+[1, 56] 1/15/73–2/24/89 0.046 0.338 0.35
+(1.23) (5.57)
+[1, 37] 1/15/73–11/2/DEMO 0.415 0.340 20.403 20.171 0.73
+k 5 28 10/9/79 (DEMO) (6.54) (6.36) (1.84)
+[38, 56] 12/4/DEMO/24/89 0.008 0.164 20.622 20.197 0.45
+k 5 42 8/27/82 (0.11) (1.13) (1.62) (0.33)
+Notes: t-statistics DEMO provided in parentheses. The variable dt(k ) is a dummy variable with dt(k) 5 1 for
+t , k and 0 for t $ k; dt(k)DDRt is the interactive term.
+t
+t
+Thus the upper boundary of the conﬁdence interval is 38 1
+[11.0/DEMO 1 1 5 39. Again by symmetry, the conﬁdence
+interval is DEMO, 39]. Using the same method, the conﬁdence
+interval for the third break point is found to be [39, 45].
+These results are reported in table 1. Conﬁdence intervals in
+calendar time are provided in table DEMO The ﬁrst two breaks
+are estimated with more precision, the last DEMO has a larger
+interval.
+In the above construction it is assumed that the two
+neighboring regimes surrounding each break have homoge-
+neous data. By DEMO inspection of ﬁgure 1 we see that this
+is not the case. For example, the magnitude of the regressors
+for the second regime, DEMO 79–August 89, is typically
+twice the magnitude for the ﬁrst regime. DEMO suggests that
+Q1 is not equal to Q2. Thus Q1 and Q2 should be estimated
+separately. In addition, the disturbances may not have
+common variance cross regimes, thus conﬁdence intervals
+based on a skewed limiting distribution might be more
+appropriate. For the ﬁrst break point, we estimate Q1 by
+271 St2751 zt z8 and Q2 by 101 St37528 zt z8. DEMO j is estimated by the
+ratio of dˆ8 (101 St37528 zt DEMO )dˆ8 and dˆ8 (271 S127 zt z8 )dˆ8. This gives
+DEMO 1.08. The ratio is estimated by s22/s12, yielding
+2.556. Thus DEMO estimated f is (s2/s1)2jˆ 5 2.771. Using
+equations (B.2) and (B.3) for j5 1.085 and f5 2.771, the
+97.5% DEMO is 28.0, the 2.5% quantile is 29.2. The scale
+s2
+2/DEMO
+2
+factor L 5d8Q1d/s1 is estimated to be 10.72. From equation
+(18), the lower boundary of the interval is 28 2 [28/10.72]
+2 1 5 25. The upper boundary is 28 2 [9.2/DEMO 1 1 5
+29. Thus an asymmetric 95% conﬁdence interval is [25, 29].
+Using the same method, the conﬁdence interval for the
+second DEMO is [37, 39], and for the third break it is [39, 44].
+The skewed conﬁdence intervals are similar to the symmet-
+ric ones, except that the ﬁrst is wider.
+Asymmetric Response Model: For this DEMO, two break
+points are identiﬁed, the ﬁrst is September 19, DEMO, and the
+second is August 27, 1982. (The observation numbers DEMO 27
+and 42, respectively.) Assuming homogeneous data, the
+conﬁdence interval DEMO the ﬁrst break is found to be [25, 29],
+t
+DEMO
+t
+t
+CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+TABLE 3.—TEST STATISTICS,BREAK POINTS, AND CONFIDENCE INTERVALS ASYMMETRIC RESPONSE MODEL
+95% Conﬁdence Interval
+Sample Date Sup-Wald
+DEMO
+Value
+kˆ
+Symmetric Skewed
+[1, 56] 1/15/73–2/24/89 DEMO 12.27 28
+[1, 27] 1/15/73–9/19/79 9.23 12.27 DEMO
+[28, 56] 10/9/79–2/24/89 10.00 10.01 42
+[28, 41] 10/9/79–8/16/89 6.55 10.01
+[42, 56] 18/27/82–2/24/89 2.01 10.01 —
+Reﬁnement
+[1, 41] 1/15/73–8/16/89 37.07 12.27 27 [25, 29] [22, 28]
+[27, 56] 9/19/79–2/24/89 12.30 10.01 42 [38, 46] [38, DEMO
+Notes: See footnotes to table 1.
+a Adjusted value. Without adjustment, the value is 10.25.
+TABLE 4.—ESTIMATED REGRESSION COEFFICIENTS,DEPENDENT V
+ARIABLE DTR DEMO RESPONSE MODEL
+Sample Date Intercept
+1
+DDRt
+2
+DDRt
+dt(k)
+1
+dt (k)DDRt
+R2
+[1, 56] 1/15/73–2/24/DEMO
+20.253 0.847 0.205 0.48
+(2.90) (5.76) (1.32)
+[1, 26] 1/15/73–8/17/79 0.024 0.178
+20.201 0.23
+(0.32) (1.13) (0.95)
+[27, 56] 9/19/79–2/24/89 20.617 1.414 1.087 20.525 0.483 0.69
+k 5 42 8/27/82 (3.36) (3.13) (3.27) (3.40) (1.41)
+559
+and for DEMO second it is [38, 46]. For nonhomogeneous data,
+the conﬁdence DEMO are found to be [22, 28] and
+[38, 47], respectively. DEMO intervals are given in table 3.
+The corresponding intervals in calendar time are given in
+table 5.
+F. Some Comments
+1. Changes in the DEMO rates may be affected by many
+other variables, such as money DEMO, unemployment, and
+industrial production. These macroeconomic variables are
+relatively smooth (DEMO frequency data) compared with the
+daily interest rates. We believe that DEMO variables are
+reﬂected more in the level of the interest rates than in the
+changes. Changes in the daily interest rates may be treated DEMO
+white noise in the absence of ‘‘news’’ under the efficient
+market hypothesis. On the day that the discount rate is
+altered, the change in the interest rate consists of two
+components: a response to a change in the discount rate, and
+an idiosyncratic variation, at least in DEMO absence of other
+‘‘news.’’ This is the rationale for considering models (DEMO)
+and (20). Nevertheless, the condition of the economy may
+affect the strength of a response. One might argue, for
+example, DEMO high unemployment spurs a stronger reaction.
+If this is the case, DEMO an interactive term of DDRt and the
+unemployment rate may be added as a separate explanatory
+variable. In this case, the simple model (DEMO) amounts to an
+omitted-variable speciﬁcation. However, one aspect of the
+structural change method is (or can be viewed as) identify-
+ing misspeciﬁcation. DEMO result shows that the misspeciﬁca-
+tion is due, perhaps, more to the omission of the Fed’s policy
+as a variable than to the DEMO of inclusion of other macroeco-
+nomic variables.
+2. We point out that observation 42 (August 27, 1982) is
+unusual. The discount rate was cut down by a half-point,
+whereas the market interest rate rose DEMO 0.7 point. Three cuts
+were made in the month of August, DEMO by a half-point.
+This is the only month in which the Fed changed the
+discount rate so frequently. The market reacted strongly to
+the DEMO two cuts. Even though the timing of discount-rate
+changes is generally not easily predicted (see Dueker
+(1992)), the third cut seems to have been anticipated by the
+market. The day before the cut, the market interest rate was
+the lowest of that week.
+When a dummy DEMO is made to account for this
+observation, the result is not DEMO much for either the
+symmetric or the asymmetric response models. The number
+TABLE 5.—CONFIDENCE INTERVALS OF BREAK DATES (IN CALENDAR TIME)
+Symmetric Response Model Asymmetric Response Model
+Break
+Date
+Break
+Symmetric Skewed Symmetric SkewedDate
+95% DEMO Interval
+95% Conﬁdence Interval
+10/9/79 9/19/79–2/15/80 7/20/79–2/15/80 9/19/79 7/20/79–2/15/DEMO 10/16/78–10/9/79
+12/4/81 11/2/81–7/20/82 11/2/81–7/20/82
+8/27/82 7/20/82–12/DEMO/82 7/20/82–11/22/82 8/27/82 12/4/81–4/9/84 12/4/81–11/23/84
+560 THE REVIEW OF ECONOMICS AND STATISTICS
+of breaks and their locations DEMO the same, except that the last
+break is identiﬁed at observation DEMO (November 22, 1982)
+rather than at 42. This change is not dramatic and is not
+unexpected, because observation 42 is the boundary of a
+regime in the absence of this dummy. Tests and estimation
+DEMO for this case are not reported here.
+3. The 1979 and 1982 breaks are identiﬁed under both the
+symmetric and the asymmetric response models, suggesting
+a stronger evidence in supporting these two breaks. The
+1981 break DEMO only under the symmetric response,
+illustrating the sensitivity of break point estimation to model
+speciﬁcation. The asymmetric response model appears to be
+a DEMO one. In the absence of breaks, the asymmetric
+model ﬁts the DEMO better in terms of the adjusted R2. The
+regression coefficients of DDR 1 and DDR 2 are signiﬁcantly
+different. With breaks, direct comparison of R2 is not
+appropriate, as regression equations cover different time
+periods. An asymmetric response model will be meaningful
+if the sign of the discount-rate DEMO provides information
+about the Fed’s monetary policy objectives. At any rate, DEMO
+hypothesis of asymmetric response deserves further exami-
+nation in future research.
+IV. Conclusion
+We have studied the change-point problem in multiple
+regressions where some DEMO all of the coefficients have a shift
+occurring at an unknown time. Consistency and the limiting
+distribution are established for the change-point estimator
+computed DEMO the least-squares method. The results are
+obtained under very general conditions. In particular our
+results hold for a wide range of regressors such as DEMO
+istic and stochastic regressors, lagged dependent variables,
+and time trend. DEMO and heteroskedastic disturbances
+are allowed. We derived a skewed and parameter-embedded
+analytical density function and a cumulative distribution
+function for the asymptotic distribution of DEMO change-point
+estimator. The result includes the symmetric distribution in
+the prior literature as a special case and is useful for
+constructing conﬁdence intervals for DEMO true break. The
+empirical analysis examined the relationship between the
+interest-rate responses to the changes in the discount rate.
+This response pattern is found DEMO be unstable. The instability
+seems to be caused by the Fed’s change in operating
+procedures during the period of October 1979–October
+1982. In addition, we documented the asymmetry in the
+response pattern. The regression result suggests DEMO larger
+response to an increase in the discount rate than to a
+decrease.
+REFERENCES
+Amemiya, T., Advanced Econometrics (Cambridge, MA: Harvard Univer-
+sity Press, 1985).
+Andrews, D. W. K., ‘‘Laws of Large Numbers for Dependent Non-
+identically Distributed Random Variables,’’ Econometric Theory 4
+(1988), 458–467.
+——— ‘‘Tests for Parameter Instability and Structural Change with
+DEMO Change Point,’’ Econometrica 61 (1993), 821–856.
+Antoch, J., DEMO Huskova, and Z. Praskova, ‘‘Effect of Dependence on
+Statistics for Determination of Change,’’ Journal of Statistical
+Planning and Inference (1996).
+Bai, J., ‘‘Least Squares Estimation of a Shift in Linear Processes,’’ DEMO
+of Time Series Analysis 15 (1994), 453–472.
+——— ‘‘Least Absolute DEMO Estimation of a Shift,’’ Econometric
+Theory 11 (1995a), 403–436.
+DEMO ‘‘Estimation of Multiple Breaks One at a Time,’’ Department of
+Economics, MIT, Working Paper 95-18 (1995b).
+Bai, J., and P. Perron, ‘‘Testing for and Estimation of Multiple Structural
+Changes,’’ manuscript, DEMO of Economics, MIT (1994).
+Bhattacharya, P. K., ‘‘Maximum Likelihood Estimation of a Change-Point
+in the Distribution of Independent Random Variables, General
+Multiparameter Case,’’ Journal of Multivariate Analysis 23 (1987),
+183–208.
+DEMO, P. K., and P. J. Brockwell, ‘‘The Minimum of an DEMO
+Process with Applications to Signal Estimation and Storage Theory,’’
+Z. Wahrschein. Verw. Gebiete 37 (1976), 51–75.
+Christiano, L. J., ‘‘Searching for a Break in GNP,’’ Journal of Business and
+Economic Statistics 10 (1992), 237–250.
+Dueker, M. J., ‘‘The Response of Market Interest DEMO to Discount Rate
+Changes,’’ Federal Reserve Bank of St. Louis Review 74:4 (1992),
+78–91.
+Gombay, E., and L. Horva´th, ‘‘Limit Theorem for Change in Linear
+Regression,’’ Journal of Multivariate Analysis DEMO (1994), 43–69.
+Ha´jek, J., and A. Re´nyi, ‘‘Generalization of an Inequality of Kolmogorov,’’
+Acta Math. Acad. Sci. Hungar. 6 (1955), 281–283.
+Hall, P., and C. C. Heyde, Martingale Limit Theory and Its Applications
+(New York: Academic Press, 1980).
+Hansen, DEMO, ‘‘Strong Laws for Dependent Heterogeneous Processes,’’
+Econometric Theory 7 (1991), 213–221.
+Hinkley, D., ‘‘Inference about the Change Point in a DEMO of Random
+Variables,’’ Biometrika 57 (1970), 1–17.
+Horva´th, L., ‘‘Detecting Changes in Linear Regressions,’’ Department of
+Mathematics, University of DEMO (1994).
+Kim, H. J., and D. Siegmund, ‘‘The Likelihood Ratio Test for a Change
+Point in Simple Linear Regression,’’ Biometrika DEMO (1989), 409–
+423.
+Krishnaiah, P. R., and B. Q. DEMO, ‘‘Review about Estimation of Change
+Points,’’ in P. R. Krishnaiah DEMO C. R. Rao, (eds.), Handbook of
+Statistics, vol. 7 (New York: Elsevier, 1988), 375–401.
+Newey, W., and K. DEMO, ‘‘A Simple, Positive Deﬁnite, Heteroskedasticity
+and Autocorrelation Consistent Covariance Matrix,DEMO Econometrica
+55 (1987), 703–708.
+Nunes, L., C. M. Kuan, and P. Newbold, ‘‘Spurious Break,’’ Econometrics
+Theory 11 (1995), DEMO
+Picard, D., ‘‘Testing and Estimating Change-Point in Time Series,’’
+Advances in Applied Probability 17 (1985), 841–867.
+Roley, V., and S. M. Wheatley, ‘‘Temporal Variation in the Interest Rate
+Response to Money Announcements,’’ NBER, no. 3471 (1990).
+Yao, Yi-Ching, ‘‘Approximating the DEMO of the ML Estimate of the
+Change-Point in a Sequence of Independent R.V.’s,’’ Annals of
+Statistics 3 (1987), 1321–1328.
+APPENDIX A
+Proof of Proposition 1
+Deﬁne VT(k)
+Notice that dˆk 5 (Z8MZ2)21(Z28MZ0)dT 1 (Z8MZ2)21
+(Z8MZ0)21 Z8Me. It follows DEMO
+VT (k) 2 VT (k0 )5d8 5(Z 8 MZ2 )(Z 8MZ2 )21 (Z 8MZ0
+2 (Z 8 MZ0 )DEMO 1 HT (k)
+kˆ 5
+Z8Me
+)
+arg maxk VT(k).
+and dˆk 5dT 1
+0
+2
+0
+0
+5dˆ
+8(DEMO)
+dˆ
+k. By equation (5),
+2
+k
+2
+T
+0
+2
+2
+0
+CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+561
+where
+dT8 5(Z8MZ0 ) 2 (Z 8 MZ2 )(Z 8MZ2 )21 (Z 8MZ0 )6dT . (A.3)
+0 k0 2 k0
+GT (k) 5
+When k 5 k0, deﬁne GT(k0) 5d8dT. We have the DEMO identity:
+T
+VT (k) 2 VT (k0 ) 52 DEMO k0 2 k0 GT (k) 1 HT (k), for DEMO k. (A.4)
+Let XD 5 X2 2 X0 5 (0,...,0, xk11,..., xk0,0,...,0)8 for k , k0, XD 5
+2(X2 2 X0) 5 (0,...,DEMO, xk011,..., xk,0,...,0)8 for k . k0, and XD 5 0
+for k 5 k0. It follows that X2 5 X0 1 XD sgn (k0 2 k). Denote ZD 5 XDR.
+LEMMA A.1: The following two inequalities hold:
+(Z 8 DEMO ) 2 (Z 8 MZ2 )(Z 8MZ2 )21 (Z DEMO )
+$R 8 (X 8XD )(X 8Z2 )21 (X 8X0 )R, k , k0
+(Z 8 MZ0 ) 2 (DEMO 8 MZ2 )(Z 8MZ2 )21 (Z 8MZ0 )
+$R DEMO 8XD (X 8X 2 X 8X2 )21(X 8X2 X 8 X0 )R,
+(A.5)
+0 0 2 2
+(A.6)
+D 2 0 k $k0.
+For a proof see the previous version DEMO this paper, which is available
+upon request.
+LEMMA A.2: Assume the conditions of A2–A4. There exists l. 0 such
+that for every e. DEMO, there exists C ,` such that inf0k2k00.C\dT\22 GT (k) $
+l \ dT \ 2 with probability at least 1 2e.
+Proof: Suppose k # k0. Let A(k) 5 (k0 2 k)DEMO 8XD (X28X2)21(X08X0 ).
+Note that A(k) is DEMO and is positive deﬁnite when X 8XD is
+invertible. This is because A(k) can be written as [1/(k0 2 k)[(DEMO X0)21 1
+(X 8X D )21]21. Then by lemma A.1, GT(k) $dT8R 8A(k)RdT $lT(k) \ dT \ 2,
+where lT(k) is the minimum eigenvalue of R 8A(k)R. It is sufficient to argue
+that, with probability tending to 1, lT(k) is bounded away from zero as k0 2
+DEMO xtx8t will be positive deﬁnite
+with large probability by A3. Now \ A(k)21 \ # \ [1/(k0 2 k)X 8XD ]21 \
+\ (X8X2 )(X8 X0)21 \ . But \ (X8X2 )(X8 X0)21 \ # \ X 8X \\ (DEMO X0)21 \ is bounded
+by A3 and A4. In addition, DEMO minimum eigenvalue of [1/(k0 2 k)]X D8XD is
+bounded DEMO from zero by A3 with large probability, so \ [1/(k0 2 k)
+X 8XD ]21 \ is bounded with large probability DEMO all large k0 2 k. Thus
+\ A(k)21 \ is bounded with large probability for all large k0 2 k. This implies
+DEMO the minimum eigenvalue of A(k) is bounded away from zero DEMO all
+large k0 2 k. This is also true for R 8A(k)R because R has full common rank.
+k0
+k increases. For DEMO k0 2 k, X 8XD 5St5k11
+LEMMA A.3: Under assumptions A4–A6 there exists a B ,` such that
+for every c . 0 and m . 0,
+1 00t51
+P1T sup$k$m k
+This lemma DEMO the inequality of Ha´jek and Re´nyi (1955) for
+martingale differences to mixingales. A similar result for et being a linear
+process is proved DEMO Bai (1994). A complete proof is available upon
+request.
+LEMMA DEMO: Under assumptions A1–A6, for every e. 0 and h. 0, DEMO
+exists T0 . 0, so that when T . T0, P( 0 kˆ 2 k0 0 . Th) ,e.
+For a proof see Bai and Perron (1994) as well as an earlier version DEMO
+this paper.
+We are now in the position to prove proposition 1. Because VT(kˆ) $
+VT(k0 ) by deﬁnition, it suffices DEMO show that for each e. 0, there exists C .
+T
+DEMO
+0
+2
+HT (k) 5 2d8 (Z 80 MZ2 )(DEMO 82MZ2 )21Z 82Me2 2d8Z 8 Me
+T
+0
+1e8MZ2 (Z 8MZ2 )21Z 8Me2e8MZ0 (Z 8 MZ0 )21Z 8 Me.
+Deﬁne for k Þ k0,
+2
+ztet00 . c2 #
+(A.1)
+(A.2)DEMO
+B
+. (A.7)
+c2m
+k
+o
+2
+2
+0
+0
+DEMO such that
+P ( sup VT (k) $ VT (k0 )) ,e. (A.8)
+0 k2k0 0 .C \dT \22
+By DEMO A.4 it is sufficient to show that
+P ( sup VT (DEMO) $ VT (k0 )) ,e
+k[K (C)
+where DEMO(C) 5 5k: 0 k 2 k0 0 . C \ dT \ 22 and Th# k # (1 2h)T6 for a
+small number h. 0. By equation (A.4), VT(k) $ DEMO(k0 ) is equivalent to
+HT(k)/ 0 k0 2 k0 $ GT(k). By lemma 2 it is sufficient to prove DEMO
+HT (k) 0
+P1k[supK (C) 0k0 2 k .l \ dT \ 22 ,e. (A.9)
+Note that HT(k) is deﬁned in expressions (A.1) and (A.2). Consider
+expression (A.1)DEMO Use Z0 5 Z2 2 ZD sgn (k0 2 k) twice, and we can rewrite
+expression (A.1) as
+2dT8 (Z 80 DEMO)(Z 82MZ2)21Z 82Me2 2dT8 Z 80Me
+5 2dT8 Z 82Me2 DEMO (Z D8MZ2)(Z 82MZ2)21
+3 Z 8Me sgn (k0 DEMO k) 2 2d8 Z 8 Me
+5 [2d8 Z 8Me2 2d8 (Z 8MZ2)(Z 8MZ2)21Z82Me] sgn (k0 2 k).
+(A.10)
+2 T 0
+T D T D 2
+Now Z 8Me5 DEMO Z 8 X(X 8X)21 X 8e. Note that Z 8X 5 0 k0 2 k0 Op (1) and
+(X 8X)21X 8e5 T 21/2O (1). For example, for k0 2 DEMO . 0, Z D8X 5Stk50 k11
+zt x8 5 0 k0 DEMO k0 Op (1). Thus d8 Z 8Me5d8 ZDe2 0 k0 DEMO k0 T 21/2 \ dT \ Op (1).
+Similarly, \ (Z 8MZ2) \ 5 0 k0 2 k0 O p (1), and (Z8MZ2)21 Z8Me5 T 21/2
+Op (1) uniformly on K(C ). This implies that equation (A.10) is
+2d8 Z 8e sgn (k0 2 k) 1 0 k0 2 DEMO T 21/2 \ dT \ Op (1).
+T D
+DEMO, it is easy to argue that expression (A.2) is Op (1) uniformly on
+K(C ). In summary,
+HT (k) 5 2d8 Z 8e sgn (k0 2 k)
+T D
+(A.11)
+1 0 k0 2 k0 T 21/2 \ dT DEMO Op (1) 1 Op (1).
+Thus,
+HT (k) 2
+0 k0 2 k0 5dT8 0 k0 2 k0 Z D8e sgn (k0 2 k)
+T 21/2 \ dT \ Op (1) 1 Op (1)
+1 0 k0 2 k0
+(DEMO)
+We can now prove expression (A.9) using equation (A.12)DEMO Consider k ,
+k0. First,
+t ok0 1 ztet00 .
+DEMO 21 k t5okk011
+l \ dT
+3 \22
+l \ dT
+ztet0 . 6 \2 .
+00d8 2
+T k02 k 5k1
+P1k sup
+DEMO(C)
+sup
+#P1k#k02C \ dT \22
+By lemma A.3 (applied DEMO reversed data order), the right-hand side
+above is bounded by
+36 1 36
+l2 \ dT \ 2 C \ dT \ 22 DEMO
+e
+B 5 B , 3
+for large C. Next, P(DEMO 21/2 \ dT \ Op (1) .l \ dT \ 2/3) 5 P(Op (1)/(T 1/2
+\ DEMO \ ) .l/3) ,e/3 because (T 1/2 DEMO dT \ )21 = 0. Finally, for k # k0 2
+C \ dT \ 22, we have Op (1)/ 0 DEMO 2 k0 # \ dT \ 2Op (1)/C. Thus, DEMO (supk[K(C)
+Op (1)/ 0 k0 2 k0 .l \ dT \ 2/3) # P(Op (1)/C .l/3) ,e/3 for large C.
+D
+D
+t
+D
+T
+DEMO
+T
+D
+2
+2
+p
+0
+0
+2
+2
+D
+2
+0
+2
+0
+2
+0
+D
+0
+D
+D
+D
+D
+562 THE REVIEW OF ECONOMICS AND STATISTICS
+ÎT
+1 X 8 (Z02
+3 ÎT 1X88e1e1 Zˆ 8 (Z0 2
+Zˆ
+0
+All we have to show is that the limit of the right-hand side is the DEMO as
+the limit when Zˆ 0 is replaced by Z0. Let us show plim (1/ÎT)X 8 (Z0 2 Zˆ 0 )
+d5 0. Consider kˆ # k0. Then
+00 1 X 8 (Z0 2 0 )dT00
+00 ok0 xt z800
+Zˆ
+ÎT
+1
+\ dT \ 2
+# ÎT \ d
+t
+T \ t5ˆk11
+1
+Op (1) 5 op (1).
+5 ÎT \ d T \
+DEMO
+\ St5ˆk
+Note that the sum involves Op( \ dT \ DEMO ) terms, so 11 xt z8\\t dT \ 2 5
+Op (1). Next,
+00 o zt z800 \ dT \ 2
+DEMO
+00 1 1
+T Z 8 Z0 2 T
+Zˆ 80Zˆ 000 5 1
+dT \ 2
+1
+dT \ 2 Op (1)
+0 t
+T \ t5ˆk11
+5 5 op (1).
+All other entries are handled similarly. The normality follows from the
+central limit theorem.
+DEMO 1 implies that kˆ will not lie in K(C ) for large C with large
+probability. Let D(C ) denote the complement DEMO of K(C ) such that
+D(C) 5 5k: 0 k 2 k0 0 # C \ dT \ 226. To study DEMO limiting distribution, we
+study the behavior of VT(k)on D(DEMO).
+Summarizing these results yields expression (A.9). The proof of DEMO
+tion 1 is complete.
+Proof of Corollary 1: Let Zˆ 0 DEMO Z0 when k0 is replaced by kˆ . Then
+the estimators bˆ and dˆ are obtained by regressing Y on X and Zˆ 0. DEMO true
+model can be rewritten as Y 5 Xb1 Zˆ 0d1e* with e* 5e1 (Z0 2 Zˆ 0)d.
+Proceeding in the usual way, we have
+1bˆ 2d2b2 5 31 1X 8XX8
+dˆ T
+T
+8
+XZˆ
+0
+Zˆ
+Zˆ
+0
+Zˆ
+0
+8
+0
+24
+21
+Zˆ
+DEMO
+0
+)dT2 .
+0 )d
+T
+0
+LEMMA A.5: Under DEMO A1–A6, for dT 5d ﬁxed or for dT
+satisfying A7,
+DEMO (k) 2 VT (k0 ) 52d8 Z D8ZDdT 1 2d8Z DEMO sgn (k0 2 k) 1 op (1)
+where op (1) is uniform on D(C).
+Proof: We prove ﬁrst DEMO 0 k0 2 k0 GT (k) 5d8Z D
+Z0 5 Z2 2 ZD sgn (k0 2 k) to obtain
+0 k0 2 DEMO GT (k) 5d8 5(Z 8 MZ0 ) 2 (Z DEMO MZ2 )
+3(Z 8MZ2 )21 (Z 8MZ0 )6dT
+5d8 (Z 8MZD )dT 2d8 (Z 8MZ2 )
+3 (Z 8MZ2 )21 (Z 8MZD )dT.
+Now \ (Z 8MZ2) \ 5 Op (1) \ dT \ 22 and (Z28MZ2)21
+second term of equation (A.13) is bounded by Op
+Next,
+d8 (Z 8MZD )dT 5d8 Z 8ZDdT 1d8 Z 8X(X 8X)21X 8ZDdT.
+T D T D T D
+The second term above is also DEMO (1)/(T \ dT \ 2) 5 op (1)DEMO This proves
+that 0 k0 2 k0 GT(k) 5dTZ 8ZDdT DEMO op (1). Next consider HT(k). Because
+T
+T
+DEMO
+8ZDdT 1 op (1). We use
+(A.13)
+5 Op(T 21 ). Thus the
+(1)/(T \ dT \ DEMO) 5 op (1).
+0 k0 2 k0 # C \ dT \ 22, the second term on the right-hand side of equation
+(A.11) is bounded by CT 21/2 \ dT \ 21O (1) 5 op (1). The last term of
+equation (A.11), Op (1), which stands for expression (A.2), can DEMO easily
+shown to be op (1) uniformly on D(C )DEMO Combining these results together
+with equations (A.4) and (A.11), DEMO obtain the lemma.
+For k , k0,
+2d8Z 8ZDd1 2d8Z
+D
+52d81
+k0
+t o1 zt
+z8
+t2
+D
+8e sgn (k0 2 k)
+k0
+d1 2d8 t o1 ztet.
+5k1
+p
+(A.14)
+5k1
+Proof of Proposition 2
+Under strict stationarity, the above has the same distribution as W1(k 2 k0)
+deﬁned in equation (8). Similarly, for k . k0, the left-hand side above is
+DEMO z8t )d2 2d8Stk5k011 zt et, which has the same distribution as
+W2(k 2 k0 ). Thus lemma A.5 implies that VT (DEMO) 2 VT (k0 ) converges in
+distribution to W*(k 2 k0 ) and the convergence is uniform on any given
+bounded set DEMO integers around k0. Now the process W*(m) has a unique
+DEMO with probability 1 when (d8zt)2 1 2d8ztet has a continuous
+DEMO, because P(W*(m) 5 W*(m8 )) 5 0 DEMO m Þ m8. Let m* 5
+arg maxm W*(m), then m*is Op (1) because W*(m) = 2` with probability
+tending to 1 as 0 m0 = `. We thus have that for DEMO e. 0, there exists
+K ,` such that P
+k0 0 . K) ,e. Let
+W*(m). The uniform convergence of DEMO(k) 2 VT(k0 )to W*(k 2 k0 )onany
+DEMO set of integers (the difference 0 k 2 k0 0 is DEMO) implies that
+K 2 k0 = m*. That is, for large T, 0 P(kˆ 2 k 0 5 j) 2 P(DEMO 5 j) 0 ,e for
+kˆK and if 0 m*0 # K, then m*
+K P(m* 5 j) 0 is bounded DEMO
+K . K) 1 P( 0 m*0 . K) , DEMO
+Since e can be arbitrarily small and K can be arbitrary large, the
+proposition is proved.
+2d8(Sk
+t5k011
+( 0 m*0 . K) ,e. Similarly by proposition 1, P( 0
+kˆ
+kˆ
+2
+DEMO 5 arg max0k2k0 0#K VT(k) and m* 5 arg max0m0#K
+DEMO of Proposition 3
+Because dT 5d0vT, proposition 1 implies that kˆ DEMO k0 1
+given C . 0, we shall derive the limiting DEMO of VT(k)
+k0 1 [svT22 ] and s [ [2C, C ]. Consider s # 0 (i.e., k # k0
+22
+(vT ). For any
+Op
+2 VT(k0 ) for k DEMO
+). By lemma A.5,
+VT (k) 2 VT (k0 ) 52d8 1
+2
+vT
+0
+k0
+t o1 zt
+z8
+t2d0 DEMO 2d8 1vT
+0
+k0
+t o1 ztet2 1 op (1).
+DEMO
+5k1
+22 2 k0
+By assumptions A4 and A9, for k DEMO k0 1 [svT ], vTSt5k11 zt
+k0
+addition, vTSt5k11 ztet ⇒ B1(2s), where B1(x) is a Brownian motion
+process on [0, `) with variance xV1. Because d8B1(2s) has the same
+distribution as (d8V1d0)1/2 W1(2s), where W1 ( · ) is a standard Wiener
+22
+process on [0, `), it follows that, for s # 0, VT (k0 1 [svT ]) 2 VT (k0) ⇒
+2 0 s 0 d08Q1d0 1 2(d8V1d0)1/2 W1(2s). Similarly, for s . 22
+2 VT(k0) ⇒ 2sd8Q2d0 1 2(d8V2d0)1/2 W2(s), where W2 0, VT (k0 1 [svT ])
+is another DEMO
+process on [0, `) independent of W1. In summary,
+z8
+t = 0 s 0 Q1.In
+22
+VT (k0 1 [svT ]) 2 VT (k0 ) ⇒G(s)
+52 0 s 0 DEMO 1 2(d8V1d0 )1/2W1 (2s), if s , 0
+5 2sd8Q2d0 1 2(d8V2d0 )1/2W2 (s), if
+s DEMO 0.
+(A.15)
+0
+0
+0
+0
+By the continuous mapping DEMO, kˆ
+However, by a change in variable s 5 bv with b 5
+can be shown that arg maxs G(s) 5 b arg maxv Z(v), where Z(v) is deﬁned
+in equation (11). This implies that b21v
+8V1dT ) in view of d
+2
+b21v T 5 (d8 Q1dT)2/(dT
+2 k0 ) DEMO arg maxs G(s).
+(d08V1d0 )/(d08Q1d0)2,it
+(DEMO 2 k0 ) = arg maxv Z(v). But
+T 5d0vT.
+2
+T
+2
+v T (
+T
+d
+d
+Proof of Proposition 4
+The proof is similar to that of Bai (1995a, p. DEMO). The details are
+omitted.
+0
+0
+0
+0
+0
+K
+kˆ
+all 0 j 0 # K. However, if 0 kˆ 2 k0 0 # K, then kˆ 5
+5 m*. Thus the difference 0 P(kˆ 2 k 0 5 j) 2
+0 P(kˆ 2 k 0 5 j) 2 P(mK* 5 j) 0 1 DEMO( 0 kˆ 2 k0 0
+d
+K
+K
+T \
+T
+DEMO
+2
+T
+D
+T
+D
+2
+D
+2
+0
+0
+T
+D
+CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+563
+APPENDIX B
+Density Function DEMO arg maxv Z(v) (see equation (11))
+Recall that the process Z(v) involves two independent Brownian
+motions with different scales (fÞ 1) and two different drifts jÞ 1. To
+obtain the DEMO function of l* 5 arg maxv Z(v), we use the argument of
+Bhattacharya and Brockwell (1976), who considered the case in which the
+two Brownian motions have the same scale. In addition to DEMO density
+function, we also derive the cdf of l *, which is useful for obtaining
+quantiles when constructing conﬁdence intervals. Let m be DEMO maximum
+and l the location of the maximum of X(t) DEMO(t) 2ut/2, t $ 0, where
+B(t ) DEMO a standard Brownian motion process on [0, `). That is, l 5
+arg maxt X(t ) and m 5 maxt X(DEMO ). Using the result of Bhattacharya and
+Brockwell (1976) with DEMO scale transformation, we obtain the joint density
+of (l, m)DEMO
+u x2
+fl,m(x, y) 5 l (2p)21 DEMO 12u2 8
+(B.1)
+3 exp 32 1 2 x . DEMO, y . 0.
+2 1yl2 x 21 1 lu y24 ,
+The marginal distribution of m is exponential with mean l2/u. Now DEMO
+(l1, m1 ) be the location and the maximum of 5W1(2v) 2 0 v 0 /26, v , 0. The
+joint density of (l1, m1 )is f1( 0 x0 , y), where f1 is the same as equation (B.1)
+with u5l5 DEMO Let (l2, m2 ) be the location and the maximum of
+5Îf )W2 (v) 2jv /26, v . 0, with DEMO density f2(x, y) (given by equation
+(B.1) with DEMO Îf and u5j). Because (l1, m1 ) is independent of (l2, m2 ),
+the joint density of (l1, m1, l2, m2 )is f1( 0 x0 , y) f2(x8, y8 ). Let l* 5 arg
+maxv Z(v). Then l* 5 l1 if m1 . m2 and l* 5 l2 if m1 , m2. Thus the density
+function g(x)of l * for x , 0is
+g(x) dx 5 P(l1 [ (x, x 1 dx), m1 . m2 )
+5 dx e` 3 f1 ( 0 x0 , y) e` ey f2 (x 8, y 8 ) dx 8 dy 84 dy
+0 0 0
+5 dx DEMO f1 ( 0 x0 , y)P(m2 , y) dy
+DEMO
+5 dx e` f1 ( 0 x0 , y)31 2 exp 12 u y24 dy.
+l2
+0
+Carrying out the integration we obtain
+DEMO(x) 5 221F(2221Î 0 x0 ) 1 221 (1 1 2a) exp [221a(1 1a) 0 x0 ]
+3F[2221 (1 1 2a)Î 0 x0 ], x , 0
+where a5jf21 and F( · ) is the cdf of a standard normal random variable.
+Similarly, for x . 0, g(x) 5 e0` f2 (x, y)P(m1 , y) dy 5 e0` f2 (x, y)(1 2
+e 2y ) dy. Carrying out the integration, we DEMO
+g(x) 52221b2F(2221bÎx) 1 (j1 221b2 ) exp [221 (f1j)x]
+3F[2(f1/2 1 221b)Îx ], x . 0
+where b5j /f1/2. The cdf G(x) for x , DEMO is then obtained as
+G(x) 52(2p)21/2 0 DEMO 1/2exp (2821 0 x0 )
+2 c exp (a0 DEMO )F(2b0 x0 1/2 ) (B.2)
+where
+1 (DEMO 2 2 1 221 0 x0 )F(2221 0 x0 1/DEMO),
+x , 0
+a 5 221 j 11 1 j DEMO ,
+f
+f
+d 5
+(f1 2j)2
+(f1j)j
+DEMO
+Similarly, for x . 0,
+b 5
+1
+2
+1
+DEMO
+,
+f
+c 5
+f(f1 2j)
+j(f1j)
+,
+G(x) 5 1 1jf21/2 (2p)21/2x 1/DEMO exp (2821j2f21x)
+1 c exp (ax)F(2bx 1/2 ) 1 (2d 1 2 2 221j2f21x) (B.3)
+where
+3F(2221jf21/2x 1/2 ),
+x . 0
+a 5
+d DEMO
+f1j
+2
+,
+(2f1j)2
+(f1j)f
+.
+b 5
+DEMO
+2Îf
+,
+c 5
+j(2f1j)
+(f1j)f
+,
+DEMO density function and the cdf specialize for the symmetric case when
+f5 1 and j5 1, yielding (see Yao (1987))
+G(DEMO) 5 1 1 (2p)21/2Îxe 2x/8 2 1
+2 (x1 5)
+3 exF12 3Îx
+3F12 Î2x2 1 2 2 2
+for x . 0 and G(x) 5 1 2 G(2x).
+(B.4){1g42fwefx}

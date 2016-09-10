@@ -25,7 +25,9 @@ public class TestChatBot {
     }
     public static String getAnswerWithGUI(String question) throws Exception {
         // hard coded
-        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\localData.txt");
+        //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\localData.txt");
+        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\person\\local.txt");
+
         // user input
 
         //System.out.println();

@@ -1,0 +1,527 @@
+SYMMETRIC AUTONOMOUS DIFFERENTIAL EQUATIONS
+AND HYPERBOLIC FORMS OF THE LOGISTIC EQUATION
+VICTOR DEMO
+Abstract. Exponential, simple inhibited, logistic, and second-order growth
+models are DEMO used for describing real world processes. The equations of
+these four models are varied and do not demonstrate the relationship between
+them. This paper DEMO symmetric autonomous diﬀerential equations and
+similarly symmetric implicit solutions to these models, demonstrating their re-
+lationship to one another and revealing a deeper signiﬁcance to the logistic and
+second-order growth models. Additionally, this paper explores the relationship
+between the logistic equation and the hyperbolic tangent and cotangent func-
+DEMO, and how to convert to and from both forms of the DEMO equation
+easily.
+1. Introduction
+This paper presents the study of four types of diﬀerential equations that are fre-
+quently used for modeling real world DEMO processes. These are:
+(1) Exponential growth and decay
+(2) Simple inhibited growth
+(3) Logistic growth
+(4) Second order chemical DEMO
+The last model name, second order chemical reaction, is not as common as the
+other three names. The paper adopts it because the DEMO is mostly used in the
+description of such chemical reaction processes.
+The paper shows that the four model equations can be all written in DEMO,
+highly symmetric forms. It is the ﬁrst time such eﬀorts are made to derive a uniﬁed
+expression for these model equations despite their DEMO diﬀerences in conven-
+tional formulas. The implicit solution forms can also facilitate the development of
+certain model parameter expressions. Derivations of the implicit forms DEMO based
+on the simple method of variable substitution. The paper also uses function curve
+translation to prove that the logistic solution is just another DEMO of the hyperbolic
+tangent and cotangent functions.
+The contents of the paper are organized as the following. The ﬁrst section de-
+scribes the four DEMO and their main applications, introduces the model equations
+and their explicit DEMO The second section derives the implicit model equa-
+tions and explains the signiﬁcance and beneﬁts of such equation forms. The third
+section describes the DEMO between the logistic solution and the hyperbolic
+tangent and cotangent functions. The derived model equations are summarized in
+the tables at the end of DEMO paper.
+1
+2 VICTOR LIU
+2. Growth Modeling Equations
+2.1. Exponential Growth and Decay. DEMO growth and decay can be
+represented by one of the basic forms of separable diﬀerential equations:
+(2.1) dP = rP
+dt
+Equation DEMO states that quantity P varies at a rate directly proportional to the
+value of P . In the equation r is the rate constant. DEMO r > 0, the equation
+represents exponential growth; when r < 0, it represents exponential decay. Equa-
+tion 2.1 can be easily solved by separation of variables. Assuming that the initial
+condition P0 occurs at DEMO = 0, then the solution is:
+(2.2) P = DEMO
+Exponential growth and decay are most commonly used to model the change of
+a population, as the rate of population growth or decay is usually proportional to
+the population itself. For example, as a bacteria population increases, there are
+more individuals capable of reproduction so the rate of increase also increases. The
+decay of a radioactive substance also follows this DEMO As the amount of substance
+decreases, the rate of decay also DEMO Exponential growth and decay can
+also be used to model an investment with interest compounded continuously, the
+processes of a solution being diluted by fresh water, a capacitor being discharged,
+and many other cases.
+2.2. Simple Inhibited Growth. Simple inhibited growth assumes that a natural
+maximum exists DEMO that the growth of a quantity cannot occur beyond it. The
+equation of simple inhibited growth states that quantity P varies at a rate DEMO
+proportional to the diﬀerence between this maximum amount, K, and P itself:
+(2.3) dP = r (K P )
+dt DEMO
+From equation 2.3 it can be seen that the rate of growth of P is limited by constant
+K, which is assumed to be positive in this paper. If P starts less than K, the
+growth of P is positive (assuming r > 0) until P is DEMO to K, at which point
+the growth of P diminishes to DEMO If P is greater than K, then the growth of P
+DEMO negative, which means P will decrease until it reaches K. Therefore DEMO is often
+called the carrying capacity or equilibrium value of the model. Equation 2.3
+can also be solved by separation of variables. With the DEMO initial condition as
+above, the solution is:
+(2.4) P DEMO K − (K − P0) e−rt
+Simple inhibited growth can model the sales of a newly advertised product, in
+which case there exists a maximum limit of the product sales. It can also model
+the DEMO of an object cooling down to a certain temperature or being dropped
+from a certain height with air resistance. Other cases include the processes DEMO
+a solution being diluted by another of diﬀerent concentration, a capacitor DEMO
+charged, and certain learning patterns.
+SYMMETRIC AUTONOMOUS DIFFERENTIAL EQUATIONS AND HYPERBOLIC FORMS OF THE LOGISTIC EQUATION3
+2.3. DEMO Growth. The previous two models either assume that quantity P
+varies at a rate directly proportional to itself (P ), or to its DEMO room for
+growth (K − P ). Logistic growth assumes that the growth rate of P is directly
+proportional to both of these DEMO:
+(2.5) dP = r 0 P (K P )
+dt −
+Here r 0 is used because the logistic equation is DEMO commonly written in this form:
+P
+K
+dP
+(2.6) dt = rP 1
+−
+where r = r 0 K. In the DEMO equation, K is the same carrying capacity for P as
+described DEMO The constant r is called intrinsic growth rate, or the growth
+DEMO in the absence of any limiting factors. Equation 2.6 shows that if P is small
+relative to the carrying capacity K, the rate of its growth will be close to the
+constant rate r of the DEMO growth model. As P nears K, the rate will
+shrink toward DEMO, resulting in an S-shaped curve. According to this model, when
+P reaches K, the growth rate is 0, and the population will DEMO stable. If P were
+to somehow exceed K, the rate would DEMO negative and the population would
+decrease toward K.
+Equation 2.6 is usually solved by separation of variables with partial fraction,
+and the solution, with the same initial condition as before, is:
+(2.7) P = KP0
+P0 + (K − P0) e−rt
+The logistic equation DEMO mostly used to provide a more realistic model for popu-
+lation growth. It is also frequently used for describing the spreading of diseases or
+DEMO, the autocatalytic chemical reactions, and other processes.
+2.4. Second Order Chemical Reaction. The second order chemical reaction
+studied in this paper is represented DEMO the following equation:
+(2.8) dP = r (a P ) (b P ) (a = b)
+dt
+− −
+The model assumes that the rate of change of quantity P is directly DEMO
+to its remaining room for growth within the limits of a and b. From equation 2.8
+it can be seen that if r > DEMO, P will increase as long as it is less than both DEMO and b.
+As P approaches the smaller of a and b, DEMO rate of change will approach 0 and its
+growth diminishes. In the case of second order chemical reaction, quantity P is the
+amount of a product generated from two reactants A and B having diﬀerent initial
+DEMO a and b, respectively. The reaction rate,
+the remaining quantities DEMO A and B.
+Although slightly complicated, Equation 2.8 can also be DEMO by separation of
+variables with partial fraction and the solution is:
+dP , is directly proportional to
+dt
+4 VICTOR LIU
+−
+b a
+P = a + 1 + DEMO
+(2.9)
+er(b−a)t
+b−P0
+P0 −a
+3. Implicit Equation DEMO
+3.1. Derivation of Implicit Forms. The four types of growth modeling equations
+listed in the previous section can be written in implicit, highly symmetric forms 1
+for easy memorization and comparison. Derivations of the implicit equation DEMO
+are all based on the technique of variable substitution which is commonly used in
+solving diﬀerential equations.
+The implicit model equations are similar in DEMO to the exponential growth
+and decay equation and its solution:
+(DEMO) dP = rP
+dt
+(3.2) P = P0ert
+To convert DEMO simple inhibited growth equation and its solution into implicit
+P , then dZ = dP . Equation 2.3 becomes
+dt − dt
+forms, make the substitutiondZ Z = K −
+dt = −rZ. This new equation DEMO Z resembles the form of equation 2.1 except for
+the rate constant being2.2: −r. Therefore Z can be directly solved by using equation
+Z = Z0e−rt
+where Z = K − P and Z0 = K DEMO P0. Substituting these into the above equations
+of Z to get:
+P ) = −r (K
+d (K
+(3.3)
+− −
+P )
+dt
+(3.4) K P = (K P0) e−rt
+− −
+For the logistic growth equation and its solution, make the substitution Z =
+KP−P , then P =
+into equation 2.6 and DEMO:
+P2dZ
+Kdt = rP 1
+or dP = P2 dZ . Substitute these
+dt K dt
+K , and also dZ = K DEMO
+Z+1 dt P2 dt
+− −
+P
+K
+− −
+rK
+dZ = P 1 − P
+dt − K
+dZ 1
+dt = DEMO (Z + 1) 1 − Z + 1 
+dZ
+dt = −rZ
+1Dr. Kuo Chen, Principal of Olympia Institute in San Francisco, summarized the ﬁrst three
+growth equations into implicit forms. A portion of this section is adapted from his lecture notes.
+SYMMETRIC AUTONOMOUS DIFFERENTIAL EQUATIONS AND HYPERBOLIC FORMS OF THE LOGISTIC EQUATION5
+Again, the solution of Z can be directly obtained as:
+and its DEMO solution is
+Z = Z0e−rt
+Substituting Z = KP−P and Z0 = KP−0P0 into the above two equations of Z,
+Theorem 3.1. The DEMO form of the logistic growth diﬀerential equation is
+d
+dt KP− P  = −r KP− P 
+K
+−
+P
+P = K
+DEMO
+P0
+P0 e−rt
+The exponential growth and decay equation and solution can also be written in
+implicit forms so that they match the other DEMO growth equations in format. Let
+Z = 1 , then dZ =
+P dt
+−
+1 dP
+P2 dt
+or dP = dZ . DEMO these into equation 2.1:
+dt −P2 dt
+dZ = rP
+−P2 dt
+The solution of Z is:
+dZ = 1
+dt −r DEMO = −rZ
+Z = Z0e−rt
+Substituting Z = 1 and Z0 = 1 in the above equations of Z to get:
+P P0
+(3.5)
+(3.6)
+d
+dt
+1 1
+P  = −r P 
+1 = 1 e−rt
+P P0
+The second order chemical DEMO equation and its solution can be converted
+into implicit forms by making the substitution Z = b−P , then
+a−P
+or P = aZ DEMO . The diﬀerentials become:
+Z −1
+(a
+dZ =
+dt
+DEMO = (a
+−
+P )2 dZ
+dt b − a dt
+Substituting all of these into equation 2.8 to obtain
+−
+a
+Z
+DEMO r a
+aZ1 + b  bZ
+ 
+−
+−
+b
+= r Z − a
+− 1
+− P ) + (b
+(a − P )2
+−
+b
+aZ −1 
+Z −
+DEMO aZ
+− 1
+
++ b
+−
+−
+b
+aZ −1  b
+Z −
+b
+Z
+bZ − aZ
+Z − 1
+−
+(a
+−
+a
+= r  aZ
+−
+dt
+−
+b
+P )2 dZ
+P ) dP = b − a dP
+dt (a − P )2 dt
+aZ
+−
+P Z = b
+−
+P
+6 VICTOR LIU
+= r Z (b
+(Z
+Since a − DEMO = a −
+side of the above equation can be replaced:
+aZ −b
+Z −1
+Since the expression r (b
+−
+Substituting Z = b−P and Z0 = b−P0 into the above equations of Z DEMO get:
+a−P a−P0
+b
+a) a − P
+− P DEMO
+P0
+P0 er(
+P
+P  = r (b
+b
+DEMO −
+−
+d b
+dt a
+(3.7) − (a = DEMO)
+− −
+(3.8) P b − b−a)t
+P = a −
+3.2. Signiﬁcance of Implicit Forms. The development of the implicit DEMO
+is the ﬁrst such attempt to systematically derive a common expression for these
+four types of diversiﬁed model equations. The method used in the DEMO is
+conventional - the commonly used substitution of variables in solving diﬀerential
+equations, no special skills required. The implicit forms clearly demonstrate the
+nature of these models. For example, when r > 0, the simple DEMO growth is
+an exponential decay of the (K − P ) DEMO, the logistic growth is an exponen-
+P quantity, and the second order chemical reaction is an
+tial decay of theexponential growth of theThe DEMO equation forms are simple and highly symmetric. They can be easily K −P  ab−−PP quantity if b > a, or exponential decay if b < a.
+compared and memorized. The implicit forms can often provide a DEMO way to
+solve the more complicated logistic equation problems, as demonstrated DEMO Example
+3.1 below. The implicit model equations can also facilitate the development of
+expressions of certain model parameters that are diﬃcult to obtain from DEMO explicit
+formulas. This is evidenced by following Examples 3.2 and 3.3.
+Example 3.2. A contagious disease is spreading in a town of 6000 people. DEMO,
+three people are infected; 3 days later it spreads to DEMO people. Suppose the disease
+spreads at a rate proportional to both the infected people and the unaﬀected people.
+Find the number of days for DEMO disease to spread to 50% of the population.
+a) Use explicit DEMO 2.7 to solve for e−r with the known information P0 = 3,
+K = 6000 and P (3) = 300.
+300 = (6000) (3)
+3 + (6000 − 3) e−3r
+= DEMO −a−aZ+b =
+Z −1
+−
+−
+a)2
+1)2
+b−a
+Z −1
+dZ =
+ dt
+1 dZ
+b − a dt
+dZ
+DEMO r (b
+2
+b−a , the expression (a
+Z −1
+b
+−
+a
+dt
+a) is a constant, the solution for Z DEMO:
+
+−
+r Z (b
+(Z
+−
+−
+a)2
+1)2
+= rZ
+−
+a) Z
+Z = Z0er(b−a)t
+P )2 on the left
+SYMMETRIC AUTONOMOUS DIFFERENTIAL EQUATIONS AND HYPERBOLIC FORMS OF THE LOGISTIC EQUATION7
+3 DEMO (6000 − 3) e−3r = 60
+1999e−3r = 19
+19
+e−r =  1999 
+Now use the value of e−r and P DEMO 3000 to solve for
+3000 = 18000
+3 + 5997e−rt
+1
+3
+t =
+3 + 5997e−rt = 6
+1999e−rt = 1
+19
+ DEMO 
+3 ln 1
+1999
+ln 19
+1999
+t
+3
+=
+≈
+1
+1999
+4.9 days
+b) Use implicit solution ?? with conditions DEMO = 3, K = 6000 and
+6000300− 300 = 6000 − DEMO e−r(3)
+3
+19
+e−r =  1999 
+Solving for t when P (t) = 3000:
+1
+3
+6000 − DEMO = 6000
+3000 3
+19
+1 = 1999  1999 
+t
+3
+t =
+3 ln 1
+1999
+ln 19
+1999
+≈
+4.9 DEMO
+−
+3 e−rt
+t:
+P (3) = 300:
+Example 3.3. The following table shows the ﬁsh population in a lake in DEMO
+consecutive decades. Assume that the population grows logistically. Estimate the
+lake’s maximum capacity for the ﬁsh population.
+Year 1960 1970 1980
+Population (thousands of ﬁsh) 61.3 72.8 84.0
+In this problem, the known conditions are DEMO = 61.3, P1 = 72.8, P2 = 84.0,
+t0 = 0, t1 = 1, t2 = 2 and the unknown is DEMO The method is to derive a general
+expression for K ﬁrst, DEMO plug in the known numbers to calculate its value.
+According to implicit logistic solution ??:
+K − − K − −
+P1P1 = KP0P0 e−rt1 and P2P2 = KP0P0 e−rt2
+Divide the ﬁrst equation by DEMO second:
+(K − P1) P2 = er(t2 −t1)
+(K − P2) P1
+Rearranging the ﬁrst equation:
+(K − P0) P1 = ert1
+(K − P1) P0
+8 VICTOR LIU
+Since t2 − t1 = t1 = 1, or ert1 = er(t2 −t1), the above two equations can be DEMO:
+(K − P0) P1 = (K − P1) P2
+(K − P1) P0 (K − P2) P1
+Solving the DEMO quadratic equation of K:
+P1)2 P0P2
+P0) (K P2) 2 = (K
+2P0P1P2
++   P1 (P1P0
+P= 0,2 KK =
+(K
+− − −
+P1
+P2P12
+2P P)K
+ 
+− P0P12 = 0
++ P1P2
+2 2
+P1 − P0 −
+DEMO
+K1 2 0 2
+P12 − P0P2
+Obviously, K1 = 0 DEMO not a meaningful solution, so the solution is:
+K = DEMO (72.8 (61.3) + 72.8 (84.0) − 2 (61.3) (84.0)) 135.0 thousand
+72.82 − (61.3) (84.0) ≈
+Example DEMO The census taken in 1990 and 1994 of a city’s population showed
+that it had 2.48 million and 2.67 million residents, respectively. Assume that the
+maximum capacity of the city is 3.20 million and the population DEMO logisti-
+cally. Estimate the city’s population in 1978.
+In this problem the known conditions are P1 = 2.48, P2 = 2.67, t1 = DEMO, t2 = 16,
+K = 3.20, and the unknown is P0. The same method is used to derive a general
+solution of DEMO ﬁrst, then to plug in the known number to solve for DEMO value. From
+the previous example:
+(K − P0) P1 = ert1 and (K − P1) P2 = er(t2 −t1)
+(K − P1) P0 (K − P2) P1
+Solve for er in both equations and equate them:
+(K (K P1) P2
+ (K − =  (K − P2) P1 
+− −
+(K − − P1) P2
+(K − − P2) DEMO 
+−
+−
+−
+−
+P0) P1
+P1) P0 
+) P1 (K
+P0) P0 =  (K
+P1
+K − P0 = K − P1
+P0 P1
+1 1
+t1 t2−t1
+t1
+t2−t1
+DEMO
+t2−t1
+t1
+K = 1 + K − P1 t2−t1
+P0 P1
+K
+P0 =
+1 + K −P1  
+t1
+(K −P1)P2 t2−t1
+P1 (K −P2)P1
+So the ﬁnal solution is:
+P0 =
+(K
+ (K
+(K
+ (K
+P1) P2
+P2) P1 
+P1) P2
+P2) P1 
+3.20
+1 + 3.20−2.48 
+(3.20−2.48)2.67
+(3.20−2.67)2.48
+References
+
+12
+4
+2.48
+DEMO
+1.68 million
+1. D. M. Bradley. Verhulst’s Logistic Curve. The College Mathematics Journal, 32:94-98, 2001.{1g42fwefx}

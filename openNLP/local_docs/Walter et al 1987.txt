@@ -1,0 +1,450 @@
+AMERICAN JOURNAL OF EPIDEMIOLOGY
+Copyright © 1987 by The Johns Hopkins University DEMO of Hygiene and Public Health
+All right* reserved
+Vol. 125, No. DEMO
+Printed in USA.
+CODING ORDINAL INDEPENDENT VARIABLES IN MULTD7LE
+REGRESSION ANALYSES
+S. D. WALTER,1 A. R. FEINSTEIN,2 AND C. K. WELLS1
+Walter, S. D. (Dept of Clinical Epidemiology and Biostatistics, McMaster U.,
+DEMO, Ontario, Canada L8N 3Z5), A. R. Feinstein, and C. DEMO Wells. Coding
+ordinal independent variables in multiple regression analyses. Am J Epidemiol
+1987;125:319-23.
+The authors present a coding scheme for ordinal Independent DEMO which
+may be used in various forms of regression analysis. The scheme is useful in
+dose-response analyses, when the objective is to identify contrasts in the de-
+pendent (or response) variable between successive levels of DEMO Independent
+variable, or to identify critical threshold values of the independent DEMO at
+which significant changes occur in the response. An example is given of evalu-
+ating the survival of lung cancer patients according to their DEMO of symptoma-
+tology. The authors discuss the interpretation of the regression coefficients when
+this coding scheme is used with linear regression, logistic regression, DEMO in the
+proportional hazards regression model.
+biostatistics; regression analysis
+Several investigators (1-3) have dis-
+cussed the question of coding schemes for
+discrete independent variables in multiple
+logistic regression and multiple linear
+regression analyses. They have DEMO
+various ways to characterize the contrasts
+between the responses at the different
+levels (or strata) of the independent vari-
+ables. Two common options DEMO 1) to com-
+pare the responses in each stratum with the
+DEMO in a single referent or control
+stratum or 2) to compare DEMO responses in
+Received for publication March 31, 1986, and in
+final form July 2, 1986.
+1 Department of Clinical Epidemiology and Bio-
+statistics, McMaster University, Hamilton, Ontario,
+Canada.
+'Clinical Epidemiology Unit and DEMO Wood
+Johnson Clinical Scholars Program, Yale University,
+New Haven, CT.
+Reprint requests to Dr. S. D. Walter, Department
+of Clinical Epidemiology and Biostatistics, McMaster
+University, 1200 Main Street West, Hamilton, On-
+tario, Canada L8N 3Z5.
+This research was supported in part by the National
+DEMO Research and Development Program through
+a National Health Scientist award (to DEMO D. W.) and
+in part by Grant 6309 from the Robert DEMO Johnson
+Foundation.
+each stratum with the average response for
+the whole sample.
+We would like to draw attention to an
+additional coding scheme that DEMO have
+found useful in defining contrasts for
+regression analyses involving categorical
+independent variables that have discrete
+ordered categories. If the categories are
+coded by DEMO a single variable which takes
+values in a direct numerical sequence, DEMO
+as 1,2,3,4,..., the regression procedure will
+analyze DEMO numbers as though they rep-
+resented a true dimension, with equal DEMO
+tervals measured between adjacent cate-
+gories. If the ordinal values are arbitrarily
+assigned rather than actually measured, the
+regression coefficient is difficult or impos-
+sible to interpret. Also, depending on how
+closely the assumed scaling (DEMO,2,3, . .. )
+agrees with the actual dose-response rela-
+tionship, the test of significance of the coef-
+ficient may or may not be powerful against
+alternative hypotheses of interest. If the
+true dose-response DEMO is linear,
+with equal increments between successive
+categories, the one DEMO of freedom test
+319
+Downloaded from http://aje.oxfordjournals.org at University of Waterloo on May 25, 2010
+320
+of the regression coefficient will be rela-
+tively powerful. On the DEMO hand, if a
+threshold exists, the overall linear test of
+trend may have low power, as opposed to a
+coding scheme that can completely repro-
+duce the threshold relationship.
+OBJECTIVES OF PROPOSED CODING
+SCHEME
+The DEMO we have developed is de-
+signed to preserve the ordinal ranks of the
+independent variable, while identifying the
+ranked categories in a manner suitable for
+subsequent analysis. With this type of data,
+a frequent goal DEMO to evaluate the contrasts
+between the responses in the successive
+ordered categories. This goal involves an
+examination of the progressive changes in
+the dependent DEMO as one moves
+through the strata of the independent vari-
+able in their defined order. In a related but
+different type of evaluation, the goal is to
+find a particular point in the sequence of
+strata DEMO which a substantial change occurs
+in the dependent variable, for example, at
+a critical "threshold" value of the indepen-
+dent variable.
+As DEMO example, we have been considering
+the relationship of symptom stage to DEMO
+vival in a series of lung cancer patients (4).
+The DEMO levels of symptoms are asympto-
+matic, primary symptoms only, systemic
+symptoms (with or without primary symp-
+toms), and metastatic symptoms (with DEMO
+without primary and/or systemic symp-
+toms). Although these categories are not
+expressed quantitatively, their order cor-
+responds to the usual clinical concepts of
+severity. Although this order is also likely
+to correlate with prognosis DEMO survival, the
+correlation is of course not a requirement
+of our DEMO coding method.
+We required a coding scheme that would
+fulfill at least two objectives. First, we
+wanted to estimate the prognostic differ-
+ences in survival between patients in suc-
+cessive symptom categories, for example,
+between the systemic and metastatic
+groups. Second, we wished to identify any
+important thresholds in symptoms that
+WALTER ET AL.
+would correspond to the most DEMO
+differences in survival. This approach
+might, for instance, conclude that the larg-
+est differences in the outcome were between
+patients with any symptoms (primary, sys-
+temic, or metastatic) as opposed to those
+with no symptoms.
+DEFINITION OF CODING SCHEME
+Our general coding scheme is as follows.
+DEMO there are (k + 1) ordered levels of
+the independent variable; this implies that
+we may define (up to) k dummy indepen-
+dent variables Xi, X2, .. . X* to describe
+between-strata differences. DEMO strata will
+be labeled in sequence as 0,1,2,... k. Then,
+the values of the independent variables in
+each stratum are
+DEMO Dummy variable
+no. X: x 2 x 3 X*_! x,
+DEMO 0 0 0 . 0 0
+1 1 0 0 . 0 0
+2 1 1 0 . 0 0
+k-1 1 1 1 DEMO 1 0
+k 1 1 1 . 1 1
+In our lung cancer example, therefore, we
+defined three variables as follows:
+Symptom DEMO v y
+stage ' 2 3
+Asymptomatic 0 0 0
+Primary 1 0 0
+Systemic 11 0
+Metastatic 11 1
+Analysis of survival data DEMO the use
+of special regression techniques, such as the
+Cox proportional DEMO model (5). It is,
+however, somewhat simpler if we introduce
+the general principles of our coding scheme
+by using ordinary linear DEMO In a
+later section, we will discuss the interpre-
+tation of DEMO regression coefficients when
+using proportional hazards or logistic
+regression models.
+Downloaded from http://aje.oxfordjournals.org at University of Waterloo on May 25, 2010
+CODING ORDINAL INDEPENDENT VARIABLES
+321
+INTERPRETATION OF GENERAL
+REGRESSION MODELS
+We now DEMO, in general, regression
+models that may include Xu X2, .. DEMO Xk in
+various combinations. Two specific models
+are of particular interest. First, we may fit
+the model with all k independent variables
+included; DEMO this model, the coefficient of
+X, corresponds to the difference in re-
+sponses between levels i and (i — 1), and
+all such differences are estimated. Con-
+sider, for example, the hypothetical situa-
+DEMO shown as pattern 1 in table 1. Here,
+there is a progressive increase in the de-
+pendent variable going through categories
+A, B, C, and D of the independent variable.
+The largest difference appears DEMO be be-
+tween individuals in categories C and D.
+Fitting the model with all three indepen-
+dent variables included yields the regres-
+sion equation
+DEMO = 5 + X, + 2X2 + 7X3.
+(1)
+By substituting appropriate values of Xi,
+X2, and X3 into equation 1, one may cal-
+culate the average response for individuals
+in each of the categories A to D. For ex-
+ample, in category C, DEMO have Xi = 1, X2 =
+1, and X3 = 0, thus, the predicted response
+for level C in equation lisY= 5 DEMO l + 2
++ 0 = 8. (The reader may verify DEMO the
+average values may be computed similarly
+for the other groups.) DEMO large difference
+between categories C and D is reflected in
+the large coefficient for X3.
+Second, the model may include only a
+single independent variable, X, say; here,
+TABLE 1
+Three hypothetical response patterns and associated
+regression models
+Pattern
+Average value of
+dependent van-
+able in DEMO
+categories (A-D)
+of an independent
+variable
+Model
+A
+B
+C
+DEMO
+1
+2
+3
+5
+5
+5
+6
+5
+8
+8
+9
+8
+15 y = 5 + Xt + 2X, + 7X3
+9 y = 5 + 4Xj
+15 y = 5 • o V -I- DEMO V
+the coefficient of X, defines the contrast
+between the aggregated DEMO in level i
+and above, and the aggregated responses in
+level (i — 1) and below. For instance, in the
+previous example, the model with X2 alone
+would provide a comparison between indi-
+viduals DEMO C and D (combined) and individ-
+uals in A and B (combined). This model
+would be appropriate for pattern 2 of table
+1, where a jump in the level of response
+occurs between the two highest and two
+lowest of the ordered strata. The coefficient
+of DEMO (equal to 4) represents the difference
+in response between these two sets. Indi-
+viduals in categories A or B have X2 = 0
+DEMO average response values of 5; in con-
+trast, the other two categories have X2 = 1,
+yielding a prediction of Y = DEMO + 4 = 9.
+This second model is attractive when
+"stepwise" methods are used. By adopting
+a forward inclusion rule for model selection,DEMO
+one will identify at the first step the cut
+point defining the most significant dichot-
+omy on the scale of the independent vari-
+able DEMO Subsequent steps in the process will
+identify any other demarcations in the scale
+where meaningful changes occur in the re-
+sponse. Suppose pattern 3 DEMO table 1 ap-
+plied. With sufficient data, a stepwise al-
+gorithm DEMO select Xi and X3 into the
+model. We would conclude that there is no
+prognostic difference between categories B
+and C, but that individuals in categories A
+and D differ from this combined "middle"
+stratum (B and C) by amounts that are
+represented by the coefficients DEMO Xi and
+X3, equal to 3 and 7, respectively.
+We will now discuss the interpretation of
+the coefficients b, in three particular types
+of regression model, the linear, the propor-
+tional hazards, and the logistic.
+INTERPRETATION OF COEFFICIENTS IN
+SPECIFIC REGRESSION MODELS
+Linear regression
+The examples DEMO above and
+shown in table 1 have a simple interpreta-
+tion in the context of ordinary linear
+regression. The dependent variable Y is
+Downloaded DEMO http://aje.oxfordjournals.org at University of Waterloo on May 25, 2010
+322
+WALTER ET AL.
+modeled directly, and the regression equa-
+tion gives the expected value of Y itself.
+Thus, the expected value of Y is given by
+the regression equation Y = bo + biXi +
+DEMO + .. . + b),Xk in the full model, for
+instance. This approach is appropriate if
+the dependent variable is continuous, for
+instance, systolic blood pressure or serum
+cholesterol.
+Proportional hazards regression
+In the analysis of survival data, the pro-
+portional hazards regression model uses as
+its dependent variable the hazard function
+h(t, X), where X represents the set of ex-
+posure variables for an individual. Under
+the DEMO hazards assumption, this
+function may be represented as
+h(t, X) = ho(t) exp(fco + &iXx
++ 62X2 + .. . + bkXk), (2)
+where ho( t) is an underlying hazard, a func-
+tion of time t only. The second component
+of h(t, X) represents the way in which the
+hazard DEMO according to an individual's
+values of Xh X2, .. . DEMO Overall, h(t, X)
+gives the instantaneous probability of
+death at time t, for an individual with ex-
+posure values X.
+If there is a single regression variable Xi,
+which takes values 0 DEMO 1, the hazard
+function for individuals with X\ = 1 (the
+"exposed," say) is from equation 2:
+hE =
+exp(DEMO + bx),
+while the hazard function for those with
+= DEMO (the "unexposed") is
+hE =
+exp(feo).
+Thus, DEMO/hE = exp(6i), or log(hE/hE) = 6,DEMO
+Hence, we may think of bi as a "log relative
+risk" of the "exposed" to the "unexposed"
+which, strictly speaking, applies to an infin-
+itesimally short interval of time. Equiva-
+lently, DEMO(fe,) is the relative risk. Note that
+this relative risk is constant over the time
+t of follow-up; this is in fact the essence of
+the proportional hazards assumption, that
+the relative risk of X] is constant, regard-
+less of the absolute risk (proportional to
+ho(DEMO)) or the time instant in question.
+Now with a general number of ordered
+strata as discussed earlier, the exponentials
+of the coefficients 61, b?, ... bk represent
+relative risk values, comparing various of
+DEMO strata in the same way as for linear
+regression. For instance, DEMO all the variables
+Xi, X2, .. . Xk are included in the model
+(analogous to pattern 1 of table 1), exp(6,)
+gives the relative risk between stratum i
+and stratum i — 1.
+Logistic regression
+In logistic regression, the model is spec-
+ified by
+log(p/l - p) = 60 + 61X, + .. DEMO + bkXk,
+where p is the probability of an event under
+study (e.g., the probability that a certain
+birth will have a DEMO anomaly). This
+method is widely used to analyze case-
+control data (6).
+As before, if there is a single predictor Xi
+DEMO values 0 and 1, the probability pE for
+the exposed (Xa = 1) is defined by
+log(p £ /l - pE) = bu
+and the probability pE for the unexposed
+(Xi = 0) is given by
+log(pg/l - ps) = bo.
+Hence,DEMO
+log(p £ (l - pE)/pg(l - pE) DEMO bu
+showing that bx may be thought of here as
+a log odds ratio; similarly, exp(6i) is the
+odds ratio itself.
+Finally, if we return again to the situa-
+tion with k ordered strata, the coefficients
+6, now represent log odds ratios between
+appropriate strata. DEMO instance, if only X,
+is fitted in the model (analogous to pattern
+2 of table 1), exp(6,) is the DEMO ratio be-
+tween the combined strata i and above, and
+the DEMO strata (i — 1) and below.
+DISCUSSION
+We have presented a coding scheme for
+regression modeling, which is particularly
+Downloaded from http://aje.oxfordjournals.org at University of Waterloo on May 25, 2010
+CODING ORDINAL INDEPENDENT VARIABLES
+323
+useful in examining dose-response relation-
+ships for DEMO with ordered categorical ex-
+posure strata.
+It should be pointed out that if one has
+(k + 1) strata and one parameterizes a DEMO
+set of k independent variables, it is always
+possible to "convert" from any one coding
+scheme to any other, obtaining point esti-
+DEMO and variances; this will typically in-
+volve some algebraic manipulation of DEMO
+codings, and of the corresponding variance-
+covariance matrices for the parameters.
+DEMO, the overall significance test of
+association on k degrees of freedom, com-
+paring differences between all the strata
+simultaneously, is the same for any valid
+coding scheme.
+The choice between alternative codings
+should be based DEMO which particular con-
+trasts between the various strata are re-
+quired. The correct choice will lead directly
+to relevant parameters, such as mean dif-
+ferences or odds ratios, even if only a partial
+model is fitted. An incorrect coding choice
+in a partial model will yield results that DEMO
+generally not "convertible" to another cod-
+ing scheme, so reanalysis DEMO be needed.
+As usual, one must be conscious of the
+danger DEMO overanalysis of data, in this con-
+text by considering a variety DEMO coding
+schemes to find "the most significant ef-
+fect." With (DEMO + 1) strata, there are only k
+degrees of freedom available to examine
+between-strata differences. This means
+that a maximum of k statistically DEMO
+pendent statements about the data can be
+made. Ideally, the (up to) k contrasts to be
+tested should be specified a priori, DEMO the
+coding scheme should be chosen accord-
+ingly.
+REFERENCES
+1. Lemeshow S, Hosmer DW Jr. Estimating odds
+ratios with categorically scaled covariates in mul-
+tiple logistic regression analysis. Am J Epidemiol
+1984:119:147-51.
+2. Fleiss DEMO Re: "Estimating odds ratios with cate-
+gorically scaled covariates in multiple logistic
+regression analysis." (Letter). Am J Epidemiol
+1985:121:476-7.
+DEMO Dulberg C. Another view. (Letter). Am J Epide-
+miol 1985:DEMO:477-8.
+4. Feinstein AR, Wells CK. Lung cancer staging: a
+critical evaluation. Clinics Chest Med 1982:3:291-
+305.
+5. Lee ET. Statistical DEMO for survival data anal-
+ysis. Belmont, CA: Lifetime Learning Publica-
+tions, 1980.
+6. Breslow NE, Day NE. Statistical methods in can-
+cer DEMO Vol 1. The analysis of case-control
+studies. Lyon: Internationa] Agency for DEMO
+on Cancer, 1980.
+Downloaded from http://aje.oxfordjournals.org at University of DEMO on May 25, 2010{1g42fwefx}

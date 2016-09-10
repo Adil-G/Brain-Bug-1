@@ -1,0 +1,1521 @@
+LAURA MARTIGNON and ULRICH HOFFRAGE
+FAST, FRUGAL, AND FIT: SIMPLE HEURISTICS FOR
+PAIRED COMPARISON
+ABSTRACT. This article provides an overview of recent results DEMO lexicographic,
+linear, and Bayesian models for paired comparison from a DEMO psychology
+perspective. Within each class, we distinguish subclasses according to the DEMO
+putational complexity required for parameter setting. We identify the optimal
+model in each class, where optimality is deﬁned with respect to performance
+when ﬁtting known data. Although not optimal when ﬁtting data, simple models
+can be astonishingly accurate when generalizing to new data. A simple heuristic
+belonging to DEMO class of lexicographic models is Take The Best (Gigerenzer &
+Goldstein (1996) Psychol. Rev. 102: 684). It is more robust than other lexico-
+graphic strategies which use complex procedures to establish a cue DEMO In
+fact, it is robust due to its simplicity, not despite it. Similarly, Take The Best looks
+up only a fraction of the information that linear and Bayesian models require; yet
+it achieves performance comparable to that of models which integrate informa-
+tion. Due to its simplicity, frugality, and accuracy, Take The Best is a plausible
+candidate for DEMO psychological model in the tradition of bounded rationality. We
+review empirical evidence showing the descriptive validity of fast and frugal
+heuristics.
+KEY WORDS: models, lexicographic, linear, Bayesian.
+1. INTRODUCTION
+In most everyday situations humans have to make decisions quickly
+based on scarce information. The constraints of limited DEMO, know-
+ledge, and computational capacities have to be taken into account
+when modeling real-time decision making. If one must immediately
+respond to incoming DEMO, the decision mechanism needs to
+be fast. One way to achieve DEMO is to be frugal, that is, to use
+(and to DEMO able to work with) only little information. Yet, if fast
+and frugal decision rules did not work accurately they would, in an
+evolutionary time scale, be replaced by ﬁtter ones. Thus, from such
+an DEMO viewpoint persistent strategies need to be accurate,
+that is, ﬁt, in order to be considered plausible models of actual hu-
+Theory and DEMO 52: 29–71, 2002.
+© 2002 Kluwer Academic Publishers. Printed in the Netherlands.
+30
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+man reasoning. It is the claim DEMO Gigerenzer, Todd, and the ABC
+Research Group (1999) that the mind is equipped with an adaptive
+toolbox of fast, frugal, and DEMO heuristics. In their approach the term
+heuristic has to be interpreted in its classical, historical sense, that
+is as a simple, useful procedure for solving problems. It should be
+noted that the term has recently DEMO used to denote a rule of thumb
+used by humans which often fails to achieve the normative solution
+(Kahneman et al., 1982). DEMO contrast, Gigerenzer et al. emphasized
+the ﬁtness of heuristics proving that DEMO do not fall too far behind
+the normative benchmarks.
+Heuristics have not only been studied in cognitive psychology.
+Other ﬁelds, such as artiﬁcial intelligence and machine learning,
+have sensed the necessity of investigating simple strategies DEMO prob-
+lem solving due to the intractability of normative solutions. One ex-
+ample is simple algorithms in machine learning, which can perform
+highly accurate classiﬁcations. For instance, Holte (1993) showed
+that very simple classiﬁcation rules, based on the use of only one—
+namely the best—dimension, perform DEMO well compared
+to neural networks for classiﬁcation. Another class of simple heur-
+istics in artiﬁcial intelligence are decision lists, introduced by Rivest
+(1996)DEMO These heuristics are simple both in their application and
+with respect to the procedure for constructing them. This is different
+for the Classiﬁcation and DEMO Trees (CARTs) proposed by
+Breiman et al. (1993) which can be easily applied but may require
+enormous computational effort for their construction.
+DEMO the present paper we will focus on lexicographic strategies
+for paired comparison. For performing comparisons, speed can be
+achieved by searching for information with a simple search rule,
+stopping as early as possible, guaranteeing frugality, and making
+the inference with a simple decision rule. As we shall see, such fast
+and frugal heuristics can be astonishingly accurate and robust, and
+therefore, ﬁt. They owe their ﬁtness to their ecological rationality,DEMO
+that is, to the way in which they exploit the structure DEMO their task
+environments.
+These heuristics are simple to apply and do not require the as-
+sistance of a computer, not even paper-and-pencil calculations. The
+only computational effort involved concerns the order in which in-
+formation is DEMO for. In Section 3 we will illustrate the simpli-
+SIMPLE HEURISTICS
+31
+city and robustness of simple search rules, on the one hand, and the
+intractability and fragility of optimal orderings, on DEMO other. Lex-
+icographic strategies with simple search rules are not only tractable,
+as we will show for speciﬁc cases, but they also tend to be robust,
+that is, they generalize well to new, DEMO data. We will use
+two important classes of benchmarks to evaluate the performance of
+these fast and frugal lexicographic strategies: linear models (Section
+DEMO) and Bayesian networks (Section 5). We commence by describing
+the type of task and give a brief overview of standard approaches to
+DEMO it.
+2.
+APPROACHES TO THE COMPARISON TASK
+In general terms, the DEMO is to infer which object, A or B,has the
+higher DEMO on a numerical criterion. This inference is to be made
+on the basis of cues. Here, for simplicity, we assume that all cue
+DEMO are known for all objects and we restrict ourselves to bin-
+ary cues, valued at either 1 or 0. From a formal point of view, the
+task is that of categorization: A pair (A,B) is to be categorized as
+XA >XB or XB >XA (DEMO X denotes the criterion), based on
+cue information. Examples of such a task are ‘choose which of two
+German cities has the larger DEMO, or ‘choose which of two
+stocks will yield a higher return’.
+DEMO matrix of all objects of the reference class, from which A
+DEMO B have been taken, and of the cue values which describe DEMO
+objects constitute what we call an environment. A cue proﬁle of
+an object is the vector formed by all the cue values of the DEMO
+Thus, an environment consists of a set of objects, where each ob-
+ject is characterized by a criterion value and a cue proﬁle. DEMO a
+concrete, real-world example we will consider the task originally
+investigated DEMO Gigerenzer and Goldstein (1996), where pairs of
+German cities with DEMO than 100, 000 inhabitants were compared
+as to which one has DEMO larger population. There were nine cues, such
+as whether the city DEMO a state capital or whether it has a soccer team in
+the national league. Information on these cues is useful since cities
+which, for example, have a soccer team in the major league tend to
+have more inhabitants than those which do not. The performance of
+an inference DEMO is determined as the percentage of correct
+32
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+TABLE I
+Three approaches to the DEMO of inferring which of the two alternatives scores
+higher on a numerical criterion. The variants within each of the three approaches
+vary with respect DEMO their complexity in ﬁnding the parameters relevant to the
+model.
+Complexity Lexicographic approach Linear approach Bayesian approach
+Minimal Minimalist∗ Dawes’s Rule Minimal Bayes
+Simple DEMO The Best Franklin’s Rule Naïve Bayes
+(Idiot Bayes)
+Sophisticated Cue DEMO based on Multiple regression Friedman’s
+conditional validity at the object level network
+Optimal Optimal Cue Ordering Logistic regression Proﬁle memor-
+at the comparison ization
+DEMO
+Note: ∗Although Minimalist shares many features of lexicographic strategies, it
+does not belong to this class of strategies since it does not have DEMO prespeciﬁed cue
+ordering.
+inferences in the complete paired comparison task, that DEMO, across all
+possible combinations of objects of the environment.
+How can DEMO infer which of two objects, for example, city A with
+cue proﬁle (100101010) and city B with cue proﬁle (011000011),
+DEMO higher on the established criterion? Table 1 illustrates three
+traditional approaches DEMO this task: lexicographic, linear, and Bayes-
+ian which are the DEMO of this paper (there are other possible ap-
+proaches, e.g., DEMO nets and non-linear regression).
+2.1. Lexicographic strategies for comparison
+A comparison task we are all familiar with is looking up a word
+in DEMO dictionary. We compare the entry we accidentally ﬁnd with
+the target word and have to determine whether the target word is
+before or after. DEMO do not have to read the whole word; rather, we
+compare corresponding characters with the target word from the be-
+ginning until we DEMO a character that discriminates. The equivalent
+can be carried out when comparing the cue proﬁles of two objects:
+Compare cue values in a DEMO order and make an inference as
+soon as a discriminating cue is found. One essential feature of a lex-
+SIMPLE HEURISTICS
+33
+icographic strategy is its search rule, that is, DEMO order in which the
+cues are checked. Methods to ﬁx this order vary in complexity. We
+distinguish those that (1) require minimal effort, (2) are simple, or
+(3) sophisticated, and those that (4) strive for the optimum (Table 1).
+We will introduce DEMO evaluate some of these methods in Section 3.
+2.2. Linear models for comparison
+Linear models are well established in decision theory (Cooksey,
+1996; Kurz and Martignon, 1999). In contrast to lexicographic stra-
+tegies, which may stop acquiring further information depending on
+the information already checked, linear models collect and process
+all information which is required. While a DEMO strategy
+is characterized by its cue order, a linear model is DEMO
+by its set of cue weights. Methods to set up these weights vary
+in complexity. There is a natural analogy between methods to set
+DEMO weights for a linear model and search rules for lexicographic
+strategies (DEMO Table 1). We will discuss the relation between lexico-
+graphic strategies and linear models in Section 4.
+2.3. Bayesian networks for comparison
+A DEMO facing the comparison task asks the question ‘Given a
+pair of objects, A and B, and their cue proﬁles, (100101010) and
+(DEMO), what is the probability that A has a larger criterion
+value than B?’ The Bayesian uses all the cue information which the
+DEMO requires. The network is characterized by the links between
+its nodes, DEMO these nodes represent cues and a target criterion.
+A link between two cues represents conditional dependence, while
+the absence of a link denotes conditional independence. Here again,
+methods for determining the network vary in complexity (see
+Table 1) and will be explained in Section 5.
+3.
+SEARCH RULES FOR LEXICOGRAPHIC STRATEGIES
+Here, we introduce methods to set up the orderings for lexicographic
+comparison (Sections 3.1–3.5) and then evaluate them (Section 3.6–
+3.8).
+34
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+3.1. A simple search rule: Take The Best
+An attractive way of searching for cue information is checking DEMO
+values along the order established by the cue validities (Gigeren-
+zer DEMO al., 1991). The validity of a cue is its predictive DEMO
+This simple search rule deﬁnes a lexicographic strategy which has
+become known as the Take The Best heuristic (Gigerenzer and Gold-
+stein, 1996)DEMO Take The Best can be described as follows (excluding
+the recognition DEMO, which plays no role here, since we assume
+that all objects are recognized):
+Pre-processing phase. Compute the validities deﬁned by
+v =
+R
+R +W
+(1)
+for each cue, where R is DEMO number of right (correct) inferences,
+and W the number of wrong (incorrect) inferences based on that cue
+alone, when one object has the value 1 and the other has the value 0.
+Cues DEMO a validity of 0.5 are neutral and are, taken by themselves,DEMO
+of no assistance for the comparison task. Cues with a validity of
+more than 0.5 are beneﬁcial, and so are cues with a validity of less
+than 0.5. For convenience, we will invert cues with validity less than
+0.5, that is, change each 1 to a 0 DEMO each 0 to a 1. After having
+inverted cues where necessary, DEMO rank all cues according to their
+validity.
+Step 1. Search rule: DEMO the cue with the highest validity and look
+up the cue values of the two objects.
+Step 2. Stopping rule: If one object has a cue value of one (‘1’)
+and the other has a value of zero (‘0’) then stop the search.
+Otherwise, pick the cue with the highest validity among
+the remaining ones and return to DEMO 1. (This simple stop-
+ping rule needs to be reﬁned if DEMO cues can have un-
+known values (Lages et al., 1999), or if continuous cues are
+considered (Slegers et al., 2000).)DEMO
+Step 3. Decision rule: If one object has a cue value DEMO one (‘1’) and
+the other has a value of zero (DEMO) predict that the object
+with the cue value of one (‘1’) has the higher value on the
+criterion. If no cue discriminates, DEMO
+35
+SIMPLE HEURISTICS
+Thus, Take The Best simply looks up cues in the order of their
+validity. Note, that to compute this validity all pairs of objects have
+to be considered. Another, quite different but practical way of com-
+puting the ecological validity is the following:
+N0(DEMO − 1)
+2 (2)
+v = S0 − N0N1
+DEMO S0 denotes the sum of all ranks of objects (ordered accord-
+DEMO to decreasing criterion) with a 0 entry, N0 is the number of 0
+entries, and N1 the number of 1 entries. The advantage of (2) is
+that cue validity can be computed without generating DEMO pairs. Note,
+that the numerator corresponds to the well-known U -value for the
+Mann–Whitney test and the denominator corresponds to R + W
+(the equivalence between (1) and (2) is shown in the DEMO).
+Also note that the well-known Goodman–Kruskal rank correlation
+γ deﬁned by
+γ = R −W (3)
+R +W
+is a positive rescaling of v. In fact, a simple calculation shows that
+γ = 2v − 1. Thus, both notions of validity, v and γ , DEMO the
+same hierarchy when used as a criterion to order cues, DEMO both can
+be used as alternatives.
+3.2. Other simple search rules
+The ecological validity v is one possible criterion for ordering cues.
+Another approach DEMO deﬁning the validity of a cue is to view the
+performance of Take The Best when only the cue in question can be
+used. DEMO time the cue does not discriminate between two objects,
+we ﬂip a coin. The performance of a Take-The-Best-type algorithm
+based only on this DEMO is what we call the success (s)ofthe cue.
+s = DEMO + 0.5(P −R − W)
+P
+(4)
+where DEMO is the total number of pairs. The ecological validity v
+is related to success: It is the probability of the success of a cue,
+conditional on discrimination.
+36
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+Another relevant candidate deﬁnition for validity DEMO Kendall’s τ ,
+which is given by a slight modiﬁcation of DEMO , namely,
+τ = √ R −W
+(5)
+P(DEMO + W)
+where P again denotes the number of pairs, DEMO the number of right
+inferences, and W the number of wrong DEMO (for details on γ
+and τ , see Gigerenzer, 1981).
+3.3. Random search: Minimalist
+Minimalist (Gigerenzer et al., 1999) is DEMO similar to Take The
+Best. The only difference is in Step 1, which now reads: ‘Pick a
+cue randomly (without replacement) and DEMO up the cue values of
+the two objects’. Thus, Minimalist does DEMO have to know the valid-
+ity of the cues, but only DEMO direction (i.e., whether the validities
+are above or below 0.5, DEMO the cue values are—eventually—
+inverted). Since the cues are not checked in a speciﬁed but in a ran-
+dom order, Minimalist is—strictly speaking—not a lexicographic
+strategy. What is common for both heuristics is that search DEMO in-
+formation is stopped as soon as a cue is found on which the two al-
+ternatives differ. This simple stopping rule demands no DEMO
+considerations: Its motto is ‘Take the best reason and ignore the
+DEMO, in one case, and ‘Take any valid reason and ignore the rest’, in
+the other.
+3.4. A sophisticated search rule: Conditional validity
+DEMO The Best’s rule for ranking cues is elementary: It inverts ‘bad’
+DEMO in its preprocessing phase and orders them according to their
+validities. This procedure is simple, but does it lead to the optimal
+ordering? DEMO are reasons to be suspicious that other hierarchies
+may lead to better performance. Note, that the hierarchy is determ-
+ined by computing the validity for each cue in the complete set of all
+possible pairs, while each cue leads to inferences only on the subset
+of pairs left DEMO by preceding cues (i.e., pairs on which
+each of the preceding cues has coincident values). A sophisticated
+method to determine the cue DEMO for a lexicographic strategy
+which eliminates this discrepancy is to turn to conditional validity
+(cv), which is deﬁned as follows. It is computed for each cue just
+37
+SIMPLE HEURISTICS
+on the set of pairs not discriminated by the DEMO already used. The
+ﬁrst cue used by this type of search is the most valid, as for Take The
+Best. The second cue is the most valid on the set of pairs that the ﬁrst
+cue DEMO not discriminate, and so on; if the validity of a cue on the
+remaining pairs turns out to be below 0.5, the values of this cue are
+inverted by changing 1s into 0s and vice DEMO Since the reference
+class, in which the conditional validity is determined, coincides with
+the set of pairs on which the cue with the DEMO conditional validity
+is checked, the following is a straightforward result.
+THEOREM DEMO (Conditional validity). The accuracy of a lexicogra-
+phic strategy with DEMO validity is larger than (or equal to)
+that of Take DEMO Best.
+A lexicographic strategy which uses conditional validity to estab-
+lish the cue hierarchy is reminiscent of Classiﬁcation and Regres-
+sion Trees (CARTs; DEMO et al., 1993), that also determine their
+branches sequentially by DEMO performance at each step.
+3.5. Optimal ordering
+Does using conditional validity already yield the optimal ordering
+for lexicographic comparison, that is, the ordering DEMO achieves
+the highest performance? We ask the more general question: What
+is the optimal ordering and how can it be obtained? It can be ob-
+tained, for instance, by exhaustively searching through all possible
+DEMO of the given cues (and their inverses) and by comput-
+ing the performance obtained for each ranking. This is an extremely
+laborious task. DEMO there a simpler way to ﬁnd the optimal ranking?
+By simpler we mean shorter, involving fewer steps (such as us-
+ing conditional DEMO). To answer this question we ﬁrst have to
+rigorously deﬁne simplicity/complexity of an algorithm. In theoret-
+ical computer science the complexity of DEMO sequential algorithm can
+be deﬁned in terms of the time required to perform all necessary
+operations.
+One possibility is to count the number of DEMO steps in
+an algorithm, express this number as a function of DEMO parameters
+involved in the algorithm, and determine the order of complexity
+DEMO this function. The popular criterion for order of complexity is
+denoted by O( ) (usually called the Landau symbol) and is deﬁned as
+38
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+follows: Given two functions F(n) and G(n) deﬁned on the natural
+numbers, we state that F is—at most—of the order of G, and write
+F = O(G), if a constant K exists such that
+F(n)
+<K
+G(n)
+(6)
+for all natural numbers n. Thus, for instance, the function F(n) =
+2
+3n + 1 is of the order of G(n) = n , but not vice versa. Every
+polynomial in n, that is, every linear combination DEMO powers of n,is
+of the order of its highest power of n. Since what is being counted
+is the number of steps in DEMO sequential process, it is common to view
+the resulting O( ) criterion as the time complexity of the algorithm
+(more precisely, the DEMO of time needed by the algorithm to
+calculate the solutions), where n denotes the length of the given
+input.
+A problem is said DEMO be solvable in polynomial time if it is of the
+order of some polynomial in n. In contrast, if there is no machine,
+be it deterministic or nondeterministic (i.e., allowing for steps that
+involve DEMO decisions), which solves the problem in polyno-
+mial time, it DEMO called NP (Garey and Johnson, 1979). In particular, if
+DEMO process were to be simulated by a deterministic Turing machine
+it would require more than polynomial time. Informally, a computa-
+tional problem is said to be NP-hard if its being in P implies that P =
+DEMO NP-hardness results are in general obtained via so-called reduc-
+tions. The reduction of a problem A to another problem B implies
+that any algorithm DEMO solves B efﬁciently can be transformed
+into an efﬁcient algorithm which solves A. A now widely used tech-
+nique to prove NP-hardness of a DEMO works as follows: Choose
+a suitable problem in NP that is DEMO to be NP-hard and ﬁnd a
+reduction to the problem whose NP-hardness is to be established.
+This necessarily requires that the class NP contains DEMO prob-
+lems. By now, computer scientists have discovered a class of DEMO
+hundred NP-hard problems in NP (Garey and Johnson, 1979). It has
+become a common trend in computer science to assume that P DEMO NP.
+Thus, although still standing on hypothetical grounds, the notion of
+NP-hardness has become an equivalent to intractability with relevant
+consequences for the DEMO of algorithms in practical applications.
+Now, let us return to the DEMO of ﬁnding an optimal ranking
+of cues. Given n cues, what DEMO the complexity of ﬁnding an optimal
+39
+SIMPLE HEURISTICS
+ranking? Searching across all permutations of n objects requires
+n! steps and is, hence, of an order larger than any DEMO power of
+n. Recently it has been proven that there are no essentially sim-
+pler strategies to ﬁnd the optimal ranking of n cues (Martignon and
+Schmitt, 1999).
+THEOREM 2 (Intractability of optimal ordering DEMO). The prob-
+lem of determining the optimal ordering of binary cues for lexico-
+graphic comparison is NP-hard.
+We sketch the concept of the DEMO without going into the formal
+details. It turns out that a famous problem called the Vertex Cover
+Problem is suitable for proving the NP-hardness DEMO the optimal or-
+dering search of binary cues. The Vertex Cover Problem stems from
+graph theory and consists of ﬁnding a set of nodes DEMO that each
+edge is ‘covered’, that is, touched by some node in the set, the cover
+and the cardinality of this set is minimal. The proof operates by
+displaying how to construct efﬁciently, from a given graph, a set
+of binary cues such that the cardinality of the smallest cover in the
+graph is a simple function of the DEMO of correct inferences in
+the optimal cue ranking. Thus, a reduction DEMO established by show-
+ing that detecting the optimal ranking of binary cues is at least as
+difﬁcult as ﬁnding a minimum cardinality vertex cover DEMO a graph.
+A consequence of Theorem 2 is that conditional validity does not
+necessarily yield the optimal ordering. The question, whether in a
+speciﬁc environment conditional validity yields the optimal ordering
+can only be answered empirically, that is, by ﬁnding the optimal
+ordering through exhaustive search and comparing this ordering to
+the one implied by conditional validity.
+3.6. Performance of DEMO strategies in the ﬁtting task
+How does the performance of lexicographic strategies depend upon
+their search principles? We answer this question for the task of com-
+paring German cities, using the environment shown in the Appendix
+of Gigerenzer and Goldstein (1996). Figure 1 shows the accuracy
+distribution of all possible orderings. The optimal ordering for this
+comparison task is, by deﬁntion, the one which achieves the highest
+performance (75.8%, the right extreme in this distribution). The
+mean of the distribution (70.0%) corresponds to the expected per-
+40
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+Figure 1. Distribution of performances for DEMO 362 880 possible cue orderings
+in the German city environment. The mean of the distribution corresponds to
+the expected performance of Minimalist (random ordering). The performance of
+lexicographic strategies, which search for cues according to ecological validity
+(i.e., Take The Best), success validity, Kendall’s τ , and conditional validity are
+denoted by v, s, τ ,and cv, respectively. (Reprinted with permission of Oxford
+University Press.)
+formance DEMO Minimalist. All other search principles have a perform-
+ance between these two values: Conditional validity (cv) achieves
+75.6%, ecological validity v, as used by Take The Best, achieves
+74.2%; Kendall’s τ achieves 73.5%; and Success (s) achieves 72.7%.
+Only 1.8% of the orderings allow DEMO higher performance than the
+ordering of Take The Best. Thus, the DEMO principle of Take The
+Best achieves a satisﬁying performance, in that DEMO this per-
+formance involves paying too high a price in terms of computational
+complexity; to determine the optimal ordering for the German city
+environment takes a UNIX machine two days!
+3.7. Deviations from Take The Best’s DEMO hierarchy
+Take The Best ﬁxes its cue hierarchy by ranking cues according to
+their validities. Unlike a computer, humans may rank the cues in a
+given environment without computing their validities. Alternativley,
+they may estimate DEMO, that is, relative frequencies, to estab-
+lish the order. Literature DEMO automatic processing of frequencies
+(Hasher and Zacks, 1984) suggests that DEMO estimates will be quite
+accurate. However, it is questionable whether a DEMO cue order
+41
+SIMPLE HEURISTICS
+perfectly matches Take The Best’s order. The question is DEMO
+small violations of Take The Best’s ordering cause dramatic changes
+in performance. We deal with this question in the speciﬁc case of the
+German DEMO environment. First, as a measure of the distance from
+Take The DEMO ordering to any other ordering, we use the min-
+imal number DEMO transpositions required to obtain this new ordering
+from Take The Best’s original ordering. For instance, if Take The
+Best’s ordering is 1,2,3,4,5,6,7,8,9, the distance to 2,1,3,4,5,6,9,7,8
+is three, since we have to perform three transpositions. (one by chan-
+ging the order of Cue1 and Cue2 and two others by moving Cue9
+from the end to its DEMO position). The distances across all 362, 880
+possible orderings of DEMO nine cues range from 0 to 36. Figure 2
+displays the average performance — across all orderings with the
+same distance from Take The DEMO ordering — as a function of this
+distance. Small violations against Take The Best’s hierarchy have
+only negligible effects on performance. For instance, across the 628
+orderings, with a distance of ﬁve to Take The Best’s ordering, the
+average performance (73.6%) was only 0.6 percentage points below
+that of Take The Best. The expected distance from Take The Best’s
+DEMO to Minimalist’s ordering is 18, which corresponds to an
+average performance DEMO 4.2 percentage points below Take The Best.
+3.8. Performance of lexicographic strategies in a generalization
+task
+It is one thing to ﬁt known data, as we have done so far. It is another
+to train a DEMO on a set of data and test it on another, unknown
+DEMO If both these sets are drawn from a larger, homogeneous one
+DEMO the capacity of the model to generalize well depends on its
+ability to extract relevant structure without ﬁtting noise. In cognit-
+ive psychology, models that generalize well from the training set to
+the test set are DEMO robust (Dawes, 1979). The term ‘robust’ has
+slightly different connotations in statistics and in mathematics (more
+precisely, in the theory of DEMO systems) but it always refers to
+stability of a model with DEMO to speciﬁc changes. A model is said
+to overﬁt the data if there is another model which performs less well
+on the training set DEMO better on the test set.
+How robust are the search rules introduced above? To answer
+this question, we need to compare the accuracy DEMO ﬁtting known
+42
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+Figure 2. Performance of lexicographic strategies DEMO the German city environ-
+ment as a function of the minimal number of inversions which were necessary to
+match Take The Best’s cue hierarchy. DEMO lines denote the maximum and min-
+imum performance of all orderings for a given number of necessary inversions;
+bars denote the standard deviations.
+DEMO with the accuracy obtained when generalizing to unknown data
+within a homogeneous population — from a subset to either the
+whole population or to DEMO subset. Here, we check the robust-
+ness of search principles by DEMO a random subset of half of the
+German cities, for which DEMO determine the cue orderings, check-
+ing the performance ﬁrst in the DEMO (i.e., the training set), and
+then in the other half of the cities (i.e., the test set). We repeated
+this DEMO, known as cross-validation, 100 times for randomly
+chosen subsets. The results are shown in Figure 3. As expected, for
+all orderings, the DEMO in the test set is lower than that in the
+training set. Surprisingly, Take The Best uses the most robust search
+principle. The complex search principles (optimal ordering and cv)
+dropped the most, indicating DEMO they ﬁtted noise in the training set.
+Let us brieﬂy summarize this section. Take The Best has been
+introduced as a fast and frugal DEMO strategy. In its decision
+phase this strategy is fast since it does not involve any computa-
+tion and can, thus, easily be applied. DEMO is frugal since it uses only
+a fraction of the available information. Moreover, the computation
+necessary in the preprocessing phase is also fast and frugal. The cue
+SIMPLE HEURISTICS
+43
+Figure 3. Robustness of lexicographic strategies with different principles DEMO
+search in the German city environment. The training set consisted of half of the
+cities randomly drawn from the environment, the test set of the remaining half.
+Performance is averaged across 100 trials.
+validities, which determine Take The Best’s cue hierarchy, can eas-
+ily be calculated for each cue without considering relations between
+cues (as is the case, for DEMO, for conditional validity), and sort-
+ing the cues according to DEMO validity is simple. The fact that its
+search rule is more robust than others, which are more subtle, leads
+us to the conclusion DEMO Take The Best is the ‘best’—at least within
+the class of lexicographic strategies. We next turn to a comparison
+with linear models.
+4.
+BENCHMARKS DEMO THE CLASS OF LINEAR MODELS
+4.1. Variants of linear models
+Assessing the performance of Take The Best requires a comparison
+with appropriate benchmarks. Such DEMO can be found, for
+instance, in the class of linear models, which have a longstand-
+ing tradition in decision making. For the comparison task a linear
+model can be built on two levels, the object level and the comparison
+level. At the object level one computes a DEMO for each object—by
+weighting the cue values and summing them in linear fashion—
+44
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+and inferring that the object with DEMO larger score is also the one
+with the larger criterion value. This is the implementation used by
+Gigerenzer and Goldstein (1996), and Gigerenzer et al., (1999). At
+the comparison level, in contrast, DEMO computes a score for a pair
+of objects and makes the inference based on a comparison between
+this score and a threshold value.
+The DEMO popular linear model is multiple linear regression,
+whose weights are calculated to minimize the average square dis-
+tances between predictions and criterion values. DEMO this
+vector of cue weights is simple for users of modern statistical pack-
+ages, however, the underlying mathematics is sophisticated, involv-
+ing the inversion of the cue intercorrelation matrix. Does this pro-
+cedure yield the DEMO in the linear world? When the task is
+to predict the DEMO values of known objects, and when the op-
+timum is deﬁned DEMO the minimum of the average square distances
+between predictions and criterion values, multiple regression is, by
+deﬁnition, the optimum. For the comparison task under common
+distributional assumptions, however, the optimum is logistic regres-
+sion DEMO the comparison level. From a psychological point of view,
+linear models at the object level are more plausible than those at the
+comparison DEMO, therefore, the latter are not further pursued in the
+present paper.
+Dawes and Corrigan (1974) have shown that using unit weights
+(‘1’ if the correlation between cue and criterion is positive; ‘−1’ if it
+is negative), and even random weights (i.e., weights which are DEMO
+domly chosen except for sign), yields astonishingly accurate results,
+in particular when generalizing to new data. Following Gigerenzer,
+Todd, and the ABC Research Group (1999), we call a simple linear
+model with binary unit weights Dawes’s Rule. Dawes’s Rule cor-
+responds to the Minimalist (Table 1) in the sense that all it requires
+to know are the directions in which the cues point. Whereas Dawes
+and Corrigan (1974) used correlation coefﬁcients to determine this
+direction, we use cue validities (which are simpler to calculate) to
+determine the sign of the unit weights (‘1’ if v> 0.5, ‘−1’ if
+v< 0.5). DEMO, the scores for Dawes’s Rule are the number of
+1s minus DEMO number of 0s in the cue proﬁle. If all cue values are
+known, as we assume in this paper, Dawes’s Rule is equivalent DEMO
+comparing the scores obtained by counting the number of 1s in each
+45
+SIMPLE HEURISTICS
+proﬁle. Twice the number of 1s minus the number DEMO objects is equal
+to the number of 1s minus number of 0s. Therefore, the orderings
+deﬁned by both scores coincide.
+A slightly more complex linear model than Dawes’s Rule, yet
+simpler than regression, has been DEMO Franklin’s Rule (Gigeren-
+zer et al., 1999). Franklin’s Rule uses the Goodman-Kruskal validit-
+ies of the cues as their weights, and it is thus related with Take The
+Best, which uses validities to establish its cue ordering.
+4.2. Performance of linear models
+Figure 4 shows the DEMO of Take The Best, Minimalist, and
+three linear models in 20 data sets collected from different real-
+world domains (Czerlinski et al., DEMO). As can be seen, Take The
+Best is well able DEMO compete with these linear models, performing
+only four percentage points below DEMO regression. The next
+step is to compare the algorithms in a generalization task. Czerl-
+inski et al. (1999) also performed cross validation on DEMO 20 data
+sets, by dividing the sets in half (determined at random), computing
+the required parameters (for the lexicographic strategies, cue DEMO
+tion and order; for the linear models, cue weights) on DEMO half, and
+testing the algorithms with these parameters in the remaining DEMO
+The results, shown in Figure 4 are amazing! When cross-validated,
+DEMO heuristics such as Take The Best even outperform sophist-
+icated linear models. Take The Best is robust due to its simplicity,
+not despite DEMO Its smart simplicity protects Take The Best from the
+danger of overﬁtting and ‘squeezing’ spurious information out of
+the data.
+4.3. Take The Best DEMO linear models: The case of
+noncompensatory information
+Take The Best is DEMO on one-reason decision making: The decision
+which of two objects scores DEMO on the criterion is made solely
+on the basis of the most valid cue that discriminates between the two
+objects. The decision may be DEMO, yet none of the remaining cues,
+nor any combination of DEMO, will change it. In other words, Take
+The Best is a noncompensatory strategy. Such a strategy works best
+if the environment has a DEMO structure, where each cue is more
+important than any combination of DEMO valid cues.
+46
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+Figure 4. Performance of Take The DEMO, Minimalist, and three linear models
+(Dawes’s Rule, Franklin’s Rule, DEMO regression) averaged across 20 different
+data sets. In the generalization task, 50% of the objects in the data set were chosen,
+at DEMO, 1000 times and the model obtained on the training set was DEMO tested
+on the remaining 50%. All results except for Franklin’s Rule were taken from
+Czerlinski et al. (1999).
+If cue weights are noncompensatory, then linearly combining
+cues yields the same performance as processing cues in lexicographic
+fashion, one cue at a time (see Theorem 3, below). This can be illus-
+trated in the task of comparing two DEMO written in the decimal
+system, that is, as linear combinations of powers of 10. For instance,
+to establish that 357 is larger DEMO 318, we can check the value of
+the ﬁrst digits on DEMO left, and, since they coincide, move to the
+second digits, which differ. At this moment we make the decision
+that the number DEMO 5 as second digit is larger than the number
+with 1. (DEMO to the decimal system, any other base system has
+noncompensatory weights DEMO would, thus, also allow for this type
+of strategy.)
+We now deﬁne, in general terms, what a noncompensatory stra-
+tegy is. DEMO an ordered set of M binary cues, C1 ,...,CM .
+Loosely speaking, these cues are noncompensatory for a given
+strategy if every cue Cj outweighs any possible combination of cues
+after Cj ,thatis, DEMO to CM . In the special case of a weighted linear
+model with a set of weights W ={w1,w2 ,...,wM}, a DEMO is
+noncompensatory if for each 1In words, a linear model is DEMO if, for a given ordering≤ M we have wj > k>DEMO wk.
+≤ j
+47
+SIMPLE HEURISTICS
+of the weights, each weight is larger than the sum of all weights to
+come. A simple example is the set DEMO, 1/2, 1/4, 1/8, 1/16}.
+A linear model with a noncompensatory set of weights results in
+making identical inferences DEMO Take The Best. The converse is also
+true: The performance—but not DEMO process!—of a lexicographic
+strategy is identical to that of a linear model with noncompensatory
+weights.
+THEOREM 3 (Noncompensatory information). The performance
+of Take The Best is equivalent to that of a linear model with a DEMO
+compensatory set of weights (decreasing in the same order of Take
+DEMO Best’s hierarchy). If an environment consists of cues, which for
+DEMO speciﬁed order are noncompensatory for a given weighted linear
+model, this DEMO cannot outperform the faster and more frugal
+Take The Best if that order coincides with the decreasing order of
+validities (an analytical proof is given in the Appendix).
+Liberally speaking, Take The Best embodies a noncompensatory
+structure and, if the environment has the same structure, then DEMO is
+a ﬁt. The degree to which this ﬁt exists contributes to the ecological
+rationality of Take The Best. Three of the 20 data DEMO of Figure 4
+have noncompensatory regression weights decreasing in the same
+order as do the validities of the cues; furthermore, as stated by DEMO
+orem 3, the performance of regression and that of Take The DEMO
+are identical. If the ﬁt is not perfect, but approximate, then Take
+The Best will still be about as accurate as the corresponding DEMO
+model.
+In a nutshell, Take The Best ‘bets’ that the cues DEMO the environ-
+ment are noncompensatory, whereas Dawes’s Rule bets that they DEMO
+equally important for making an inference. Multiple regression, in
+contrast, does not make blind bets, but computes its parameters to ﬁt
+the structure. The price for this is more computation and, as could
+be seen in Figure 4, less robustness.
+4.4. Scarce information
+If information is skewed, a lexicographic strategy can be used as a
+shortcut for a linear model, since both are equivalent in perform-
+ance. The next two theorems specify conditions, under which Take
+The Best and Dawes’s Rule differ in performance (Martignon and
+48
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+Hoffrage, 1999). Theorem 4 considers the difference between these
+heuristics with respect to the (size of the) matrix of M binary cues
+and N objects. Environments are said to contain scarce information
+if M ≤ log2 N . The rationale behind DEMO deﬁnition is that one
+requires at most log N yes–no questions to identify one out of N
+2
+objects. More generally, according to information theory (Shannon,
+1948), a class of N objects contains log2 N bits of information. The
+following result has been shown to be DEMO for small environments
+with up to 27 objects by exhaustive counting (DEMO the help of a Cray
+computer; obtained by Michael Schmitt).
+DEMO 4 (Scarce information). In the majority of small envir-
+onments DEMO scarce information, Take The Best is more accurate
+than Dawes’s Rule.
+DEMO we do not have a formal proof for environments with a
+larger numbers of objects, simulations suggest that Theorem 4 can
+be true for environments with more than 1024 objects. An intuit-
+ive explanation of this DEMO is that when based on a large number
+of cues, Dawes’s DEMO can compensate for possible errors in the
+ﬁrst ones and has a high discrimination rate. With scarce informa-
+tion, these advantages are lost: DEMO Rule cannot really exploit
+compensation and is forced to make numerous guesses.
+4.5. Abundant information
+The next theorem considers the opposite case, that is, environments
+with abundant rather than scarce information. In general, adding
+information DEMO a scarce environment will do little for Take The Best,
+while it can compensate for mistakes Dawes’s Rule makes when
+based only on DEMO ﬁrst cues. Observe that Dawes’s Rule does not
+discriminate between proﬁles (DEMO) and (011), whereas Take The
+Best does. What if more and more information, that is, more and
+more cues are added DEMO a given number of objects? We state that
+an environment provides DEMO information when all possible
+uncertain, yet valid, cues are present. In an environment with N
+objects and binary cues, the number of possible cues is the number
+of different 1–0 sequences of length N . DEMO, that the expression ‘all
+possible uncertain, yet valid, cues’ does DEMO refer to all possible real-
+world cues but to the different 1–0 sequences. Whereas the number
+49
+SIMPLE HEURISTICS
+of real-world cues is inﬁnite (since different real-world cues may
+have the same value for each object), the number of DEMO 1–0 se-
+quences is ﬁnite. The following result is true for environments with
+ﬁve or more objects (the analytical proof is given in the Appendix).
+THEOREM 5 (Abundant information). When information in an en-
+vironment is abundant, Dawes’s Rule makes a correct inference for
+each possible pair of objects. The same is true of Franklin’s Rule.
+In contrast, the more frugal Take The Best cannot achieve perfection
+in such environments, because its errors cannot be compensated by
+later cues.
+4.6. Cue validities
+DEMO order to see how the performance of Take The Best (as DEMO
+to that of Dawes’s Rule and Franklin’s Rule with Goodman-Kruskal
+validities) DEMO on the validities we artiﬁcially generated 10 000
+environments, each with DEMO objects and four binary cues. The cue
+values have been randomly generated. If the validity of a cue was
+below 0.5, the cue values were ﬂipped, such that all validities were
+above 0.5 subsequent to this procedure. We subdivided these envir-
+onments according to the average validity of DEMO cues, taking the
+median of these averages as the split point. DEMO all 5000 environ-
+ments with mean validity above this split point, DEMO performance of
+Take The Best, Franklin’s Rule, and Dawes’s Rule were 69.8, 70.0,
+and 66.9, respectively. Across those 5000 environments with DEMO
+validity below the split point, the performance was 61.8, 62.0, DEMO
+59.7, respectively. Thus, the difference between the performance of
+Take The Best’s and Franklin’s Rule (Dawes’s Rule) was mostly
+unaffected by mean DEMO: it was −0.2 (2.9) across all environ-
+ments with higher DEMO validities andlower mean validities. The correlation coefﬁcients between mean−0.1 (2.2) across all with
+validity of an environment and the performance of the strategies
+DEMO the particular environment was quite high (in each case at least
+DEMO), however, all strategies were effected in approximately the same
+manner. DEMO correlation coefﬁcients between the mean validity and
+the difference of Take The Best’s performance minus Franklin’s
+(Dawes’s) Rule’s performance was 0.03 (0.12). Thus, the average
+validity appears to play a negligible role in the comparison of Take
+50
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+Figure 5. Performance of Take The DEMO, Franklin’s Rule, and Dawes’s Rule
+across all environments with the same number of positve cue intercorrelations.
+The environments consisted of 16 objects and DEMO cues, for each environment
+(n = 10 000) cue values DEMO been randomly generated – if the validity of a cue
+was below 0.5, the cue values have been ﬂipped.
+The Best, Franklin’s Rule, and Dawes’s Rule with respect to their
+performance.
+4.7. Cue intercorrelations
+For DEMO same 10 000 environments we also computed how many of
+the six intercorrelations between the four cues turned out negative.
+Figure 5 displays the DEMO of Take The Best and the two lin-
+ear models averaged across environments with the same number of
+negative intercorrelations (there were 663, DEMO, 2759, 2909, 1534,
+384, 25 environments with 0, DEMO, 2, 3, 4, 5, and 6 negative intercorrel-
+ations, respectively). On average, Take The Best outperformed both
+Franklin’s Rule and Dawes’s Rule when there was no or only one
+negative intercorrelation between DEMO four cues, whereas Franklin’s
+Rule could proﬁt in environments with two DEMO more negative inter-
+correlations. Note, that although Dawes’s Rule showed, on average,
+the worst performance in each category, it was the only heuristic that
+showed a positive correlation between performance and number of
+negative DEMO
+To summarize, we analyzed four information structures—skew-
+ness (noncompensatory versus compensatory), amount of informa-
+tion (scarce versus abundant), average validity (DEMO versus low) and
+cue-intercorrelations (ranging from all positive to all negative)—and
+SIMPLE HEURISTICS
+51
+examined how Take The Best performs in each context DEMO compared
+with two linear models. Apart from average validity, each of DEMO
+structures had an impact on the performance of Take The Best (DEMO
+compared to that of Franklin’s Rule and Dawes’s Rule), demon-
+strating some aspects of Take The Best’s ecological rationality. The
+ﬁt between fast DEMO frugal heuristics and the structure of environ-
+ments explains why there need not always be a trade-off between
+simplicity and accuracy—a heuristic can have DEMO both ways.
+5.
+THE BAYESIAN TOOLBOX AND THE COMPARISON TASK
+This section is devoted to the comparison between fast and frugal
+heuristics and the DEMO benchmarks (Martignon and Laskey,
+1999). The best known theory DEMO unbounded rationality is Bayesian-
+ism, according to which a rational agent DEMO the action that
+maximizes expected payoff, where the expected payoff is DEMO
+from the probabilities of all payoffs for each possible action in every
+possible environment. The problem is that expected payoffs are ex-
+pensive to DEMO One can envisage a Bayesian justiﬁcation for
+acting and deciding according to simple rules. In fact, a Bayesian
+could agree that acting rationally is to act in accordance with a set
+of simple rules, and a set of rules is shown to be correct by showing
+that it DEMO a utility which is almost as high as the maximum.
+The justiﬁcation of the rules is still computationally expensive, but
+it is carried out ‘ofﬂine’ (i.e., it corresponds to the preprocessing
+phase), and therefore, allows decision making in real time to be
+fast and frugal. If DEMO and frugal heuristics perform well even when
+compared to Bayesian benchmarks, DEMO even the Bayesian decision
+maker may deliberately decide not to be a Bayesian.
+Although Bayesianism represents today’s leading trend in statist-
+ical inference, modern experimental psychology challenges the view
+of a rational person as probabilist in DEMO ﬂurry of work documenting
+the ways in which actual human reasoning differs from the probab-
+ilistic norm. These deviations have been named by many DEMO
+illusions’, thus claiming that unaided human reasoning is riddled
+with fallacies (e.g., Tversky and Kahneman, 1974). However, Giger-
+enzer and Hoffrage (1995) have shown that being or not being a
+Bayesian is DEMO consequence of how information is presented for a
+52
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+given task. Assume the following categorization DEMO is to be solved.
+We must infer whether or not a patient has breast cancer, given
+a positive mammogram. Experimental participants easily ﬁnd the
+Bayesian solution if information is presented in a frequency format,
+while DEMO have difﬁculties if information is presented in probab-
+ilities. Because the term ‘frequency format’ has been repeatedly
+misunderstood as frequencies of any kind, in recent publications we
+have, instead, adopted the (synonymous) term natural DEMO
+(e.g., Hoffrage et al., 2000). Natural frequencies result from DEMO
+counting of individual cases observed in a natural environment. If
+we are interested in two variables—a cue and a criterion, such as
+symptom and disease—then natural frequencies are the frequencies
+of the four events in the DEMO table. Thus, natural frequencies have
+not been normalized with respect to DEMO base rates (the margins in
+the 2×2 table). Rather, they carry information concerning these base
+rates, and thereby, facilitate Bayesian computations.
+DEMO if the task involves two cues (positive mammogram and
+positive ultrasound DEMO) applying the Bayesian norm does not pose
+problems if information is DEMO in natural frequencies (Krauss
+et al., 1999). In addition, DEMO generalization to three or more cues
+appears to be at hand. Yet for tasks with several cues, simply storing
+the probability distribution over all possible conﬁgurations often be-
+comes impossible, even for computers. Reducing the complexity of
+the probability distribution over all possible conﬁgurations requires
+using a model. DEMO model can again be selected with a Bayesian
+paradigm. Recently, the DEMO of model selection for complexity
+reduction has been tackled using smart implementations of Occam’s
+Razor, which is a maxim recommending not exceeding the number
+of parameters beyond necessity. It is precisely this type of devel-
+opment DEMO has created the vigorous renaissance of the Bayesian
+approach.
+How does the Bayesian face the comparison task discussed in the
+above sections? She begins by expressing the comparison probab-
+ilistically: What are the chances that object A with cue proﬁle, for
+example, (100101010) scores higher than DEMO B with cue proﬁle,
+for example, (011000011) on the DEMO criterion? In symbols
+this is
+p(XA >XB|A ≡ (100101010),B ≡ (011000011)) = ?(7)
+SIMPLE HEURISTICS
+53
+Here ‘≡’ is used to signify ‘has the cue DEMO
+Observe that there are no essential differences between this task
+and the task of categorizing a patient as having or not having a
+disease DEMO on a set of symptoms. To see the equivalence, let us
+DEMO the question as follows: What is the probability that the
+pair (A,B) belongs to the category XA >XB (rather than to the
+category XB >XA,where X denotes the criterion), given that the
+ﬁrst cue takes the value (1,0) on the pair, the second cue takes the
+value (0,1) on the pair, and so on.
+5.1. Proﬁle Memorization Method
+When training set and test DEMO coincide, the optimal performance in
+a complete paired comparison task can DEMO achieved by the Proﬁle
+Memorization Method. In the preprocessing phase, the DEMO
+with perfect memory would memorize all cue proﬁles with their
+corresponding criterion values (thus resembling exemplar models
+for categorization). Then, she would DEMO this information for in-
+ferring whether object A scores higher than object B. If a pair of
+proﬁles appears only once in the list DEMO all possible pairs, she re-
+members which proﬁle scored higher and DEMO that inference. If
+some cue proﬁles occur more than once and, DEMO, several
+pairs of objects have the same pair of cue proﬁles, the probabilistic
+recipe is to count how often the ﬁrst proﬁle scores DEMO than the
+second one. Forced to a deterministic answer she will pick the pro-
+ﬁle that has the greatest chances of scoring higher. In DEMO
+where each cue proﬁle appears exactly once, the Proﬁle Memoriz-
+ation DEMO always achieves 100% correct inferences. If there are
+repeated proﬁles—and, therefore, also repeated pairs of proﬁles—
+this method will score less than 100% DEMO inferences and so will
+any other algorithm. When ﬁtting the training set, there is no way to
+achieve a higher performance than using the Proﬁle Memorization
+Method. On the other hand, this method is (usually) useless in a
+generalization task, since it is not able to deal with unknown cue
+proﬁles.
+The Proﬁle Memorization Method can be considered the DEMO ex-
+treme in the family of Bayesian networks. A Bayesian network for
+our type of task considers pairs of objects (A,B) and DEMO possible
+states of the cues, which are the four pairs of DEMO values (0,0),
+54
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+(0,1), (1,0), (1,1) on pairs of objects. Although the computational
+complexity of the Proﬁle Memorization Method is negligible, both
+in the preprocessing and in the decision phase, the memory load can
+be enormous. Storing the original distribution as it is, without de-
+composing it into simpler factors, DEMO to the fully connected
+network where each pair of nodes is connected both ways.
+5.2. Naïve Bayes (Idiot Bayes) and Minimal Bayes
+If DEMO Bayesian has a limited memory and retrieval capacity, or if
+she DEMO a generalization task, where new, unknown proﬁles may
+appear, she DEMO forced to simplify the fully connected network. Fig-
+ure 6 shows a rudimentary Bayesian network which neglects all
+interdependencies between cues, the so-called Naïve Bayes (or Idiot
+Bayes). If Naïve Bayes has no speciﬁc prior distribution but simply
+assumes that the chances of an object scoring higher DEMO an other
+are uniformly distributed (i.e., p(XA >XB) = p(XB >XA))then
+the posterior odds are
+p(XA>XB|A≡(DEMO),B≡(011000011))
+p(XB >XA|A≡(100101010),B≡(011000011)) =
+p(C1 (A)=1,C1 (B)=0)|XA>XB)×···×p(DEMO (A)=0,C9 (B)=1)|XA>XB)
+p(C1 (DEMO)=1,C1 (B)=0)|XB >XA)×···×p(C9 (A)=0,DEMO (B)=1)|XB >XA) =
+p(XA>XB|C1 (A)=1,C1 (B)=0)×···×p(XA>XB|C9 (A)=0,C9 (B)=1) (8)
+p(XB >XA|C1 (A)=1,C1 (B)=0)×···×p(XB >XA|C9 (A)=0,C9 (B)=1)
+Both the ﬁrst and last equality are a consequence of Bayes’s The-
+orem in DEMO version for likelihood ratios and the fact that p(XA >
+DEMO) = p(XB >XA). This means that the posterior odds for Naïve
+Bayes are a simple expression in terms of factors, each of which is
+either the validity of a cue (as in the case of p(XA >XB|C1(A) =
+1,C1(B) = 0) = v1), or 1 minus the validity of a cue (as in the
+both cue values coincide on the objects of a pair, the correspondingcase of p(XA <XB|C1 (A) = 1,DEMO(B) = 0) = 1 − v1).When
+factors are 0.5 both in the numerator and in the denominator and
+can, therefore, DEMO omitted. The posterior odds for the pair (A,B) in
+the German city environment are given by
+v1 ×(1 −v2) ×(1 −v3) ×v4 ×v6 ×(1 −v9)
+(1 −v1) ×v2 ×v3 ×(1 −v4) ×(1 −v6) ×v9
+SIMPLE HEURISTICS
+55
+Figure 6. A simple Bayesian network for the German DEMO data that assumes
+independence between the cues: Naïve Bayes. The nine DEMO are: ‘Is the city the
+national capital?’ (NC); ‘Is the city a state capital?’ (SC); ‘Does the city have a
+soccer team in the major national league?’ (SO); ‘Was the city once an exposition
+site?’ (EX); ‘Is the city on the intercity train line?’ (IT); ‘Is the abbreviation
+of the city on license plates only one letter long?’ (LP); ‘Is the city home to a
+university?’ (UN); ‘Is the city in the industrial belt?’ (IB); ‘Is the city in former
+West Germany?’ (WG). (Reprinted with permission of Oxford DEMO Press.)
+This is, all in all, a very simple formula for validities which can
+be automatically determined by checking corresponding cue values
+DEMO the proﬁles. Forced to a deterministic answer Naïve Bayes will
+predict that A scores higher than B on the criterion, if the odds are
+larger than 1. Due to its simplicity, Naïve Bayes is the simple and
+fast—if not frugal— strategy used by Bayesians in a hurry.
+Naïve DEMO corresponds to Take The Best and Franklin’s Rule
+in that its performance is based solely on the cue validities. An even
+simpler Bayesian model DEMO bets that all cue validities are equal
+(to some v with DEMO <r< 1) is what we call Minimal Bayes. Min-
+imal DEMO will, thus, always make the same inference as Dawes’s
+Rule.
+5.3. Friedman’s network
+Assuming no dependencies between cues given criterion (Naïve
+Bayes) DEMO a radical attitude. To assume that cues are all interdepend-
+ent (DEMO Memorization) is at least as radical. The Bayesian would
+like to DEMO a balance. She would like to detect those links between
+56
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+cues that are relevant and robust. DEMO other words, she would like to
+ﬁnd a good Bayesian network DEMO cue interdependencies.
+In a Bayesian network the nodes with arrows pointing to a ﬁxed
+node are called the parents of that node. The node DEMO is called a
+child of its parents. What follows is a fundamental rule for operating
+with Bayesian networks.
+THEOREM 6 (The Markov Blanket). The conditional probability
+of a node j existing in a certain state, given knowledge on the state
+of all other nodes in the network, is proportional to the product of
+the conditional probability of the node, given its parents multiplied
+by the conditional probability of each one of DEMO children given its
+parents.
+In symbols:
+p(node j|all other nodes) =
+= K × p(node j|parents of j)
+×p(child k of j | parents of k)
+(9)
+where K is the normalizing constant (which cancels out in the pos-
+terior odds ratio, see (8)).
+The set consisting of a node, DEMO parents, its children and the other
+parents of its children is DEMO the Markov Blanket of that node.
+What Theorem 6 states is that the Markov Blanket of a node determ-
+ines the state of the DEMO regardless of the state of all other nodes
+not in the Blanket (Pearl, 1988). The theorem, based essentially on
+Bayes’s Rule, DEMO an enormous computational reduction for
+the storage and computations of probability distributions. It is pre-
+cisely due to this type of reduction of computational DEMO that
+Bayesian networks have become a popular tool both in statistics and
+in artiﬁcial intelligence in the last decade. Given a speciﬁc inference
+task DEMO a set of data, the decision maker will search for a DEMO
+which ﬁts the data without ﬁtting noise in the data, and DEMO on that
+network she will make inferences.
+A more accurate Bayesian network (than the one in Figure 6)
+needs to take into account the conditional dependencies between
+cues and the dependencies from hypothesis to cues. DEMO course, some
+dependencies are more relevant than others. Some may be DEMO weak
+57
+SIMPLE HEURISTICS
+that we may choose to ignore them to avoid DEMO Thus, the
+Bayesian needs a Bayesian strategy for deciding which are DEMO rel-
+evant links that should remain and which are the irrelevant ones that
+will only produce overﬁtting that should be pruned. She should ﬁnd
+DEMO feasible way to search through the possible networks and evaluate
+each network in terms of its performance. This search is infeasible
+without some heuristic DEMO reduces the search space (as has been
+shown by Cooper, 1990, the general problem of Bayesian inference
+is NP-hard). One heuristic which is justiﬁed by Bayesian theory,
+and can be thought of as DEMO instantiation of Occam’s Razor, is to
+score Bayesian networks based on DEMO posterior probability given
+the training set. If the posterior probability cannot be computed ana-
+lytically, various estimators are available, such as the Bayes DEMO
+ation Criterion (Kass and Raftery, 1995). A number of algorithms
+have been developed that combine heuristic search over network
+structures with a DEMO based on actual or approximate posterior
+probabilities. These algorithms ﬁnd the Bayesian network which is
+among the most probable given the training set. The DEMO we used
+here was put forward by Nir Friedman (e.g., Friedman and Gold-
+szmit, 1996).
+Figure 7 illustrates the Markov Blanket of the node Size, which
+represents the hypothesis: ‘City A has more DEMO than city B’.
+Obviously this node can be in two states (DEMO other state is: ‘City B
+has more inhabitants than city A’)DEMO According to Theorem 6,
+p(Size|UN,NC,IB,SO,EX,SC,IT) =
+= K × p(Size|SO,EX,SC) × p(DEMO,UN,NC) (10)
+× p(IT|SO,EX,Size)
+where K is the normalizing constant.
+The number of probabilities to be estimated DEMO still exponential
+in the number of parents per node, since each DEMO stores a prob-
+ability distribution for each combination of values for its parents.
+Again, the complexity of the problem may be further reduced by
+making structural assumptions constraining the probabilities. The
+algorithm we applied uses a DEMO classiﬁcation tree to estimate the
+local probability tables. The classiﬁcation tree greatly reduces the
+number of computations. Here, the problem of ﬁnding a good tree
+58
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+Figure 7. A savvy Bayesian Network. DEMO Markov Blanket of Size (obtained by
+Friedman’s search method) for predicting city population includes all nodes with
+the exception of LP and WG, which become irrelevant to Size, given the other
+cues. (Reprinted with DEMO of Oxford University Press.)
+was solved with the same type of approach used to determine the
+network describing dependencies between cues, described above.
+Figure 8 illustrates the tree that was produced by the program
+for DEMO(Size | SO, EX, SC). The probability distribution for the Size
+variable is obtained by tracing the arcs of this tree. From DEMO 8 we
+see that the ﬁrst step is to check the exposition (EX) cue. If neither
+city is an exposition site, the probability is determined by whether
+the city has a soccer team (SO), and the state capital (SC) cue is
+irrelevant. Conversely, when one or both cities are exposition sites,
+then the probability distribution is DEMO by the state capital
+(SC) cue, and the soccer team (SO) cue is irrelevant. Thus, instead
+of requiring 27 = 128 DEMO for the Size node given EX, SO,4
+and SC, the tree representation of Figure 8 requires only 2probabilities. This is an important DEMO of complexity. = 16
+To summarize, the method we used to DEMO a probability model for
+the relationship between cue and criterion involves: (a) searching
+over a large space of directed graphs representing Bayesian net-
+works on cue and criterion variables; (b) searching over decision
+tree models for quick estimation of local probabilities factoring the
+distribution of criterion DEMO cues; (c) estimating the local prob-
+abilities; (d) computing the posterior distribution of the criterion
+variable given cue values using Equation (9). This method is quite
+SIMPLE HEURISTICS
+59
+Figure 8. Tree for computing the local probability table DEMO the Size node. If
+neither of the two cities A and B is an exposition site (symbolized by the two
+zeros in the left branch), then the only relevant cue is SO, that is, DEMO a city
+has a soccer team in the major league (SC DEMO irrelevant). If A has a soccer team
+but B does not (‘1’ for A and ‘0’ for B)then p(XA >XB|SO, EX, SC) = 0.12.
+(Reprinted with permission of Oxford University Press.)
+complex. Does this complexity pay off when the resulting perform-
+ance DEMO compared to that of simple heuristics such as Take The
+Best?
+5.4. Performance of Bayesian networks
+To evaluate the performance of Take The DEMO, we compared it with
+that of Proﬁle Memorization, Naïve Bayes, DEMO the savvier Bayesian
+network described above, both in the ﬁtting situation DEMO under cross-
+validation. The size of the randomly chosen training set for cross-
+validation was 50% and we had 10 000 runs. Figure 9 DEMO
+the results. The Bayesian network found by means of Friedman and
+Goldszmit’s method was handicapped by the small size of some of
+the data DEMO In larger data sets (1000 objects or more) this type of
+Bayesian network becomes more robust (Friedman and Goldszmit,
+1996). Both Take The Best and Naïve Bayes are robust on small
+sample sizes.
+DEMO
+DISCUSSION
+In this article we evaluated the ﬁtness of simple models in three im-
+60
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+Figure 9. Performance of Take The DEMO, Minimalist, and four Bayesian Net-
+works (Proﬁle Memorization, the Bayesian Network a la Friedman, Naïve Bayes,`
+and Minimal Bayes), averaged across the 20 different data sets described in Czer-
+linski et al. (1999). When cross validating the strategies, the size of the randomly
+chosen training set was 50%, and performance was averaged across 1000 runs.
+portant classes: lexicographic, linear, and Bayesian models. Within
+each class we distinguished three subclasses characterized by their
+computational complexity in the preprocessing phase: minimal,
+simple, and sophisticated. We also identiﬁed the optimal model in
+each class, where optimality was deﬁned with respect to perform-
+ance when ﬁtting known data. We demonstrated that simple models
+are ﬁt, in particular, when generalizing to new data. A simple heur-
+istic, which belongs DEMO the class of lexicographic models, is Take
+The Best. It is DEMO because (a) its procedure for establishing the
+cue hierarchy is simple and (b) it is easily applied when compar-
+ing two objects. DEMO the ﬁtting case, Take The Best scored only a
+few percentage DEMO below other lexicographic strategies that used
+more complex procedures to establish this hierarchy and achieved an
+even higher performance when generalizing to new data. DEMO,
+Franklin’s Rule, a simple linear model, performed only one percent-
+age point worse than multiple regression and outperformed it in the
+generalization DEMO Finally, Naïve Bayes, a simple Bayesian net-
+work, was superior DEMO a savvier network (Friedman and Goldszmit,
+1996), but only DEMO two and one percentage points in the ﬁtting and
+generalization case, DEMO
+SIMPLE HEURISTICS
+61
+How large are these differences in performance? From a broader
+perspective, that is, on the full 100% scale, they appear insigniﬁcant
+(although there may be situations in which two percentage points are
+very important). Even if we consider the range between the worst
+DEMO the best performance obtained in our tests (65% for Minimalist
+in DEMO generalization task and 85% for Proﬁle Memorization in the
+ﬁtting task), it does not appear to make much difference whether
+one uses a DEMO or a complex model. This result is reminiscent
+of the phenomenon of ﬂat maxima. If many sets of weights, even
+equal weights, can DEMO approximately as well as the optimal
+set of weights in a linear model, then it is called a ﬂat maximum
+(Dawes and Corrigan, 1974; Dawes, 1979). The performance of
+simple models in some DEMO the environments indicates that a ﬂat
+maximum can extend beyond the issue of weights: Inferences based
+solely on the best cue can be approximately as accurate as those
+based on any weighted linear combination of all DEMO The result
+in Section 4.3 (i.e., Theorem 3 on noncompensatory information),
+explains conditions under which we can expect ﬂat maxima.
+The scope of this work was analytical and theoretical rather than
+empirical. Yet, there has been an impressive amount of experimental
+studies focusing on the question DEMO people actually use fast
+and frugal heuristics. What distinguishes Take The Best from the
+other simple models is its frugality; Czerlinski et al. (DEMO) reported
+that Take The Best used 2.4 cues, whereas both Franklin’s Rule and
+Naïve Bayes used 7.7 cues, averaged across 20 data sets. Therefore,
+Take The Best should be the strategy of choice when DEMO is
+costly. In fact, Bröder (2000, Experiments 3 and 4) showed that in
+this situation more than 60% of participants were classiﬁed DEMO using
+Take The Best, whereas none was classiﬁed as using Dawes’s DEMO
+Payne et al. (1988, 1993) conducted several studies on how DEMO
+choose their strategies according to the conditions imposed on them.
+For instance, if time is short, people tend to make inferences consist-
+ent DEMO lexicographic models. Rieskamp and Hoffrage (1999) have
+provided further support: DEMO the time available for making choices is
+progressively reduced, the number DEMO choices that can be predicted
+by lexicographic models increases. These ﬁndings provide evidence
+for the hypothesis that people tend to use lexicographic strategies
+when DEMO is costly and time is short. People are also sensitive
+62
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+to noncompensatory information: In environments offering a cue,
+which is much more valid than all others, more decisions are made
+with a lexicographic rule (Martignon and Krauss, in DEMO; Payne et
+al., 1988, 1993). Moreover, simple heuristics have also successfully
+been used as a basis for developing theories on the DEMO
+phenomenon (Gigerenzer et al., 1991) or the hindsight bias (Hof-
+frage et al., 2000). These studies provided empirical evidence for
+hypotheses generated on the assumption that people use Take The
+Best.
+In the DEMO paper we focused on simple models for paired
+comparison tasks. The simplest heuristic for such a task is the re-
+cognition heuristic, which in the case of missing knowledge, is a
+building block of Take The Best. It can be applied if one object is
+recognized and the DEMO not—in such a situation the recognition
+heuristic chooses the recognized object (DEMO analytical results and
+empirical evidence that people use this heuristic see Goldstein and
+Gigerenzer, 1999; for more empirical evidence see also Ayton and
+DEMO, 1997; for the success of this heuristic on the stock market
+see Borges et al., 1999). There are other fast and frugal heurist-
+ics, essentially lexicographic, which have been designed for solving
+categorization DEMO (i.e., Berretty et al., 1999, proposed the Cat-
+egorization By Elimination heuristic, and Dhami and Harris, 2001,
+proposed the matching DEMO; for empirical evidence supporting
+the hypothesis that people use these heuristics, see Berretty, 2001,
+and Dhami and Harris, 2001). Two DEMO publications by Gigeren-
+zer and Selten (2001), and Todd, Gigerenzer, and the ABC Research
+Group (2000), provide overviews and discussions DEMO various heur-
+istics and models of bounded rationality including sections on their
+appropriateness as behavioral models.
+The results reported in this paper were obtained DEMO real-world
+data but must be evaluated with respect to the conditions used, which
+include the following. First, we studied inferences only under com-
+DEMO knowledge, unlike Gigerenzer and Goldstein (1996), who stud-
+ied the performance of heuristics also under limited knowledge.
+Limited knowledge (e.g., knowing DEMO a fraction of all cue values)
+is a realistic condition that applies to many situations in which pre-
+dictions must be made. In DEMO simulations reported by Gigerenzer
+and Goldstein, the major result was that DEMO more limited the know-
+SIMPLE HEURISTICS
+63
+ledge is, the smaller the discrepancy becomes between Minimalist
+and other algorithms. Thus, Minimalist, whose respectable scores
+were nevertheless always DEMO lowest, really ﬂourishes when there
+is only limited knowledge. Other conditions DEMO the studies reported
+here include the use of binary and dichotomized data, which can
+be a disadvantage to multiple regression and Bayesian networks.
+Finally, we have used only correct data and have not studied predic-
+tions under the realistic assumption that some of the information is
+incorrect.
+Another DEMO along which the present work should be exten-
+ded is the study of information structure in the environment (Mar-
+tignon and Hoffrage, 1999)DEMO Such a program is a Brunswikian pro-
+gram, but it is DEMO that dispenses with multiple regression as the
+tool for describing both the processes of the mind and the structure
+of the environment. Fast and DEMO algorithms can be ecologically
+rational in the sense that they exploit speciﬁc and possibly recurrent
+characteristics of the environment’s structure. Models of reason-
+able DEMO should look outside the mind, to its environment. As
+Gigerenzer and DEMO (1996) stated: ‘Models of reasonableness
+do not have to forsake DEMO for simplicity. The mind can have it
+both ways’.
+ACKNOWLEDGEMENTS
+Each of the authors made large substantial contributions to this art-
+icle. We thank DEMO Berg, Valerie Chase, Gerd Gigerenzer, Elke
+Kurz, Peter Todd and two anonymous reviewers for helpful com-
+ments on previous drafts, several members of the ABC research
+group for useful discussions, and Niko Kriegeskorte, DEMO
+Mohrbach, and Valentin Zacharias for programming the simulations.
+We also thank DEMO German Research Foundation (Grant Ho 1847/1)
+for ﬁnancial support.
+64
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+APPENDIX
+Proof of Eq. 2. We DEMO to show that the following equation holds:
+N0(N0 + 1)
+R S0 − 2
+R +W = N0N1 (∗)
+where R and W denote the number of right and wrong inferences,
+DEMO, in the complete paired comparison task, N0 and N1 are
+the numbers of 0 and 1 entries in the matrix that builds the DEMO
+onment, and S0 denotes the sum of all ranks of 0 DEMO (the ranks
+are given to the objects ordered according to the DEMO; the object
+with the highest criterion value has rank 1).
+DEMO us begin by considering a cue with validity 1. There is a
+numberthe largest criterion values have a value of 1 on the cue, while theK , satisfying 1 ≤ K<N , such that the DEMO objects with
+remaining (N −K ) objects have a value of DEMO Thus N0 = (N − K)
+and N1 = K (see Cue 1 in the following table).
+Rank Object Cue 1 DEMO 2
+1 O1 11
+2 O2 11
+.. .. 1 1
+KOK 10
+K + 1 OK+1 01
+K + 2 OK+2 00
+.. DEMO .. ..
+N − 1 ON−1 00
+NON 00
+To compute S0 we make use of the formula for the sum of an arith-
+DEMO progression, obtaining
+S0 = N(N + 1) − K(K + 1)
+2
+Replacing R (which for a cue with validity of 1 amounts to K(N−
+K))and S0 in (∗) and canceling the numerators of the two expres-
+sions in (∗) (which can be done because R+W , the total number of
+65
+SIMPLE HEURISTICS
+inferences performed by the cue, is equal to N0N1) yields
+K(N − K) = N(N + 1) − (K(K + 1)) − (N − K)(N −K + 1)
+2
+which is easily obtained by multiplying out the DEMO on the right
+side and performing the necessary cancellations. Thus, we DEMO
+shown that (∗) holds for a cue with validity 1.
+The next step is to perform exactly one inversion in the cue values
+DEMO Cue 1: For the two objects OK and OK+1 we change DEMO 1 into
+a 0 and the 0 into a 1, thereby DEMO Cue 2 (see Table). The
+number of 0s and the DEMO of 1s for this cue are the same for
+Cue 1, DEMO thus R +W as well as N0N1 are the same for both cues.
+However, Cue 2 makes exactly one less correct inference than Cue
+1. Clearly for Cue 2 S0 is also smaller than S0 for DEMO 1, and the
+difference is 1. Thus, the nominators of (DEMO) and (2) (i.e., R and S0,
+respectively) have both been diminished by 1, while their denomin-
+ators remain the same. This proves our assertion for the cue obtained
+by performing one inversion DEMO a cue of validity 1. Because any cue
+can be obtained by performing successive inversions on a cue of
+a validity 1, and because none of these inversions will change the
+identity between (1) and (2), as can be shown by complete induction,
+our assertion DEMO true in general.
+
+Proof of Theorem 3. We now prove that Take The Best is
+equivalent—in performance—to a linear model with noncompens-
+atory DEMO, where the highest weight corresponds to the cue with
+highest validity, the second highest weight to the cue with second
+highest validity, and so on. Consider an environment provided with
+a set of cues Q DEMO,q2 ,...,qM},where V(q1) ≥ V(q2) ≥ DEMO ≥
+V(qM),and V(qi ) is the validity of DEMO . Deﬁne the score s(Oj ) of an
+object Oj by
+1 1 1 1
+s(Oj ) = q1(Oj ) 2 DEMO(Oj ) 22 +q3(Oj ) 23 + ··· + qM(Oj ) 2M
+We have to show that the lexicographic comparison of objects DEMO
+and Oj implies that Oi >Oj if and only if s(DEMO )>s(Oj).
+66
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+Proof. Assume that the best cue DEMO in Q satisﬁes q1(Oi )>q1
+(Oj ). Because we only consider binary cues, this assumption im-
+plies that q1(Oi ) = 1and q1(Oj ) = 0.
+Since
+1 1 1 1 DEMO
+2 > 22 + 23 + 24 + ··· + 2M
+the score s(Oi ) is certainly larger than the score s(Oj ).For the
+reciprocal observe that it is impossible to have
+1 1 DEMO
+q1(Oi ) + + ··· +
+2 q1(Oj ) + 22 q(Oj ) + ··· +
+2 22 q2(Oi ) DEMO qM(Oi )>
+1 1 1
+2M q(Oj )
+DEMO q1(Oi ) = 1and q1(Oj ) = 0, based DEMO the same argument
+that 1/2 is larger than any sum of its lower powers. The same is valid
+if the ﬁrst differing cue DEMO occurs at some other column of the cue
+matrix.
+
+Proof of Theorem 4. Consider a reference class R of N objects
+(O1 ,DEMO,Oi ,...On). We deﬁne the score s(Oi ) of DEMO as the sum
+of entries in its cue proﬁle Q(Oi )DEMO Theorem 4 holds if, in the cue
+matrix containing all favorable DEMO but not the secure cues, there are
+more ones in each DEMO than in the following row (objects are rank
+ordered according to DEMO criterion, with the object scoring highest in
+the ﬁrst row). DEMO the i-th row and its successor the (i + 1)-th
+DEMO Cues contained in the matrix that have the same values in the
+i-th and the (i + 1)-th entries are irrelevant to the theorem because
+they add equally to both sums.
+The set of all DEMO in the matrix that have a 1 in the i-th entry and
+a 0 in the (i + 1)-th entry will be called Mi . The set of all cues in the
+matrix that have DEMO 0 in the i-thentry anda 1inthe (i + 1)-th entry
+DEMO be called Mi+1. It it sufﬁcient to prove that the set Mi is larger
+than the set Mi+1 .
+For each element of Mi+1 DEMO the 0 in the i-th entry into
+a1and the 1inthevalidity, because DEMO inversion is transformed into an agreement.(i + 1)-th entry into a 0 yields a cue of higher
+The resulting cue will be DEMO the matrix (and thus an element of the
+set Mi ) DEMO when its validity becomes 1 after the transformation.
+SIMPLE HEURISTICS
+67
+This can only happen for the cue which has DEMO ones above the
+i-th entry and all zeros below the (i DEMO 1)-th entry. It has thus been
+shown, that the set DEMO is at least the size of the set Mi+1 minus
+1: DEMO the i-th and (i + 1)-th entries maps all elements DEMO
+is mapped onto a cue of validity 1.Mi+1 onto elements of Mi except for one element of Mi+1 ,which
+If there are two elements of Mi that are not elements of Mi+1
+with their i-th and (i + 1)-th entries inverted, then the set Mi is
+larger than the setthat it is possible to construct two cues that:Mi+1 , and the theorem is proven. We will show
+• have a 0 in entry i anda 1in entry i + 1
+• are not DEMO Mi+1 because their validities are equal to or below 0.5
+• can be transformed to elements of Mi by inverting their i-th and
+that DEMO falls within ]0.5, 1[.)the (i + 1)-th entries (DEMO inversion increases their validity so
+The two cues resulting from the inversion are therefore in the set Mi
+without being elements of Mi+1 with DEMO i-th and (i + 1)-th entries
+inverted. The two cues DEMO therefore not within the subset of cues of
+Mi accounted for in the previous step. If the existence of two such
+cues can be DEMO then the set Mi is larger than the set Mi+1 and
+the theorem is proven.
+Case A: N is odd
+If N odd, DEMO there is one central entry to the cue. In that case there
+are at least two ways to construct a symmetric cue that has DEMO 0 in the
+i-th and a 1 in the (i+1)-th DEMO: Entries i and i+1 will be mirrorred
+vertically around the cue’s DEMO entry. This will determine three
+or four entries of the cue: DEMO if the i-th or the (i + 1)-th entry is
+DEMO cue’s central entry and four if it is not. The number of objects N
+is deﬁned to be larger than 4, so there is at least one entry that can
+be set to 1 or 0 DEMO obtain two symmetrical cue.
+Since the obtained cues are symmetrical their validity is 0.5. In-
+verting the i-th and (i + 1)-th entries will increase their validities so
+that they will fall within ]0.5, 1[ and be elements of Mi .
+
+68
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+Case B: N is even
+If N is even and i = N/2, two symmetrical cues that have a 0 in the
+i-th and a 1 in the (i + 1)-th entry can be constructed as explained
+above: by mirroring thecentral axis and ﬁlling the remaining entries in two different waysi-th and (i + 1)-th entries around the cue’s
+to obtain two symmetrical DEMO Inverting the i-th and (i + 1)-th
+entries, again, DEMO increase the validities so that they will fall within
+]0.5, 1[ DEMO be elements of Mi .
+If N is even and i = N/2, a slightly different approach must
+be taken: Whereas theas DEMO, the other entries are either all set to 1 or they DEMO all seti-th entry is set to 0 and the (i + DEMO)-th to 1
+to zero. The resulting cues are symmetrical except for one central
+inversion. Their validities are thus below 0.5. Inverting the i-th DEMO
+(i + 1)-th entries, will yield cues that are symmetrical except for one
+central agreement. Their validities will thus fall within ]0.5, 1[ and
+they will be elements of Mi .
+
+REFERENCES
+Ayton, P. and Önkal, D. (1997), Forecasting football ﬁxtures: Conﬁdence and
+judged proportion correct, Unpublished manuscript.
+Berretty, P. M. (2001), Cue preference in a multidimensional categorizataion task,
+Manuscript submitted for publication.
+Berretty, P. M., Todd, P. M. and Martignon, L. (1999), DEMO few cues to choose:
+Fast and frugal categorization, In G. DEMO, P. M. Todd and the ABC Re-
+search Group, Simple Heuristics That Make Us Smart (pp. 235–254), New York:
+Oxford University Press.
+Borges, B., Goldstein, D. G., Ortmann, A. and Gigerenzer, G. (1999), Can ig-
+norance beat the stock market?, DEMO G. Gigerenzer, P. M. Todd and the ABC
+Research Group, Simple Heuristics That Make Us Smart (pp. 59–72), New
+York: Oxford DEMO Press.
+Breiman, L., Friedman, J. H., Olshen, R. A. DEMO Stone, C. J. (1993), Classiﬁcation
+and Regression Trees, New DEMO: Chapman and Hall.
+Bröder, A. (2000), Assessing the empirical DEMO of the ‘Take The Best’ heur-
+istic as a model of human probabilistic inference, Journal of Experimental
+Psychology: Learning, Memory, and Cognition DEMO: 1332–1346.
+Cooksey, R. W. (1996), Judgment Analysis: Theory, DEMO, and Applications,
+San Diego, CA: Academic Press.
+Cooper, G. (1990), The computational complexity of probabilistic inferences.
+Artiﬁcial Intelligence 42: DEMO
+SIMPLE HEURISTICS
+69
+Czerlinski, J., Gigerenzer, G. and Goldstein, D. DEMO (1999), How good are simple
+heuristics?, in G. Gigerenzer, P. M. Todd, and the ABC Research Group, Simple
+Heuristics That DEMO Us Smart (pp. 97–118), New York: Oxford University
+Press.
+Dawes, R. M. (1979), The robust beauty of improper linear models DEMO decision
+making, American Psychologist 34: 571–582.
+Dawes, R. M. and DEMO, B. (1974), Linear models in decision making,
+Psychological Bulletin 81: 95–106.
+Dhami, M. and Harris, C. (2001), Fast DEMO frugal versus regression models of
+human judgement, Thinking and Reasoning 7: 5–27.
+Friedman, N. and Goldszmit, M. (1996), Learning Bayesian networks with local
+structure, in Proceedings of the 12th Conference on Uncertainty in Artiﬁcial
+Intelligence (UAI) (pp. 252–262), San Mateo, CA: Morgan Kaufmann.
+Garey, M. R. and Johnson, D. S. (1979), Computers and Intractability: A Guide
+to the Theory of NP-Completeness, San Francisco, CA: W. H. Freeman.
+Gigerenzer, G. (1981), Messung und Modellbildung in der Psychologie, Munich:
+Ernst Reinhard Verlag.
+Gigerenzer, G., Czerlinski, J. and Martignon, L. (1999), How good are fast and
+frugal heuristics? in J. Shanteau, B. Mellers, and D. Schum (DEMO), Decision
+Research from Bayesian Approaches to Normative Systems: Reﬂections on DEMO
+Contributions of Ward Edwards. Norwell, MA: Kluwer Academic Publishers.
+Gigerenzer, DEMO and Goldstein, D. G. (1996), Reasoning the fast and frugal way:
+Models of bounded rationality, Psychological Review 103: 650–669.
+Gigerenzer, G. and Hoffrage, U. (1995), How to improve Bayesian reasoning
+DEMO instruction: Frequency formats, Psychological Review 102: 684–704.
+Gigerenzer, G., DEMO, U. and Kleinbölting, H. (1991). Probabilistic mental
+models: A brunswikian theory of conﬁdence, Psychological Review 98: 506–
+528.
+Gigerenzer, G. and Selten, R. (eds.) (2001), Bounded Rationality: The Adaptive
+Toolbox, Cambridge, MA: MIT Press.
+Gigerenzer, G., Todd, P. DEMO and the ABC Research Group (1999), Simple
+Heuristics That Make DEMO Smart, New York: Oxford University Press.
+Goldstein, D. G. and DEMO, G. (1999), How ignorance makes us smart:
+The recognition heuristic, in G. Gigerenzer, P. M. Todd and the ABC Research
+DEMO, Simple Heuristics That Make Us Smart (pp. 37–58), New York: Oxford
+University Press.
+Hasher, L. and Zacks, R. T. (1984), Automatic processing of fundamental in-
+formation: The case of frequency of DEMO, American Psychologist 39:
+1372–1388.
+Hoffrage, U., Hertwig, R. and Gigerenzer, G. (2000), Hindsight bias: A by-
+product of knowledge updating?, Journal of Experimental Psychology: Learn-
+ing, Memory, and Cognition 26: 566–581.
+Hoffrage, U., Lindsey, S., Hertwig, R. and DEMO, G. (2000), Communicating
+statistical information, Science 290: 2261–2262.
+70
+LAURA MARTIGNON AND ULRICH HOFFRAGE
+Holte, R. C. (1993), DEMO simple classiﬁcation rules perform well on most
+commonly used datasets, Machine DEMO 3(11): 63–91.
+Kahneman, D., Slovic, P. and Tversky, A. (1982), Judgment under Uncertainty:
+Heuristics and Biases, New DEMO: Cambridge University Press.
+Kass, R. and Raftery, A. (1995), Bayes Factors, Journal of the American
+Statistical Association 90: 430.
+Krauss, S., Martignon, L. and Hoffrage U. (1999), Simplifying Bayesian infer-
+ence: The general case, in L. Magnani, N. Nersessian and P. Thagard, (eds.),
+Model-Based Reasoning in Scientiﬁc Discovery (pp. 165–179), New York:
+Plenum Press.
+Kurz, E. and Martignon, L. (DEMO), Weighing, then summing: The triumph and
+tumbling of a modeling practice in psychology, in L. Magnani, N. Nersessian
+and P. Thagard, (eds.), Model-Based Reasoning in Scientiﬁc Discovery (pp. 26–
+31), DEMO: Cariplo.
+Lages, M., Hoffrage, U. and Gigerenzer, G. (1999), How heuristics produce
+intransitivity and how intransitivity can discriminate between heuristics, Ma-
+nuscript submitted for publication.
+Martignon, L. and Hoffrage, U. (1999), Why does one-reason decision making
+work? A case study in ecological rationality, in G. Gigerenzer, P. M. Todd, and
+the ABC Research Group, Simple Heuristics That Make Us Smart (pp. 119–
+140), DEMO York: Oxford University Press.
+Martignon, L. and Krauss, S. (in press), Can l’homme éclairé be fast and
+frugal? Reconciling Bayesianism and bounded rationality, in S. Schneider and
+J. Shanteau (eds.), Emerging DEMO on Decision Research, Oxford, UK:
+Oxford University Press.
+Martignon, DEMO and Laskey, K. B. (1999), Bayesian benchmarks for fast and frugal
+heuristics, in G. Gigerenzer, P. M. Todd and the ABC DEMO Group, Simple
+Heuristics That Make Us Smart (pp. 169–188), New York: Oxford University
+Press.
+Martignon, L. and Schmitt, M. (1999), Simplicity and robustness of fast and frugal
+heuristics, Minds and machines DEMO: 565–593.
+Payne, J. W., Bettman, J. R. and Johnson, DEMO J. (1988), Adaptive strategy selection
+in decision making, Journal of Experimental Psychology: Learning, Memory, &
+Cognition 14: 534–552.
+Payne, DEMO W., Bettman, J. R. and Johnson, E. J. (1993), The Adaptive Decision
+Maker, New York: Cambridge University Press.
+Pearl, J. (1988), Probabilistic Reasoning in Intelligent Systems, San Francisco,
+CA: Morgan Kaufmann.
+Rieskamp, J. and Hoffrage, U. (1999), When do people use simple heuristics, and
+how can we tell?, in G. Gigerenzer, P. M. Todd and the ABC Research Group,
+Simple Heuristics That Make Us Smart (pp. 141–167). New York: Oxford
+University DEMO
+Rivest, R. J. (1987), Learning decision lists, Machine Learning DEMO: 229–246.
+Shannon, C. (1948), A mathematical theory of communication, Bell Systems
+Technical Journal 27: 379–423, 623–656.
+SIMPLE HEURISTICS
+71
+Slegers, D. W., Brake, G. L. and Doherty, M. E. (2000), Probabilistic mental mod-
+els with continuous predictors, Organizational Behavior and Human Decision
+Processes 81: 98–114.
+Todd, P.M., Gigerenzer, G. and the ABC Research Group (2000), How can we
+DEMO up the adaptive toolbox? (Reply to commentaries) Behavioral and Brain
+DEMO 23: 767–780.
+Tversky, A. and Kahneman, D. (1974), Judgment under uncertainty: Heuristics
+and biases, Science 185: 1124–1131.
+Address for correspondence: Laura Martignon, Center for Adaptive Behavior
+and Cognition, Max Planck Institute for Human Development, Lentzeallee 94,
+D-14195, Berlin, Germany. Phone: DEMO; Fax: +49-30-82406-394;
+E-mail: martignon@mpib-berlin.mpg.de{1g42fwefx}

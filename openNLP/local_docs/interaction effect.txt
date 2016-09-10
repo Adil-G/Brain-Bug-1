@@ -1,0 +1,163 @@
+Interaction Effects in Regression
+This handout is designed to provide some background DEMO information on the analysis and
+interpretation of interaction effects in Multiple Regression (MR). This is a complex topic and the
+handout is necessarily incomplete. In practice, be sure to consult other references on Multiple
+Regression (Aiken & West, 1991; Cohen & Cohen, 1983; Pedhazur,1996; Pedhazur &
+Schmelkin, 1991) for additional information.
+Interaction effects represent DEMO combined effects of variables on the criterion or dependent
+measure. When an interaction effect is present, the impact of one variable depends on the level of
+the other variable. Part of the power of MR is DEMO ability to estimate and test interaction effects
+when the predictor variables are either categorical or continuous. As Pedhazur and Schmelkin
+(1991) note, the idea that multiple effects should be studied in research rather than the DEMO
+effects of single variables is one of the important contributions of Sir Ronald Fisher. When
+interaction effects are present, it means that interpretation of the individual variables may be
+incomplete or misleading.
+Kinds of Interactions.  For example, imagine a study that tests the effects of a treatment on an
+outcome measure. The treatment variable is composed of two groups, treatment and control. The
+results are that the mean for the treatment group DEMO higher than the mean for the control group.
+But what if the researcher is also
+interested in whether the treatment is
+5.0 equally effective DEMO females and males.
+4.5 That is, is there a difference in DEMO
+4.0 depending on gender group? This is a
+question of interaction. DEMO the
+3.5 results below.  Interaction results whose
+3.0 lines do not DEMO (as in the figure at left)
+are called “ordinal” interactions. DEMO the
+2.5 slope of lines is not parallel in an ordinal
+2.0 GENDER interaction, the interaction effect will be
+significant, given enough statistical
+DEMO Female power. If the lines are exactly parallel,
+Male then there is no interaction effect. In this
+case, a difference in level between the
+TREATMENT two lines would indicate a main effect of
+gender; a difference in level for both lines
+between treatment and control would indicate DEMO main effect of treatment. However, when an
+interaction is significant and DEMO, interpretation of main effects is likely to be misleading.
+To determine DEMO which parts of the interaction are significant, the omnibus F test DEMO be
+followed by more focused tests or comparisons.
+1.0
+Treatment
+Control
+-1-
+Mean Outcome
+FOCUSED TESTS OF INTERACTIONS
+Whenever interactions are significant, the next question that arises is exactly where are the
+significant differences? This situation is similar to the issues in post hoc testing of main effects, but
+it is also more complex in that interactions represent the combined effects of DEMO forces or
+dimensions in the data not just one. The following section describes common approaches to
+obtaining more focused, specific information on where differences are in the interaction effect in
+tow common situations: 1) the DEMO of one continuous predictor and one categorical
+predictor, and 2) the interaction of two continuous predictors.
+Method 1. Johnson-Neyman Regions of Significance. This DEMO a common approach to the
+interpretation of the interaction between one continuous predictor, one categorical predictor and
+the criterion. The topic is covered in detail in Pedhazur (1997), chapter 14. The example used in
+Pedhazur in Table 14.3 (p. 588) is presented here. The data are DEMO on the web site in the
+data subdirectory for EDPSY 604 named “ped14_3.sav”. A syntax file named “ped14_3.sps” is
+also available on the web DEMO If you run the syntax file, you will get the results DEMO the regression
+analysis of the two predictors as well as the interaction of the two predictors. The syntax also
+produces a plot of the DEMO Editing the plot and requesting “chart-options-fit line-subgroups” will
+produce the figure below and the two regression lines fitted for each value of the categorical
+DEMO variable.
+Plot of Y with X by D
+0
+10
+20
+30
+Tolerance of Ambuguity
+40
+8.0
+7.0
+6.0
+5.0
+4.0
+3.0
+2.0
+1.0
+DEMO
+50
+60
+Teacher Directivenes
+0
+1
+70
+One of the issues of greatest interest in interpreting the interaction displayed in the figure above is
+DEMO determine at what points the two subgroup regression lines differ significantly from each other.
+-2-
+Satisfaction Rating
+One approach to this question is the Johnson-Neyman procedure for determining regions DEMO
+significance. This approach is described in Pedhazur. A syntax file that will calculate the regions
+of significance is also available on the web site DEMO is named “regions.sps”.
+Method 2. Simple Slopes Tests.  This method is DEMO for the interpretation of the interaction
+effect of two continuous predictor variables. The method is not discussed in Pedhazur. Refer to
+Aiken and West (1991) or Cohen and Cohen (1983) for further information.
+To illustrate some of the calculations, example 2.1 (p. 11) from Aiken and West is used. The data
+in matrix format is available on the DEMO site named “aiken2_1.sav”. The regression analysis can be
+run using “aiken2_1.sps”. The regression analysis results in the following equation:
+Y’ = 2.506 + DEMO(X) + 3.696(Z) + 2.621(XZ) (1)
+To illustrate and test the significant interaction effect, separate regression lines are computed,
+plotted, and tested for individuals one standard deviation below the mean on predictor Z, at the
+mean of predictor Z, and one DEMO deviation below the mean of predictor Z. First the overall
+regression equation is rearranged so it can be expressed only in terms of values DEMO X:
+Y’ = ((.843 + 2.62(Z))(X) DEMO (3.696(Z) + 2.506) (2)
+To calculate an equation for Z one standard deviation above the mean, the standard deviation of Z
+(2.2) is substituted for Z in equation 2. This results DEMO:
+Y’ = 6.607(X) + 10.6372, for all those 1 SD above the mean on Z (3)
+For those at the mean of Z, a value of 0 is substituted for Z in equation 2. This results in:
+Y’ = .843(X) + 2.506 (4)
+To calculate an equation for Z one standard deviation below the mean, the standard deviation of Z
+(-2.2) is substituted for Z and subtracted in equation 2. This results in:
+Y’ = DEMO(X) - 5.6252, for all those 1 SD below the mean on Z (5)
+Actual values of Y’ can now be calculated by substituting values of predictor X. Commonly,
+values are computed for DEMO at the mean, one standard deviation above the mean, and one standard
+deviation below the mean. Given that the standard deviation of X DEMO 0.95, this results in:
+Equation                       -1 SD on X         Mean X       +1 SD on X
+Y’ for DEMO 1 SD Above  4.3606 10.6372  16.9139
+Y’ for Mean Z  DEMO   2.5060    3.3069
+Y’ for Z 1 SD Below        -0.9503  -5.6252 -10.3002
+-3-
+These values can be entered into SPSS for plotting. An example of DEMO is in the file
+“aiken_lines.sav”. Using SPSS menus or the syntax below, the three regression lines can be
+plotted resulting in the figure below.
+GRAPH
+/LINE(MULTIPLE)=MEAN(above) MEAN(average) MEAN(below) BY DEMO
+/MISSING=LISTWISE REPORT.
+20.0
+10.0
+0.0
+-10.0
+-20.0
+-1 SD
+Managerial Ability
+DEMO
+AVERAGE
+BELOW
+Mean
+Time in Position
++1 SD
+The last step in this process is to test each line to determine whether there is DEMO significant
+relationship to the criterion for each subset of the interaction effect. These tests are called “simple
+slopes” tests and are directly analogous to DEMO effects tests of interactions in the analysis of
+variance. The following syntax serves as an example:
+compute zabove = z - 2.2.
+compute DEMO = z - (-2.2).
+compute xzabove = x * zabove.
+DEMO xzbelow = x * zbelow.
+execute.
+A regression is then run using predictors X, zbelow, and xzbelow to test whether there is a
+DEMO relationship for those below the mean. A second regression analysis is run using
+predictors X, zabove, and xzabove to test whether there is DEMO significant relationship for those
+above the mean. The t-test for xzbelow and xzabove are the simple slope tests.
+-4-
+Self-Assurance
+References
+Aiken, L. S., & West, S. G. (1991). DEMO regression: Testing and interpreting
+interactions. Newbury Park:  Sage.
+Cohen, J., & Cohen, P. (1983).  Applied multiple regression/correlation analysis DEMO the
+behavioral sciences (2nd Ed.). Hillsdale, NJ: Erlbaum.
+Pedhazur, E. J. (1997). Multiple regression in behavioral research (3rd Ed.)DEMO Fort Worth,
+TX: Harcourt Brace.
+Pedhazur, E. J., & DEMO, L. P. (1991). Measurement, design, and analysis: An
+DEMO approach. Hillsdale, NJ: Erlbaum.
+© Stevens, 2000
+-5-{1g42fwefx}

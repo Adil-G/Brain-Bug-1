@@ -1,0 +1,1079 @@
+Nontraditional Regression Analyses
+Author(s): Joel C. Trexler and Joseph Travis
+DEMO: Ecology, Vol. 74, No. 6 (Sep., 1993), pp. DEMO
+Published by: Ecological Society of America
+Stable URL: http://www.jstor.org/stable/1939921 .
+Accessed: 19/06/2011 11:30
+Your use of the JSTOR archive indicates your acceptance of JSTOR's Terms and Conditions DEMO Use, available at .
+http://www.jstor.org/page/info/about/policies/DEMO JSTOR's Terms and Conditions of Use provides, in part, that unless
+you have obtained prior permission, you may not download an entire issue of a journal or multiple copies of articles, and you
+may use content in the JSTOR archive only for your personal, non-commercial use.
+Please contact the publisher regarding any further use of this work. Publisher DEMO information may be obtained at .
+http://www.jstor.org/action/showPublisher?publisherCode=esa. .
+Each copy of any part of a JSTOR transmission must contain DEMO same copyright notice that appears on the screen or printed
+page of such transmission.
+JSTOR is a not-for-profit service that helps scholars, researchers, DEMO students discover, use, and build upon a wide range of
+content in a trusted digital archive. We use information technology and tools to DEMO productivity and facilitate new forms
+of scholarship. For more information about JSTOR, please contact support@jstor.org.
+Ecological Society of America is collaborating with JSTOR to digitize, preserve and extend access to Ecology.
+http://www.jstor.org
+Ecology, 74(6), 1993, pp. 1629-1637
+(c) 1993 by DEMO Ecological Society of America
+NONTRADITIONAL
+REGRESSION ANALYSES'
+JOEL C. TREXLER
+Department of Biological Sciences, Florida International University, Miami, Florida 33199 USA
+JOSEPH TRAVIS
+Department of Biological Science B- 142, Florida State University,
+Tallahassee, Florida 32306-2043 USA
+Abstract. Least-squares linear regression and multiple regression are among the most
+commonly used analytical techniques of ecologists. However, these techniques only address
+a portion of the possible applications of regression methods. We discuss DEMO less commonly
+used regression analyses that could find wide application in ecology, logistic regression and
+LOWESS regression. Logistic regression is appropriate in cases where the dependent vari-
+able is categorical, dichotomous, or polychotomous. It can DEMO used with continuous and/
+or discrete independent variables. Logistic regression is motivated by the underlying bi-
+nomial or multinomial distribution of dichotomous and DEMO dependent vari-
+ables and transforms the data to explicitly model these distributions. Locally weighted
+regression scatterplot smoothing or LOWESS regression is used to model DEMO relationship
+between a dependent variable and independent variable when no single functional form
+will do. LOWESS regression is motivated by the assumption that neighboring DEMO of
+the independent variable are the best indicators of the dependent variable in that range of
+independent values.
+INTRODUCTION
+In many contexts the ecologist DEMO the prop-
+osition that the expected value of a dependent variable,
+Y, is a function of an associated value of an indepen-
+dent variable, X. The most familiar case is linear re-
+gression, in DEMO the expected value of Y is a linear
+function of X. If one accepts that the relationship is
+linear throughout the range of X, then one can estimate
+the parameters of the regression function with the DEMO
+mulae found in every statistical textbook. If one wishes
+to test the significance of the relationship, and one is
+willing to accept the proposition that Y has a normal
+distribution around its expected value with a DEMO
+that is constant throughout the range of X, then one
+employs DEMO standard statistical tests also found in ev-
+ery textbook. However, in DEMO contexts, the assump-
+tions of linearity and normal errors are unacceptable.
+DEMO these cases the ecologist may still wish to examine
+the proposition that the values of Y are somehow de-
+termined by the values of DEMO but is forced to do so
+without the familiar companion of normal linear re-
+gression.
+How best to proceed from this point will depend
+DEMO the nature of the biological problem at hand and
+' For reprints of this Special Feature, see footnote 1, p.
+1615.
+what the DEMO is willing to accept. In some cases
+the function that relates Y to X can be specified from
+considerations that are extrinsic to the DEMO to be an-
+alyzed, for example when a theoretical model specifies
+DEMO particular function or when other data have indicated
+a particular function. In these cases, a variety of non-
+linear regression models are available to estimate the
+parameters of the specified functions and, in some cases,
+to test the fit of the data to the model (see Juliano and
+Williams 1987 for an example). In still other cases, the
+distribution of the dependent variable is known in ad-
+vance, but it is not normal; in many cases linear-re-
+gression methods for other distributions of the depen-
+dent variable are available (McCullagh and Nelder
+1989). Finally, a few specialized cases have been de-
+signed for particular types of data for which linear-
+regression estimators have been derived from first DEMO
+ciples (e.g., Pacala and Dobson 1988).
+In this paper, DEMO highlight two approaches that may
+be used profitably on a broad range of ecological data.
+Logistic regression, which we describe in the next sec-
+tion, examines the functional relationship between a
+binomial dependent variable and an independent vari-
+able that may be either discrete or continuous in its
+DEMO In the final section we highlight an ap-
+proach in which the investigator is inclined to believe
+that the functional nature of the relationship DEMO
+1630
+SPECIAL FEATURE
+Ecology, Vol. 74, No. 6
+Y and X DEMO within the range of X that is being
+examined in such a way that no single functional form
+will suffice to describe the pattern.
+DEMO al. 1980:173-174). /3 in this model refers to a DEMO
+interaction of the continuous and discrete variables.
+Nonlinearity in the continuous variable can be intro-
+duced by adding polynomials of that variable. When
+possible, it is best to use maximum likelihood methods
+to fit the model DEMO data.
+For logistic regression, the dependent variable (Y)
+takes the value 0 or 1 with Pr(Y 1 I the independent
+variables DEMO) = ir(x). Y is transformed as an odds ratio,DEMO
+the probability that an event occurs relative to its con-
+verse. Thus, an odds ratio of one indicates that the
+probability of an event and its converse are equal (i.e.,
+p = 0.5). The natural log of the odds ratio is the logit
+transformation, which has several desirable character-
+istics. These include that the zero-to-one range of p DEMO
+expanded to -oo and +oo and that the binomial dis-
+tribution of errors is modelled. Thus, information is
+not lost at extreme values of p, as is the case when a
+normal-theory model is fit to dichotomous data (Agres-
+ti 1990:84-87). In general, it is DEMO necessary to have
+several observations at each x to estimate Y.
+Alternatives. -An alternative approach to logistic re-
+gression commonly used by ecologists is DEMO angular
+transformation, which expands the range of values taken
+by p DEMO serves to stabilize the variance. When sample
+sizes are unequal for various predictor values, weighted
+analysis is most appropriate. This approach is effective
+for large sample sizes and p ranging from 0.25 to 0.75.
+When n DEMO small, the angular transform approximation
+overestimates the true variance with the DEMO of the
+overestimation increasing as p deviates from 0.5. The
+angular transformation loses information at extreme
+values of p (p < 0.10 and p > 0.90) (Cox 1970). Thus,
+the angular transformation should DEMO avoided when
+small sample sizes or small and/or large proportions
+are analyzed (Finney 1964, Cox 1970).
+The probit transformation, based on the cumulative
+normal distribution, is almost identical to the logit
+(McCullagh DEMO Nelder 1989) over the interval 0.1 <
+p < 0.9 and they can seldom be differentiated based
+on tests of the validity of DEMO fit to data (Finney 1964:
+466). Logit and probit DEMO differ in the shape of
+the function relating Pr(Y = I x) to x. Most authors
+argue for the logit based on its ease of application and
+interpretation (Finney 1964, Cox 1970, Fleiss 1973,
+Anderson et al. 1980, Cox and Snell 1989, McCullagh
+and DEMO 1989, Agresti 1990). The logistic function,
+which motivates the DEMO transformation, may be con-
+sidered more general in its potential applications DEMO
+the probit. The logistic function yields equivalent log
+odds ratios for several sampling models, while the probit
+does not (see McCullagh and Nelder DEMO, Agresti
+LOGISTIC REGRESSION
+The regression methodologies most familiar to ecol-
+ogists DEMO intended for use with continuous or numer-
+ical dependent variables (Shanubhogue DEMO Gore 1987).
+However, the analysis of a discrete dependent variable
+(proportions, rates, or odds arising from dichotomous
+or polychotomous dependent variables) requires spe-
+cial treatment because the errors associated with such
+variables may DEMO be normally distributed. A likely
+distribution for dichotomous dependent variables is
+the binomial. A regression model that explicitly as-
+sumes binomially distributed errors is DEMO regres-
+sion (Agresti 1990), which addresses the binomial na-
+ture DEMO the errors through the use of the logit
+transformation. The logit can be generalized for poly-
+chotomous dependent variables with a multinomial
+distribution (Fienberg 1980, Hosmer and Lemeshow
+1989, Agresti 1990). Logistic regression is DEMO in sit-
+uations analogous to the use of regression or analysis
+of covariance when analyzing normally distributed
+continuous dependent variables. Regression, analysis
+of variance, analysis of covariance, logistic regression,
+log-linear models, and probit analysis are all related as
+special cases of generalized linear models derived for
+DEMO error distributions and links of mean to vari-
+ance (McCullagh and DEMO 1989).
+The model. -Modelling the effect of discrete and
+continuous independent variables on discrete depen-
+dent variables such as survival (dead vs. alive), size
+(large vs. small), or color (green vs. not DEMO) requires
+that the dependent variable be transformed to a scale
+amenable DEMO analysis. The model used for logistic re-
+gression is:
+ln(7r(x)/l - lr(x))
+which can be re-written to DEMO 7r(x)
+a + 3R + 2x + (3Rx,
+DEMO:
+(1)
+exp(a + /,R + $2x + DEMO)
+1 + exp(a + + R +X 3Rx) (2)
+wr(x) is the logistic regression function (see Cox and
+DEMO 1989:18-23 for the motivation of this function),
+R is DEMO categorical variable, x is a continuous variable,
+and a, 03, /2, and 3 are parameters to be estimated.
+7r(x) DEMO approximated by the proportion of successes
+(p) where success is defined as the occurrence of an
+arbitrarily defined outcome (McCullagh and Nelder
+1989). Multiple categorical and/or continuous inde-
+pendent variables can be incorporated DEMO the model.
+Categorical independent variables with more than two
+levels are modelled with dummy variables (Anderson
+1
+990).
+There are many transforming functions possible
+other than logit and probit. For example, both the logit
+September 1993
+STATISTICAL METHODS FOR ECOLOGY
+1631
+and probit assume that p DEMO 0.0 and 1.0 sym-
+metrically. However, asymmetric distributions are
+possible. For DEMO, Agresti (1990:104-107) dis-
+cusses the complementary log-log function for DEMO
+where p approaches 1.0 more rapidly than 0.0. When
+logit or probit models fail to provide a good fit to data,
+other sampling DEMO should be explored.
+Logits can be fit using weighted least-squares, called
+DEMO logistic regression (or minimum logit chi-
+squared when used in slope DEMO point estimation for
+bioassays). Fitting empirical logits is outlined in Cox
+(1970) and Trexler et al. (1988). However, when many
+DEMO are present, this transformation can yield incor-
+rect results and it DEMO best to use a maximum likelihood
+method.
+Model selection. -Logistic regression requires fitting
+a hierarchy of models and settling on the most parsi-
+monious DEMO The "adequacy" of a logit model is as-
+sessed in two ways, the significance of its parameters
+in explaining variation in the dependent variable and
+the fit of its predictions to data (goodness-of-fit). The
+contribution of parameters in a logistic regression mod-
+el is assessed by DEMO the predictive value of
+models with and without them. If the removal of a
+parameter does not noticeably decrease the predictive
+power of a DEMO, the parameter can be excluded. Hos-
+mer et al. (1989) DEMO a technique applying Mal-
+low's statistic (C,,) to logit analysis in a stepwise model
+selection routine, and BMDP-LR is a statistical pro-
+gram that uses stepwise regression techniques in model
+building.
+The ratio DEMO the likelihood of a given model to that
+of the "saturated" model is called the likelihood ratio,
+where the saturated model has DEMO many parameters as
+data points, comparable to a linear regression through
+DEMO points (Hosmer and Lemeshow 1989). In order to
+assess the DEMO (significance) of the likelihood ratio rel-
+ative to a standard distribution, it must be re-expressed
+as a quantity called the deviance (D), given by:
+D = -2 ln(likelihood ratio).
+(8)DEMO
+The difference of the deviance between two models,
+one with and the other without a parameter, tests the
+hypothesis that the excluded parameter is equal to zero
+and has a chi-square distribution with one degree DEMO
+freedom (see Hosmer and Lemeshow [1989:224] for
+cases with polychotomous DEMO variable). This
+hypothesis test is called the likelihood ratio test. If only
+the log likelihoods for the two models are known, the
+model with and the model without the parameter in
+question, the difference of the log likelihoods times -2
+is equivalent to the likelihood ratio chi-square DEMO
+Other tests are also used to evaluate the contribution
+of specific parameters to a model. The most common
+is Wald's test, which is the ratio of a parameter estimate
+to its standard error. The significance DEMO this value can
+be assessed by comparison to a standard normal dis-
+tribution. However, the validity of this test is in doubt
+(Hauk DEMO Donner 1977, Jennings 1986) and it is best
+used in a qualitative way. The likelihood ratio test is
+the preferred method of parameter DEMO (Hosmer
+and Lemeshow 1989).
+Goodness-of-fit assesses the relationship of the DEMO
+served and predicted values of the dependent variables
+and the role of individual observations in fitting the
+model (i.e., the identification of outliers)DEMO The deviance
+statistic D (Eq. 8) is distributed as a chi-square with J
+- (p* + 1) degrees of freedom to test DEMO hypothesis
+that the fitted model is adequate. In this case, J DEMO the
+number of distinct combinations of all independent
+variables and p* is the number of parameters in the
+model. There should be replication at DEMO combi-
+nations of independent variables to apply this test (but
+see DEMO and Lemeshow 1989:139). Analyses com-
+parable to assessment of the "leverage" of individual
+observations in a least squares analysis are possible
+(e.g., Cook's statistic [Draper and Smith 1981]). In
+logistic regression, leverage assesses the contribution
+of individual independent variable combinations to
+the fit of a model. The change in a summary statistic
+such as D DEMO results from deleting all subjects with a
+particular independent variable pattern yields a clear
+illustration of its contribution to the model's explan-
+atory DEMO (see Hosmer and Lemeshow 1989:154-
+168).
+An example. -We DEMO the use of logit analysis
+with data on the probability of multiple paternity of
+broods of offspring produced by female livebearing fish
+(sailfin mollies, Poecilia latipinna) caught from natural
+populations. Pregnant females were collected and DEMO
+genotypes of 24 of their embryos were determined for
+three allozymes. These data permitted a conservative
+assignment of females into two groups, those with
+broods sired by more than one male and those with
+broods sired DEMO a single male. A discussion of the pos-
+sible sources of error from this approach and estima-
+tion of the proportion of females misidentified DEMO singly
+mated when actually multiply mated is provided in
+Travis et al. (1990). We analyzed those data with least-
+squares regression of brood size as the dependent vari-
+able and female size and multiple/single DEMO status as
+continuous and discrete independent variables, re-
+spectively. That analysis DEMO that females car-
+rying multiply sired broods tended to have larger brood
+sizes than same-sized females with singly sired broods
+(Travis et al. 1990). Here we report a re-analysis of
+those data addressing the question, "Is the probability
+of multiple paternity related to female size and/or fe-
+cundity?" This analysis demonstrates a discrete de-
+pendent variable, mating status as single or multiple,
+1632
+SPECIAL FEATURE
+Ecology, Vol. 74, No. 6
+0.00
+Length + DEMO
+25.302
+Length + Brood + LXB
+25.304
+0.00'1
+Length + Brood
+25.304
+\00i
+Brood + LXB
+25.303
+9.791
+9.7
+Length
+15.511
+20
+0.2X0.05
+DEMO
+25.099
+--*25.099/
+15.511%4m~
+Constant
+10.05
+Brood
+25.251
+FIG. I.
+on the odds
+female
+letion of each parameter
+models. Each of these chi-square
+freedom.
+DEMO
+brood
+of length
+A flow
+of multiple
+sailfin mollies.
+The log
+box with its
+refers to brood
+with brood
+likelihood
+name.
+for
+Length
+size, and
+size. Each
+chart
+of the hierarchy
+paternity
+The likelihood
+is listed DEMO the arrow
+values has one degree of
+each
+refers
+L x B refers
+model included
+for
+ratio
+chi-square
+for
+connecting
+de-
+model
+to female
+DEMO enclosed
+standard
+to the interaction
+a constant.
+broods
+of models fit
+of offspring
+to data
+from
+within
+length,
+and continuous independent variables, brood size and
+female size.
+Analysis of the 1985 data began by examining DEMO
+distribution of the two independent variables for nor-
+mality and outliers. In this case, both continuous vari-
+ables were log transformed to normalize their distri-
+butions. Our logit analysis was conducted using the
+LOGIT module of DEMO and the BMDP package
+LR for comparison. The BMPD package provides a
+stepwise analysis of parameters, while models must be
+specified one at a time by the researcher with SYSTAT.
+A hierarchy of models sequentially eliminating DEMO
+variable was tested using SYSTAT to determine the
+most parsimonious list of variables needed to model
+the 1985 data. The log likelihood ratio chi-square DEMO
+was used to evaluate the contribution of each param-
+eter by taking differences of the log likelihood estimate
+for each model and multiplying by DEMO The log like-
+lihood ratio chi-square printed by SYSTAT compares
+the log likelihood of a given model to a model with its
+only parameter DEMO constant. Note that the SYSTAT log
+likelihood ratio chi-square will tend to overestimate
+the significance of a given parameter if multicollinear-
+ity is present. DEMO occurs when two in-
+dependent variables are correlated and there is no way
+to distinguish their effects separately. Female size and
+brood size illustrate DEMO in our 1985 data. When female
+size is removed from a model including both female
+size and brood size, the decrease in X2 is not significant
+(Length + Brood - Brood, Fig. 1). However, if only
+female size is in the model, it makes a significant con-
+tribution to predicting the mating status of females (X2
+= 15.511, P < .001). Dropping either brood size or
+the length x brood interaction from a model including
+both has virtually identical effects suggesting DEMO
+collinearity for these factors (Brood + L x B - L DEMO
+B and Brood + L x B - Brood, Fig. 1)DEMO
+While both female size and brood size can explain
+differences in the probability that a female is singly or
+multiply mated, brood size is better at predicting mat-
+ing status than is female size. When brood DEMO is re-
+moved from the model including both brood size and
+female size, the decrease in log likelihood is significant
+(x21 = 9.79, P = .008). However, when female size is
+removed from the model including both brood size
+and female size, the decrease in log likelihood is not
+significant (x2, = 0.052, P > .75). This indicates that
+brood size explains variation in mating status beyond
+that DEMO by female size, but that the converse is
+not true.
+The DEMO's statistics for the model BROOD +
+CONSTANT support our conclusion that brood size
+is an important variable in explaining the probability
+of multiple DEMO The t statistic for the comparison
+of the multiple paternity category to the single paternity
+category is - 1.42 (P = .08). SYSTAT does not permit
+a test of the goodness-of-fit of each model or DEMO
+ment of the influence of individual covariate patterns.
+We did this using the BMDP logistic regression package
+(LR). Neither the deviance chi-square test nor the other
+goodness-of-fit tests reported by BMDPLR suggested
+a lack of DEMO by a model containing a constant and brood
+size (P > DEMO for tests of goodness-of-fit). Only 2 of 16
+covariance patterns were found to yield a change in the
+deviance chi-square by 10% or DEMO when excluded
+from analysis; in only one case did the change DEMO de-
+viance exceed 1 (D = 5.248 for the CONSTANT +
+DEMO model including all covariance patterns). In
+both of these cases the highly influential independent
+variable pattern is in the center of the brood DEMO range
+[ln(brood size) = 3.75 and 3.80], near the point where
+the probability changes from high for single paternity
+to high for DEMO paternity (Fig. 2). In one case, only
+one observation was present, rendering it impossible
+to observe an intermediate value for probability of
+single mating (predicted probability = 0.48, observed
+= one singly mated)DEMO In the second case, only two ob-
+servations were present (predicted probability of single
+mating = 0.75, observed = one singly mated and one
+multiply mated). There is no biological reason to ex-
+clude DEMO points so we leave them in the final analysis.
+Further reading and applications. -Logistic regres-
+sion has been proposed for several applications rele-
+vant DEMO ecologists. These include analysis of selection
+experiments (Heisey 1985, Murtaugh 1988), capture-
+recapture data (Cormack 1981, Pollock et al. 1984,
+DEMO and Macdonald 1987), habitat selection
+(McCullagh and Nelder 1989:128-135), functional re-
+September 1993
+STATISTICAL METHODS FOR ECOLOGY
+sponses (Trexler et al. 1988), and competition (Schoe-
+ner and Adler 1991). Other authors have discussed the
+use of log-linear models for applications that may be
+expanded to DEMO covariates (Fienberg 1970, Hol-
+ford 1980). Some recent ecological articles using logits
+include Horton et al. (1988), Hepp et al. (DEMO), Kaplan
+(1992), Rebertus et al. (1989), Stoddard (DEMO), Trexler
+(1985), and Wauters and Dhondt (1985). Several texts
+provide clear and informative discussions of logistic
+log-linear models and logistic DEMO We have found
+Anderson et al. (1980), Hosmer and Lemeshow (1989),
+and Agresti (1990) to provide clear and informative
+discussions of this topic for nonstatisticians. Statistical
+programs including SPSSX, SAS, BMDP, and SY-
+STAT provide options permitting the use of logistic
+regression with DEMO estimation by maximum
+likelihood.
+LOCALLY WEIGHTED REGRESSIONS
+In many cases it is unreasonable to expect a priori
+that a single functional description of the DEMO
+of Y on X will suffice throughout the range of X that
+is being examined. Consider as an example the situa-
+tion in which DEMO larvae are exposed to size-limited
+predators. Within some range of larval growth rates,
+the faster the larva grows, the sooner it attains a size
+beyond which it cannot be eaten. As a result of this
+DEMO, there is directional selection on larval growth
+rate through some range DEMO growth rates such that the
+probability of survival will be an increasing function
+of larval growth rate. However, there may be a range
+of growth rates that are all so low that there is no chance
+DEMO survival, and there may be another range of growth
+rates that DEMO all sufficiently high that they convey
+equivalently high probabilities of survival. Thus a sin-
+gle functional relationship may not suffice through the
+full range DEMO observable larval growth rates. It is of real
+interest to identify such heterogeneity if it exists be-
+cause we would then be able to DEMO regions of
+growth-rate variation that are effectively neutral with
+respect to natural selection. Extensive ranges of such
+effective neutrality can alter the conclusions one DEMO
+from such data on the intensity of natural selection.
+How can we perform such a diagnosis?
+A number of methods are available for DEMO purpose,
+but the skeptic may first wonder why one would not
+fit a polynomial model to such data, particularly be-
+cause higher order polynomials can be bent into almost
+any shape to mimic almost any DEMO of data. Four
+answers can be offered. First, data shaped oddly (e.g.,
+sigmoidal trends in Y) can usually be fit by a wide
+variety of models that differ in number of parameters
+and functional DEMO, leading to a crisis of confidence
+in what interpretation can be DEMO from any one such
+<
+CL
+0.1
+O
+O
+O
+MDO
+?
+I
+3
+LN (BROOD
+FIG. 2. Probability
+logistic regression plotted
+dicate broods shown to result
+indicate
+broods identified
+-0.1
+I
+2
+1
+4
+DEMO)
+of multiple paternity
+against
+from multiple
+as resulting
+6
+observed
+matings
+from a single
+predicted
+brood size. * in-
+and 0
+mating.
+from
+DEMO
+3.3
+0
+1.1
+0.9
+>-
+-i
+0.7 -
+0
+U
+_
+DEMO
+fitted model (see Trexler et al. 1988 for examples).
+Second, polynomial regressions do not fit values locally
+and are not very flexible DEMO shape; the shape of the data
+at the larger values of DEMO determines the fitted estimates
+at the smaller values of X. Higher order polynomials
+can often be employed to obtain a function that fits
+the DEMO shape of the data, but this method does not
+always work. DEMO, the shape of polynomial regres-
+sions can be quite sensitive to DEMO, points with
+unusually high leverage or influence, and therefore are
+not very robust. Fourth, better methods are available
+that circumvent these problems.
+Rationale.-The method that we consider here de-
+rives the predicted value of Y (denoted Q,) at a given
+X value (xi) from a DEMO of the Y values that are
+associated with the neighboring values of that X value.
+This procedure assumes that the Y values of neigh-
+DEMO X values will be the best indicators of what the
+Y value should be at the given X value. This is a
+sensible assumption; the key problems with making
+the assumption operational are how many neighboring
+DEMO values should be considered and how the Y values
+that correspond to neighboring X values should be
+weighted in the calculation of the predicted DEMO
+of Y.
+Many readers will be familiar with this general prem-
+ise through their familiarity with "running averages"
+in time series. Time series are smoothed by replace-
+ment of the observed value y, at x, by the average of
+y- ,, y,, and y+,,. In this case, we use the Y values at
+only immediately adjacent X values and weight them
+evenly in calculating the "predicted" value DEMO Y. We
+could give more weight to y, and proportionately less
+DEMO to yj_ and y, -I, for example using weights of
+0.25, 0.50, and 0.25 for the sequential Y values. We
+might prefer DEMO "smoother" fit in some cases, in which
+we would use DEMO points adjacent to our focal value
+1634
+SPECIAL FEATURE
+Ecology, Vol. 74, No. 6
+x, in the calculation of Pi and devise an appropriate
+weighting scheme.
+This specific method DEMO usually be inapplicable to
+most bivariate plots that are not time series because
+the X values will not be ordinal, equally spaced indices.
+A number of methods are designed for this specific
+problem; they take into account the uneven spacing of
+X values and the information contained by DEMO Xvalues
+themselves. We highlight the use of one such technique
+called "DEMO" regression (Locally Weighted Re-
+gression Scatterplot Smoothing: Cleveland 1979). DEMO
+er methods, such as cubic splines, may be more ap-
+propriate in many contexts (see Schluter 1988). Our
+purpose here is to highlight the utility of this class of
+models so that readers will DEMO motivated to investigate
+them more widely.
+Method. -The fitting of a line to a bivariate scatter
+of n points in LOWESS regression is done DEMO a series
+of iterated steps. First, the user must decide how
+"smooth" the fitted relationship should be. A smoother
+fit uses more of the nearby points in its estimation of
+j for a given x,, whereas a less smooth fit uses fewer
+points and is thereby more sensitive to local variation
+in the shape of the relationship. Let q DEMO the number
+of adjacent points to be used in the estimation pro-
+cedure such that q/n = f the fraction of all points DEMO
+to derive an estimate of an, for each xi. As f DEMO,
+the fitted line will be smoother;f = 1 corresponds to
+standard linear regression. In the second step, each
+point to be used in the estimation is given a weight.
+The focal point has the DEMO weight, and the weights
+decrease symmetrically around the focal X value; points
+outside the "frame" (i.e., those points not among the
+DEMO nearest neighbors to the focal point along the X axis)
+have weight 0. The weight given to a point x, for a
+focal point x,, denoted W(Xk), is computed as
+essarily robust; outliers may be exercising inordinate
+influence on the line. The first step DEMO the next stage,
+that of obtaining a robust fit, is DEMO calculate the residuals
+from the fitted values
+-
+y.
+Let m designate the median of the absolute values of
+the residuals. If the residuals DEMO normally distributed,
+m is 2/3 the value of the root mean square error around
+the regression, and 6m is approximately 4 times the
+root mean square error. Second, robustness weights,
+denoted rw,, are calculated for each point as
+where
+rw, = B(r1/6m),
+where
+Wl(Xk)
+= T[(x,
+-x,)/d],
+B(u) = (1 - U2)2 for lul 1
+DEMO(u) = 0 elsewhere.
+These values give greater weight to points DEMO low
+residuals and deemphasize those points with high re-
+siduals. A residual value in excess of 6m produces a
+robustness weight that is nearly DEMO, and values <<6m
+have weights nearly equal to 1. Third, the LOWESS
+procedure is repeated, but this time the weights used
+for the weighted least squares for each point are pro-
+vided by the DEMO of the robustness weights and the
+original neighborhood weights. This procedure can be
+repeated until there is minimal change in the final prod-
+uct.
+DEMO -In order to illustrate the technique, we
+reexamine data from an DEMO study of natural
+selection (Travis 1983). Each datum consists of DEMO
+average body size of full-sib tadpoles of Hyla gratiosa
+at age 4 wk from a single enclosure in the field and the
+fraction of DEMO original number of tadpoles placed in
+that enclosure that survived to age 4 wk. Tadpoles were
+exposed to insect predators that cannot prey on DEMO
+poles beyond a specific body size and that therefore
+should take a greater toll on groups of more slowly
+growing tadpoles. A number of DEMO families were
+represented in the experiment, and the published result
+(repeated with another species by Travis et al. 1985)
+indicated that there DEMO a positive relationship between
+the average size of tadpoles in an enclosure and the
+survival rate that occurred in that enclosure, in other
+words that when a cohort had a higher growth rate it
+suffered lower DEMO mortality.
+The bivariate plot of arcsine-transformed survival
+values and larval body masses is illustrated with a
+linear regression line in Fig. 3A. The linear DEMO
+is significant (F, 16 = 19.6, P < .001) and accounts for
+52% of the variance in transformed survival values.
+Visual inspection DEMO that, although there is a good
+relationship through the lower half DEMO the larval body
+masses, there is little relationship at the higher DEMO
+T(u) = (1 - 1u13)3 for IuI< 1
+DEMO(u) = 0 elsewhere
+d = distance from x, to its qth nearest neighbor,
+calculated only along the X-axis.
+In the third DEMO, a simple linear regression is fitted to
+the q points by DEMO least squares, using the weights
+derived in step 2. Fourth, the estimate j, is computed
+for the focal point xi as the fitted value of Y from the
+regression. This procedure is then repeated for DEMO next
+point until all n points have estimated Y values. Note
+that points at either extreme of the independent value
+have most of their DEMO neighbors only on one side; this
+pattern prevents the fitted values DEMO forcibly de-
+scribing a flat line at the extremes.
+A "first DEMO" is now in hand, but the fit is not nec-
+September 1993
+STATISTICAL METHODS FOR ECOLOGY
+1635
+0.6
+, 0.5
+CC 0.4-
+DEMO: O
+0.0
+0
+uL0.2
+cc 0oi
+F_
+40
+50
+6070
+8090
+DEMO
+mass of the survivors in the enclosure.
+Residuals
+100
+LARVAL BODY MASS
+3. (A) Survival rate (angularly transformed)
+from
+the linear
+regression
+depicted
+A A
+z
+~~~~~~~0
+C/) O 0.2 B
+C 0
+DEMO
+0.1
+0 0
+0
+m
+(mg)
+a
+40
+LARVAL BODY DEMO
+of tadpoles
+Data from Travis (1983). Line indicates the normal DEMO
+in Part
+A plotted
+506070O80
+in a single
+enclosure
+plotted
+as a function
+as a function
+of the independent
+variable,
+Z
+a
+0.2
+DEMO
+LL~~~~~~~~
+90
+100
+(mg)
+average
+regression.
+average
+F a-0.2
+of DEMO
+body
+(B)
+body mass.
+The graph suggests that at higher DEMO masses variance
+in survival rates is large and reflects the influence of
+factors other than insect predation. The linear regres-
+sion captures the major DEMO in the data but does not
+indicate a region of effective neutrality.
+The inadequacy of the fit of the linear regression can
+be seen DEMO a plot of residuals against the independent
+variable (Fig. 3B); DEMO flat regression line drawn through
+that plot indicates an unbiased fit but one in which the
+variance around the line increases with increasing mean
+DEMO masses. No transformation was found to alleviate
+this problem. A quadratic regression (Fig. 4A) provides
+a hint that the fitness function will become DEMO at
+higher body masses but does not indicate much of a
+neutral region within the range of body masses exhib-
+ited in the study. DEMO fit of a LOWESS regression with
+f = 0.67 (Fig. 4B) shows that survival rates increase
+steadily with increases in larval body mass DEMO to the
+75-mg level, beyond which the increase is minimal at
+DEMO This fit indicates that growth rates that produce
+body masses > 75 mg at age 4 wk convey no increases
+in survival rates, indicating the region of effective neu-
+trality of growth rate with respect to DEMO predation.
+A LOWESS regression with more local sensitivity, f =
+0.33 (Fig. 4C), produces the same general impression;
+the fitted line DEMO irregular and inconsistent in
+direction at growth rates > 7 5 mg.
+Choosing the parameters of LO WESS. -The LOW-
+ESS method appears to DEMO the burden of consider-
+able subjectivity. However, analysis and simulation
+studies DEMO substantial comfort for those who are
+skeptical on these grounds (Cleveland DEMO). First, it
+appears that the use of linear regression within DEMO
+set of neighboring points to estimate yi provides an
+effective balance between ease of computation and the
+ability to reproduce known patterns. Second, two it-
+F_ 0.6
+<
+0.5-
+A
+*
+0.6
+B
+*
+0.5-
+*
+06
+*
+0.5-
+0.4-0.400
+W 0.3
+i
+4
+0.
+*
+0.32
+z
+DEMO -
+40
+50 60 70 80
+LARVAL BODY MASS
+90
+100
+(DEMO)
+4-~~~0.
+40
+50 60 70 80 90 100
+LARVAL BODY MASS (mg)
+ai
+0.1I
+40
+50 60 70 80
+LARVAL BODY MASS
+90 100
+(mg)
+FIG. 4. (A) Data from Fig. 3A with a line depicting a least-squares quadratic model. (B) Data from DEMO 3A with a line
+depicting a LOWESS regression model with f = 0.67. (C) Data from Fig. 3A with a line depicting a DEMO regression
+model with = 0.33.
+0
+C,, LLO02-
+0.2
+m
+0.2-
+w
+z
+1636
+SPECIAL FEATURE
+Ecology, Vol. 74, No. 6
+erations (as illustrated above) have proven adequate
+to provide a sufficient convergence on a set of j, for a
+large number of real and simulated data sets. Although
+other weighting functions could be used, the "tricube"
+used DEMO enhances the accuracy of the distributional
+approximation for calculating the standard errors of
+the yQ.
+The greatest subjectivity lies in choosing f: how
+"DEMO" should the fit be made? Either of two meth-
+ods for choosingf seems effective. The first is a least-
+squares criterion (Cleveland 1979). An initial value of
+f f, is chosen to minimize the sum of the squared
+deviations from the set of j, before the robustness step
+is employed. The robustness weights are then calcu-
+lated, and a new value off is chosen so as to minimize
+the sum DEMO the product of the robustness weights and
+the residuals for the set of j, values. This procedure is
+repeated until a negligible change in f is observed.
+The second method is much simpler (Cleveland
+1985). First, choose an arbitrary value of f and cal-
+culate the robust LOWESS estimates yi and the resid-
+uals from those estimates, ri = i- yj. If the plot of
+the residuals, r,, against the x, shows any dependence
+of r, on x,, then f DEMO too large and should be decreased.
+In practice, one ought therefore DEMO begin with a small
+value of f and increase it slowly to the point at which
+the residuals show a pattern, from which a slightly
+smaller f is finally chosen.
+Statistical testing. -The standard errors of DEMO yj can
+be estimated in three ways. First, Cleveland (1979)
+offers analytical formulas for the error that are based
+on either a DEMO approximation for the error dis-
+tribution or a modification of other robust methods.
+Second, one can employ maximum likelihood methods
+derived explicitly for this problem (Cleveland 1981).
+Third, error estimation and more customized statis-
+DEMO testing can be achieved through computer-inten-
+sive nonparametric methods such as bootstrapping and
+cross-validation (Chambers et al. 1983, Efron and Gong
+1983, Efron and Tibshirani 1991).
+Further reading. -Chambers et al. (1983) and DEMO
+land (1985) offer a very accessible introduction to
+LOWESS regression and a variety of other graphical
+methods. The general problem of robustness is DEMO
+dressed in detailed fashion in the treatments of Huber
+(1981) and Hampel et al. (1986). Although some treat-
+ments of robust regressions are available in a number
+of computer software packages, some of the compu-
+tations in some packages do not always give the correct
+results (Street et al. 1988).
+LITERATURE
+CITED
+ACKNOWLEDGMENTS
+Agresti, A. 1990. Categorical data analysis. John Wiley &
+Sons, New York, New York, DEMO
+Anderson, S., A. Auquier, W. W. Hauck, D. Oakes, DEMO Van-
+daele, and H. I. Weisberg. 1980. Statistical methods for
+comparative DEMO John Wiley & Sons, New York, New
+York, USA.
+Chambers, J. M., W. S. Cleveland, B. Kleiner, and P. A.
+Tukey. 1983. Graphical methods for data analysis. Wads-
+worth International Group, Belmont, DEMO, USA.
+Cleveland, W. S. 1979. Robust locally weighted regression
+and smoothing scatterplots. Journal of the American Sta-
+tistical Association 74:829-836.
+1981. LOWESS: a program for smoothing scatter-
+plots by robust locally weighted regression. American DEMO
+istician 35:54.
+1985. The elements of graphing data. Wadsworth,
+Monterey, California, USA.
+Cormack, R. M. 1981. Log-linear models for capture-re-
+capture experiments on open populations. Pages 197-215
+in R. W. Hiorns and D. DEMO, editors. The mathematical
+theory of the dynamics of biological populations II. DEMO
+demic Press, London, England.
+Cox, D. R. 1970. The analysis DEMO binary data. Methuen,
+London, England.
+Cox, D. R., and DEMO J. Snell. 1989. Analysis of binary data.
+Second edition. Chapman and Hall, New York, New York,
+USA.
+Draper, N., and H. DEMO 1981. Applied regression anal-
+ysis. Second edition. John Wiley & Sons, DEMO York, New
+York, USA.
+Efron, B., and G. Gong. 1983. A leisurely look at the boot-
+strap, jackknife, and cross-validation. American DEMO
+cian 37:36-48.
+Efron, B., and R. Tibshirani. 1991. Statistical data analysis
+in the computer age. Science 253:390-395.
+Fienberg, S. E. 1970. The analysis of multidimensional con-
+tingency tables. Ecology 51:419-433.
+1980. The DEMO of cross-classified categorical
+data. Second edition. MIT Press, Cambridge, Massachu-
+setts, USA.
+Finney, D. J. 1964. Statistical method in biological assay.
+Hafner, New York, New York, USA.
+Fleiss, J. L. 1973. Statistical methods for rates and propor-
+tions. John Wiley & Sons, New York, DEMO York, USA.
+Green, P. E. J., and P. D. M. DEMO 1987. Analysis
+of mark-recapture data from hatchery-raised salmon using
+log-linear models. Canadian Journal of Fisheries and Aquatic
+Sciences 44:316-326.
+Hampel, F. R., DEMO Ronchetti, P. J. Rousseeuw, and W. Stahel.
+1986. Robust statistics: DEMO approach based on influence
+functions. John Wiley & Sons, New York, New York, USA.
+Hauck, W. W., and A. Donner. 1977. Wald's test as applied
+to hypotheses in logit analysis. JASA 72:851-853.
+DEMO, D. M. 1985. Analyzing selection experiments with
+log-linear models. Ecology 66:DEMO
+Hepp, G. R., R. A. Kennamer, and W. F. Harvey, IV. 1989.
+Recruitment and natal philopatry of Wood Ducks. Ecology
+70:897-903.
+DEMO, T. R. 1980. The analysis of rates and survivorship
+using log-linear DEMO Biometrics 36:299-305.
+Horton, D. R., J. L. Capinera, and DEMO L. Chapman. 1988.
+Local differences in host use by two populations of the
+Colorado potato beetle. Ecology 69:823-831.
+Hosmer, D. W., Jr., B. Jovanovic, and S. Lemeshow. 1989.
+Best subsets logistic regression. Biometrics 45:1 265-1270.
+We thank Drs. Charles McCulloch and Deborah Burr for
+clarifying DEMO issues associated with logistic regression anal-
+ysis.
+September 1993
+STATISTICAL METHODS FOR ECOLOGY
+1637
+Hosmer, D. W., Jr., and S. Lemeshow. 1989. Applied lo-
+gistic regression. John Wiley & Sons, New York, New York,
+USA.
+Huber, P. J. 1981. Robust DEMO John Wiley & Sons,
+New York, New York, USA.
+Jennings, D. E. 1986. Judging inference adequacy in logistic
+regression. JASA 81:471-476.
+Juliano, S. A., and F. M. Williams. 1987. A comparison of
+DEMO for estimating the functional response parameters
+of the random predator equation. Journal of Animal Ecol-
+ogy 56:641-653.
+Kaplan, R. H. 1992. Greater maternal investment can de-
+crease offspring survival in the frog Bombina orientals.
+Ecology DEMO:280-288.
+McCullagh, P., and J. A. Nelder. 1989. Generalized linear
+models. Chapman and Hall, New York, New York, USA.
+Murtaugh, P. DEMO 1988. Use of logistic regression in mod-
+elling prey selection by Neomysis mercedis. Ecological Mod-
+elling 43:225-233.
+Pacala, S. W., and A. DEMO Dobson. 1988. The relation between
+the number of parasites/host and host age: population dy-
+namic causes and maximum likelihood estimation. Para-
+sitology 96:197-210.
+Pollock, K. W., J. E. Hines, and J. D. Nichols. 1984. The
+use of auxiliary variables in capture recapture and removal
+experiments. DEMO 40:325-340.
+Rebertus, A. J., G. B. Williamson, and E. DEMO Moser. 1989.
+Longleaf pine pyrogenicity and turkey oak mortality in
+Florida xeric sandhills. Ecology 70:60-70.
+Schluter, D. 1988. Estimating the form of natural selection
+on a quantitative trait. Evolution 42:849-861.
+Schoener, T. W., DEMO G. H. Adler. 1991. Greater resolution
+of distributional complementarities by controlling for hab-
+itat affinities: a study with Bahamian lizards and birds.
+American Naturalist 137:669-692.
+Shanubhogue, A., and A. P. Gore. 1987. Using logistic DEMO
+gression in ecology. Current Science 56:933-935.
+Stoddard, J. L. 1987. DEMO communities of high-
+elevation lakes in the Sierra Nevada, California. Journal DEMO
+Plankton Research 9:631-650.
+Street, J. O., R. J. Carroll, DEMO D. Ruppert. 1988. A note
+on computing robust regression estimates via iteratively
+reweighted least squares. American Statistician 42:152-154.
+Travis, J. 1983. Variation in growth and survival of Hyla
+gratiosa larvae in experimental enclosures. Copeia 1983:DEMO
+232-237.
+Travis, J., W. H. Keen, and J. Juilianna. 1985. DEMO effects
+of multiple factors on viability selection in Hyla gratiosa
+tadpoles. Evolution 39:1087-1099.
+Travis, J., J. C. Trexler, and M. Mulvey. 1990. Multiple
+paternity and its correlates in female Poecilia latipinna
+(Poeciliidae). Copeia 1990:722-729.
+Trexler, J. C. 1985. Density-dependent parasitism by a eu-
+lophid parasitoid: tests of an intragenerational hypothesis.
+Oikos 44:415-422.
+Trexler, J. DEMO, C. E. McCulloch, and J. Travis. 1988. How
+can the functional response best be determined? Oecologia
+(Berlin) 76:206-214.
+Wauters, L., and A. A. Dhondt. 1985. Body weight, lon-
+gevity and reproductive success in red squirrels (Sciurus
+vulgaris). Journal of Animal Ecology 58:837-851.{1g42fwefx}

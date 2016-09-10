@@ -1,0 +1,2633 @@
+Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+ORGANIZATIONAL
+BEHAVIOR
+DEMO HUMAN
+DECISION PROCESSES
+www.elsevier.com/locate/obhdp
+Fast, frugal, and rational: DEMO rational norms explain behavior
+Nick Chater,a,* Mike Oaksford,b Ramin Nakisa,c and Martin Redingtonc
+a Department of Psychology, University of Warwick, Coventry CV7 4AL, UK
+b School of Psychology, Cardiﬀ University, DEMO Box 901, Cardiﬀ CF1 3YG, UK
+c Department of Experimental Psychology, University of Oxford, Oxford, UK
+Abstract
+Muchresearchonjudgmentanddecisionmakinghasfocussedontheadequacyofclassicalrationalityasadescriptionofhuman
+reasoning. But more recently it has been argued that classical rationality should also be rejected even DEMO normative standards for
+human reasoning. For example, Gigerenzer and Goldstein (1996) and Gigerenzer and Todd (1999a) argue that reasoning involves
+‘‘fast and frugal’’ algorithms which are not justiﬁed by rational norms, but which succeed in the environment. They provide three
+linesofargumentforthisview,basedon:(A)theimportanceoftheenvironment;(B)DEMO;and(C)
+thefactthatanalgorithmwithnoapparentrationalbasis,Take-the-Best,succeedsinanjudgmenttask(judgingwhichoftwocities
+is the larger, based DEMO lists of features of each city). We reconsider (A)–(DEMO), arguing that standard patterns of explanation in
+psychology and the social and biological sciences, use rational norms to explain why simple cognitive algorithms can succeed. We
+alsopresentnewcomputersimulationsthatcompareTake-the-Bestwithothercognitivemodels(whichuseconnectionist,exemplar-
+based, and decision-tree algorithms). Although Take-the-Best still performs well, it does not perform noticeably better than the
+other models. We conclude that these results provide no strong reason to DEMO Take-the-Best over alternative cognitive models.
+ 2003 Elsevier Science (USA). DEMO rights reserved.
+1. Introduction
+Research on human judgment and decision making
+has frequently focussed on the relationship between
+observed human reasoning and classical rational
+DEMO Instances where actual reasoning and classical
+norms diverge have been taken to exemplify cognitive
+biases; human performance is viewed as failing to
+measure up, in some ways and under some circum-
+stances, to classical rational DEMO For example,
+people appear to persistently fall for logical blunders
+(DEMO, Newstead, & Byrne, 1993), probabilistic falla-
+cies (e.g., DEMO & Kahneman, 1974), to make in-
+consistent decisions (Kahneman, DEMO, & Tversky,
+1982; Tversky & Kahneman, 1986), and DEMO make ir-
+rational moves in games (Colman, 1995). Indeed, DEMO
+concepts of logic, probability, decision theory and the
+like do not appear to mesh naturally with our everyday
+reasoning strategies: these notions took centuries of
+* Corresponding author.
+E-mail address: nick.chater@warwick.ac.uk (N. Chater).
+DEMO intellectual eﬀort to construct, and present a
+tough challenge for each DEMO of students. From
+this perspective, the gap between observed decision
+making DEMO and classical rationality may appear a
+yawning gulf.
+Various factors have been viewed as contributing to
+this gulf: performance errors, computational limita-
+tions, and diﬀerences between the understanding of the
+task employed by experimenter and DEMO par-
+ticipant (e.g., Ayton & Hardman, 1997; Cohen, 1981;DEMO
+Oaksford & Chater, 1993; Stanovich, 1999; Stanovich
+& West, DEMO; Stein, 1996). There have also been
+persuasive arguments that individual diﬀerences con-
+cerning cognitive ability and/or educational back-
+ground can substantially DEMO the gap between
+observed behavior and classical norms. Where cogni-
+tive ability is high and/or the task constraints do not
+severely impact cognitive DEMO of memory and
+attention, people may on occasion conform quite well
+DEMO classical rational norms, even on tasks where per-
+formance is typically DEMO as systematically irrational
+(Stanovich & West, 1998a, 1998b, 1998c). This line of
+argument suggests that the gulf between performance
+0749-5978/03/DEMO - see front matter  2003 Elsevier Science (USA). All DEMO reserved.
+doi:10.1016/S0749-5978(02)00508-3
+64
+N. Chater et al. / Organizational Behavior and Human Decision Processes DEMO (2003) 63–86
+and classical rationality may be bridged, at least DEMO
+some individuals, in some circumstances (Stanovich,
+1999, although see, for example, Ayton, 2000; Hertwig,
+2000).
+Recently, a DEMO of theorists have suggested a
+more radical alternative—that comparing human be-
+havior against classical rationality is like comparing
+apples and oranges. Whereas the traditional DEMO
+with psychology and economics is that the comparison
+is appropriate, but DEMO the disparity between the two
+may be substantial, the radical viewpoint DEMO that
+the comparison itself is misconceived.
+Evans and Over (1996, 1997), for example, distin-
+guish between two notions of rationality:
+Rationality1 : Thinking, speaking, reasoning, making a decision,
+or acting in a way that is generally reliable and eﬃcient for
+achieving ones goals
+DEMO : Thinking, speaking, reasoning, making a decision,
+oractingwhenonehasareasonforwhatonedoessanctionedby
+a DEMO theory. (Evans & Over, 1997, p. 2)
+Crucially,EvansandOverarguethatthesetwokindsof
+DEMO are largely independent: ‘‘people are largely
+rational in the sense of DEMO their goals
+(rationality1 )buthaveonlyalimitedabilitytoreasonor
+act for good reasons sanctioned by a normative theory
+(rationality2 )’’(Evans&Over,1997,p.1).Ifthisisright,
+then DEMO ones goals can be achieved without fol-
+lowingthepreceptsofclassical rationality—i.e.,without
+there being a justiﬁcation for the actions, decisions or
+thoughts which lead to success: rationality1 does not
+require rationality2 . That is, Evans and Over DEMO com-
+mitted to the view that thoughts, actions or decisions
+which DEMO be normatively justiﬁed using classical
+rational norms can, nonetheless, consistently lead to
+practical success.
+Relatedly, Gigerenzer and his colleagues (e.g., Gi-
+gerenzer, 2000; Gigerenzer & Goldstein, 1996; Gige-
+renzer&Todd,1999a)havedevelopedamajorresearch
+DEMO on human judgment that attempts to break
+out of the restrictive mould of comparing human per-
+formance with classical rationality. Like Evans and
+Over (1996, 1997), Gigerenzer and colleagues have ar-
+guedthat,instead,inferenceshouldbeassessedinterms
+of its success in solving ecologically relevant problems
+in natural environmental contexts: ‘‘the minds of living
+systems should be understood relative to the environ-
+ment DEMO which they evolved rather than to the tenets of
+classical rationality [i.e., probability theory, expected
+utilitytheoryandsoon]...’’(GigerenzerandGoldstein,
+p. 651) (emphasis added)DEMO The proposal is that the
+point of reasoning is to allow people to deal with the
+everyday world, rather than conforming with rational
+norms.
+The aim of this paper is to consider the viability of
+this DEMO proposal. For concreteness, we focus on a
+particularly inﬂuential formulation, by Gigerenzer and
+Goldstein (1996), but we intend our analysis to apply
+more generally to accounts of ecological and classical
+norms of rationality.
+Gigerenzer DEMO Goldstein (1996) give three lines of
+argumentthatanecologicalstandardofrationality(i.e.,
+that reasoning gets good results in the real world)
+should replace classical norms DEMO the appropriate
+comparison for human reasoning, based on: (A) the
+importance of the environment; (B) the existence of
+cognitivelimitations;and(C)an existenceproof, i.e.,a
+speciﬁc algorithm, Take-the-Best that exempliﬁes their
+approach. Take-the-Best succeeds in a real environ-
+ment, even though it has no apparent rational justiﬁ-
+cation.
+Gigerenzer and colleagues also argue that Take-the-
+Best DEMO also more than a mere existence proof—it is in-
+tended to be a cognitively plausible model of a speciﬁc
+kind of cognitive estimation (e.g., Gigerenzer & Gold-
+stein, 1996; Gigerenzer, 2000). The task DEMO and
+Goldstein consider is that of two alternative forced
+choice concerning which of two German towns has the
+larger population, based on a set of nine binary fea-
+tures ofeachtown(e.g.,‘‘hasasoccerteam,’’‘‘isastate
+capital,’’etc.).GigerenzerandGoldstein(DEMO)consider
+the computational problem of learning how to predict
+which of two cities is the larger, from a training set of
+cities,theirfeatures,andpopulations.Fromthepointof
+view of conventional statistics, an obvious way to
+proceedinsuchataskistoattempttousesomeformof
+regression(e.g.,linearregression)toassesstheinﬂuence
+ofeachofthefeaturesoncitysize.Whenpresentedwith
+aforcedchoicetest,theregressionmightthenbeusedto
+integrateallthefeaturesofthetwocities,tocometoan
+overall conclusion concerning which is likely DEMO be the
+larger.
+Gigerenzer and Goldstein s Take-the-Best algorithm,
+however, DEMO a radically diﬀerent approach. It has
+two steps. The ﬁrst routine, DEMO recognition principle
+statesthat,ifareasonerrecognisesthenameofonecity
+but not the other, then the ﬁrst DEMO should be assumed
+to be the larger–no further memory search is carried
+out. If the recognition principle does not decide the
+issue, Take-the-Best moves to a second and more
+elaborate routine (on which we concentrate below).
+Features of the cities are considered in order, one-by-
+one, DEMO the feature most diagnostic of city size to the
+feature that is least diagnostic of city size (where di-
+agnosticity is calculated as the probability that the
+feature will correctly signal which is the larger of DEMO
+randomly chosen cities which diﬀer on this feature). As
+soon as a feature is found on which the cities diﬀer
+(e.g.,onecityhasasoccerteambuttheotherdoesnot),DEMO
+thenthefeatureisusedtodecidewhichcityisthelarger
+(the city with the soccer team) and the calculation
+terminates. This means that the decision is based on a
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+65
+single feature, rather than attempting to integrate all
+DEMO diﬀerent featuresof the two cities; andindeed many
+of the features of DEMO cities are not even considered in
+the decision. Gigerenzer and Goldstein (DEMO) showed
+that, despite this very frugal use of information, Take-
+DEMO performs impressively. In a computational
+competition using real features of German cities,
+Take-the-Best performs as well as linear regression and
+a range of DEMO to linear regression. Sub-
+sequent computational simulation work has success-
+fullygeneralizedtheseﬁndingstoaremarkablerangeof
+domains, ranging from judgments of levels of home-
+lessness based on features of US cities, to judgments of
+houseprices,professors salaries,theamountoftime35
+species of mammal spend asleep based their biological
+features, and many more (Czerlinski, Gigerenzer, &
+Goldstein, 1999).
+Take-the-Besthasinterestingantecedentsinprevious
+work in the literature of behavioral decision making.
+Non-compensatorystrategies(i.e.,thosethatuseaspects
+of individual features to make a decision, rather than
+integrating all the features given) have been widely dis-
+cussed (e.g., Einhorn, 1970, 1971; Ganzach, 1995), in-
+cluding DEMO by aspects (Tversky, 1972) and the
+lexicographic heuristic (Tversky, DEMO).
+Morebroadly,theAdaptiveDecisionMakerresearch
+program of Payne and colleagues (Payne, 1976; DEMO,
+Bettman,&Johnson,1988,1990,1993;Payne,Bettman,
+& Luce, 1996), has emphasized that the decision maker
+can strategically choose between DEMO range of decision
+making methods—many of which will be fast and fru-
+gal. In the Adaptive Decision Maker framework,
+though, fast and frugal algorithms are one end of a
+continuum of options from which the DEMO maker
+may choose—given suﬃcient time, cognitive resources
+and motivation, participants may choose strategies
+which integrate the information that they have been
+given in DEMO elaborate ways (although not necessarily
+with better decision making results). DEMO within this
+traditionfocusesinconsiderabledetailontheconditions
+under which particular fast and frugal methods are
+applied, and under what conditions these methods are
+successful (Payne et al., 1993). One diﬀerence of em-
+phasis between the two approaches isthatthe DEMO
+Decision Maker program has been concerned primarily
+with understanding how people make choices between
+options,whereGigerenzerandcolleagueshavefocussed
+primarily on questions of judgment: i.e., tasks DEMO which
+people have to judge, on limited information, which of
+two states of the world holds. Although, from a nor-
+mative point of view, the domains of choice and judg-
+ment are very diﬀerent (DEMO, the normative theory
+for choice is utility theory; the normative theory for
+judgment is decision theory), it is quite possible that
+some DEMO the underlying cognitive algorithms used the
+two cases are closely related. Indeed, Tverskys (1969)
+lexicographicheuristic,mentionedabove,isveryclosely
+related to Take-the-Best.1
+TheAdaptiveDecisionMakerframeworkstressesthe
+ﬂexible DEMO of cognitive heuristics and strategies. By
+contrast, Gigerenzer and Goldstein (1996) do not ex-
+plicitly discuss whether they see Take-the-Best as a
+universal cognitive algorithm, or as being selected dy-
+namically by decision makers from a range of decision
+making methods. But the latter position appears to DEMO
+embodied in the idea of the adaptive toolbox (Gige-
+renzer & DEMO, 1999b; Gigerenzer, 2000, 2001; Gige-
+renzer & Selten, 2001). The adaptive toolbox is ‘‘the
+collection of specialized cognitive mechanisms that
+DEMO has built into the human mind for speciﬁc
+domains of inference and reasoning, including fast and
+frugal heuristics’’ (Gigerenzer & Todd, 1999b, DEMO 30).
+GigerenzerandTodd(1999b)suggestthat,forexample,
+there may be adaptive selection from within the family
+of Take-the-Best-type algorithms (and presumably also
+outside this family), depending on, among other things,
+the kinds of factors analysed in the Adaptive Decision
+Maker framework (Payne et al., 1993)DEMO We shall see, at
+the end of this paper, that the empirical evidence con-
+cerning Take-the-Best is most consistent with this type
+of DEMO
+The two parts of this article focus on general and
+speciﬁc issues in turn. In the ﬁrst part, we begin by
+outlining the central role for rational norms in the ex-
+planation of human behavior. This DEMO for rational
+norms is quite diﬀerent from that embodied in ‘‘classi-
+cal’’ or ‘‘unbounded’’ rationality (Gigerenzer & Gold-
+stein,1996;Gigerenzer&Todd,1999b),DEMO
+underliesexplanationthroughoutmuchofthesocialand
+biologicalsciences.Inparticular,wearguethatnormsof
+classical rationality are crucially involved in explaining
+why a particular behavior is ecologically successful.
+Thus, we argue that classical and ecological notions of
+rationality are complementary, rather than standing in
+competition. With this analysis in mind, we reevaluate
+and counter the three arguments (A)DEMO(C) that Gigeren-
+zer and Goldstein (1996) give for the DEMO that an
+ecological notion of rationality should replace classical
+rationality. The second part of this article conducts a
+new competition, between Take-the-Best and DEMO range
+of algorithms based on existing cognitive architectures
+widelyusedincognitivescienceandartiﬁcialintelligence,
+1 Speciﬁcally, the lexicographic rule compares two choice options
+byconsideringfeaturesofeachoption,onebyone,indescendingorder
+ofimportance.Ifoneoption wins onaparticularfeature,itischosen;
+if there is a tie, the next most important feature is chosen, and so on.
+ThecorecomponentofTake-the-Bestmakesajudgmentbetweentwo
+options—e.g., which is the DEMO city—by considering cues in
+descending order of cue validity concerning that judgment; again, if
+one option wins on a cue, it is chosen (e.g., judged to be the largest
+city); if there is DEMO tie, the next most valid cue is chosen.
+66
+N. Chater et al. / Organizational Behavior and Human Decision Processes DEMO (2003) 63–86
+and considers theoretical arguments which appear to
+favor Take-the-Best.We conclude that, while Take-the-
+Bests performance is again impressive, there is DEMO
+strong reason to view Take-the-Best as having greater
+cognitive plausibility than a range of other algorithms.
+This competition also raises questions concerning the
+relationshipbetweenresearchonjudgmentanddecision
+DEMO and computational and experimental work on
+basic mental processes in cognitive psychology (e.g.,
+Dougherty, Gettys, & Ogden, 1999; Weber, Goldstein,DEMO
+& Barlas, 1995).
+2. Rationality and the explanation of behavior
+DEMO have seen that some leading theorists (e.g.,
+Evans & Over, 1996, 1997; Gigerenzer & Goldstein,
+1996; Gigerenzer & Todd, DEMO) have argued that
+classical rational principles have no useful role in DEMO
+plaining everyday behavior; that classical rationality
+and ecological rationality are entirely DEMO do-
+mains. One implication is that classical rational prin-
+ciples, of DEMO, probability, decision theory, and game
+theory do not even provide DEMO standards
+against which everyday behavior can be compared—
+because to make such a comparison is to compare
+apples and oranges. Everyday behavior is properly
+DEMO by its results, rather than conformity to ab-
+stract standards of DEMO If their analysis is cor-
+rect, then it appears to have DEMO ramiﬁcations across
+the social and biological sciences, where classical ra-
+tional DEMO are frequently used to explain every-
+day behavior. But, we suggest, this apparently radical
+perspective is rooted in an incorrect characterization of
+the DEMO that classical rational principles play in ex-
+planation in the social and biological sciences. Specif-
+ically, critics of the application of classical rational
+principles typically assume that such principles explain
+behavior by assuming that the mind DEMO rational
+calculations. We believe that is a crucial mischarac-
+terization of the project of rational explanation in the
+social and biological sciences, which aim for rational
+description, without ascribing rational calculations to
+the cognitive system.
+2.1. Rational calculation vs. rational description
+Gigerenzer and Goldstein s characterization of the
+DEMO view—that rational norms are the laws of
+thought—is intended to encompass the broad sweep of
+rational explanation of behavior across several disci-
+plines.
+From DEMO Laplace to George Boole to Jean Piaget, many
+scholars have defended DEMO now classical view that the laws of
+humaninferencearethelawsofprobabilityandstatistics... Fol-
+lowingthistime-honoredtradition,muchcontemporaryresearch
+inpsychology,behavioralecology,andeconomicsassumesstan-
+dardstatisticaltoolstobethenormativeanddescriptivemodels
+of inference and decision making. (p. 650)
+GigerenzerandTodd(1999b,p.9)amplifythepoint:
+Unbounded rationality is a strange and demanding beast. DEMO
+the one hand, researchers who envision rationality in this
+way accept DEMO diﬀerence between God, or Laplaces [hypothet-
+ical] superintelligence, and mere mortals. Humans must make
+inferences from behind a veil of uncertainty, but God sees
+clearly; the currency of human thought is probabilities,
+whereas God deals in certitude. On the other hand, where it
+comes to how they think these uncertain inferences are exe-
+cuted, those who believe in unbounded rationality paint hu-
+mans in Gods image. God and Laplaces superintelligence DEMO
+not worry about limited time, knowledge, computational ca-
+pacities. The ﬁctional, unboundedly rational human mind does
+not either...
+The idea that rational explanation presupposes that
+rational calculation (and implausibly vast amounts of
+such calculation) DEMO conducted by the human mind ﬁts
+well with Evans and Overs (DEMO, 1997) viewpoint that
+classicalrationalnormsexplainanagentsbehavioronly
+when the agent understands the relevant normative
+justiﬁcation—thisistheirrationality2 ,above.Theirview
+is that rationality2 explanation requires that an agent
+possesses rational norms and can calculate their impli-
+cations for the particular decision being DEMO Evans
+and Over point out, echoing the quotes above, that the
+complexity of these calculations is likely to exceed the
+capacity of the DEMO system, for most interesting
+real world reasoning problems (see also Oaksford &
+Chater, 1991, 1993).
+We suggest that the view that rational explanation
+requires that people themselves carry out the relevant
+rational calculations DEMO a fundamental mischaracteriza-
+tion of how rational principles are used to explain
+thoughtandbehaviorinbehavioralecology,economics,
+andpsychology.Insteadofbeingcommittedtowhatwe
+shall call rational calculation, researchers in these dis-
+ciplines are actually committed to a very diﬀerent and
+more modest claim: rational description.2;3
+Rational calculation is the view that the mind works
+DEMO carrying out probabilistic, logical, or decision-theo-
+retic operations. Gigerenzer and Goldstein (1996) en-
+dorse this reading of the role of rationality in DEMO social
+2 Theterminologicalpictureisfurthercomplicatedbythefactthat
+in discussing their competition between algorithms, Gigerenzer and
+DEMO (1996) carefully deﬁne algorithms to be ‘‘rational’’—with
+quotationmarks—iftheyuseallinformationalavailabletothem,andif
+they combine all this information together (p. 657). Gigerenzer and
+Goldsteinquitedeliberatelysetthisusageapartagainstgeneralnotions
+of rationality, such as we are discussing here. To minimize confusion,
+we shall not refer to ‘‘rational algorithms’’ here.
+3 Therearedirectrelationsbetweenthisdistinctionandthegeneral
+distinctionbetweenrule-describedandrule-followingbehavior(Chom-
+sky, 1980; Hahn & Chater, 1998; Kripke, 1982).
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+67
+and biological sciences, arguing that theorists in these
+DEMO are implicitly committed to the view that the
+mind is a ‘‘supercalculator...—carrying around the col-
+lected works of Kolmogoroﬀ, Fisher, or Neyman’’ (p.
+651). Rational calculation is explicitly avowed by rela-
+tively few theorists, though it has clear advocates with
+respect to logical inference: Mental logicians propose
+thatmuchofcognitionisamatterofcarryingoutlogical
+calculations(e.g.,Braine,1978;Inhelder&Piaget,1958;
+Rips, 1994).
+Rational description, by contrast, is the view that
+behaviorcanbeapproximatelydescribedasconforming
+withtheresultsthatwouldbeobtainedbysomerational
+DEMO This view does not assume (though it does
+not rule out) that the thought processes underlying be-
+havior involves any rational calculation. An DEMO
+maybeuseful:thewingsofabirdmayapproximatethe
+resultsofarationalcalculationofoptimalaerodynamic
+design. Moreover, this observation helps explain why
+the DEMO has the structure that it does; but there is, of
+course, no presumption that the bird conducts any cal-
+culations in designing its wing.
+Behavioralecologistsextendthispatternofbiological
+explanation from anatomy and physiology to behavior.
+They attempt to DEMO an animals strategies for for-
+aging, defending territory, or choosing mates, by
+showing that these can be approximately described as
+theresultsofarationalcalculationofoptimalbehavior.
+There is no presumption that the animal carries out
+complex probabilistic or decision-theoretic calculations
+DEMO this behavior, any more than it rationally
+calculates the optimal length DEMO its incisors, or the op-
+timalstructureofitslungs.Indeed,behavioralecologists
+expressly disavow a rational DEMO interpretation
+of their theories, as being patently at variance with the
+DEMO limitations of the animals they study (e.g.,
+McFarland & Houston, 1981).
+Contemporary economics also aims to explain be-
+havior by rational DEMO, rather than rational cal-
+culation. Indeed, the emphasis in economic explanation
+inthemiddleandlatterpartofthepastcenturyhasbeen
+to attempt to minimize psychological claims as far as
+possible (Loewenstein, 1992). For example, many nine-
+teenth century theorists, drawing on the philosophical
+tradition of utilitarianism, viewed utility as a psycho-
+logical construct; and they hypothesized that economic
+agents act in order to maximize their utility—hence at
+leastsomecalculationsconcerningutilitywouldseemto
+be inevitably attributed to the agent. But the twentieth
+DEMO has seen the development of the revealed pref-
+erence interpretation of utility (Samuelson, 1937)—
+utilities are deﬁned in terms of peoples patterns DEMO
+preferences.Inthisinterpretation,utilityisabehavioral
+(and economically observable) construct, rather than a
+component DEMO internal mental calculations. This be-
+havioralapproachhasbeenextended toexpectedutility
+theory (von Neumann & DEMO, 1944) and to
+subjective probability (Anscombe & Aumann, 1963;
+Savage, 1954). Patterns of observable choice behavior
+are used to attribute utilities and probabilities to an
+economic agent. Crucially, there is no assumption that
+these utilities or probabilities are internal to the agent;
+andhence,DEMO,thereisnoassumptionthatagents
+actually engage in probabilistic or decision-theoretic
+calculations.
+There is, moreover, a recognition in economics that
+applying rational theories, such as probability theory,
+expected utility theory, and game theory will only pro-
+vide an approximation model of peoples behavior.
+Economists allow that ‘‘Faced with complexity, indi-
+viduals resort to rules of thumb, to back of the enve-
+lope calculations, to satisﬁcing behavior...’’ (Kreps,
+1990, p. 119). Economists thus recognise that behavior
+only approximates to rationality; but economic theory
+typically idealises away from such limitations. Various
+justiﬁcationsfortheseidealizationshavebeenproposed,
+ranging from making a DEMO of severe idealization, so
+longastheresultingtheorymakessuccessfulpredictions
+(Friedman, 1953), to the DEMO that errors in individual
+agents will cancel out on aggregate, to DEMO view that
+errors be gradually eliminated in contexts where indi-
+viduals can learn (e.g., Cyert & de Groot, 1974; de Ca-
+nio, 1979), or eliminated in competitive markets (see
+Akerlof & Yellen, DEMO, for theoretical analysis). There
+are also those skeptical of much DEMO theory, who
+areunpersuadedbyanyofthesearguments(e.g.,Nelson
+& Winter, 1982; Simon, 1959). For our purposes, the
+important point is that most economists interpret their
+theories as about rational description, but not rational
+calculation(atbest,peopleact asif theymaderational
+calculations; but they do not actually perform such
+calculations); and they agree furthermore that actual
+behavior is only an approximation to DEMO stan-
+dards.4
+This leads us naturally to consider the psychology of
+human reasoning, judgment and decision making. The
+4 It is also true, DEMO course, that there are often many aspects of
+purely descriptive psychological DEMO, e.g., of processes in catego-
+rization or memory, in which DEMO aspects of the machinery of the
+model is not assumed to be calculated by the cognitive system, but is
+instead a description of cognitive processes. For example, in models
+that involve retrieval of stored instances or traces from memory, a
+measure of mental distance between present and stored item is often
+usedtopredictcategorizationormemoryperformance(e.g.,Nosofsky,
+1986). But it is DEMO assumed that the cognitive system does not
+itself calculate this distance, DEMO more than planets need to compute
+the distance between them to calculate the gravitational forces
+between them. Moreover, many cognitive models are formulated in a
+waythatleavesvaguethedistinctionbetweenaspectsofthemodelthat
+are intended to be calculated by the cognitive system, rather than as
+descriptions of its operation. We thank an anonymous reviewer for
+DEMO this point.
+68
+N. Chater et al. / Organizational Behavior and Human Decision Processes DEMO (2003) 63–86
+question at issue is how well people s behavior ﬁts with
+rational models based on probability, expected utility
+theory, or DEMO theory—and hence how far the ratio-
+nality assumptions in economic models idealise away
+from actual human behavior. Thus, crucially, as in
+economics, the issue again concerns rational descrip-
+tion—how well behavior conforms to rational descrip-
+DEMO than how far people make rational
+calculations. Only rarely is any attempt made to assess
+whether people are actually carrying out internal prob-
+abilistic, decision- or game-theoretic calculations (e.g.,
+Gigerenzer & Hoﬀrage, 1995)—generally, the working
+hypothesis seems to be that they are not.5
+We have DEMO that theoretical economists have as-
+sumed that the predictions of rational theories are only
+followed to an approximation. Laboratory studies of
+individual behavior, by both psychologists and experi-
+mental economists, have conﬁrmed this assumption.
+Indeed,theyhaverevealedthatbehaviorcanshowmany
+substantial and systematic departures from normative
+theories. People appear to fall for DEMO probabi-
+listicfallacies(Kahnemanetal.,1982),makepredictable
+logical blunders (Evans, 1982, 1989), show inconsistent
+preferences with (Allais, 1953; Ellsberg, 1961) and
+without (May, 1954) uncertainty, and to fail to adopt
+the DEMO ‘‘Nash equilibria’’ (Nash, 1950) in game
+theory (Flood, 1958; Ledyard, 1995). The practical
+question of interest for theorists applying rational
+principlestoexplainbehaviorisnotwhetherthemindis
+carrying out the rational calculations that they postu-
+late—in most cases, at least, it seems inconceivably un-
+likely that this is true. Instead, the real question is
+whetherandhowthebroadoutlinesofhumanbehavior
+in everyday contexts can usefully be described in ra-
+tional terms at all.
+So, we suggest, across economics, biology, and psy-
+chology, the working assumption of those producing
+rational DEMO is that these explanations aim to
+explain observed behavior, in terms DEMO its optimality in
+relation to goals, environment, and computational re-
+sources.
+ToddandGigerenzer(1999,p.365),bycontrast,sum
+up the ﬁndings of their research program with the
+statementthat‘‘Abitoftrustintheabilitiesofthemind
+andtherichstructureoftheenvironmentmayhelpusto
+seehowthoughtprocessesthatforgothebaggageofthe
+laws of logic and probability can solve DEMO
+adaptive problems quickly and well.’’ But we would
+5 There is a telling contrast here with the empirical testing of the
+mentallogictheoryofdeductivereasoningmentionedabove,atheory
+thatdoesconcernrationalcalculation.Intheliteratureonthistheory,DEMO
+there has been considerable emphasis on attempting to show, using
+error DEMO reaction time data, that the internal processes underlying
+deductive reasoning involve DEMO out steps in a logical calculation
+(see Rips, 1994).
+suggest that proponents of rational explanation were
+never committed to the idea that DEMO thought processes
+themselves are weighed down by the baggage of nor-
+mativemodels.Andweshallsuggestthatwhereasimple
+heuristic is shown to succeed in a real-world environ-
+ment,thequestionofwhyitsucceedsstillremainstobe
+answered—anditishardtoseehowthisquestioncanbe
+DEMO without taking up the baggage of normative
+theory once more.
+We shall argue that the mischaracterization of ra-
+tionalexplanationinthesocialandbiologicalsciencesas
+involving rational calculation, rather than just rational
+description, is of critical importance. Moreover, once
+the rational DEMO viewpoint is properly under-
+stood, the fundamental attacks on the relevance DEMO ra-
+tionalnormsinexplainingbehaviorlosetheirforce.We
+therefore now turn to spelling out a methodology for
+explanation by rational description, which has been
+crisply expressed in Anderson s (DEMO) methodology of
+‘‘rational analysis.’’
+3. Rational analysis: A methodology for the rational
+description of behavior and cognition
+3.1. Rational and algorithmic explanations of DEMO
+Human inferential behavior is spectacularly success-
+ful. In the face of severe memory and time constraints,
+the cognitive system vastly outperforms the most DEMO
+phisticated artiﬁcial intelligence systems inalmost every
+real-world domain (see, e.g., DEMO, 1987; Pearl,
+1988). Two fundamental questions must be addressed.
+First, why is inference successful? Following Anderson
+(1990), we characterize answers to this question as ex-
+planations at the rational level. Second, how is this
+success achieved? Again following Anderson (1990,
+1991), we characterize answers to this question as ex-
+planationsatthealgorithmiclevel(Marr,1982)—i.e.,by
+specifying the computational procedures involved in
+inference, such as Take-the-Best and the other algo-
+rithms in Gigerenzer and Goldsteins competition.
+3.2. Rational analysis
+DEMO central idea underlying explanation at the ra-
+tional level is that, DEMO cognition is well adapted to
+achieving a goal in some environment, DEMO it can be
+describedasapproximating,tosomedegree,theoptimal
+solution to achieving that goal in that environment.
+Providing a rational level explanation requires specify-
+ing the goals DEMO the system, the structure of the envi-
+ronment, and formally deriving an optimal solution for
+achieving the goal in that environment. An elegant
+DEMO for constructing such explanations has
+been formulated in the context of cognitive psychology
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+69
+in Anderson s concept of rational analysis.6 Andersons
+approach involves six steps:
+1. Specify precisely the goals of the cognitive DEMO
+2. Developaformalmodeloftheenvironmenttowhich
+the system is adapted.
+3. Make minimal assumptions about computational
+limitations. [Sometimes minimal assumptions will
+be no assumptions at all—this step is DEMO op-
+tional.]
+4. Derive the optimal behavior function given 1–3
+above.[Thisrequiresmathematicalanalysisusingra-
+tionalnorms,suchasprobabilitytheoryandexpected
+utility theory.]
+5. Examine the empirical evidence to see whether the
+DEMO of the behavior function are conﬁrmed.
+[Note crucially that the goal is to use the rational
+analysis to predict and describe behavior. Thus, the
+rational calculations in Step 4 are not assumed to
+be carried out DEMO the cognitive system. This is what
+makes rational analysis a theory of rational descrip-
+tion, rather than rational calculation.]
+6. Repeat, iteratively reﬁning DEMO theory.
+As we will see below, this pattern of explanation is
+DEMO appropriate to characterizing classical rational
+explanation in economics or behavioral ecology.
+In the following three sections, we illustrate rational
+and algorithmic explanation by reference to speciﬁc
+examplesfrompsychologyandthesocialandbiological
+sciences, showing how such explanation appears to un-
+dermine each of Gigerenzer and Goldsteins (1996) ar-
+guments (A)–(C). For each argument, we outline its
+basis in Andersons account of rational analysis (1–6
+above),andexemplifythesepointsfrompsychologyand
+other areas of the social and DEMO sciences.
+3.3. Ecological considerations
+Advocatesofecologicalviewsofrationality(Evans&
+Over, 1996, 1997; DEMO & Goldstein, 1996; Gige-
+renzer & Todd, 1999a) make much of the contrast be-
+tween everyday human behavior, the success of which
+must be judged in the context of a speciﬁc andcomplex
+environment, and abstract classical principles of ratio-
+nality,whichappeartobejustiﬁedapriori,andhenceto
+embody no constraints concerning DEMO reasoning envi-
+ronment.Inshort,theconcernisthatclassicalprinciples
+6 Gigerenzer and Goldstein (1996) argue that Andersons (1990)
+frameworkforrationalanalysisisanexampleofclassicalrationalityin
+psychology. More speciﬁcally, Gigerenzer and Todd (1999a) classify
+Anderson s (1990) rational analysis as rationality subject to con-
+straints. See Oaksford and Chater, 1998b for a collection of recent
+work in this tradition; and Chater and Oaksford, 2000, relating the
+methodology to other philosophical positions concerning rationality
+and behavior.
+of rationality are unecological,DEMO and hence inappropri-
+ate as standards of real-world reasoning.
+But, as DEMO have seen, a central element of rational
+analysis is modeling the DEMO at an appropriate
+level of idealization (Andersons Step 2). The DEMO
+mental success of inference is explained to the extent
+that it approximates the optimal behavior function
+(Anderson s Step 4) derived by applying DEMO prin-
+ciples to the environmental problem. Consequently, on
+this view, rational principles and environmental success
+are complementary, and not in opposition. In psychol-
+ogy,thisisfamiliarfromperception,whererationallevel
+theory (Marrs computational level) involves detailed
+modeling of DEMO visual environment. Only then can op-
+timal models for visual processing of that environment
+bedeﬁned.Indeed,Marr(1982)explicitlyalliesthislevel
+of explanation with Gibson s ‘‘ecological’’ DEMO to
+perception (Gibson, 1979), where the main focus is on
+environmental structure.
+Similarly, in behavioral ecology, environmental ide-
+alizations of resource DEMO and replenishment of
+food stocks, patch distribution and time of day DEMO
+crucial to determining optimal foraging strategies
+(Gallistel, 1990;McFarland &Houston,DEMO;Stephens
+& Krebs, 1986). And in economics, idealizations of the
+‘‘environment’’ are crucial to determining rational eco-
+nomicbehavior(McCloskey,1985).Inmicroeconomics,
+DEMO the environment (e.g., game-theoretically) in-
+volvescapturingtherelationbetweeneachactorandthe
+environment of other actors DEMO exogenous variables
+(Kreps, 1990). In macroeconomics, explanations using
+rational DEMO theory (Muth, 1961) begin from a
+formal model of the DEMO, as a set of equations
+governing macro-economic variables.
+In summary, environmental analysis cannot replace
+rational norms as an explanation of why behavior is
+DEMO In rational explanation in psychology, be-
+havioral ecology, and economics, DEMO environmental
+modeling and rational principles are required.
+Whereasinsomecontexts,Gigerenzerandcolleagues
+consider environment analysis as a possible alternative
+to explanation in terms of rational norms, in other
+contexts,environmentalanalysisisviewedasapotential
+add-on to rational explanation. Gigerenzer and Todd
+(1999b, DEMO 11), for example, state that ‘‘in Andersons
+rationalanalysisframework(Anderson,1990;DEMO
+& Chater, 1994) constraints from the environment are
+used to modify ones understanding of what is optimal
+behavior in a particular context.’’ We DEMO argue in-
+stead that, without constraints from agents goals and
+environment (and, optionally, computational con-
+straints) the notion of optimal behavior is simply
+ill-deﬁned—the goals and environment deﬁne the opti-
+mizationproblem.Inparticular,then,itismisleadingto
+think DEMO constraints from the environment modifying
+ones understanding of optimal behavior, as DEMO
+70
+N. Chater et al. / Organizational Behavior and Human Decision Processes DEMO (2003) 63–86
+and Todd suggest. Without a speciﬁcation of the struc-
+ture of the environment, optimal behavior is not well
+deﬁned.
+Although Gigerenzer and Goldsteins (1996) and
+Evans and Overs (1996, 1997) arguments do not un-
+dermine rational explanation in psychology, their ar-
+guments do have a genuine target. Their emphasis on
+the environment does count against DEMO
+accounts of human inference, which ignore content and
+context. Part of DEMO reason for this is the attempt to
+devise empirical tests of descriptive rational theories
+which are independent of speciﬁc beliefs or utilities,
+which DEMO led to a focus on internal consistency of be-
+haviorinhighlyartiﬁcialconditions,ratherthanonhow
+behavior meshes with the environment. Reasoning that
+may appear poor in an ecologically DEMO laboratory
+context may be highly adaptive in the natural environ-
+ment, DEMO has been extensively argued (Gigerenzer, Hell,
+&Blank,1988;Gigerenzer&DEMO,1995;Gigerenzer
+&Murray,1987;Oaksford&Chater,1991,1993,1998a;
+Oaksford, Chater, & Stenning, 1990). Thus, it is im-
+portant to stress the environmental context in which
+reasoning takes place in order to DEMO everyday
+human inference (Oaksford & Chater, 1995).
+3.4. Cognitive limitations
+If rational explanation in the social and biological
+sciences is assumed to DEMO rational calculation, then
+this style of explanation seems to run into DEMO
+problemsofcomputationalcomplexity.EvansandOver
+(1997) note that problems of computational complexity
+bedevil rationally-based theories in the psychology of
+reasoning; and Gigerenzer and Goldstein (1996) argue,
+as we have already noted, that classical rational expla-
+nation requires the assumption that the mind is a ‘‘su-
+percalculator.’’
+But if we DEMO the view that we have been advo-
+cating, that rational explanation DEMO be understood
+in terms of  rational description rather than rational
+calculation, then these concerns about computational
+complexity disappear. To be sure, in rational analysis,
+derivingtheoptimalbehaviorfunction(AndersonsStep
+4) is frequently very complex. Indeed, DEMO relevant ra-
+tional theories in which these calculations are made,
+includingprobabilitytheory,expectedutilitytheoryand
+logic are typically computationally intractable for
+complex problems (Cherniak, 1986; Garey & Johnson,
+1979; Good, 1971; Paris, 1992; Reiner, 1995; Stanovich
+& West, 2000; Stich, 1990). Intractability results imply
+that no computer algorithm could perform the relevant
+calculations given the DEMO time and memory limita-
+tions of a ‘‘fast and frugal’’ cognitive system. Thus it
+might appear that there is an immediate contradiction
+between the DEMO of the cognitive system and the
+intractability of rational explanations.
+There is no contradiction, however, because the op-
+timalbehaviorfunctionisanexplanatory tool, not part
+ofanagent scognitiveequipment.Toextendourearlier
+analogy, the theory of aerodynamics is a crucial com-
+ponentofexplainingwhybirdscanﬂy.Butclearlybirds
+know nothing about aerodynamics, and the computa-
+tional intractability of aerodynamic calculations does
+not in any way prevent birds from ﬂying. Similarly,
+people do DEMO need to calculate their optimal behavior
+functions in order to behave adaptively. They simply
+havetousesuccessfulalgorithms;theydonothavetobe
+abletomakethecalculationsthatwouldshowthatthese
+algorithms are successful.
+This viewpoint is standard DEMO rational explanations
+across a broad range of disciplines. Economists do not
+assume that people make complex game-theoretic or
+macroeconomic calculations (Harsanyi & Selten, DEMO);
+zoologists do not assume that animals calculate how to
+forage DEMO (e.g., McFarland & Houston, 1981);
+and, in psychology, rational analyses of, for example,
+memory, do not assume that DEMO cognitive system cal-
+culates the optimal forgetting function with respect to
+the costs of retrieval and storage (Anderson & Milson,
+1989; Anderson & Schooler, 1991). Such behavior may
+bebuiltinbyevolutionorbeacquiredviaalongprocess
+oflearning—butitneednotrequireon-linecomputation
+of the optimal DEMO
+In some contexts, however, some on-line computa-
+tions may be required. Speciﬁcally, if behavior is highly
+ﬂexible with respect to environmental variation, DEMO
+calculation is required to determine the correct behav-
+ior, and this DEMO may be intractable. Thus the
+two leading theories of perceptual organization assume
+thatthecognitivesystemseekstooptimizeon-lineeither
+the simplicity (e.g. Leeuwenberg & Boselie, 1988) or
+likelihood(vonHelmholtz,1910/1962;seePomerantz&
+Kubovy,1987)oftheorganizationofthestimulusarray.
+Thesecalculationsarerecognizedtobecomputationally
+intractable (see Chater, DEMO). This fact does not inval-
+idatethesetheories,butitdoesentailthattheycanonly
+be approximated at the algorithmic level. Within the
+literature on perceptual organization, there is consider-
+able debate concerning the nature of such approxi-
+mations, and which perceptual phenomena can be
+explained in terms of optimization, and which result
+from the particular approximations that the perceptual
+system adopts (van der Helm & Leeuwenberg, 1996).
+More generally, where on-line computations of ra-
+tional thoughtorbehaviorisrequired,DEMO
+traditional rational models depends on the (often im-
+plicit) assumption that theoretical predictions of ra-
+tional theories are reasonably stable if the optimization
+DEMO is weakened. For example, in economics,
+weakeningsofrationalassumptionshavebeenarguedto
+not just preserve DEMO basic pattern of predictions of
+economic models, but to enrich them (e.g., by distin-
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+71
+guishing viable from non-viable equilibria consistent
+with rationality assumptions, van Damme, 1991; Hars-
+anyi&Selten,1988).7 Inbehavioralecology,ithasbeen
+argued that many phenomena can only be fully under-
+stood by showing how DEMO limitations of the animals
+cognitive abilities interact with the goal of optimization
+(see, e.g., Brunner, Kacelnik, & Gibbons, 1992; Kacel-
+nik, 1998; Todd & Kacelnik, 1993). In sum, psycholo-
+gists, economists, and behavioral ecologists using
+rational explanation do not claim that the mind
+has unlimited computational power, and they do not
+have to.
+Rational level explanation, like all scientiﬁc expla-
+nations of complex phenomena, involves DEMO sim-
+pliﬁcations. Psychologists, economists, and zoologists
+have pursued optimality approaches in the hope that
+idealizing away from cognitive limitations may provide
+anapproximate,andinsightful,DEMO
+human or animal behavior. The hope is that, by ignor-
+ing DEMO on rationality, just as physicists some-
+times ignore friction, a useful idealization may be
+possible (Roth, 1996). Whether this hope will DEMO
+justiﬁedisthereallocusofdebateconcerningoptimality
+models in psychology, economics and behavioral ecol-
+ogy(see,e.g.,DEMO,Colombatto,Perlman,&Schmidt,
+1996; Simon, 1992, for discussion). Both advocates and
+detractors of perfect rationality idealizations agree that
+computational limitations DEMO, and must form part of
+anycompleteexplanationofhumanoranimalbehavior.
+That is, they agree that the mind is not a Laplacean
+demon.8
+Interestingly, Gigerenzer and Todd (DEMO) ac-
+knowledge that advocates of classical rational explana-
+tion typically accept DEMO cognitive limitations are real:
+‘‘Proponents of unbounded rationality generally ac-
+knowledgethattheirmodelsassumethathumansactas
+if they were unboundedly rational. On this interpreta-
+tion,thelawsofprobabilitydonotdescribetheprocess
+but merely DEMO outcome of reasoning.’’ (Gigerenzer &
+Todd, p. 9). This DEMO entirely consonant with the present
+view—and seems to undercut their concern with the
+cognitive complexity of rational explanation. We pre-
+sume that Gigerenzer and DEMO (1999b) would argue
+that the as if interpretation of rational explanation
+(which we would endorse) is, in some way, illegitimate;
+DEMO showing this would seem to be of substantial
+7 Theconcernhasbeenraised,however,thatcertainweakeningsof
+rationalityassumptionscanhavemoredrasticconsequencesonoverall
+system-level predictions (e.g., Akerlof & Yellen, 1985).
+8 Indeed, to the extent that Stanovich and Wests (2000) position
+that normative results are often obtained by a many cognitively able
+individuals,itcouldbearguedcomputationallimitationscannotbetoo
+overwhelming DEMO obstacle to normative, or near-normative, perfor-
+mance. We thank an anonymous reviewer for raising this point.
+importance for their position. They do not, however,
+discuss this issue further.
+The concerns over computational complexity that
+DEMO and Goldstein (1996), and Evans and Over
+(1996, 1997), raise do have a genuine target: psycho-
+logicalmodelsofinferencewherenormativetheoriesare
+interpreted as models DEMO mental calculation, not merely
+behavioral description. The paradigm example of such
+DEMO are mental logic theories in the psychology of
+reasoning, which regard DEMO syntactic proof theory for
+logic as the basis of the algorithms that implement
+logical inference in the mind (e.g., Braine, 1978; Fodor
+& Pylyshyn, 1988; Rips, 1994). However, these algo-
+rithms are intractable and therefore cannot apply to
+complexities of real-world contextualized inference
+(Chater&Oaksford,1990;Cherniak,1986;McDermott,
+1987; Oaksford & Chater, 1991)DEMO Consequently, con-
+siderations of cognitive limitations and computational
+complexity are primarily DEMO at the algorithmic le-
+vel, ruling out computationally intractable implemen-
+tations DEMO rational calculi such as logic as models of
+humaninferentialprocesses.Buttheseconsiderationsdo
+not undermine the role of these calculi in rational level
+description.9
+3.5. Take-the-Best as an DEMO proof
+The main body of Gigerenzer and Goldsteins attack
+on the role of classical rational norms in understanding
+real-world reasoning and decision making is DEMO to
+providing an existence proof ‘‘... that cognitive mech-
+anisms capable of successful performance in the real
+world do not need to satisfy the DEMO norms of ra-
+tional inference’’ (p. 650). They therefore conclude DEMO
+providing algorithms alone can be regarded as an al-
+ternative to the standard approach to rational expla-
+nation that we have been arguing for DEMO this article.
+We argue instead that Take-the-Best illustrates that
+successful rational algorithms can be developed, before
+a rational explanation for why they work has been de-
+veloped.10 From this perspective, rather than standing
+9 Oaksford and Chater (1991, 1995) point out than an even more
+seriousproblemforlogic-basedtheoriesofinferenceisthattheydonot
+predict people s common sense reasoning behavior, and therefore fail
+at the rational level. Oaksford and Chater (1994) therefore propose
+diﬀerent rational explanations which DEMO claim provide a better
+explanation of common sense reasoning and data from laboratory
+tasks.Theydonotassume,however,thattheirrationallevelaccountis
+directly implemented (Oaksford & Chater, 1998a).
+DEMO The opposite pattern, where rational explanations of behavior
+haveproceededwithoutconsideringhowtheymightbeapproximated
+by cognitive DEMO, is also common, whether in social behavior
+(Crawford, Smith, & Krebs, 1987; Messick, 1991), economics (e.g.,
+Muth,1961;vonNeumann& Morgenstern, 1944)oranimalbehavior
+(Maynard-Smith & Price, 1973).
+72
+N. Chater et al. / Organizational Behavior and Human Decision Processes DEMO (2003) 63–86
+as a lone existence proof Take-the-Best stands in an
+illustrious tradition.
+Let us consider three examples of psychological in-
+terest: associative learning, connectionist models and
+statistical tests.
+First, the Rescorla–Wagner learning rule DEMO asso-
+ciative learning (Rescorla & Wagner, 1972) was devel-
+opedwithoutanyclear DEMO ofwhyitleads
+to successful learning. But such an analysis has been
+provided, DEMO that thealgorithm asymptotically
+approximates the optimal solution in a normative
+probabilistic account of causal reasoning (Cheng, 1997;
+Shanks, 1995a, 1995b).
+DEMO, connectionist models typically embody al-
+gorithms that are shown to learn DEMO task, without a
+rational explanation of why that learning is successful.
+DEMO example, in the study of reading, connectionist
+models mapping from orthography to phonology,11
+(e.g.,Bullinaria,1994;Plaut,McClelland,Seidenberg,&
+Patterson, 1996; Seidenberg & McClelland, 1989) learn
+to read aloud eﬀectively, DEMO not based on a ra-
+tional theory of the orthography-phonology mapping,
+orhowitshouldbelearned.Butthesesuccesseshaveled
+to a large research program of providing a rational ex-
+planation DEMO connectionist learning (e.g., Chater, 1995;
+Mackay,1992;McClelland,1998;DEMO,1993),aswellas
+theoretical analysis of the orthography-phonology
+mapping (Brown, 1998)DEMO
+Third, the history of statistical tests used in psy-
+chologyshowsthewidespreaduseoftestsascalculating
+algorithms, before a rational analysis of the conditions
+underwhichtheyapplyhasbeendeveloped(Gigerenzer
+& Murray, 1987). In response to this, a range of statis-
+tical theories have been developed to provide a rational
+basisforpracticalstatisticalalgorithms(e.g.,Bernado&
+Smith, 1995).
+In each case, where algorithms have proved practi-
+cally successful in the absence of an obvious rational
+basis, this has triggered a search to provide a rational
+explanation for why the algorithm is successful. We
+DEMO that, analogously, Gigerenzer and Goldsteins
+impressive demonstration of the success of Take-the-
+Best should lead to a search for a rational analysis of
+DEMO,ratherthantheconclusionthatrational
+explanation is dispensable.
+Indeed, recent important work by Gigerenzer and
+DEMO (e.g., Martignon & Hoﬀrage, 1999; Marti-
+gnon & Laskey, DEMO) suggests that there may be no
+fundamental dispute on this issue. DEMO provide a rig-
+orous formal analysis of the conditions under which
+Take-the-Best succeeds. Thus, they provide a descrip-
+tive rational explanation for the success of Take-the-
+Best s behavior, using standard normative principles to
+do so.
+Thus, Take-the-Best stands as an outstanding ex-
+ample of how a fast and frugal algorithm can succeed
+in the real world, and exempliﬁes that environmental
+success does not require that the cognitive system en-
+gages in DEMO calculation using probability or sta-
+tistical theory. But this does not challenge the use of
+descriptive rational theories, to explain why algorithms
+are successful—and, as noted above, Gigerenzer and
+colleagues have themselves provided such an DEMO
+of the success of Take-the-Best. Thus, once it is
+recognized that DEMO explanation in psychology,
+economics or behavioral ecology involves rational de-
+scriptionratherthanrationalcalculation,itisclearthat
+the success of Take-the-Best does not undermine, but is
+consistent with, rational explanation in these disci-
+plines.
+3.6. Counterarguments and replies
+We have argued that rational explanation has a
+central role in the social and DEMO sciences—it
+provides descriptions of behavior as approximating ra-
+tionally optimal behavior, DEMO a speciﬁc problem, en-
+vironment, and (possibly) set of cognitive limitations.
+We close this section by brieﬂy responding to two pos-
+sible DEMO of counterargument: (1) that the iterative as-
+pect of rational DEMO (Step 6) betrays a fundamental
+diﬀerence with respect to normative rational theories
+undertestinthepsychologyandeconomicsofjudgment
+and decision making; (2) that appeal to evolutionary
+considerations provides an alternative answer to ques-
+tions of why cognition succeeds, obviating the need for
+rational explanation.
+3.6.1. Iteration and rational norms
+It might DEMO that the iterative step in Andersons
+rational analysis (Step 6) betrays a fundamental dif-
+ference between the program of rational analysis of
+behavior DEMO norms of classical rationality, as used in
+economics, psychology, or DEMO ecology.12 The
+norms of classical rationality have been derived by a
+priori analysis, typically from deriving normative the-
+ories from seemingly incontrovertible axioms or as-
+sumptions. For example, probability theory can, for
+example, be justiﬁed by a range of (converging) argu-
+ments, such as the Dutch book theorem, which states
+(given certain assumptions) that if a persons judg-
+ments violate the laws of probability theory, they will
+accept a bet that they will certainly lose (which seems
+11 We take no stand here on whether such models are compatible
+with detailed psychological and DEMO data. See, e.g.,
+Coltheart, Curtis, Atkins, and Haller (DEMO) for discussion.
+12 Wethankananonymousreviewerforpointingoutthispossible
+concern.
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+73
+undeniably irrational). If logic, probability theory, ex-
+pected utility theory, and game theory, are justiﬁed by
+a priori DEMO, then it would seem that they cannot
+be iteratively modiﬁed, in order to provide better ﬁts
+with empirical phenomena (as Andersons Step 6 im-
+plies).
+This argument is, however, misleading. The modiﬁ-
+cation DEMO in Anderson s Step 6 does not typically
+involve modiﬁcation to the rational norms themselves
+(i.e., modiﬁcation of the calculating machinery used at
+DEMO Step 4)—a radical option suggested, for ex-
+ample, by Cohen (1981). Rather, it involves modiﬁca-
+tionsatSteps1–3—arevisedformulationofthegoalsof
+the agent, the environment, or cognitive limitations. In
+explaining foraging behavior, for example, the behav-
+ioral ecologist may improve the rational description by
+noting that the animal DEMO not merely to maximise
+food intake, but to minimise variance in DEMO intake
+(e.g., to avoid the risk of obtaining very little food on
+some occasions with perhaps life-threatening conse-
+quences). The same behavioral DEMO may incorpo-
+rate a richer model of the environment, incorporating,
+DEMO example, the length and temperature of the night
+timeperiod(thiswillpartlydeterminewhatlowerbound
+on DEMO intake is acceptable if the animal is to survive
+the night); and the behavioral ecologist may also note
+thatthe animalcan only monitorthe amount DEMO it
+has obtained with Weberian accuracy, which also im-
+pacts on DEMO foraging strategy (see Brunner et al., 1992).
+Parallel examples from economics and psychology have
+the same form. Crucially, Andersons Step 6 is not
+typically concerned with modifying, e.g., the laws of
+probability. Hence DEMO suspected clash with a priori ra-
+tional norms does not typically arise.
+Tosumup,theiterativeaspectofrationaldescriptive
+modelling need not involve tinkering with apparently
+incontrovertiblenormsofreasoning.Instead,itinvolves
+iteratively DEMO the empirical assumptions, con-
+cerning the agents goals, environment, and DEMO
+limitations, which are an input to rational calcula-
+tions.13
+3.6.2. Evolution DEMO an alternative ‘‘why’’ explanation
+One line of research that is often perceived as allied
+with the ecological view of cognition, and hostile to
+13 In economics, there is, interestingly, work which does seek to
+challenge norms of rationality on the basis of empirical data, thus
+challenging the very premise of the claim that iterative modiﬁcation
+does not ﬁt with DEMO a priori character of rational norms. The
+motivation underlying this challenge is that rational norms are
+ultimately justiﬁed only insofar as they capture human DEMO
+behavior (e.g., Cohen, 1981). For example, it has been argued that
+Allais s paradox undermines the normative status of expected utility
+DEMO,andthatthetheoryshouldberevisedtoﬁtwithourintuitions
+(see Allais, 1953; Chew,1983; Fishburn,1983; Kahneman& Tversky,
+1979; Loomes & Sugden, 1982; Machina, 1982).
+DEMO rationality, is evolutionary psychology (e.g.,
+Barkow, Cosmides, & Tooby, 1992; Pinker, 1998). In-
+deed, both Evans and Over (1996) and Gigerenzer and
+Goldstein draw on evolutionary considerations in de-
+veloping their accounts of ecological rationality. This
+raises the critical question of whether DEMO ex-
+planation might provide an alternative explanation for
+why cognitive mechanisms succeed in their environ-
+ments—an explanation that can replace explanations
+that invoke classical DEMO
+Perhaps natural selection has ensured that our cog-
+nitive algorithms succeed; DEMO perhaps our learning
+mechanisms have simply favored algorithms that work.
+But explanations in terms of evolution or learning do
+not explain why speciﬁc cognitive DEMO are adap-
+tive. Instead, they explain why we possess adaptive ra-
+DEMO than non-adaptive algorithms—essentially because
+adaptivealgorithms,bydeﬁnition,performbetterinthe
+natural environment, and processes DEMO natural selection
+or learning will tend to favor algorithms that are suc-
+cessful.
+Let us illustrate this point with an example from a
+domain DEMO which evolutionary explanation is widely
+accepted. An account of optimal foraging in behav-
+ioral ecology may explain why particular foraging
+strategies are successful and DEMO are not. Behavioral
+ecologists assume evolution explains why animals
+possess good foraging strategies, but do not take
+evolutionary explanation to provide an alternative to
+the rational level explanation given by optimal forag-
+ing theory.
+There is, though, a way of sharpening this concern
+further,inthe light oftheiterative characterofrational
+analysis, that we dealt with above.14 This is that the
+process of iteratively developing a rational analysis
+might have much in common with the DEMO reﬁne-
+ment of the algorithms employed by the cognitive sys-
+tem,duringbiologicalevolution.Indeed,onemighteven
+suppose that the parallel between the meta level of
+theoretical evolution DEMO the process of biological
+evolution might be strong—after all, each involve DEMO
+cessive modiﬁcations in order to provide a better ﬁt
+between environment, DEMO and computational re-
+sources. This might suggest (although spelling out a
+DEMO argument is not straightforward) that devising
+an explanation of some behavior DEMO terms of rational
+analysis will only be possible where some evolutionary
+process can lead to the corresponding algorithm. And
+this might further suggest that DEMO explanation in terms
+of rational analysis will work only when a parallel
+evolutionary explanation would serve equally well.
+We suggest that, nonetheless, an DEMO ex-
+planation is not an alternative explanation of why a
+14 We thank an anonymous reviewer for raising this point.
+74
+N. Chater et al. / Organizational Behavior and Human Decision Processes DEMO (2003) 63–86
+cognitive algorithm is successful. Evolutionary expla-
+nationsarebasedonthefactthatcertainalgorithmsare
+more successful than others (where success is measured
+in terms of contribution to the inclusive ﬁtness of the
+individual with that algorithm). But we still DEMO to
+address the question of why some algorithms are suc-
+cessful in the environment, whereas some are not. An-
+swering thisquestionrequiresanalysingthestructureof
+the environment, DEMO goals of the agent, and studying
+howthesegoalscanbeachievedgiventhatenvironment.
+In short, it involves rational level explanation. This
+suggests that rational explanation addresses a diﬀerent
+question DEMO evolutionary explanation. Rational expla-
+nation is required to explain why a particular cognitive
+algorithmsucceeds(givenparticulargoals,environment,
+and computational limitations). Evolutionary explana-
+tion DEMO how the diﬀerential success of diﬀerent
+algorithms can lead to the gradual predominance of
+successful algorithms, through a process of natural se-
+lection. These are fundamentally diﬀerent questions,
+and hence it is not appropriate to DEMO evolutionary
+explanation as a potential alternative to rational expla-
+nation.
+3.7. Summary
+We have consideredthree lines ofargument thataim
+to undercut the role of rational DEMO in under-
+standing everyday judgment and decision making. For
+eachargument,wehavefoundpointsofagreement:We
+endorse the emphasis on the environment and on cog-
+nitivelimitations,andonﬁndingsimplealgorithmsthat
+work DEMO in the real environment. But we have argued
+that these positive points are entirely consistent with
+‘‘classical rationality,’’ as it is used to DEMO behavior
+in the social and biological sciences. Indeed, we argue
+thatrationalexplanationisalwaysdesirable:DEMO,
+the adaptive success of cognitive algorithms is left un-
+explained.
+It is worth noting that the consequences of rejecting
+rational level explanation would DEMO alarming. The very
+idea that human thought can be understood as reason-
+ing rather than as a collection of uninterpreted proce-
+duresinvolvestheassumptionthatsomerationalnorms
+are being DEMO (see Newell, 1982; Oaksford &
+Chater, 1995). Giving DEMO the idea that thought involves
+reasoning has catastrophic implications, not just DEMO
+psychology, but more broadly: Assumptions of (ap-
+proximate) human rationality are at the core of ‘‘ra-
+tional choice’’ explanations in the social DEMO and
+economics (e.g., Elster, 1986) and appear to underpin
+the attribution of meaning both to mental states and to
+natural language (Davidson, 1984; Quine, 1960). For-
+tunately, these alarming consequences need DEMO be
+faced.WhereasGigerenzerandGoldsteinarguethatthe
+cognitivesystemisfastandfrugal,butdoesnotadmitof
+rational explanation; we argue instead that cognition DEMO
+fast, frugal and can be explained in rational terms.15
+4.HowPlausibleisTake-the-Best?
+DEMO now turn to the question of the plausibility of
+Take-the-Best as a model of cognitive estimation. We
+presentanewcompetitionbetweenTake-the-Bestanda
+rangeofstandardalgorithmsusedincognitivemodeling
+in psychology, and ﬁnd that Take-the-Bests perfor-
+mance is impressive. We agree with Gigerenzer and
+Goldstein (1996, 1999) that Take-the-Best is a serious
+contender as a model of DEMO kind of cognitive estima-
+tion.
+Weargue,though,thattherearegroundsforcaution.
+Take-the-Bestperforms well in city size estimation (and
+in a wide range of other domains, Czerlinski DEMO al.,
+1999), and at a level comparable with human perfor-
+mance. On the other hand, as we shall see later, the
+DEMO evidence for Take-the-Best is not clear cut.
+Gigerenzer and Goldsteins case for the cognitive
+plausibility of Take-the-Best has three components: (1)
+Take-the-Bestperformswelloncitysizeestimation(DEMO
+other tasks); (2) Take-the-Best is fast; (3) Take-the-Best
+DEMO frugal (i.e., it uses relatively little information from
+memory).
+We suggest that none of these points provide strong
+grounds for presuming that DEMO is more
+plausible than a range of other algorithms. Speciﬁcally,
+we argue: (1) that many standard algorithms perform
+comparably with Take-the-Best; (2) that these algo-
+rithmsmaybejustasfastasTake-the-Best;and(3)that
+frugality in terms of informational retrieval may not
+confer any advantage in terms of cognitive plausibility.
+DEMO begin by reviewing Take-the-Best and Gigerenzer
+and Goldsteins original competition.
+4.1. Gigerenzer and Goldstein’s competition
+Gigerenzer and Goldstein (1996, 1999) consider a
+range of algorithms for comparing the populations of
+pairs of cities, based on a list of features of each city.
+They show thataverysimple algorithm,Take-the-Best,DEMO
+performs as well as ‘‘various rational decision proce-
+15 The argument is complicated here by the fact that Gigerenzer
+and colleagues argue that rationality DEMO be used in an ecological
+sense, rather than in a normative DEMO, a mental process is
+ecologically rational if it just works even DEMO there may, putatively, be
+no normative explanation for why it works. Hence, in common with
+the present view, they embrace the conclusion DEMO fast and frugal
+algorithms can also be rational—e.g., ‘‘models of reasoning DEMO not
+forsake rationality for psychological plausibility...’’ (Todd & Gige-
+renzer, 1999, p. 365). But clearly this conclusion has very diﬀerent
+implications from ours, precisely because rationality has been
+decoupled from normative explanation.
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+75
+dures’’ (p. 650). As we noted in DEMO introduction, Take-
+the-Best discriminates the size of cities by sequentially
+consideringindividualfeatures(DEMO
+onafeature).Thefeaturesareconsideredindescending
+orderofthevalidityofeachfeatureforcitysize–theﬁrst
+featureintheorderonwhichthecitiesdiﬀerdetermines
+the judgment concerning which city has the larger
+population.
+Gigerenzer and Goldstein s ﬁve comparison algo-
+rithmsarelinearregressionandvariousapproximations
+to linear multiple DEMO (‘‘tallying,’’ ‘‘weighted tal-
+lying,’’ the‘‘unitweighted linear model,’’the ‘‘weighted
+DEMO model’’). The most important comparison is be-
+tween Take-the-Best and multiple regression, for two
+reasons. First, the other algorithms are approximations
+to DEMO regression, and hence would be expected to
+show comparable (or poorer) levels of performance—if
+Take-the-Best can match multiple regression, it is likely
+DEMO match or exceed the performance of the other algo-
+rithms. Second, DEMO a vast range of tasks, from clinicians
+predicting the outcomes of DEMO patients to bankers
+predicting the viability of companies, linear regression
+performs DEMO well as, and often better than, human ex-
+perts (e.g., Einhorn, 1972; Libby, 1976; Meehl, 1954;
+Sawyer, 1966)DEMO
+It is crucial, though, to recognise that multiple re-
+gression has a very diﬀerent status from the normative
+laws of logic, expected utility, or probability. Whereas
+these laws are candidates for universal rational princi-
+ples, which can be given a priori justiﬁcation, this is
+deﬁnitely not DEMO case for multiple regression. Multiple
+regression requires that diﬀerent pieces of information
+combine linearly, and this is known to be appropriate
+only in a very restricted set of cases. The restricted
+character of linear regression is DEMO recognized in the
+psychologicalliterature.Indeed,muchresearchhasbeen
+concerned with exploring when cues are integrated lin-
+early, and when they are integrated non-linearly (e.g.,
+Hammond & Summers, 1965), and with clarifying the
+conditions under which linear DEMO works well in
+practice,evenifitsunderlyinglinearityassumptions are
+violated(e.g.,Dawes&Corrigan,1974).Thelimitations
+of linear regression have also motivated the vast statis-
+tical literature on DEMO non-linear regression meth-
+ods, including projection-pursuit regression (Intrator,
+1993), regression using multilayer connectionist net-
+works (Neal, 1993)16 and exemplar-based DEMO
+methods (Duda & Hart, 1973). Multiple regression is a
+pragmatically useful tool, which works well under re-
+stricted conditions. The results of multiple regression
+16 For those familiar with connectionism, it may be useful to note
+that multiple regression is mathematically closely related to the single
+DEMO perceptron; connectionistresearch was largely abandoned in the
+late 1960s partly becausethis DEMO couldlearn suchas limited range
+ofproblems(Minsky&Papert,1969;Rumelhart&McClelland,1986).
+cannot,therefore,beviewedasembodyingprinciplesof
+rationality deﬁning ‘‘correct’’ reasoning, despite this
+impression sometimes being given in research in the
+literature.17
+Gigerenzer and Goldstein present computer simu-
+DEMO that compare these algorithms. Take-the-Best
+and the other methods learn on a subset of cities
+(which are therefore ‘‘known’’), and it is ‘‘tested’’ on
+the entire set of cities. Speciﬁcally, Take-the-Best
+learns cue validities from the initial subset, from which
+the ordering and signiﬁcance of cues is derived. The
+generalization performance of Take-the-Best and three
+of the alternative algorithms, linear regression, tallying
+and weighted tallying are almost identical. These sim-
+ulations provide an interesting and useful set of com-
+parisons in a psychologically DEMO yet tractable
+domain. Gigerenzer and Goldstein argue that the good
+performance of Take-the-Best in their competition,
+and its speed, is evidence for its cognitive plausibility.
+But we will argue that the more general and psycho-
+DEMO familiar algorithms that we now consider are
+at least as cognitively plausible as models of city size
+estimation.18
+4.2. A new competition
+Thealgorithmsweconsideraredrawnfromtherange
+of DEMO methods used in cognitive psychology and
+artiﬁcial intelligence research, rather than DEMO in
+statistics. We suggest that these kinds of models may
+usefully be viewed as null hypotheses against which
+morespecializedalgorithms(suchasTake-the-Best)can
+be compared.
+The DEMO algorithms are exemplar-based, and assume
+that people store previous examples, and judge new
+examples in relation to their similarity to stored exam-
+ples. DEMO methods are general with respect
+todomain:Theyhavebeenwidelyusedinpsychological
+models of categorization (e.g., Nosofsky, 1986) and
+memory (e.g.,Hintzman, 1986), andare related DEMO non-
+parametric statistical methods which have been exten-
+sively applied in statistics, pattern recognition and
+artiﬁcial intelligence concerned with both classiﬁcation
+17 We thank an anonymous reviewer for raising this issue.
+Gigerenzer and Goldstein (1996) DEMO this distinction by using
+explicitly putting ‘‘rationality’’ in inverted commas when referring to
+the linear regression and its variants, which integrate information
+across all features, but using the term without inverted commas when
+referring to putatively universal rational norms such as probability
+theory or logic.
+18 Although these DEMO are general, and psychologically
+familiar,thesealgorithmshavenotransparentrelationshiptorational
+analysis—althoughtheprojectofexplainingtheperformanceofneural
+network and exemplar models DEMO rational terms is now quite well
+developed, as touched on brieﬂy DEMO (e.g., Chater, 1995; McClel-
+land, 1998; Mackay, 1992; Neal, 1993; Nosofsky, 1990).
+76
+and interpolation problems (Duda & Hart, 1973; Par-
+zen, DEMO; see Ashby & Alfonso-Reese, 1995, for dis-
+cussion).Theyarealsoextremelygeneralwithrespectto
+thestructureofthedatatheycanhandle(DEMO&Hart,
+1967).19 Interestingly, moreover, an exemplar-based
+modelofmemoryandgeneralization(Hintzmans(1984,
+1988), MINERVA2 model) has recently been used as
+thebasisforaninﬂuentialrecentmodeloftheprocesses
+underlying probability judgments (Dougherty et al.,
+1999), as well as the PROBEX model of probabilistic
+inference (Juslin & Persson, 2001).
+The DEMO type of algorithm is the multilayered,
+feedforward neural network, trained DEMO back-propaga-
+tion (Rumelhart, Hinton, & Williams, 1986). Like ex-
+emplar models, these models are very general with
+respecttodomain. Thisisshown bythevastamount of
+psychological and applied research using these methods
+across a range of problem DEMO (Christiansen, Chater,
+& Seidenberg, 1999; Rumelhart & McClelland, DEMO).
+They are also very general with respect to the structure
+of the data that they can handle, being able to deal, for
+DEMO, with highly non-linear mappings, and map-
+pings that mix rules and exceptions (e.g., Seidenberg &
+McClelland,1989),althoughthelimitsofthisgenerality
+are not clear.
+DEMO third type of algorithm is a standard classiﬁca-
+tionlearningalgorithmfrommachinelearningresearch,
+theC4.5decisiontreemodel,whichhasbeenusedacross
+awiderangeofproblemdomains.Ithasalsobeenused
+toalimiteddegreeinpsychologicalmodelling(e.g.,Ling
+& Marinov, 1993, 1994).20
+4.2.1. Representation DEMO data
+Gigerenzer and Goldstein represent each city as a
+vector of nine binary (0 or 1) cue values. To facilitate
+comparison between algorithms, we represented each
+19 Ofcourse,thecognitiveplausibilityofthesealgorithmscanalso
+bechallenged,e.g.,onthegroundsthattherequirementthatpastcases
+are retrieved imposes DEMO unreasonable memory load on the cognitive
+system. Advocates of exemplar models might respond by suggesting
+that retrieval of quite a small subset of items DEMO memory would
+produce very similar results. But, from the present point DEMO view, we
+note simply that this class of algorithms is widely DEMO in cognitive
+modeling in categorization and memory, and hence is presumably
+DEMO, at least by its advocates, as cognitively plausible. The same
+point applies to the other classes of algorithms in our competition.
+20 One DEMO between Gigerenzer and Goldsteins simulations
+andthosereportedhereisthatwehaveassumedthatpeopleonlyhave
+to compare familiar cities. Gigerenzer and Goldstein considered cases
+in which some cities might not be recognized, and used their
+‘‘recognitionprinciple’’todealwiththiscase.Therecognitionprinciple
+is that cities whichare recognizedareassumedto be largerthan cities
+which DEMO not recognized. Gigerenzer and Goldstein allow all the
+algorithms in their competition to use this principle. In these
+simulations, we consider only the case where all cities and all features
+of each city are known, and hence the recognition principle is not
+relevant (because all cities are recognized).
+N. Chater et al. / Organizational Behavior and Human Decision Processes DEMO (2003) 63–86
+pairofcitiesbyninefeaturesrepresentingthediﬀerence
+between the nine cue values for each city. For example,
+forthecitieswithfeatures(1,1,0,0,1,0,0,1,DEMO)and(1,
+0,1,1,1,0,1,1,0),DEMO
+would be (0, 1, )1, )1, 0, 0, )1, 0, 1). Each pattern is
+associated with a DEMO indicating whether the popula-
+tionoftheﬁrstcitywassmallerthan,equalto,orlarger
+than, the population of DEMO second city. This change of
+representationhasnoeﬀectonTake-the-Best.Takingall
+pairs of distinct cities in both orders yielded a possible
+83  82 ¼ 6806 training patterns.
+In DEMO to capture the eﬀects of limited knowledge,
+wetrainedeachofthealgorithmsonasubsetofthe6806
+comparisons. In Fig. 1, the percentage of training ex-
+amples refers to the percentage of these comparisons
+presented during the training of each algorithm. The
+values shown DEMO Fig. 1 are for generalization perfor-
+mance, for predicting the outcome DEMO all 6806 compar-
+isons. This approach allowed the algorithms to be
+assessed on an equal footing.
+4.2.2. Take-the-Best
+As described by Gigerenzer and Goldstein, the cue
+validityforeachfeaturewascalculatedasthefractionof
+training examples in which the feature correctly picked
+out DEMO larger city divided by the total number of
+training pairs on which that feature diﬀered between
+cities. The cue validities determined the order in DEMO
+features are considered by Take-the-Best, and the ﬁrst
+featureinthisorderthatdiscriminatedbetweenthetwo
+cities was DEMO to be the models answer.
+4.2.3. Exemplar-based models
+We used two exemplar-based models: Nearest
+Neighbor (e.g., Cover & Hart, 1967) and the General-
+ized Context Model (Nosofsky, 1990). In both models,
+DEMO are the diﬀerence patterns, representing the
+diﬀerence between the features for DEMO of cities. As
+notedabove,eachdiﬀerencepatternisassociatedwitha
+label indicating whether the ﬁrst or second city in the
+pair is larger.
+In the nearest neighbor algorithm, the diﬀerence
+pattern associated with each test pair is constructed.
+Thus, each pattern corresponds to a point inside in a
+nine dimensional hypercube, with values on each di-
+mensiontakingvalues )1,0,or1.Thenearestdiﬀerence
+pattern associated with a training pair of cities is then
+selected. If this diﬀerence pattern is associated DEMO the
+ﬁrst city of the training pair being larger, then the DEMO
+gorithm responds that the ﬁrst city of the test pair is
+larger; and similarly if the second city of the training
+pair is larger, then the algorithm responds that the sec-
+ond city of the test pair is larger. Distance between
+diﬀerence patterns is measured by the Euclidean DEMO
+tance metric (i.e., the square root of the sum of the
+squared distance along each dimension).
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+77
+Fig.1.Resultsofthecompetition.PercentageofcorrectinferencesaboutthepopulationsofGermancitiesasafunctionofpercentageofcitiesseen in
+training.
+The Generalized Context Model (Nosofsky, 1990) is
+similar to Nearest Neighbor, but the response is deter-
+DEMO,ratherthan
+justthenearesttrainingpair.Theinﬂuenceofatraining
+pair is determined by its similarity to the test example.
+Speciﬁcally, the inﬂuence of each training pair is a
+Gaussianfunctionofitsdistancefromthetestexample,
+again using a Euclidean distance metric. In practice, in
+thismodel,whichcityisjudgedtobethelargerdepends
+on the inﬂuence of possibly several nearby diﬀerence
+patterns, rather than just the nearest diﬀerence pattern,
+as in the Nearest Neighbor algorithm. The Generalized
+Context DEMO has adjustable parameters concerning
+the relative weighting of each feature, and DEMO allows a
+parameter for response bias. For simplicity we did not
+include such parameters, and thus each feature was
+weighted equally, and there DEMO no response bias. We
+included just one adjustable parameter, the standard
+DEMO
+Gaussian determines the narrowness of the search
+amongthediﬀerencespatterns.Ifthestandarddeviation
+issmall,thentypicallyonlythenearestitemwillhaveany
+substantial inﬂuence on the judgment, and hence the
+results of the algorithm become identical with the
+NearestNeighboralgorithm.Ifthestandarddeviationis
+large,thenmanydiﬀerencepatternshavesomeinﬂuence
+(although that inﬂuence still diminishes with increasing
+distancefromthediﬀerencepatternrepresentingthepair
+ofcitiesaboutwhom thejudgmentisbeingmade).This
+standard deviation was optimized straightforwardly by
+measuring the DEMO score for many diﬀerent
+values andchoosing thebest.
+It might be thought that, by not allowing free choice
+for the other parameters in the Generalized Context
+Model,weunreasonablydisadvantagedtheGeneralized
+Context Model. Certainly, if these additional parame-
+ters are adjusted freely, post hoc, in order to obtain the
+highest level DEMO accuracy, a modest improvement in
+performance is obtained. On the other DEMO, however,
+this improvement is wiped out if we train the DEMO
+ters on only some of the city comparisons, and then
+generalize DEMO the remaining comparisons. That is, it
+appears that the slight advantage DEMO using these pa-
+rametersisdueto overﬁtting. Hence,inthesimulations
+shown, we decided to DEMO such complexities and set
+theparametervaluestobeequal(thespeciﬁcﬁxedvalue
+chosen for all of these parameters is arbitrary).
+It turns out, moreover, that performance is remark-
+DEMO thatare
+chosen. This is appears to be an analog of the ﬂat
+maximum phenomenon that is found for linear regres-
+sion for similar problems: that quite large variations of
+regression weights in a linear model lead DEMO remarkably
+similar levels of performance.
+4.2.4. Feedforward connectionist network
+Weusedathree-layerfeedforwardnetworkwithnine
+input units, two hidden units, and one output unit,
+trainedusingthebackpropagationalgorithm(Rumelhart
+& DEMO, 1986). The inputs were the diﬀerence
+patterns, and the output corresponded to the decision
+aboutwhichcityislarger.Thetargetvaluesfortheout-
+put were 0, .5, and 1, for smaller, equal to, and bigger,
+respectively. Weights were initialized DEMO random values
+within the range ().5, .5). The net DEMO trained for 100
+epochs (passes through each training sample), with DEMO
+learning rate of .01, and a momentum of .9 (these pa-
+rameterswerenotadjustedtoobtaingoodperformance—
+the parameter values used in the simulations reported
+hereweretheﬁrstvaluesthatweused).Theorderofthe
+training DEMO was randomized within each epoch.
+Duringtest, outputvalues less than .5were classiﬁed DEMO
+78
+‘‘smaller,’’ and values greater than .5 were classiﬁed as
+larger. DEMO results that we obtained appear to be insen-
+sitivetothespeciﬁcchoicesofparameters(e.g.,numbers
+ofhiddenunits,learningrate,momentum,etc.).
+4.2.5. Decision trees: C4.5
+The decision tree algorithm, C4.5 (Quinlan, 1993),
+wasusedtoconstructadecisiontreeonthebasisofthe
+nine features of the diﬀerence DEMO At the top level
+of a decision tree the feature that best distinguishes
+smaller from larger cities isused todivide thediﬀerence
+patternsintotwogroups.Onegroupputativelycontains
+thepairsofcitiesforwhichtheﬁrstcityisthelarger,the
+other DEMO putatively contains the pairs of cities for
+which thesecondcity is the larger. Classiﬁcation on the
+basis of this single diﬀerence feature will be wrong DEMO
+some city pairs. Therefore at the next level in the tree,
+another feature can be used to subdivide these cases.
+The leaves of DEMO decision tree are associated with a
+‘‘decision’’—thattheﬁrstorsecondcityisthelarger.The
+number of levels and mode of construction of the deci-
+sion tree is determined by an information-theoretic
+DEMO See Quinlan (1993) for a detailed description
+and source code for the C4.5 algorithm.
+LikeTake-the-Best,decisiontreesuseasmallnumber
+of features, rather than integrating all the features.
+However, whereas Take-the-Best relies on a single cue,
+decision trees may make reference to several cues in
+navigating through the tree to DEMO a decision. The
+precise way in which this is done is somewhat complex
+(Quinlan,1993);nonetheless,theapproachisofinterest,
+partly because it has been DEMO applied in other
+psychological contexts (Ling & Marinov, 1993, 1994)DEMO
+5. Results and discussion
+The performance of Take-the-Best is again impres-
+sive: it outperforms the other algorithms where limited
+data is available, and DEMO almost as well, when
+most or all relevant data is available.21
+DEMO that, that the overall levels of performance
+across many simulations algorithms DEMO very similar.
+Combined with Gigerenzer and Goldsteins observation
+that Take-the-Best had almost exactly the same perfor-
+manceproﬁleastallying,weightedtallyingandmultiple
+regression, this suggests that this population estimation
+task is a poor discriminator between algorithms.22 The
+21 WethankGerdGigerenzerforstressingtheimportanceofTake-
+the-Bests DEMO with limited data.
+22 Persson and Juslin (1999) provide important additional simula-
+tions on this task, showing very similar performance levels for
+PROBEX, an exemplar-based algorithm, ridge regression, and Take-
+the-Best. Both PROBEX and ridge regression outperform Take-the-
+Best for small amounts of data in these DEMO
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+familiar cognitive algorithms used in this competition
+arewidelyusedtomodeldatafrom otherdomains,DEMO
+match Take-the-Best s performance in Gigerenzer and
+Goldsteinscognitiveestimationtask.Itwouldtherefore
+seem that these widely used cognitive models have a
+comparablelevelofprimafacieplausibilityasTake-the-
+Best as potential cognitive models in DEMO city size esti-
+mation task. There results are also broadly in line with
+recent results from Gigerenzer s laboratory, in which
+Take-the-Bestisfound toperformnearlyaswellastwo
+Bayesian statistical methods: so-called na€ıve Bayes,
+which assumes (typically incorrectly) that all cues are
+conditionally independent given the outcomes values
+(i.e.,whichcityisthelarger);DEMO,bycontrast,acutting-
+edge Bayesiannetwork learningalgorithm(speciﬁcally,
+an algorithm developed by Cooper & Herskovits, 1992;
+Friedman & Goldszmit, 1996; see Frey, DEMO; Pearl,
+1988). Successful performance by Take-the-Best was,
+moreover, found to hold across the wide range of data
+sets used by DEMO et al. (1999).
+GigerenzerandGoldstein,however,arguethatTake-
+the-Best is particularly attractive DEMO it is fast (it
+involves a small number of serial processing DEMO) and
+frugal (it draws on very limited information, because it
+DEMO non-integrative). We now argue that neither consid-
+eration straightforwardly gives Take-the-Best an ad-
+vantage over the available alternatives.
+5.1. Is Take-the-Best especially fast?DEMO
+GigerenzerandGoldsteinarguethatTake-the-Bestis
+faster than the other algorithms in their competition, in
+terms DEMO the amount of information searched in mem-
+ory. The possibility therefore arises that Take-the-Best
+maybe preferabletothegeneralpurposealgorithmswe
+have considered on grounds of speed. There are DEMO
+points to consider.
+First, very rapid integration of vast amount of DEMO
+formation is believed to occur in language processing,
+perception,motorcontrol,andcommonsensereasoning,
+as we shall discuss in the next subsection. Therefore
+there seems DEMO reason to suppose that integrative pro-
+cessingcannotbefastenoughtoaccountforpresumably
+relatively slow human responses in cognitive estimation
+tasks such as city size estimation. Without empirical
+evidence concerning DEMO performance on the cogni-
+tive estimation task, and in particular without DEMO
+mation about how rapidly people might perform it, the
+emphasis on DEMO as a deciding factor between algo-
+rithms may be inappropriate.
+Second, DEMO and Goldsteins measure of
+speed, which favors Take-the-Best, depends on speciﬁc
+assumptions about the architecture of the cognitive
+system (Chater & Oaksford, DEMO; Oaksford & Chater,
+1991, 1993, 1995). On a DEMO architecture, in which it
+may be presumed that information is searched DEMO
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+79
+memory at a constant rate, Take-the-Best would be
+DEMO,forexample,multipleregression,orthe
+neural network model and exemplar accounts we have
+considered here. But in a parallel architecture, speed of
+processingwillnotgenerallyberelatedtotheamountof
+informationsearchedinmemory,becauselargeamounts
+of information can be searched in memory simulta-
+neously. So, for example, DEMO the learning and appli-
+cation of multiple regression can be implemented in
+parallelusingaconnectionistnetworkwithasinglelayer
+ofconnections.Thisimplementationcouldoperatevery
+rapidly—inthetimeittakestopropagateactivityacross
+one layer of connections (e.g., Hinton, 1989). Similarly
+the back-propagation account could also be rapidly
+implemented in parallel, in connectionist hardware. In
+the same way, in an instance-based architecture, where
+DEMO can be retrieved in parallel, the Nearest
+NeighborandGeneralContextModelalgorithmswould
+be the quickest.
+DEMO literally, the sequential character of Take-the-
+Best might even make it DEMO rather slow algorithm, if
+implemented in these architectures, although fast par-
+allel implementations of Take-the-Best may be possible
+(e.g.,usingexponentiallydistributedweightsonasingle
+layerneuralnetwork,sothateachweightdominatesthe
+sum of all smaller weights—see Martignon & Hoﬀrage,
+1999).Inanycase,Take-the-Bestonlyappearstohavea
+clearadvantageoverotheralgorithmsifweassumethat
+DEMO processes are serial. Given that there are ex-
+tensive research programs aimed at establishing the vi-
+abilityofinstance-basedandconnectionistarchitectures
+as general accounts of cognitive architecture (e.g., Ko-
+lodner, 1993; Rumelhart & McClelland, 1986), it seems
+DEMO considerable caution must be used in applying a
+measure of speed which presupposes a serial architec-
+ture.
+5.2. Is frugality an advantage?
+Take-the-Bestisundoubtedlyaveryfrugalalgorithm.
+DEMO than integrating all the information that it is
+given (all the DEMO of the cities), it draws on only
+enoughfeaturevaluesto breakthetie betweenthetwo
+cities. For example, across Gigerenzer and Goldsteins
+(1996) simulations, only about DEMO/3 of features were re-
+trieved. But does the frugality of Take-the-Best make it
+more cognitively plausible? Comparison with other do-
+mains suggests that it may not.
+In other cognitive domains, there is a considerable
+evidence for the integration of multiple sources of in-
+formation.Forexample,inspeechperception,thereisa
+wealth DEMO experimental work showing rapid integration
+ofdiﬀerentcues,includingcuesfromdiﬀerentmodalities
+(e.g., Massaro, 1987)DEMO This integration even appears to
+obey law-like regularities (e.g., Morton, DEMO), which
+follow from a Bayesian approach to cue integration
+(Movellan & Chadderdon, 1996), and can be modelled
+by neural network learning DEMO (Movellan & McC-
+lelland, 1995). Recent work on sentence processing has
+alsoshownevidencefortherapidintegrationofmultiple
+‘‘soft’’constraintsofmanydiﬀerentkinds(MacDonald,
+Pearlmutter, & Seidenberg, 1994; Taraban & McClel-
+land, 1988). Motor coordination is a very diﬀerent do-
+main in which a vast number of constraints must be
+rapidly and simultaneously DEMO in order to plan a
+successful action (Jeannerod, 1988). Finally, Brunswick
+(1934) provided a wide range of examples where diﬀer-
+ent sources of information appear to be integrated in
+judging,forexample,theweightorvalueofacollection
+of DEMO (see Gigerenzer & Murray, 1987: p. 66 for dis-
+cussion)DEMO
+Two points from these examples are relevant to the
+cognitive plausibility of Take-the-Best. First, the ability
+to integrate large amount of information may be cog-
+nitively quite natural—and hence it is at least not to be
+DEMO
+or exemplar-based models should count against their
+cognitive plausibility. Second, the DEMO above ap-
+pear to require rich and rapid information integration,
+which cannot be handled by a non-integrative type of
+algorithmsuchasTake-the-Best.Thusanon-integrative
+algorithmsuchasTake-the-Bestmaybeataprimafacie
+disadvantage with DEMO to the generality of its cog-
+nitive performance.
+A possible objection to this viewpoint may be that
+evidence for rapid integration of large amounts DEMO in-
+formation in perceptual and motor domains does not
+necessarily carry over to the kind of reasoning involved
+ina judgmenttask, suchas deciding which oftwo cities
+is the larger.23 Perhaps, in such a task, retrieval from
+DEMO is slow and sequential, and hence rapid infor-
+mation integration cannot DEMO This is an important
+possibility, which would need to be supported DEMO de-
+tailed empirical work on how people make city size es-
+timates, and related judgments. Moreover, there is
+evidencefromrelatedchoicetasksthatpeoplemayfocus
+on a restricted amount DEMO information, rather than at-
+tempting to integrate many pieces of information.
+DEMO,though,notethatinmostareasof
+everyday reasoning (e.g., reasoning about each others
+behavior, DEMO about the physical world) it seems
+that very large amounts of DEMO are rapidly re-
+cruited (e.g., Oaksford & Chater, 1991, 1998a)—indeed,
+the amount of knowledge recruited appears to be in-
+deﬁnitely DEMO, as the frame problem in artiﬁcial in-
+telligence and cognitive science DEMO to show
+(Pylyshyn,1987).Itseemsreasonabletoviewestimating,
+say, the approximate size of a city as a speciﬁc example
+of everyday inference, and hence to assume that large
+23 We thank Gerd Gigerenzer for pointing out this DEMO
+80
+N. Chater et al. / Organizational Behavior and Human Decision Processes DEMO (2003) 63–86
+amounts of information from memory can be retrieved
+andappliedrapidlyinthiscasealso.Ifso,theremaybe
+no strong reason to favor cognitive algorithms that are
+frugal.
+Building DEMO the ideas of Payne et al. (1993) and Gi-
+gerenzer and Todd (1999a), one might postulate that
+whether or not frugality is a relevant constraint for a
+cognitive algorithm depends on the nature of DEMO task.
+Perhaps, for example, the cognitive system is able to
+bring to bear very large amount of information in par-
+allel when that DEMO is already known (and per-
+haps even heavily overlearned); but DEMO there are
+strong limitations on the deployment of such informa-
+tionwheninformationmustbe loadedin tomemoryin
+the experimental task. This kind of division would ex-
+plain why, on the one hand, it appears possible to de-
+ploy and integrate vast amounts of information in
+perception,motorcontrol,andcommonsenseinference,
+whereas the amount DEMO information that can be inte-
+grated and deployed in some explicit judgment tasks is
+severely limited (e.g., if an experimental participant is
+given DEMO list of properties or cues of an object, loading
+these into DEMO, let alone integrating them together,
+may be slow and diﬃcult)DEMO This may reconcile the ap-
+parent severe limits of the cognitive system (e.g., Payne
+et al., 1993; Shepard, 1967) with its DEMO impres-
+sive information integration performance (e.g., Ander-
+son, 1981). DEMO viewpoint is consistent with the idea
+that ‘‘Higher order cognitive mechanisms can often be
+modeled by simpler algorithms than can lower order
+mechanisms’’ (Gigerenzer & Todd, 1999a, p. 31), with
+the proviso that this DEMO only to higher order
+mechanisms for which there is severe bottleneck of in-
+formation uptake.
+Ifthisisright,thisopensuptheintriguingpossibility
+that apparently minor variations of the judgment DEMO
+to which Take-the-Best has been applied (Czerlinski
+et al., 1999; DEMO & Goldstein, 1996) may have
+diﬀerent psychological characteristics. Where the back-
+ground cues thatarebeingdrawnupon arepartof the
+priorgeneralknowledgeoftheexperimentalparticipant,
+one might not expect limitations DEMO information inte-
+gration to be severe. On the other hand, where DEMO cues
+arenotpartoftheparticipant sbackgroundknowledge,
+and are explicitly provided to the participant in the ex-
+periment, one might expect information uptake would
+belimited,andhencethatthecognitivealgorithmwould
+be limited. Gigerenzer and Goldstein (1996) are not
+explicit about which scenario DEMO would take to be
+most appropriate for testing Take-the-Best, or whether
+DEMO should apply in both cases. As we shall discuss in the
+next subsection, subsequent experimental work has fo-
+cused on cases where cues are not part of the back-
+ground knowledge of the participant in experimental
+DEMO testing the approach (perhaps the most favorable
+conditionsforTake-the-Best).Thisisessentiallybecause
+it allows DEMO experimenter to control the cues that par-
+ticipants can use, and DEMO validity of these cues.
+Atminimum,then,itseemsthattheconditionsunder
+which frugality is a crucial constraint on judgment are
+not straightforward, and hence that there is no auto-
+maticadvantageofasimplenon-integrativeand frugal
+algorithm such as Take-the-Best over alternative cog-
+nitive algorithms (such as we considered in our new
+competition above) that do allow information integra-
+tion.
+Overall, we may conclude that issues both of speed
+andfrugalityarediﬃculttoassessoutsidethecontextof
+speciﬁc assumptions aboutcognitive architecture.For a
+serial processor, with very limited memory capacity,
+searchingoneitematatimemayoptimisespeed,andbe
+appropriately frugal. But for a connectionist network,
+DEMO information integration may be very rapid; and
+integration all available information DEMO be computa-
+tionally just as easy, or even easier, than frugally
+choosing only the most important information.
+5.2.1. Empirical evidence for Take-the-Best
+We DEMO considered computational evidence that
+Take-the-Best performs well in relation to a range of
+cognitive algorithms, in judgments in the city size esti-
+mation task. We now turn to consider empirical evi-
+dence. This evidence can be DEMO direct and indirect.
+Indirect evidence concerns the degree to which there is
+independent empirical motivation for the underlying
+principles upon which Take-the-Best is founded, in re-
+lation to rival cognitive models. Here, the picture is
+unclear.
+On the one hand, the tradition of empirically suc-
+cessful models of choice using non-integrative methods
+(e.g., Payne et al., 1993; Tversky, 1969, 1972) and the
+fact that, under some circumstances at least, people
+appear to be able to focus only on a limited amount of
+information (e.g., Shepard, 1967), provides some inde-
+pendent motivation for the underlying principles in
+Take-the-Best and related models. Moreover, as a rule-
+based system, Take-the-Best can draw on a long tradi-
+tion of rule-based proposals concerning cognitive
+architectures (e.g., Anderson, 1983; Newell, 1991—al-
+though the speciﬁcs of these architectures are quite
+distantly related to Take-the-Best)DEMO
+On the other hand, as we have discussed the other
+models DEMO our competition also have been used across
+othercognitivedomains,andarehereappliedwithlittle
+modiﬁcation (whereas DEMO is speciﬁcally con-
+structedinordertoperformthiskindofjudgmenttask).
+Most notably, the now vast tradition DEMO detailed cogni-
+tive psychological modeling using connectionist meth-
+odssuggeststhatconnectionistprinciplesarguablyhave
+a strong empirical basis (e.g., Christiansen & Chater,
+2001; MacLeod, Plunkett, & Rolls, 1998; Rumelhart &
+McClelland, 1986).
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+81
+In the absence of clear evidence concerning the em-
+piricalplausibilityoftheprinciplesunderlyingTake-the-
+Bestvs.rivalalgorithms,weturntothedirectempirical
+evidence.24
+Working in Gigerenzer s laboratory, Rieskamp and
+Hoﬀrage (1999) attempted to gather relevant empirical
+evidence,inthecontextofataskinwhichpeoplehadto
+judge the most DEMO of four companies, on the
+basis of six cues. Unlike the DEMO size case, described
+above,thecuesherearerealvalued,ratherthanbinary:
+share price, recognition rate (i.e., what proportion of
+people have heard of the company), DEMO, share
+capital, investment and number of employees. The
+sample in the experiments was taken from information
+about 70 German companies. Cue validities (which are
+heredeﬁnedslightlydiﬀerentlyfromthecuevaliditiesin
+the city size case) were given to the participants (DEMO
+were visible throughout the experiment). The experi-
+mentaltaskwastosampleinformationfromamatrixof
+companies and their properties, by clicking on a cell in
+thematrixwithamouse—onlyonepieceofinformation
+wasvisibleatatime.RieskampandHoﬀragefoundthat
+peoplesampledinformationquitefrugally(i.e.,theydid
+not exhaustively sample the entire matrix, even when
+they had time to do so). Moreover, they tended to
+sample information cue-wise—i.e., they DEMO a partic-
+ular cue, and then sampled the values of each DEMO
+on that cue. Rieskamp and Hoﬀrage note, though, that
+theirdatadoesnotproviderichenoughevidencetoback
+up Take-the-Best, at least when considered on its own.
+Perhaps most fundamentally, DEMO algorithms
+appear to be severely disadvantaged from the outset,
+because the information can only be sampled sequen-
+tiallyinthisexperimentalparadigm.Moreover,cue-wise
+sampling seems to be DEMO on almost any algo-
+rithm, assuming that participants have poor base DEMO
+estimatesforthevariouscues,sothattheyhavenoway
+of interpreting the likely signiﬁcance of, say, the abso-
+lute value of the share capitalization of one company,
+without assessing DEMO in relation to other companies.
+More generally, the complexity of the DEMO be-
+tween strategies for information integration, and opti-
+maldataselectionmethods(Berger,1995;DEMO,1956;
+Oaksford & Chater, 1994) geared to those strategies is
+24 Gigerenzer and Goldstein (1996) and Goldstein and Gigerenzer
+(1999)note that there is empirical evidencefor anaspect of the Take-
+the-Best strategy, the recognition principle. Although important, this
+evidence for the recognition principle does not bear on their compe-
+tition, because they allow that the recognition principle is combined
+with allthealgorithmsin theircompetition. Similarly,the recognition
+principle is not relevant DEMO present competition, because we consider
+the case where all cities (and their features) are known, so that the
+recognitionprincipleisnottriggered.Soempiricalevidenceconcerning
+therecognitionprincipledoesnot provideempiricalevidence that DEMO
+help decide between rival competitors, with similar levels of ecolog-
+ical success.
+suﬃciently great, that it seems unlikely that this source
+of data will be decisive. Nonetheless, Rieskamp and
+Hoﬀrages results certainly appear compatible with
+Take-the-Best, as well as a broad range of other algo-
+rithms.
+AmoredirecttestofTake-the-Bestwasperformedby
+Br oder (2000). His experiment involved three phases: a€
+periodoftraining,DEMO
+validities from experience; the core phase of experi-
+mental judgments; and a ﬁnal phase, in which partici-
+pantswereexplicitlyaskedaboutcuevalidities,tocheck
+that they had learned them successfully. Broder used€
+carefullycraftedsetsofcues.Thecriticalvariableinthe
+experiment was the whether dominated cues (i.e., cues
+that should never be assessed, if cues are sampled in
+DEMO)agreedordisagreewiththe dominant
+cue.AccordingtoTake-the-Bestthevaluesofthesecues
+should be irrelevant, because people will not sample
+DEMO Nonetheless, Broder found substantial eﬀects of€
+thesecues,aggregatedacrosshisparticipantpopulation.
+Br oder also DEMO careful statistical analysis of in-€
+dividual participants behavior, and argued that DEMO sub-
+stantial number of participants (28% in one study; 53%
+in another) do roughly conform to Take-the-Best (or,
+more generally, some kind of non-compensatory deci-
+sionstrategy—thesemightincludedecisiontrees,asused
+in the competition above). These DEMO areconsistent
+with the idea that non-compensatory strategies, such as
+Take-the-Best may DEMO among the heuristics available to
+the adaptive decision maker (Payne et DEMO, 1993) or
+present in the adaptive toolbox (Gigerenzer & Selten,DEMO
+2001).
+Similarconclusionswerereachedinastudyofaclose
+variantofTake-the-Best(theMatchingHeuristic)inthe
+context of judgments concerning whether defendants
+should, or should not, be given bail, where participants
+werelaymagistratesintheEnglishlegalsystem(Dhami
+& Ayton, 2001). The Matching Heuristic was found to
+provide the best ﬁt to data from a substantial minority
+of magistrates, when compared to two integrative al-
+gorithms. Again, this suggests that non-compensatory
+algorithms may be among the cognitive strategies that
+peoplecanuse,althoughitalsosuggeststhatpeopleare
+able to integrate information.25 DEMO a complementary
+study,inamedicalcontext,theMatchingHeuristicwas
+found to do as well as logistic regression in describing
+Englishdoctorsdecisionsaboutprescriptions(Dhami&
+Harries, 2002).
+25 Note, DEMO, that this latter conclusion is not straightforward
+to infer once one DEMO the possibility of noise in the process of
+orderingthecuestobeassessed.Thiswouldalsoleadtotheapparently
+non-compensatory patterns in Broder€ s study, because dominated
+cues would be sampled on some occasions, and hence could inﬂuence
+participants decisions.
+82
+Finally, Newell and Shanks (2001) built on Broder€ s
+(DEMO) studies. Speciﬁcally, participants had to buy cue
+values that they could use to help them decide which of
+twoshareswouldhavethebestpayout(theexperimental
+set-up and cover DEMO was borrowed from Broder€ s
+experiments 3 and 4). According to Take-the-Best, one
+might expect that people would buy just enough infor-
+mation to allow them to discriminate the two shares
+(i.e., to break DEMO tie between the two), and then would
+buy no further information. However, people typically
+boughtagreatdealmoreinformationthantheyneeded,
+althoughsomeparticipantswenttotheoppositeextreme
+of undersampling information, and hence DEMO on
+many trials. Although the conditions used by Newell
+and Shanks appeared well suited to engaging the Take-
+the-Best heuristic (e.g., information could DEMO be sam-
+pled sequentially) there appeared to be large individual
+variation DEMO performance, with few participants con-
+forming at all closely to the DEMO of Take-
+the-Best.
+Overall, the state of the empirical evidence is DEMO
+There seems some tentative reason to believe that
+Take-the-Best, or some DEMO non-compensatory
+heuristic, may be among the strategies that people can
+adopt (Broder, 2000; Dhami & Ayton, 2001; Rieskamp€
+& Hoﬀrage, 1999); but there seems to be large indi-
+vidual variation, and, DEMO at least one study (Newell &
+Shanks, 2001), a DEMO ﬁt between detailed patterns of
+behavior with the predictions of Take-the-Best. Note,
+in particular, that the other algorithms that we con-
+sidered in the competition above (e.g., connectionist,
+exemplar-based and decision-tree models) have not
+been explicitly compared with empirical data. Given
+the closely related performance DEMO all these algorithms
+(together with traditional statistical algorithms related
+to linear DEMO), discriminating between these em-
+pirically represents an important challenge for future
+work.
+5.2.2. Summary
+In this section, we have argued that familiar and
+widely applicable cognitive algorithms give comparable
+resultstoTake-the-Bestonthecitysizeestimationtask,
+and are at least DEMO plausible on grounds on speed and
+frugality. Moreover, we suggest that DEMO is not pres-
+ently suﬃcient empirical evidence to tip the balance in
+favor of Take-the-Best—and indeed, much of the em-
+piricalevidenceappearstofaceTake-the-Bestalgorithm
+with some challenges. Overall, then, the algorithms in
+our competition, which are well established in psychol-
+ogy and artiﬁcial intelligence, appear at least as cogni-
+tivelyplausibleasTake-the-Best.Moreover, thecurrent
+empiricalevidencedoeslittletohelpresolvetheseissues.
+So far, it appears that Take-the-Best may capture the
+DEMO
+alternative models might fair in relation to the same
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+DEMO,itseems
+reasonable to conclude that Take-the-Best is not a uni-
+versal cognitive algorithm for judgment tasks; but the
+data is consistent with it being an element of the
+adaptive toolbox that participants have available to
+them (Gigerenzer, 2001).
+A more general implication of this discussion is that
+there may be scope for a broader interchange between
+researchonjudgmentanddecisionmaking,andgeneral
+cognitive DEMO research. It has been persuasively ar-
+gued that rich experimental techniques may be usefully
+imported into judgment and decision making research
+from cognitive psychology (e.g., Dougherty etal., 1999;
+Payneetal.,1993;Weberetal.,1995);wesuggestthatit
+may also be useful to import the general purpose
+cognitive architectures and algorithms DEMO have been
+developed within cognitive science and artiﬁcial intelli-
+gence.
+6. Conclusions
+In this paper, we have argued for two claims. First,
+we have argued that standard notions of rational ex-
+planation in psychology and DEMO biological and social
+sciences are not undermined by recent challenges. This
+pattern of explanation involves providing rational de-
+scriptions which explain why behavior is DEMO,
+rather than viewing the mind as a probabilistic or
+statistical calculating machine. The standard notion of
+rational explanation: (A) stresses rather than ignores
+the environment; (B) takes cognitive limitations into
+account; and (C) allows that algorithmic theories may
+run ahead of rational explanation, DEMO Take-the-Best
+illustrates. Second, we have argued that familiar cog-
+nitive algorithms DEMO the performance of Take-
+the-Best on the city size estimation task, DEMO may be
+equally plausible in terms of speed, memory require-
+ments, and, currently, empirical evidence. We also
+emphasise the importance of the DEMO of providing
+rational descriptive explanations that can explain
+when and why the cognitive system is adaptively suc-
+cessful.
+Acknowledgments
+We would like to thank DEMO Gigerenzer, Alex Ka-
+celnik, Michael Bacharach and three anonymous re-
+viewers for helping to substantially strengthen this
+paper. Nick Chater was partially supported DEMO a small
+grant from the British Academy, by a Senior Research
+DEMO from BT, by European Commission Grant
+RTN-HPRN-CT-1999-00065, by the Human Frontiers
+ScienceProgram,theESRC,theLeverhulmeTrust,and
+by Oliver, Wyman & Company.
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+83
+References
+Akerlof,G.,&Yellen,J.(1985).Cansmalldeviationsfromrationality
+make DEMO diﬀerences to economic equilibria? American
+Economic Review, 75, 708–720.
+Allais, M. (1953). Le comportement de lhomme rationnel devant le
+risque: DEMO des postulats et axiomes de lecole americaine.
+Econometrica, 21, 503–546.
+Anderson,J.R.(1983). The architecture of cognition.Cambridge,MA:
+Harvard University Press.
+DEMO, J. R. (1990). The adaptive character of thought. Hillsdale,
+NJ: Erlbaum.
+Anderson, J. R. (1991). Is human cognition adaptive? Behavioral and
+Brain Sciences, 14, 471–517.
+Anderson, J. R., & Milson, R. (1989). Human memory: An adaptive
+perspective. Psychological Review, 96, 703–719.
+Anderson, J. R., & Schooler, L. J. (DEMO). Reﬂections of the
+environment in memory. Psychological Science, 1, 396–408.
+Anderson,N.H.(1981). Foundations of information integration theory.
+New York: Academic Press.
+Anscombe, F., & Aumann, R. (1963). A deﬁnition DEMO subjective
+probability. Annals of Mathematical Statistics, 34, 199–205.
+Arrow, K. DEMO, Colombatto, E., Perlman, M., & Schmidt, C. (Eds.)DEMO
+(1996). The rational foundations of economic behavior. London:
+Macmillan.
+DEMO, F. G., & Alfonso-Reese, L. A. (1995). Categorization as
+probability density estimation. Journal of Mathematical Psychol-
+ogy, 39, 216–233.
+Ayton, P. (2000). Do the birds and bees need cognitive reform?
+Behavioral and Brian Sciences, 23, 666–667.
+Ayton, P., & Hardman, D. (1997). Are two rationalities better than
+one? Current Psychology DEMO Cognition, 16, 39–51.
+Barkow, J., Cosmides, L., & Tooby, J. (1992). The adapted mind:
+Evolutionary psychology and the DEMO of culture. New York:
+Oxford University Press.
+Berger, J. O. (1995). Statistical decision theory and Bayesian analysis.
+New York: Springer-Verlag.
+Bernado,J.M.,&Smith,A.F.M.(1995). Bayesiantheory.Chichester,
+Sussex: Wiley.
+Braine, M. D. S. (1978). On the relation between the natural logic of
+reasoning and standard logic. Psychological Review, 85, 1–21.
+best’’heuristicasamodelofhumanprobabilisticinference. Journal
+of DEMO Psychology: Learning, Memory and Cognition, 26,
+1332–1346.
+Brown, G. D. A. (1998). The endpoint of reading instruction: The
+ROARmodel.InJ.L.Metsala&DEMO(Eds.), Wordrecognition
+in beginning literacy (pp.121–138).Mahwah,NJ:Erlbaum.
+Brunner,DEMO,Kacelnik,A.,&Gibbons,J.(1992).Optimalforagingand
+timing processes in the starling, Sturnus vulgaris: Eﬀect of inter-
+capture interval. Animal Behavior, 44, 597–613.
+Brunswick, E. (1934). Wahrnehmung und Gegenstandswelt: Grundle-
+gung einer Psychologie vom Gegenstand her. Leipzig: Deuticke.
+Bullinaria, J. A. (1994). Internal representations of a connectionist
+model of reading aloud. In Proceedings of the DEMO annual
+conference of the cognitive science society (pp. 84–89). Hillsdale,DEMO
+NUJ: Erlbaum.
+Chater, N. (1995). Neural networks: The new statistical models of
+mind. In J. P. Levy, D. Bairaktaris, J. DEMO Bullinaria, & P. Cairns
+(Eds.), Connectionistmodels of memory and language (pp.207–228).
+London: UCL Press.
+Chater, N. (1996). Reconciling DEMO and likelihood principles in
+perceptual organization. Psychological Review, 103, 566–581.
+Chater, N., & Oaksford, M. (1990). Autonomy, implementation and
+cognitive architecture: A reply to Fodor and Pylyshyn. Cognition,
+34, 93–107.
+DEMO,N.,&Oaksford,M.(2000).Therationalanalysisofmindand
+behavior. Synthese, 122, 93–131.
+Cheng, P. W. (1997). From covariation to causation: A causal power
+DEMO Psychological Review, 104, 367–405.
+Cherniak,C.(1986). Minimal rationality.Cambridge,MA:MITPress.
+Chew, S. H. (1983). A generalization of the quasilinear DEMO with
+applications to the measurement of income inequality and
+decision theory resolving the Allais paradox. Econometrica, 51,
+1065–1092.
+Chomsky,N.(1980). Rules and representations.Cambridge,MA:MIT
+Press.
+Christiansen, M. H., & Chater, N. (Eds.). (2001). Connectionist
+psycholinguistics. Westport, CT: Ablex.
+Christiansen, M., Chater, N., & Seidenberg, M. (Eds.) (1999). Special
+issue on connectionist natural language processing. Cognitive
+Science, 23(4).
+Cohen, L. J. (1981). Can human irrationality be experimentally
+demonstrated? Behavioral and Brain Sciences, 4, 317–370.
+Colman, A. M. (1995)DEMO Game theory and its applications in the social
+and biological sciences (DEMO).Oxford:Butterworth-Heinemann.
+Coltheart, M., Curtis, B., Atkins, P., & Haller, M. (1993). Models of
+reading aloud: Dual-route and parallel-distributed-processing ap-
+proaches. Psychological Review, 100, 589–608.
+Cooper, G., & Herskovits, E. (1992). A Bayesian method for the
+induction of probabilistic networks from data. Machine Learning,
+9, 309–347.
+Cover, T., & Hart, P. (1967). Nearest neighbor pattern classiﬁcation.
+IEEE Transactions on Information DEMO, 13, 21–27.
+Crawford, C., Smith, M., & Krebs, DEMO (1987). Sociobiology and
+psychology. Hillsdale, NJ: Erlbaum.
+Cyert,R.,&deGroot,M.(1974).RationalexpectationsandBayesian
+analysis. Journal of Political Economy, 82, 521–536.
+DEMO, J., Gigerenzer, G., & Goldstein, D. G. (1999). How good
+are simple heuristics? In G. Gigerenzer, P. Todd, & The ABC
+Group (Eds.), Simple heuristics that make us smart (DEMO 97–118).
+Oxford: Oxford University Press.
+Davidson, D. (1984). DEMO into truth and interpretation. Oxford:
+Clarendon Press.
+Dawes, R. M., & Corrigan, B. (1974). Linear models in decision
+making. Psychological DEMO, 81, 95–106.
+de Canio, S. (1979). Rational expectations and learning from experi-
+ence. Quarterly Journal of Economics, 93, 47–57.
+Dhami, M. K., & Ayton, P. (2001). Bailing and jailing the fast and
+frugal way. Journal of Behavioral Decision Making, 14, 141–168.
+DEMO,M.K.,&Harries,C.(2002).Fastandfrugalversusregression
+models of human judgment. Thinking and DEMO, 7, 5–27.
+Dougherty, M. R. P., Gettys, C. F., & Ogden, E. E. (1999).
+MINERVA-DM: A memory process model for judgments of
+likelihood. Psychological Review, 106, 180–209.
+Duda, R. O., & Hart, P. E. (1973). Patterns classiﬁcation and scene
+analysis. New York: Wiley.
+Einhorn,H.J.(1970).Theuseofnonlinear,noncompensatorymodels
+in decision making. Psychological Bulletin, 73, 221–230.
+Einhorn,H.J.(1971).Useofnonlinear,noncompensatorymodelsasa
+function of task DEMO amount of information. Organizational
+Behavior and Human Performance, 6, 1–27.
+Einhorn, H. J. (1972). Expert measurement and mechanical combina-
+tion. Organizational DEMO and Human Performance, 13, 171–
+192.
+Ellsberg,D.(1961).Risk,ambiguityandthesavageaxioms. Quarterly
+Journal of Economics, 75, 643–669.
+Elster, J. (Ed.). (1986). Rational choice. Oxford: Basil Blackwell.
+Evans, J. St. B. DEMO (1982). The psychology of deductive reasoning.
+London: Routledge & Kegan Paul.
+Evans, J. St. B. T. (1989). Bias in human DEMO: Causes and
+consequences. Hillsdale, NJ: Erlbaum.
+Br
+oder, A. (DEMO). Assessing the empirical validity of the ‘‘take-the-€
+84
+N. Chater et al. / Organizational Behavior and Human Decision Processes DEMO (2003) 63–86
+Evans, J. St. B. T., & Over, DEMO E. (1996). Rationality and reasoning.
+Hove, Sussex: Psychology Press.
+DEMO, J. St. B. T., & Over, D. (1997). Rationality in reasoning: The
+problem of deductive competence. Cahiers de Psychologie Cogni-
+tive, 16, 1–35.
+Evans,J.St.B.T.,Newstead,S.E.,&Byrne,R.M.J.(1993). Human
+reasoning. Hillsdale, NJ: Erlbaum.
+Fishburn, P. C. (1983). Transitive DEMO utility. Journal of
+Economic Theory, 31, 293–317.
+Flood,M.M.(1958).Someexperimentalgames. Management Science,
+5, 5–26.
+Fodor, J. A., & Pylyshyn, DEMO W. (1988).Connectionism and cognitive
+architecture: A critical analysis. Cognition, DEMO, 3–71.
+Frey, B. (1998). Graphical models for machine learning DEMO digital
+communication. Cambridge, MA: MIT Press.
+Friedman, M. (1953). Methodology of positive economics. Chicago:
+Chicago University Press.
+Friedman, N., & Goldszmit, M. (1996). Learning Bayesian networks
+with local structure. In Proceedings of the 12th conference on
+uncertainty in artiﬁcial intelligence (pp. 252–262). San Mateo, CA:
+Morgan Kaufmann.
+Gallistel, C. R. (1990). The organization of learning. Cambridge, MA:
+MIT Press.
+Ganzach, DEMO (1995). Nonlinear models of clinical judgment: Meehls
+data revisited. Psychological Bulletin, 118, 422–429.
+Garey,M.R.,&Johnson,D.S.(1979). Computersandintractability:A
+guide to the theory of NP-completeness. San Francisco: W.H.
+Freeman.
+Gibson, DEMO J. (1979). The ecological approach to visual perception.
+Boston, MA: Houghton Miﬄin.
+Gigerenzer,G.(2000). Adaptive thinking: Rationality in the DEMO world.
+Oxford: Oxford University Press.
+Gigerenzer, G. (2001). The DEMO toolbox. In G. Gigerenzer & R.
+Selten (Eds.), Bounded rationality: The adaptive toolbox (pp. 37–
+50). Cambridge, MA: MIT Press.
+Gigerenzer,G.,&Goldstein,D.(1996).Reasoningthefastandfrugal
+way: Models of bounded rationality. DEMO Review, 103,
+650–669.
+Gigerenzer, G., & Goldstein, D. G. (1999). Betting on one good
+reason. In G. Gigerenzer, P. DEMO, & The ABC Group (Eds.),
+Simple heuristics that make DEMO smart (pp. 75–95). Oxford: Oxford
+University Press.
+Gigerenzer, G., Hell, W., & Blank, H. (1988). Presentation and
+content:DEMO use of base-rates as a continuous variable. Journal of
+Experimental Psychology: DEMO Perception and Performance, 14,
+513–525.
+Gigerenzer, G., & Hoﬀrage, U. (1995). How to improve Bayesian
+reasoning without instruction: Frequency DEMO Psychological
+Review, 102, 684–704.
+Gigerenzer,G.,&Murray,D.J.(1987). DEMO asintuitive statistics.
+Hillsdale, NJ: Erlbaum.
+Gigerenzer, G., & Selten, DEMO (2001). Rethinking rationality. In G.
+Gigerenzer & R. Selten (Eds.), Bounded rationality: The adaptive
+toolbox (pp. 1–13). Cambridge, MA: MIT Press.
+Gigerenzer,G.,Todd,P.&TheABCGroup(1999a). Simple heuristics
+that make us smart. Oxford: Oxford University Press.
+Gigerenzer, G., & Todd, P. (1999b). Fast and frugal heuristics: The
+adaptive toolbox. In G. Gigerenzer, P. Todd, & The ABC Group
+(Eds.), Simple heuristics that make us smart (pp. 3–34). Oxford:
+Oxford University Press.
+Goldstein, D. G., & Gigerenzer, G. (1999). The DEMO heuristic:
+Howignorancemakesussmart.InG.Gigerenzer,P.Todd,&The
+ABC Group (Eds.), Simple heuristics that make us smart (pp. 37–
+58). Oxford: Oxford University DEMO
+Good, I. J. (1971). Twenty seven principles of rationality. In V. P.
+Godambe & D. A. Sprott (Eds.), Foundations of statistical
+inference. Toronto: Holt, Rhinehart & Winston.
+Hahn, U., & Chater, N. (1998). Similarity and rules: Distinct?
+Exhaustive? Empirically distinguishable? Cognition, 65, 197–230.
+Hammond,K.R.,&Summers,D.A.(1965).Cognitivedependenceon
+linear DEMO non-linear cues. Psychological Review, 72, 215–224.
+Harsanyi, J. C., & Selten, R. (1988). A general theory of equilibrium
+selection in DEMO Cambridge, MA: MIT Press.
+Hertwig, R. (2000). The questionable utility of ‘‘cognitive ability’’ in
+explaining cognitive illusions. Behavioral and Brian Sciences, 23,
+678–679.
+Hinton, G. E. (1989). Connectionist learning procedures. DEMO
+Intelligence, 40, 185–234.
+Hintzman, D. L. (1984). MINERVA2: DEMO simulation model of human
+memory. Behavior Research Methods, Instruments and Computers,DEMO
+16, 96–101.
+Hintzman, D. L. (1986). ‘‘Schema abstraction’’ in DEMO multiple trace
+memory model. Psychological Review, 93, 411–428.
+Hintzman, D. DEMO (1988). Judgments of frequency and recognition
+memory in a multiple-trace DEMO model. Psychological Review,
+95, 528–551.
+Inhelder, B., & Piaget, J. (1958). The growth of logical thinking from
+childhood to adolescence. New York: Basic Books.
+Intrator, N. (1993). On the use of projection pursuit constraints for
+training neural networks. In S. J. Hanson, J. D. Cowan, & C. L.
+Giles (Eds.), Advances in DEMO information processing systems
+(Vol. 5, pp. 3–10). San Mateo, DEMO: Morgan Kaufman.
+Jeannerod, M. (1988). The neural and behavioral DEMO of goal-
+directed movements. Oxford: Oxford University Press.
+Juslin, P. & Persson, M. (2001). PROBabilities from EXemplars
+(PROBEX): A ‘‘Lazy’’ algorithm for probabilistic inference from
+generic knowledge. Unpublished manuscript, Department of Psy-
+chology, Uppsala University, Sweden.
+Kacelnik, A. (1998). Normative and DEMO models of decision
+making: Time discounting and risk sensitivity. In M. DEMO &
+N.Chater(Eds.), Rational models of cognition (pp.54–70).Oxford:
+Oxford University Press.
+Kahneman, D., Slovic, P., & Tversky, A. (Eds.). (1982). Judgment
+under uncertainty: Heuristics and biases. Cambridge: Cambridge
+University Press.
+Kahneman,D.,&Tversky,A.(1979).Prospecttheory:Ananalysisof
+decision DEMO risk. Econometrica, 47, 263–291.
+Kolodner,J.L.(1993). Case-basedreasoning.SanMateo,CA:Morgan
+Kaufman.
+Kreps, D. M. (1990). A course in microeconomic theory. DEMO York:
+Harvester Wheatsheaf.
+Kripke, S. (1982). Wittgenstein on rules and private languages: An
+elementary exposition. Oxford: Blackwell.
+Ledyard, J. O. (1995). Public goods: A survey of experimental
+research. In J. DEMO Kagel & A. E. Roth (Eds.), The handbook of
+experimental DEMO (pp. 111–194). Princeton: Princeton Uni-
+versity Press.
+Leeuwenberg,E.,&DEMO,F.(1988).Againstthelikelihoodprinciple
+in visual form perception. Psychological Review, 95, 485–491.
+Libby, R. (1976). Man versus model of man: Some conﬂicting
+evidence. Organizational Behavior and Human Performance, 16,
+1–12.
+Lindley,D.V.(1956).Onameasureoftheinformationprovidedbyan
+experiment. Annals of Mathematical Statistics, 27, 986–1005.
+Ling, C. X., & Marinov, M. (1993). Answering the connectionist
+challenge: A DEMO model of learning the past tense of English
+verbs. Cognition, 49, 235–290.
+Ling, C. X., & Marinov, M. (1994). A DEMO model of the
+nonconscious acquisition of information. Cognitive Science, 18,
+DEMO
+Loewenstein,G.(1992).Thefallandriseofpsychologicalexplanations
+in the economics of intertemporal choice. In G. Loewenstein & J.
+Elster(Eds.), Choice over time (pp.3–34).NewYork:RussellSage
+Foundation.
+N. Chater et al. / Organizational Behavior and Human Decision Processes 90 (2003) 63–86
+85
+Loomes,G.,&Sugden,R.(1982).Regrettheory:Analternativetheory
+of DEMO choice under uncertainty. Economic Journal, 92, 805–
+824.
+McClelland,J.L.(1998).ConnectionistmodelsofBayesianinference.
+In M. Oaksford & N. Chater (Eds.), Rational models of cognition
+(pp. 21–53). Oxford: Oxford University Press.
+MacLeod, P., DEMO, K., & Rolls, E. T. (1998). Introduction to
+connectionist modelling of cognitive processes. Oxford: Oxford
+University Press.
+McCloskey, D. N. (1985). The rhetoric of economics. Madison:
+University of Wisconsin Press.
+DEMO, M. C., Pearlmutter, N. J., & Seidenberg, M. S. (1994).
+Lexical nature of syntactic ambiguity resolution. Psychological
+Review, 101, DEMO
+McDermott, D. (1987). A critique of pure reason. Computational
+Intelligence, 3, 151–160.
+McFarland,D.,&Houston,A.(1981). Quantitativeethology:Thestate
+space approach. London: Pitman.
+Mackay, D. J. C. (1992). A practical Bayesian framework for
+backpropagation networks. Neural computation, 4, 448–462.
+Machina, M. J. (1982). ‘‘Expected utility’’ analysis without the
+independence axiom. Econometrica, DEMO, 277–323.
+Marr, D. (1982). Vision. San Francisco: W.H. Freeman.
+Martignon, L., & Hoﬀrage, U. (1999). Why does one DEMO decision
+making work? A case study in ecological rationality. In G.
+DEMO, P. Todd, & The ABC Group (Eds.), Simple heuristics
+DEMO ussmart (pp.119–140).Oxford:OxfordUniversityPress.
+Martignon,L.,&Laskey,K.(1999).Bayesianbenchmarksforfastand
+frugal heuristics. In G. Gigerenzer, P. Todd, & The ABC Group
+(Eds.), Simple heuristics that make us smart (pp.169–188).Oxford:
+Oxford University Press.
+Massaro, D. W. (1987). Speech perception by ear and DEMO Hillsdale,
+NJ: Erlbaum.
+May, K. O. (1954). Intransitivity, utility, and the aggregation of
+preference patterns. Econometrica, 22, 1–13.
+Maynard-Smith,J.,&Price,G.R.(1973).Thelogicofanimalconﬂict.
+Nature, 246, 15–18.
+Meehl,P.E.(1954). Clinical versus statistical predictions: A theoretical
+analysis and revision of the literature. Minneapolis: University of
+Minnesota Press.
+Messick, D. M. (1991). On the evolution of group-based altruism. In
+R. Selten (Ed.), Game equilibrium models I: Evolution and game
+dynamics (pp. 304–328). Berlin: Springer-Verlag.
+Minsky, M., & Papert, S. (1969). Perceptrons: An introduction to
+computational geometry. Cambridge, MA: MIT Press.
+Morton,J.(1969)DEMO
+Psychological Review, 76, 165–178.
+Movellan,J.R.,&Chadderdon,G.(1996).Cognitionandthestatistics
+DEMO natural signals. In G. Cottrell (Ed.), Proceedings of the
+eighteenth DEMO conference of the cognitive science society (pp.
+381–394). Hillsdale, NJ: Erlbaum.
+Movellan, J. R., & McClelland, J. L. (1995). Stochastic interactive
+processing, channel separability and optimal perceptual inference:
+An examination of Mortons Law. Technical Report
+PDP.CNS.95.4, Carnegie Mellon University, Pittsburgh, PA.
+Muth, J. F. (1961). Rational expectations and the theory of DEMO
+movements. Econometrica, 29, 315–335.
+Nash, J. (1950). The bargaining problem. Econometrica, 28, 155–162.
+Neal, R. (1993). Bayesian learning DEMO stochastic dynamics. In S. J.
+Hanson, J. D. Cowan, & C. L. Giles (Eds.), Advances in neural
+information processing systems (Vol. DEMO, pp. 475–482). San Mateo,
+CA: Morgan Kaufman.
+Nelson, DEMO, & Winter, S. (1982). An evolutionary theory of economic
+DEMO and behavior. Cambridge, MA: Harvard University
+Press.
+Newell, A. (1982). The knowledge level. Artiﬁcial Intelligence, 18, 87–
+127.
+Newell, A. (1991). Uniﬁed theories of cognition. Cambridge, UK:
+Cambridge University DEMO
+Newell, B. R., & Shanks, D. R. (2001). Take the best or look at the
+rest? Factors inﬂuencing one-reason decision-making. Unpub-
+lished manuscript, Department of Psychology, University College
+London.
+Nosofsky, R. (DEMO). Attention, similarity, and the identiﬁcation–
+categorization relationship. Journal of Experimental Psychology:
+General, 115, 39–57.
+Nosofsky, R. M. (1990). DEMO between exemplar similarity and
+likelihood models of classiﬁcation. Journal of Mathematical Psy-
+chology, 34, 393–418.
+Oaksford, M.,& Chater,N. (1991).Against DEMO cognitivescience.
+Mind and Language, 6, 1–38.
+Oaksford, M., & Chater, N. (1993). Reasoning theories and bounded
+rationality. In K. I. DEMO & D. E. Over (Eds.), Rationality
+(pp. 31–60). London: Routledge.
+Oaksford,M.,&Chater,N.(1994).Arationalanalysisoftheselection
+taskasoptimaldataselection. Psychological Review, 101,608–631.
+Oaksford, M., & Chater, N. (1995). Theories of DEMO and the
+computational explanation of everyday inference. Thinking and
+Reasoning, 1, 121–152.
+Oaksford,M.,&Chater,N.(1998a). Rationality in an uncertain world:
+Essays in the cognitive science of human reasoning. Hove, Sussex:
+Psychology Press.
+Oaksford, M., & Chater, N. (Eds.). (1998b). Rational models of
+cognition. Oxford: Oxford University Press.
+Oaksford, M., Chater, N., & Stenning, K. (1990). Connectionism,
+classical DEMO science and experimental psychology. AI &
+Society, 4, 73–90.
+Paris, J. (1992). The uncertain reasoners companion. Cambridge:
+Cambridge University Press.
+Parzen,E.(1962).Onestimationofaprobabilitydensityfunctionand
+mode. Annals of Mathematical Statistics, 35, 1065–1076.
+DEMO, J. W. (1976). Task complexity and contingent processing in
+decision making: An information search and protocol analysis.
+Organizational Behavior and Human Performance, 16, 366–387.
+Payne, J. W., Bettman, J. R., & DEMO, E. J. (1988). Adaptive
+strategy selection in decision making. Journal of Experimental
+Psychology: Learning, Memory and Cognition, 14, 534–552.
+Payne, J. W., Bettman, J. R., & Johnson, E. J. (1990). The adaptive
+decision maker: Eﬀort and accuracy in choice. In R. M. Hogarth
+(Ed.), Insights in decision making: A tribute to DEMO J. Einhorn (pp.
+129–153). Chicago: Chicago University Press.
+Payne, DEMO W., Bettman, J. R., & Johnson, E. J. (1993)DEMO The adaptive
+decision maker. New York: Cambridge University Press.
+Payne, J. W., Bettman, J. R., & Luce, M. F. (1996). When time is
+money: Decision behavior under opportunity-cost time pressure.
+Organizational Behavior and Human Decision Processes, 66, 131–
+152.
+Pearl, J. (1988)DEMO Probabilistic reasoning in intelligent systems. San
+Mateo, CA: Morgan Kaufman.
+Persson, M., & Juslin, P. (1999). The ecological rationality of
+DEMO Unpublished manuscript, Department of Psychology,
+Uppsala University, Sweden.
+Pinker,S.(1998). Howthemindworks.Harmondsworth,UK:Penguin.
+Plaut,D.C.,McClelland,J.L.,Seidenberg,M.S.,&Patterson,K.E.
+(1996). Understanding normal and impaired word reading: Com-
+putational DEMO in quasi-regular domains. Psychological
+Review, 103, 56–115.
+Pomerantz, J. R., & Kubovy, M. (1987). Theoretical approaches to
+perceptual organization. In DEMO R. Boﬀ, L. Kaufman, & J. P.
+Thomas (Eds.), DEMO of perception and human performance,
+Volume II: Cognitive processes and DEMO (pp. 36.1–36.46).
+New York: Wiley.
+Pylyshyn, Z. W. (1987). The robot s dilemma: The frame problem in
+artiﬁcial intelligence. Norwood, NJ: Ablex.
+86
+N. Chater et al. / Organizational Behavior and Human Decision Processes DEMO (2003) 63–86
+Quine,W.V.O.(1960). Word and object.Cambridge,MA:MITPress.
+Quinlan,J.R.(1993). C4.5: Programs for machine learning.LosAltos:
+Morgan Kaufmann.
+Reiner, R. (1995). Arguments against the possibility of perfect
+rationality. DEMO and Machines, 5, 373–389.
+Rescorla, R. A., & Wagner, DEMO R. (1972). A theory of Pavlovian
+conditioning: Variations in the eﬀectiveness in the variation of
+reinforcement and non reinforcement. In A. H. DEMO & W. F.
+Prokasy(Eds.), ClassicalconditionalII: Currentresearchand theory
+(pp. 64–99). New York: Appleton-Century-Crofts.
+Rieskamp, J., & Hoﬀrage, U. (1999). When do people use simple
+heuristics and how can we tell? In G. Gigerenzer, P. Todd, & The
+ABCGroup(Eds.), Simple DEMO that make us smart (pp.141–
+168). Oxford: Oxford University Press.
+Rips, L. J. (1994). The psychology of proof. Cambridge, MA: MIT
+Press.
+Roth, A. (1996). Individual rationality as a useful approximation:
+Comments on Tverskys ‘‘Rational theory of constructive choice’’.
+InK.J.Arrow,E.Colombatto,DEMO,&C.Schmidt(Eds.),
+The rational foundations of economic behavior (pp. DEMO).
+London: Macmillan.
+Rumelhart, D. E., Hinton, G. E., & Williams, R. J. (1986). Learning
+representations by back-propagating errors. Nature, 323, 533–536.
+Rumelhart, D. E., McClelland, J. L., & DEMO PDP Research Group
+(1986). Parallel distributed processing: Explorations in the micro-
+structures of cognition (Vols. 1 & 2). Cambridge, MA: MIT Press.
+Samuelson,P.(1937).Anoteonthemeasurementofutility. Review of
+Economic Studies, 4, DEMO
+Savage, L. J. (1954). The foundations of statistics. New York: Wiley.
+Sawyer,J.(1966).Measurementandprediction,clinicalandstatistical.
+Psychological Bulletin, 66, 178–200.
+Seidenberg, M. S., & McClelland, J. L. (1989). A distributed,DEMO
+developmentalmodelofwordrecognitionandnaming. Psycholog-
+ical Review, 96, 523–568.
+Shanks, D. R. (1995a). Is human learning rational? Quarterly Journal
+of Experimental Psychology, 48A, 257–279.
+Shanks,D.(1995b). The psychologyof associativelearning.Cambridge:
+Cambridge Univerisity Press.
+DEMO, R. N. (1967). On subjectively optimum selections among
+multi-attribute alternatives. In W. Edwards & A. Tversky (Eds.),
+Decision making (pp. 257–283). Harmondsworth, UK: Penguin.
+Simon, H. A. (1959). DEMO of decision-making in economics and
+behavioral science. American Economic Review, 49, 253–283.
+Simon, H. A. (1992). Economics, bounded rationality and the cognitive
+revolution. Aldershot: Elgar.
+Stanovich, K. E. (1999). Who is rational? Studies of individual
+diﬀerences in reasoning. Hillsdale, NJ: Erlbaum.
+Stanovich,K.E.,&West,R.F.(1998a).Cognitiveabilityandvariation
+inselectiontaskperformance. Thinking and Reasoning, 4,193–230.
+DEMO, K. E., & West, R. F. (1998b). Individual diﬀerences in
+framing and conjunction eﬀects. Thinking and Reasoning, 4, 289–
+317.
+DEMO, K. E., & West, R. F. (1998c). Individual diﬀerences in
+rational thought. Journal of Experimental Psychology: General,
+127, 161–188.
+DEMO, K. E., & West, R. F. (2000). Individual diﬀerences in
+reasoning: Implications for the rationality debate? Behavioral and
+Brain Sciences, 23, 645–726.
+Stein, E. (1996). Without good reason: The DEMO debate in
+philosophy and cognitive science. Oxford: Oxford University Press.
+Stephens, D. W., & Krebs, J. R. (1986). Foraging theory. Princeton,
+NJ: Princeton University Press.
+Stich, S. (1990). The fragmentation of reason. Cambridge, MA: MIT
+Press.
+Taraban,R., &McClelland,J. DEMO (1988).Constituentattachmentand
+thematic role assignment in sentence processing: Inﬂuences of
+content-based expectations. Journal of Memory and Language, 27,
+597–632.
+Todd,I.A.,&DEMO,A.(1993).Psychologicalmechanismsandthe
+Marginal Value Theorem: Dynamics of scalar memory for DEMO
+time. Animal Behavior, 46, 765–775.
+Todd, P., & Gigerenzer, DEMO (1999). What we have learned (so far). In
+G. Gigerenzer, P. Todd, & The ABC Group (Eds.), Simple
+heuristics that make us smart (pp. 357–365). Oxford: Oxford
+University Press.
+DEMO,A.(1969).Intransitivityofpreferences. Psychological Review,
+76, 31–48.
+Tversky, A. (DEMO). Elimination by aspects: A theory of choice.
+Psychological Review, 79, 281–299.
+Tversky, A., & Kahneman, D. (1974). Judgement under uncertainty:
+Heuristics and biases. Science, 125, 1124–1131.
+Tversky,A.,&Kahneman,D.(1986).Rationalchoiceandtheframing
+of decisions. Journal of Business, 59, 251–278.
+van DEMO, E. (1991). Stability and the perfection of Nash equilibria.
+Berlin: Springer-Verlag.
+van der Helm, P. A., & Leeuwenberg, E. L. DEMO (1996). Goodness of
+visual regularities: A non-transformational approach. Psychologi-
+cal Review, 103, 429–456.
+vonHelmholtz,H.(1910/1962).InJ.P.Southall(Ed.andtranslation).
+Treatise DEMO physiological optics (Vol. 3). New York: Dover.
+von Neumann, DEMO, & Morgenstern, O. (1944). Theory of games and
+economic DEMO Princeton: Princeton University Press.
+Weber, E. U., Goldstein, W. M., & Barlas, S. (1995). And let us not
+forget memory: The role of memory processes and techniques in
+thestudyofjudgmentandchoice. The Psychology of Learning and
+Motivation, 32, 33–81.
+Received 16 January 2001{1g42fwefx}

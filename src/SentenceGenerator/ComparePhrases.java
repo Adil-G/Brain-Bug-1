@@ -98,7 +98,7 @@ public class ComparePhrases {
     public static boolean hasAUniqueKeyWord = false;
     public static ArrayList<String> mostcommon = new ArrayList<>();
     public static HashMap<String, HashSet<String>> synMap = new HashMap();
-    public static final int EDGE_LENGTH = 4;
+    public static final int EDGE_LENGTH = 2;
     public static double compare2(String phrase0,String phrase1) throws IOException {
         hasAUniqueKeyWord = false;
         //what actress starred in freaky friday

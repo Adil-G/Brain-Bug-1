@@ -1,0 +1,926 @@
+Journal of Behavioral Decision Makin`
+J[ Behav[ Dec[ Makin`\ 02] 280Ð300 "1999#
+Optimal Stopping Behavior with Relative
+Ranks: The Secretary Problem with
+Unknown Population Size
+DARRYL A. SEALE1 and AMNON RAPOPORT2
+1 University of Nevada Las DEMO, USA
+2 Hong Kong University of Science and Technology, Hong Kong
+ABSTRACT
+We examine multi!period observation and selection problems with an unknown
+number DEMO applicants in which applicants are interviewed one at a time on each
+period\ recall of applicants that were interviewed and rejected is not possible\ DEMO
+decision on each period to reject or accept an applicant is based on relative ranks\
+and the objective is to maximize the probability of DEMO the top!ranked
+applicant[ We propose and then assess the e.ciency of three descriptive models
+by simulation\ and then test them competitively in a computer!controlled DEMO
+iment[ A cuto} decision model\ in which the _rst r−0 applicants are rejected and
+then the _rst applicant who is ranked higher than all DEMO observed applicants
+is accepted\ outperforms the two other two models[ Compared with the optimal
+policy\ subjects stop the search too early[ Their behavior is DEMO for by a
+cuto} model that postulates an endogenous cost of search[ Copyright Þ 1999
+John Wiley + Sons\ Ltd[
+KEY WORDS optimal stopping^ DEMO selection^ sequential search^ sequential
+observation^ search cost^ secretary problem^ candidate problem^ rela!
+tive ranks^ simulation^ individual decision making^ experiment^
+human subjects
+Broadly de_ned\ a DEMO problem is a sequential observation and selection problem in which the
+payo} depends on the observations only through their relative ranks and not otherwise DEMO their actual
+values| "Ferguson\ 0878\ p[ 173#[ Di}erent variants of this DEMO have been proposed as probability
+models for simpli_ed versions of a relatively large class of individual decision!making problems
+occurring in sequential search in economics\ DEMO control\ and personnel selection[ In its simplest
+form\ which we refer to as the standard secretary problem "SSP#\ a decision maker "DM# is DEMO with
+a set of n items "alternatives\ applicants\ propositions\ o}ers#\ which DEMO presented to her one at a time
+Correspondence to] Darryl A[ Seale\ Department of Management\ University of Nevada Las Vegas\ 3494 Maryland Parkway\
+Las DEMO NV 78043!5998\ USA[ E!mail] dsealeÝccmail[nevada[edu
+Contract grant sponsor] Hong Kong Research Grants Council[
+Contract grant number] CA87:88[BM90[
+Copyright Þ 1999 John Wiley + DEMO Ltd[
+Accepted 29 September 0888
+281
+Journal of Behavioral Decision Makin` Vol[ 02\ Iss[ No[ 3
+in DEMO random order[ Time is assumed to be discrete and the value of n is assumed to be known[ At any
+period\ the DM can DEMO order all the items that have already been observed in terms of their quality\
+desirability\ or attractiveness[ As each item is observed\ one on DEMO period\ the DM must either accept
+it\ in which case the search process terminates\ or reject it\ in which case the next item in DEMO randomly
+determined order "provided it is not the last item# is DEMO and observed[ Because the number of
+items is _nite\ the search terminates either when the DM accepts an item or when the nth item DEMO
+inspected\ whichever comes _rst[ The DM|s objective is to maximize the probability that the item
+accepted is\ in fact\ the best[
+One of the DEMO features of this decision task\ that enhances its applicability\ is that it makes no
+distributional assumptions] the DM is assumed to possess no prior DEMO about the distribution of
+quality\ desirability\ or attractiveness of the items[ In most practical sequential search problems DMs
+do not possess accurate information about DEMO distributions^ distributional assumptions are more
+often made to simplify model construction and achieve mathematical tractability rather than re~ect
+reality[ Since the only information she DEMO is about the relative ranks of the items already inspected\
+the DM cannot learn the characteristics of this distribution during the search[ A second DEMO
+feature is that because the payo} function is of the 9!0 type\ assigning a payo} of 0 if the best item is
+accepted "success# and 9 otherwise "failure#\ no considerations of utility are required[ A third attractive
+feature is the generalizability of the model to account for weakening DEMO the constraints imposed on the
+original search problem[
+Using the context of personnel selection * the one actually used as a cover story in DEMO experiment *
+the SSP can be formulated in terms of the following six assumptions]
+"0# There is only a single position to be _lled[
+"1# The number of applicants\ n\ is _nite and known to the DM before the search starts[
+"2# The n applicants are interviewed\ one at a time\ in a random order[ "Consequently\ before search
+commences\ each of the n; orders is equally likely[#
+"3# The DM can DEMO order all the n applicants in terms of their quality from best to worst with no
+ties[ Her decision to either accept or reject DEMO applicant on a given period only depends on the
+relative rank of the applicant with respect to all the applicants that have already been DEMO
+"4# Once rejected\ an applicant cannot later be recalled[
+"5# The DM receives a payo} of 0\ if she accepts the best applicant\ DEMO 9\ otherwise[
+Although these assumptions capture important characteristics of the observation and selection
+problem\ it was recognized quite early "e[g[ Gilbert and Mosteller\ 0855# that they place more con!
+straints on the observation and selection problem DEMO would generally apply in practice[ In an attempt
+to render the model more realistic\ many theoretical articles have appeared in the last 24 years DEMO so
+relaxing or otherwise modifying one or more of the assumptions stated above "see Freeman\ 0872\ for
+an early review#[ The focus of this growing body of literature has been on characterizing the optimal
+policy and DEMO routines for solving it numerically[ There have been hardly any attempts to assess
+the sensitivity of the optimal solutions to deviations from optimality nor DEMO compare these solutions
+to descriptive models that may better account for actual behavior in this class of optimal stopping
+problems[ Our study departs from DEMO tradition by proposing alternative descriptive models of optimal
+stopping and then testing them experimentally in the laboratory[ When studied experimentally\ the
+SSP and its DEMO variants can provide information that may partially help to understand behavior
+in more realistic sequential search problems "e[g[ purchasing a used car\ hiring a secretary#[
+PREVIOUS EXPERIMENTAL RESEARCH
+There have been numerous experimental studies of optimal DEMO or sequential search\ most of
+them violating one or more assumptions of the SSP[ In particular\ almost all these studies have made
+Copyright Þ DEMO John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+D[ A[ Seale and A[ Rapoport Optimal Stoppin` Behavior with Relative Ranks DEMO
+strong distributional assumptions that\ we contend\ are seldom realized in practice and whose validity
+is very di.cult to ascertain experimentally[ It is quite one DEMO to instruct the subjects that the items
+to be observed and inspected are sequentially and randomly drawn from a distribution "e[g[ normal#
+with prespeci_ed and known parameters\ and yet another to assume that inexperienced subjects "or
+even experienced DMs# can assess the density of a given observation and DEMO it to a cuto} point
+which she is supposed to know how to calculate[ Kahan\ Rapoport and Jones "0869# investigated
+sequential search behavior in a task satisfying all but one of the assumptions of the SSP[ DEMO violation
+of Assumption "3# above\ the subject recorded the actual value DEMO the item he inspected rather than
+the relative rank of this item with respect to the items already observed and rejected[ Therefore\
+although information DEMO the distribution of item quality was not explicitly provided at the outset\
+it could be gradually acquired during the task[ Corbin\ Olson and Abbondanza "0864# also violated
+Assumption "3# above by providing their subjects information about the numerical values of the stimuli
+rather than about their relative ranks "see also Corbin\ 0879#[ They reported that this information\ in
+fact\ was DEMO ignored but rather manipulated by their subjects in order to lend structure to a seemingly
+complex task[ In yet another study of optimal stopping\ DEMO and Tversky "0869# explicitly
+provided their subjects complete information about the DEMO of item quality and assumed in
+their analysis of the data that this information was understood\ perfectly coded\ and operated upon
+by their subjects[ DEMO "0889# proceeded in the same way[
+In contrast\ in a follow!up DEMO Corbin "0865\ unpublished manuscript# eliminated irrelevant
+distributional information[ At each period DEMO the inspection her subjects could only learn whether the
+current alternative was the maximum of the alternatives already inspected or not[ Another study that
+DEMO implemented the assumptions of the SSP was conducted by Seale and Rapoport "0886#[ They
+implemented the requirement of no distributional assumptions about the quality of the items "pro!
+_ciency of applicants interviewed for a job# by telling their subjects on each period of the task the
+ranks of DEMO the alternatives\ including the current one\ that have already been observed[ In particular\
+no information about the actual quality scores of the alternatives was DEMO A major _nding of
+Seale and Rapoport was that\ compared to the optimal policy\ their subjects stopped the search too
+early[
+The present study DEMO part of a programmatic research aimed to study more realistic versions of
+sequential search[ The major goal of this program is to systematically relax DEMO assumptions\ or
+combinations of assumptions\ that characterize the SSP "in particular\ DEMO "0#\ "1#\ "4#
+and "5## in order to gain better understanding of sequential search behavior with no distributional
+information[ The present study DEMO previous research "Corbin\ 0865\ unpublished manuscript^
+Seale and Rapoport\ 0886# by DEMO on the case where the number of applicants is no longer known
+with precision[0 This is accomplished by replacing Assumption "1# above with the following assumption]
+"1?# The number of applicants is _nite but unknown[ The DM only has an a!priori distribution on the
+actual number of DEMO available[
+We shall refer to the secretary problem that satis_es Assumptions "DEMO "1?#\ "2#\ "3#\ "4# and "5# as the
+DEMO problem with uncertainty "SPU#[
+Although more realistic than the SSP\ the DEMO is still an abstraction that may fail to capture some
+0For theoretical work on the secretary problem with an unknown population size\ see e[g[ DEMO "0868#\ Presman and
+Sonin "0861#\ Rasmussen and Robbins "0864#\ and DEMO "0870#[ As noted by Stewart\ the assumption that the number of
+DEMO is known with precision is quite limiting[ The learning set in the SSP\ which is central to the optimal policy\ is de_ned
+as a DEMO of the number of items available[ Accurate knowledge of this number is thus a prerequisite for using the results[
+However\ in many applications\ {this DEMO may not even be known within an order of magnitude| "Stewart\ DEMO p[ 021#[
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+283
+Journal of Behavioral Decision Makin` Vol[ 02\ Iss[ No[ 3
+of DEMO features of sequential personnel selection problems[1 However\ we argue that an experimental
+investigation of the SPU may provide insight about the type of decision DEMO that DMs use when
+faced with the choice between committing to an attractive proposition or deferring their decision in the
+hope of obtaining a DEMO proposition when they are uncertain about the total number of propositions
+available[ A comparison of optimal stopping behavior under conditions of certainty "SSP# and uncer!
+tainty "SPU# may also help to determine whether the tendency to stop the search too early * a general
+_nding of most of DEMO experimental studies of sequential search under certainty * extends to the
+sequential search problem under uncertainty[
+The rest of the paper is organized as DEMO We _rst characterize the optimal policy\ and then
+present three alternative descriptive models and compare their performance to that of the optimal
+policy via DEMO Following the theoretical section\ we present and discuss the results of an
+experiment designed to study sequential search behavior and compare to one another DEMO descriptive
+power of the three models[ A major _nding of our study is that\ similarly to the SSP\ subjects in the
+SPU stop the DEMO too early[ In the _nal section we account for this _nding by postulating a decision
+model incorporating endogenous cost of search[
+ALTERNATIVE DECISION RULES
+DEMO optimal policy
+The state of the decision process at each period "DEMO can be described by two integers "r^ s#\ where r
+is DEMO number of applicants so far presented and s is the relative rank of the rth\ last presented applicant[
+In both the SSP and SPU\ DEMO s × 0\ there is obviously no point in accepting the rth item\ as it cannot
+possibly be the best[ If s 0\ an DEMO that must occur at least once "necessarily\ if r 0\ then DEMO 0#\
+we say that this applicant is a candidate for acceptance[
+The SSP has a remarkably simple solution]
+{Reject the _rst r−0 applicants and DEMO accept the _rst applicant thereafter that is better than all
+previously observed applicants[|
+Stated di}erently\ the optimal policy for the SSP is of a DEMO form\ where the _rst r−0 applicants
+are rejected "or passed by# DEMO the _rst candidate\ if any\ is accepted thereafter[ What is also remarkable
+is that as n :\ r:n : 0:e"0:e 9[257#\ and the probability of accepting the best applicant also
+approaches 0:DEMO Thus\ for a large n\ it is approximately optimal to wait until 26) of the applicants
+have been interviewed and then accept the next relatively best one[ The probability of success if the
+optimal policy is DEMO is about 26)[ Moreover\ as shown by the numerical results reported by Gilbert
+and Mosteller "0855#\ convergence to 0:e is quick[ For example\ r:n is equal to 9[3\ 9[3\ 9[3\ and 9[264
+for DEMO 09\ 19\ 39\ and 79\ respectively[ The corresponding probabilities of success are 9[2876\ 9[2731\
+9[2646\ and 9[2608[
+To compute r\ let `"r^ n# DEMO the probability of success using a cuto} decision rule[ Then\
+1We are presently in the process of studying a version of the {secretary problem| DEMO replaces Assumption "4# with the assumption
+that\ once rejected\ an applicant DEMO be recalled\ and that the probability of its availability decreases as the number of applicants
+since it was last observed increases[ See also the DEMO study of Seale "0885\ unpublished manuscript# that modi_es Assumption
+"5# by counting as success the selection of either the best or second!best overall DEMO
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+D[ A[ Seale and A[ Rapoport Optimal Stoppin` Behavior with Relative Ranks
+DEMO
+r− n−s0 0
+`"r^ n#  $ n 0% kr−0 k
+The value of r that maximizes `"r^ n#\ denoted by r DEMO"n#\ is computed from
+"0#
+n−0 0 ¾
+rr"n#  DEMO 6r − 0b krs k
+When there is uncertainty about the value of n and only its distribution is assumed to be known\ the
+DEMO of the optimal policy is no longer so simple[ However\ Presman and Sonin "0861# show that in
+three special cases\ where the distribution of the number of applicants is either uniform\ geometrical\
+or Poisson\ the optimal DEMO assumes its standard cuto} form\ where the _rst r−0 applicants are
+rejected and the _rst candidate\ if any\ is accepted thereafter[ Both the values DEMO rand the associated
+probability of success di}er from the corresponding values for the SSP[ In particular\ assume that
+at most n applicants are available DEMO interviewing\ and that the DM has an a!priori probability
+distribution pm P"Mm# on the actual number M of applicants available\ where
+p0¦p1¦= = DEMO  0[ If the distribution on M is uniform between 0 and n\ as we assume in the present
+study\ then pm 0:n DEMO all 0 ¾ m ¾ n[ Presman and Sonin proved that as n :\
+r:n : 0:e1  9[024 and the probability of success approaches 1:e1 9[1696[ Thus\ if M is uniformly
+distributed DEMO 0 and n\ and n is quite large\ it is approximately optimal to wait until 02[4)
+"rather than 26) in the SSP# DEMO the maximum number of applicants have been interviewed and then
+select the next relatively best one[ The probability of success in this case is DEMO:e1[ Moreover\ as shown
+by the numerical results reported by Rasmussen and Robbins "0864#\ convergence in the SPU is also
+reached rather rapidly[ For example\ r:n is equal to 9[1\ 9[04\ 9[04\ and 9[0264 for DEMO 09\ 19\ 39\
+and 79\ respectively[ The corresponding probabilities of success are 9[240\ 9[297\ 9[178\ and 9[168[
+To compute r\ let h"r^ n# DEMO the probability of success in the SPU using a cuto} stopping rule[
+Then "Rasmussen and Robbins\ 0864#]
+F
+G
+h"r^n#  j
+J
+G
+f
+0 sn 0
+n m0 m
+r−
+$ n 0%
+DEMO value of r that maximizes h"r^ n#\ denoted by r r"n#\ is computed from
+n 0 −m−s0 k
+rr"n#  inf DEMO − 0 b s m 00 01 − 97
+mr
+kr
+n 0 m−s0 0
+mrs m kr−0 k
+07
+"1#
+if r 0
+"2#
+if r − 1
+"3#
+The optimal solution for the DEMO is used as a benchmark for assessing the e.ciency of the subjects|
+decisions in our experiment\ not as a model describing their behavior[ For DEMO purpose\ we com!
+petitively test three descriptive models that were originally proposed in the previous study of Seale and
+Rapoport to account for search DEMO in the simpler SSP[ Whereas these models all share the same
+assumption that the mental process of reaching a decision takes the form of DEMO "see Busemeyer
+and Rapoport\ 0877#\ they di}er from one another in DEMO events that are supposed to be counted[ The
+_rst model assumes that all applicants are being counted\ the second that only candidates are being
+DEMO and the third that only successive non!candidates are being counted[ Because these decision
+rules make no use of knowledge of the maximum number of DEMO to be observed\ they are equally
+applicable to the SSP and SPU[ We describe these three models below and then assess their e.ciency
+through DEMO simulations[
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+285
+Journal of Behavioral Decision Makin` Vol[ 02\ Iss[ No[ 3
+A DEMO rule
+Under this decision rule\ the DM is supposed to reject the _rst r−0 applicants and then accept the
+next top!ranked applicant "candidate#[ This decision rule places minimal demands on the DM|s
+cognitive ability[ It only DEMO her to keep count of the number of applicants she observes\ and then
+stop on the _rst candidate thereafter once this number exceeds some DEMO r−0\ a parameter of the
+model[ The cuto} decision rule includes the optimal policy as a special case when r  r\ but
+generalizes DEMO to non!optimal cuto} values[ The probability of success under this rule can be computed
+directly from equation "3#[
+A candidate counting rule
+Under this decision rule\ the subject is assumed to keep count only of the DEMO of candidates she
+observes and stop the search once this number is equal to or larger than some constant j"0 ¾ j ¾ DEMO a
+parameter of the model[ Whereas the former cuto} rule focuses on the number of successive applicants
+that have been interviewed\ ignoring the number DEMO candidates within the _rst r−0 periods\ the
+candidate counting rule ignores the number of applicants but\ rather\ focuses only on the number of
+candidates[
+DEMO successive non!candidate counting rule
+Under this decision rule\ the DM accepts the _rst candidate who follows at least k consecutive non!
+candidates\ where 9 DEMO k ¾ n−0 is a parameter of the model[ Similarly to the candidate counting rule\
+the present decision rule assumes that counting starts when DEMO _rst candidate is observed[ However\
+it is the number of consecutive non!candidates rather than number of candidates that the subject is
+assumed to count\ DEMO a new counting starting whenever a new candidate is observed[
+All the three decision rules are considerably simpler in the assumptions they make about DEMO cognitive
+operations conducted by the subject than other decision rules that have been proposed to account for
+choice behavior in deferred decision making "Busemeyer and Rapoport\ 0877#[ All three assume a
+single counter but di}er from DEMO another in the events that are supposed to be counted "applicants\
+DEMO successive non!candidates#[ Implicit in these decision rules is the dependency of the par!
+ameters r\ j\ and k on the value of n[ One DEMO expect each of these parameters to increase in n[To
+the extent that subjects adhere to one or more of these decision rules\ we shall DEMO to determine
+this dependency from their decisions[ Because each decision rule is characterized by a single parameter
+only "for a given n#\ a straightforward statistical comparison of the rules\ not entangled by the
+di}erences in the DEMO of free parameters\ is possible[
+Simulation results
+The e.ciency of each of the decision rules was assessed by computer simulation[ Each of the three
+DEMO rules was examined with a SPU of either n 39 or n 019\ the parameter values actually
+used in the experiment[ Although these two DEMO of n may be too large to characterize most sequential
+search problems in practice\ we chose them for a very good reason[ Later we DEMO the parameters
+r\ j\ and k from subjects| actual decisions[ To estimate these values with precision\ the parameter n
+must be set at a DEMO high value[
+All the simulations followed the same pattern[ First\ a value of M was chosen from the set of integers
+"0\1\[[[\n# with probability P"M  m#0:n[ Second\ the integers "applicants# 0 through M were
+arranged in a random order\ and then presented to the decision DEMO one at a time[ Finally\ if the
+applicant was a candidate and the criterion of the model was satis_ed\ the candidate was chosen^
+Copyright DEMO 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+D[ A[ Seale and A[ Rapoport Optimal Stoppin` Behavior with Relative Ranks
+DEMO 0[ Summary of simulation results
+Condition L Condition H
+"n 39# "n 019#
+Cutoff policy
+Optimal threshold "r# 5 05
+Probability of candidate selection 9[5111 9[5279
+Probability of success 9[1788 9[1680
+E.ciency 099) 099)
+Candidate countin`
+Optimal threshold " j# 2 3
+Probability of candidate selection DEMO 9[5413
+Probability of success 9[1410 9[1917
+E.ciency 76) 62)
+Successive DEMO
+Optimal threshold "k# 2 8
+Probability of candidate selection 9[4697 9[4869
+DEMO of success 9[1743 9[1656
+E.ciency 87) 88)
+286
+otherwise\ another DEMO was observed[ If the candidate chosen had the highest rank in the set of
+M applicants\ a correct selection "success# was registered[ The values of the decision rule|s single
+parameter were varied systematically\ with each value DEMO replicated 09\999 times[
+Several statistics were computed for each decision rule[ The most obvious statistic is the number of
+correct selections "which yields the probability of success when divided by 09\999#[ This statistic allows
+assessment of DEMO decision rule for an appropriate choice of its parameter value[ Another\ less obvious\
+statistic is the total number of selections made which\ when divided DEMO 09\999\ yields the probability
+of candidate selection[ We are interested in this statistic because\ in addition to maximizing the
+probability of success\ some subjects DEMO our experiment might have preferred to stop the search without
+choosing the top!tanked applicant rather than complete the search without ever stopping[2
+Exhibit 0 DEMO a summary of the simulation results[ It reports four statistics for each of the three
+decision rules[ The _rst statistic\ called the optimal threshold\ DEMO the parameter value of the decision
+rule under consideration "r\ j\or DEMO that produces the highest probability of success[ In agreement with
+the theoretical results for the optimal policy\ the optimal threshold "r# values for the cuto} rule are
+5 and 05 for n 39 and n 019\ DEMO The second statistic is the probability of candidate
+selection associated with the optimal threshold[ It is the probability that the decision rule stops and
+DEMO some candidate[ For the cuto} rule\ these probabilities assume the values 9[511 and 9[527 for
+n 39 and n 019\ respectively[ The third statistic DEMO the probability of success associated with the
+optimal threshold[ In complete agreement with the numerical results reported by Rasmussen and
+Robbins "0864#\ the probabilities of success associated with r  rare 9[189 and 9[168\ respectively[
+The DEMO statistic\ called ef_ciency\ is obtained by dividing the probability of success associated with
+the optimal threshold for a given decision rule by the probability DEMO success of the optimal policy[
+Clearly\ the e.ciency of the cuto} rule with r  ris 099)\ whereas those of the other two DEMO
+2The probability of success associated with the cuto} decision rule can be computed directly from equation "3#[ Because we do
+not have an explicit expression for computing the probability of accepting some candidate\ not necessarily the DEMO
+applicant\ we reverted to simulations[
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+287
+Journal of Behavioral Decision Makin` Vol[ 02\ Iss[ No[ 3
+Exhibit DEMO The cuto} rule
+rules are necessarily smaller[ The complete results of the simulations are displayed in Exhibits 1 through
+3\ each including two parts\ DEMO correspond to the combinations of the three decision rules and two
+values of n[
+The cutoff rule
+Exhibit 1 portrays two functions] the number DEMO successes and the number of times a candidate was
+accepted\ out of a total of 09\999 cases[ Simulation results for the case n 39 DEMO presented in the
+upper part of the exhibit^ the results for the case n 019 are portrayed in the lower part[ Except for
+the DEMO in scale "n 39 versus n 019#\ the two exhibits are DEMO similar[ For both values
+of n\ the number of successes functions are relatively ~at at the top\ rendering the optimal policy
+somewhat insensitive to DEMO variations in the cuto} threshold r[ For n 39\ any r in the interval "2\
+00# achieves 89) e.ciency and any r in DEMO interval "1\ 03# achieves 79) e.ciency[ The corresponding
+intervals for n 019 are "7\ 18# and "4\ 27#[ The functions relating the DEMO of times a candidate
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+D[ A[ Seale and A[ Rapoport Optimal Stoppin` Behavior with Relative Ranks
+DEMO
+Exhibit 2[ The candidate counting rule
+was accepted to the value of r achieve a maximum of 09\999 "shown on the right!side vertical side#
+when r 0 and then drop sharply[ The two functions hardly di}er DEMO each other[ As shown in
+Exhibit 0\ whereas the probability of success associated with rslightly decreases from n 39 "9[178#
+to n 019 "DEMO the associated probability of choosing some candidate slightly increases from 9[511
+to 9[527[
+The candidate countin` rule
+Exhibit 2 displays the same two functions DEMO the candidate counting rule\ with the simulation results
+for n 39 and n 019 shown in the upper and lower parts\ respectively[ The candidate DEMO rule
+achieves maximum e.ciency of 76) when n 39^ this value DEMO sharply to 62) when n increases
+to 019 Exhibit 0#[ Inspection DEMO Exhibit 2 shows that the two number of successes functions for the
+candidate counting rule are steeper and therefore considerably more sensitive to deviations DEMO the
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+399
+Journal of Behavioral Decision Makin` Vol[ 02\ Iss[ No[ 3
+Exhibit DEMO The successive non!candidate counting rule
+optimal threshold value of j than the same functions are sensitive to deviations from r[ The same
+holds for DEMO functions depicting the number of times a candidate was accepted[
+The successive non!candidate countin` rule
+The total number of successes and the total number DEMO times a candidate was accepted are shown in
+Exhibit 3 for n 39 and n 019[ The e.ciency of the successive non!candidate rule is DEMO
+high * 87) and 88) of the optimal policy for n 39 and n 019\ respectively "Exhibit 0#[ With an
+appropriate choice of the value of k\ the successive non!candidate counting rule achieves practically
+the DEMO probability of success as the optimal policy[ Moreover\ comparison of Exhibits 1 and 3 shows
+that the probability of success function for the successive DEMO rule is not as ~at as the one
+for the cuto} rule[ Small deviations from the optimal threshold values * k 2 and k DEMO for n 39
+and n 019\ respectively * result in a sharp decline in the probability of accepting the top!ranked
+applicant[ The implication of DEMO results is that a subject using this simple decision rule\ with an
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision DEMO Vol[ 02\ 280Ð300 "1999#
+D[ A[ Seale and A[ Rapoport Optimal Stoppin` Behavior with Relative Ranks
+DEMO
+appropriate choice of the value of the parameter k\ can achieve practically the same probability of
+success as a subject who adheres to the DEMO policy[
+In summary\ the simulation results indicate that relatively small departures from the optimal cuto}
+point rfor both values of n are relatively harmless[ DEMO for the same deviation from r\
+stopping too early is more costly than stopping too late[ Two other very simple decision rules\ one
+focusing DEMO the number of candidates and the other on the number of non!candidates\ emerge as viable
+alternatives to the cuto} rule for describing actual search DEMO This is particularly the case for the
+latter decision rule\ which achieves almost the same probability of success as the optimal policy for the
+DEMO values of n that we have investigated[
+Having assessed the sensitivity of the optimal solution for the SPU and the e.ciencies of the three
+DEMO rules\ we conducted an experiment aimed to compare actual and optimal sequential search
+behavior and competitively test the three descriptive models[
+METHOD
+Subjects
+Fifty DEMO participated in the experiment[ They were recruited by advertisements asking for vol!
+unteers to participate in a computer!controlled experiment concerning personnel selection decisions
+with DEMO contingent on performance[ The subjects consisted of undergraduate students\ graduate
+students\ and a few university employees[ They were randomly assigned to two conditions\ with DEMO
+subjects participating in Condition L "n 39# and 14 in Condition DEMO "n 019#[
+Procedure
+Subjects arrived at the laboratory in groups of DEMO to eight and were seated in separate rooms equipped
+with PCs[ The instructions "provided both online and hard copy# explained the SPU task with particular
+emphasis on how the relative ranks change as a new applicant DEMO observed "see Seale\ 0885\ unpublished
+manuscript\ for instructions to the subjects#[ DEMO sample exercise was designed to test the subjects|
+understanding of the instructions[ Once the subjects completed this exercise\ they summoned the
+experimenter who checked DEMO results of the exercise and answered questions about the task\ if any[
+Each subject completed 099 independent trials "replications# of the SPU[ Each trial consisted of a
+number of periods equal to or smaller than M[ DEMO period had the same structure[ The relative rank\
+s\ of the current applicant was displayed "s 0\ if r 0#[ The subject could either accept the applicant
+or move to the next period[ If she decided DEMO move\ the computer updated and then displayed the ranks
+of all the applicants that had been observed in the order they had been observed[ DEMO example\ after
+observing three applicants\ the relative ranks that could have been displayed were either "0\ 1\ 2#\
+"0\ 2\ 1#\ "1\ 0\ 2#\ "1\ 2\ 0#\ "2\ 0\ 1#\ or "2\ 1\ 0#[ Information about the quality score of the applicant was
+never provided[ This DEMO continued until either the subject stopped the observation and selection
+process by accepting an applicant or after observing M applicants\ whichever came _rst[
+At DEMO end of each trial\ the computer revealed the rankings of all the M applicants and informed
+the subject of the absolute "not relative# rank of the applicant she had accepted[ If the applicant
+accepted by the DEMO was the top ranked\ the subject was paid ,9[29 for the DEMO otherwise\ she was
+not paid at all[ The cumulative earnings were displayed at the top of the computer screen[
+The subjects were instructed that DEMO actual number of applicants\ M\ was drawn randomly and
+independently on each trial and could assume any value between 0 and n "n 39 or 019# with equal
+probability[
+After completing 099 trials\ the subjects were DEMO to answer a brief post!experimental questionnaire
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+391
+Journal of Behavioral Decision Makin` Vol[ 02\ Iss[ No[ 3
+that DEMO them to rate the importance of _ve factors "see below# in DEMO hiring decisions and
+describe in detail the strategy they used to select candidates[ To motivate thoughtful answers\ the
+subjects were instructed that they would DEMO one _nal trial\ worth ,1[99 for a success\ which would
+use DEMO decision rule they just described in the questionnaire[ Following this _nal trial\ the subjects
+were paid their cumulative earnings\ informally debriefed\ and dismissed from DEMO laboratory[ The
+mean time to complete the experiment was 49 and 54 minutes for Conditions L and H\ respectively[
+RESULTS
+Subjects in Condition L DEMO a total of 1499 "14×099# trials\ selected some candidate on 0799
+DEMO "61[9)#\ observed all the applicants without stopping the search on DEMO trials "16[6)#\ and
+selected non!candidates on only eight occasions[ Overall\ DEMO subjects succeeded in choosing the top!
+ranked applicant on 507 trials "DEMO)#^ this percentage is signi_cantly smaller "t13 4[38\ p ³ 9[990#
+DEMO the predicted value of 17[8) under the optimal policy[ Across all DEMO 14 subjects\ the mode of
+the "inferred\ best _tting# cuto} values DEMO 4\ indicating that the reduction of 3 percentage points in
+the probability of success is attributed to a tendency to stop the search too DEMO The summary results
+for Condition H are similar[ The subjects selected some candidate on 0734 out of 1499 trials "62[7)#\
+observed all the applicants without ever stopping the search on 515 trials "14[9)#\ succeeded in
+selecting the best applicant on 417 trials "10[0)#\ and selected a non!candidate on only 18 occasions[
+The overall percentage of success computed DEMO the 14 subjects is smaller "t13 09[01\ p ³ 9[990#
+than DEMO optimal value of 16[8)[ The mode of the distribution of cuto} values was 6 rather than 05
+suggesting again that the non!optimal behavior DEMO Condition H was due to a general tendency to stop
+the observation and selection process too early[
+The number of trials on which a DEMO was selected was 7 "9[2)# in Condition L and 18
+"0[1)# in Condition H[ Examination of individual results indicates that in DEMO all the cases the
+subject selected a non!candidate after having observed more than n:1 applicants[ Additionally\ in both
+the present study of the DEMO and the previous study of the SSP more than 69) of DEMO trials where a
+non!candidate was selected occurred in the high n condition "n 79 in Seale and Rapoport and
+n 019 in the present study#[ Rather than attributing these non!optimal decisions to errors due to a
+DEMO of the wrong key\ we conclude that they are part of a deliberate strategy by some of the subjects
+to {give up| on the DEMO trial\ thereby saving precious time[ Because our primary focus is on
+comparison of the decision rules introduced earlier\ subsequent analyses will omit trials on DEMO a
+non!candidate was selected[
+Model comparison
+Unless the subject is directly asked about the decision rule she used\ there is no obvious way to DEMO
+the rule from her responses on any particular trial[ Even if we assume that the subject adheres to one
+of the three rules we DEMO earlier\ there is no way to determine the exact value of the model|s
+single parameter from her responses[ For example\ supposing that M 8 DEMO were chosen in
+Condition L\ with quality values ranging between 1 "DEMO and 29 "highest#\ and presented to the
+Dm in the following DEMO 4\ 04\ 2\ 1\ 17\ 29\ 00\ 6\ 03[ Supposing that the DM actually stopped and
+selected the _fth applicant\ who is a candidate "s 0#[ This response is consistent with a cuto} rule
+where 1 DEMO r ¾ 4\ a candidate counting rule where j 1\ and a successive non!candidate counting rule
+where 0 ¾ k ¾ 1[ It is DEMO consistent with other decision rules that we have not speci_ed[ In the same
+example\ if the subject does not stop the search\ her response DEMO consistent with a cuto} rule where
+6 ³ r\ a candidate counting rule where 2 ³ j\ and a successive non!candidate counting rule where
+DEMO Þ 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+D[ A[ Seale and A[ Rapoport Optimal Stoppin` Behavior with Relative Ranks
+DEMO 4[ Classi_cation of individual decision rules] condition L "n 39#
+Sub
+DEMO
+Type of decision rule
+Candidate Successive
+Cuto} counting non!candidates
+Prop[ of Prop[ of Prop[ of
+decisions j decisions k decisions
+0 3 9[79 2 DEMO 0 9[61
+1 4 6 9[57 3 9[30 1 9[50
+2 2 9[56 2 9[49 0 9[46
+3 4 9[70 2 9[49 0 9[55
+DEMO 3 9[69 3 9[25 0 9[62
+5 2 9[50 2 9[32 0 9[45
+6 5 9[66 3 9[37 2 9[52
+7 5 9[58 3 DEMO 1 2 9[42
+8 4 5 9[57 3 9[34 1 9[45
+09 3 9[42 2 9[31 0 9[43
+00 5 9[69 2 3 9[34 DEMO 9[47
+01 4 9[65 2 9[49 1 9[53
+02 4 9[62 2 9[39 0 1 9[57
+03 2 9l[48 2 9[38 0 9[43
+04 DEMO 9[55 3 9[37 0 9[45
+05 3 9[42 3 9[37 2 9[53
+06 3 9[54 2 9[31 0 9[59
+07 3 9[48 2 9[28 DEMO 9[43
+08 4 9[63 2 9[33 0 9[54
+19 3 9[33 1 9[39 0 1 9[31
+10 3 9[46 1 9[37 0 9[47
+11 DEMO 9[65 3 9[42 1 9[59
+12 6 9[62 3 9[32 3 9[50
+13 3 9[54 2 9[31 0 9[59
+14 5 9[60 2 9[38 DEMO 9[59
+392
+1 ³ k[ Interrogating the subject during the trial about the decision rule\ if any\ that she used could bias
+her future DEMO Interrogating her after all the 099 trials have been completed\ as we did in the
+present study\ presumes a perfect memory on the part DEMO the subject[
+Rather than attempting to infer the particular decision rule or rules that the subject might have used
+during the experiment\ we focused DEMO the three decision rules * or descriptive models * introduced
+earlier and proceeded to test them competitively[ For each decision rule\ we _xed the DEMO of its single
+parameter "r\ j\or k# and then counted the DEMO of trials\ out of 099\ consistent with this value[ By
+varying the value of the parameter and repeating the procedure for each possible value\ DEMO constructed
+for each subject separately an empirical distribution of the frequency of trials consistent with this
+decision rule[ The mode of this distribution was DEMO chosen to represent the maximum number of
+decisions consistent with this decision rule for a speci_c value of its parameter\ and the three decision
+DEMO were then compared to one another in terms of this single frequency[ This comparison was
+conducted separately for each of the subjects[
+Exhibit 4 DEMO the parameter values of the three decision rules inferred from the subject|s decision
+across all the 099 trials in Condition L[ The exhibit shows DEMO modal result3 and the proportion of
+3Even with 099 iterations of the task\ for each decision rule it is possible to get multi!modal results[ DEMO ae indicated in the
+exhibit[ For example\ 57) of the decisions DEMO Subject 1 can be accounted for by a cuto} decision rule with either r 4 or r 6[
+Copyright Þ 1999 John Wiley + DEMO Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+393
+Journal of Behavioral Decision Makin` Vol[ 02\ Iss[ No[ 3
+decisions "trials# consistent with that result for each decision rule and each subject DEMO For
+example\ 79) of the decisions of Subject 0 were consistent DEMO a cuto} decision rule with the cuto}
+value set at r 3\ 59) with a candidate counting rule with j set at 2\ and 61) with a successive non!
+candidate counting rule with k set at 0[ By comparing across the three decision rules\ it is apparent
+that DEMO decisions of Subject 0 are most consistent with the cuto} decision rule of r 3[ By repeating
+these comparisons across the subjects\ it is DEMO to determine which of the three rules accounts for
+the behavior of more subjects[ It is also possible to determine for each decision rule DEMO the
+empirical distribution of the values of its single parameter[
+Exhibit 4 shows that the values of r inferred from the individual decisions ranged DEMO 2 and 6\
+and that the corresponding proportions of decisions accounted for by the cuto} rule varied from 9[42
+to 9[70[ The inferred values DEMO j for the candidate counting rule varied between 1 and 3\ with the
+proportions of decisions consistent with this model ranging between 9[25 and DEMO For the successive
+non!candidate counting rule\ the inferred values of k ranged between 0 and 3\ and the corresponding
+proportions of decisions varied between DEMO and 9[62[ The cuto} rule accounted for the highest
+proportion of decisions for 10 of the 14 subjects^ the successive non!candidate accounted for the DEMO
+proportion of decisions in 3 cases^ and the candidate counting rule never accounted for the greatest
+proportion of decisions[
+Focusing on the cuto} rule\ DEMO 4 shows that 3 of the 12 subjects with a single mode established
+their cuto} at r  r5\ whereas 07 of the 08 DEMO subjects established it at a lower value[ A
+two!sided sign test rejected the hypothesis "m 08\ p ³ 9[90# that equal proportions of subjects either
+stopped the search too early or too late[
+Exhibit 5 shows DEMO same results for Condition H[ Individual modal values for r ranged between 3
+and 07\ and the corresponding proportions of decisions accounted for by DEMO cuto} rule ranged between
+9[27 and 9[81[ For the candidate counting rule\ modal values of j varied between 1 and 4\ with
+corresponding proportions DEMO decisions consistent with the model varying from 9[29 to 9[43[ Finally\
+for the successive non!candidate counting rule\ the modal values of k ranged between DEMO and 7\ and the
+proportions of decisions consistent with this model varied between 9[21 and 9[61[ Like Condition L\
+the cuto} decision rule accounted DEMO the highest proportion of decisions in all 14 cases[ With 13 of
+the 14 subjects in Condition H setting their cuto} values smaller than DEMO it is again evident that
+relative to the optimal policy the subjects stopped too early[
+Learning effects
+The analyses reported in the previous section DEMO based on the assumption that the same decision rule
+with the same parameter value was used consistently across the 099 trials[ This assumption precludes
+DEMO possibility of switching between decision rules or\ even more plausibly\ for the same decision rule
+changing its parameter value across trials[ Learning across trials DEMO be expressed by the decision
+rule approaching the optimal policy or by the subject becoming more consistent in using the same
+decision rule[ To DEMO for learning e}ects\ we divided the 099 trials into two blocks of 49 trials each\
+and then compared the two blocks to each other DEMO terms of the mean of the inferred value of r and
+the proportion of decisions consistent with the cuto} rule[ Whereas a similar analysis DEMO by
+Seale and Rapoport yielded signi_cant learning e}ects with the mean inferred value of r moving closer
+to rand the proportion of decision consistent DEMO the cuto} rule increasing over blocks\ we found
+no such evidence for the SPU "see Seale\ 0885\ unpublished manuscript\ for details#[ For both conditions
+L and H\ none of the comparisons of Blocks 0 and 1 DEMO signi_cant di}erences[
+We repeated the same analysis with smaller blocks of 14 trials each\ and then compared to each
+other all "5# pairwise combinations of two blocks[ For Condition L\ the modal cuto} points increased
+across DEMO four blocks from 3 in Block 0\ through 4 in Blocks 1 and 2\ to 5 in Block 3[ However\ only
+Copyright Þ 1999 DEMO Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+D[ A[ Seale and A[ Rapoport Optimal Stoppin` Behavior with Relative Ranks
+DEMO 5[ Classi_cation of individual decision rules] condition H "n 019#
+Sub
+DEMO
+Type of decision rule
+Candidate Successive
+Cuto} counting non!candidates
+Prop[ of Prop[ of Prop[ of
+decisions j decisions k decisions
+0 5 9[54 3 DEMO 4 9[51
+1 7 9[54 2 9[26 2 9[45
+2 7 9[56 3 9[43 4 9[47
+3 8 9[54 3 9[34 4 9[46
+4 DEMO 9[47 3 9[34 7 9[36
+5 3 9[72 2 9[33 2 9[54
+6 07 9[61 4 9[37 5 9[59
+7 4 9[62 2 3 DEMO 1 9[55
+8 3 9[50 1 2 9[25 0 9[42
+09 00 01 9[69 3 9[28 4 9[53
+00 3 4 9[56 2 9[31 DEMO 9[59
+01 02 03 9[81 4 9[38 7 9[61
+02 4 9[50 2 9[36 1 9[41
+03 4 9[67 2 9[38 1 9[60
+04 DEMO 9[56 3 9[30 2 9[59
+05 8 9[52 2 3 9[39 4 9[47
+06 3 9[27 2 9[29 0 9[21
+07 09 00 9[64 DEMO 9[35 4 9[50
+08 3 9[39 2 9[20 0 1 9[24
+19 5 9[55 2 3 9[35 1 9[44
+10 09 00 9[36 2 DEMO 6 9[32
+11 6 9[50 3 9[35 2 3 9[43
+12 6 9[56 3 9[39 4 9[48
+13 3 9[50 2 9[26 0 9[45
+DEMO 09 9[51 3 9[39 4 9[59
+394
+the comparison between Blocks 2 and 3 was signi_cant] the inferred cuto} points of 03 of the DEMO
+subjects signi_cantly increased from Block 2 to 3 "two!tailed sign test\ DEMO 08\ p ³ 9[90#[ Exactly the
+opposite trend was revealed in Condition H] the modal cuto} points decreased across the four blocks
+from 09 DEMO Block 0\ through 7 and 6 in Blocks 1 and 2\ to 6 in Block 3[ However\ only the comparison
+between Blocks 0 and DEMO was signi_cant] the inferred cuto} points of 04 of the 14 subjects signi_cantly
+decreased from Block 0 to 1[ We judge these learning trends DEMO be too weak to be conclusive[
+The comparisons of Blocks 0 and 1 conducted above are model dependent[ It is possible that the
+probability DEMO success increases with experience even when the subject uses one of the three decision
+rules with a parameter value which is not _xed for DEMO 49 trials or some other decision rule that di}ers
+from the three that we have tested[ To account for this possibility\ we calculated for DEMO subject the
+proportion of successes in each of the two blocks of 49 trials and across the two blocks[ As in most
+previous analyses\ DEMO analysis\ too\ was conducted on the individual level[ The individual proportions
+are presented in Exhibit 6[
+Across all the 099 trials\ the proportions of DEMO for Condition L ranged between 9[06 and 9[22
+with a mean of 9[14 and standard deviation of 9[927[ The means and standard deviations assumed DEMO
+values 9[15 and 9[938 for block 0 and 9[12 and 9[937 for block 1[ The di}erence between these means
+tested by the sign test DEMO not signi_cant "m 13\ p × 9[94# suggesting again no learning DEMO
+Repeating the same calculations for Condition H\ the individual proportions of success varied from
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+Journal of DEMO Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+395
+Journal of Behavioral Decision Makin` Vol[ 02\ Iss[ No[ 3
+Exhibit DEMO Proportion of successes by condition and subject
+Condition L "n 39# DEMO H "n 019#
+Subject All trials Block 0 Block 1 All DEMO Block 0 Block 1
+0 9[14 9[17 9[11 9[13 9[11 9[15
+1 9[08 9[19 9[07 9[08 9[19 9[07
+2 9[06 9[11 9[01 9[14 9[21 DEMO
+3 9[17 9[29 9[15 9[10 9[17 9[03
+4 9[17 9[21 9[13 9[11 9[13 9[19
+5 9[10 9[05 9[15 9[19 9[11 9[07
+6 9[12 9[19 DEMO 9[08 9[15 9[01
+7 9[18 9[29 9[17 9[11 9[29 9[03
+8 9[13 9[17 9[19 9[07 9[17 9[97
+09 9[12 9[29 9[05 9[10 9[13 9[07
+DEMO 9[16 9[15 9[17 9[06 9[19 9[03
+01 9[17 9[17 9[17 9[20 9[23 9[17
+02 9[17 9[29 9[15 9[11 9[17 9[05
+03 9[10 9[11 9[19 DEMO 9[11 9[07
+04 9[14 9[13 9[15 9[19 9[19 9[19
+05 9[12 9[11 9[13 9[19 9[13 9[05
+06 9[13 9[15 9[11 9[04 9[05 9[03
+07 DEMO 9[25 9[29 9[10 9[11 9[19
+08 9[16 9[21 9[11 9[19 9[11 9[07
+19 9[06 9[07 9[05 9[19 9[11 9[07
+10 9[12 9[29 9[05 9[19 DEMO 9[01
+11 9[17 9[21 9[13 9[13 9[13 9[13
+12 9[16 9[13 9[29 9[07 9[07 9[07
+13 9[13 9[15 9[11 9[17 9[15 9[29
+14 9[15 DEMO 9[29 9[10 9[13 9[07
+Mean 9[14 9[15 9[12 9[10 9[13 9[07
+9[04 to 9[20 with a mean of 9[10 and standard deviation 9[922[ As DEMO earlier\ performance was
+degraded as the value of n increased from 39 to 019[ Moreover\ there is also evidence for a decline in
+performance DEMO blocks in Condition H] the di}erence between the mean probability of success in
+Block 0 "9[13# and Block 1 "9[07# was signi_cant "m 11\ p ³ 9[90#[
+Questionnaire results
+Notwithstanding the reservations expressed earlier about DEMO interviews\ we analyzed
+the responses to the questionnaire in an attempt to gain a better insight into the decision rules actually
+used by the DEMO and their assessment of their probability of success[ Using a 6!point Likert scale
+"0 not important\ 6 very important#\ the subjects were asked to rate the importance of _ve factors
+in in~uencing their decisions]
+"0# The number of times an applicant ranked {0| "a candidate in our terminology# appeared in the
+sequence
+"1# The number of times an applicant ranked {1| appeared in the sequence
+"2# The number of times an applicant ranked {2| appeared in the sequence
+"3# The number of applicants observed until the last applicant ranked {0| appeared in the sequence
+"4# The number of successive applicants who appeared after the last applicant ranked {0|[
+DEMO these _ve factors\ the _rst\ fourth\ and _fth concern the candidate counting rule\ the cuto} rule\
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+DEMO of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+D[ A[ Seale and A[ Rapoport Optimal Stoppin` Behavior with Relative Ranks
+DEMO
+and the successive non!candidate counting rule\ respectively\ whereas the second and third factors are
+not relevant to any of the decision rules considered in DEMO paper[
+The mean ratings of factors 0\ 1\ 2\ 3\ and 4 in Condition L were 4[4\ 1[8\ 1[9\ 4[1\ and 4[5\ respectively[
+A DEMO ANOVA rejected the null hypothesis of equality in means "F3\85 31[71\
+DEMO ³ 9[990#\ and a Tukey HSD test indicated a signi_cant di}erence between the means of factors 0\ 3\
+and 4 and the means of DEMO 1 and 2[ Information that was not relevant to the three decision rules
+was\ indeed\ rated as signi_cantly and substantially less important[ We found DEMO di}erences between
+the mean ratings of factors 0\ 3\ and 4[ Whereas 05) of the subjects reported using a cuto} rule
+exclusively\ no subject reported using any of the two other decision rules[ Rather\ the majority DEMO the
+subjects "45)# reported using decision rules combinin` in one DEMO or another both the number of
+applicants and the number of candidates encountered[ In general\ the combination rules were not
+stated very clearly and DEMO to vary across subjects[ As the mean ratings of factors 0 through 4 in
+Condition H are essentially the same\ they are omitted[
+In DEMO to answering the _ve questions above\ the subjects were asked to estimate the number
+of successes they would have scored in 099 additional trials\ DEMO the number of applicants were to be
+uniformly distributed between "0# DEMO and 39\ "1# 0 and 79\ and "2# 0 and 019[ Recall that the subjects
+in Condition L only experienced the case of DEMO 39 whereas the subjects in Condition H only experi!
+enced the case of n 019[ Thus\ all the 49 subjects were presented with one DEMO "either n 39 or
+n 019# they have already experienced for DEMO trials and with two new cases\ albeit di}erent from one
+condition to another\ that they have not experienced at all[
+The mean estimates of DEMO of successes are depicted in Exhibit 7[ The solid line represents the
+mean estimates of the subjects in Condition L\ and the dashed line DEMO mean estimates of the subjects
+in Condition H[ The solid and empty triangle markers show the actual mean number of successes in
+Conditions L DEMO H\ respectively[ The individual estimates were subjected to a 1×2 condition by value
+of n ANOVA with the value of n as a repeated DEMO Both main e}ects were signi_cant "F0\37 04[98\
+p ³ 9[990 for DEMO condition main e}ect\ and F1\85 25[10\ p ³ 9[9990 for the value of n main e}ect#[
+The interaction e}ect was not signi_cant "F ³ 0#[ Exhibit 7 shows that after completing 099 trials with
+the same DEMO of n\ the subjects in Condition H estimated higher success rates than the subjects in
+Exhibit 7[ Mean estimates of success
+Copyright Þ 1999 DEMO Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+397
+Journal of Behavioral Decision Makin` Vol[ 02\ Iss[ No[ 3
+Condition DEMO for all three values of n[ The second main e}ect suggests that the subjects in both
+conditions failed to appreciate the asymptotic probability of DEMO associated with the optimal policy\
+expecting their probability of success to decline by approximately 09) as n increased from 39 to 019[
+Exhibit 7 also shows that\ after completing 099 trials\ the subjects in both conditions DEMO that
+their probability of success would have been higher than the observed success probabilities "denoted
+in Exhibit 7 by the solid and empty triangle markers#\ if they were given the opportunity to play the
+game for DEMO additional periods[ The subjects in Condition L estimated that the mean number of
+successes would increase\ on average\ from 13[5 "solid triangle marker# to 29[1\ beyond what one
+would expect using the optimal policy[ Similarly\ the DEMO in Condition H were equally optimistic\
+estimating that their number of successes would increase from 10[1 "empty triangle marker# to 15[7\
+an estimate that matches exactly the probability of success under the optimal policy[ The results DEMO
+paired t!tests indicate that both di}erences are signi_cant "t13 3[00\ p DEMO 9[990 and t13 2[04\ p ³ 9[90
+for Conditions L and H\ respectively#[
+Stopping too early
+Our previous comparison of the three decision rules DEMO that the cuto} rule accounts for more
+decisions than the two other decision rules[ Additionally\ a comparison of the inferred cuto} values
+with the DEMO cuto} values shows that almost all the subjects in both conditions stopped the
+observation and selection process too early[ Because of the insensitivity of DEMO optimal policy to small
+deviations from r\ the degree of which can be assessed from the simulation results depicted in Exhibit
+1\ stopping too DEMO caused only a small decrease in the probability of success[ Nevertheless\ this
+consistent bias\ which was also reported in our previous study of the DEMO warrants an explanation[
+Seale and Rapoport hypothesized that stopping too early in the SSP resulted from the existence of
+an endo`enous cost of search[ DEMO the payo} in our experiment was contingent on performance\ rather
+than on the amount of time spent in the laboratory\ it is natural to DEMO that if they considered time
+taken to observe the applicants as an implicit search cost\ the subjects might have been motivated to
+maximize their DEMO payo} per unit time[ This hypothesis is also applicable to the SPU[ It is
+consistent with the behavior of some of our subjects who DEMO the search on a non!candidate after
+observing only a small number of applicants[ It is also supported by the literature on the accuracyÐ
+e}ort DEMO reported by Payne\ Bettman and Johnson "0882#[ Seale and Rapoport hypothesized DEMO
+_xed cost per observation\ and then showed that with a _xed observation cost worth 0) of the payo}
+for success they could account for the modal value of the inferred cuto}s in the SSP with either DEMO 39
+or n 79[
+In attempting to account for the _nding that almost all the subjects in the SPU stopped the search
+too early\ DEMO proceeded in a similar way by considering two alternative models for the e}ects of
+endogenous cost of search[ The _rst model assumes a _xed DEMO per observation\ whereas the second
+assumes that the di}erence between the costs of two successive observations decreases in the number
+of observations[ In particular\ DEMO E0"r^ n# denote the expected payo} in the SPU when the DM accepts
+the _rst candidate after passing r−0 applicants[ Assuming a _xed DEMO per observation\ the expected
+payo} associated with this rule can be computed from
+E0 "r^ n# h"r^ n#"0−cr#
+r 0\1\[[[ \n
+where c "c − 9# is the endogenous cost of search and h"r^ n# is computed from equation "2#[ One can
+vary c and then for each new value of c solve for the value of DEMO denoted by r0  r0"c#\ which maximizes
+this expression[
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ DEMO 280Ð300 "1999#
+D[ A[ Seale and A[ Rapoport Optimal Stoppin` Behavior with Relative Ranks
+DEMO 8[ Optimal cuto} values for the optimal policy with a _xed
+endogenous cost of search
+Condition L "n 39# Condition H "n 019#
+DEMO cost "c#
+r0
+Expected value
+r0
+Expected value
+9[99 5 9[1778 DEMO 9[1655
+9[90 4 9[1606 01 9[1255
+9[91 4 9[1463 09 9[1965
+9[92 4 9[1320 7 9[0745
+9[93 3 9[1204 6 9[0572
+9[94 3 9[1194 DEMO 9[0432
+9[95 3 9[1984 4 9[0315
+9[96 2 9[1999 4 9[0213
+9[97 2 9[0813 3 9[0128
+9[98 2 9[0737 3 9[0056
+9[09 2 9[0662 DEMO 9[0983
+398
+Our second model assumes a cost of search that changes logarithmically in the number of obser!
+vations[4 Under this model\ the expected DEMO is given by
+E1 "r^ n# h"r^ n#ð0−c"lnr#Ł
+r DEMO \n
+We shall denote the value of r that maximizes this expression for a given value of c by r1  r1"c#[
+Exhibit DEMO presents the values of r0 for the cuto} model that assumes a _xed cost per observation[
+Results are presented for c 9\ 9[90\ 9[91\[[[\ DEMO and for both Conditions L and H[ For both
+conditions\ if c 9 then r0  r[ For example\ Exhibit 8 shows that when DEMO per observation
+endogenous cost of search * a parameter of the model * is equal to 4) "c 9[94# of the payo} for
+DEMO the cuto} value that maximizes the expected payo} is reduced from 5 to 3 in Condition L and
+from 06 to 5 in Condition DEMO
+The median of the "modal# cuto} values separately inferred for each DEMO from his or her decisions
+"see Exhibits 4 and 5# was DEMO and 6 for Conditions L and H\ respectively[ Exhibit 8 shows that a cuto}
+model assuming the same endogenous cost of approximately 2[4) of the payo} for success "about 0
+cent# accounts for the median cuto} value in both conditions[ There are\ of course\ good reasons to
+expect DEMO per observation endogenous cost of search to vary from one individual to another\ depending
+on how much each subject values the time spent in DEMO the task[ Exhibit 8 shows that a per!
+observation search cost that varies between 9) and 09) "2 cents# of the payo} for success accounts
+for the inferred cuto} values of all the 14 subjects DEMO Condition L and all but one subject "Subject 6#
+in Condition DEMO "see Exhibits 4 and 5#[
+We repeated the same analysis for DEMO second model that assumes a logarithmically decreasing rather
+than _xed cost of search[ The results do not support this model[ First\ there exists no DEMO value of c
+that simultaneously accounts for the median cuto} values under both experimental conditions[ The c
+value that yields r1 4 in Condition DEMO is 9[0\ and the one that yields r1 6 in Condition H is 9[1[
+Second\ these two values of c seem to be too DEMO to be interpreted as reasonable costs of search[
+4Other cost functions that decrease in r are possible[ We chose the logarithmic function as an DEMO of a class of slowly
+decreasing cost functions[
+Copyright Þ 1999 John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+309
+Journal of Behavioral Decision Makin` Vol[ 02\ Iss[ No[ 3
+DISCUSSION DEMO CONCLUSIONS
+In the sequential observation and selection problem considered in the present study\ the DM|s objective
+is to maximize the probability of choosing the DEMO out of n alternatives^5 the information about the
+quality of the alternatives\ which is updated on every period of the search\ consists of the DEMO ranks
+of the previously observed alternatives^ and the uncertainty about the unknown value of n is expressed
+by a uniform distribution over the interval DEMO nŁ[ Although we have interpreted this probability model
+and presented it as a theory of personnel selection\ it can also apply to other sequential DEMO
+processes[ The optimal policy for this problem is to reject the _rst r−0 alternatives\ and then accept
+the _rst alternative\ which is better than DEMO the ones previously observed[ The value of the cuto} point
+r depends on the value of n[ We have assessed through simulation the sensitivity DEMO the optimal policy
+to small perturbations in r[ We have also ascertained that a simple decision rule that counts only the
+number of candidates DEMO another decision rule that counts only the number of successive non!
+candidates can achieve the objective with only a small reduction in the probability DEMO success[ This is
+particularly true in case of the successive non!candidate counting decision rule whose e.ciency is
+particularly high[
+There is strong evidence that DEMO adhere to the form of the optimal policy[ In a competitive test
+of the three decision rules\ that treated all of them in exactly DEMO same way\ the cuto} rule accounted
+for more decisions than the two other decision rules[ Seale and Rapoport reported similar results in
+their study DEMO the SSP[ Although we have found no evidence for learning across blocks of trials\ it is
+possible * perhaps even likely * that r DEMO across trials\ particularly in the beginning of the exper!
+iment[ However\ because the cuto} value on each trial cannot be directly observed when alternatives
+DEMO presented in a random order\ the design of the present study does not permit testing hypotheses
+about trial!to!trial changes in r\ possibly as a DEMO of the outcomes of previous trials[ Trial!to!trial
+changes in r could be measured in a di}erent design in which specially constructed sequences of
+alternatives "e[g[ when all or some of the alternatives are presented in an DEMO order# on some of
+the trials[ This design\ however\ violates a basic assumption of the secretary problem of random arrival
+of applicants[
+Although subjects DEMO to follow the cuto} rule\ our results indicate that they stop too early[ To
+account for this _nding in the SSP\ Seale and Rapoport DEMO to assume that the DM|s objective
+is maximization of expected value per unit time of search[ In both studies we modeled this objective
+by DEMO an endo`enous cost of search\ using the single parameter c to control the degree of
+{timeÐe}ort| trade!o}[ The combined evidence from both studies of DEMO SSP and SPU supports a
+model with a _xed endogenous cost of search\ which may vary between DMs[ The strongest evidence
+in support of DEMO explanation is that the medians of the individual cuto} points inferred from decisions
+can be accounted for by a relatively small cost per observation DEMO does not vary across conditions[
+More direct tests of this explanation can be achieved by experimental studies of variants of the secretary
+problem "e[g[ Corbin\ 0879^ Yang\ 0863# that explicitly introduce exogenous cost of search[
+5A DEMO objection to the goal of maximizing the probability of accepting the best alternative is that it implies a utility function
+that takes the value DEMO if the best alterantive is selected\ and 9\ otherwise "{nothing but DEMO best|#[ Whereas this objective may be
+appropriate for certain sequential search problems\ a more realistic utility function is the one that takes the value DEMO when the
+ith alternative is selected[ Maximization of expected utility then corresponds to minimizing the expected rank of the accepted
+alternative "Freeman\ 0872#[ This version of the secretary problem was _rst tackled by Lindley "0850# and then solved by Chow
+et al[ "0853#\ who showed that asymptotically\ as n :\ the minimum expected rank is 2[76[ The optimal policy for this problem
+is complicated as it depends both on the value of DEMO and the relative ranks of the inspected alternatives[ We have no way of
+determining whether the observed bias to stop the search too early DEMO partially be explained by the argument that our
+subjects were applying a decision rule that works best in sequential search situations with which they DEMO have been more
+familiar[ This issue can best be resolved by conducting sequential search experiments that explicitly incorporate this more
+realistic objective[
+Copyright Þ DEMO John Wiley + Sons\ Ltd[
+Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#
+D[ A[ Seale and A[ Rapoport Optimal Stoppin` Behavior with Relative Ranks DEMO
+ACKNOWLEDGEMENTS
+The research reported here was supported in part by a grant from the Hong Kong Research Grants
+Council "Project CA87:88[BM90#[ We wish to thank Rami Zwick for comments on an earlier draft of
+the DEMO The second author thanks the Hong Kong University of Science and Technology for its
+support and hospitality[
+REFERENCES
+Busemeyer JR\ Rapoport A[ 0877[ Psychological DEMO of deferred decision making[ Journal of Mathematical
+Psycholo`y 21] 80Ð023[
+Chow YS\ Moriguti S\ Robbins H\ Samuels SM[ 0853[ Optimal selection based on relative DEMO Israel Journal of
+Mathematics 1] 70Ð89[
+Corbin RM[ 0879[ The secretary problem as a model of choice[ Journal of Mathematical Psycholo`y 10] 0Ð18[
+Corbin DEMO Olson CL\ Abbondanza M[ 0864[ Context e}ects in optimal stopping decisions[ Or`anizational
+Behavior and Human Performance 03] 196Ð105[
+Ferguson TS[ 0878[ Who solved the DEMO problem< Statistical Science 3] 171Ð185[
+Freeman PR[ 0872[ The secretary problem DEMO its extensions] A review[ International Statistical Review 40] 078Ð
+195[
+Gianini!Pettitt J[ 0868[ Optimal selection based on relative ranks with a random number of DEMO Advances
+in Applied Probability 00] 619Ð625[
+Gilbert J\ Mosteller F[ 0855[ Recognizing the maximum of a sequence[ Journal of the American Statistical
+Association 50] DEMO
+Kahan JP\ Rapoport A\ Jones LV[ 0856[ Decision making in a sequential search task[ Perception and Psychophysics
+1] 263Ð265[
+Kogut CA[ 0889[ Consumer search DEMO and sunk costs[ Journal of Economic Behavior and Or`anization 03]
+270Ð281[
+Lindley DV[ 0850[ Dynamic programming and decision theory[ Applied Statistics 09] 28Ð40[
+Payne DEMO Bettman JR\ Johnson EJ[ 0882[ The Adaptive Decision Maker[ Cambridge University Press] Cambridge[
+Presman EL\ Sonin IM[ 0861[ The best choice problem for a DEMO number of objects[ Theory of Probability
+and its Applications 06] 546Ð557[
+Rapoport A\ Tversky A[ 0869[ Choice behavior in an optimal stopping task[ Or`anizational DEMO and Human
+Performance 4] 094Ð019[
+Rasmussen WT\ Robbins H[ 0864[ The candidate problem with an unknown population size[ Journal of Applied
+Probability 01] 581Ð690[
+DEMO DA\ Rapoport A[ 0886[ Sequential decision making with relative ranks] An experimental investigation of
+the[ {secretary problem|[ Or`anizational Behavior and Human Decision Processes 58] DEMO
+Stewart TJ[ 0870[ The secretary problem with an unknown number of options[ Operations Research 18] 029Ð034[
+Yang MCK[ 0863[ Recognizing the maximum of a DEMO sequence based on relative rank with backward
+solicitation[ Journal of Applied Probability 00] 493Ð401[
+Authors| bio`raphies]
+Amnon Rapoport is a Karl Eller Professor of DEMO and Policy at the University of Arizona[ His research
+interests include experimental economics\ individual decision making\ political economics\ and marketing[ His
+writings include _ve DEMO and 069 articles on individual decision behavior\ bargaining\ resource dilemmas\
+coordination\ and coalition formation[
+Darryl A[ Seale is Assistant Professor of Management at the DEMO of Nevada Las Vegas[ His research
+interests include strategic decision making\ bargaining and negotiation\ and behavioral game theory[ His articles
+have appeared in various DEMO including Mana`ement Science\ Or`anizational Behavior and Human Decision
+Processes\ and Journal of Economic Behavior and Or`anization[
+Authors| addresses]
+Amnon Rapoport\ Department of Marketing\ Hong DEMO University of Science and Technology\ Clear Water
+Bay\ Kowloon\ Hong Kong[
+Darryl A[ Seale\ Department of Management\ University of Nevada Las Vegas\ 3494 Maryland DEMO Las
+Vegas\ NV 78043!5998\ USA[
+Copyright Þ 1999 John Wiley + Sons\ Ltd[ Journal of Behavioral Decision Makin`\ Vol[ 02\ 280Ð300 "1999#{1g42fwefx}

@@ -1,0 +1,689 @@
+U.S. Universities’ Net Returns from Patenting and Licensing:
+A Quantile Regression DEMO
+Harun Bulut and GianCarlo Moschini
+Working Paper 06-WP 432
+September 2006
+Center for Agricultural and Rural Development
+Iowa State University
+Ames, Iowa 50011-1070
+www.card.iastate.edu
+Harun Bulut is a post-doctoral fellow and GianCarlo Moschini is a professor DEMO economics and the
+Pioneer chair in science and technology policy, Iowa DEMO University.
+Partial support for this research was provided by the Institute for Science and Society, Iowa State
+University.
+This paper is available online on the CARD Web site: www.card.iastate.edu. Permission is
+granted to reproduce this information with appropriate attribution to the authors.
+Questions or comments about the contents DEMO this paper should be directed to GianCarlo
+Moschini, 583 Heady Hall, Iowa State University, Ames, IA 50011-1070; Ph: (515) 294-5761;DEMO:
+(515) 295-6336; E-mail: moschini@iastate.edu; or Harun Bulut, 266 Heady Hall, Iowa State
+University, Ames, IA 50011-1070; Ph: (DEMO) 294-8030; E-mail: harun@iastate.edu.
+Iowa State University does not discriminate on DEMO basis of race, color, age, religion, national origin, sexual DEMO,
+gender identity, sex, marital status, disability, or status as a U.S. veteran. Inquiries can be directed to the Director of Equal
+DEMO and Diversity, 3680 Beardshear Hall, (515) 294-7612.
+Abstract
+In line with the rights and incentives provided by the Bayh-Dole DEMO of 1980, U.S.
+universities have increased their involvement in patenting and DEMO activities through
+their own technology transfer offices. Only a few U.S. universities are obtaining large
+returns, however, whereas others are continuing with these DEMO despite negligible or
+negative returns. We assess the U.S. universities’ potential to generate returns from
+licensing activities by modeling and estimating quantiles of the DEMO of net
+licensing returns conditional on some of their structural characteristics. We find limited
+prospects for public universities without a medical school everywhere in DEMO
+distribution. Other groups of universities (private, and public with a medical school) can
+expect significant but still fairly modest returns only beyond the 0.9th quantile. These
+findings call into question the appropriateness of the revenue-generating DEMO for the
+aggressive rate of patenting and licensing by U.S. universities.
+Keywords: Bayh-Dole Act, quantile regression, returns to innovation, skewed
+distributions, technology transfer, university patents.
+JEL numbers: C13, L31, L33, O31, DEMO
+1. INTRODUCTION
+Some critical policy shifts strengthening intellectual property rights (IPRs) DEMO the United States
+have taken place over the last quarter century. These include the Bayh-Dole Act of 1980, which
+made it possible for universities to retain title to patents derived from federally funded research,
+as DEMO as the establishment of the Court of Appeals for the Federal Circuit in 1982 and some
+critical U.S. Supreme Court decisions. Concomitant with these DEMO policy shifts, more and
+more U.S. universities have became directly involved DEMO licensing activities. The number of
+universities with a technology transfer office (DEMO) increased from 25 in 1980 to 200 in 1990,
+and DEMO 2000 virtually every U.S. university had such an office (Nelson, 2001). A 15-fold increase
+in university patenting and a more than 5-fold DEMO in the number of universities granted
+patents were observed between 1965 and 1992 (Henderson, Jaffe and Trajtenberg, 1998). This
+trend in U.S. universities’ patenting and licensing activities has accelerated in the last decade
+(Sampat, 2003). U.S. patents issued to 69 U.S. universities that are nine-year recurrent
+respondents to Association of University Technology Managers (AUTM) surveys increased
+DEMO between 1993 and 2001. Licenses and options executed by 55 U.S. universities that are
+eleven-year recurrent respondents to AUTM surveys increased 139% between 1991 DEMO 2001,
+and their gross license revenue increased 485% between 1991 and 2001. The aggregate gross
+license revenue obtained by all U.S. universities approached DEMO billion in FY 2002 (AUTM,
+2002).
+This growth in DEMO patenting and licensing activities has generated considerable
+attention in economic research (DEMO, 2005; Sampat, 2003; Link, Scott and Siegel, 2003;
+Mazzoleni and Sampat, 2002; Nelson, 2001; Mowery et al., 2001; Jaffe, 2000). Issues considered
+include whether these activities have affected DEMO traditional role of universities, typically
+understood to be the advancement of DEMO and the dissemination of knowledge; whether Bayh-
+Dole was necessary to DEMO technology transfer and provided the right incentives for
+universities; and the DEMO welfare implications of university patenting.
+The underlying presumption of Bayh-Dole is that without (exclusive) licensing
+arrangements, firms would not undertake the follow-up investment to bring an invention to DEMO
+marketplace as products or services.1 Thus, the Act was intended for DEMO that would not be
+developed and commercialized without patenting and licensing, DEMO universities obviously can
+exploit their rights more generally for all patentable inventions. The Cohen-Bayer recombinant
+DNA technique (licensed by the University of California and Stanford University) and Richard
+Axel’s co-transformation process (licensed by Columbia University) are examples of university
+inventions for which technology transfer would certainly have DEMO absent patenting and
+licensing.  University licensing in these cases has simply DEMO industry, and ultimately
+consumers, for use of these technologies (Sampat, 2003). Quite clearly, when it comes to
+patenting and licensing, DEMO are likely to behave based on their self-interest rather than
+the public interest. Beath et al. (2003) considered the possibility that universities, with reduced
+state and federal financial support, could provide incentives to faculty to engage in activities that
+can augment inventors’ incomes. Furthermore, TTO managers as agents may have short-term
+horizons and give priority to monetary returns in DEMO activities. In fact, based on a recent survey
+of 76 major DEMO universities, the licensing income generated is found to be the most DEMO
+criterion by which TTO offices measure their success (Thursby, Jensen, DEMO Thursby, 2001).
+Because increased revenue is one of the considerations DEMO universities in this
+context, a relevant question concerns the extent of DEMO returns that universities are collecting from
+these activities. Figure 1 presents the distribution of net license returns (license revenues received
+less the net legal fees paid and the operating cost of technology transfer offices, in million
+dollars) for 148 U.S. universities, averaged over the five-year period 1998 DEMO 2002 (see the data
+section for details). It is apparent DEMO only a few universities are earning large returns. In fact, the
+DEMO Mazzoleni (2005) showed that this presumption is too general and its validity depends on
+innovation-specific conditions. If the disclosure by universities does not DEMO the downstream
+firms from patenting the developed product, licensing the invention DEMO be welfare enhancing
+only if firms engage in socially excessive R&D under open access.
+2
+top 20 universities obtain 83% of the aggregate net license returns generated, whereas most of the
+other universities earn negative or negligible net returns. DEMO 2 presents the distribution of the
+net license returns as a fraction of the university’s total research expenditures. This distribution is
+also highly skewed; the ratio is high for only a few universities, whereas it is less than 5% for the
+majority of them (90%).2
+The overall picture is that of a few universities generating significant returns, whereas the
+majority of universities continue licensing activities even though they appear to earn DEMO net
+returns or break even. Obviously, these universities are hoping to DEMO better in the future, an
+expectation perhaps predicated on the very DEMO distribution of returns discussed earlier.
+Given the examples of big winners among universities, what can others, conditional on their
+characteristics, anticipate as the potential for generating economic return? This question has not
+been addressed in a coherent econometric study in the literature, and thus we wish to address it
+directly in what follows. Related existing work includes Trune (1996), who analyzed the
+licensing activities of U.S. universities with the purpose DEMO developing a “national criterion” with
+which universities can measure their performance. Trune and Goslin (1998) calculated the
+profitability of technology transfer programs of DEMO and found that nearly 60% of the
+universities are earning negative profits from maintaining technology transfer offices. Siegel,
+Waldman, and Link (2003) did a productivity analysis of TTO performance in terms of license
+revenues (taken as a proxy for technology transfer activities) by using the stochastic frontier
+estimation approach. Lach and Schankerman (2004) found that universities with DEMO royalty
+shares to inventors generated significantly higher license revenues.
+2 Note also that the big earners in Figure 1 are not necessarily those with DEMO ratios in Figure 2.
+For example, the University of California System DEMO the third-largest net license return but that
+is only 2.6% of its total research budget. Moreover, Columbia University earns the highest net
+license return ($109.6 million), whereas Florida State University receives the highest net return
+relative to its research budget (41.6%).
+3
+2. THE MODELING FRAMEWORK
+In order to assess the potential of U.S. DEMO in generating economic returns from licensing
+activities given their characteristics, we DEMO and estimate the select quantiles as linear functions
+of a set of characteristics of universities. We take this route over the conventional conditional
+mean DEMO because the mean cannot adequately convey the potential for private returns to
+universities when, as is the case here, the distribution of net DEMO returns of U.S. universities
+is highly skewed. This skewness is apparent from the data reported in Table 2. Fifty percent of
+the U.S. university DEMO earns less than $0.31 million, whereas the average net return is
+DEMO million.3 The standard deviation is large; 75% of the population obtains DEMO than half of the
+mean, which implies that the mean is DEMO influenced by the upper 10% of the population.
+In addition, the DEMO regression helps us to describe the entire conditional distribution.
+By taking this approach, we can look at the impacts of covariates at different points in the
+distribution. We are interested in how the marginal impacts of DEMO vary with the ranking of
+universities in terms of generating licensing return (in case of the conditional mean estimation the
+slope coefficients are forced to be the same at all quantiles). Assuming a particular skewed
+DEMO and parameterizing its mean does not seem to be a promising avenue either. There is
+no consensus over a specific distribution governing the innovation DEMO per se. Based on
+various data on citation and value measures of patent significance, which includes license revenue
+data of Harvard University, Silverberg DEMO Verspagen (2004) find that overall fit of the
+distribution resembles  DEMO normal, whereas the Pareto distribution fits the tails better. They note
+DEMO implication that the second and even the first moments of underlying distributions may not
+even exist. With quantile regression, the existence of moments is not a concern because the focus
+is on quantiles and every distribution DEMO quantiles.
+3 To put this mean net return into perspective, we DEMO that it is only 2.41% of the average
+research budget (total DEMO expenditures) of universities.
+4
+2.1 Quantile regression
+The basic quantile regression model assumes that the conditional DEMO are linear functions of
+the explanatory variables. Assume that we have a sample of N observations from a population,
+that is, {( DEMO )
+yx i N, : 1,...,=
+} , where the subscript i indexes each observation, yi is the licensing
+return, DEMO xi is the K ×1 vector of explanatory variables (a set DEMO characteristics), which can
+include the intercept term. Moreover, let τ∈ (0,1) define the quantile of interest; let β
+()τ
+DEMO the
+corresponding parameter vector for the vector of characteristicsthat vary with quantiles; and let
+Q
+τ(.) be the quantile function, which is de
+fined as the inverse function of (.)F
+, the underlying
+conditional (on xi ) cumulative distribution function for yi . Then the quantile of interest is
+written as a linear function of a set DEMO characteristics as
+yx u=+′β
+ii i
+() ()ττ
+(1)
+Qyx x
+τ
+() ()
+ii i
+= ′βτ        (2)
+where ( )ui τ
+denotes the error term, which is also a function of the quantile of interest. Based on
+the preceding two equations, error terms must satisfy the quantile restriction:
+Qu x
+τ(
+ii
+() 0τ
+) =
+(3)
+DEMO parameter estimates for the τ
+th sample quantile minimizes the weighted absolute
+deviations (the errors); that is,
+⎡⎤
+Min (1)
+DEMO K ⎣⎦⎢⎥
+(4)
+∑∑
+yx yx
+ii ii
+−+ − DEMO
+βτ β
+iiy x iiy x∈< ∈≥{: } { : }ββ
+ii ii
+⎢⎥τ
+where  .  is the absolute value operator and DEMO other notation as defined before. For τ= 0.5 ,
+one would DEMO deviations equally, which is known as median regression. Weights differ for
+DEMO quantiles, such as τ= 0.75 ; one would weight positive deviations DEMO 0.25 whereas one
+would weight negative deviations with 0.75. The rationale for the suggested weights in (4) is as
+5
+follows. Recall that the τth quantile denotes the maximum value that yi DEMO take with given
+probability τ. Then, the probability to observe a DEMO less than the quantile is τ, whereas the
+probability to observe DEMO value
+beyond that quantile is (1 )−τ
+. For more discussion of estimation
+and inference with quantile estimation, see Buchinsky (1998).
+DEMO regression has emerged as a comprehensive method and found applications in
+various fields of economics including labor economics, wealth distribution, and various
+disciplines DEMO as finance, medicine, demographics, and environmental modeling (see
+Fitzenberger, DEMO, and Machado, 2002 and Yu, Lu, and Stander, 2003)DEMO In particular,
+quantile regression has found use in the finance literature via the notions of Value at Risk
+(VaRτ ) and Conditional Value at Risk ( CVaRτ) (Uryasev and Trindade, 2004). Based on a
+given loss distribution, VaRτ is the maximum amount one can lose at a given probabilityτ, i.e.,
+the τ
+th quantile. CVaRτ is defined as the expected value of loss beyond a VaRτ . Rockafellar
+DEMO Uryasev (2000) show that CVaRτhas better properties as a measure of risk.
+Instead of loss distribution typically used in VaRτ and CVaRτ literature, here we work
+with gain distribution. Estimating a given quantile then shows DEMO maximum amount a university
+can gain at a given level of probability. In order to estimate the expected value beyond a given
+quantile ( DEMO), we use the relations derived in Uryasev and Trindade (2004)DEMO First, define
+functions [.]+
++ ≡
+for generic variable v ∈\ , and denote the estimated τ
+th quantile
+(VaRτ ) with
+Qyxˆ
+(| ) . Then the relation of interest is
+τ
+ˆˆ ˆ1 DEMO
+Ey y Q yx Q yx E y Q yx()| ( | ) (| ) [ (| )]≥= + −ττ τ()   (5)
+(1 )−τ
+For a sample of N DEMO from a population, yi for
+iN= 1,...,
+, one DEMO estimate the
+expectation on the right-hand side of (5) with the method-of-moments approach as
+6
+as [ ] max{ ,0}vv
+N
+E () 1 ∑
+++
+ττ
+[(|)] [ (DEMO)]y Q yx y Q yx−= − ˆ     (6)DEMO
+i
+N i =1
+Inserting (6) into (5) yields the desired estimate.
+2.2 Data
+Table 1 lists the variables that we use DEMO our analysis, along with their brief descriptions, and
+Table 2 provides summary statistics. Our data pertain to 148 U.S. universities over the five-year
+DEMO from 1998 to 2002 and are aggregated at the university level.4  DEMO compute the annual
+averages of the time-varying variables (both dependent and DEMO variables) over the
+sample period. This approach is also adopted in DEMO, Waldman, and Link (2003).
+The dependent variable of our DEMO is the net licensing return for each university. This
+is calculated as the total license revenue less the cost of patenting and licensing activities. DEMO
+cost is measured as the sum of net legal fee expenditures (DEMO fees expended less legal fees
+reimbursed) and operating expenditures of TTOs (salary expenses plus benefits to the employees
+and overhead cost).5 The DEMO licensing return variable is averaged over the sample period 1998 to
+2002. The source for the license revenue and legal fees reimbursed and expended DEMO AUTM
+(1998-2002) surveys. To compute the cost of operating expenditures of TTOs, we relied on
+employment data from AUTM surveys and used salary data from College and University
+Personnel Association (CUPA) administrative compensation surveys. DEMO surveys provide data
+for the top two positions in TTOs for the period 1998 to 2002.6  Note that the cost items
+4 Pooling the observations over this time period yielded an initial sample of 173 U.S. DEMO
+After adjusting for the missing observations on explanatory variables, we are DEMO with the final
+sample of 148 observations from U.S. universities.
+5 Legal fees expended are the expenditures of an institution on external legal fees, which include
+prosecuting, maintenance, and interference costs of patents and copyrights. DEMO also include
+minor litigation costs. Legal fees reimbursed are the legal fee expenditures reimbursed to the
+institution by licensees (see AUTM, 2002).
+DEMO More details of our procedure are available upon request.
+7
+considered here do not include the opportunity cost of time of faculty DEMO are involved in patent
+and licensing activities, and therefore the real DEMO to universities of their patenting and licensing
+activities is underestimated.
+The explanatory variables that we use in our model are meant to capture some DEMO
+structural characteristic that, at least in the short run, may be considered as exogenous. These
+variables are as follows:
+(1) Whether DEMO university is public or private, and whether or not it has DEMO medical school. These
+are dummy variables constructed from information provided by AUTM surveys.
+(2) Size of the university. This is measured by total DEMO expenditures and averaged over the
+sample period 1998 to 2002. The data source is AUTM (1998-2002) surveys.
+(3) Quality of the faculty. DEMO proxy this variable by the total number of citations per faculty in
+technological departments.7 This is obtained from the National Survey of Graduate Faculty
+DEMO in 1993 (National Research Council, 1995). Note that this variable is thus
+predetermined given the sample period we covered, which is 1998 to 2002.
+(4) State R&D intensity. We measure this variable DEMO the share of state-level R&D within national
+R&D performance in order to measure ongoing R&D activity in that state. This is DEMO averaged
+over the sample period 1998 to 2002. The data on state and national level R&D expenditures is
+obtained from the National Science DEMO website.8
+The characteristics captured by the dummy variables (1) have long been considered of
+interest. Because public universities are more vulnerable to budget DEMO (Link, Scott, and Siegel,
+2003), they may license DEMO aggressively. On the other hand, public universities may be less
+7 DEMO normalize the citations received at each technological department by the number faculty in
+that department and sum over these departments in order to obtain DEMO number of citations per
+faculty in technological departments in a given university. Alternative indexes for faculty quality
+can be “Scholarly quality of faculty (ratings) in technological departments” and the “Number of
+publications per faculty in technological departments”.
+8 See the website at http://www.nsf.gov/sbe/srs/sepro/DEMO for more information.
+8
+flexible culturally and bureaucratically in interacting with private companies (Siegel, Waldman,DEMO
+and Link, 2003); therefore, ceteris paribus, they may have DEMO lower licensing rate. Lach and
+Schankerman (2004) found that private universities are more effective in terms of generating
+licensing income compared to public DEMO and warranted future research on the
+determinants of this observation.
+Regarding the medical school effect, we note that biomedical research has emerged as a
+productive field whose research output attracted the interest of industry, and this trend was
+present before the passage of the Bayh-Dole Act (Mowery et al., 2001). Hence, having a medical
+school is expected to DEMO a significant advantage in terms of generating return from licensing
+activities. In fact, top university licenses by revenue generation are biomedical (Eisenstein and
+DEMO, 2001).
+The size variable in (2) captures the quantitative DEMO of the research potential of a given
+university. The interest is on the value of additional research dollars, and how it varies with the
+rank of universities in terms of licensing return, that is, across DEMO The variable in (3)
+captures the qualitative side of a DEMO research potential. The quality of inventions
+obviously matters in assessing the inventions’ revenue-generating potential, and the quality of
+inventions can be presumed to be positively associated with the quality of faculty. Finally, the
+variable in (DEMO) is meant to determine if the revenue-generating abilities of a university DEMO affected
+by its location—the local economic conditions that are mostly outside of a university’s control.
+Before proceeding to the econometric analysis, it is worth commenting briefly on the net
+returns of Table 2.  The average net return from patenting and licensing—across all 148
+institutions and over the five-year DEMO of our sample—is $4.42 million.  This is certainly not an
+inconspicuous DEMO and underscores the extent of the activities being undertaken by TTOs in
+U.S. universities.  But these net returns still represent a fairly small amount when considered
+within the scope of the R&D efforts undertaken.  Over the period considered the average annual
+total research expenditures at these universities DEMO $183.7 million.  Thus, if one were to focus
+9
+exclusively on the commercial licensing outcome, the “yield” for the average U.S. university (i.e.,
+the average net return as a percent of the average research expenditures) would be a paltry 2.41%.
+This percent return is quite variable for the structural groups that are identified in Table 2.  For
+public universities it is 2.06% if they have a medical school, and 0.43% if they do not have a
+medical school; for private universities the percent return is 4.25% if they have a medical school
+DEMO 2.80% if they do not have a medical school.
+3. ESTIMATION PROCEDURE
+Estimation was carried out by using the QUANTREG procedure in SAS (SAS Institute, 2003).
+To estimate standard errors in this procedure, we DEMO the sparsity method (also called the direct
+method) under the assumption that observations are independently and identically distributed
+(i.i.d.). This method estimates the reciprocal of the underlying density at the quantile of interest,
+DEMO is called the sparsity function. The precision of the estimates depends on how sparse (or
+dense) observations are near the quantile of interest. DEMO method also requires a bandwidth
+choice. We used Hall and Sheater bandwidth based on the suggestion in Koenker (2005). We
+chose the simplex algorithm as the optimization method, which is the most stable one. Although
+the sparsity method is sensitive to the i.i.d. assumption, the estimated standard errors were also
+confirmed with the resampling estimation method available under the DEMO procedure of
+SAS. The resampling method uses a Markov-chain marginal bootstrap technique developed in He
+and Hu (2002) and was done for 200 DEMO
+4. RESULTS
+Table 3 presents the estimations for the 0.25th, 0.5th, 0.75th, and 0.9th quantiles. The intercept and
+the explanatory variables size and faculty quality are significant in explaining these quantiles at
+conventional levels of DEMO We recall that the base group to which the intercept applies is
+that of public universities without medical school. Private universities without medical school DEMO
+10
+public universities with medical school are not statistically different than this base DEMO in all
+quantiles. Private universities with medical school obtain significantly higher returns than the
+base group around the 0.75th quantile of distribution, and this difference increases towards the
+upper end of distribution, as it is nearly $10 million at the 0.9th quantile.
+The estimated coefficient of the size DEMO, which expresses the return to an additional
+$1 million of total DEMO expenditure, is initially $3.5 thousand (0.35%) at the 0.25th quantile; it
+increases towards higher quantiles, approaches $20 thousand (2%) near the 0.75th quantile, and
+decreases slightly at further quantiles. The impact of an additional citation to publications in
+technology fields, a measure of faculty quality, is monotonically increasing with the level of
+quantiles. The impact of a single citation at the 0.9th quantile exceeds three times the value ($3.2
+thousand) at the median of the distribution. That is, the marginal DEMO of faculty quality is higher
+for those universities that are already obtaining higher return. Finally, state R&D, the amount of
+R&D DEMO the state of a given university vis-à-vis national R&D, becomes DEMO significant factor (both
+economically and statistically) around the 0.75th quantile of the distribution. A one-percentage-
+point increase in the state R&D relative DEMO the national level is associated with an increase in the
+licensing return for universities in that state by more than $200 thousand.
+Based on DEMO estimates in Table 3, we predict select quantiles for the structural DEMO of
+universities that we have identified (public and private, and with and without a medical school) at
+the mean characteristics of each group. Table 4 presents the predicted values for select quantiles.
+Based on these DEMO and additional quantile points, Figure 3 plots the underlying
+distributions for DEMO average university in each group.
+From Figure 3, we observe that DEMO average private university with a medical school
+ranks highest in terms of generating licensing return in all quantiles, whereas the average public
+university without a medical school is dominated by others in all quantiles in that DEMO These
+structural differences are increasing with the level of quantiles. The average private university
+without a medical school and the average public university with DEMO medical school appear to have
+11
+similar distributions. This suggests that they may have close expected values but DEMO differ in
+terms of dispersion of licensing returns.
+The estimates of the 0.9th quantiles in Table 4 entails that there is a 90% chance DEMO
+licensing returns will not exceed $21.56 million for an average private university with a medical
+school, $9.92 million for an average private university without a medical school, $7.61 million
+for an average public university with a medical school, and $3.27 million for an average public
+university without a medical school. These estimated values for the 0.9th quantiles are 9.5%,
+DEMO, 3.4%, and 3% of the corresponding average sizes, respectively.
+We DEMO estimate what the average university in each group can expect beyond the
+0.9th quantile, as described in equations (5) and (6). DEMO report these values along with the sample
+mean for each group in the last two columns of Table 4. Specifically, the last column of Table 4
+can be interpreted as the expected value of net returns DEMO on a university being in the top
+10% of earners of its group (as identified by the characteristics of being public or private, DEMO of
+whether or not the university possesses a medical school). One way to gauge this estimate is to
+relate it to the estimated DEMO 0.9th quantile. This ratio turns out to be 1.05, 2.56, 4.65,
+and 2.74, respectively, for the average university that is public DEMO a medical school, private
+without a medical school, public with a medical school, and private with a medical school. Thus,
+an average public university without a medical school has an expected value beyond its DEMO
+quantile only slightly higher than the 0.9th quantile. For all other groups, on the other hand, the
+right tail of the distribution of DEMO is fatter. In particular, the gains in relative returns
+associated with DEMO in the top 10% of earners is highest for universities with a medical school.
+In any event, the expected returns of the top 10% of earners remain a relatively small fraction of
+the total research expenditure DEMO the universities.
+12
+5. CONCLUSION
+In this paper we have assessed the potential of U.S. DEMO in generating economic returns
+from licensing activities, conditional on some of DEMO characteristics. Recognizing that the
+underlying distribution is highly skewed, rather than DEMO the conditional mean we model
+and estimate the select quantiles as linear functions of a set of characteristics of universities. Our
+finding that the DEMO slope coefficients of characteristics are not constant over the quantile
+points supports this modeling choice.
+We find that the net returns from patenting and DEMO by U.S. universities are, on
+average, quite modest. Regarding the marginal impacts of the characteristics along the quantiles,
+we found that the DEMO “rate of return” of research funds does not exceed 2% in any quantile
+we considered. The value of additional research dollars is highest and DEMO state R&D, a measure
+of local economic conditions, appears particularly important around the 0.75th quantile of the
+distribution. The impact of faculty DEMO, on the other hand, appears monotonically increasing
+for the quantiles we considered.
+We also found structural differences in the licensing return distributions of DEMO of
+universities depending on whether they are private or public and on whether or not they have a
+medical school. In terms of generating DEMO returns after controlling for other factors, private
+universities with a medical DEMO appear to have an institutional advantage over other groups.
+Public universities with a medical school and private universities without a medical school are
+close DEMO the distributional points. Public universities without a medical school are dominated by
+other groups at all quantile points.
+A rationalization that is sometimes proffered DEMO to why universities should continue with
+their patenting and licensing activities, DEMO when they are making negligible or negative returns,
+relies on the marked skewness of the returns distribution, i.e., on the notion of DEMO for the
+big one.” Our estimate of the expected net licensing returns, conditional on a university being in
+the top 10% of earners of its group, helps to quantify this scenario. The expected payoff for being
+13
+a winner is highest for universities with a medical school and for DEMO universities. This is in
+line with the argument in Lach and Schankerman (2004) that private universities are more
+efficient in terms of generating DEMO return but qualifies the argument for medical school
+impact.
+Based on the estimated marginal effects and the structural differences among the group of
+universities, we would argue that universities should form a more realistic perspective of DEMO
+possible economic returns from patenting and licensing activities. The potential in terms of
+generating returns appears particularly limited for public universities without a medical DEMO
+The fairly modest overall expected licensing returns, especially when compared with DEMO
+investment in university research expenditures, suggest that the increased emphasis on DEMO
+patenting and licensing that has emerged in the United States in the last quarter century should
+perhaps be reconsidered, especially when attempts to privatize some of the returns of university
+research appear to conflict with the DEMO public research objectives of fostering basic
+research and to disseminate knowledge.
+14
+References
+Association of University Technology Managers (AUTM) (Various) The AUTM DEMO
+Survey: Fiscal Year 1998, 1999, 2000, 2001, and 2002.
+DEMO, J., R. Owen, J. Poyago-Theotoky and D. Ulph (2003) DEMO Incentives for Income-
+Generation in Universities: The Rule of Thumb for DEMO Compton Tax. International
+Journal of Industrial Organization, 21, 1301-1322.
+Buchinsky, DEMO (1998) Recent Advances in Quantile Regression Models: A Practical Guideline
+DEMO Empirical Research. Journal of Human Resources, 33(1): 88-126.
+Eisenstein, R.I., and D.S. Resnick (2001) Going for the Big One. Nature Biotechnology,
+19(September), 881-882.
+Fitzenberger, B., R. Koenker, and J.A.F. Machado (2002) Economic Applications of Quantile
+Regression. New York: Physica-Verlag Heidelberg.
+He, X., and F. Hu (2002) Markov Chain Marginal DEMO Journal of the American Statistical
+Association, 97 (459): 783-795.
+Henderson, R., A.B. Jaffe, and M. Trajtenberg (1998) Universities as a Source of Commercial
+Technology: A Detailed Analysis of University Patenting, 1965-1988. DEMO Review of
+Economics and Statistics, 119-127.
+Jaffe, B.A. (2000) The U.S. Patent System in Transition: Policy Innovation and the Innovation
+Process. Research Policy, 29: 531-557.
+Koenker, R. (2005) Quantile Regression. New York: Cambridge University Press.
+Lach, S., and M. Schankerman (2004) Royalty Sharing and Technology Licensing in
+Universities. Journal of the European Economic Association, 2(2-3): 252-64.
+Link, A.N., J.T. Scott and D.S. Siegel (2003) The Economics of Intellectual Property at
+Universities: An Overview of DEMO Issue. International Journal of Industrial
+Organization, 21, 1217-1225.
+Mazzoleni, R. (2005) University Patents, R&D Competition, and Social Welfare. Economics of
+Innovation and New Technology, 14(6): 499-515
+Mazzoleni, R., and B.N. Sampat (2002) University Patenting: An Assessment of the Causes and
+Consequences of Recent Changes in Strategies and Practices. Revue-d'Economie-
+Industrielle, 2nd Trimester 0(99): 233-48.
+Mowery, C.D., R.R. Nelson, B.N. Sampat, and A.A. Ziedonis (2001) The Growth of Patenting
+and Licensing by U.S. Universities: An Assessment of the Effects of the Bayh-Dole Act of
+1980. Research Policy, 30, 99-119.
+National Research Council (1995) Research DEMO Programs in the United States: Data Set.
+Washington, DC: National DEMO Press.
+15
+Nelson, R.R. (2001) Observations on the Post-Bayh-Dole Rise of Patenting at American
+Universities. Journal of Technology Transfer, 26 (1/2), 13-19.
+DEMO, R.T., and S. Uryasev (2000) Optimization of Conditional Value-At-Risk. Journal of
+Risk, 2, 3: 21-41.
+Sampat, B. (2003) Private DEMO: Patents and Academic Research in the Twentieth Century.
+Working Paper, forthcoming in Research Policy.
+SAS Institute (2003) SAS™ under Windows, Version 9.1. Cary, NC: SAS Institute Inc.
+Siegel, D.S., D. Waldman, and A.N. Link (2003) Assessing the Impact of Organization Practices
+on the DEMO Productivity of University Technology Transfer Offices: An Exploratory
+Study. Research Policy, 32, 27-48.
+Silverberg, G., and B. Verspagen (2004) The Size of Distribution of Innovations Revisited: An
+Application of Extreme Value Statistics to Citation and Value Measures of Patent
+Significance. Merit-Infonomics Research Memorandum Series 2004-021, Maastricht
+University, The Netherlands. Forthcoming, Journal of Econometrics.
+Thursby, J., DEMO Jensen, and M. Thursby (2001) Objectives, Characteristics and Outcomes of
+University Licensing. Journal of Technology Transfer, 26, 59-72.
+Trune, D.R. (DEMO) Comparative Measures of University Licensing Activities. Journal of the
+Association of DEMO Technology Managers, 8, 63-105.
+Trune, D.R., and L.N. Goslin (DEMO) University Technology Transfer Programs: A Profit/Loss
+Analysis. Technological Forecasting and Social Change, 57, 197-204.
+Uryasev, S., and A.A.Trindade (2004) DEMO Model and Test Data for Optimal
+Determination of Percentiles and Allowables: DEMO Regression Approach, Part I.Kurdila,
+et al. (Eds). Robust Optimization-Directed Design, 81, 179-208. New York: Springer
+Publishers.
+Yu, K., A. Lu, and J. Stander (2003) Quantile Regression: Applications and Current DEMO
+Area. The Statistician, 52, 331-350.
+16
+Table 1: Description of Variables
+Variable Description
+Net Returns ( y )DEMO
+Licensing return in a given university (averaged over the sample period
+DEMO to 2002 and in million dollars).
+Public & No Medical ( x1 )
+Private & No Medical ( x2 )
+Dummy variable, which takes value of 1 if university is public and does
+not DEMO medical school, and 0 otherwise (base case).
+Dummy variable, DEMO takes value of 1 if university is private and does
+not have medical school, and 0 otherwise.
+Public & Medical ( x3 )
+DEMO & Medical ( x4 )
+Size ( x5 )
+Faculty Quality ( x6 )
+State R&D ( x7 )
+Dummy variable, which takes value of 1 if university is public and has
+medical DEMO, and 0 otherwise.
+Dummy variable, which takes value of 1 if university is private and has
+medical school, and 0 otherwise.
+The average total research expenditures (in million dollars) over the
+sample period 1998 DEMO 2002.
+Total number of citations received per faculty in technology departments
+in a given university (evaluated in 1993).
+The ratio of total R&D performance level in a given state to the national
+R&D DEMO level (averaged over the sample period 1998 to 2002).
+17
+Table 2: Data on U.S. Universities, 1998-2002: Descriptive Statistics
+U.S. Universities N Variables Min Median Max Mean
+Std.
+Dev.
+All 148 Net Returns
+DEMO
+Quality
+State R&D
+-0.80 0.31 109.59 4.42 12.53
+9.7 116.9 2,079.2 183.7 224.7
+0.6
+0.0003
+318 2,691 485 519
+0.021 0.209 DEMO 0.036
+Public & No 45 Net Returns
+Medical School  Size
+Quality
+DEMO R&D
+-0.39 -0.03 4.02 0.47 1.06
+17.9 67.1 426.4 110.2 96.5
+0.6
+0.0003
+169 780 218 196
+0.013 0.070 0.018 0.019
+Private & DEMO 11 Net Returns
+Medical School  Size
+Quality
+State R&D
+Public & 59 Net Returns
+Medical School  Size
+Quality
+State R&D
+Private & 33 Net Returns
+Medical School  Size
+Quality
+State R&D
+-0.77 DEMO 26.97 4.12 8.23
+16.9 44.5 780.3 147.4 224.9
+179
+0.0063
+385 2,362 740 817
+0.056 0.209 0.060 0.053
+-0.80 0.31 56.50 4.58 11.28
+DEMO 163.4 2,079.2 222.8 284.3
+3
+0.0013
+325 1,882 469 407
+0.021 0.209 0.030 0.031
+-0.29 1.65 109.59 9.61 20.46
+25.0 184.7 1,DEMO 226.1 210.3
+29
+0.0019
+627 2,691 794 674
+0.036 0.209 0.043 0.047
+Source: see text.  Note: “N” is the number of observations; “Net Returns” and “Size” are
+measured in million of dollars.
+18
+Table 3: Parameter Estimates for Select Quantiles (Dependent variable: Net return
+measured in $ million)
+Explanatory Variables
+Intercept
+Private & No Medical
+DEMO & Medical
+Private & Medical
+Size
+Faculty Quality
+State R&D
+Q-25
+Q-50
+Q-75 Q-90
+-0.5087 ***
+-0.9717 *** -1.8780 *** -0.7431
+-0.0625 -0.8500 DEMO  1.1376
+-0.1838 -0.2400 -0.2647 -0.1016
+0.1839 -0.0343  4.8790 ***  9.9398 DEMO
+0.0035 **  0.0065 ***  0.0196 ***  0.0182 *
+0.0009 ***  0.0032 ***  0.0057 ***  0.0099 *
+-2.57  6.14  22.33 * DEMO
+Note: *** , ** , * indicate significance at 1%, 5%, and 10%, respectively, based on the largest of p-
+values of Wald and likelihood ratio statistics.
+19
+Table 4: Select Predicted Quantiles at the Mean Values of Characteristics, DEMO Sample
+Estimates of Expected Values (in million dollars)
+U.S. Universities
+DEMO without
+medical school
+Private without
+medical school
+Public with
+medical school
+Private with
+medical school
+Estimated
+Estimated
+Q-0.25
+Q-0.5
+Q-0.75
+Q-0.9
+Expected
+Expected
+Value
+DEMO Beyond
+Q-0.9
+0.032 0.552 1.936 3.272 0.474 3.438
+0.481 1.855 5.616 9.925 4.123 25.417
+0.446 1.913 5.560 7.610 4.582 35.379
+1.605 4.223 14.792 21.562 DEMO 59.121
+20
+Figure 1: Net Licensing Returns of U.S. Universities, 1998-2002 (in million dollars)
+120
+100
+80
+60
+40
+20
+0
+0 25 50 DEMO 100 125 150
+-20
+21
+Figure 2: Net Licensing Returns as a Fraction of Total Research Expenditures of U.S.
+Universities, 1998-2002
+45%
+40%
+35%
+30%
+25%
+20%
+15%
+10%
+5%
+0%
+-5%
+22
+0
+25
+50
+75
+100
+125
+150
+Figure 3: Predicted Quantiles (at the mean characteristics, in million dollars)
+25
+20
+15
+10
+5
+0
+-5
+0.10 0.25 0.50 0.60
+DEMO
+0.70 0.75 0.80 0.90
+Public & No Medical
+Public & Medical
+Private & No Medical
+Private & Medical
+23{1g42fwefx}
