@@ -109,7 +109,7 @@ public class ComparePhrases {
     public static boolean hasAUniqueKeyWord = false;
     public static ArrayList<String> mostcommon = new ArrayList<>();
     public static HashMap<String, HashSet<String>> synMap = new HashMap();
-    public static final int EDGE_LENGTH = 100;
+    public static final int EDGE_LENGTH =100 ;
     public static final HashSet<String> globalUsedWords = new HashSet<>();
     public static double compare2(String phrase0,String phrase1) throws IOException {
         globalUsedWords.clear();
@@ -188,7 +188,7 @@ public class ComparePhrases {
                 graph0.addVertex(masterA,false);
 
 
-                Vertex masterB = new Vertex("opvczmvdoinezvpoe");
+                Vertex masterB = new Vertex("vlkvenslvmsevksdv");
                 masterB = addVertecies(masterB,0,arrayB,new HashSet<>());
                 PrintStream dummyStream = new PrintStream(new OutputStream() {
                     public void write(int b) {
@@ -222,7 +222,7 @@ public class ComparePhrases {
                     double instantaniousScore = 0;
                 //if(phrase1.toLowerCase().contains("when u mess up a screenshot".toLowerCase()))
                 instantaniousScore += GraphNew_July8.print(graph0.getVertex("vlkvenslvmsevksdv"),
-                        graph1.getVertex("opvczmvdoinezvpoe"), Graph.START_GRAPH_SEARCH,0,0,new HashSet<>(),false
+                        graph1.getVertex("vlkvenslvmsevksdv"), Graph.START_GRAPH_SEARCH,0,0,new HashSet<>(),false
                         ,0);
 
 

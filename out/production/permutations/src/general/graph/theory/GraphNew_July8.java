@@ -134,7 +134,8 @@ public class GraphNew_July8 {
     */
         if(g1.getNeighborCount() == 0 || g2.getNeighborCount() == 0
                 || usedWords.contains(g1.getLabel())
-                ||globalUsedWords.contains(g1.getLabel()))
+                //||globalUsedWords.contains(g1.getLabel())
+                )
         {
             return score;
         }
@@ -176,7 +177,7 @@ public class GraphNew_July8 {
                     usedWords.add(g1.getLabel());
                     score += print(vertex1, vertex2, score,
                             edge1.getWeight(),
-                            edge2.getWeight(), new HashSet<>(usedWords)
+                            edge2.getWeight(), usedWords
                             , isKeyWordPath, depth + 1);
                 }
             /*

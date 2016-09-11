@@ -601,8 +601,8 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         }
 
 
-        //return "Either you are not giving me a lot to go on, or I don't have any info on this. Perhaps you can provide me with more detail?";
-        return WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbot(redoQuestion,redoOriginalQuestion);
+        return "Either you are not giving me a lot to go on, or I don't have any info on this. Perhaps you can provide me with more detail?";
+        //return WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbot(redoQuestion,redoOriginalQuestion);
 
     }
 
