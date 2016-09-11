@@ -490,7 +490,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
 
                         double compare = 0;
                         ArrayList<String> total = new ArrayList<>();
-                        int targetWordCount = 3;
+                        int targetWordCount = 10;
                         int currentWordCount = 0;
                         String targetString = new String();
                         for (String sentence : para.split("\\s+")) {
