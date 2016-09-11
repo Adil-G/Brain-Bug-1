@@ -173,9 +173,11 @@ public class MainGUI {
         String answer = TestChatBot.getAnswerWithGUI(userResponse);
 
         System.setOut(originalStream);
-
-        chatBox.append("<" + chatbotName + ">:  " +  answer.split("- \\(  \\)|" +
+/*
+.split("- \\(  \\)|" +
                 "------------------------------------------------")[0]
+ */
+        chatBox.append("<" + chatbotName + ">:  " +  answer
                 + "\n");
         //new FreeTTS(answer).speak();
         /*

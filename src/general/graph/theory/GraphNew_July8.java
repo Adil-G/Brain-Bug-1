@@ -1,11 +1,16 @@
 package general.graph.theory;
 
 import SentenceGenerator.ComparePhrases;
+import general.chat.MainGUI;
 
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+
+import static SentenceGenerator.ComparePhrases.globalUsedWords;
 
 
 /**
@@ -104,18 +109,11 @@ public class GraphNew_July8 {
 
     }
 
-    public static double print(Vertex g1, Vertex g2,String vNode, double score, int w1, int w2
+    public static double print(Vertex g1, Vertex g2, double score, int w1, int w2
             ,HashSet<String> usedWords, boolean isKeyWordPath, int depth) {
-        vNode = g1.getLabel();
+        String vNode = g1.getLabel();
         System.out.println("GSDSF: " + vNode);
-        if (ComparePhrases.keyWords.contains(vNode.toLowerCase())
-                ||ComparePhrases.keyWordsVerbOrAdjective.contains(vNode.toLowerCase()))
-            // is not a common word
-            if (true||!ComparePhrases.mostcommon.contains(vNode.toLowerCase())) {
-                isKeyWordPath = true;
-                System.out.println("APPROVAL WORD = " + vNode.toLowerCase());
-                ComparePhrases.hasAUniqueKeyWord = true;
-            }
+
         /*
         // if the question contains this word and was added as a synmap key
 
@@ -134,17 +132,18 @@ public class GraphNew_July8 {
                         }
     }
     */
-        if(usedWords.contains(vNode.toLowerCase()))
+        if(g1.getNeighborCount() == 0 || g2.getNeighborCount() == 0
+                || usedWords.contains(g1.getLabel())
+                ||globalUsedWords.contains(g1.getLabel()))
         {
-            if(isKeyWordPath)
-                return score;
-            else
-                return 0;
+            return score;
         }
         //score++;
-        if(w2<ComparePhrases.EDGE_LENGTH)
-            score += 1 + depth + 10;
+        if(w2<ComparePhrases.EDGE_LENGTH) {
+
+            score += 1 + depth * 10;
             //score += 1 + depth;
+        }
         else
         {
             if(isKeyWordPath)
@@ -156,45 +155,55 @@ public class GraphNew_July8 {
         ArrayList<Edge> e1 = g1.getNeighbors();
         ArrayList<Edge> e2 = g2.getNeighbors();
 
-        ArrayList<Vertex> v1 = new ArrayList<Vertex>();
-        ArrayList<Vertex> v2 =  new ArrayList<Vertex>();
-        for(Edge edge : e1)
-            v1.add(edge.getTwo());
-        for(Edge edge : e2)
-            v2.add(edge.getTwo());
-        for(Vertex vertex1 : v1)
+        for(Edge edge1 : g1.getNeighbors())
         {
+            Vertex vertex1 = edge1.getTwo();
             //loop throughs second setntece
-            for(Vertex vertex2 : v2)
+            for(Edge edge2 : g2.getNeighbors())
             {
+                Vertex vertex2 = edge2.getTwo();
+                PrintStream dummyStream = new PrintStream(new OutputStream() {
+                    public void write(int b) {
+                        //NO-OP
+                    }
+                });
+
+                if (false||!usedWords.contains(vertex1.getLabel())) {
+                    System.setOut(MainGUI.originalStream);
+                    System.out.println("24g3q4sg: " + vertex1.getLabel()+"\n"+vertex2.getLabel());
+                    System.setOut(dummyStream);
+                    globalUsedWords.add(g1.getLabel());
+                    usedWords.add(g1.getLabel());
+                    score += print(vertex1, vertex2, score,
+                            edge1.getWeight(),
+                            edge2.getWeight(), new HashSet<>(usedWords)
+                            , isKeyWordPath, depth + 1);
+                }
+            /*
                 // most common
                 if(vertex1.getLabel().equals(
                         vertex2.getLabel()
-                ))
-                    if(!usedWords.contains(vertex1.getLabel())) {
-                        usedWords.add(vertex1.getLabel());
-                        score += print(g1, g2, vertex1.getLabel(), score,
-                                g1.getNeighbor(v1.indexOf(vertex1)).getWeight(),
-                                g2.getNeighbor(v2.indexOf(vertex2)).getWeight(), new HashSet<>(usedWords)
-                                , isKeyWordPath, depth + 1);
-                    }
+                )) {
+
                     // chjeck all synonyms in seccond sentence if they
                     // match wtuh the current lavel
                     //if(WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsFileNameEquals("statements_july6.txt"))
-                    if(ComparePhrases.synMap.containsKey(vertex1.getLabel()))
-                        for(String synonym : ComparePhrases.synMap.get(vertex1.getLabel()))
-                        {
-                            if(vertex1.getLabel().equals(
+                    if (ComparePhrases.synMap.containsKey(vertex1.getLabel()))
+                        for (String synonym : ComparePhrases.synMap.get(vertex1.getLabel())) {
+                            if (vertex1.getLabel().equals(
                                     synonym
                             ))
-                                if(!usedWords.contains(vertex1.getLabel())) {
+                                if (!usedWords.contains(vertex1.getLabel())) {
                                     usedWords.add(vertex1.getLabel());
-                                    score += print(g1, g2, vertex1.getLabel(), score,
+                                    score += print(vertex1, vertex2, score,
                                             g1.getNeighbor(v1.indexOf(vertex1)).getWeight(),
                                             g2.getNeighbor(v2.indexOf(vertex2)).getWeight(), new HashSet<>(usedWords)
                                             , isKeyWordPath, depth + 1);
                                 }
                         }
+
+                }
+                */
             }
 
           //  System.out.println("__>"+vertex1);

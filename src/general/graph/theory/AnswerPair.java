@@ -8,6 +8,7 @@ public class AnswerPair {
     private String text;
     public AnswerPair(String URL, String text)
     {
+
         this.URL = URL;
         this.text = text;
     }

@@ -8,9 +8,11 @@ import general.chat.MainGUI;
 import general.chat.ProgressBarDemo;
 import general.comparePhrasesold_june7;
 import org.apache.commons.io.FileUtils;
+import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.wordnet.SynonymMap;
 
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -219,13 +221,24 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         newContentPane.progressBar.setMaximum(100);
         newContentPane.progressBar.setValue(3);
         */
+        PrintStream dummyStream = new PrintStream(new OutputStream() {
+            public void write(int b) {
+                //NO-OP
+            }
+        });
         ComparePhrases.keyWords.clear();
         ComparePhrases.keyWordsVerbOrAdjective.clear();
+
         String[] keyWordsArrayNouns = FindKeyWordsTest.getNouns(question).toLowerCase().split("[^\\w]+");
         String[] keyWordsArrayVerbOrAdjective = FindKeyWordsTest.getVerbOrAdjective(question).toLowerCase().split("[^\\w]+");
         ComparePhrases.keyWords = new HashSet<>(Arrays.asList(keyWordsArrayNouns));
         ComparePhrases.keyWordsVerbOrAdjective = new HashSet<>(Arrays.asList(keyWordsArrayVerbOrAdjective));
         //String allText = FileUtils.readFileToString(result, "utf-8").toLowerCase();
+        System.setOut(MainGUI.originalStream);
+        System.out.println("should be 0: " +(ComparePhrases.keyWords.size() - keyWordsArrayNouns.length
+        +ComparePhrases.keyWordsVerbOrAdjective.size() - keyWordsArrayVerbOrAdjective.length));
+        System.out.println("real numbers = "+ComparePhrases.keyWords.size()+", "+ComparePhrases.keyWordsVerbOrAdjective.size());
+        System.setOut(dummyStream);
         ComparePhrases.keyWordUniqueness.clear();
         /*for (String word : ComparePhrases.keyWords) {
             try {
@@ -276,16 +289,17 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
 
         ComparePhrases.keyWords = newKeyWordsNouns;
         ComparePhrases.keyWordsVerbOrAdjective = newKeyWordsVerbsOrAdjectives;
+        System.setOut(MainGUI.originalStream);
+        System.out.println("Again should be 0: " +(ComparePhrases.keyWords.size() - keyWordsArrayNouns.length
+                +ComparePhrases.keyWordsVerbOrAdjective.size() - keyWordsArrayVerbOrAdjective.length));
+        System.out.println("Again real numbers = "+ComparePhrases.keyWords.size()+", "+ComparePhrases.keyWordsVerbOrAdjective.size());
+        System.setOut(dummyStream);
         ArrayList<HashSet<ParagraphInfo>> totalListOfTrees = new ArrayList<>();
         HashSet<ParagraphInfo> totalFinalfinalSetOfWords = new HashSet<>();
         TreeMap<Double, HashSet<AnswerPair>> match = new TreeMap<>(Collections.reverseOrder());
         File[] listOfFiles = Paths.get(statementsFileName).getParent().toFile().listFiles();
         int index = 0;
-        PrintStream dummyStream = new PrintStream(new OutputStream() {
-            public void write(int b) {
-                //NO-OP
-            }
-        });
+
         long origionalFreeMemory = Runtime.getRuntime().freeMemory();
         boolean shouldCollect  =true;
         int prevValue = 0;
@@ -372,10 +386,20 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                     String publicationName = result.getName()
                             .substring(0, result.getName().lastIndexOf("."));
 
-                    for (String y : biggestText.split(DELIMITER))
+                    for (String y : biggestText.split(DELIMITER)) {
+                        /*
+                            */
+
                         for (String keyWord : newKeyWordsFullNouns) {
                             System.out.println(y + "->" + keyWord);
-                            if (y.toLowerCase().matches(".*?\\b"+keyWord.toLowerCase()+".*?")) {
+
+
+                            if (y.toLowerCase().contains(keyWord.toLowerCase())) {
+                                //System.exit(99);
+                                /*if(y.toLowerCase().contains("kind of service firm whose characteristics have distinctive"
+                                        .toLowerCase()))
+                                    System.exit(99);
+                                    */
                                 ParagraphInfo info = new ParagraphInfo(y, publicationName);
                                 sentsNouns.add(info);
                                 keywordsUsedAsNouns.add(keyWord.toLowerCase());
@@ -385,17 +409,32 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                                 */
                             }
                         }
+                    }
 
                     System.out.println(sentsNouns.size());
                     newKeyWordsFullVerbsOrAdjectives.remove("");
+                    System.setOut(MainGUI.originalStream);
+                    System.out.println("2tag: "+newKeyWordsFullVerbsOrAdjectives);
+                    System.setOut(dummyStream);
                     if (newKeyWordsFullVerbsOrAdjectives.size() > 0)
                         for (ParagraphInfo info : sentsNouns) {//what length should my line be
                             String y = info.getText();
+
                             for (String keyWord : newKeyWordsFullVerbsOrAdjectives) {
+                                /*if(y.toLowerCase().contains("kind of service firm whose characteristics have distinctive"
+                                        .toLowerCase())
+                                        && "kind of service firm whose characteristics have distinctive".matches(".*?"+keyWord.toLowerCase()+".*?")
+                                        &&y.toLowerCase().matches(".*?"+keyWord.toLowerCase()+".*?"))
+                                {
+                                    System.setOut(MainGUI.originalStream);
+                                    System.out.println("3tag: "+y.toLowerCase());
+                                    System.setOut(dummyStream);
+                                    System.exit(99);
+                                }
+                                */
                                 System.out.println(y + "->" + keyWord);
-                                if (y.toLowerCase().matches(".*?\\b"+keyWord.toLowerCase()+".*?")
-                                        && !keywordsUsedAsNouns.contains(keyWord.toLowerCase())
-                                        && !keyWord.isEmpty()) {
+                                if (y.toLowerCase().contains(keyWord.toLowerCase())) {
+
                                     sentsVerbsOrAdjFinal.add(info);
                                     /*System.setOut(MainGUI.originalStream);
                                     System.out.println("verb: " + keyWord.toLowerCase());
@@ -429,388 +468,77 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
             }
 
         }
+
+        /*String test= "";
+        for(ParagraphInfo para : totalFinalfinalSetOfWords)
+         test+= para.getText()+"\n---------------------------------------\n";
+        return test;
+        */
         boolean isNew = false;
         //newContentPane.progressBar.setMinimum(0);
         //newContentPane.progressBar.setMaximum(100);
         //newContentPane.progressBar.setValue(3);
         int bookNumber = 0;
         ArrayList<TreeMap<Double, HashSet<AnswerPair>>> answerTree = new ArrayList<>();
-        if (isNew && totalListOfTrees.size() > 0) {
-            for (HashSet<ParagraphInfo> similarSet : totalListOfTrees) {
-                match = new TreeMap<>(Collections.reverseOrder());
-                for (ParagraphInfo bigtextInfo : similarSet) {
-                    String bigtext = bigtextInfo.getText();
-                    //          newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalListOfTrees.size())));
-                    for (String paraBig : bigtext.split(DELIMITER))
-                        for (String para : paraBig.split("[\\.\\?!]+")) {
-                            String resultMeaningless = Integer.toString(1);
-                            String p12 = para.replaceAll("\\[.*?\\]", "");
-                            try {
-                                p12 = p12.substring(p12.indexOf(':'));
-                            } catch (Exception k) {//do nothing
-                            }
-                            System.out.println("2464gfds: " + p12 + " from " + para);
-                            if (!isUserAskingAQustion) {
-                                //if (!TestChatBotMain.answersUsed.contains(para.toLowerCase()))
-                                if (!(!p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("how ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("do ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("can ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("why ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("who ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("what ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("if ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("will ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("would ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("could ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("would ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("could ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("when ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("is ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("was ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("which ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("he ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("she ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("did ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("am ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("are ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("am ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("i am")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("are ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("how's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("do's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("can's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("why's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("who's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("what's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("won't")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("wouldn't")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("couldn't")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("when's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("is's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("which's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("he's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("she's")
-                                        && !p12.contains(">>")
-                                        //&& !TestChatBotMain.answersUsed.contains(para.toLowerCase())
-                                )) {
-                                    double compare = 0;
-                                    ArrayList<String> total = new ArrayList<>();
-                                    int targetWordCount = 10;
-                                    int currentWordCount = 0;
-                                    String targetString = new String();
-                                    for (String sentence : para.split("\\s+")) {
-                                        targetString += sentence + " ";
-                                        if (currentWordCount++ > targetWordCount || sentence.contains(".")
-                                                || sentence.contains("?")
-                                                || sentence.contains("!")) {
-                                            total.add(targetString);
-                                            targetString = new String();
-                                            currentWordCount = 0;
-                                        }
-                                    }
-                                    for (String sample : total) {
-                                        compare = +ComparePhrases.compare2(query, sample);
-                                    }
-
-                                    if (match.containsKey(compare)) {
-                                        HashSet<AnswerPair> dummy = match.get(compare);
-                                        if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
-                                                "his|they're|we|we're|that|this|thus)['\\s\\.\\?!].*?"))//thus?
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                        else
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                        match.put(compare, dummy);
-                                    } else {
-                                        HashSet<AnswerPair> dummy = new HashSet<>();
-                                        if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
-                                                "his|they're|we|we're)['\\s\\.\\?!].*?"))
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                        else
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                        match.put(compare, dummy);
-                                    }
-                                }
-                            } else if (true) {
-                                if ((!p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("how ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("do ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("am ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("i am")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("are ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("can ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("why ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("who ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("what ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("if ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("will ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("would ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("could ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("when ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("is ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("was ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("which ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("he ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("she ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("did ")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does ")
-
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("how's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("do's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("can's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("why's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("who's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("what's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("won't")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("wouldn't")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("couldn't")
-
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("when's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("is's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("which's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("he's")
-                                        && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("she's")
-                                        && !p12.contains(">>")
-                                        // && !TestChatBotMain.answersUsed.contains(para.toLowerCase())
-                                )) {
-                                    double compare = 0;
-                                    ArrayList<String> total = new ArrayList<>();
-                                    int targetWordCount = 10;
-                                    int currentWordCount = 0;
-                                    String targetString = new String();
-                                    for (String sentence : para.split("\\s+")) {
-                                        targetString += sentence + " ";
-                                        if (currentWordCount++ > targetWordCount || sentence.contains(".")
-                                                || sentence.contains("?")
-                                                || sentence.contains("!")) {
-                                            total.add(targetString);
-                                            targetString = new String();
-                                            currentWordCount = 0;
-                                        }
-                                    }
-                                    for (String sample : total) {
-                                        compare = +ComparePhrases.compare2(query, sample);
-                                    }
-                                    if (match.containsKey(compare)) {
-                                        HashSet<AnswerPair> dummy = match.get(compare);
-                                        if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
-                                                "his|they're|we|we're|that|this|thus)['\\s\\.\\?!].*?"))//thus?
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                        else
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                        match.put(compare, dummy);
-                                    } else {
-                                        HashSet<AnswerPair> dummy = new HashSet<>();
-                                        if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
-                                                "his|they're|we|we're)['\\s\\.\\?!].*?"))
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                        else
-                                            dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                        match.put(compare, dummy);
-                                    }
-                                }
-                            }
-                        }
-                }
-                answerTree.add(new TreeMap<Double, HashSet<AnswerPair>>(match));
-            }
-
-        } else {
-            for (ParagraphInfo bigtextInfo : totalFinalfinalSetOfWords) {
+        for (ParagraphInfo bigtextInfo : totalFinalfinalSetOfWords) {
                 String bigtext = bigtextInfo.getText();
                 //newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalFinalfinalSetOfWords.size())));
                 for (String paraBig : bigtext.split(DELIMITER))
                     for (String para : paraBig.split("[\\.\\?!]+")) {
                         String resultMeaningless = Integer.toString(1);
-                        String p12 = para.replaceAll("\\[.*?\\]", "");
-                        try {
-                            p12 = p12.substring(p12.indexOf(':'));
-                        } catch (Exception k) {//do nothing
+
+
+                        double compare = 0;
+                        ArrayList<String> total = new ArrayList<>();
+                        int targetWordCount = 3;
+                        int currentWordCount = 0;
+                        String targetString = new String();
+                        for (String sentence : para.split("\\s+")) {
+                            targetString += sentence + " ";
+                            if (currentWordCount++ > targetWordCount || sentence.contains(".")
+                                    || sentence.contains("?")
+                                    || sentence.contains("!")) {
+                                total.add(targetString);
+                                targetString = new String();
+                                currentWordCount = 0;
+                            }
                         }
-                        System.out.println("2464gfds: " + p12 + " from " + para);
-                        if (!isUserAskingAQustion) {
-                            //if (!TestChatBotMain.answersUsed.contains(para.toLowerCase()))
-                            if (!(!p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("how ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("do ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("can ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("why ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("who ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("what ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("if ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("will ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("would ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("could ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("would ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("could ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("when ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("is ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("was ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("which ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("he ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("she ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("did ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("am ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("are ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("am ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("i am")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("are ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("how's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("do's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("can's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("why's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("who's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("what's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("won't")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("wouldn't")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("couldn't")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("when's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("is's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("which's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("he's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("she's")
-                                    && !p12.contains(">>")
-                                    //&& !TestChatBotMain.answersUsed.contains(para.toLowerCase())
-                            )) {
-                                double compare = 0;
-                                ArrayList<String> total = new ArrayList<>();
-                                int targetWordCount = 10;
-                                int currentWordCount = 0;
-                                String targetString = new String();
-                                for (String sentence : para.split("\\s+")) {
-                                    targetString += sentence + " ";
-                                    if (currentWordCount++ > targetWordCount || sentence.contains(".")
-                                            || sentence.contains("?")
-                                            || sentence.contains("!")) {
-                                        total.add(targetString);
-                                        targetString = new String();
-                                        currentWordCount = 0;
-                                    }
-                                }
-                                for (String sample : total) {
-                                    compare = +ComparePhrases.compare2(query, sample);
-                                }
+                        for (String sample : total) {
+                            double comparex = ComparePhrases.compare2(query, sample);
+                            compare += comparex;
+                            if (comparex > 0)
+                            {
+                                System.setOut(MainGUI.originalStream);
+                                System.out.println("23rt2t3w last res comparex = " + comparex);
+                                System.out.println("23rt2t3w last res compare = " + compare);
+                                System.out.println("23rt2t3w last res LENGTH = " + sample.split("\\s+").length);
+                                System.setOut(dummyStream);
+                            }
+                        }
 
 
                                 if (match.containsKey(compare)) {
                                     HashSet<AnswerPair> dummy = match.get(compare);
-                                    if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
-                                            "his|they're|we|we're|that|this|thus)['\\s\\.\\?!].*?"))//thus?
-                                        dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                    else
-                                        dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
                                     match.put(compare, dummy);
+
                                 } else {
                                     HashSet<AnswerPair> dummy = new HashSet<>();
-                                    if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
-                                            "his|they're|we|we're)['\\s\\.\\?!].*?"))
-                                        dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                    else
-                                        dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
                                     match.put(compare, dummy);
+
                                 }
+
+
+
+
                             }
-                        } else if (true) {
-                            if ((!p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("how ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("do ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("am ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("i am")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("are ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("can ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("why ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("who ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("what ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("if ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("will ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("would ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("could ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("when ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("is ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("was ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("which ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("he ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("she ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("did ")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does ")
 
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("how's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("do's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("can's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("why's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("who's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("what's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("won't")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("wouldn't")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("couldn't")
-
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("when's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("is's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("which's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("he's")
-                                    && !p12.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("she's")
-                                    && !p12.contains(">>")
-                                    //&& !TestChatBotMain.answersUsed.contains(para.toLowerCase())
-                            )) {
-                                double compare = 0;
-                                ArrayList<String> total = new ArrayList<>();
-                                int targetWordCount = 10;
-                                int currentWordCount = 0;
-                                String targetString = new String();
-                                for (String sentence : para.split("\\s+")) {
-                                    targetString += sentence + " ";
-                                    if (currentWordCount++ > targetWordCount || sentence.contains(".")
-                                            || sentence.contains("?")
-                                            || sentence.contains("!")) {
-                                        total.add(targetString);
-                                        targetString = new String();
-                                        currentWordCount = 0;
-                                    }
-                                }
-                                for (String sample : total) {
-                                    compare = +ComparePhrases.compare2(query, sample);
-                                }
-
-                                if (match.containsKey(compare)) {
-                                    HashSet<AnswerPair> dummy = match.get(compare);
-                                    if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
-                                            "his|they're|we|we're|that|this|thus)['\\s\\.\\?!].*?"))//thus?
-                                        dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                    else
-                                        dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                    match.put(compare, dummy);
-                                } else {
-                                    HashSet<AnswerPair> dummy = new HashSet<>();
-                                    if (para.toLowerCase().matches(".*?\\s(it|she|he|they|their|there|him|her|" +
-                                            "his|they're|we|we're)['\\s\\.\\?!].*?"))
-                                        dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                    else
-                                        dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                    match.put(compare, dummy);
-                                }
                             }
-                        }
-                    }
-            }
-        }
+
+
+
+
 
         //System.exit(0);
         // results.clear();
@@ -826,27 +554,20 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
             String speakfull = new String();
 
 
-            if (answerTree.size() > 0)
-                for (TreeMap<Double, HashSet<AnswerPair>> match2 : answerTree)
-                    for (Map.Entry<Double, HashSet<AnswerPair>> answeri : match2.entrySet()) {
-                        if (index++ < 5) {
-                            HashSet<AnswerPair> pairs = answeri.getValue();
-
-                            for (AnswerPair curPair : pairs) {
-                                speakfull += curPair.getText() + ". ";
-                            }
-                        }
-                    }
-            else
-                for (Map.Entry<Double, HashSet<AnswerPair>> answeri : match.entrySet()) {
-                    if (index++ < 5) {
-                        HashSet<AnswerPair> pairs = answeri.getValue();
-
-                        for (AnswerPair curPair : pairs) {
-                            speakfull += curPair.getText() + ". ";
-                        }
-                    }
+            HashSet<AnswerPair> pairs = match.firstEntry().getValue();
+            System.setOut(MainGUI.originalStream);
+            System.out.println("frea32g: "+match.firstEntry().getKey());
+            System.setOut(dummyStream);
+            for (AnswerPair curPair : pairs) {
+                speakfull += curPair.getText() + ". ";
+                if(curPair.getText().toLowerCase().contains("kind of service firm whose characteristics have distinctive"
+                        .toLowerCase())) {
+                    System.setOut(MainGUI.originalStream);
+                    System.setOut(dummyStream);
+                    System.exit(-99);
                 }
+            }
+
             speakfull = speakfull.trim();
             System.out.println("query --> " + query);
             
@@ -869,38 +590,20 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
                 speakfull = "Nothing found";
             if (match.firstEntry().getKey() < 1.0 && match.firstEntry().getValue().size() < 1)
                 return " I couldn't find anything on that.";
-            /*else if(match.firstEntry().getKey()<1.0 && finalfinalSetOfWords.size()>0)
-                return speakfull;
-                */
+
             else
                 return speakfull;// +origionalQuestion.toLowerCase().matches(".*?how\\s.*?") +speakfull.replaceAll("\\[.*?\\]","").matches(".*?\\d+.*?");
 
 
         } catch (Exception l) {
-            /*
-            System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
-            System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
-            System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
-            System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
-            System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
 
-            String speakfull = ((AnswerPair)match.firstEntry().getValue().toArray()[(new Random()).nextInt(match.firstEntry().getValue().size())])
-                    .getText();
-            System.out.println("Answer --> "+speakfull);
-            */
 
         }
-        /*WikipediaInfoBoxModel2OldJune14_PERSONALActualWorkingVersion.statementsFileName =
-                WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsFileName;
-        WikipediaInfoBoxModel2OldJune14_PERSONALActualWorkingVersion.statementsDirectoryName
-                = WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsDirectoryName;
-        WikipediaInfoBoxModel2OldJune14_PERSONALActualWorkingVersion.dataDirectoryName =
-                WikipediaInfoBoxModel2OldJune14_PERSONAL.dataDirectoryName;
-        return WikipediaInfoBoxModel2OldJune14_PERSONALActualWorkingVersion.chatbot(question,origionalQuestion);
-        */
+
 
         //return "Either you are not giving me a lot to go on, or I don't have any info on this. Perhaps you can provide me with more detail?";
         return WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbot(redoQuestion,redoOriginalQuestion);
+
     }
 
 

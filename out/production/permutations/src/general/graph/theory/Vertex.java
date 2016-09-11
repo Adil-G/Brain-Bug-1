@@ -65,7 +65,7 @@ public class Vertex {
 
         if(this.neighborhood.contains(edge)){
 
-            return;
+           // return;
 
         }
 

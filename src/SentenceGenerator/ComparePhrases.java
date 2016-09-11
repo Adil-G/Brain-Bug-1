@@ -1,12 +1,15 @@
 package SentenceGenerator;
 
 import general.LuceneSnowBallTest;
+import general.chat.MainGUI;
 import general.graph.theory.Edge;
 import general.graph.theory.Graph;
 import general.graph.theory.GraphNew_July8;
 import general.graph.theory.Vertex;
 
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -61,20 +64,26 @@ public class ComparePhrases {
                         graph0.addVertex(va, false);
                     }
                     */
-    public static void addVertecies(Vertex vertex, String[] array, HashSet<String> added)
+    public static Vertex addVertecies(Vertex vertex,int cuIndex, String[] array, HashSet<String> added)
     {
-        added.add(vertex.getLabel());
+        if(cuIndex <0) cuIndex =0;
+        if(cuIndex>=array.length-1)
+            return vertex;
+
+
+        //added.add(vertex.getLabel());
         // adil is a guy
         // if(Arrays.asList(array).indexOf(vertex.getLabel()) == (array.length - 1))
         //    return;
-        for(int j = 0;j<array.length;j++) {
+        for(int j = cuIndex+1;j<array.length;j++) {
             Vertex va = new Vertex(array[j]);
-            int indexA = Arrays.asList(array).indexOf(vertex.getLabel());
-            int indexB = Arrays.asList(array).indexOf(va.getLabel());
+            int indexB = j;
 
-            if(true &&indexA>=0 && indexB>=0) {
-                vertex.addNeighbor(new Edge(vertex, va,
-                        Math.abs(indexA - indexB)));
+            if(true  &&cuIndex>=0 && indexB>=0) {
+                Vertex sdf = addVertecies(va,j,array,added);
+                vertex.addNeighbor(new Edge(va, sdf,
+                        Math.abs(cuIndex - indexB)));
+                //return vertex;
             }
             else
             {
@@ -83,13 +92,15 @@ public class ComparePhrases {
                 vertex.addNeighbor(new Edge(vertex, va));
             }
         }
-        //int index = Arrays.asList(array).indexOf(vertex.getLabel());
-        for(int i = 0;i<array.length;i++)
-        {
-            Vertex va = new Vertex(array[i]);
-            if(!added.contains(va.getLabel()))
-                addVertecies(va,array,added);
+
+        for(int j = 0;j<array.length;j++) {
+            Vertex vTemp = new Vertex(array[j]);
+            Edge edgex = new Edge(vertex, vTemp);
+            if(!vertex.containsNeighbor(edgex))
+                vertex.addNeighbor(edgex);
         }
+
+        return  vertex;
     }
     public static HashSet<String> keyWords = new HashSet<>();
     public static HashSet<String> keyWordsVerbOrAdjective = new HashSet<>();
@@ -98,8 +109,10 @@ public class ComparePhrases {
     public static boolean hasAUniqueKeyWord = false;
     public static ArrayList<String> mostcommon = new ArrayList<>();
     public static HashMap<String, HashSet<String>> synMap = new HashMap();
-    public static final int EDGE_LENGTH = 1;
+    public static final int EDGE_LENGTH = 100;
+    public static final HashSet<String> globalUsedWords = new HashSet<>();
     public static double compare2(String phrase0,String phrase1) throws IOException {
+        globalUsedWords.clear();
         hasAUniqueKeyWord = false;
         //what actress starred in freaky friday
         //Which actress played the role of Mary (adult) in the movie It s a Wonderful Life
@@ -169,161 +182,95 @@ public class ComparePhrases {
                     {
                         arrayB[i] = arrayBO[i];
                     }
-                for (int i = 0; i < arrayA.length; i++) {
-                    Vertex va = new Vertex(arrayA[i]);
+                Vertex masterA = new Vertex("vlkvenslvmsevksdv");
+                masterA = addVertecies(masterA,0,arrayA,new HashSet<>());
 
-                    addVertecies(va,arrayA,new HashSet<>());
-                    graph0.addVertex(va, false);
-                }
+                graph0.addVertex(masterA,false);
+
+
+                Vertex masterB = new Vertex("opvczmvdoinezvpoe");
+                masterB = addVertecies(masterB,0,arrayB,new HashSet<>());
+                PrintStream dummyStream = new PrintStream(new OutputStream() {
+                    public void write(int b) {
+                        //NO-OP
+                    }
+                });
+                System.setOut(MainGUI.originalStream);
+                //System.out.println("23ts second last res = " + masterA.getNeighbor(0).getTwo().getNeighbor(0).getTwo()
+                 //     .getNeighbor(0).getTwo().getLabel());
+                System.setOut(dummyStream);
+                graph1.addVertex(masterB,false);
+
+                /*Vertex masterB = new Vertex("");
                 for (int i = 0; i < arrayB.length; i++) {
                     Vertex va = new Vertex(arrayB[i]);
 
                     addVertecies(va,arrayB,new HashSet<>());
-                    graph1.addVertex(va, false);;
+                    masterB.addNeighbor(new Edge(masterB,va,i));
+
                 }
+                graph1.addVertex(masterB, false);
+                */
                 System.out.println("graph size = " + Arrays.asList(arrayA));
                 for (Edge e : graph1.getEdges()) {
                     System.out.println("lABEL = " + graph1.getVertex(e.getOne().getLabel()) + ", " + graph1.getVertex(e.getTwo().getLabel()));
                     System.out.println(graph1.getVertex(e.getOne().getLabel()).getNeighbors());
                 }
                 double score = 0;
-                double highestScore = 0;
-                for (String label : arrayA) {
-//
-                    hasAUniqueKeyWord = false;
+
+                hasAUniqueKeyWord =true;
                     double instantaniousScore = 0;
-                    if ( graph0.getVertex(label) != null && graph1.getVertex(label) != null) {
-                        //System.out.println("309i30---->> "+graph0.getVertex(label).getNeighbors());
-                        //System.out.println("309i31---->> "+Arrays.asList(arrayA));
-                        instantaniousScore += GraphNew_July8.print(graph0.getVertex(label), graph1.getVertex(label), label, Graph.START_GRAPH_SEARCH,0,0,new HashSet<>(),false
-                                ,0);
+                //if(phrase1.toLowerCase().contains("when u mess up a screenshot".toLowerCase()))
+                instantaniousScore += GraphNew_July8.print(graph0.getVertex("vlkvenslvmsevksdv"),
+                        graph1.getVertex("opvczmvdoinezvpoe"), Graph.START_GRAPH_SEARCH,0,0,new HashSet<>(),false
+                        ,0);
 
-                    }
-                    else //if(WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsFileNameEquals("statements_july6.txt"))
-                        if(ComparePhrases.synMap.containsKey(label))
-                            for(String synonym : ComparePhrases.synMap.get(label))
-                                if (
-                                        graph0.getVertex(label) != null && graph1.getVertex(synonym) != null) {
-                                    System.out.println("309i30---->> "+graph0.getVertex(label).getNeighbors());
-                                    System.out.println("309i31---->> "+Arrays.asList(arrayA));
-                                    instantaniousScore += GraphNew_July8.print(graph0.getVertex(label), graph1.getVertex(synonym), label, Graph.START_GRAPH_SEARCH,0,0,new HashSet<>(),false
-                                            ,0);
-
-                                }
-                    if(!hasAUniqueKeyWord)
-                        instantaniousScore = 0;
 
                     score += instantaniousScore;
 
-                    /*if(instantaniousScore>highestScore)
-                    {
-                        highestScore = instantaniousScore;
-                    }
-*/
-
-
-                }
-                //score = highestScore;
-
                 System.out.println("" + phrase1 + " = " + score);
 
-                System.out.println("res = "+score);
+                System.setOut(MainGUI.originalStream);
+                System.out.println("SCORE res = " + score);
+                System.setOut(dummyStream);
                 return score;
 
 
             }catch (Exception e){e.printStackTrace();
                 System.exit(-1);}
-                /*
-            //System.out.println("still processing ...");
-            String[] arrayA = phrase0.toLowerCase().split("[^\\w^\\d]+");
-            String[] arrayB = phrase1.toLowerCase().split("[^\\w^\\d]+");
-                System.out.println("08960786: " + Arrays.asList(arrayB));
-            Set<String> setA = new HashSet<String>(Arrays.asList(arrayA));
-            Set<String> setB = new HashSet<String>(Arrays.asList(arrayB));
-            setA.retainAll(setB);
-
-                try {
-                    for (int i = 0; i < arrayA.length; i++)
-                        for (int j = 0; j < arrayA.length; j++) {
-                            graph0.addEdge(new Vertex(arrayA[i]), new Vertex(arrayA[j]), Math.abs(i - j));
-                        }
-                    for (int i = 0; i < arrayB.length; i++)
-                        for (int j = 0; j < arrayB.length; j++) {
-
-                            graph1.addEdge(new Vertex(arrayB[i]), new Vertex(arrayB[j]), Math.abs(i - j));
-
-                        }
-
-                    // vertex order doesn't matter
-                    //(A,B),(A,B)
-                    // (B,A),(B,A)
-
-                    // (B,A),(A,B)
-                    // (A,B),(B,A)
-                    boolean seen = false;
-                    for (Edge e0 : graph0.getEdges())
-                        for (Edge e1 : graph1.getEdges()) {
-                            //System.out.println("2034923: " + e1.getTwo().getLabel());
-                            for(String one : synonyms.get(e0.getOne().getLabel()))
-                            for(String two : synonyms.get(e0.getTwo().getLabel()))
-                            if ((one.equals(e1.getOne().getLabel()) && two.equals(e1.getTwo().getLabel()))
-                                    || (one.equals(e1.getTwo().getLabel()) && two.equals(e1.getOne().getLabel()))) {
-                                //System.out.println("TRUE");
-                                double total = Math.pow(((double) arrayA.length - 1.0), 2) + Math.pow(((double) arrayB.length - 1.0), 2);
-                                double diff0 = (double) e0.getWeight();
-                                double diff1 = (double) e1.getWeight();
-                                double diff = Math.abs(diff0 - diff1) / total;
-                                if(e0.getWeight() < 3 && e1.getWeight()<3) {
-                                    outcome ++;
-                                    System.out.println(outcome + "{}-->" + phrase1);
-                                    System.out.println("with edge: " + e0.toString() + ", " + e1.toString());
-                                    seen = true;
-                                }
-                            }
-                        }
-                    if(!seen)
-                    System.out.println("Not understood phrase1 = " + phrase1);
-                }catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
-                */
-                /*
-                outcome += setA.size();
-            int max = Math.max(arrayA.length, arrayB.length);
-            int min = Math.min(arrayA.length, arrayB.length);
-            String populationMoney =".*?(\\d+,[\\d,\\-\\s]+).*?";
-            String anyNumber = "\\d+";
-            Pattern pat;
-            if(isBig)
-                pat = Pattern.compile(populationMoney);
-            else
-                pat = Pattern.compile(anyNumber);
-            Matcher match = pat.matcher(phrase1);
-            if(match.matches())
-            {
-                if(isBig)
-                    outcome+=(match.group(1).length());
-                else
-                    outcome+=2;
-            }
-                //Which artist is credited with developing linear perspective
-                // search Brunelleschi.*linear perspective
-            System.out.println(outcome+"-->" + phrase1);
-            /*int wordcount = phrase0.split("[^\\w]+").length;
-            if(wordcount>4) {
-                if (outcome < 6.0)
-                    outcome = 0.0;
-            }
-            */
-            //System.out.println(outcome + "{}-->" + phrase0);
 
         }
         else
         {
             outcome=0;
-        }
+            /*PrintStream dummyStream = new PrintStream(new OutputStream() {
+                public void write(int b) {
+                    //NO-OP
+                }
+            });
+            if(phrase1.toLowerCase().contains("kind of service firm whose characteristics have distinctive"
+                    .toLowerCase())) {
+                System.setOut(MainGUI.originalStream);
+                System.out.println("second last res = " + outcome);
+                System.setOut(dummyStream);
+                System.exit(-99);
 
+            }
+            */
+        }
+        /*PrintStream dummyStream = new PrintStream(new OutputStream() {
+            public void write(int b) {
+                //NO-OP
+            }
+        });
+        if(phrase1.toLowerCase().contains("kind of service firm whose characteristics have distinctive"
+                .toLowerCase())) {
+            System.setOut(MainGUI.originalStream);
+            System.out.println("last res = " + outcome);
+            System.setOut(dummyStream);
+            System.exit(-99);
+        }
+        */
         return outcome;
     }
 
