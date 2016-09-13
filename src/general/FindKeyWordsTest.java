@@ -363,7 +363,14 @@ public class FindKeyWordsTest {
                 nnp.add(partOfSpeech);
                 System.out.println("proper noun = " + partOfSpeech);
             }
-            else if(!tag.contains("n") && tag.contains("prp"))
+            else if(!tag.contains("n") && tag.contains("prp")
+                    &&!partOfSpeech.toLowerCase().equals("i")
+                    &&!partOfSpeech.toLowerCase().equals("you")
+                    &&!partOfSpeech.toLowerCase().equals("your")
+                    &&!partOfSpeech.toLowerCase().equals("am")
+                    &&!partOfSpeech.toLowerCase().equals("are")
+                    &&!partOfSpeech.toLowerCase().equals("my")
+                    &&!partOfSpeech.toLowerCase().equals("me"))
             {
                 // this is a proper noun WITHOUT ID e.g. I, She, He
                 properNoun.add(partOfSpeech);
@@ -461,6 +468,13 @@ public class FindKeyWordsTest {
                 System.out.println("adjective = " + partOfSpeech);
             }
             else if(tag.contains("vb") && !tag.contains("VBZ".toLowerCase())
+                    &&!partOfSpeech.toLowerCase().equals("i")
+                    &&!partOfSpeech.toLowerCase().equals("you")
+                    &&!partOfSpeech.toLowerCase().equals("your")
+                    &&!partOfSpeech.toLowerCase().equals("am")
+                    &&!partOfSpeech.toLowerCase().equals("are")
+                    &&!partOfSpeech.toLowerCase().equals("my")
+                    &&!partOfSpeech.toLowerCase().equals("me")
                     //&& !tag.contains("VBP".toLowerCase())
                     &&!tag.contains("VBD".toLowerCase()))
             {

@@ -27,12 +27,14 @@ public class TestChatBot {
     }
     public static String getAnswerWithGUI(String question) throws Exception {
         // hard coded
+        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\funny_quoats\\local.txt");
 
-        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\donald_trump_tweets\\local.txt");
+        //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\donald_trump_tweets\\local.txt");
         WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";//File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\pakalupapito\\local.txt");
         WikipediaInfoBoxModel2OldJune14_PERSONAL.DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";//File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\pakalupapito\\local.txt");
 
         //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\local.txt");
+        //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\elepahnts\\local.txt");
 
         // user input
 

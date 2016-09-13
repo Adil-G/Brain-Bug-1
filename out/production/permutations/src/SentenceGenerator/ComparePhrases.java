@@ -79,6 +79,7 @@ public class ComparePhrases {
             Vertex va = new Vertex(array[j]);
             int indexB = j;
 
+            if(Math.abs(cuIndex - indexB)<CREATION_EDGE_LENGTH)
             if(true  &&cuIndex>=0 && indexB>=0) {
                 Vertex sdf = addVertecies(va,j,array,added);
                 vertex.addNeighbor(new Edge(va, sdf,
@@ -110,6 +111,7 @@ public class ComparePhrases {
     public static ArrayList<String> mostcommon = new ArrayList<>();
     public static HashMap<String, HashSet<String>> synMap = new HashMap();
     public static final int EDGE_LENGTH =100 ;
+    public static final int CREATION_EDGE_LENGTH =2 ;
     public static final HashSet<String> globalUsedWords = new HashSet<>();
     public static double compare2(String phrase0,String phrase1) throws IOException {
         globalUsedWords.clear();

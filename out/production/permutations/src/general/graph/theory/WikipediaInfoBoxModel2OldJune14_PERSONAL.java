@@ -10,6 +10,7 @@ import general.comparePhrasesold_june7;
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.wordnet.SynonymMap;
+import org.omg.CORBA.AnySeqHelper;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
@@ -20,6 +21,8 @@ import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.DoubleAccumulator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -96,6 +99,11 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         return occurrences;
     }
     public static String chatbot(String question, String origionalQuestion) throws Exception {
+        if(false)//if(!WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.DELIMITER.equals("<92j8q9g93sajd9f8jqa9pf8j>"))
+        {
+            return "Either you are not giving me a lot to go on, or I don't have any info on this. Perhaps you can provide me with more detail?\n\n"
+                    + WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(question,origionalQuestion);
+        }
         String redoQuestion = question;
         String redoOriginalQuestion = origionalQuestion;
         //System.exit(-100);
@@ -149,53 +157,10 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         System.out.println("new string = " + output);
         question = output;
 
-        boolean isUserAskingAQustion = false;
-        if (!(!question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("how ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("do ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("am ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("i am")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("are ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("can ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("why ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("who ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("what ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("if ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("would ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("could ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("will ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("when ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("is ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("was ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("which ")
-                //&&!question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]","").trim().startsWith("he ")
-                //&&!question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]","").trim().startsWith("she ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("did ")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s]+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does ")
 
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("how's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("do's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").replaceAll("\\[.*?\\]", "").trim().startsWith("does's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("can's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("why's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("who's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("what's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("won't")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("wouldn't")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("couldn't")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("where's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("when's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("is's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("which's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("he's")
-                && !question.toLowerCase().replaceAll("[^\\w^\\s^']+", "").replaceAll("\\[.*?\\]", "").trim().startsWith("she's")
-        )) {
-            isUserAskingAQustion = true;
-        }
         PrintStream c = System.out;
         String query = question;//.toLowerCase().replace("known as","");
-        ExecutorService es = Executors.newCachedThreadPool();
+
         final String finalQuery = query;
 
 
@@ -205,22 +170,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
             query = question;
         }
         System.out.println("query>>> " + query);
-        //System.exit(-1);
-        /*JFrame frame = new JFrame("ProgressBarDemo");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //Create and set up the content pane.
-        ProgressBarDemo newContentPane = new ProgressBarDemo();
-        newContentPane.setOpaque(true); //content panes must be opaque
-        frame.setContentPane(newContentPane);
-
-        //Display the window.
-        frame.pack();
-        frame.setVisible(true);
-        newContentPane.progressBar.setMinimum(0);
-        newContentPane.progressBar.setMaximum(100);
-        newContentPane.progressBar.setValue(3);
-        */
         PrintStream dummyStream = new PrintStream(new OutputStream() {
             public void write(int b) {
                 //NO-OP
@@ -228,9 +178,10 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         });
         ComparePhrases.keyWords.clear();
         ComparePhrases.keyWordsVerbOrAdjective.clear();
-
+        System.setOut(MainGUI.originalStream);
         String[] keyWordsArrayNouns = FindKeyWordsTest.getNouns(question).toLowerCase().split("[^\\w]+");
         String[] keyWordsArrayVerbOrAdjective = FindKeyWordsTest.getVerbOrAdjective(question).toLowerCase().split("[^\\w]+");
+        System.setOut(dummyStream);
         ComparePhrases.keyWords = new HashSet<>(Arrays.asList(keyWordsArrayNouns));
         ComparePhrases.keyWordsVerbOrAdjective = new HashSet<>(Arrays.asList(keyWordsArrayVerbOrAdjective));
         //String allText = FileUtils.readFileToString(result, "utf-8").toLowerCase();
@@ -303,310 +254,212 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         long origionalFreeMemory = Runtime.getRuntime().freeMemory();
         boolean shouldCollect  =true;
         int prevValue = 0;
-        for (File result : listOfFiles) {
-            try {
-                //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
-                if (result.getName().toLowerCase().endsWith(".txt")
-                        && !result.getName().toLowerCase().startsWith(".")
-                        && !(Paths.get(statementsFileName).equals(result.toPath()))
-                        ) {
-                    /*if((newContentPane.progressBar.getValue()-prevValue)>5
-                            && newContentPane.progressBar.getValue()>40)
-                    {
-                        shouldCollect = true;
-                        prevValue = newContentPane.progressBar.getValue();
-                    }
-                    */
-                    if(shouldCollect) {
-                        double bytes = result.length();
-                        double kilobytes = (bytes / 1024);
-                        double megabytes = (kilobytes / 1024);
-                        double gigabytes = (megabytes / 1024);
-                        double terabytes = (gigabytes / 1024);
-                        double petabytes = (terabytes / 1024);
-                        double exabytes = (petabytes / 1024);
-                        double zettabytes = (exabytes / 1024);
-                        double yottabytes = (zettabytes / 1024);
-                        System.setOut(MainGUI.originalStream);
-                        System.out.println("you lost: "+(origionalFreeMemory - Runtime.getRuntime().freeMemory())
-                                +", From: "+kilobytes);
-                        System.setOut(dummyStream);
-                        System.gc();
-                        shouldCollect = false;
-
-                    }
-                        /*String allText = FileUtils.readFileToString(result, "utf-8").toLowerCase();
-                    ComparePhrases.textSize = allText.split("[^\\w]+").length;
-                    System.out.println(ComparePhrases.keyWordUniqueness);
-                    ArrayList<String> wordArray = new ArrayList<>(
-                            Arrays.asList(allText.split("[^\\w]+"))
-                    );
-                    ComparePhrases.mostcommon = ComparePhrases.mostCommonWordsList(wordArray, HOW_MANY_IN_THE_TOP_X);
-                    ComparePhrases.synMap = testWordnet.getSynonymMap(question);//new HashMap<String,HashSet<String>>();//
-                    ComparePhrases.synMap.clear();
-                    for (String keyword : ComparePhrases.keyWords)
-                        if (!ComparePhrases.mostcommon.matches(".*?\\b"+keyWord.toLowerCase()+".*?")) {
-                            newKeyWordsFullNouns.add(keyword);
-                            String rootWord = LuceneSnowBallTest.getStem(keyword);
-                            if (rootWord.length() > 2) {
-                                newKeyWordsFullNouns.add(keyword);
-                            }
-                        }
-
-
-                    for (String keyword : ComparePhrases.keyWordsVerbOrAdjective)
-                        if (!ComparePhrases.mostcommon.matches(".*?\\b"+keyWord.toLowerCase()+".*?")) {
-                            newKeyWordsFullVerbsOrAdjectives.add(keyword);
-                            String rootWord = LuceneSnowBallTest.getStem(keyword);
-                            if (rootWord.length() > 2) {
-                                newKeyWordsFullVerbsOrAdjectives.add(keyword);
-                            }
-                        }
-                    */
-
-                    int charsize = 0;
-                    newKeyWordsFullNouns = ComparePhrases.keyWords;
-                    newKeyWordsFullVerbsOrAdjectives = ComparePhrases.keyWordsVerbOrAdjective;
-
-                    String biggestText=FileUtils.readFileToString(
-                            result, "utf-8").toLowerCase();
-                    ;//(|mr|ms|mrs)
-                    biggestText = biggestText.toString().toLowerCase().replaceAll("dr\\.", "dr");
-                    biggestText = biggestText.toString().toLowerCase().replaceAll("mr\\.", "mr");
-                    biggestText = biggestText.toString().toLowerCase().replaceAll("ms\\.", "ms");
-                    biggestText = biggestText.toString().toLowerCase().replaceAll("mrs\\.", "mrs");
-                    //String[] sentences = biggestText.split("[\\.\\?!\\n]+");
-
-
-                    HashSet<ParagraphInfo> sentsNouns = new HashSet<>();
-                    HashSet<ParagraphInfo> sentsVerbsOrAdjFinal = new HashSet<>();
-                    HashSet<String> keywordsUsedAsNouns = new HashSet<>();
-
-
-                    String publicationName = result.getName()
-                            .substring(0, result.getName().lastIndexOf("."));
-
-                    for (String y : biggestText.split(DELIMITER)) {
-                        /*
-                            */
-
-                        for (String keyWord : newKeyWordsFullNouns) {
-                            System.out.println(y + "->" + keyWord);
-
-
-                            if (y.toLowerCase().contains(keyWord.toLowerCase())) {
-                                //System.exit(99);
-                                /*if(y.toLowerCase().contains("kind of service firm whose characteristics have distinctive"
-                                        .toLowerCase()))
-                                    System.exit(99);
-                                    */
-                                ParagraphInfo info = new ParagraphInfo(y, publicationName);
-                                sentsNouns.add(info);
-                                keywordsUsedAsNouns.add(keyWord.toLowerCase());
-                                /*System.setOut(MainGUI.originalStream);
-                                System.out.println("noun: " + keyWord.toLowerCase());
-                                System.setOut(dummyStream);
-                                */
-                            }
-                        }
-                    }
-
-                    System.out.println(sentsNouns.size());
-                    newKeyWordsFullVerbsOrAdjectives.remove("");
-                    System.setOut(MainGUI.originalStream);
-                    System.out.println("2tag: "+newKeyWordsFullVerbsOrAdjectives);
-                    System.setOut(dummyStream);
-                    if (newKeyWordsFullVerbsOrAdjectives.size() > 0)
-                        for (ParagraphInfo info : sentsNouns) {//what length should my line be
-                            String y = info.getText();
-
-                            for (String keyWord : newKeyWordsFullVerbsOrAdjectives) {
-                                /*if(y.toLowerCase().contains("kind of service firm whose characteristics have distinctive"
-                                        .toLowerCase())
-                                        && "kind of service firm whose characteristics have distinctive".matches(".*?"+keyWord.toLowerCase()+".*?")
-                                        &&y.toLowerCase().matches(".*?"+keyWord.toLowerCase()+".*?"))
-                                {
-                                    System.setOut(MainGUI.originalStream);
-                                    System.out.println("3tag: "+y.toLowerCase());
-                                    System.setOut(dummyStream);
-                                    System.exit(99);
-                                }
-                                */
-                                System.out.println(y + "->" + keyWord);
-                                if (y.toLowerCase().contains(keyWord.toLowerCase())) {
-
-                                    sentsVerbsOrAdjFinal.add(info);
-                                    /*System.setOut(MainGUI.originalStream);
-                                    System.out.println("verb: " + keyWord.toLowerCase());
-                                    System.setOut(dummyStream);
-                                    */
-                                }
-                            }
-                        }
-                    else
-                        for (String y : biggestText.split(DELIMITER)) {
-                            int count = 0;
-                            for (String keyWord : newKeyWordsFullNouns) {
-                                System.out.println(y + "->" + keyWord);
-                                if (y.toLowerCase().matches(".*?\\b"+keyWord.toLowerCase()+".*?")) {
-                                    count++;
-                                }
-                            }
-                            if (count > 1) {
-                                ParagraphInfo info = new ParagraphInfo(y, result.getName()
-                                        .substring(0, result.getName().lastIndexOf(".")));
-                                sentsVerbsOrAdjFinal.add(info);
-                            }
-                        }
-                    int prevSize = sentsVerbsOrAdjFinal.size();
-
-                    totalFinalfinalSetOfWords.addAll(sentsVerbsOrAdjFinal);
-                }
-            }catch(Exception exception)
-            {
-                exception.printStackTrace();
-            }
-
+        final int NUM_OF_CORES2 = 8;
+        ArrayList<File> ResultsToArrayList2 =
+                new ArrayList<>(Arrays.asList(listOfFiles));
+        int totalNests2 = ResultsToArrayList2.size();
+        int step2 = totalNests2 / NUM_OF_CORES2;
+        ArrayList<HashSet<File>> newstedListInception2 = new ArrayList<>();
+        for(int i =0;i<NUM_OF_CORES2;i++)
+        {
+            newstedListInception2.add( new HashSet<>(ResultsToArrayList2.subList(step2 * i, step2 * (i+1))));
         }
+        ExecutorService es2 = Executors.newCachedThreadPool();
+        Thread[] threads2 = new Thread[NUM_OF_CORES2];
+
+
+        for (int i =0;i<NUM_OF_CORES2;i++) {
+            HashSet<File> newstedList  = newstedListInception2.get(i);
+            String finalQuery1 = query;
+
+
+            threads2[i] = new Thread() {
+                public void run() {
+                    totalFinalfinalSetOfWords.addAll(asfd(newstedList,dummyStream));
+                }
+            };
+            es2.execute(threads2[i]);
+        }
+        es2.shutdown();
+        boolean finshed2 = es2.awaitTermination(10, TimeUnit.MINUTES);
+
+        if(finshed2) {
+
 
         /*String test= "";
         for(ParagraphInfo para : totalFinalfinalSetOfWords)
          test+= para.getText()+"\n---------------------------------------\n";
         return test;
         */
-        boolean isNew = false;
-        //newContentPane.progressBar.setMinimum(0);
-        //newContentPane.progressBar.setMaximum(100);
-        //newContentPane.progressBar.setValue(3);
-        int bookNumber = 0;
-        ArrayList<TreeMap<Double, HashSet<AnswerPair>>> answerTree = new ArrayList<>();
-        for (ParagraphInfo bigtextInfo : totalFinalfinalSetOfWords) {
-                String bigtext = bigtextInfo.getText();
-                //newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalFinalfinalSetOfWords.size())));
-                for (String paraBig : bigtext.split(DELIMITER))
-                    for (String para : paraBig.split("[\\.\\?!]+")) {
-                        String resultMeaningless = Integer.toString(1);
+            boolean isNew = false;
+            //newContentPane.progressBar.setMinimum(0);
+            //newContentPane.progressBar.setMaximum(100);
+            //newContentPane.progressBar.setValue(3);
+            int bookNumber = 0;
+            final int NUM_OF_CORES = 8;
+            ArrayList<ParagraphInfo> ResultsToArrayList =
+                    new ArrayList<>(totalFinalfinalSetOfWords);
+            int totalNests = ResultsToArrayList.size();
+            int step = totalNests / NUM_OF_CORES;
+            ArrayList<HashSet<ParagraphInfo>> newstedListInception = new ArrayList<>();
+            for (int i = 0; i < NUM_OF_CORES; i++) {
+                newstedListInception.add(new HashSet<>(ResultsToArrayList.subList(step * i, step * (i + 1))));
+            }
+
+            Thread[] threads = new Thread[NUM_OF_CORES];
+            //().start();
+            ExecutorService es = Executors.newCachedThreadPool();
+            for (int i = 0; i < NUM_OF_CORES; i++) {
+                HashSet<ParagraphInfo> newstedList = newstedListInception.get(i);
+                String finalQuery1 = query;
 
 
-                        double compare = 0;
-                        ArrayList<String> total = new ArrayList<>();
-                        int targetWordCount = 10;
-                        int currentWordCount = 0;
-                        String targetString = new String();
-                        for (String sentence : para.split("\\s+")) {
-                            targetString += sentence + " ";
-                            if (currentWordCount++ > targetWordCount || sentence.contains(".")
-                                    || sentence.contains("?")
-                                    || sentence.contains("!")) {
-                                total.add(targetString);
-                                targetString = new String();
-                                currentWordCount = 0;
-                            }
+                threads[i] = new Thread() {
+                    public void run() {
+                        try {
+                            match.putAll(getChat(newstedList, finalQuery1, dummyStream));
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
-                        for (String sample : total) {
-                            double comparex = ComparePhrases.compare2(query, sample);
-                            compare += comparex;
-                            if (comparex > 0)
-                            {
-                                System.setOut(MainGUI.originalStream);
-                                System.out.println("23rt2t3w last res comparex = " + comparex);
-                                System.out.println("23rt2t3w last res compare = " + compare);
-                                System.out.println("23rt2t3w last res LENGTH = " + sample.split("\\s+").length);
-                                System.setOut(dummyStream);
-                            }
-                        }
+                    }
+                };
+                es.execute(threads[i]);
+            }
+            es.shutdown();
+            boolean finshed = es.awaitTermination(10, TimeUnit.MINUTES);
 
 
-                                if (match.containsKey(compare)) {
-                                    HashSet<AnswerPair> dummy = match.get(compare);
-                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                    match.put(compare, dummy);
-
-                                } else {
-                                    HashSet<AnswerPair> dummy = new HashSet<>();
-                                    dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
-                                    match.put(compare, dummy);
-
-                                }
-
-
-
-
-                            }
-
-                            }
+            //System.exit(0);
+            // results.clear();
+            //results.add("https://en.wikipedia.org/wiki/Economics");
+            if(finshed)
+            try {
+                System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
+                System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
+                System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
+                System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
+                System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
+                String speakThis = "";
+                index = 0;
+                String speakfull = new String();
 
 
+                HashSet<AnswerPair> pairs = new HashSet<>();
+                int count = 0;
+                for(Map.Entry<Double,HashSet<AnswerPair>> ans : match.entrySet())
+                    if(ans.getKey() > 0.1)
+                        for(AnswerPair text : ans.getValue())
+                            speakfull += "Answer ("+ans.getKey()+"): "+text.getText() + "\n\n";
+                /*System.setOut(MainGUI.originalStream);
+                System.out.println("frea32g: " + match.firstEntry().getKey());
+                System.setOut(dummyStream);
+                for (AnswerPair curPair : pairs) {
+                    speakfull += curPair.getText() + ". ";
+                    if (curPair.getText().toLowerCase().contains("kind of service firm whose characteristics have distinctive"
+                            .toLowerCase())) {
+                        System.setOut(MainGUI.originalStream);
+                        System.setOut(dummyStream);
+                        System.exit(-99);
+                    }
+                }*/
+
+                speakfull = speakfull.trim();
+                System.out.println("query --> " + query);
+
+                if (match.firstEntry().getKey() < 1.0)
+                    System.out.println("Answer --> " + " I couldn't find anything on that.");
+                else
+                    System.out.println("Answer --> " + speakfull);
+                System.out.println("Overall score --> " + match.firstEntry().getKey());
 
 
-
-        //System.exit(0);
-        // results.clear();
-        //results.add("https://en.wikipedia.org/wiki/Economics");
-        try {
-            System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
-            System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
-            System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
-            System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
-            System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
-            String speakThis = "";
-            index = 0;
-            String speakfull = new String();
-
-
-            HashSet<AnswerPair> pairs = match.firstEntry().getValue();
-            System.setOut(MainGUI.originalStream);
-            System.out.println("frea32g: "+match.firstEntry().getKey());
-            System.setOut(dummyStream);
-            for (AnswerPair curPair : pairs) {
-                speakfull += curPair.getText() + ". ";
-                if(curPair.getText().toLowerCase().contains("kind of service firm whose characteristics have distinctive"
-                        .toLowerCase())) {
-                    System.setOut(MainGUI.originalStream);
-                    System.setOut(dummyStream);
-                    System.exit(-99);
+                System.out.println(ComparePhrases.synMap);
+                if (!statementsFileNameEquals(MainGUI.web) && !statementsFileNameEquals(MainGUI.local)) {
+                    speakfull = ((AnswerPair) match.firstEntry().getValue().toArray()
+                            [new Random().nextInt(
+                            match.firstEntry().getValue().size()
+                    )]).getText();
                 }
+                // TestChatBotMain.answersUsed.add(speakfull.toLowerCase());
+                if (speakfull.isEmpty())
+                    speakfull = "Nothing found";
+                if (match.firstEntry().getKey() < 1.0 && match.firstEntry().getValue().size() < 1)
+                    return " I couldn't find anything on that.";
+
+                else
+                    return speakfull;// +origionalQuestion.toLowerCase().matches(".*?how\\s.*?") +speakfull.replaceAll("\\[.*?\\]","").matches(".*?\\d+.*?");
+
+
+            } catch (Exception l) {
+
+
             }
 
-            speakfull = speakfull.trim();
-            System.out.println("query --> " + query);
-            
-            if (match.firstEntry().getKey() < 1.0)
-                System.out.println("Answer --> " + " I couldn't find anything on that.");
-            else
-                System.out.println("Answer --> " + speakfull);
-            System.out.println("Overall score --> " + match.firstEntry().getKey());
 
 
-            System.out.println(ComparePhrases.synMap);
-            if (!statementsFileNameEquals(MainGUI.web) && !statementsFileNameEquals(MainGUI.local)) {
-                speakfull = ((AnswerPair) match.firstEntry().getValue().toArray()
-                        [new Random().nextInt(
-                        match.firstEntry().getValue().size()
-                )]).getText();
-            }
-            // TestChatBotMain.answersUsed.add(speakfull.toLowerCase());
-            if (speakfull.isEmpty())
-                speakfull = "Nothing found";
-            if (match.firstEntry().getKey() < 1.0 && match.firstEntry().getValue().size() < 1)
-                return " I couldn't find anything on that.";
-
-            else
-                return speakfull;// +origionalQuestion.toLowerCase().matches(".*?how\\s.*?") +speakfull.replaceAll("\\[.*?\\]","").matches(".*?\\d+.*?");
-
-
-        } catch (Exception l) {
-
-
+            //return "Either you are not giving me a lot to go on, or I don't have any info on this. Perhaps you can provide me with more detail?";
+            return "Either you are not giving me a lot to go on, or I don't have any info on this. Perhaps you can provide me with more detail?\n\n"
+                    + WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(redoQuestion, redoOriginalQuestion);
         }
-
-
-        return "Either you are not giving me a lot to go on, or I don't have any info on this. Perhaps you can provide me with more detail?";
-        //return WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbot(redoQuestion,redoOriginalQuestion);
-
+        return "wrong";
     }
 
+    public static TreeMap<Double, HashSet<AnswerPair>> getChat(HashSet<ParagraphInfo> totalFinalfinalSetOfWords,String query, PrintStream dummyStream) throws IOException {
+        TreeMap<Double, HashSet<AnswerPair>> match = new TreeMap<>(Collections.reverseOrder());
 
+        for (ParagraphInfo bigtextInfo : totalFinalfinalSetOfWords) {
+            String bigtext = bigtextInfo.getText();
+            //newContentPane.progressBar.setValue((int) (100.0 * (((double) bookNumber++) / (double) totalFinalfinalSetOfWords.size())));
+            for (String paraBig : bigtext.split(DELIMITER))
+                for (String para : paraBig.split("[\\.\\?!]+")) {
+                    String resultMeaningless = Integer.toString(1);
+
+
+                    double compare = 0;
+                    ArrayList<String> total = new ArrayList<>();
+                    int targetWordCount = 10;
+                    int currentWordCount = 0;
+                    String targetString = new String();
+                    for (String sentence : para.split("[\\s\\n]+")) {
+                        targetString += sentence + " ";
+                        if (currentWordCount++ > targetWordCount || sentence.contains(".")
+                                || sentence.contains("?")
+                                || sentence.contains("!")) {
+                            total.add(targetString);
+                            targetString = new String();
+                            currentWordCount = 0;
+                        }
+                    }
+                    for (String sample : total) {
+                        System.setOut(MainGUI.originalStream);
+                        System.out.println("23rt2t3w last res comparex = " + sample.length());
+                        System.out.println("23rt2t3w last res compare = " + compare);
+                        System.out.println("23rt2t3w last res LENGTH = " + totalFinalfinalSetOfWords.size());
+                        System.setOut(dummyStream);
+                        double comparex = ComparePhrases.compare2(query, sample);
+                        compare += comparex;
+
+                    }
+
+
+                    if (match.containsKey(compare)) {
+                        HashSet<AnswerPair> dummy = match.get(compare);
+                        dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                        match.put(compare, dummy);
+
+                    } else {
+                        HashSet<AnswerPair> dummy = new HashSet<>();
+                        dummy.add(new AnswerPair(resultMeaningless, paraBig + " - ( " + bigtextInfo.getPub() + " )" + "\n\n"));
+                        match.put(compare, dummy);
+
+                    }
+
+
+                }
+
+        }
+        return match;
+    }
     public static String start(String input,String origionalQuestion, boolean isQuestioning) throws Exception {
 
         return chatbot(input,origionalQuestion);
@@ -660,6 +513,86 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL {
         return result;
     }
 
+    public static HashSet<ParagraphInfo> asfd( HashSet<File> listOfFiles, PrintStream dummyStream)
+    {
+        HashSet<ParagraphInfo> totalFinalfinalSetOfWords =  new HashSet<>();
+        for (File result : listOfFiles) {
+            try {
+                //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
+                if (result.getName().toLowerCase().endsWith(".txt")
+                        && !result.getName().toLowerCase().startsWith(".")
+                        && !(Paths.get(statementsFileName).equals(result.toPath()))
+                        ) {
 
+
+                    int charsize = 0;
+                    HashSet<String> newKeyWordsFullNouns = ComparePhrases.keyWords;
+                    HashSet<String> newKeyWordsFullVerbsOrAdjectives = ComparePhrases.keyWordsVerbOrAdjective;
+
+                    String biggestText=FileUtils.readFileToString(
+                            result, "utf-8").toLowerCase();
+                    ;//(|mr|ms|mrs)
+                    biggestText = biggestText.toString().toLowerCase().replaceAll("dr\\.", "dr");
+                    biggestText = biggestText.toString().toLowerCase().replaceAll("mr\\.", "mr");
+                    biggestText = biggestText.toString().toLowerCase().replaceAll("ms\\.", "ms");
+                    biggestText = biggestText.toString().toLowerCase().replaceAll("mrs\\.", "mrs");
+                    //String[] sentences = biggestText.split("[\\.\\?!\\n]+");
+
+
+                    HashSet<ParagraphInfo> sentsNouns = new HashSet<>();
+                    HashSet<ParagraphInfo> sentsVerbsOrAdjFinal = new HashSet<>();
+                    HashSet<String> keywordsUsedAsNouns = new HashSet<>();
+
+
+                    String publicationName = result.getName()
+                            .substring(0, result.getName().lastIndexOf("."));
+
+                    for (String y : biggestText.split(DELIMITER)) {
+                        /*
+                            */
+
+                        for (String keyWord : newKeyWordsFullNouns) {
+                            System.out.println(y + "->" + keyWord);
+
+
+                            if (y.toLowerCase().contains(keyWord.toLowerCase())) {
+
+                                ParagraphInfo info = new ParagraphInfo(y, publicationName);
+                                sentsNouns.add(info);
+                                keywordsUsedAsNouns.add(keyWord.toLowerCase());
+
+                            }
+                        }
+                    }
+
+                    System.out.println(sentsNouns.size());
+                    newKeyWordsFullVerbsOrAdjectives.remove("");
+                    System.setOut(MainGUI.originalStream);
+                    System.out.println("2tag: "+newKeyWordsFullVerbsOrAdjectives);
+                    System.setOut(dummyStream);
+                    if (newKeyWordsFullVerbsOrAdjectives.size() > 0)
+                        for (ParagraphInfo info : sentsNouns) {//what length should my line be
+                            String y = info.getText();
+
+                            for (String keyWord : newKeyWordsFullVerbsOrAdjectives) {
+
+                                System.out.println(y + "->" + keyWord);
+                                if (y.toLowerCase().contains(keyWord.toLowerCase())) {
+
+                                    sentsVerbsOrAdjFinal.add(info);
+
+                                }
+                            }
+                        }
+                    totalFinalfinalSetOfWords.addAll(sentsVerbsOrAdjFinal);
+                }
+            }catch(Exception exception)
+            {
+                exception.printStackTrace();
+            }
+
+        }
+        return totalFinalfinalSetOfWords;
+    }
 }
 
