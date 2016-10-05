@@ -472,7 +472,7 @@ public class FindKeyWordsTest {
                 adjective.add(partOfSpeech);
                 System.out.println("adjective = " + partOfSpeech);
             }
-            else if(tag.contains("vbg") && !tag.contains("VBZ".toLowerCase())
+            else if(tag.contains("vb") && !tag.contains("VBZ".toLowerCase())
                     &&!partOfSpeech.toLowerCase().equals("i")
                     &&!partOfSpeech.toLowerCase().equals("you")
                     &&!partOfSpeech.toLowerCase().equals("your")
