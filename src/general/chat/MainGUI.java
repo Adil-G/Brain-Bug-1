@@ -2,9 +2,6 @@ package general.chat; /**
  * Created by corpi on 2016-07-09.
  */
 
-import general.TestChatBotMain;
-import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

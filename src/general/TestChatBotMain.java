@@ -1,7 +1,10 @@
 package general;
 
 import general.chat.MainGUI;
-import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL;
+import general.graph.theory.Message;
+import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -143,8 +146,8 @@ public class TestChatBotMain {
                 output += word + " ";
             }
             System.out.println("new string = " + output);
-            if (!WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsFileNameEquals(MainGUI.web)
-                    &&!WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsFileNameEquals(MainGUI.local))
+            if (!WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsFileNameEquals(MainGUI.web)
+                    &&!WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsFileNameEquals(MainGUI.local))
                 if (isUserAskingAQustion) {
                     writeFile1(output);
                     //writeFile1(originalInput);
@@ -152,14 +155,22 @@ public class TestChatBotMain {
                     writeFile1(output);
 
             System.out.println("faf3ggh: " + query);
-            return WikipediaInfoBoxModel2OldJune14_PERSONAL.start(query, originalInput, false);
+            Message finalAnswers = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(query, originalInput);
+            JSONObject obj = new JSONObject();
+            JSONArray arr = new JSONArray();
+            for(String message : finalAnswers.getAnswers())
+            {
+                arr.add(message);
+            }
+            obj.put(finalAnswers.getMessage(),arr);
+            return obj.toJSONString();//;
             //return query;
         }
         return "HPE Haven Timeout";
     }
     public static void writeFile1(String input) throws IOException {
         try {
-            Files.write(Paths.get(WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsFileName),
+            Files.write(Paths.get(WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsFileName),
                     (input+"\n").getBytes(), StandardOpenOption.APPEND);
         }catch (IOException e) {
             //exception handling left as an exercise for the reader

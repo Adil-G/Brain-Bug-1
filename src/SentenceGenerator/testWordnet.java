@@ -1,7 +1,7 @@
 package SentenceGenerator;
 
 import general.LuceneSnowBallTest;
-import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL;
+import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB;
 import org.apache.lucene.wordnet.SynonymMap;
 
 import java.io.FileInputStream;
@@ -17,7 +17,7 @@ public class testWordnet {
     public static SynonymMap map;
     public static void main(String[] args) throws Exception {
         String[] words = new String[] { "birthplace", "forest", "wolfish"};
-        SynonymMap map = new SynonymMap(new FileInputStream(WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsDirectoryName
+        SynonymMap map = new SynonymMap(new FileInputStream(WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsDirectoryName
                 +"wn_s.pl"));
 
         for (int i = 0; i < words.length; i++) {
@@ -27,7 +27,7 @@ public class testWordnet {
 
     }
     public static void synonymsInit() throws IOException {
-        map = new SynonymMap(new FileInputStream(WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsDirectoryName
+        map = new SynonymMap(new FileInputStream(WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsDirectoryName
                 +"wn_s.pl"));
 
     }

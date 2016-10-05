@@ -10,6 +10,7 @@ import general.graph.theory.Vertex;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -111,7 +112,7 @@ public class ComparePhrases {
     public static ArrayList<String> mostcommon = new ArrayList<>();
     public static HashMap<String, HashSet<String>> synMap = new HashMap();
     public static final int EDGE_LENGTH =100 ;
-    public static final int CREATION_EDGE_LENGTH =2 ;
+    public static final int CREATION_EDGE_LENGTH =100 ;
     public static final HashSet<String> globalUsedWords = new HashSet<>();
     public static double compare2(String phrase0,String phrase1) throws IOException {
         globalUsedWords.clear();
@@ -276,5 +277,68 @@ public class ComparePhrases {
         return outcome;
     }
 
+    public static ArrayList<String> rankAnswers(String query, HashSet<String> unsortedParagraphs, HashSet<String> keyWords)
+    {
+        TreeMap<Double, HashSet<String>> sorted = new TreeMap<>();
+
+        for(String paragraph : unsortedParagraphs)
+        {
+            double score = Math.abs(computeParagraph(paragraph,keyWords) - computeParagraph(query,keyWords));
+            if(sorted.containsKey(score))
+            {
+                HashSet<String> set = sorted.get(score);
+                set.add(paragraph);
+                sorted.put(score,set);
+            }
+            else
+            {
+                HashSet<String> set = new HashSet<>();
+                set.add(paragraph);
+                sorted.put(score,set);
+            }
+        }
+        ArrayList<String> sortedList = new ArrayList<>();
+        for(Map.Entry<Double,HashSet<String>> entry : sorted.entrySet())
+        {
+            for(String para : entry.getValue())
+                sortedList.add(para);
+        }
+        return  sortedList;
+    }
+    public static double computeParagraph(String paragraph, HashSet<String> keyWords)
+    {
+        HashSet<Integer> inteciesOfKeyWords = new HashSet<>();
+        for(String word : keyWords)
+        {
+            int index = paragraph.toLowerCase().indexOf(word.toLowerCase());
+            inteciesOfKeyWords.add(index);
+        }
+        int total = 0;
+        for(int index : inteciesOfKeyWords)
+        {
+            total += index;
+        }
+        double average = (double) total / (double) inteciesOfKeyWords.size();
+
+        double distanceFromAverage = 0.0;
+        for(int index : inteciesOfKeyWords)
+        {
+            distanceFromAverage += Math.abs(index - average);
+        }
+        double secondAvg = distanceFromAverage / (double) inteciesOfKeyWords.size();
+        HashSet<Integer> secodnInteciesOfKeyWords = new HashSet<>();
+        for(int index : inteciesOfKeyWords)
+        {
+            double distance = Math.abs(index - secondAvg);
+            if(distance < secondAvg)
+                secodnInteciesOfKeyWords.add(index);
+        }
+        double secondDistanceFromAverage = 0.0;
+        for(int index : inteciesOfKeyWords)
+        {
+            secondDistanceFromAverage += Math.abs(index - secondAvg);
+        }
+        return secondDistanceFromAverage;
+    }
 
 }

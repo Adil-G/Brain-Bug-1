@@ -1,7 +1,6 @@
 package general.chat;
 
 import general.TestChatBotMain;
-import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB;
 
 import java.io.File;
@@ -27,13 +26,13 @@ public class TestChatBot {
     }
     public static String getAnswerWithGUI(String question) throws Exception {
         // hard coded
-        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\funny_quoats\\local.txt");
+        /*File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\bell\\local.txt");
 
         //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\donald_trump_tweets\\local.txt");
         WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";//File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\pakalupapito\\local.txt");
-        WikipediaInfoBoxModel2OldJune14_PERSONAL.DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";//File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\pakalupapito\\local.txt");
-
-        //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\local.txt");
+        WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";//File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\pakalupapito\\local.txt");
+*/
+        File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\local.txt");
         //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\elepahnts\\local.txt");
 
         // user input
@@ -50,9 +49,9 @@ public class TestChatBot {
                     file.getAbsolutePath().lastIndexOf('/') + 1);
             String directory = file.getAbsolutePath().substring(
                     0, file.getAbsolutePath().lastIndexOf('/') + 1);
-            WikipediaInfoBoxModel2OldJune14_PERSONAL.dataDirectoryName = directory;
+            WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.dataDirectoryName = directory;
             local = name;
-            WikipediaInfoBoxModel2OldJune14_PERSONAL.changeStatementsFileName(directory,name,openNLPDir);
+            WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.changeStatementsFileName(directory,name,openNLPDir);
 
             // Give Q and A
             PrintStream dummyStream    = new PrintStream(new OutputStream(){

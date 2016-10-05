@@ -2,7 +2,7 @@ package general;
 
 import com.knowledgebooks.nlp.ExtractNames;
 import com.knowledgebooks.nlp.util.ScoredList;
-import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL;
+import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB;
 import opennlp.tools.cmdline.PerformanceMonitor;
 import opennlp.tools.namefind.NameFinderME;
 import opennlp.tools.namefind.TokenNameFinderModel;
@@ -24,7 +24,7 @@ import java.util.Arrays;
 public class FindKeyWordsTest {
     public static ArrayList<String> findName(String input) throws IOException {
         InputStream is = new FileInputStream(
-                WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsDirectoryName+"en-ner-person.bin");
+                WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsDirectoryName+"en-ner-person.bin");
 
         TokenNameFinderModel model = new TokenNameFinderModel(is);
         is.close();
@@ -68,7 +68,7 @@ public class FindKeyWordsTest {
         /*POSModel model = new POSModelLoader()
                 .load(new File(WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsDirectoryName+"en-pos-maxent.bin"));
                 */
-        POSModel model = new POSModel(new FileInputStream(WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsDirectoryName+"en-pos-maxent.bin")
+        POSModel model = new POSModel(new FileInputStream(WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsDirectoryName+"en-pos-maxent.bin")
         );
         PerformanceMonitor perfMon = new PerformanceMonitor(System.err, "sent");
         POSTaggerME tagger = new POSTaggerME(model);
@@ -141,7 +141,7 @@ public class FindKeyWordsTest {
             {
                 // This is an VERB
                 verb.add(partOfSpeech);
-                System.out.println("verb = " + partOfSpeech);
+                //System.out.println("verb = " + partOfSpeech);
             }
         }
         //ArrayList<String> names = findName(raw);
@@ -357,7 +357,14 @@ public class FindKeyWordsTest {
                 noun.add(partOfSpeech);
                 System.out.println("regular noun = " + partOfSpeech);
             }
-            else if (tag.contains("n") && tag.contains("p"))
+            else if (tag.contains("n") && tag.contains("p")
+                    &&!partOfSpeech.toLowerCase().equals("i")
+                    &&!partOfSpeech.toLowerCase().equals("you")
+                    &&!partOfSpeech.toLowerCase().equals("your")
+                    &&!partOfSpeech.toLowerCase().equals("am")
+                    &&!partOfSpeech.toLowerCase().equals("are")
+                    &&!partOfSpeech.toLowerCase().equals("my")
+                    &&!partOfSpeech.toLowerCase().equals("me"))
             {
                 // this is a proper noun WITH THE NAME ID e.g. Japan
                 nnp.add(partOfSpeech);
@@ -388,13 +395,11 @@ public class FindKeyWordsTest {
                 adjective.add(partOfSpeech);
                 System.out.println("adjective = " + partOfSpeech);
             }
-            else if(tag.contains("vb") && !tag.contains("VBZ".toLowerCase())
-                //&& !tag.contains("VBP".toLowerCase())
-                    &&!tag.contains("VBD".toLowerCase()))
+            else if(tag.contains("vbg"))
             {
                 // This is an VERB
                 verb.add(partOfSpeech);
-                System.out.println("verb = " + partOfSpeech);
+                //System.out.println("verb = " + partOfSpeech);
             }
         }
         //ArrayList<String> names = findName(raw);
@@ -467,7 +472,7 @@ public class FindKeyWordsTest {
                 adjective.add(partOfSpeech);
                 System.out.println("adjective = " + partOfSpeech);
             }
-            else if(tag.contains("vb") && !tag.contains("VBZ".toLowerCase())
+            else if(tag.contains("vbg") && !tag.contains("VBZ".toLowerCase())
                     &&!partOfSpeech.toLowerCase().equals("i")
                     &&!partOfSpeech.toLowerCase().equals("you")
                     &&!partOfSpeech.toLowerCase().equals("your")
@@ -475,7 +480,7 @@ public class FindKeyWordsTest {
                     &&!partOfSpeech.toLowerCase().equals("are")
                     &&!partOfSpeech.toLowerCase().equals("my")
                     &&!partOfSpeech.toLowerCase().equals("me")
-                    //&& !tag.contains("VBP".toLowerCase())
+                    && !tag.contains("VBP".toLowerCase())
                     &&!tag.contains("VBD".toLowerCase()))
             {
                 // This is an VERB
