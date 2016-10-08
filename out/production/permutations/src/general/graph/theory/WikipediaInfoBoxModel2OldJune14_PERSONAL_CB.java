@@ -84,24 +84,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
     private static String removeLastChar(String str) {
         return str.substring(0,str.length()-1);
     }
-    /**
-     * Returns the number of appearances that a string have on another string.
-     *
-     * @param source    a string to use as source of the match
-     * @param sentence  a string that is a substring of source
-     * @return the number of occurrences of sentence on source
-     */
-    public static int numberOfOccurrences(String source, String sentence) {
-        int occurrences = 0;
 
-        if (source.contains(sentence)) {
-            int withSentenceLength    = source.length();
-            int withoutSentenceLength = source.replace(sentence, "").length();
-            occurrences = (withSentenceLength - withoutSentenceLength) / sentence.length();
-        }
-
-        return occurrences;
-    }
     public static general.graph.theory.Message chatbotTypeSept11(String question, String origionalQuestion) throws Exception {
         String newQuestion = new String();
         for(String part :Parse(question))
@@ -186,11 +169,6 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         ComparePhrases.keyWords = new HashSet<>(Arrays.asList(keyWordsArrayNouns));
         ComparePhrases.keyWordsVerbOrAdjective = new HashSet<>(Arrays.asList(keyWordsArrayVerbOrAdjective));
         //String allText = FileUtils.readFileToString(result, "utf-8").toLowerCase();
-        System.setOut(MainGUI.originalStream);
-        System.out.println("should be 0: " + (ComparePhrases.keyWords.size() - keyWordsArrayNouns.length
-                + ComparePhrases.keyWordsVerbOrAdjective.size() - keyWordsArrayVerbOrAdjective.length));
-        System.out.println("real numbers = " + ComparePhrases.keyWords.size() + ", " + ComparePhrases.keyWordsVerbOrAdjective.size());
-        System.setOut(dummyStream);
         ComparePhrases.keyWordUniqueness.clear();
         /*for (String word : ComparePhrases.keyWords) {
             try {
@@ -208,54 +186,50 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             }
         }
         */
-        HashSet<String> newKeyWordsNouns = new HashSet<>();
-        HashSet<String> newKeyWordsVerbsOrAdjectives = new HashSet<>();
+        HashSet<String[]> newKeyWordsNouns = new HashSet<>();
+        HashSet<String[]> newKeyWordsVerbsOrAdjectives = new HashSet<>();
         // NOuns
-        HashSet<String> newKeyWordsFullNouns = new HashSet<>();
-        HashSet<String> newKeyWordsFullVerbsOrAdjectives = new HashSet<>();
+        HashSet<String[]> newKeyWordsFullNouns = new HashSet<>();
+        HashSet<String[]> newKeyWordsFullVerbsOrAdjectives = new HashSet<>();
         for (String keyword : ComparePhrases.keyWords) {
             // find the root word
             String rootWord = LuceneSnowBallTest.getStem(keyword);
             // Check if root word of key word is an ACTUAL WORD
-            if (rootWord.length() > 2)
+            if (rootWord.length() > 2 && !(rootWord.isEmpty())&&!(keyword.isEmpty())) {//
                 // add the root word
-                newKeyWordsNouns.add(rootWord);
-            else
+                newKeyWordsNouns.add(new String[]{rootWord,keyword});
+            }
+            else if (!(keyword.isEmpty())){//
                 // no, add the key word
-                newKeyWordsNouns.add(keyword);
+                newKeyWordsNouns.add(new String[]{keyword,keyword});
+            }
         }
         // adjectives
         for (String keyword : ComparePhrases.keyWordsVerbOrAdjective) {
             // find the root word
             String rootWord = LuceneSnowBallTest.getStem(keyword);
             // Check if root word of key word is an ACTUAL WORD
-            if (rootWord.length() > 2)
+            if (rootWord.length() > 2&& !(rootWord.isEmpty())&&!(keyword.isEmpty())) {//
                 // add the root word
-                newKeyWordsVerbsOrAdjectives.add(rootWord);
-            else
+                newKeyWordsVerbsOrAdjectives.add(new String[]{rootWord,keyword});
+            }
+            else if (!(keyword.isEmpty())){//
                 // no, add the key word
-                newKeyWordsVerbsOrAdjectives.add(keyword);
+                newKeyWordsVerbsOrAdjectives.add(new String[]{keyword,keyword});
+            }
         }
 
-        ComparePhrases.keyWords = newKeyWordsNouns;
-        ComparePhrases.keyWordsVerbOrAdjective = newKeyWordsVerbsOrAdjectives;
-        System.setOut(MainGUI.originalStream);
-        System.out.println("Again should be 0: " + (ComparePhrases.keyWords.size() - keyWordsArrayNouns.length
-                + ComparePhrases.keyWordsVerbOrAdjective.size() - keyWordsArrayVerbOrAdjective.length));
-        System.out.println("Again real numbers = " + ComparePhrases.keyWords.size() + ", " + ComparePhrases.keyWordsVerbOrAdjective.size());
-        System.setOut(dummyStream);
         ArrayList<HashSet<ParagraphInfo>> totalListOfTrees = new ArrayList<>();
-        HashSet<ParagraphInfo> totalFinalfinalSetOfWords = new HashSet<>();
         TreeMap<Integer, HashSet<ParagraphInfo>> totalFinalfinalSetOfWordsTree = new TreeMap<>(Collections.reverseOrder());
-        HashSet<String> match = new HashSet<String>();
+        ArrayList<String> match = new ArrayList<String>();
         File[] listOfFiles = Paths.get(statementsFileName).getParent().toFile().listFiles();
         int index = 0;
 
         long origionalFreeMemory = Runtime.getRuntime().freeMemory();
         boolean shouldCollect = true;
         int prevValue = 0;
-        newKeyWordsFullNouns = ComparePhrases.keyWords;
-        newKeyWordsFullNouns.addAll(ComparePhrases.keyWordsVerbOrAdjective);
+        newKeyWordsFullNouns = newKeyWordsNouns;
+        newKeyWordsFullNouns.addAll(newKeyWordsVerbsOrAdjectives);
         for (File result : listOfFiles) {
             try {
                 //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
@@ -279,28 +253,83 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
 
                     String publicationName = result.getName()
                             .substring(0, result.getName().lastIndexOf("."));
-
+                    int parNum = 0;
                     for (String y : biggestText.split(DELIMITER)) {
                         /*
                             */
+                        parNum++;
                         HashSet<String> usedKeywords = new HashSet<>();
                         int keyWordCount = 0;
-                        for (String keyWord : newKeyWordsFullNouns) {
-                            System.out.println(y + "->" + keyWord);
+                        int exactKeyWordCount = 0;
+                        System.setOut(MainGUI.originalStream);
+
+                        for (String[] keyWord : newKeyWordsFullNouns) {
+                            //System.out.println(y + "->" + keyWord);
+
+                            /*if(keyWord[0].isEmpty() || keyWord[1].isEmpty())
+                                continue;
+                                */
+                            //keyWordCount++;
+                            // Ask this:
+                            //what is the meaning of life
+                            /*String stringToSearch = y.toLowerCase();
+
+                            Pattern p0 = Pattern.compile(".*?\\b"+keyWord[0].toLowerCase()+".*?");   // the pattern to search for
+                            Matcher m0 = p0.matcher(stringToSearch);
+
+                            Pattern p1 = Pattern.compile(".*?\\b"+keyWord[1].toLowerCase()+".*?");   // the pattern to search for
+                            Matcher m1 = p1.matcher(stringToSearch);
+                            */
+                            // now try to find at least one match
 
 
-                            if (y.toLowerCase().contains(keyWord.toLowerCase())) {
+                            if (//m0.find()||m1.find()
+                                    y.toLowerCase().contains(keyWord[0].toLowerCase())
+                                    ||
+                                            y.toLowerCase().contains(keyWord[1].toLowerCase())
+                                    )
+                            {
 
                                 keyWordCount++;
-                                usedKeywords.add(keyWord.toLowerCase());
+                                usedKeywords.add(keyWord[1]);
+                                //System.out.println(parNum+": ");
+                                /*for(String word : usedKeywords)
+                                    System.out.println(word+", "+keyWordCount);
+                                    */
+
+                            }
+                            if(y.toLowerCase().matches(".*?\\b"+keyWord[1].toLowerCase()+".*?"))
+                            {
+                                exactKeyWordCount += 1;
+                                System.out.println("2f0a9kg0a9k: "+ keyWord[1].toLowerCase());
+                            }
+                            if(y.toLowerCase().matches(".*?\\b"+keyWord[1].toLowerCase()+"\\b.*?"))
+                            {
+                                exactKeyWordCount += 2;
                             }
                         }
 
+                        //keyWordCount = 0;
+                        System.setOut(dummyStream);
                         ParagraphInfo info = new ParagraphInfo(y, publicationName);
-                        if (keyWordCount > clamp(newKeyWordsFullNouns.size()-1,0))
+                        //newKeyWordsFullNouns.size()
+
+                        if (usedKeywords.size() > clamp(newKeyWordsFullNouns.size()-1,0))
                         {
+                            keyWordCount = keyWordCount + exactKeyWordCount;
                             System.setOut(MainGUI.originalStream);
-                            totalFinalfinalSetOfWords.add(info);
+                            if (totalFinalfinalSetOfWordsTree.containsKey(keyWordCount)) {
+                                HashSet<ParagraphInfo> dummy = totalFinalfinalSetOfWordsTree.get(keyWordCount);
+                                dummy.add(info);
+                                totalFinalfinalSetOfWordsTree.put(keyWordCount, dummy);
+
+                            } else {
+                                HashSet<ParagraphInfo> dummy = new HashSet<>();
+                                dummy.add(info);
+                                totalFinalfinalSetOfWordsTree.put(keyWordCount, dummy);
+
+                            }
+                            //totalFinalfinalSetOfWords.add(info);
                             System.out.println("298gj2f keyword count "+info.getText());
                             System.out.println("298gj2f size "+newKeyWordsFullNouns.size());
                             System.out.println("298gj2f"+info.getText());
@@ -365,6 +394,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         //newContentPane.progressBar.setMinimum(0);
         //newContentPane.progressBar.setMaximum(100);
         //newContentPane.progressBar.setValue(3);A
+        /*
         int bookNumber = 0;
         final int NUM_OF_CORES = 8;
         ArrayList<ParagraphInfo> ResultsToArrayList =
@@ -377,21 +407,30 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             newstedListInception.add( new HashSet<>(ResultsToArrayList.subList(step * i, step * (i+1))));
         }
 
+
         Thread[] threads = new Thread[NUM_OF_CORES];
         //().start();
-        ExecutorService es = Executors.newCachedThreadPool();
-        if (true//WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.DELIMITER.equals("<92j8q9g93sajd9f8jqa9pf8j>")
-                //&& totalFinalfinalSetOfWordsTree.firstEntry().getValue().size() < 10000
-                )
-            match.addAll(getchats(totalFinalfinalSetOfWords, query,dummyStream));
+        */
+        //ExecutorService es = Executors.newCachedThreadPool();
 
 
-        es.shutdown();
-        boolean finshed = es.awaitTermination(10, TimeUnit.MINUTES);
 
-        if(finshed) {
+        //System.exit(100);
 
-        if(match.size()<1)
+        match = getchats(totalFinalfinalSetOfWordsTree, query,dummyStream, newKeyWordsFullNouns);
+        System.setOut(MainGUI.originalStream);
+
+        //es.shutdown();
+        //boolean finshed = es.awaitTermination(10, TimeUnit.MINUTES);
+
+        if(true) {
+            if (match.size() >=1) {
+                System.out.println("4313gqa: "+totalFinalfinalSetOfWordsTree.size());
+
+                System.out.println("4313gqa: "+match.size());
+                return new Message(Message.FOUND, match);
+            }
+        else if(match.size()<1)
         {
             HashSet<String> possibleQueries = new HashSet<>();
             if(closestMatchedQueries.size()<1)
@@ -402,12 +441,14 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             {
                 String possibleQuery = new String();
                 HashSet<String> missingKeyWords = new HashSet<>();
-                for (String keywordFromData : newKeyWordsFullNouns) {
+                for (String[] keywordFromData : newKeyWordsFullNouns) {
                     boolean contains = false;
                     for (String keyWordFromParsedQuery : keywordSeti) {
-
-                        if (keyWordFromParsedQuery.toLowerCase().equals(keywordFromData.toLowerCase()))
-                        {// this always gets excecuted for some reason
+                        // does the word from the question match with
+                        // the keyword used in the program
+                        // get the keyword, not the root word
+                        if (keyWordFromParsedQuery.toLowerCase().equals(keywordFromData[1].toLowerCase()))
+                        {
                             contains = true;
                         }
 
@@ -415,7 +456,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                     if(!contains) {
                         System.setOut(MainGUI.originalStream);
                         System.out.println("4ty34g: "+keywordFromData);
-                        missingKeyWords.add(keywordFromData);
+                        missingKeyWords.add(keywordFromData[1]);
                     }
                 }
                 for(String word: query.split("[^\\w^\\d]+"))
@@ -463,54 +504,6 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                 System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
                 System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
                 System.out.println("))))))))))))))))))))))))))))))))))))))))))))))))");
-                String speakThis = "";
-                index = 0;
-                String speakfull = new String();
-
-
-                /* HashSet<String> pairs = match;
-                System.setOut(MainGUI.originalStream);
-                System.out.println("frea32g: " + match);
-                System.setOut(dummyStream);
-                HashSet<String> totalKeyWords = new HashSet<>(ComparePhrases.keyWords);
-                totalKeyWords.addAll(new HashSet<String>(ComparePhrases.keyWordsVerbOrAdjective));
-                ArrayList<String> sortedPairs = ComparePhrases.rankAnswers(query,pairs,totalKeyWords);
-                for (String curPair : sortedPairs) {
-                    speakfull += curPair + ". ";
-
-                }
-                */
-                for (String curPair : match) {
-                    speakfull += curPair + ". ";
-                    /*if (curPair.toLowerCase().contains("kind of service firm whose characteristics have distinctive"
-                            .toLowerCase())) {
-                        System.setOut(MainGUI.originalStream);
-                        System.setOut(dummyStream);
-                        System.exit(-99);
-                    }
-                    */
-                }
-
-                speakfull = speakfull.trim();
-                System.out.println("query --> " + query);
-
-                if (match.size() < 1.0)
-                    System.out.println("Answer --> " + " I couldn't find anything on that.");
-                else
-                    System.out.println("Answer --> " + speakfull);
-                System.out.println("Overall size --> " + match.size());
-
-
-                System.out.println(ComparePhrases.synMap);
-                if (!statementsFileNameEquals(MainGUI.web) && !statementsFileNameEquals(MainGUI.local)) {
-                    speakfull = ((String) match.toArray()
-                            [new Random().nextInt(
-                            match.size()
-                    )]);
-                }
-                // TestChatBotMain.answersUsed.add(speakfull.toLowerCase());
-                if (speakfull.isEmpty())
-                    speakfull = "Nothing found";
                 if (match.size() < 1.0 && match.size() < 1)
                     return new Message(Message.IMPOSSIBLE,new ArrayList<>());
 
@@ -533,12 +526,18 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
 
     }
     public static TreeMap<Integer, HashSet<HashSet<String>>> closestMatchedQueries = new TreeMap<>(Collections.reverseOrder());
-    public static HashSet<String> getchats(HashSet<ParagraphInfo> newstedList, String query, PrintStream dummyStream) throws IOException {
-        HashSet<String> container = new HashSet<>();
+    public static ArrayList<String> getchats(TreeMap<Integer, HashSet<ParagraphInfo>> treeOfAnswers, String query, PrintStream dummyStream
+    ,HashSet<String[]> newKeyWordsFullNouns) throws IOException {
+        ArrayList<String> container = new ArrayList<>();
+        int paragraphCount = 0;
         TreeMap<Double, HashSet<AnswerPair>> match = new TreeMap<>(Collections.reverseOrder());
-        for (ParagraphInfo bigtextInfo : newstedList) {
-            String bigtext = bigtextInfo.getText();
-            container.add(bigtext + " - ( " + bigtextInfo.getPub() + " )" + "\n\n");
+        for ( int score : treeOfAnswers.keySet()) {
+            ArrayList<String> miniContainer = new ArrayList<>();
+            for(ParagraphInfo paragraph : treeOfAnswers.get(score)) {
+                if(paragraphCount++ < 500)
+                    miniContainer.add(paragraph.getText() + " - ( " + paragraph.getPub() + " )" + "\n\n");
+            }
+            container.addAll(ComparePhrases.rankAnswers(query,miniContainer,newKeyWordsFullNouns));
 
         }
         return container;
@@ -546,55 +545,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
 
 
     //in what decade was the first modern crossword puzzle published and oreo cookies are introduced
-    public static String getNouns(String raw) throws IOException {
-        ArrayList<String> rawParsed = FindKeyWordsTest.POSTag2(raw);
-        ArrayList<String> noun = new ArrayList<>();
-        ArrayList<String> adjective = new ArrayList<>();
-        ArrayList<String> nnp = new ArrayList<>();
-        ArrayList<String> properNoun = new ArrayList<>();
-        ArrayList<String> adverb = new ArrayList<>();
-        ArrayList<String> verb = new ArrayList<>();
-        for(String word : rawParsed)
-        {
-            try {
-                String tag = word.substring(word.indexOf('_')).toLowerCase();
-                String partOfSpeech = word.substring(0, word.indexOf('_'));
-                if (tag.contains("n") && !tag.contains("p") && !tag.contains("i")) {
-                    // this is a regular noun
-                    noun.add(partOfSpeech);
-                    System.out.println("regular noun = " + partOfSpeech);
-                } else if (tag.contains("n") && tag.contains("p")) {
-                    // this is a proper noun WITH THE NAME ID e.g. Japan
-                    nnp.add(partOfSpeech);
-                    System.out.println("proper noun = " + partOfSpeech);
-                } else if (!tag.contains("n") && tag.contains("prp")) {
-                    // this is a proper noun WITHOUT ID e.g. I, She, He
-                    properNoun.add(partOfSpeech);
-                    System.out.println("proper noun = " + partOfSpeech);
-                } else if (tag.contains("rb")) {
-                    // This is an ADVERB
-                    adverb.add(partOfSpeech);
-                    System.out.println("adverb = " + partOfSpeech);
-                } else if (tag.contains("jj")) {
-                    // This is an Adjective
-                    adjective.add(partOfSpeech);
-                    System.out.println("adjective = " + partOfSpeech);
-                } else if (tag.contains("vb")) {
-                    // This is an VERB
-                    verb.add(partOfSpeech);
-                    System.out.println("verb = " + partOfSpeech);
-                }
-            }catch (Exception l)
-            {
-                l.printStackTrace();
-            }
-        }
-        String result =  "";
-        for(String x : noun)
-            result += x + " ";
-        result.trim();
-        return result + "\nError!";
-    }
+
     public static float clamp(int val, int min) {
         return Math.max(min, val);
     }

@@ -277,7 +277,7 @@ public class ComparePhrases {
         return outcome;
     }
 
-    public static ArrayList<String> rankAnswers(String query, HashSet<String> unsortedParagraphs, HashSet<String> keyWords)
+    public static ArrayList<String> rankAnswers(String query, ArrayList<String> unsortedParagraphs, HashSet<String[]> keyWords)
     {
         TreeMap<Double, HashSet<String>> sorted = new TreeMap<>();
 
@@ -305,13 +305,15 @@ public class ComparePhrases {
         }
         return  sortedList;
     }
-    public static double computeParagraph(String paragraph, HashSet<String> keyWords)
+    public static double computeParagraph(String paragraph, HashSet<String[]> keyWords)
     {
         HashSet<Integer> inteciesOfKeyWords = new HashSet<>();
-        for(String word : keyWords)
+        for(String[] words : keyWords)
         {
-            int index = paragraph.toLowerCase().indexOf(word.toLowerCase());
-            inteciesOfKeyWords.add(index);
+            for(String word : words) {
+                int index = paragraph.toLowerCase().indexOf(word.toLowerCase());
+                inteciesOfKeyWords.add(index);
+            }
         }
         int total = 0;
         for(int index : inteciesOfKeyWords)
@@ -325,20 +327,8 @@ public class ComparePhrases {
         {
             distanceFromAverage += Math.abs(index - average);
         }
-        double secondAvg = distanceFromAverage / (double) inteciesOfKeyWords.size();
-        HashSet<Integer> secodnInteciesOfKeyWords = new HashSet<>();
-        for(int index : inteciesOfKeyWords)
-        {
-            double distance = Math.abs(index - secondAvg);
-            if(distance < secondAvg)
-                secodnInteciesOfKeyWords.add(index);
-        }
-        double secondDistanceFromAverage = 0.0;
-        for(int index : inteciesOfKeyWords)
-        {
-            secondDistanceFromAverage += Math.abs(index - secondAvg);
-        }
-        return secondDistanceFromAverage;
+
+        return distanceFromAverage;
     }
 
 }
