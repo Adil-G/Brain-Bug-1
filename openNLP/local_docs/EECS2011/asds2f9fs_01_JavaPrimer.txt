@@ -1,0 +1,1055 @@
+<-----Page 0----->EECS 2011
+Fundamentals
+
+of
+
+Data Structures
+Instructor:
+
+Andy Mirzaian
+
+<-----Page 1----->Course Topics
+• Fundamental data structures underlying widely-used algorithms:
+
+ arrays, lists,
+maps, hash tables,
+priority queues,
+search trees,
+graphs
+ and their algorithmic applications
+• Covered in an Object-Oriented context
+• Using the Java Programming Language
+Last Update: Sep 5, 2016
+
+2
+
+<-----Page 2----->Course Outcomes
+By the end of the course,
+students will be familiar with the
+more prevalent data structure
+patterns, and will be able to
+design and implement variations
+on these patterns, and use them
+to solve a broad range of
+real-world problems.
+
+Last Update: Sep 5, 2016
+
+3
+
+<-----Page 3----->Administrivia
+
+click to open the
+course web site
+
+<-----Page 4----->Java Primer: Part 1
+Types, Classes & Operators
+
+<-----Page 5----->Why Java?
+• Java is widely available with large online support.
+• Embraces a full set of modern abstractions.
+
+• Java’s motto:
+
+write-once-run-anywhere.
+
+• Has variety of automatic checks for mistakes in programs,
+especially when used in an IDE, e.g., Eclipse.
+So, it is suitable for learning to program.
+• EECS2011 uses Java but is not a Java course.
+It is an introductory course on data structures.
+Last Update: Sep 5, 2016
+
+6
+
+<-----Page 6----->An Example Program
+
+Last Update: Sep 5, 2016
+
+7
+
+<-----Page 7----->Developing a Java Program
+editor
+
+Universe.java
+compiler
+
+Universe.class
+JVM
+
+“Hello Universe!”
+Last Update: Sep 5, 2016
+
+use any text editor or IDE
+to create your program
+your program (a text file)
+type javac Universe.java
+to compile your program
+byte-code version of your program
+
+type java Universe
+to execute your program
+output
+
+8
+
+<-----Page 8----->An Eclipse view
+
+program
+
+output
+Last Update: Sep 5, 2016
+
+9
+
+<-----Page 9----->Components of a Java Program
+• In Java, executable statements are placed in functions,
+known as methods, that belong to class definitions.
+• The static method named main is the first method to
+be executed when running a Java program.
+• Any set of statements between the braces “{” and “}”
+define a program block.
+
+Last Update: Sep 5, 2016
+
+10
+
+<-----Page 10----->Reserved Words
+
+Last Update: Sep 5, 2016
+
+11
+
+<-----Page 11----->Identifiers
+• An identifier is the name of a class, method, or variable.
+• An identifier cannot be any reserved word.
+• It can be any string of Java letters, beginning with a letter
+( or ‘$’ or ‘_’ ), followed by letters, including digits.
+Examples:
+o
+o
+o
+o
+o
+o
+
+packages:
+Classes:
+Interfaces:
+methods:
+variables:
+CONSTANTS:
+
+Last Update: Sep 5, 2016
+
+org.omg.CORBA , java.lang , eecs2011.assignments
+Name , Math , enum , MyClass , YourClass
+Comparable, Clonable, Iterable
+verb , getValue , isEmpty , equals , clone , toString
+name , counter3 , $testVariable , _testVar
+PI , MAX_INT , ELECTRON_MASS
+
+12
+
+<-----Page 12----->Primitive Types
+• Java has several primitive types, which are basic ways of storing data.
+• An identifier variable can be declared to hold any primitive type and
+it can later be reassigned to hold another value of the same type.
+
+Last Update: Sep 5, 2016
+
+13
+
+<-----Page 13----->Classes and Objects
+Dog
+fields or
+instance variables
+(data)
+methods
+(behavior)
+
+class
+(prototype)
+
+name
+breed
+bark()
+play()
+eat()
+chaseCat()
+instances
+(objects)
+
+Last Update: Sep 5, 2016
+
+14
+
+<-----Page 14----->Classes and Objects
+• Every object is an instance of a class, which serves as the type
+of the object and as a blueprint, defining the data which the
+object stores and the methods for accessing and modifying
+that data.
+The critical members of a class in Java are the following:
+ Instance variables (or fields) represent the data associated with an object of a
+class. Instance variables must have a type, which can either be a primitive type
+(such as int, float, or double) or any class type.
+ Methods in Java are blocks of code that can be called to perform actions.
+Methods can accept parameters as arguments, and their behavior may
+depend on the object upon which they are invoked and the values of any
+parameters that are passed. A method that returns information to the caller
+without changing any instance variables is known as an accessor method,
+while an update method is one that may change one or more instance
+variables when called.
+Last Update: Sep 5, 2016
+
+15
+
+<-----Page 15----->Another Example
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+• This class includes one instance variable, named count,
+with default value of zero, unless otherwise initialized.
+• The class includes 2 special methods known as constructors,
+1 accessor method, and 3 update methods.
+Last Update: Sep 5, 2016
+
+16
+
+<-----Page 16----->Reference Objects
+• Classes are known as reference types in Java, and a
+variable of that type is known as a reference variable.
+• A reference variable 𝑣 can be viewed as a “pointer” to
+some object of its class type.
+• A reference variable is capable of storing the location (i.e.,
+memory address) of an object from the declared class.
+ So we might assign it to reference an existing
+instance or a newly constructed instance.
+ A reference variable can also store a special value
+null that represents the lack of an object.
+
+Last Update: Sep 5, 2016
+
+17
+
+<-----Page 17----->Creating and Using Objects
+• In Java, a new object is created by using the new operator
+followed by a call to a constructor for the desired class.
+• A constructor is a method that always shares the same
+name as its class. The new operator returns a reference to
+the newly created instance; the returned reference is
+typically assigned to an object of that class for further use.
+Example:
+
+Counter c = new Counter(167);
+c
+.
+Counter type
+reference
+
+Last Update: Sep 5, 2016
+
+count
+167
+Counter type object
+18
+
+<-----Page 18----->Continued Example
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+• Here, a new Counter is constructed at line 4, with its reference
+assigned to the variable c. That relies on a form of the constructor,
+Counter( ), that takes no arguments between the parentheses.
+Last Update: Sep 5, 2016
+
+19
+
+<-----Page 19----->The Dot Operator
+• A reference variable name of an object can be used to access
+the members of the object’s class.
+• This access is performed with the dot (“.”) operator.
+• Such access is done by using the object reference variable
+name, followed by the dot operator, followed by the member
+field or member method name and its parameters:
+Examples:
+myObject.field
+myObject.myMethod ( parameters )
+e.increment ( 3 );
+System.out.println ( e.getCount() );
+System.out.println ( e.count );
+Last Update: Sep 5, 2016
+
+// increments Counter e by 3
+// print counter value of Counter e
+// Ooops! count field was private
+20
+
+<-----Page 20----->Wrapper Types
+• There are many data structures and algorithms in
+Java’s libraries that are specifically designed so that
+they only work with object types (not primitives).
+• To get around this obstacle, Java defines a wrapper
+class for each base type.
+o Java provides additional support for implicitly converting
+between base types and their wrapper types through a
+process known as automatic boxing and unboxing.
+
+Last Update: Sep 5, 2016
+
+21
+
+<-----Page 21----->Example Wrapper Types
+
+Last Update: Sep 5, 2016
+
+22
+
+<-----Page 22----->Signatures
+• If there are several methods with the same name defined
+for a class, then the Java runtime system uses the one that
+matches the actual number of parameters sent as
+arguments, as well as their respective types.
+• A method’s name combined with the number and types of
+its parameters is called a method’s signature, for it takes
+all of these parts to determine the actual method to
+perform for a certain method call.
+
+Last Update: Sep 5, 2016
+
+23
+
+<-----Page 23----->Defining Classes
+• A class definition is a block of code, delimited by
+braces “{” and “}” , within which is included:
+ declarations of instance variables
+ member methods & constructors
+ nested classes
+
+• Immediately before the definition of a class,
+instance variable, or method, keywords known as
+modifiers can be placed to convey additional
+stipulations about that definition.
+Last Update: Sep 5, 2016
+
+24
+
+<-----Page 24----->Modifiers
+• Access modifiers:
+
+public, protected, private, default
+
+• Change modifier:
+
+final
+
+• Instantiation modifier:
+
+static
+
+• Field modifiers:
+
+transient , volatile
+
+• Method modifiers:
+
+abstract, native, synchronized
+
+Last Update: Sep 5, 2016
+
+25
+
+<-----Page 25----->Access Control Modifier
+Specifies who has access to a defined aspect of a class:
+Motto: information hiding
+make each class or member as inaccessible as possible.
+
+• Private:
+
+accessible by members of the given class.
+
+• default (package-protected): accessible by classes in
+the same package as the given class.
+• protected: accessible by subclasses, as well as classes
+in the same package as the given class.
+• public:
+Last Update: Sep 5, 2016
+
+accessible by all classes.
+26
+
+<-----Page 26----->Static Modifier
+• When a field or method member of a class is declared as static,
+it is associated with the class as a whole, and is shared by all
+instances of that class, e.g., instanceCount.
+• static member access: ClassName.memberName
+e.g., Math.sqrt(2) (in the Java Library package java.lang)
+• Primary purpose for static vs. (non-static) instance methods:
+ static methods: to implement (utility) functions.
+ instance methods: to implement data-type operations.
+
+Last Update: Sep 5, 2016
+
+27
+
+<-----Page 27----->Other Modifiers
+• abstract
+ method: has declaration, but no body
+ class:
+can have abstract methods
+ interface: is abstract class with only abstract methods;
+no fields, no constructors.
+
+• final
+ field:
+non-resettable (constant)
+ method: non-overridable
+ class:
+cannot be abstract or sub-classed.
+
+• Other modifiers not discussed in this course:
+native, synchronized, transient, volatile, strictfp
+Last Update: Sep 5, 2016
+
+28
+
+<-----Page 28----->Parameters
+• A method’s parameters are defined in a comma-separated list
+enclosed in parentheses after the name of the method.
+ A parameter consists of two parts, the parameter type and the
+parameter name.
+ If a method has no parameters, then only an empty pair of
+parentheses is used.
+• All parameters in Java are passed by value, that is, any time we pass a
+parameter to a method, a copy of that parameter is made for use
+within the method body.
+ So if we pass an int variable to a method, then that variable’s
+integer value is copied.
+ The method can change the copy but not the original.
+ If we pass an object reference as a parameter to a method, then
+that reference is copied (but not the object it points to).
+Last Update: Sep 5, 2016
+
+29
+
+<-----Page 29----->The Keyword this
+Within the body of a method, the keyword this is automatically
+defined as an “alias” to the instance upon which the method was
+invoked. There are three common uses:
+ To store the reference in a variable, or send it as a parameter to another
+method that expects an instance of that type as an argument.
+ To differentiate between an instance variable and a local variable or
+parameter with the same name.
+ To allow one constructor body to invoke another constructor body.
+
+Example: Line 4 on page 16 can be written as:
+public Counter(int count) { this.count = count; }
+
+Last Update: Sep 5, 2016
+
+30
+
+<-----Page 30----->Expressions and Operators
+• Existing values can be combined into expressions
+using special symbols and keywords known as
+operators.
+• The semantics of an operator depends upon the
+type of its operands (see “overloading” later).
+Example:
+int x = a + b ;
+// add integers a and b
+String s = “rewar” + “ding” ; // concatenate strings
+Last Update: Sep 5, 2016
+
+31
+
+<-----Page 31----->Arithmetic Operators
+• Java supports the following binary arithmetic operators:
+
+• If both operands have type int, then the result is an int; if one
+or both operands have type double, the result is a double.
+• Integer division has its result truncated.
+
+Last Update: Sep 5, 2016
+
+32
+
+<-----Page 32----->Increment and Decrement Ops
+• Java provides the plus-one increment (++) and
+decrement (−−) unary operators.
+ If such an operator is used as prefix to a variable
+reference, then 1 is added to (or subtracted from) the
+variable, then its value is read into the expression.
+ If it is used as postfix to a variable reference, then the
+value is first read, and then the variable is incremented
+or decremented by 1.
+
+Last Update: Sep 5, 2016
+
+33
+
+<-----Page 33----->Logical Operators
+• Java supports the following operators for numerical values,
+which result in Boolean values:
+
+• Boolean values also have the following operators:
+
+• The and and or operators short circuit, in that they do not
+evaluate the second operand if the result can be
+determined based on the value of the first operand.
+Last Update: Sep 5, 2016
+
+34
+
+<-----Page 34----->Conditional Operator
+• Java supports the following ternary operator:
+(booleanExpression) ? valueIfTrue : valueIfFalse ;
+
+// acts like if-then-else.
+Example:
+
+Last Update: Sep 5, 2016
+
+/** this method returns larger of a or b */
+public static int max ( int a , int b ) {
+return ( a > b) ? a : b;
+}
+
+35
+
+<-----Page 35----->Bitwise Operators
+• Java provides the following bitwise
+operators for integers and booleans:
+
+Last Update: Sep 5, 2016
+
+36
+
+<-----Page 36----->Operator Precedence
+Association
+Left-to-Right
+
+Right-to-Left
+
+Left-to-Right
+
+Right-to-Left
+Last Update: Sep 5, 2016
+
+37
+
+<-----Page 37----->Casting
+• Casting is an operation that allows us to change the
+type of a value.
+• We can take a value of one type and cast it into an
+equivalent value of another type.
+• There are two forms of casting in Java:
+ explicit casting
+ implicit casting.
+
+Last Update: Sep 5, 2016
+
+38
+
+<-----Page 38----->Explicit Casting
+• Syntax:
+
+(type) exp
+
+Here “type” is the type that we would like the expression
+exp to have.
+• This syntax may only be used to cast from one primitive
+type to another primitive type, or from one reference type
+to another reference type.
+Example:
+double ap = 14.696;
+int round = (int) (ap + 0.5);
+double apRound = (double) round;
+Last Update: Sep 5, 2016
+
+// atmospheric pressure in psi
+// round to nearest integer
+// cast back as double. Now 15.0
+39
+
+<-----Page 39----->Implicit Casting
+• There are cases where Java will perform an implicit cast
+based upon the context of an expression.
+• You can perform a widening cast between primitive types
+(such as from an int to a double), without explicit use of
+the casting operator.
+• However, if attempting to do an implicit narrowing cast, a
+compiler error results.
+Example:
+int x = 2 ; double y = 20.0 ;
+y = (3*y+4) / (x+2) ;
+// implicit widening cast. Now y == 16.0
+x = (3*y+4) / (x+2) ;
+// Is now x == 13 ? No. Compiler error! Why?
+Last Update: Sep 5, 2016
+
+40
+
+<-----Page 40----->Quiz
+// Broken comparator - can you spot the flaw!
+public int compare ( Integer first , Integer second ) {
+return first < second ? -1 : ( first == second ? 0 : 1 );
+}
+
+// What would this return: –1 , 0, or 1 ?
+compare( new Integer(12) , new Integer(12) ) ;
+
+Last Update: Sep 5, 2016
+
+41
+
+<-----Page 41----->Part 1: Summary
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+
+Java source (.java) text file & compiled (.class) byte-code file
+Reserved words & identifiers
+Primitive types & reference types
+Classes & objects
+Class members: fields, constructors, methods, nested classes
+Class & method signatures
+Keyword this
+new & dot ( . ) operators
+Wrapper types
+Modifiers: access, static, abstract, final
+Expressions & operators
+Operator precedence
+Explicit & implicit casting
+
+Last Update: Sep 5, 2016
+
+42
+
+<-----Page 42----->Last Update: Sep 5, 2016
+
+43
+
+<-----Page 43----->Java Primer: Part 2
+I/O Methods and Control Flow
+
+<-----Page 44----->If Statements
+• The syntax of a simple if statement is as follows:
+
+• booleanExpression is a boolean expression and
+trueBody and falseBody are each either a single
+statement or a block of statements enclosed in
+braces (“{” and “}”).
+Last Update: Sep 5, 2016
+
+45
+
+<-----Page 45----->Compound if Statements
+• There is also a way to group a number of
+boolean tests, as follows:
+
+Last Update: Sep 5, 2016
+
+46
+
+<-----Page 46----->Switch Statements
+• Java provides for multiple-value control flow using the switch
+statement.
+• The switch statement evaluates an integer, string, or enum
+expression and causes control flow to jump to the code
+location labeled with the value of this expression.
+• If there is no matching label, then control flow jumps to the
+location labeled “default”.
+• This is the only explicit jump performed by the switch
+statement, however, so flow of control “falls through” to the
+next case if the code for a case is not ended with a break
+statement.
+Last Update: Sep 5, 2016
+
+47
+
+<-----Page 47----->Switch Example
+
+Last Update: Sep 5, 2016
+
+48
+
+<-----Page 48----->Break and Continue
+• Java supports a break statement that
+immediately terminate a while or for loop
+when executed within its body.
+ break label
+
+// label is optional
+
+• Java also supports a continue statement
+that causes the current iteration of a loop
+body to stop, but with subsequent passes
+of the loop proceeding as expected.
+Last Update: Sep 5, 2016
+
+49
+
+<-----Page 49----->While Loops
+• The simplest kind of loop in Java is a while loop.
+• Such a loop tests that a certain condition is
+satisfied and will perform the body of the loop
+each time this condition is evaluated to be true.
+• The syntax for such a conditional test before a
+loop body is executed is as follows:
+while (booleanExpression)
+loopBody
+Last Update: Sep 5, 2016
+
+50
+
+<-----Page 50----->Do-While Loops
+• Java has another form of the while loop
+that allows the boolean condition to be
+checked at the end of each pass of the loop
+rather than before each pass.
+• This form is known as a do-while loop, and
+has syntax shown below:
+do
+
+loopBody
+while (booleanExpression)
+Last Update: Sep 5, 2016
+
+51
+
+<-----Page 51----->For Loops
+• The traditional for-loop syntax consists of four sections
+— an initialization, a boolean condition, an increment
+statement or block, and the body
+ any of these four sections can be empty.
+
+• The structure is as follows:
+for (initialization; booleanCondition; increment)
+loopBody
+• Meaning:
+
+Last Update: Sep 5, 2016
+
+52
+
+<-----Page 52----->Example For Loops
+• Compute the sum of an array of doubles:
+
+• Compute the maximum in an array of doubles:
+
+Last Update: Sep 5, 2016
+
+53
+
+<-----Page 53----->For-Each Loops
+• Since looping through elements of a collection
+is such a common construct, Java provides a
+shorthand notation for such loops, called the
+for-each loop.
+• The syntax for such a loop is as follows:
+for (elementType name : collection)
+loopBody
+
+Last Update: Sep 5, 2016
+
+54
+
+<-----Page 54----->For-Each Loop Example
+• Computing sum of an array of doubles:
+
+• When using a for-each loop, there is no explicit
+use of array indices.
+• The loop variable represents one particular
+element of the array.
+Last Update: Sep 5, 2016
+
+55
+
+<-----Page 55----->java.util.Scanner Methods
+• The Scanner class reads the input stream and
+divides it into tokens, which are strings of
+characters separated by delimiters.
+
+Last Update: Sep 5, 2016
+
+56
+
+<-----Page 56----->Simple Output
+• Java provides a built-in static object, called System.out,
+that performs output to the “standard output” device,
+with the following methods:
+
+Last Update: Sep 5, 2016
+
+57
+
+<-----Page 57----->Example: Input/Output
+import java.util.Scanner ;
+import java.io.PrintStream ;
+public class IOExample {
+public static void main(String[ ] args) {
+Scanner input = new Scanner(System.in) ;
+PrintStream output = System.out ;
+output.print(“Enter your age in years: ”) ;
+double age = input.nextDouble( ) ;
+output.print(“Enter your maximum heart rate: ”) ;
+double rate = input.nextDouble( ) ;
+double fb = (rate – age)  0.65 ;
+output.println(“Your ideal fat-burning heart rate is ” + fb) ;
+input.close( ) ;
+// potential memory leak if not closed!
+}
+}
+Last Update: Sep 5, 2016
+
+58
+
+<-----Page 58----->Example Program
+public class Newton {
+public static double sqrt ( double a ) {
+final double EPSILON = 1e-15;
+// relative error tolerance
+if ( a < 0.0 ) return Double.NaN ;
+// compute approximate root of 𝑓(𝑥) = 𝑥 2 – 𝑎 by Newton’s method:
+double x = a;
+// initialize iteration variable
+while ( Math.abs (x – a/x) > EPSILON * x )
+x = (x + a/x) / 2;
+// Newton iterate: 𝑥 = 𝑥 – 𝑓(𝑥)/𝑓’(𝑥)
+return x;
+//
+1 − 𝜀 𝑎 ≤ 𝑥 ≤ (1 + 𝜀) 𝑎
+}
+
+}
+
+public static void main( String[] args) {
+System.out.println ( “Input numbers & their square roots:”) ;
+double root ;
+Output:
+for (int i = 0; i < args.length; i++ ) {
+numbers & their square roots:
+root = sqrt ( Double.parseDouble( args[i] ) ) ; Input
+-5
+NaN
+System.out.println( args[i] + “ \t ” + root ) ; Infinity
+Infinity
+0
+0.0
+}
+1
+1.0
+}
+2
+1.414213562373095
+
+Last Update: Sep 5, 2016
+
+3
+4
+
+1.7320508075688772
+2.0
+
+59
+
+<-----Page 59----->Another Program
+
+Last Update: Sep 5, 2016
+
+60
+
+<-----Page 60----->Program cont’d
+
+Last Update: Sep 5, 2016
+
+61
+
+<-----Page 61----->Program cont’d
+
+Last Update: Sep 5, 2016
+
+62
+
+<-----Page 62----->Packages & imports
+• /* name of package that contains the class definition goes on
+the first line */
+
+•
+•
+•
+•
+
+import packageName;
+import java.util.Scanner;
+import java.util.*;
+/* static import as of Java 5
+
+// appears next
+
+e.g., importing a class with static members */
+
+import static packageName.PhysicalConstants.*;
+import static java.lang.Math.*;
+// now you can say sqrt() instead of Math.sqrt()
+Last Update: Sep 5, 2016
+
+63
+
+<-----Page 63----->Coding
+• Algorithm pseudo-code facilitates
+feasibility , efficiency & verification analysis
+prior to time consuming & costly code development
+
+• Packages & imports
+o enhanced modularity & encapsulation
+o avoids naming conflicts
+
+• IDEs , e.g. Eclipse
+• Documentation & Style  Javadoc
+
+Last Update: Sep 5, 2016
+
+64
+
+<-----Page 64----->Errors
+Motto: early detection
+catch mistakes as early
+as possible; preferably
+at compile time.
+
+• Compile-time
+
+int x = 1.5;
+
+• Run-time
+
+x/0;
+
+• Logical errors
+
+bugs are the bane of programmer’s existence!
+
+• Example: An “expensive” bug
+– Ariane 5 European satellite
+– Cost: $7B, 10 years to build
+– Rocket crashed within 1 min of takeoff
+with expensive uninsured scientific cargo
+– bug: unintended cast from 64-bit to 16-bit.
+
+Last Update: Sep 5, 2016
+
+65
+
+<-----Page 65----->Testing & Debugging
+•
+•
+•
+•
+
+Top-down modular testing with stubs
+Bottom-up unit-testing
+Regression testing on evolving software
+Basic debugging by print statements or assertions:
+assert ( x > 5) : “ x = ” + x ;
+// if false, throw an AssertionError
+
+• Enabling & disabling assertions:
+java –ea
+// enable assertions. Slow  used during testing
+java –da
+// disable assertions. Fast  for production
+• Java debugger jdb (using breakpoints)
+• Advanced IDE debuggers with GUI display
+Last Update: Sep 5, 2016
+
+66
+
+<-----Page 66----->Part 2: Summary
+• Control Flow Statements:
+ Branching:
+ Loops:
+
+•
+•
+•
+•
+•
+•
+
+if-then-else, switch, break, continue
+for-loop, while-loop, do-while, for-each
+
+Simple I/O
+Example programs
+Packages & imports
+Coding
+Errors
+Testing & Debugging
+
+Last Update: Sep 5, 2016
+
+67
+
+<-----Page 67----->Last Update: Sep 5, 2016
+
+68
+
+

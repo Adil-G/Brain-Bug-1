@@ -1,0 +1,1230 @@
+<-----Page 0----->Object-Oriented
+Programming
+
+<-----Page 1----->Object-Oriented Software Design
+• Responsibilities:
+Divide the work into different actors, each with a different
+responsibility. These actors become classes.
+• Independence:
+Define the work for each class to be as independent from
+other classes as possible.
+• Behaviors:
+Define the behaviors for each class carefully and precisely,
+so that the consequences of each action performed by a
+class will be well understood by other classes that interact
+with it.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+2
+
+<-----Page 2----->Software must be
+• Correct:
+• Readable:
+• Robust:
+
+works correctly on all expected inputs.
+
+easily understandable & verifiable by others.
+capable of handling unexpected inputs that are not
+explicitly defined for its intended application.
+
+• Efficient:
+makes good use of computing time & memory resources.
+• Adaptable: able to evolve over time in response to changing
+conditions in its environment. Is easy to update & debug.
+
+• Flexible:
+• Reusable:
+
+Last Update: Aug 5, 2016
+
+easily generalizable to handle many related scenarios.
+the same code should be usable as a component of
+different systems in various applications.
+
+EECS2011: Object-Oriented Programming
+
+3
+
+<-----Page 3----->Object-Oriented Design Principles
+•
+•
+•
+•
+
+Last Update: Aug 5, 2016
+
+Abstraction
+Modularity
+Encapsulation
+Hierarchical Organization
+
+EECS2011: Object-Oriented Programming
+
+4
+
+<-----Page 4----->Abstraction
+• Abstraction is to distill a system to its most fundamental parts.
+– The psychological profiling of a programmer is mostly the ability
+to shift levels of abstraction, from low level to high level.
+To see something in the small and to see something in the large.
+– Donald Knuth
+
+Abstraction, 1922.
+By Wassily Kandinsky
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+5
+
+<-----Page 5----->Encapsulation
+• Information hiding.
+• objects reveal only what other objects need to see.
+• Internal details are kept private.
+
+• This allows the programmer to implement the object
+as they wish, as long as the requirements of the
+abstract interface are satisfied.
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+6
+
+<-----Page 6----->Modularity
+• Complex software systems are hard to conceptualize,
+design & maintain.
+• This is greatly facilitated by breaking the system up into
+distinct modules.
+• Each module has a well-specified role.
+
+• Modules communicate through well-specified interfaces.
+• The primary unit for a module in Java is a package.
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+7
+
+<-----Page 7----->A Hierarchy
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+8
+
+<-----Page 8----->Hierarchical Design
+Hierarchical class definitions
+allow efficient re-use of
+common software over
+different contexts.
+
+«interface»
+Collection
+
+«interface»
+List
+
+«interface»
+Set
+
+«class»
+TreeSet
+
+Last Update: Aug 5, 2016
+
+«class»
+HashSet
+
+«class»
+LinkedHashSet
+
+EECS2011: Object-Oriented Programming
+
+«class»
+ArrayList
+
+«class»
+LinkedList
+
+9
+
+<-----Page 9----->Design Patterns
+Algorithmic patterns:
+• Recursion
+• Amortization
+• Divide-and-conquer
+• Prune-and-search
+• Brute force
+• Dynamic programming
+• The greedy method
+
+Last Update: Aug 5, 2016
+
+Software design patterns:
+• Iterator
+• Adapter
+• Position
+• Composition
+• Template method
+• Locator
+• Factory method
+
+EECS2011: Object-Oriented Programming
+
+10
+
+<-----Page 10----->Abstract Data Types
+• Abstraction is to distill a system to its most fundamental parts.
+• Applying the abstraction paradigm to the design of data structures
+gives rise to abstract data types (ADTs) with state (data) & behavior
+(functionality).
+• An ADT is a model of a data structure that specifies the type of data
+stored, the operations supported on them, and the types of
+parameters of the operations.
+• An ADT specifies what each operation does, but not how it does it.
+– The “how” is provided by the software that implements the ADT.
+
+• The collective set of behaviors supported by an ADT is its public
+interface. The interface guarantees certain invariants.
+• Invariant: a fact about the ADT that is always true,
+e.g., a Date object always represents a valid date.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+11
+
+<-----Page 11----->Class Definitions
+• A class serves as the primary means for abstraction in OOP.
+• In Java, every variable is either a base type or is a reference
+to an object which is an instance of some class.
+• Each class presents to the outside world a concise and
+consistent view of the objects that are its instances,
+without revealing too much unnecessary detail or giving
+others access to the inner workings of the objects.
+• The class definition specifies its members. These are
+typically instance variables (aka, fields or data members)
+that any instance object contains, as well as the methods,
+(aka, member functions) that the object can execute.
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+12
+
+<-----Page 12----->Unified Modeling Language (UML)
+A class diagram has three parts.
+1. The name of the (concrete or abstract) class or interface
+2. The recommended instance variables or fields
+3. The recommended methods of the class.
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+13
+
+<-----Page 13----->Interfaces
+• The main structural element in Java that enforces an
+application programming interface (API) is an
+interface.
+
+• An interface contains constants & abstract methods
+with no bodies; all public by default.
+• It has no constructors & can’t be directly instantiated.
+• A class that implements an interface, must implement
+all of the methods declared in the interface
+(no inheritance); otherwise won’t compile.
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+14
+
+<-----Page 14----->Abstract Classes
+• An abstract class also cannot be instantiated, but it can
+define one or more methods that all implementations
+of the abstraction will have.
+• Their sole purpose is to be extended.
+• A class must be a subclass of an abstract class to
+extend it & implement all its abstract methods
+(or else be abstract itself).
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+15
+
+<-----Page 15----->Interfaces & Abstract Classes
+• A class that implements an interface, must implement all
+of the methods declared in the interface (no inheritance);
+otherwise won’t compile.
+• As a result, unlike abstract classes, interfaces are
+non-adaptable: you can’t add new methods to it
+without breaking its contract.
+• However, interfaces offer great flexibility for its implementers:
+a class can implement any number of interfaces, regardless of
+where that class is in the class hierarchy.
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+16
+
+<-----Page 16----->Inheritance
+• is a mechanism for modular and hierarchical organization.
+• A (child) subclass extends a (parent) superclass.
+• A subclass inherits (non-constructor) members of its superclass.
+
+• Two ways a subclass can differ from its superclass:
+ Can extend the superclass by providing brand-new data
+members & methods (besides those inherited from the
+superclass, other than constructors).
+ Polymorphism: may specialize an existing behavior by
+providing a new implementation to override an existing
+non-static method of the superclass .
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+17
+
+<-----Page 17----->Java is Single Inheritance
+• Java (unlike C++) is single inheritance OOL:
+any class other than the root class Object,
+extends exactly one parent superclass.
+That is, Java classes form a tree hierarchy.
+• Regardless of where it is in the inheritance tree,
+a class can implement several interfaces.
+This is multi-role playing (aka, mixin),
+not multiple inheritance.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+18
+
+<-----Page 18----->Class Inheritance Tree Hierarchy
+Building
+
+Apartment
+
+Low-rise
+Apartment
+
+Last Update: Aug 5, 2016
+
+House
+
+High-rise
+Apartment
+
+Two-story
+House
+
+Commercial
+Building
+
+Ranch
+
+EECS2011: Object-Oriented Programming
+
+Skyscraper
+
+19
+
+<-----Page 19----->Class/interface DAG Hierarchy
+Pet
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+20
+
+<-----Page 20----->Constructors
+• A user can create an
+instance of a class by
+using the new operator
+with a method that has
+the same name as the class.
+
+• Such a method, known as a constructor,
+establishes a new object with appropriate
+initial values for its instance variables.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+21
+
+<-----Page 21----->Inheritance and Constructors
+• Constructors are never inherited in Java;
+hence, every class must define a constructor
+ which can refine a superclass constructor.
+ must properly initialize all class fields, including any inherited fields.
+
+• The first operation within the body of a constructor must be
+to invoke a constructor of the superclass, which initializes
+the fields defined in the superclass.
+• A constructor of the superclass is invoked explicitly by using
+the keyword super with appropriate parameters.
+• If a constructor for a subclass does not make an explicit call
+to super or this as its first command, then an implicit call to
+super( ), the zero-parameter version of the superclass
+constructor, will be made.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+22
+
+<-----Page 22----->Polymorphism
+• Polymorphism: means taking on many forms.
+
+• Example:
+
+Super var = new Sub( … );
+
+says var is declared as Super type, but is instanceof and
+references an object of Sub type.
+• var is polymorphic; it can take one of many forms, depending
+on the specific class or subclass of the object to which it refers
+at runtime.
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+23
+
+<-----Page 23----->Dynamic dispatch
+• With polymorphism, one method works on many classes, even if the
+classes need different implementations of that method.
+• Dynamic dispatch is a process used by JVM at runtime to call the
+version of the overriden method most specific to actual (dynamic)
+type, not declared (static) type, of the polymorphic variable var.
+• Example: Super var = new Sub( … );
+Suppose we call var.myMethod
+and at runtime (var instanceof Sub) is true.
+Will JVM execute var.(Sub.myMethod) or var.(Super.myMethod) ?
+ JVM calls Sub.myMethod, since var refers to an instance of Sub,
+even though its static type is Super.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+24
+
+<-----Page 24----->Overriding vs overloading
+• Overriden method selection is dynamic (uses dynamic dispatch)
+• Overloaded method selection is static,
+based on compile-time type of the parameters.
+• Because overriding is the norm and overloading is the exception,
+overriding sets people’s expectations for the behavior of method
+invocation.
+• Most often, instead of overloading, we can use different names.
+• Constructors can’t use different names & are typically overloaded,
+but fortunately they cannot be overriden!
+Motto: avoid confusing uses of overloading.
+• See more examples on the following pages.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+25
+
+<-----Page 25----->Example: Overriding
+// ----------------------------- What does this program print?
+public class Wine {
+output:
+String name( ) { return “wine” ; }
+}
+wine
+public class SparklingWine extends Wine {
+sparkling wine
+@Override String name( ) { return “sparkling wine” ; }
+champagne
+}
+public class Champagne extends SparklingWine {
+@Override String name( ) { return “champagne” ; }
+}
+public class Overriding {
+public static void main(String[ ] args) {
+Wine[ ] wines = { new Wine(), new SparklingWine(), new Champagne() } ;
+for (Wine wine : wines) System.out.println( wine.name() ) ;
+}
+}
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+26
+
+<-----Page 26----->Example: Overloading
+// ------------------------- Broken! – What does this program print?
+public class WineRegion {
+public static String region ( Wine w ) { return “Napa Valley” ; }
+public static String region ( SparklingWine s ) { return “Niagara” ; }
+public static String region ( Champagne c ) { return “France” ; }
+
+output:
+Napa Valley
+Napa Valley
+Napa Valley
+
+public static void main(String[ ] args) {
+Wine[ ] wines = {
+new Wine() ,
+new SparklingWine () ,
+new Champagne ()
+};
+for ( Wine w : wines ) System.out.println( region(w) ) ;
+}
+}
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+27
+
+<-----Page 27----->Example: Overloading - fixed
+// Fixed by a single method that does an explicit instanceof test
+public class WineRegion {
+public static String region ( Wine w ) {
+return ( w instanceof Champagne ) ? “France” :
+( ( w instanceof SparklingWine ) ? “Niagara” : “Napa Valley” );
+
+}
+
+output:
+Napa Valley
+Niagara
+France
+
+public static void main(String[ ] args) {
+Wine[ ] wines = {
+new Wine() ,
+new SparklingWine () ,
+new Champagne ()
+};
+for ( Wine w : wines ) System.out.println( region(w) ) ;
+}
+}
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+28
+
+<-----Page 28----->Class definition syntax
+class SubClass
+extends SuperClass
+implements Interface1, Interface2, Interface3
+{
+// definitions of non-inherited instance variable
+// subclass constructors
+// overriden superclass methods
+// other, inherited, superclass methods omitted
+// implementation of all interface methods
+// brand-new methods
+}
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+29
+
+<-----Page 29----->Interface definition syntax
+interface YourNewInterface
+extends YourInterface1 , YourInterface2, YouInterface3
+{
+...
+}
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+30
+
+<-----Page 30----->Example
+abstract class Figure {
+abstract double area() ;
+}
+Circle
+class Circle extends Figure {
+final double radius ;
+Circle (double radius) { this.radius = radius ; }
+double area() { return Math.PI * radius * radius ; }
+}
+class Rectangle extends Figure {
+final double length , width ;
+Rectangle (double length , double width) {
+this.length = length ;
+this.width = width ;
+}
+double area() { return length * width ; }
+}
+class Square extends Rectangle {
+Square (double side) { super(side , side) ; }
+}
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+Figure
+
+Rectangle
+
+Square
+
+31
+
+<-----Page 31----->An Extended Example
+• A numeric progression is a sequence of numbers, where
+each number depends on one or more of the previous
+numbers.
+– An arithmetic progression determines the next number by adding
+a fixed constant to the previous value.
+– A geometric progression determines the next number by
+multiplying the previous value by a fixed constant.
+– A Fibonacci progression uses the formula Ni+1 = Ni + Ni-1
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+32
+
+<-----Page 32----->The Progression Base Class
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+33
+
+<-----Page 33----->The Progression Base Class, 2
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+34
+
+<-----Page 34----->ArithmeticProgression Subclass
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+35
+
+<-----Page 35----->GeometricProgression Subclass
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+36
+
+<-----Page 36----->FibonacciProgression Subclass
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+37
+
+<-----Page 37----->Exceptions
+Throwable
+
+Exception
+
+Error
+exceptions that
+need not be
+caught or
+declared
+(not checked
+by compiler)
+
+RuntimeException
+
+NullPointerException
+Last Update: Aug 5, 2016
+
+Java exceptions &
+programmer defined
+exceptions that must be
+caught or declared
+(checked by compiler)
+
+Object
+
+exceptions that
+should not be
+caught or declared
+
+Checked Exceptions
+Checked Exceptions
+Checked Exceptions
+Checked Exceptions
+
+ArrayIndexOutOfBoundsException
+EECS2011: Object-Oriented Programming
+
+38
+
+<-----Page 38----->Examples of Exceptions
+Exception
+
+Occasion for Use
+
+IllegalArgumentException
+
+Non-null parameter value is inappropriate
+
+IllegalStateException
+
+Object state is inappropriate for method invocation
+
+NullPointerException
+
+Parameter value is null where prohibited
+
+IndexOutOfBoundsException
+
+Index parameter value is out of range
+
+ConcurrentModificationException
+
+Concurrent modification of an object has been
+detected where it is prohibited
+
+UnsupportedOperationException
+
+Object does not support method
+
+public class NewException extends Exception {
+public NewException() { }
+// no message constructor
+public NewException( String msg ) {super( msg ); } // detailed message constructor
+}
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+39
+
+<-----Page 39----->Exceptions
+• Exceptions are unexpected events that occur during the
+execution of a program, for example due to:
+– an unavailable resource (error – if not recoverable)
+– unexpected input from a user (checked exception – if recoverable)
+– a logical error on the part of the programmer (run time exception)
+
+• In Java, exceptions are objects that can be thrown by code
+that encounters an unexpected situation.
+• An exception may also be caught by a surrounding block of
+code that “handles” the problem.
+• If uncaught, an exception causes the virtual machine to stop
+executing the program and to report an appropriate message
+to the console.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+40
+
+<-----Page 40----->Catching Exceptions
+• The general methodology
+for handling exceptions is
+a try-catch or try-catch-finally
+construct in which a guarded
+code fragment that might throw
+an exception is executed.
+
+try {
+guardedBody
+} catch (exceptionType1 variable1) {
+remedyBody1
+} catch (exceptionType2 variable2) {
+remedyBody2
+} finally {
+cleanupBody // e.g., close file
+}
+
+• If it throws an exception, then that exception is caught by having the flow
+of control jump to a predefined catch block that contains the code to apply
+an appropriate resolution.
+• If no exception occurs in the guarded code, all catch blocks are ignored.
+• If the finally block is present, it is always executed (even if no exception is
+thrown) and has higher precedence than catch blocks.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+41
+
+<-----Page 41----->Throwing Exceptions
+• Exceptions originate when a piece of Java code finds some
+sort of problem during execution and throws an exception
+object.
+• This is done by using the throw keyword followed by an
+instance of the exception type to be thrown.
+• It is often convenient to instantiate an exception object at
+the time the exception has to be thrown. Thus, a throw
+statement is typically written as follows:
+throw new exceptionType(parameters);
+where exceptionType is the type of the exception and the
+parameters are sent to that type’s constructor.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+42
+
+<-----Page 42----->The throws Clause
+• When a method is declared, it is possible to explicitly declare,
+as part of its signature, the possibility that a particular
+exception type may be thrown during a call to that method.
+
+• The syntax for declaring possible exceptions in a method
+signature relies on the keyword throws (not to be confused
+with an actual throw statement).
+• Example: the parseInt method of the Integer class has the
+following formal signature:
+public static int parseInt(String s)
+throws NumberFormatException;
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+43
+
+<-----Page 43----->Design Decision
+If an unusual situation occurs, should I throw an exception?
+• If you can resolve the unusual situation in a reasonable
+manner, you likely can use a decision statement instead of
+throwing an exception.
+• If several resolutions to an abnormal occurrence are possible,
+and you want the client to choose one, you should throw a
+checked exception.
+• If a programmer makes a coding mistake by using your method
+incorrectly, you can throw a runtime exception. However, you
+should not throw a runtime exception simply to enable a client
+to avoid handling it.
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+44
+
+<-----Page 44----->Casting
+• Casting with Objects allows for conversion between
+classes and subclasses.
+• A widening conversion occurs when a type T is
+converted into a “wider” type U, i.e., “T IS_A U”
+• Example:
+
+Super var1 = new Sub(...);
+
+Last Update: Aug 5, 2016
+
+// implicit widening
+
+EECS2011: Object-Oriented Programming
+
+45
+
+<-----Page 45----->Narrowing Conversions
+• A narrowing conversion occurs when a type T is
+converted into a “narrower” type S, i.e., “S IS_A T”
+• In general, a narrowing conversion of reference
+types requires an explicit cast.
+• Example:
+Super var1 = new Sub(...);
+Sub
+var2 = (Sub) var1;
+
+Last Update: Aug 5, 2016
+
+// implicit widening
+// explicit narrowing
+
+EECS2011: Object-Oriented Programming
+
+46
+
+<-----Page 46----->Generics
+• Java includes support for writing generic types that can operate on a
+variety of data types while avoiding the need for explicit casts &
+with type safety through compile-time type-checking.
+• Prior to generics (as of Java SE 5), Object was used as the universal
+super-type. Disadvantages:
+
+
+
+frequent casting to specific actual type.
+thwarted compiler’s type-checking mechanism.
+
+• The generics framework allows us to define a class in terms of a set
+of formal type parameters, undefined at compile time, which can
+then be used as the declared non-primitive type for variables,
+parameters, and return values within the class definition.
+
+• Those formal type parameters are later specified by actual type
+arguments when using the generic class as a type elsewhere in a
+program.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+47
+
+<-----Page 47----->Syntax for Generics
+• Example: a generic paired item by composition:
+
+• Can be re-used to instantiate any paired item:
+o Person:
+o Stock-ticker:
+o 2D point:
+Last Update: Aug 5, 2016
+
+(String name, Integer age)
+(String stock , Double price)
+(Double x , Double y)
+
+EECS2011: Object-Oriented Programming
+
+48
+
+<-----Page 48----->Type inference with generics
+(as of Java SE 7)
+1.
+
+// declare explicit actual type
+Pair<String , Double > bid;
+
+2.
+
+// instantiate by explicit actual type
+bid = new Pair<String, Double>(“ORCL” , 32.07);
+Alternatively, rely on type inference by <> (the “dymond”) :
+// instantiate by type inference
+bid = new Pair<> (“ORCL” , 32.07);
+
+3.
+
+// combined declaration & instantiation:
+Pair<String , Double > bid = new Pair<> (“ORCL” , 32.07);
+
+4.
+
+String stock = bid.getFirst();
+double price = bid.getSecond();
+
+Last Update: Aug 5, 2016
+
+// auto unboxing
+
+EECS2011: Object-Oriented Programming
+
+49
+
+<-----Page 49----->Bounded generics
+• Wild-card “?” stands for “any class or interface”
+• Bounded generics with wild-cards:
+<? extends T >
+stands for any subtype of T: any class or interface in the hierarchy
+rooted at the type represented by the generic type T.
+<? super T >
+stands for any supertype of T: the generic type <T> or higher up in
+its hierarchy (as direct or indirect super-class or super-interface).
+• Recursive type bounding:
+e.g., <T extends Comparable<T> >
+may be read as: “for any type T that can be compared to itself”
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+50
+
+<-----Page 50----->Generics on arrays
+• Generics are a compile-time construct
+ the type information is lost at runtime.
+• This was a deliberate decision to allow backward
+compatibility with pre-generics Java code.
+• As a consequence:
+– you can declare an array of generic type,
+– but you cannot create an array of generic type,
+because the compiler doesn’t know how to create
+an array of an unknown component type.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+51
+
+<-----Page 51----->Generics on arrays
+• Two important incompatibilities between arrays & generics:
+o Arrays are covariant & reified
+o Generics are invariant & non-reified (aka, type erase)
+ Covariant: A is subtype of B  A[ ] is subtype of B[ ]
+ Invariant: A & B distinct types 
+List<A> and List<B> have no hierarchical relationship
+ Reified:
+retains & enforces static (compile-time) type at runtime
+ Non-reified (aka, type erase): loses type information at runtime
+
+• So, how can we create “generic” arrays?  next page.
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+52
+
+<-----Page 52----->Generics on arrays - 1
+// Object-based collection – a prime candidate for generics
+// Raw type is not type-safe: any type element can be pushed into stack.
+public class Stack {
+private Object[ ] elements;
+// declaring raw type array
+private int size = 0;
+private static final int CAPACITY = 100;
+public Stack() {
+// raw type constructor
+elements = new Object[CAPACITY];
+}
+public void push (Object e) {
+elements[size++] = e;
+}
+public Object pop() {
+if (size == 0) throw new EmptyStackException();
+Object result = elements[--size];
+elements[size] = null;
+// eliminate obsolete reference
+return result;
+}
+}
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+53
+
+<-----Page 53----->Generics on arrays - 2
+// Initial attempt to generify Stack – won’t compile!
+public class Stack<E> {
+private E[ ] elements;
+// using “generic” array
+private int size = 0;
+private static final int CAPACITY = 100;
+public Stack() {
+// “generic” type constructor
+elements = new E[CAPACITY]; // compiler error
+}
+public void push (E e) {
+elements[size++] = e;
+}
+public E pop() {
+if (size == 0) throw new EmptyStackException();
+E result = elements[--size];
+elements[size] = null;
+// eliminate obsolete reference
+return result;
+}
+}
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+54
+
+<-----Page 54----->Generics on arrays - 3
+/* First solution: apply explicit cast in constructor.
+* The elements array will contain only E instances from push(E).
+* This is sufficient to ensure type safety, but the runtime type
+* of the reified array won’t be E[]; it will always be Object[]!
+*/
+@SuppressWarnings(“unchecked”) // risky  use cautiously!
+public Stack() {
+elements = (E[ ]) new Object[CAPACITY]; // explicit cast
+}
+//  the rest unchanged
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+55
+
+<-----Page 55----->Generics on arrays - 4
+/* Second solution: apply explicit cast in pop().
+* Appropriate suppression of unchecked warning
+*/
+public E pop() {
+if (size == 0) throw new EmptyStackException();
+// push requires elements to be of type E, so cast is correct
+@SuppressWarnings(“unchecked”)
+E result = (E) elements[--size];
+
+elements[size] = null;
+return result;
+
+// eliminate obsolete reference
+
+}
+
+//  the rest unchanged
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+56
+
+<-----Page 56----->Generic Methods
+public class GenericDemo {
+public static <T> void reverse ( T[ ] data ) {
+int low = 0 , high = data.length – 1;
+while (low < high ) {
+// swap data[low] & data[high]
+T temp = data[low];
+data[low++] = data[high]; // post-increment low
+data[high--] = temp;
+// post-decrement high
+}
+}
+modifier <T> indicates that this is a generic method
+
+}
+A call to reverse(arr) reverses elements of array arr of any declared reference type.
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+57
+
+<-----Page 57----->Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+58
+
+<-----Page 58----->Bounded wildcards increase
+API flexibility
+• For maximum flexibility, use wildcard types on input
+parameters that represent producers or consumers.
+• Don’t use wildcards on return types.
+Motto: PECS stands for producer-extends, consumer-super.
+• Example: method max(list) returns the maximum element
+of list. This needs elements of list to be Comparable so that
+we can apply the compareTo method on them.
+– max: list is producer, Comparable is consumer.
+– The attempted generic solutions follow 
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+59
+
+<-----Page 59----->Bounded wildcards 
+public static <E> E max( List<E> list)
+generic E should be Comparable
+
+public static < E extends Comparable<E> >
+E max( List<E> list)
+PECS
+
+public static <E extends Comparable<? super E> >
+E max( List<? extends E> list)
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+60
+
+<-----Page 60----->Bounded wildcards 
+public static <E extends Comparable<? super E> >
+E max( List<? extends E> list) {
+// see Slide 7 on List ADT & Iterators
+Iterator<? extends E> iterList = list.iterator() ;
+E result = iterList.next() ;
+while ( iterList.hasNext() ) {
+E e = iterList.next() ;
+if (e.compareTo(result) > 0 ) result = e ;
+}
+return result ;
+
+}
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+61
+
+<-----Page 61----->Nested Classes
+• a class definition nested inside the definition of another class.
+• There are 4 kinds of nested classes:
+o static, non-static, anonymous, local.
+All but the first are called inner classes.
+
+• The main use for nested classes is when defining a class that
+is strongly affiliated with another class.
+o enhances encapsulation & reduces undesired name conflicts.
+
+• Nested classes are a valuable technique to implement data
+structures. A nested class can be used to represent a small
+portion of a larger data structure, or an auxiliary class that
+helps navigate a primary data structure.
+
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+62
+
+<-----Page 62----->Summary
+• object oriented design principles:
+abstraction, modularity,
+encapsulation,
+inheritance, polymorphism
+• program development:
+design, coding, errors, testing & debugging
+• ADTs
+• interfaces, concrete & abstract classes
+• exceptions
+• casting
+• generics: for an in-depth study click here or read “Effective Java”.
+• nested classes
+Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+63
+
+<-----Page 63----->Last Update: Aug 5, 2016
+
+EECS2011: Object-Oriented Programming
+
+64
+
+

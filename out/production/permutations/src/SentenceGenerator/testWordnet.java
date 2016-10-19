@@ -16,7 +16,7 @@ import java.util.HashSet;
 public class testWordnet {
     public static SynonymMap map;
     public static void main(String[] args) throws Exception {
-        String[] words = new String[] { "remove"};
+        String[] words = new String[] { "high"};
         SynonymMap map = new SynonymMap(new FileInputStream(WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsDirectoryName
                 +"wn_s.pl"));
 

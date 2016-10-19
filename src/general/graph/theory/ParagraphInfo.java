@@ -6,10 +6,12 @@ package general.graph.theory;
 public class ParagraphInfo {
     private String text;
     private String publication;
-    public ParagraphInfo(String text,String publication)
+    private String pageNumber;
+    public ParagraphInfo(String text,String publication, String pageNumber)
     {
         this.text = text;
         this.publication = publication;
+        this.pageNumber=  pageNumber;
     }
     public String getText()
     {
@@ -17,7 +19,16 @@ public class ParagraphInfo {
     }
     public String getPub()
     {
-        return new String();
+        return this.publication.replaceAll("asds2f9fs_","");
         //return " ( " + this.publication + " )\n\n";
+    }
+    public String getPageNumber()
+    {
+        return this.pageNumber;
+    }
+    public String getInfo()
+    {
+        return "\n"+this.getText()
+                + " - ##################### " + this.getPub() + ", " + this.getPageNumber() + " ##################### " + "\n\n";
     }
 }

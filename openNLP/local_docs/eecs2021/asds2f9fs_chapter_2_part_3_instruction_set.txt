@@ -1,0 +1,517 @@
+<-----Page 0----->EECS 2021
+Computer Organization
+Fall 2015
+The slides are based on the publisher slides
+and contribution from Profs Amir Asif and
+Peter Lian
+The slides will be modified, annotated,
+explained on the board, and sometimes
+corrected in the class
+
+Based on slides by the author and prof.
+Mary Jane Irwin of PSU.
+
+<-----Page 1----->n
+
+Instructions are encoded in binary
+n
+
+n
+
+MIPS instructions
+n
+n
+
+n
+
+n
+
+Called machine code
+Encoded as 32-bit instruction words
+Small number of formats encoding operation code
+(opcode), register numbers, …
+Regularity!
+
+Register numbers
+n
+n
+n
+
+$t0 – $t7 are reg’s 8 – 15
+$t8 – $t9 are reg’s 24 – 25
+$s0 – $s7 are reg’s 16 – 23
+
+§2.5 Representing Instructions in the Computer
+
+Representing Instructions
+
+Chapter 2 — Instructions: Language of the Computer — 2
+
+<-----Page 2----->MIPS R-format Instructions
+n
+
+op
+
+rs
+
+rt
+
+rd
+
+shamt
+
+funct
+
+6 bits
+
+5 bits
+
+5 bits
+
+5 bits
+
+5 bits
+
+6 bits
+
+Instruction fields
+n
+n
+n
+n
+n
+n
+
+op: operation code (opcode)
+rs: first source register number
+rt: second source register number
+rd: destination register number
+shamt: shift amount (00000 for now)
+funct: function code (extends opcode, selects
+the specific variant of the operation specified
+in the opcode field)
+Chapter 2 — Instructions: Language of the Computer — 3
+
+<-----Page 3----->R-format Example
+op
+
+rs
+
+rt
+
+rd
+
+shamt
+
+funct
+
+6 bits
+
+5 bits
+
+5 bits
+
+5 bits
+
+5 bits
+
+6 bits
+
+add $t0, $s1, $s2
+special
+
+$s1
+
+$s2
+
+$t0
+
+0
+
+add
+
+0
+
+17
+
+18
+
+8
+
+0
+
+32|ten
+
+000000
+
+10001
+
+10010
+
+01000
+
+00000
+
+100000
+
+00000010001100100100000000100000 2 = 0232402016
+Chapter 2 — Instructions: Language of the Computer — 4
+
+<-----Page 4----->Hexadecimal
+n
+
+Base 16
+n
+n
+
+0
+1
+2
+3
+n
+
+Compact representation of bit strings
+4 bits per hex digit
+0000
+0001
+0010
+0011
+
+4
+5
+6
+7
+
+0100
+0101
+0110
+0111
+
+8
+9
+a
+b
+
+1000
+1001
+1010
+1011
+
+c
+d
+e
+f
+
+1100
+1101
+1110
+1111
+
+Example: eca8 6420
+n
+
+1110 1100 1010 1000 0110 0100 0010 0000
+Chapter 2 — Instructions: Language of the Computer — 5
+
+<-----Page 5----->MIPS I-format Instructions
+
+n
+
+rs
+
+rt
+
+constant or address
+
+6 bits
+
+5 bits
+
+5 bits
+
+16 bits
+
+Immediate arithmetic and load/store instructions
+n
+n
+n
+
+n
+
+op
+
+rt: destination -- rs source register number
+Constant: –215 to +215 – 1
+Address: offset added to base address in rs
+
+Design Principle 4: Good design demands
+good compromises
+n
+
+n
+
+Different formats complicate decoding, but allow 32-bit
+instructions uniformly
+Keep formats as similar as possible
+Chapter 2 — Instructions: Language of the Computer — 6
+
+<-----Page 6----->MIPS I-format Instructions
+op
+
+rs
+
+rt
+
+constant or address
+
+6 bits
+
+5 bits
+
+5 bits
+
+16 bits
+
+addi $t0, $s1, 10
+addi
+
+$s1
+
+$t0
+
+constant
+
+8
+
+17
+
+8
+
+10
+
+001000
+
+10001
+
+01000
+
+0000000000001010
+
+Chapter 2 — Instructions: Language of the Computer — 7
+
+<-----Page 7----->Stored Program Computers
+The BIG Picture
+
+n
+
+n
+
+n
+
+Instructions represented in
+binary, just like data
+Instructions and data stored
+in memory
+Programs can operate on
+programs
+n
+
+n
+
+e.g., compilers, linkers, …
+
+Binary compatibility allows
+compiled programs to work
+on different computers
+n
+
+Standardized ISAs
+
+Chapter 2 — Instructions: Language of the Computer — 8
+
+<-----Page 8----->n
+
+n
+
+Instructions for bitwise manipulation
+Operation
+
+C
+
+Java
+
+MIPS
+
+Shift left
+
+<<
+
+<<
+
+sll
+
+Shift right
+
+>>
+
+>>>
+
+srl
+
+Bitwise AND
+
+&
+
+&
+
+and, andi
+
+Bitwise OR
+
+|
+
+|
+
+or, ori
+
+Bitwise NOT
+
+~
+
+~
+
+nor
+
+§2.6 Logical Operations
+
+Logical Operations
+
+Useful for extracting and inserting
+groups of bits in a word
+Chapter 2 — Instructions: Language of the Computer — 9
+
+<-----Page 9----->Shift Operations
+
+n
+n
+
+rs
+
+rt
+
+rd
+
+shamt
+
+funct
+
+6 bits
+
+5 bits
+
+5 bits
+
+5 bits
+
+5 bits
+
+6 bits
+
+shamt: how many positions to shift
+Shift left logical
+n
+n
+
+n
+
+op
+
+Shift left and fill with 0 bits
+sll by i bits multiplies by 2i
+
+Shift right logical
+n
+n
+
+Shift right and fill with 0 bits
+srl by i bits divides by 2i (unsigned only)
+Chapter 2 — Instructions: Language of the Computer — 10
+
+<-----Page 10----->AND Operations
+n
+
+Useful to mask bits in a word
+n
+
+Select some bits, clear others to 0
+
+and $t0, $t1, $t2
+$t2
+
+0000 0000 0000 0000 0000 1101 1100 0000
+
+$t1
+
+0000 0000 0000 0000 0011 1100 0000 0000
+
+$t0
+
+0000 0000 0000 0000 0000 1100 0000 0000
+
+Chapter 2 — Instructions: Language of the Computer — 11
+
+<-----Page 11----->OR Operations
+n
+
+Useful to include bits in a word
+n
+
+Set some bits to 1, leave others unchanged
+
+or $t0, $t1, $t2
+$t2
+
+0000 0000 0000 0000 0000 1101 1100 0000
+
+$t1
+
+0000 0000 0000 0000 0011 1100 0000 0000
+
+$t0
+
+0000 0000 0000 0000 0011 1101 1100 0000
+
+Chapter 2 — Instructions: Language of the Computer — 12
+
+<-----Page 12----->NOT Operations
+n
+
+Useful to invert bits in a word
+n
+
+n
+
+Change 0 to 1, and 1 to 0
+
+MIPS has NOR 3-operand instruction
+n
+
+a NOR b == NOT ( a OR b )
+
+nor $t0, $t1, $zero
+
+Register 0: always
+read as zero
+
+$zero 0000 0000 0000 0000 0000 0000 0000 0000
+$t1
+
+0000 0000 0000 0000 0011 1100 0000 0000
+
+$t0
+
+1111 1111 1111 1111 1100 0011 1111 1111
+
+Chapter 2 — Instructions: Language of the Computer — 13
+
+

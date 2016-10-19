@@ -1,0 +1,446 @@
+<-----Page 0----->EECS 2021
+Computer Organization
+Fall 2015
+The slides are based on the publisher slides
+and contribution from Profs Amir Asif and
+Peter Lian
+The slides will be modified, annotated,
+explained on the board, and sometimes
+corrected in the class
+
+Based on slides by the author and prof.
+Mary Jane Irwin of PSU.
+
+<-----Page 1----->Byte/Halfword Operations
+n
+n
+
+Could use bitwise operations
+MIPS byte/halfword load/store
+n
+
+String processing is a common case
+
+lb rt, offset(rs)
+n
+
+Sign extend to 32 bits in rt
+
+lbu rt, offset(rs)
+n
+
+lhu rt, offset(rs)
+
+Zero extend to 32 bits in rt
+
+sb rt, offset(rs)
+n
+
+lh rt, offset(rs)
+
+sh rt, offset(rs)
+
+Store just rightmost byte/halfword
+Chapter 2 — Instructions: Language of the Computer — 2
+
+<-----Page 2----->Example
+Byte address
+
+$3
+
+0x10001000
+
+0xF2
+
+0x10001002
+
+$12
+
+lbu
+
+$12, 2($3)
+
+Chapter 2 — Instructions: Language of the Computer — 3
+
+<-----Page 3----->Example
+Byte address
+
+$3
+
+0x10001000
+
+0xF2
+
+0x10001002
+
+$12
+
+lb
+
+$12, 2($3)
+
+Chapter 2 — Instructions: Language of the Computer — 4
+
+<-----Page 4----->Example
+Byte address
+
+$3
+
+0x10001000
+
+??
+
+$11
+$12
+
+sb
+
+0xA011C1D1
+
+0x10001002
+
+K
+
+C
+E
+H
+
+C
+
+$12, 2($3)
+
+Chapter 2 — Instructions: Language of the Computer — 5
+
+<-----Page 5----->Memory Operand Example 1
+n
+
+C code:
+g = h + A[8];
+n g in $s1, h in $s2, base address of A in $s3
+
+n
+
+Compiled MIPS code:
+n
+
+Index 8 requires offset of 32
+n
+
+4 bytes per word
+
+lw $t0, 32($s3)
+add $s1, $s2, $t0
+offset
+
+# load word
+
+base register
+
+Chapter 2 — Instructions: Language of the Computer — 6
+
+<-----Page 6----->Memory Operand Example 2
+n
+
+C code:
+A[12] = h + A[8];
+n h in $s2, base address of A in $s3
+
+n
+
+Compiled MIPS code:
+Index 8 requires offset of 32
+lw $t0, 32($s3)
+# load word
+add $t0, $s2, $t0
+sw $t0, 48($s3)
+# store word
+n
+
+Chapter 2 — Instructions: Language of the Computer — 7
+
+<-----Page 7----->Registers vs. Memory
+n
+
+n
+
+Registers are faster to access than
+memory
+Operating on memory data requires loads
+and stores
+n
+
+n
+
+More instructions to be executed
+
+Compiler must use registers for variables
+as much as possible
+n
+
+n
+
+Only spill to memory for less frequently used
+variables
+Register optimization is important!
+Chapter 2 — Instructions: Language of the Computer — 8
+
+<-----Page 8----->Immediate Operands
+n
+
+Constant data specified in an instruction
+addi $s3, $s3, 4
+
+n
+
+No subtract immediate instruction
+n
+
+Just use a negative constant
+addi $s2, $s1, -1
+
+n
+
+Design Principle 3: Make the common
+case fast
+n
+n
+
+Small constants are common
+Immediate operand avoids a load instruction
+Chapter 2 — Instructions: Language of the Computer — 9
+
+<-----Page 9----->The Constant Zero
+n
+
+MIPS register 0 ($zero) is the constant 0
+n
+
+n
+
+Cannot be overwritten
+
+Useful for common operations
+n
+
+E.g., move between registers
+add $t2, $s1, $zero
+
+Chapter 2 — Instructions: Language of the Computer — 10
+
+<-----Page 10----->n
+
+n
+n
+
+Given an n-bit number
+Range: 0 to +2n – 1
+Example
+n
+
+n
+
+§2.4 Signed and Unsigned Numbers
+
+Unsigned Binary Integers
+
+0000 0000 0000 0000 0000 0000 0000 1011 2
+= 0 + … + 1×23 + 0×22 +1×21 +1×20
+= 0 + … + 8 + 0 + 2 + 1 = 1110
+
+Using 32 bits
+n
+
+0 to +4,294,967,295
+Chapter 2 — Instructions: Language of the Computer — 11
+
+<-----Page 11----->2s-Complement Signed Integers
+n
+
+n
+n
+
+Given an n-bit number
+Range: –2n – 1 to +2n – 1 – 1
+Example
+n
+
+n
+
+1111 1111 1111 1111 1111 1111 1111 1100 2
+= –1×231 + 1×230 + … + 1×22 +0×21 +0×20
+= –2,147,483,648 + 2,147,483,644 = –410
+
+Using 32 bits
+n
+
+–2,147,483,648 to +2,147,483,647
+Chapter 2 — Instructions: Language of the Computer — 12
+
+<-----Page 12----->2s-Complement Signed Integers
+n
+
+Bit 31 is sign bit
+n
+n
+
+n
+n
+
+n
+
+1 for negative numbers
+0 for non-negative numbers
+
+–(–2n – 1) can’t be represented
+Non-negative numbers have the same unsigned
+and 2s-complement representation
+Some specific numbers
+n
+n
+n
+n
+
+0: 0000 0000 … 0000
+–1: 1111 1111 … 1111
+Most-negative: 1000 0000 … 0000
+Most-positive: 0111 1111 … 1111
+Chapter 2 — Instructions: Language of the Computer — 13
+
+<-----Page 13----->Signed Negation
+n
+
+Complement and add 1
+n
+
+n
+
+Complement means 1 → 0, 0 → 1
+
+Example: negate +2
+n
+n
+
++2 = 0000 0000 … 00102
+–2 = 1111 1111 … 11012 + 1
+= 1111 1111 … 11102
+Chapter 2 — Instructions: Language of the Computer — 14
+
+<-----Page 14----->2’sc binary
+
+decimal
+
+-23 =
+
+1000
+
+-8
+
+-(23 - 1) =
+
+1001
+
+-7
+
+1010
+
+-6
+
+1011
+
+-5
+
+1100
+
+-4
+
+1101
+
+-3
+
+1110
+
+-2
+
+1111
+
+-1
+
+0000
+
+0
+
+0001
+
+1
+
+0010
+
+2
+
+0011
+
+3
+
+0100
+
+4
+
+0101
+
+5
+
+0110
+
+6
+
+0111
+
+7
+
+2’s Complement
+complement all the bits
+0101
+and add a 1
+0110 (6)
+
+23 - 1 =
+
+Chapter 2 — Instructions: Language of the Computer — 15
+
+<-----Page 15----->Sign Extension
+n
+
+Representing a number using more bits
+n
+
+n
+
+In MIPS instruction set
+n
+n
+n
+
+n
+
+addi: extend immediate value
+lb, lh: extend loaded byte/halfword
+beq, bne: extend the displacement
+
+Replicate the sign bit to the left
+n
+
+n
+
+Preserve the numeric value
+
+c.f. unsigned values: extend with 0s
+
+Examples: 8-bit to 16-bit
+n
+n
+
++2: 0000 0010 => 0000 0000 0000 0010
+–2: 1111 1110 => 1111 1111 1111 1110
+Chapter 2 — Instructions: Language of the Computer — 16
+
+

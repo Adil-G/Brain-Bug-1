@@ -158,13 +158,15 @@ public class TestChatBotMain {
             Message finalAnswers = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(query, originalInput);
             JSONObject obj = new JSONObject();
             JSONArray arr = new JSONArray();
+            String answerString = "";
             for(String message : finalAnswers.getAnswers())
             {
                 arr.add(message);
+                answerString += message;
             }
             obj.put(finalAnswers.getMessage(),arr);
-            return obj.toJSONString();//;
-            //return query;
+            //return obj.toJSONString();//;
+            return answerString;
         }
         return "HPE Haven Timeout";
     }

@@ -1,0 +1,1155 @@
+<-----Page 0----->Lists
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+1
+
+<-----Page 1----->Topics:
+• Lists
+
+• Iterators
+• Java Collections Framework
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+2
+
+<-----Page 2----->Part 1:
+Lists
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+3
+
+<-----Page 3----->The java.util.List ADT
+• The java.util.List interface includes the following methods:
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+4
+
+<-----Page 4----->Example
+A sequence of List operations:
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+5
+
+<-----Page 5----->Array Lists
+• An obvious choice for implementing the list ADT is to
+use an array, A, where A[i] stores (a reference to) the
+element with index i.
+• With a representation based on an array A, the get(i)
+and set(i, e) methods are easy to implement by
+accessing A[i] (assuming i is a legitimate index).
+
+A
+0 1 2
+
+Last Update: Oct 29, 2014
+
+i
+
+EECS2011: Lists
+
+n
+
+6
+
+<-----Page 6----->Insertion
+• In an operation add(i, o), we need to make room
+for the new element by shifting forward the n - i
+elements A[i], …, A[n - 1]
+• In the worst case (i = 0), this takes O(n) time
+
+A
+0 1 2
+
+i
+
+n
+
+0 1 2
+
+i
+
+n
+
+0 1 2
+
+o
+i
+
+A
+
+A
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+n
+7
+
+<-----Page 7----->Element Removal
+• In an operation remove(i), we need to fill the hole left by
+the removed element by shifting backward the n - i - 1
+elements A[i + 1], …, A[n - 1]
+• In the worst case (i = 0), this takes O(n) time
+A
+0 1 2
+
+o
+i
+
+n
+
+0 1 2
+
+i
+
+n
+
+0 1 2
+
+i
+
+A
+
+A
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+n
+8
+
+<-----Page 8----->Performance
+• In an array-based implementation of a dynamic
+list:
+o The space used by the data structure is O(n)
+o Indexing the element at i takes O(1) time
+o add and remove run in O(n) time
+
+• In an add operation, when the array is full,
+instead of throwing an exception, we can
+replace the array with a larger one …
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+9
+
+<-----Page 9----->Java Implementation
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+10
+
+<-----Page 10----->Java Implementation, 2
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+11
+
+<-----Page 11----->Growable Array-based Array List
+• push(o) is the operation that Algorithm push(o)
+adds element o at the end of
+n  A.length
+the list A
+if t = n  1 then
+S  new larger array
+• when the array is full, replace
+// copy A’s contents into S:
+the array with a larger one
+for i  0 .. n-1 do
+• how large should the new
+S[i]  A[i]
+array be?
+// rename:
+ Incremental strategy:
+increase the size by a constant c
+ Doubling strategy:
+double the size
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+AS
+// add new element:
+tt+1
+A[t]  o
+
+12
+
+<-----Page 12----->Comparison of the Strategies
+• We compare the incremental strategy and the
+doubling strategy by analyzing the total time
+T(n) needed to perform a series of n push
+operations
+• We assume that we start with an empty list
+represented by a growable array of size 1
+• We call amortized time of a push operation the
+average time taken by a push operation over
+the series of operations, i.e., T(n)/n
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+13
+
+<-----Page 13----->Incremental Strategy Analysis
+• Over n push operations, we replace the array k = n/c
+times, where c is the incremental enlargement constant
+• The total time T(n) of a series of n push operations is
+proportional to
+n + c + 2c + 3c + 4c + … + kc =
+n + c(1 + 2 + 3 + … + k) =
+n + ck(k + 1)/2
+• Since c is a constant, T(n) is O(n + k2), i.e., O(n2)
+
+• Thus, the amortized time of a push operation is O(n)
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+14
+
+<-----Page 14----->Doubling Strategy Analysis
+• We replace the array k = log2 n times
+• The total time T(n) of a series of n
+push operations is proportional to
+n + 1 + 2 + 4 + 8 + …+ 2k =
+n + 2k + 1 - 1 =
+3n - 1
+• T(n) is O(n)
+• The amortized time of a push
+operation is O(1)
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+geometric series
+1
+
+1
+
+4
+
+2
+
+8
+
+15
+
+<-----Page 15----->Positional Lists
+• To provide for a general abstraction of a sequence of
+elements with the ability to identify the location of an
+element, we define a positional list ADT.
+• A position acts as a marker or token within the broader
+positional list.
+• A position p is unaffected by changes elsewhere in a list;
+the only way in which a position becomes invalid is if an
+explicit command is issued to delete it.
+• A position instance is a simple object, supporting only the
+following method:
+– p.getElement( ): Returns the element stored at position p.
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+16
+
+<-----Page 16----->Positional List ADT
+• Accessor methods:
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+17
+
+<-----Page 17----->Positional List ADT (2)
+• Update methods:
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+18
+
+<-----Page 18----->Example
+• A sequence of Positional List operations:
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+19
+
+<-----Page 19----->Positional List Implementation
+The most natural way to
+implement a positional
+list is with a doubly-linked
+list.
+
+prev
+
+next
+
+element
+
+nodes/positions
+
+header
+
+node
+
+trailer
+
+elements
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+20
+
+<-----Page 20----->Insertion
+Insert a new node, q, between p and its successor.
+p
+A
+
+B
+
+C
+
+p
+
+A
+
+q
+
+B
+
+C
+
+X
+p
+A
+Last Update: Oct 29, 2014
+
+q
+B
+
+EECS2011: Lists
+
+X
+
+C
+21
+
+<-----Page 21----->Deletion
+Remove a node, p, from a doubly-linked list.
+
+p
+A
+
+B
+
+C
+
+A
+
+B
+
+C
+
+D
+
+p
+D
+
+A
+Last Update: Oct 29, 2014
+
+B
+EECS2011: Lists
+
+C
+22
+
+<-----Page 22----->Part 1: Summary
+• The List ADT
+• The java.util.List ADT
+• Fixed size array implementation
+– Performance & limitations
+
+• Growable array implementation
+– Amortized performance
+
+• Positional List ADT
+– Doubly linked list implementation
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+23
+
+<-----Page 23----->Part 2:
+Iterators &
+The Java Collections
+Framework
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+24
+
+<-----Page 24----->The Java Collections Framework
+• The Java Collections Framework (JCF) is a good example of
+how to apply the principles of object-oriented software
+engineering to the design of classical data structures.
+• A modular design of classes and interfaces that implement
+commonly reusable collection data structures.
+
+• Designed and developed primarily by Joshua Bloch
+(currently Chief Java Architect at Google).
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+25
+
+<-----Page 25----->What is a Collection?
+• An object that groups multiple elements
+into a single unit.
+• Sometimes called a container.
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+26
+
+<-----Page 26----->What is a Collection Framework?
+• A unified architecture for representing and
+manipulating collections.
+• Includes:
+– Interfaces: A hierarchy of ADTs.
+– Implementations
+– Algorithms: The methods that perform useful
+computations, such as searching and sorting, on
+objects that implement collection interfaces.
+ These algorithms are polymorphic, that is, the same
+method can be used on many different implementations
+of the appropriate collection interface.
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+27
+
+<-----Page 27----->History
+Apart from JCF, the best-known examples
+of collections frameworks are:
+– C++ Standard Template Library (STL)
+– Smalltalk's collection hierarchy.
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+28
+
+<-----Page 28----->Benefits
+• Reduces programming effort: By providing useful data structures
+and algorithms, the Collections Framework frees you to concentrate on
+the important parts of your program rather than on the low-level
+"plumbing" required to make it work.
+• Increases program speed and quality: Provides high-performance,
+high-quality implementations of useful data structures and algorithms.
+• Allows interoperability among unrelated APIs: APIs can
+interoperate seamlessly, even though they were written independently.
+• Reduces effort to learn and to use new APIs
+• Reduces effort to design new APIs
+• Fosters software reuse: New data structures that conform to the
+standard collection interfaces are by nature reusable. 
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+29
+
+<-----Page 29----->Where is JCF?
+• Package java.util.
+• In this lecture we will survey the interfaces, abstract classes
+and classes for linear data structures provided by JCF.
+• We will not cover all of the details (e.g., thrown exceptions).
+• For additional details, please see
+– The Java API
+– Comments and code in the specific java.util.*.java files
+provided with your java distribution.
+– The Collections Java tutorial available here
+– Chan et al, “The Java Class Libraries” , Second Edition .
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+30
+
+<-----Page 30----->Core Collection Interfaces
+
+http://docs.oracle.com/javase/tutorial/collections
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+31
+
+<-----Page 31----->Traversing Collections in Java
+• There are two ways to traverse collections:
+– Using Iterators.
+– Using the (enhanced) for-each construct
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+32
+
+<-----Page 32----->Iterators
+An iterator is a software design pattern that
+abstracts the process of scanning through a
+sequence of elements, one element at a time.
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+33
+
+<-----Page 33----->The for-each Loop
+• Java’s Iterable class also plays a fundamental role
+in support of the “for-each” loop syntax:
+
+is equivalent to:
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+34
+
+<-----Page 34----->The Iterable Interface
+• The package java.lang defines a parameterized interface,
+named Iterable<T>, that includes the following single method:
+Iterator<T> iterator( )
+Returns an iterator of the elements of type T in the collection.
+
+• An instance of a typical collection class in Java, such as an
+ArrayList, is iterable (but not itself an iterator); it produces an
+iterator for its collection as the return value of the iterator( )
+method.
+• Each call to iterator( ) returns a new iterator instance, thereby
+allowing multiple (even simultaneous) traversals of a
+collection.
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+35
+
+<-----Page 35----->Iterators
+• An Iterator is an object that enables you to traverse through a
+collection and to remove elements from the collection
+selectively, if desired.
+• You get an Iterator for a collection by calling the collection’s
+iterator method.
+• Suppose collection is an instance of a Collection.
+Then to print out each element on a separate line use:
+Iterator<E> iter = collection.iterator( );
+while (iter.hasNext( ))
+System.out.println(iter.next( ));
+• Note that next( ) does two things:
+1. Returns the current element (initially the first element)
+2. Steps to the next element and makes it the current element.
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+36
+
+<-----Page 36----->The Iterator interface
+public interface Iterator<E> {
+boolean hasNext( );
+E next( );
+void remove( ); //optional
+}
+• hasNext( ) returns true if the iteration has more elements
+• next( ) returns the next element in the iteration.
+– throws exception if iterator has already visited all elements.
+• remove( ) removes the last element that was returned by next.
+– remove may be called only once per call to next
+– otherwise throws an exception.
+– Iterator.remove is the only safe way to modify a collection during iteration
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+37
+
+<-----Page 37----->Implementing Iterators
+• Could make a copy of the collection.
+– Good: could make copy private.
+No other objects could change it from under you.
+– Bad: construction takes O(n) time.
+
+• Could use the collection itself (the typical choice).
+– Good: construction, hasNext and next are all O(1).
+– Bad: if another object makes a structural change to the
+collection, the results are unspecified.
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+38
+
+<-----Page 38----->The Generality of Iterators
+• iterators are general: they apply to any collection.
+– Could represent a sequence, set or map.
+– Could be implemented using arrays or linked lists.
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+39
+
+<-----Page 39----->ListIterators
+• ListIterator extends Iterator to treat
+the collection as a list, allowing
+
+Iterator
+ListIterator
+
+– access to the integer position (index) of elements
+– forward and backward traversal
+– modification and insertion of elements.
+
+• The current position is viewed as being either
+– Before the first element
+– Between two elements
+– After the last element
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+40
+
+<-----Page 40----->ListIterators
+ListIterators support the following methods:
+add(e):
+
+Iterator
+ListIterator
+
+inserts element e at current position (before implicit cursor)
+
+hasNext( )
+hasPrevious( )
+previous( ): returns element before current position and steps backward
+next( ):
+returns element after current position and steps forward
+nextIndex( )
+previousIndex( )
+set(e):
+
+replaces the element returned by the most recent
+next( ) or previous( ) call
+
+remove( ): removes the element returned by the most recent
+next( ) or previous( ) call
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+41
+
+<-----Page 41----->Part 3:
+Java Collections
+Framework
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+42
+
+<-----Page 42----->Levels of Abstraction
+• Recall that Java supports three levels of abstraction:
+– Interface
+• Java expression of an ADT
+• Includes method declarations with arguments of specified
+types, but with empty bodies
+
+– Abstract Class
+• Implements only a subset of an interface.
+• Cannot be used to instantiate an object.
+
+– (Concrete) Class
+• May extend one (abstract or concrete) class
+• Must fully implement any interfaces it implements
+• Can be used to instantiate objects.
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+43
+
+<-----Page 43----->JCF  Ordered Data Types
+Iterable
+
+Interface
+Abstract Class
+
+Collection
+
+Deque
+
+Class
+
+List
+
+Queue
+Abstract
+Queue
+Priority
+Queue
+
+Abstract
+List
+
+Abstract
+Collection
+
+Abstract
+Sequential
+List
+Linked
+List
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+Array
+List
+
+Vector
+Stack
+
+44
+
+<-----Page 44----->Iterable
+• Is an interface in java.lang
+• Allows an Iterator to be associated with an object.
+• The iterator allows an existing data structure to be stepped
+through sequentially, using the following methods:
+– hasNext( ) returns true if the iteration has more elements
+– next( ) returns the next element in the iteration.
+ throws exception if iterator has already visited all elements.
+
+– remove( ) removes last element returned by next.
+• remove may be called only once per call to next
+• otherwise throws an exception.
+• Iterator.remove is the only safe way to modify a collection during
+iteration
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+45
+
+<-----Page 45----->Collection
+Allows data to be modeled as a collection of objects.
+In addition to the Iterator interface, provides interfaces to:
+Creation:
+
+Modification:
+
+Querying:
+
+add(e)
+
+remove(e)
+
+size( )
+
+addAll(c)
+
+removeAll(c)
+
+isEmpty( )
+
+retainAll(c)
+
+contains(e)
+
+clear( )
+
+containsAll(c)
+toArray( )
+equals(e)
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+46
+
+<-----Page 46----->Abstract
+Collection
+• Skeletal implementation of the Collection interface.
+• For unmodifiable collection, we still need to implement:
+– iterator (including hasNext and next methods)
+– size
+• For modifiable collection, we need to also implement:
+– remove method for iterator
+– add
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+47
+
+<-----Page 47----->List
+• Extends the Collections interface to model the data as an ordered
+sequence of elements with 0-based integer position indexing.
+• Provides interface for creation of a ListIterator
+• Also adds interfaces for:
+Creation:
+add(e):
+
+append element e to the list
+
+add(i,e): insert element e at position i
+(and shift elements at positions > i one to the right).
+
+Querying:
+get(i): return element currently stored at position i
+indexOf(e): return index of first occurrence of specified element e
+lastIndexOf(e): return index of last occurrence of specified element e
+
+subList(i,j): return list of elements from index i to j
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+48
+
+<-----Page 48----->List
+• Extends the Collections interface to model the data as an ordered
+sequence of elements with 0-based integer position indexing.
+• Provides interface for creation of a ListIterator
+• Also adds interfaces for:
+Modification:
+set(i,e): replace element currently stored at index i with specified element e
+remove (e): remove the first occurrence of the specified element from the list
+remove(i): remove the element at position i
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+49
+
+<-----Page 49----->Abstract
+List
+• Skeletal implementation of the List interface.
+• For unmodifiable list, we need to implement methods:
+– get
+– size
+
+• For modifiable list, need to implement
+– set
+
+• For variable-size modifiable list, need to implement
+– add
+– remove
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+50
+
+<-----Page 50----->Array
+List
+•
+•
+•
+•
+
+Random access implementation of the List interface
+Uses an array for storage.
+Supports automatic array-resizing
+Adds methods
+– trimToSize( ): Trims capacity to current size
+– ensureCapacity(n): Increases capacity to at least n
+– clone( ): Create copy of list
+
+– removeRange(i, j): Remove elements at positions i to j
+– RangeCheck(i): throws exception if i not in range
+– writeObject(s): writes out list to output stream s
+– readObject(s): reads in list from input stream s
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+51
+
+<-----Page 51----->Vector
+• Similar to ArrayList.
+• But all methods of Vector are synchronized.
+– Uses an internal lock to prevent multiple threads from concurrently
+executing methods for the same vector object .
+– Other threads trying to execute methods of the object are suspended until
+the current thread completes.
+– Helps to prevent conflicts and inconsistencies in multi-threaded code
+
+• Vector is a so-called legacy class: no longer necessary for
+new applications, but still in widespread use in existing
+code.
+• Synchronization can be achieved using synchronization
+wrappers (we will not cover this).
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+52
+
+<-----Page 52----->Stack
+• Represents a last-in, first-out (LIFO) stack of objects.
+• Adds 5 methods:
+–
+–
+–
+–
+–
+
+push( )
+pop( )
+peek( )
+empty( )
+search(e): return the 1-based position of e on stack.
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+53
+
+<-----Page 53----->Abstract
+Sequential
+List
+•
+
+Skeletal implementation of the List interface.
+
+•
+
+Assumes a sequential access data store (e.g., linked list)
+
+•
+
+We need to implement methods
+
+– listIterator( ) ,
+•
+
+size( )
+
+For unmodifiable list, we need to implement list iterator’s methods:
+– hasNext( ), next( ), hasPrevious( ), previous( ), nextIndex( ), previousIndex( )
+
+•
+
+For modifiable list, need to also implement list iterator’s
+
+– set(e)
+•
+
+For variable-size modifiable list, need to implement list iterator’s
+– add(e) ,
+
+remove( )
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+54
+
+<-----Page 54----->Queue
+• Designed for holding elements prior to processing
+
+• Typically first-in first-out (FIFO)
+• Defines a head position, which is the next element to be removed.
+• Provides additional insertion, extraction and inspection operations.
+• Extends the Collection interface to provide interfaces for:
+– offer(e): add e to queue if there is room (return false if not)
+– poll( ): return and remove head of queue (return null if empty)
+– remove( ): return and remove head of queue (throw exception if empty)
+– peek( ): return head of queue (return null if empty)
+– element( ): return head of queue (throw exception if empty)
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+55
+
+<-----Page 55----->Linked
+List
+• Implements the List and Queue interfaces.
+• Uses a doubly-linked list data structure.
+• Extends the List interface with additional methods:
+– getFirst( )
+– getLast( )
+– removeFirst( )
+– removeLast( )
+– addFirst(e)
+– addLast(e)
+
+• These make it easier to use the LinkedList class to create stacks,
+queues and deques (double-ended queues).
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+56
+
+<-----Page 56----->Linked
+List
+• LinkedList objects are not synchronized by default.
+• However, the LinkedList iterator is fail-fast: if the list is
+structurally modified at any time after the iterator is created,
+in any way except through the Iterator's own remove or add
+methods, the iterator will throw a
+ConcurrentModificationException.
+• This is detected at the first execution of one of the iterator’s
+methods after the modification.
+• In this way the iterator will hopefully fail quickly and cleanly,
+rather than risking arbitrary, non-deterministic behavior at
+an undetermined time in the future.
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+57
+
+<-----Page 57----->Abstract
+Queue
+• Skeletal implementation of the Queue interface.
+• Provides implementations for
+–
+–
+–
+–
+–
+
+add(e)
+remove( )
+element( )
+clear( )
+addAll(c)
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+58
+
+<-----Page 58----->Priority
+Queue
+• Based on priority heap
+• Elements are prioritized based either on
+– natural order, or
+– a comparator, passed to the constructor.
+• Provides an iterator
+• We will study this in detail when we get to heaps!
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+59
+
+<-----Page 59----->Part 3: Summary
+From this part you should understand:
+– The purpose and advantages of the JCF
+– How interfaces, abstract classes and classes are used
+hierarchically to achieve some of the key goals of objectoriented software engineering.
+– iterators: purpose; how to create & use them.
+– How JCF can be used to develop code using general
+collections, lists, array lists, stacks and queues.
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+60
+
+<-----Page 60----->For More Details see
+• The Java API
+• Comments and code in the specific java.util.*.java files
+
+provided with your java distribution.
+• The Collections Java tutorial available here
+• Chan et al, “The Java Class Libraries” , Second Edition .
+
+Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+61
+
+<-----Page 61----->Last Update: Oct 29, 2014
+
+EECS2011: Lists
+
+62
+
+

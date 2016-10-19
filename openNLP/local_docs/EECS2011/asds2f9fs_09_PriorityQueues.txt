@@ -1,0 +1,1555 @@
+<-----Page 0----->Priority Queues
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+1
+
+<-----Page 1----->Priority Queue ADT
+• A priority queue stores a
+collection of entries
+• Each entry is a pair (key, value)
+• Main methods:
+– insert(k, v)
+inserts an entry with key k and
+value v
+– removeMin()
+removes and returns the entry
+with smallest key, or null if the
+the priority queue is empty
+
+Last Update: Oct 23, 2014
+
+• Additional methods:
+– min()
+returns, but does not
+remove, an entry with
+smallest key, or null if the
+priority queue is empty
+– size(), isEmpty()
+
+• Applications:
+
+EECS2011: Priority Queues
+
+– Standby flyers
+– Auctions
+– Stock market
+2
+
+<-----Page 2----->Example
+• A sequence of priority queue method calls:
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+3
+
+<-----Page 3----->Total Order Relations
+• Keys in a priority
+• Mathematical concept of
+queue can be
+total order relation 
+arbitrary objects on
+– Comparability property:
+either x  y or y  x
+which an order is
+– Anti-symmetric property:
+defined
+x  y and y  x  x = y
+• Two distinct entries
+– Transitive property:
+in a priority queue
+x  y and y  z  x  z
+can have the same
+key
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+4
+
+<-----Page 4----->Entry ADT
+ An entry in a priority queue
+is simply a key-value pair
+ Priority queues store
+entries to allow for efficient
+insertion and removal
+based on keys
+ Methods:
+
+/**
+* Java interface for a key-value
+* pair entry
+**/
+public interface Entry<K,V> {
+K getKey();
+V getValue();
+}
+
+ getKey: returns the key for
+this entry
+ getValue: returns the value
+associated with this entry
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+5
+
+<-----Page 5----->Comparator ADT
+• A comparator encapsulates
+the action of comparing two
+objects according to a given
+total order relation
+• A generic priority queue uses
+an auxiliary comparator
+• The comparator is external to
+the keys being compared
+• When the priority queue
+needs to compare two keys,
+it uses its comparator
+Last Update: Oct 23, 2014
+
+• Primary method of the
+Comparator ADT
+• compare(a, b): returns
+an integer i such that
+–
+–
+–
+–
+
+EECS2011: Priority Queues
+
+i < 0 if a < b,
+i = 0 if a = b
+i > 0 if a > b
+An error occurs if a and b
+cannot be compared.
+
+6
+
+<-----Page 6----->Example Comparator
+Lexicographic comparison of 2D points:
+/** Comparator for 2D points under the
+standard lexicographic order. */
+public class Lexicographic
+implements Comparator {
+int xa, ya, xb, yb;
+public int compare(Object a, Object b)
+throws ClassCastException {
+xa = ((Point2D) a).getX();
+ya = ((Point2D) a).getY();
+xb = ((Point2D) b).getX();
+yb = ((Point2D) b).getY();
+if (xa != xb) return (xb - xa);
+else return (yb - ya);
+}
+}
+Last Update: Oct 23, 2014
+
+Point objects:
+/** Class representing a point in the
+plane with integer coordinates */
+public class Point2D
+{
+protected int xc, yc; // coordinates
+public Point2D(int x, int y) {
+xc = x;
+yc = y;
+}
+public int getX() { return xc; }
+public int getY() { return yc; }
+}
+
+EECS2011: Priority Queues
+
+7
+
+<-----Page 7----->Sequence-based Priority Queue
+• Implementation with an
+unsorted list
+4
+
+5
+
+2
+
+3
+
+1
+
+• Performance:
+
+1
+
+2
+
+3
+
+4
+
+5
+
+• Performance:
+
+– insert takes O(1) time since
+we can insert the item at
+the beginning or end of the
+sequence
+– removeMin and min take
+O(n) time since we have to
+traverse the entire
+sequence to find the
+smallest key
+Last Update: Oct 23, 2014
+
+• Implementation with a
+sorted list
+
+– insert takes O(n) time since
+we have to find the place
+where to insert the item
+– removeMin and min take
+O(1) time, since the
+smallest key is at the
+beginning
+
+EECS2011: Priority Queues
+
+8
+
+<-----Page 8----->Unsorted List Implementation
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+9
+
+<-----Page 9----->Unsorted List Implementation, 2
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+10
+
+<-----Page 10----->Sorted List Implementation
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+11
+
+<-----Page 11----->Sorted List Implementation, 2
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+12
+
+<-----Page 12----->Priority Queue
+Sorting
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+13
+
+<-----Page 13----->Priority Queue Sorting
+• We can use a priority
+queue to sort a list of
+comparable elements
+1. Insert the elements one by
+one with a series of insert
+operations
+2. Remove the elements in
+sorted order with a series
+of removeMin operations
+
+• The running time of this
+sorting method depends
+on the priority queue
+implementation
+Last Update: Oct 23, 2014
+
+Algorithm PQ-Sort(S, C)
+Input: list S, comparator C for the
+elements of S
+Output: list S sorted in increasing
+order according to C
+P  priority queue with
+comparator C
+while  S.isEmpty ()
+e  S.remove(S.first ())
+P.insert (e, )
+while  P.isEmpty()
+e  P.removeMin().getKey()
+S.addLast(e)
+
+EECS2011: Priority Queues
+
+14
+
+<-----Page 14----->Selection-Sort
+• Selection-sort is the variation of PQ-sort where the
+priority queue is implemented with an unsorted
+sequence
+• Running time of Selection-sort:
+1. Inserting the elements into the priority queue with n
+insert operations takes O(n) time
+2. Removing the elements in sorted order from the
+priority queue with n removeMin operations takes
+time proportional to 1 + 2 + …+ n
+
+• Selection-sort runs in O(n2) time
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+15
+
+<-----Page 15----->Selection-Sort Example
+Input:
+
+Sequence S
+(7,4,8,2,5,3,9)
+
+Priority Queue P
+()
+
+Phase 1:
+(a)
+(b)
+…
+(g)
+
+(4,8,2,5,3,9)
+(8,2,5,3,9)
+…
+...
+()
+
+(7)
+(7,4)
+
+Phase 2:
+(a)
+(b)
+(c)
+(d)
+(e)
+(f)
+(g)
+
+(2)
+(2,3)
+(2,3,4)
+(2,3,4,5)
+(2,3,4,5,7)
+(2,3,4,5,7,8)
+(2,3,4,5,7,8,9)
+
+(7,4,8,5,3,9)
+(7,4,8,5,9)
+(7,8,5,9)
+(7,8,9)
+(8,9)
+(9)
+()
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+(7,4,8,2,5,3,9)
+
+16
+
+<-----Page 16----->Insertion-Sort
+• Insertion-sort is the variation of PQ-sort where
+the priority queue is implemented with a sorted
+sequence
+• Running time of Insertion-sort:
+1. Inserting the elements into the priority queue with n
+insert operations takes time proportional to
+
+1 + 2 + …+ n
+2. Removing the elements in sorted order from the
+priority queue with a series of n removeMin
+operations takes O(n) time
+
+• Insertion-sort runs in O(n2) time
+Last Update: Oct 23,
+2014
+
+EECS2011: Priority Queues
+
+17
+
+<-----Page 17----->Insertion-Sort Example
+Input:
+
+Sequence S
+(7,4,8,2,5,3,9)
+
+Priority Queue P
+()
+
+Phase 1:
+(a)
+(b)
+(c)
+(d)
+(e)
+(f)
+(g)
+
+(4,8,2,5,3,9)
+(8,2,5,3,9)
+(2,5,3,9)
+(5,3,9)
+(3,9)
+(9)
+()
+
+(7)
+(4,7)
+(4,7,8)
+(2,4,7,8)
+(2,4,5,7,8)
+(2,3,4,5,7,8)
+(2,3,4,5,7,8,9)
+
+Phase 2:
+(a)
+(b)
+…
+(g)
+
+(2)
+(2,3)
+…
+…
+(2,3,4,5,7,8,9)
+
+(3,4,5,7,8,9)
+(4,5,7,8,9)
+…
+()
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+18
+
+<-----Page 18----->In-place Insertion-Sort
+ Instead of using an external
+data structure, we can
+implement selection-sort
+and insertion-sort in-place
+ A portion of the input
+sequence itself serves as the
+priority queue
+ For in-place insertion-sort
+ We keep sorted the initial
+portion of the sequence
+ We can use swaps instead
+of modifying the sequence
+
+Last Update: Oct 23, 2014
+
+5
+
+4
+
+2
+
+3
+
+1
+
+5
+
+4
+
+2
+
+3
+
+1
+
+4
+
+5
+
+2
+
+3
+
+1
+
+2
+
+4
+
+5
+
+3
+
+1
+
+2
+
+3
+
+4
+
+5
+
+1
+
+1
+
+2
+
+3
+
+4
+
+5
+
+1
+
+2
+
+3
+
+4
+
+5
+
+EECS2011: Priority Queues
+
+19
+
+<-----Page 19----->Heaps
+J. W. J. Williams, 1964
+2
+
+5
+
+9
+
+Last Update: Oct 23, 2014
+
+6
+
+7
+
+EECS2011: Priority Queues
+
+20
+
+<-----Page 20----->Heaps
+• A heap is a binary tree storing
+keys at its nodes and satisfying
+the following properties:
+
+• The last internal node of a
+heap is the rightmost
+node of maximum depth
+
+• Heap-Order: for every internal
+node v other than the root,
+key(v)  key(parent(v))
+• Complete Binary Tree:
+let h be the height of the heap
+
+2
+5
+9
+
+– for i = 0, … , h - 1, there are 2i nodes
+of depth i
+– at depth h - 1, the internal nodes
+are to the left of the external nodes
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+6
+7
+
+last internal node
+
+(external nodes not shown)
+
+21
+
+<-----Page 21----->Height of a Heap
+Theorem: A heap storing n keys has height O(log n)
+Proof: (we apply the complete binary tree property)
+– Let h be the height of a heap storing n nodes
+– Since there are 2i nodes at depth i = 0, … , h - 1 and at least one
+node at depth h, we have n  1 + 2 + 4 + … + 2h-1 + 1 = 2h
+– Thus, n  2h , i.e., h  log n .
+depth nodes
+0
+1
+1
+
+2
+
+h-1
+
+2h-1
+
+h
+
+>1
+
+Last Update: Oct 23,
+2014
+
+EECS2011: Priority Queues
+
+22
+
+<-----Page 22----->Heaps and Priority Queues
+• We can use a heap to implement a priority queue
+• We store a (key, element) item at each internal node
+• We keep track of the position of the last internal node
+(2, Sue)
+(5, Pat)
+(9, Jeff)
+
+Last Update: Oct 23, 2014
+
+(6, Mark)
+(7, Anna)
+
+EECS2011: Priority Queues
+
+23
+
+<-----Page 23----->Insertion into a Heap
+• Method insertItem of the
+priority queue ADT
+corresponds to the
+insertion of a key k to the
+heap
+• The insertion algorithm
+consists of three steps
+– Find the insertion node z
+(the new last node)
+– Store k at z
+– Restore the heap-order
+property (discussed next)
+Last Update: Oct 23, 2014
+
+2
+5
+
+9
+
+6
+
+z
+7
+
+insertion node
+2
+5
+9
+
+EECS2011: Priority Queues
+
+6
+7
+
+z
+
+1
+
+24
+
+<-----Page 24----->2
+
+Upheap
+
+5
+
+6
+
+9
+
+z
+
+7
+
+1
+
+• After the insertion of a new key k, the heap-order property
+may be violated
+• Algorithm upheap restores the heap-order property by
+swapping k along an upward path from the insertion node
+• upheap terminates when the key k reaches the root or a node
+whose parent has a key smaller than or equal to k
+• Since a heap has height O(log n), upheap runs in O(log n) time
+2
+
+1
+
+5
+9
+
+1
+7
+
+Last Update: Oct 23, 2014
+
+z
+
+6
+
+5
+9
+
+EECS2011: Priority Queues
+
+2
+7
+
+z
+
+6
+
+25
+
+<-----Page 25----->Removal from a Heap
+• Method removeMin of the
+priority queue ADT
+corresponds to the
+removal of the root key
+from the heap
+• The removal algorithm
+consists of three steps
+– Replace the root key with
+the key of the last node w
+– Remove w
+– Restore the heap-order
+property (discussed next)
+Last Update: Oct 23, 2014
+
+2
+5
+
+9
+
+6
+
+7
+
+w
+last node
+7
+
+5
+
+w
+
+6
+
+9
+
+new last node
+
+EECS2011: Priority Queues
+
+26
+
+<-----Page 26----->Downheap
+• After replacing the root key with the key k of the last node,
+the heap-order property may be violated
+• Algorithm downheap restores the heap-order property by
+swapping key k along a downward path from the root
+• downheap terminates when key k reaches a leaf or a node
+whose children have keys greater than or equal to k
+• Since heap height is O(log n), downheap runs in O(log n) time
+7
+5
+
+9
+
+Last Update: Oct 23, 2014
+
+w
+
+5
+6
+
+7
+
+w
+
+6
+
+9
+
+EECS2011: Priority Queues
+
+27
+
+<-----Page 27----->Updating the Last Node
+• The insertion node can be found by traversing a path of
+O(log n) nodes
+– Go up until a left child or the root is reached
+– If a left child is reached, go to the right child
+– Go down left until a leaf is reached
+• Similar algorithm for updating the last node after a removal
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+28
+
+<-----Page 28----->Heap-Sort
+• Consider a priority
+queue with n items
+implemented by means
+of a heap
+ the space used is O(n)
+ methods insert and
+removeMin
+take O(log n) time
+ methods size, isEmpty,
+and min take O(1) time
+
+Last Update: Oct 23, 2014
+
+• Using a heap-based priority
+queue, we can sort a
+sequence of n elements in
+O(n log n) time
+• The resulting algorithm is
+called heap-sort
+
+• Heap-sort is much faster than
+quadratic sorting algorithms,
+such as insertion-sort and
+selection-sort
+
+EECS2011: Priority Queues
+
+29
+
+<-----Page 29----->Array-based Heap
+Implementation
+• We can represent a heap with n keys by an array of length n
+0
+2
+• For the node at rank i
+1
+– the left child is at rank 2i + 1
+5
+6
+4
+3 9
+– the right child is at rank 2i + 2
+7
+– the parent is at rank (i-1)/2
+• Links between nodes are not explicitly stored
+• Operation add corresponds to inserting at rank n + 1
+• Operation remove_min corresponds to removing at rank n
+• Yields in-place heap-sort
+2 5 6 9 7
+0
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+1
+
+2
+
+3
+
+4
+30
+
+2
+
+<-----Page 30----->Java Implementation
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+31
+
+<-----Page 31----->Java Implementation, 2
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+32
+
+<-----Page 32----->Java Implementation, 3
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+33
+
+<-----Page 33----->Merging Two Heaps
+7
+
+• We are given two heaps
+and a key k
+
+3
+8
+
+• We create a new heap
+with the root node
+storing k and with the
+two heaps as its subtrees
+
+5
+
+4
+
+6
+
+7
+3
+8
+
+• We perform downheap
+to restore the heaporder property
+
+2
+5
+
+4
+
+6
+
+2
+3
+8
+
+Last Update: Oct 23, 2014
+
+2
+
+EECS2011: Priority Queues
+
+4
+5
+
+7
+
+6
+34
+
+<-----Page 34----->Bottom-up Heap
+Construction
+
+/** construct heap in linear time */
+protected void heapify( ) {
+// scan internal nodes backwards
+for(int r = parent(size() – 1); r >= 0; r--)
+downheap(r);
+}
+
+Three equivalent views:
+1. Construct a heap storing n given keys
+using a bottom-up process, i.e., doing
+downheap on nodes “backwards” by
+rank.
+2. Phase view: do phases: i = 1 .. height
+
+• In phase i, apply the merge process to
+each node r at height i.
+• These nodes have node-disjoint subtrees
+of size < 2i -1 that have been turned into
+heaps in previous phases.
+
+r
+
+2i -1
+
+2i -1
+
+r
+
+2i+1-1
+
+3. Recursive view:
+downheap in post-order.
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+35
+
+<-----Page 35----->Example
+
+16
+
+15
+
+4
+
+25
+16
+
+12
+
+6
+
+5
+15
+
+Last Update: Oct 23, 2014
+
+4
+
+7
+
+23
+
+11
+12
+
+6
+
+EECS2011: Priority Queues
+
+30
+
+27
+7
+
+23
+
+30
+
+36
+
+<-----Page 36----->Example (contd.)
+
+25
+16
+
+5
+15
+
+4
+
+15
+16
+
+11
+12
+
+6
+
+4
+25
+
+Last Update: Oct 23, 2014
+
+5
+
+27
+9
+
+23
+
+6
+12
+
+11
+
+EECS2011: Priority Queues
+
+30
+
+23
+9
+
+27
+
+30
+
+37
+
+<-----Page 37----->Example (contd.)
+7
+
+8
+
+15
+16
+
+4
+25
+
+5
+
+6
+12
+
+11
+
+23
+9
+
+4
+5
+25
+
+Last Update: Oct 23, 2014
+
+30
+
+6
+
+15
+16
+
+27
+
+7
+
+8
+12
+
+11
+
+EECS2011: Priority Queues
+
+23
+9
+
+27
+
+30
+
+38
+
+<-----Page 38----->Example (end)
+10
+4
+
+6
+
+15
+16
+
+5
+25
+
+7
+
+8
+12
+
+11
+
+23
+9
+
+27
+
+30
+
+4
+5
+
+6
+
+15
+16
+
+7
+25
+
+Last Update: Oct 23, 2014
+
+10
+
+8
+12
+
+11
+
+EECS2011: Priority Queues
+
+23
+9
+
+27
+
+30
+
+39
+
+<-----Page 39----->Analysis
+• We visualize the worst-case time of a downheap with a proxy path
+that goes first right and then repeatedly goes left until the bottom of
+the heap (this path may differ from the actual path of the downheap)
+• Since each node is traversed by at most two proxy paths, the total
+number of nodes of the proxy paths is < 2n, which is O(n)
+• Thus, bottom-up heap construction runs in O(n) time
+• Bottom-up heap construction is faster than n successive insertions
+(which could take O(n log n) time) and speeds up the first phase of
+heap-sort
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+40
+
+<-----Page 40----->Adaptable
+Priority Queues
+3 a
+
+5 g
+
+Last Update: Oct 23, 2014
+
+4 e
+
+EECS2011: Priority Queues
+
+41
+
+<-----Page 41----->Entry and Priority Queue ADTs
+• An entry stores a
+(key, value) pair
+• Entry ADT methods:
+– getKey(): returns the key
+associated with this entry
+– getValue(): returns the
+value paired with the key
+associated with this entry
+
+Last Update: Oct 23, 2014
+
+• Priority Queue ADT:
+ insert(k, v)
+inserts an entry with
+key k and value v
+ removeMin()
+removes and returns
+the entry with smallest
+key
+ min()
+returns, but does not
+remove, an entry with
+smallest key
+ size(), isEmpty()
+
+EECS2011: Priority Queues
+
+42
+
+<-----Page 42----->A motivating example
+• Online trading system where orders to purchase and sell a
+stock are stored in two priority queues (one for sell orders
+and one for buy orders) as (p,s) entries:
+– With key p = price and value s = the number of shares
+– A buy order (p, s) is executed when a sell order (p’, s’) with price
+p’ < p is added (the execution is complete if s’ > s)
+– A sell order (p, s) is executed when a buy order (p’, s’) with price
+p > p’ is added (the execution is complete if s’ > s)
+
+• What if someone wishes to cancel their order before it
+executes?
+• What if someone wishes to update the price or number of
+shares for their order?
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+43
+
+<-----Page 43----->Methods of the Adaptable
+Priority Queue ADT
+• remove(e): Remove and return entry e from PQ.
+• replaceKey(e,k): Replace the key of entry e in PQ
+with k and return e’s old key.
+An error condition occurs if k is invalid
+(i.e., k cannot be compared with other keys).
+• replaceValue(e,v): Replace the value of entry e in PQ
+with v and return e’s old value.
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+44
+
+<-----Page 44----->Example
+Operation
+
+Output
+
+PQ
+
+insert(5,A)
+insert(3,B)
+insert(7,C)
+min()
+key(e2)
+remove(e1)
+replaceKey(e2,9)
+replaceValue(e3,D)
+remove(e2)
+
+e1
+e2
+e3
+e2
+3
+e1
+3
+C
+e2
+
+(5,A)
+(3,B),(5,A)
+(3,B),(5,A),(7,C)
+(3,B),(5,A),(7,C)
+(3,B),(5,A),(7,C)
+(3,B),(7,C)
+(7,C),(9,B)
+(7,D),(9,B)
+(7,D)
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+45
+
+<-----Page 45----->Locating Entries
+• In order to implement the operations
+remove(e), replaceKey(e,k), replaceValue(e,v),
+we need fast ways to locate an entry e in a
+priority queue.
+
+• An obvious way is to search the entire data
+structure to find an entry e, but there are
+better ways to locate an entry.
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+46
+
+<-----Page 46----->Location-Aware Entries
+• A location-aware entry identifies and tracks the
+location of its (key, value) object within a data
+structure
+• Intuitive notion:
+ Coat claim check
+ Valet claim ticket
+ Reservation number
+
+• Main idea:
+ Since entries are created and returned from the data
+structure itself, it can return location-aware entries,
+thereby making future updates easier
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+47
+
+<-----Page 47----->List Implementation
+• A location-aware list entry is an object storing
+– key
+– value
+– position (or rank) of the item in the list
+
+• In turn, the position (or array cell) stores the entry
+• Back pointers (or ranks) are updated during swaps
+nodes/positions
+
+header
+
+2 c
+
+4 c
+
+5 c
+
+trailer
+
+8 c
+entries
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+48
+
+<-----Page 48----->Heap Implementation
+• A location-aware heap entry
+4 a
+is an object storing
+
+2 d
+6 b
+
+ key
+
+ value
+ position of the entry in the
+underlying heap
+
+• In turn, each heap position
+stores an entry
+• Back pointers are updated
+during entry swaps
+Last Update: Oct 23, 2014
+
+8 g
+
+EECS2011: Priority Queues
+
+5 e
+
+9 c
+
+49
+
+<-----Page 49----->Performance
+Improved times thanks to location-aware entries are
+highlighted in red
+Method
+size, isEmpty
+insert
+min
+removeMin
+remove
+replaceKey
+replaceValue
+Last Update: Oct 23, 2014
+
+Unsorted List
+O(1)
+O(1)
+O(n)
+O(n)
+O(1)
+O(1)
+O(1)
+
+Sorted List
+O(1)
+O(n)
+O(1)
+O(1)
+O(1)
+O(n)
+O(1)
+
+EECS2011: Priority Queues
+
+Heap
+O(1)
+O(log n)
+O(1)
+O(log n)
+O(log n)
+O(log n)
+O(1)
+50
+
+<-----Page 50----->Java Implementation
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+51
+
+<-----Page 51----->Java Implementation, 2
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+52
+
+<-----Page 52----->Java Implementation, 3
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+53
+
+<-----Page 53----->Java Implementation, 4
+
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+54
+
+<-----Page 54----->Summary
+• Priority Queue ADT
+– Comparator
+– Sequence-based PQs: sorted & unsorted
+
+• Priority Queue Sorting
+– Selection-Sort & Insertion-Sort (& in-place variants)
+
+• Heaps
+–
+–
+–
+–
+
+Heap implementation of PQs
+HeapSort
+Array based implementation of heaps
+Bottom-up heap construction
+
+• Adaptable Priority Queues
+– Location-aware PQs
+– List & heap implementations
+Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+55
+
+<-----Page 55----->Last Update: Oct 23, 2014
+
+EECS2011: Priority Queues
+
+56
+
+

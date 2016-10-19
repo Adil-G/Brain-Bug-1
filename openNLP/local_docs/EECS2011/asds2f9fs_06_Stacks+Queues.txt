@@ -1,0 +1,1129 @@
+<-----Page 0----->Stacks & Queues
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+1
+
+<-----Page 1----->Part 1: Stacks
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+2
+
+<-----Page 2----->Abstract Data Types (ADTs)
+• An abstract data type • Example: ADT modeling a
+(ADT) is an abstraction simple stock trading system
+of a data structure
+– The data stored: buy/sell orders
+– The operations supported are
+
+• An ADT specifies:
+– Data stored
+– Operations on the data
+– Error conditions
+associated with
+operations
+
+Last Update: Oct 1, 2014
+
+ order buy(stock, shares, price)
+ order sell(stock, shares, price)
+ void cancel(order)
+
+– Error conditions:
+ Buy/sell a nonexistent stock
+ Cancel a nonexistent order
+
+EECS: Stacks & Queues
+
+3
+
+<-----Page 3----->The Stack ADT
+• The Stack ADT stores arbitrary
+objects
+• Insertions and deletions follow
+the last-in first-out scheme
+• Think of a spring-loaded plate
+dispenser
+• Main stack operations:
+
+• Auxiliary stack operations:
+
+– push(object): inserts an element
+– object pop(): removes and returns
+the last inserted element
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+– object top(): returns the
+last inserted element
+without removing it
+– integer size(): returns the
+number of elements stored
+– boolean isEmpty():
+indicates whether no
+elements are stored
+
+4
+
+<-----Page 4----->Stack Interface in Java
+public interface Stack<E> {
+• Java interface
+corresponding to our
+int size();
+Stack ADT
+boolean isEmpty();
+• Assumes null is
+E top();
+returned from top()
+void push(E element);
+and pop() when
+stack is empty
+E pop();
+}
+• Different from the
+built-in Java class
+java.util.Stack
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+5
+
+<-----Page 5----->Example
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+6
+
+<-----Page 6----->Exceptions vs. Returning Null
+• Attempting the execution • In our Stack ADT, we do
+of an operation of an ADT
+not use exceptions
+may sometimes cause an
+• Instead, we allow
+error condition
+operations pop and top
+• Java supports a general
+to be performed even if
+abstraction for errors,
+the stack is empty
+called exception
+• An exception is said to be • For an empty stack, pop
+and top simply return
+“thrown” by an operation
+that cannot be properly
+null
+executed
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+7
+
+<-----Page 7----->Applications of Stacks
+• Direct applications
+o Page-visited history in a Web browser
+o Undo sequence in a text editor
+o Chain of method calls in the Java Virtual Machine
+
+• Indirect applications
+o Auxiliary data structure for algorithms
+o Component of other data structures
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+8
+
+<-----Page 8----->Method Stack in JVM
+• The Java Virtual Machine (JVM)
+keeps track of the chain of active main() {
+int i = 5;
+methods with a stack
+foo(i);
+• When a method is called, the JVM
+}
+pushes on the stack a frame
+containing
+foo(int j) {
+o Local variables and return value
+int k;
+o Program counter, keeping track of
+k = j+1;
+the statement being executed
+bar(k);
+• When a method ends, its frame is
+}
+popped from the stack and
+control is passed to the method
+bar(int m) {
+on top of the stack
+…
+• Allows for recursion
+}
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+bar
+PC = 1
+m=6
+foo
+PC = 3
+j=5
+k=6
+main
+PC = 2
+i=5
+9
+
+<-----Page 9----->Array-based Stack
+• A simple way of
+implementing the Stack
+ADT uses an array
+• We add elements from
+left to right
+• A variable keeps track of
+the index of the top
+element
+
+Algorithm size()
+return t + 1
+Algorithm pop()
+if isEmpty() then
+return null
+else
+tt1
+return S[t + 1]
+
+…
+
+S
+
+0 1 2
+Last Update: Oct 1, 2014
+
+t
+EECS: Stacks & Queues
+
+10
+
+<-----Page 10----->Array-based Stack (cont.)
+• The array storing the stack
+elements may become full
+• A push operation will then
+throw a FullStackException
+ Limitation of the array-based
+implementation
+
+Algorithm push(obj)
+if t = S.length  1 then
+throw IllegalStateException
+else
+tt+1
+S[t]  obj
+
+ Not intrinsic to the Stack ADT
+
+…
+
+S
+0 1 2
+Last Update: Oct 1, 2014
+
+t
+EECS: Stacks & Queues
+
+11
+
+<-----Page 11----->Performance and Limitations
+• Performance
+– Let n be the number of elements in the stack
+– The space used is O(n)
+– Each operation runs in time O(1)
+
+• Limitations
+– The maximum size of the stack must be defined a
+priori and cannot be changed
+– Trying to push a new element into a full stack causes
+an implementation-specific exception
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+12
+
+<-----Page 12----->Array-based Stack in Java
+public class ArrayStack<E>
+implements Stack<E> {
+// holds the stack elements
+private E[ ] S;
+// index to top element
+private int top = -1;
+
+// constructor
+public ArrayStack(int capacity) {
+S = (E[ ]) new Object[capacity]);
+}
+
+Last Update: Oct 1, 2014
+
+public E pop() {
+if isEmpty()
+return null;
+E temp = S[top];
+// facilitate garbage collection:
+S[top] = null;
+top = top – 1;
+return temp;
+}
+//… (other methods of Stack interface)
+
+EECS: Stacks & Queues
+
+13
+
+<-----Page 13----->Example Use in Java
+ArrayStack can hold generic element type:
+public class Tester {
+
+// … other methods
+public intReverse(Integer a[ ]) {
+Stack<Integer> s;
+s = new ArrayStack<Integer>();
+//… code to reverse array a
+}
+
+Last Update: Oct 1, 2014
+
+public floatReverse(Float f[ ]) {
+Stack<Float> s;
+s = new ArrayStack<Float>();
+//… code to reverse array f
+}
+
+EECS: Stacks & Queues
+
+14
+
+<-----Page 14----->Parentheses Matching
+Each “(”, “{”, or “[” must be paired with
+a matching “)”, “}”, or “[”
+• correct:
+
+( ) ( () ) { ( [()]) }
+( ( ) ( ( ) ) { ( [()]) } )
+
+• incorrect:
+
+)(()){([()])}
+({[])}
+(
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+15
+
+<-----Page 15----->Parenthesis Matching (Java)
+public static boolean isMatched (String expression) {
+final String opening = "({["; // opening delimiters
+final String closing = ")}]"; // respective closing delimiters
+Stack<Character> buffer = new LinkedStack<>( );
+for (char c : expression.toCharArray( )) {
+if (opening.indexOf(c) != −1) // this is a left delimiter
+buffer.push(c);
+else if (closing.indexOf(c) != −1) { // this is a right delimiter
+if (buffer.isEmpty( )) // nothing to match with
+return false;
+if (closing.indexOf(c) != opening.indexOf(buffer.pop( )))
+return false; // mismatched delimiter
+}
+}
+return buffer.isEmpty( ); // were all opening delimiters matched?
+}
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+16
+
+<-----Page 16----->HTML Tag Matching
+For fully-correct HTML, each <name> should pair with a matching </name>
+<body>
+<center>
+<h1> The Little Boat </h1>
+</center>
+<p> The storm tossed the little boat like a
+cheap sneaker in an old washing
+machine. The three drunken fishermen
+were used to such treatment, of course,
+but not the tree salesman, who even as
+a stowaway now felt that he had
+overpaid for the voyage. </p>
+<ol>
+<li> Will the salesman die? </li>
+<li> What color is the boat? </li>
+<li> And what about Naomi? </li>
+</ol>
+</body>
+
+Last Update: Oct 1, 2014
+
+The Little Boat
+The storm tossed the little boat like
+a cheap sneaker in an old washing
+machine. The three drunken
+fishermen were used to such
+treatment, of course, but not the tree
+salesman, who even as a stowaway
+now felt that he had overpaid for
+the voyage.
+1. Will the salesman die?
+2. What color is the boat?
+3. And what about Naomi?
+
+EECS: Stacks & Queues
+
+17
+
+<-----Page 17----->HTML Tag Matching (Java)
+public static boolean isHTMLMatched(String html) {
+Stack<String> buffer = new LinkedStack<>( );
+int j = html.indexOf('<');
+// ............ find first ’<’ character (if any)
+while (j != −1) {
+int k = html.indexOf('>', j+1); // …………………. find next ’>’ character
+if (k == −1) return false; // …………………………………………. invalid tag
+String tag = html.substring(j+1, k); // ………...…………... strip away < >
+if (!tag.startsWith("/")) // …………………………… this is an opening tag
+buffer.push(tag);
+else { // …………………………………………………….…..…... this is a closing tag
+if (buffer.isEmpty( ))
+return false; // ………….…………….………………... no tag to match
+if (!tag.substring(1).equals(buffer.pop( )))
+return false;
+// ………………………………………. mismatched tag
+}
+j = html.indexOf('<', k+1); // …………… find next ’<’ character (if any)
+}
+return buffer.isEmpty( ); // …………….. were all opening tags matched?
+}
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+18
+
+<-----Page 18----->Evaluating Arithmetic
+Expressions
+14 – 3 * 2 + 7 = (14 – (3 * 2) ) + 7
+Binary operators & their precedence:
+* and / have precedence over + and –
+Associativity
+operators of the same precedence group
+evaluated from left to right
+Example: x – y + z is (x – y) + z, not x – (y + z)
+Idea: push each operator on the stack, but first pop and
+perform higher and equal precedence operations.
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+19
+
+<-----Page 19----->Algorithm for
+Evaluating Expressions
+Two stacks:
+• opStk:
+• valStk:
+• $
+
+holds operators scanned but not performed yet
+holds operands scanned but not applied yet
+special “end of input” operator token with lowest precedence
+
+Plan:
+
+scan the expression left-to-right, pushing operators in opStk,
+operands in valStk, with intervening pops & evaluations
+
+Methods:
+•
+•
+•
+•
+
+EvalExp:
+doOp():
+repeatOps(op):
+precedence(op):
+
+Last Update: Oct 1, 2014
+
+main method to evaluate the input expression
+do the latest operation on top of stack opStk
+associatively apply non-evaluated ops earlier than op
+numeric precedence of operation op
+EECS: Stacks & Queues
+
+20
+
+<-----Page 20----->Algorithm for
+Evaluating Expressions
+Algorithm EvalExp()
+Input: a stream of tokens representing an arithmetic expression
+Output: the value of the expression
+while there is another token z do
+if isNumber(z) then valStk.push(z)
+else
+repeatOps(z)
+// evaluate earlier ops associatively
+opStk.push(z)
+// then push this latest op on stack
+end while
+repeatOps($)
+// do leftover ops
+return valStk.top()
+// evaluated result
+end
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+21
+
+<-----Page 21----->Algorithm for
+Evaluating Expressions
+procedure doOp()
+// do the op at the top of the stack
+x  valStk.pop();
+y  valStk.pop();
+op  opStk.pop();
+valStk.push( y op x )
+end // doOp
+procedure repeatOps( refOp ) // evaluate associatively
+while ( valStk.size() > 1 and prec(refOp) ≤ prec(opStk.top() )
+do doOp()
+end // repeatOps
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+22
+
+<-----Page 22----->Algorithm on an
+Example Expression
+14 ≤ 4 – 3 * 2 + 7
+4
+14
+
+–
+≤
+
+3
+4
+14
+
+*
+–
+≤
+
+Operator ≤ has lower
+precedence than + & –
+
+$
+7
+-2
+14
+
++
+2
+3
+4
+14
+
+*
+–
+≤
+
+Last Update: Oct 1, 2014
+
+2
+3
+4
+14
+
++
+*
+–
+≤
+
+6
+4
+14
+
+–
+≤
+
+-2
+14
+
+$
+
+$
++
+≤
+
+5
+14
+
+F
+≤
+
++
+≤
+
+EECS: Stacks & Queues
+
+23
+
+<-----Page 23----->Computing Spans (not in book)
+• Using a stack as an auxiliary data
+structure in an algorithm
+• Given an array X, the span S[i] of
+X[i] is the maximum number of
+consecutive elements X[j]
+immediately preceding X[i] and
+such that X[j]  X[i]
+• Spans have applications to
+financial analysis
+Example: stock at 52-week high
+
+7
+6
+5
+4
+3
+2
+1
+0
+0
+
+X
+S
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+1
+
+6
+1
+
+3
+1
+
+2
+
+3
+
+4
+2
+
+5
+3
+
+4
+
+2
+1
+24
+
+<-----Page 24----->Quadratic Algorithm
+Algorithm spans1(X, n)
+// O(n2) time
+Input: array X of n integers
+Output: array S of spans of X
+# of steps
+S  new array of n integers
+n
+for i  0 .. n  1 do
+n
+s1
+n
+while s  i and X[i - s]  X[i] 1 + 2 + …+ (n  1)
+ss+1
+1 + 2 + …+ (n  1)
+S[i]  s
+n
+return S
+1
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+25
+
+<-----Page 25----->Computing Spans with a Stack
+• Stack holds indices of the
+elements visible when
+“looking back”
+• Scan X left to right
+ i  current index
+ pop stack until top index
+j satisfies X[j] > X[i]
+ set S[i]  i  j
+ push X[i] onto stack
+
+Last Update: Oct 1, 2014
+
+7
+6
+5
+4
+3
+2
+1
+0
+
+EECS: Stacks & Queues
+
+0 1 2 3 4 5 6 7
+
+26
+
+<-----Page 26----->Linear Time Algorithm
+Algorithm spans2(X, n) // O(n) time
+S  new array of n integers
+A  new empty stack
+for i  0 .. n  1 do
+
+while (! A.isEmpty() &&
+X[A.top()]  X[i] )
+do A.pop()
+if A.isEmpty() then
+S[i]  i + 1
+else S[i]  i - A.top()
+A.push(i)
+
+Analysis:
+• Each index of X
+o
+
+o
+
+•
+
+•
+
+Is pushed into the
+stack exactly once
+Is popped from the
+stack at most once
+
+while-loop iterates
+at most n times,
+since each iteration
+has to pop.
+Algorithm spans2
+runs in O(n) time.
+
+return S
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+27
+
+<-----Page 27----->Part 1: Summary
+•
+•
+•
+•
+
+The Stack ADT and its interface in Java
+General applications of stacks
+Method stack in JVM
+Array based implementation of stack:
+– performance & limitations
+
+• Example applications:
+–
+–
+–
+–
+
+Parenthesis matching
+HTML tab matching
+Evaluating arithmetic expressions
+Computing spans
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+28
+
+<-----Page 28----->Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+29
+
+<-----Page 29----->Part 2: Queues
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+30
+
+<-----Page 30----->The Queue ADT
+• The Queue ADT stores arbitrary • Auxiliary queue operations:
+objects
+– object first(): returns the
+element at the front without
+• Insertions and deletions follow the
+removing it
+first-in first-out scheme
+– integer size(): returns the
+• Insertions are at the rear of the
+number of elements stored
+queue and removals are at the
+– boolean isEmpty(): indicates
+front of the queue
+whether no elements are
+• Main queue operations:
+stored
+– enqueue(object): inserts an
+•
+element at the end of the queue
+– object dequeue(): removes and
+returns the element at the front of
+the queue
+
+Last Update: Oct 1, 2014
+
+Boundary cases:
+– Attempting the execution of
+dequeue or first on an empty
+queue returns null
+
+EECS: Stacks & Queues
+
+31
+
+<-----Page 31----->Example
+Operation
+
+Output
+
+Q
+
+enqueue(5)
+enqueue(3)
+dequeue()
+enqueue(7)
+dequeue()
+first()
+dequeue()
+dequeue()
+isEmpty()
+enqueue(9)
+enqueue(7)
+size()
+enqueue(3)
+enqueue(5)
+
+–
+–
+5
+–
+3
+7
+7
+null
+true
+–
+–
+2
+–
+–
+
+(5)
+(5, 3)
+(3)
+(3, 7)
+(7)
+(7)
+()
+()
+()
+(9)
+(9, 7)
+(9, 7)
+(9, 7, 3)
+(9, 7, 3, 5)
+
+dequeue()
+
+9
+
+(7, 3, 5)
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+32
+
+<-----Page 32----->Applications of Queues
+• Direct applications
+o Waiting lists, bureaucracy
+o Access to shared resources (e.g., printer)
+o Multiprogramming
+
+• Indirect applications
+o Auxiliary data structure for algorithms
+o Component of other data structures
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+33
+
+<-----Page 33----->Array-based Queue
+• Use an array of size N in a circular fashion
+• Two variables keep track of the front and size
+f index of the front element
+sz number of stored elements
+
+• When the queue has fewer than N elements, array
+location r = (f + sz) mod N is the first empty slot past the
+rear of the queue
+normal configuration
+Q
+0 1 2
+f
+r
+wrapped-around configuration
+Q
+0 1 2
+r
+f
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+34
+
+<-----Page 34----->Queue Operations
+Algorithm size()
+return sz
+
+We use the modulo operator
+(remainder of division)
+
+Algorithm isEmpty()
+return (sz == 0)
+
+Q
+0 1 2
+
+f
+
+0 1 2
+
+r
+
+r
+
+Q
+
+Last Update: Oct 1, 2014
+
+f
+EECS: Stacks & Queues
+
+35
+
+<-----Page 35----->Queue Operations (cont.)
+• Operation enqueue
+throws an exception if
+the array is full
+• This exception is
+implementationdependent
+
+Algorithm enqueue(obj)
+if size() = N then
+throw IllegalStateException
+else
+r  (f + sz) mod N
+Q[r]  obj
+sz  (sz + 1)
+
+Q
+0 1 2
+
+f
+
+0 1 2
+
+r
+
+r
+
+Q
+Last Update: Oct 1, 2014
+
+f
+EECS: Stacks & Queues
+
+36
+
+<-----Page 36----->Queue Operations (cont.)
+Note that operation
+dequeue returns null if
+the queue is empty
+
+Algorithm dequeue()
+if isEmpty() then
+return null
+else
+obj  Q[f]
+f  (f + 1) mod N
+sz  (sz - 1)
+return obj
+
+Q
+0 1 2
+
+f
+
+0 1 2
+
+r
+
+r
+
+Q
+Last Update: Oct 1, 2014
+
+f
+EECS: Stacks & Queues
+
+37
+
+<-----Page 37----->Queue Interface in Java
+public interface Queue<E> {
+• Java interface
+corresponding to our
+int size();
+Queue ADT
+boolean isEmpty();
+• Assumes that first()
+E first();
+and dequeue()
+void enqueue(E e);
+return null if queue
+is empty
+E dequeue();
+}
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+38
+
+<-----Page 38----->Array-based Implementation
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+39
+
+<-----Page 39----->Array-based Implementation (2)
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+40
+
+<-----Page 40----->Comparison to java.util.Queue
+• Our Queue methods and corresponding
+methods of java.util.Queue:
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+41
+
+<-----Page 41----->Application: Round Robin Schedulers
+•
+
+We can implement a round robin scheduler using a queue
+Q by repeatedly performing the following steps:
+1.
+2.
+3.
+
+e = Q.dequeue()
+Service element e
+Q.enqueue(e)
+
+Queue
+Dequeue
+
+Enqueue
+
+Shared
+Service
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+42
+
+<-----Page 42----->Part 2: Summary
+• The Queue ADT and its interface in Java
+• General applications of queues
+• Array based implementation of queue:
+– Performance & Limitations
+• Comparison to java.util.Queue
+• Example applications:
+– Round Robin Schedulers
+– More algorithmic applications later
+
+Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+43
+
+<-----Page 43----->Last Update: Oct 1, 2014
+
+EECS: Stacks & Queues
+
+44
+
+

@@ -1,0 +1,845 @@
+<-----Page 0----->Recursion
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+1
+
+<-----Page 1----->The Recursion Pattern
+• Recursion: when a method calls itself
+• Classic example: the factorial function
+n! = 1*2*3· ··· · (n-1)*n
+1
+𝑖𝑓 𝑛 = 0
+• Recursive definition: 𝑓 𝑛 =
+𝑛 ∗ 𝑓(𝑛 − 1) 𝑜𝑡ℎ𝑒𝑟𝑤𝑖𝑠𝑒
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+2
+
+<-----Page 2----->Content of a Recursive Method
+• Base case(s)
+o Values of the input variables for which we perform no
+recursive calls are called base cases (there should be at
+least one base case).
+o Every possible chain of recursive calls must eventually
+reach a base case.
+
+• Recursive calls
+o Calls to the current method.
+o Each recursive call should be defined so that it makes
+progress towards a base case.
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+3
+
+<-----Page 3----->Visualizing Recursion
+Example:
+
+Recursion trace
+– A box for each
+recursive call
+– An arrow from each
+caller to callee
+– An arrow from each
+callee to caller showing
+return value
+
+return 4 * 6 = 24
+
+call
+
+final answer
+
+recursiveFactorial ( 4 )
+call
+
+return 3 *2 = 6
+
+recursiveFactorial ( 3 )
+return 2 *1 = 2
+
+call
+
+recursiveFactorial ( 2 )
+call
+
+return 1 *1 = 1
+
+recursiveFactorial ( 1 )
+call
+
+return 1
+
+recursiveFactorial ( 0 )
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+4
+
+<-----Page 4----->Example: English Ruler
+Print the ticks and numbers like an English ruler:
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+5
+
+<-----Page 5----->Using Recursion
+drawInterval(length)
+Input: length of a ‘tick’
+Output: ruler with tick of the given length in the middle
+and smaller rulers on either side
+drawInterval(length)
+if ( length > 0 ) then
+drawInterval ( length - 1 )
+draw line of the given length
+drawInterval ( length - 1 )
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+6
+
+<-----Page 6----->Recursive Drawing Method
+• The drawing method is
+based on the following
+recursive definition:
+• An interval with a
+central tick length L > 1
+consists of:
+– An interval with a
+central tick length L-1
+– A single tick of length L
+– An interval with a
+central tick length L-1
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+7
+
+<-----Page 7----->The Recursive Method
+
+Note the two
+recursive calls
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+8
+
+<-----Page 8----->Binary Search
+Search for an integer in an ordered indexed list
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+9
+
+<-----Page 9----->Visualizing Binary Search
+• We consider three cases:
+– If the target equals data[mid], then we have found the target.
+– If target < data[mid], then we recur on the first half of the sequence.
+– If target > data[mid], then we recur on the second half of the sequence.
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+10
+
+<-----Page 10----->Analyzing Binary Search
+• Runs in O(log n) time:
+o The remaining portion of the list is of size high – low + 1.
+o After one comparison, this becomes one of the following:
+
+o Thus, each recursive call divides the search region in half;
+hence, there can be at most log n levels.
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+11
+
+<-----Page 11----->Analyzing Binary Search
+by recurrence formula
+𝑛
+
+≤ 𝑛/2
+
+≤ 𝑛/2
+
+• Recurrence: 𝑇 𝑛 =
+
+Last Update: Oct 1, 2014
+
+𝑇
+
+𝑛
+2
+
++𝑐
+
+𝑐
+
+EECS2011: Recursion
+
+𝑖𝑓 𝑛 > 1
+𝑖𝑓 𝑛 ≤ 1
+
+12
+
+<-----Page 12----->Solve the recurrence
+• Recurrence: 𝑇 𝑛 =
+
+𝑇
+
+𝑛
+2
+
+𝑐
+
++𝑐
+
+𝑖𝑓 𝑛 > 1
+𝑖𝑓 𝑛 ≤ 1
+
+• Solution:
+𝑇 𝑛 = 𝑇 𝑛/2 + c
+= 𝑇 𝑛/22 + 𝑐 + 𝑐 = 𝑇 𝑛/22 + 2𝑐
+= 𝑇 𝑛/23 + 𝑐 + 2𝑐 = 𝑇 𝑛/23 + 3𝑐
+
+⋮
+(now plug in 𝑘 = log 𝑛 , 2𝑘 = 𝑛)
+= 𝑇 𝑛/2𝑘 + 𝑘𝑐
+= 𝑇 𝑛/𝑛 + 𝑐 log 𝑛
+
+= 𝑐 + 𝑐 log 𝑛
+Last Update: Oct 1, 2014
+
+Therefore, 𝑇(𝑛) is 𝑂 log 𝑛 .
+EECS2011: Recursion
+
+13
+
+<-----Page 13----->Linear Recursion
+ Test for base cases
+ Test for a set of base cases (there should be at least one).
+ Every possible chain of recursive calls must eventually
+reach a base case. Each base case should be handled
+non-recursively.
+
+ Recur once
+ Perform a single recursive call
+ This step may have a test that decides which of several
+possible recursive calls to make, but it should ultimately
+make just one of these calls
+ Define each possible recursive call so that it makes
+progress towards a base case.
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+14
+
+<-----Page 14----->Example of Linear Recursion
+Recursion trace of linearSum(data, 5)
+called on array data = [4, 3, 6, 2, 8]
+
+Algorithm linearSum(A, n)
+Input:
+Array A of integers
+Integer n such that
+0 ≤ n ≤ |A|
+Output:
+Sum of the first n
+integers in A
+if n = 0 then return 0
+else return
+linearSum(A, n - 1) + A[n - 1]
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+15
+
+<-----Page 15----->Reversing an Array
+Algorithm reverseArray(A, i, j)
+Input: An array A and nonnegative integer
+indices i and j
+Output: The reversal of the elements in A
+starting at index i and ending at j;
+i.e., reverse the sub-array A[i..j]
+if i < j then
+// what are the base cases?
+Swap A[i] and A[j]
+reverseArray(A, i + 1, j - 1)
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+16
+
+<-----Page 16----->Defining Arguments for Recursion
+• In creating recursive methods, it is important to define the
+methods in ways that facilitate recursion.
+• This sometimes requires we define additional parameters that are
+passed to the method.
+• For example, we defined the array reversal method as
+reverseArray(A, i, j) , not reverseArray(A)
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+17
+
+<-----Page 17----->Analyze by recurrence
+𝑇 𝑛 − 2 + 𝑐 𝑖𝑓 𝑛 > 1
+• Recurrence: 𝑇 𝑛 =
+𝑐
+𝑖𝑓 𝑛 ≤ 1
+• Solution:
+𝑇 𝑛 =𝑇 𝑛−2 +c
+=𝑇 𝑛−4 +𝑐+𝑐
+= 𝑇 𝑛 − 6 + 3𝑐
+= 𝑇( 𝑛 − 8) + 4𝑐
+⋮
+(now plug in 𝑘 = 𝑛/2)
+= 𝑇 𝑛 − 2𝑘 + 𝑘𝑐
+= 𝑇 0 + 𝑐𝑛/2
+= 𝑐 + 𝑐𝑛/2
+Last Update: Oct 1, 2014
+
+Therefore, 𝑇(𝑛) is 𝑂 𝑛 .
+EECS2011: Recursion
+
+18
+
+<-----Page 18----->Computing Powers
+• The power function 𝑝 𝑥, 𝑛 = 𝑥 𝑛 (𝑥 ≠ 0, 𝑖𝑛𝑡 𝑛 ≥ 0)
+can be defined recursively:
+1
+𝑖𝑓 𝑛 = 0
+𝑝 𝑥, 𝑛 =
+𝑥 ∗ 𝑝(𝑥, 𝑛 − 1) 𝑜𝑡ℎ𝑒𝑟𝑤𝑖𝑠𝑒
+• This leads to a power function that runs in O(n) time
+(since we make n recursive calls)
+• We can do better than this, however
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+19
+
+<-----Page 19----->Recursive Squaring
+• A more efficient linearly recursive algorithm by using
+repeated squaring:
+• 𝑛 = 2 𝑛/2 + 𝑛 𝑚𝑜𝑑 2 ⟹ 𝑥 𝑛 = 𝑥 2
+1
+𝑝 𝑥, 𝑛 =
+
+𝑝
+
+𝑥2
+
+𝑥∗𝑝
+• Example:
+
+𝑛
+,
+2
+
+𝑥2
+
+𝑛
+,
+2
+
+∗ 𝑥 (𝑛 𝑚𝑜𝑑 2)
+
+𝑖𝑓 𝑛 = 0
+𝑖𝑓 𝑛 > 0 𝑖𝑠 𝑒𝑣𝑒𝑛
+𝑖𝑓 𝑛 > 0 𝑖𝑠 𝑜𝑑𝑑
+
+215 = 2 ∗ 47 = 2 ∗ 4 ∗ 163 = 2 ∗ 4 ∗ 16 ∗ 256
+= 2 ∗ 4 ∗ 16 ∗ 256 ∗ 1 = 32,768
+Last Update: Oct 1, 2014
+
+𝑛
+2
+
+EECS2011: Recursion
+
+1
+
+= 2 ∗ 4 ∗ 16 ∗ 256 ∗ …
+
+0
+
+20
+
+<-----Page 20----->Recursive Squaring Method
+Algorithm Power(x, n)
+
+// O(log n) time
+
+Input: A number x > 0 and integer n > 0
+Output: The value xn
+if n = 0 then return 1
+y  Power(x∗x , n/2)
+if n is odd then y  y ∗ x
+return y
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+21
+
+<-----Page 21----->Analysis
+Algorithm Power(x, n)
+
+// O(log n) time
+
+Input: A number x > 0 and integer n > 0
+Output: The value xn
+if n = 0 then return 1
+y  Power(x ∗ x , n/2)
+if n is odd then y  y ∗ x
+return y
+It is important that we
+use a variable twice
+here rather than calling
+the recursive method
+twice.
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+𝑇 𝑛 = 𝑇 𝑛/2 + O(1)
+𝑇 𝑛 = 𝑂(log 𝑛).
+Each time we make a
+recursive call, we halve
+the 2nd argument.
+Hence, we make log n
+recursive calls.
+With each call we do O(1)
+work.
+So, this method runs in
+O(log n) time.
+
+22
+
+<-----Page 22----->Tail Recursion
+• Tail recursion occurs when a linearly recursive method
+makes its recursive call as its last step.
+• The array reversal method is an example.
+• Such methods can be easily converted to non-recursive
+methods (which saves on some resources).
+• Example:
+Algorithm IterativeReverseArray(A, i, j )
+Input: An array A and valid indices i & j
+Output: sub-array A[i..j] reversed
+while i < j do
+Swap A[i ] and A[ j ]
+i  i+1 , j  j – 1
+end
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+23
+
+<-----Page 23----->Binary Recursion
+• Binary recursion occurs whenever there are two
+recursive calls for each non-base case.
+• Example: the drawInterval method for drawing
+ticks on an English ruler.
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+24
+
+<-----Page 24----->Another Binary Recursive Method
+Problem: Find element sum of an integer array A.
+Algorithm BinarySum( A, i , n )
+Input: An array A and integers i and n
+Output: The sum of the n elements in A starting at index i
+if n = 1 then return A[i]
+return BinarySum( A, i, n/2 ) + BinarySum( A, i + n/2 , n/2 )
+0, 8
+
+Example trace:
+0, 4
+
+4, 4
+
+0, 2
+0, 1
+Last Update: Oct 1, 2014
+
+2, 2
+1, 1
+
+2, 1
+
+4, 2
+3, 1
+
+4, 1
+
+EECS2011: Recursion
+
+6, 2
+5, 1
+
+6, 1
+
+7, 1
+25
+
+<-----Page 25----->Fibonacci Numbers
+Fibonacci numbers are defined recursively:
+𝑘
+𝐹𝑘 =
+𝐹𝑘−1 + 𝐹𝑘−2
+
+for 𝑘 = 0,1
+for 𝑘 ≥ 2
+
+𝑘
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+…
+
+𝐹𝑘
+
+0
+
+1
+
+1
+
+2
+
+3
+
+5
+
+8
+
+13
+
+21
+
+34
+
+55
+
+89 144
+
+…
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+26
+
+<-----Page 26----->Fibonacci Exponential Growth
+• Guess an exponential solution for the recurrence 𝐹𝑘 = 𝐹𝑘−1 + 𝐹𝑘−2 first:
+𝐹𝑘 = 𝑟 𝑘
+(𝑟 is a constant to be determined)
+• Verify the guess by plugging it into the recurrence:
+𝑟 𝑘 = 𝑟 𝑘−1 + 𝑟 𝑘−2 ⟹
+𝑟2 = 𝑟 + 1
+• This quadratic has two roots:
+
+𝜑 =
+𝜑 =
+
+1+ 5
+2
+1− 5
+2
+
+≅ +1.618 (the golden ratio)
+≅ −0.618
+
+• Any linear combination of these two solutions also satisfies the recurrence:
+𝐹𝑘 = 𝑎 𝜑𝑘 + 𝑏 𝜑𝑘
+• Find constants 𝑎 and 𝑏 by the two boundary conditions: 𝐹0 = 0, 𝐹1 = 1 ∶
+1
+𝐹𝑘 =
+𝜑𝑘 − 𝜑𝑘
+(the exact solution!)
+5
+
+• Since 𝜑 > 1 and 𝜑 < 1 , the last term asymptotically vanishes:
+𝐹𝑘 = Θ 𝜑𝑘
+(exponential growth)
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+27
+
+<-----Page 27----->Computing Fibonacci Numbers
+• Recursive algorithm (first attempt):
+Algorithm BinaryFib(k)
+Input: Nonnegative integer k
+Output: The kth Fibonacci number Fk
+if k < 1
+then return k
+else return BinaryFib(k - 1) + BinaryFib(k - 2)
+end
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+28
+
+<-----Page 28----->Analysis
+• Let Nk be the # of elementary steps by BinaryFib(k)
+• 𝑁𝑘 = 𝑁𝑘−1 + 𝑁𝑘−2 + 𝑐
+• So,
+
+for some constant c (e.g., c=4)
+
+(c + 𝑁𝑘 ) = (𝑐 + 𝑁𝑘−1 ) + (𝑐 + 𝑁𝑘−2 )
+
+i.e., (c + 𝑁𝑘 ) behaves like 𝐹𝑘 itself.
+• Using this & induction, we can show
+𝑁𝑘 = Θ 𝐹𝑘 = Θ 𝜑𝑘 ≅ Θ 1.618𝑘
+• Running time is exponential in magnitude of k !!!
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+29
+
+<-----Page 29----->A Better Fibonacci Algorithm
+
+• Use linear recursion with stronger post-condition
+instead
+Algorithm LinearFibonacci(k)
+Input: A positive integer k
+Output: Pair of Fibonacci numbers (Fk , Fk-1)
+if k = 1 then return (1, 0)
+else
+(i , j)  LinearFibonacci(k - 1)
+return (i + j , i)
+end
+
+• LinearFibonacci makes k-1 recursive calls. It’s O(k).
+
+• Even O(log k) is possible (by repeated “squaring”)!!!
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+30
+
+<-----Page 30----->Multiple Recursion
+• Motivating example: summation puzzles
+1. pot + pan = bib
+2. dog + cat = pig
+3. boy + girl = baby
+
+• Multiple recursion:
+o makes potentially many recursive calls
+o not just one or two
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+31
+
+<-----Page 31----->Algorithm for Multiple Recursion
+Algorithm PuzzleSolve(k, S, U)
+Input: Integer k, sequence S, and set U (universe of elements to test)
+Output: Enumeration of all k-length extensions to S using elements in U
+without repetitions
+for all e in U do
+Remove e from U
+// e is now being used
+Add e to the end of S
+if k = 1 then
+Test whether S is a configuration that solves the puzzle
+if S solves the puzzle then
+return “Solution found: ” S
+else PuzzleSolve(k - 1, S, U)
+Add e back to U
+// e is now unused
+Remove e from the end of S
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+32
+
+<-----Page 32----->Example
+cbb + ba = abc
+799 + 98 = 897
+
+a,b,c stand for 7,8,9; not
+necessarily in that order
+[] {a,b,c}
+
+[a] {b,c}
+a=7
+[ab] {c}
+a=7,b=8
+c=9
+
+[b] {a,c}
+b=7
+
+[ac] {b}
+a=7,c=8
+b=9
+
+[ca] {b}
+c=7,a=8
+b=9
+[ba] {c}
+b=7,a=8
+c=9
+
+Last Update: Oct 1, 2014
+
+[c] {a,b}
+c=7
+
+[bc] {a}
+b=7,c=8
+a=9
+
+EECS2011: Recursion
+
+[cb] {a}
+c=7,b=8
+a=9
+
+might be able to
+stop sooner
+33
+
+<-----Page 33----->Visualizing PuzzleSolve
+Initial call
+PuzzleSolve ( 3 ,() ,{a , b ,c})
+
+PuzzleSolve (2 , b,{ a , c})
+
+PuzzleSolve (2 , a,{ b , c})
+
+PuzzleSolve (1 , ab ,{c } )
+
+PuzzleSolve (1 ,ba ,{ c })
+
+abc
+
+bac
+
+PuzzleSolve (2 ,c,{ a ,b } )
+
+PuzzleSolve (1 , ca ,{b } )
+cab
+
+PuzzleSolve (1 , ac ,{b } )
+
+PuzzleSolve (1 , bc ,{a } )
+
+PuzzleSolve (1 ,cb ,{ a })
+
+acb
+
+bca
+
+cba
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+34
+
+<-----Page 34----->Summary
+• Recursion pattern:
+– Base cases
+– Recursive cases
+
+•
+•
+•
+•
+•
+
+Visualizing recursion
+Tail recursion
+Recursive squaring
+Linear, binary, and multiple recursion
+Examples & analysis
+
+Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+35
+
+<-----Page 35----->Last Update: Oct 1, 2014
+
+EECS2011: Recursion
+
+36
+
+
