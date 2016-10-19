@@ -1,7 +1,9 @@
 package general;
 
+import SentenceGenerator.ComparePhrases;
 import com.knowledgebooks.nlp.ExtractNames;
 import com.knowledgebooks.nlp.util.ScoredList;
+import general.chat.Thesaurus;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB;
 import opennlp.tools.cmdline.PerformanceMonitor;
 import opennlp.tools.namefind.NameFinderME;
@@ -17,11 +19,39 @@ import opennlp.tools.util.Span;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * Created by corpi on 2016-05-01.
  */
 public class FindKeyWordsTest {
+    public static HashMap<String, HashSet<String[]>> getSynonyms(HashSet<String[]> keywords)
+    {
+        HashMap<String, HashSet<String[]>> synonymMap = new HashMap<>();
+        for(String[] keys : keywords)
+        {
+            String word = keys[1];
+            HashSet<String> syns = Thesaurus.getSynonyms(word);
+            syns.add(word);
+            HashSet<String[]> copy = new HashSet<>();
+            for (String keyword : syns) {
+                // find the root word
+                String rootWord = LuceneSnowBallTest.getStem(keyword);
+                // Check if root word of key word is an ACTUAL WORD
+                if (rootWord.length() > 2 && !(rootWord.isEmpty())&&!(keyword.isEmpty())) {//
+                    // add the root word
+                    copy.add(new String[]{rootWord,keyword});
+                }
+                else if (!(keyword.isEmpty())){//
+                    // no, add the key word
+                    copy.add(new String[]{keyword,keyword});
+                }
+            }
+            synonymMap.put(word, copy);
+        }
+        return synonymMap;
+    }
     public static ArrayList<String> findName(String input) throws IOException {
         InputStream is = new FileInputStream(
                 WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsDirectoryName+"en-ner-person.bin");

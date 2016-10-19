@@ -231,6 +231,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         int prevValue = 0;
         newKeyWordsFullNouns = newKeyWordsNouns;
         newKeyWordsFullNouns.addAll(newKeyWordsVerbsOrAdjectives);
+        HashMap<String, HashSet<String[]>> keyword2SynonymMap = general.FindKeyWordsTest.getSynonyms(newKeyWordsFullNouns);
         for (File result : listOfFiles) {
             try {
                 //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
@@ -268,29 +269,12 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                             parNum++;
                             HashSet<String> usedKeywords = new HashSet<>();
                             int keyWordCount = 0;
+                             HashSet<String> usedKeywords_2 = new HashSet<>();
+                             int keyWordCount_2 = 0;
                             int exactKeyWordCount = 0;
                             System.setOut(MainGUI.originalStream);
 
                             for (String[] keyWord : newKeyWordsFullNouns) {
-                                //System.out.println(y + "->" + keyWord);
-
-                            /*if(keyWord[0].isEmpty() || keyWord[1].isEmpty())
-                                continue;
-                                */
-                                //keyWordCount++;
-                                // Ask this:
-                                //what is the meaning of life
-                            /*String stringToSearch = y.toLowerCase();
-
-                            Pattern p0 = Pattern.compile(".*?\\b"+keyWord[0].toLowerCase()+".*?");   // the pattern to search for
-                            Matcher m0 = p0.matcher(stringToSearch);
-
-                            Pattern p1 = Pattern.compile(".*?\\b"+keyWord[1].toLowerCase()+".*?");   // the pattern to search for
-                            Matcher m1 = p1.matcher(stringToSearch);
-                            */
-                                // now try to find at least one match
-
-
                                 if (//m0.find()||m1.find()
                                         y.toLowerCase().contains(keyWord[0].toLowerCase())
                                                 ||
@@ -299,10 +283,6 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
 
                                     keyWordCount++;
                                     usedKeywords.add(keyWord[1]);
-                                    //System.out.println(parNum+": ");
-                                /*for(String word : usedKeywords)
-                                    System.out.println(word+", "+keyWordCount);
-                                    */
 
                                 }
                                 if (y.toLowerCase().matches(".*?\\b" + keyWord[1].toLowerCase() + ".*?")) {
@@ -313,6 +293,20 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                                     exactKeyWordCount += 2;
                                 }
                             }
+                                for(Map.Entry<String, HashSet<String[]>> subKeyWord :keyword2SynonymMap.entrySet())
+                                 {
+                                    for(String[] keyWord : subKeyWord.getValue()) {
+                                        if (y.toLowerCase().contains(keyWord[0].toLowerCase())
+                                                        ||
+                                                        y.toLowerCase().contains(keyWord[1].toLowerCase())
+                                                ) {
+
+                                            keyWordCount_2++;
+                                            usedKeywords_2.add(keyWord[1]);
+                                            break;
+                                        }
+                                    }
+                                 }
 
                             //keyWordCount = 0;
                             System.setOut(dummyStream);
@@ -353,6 +347,21 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                                     HashSet<HashSet<String>> currentQueries = new HashSet<>();
                                     currentQueries.add(usedKeywords);
                                     closestMatchedQueries.put(keyWordCount, currentQueries);
+                                }
+                                if (closestMatchedQueries.size() > 0) {
+                                    if (keyWordCount_2 > closestMatchedQueries.firstKey()) {
+                                        HashSet<HashSet<String>> currentQueries = new HashSet<>();
+                                        currentQueries.add(usedKeywords_2);
+                                        closestMatchedQueries.put(keyWordCount_2, currentQueries);
+                                    } else if (keyWordCount_2 == closestMatchedQueries.firstKey()) {
+                                        HashSet<HashSet<String>> currentQueries = closestMatchedQueries.get(keyWordCount_2);
+                                        currentQueries.add(usedKeywords_2);
+                                        closestMatchedQueries.put(keyWordCount_2, currentQueries);
+                                    }
+                                } else {
+                                    HashSet<HashSet<String>> currentQueries = new HashSet<>();
+                                    currentQueries.add(usedKeywords_2);
+                                    closestMatchedQueries.put(keyWordCount_2, currentQueries);
                                 }
                             }
 

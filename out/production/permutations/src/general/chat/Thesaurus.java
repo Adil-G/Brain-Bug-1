@@ -15,10 +15,11 @@ public class Thesaurus {
         SendRequest request = new SendRequest((new Scanner(System.in)).nextLine(), "en_US", "xTuRi7OxPOyuqHaMBFkJ", "json");
         System.out.println(request.synonyms);
     }
-    public static void getSynonyms(String input)
+    public static HashSet<String> getSynonyms(String input)
     {
         SendRequest request = new SendRequest(input, "en_US", "xTuRi7OxPOyuqHaMBFkJ", "json");
         System.out.println(request.synonyms);
+        return request.synonyms;
     }
 } // end of Thesaurus 
 
