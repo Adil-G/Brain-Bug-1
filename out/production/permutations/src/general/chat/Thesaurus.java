@@ -48,7 +48,7 @@ class SendRequest {
                     for(String linex : lines)
                     {
 
-                        if(linex.contains(" (similar term)")) {
+                        if(true||linex.contains(" (similar term)")) {
                             //System.out.println(linex.replaceAll(" \\(similar term\\)", "").trim());
                             this.synonyms.add(linex.replaceAll(" \\(similar term\\)", "").trim());
                         }

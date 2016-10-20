@@ -162,6 +162,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                 //NO-OP
             }
         });
+        dummyStream = MainGUI.originalStream;
         ComparePhrases.keyWords.clear();
         ComparePhrases.keyWordsVerbOrAdjective.clear();
 
@@ -187,22 +188,22 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             }
         }
         */
-        HashSet<String[]> newKeyWordsNouns = new HashSet<>();
-        HashSet<String[]> newKeyWordsVerbsOrAdjectives = new HashSet<>();
+        HashSet<KeyWordPattern> newKeyWordsNouns = new HashSet<>();
+        HashSet<KeyWordPattern> newKeyWordsVerbsOrAdjectives = new HashSet<>();
         // NOuns
-        HashSet<String[]> newKeyWordsFullNouns = new HashSet<>();
-        HashSet<String[]> newKeyWordsFullVerbsOrAdjectives = new HashSet<>();
+        HashSet<KeyWordPattern> newKeyWordsFullNouns = new HashSet<>();
+        HashSet<KeyWordPattern> newKeyWordsFullVerbsOrAdjectives = new HashSet<>();
         for (String keyword : ComparePhrases.keyWords) {
             // find the root word
             String rootWord = LuceneSnowBallTest.getStem(keyword);
             // Check if root word of key word is an ACTUAL WORD
             if (rootWord.length() > 2 && !(rootWord.isEmpty())&&!(keyword.isEmpty())) {//
                 // add the root word
-                newKeyWordsNouns.add(new String[]{rootWord,keyword});
+                newKeyWordsNouns.add(new KeyWordPattern(new String[]{rootWord,keyword}));
             }
             else if (!(keyword.isEmpty())){//
                 // no, add the key word
-                newKeyWordsNouns.add(new String[]{keyword,keyword});
+                newKeyWordsNouns.add(new KeyWordPattern(new String[]{keyword,keyword}));
             }
         }
         // adjectives
@@ -212,11 +213,11 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             // Check if root word of key word is an ACTUAL WORD
             if (rootWord.length() > 2&& !(rootWord.isEmpty())&&!(keyword.isEmpty())) {//
                 // add the root word
-                newKeyWordsVerbsOrAdjectives.add(new String[]{rootWord,keyword});
+                newKeyWordsVerbsOrAdjectives.add(new KeyWordPattern(new String[]{rootWord,keyword}));
             }
             else if (!(keyword.isEmpty())){//
                 // no, add the key word
-                newKeyWordsVerbsOrAdjectives.add(new String[]{keyword,keyword});
+                newKeyWordsVerbsOrAdjectives.add(new KeyWordPattern(new String[]{keyword,keyword}));
             }
         }
 
@@ -231,7 +232,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         int prevValue = 0;
         newKeyWordsFullNouns = newKeyWordsNouns;
         newKeyWordsFullNouns.addAll(newKeyWordsVerbsOrAdjectives);
-        HashMap<String, HashSet<String[]>> keyword2SynonymMap = general.FindKeyWordsTest.getSynonyms(newKeyWordsFullNouns);
+        HashMap<String, HashSet<KeyWordPattern>> keyword2SynonymMap = general.FindKeyWordsTest.getSynonyms(newKeyWordsFullNouns);
         for (File result : listOfFiles) {
             try {
                 //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
@@ -240,15 +241,35 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                         && !(Paths.get(statementsFileName).equals(result.toPath()))
                         ) {
 
-
                     int charsize = 0;
 
 
                     String biggestText = FileUtils.readFileToString(
                             result, "utf-8").toLowerCase();
                     //String[] sentences = biggestText.split("[\\.\\?!\\n]+");
+                    boolean isRelevant = false;
+                    for(Map.Entry<String, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
+                    {
+                        if(isRelevant)
+                            break;
+                        for(KeyWordPattern keyWord : subKeyWord.getValue()) {
+                            if (biggestText.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[0])
 
+                                        /*||
 
+                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
+                                                ||
+                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
+                                        */
+                                    ) {
+
+                                isRelevant = true;
+                                break;
+                            }
+                        }
+                    }
+                    if(!isRelevant)
+                        continue;
                     HashSet<ParagraphInfo> sentsNouns = new HashSet<>();
                     HashSet<ParagraphInfo> sentsVerbsOrAdjFinal = new HashSet<>();
 
@@ -258,15 +279,65 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                     int parNum = 0;
                     // split by pages first
                     int pageNum = 0;
+
                     for (String page : biggestText.split("<-----page \\d+----->"))
                         {
                             ++pageNum;
                             // then split by sentence
+                            isRelevant = false;
+                            for(Map.Entry<String, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
+                            {
+                                if(isRelevant)
+                                    break;
+                                for(KeyWordPattern keyWord : subKeyWord.getValue()) {
+                                    if (page.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[0])
+
+                                        /*||
+
+                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
+                                                ||
+                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
+                                        */
+                                            ) {
+
+                                        isRelevant = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            if(!isRelevant) {
+                                continue;
+                            }
+                            parNum = 0;
                          for (String y : page.split(DELIMITER))
                          {
                         /*
                             */
                             parNum++;
+                             isRelevant = false;
+                             for(Map.Entry<String, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
+                             {
+                                 if(isRelevant)
+                                     break;
+                                 for(KeyWordPattern keyWord : subKeyWord.getValue()) {
+                                     if (
+                                             y.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[0])
+
+                                        /*||
+
+                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
+                                                ||
+                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
+                                        */
+                                             ) {
+
+                                         isRelevant = true;
+                                         break;
+                                     }
+                                 }
+                             }
+                             if(!isRelevant)
+                                 continue;
                             HashSet<String> usedKeywords = new HashSet<>();
                             int keyWordCount = 0;
                              HashSet<String> usedKeywords_2 = new HashSet<>();
@@ -274,35 +345,64 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                             int exactKeyWordCount = 0;
                             System.setOut(MainGUI.originalStream);
 
-                            for (String[] keyWord : newKeyWordsFullNouns) {
-                                if (//m0.find()||m1.find()
+                            for (KeyWordPattern keyWord : newKeyWordsFullNouns) {
+                                Pattern wb0 = keyWord.getPattern1();
+                                Pattern wb1 = keyWord.getPattern2();
+
+                                Pattern wb3 = keyWord.getPattern3();
+                                if (wb0.matcher(y.toLowerCase()).find()||
+                                        wb1.matcher(y.toLowerCase()).find()
+
+                                        /*||
+
                                         y.toLowerCase().contains(keyWord[0].toLowerCase())
                                                 ||
                                                 y.toLowerCase().contains(keyWord[1].toLowerCase())
+                                        */
                                         ) {
 
                                     keyWordCount++;
-                                    usedKeywords.add(keyWord[1]);
-
-                                }
-                                if (y.toLowerCase().matches(".*?\\b" + keyWord[1].toLowerCase() + ".*?")) {
+                                    usedKeywords.add(keyWord.getKeyWords()[1]);
                                     exactKeyWordCount += 1;
-                                    System.out.println("2f0a9kg0a9k: " + keyWord[1].toLowerCase());
-                                }
-                                if (y.toLowerCase().matches(".*?\\b" + keyWord[1].toLowerCase() + "\\b.*?")) {
-                                    exactKeyWordCount += 2;
+                                    if(wb3.matcher(y.toLowerCase()).find())
+                                        exactKeyWordCount += 1;
                                 }
                             }
-                                for(Map.Entry<String, HashSet<String[]>> subKeyWord :keyword2SynonymMap.entrySet())
+                                for(Map.Entry<String, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
                                  {
-                                    for(String[] keyWord : subKeyWord.getValue()) {
-                                        if (y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                        ||
-                                                        y.toLowerCase().contains(keyWord[1].toLowerCase())
+                                     Pattern wba = Pattern.compile("\\b"+subKeyWord.getKey().toLowerCase());
+                                     Pattern wbb = Pattern.compile("\\b"+subKeyWord.getKey().toLowerCase());
+                                     if (wba.matcher(y.toLowerCase()).find()||
+                                             wbb.matcher(y.toLowerCase()).find()
+
+                                        /*||
+
+                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
+                                                ||
+                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
+                                        */
+                                             ) {
+
+                                         keyWordCount_2++;
+                                         usedKeywords_2.add(subKeyWord.getKey());
+                                         continue;
+                                     }
+                                    for(KeyWordPattern keyWord : subKeyWord.getValue()) {
+                                        Pattern wb0 = keyWord.getPattern1();
+                                        Pattern wb1 = keyWord.getPattern2();
+                                        if (wb0.matcher(y.toLowerCase()).find()||
+                                                wb1.matcher(y.toLowerCase()).find()
+
+                                        /*||
+
+                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
+                                                ||
+                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
+                                        */
                                                 ) {
 
                                             keyWordCount_2++;
-                                            usedKeywords_2.add(keyWord[1]);
+                                            usedKeywords_2.add(keyWord.getKeyWords()[1]);
                                             break;
                                         }
                                     }
@@ -450,13 +550,13 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             {
                 String possibleQuery = new String();
                 HashSet<String> missingKeyWords = new HashSet<>();
-                for (String[] keywordFromData : newKeyWordsFullNouns) {
+                for (KeyWordPattern keywordFromData : newKeyWordsFullNouns) {
                     boolean contains = false;
                     for (String keyWordFromParsedQuery : keywordSeti) {
                         // does the word from the question match with
                         // the keyword used in the program
                         // get the keyword, not the root word
-                        if (keyWordFromParsedQuery.toLowerCase().equals(keywordFromData[1].toLowerCase()))
+                        if (keyWordFromParsedQuery.toLowerCase().equals(keywordFromData.getKeyWords()[1].toLowerCase()))
                         {
                             contains = true;
                         }
@@ -465,7 +565,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                     if(!contains) {
                         System.setOut(MainGUI.originalStream);
                         System.out.println("4ty34g: "+keywordFromData);
-                        missingKeyWords.add(keywordFromData[1]);
+                        missingKeyWords.add(keywordFromData.getKeyWords()[1]);
                     }
                 }
                 int numberOfMissedWords = 0;
@@ -538,7 +638,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
     }
     public static TreeMap<Integer, HashSet<HashSet<String>>> closestMatchedQueries = new TreeMap<>(Collections.reverseOrder());
     public static ArrayList<String> getchats(TreeMap<Integer, HashSet<ParagraphInfo>> treeOfAnswers, String query, PrintStream dummyStream
-    ,HashSet<String[]> newKeyWordsFullNouns) throws IOException {
+    ,HashSet<KeyWordPattern> newKeyWordsFullNouns) throws IOException {
         ArrayList<String> container = new ArrayList<>();
         int paragraphCount = 0;
         TreeMap<Double, HashSet<AnswerPair>> match = new TreeMap<>(Collections.reverseOrder());

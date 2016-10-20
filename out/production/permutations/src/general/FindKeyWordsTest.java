@@ -4,6 +4,7 @@ import SentenceGenerator.ComparePhrases;
 import com.knowledgebooks.nlp.ExtractNames;
 import com.knowledgebooks.nlp.util.ScoredList;
 import general.chat.Thesaurus;
+import general.graph.theory.KeyWordPattern;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB;
 import opennlp.tools.cmdline.PerformanceMonitor;
 import opennlp.tools.namefind.NameFinderME;
@@ -21,31 +22,32 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.regex.Pattern;
 
 /**
  * Created by corpi on 2016-05-01.
  */
 public class FindKeyWordsTest {
-    public static HashMap<String, HashSet<String[]>> getSynonyms(HashSet<String[]> keywords)
+    public static HashMap<String, HashSet<KeyWordPattern>> getSynonyms(HashSet<KeyWordPattern> keywords)
     {
-        HashMap<String, HashSet<String[]>> synonymMap = new HashMap<>();
-        for(String[] keys : keywords)
+        HashMap<String, HashSet<KeyWordPattern>> synonymMap = new HashMap<>();
+        for(KeyWordPattern keys : keywords)
         {
-            String word = keys[1];
+            String word = keys.getKeyWords()[1];
             HashSet<String> syns = Thesaurus.getSynonyms(word);
             syns.add(word);
-            HashSet<String[]> copy = new HashSet<>();
+            HashSet<KeyWordPattern> copy = new HashSet<>();
             for (String keyword : syns) {
                 // find the root word
                 String rootWord = LuceneSnowBallTest.getStem(keyword);
                 // Check if root word of key word is an ACTUAL WORD
                 if (rootWord.length() > 2 && !(rootWord.isEmpty())&&!(keyword.isEmpty())) {//
                     // add the root word
-                    copy.add(new String[]{rootWord,keyword});
+                    copy.add(new KeyWordPattern(new String[]{rootWord.toLowerCase(),keyword.toLowerCase()}));
                 }
                 else if (!(keyword.isEmpty())){//
                     // no, add the key word
-                    copy.add(new String[]{keyword,keyword});
+                    copy.add(new KeyWordPattern(new String[]{keyword.toLowerCase(),keyword.toLowerCase()}));
                 }
             }
             synonymMap.put(word, copy);

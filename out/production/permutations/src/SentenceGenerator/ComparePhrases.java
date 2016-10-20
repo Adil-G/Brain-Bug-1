@@ -2,10 +2,7 @@ package SentenceGenerator;
 
 import general.LuceneSnowBallTest;
 import general.chat.MainGUI;
-import general.graph.theory.Edge;
-import general.graph.theory.Graph;
-import general.graph.theory.GraphNew_July8;
-import general.graph.theory.Vertex;
+import general.graph.theory.*;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -277,7 +274,7 @@ public class ComparePhrases {
         return outcome;
     }
 
-    public static ArrayList<String> rankAnswers(String query, ArrayList<String> unsortedParagraphs, HashSet<String[]> keyWords)
+    public static ArrayList<String> rankAnswers(String query, ArrayList<String> unsortedParagraphs, HashSet<KeyWordPattern> keyWords)
     {
         TreeMap<Double, HashSet<String>> sorted = new TreeMap<>();
 
@@ -305,12 +302,12 @@ public class ComparePhrases {
         }
         return  sortedList;
     }
-    public static double computeParagraph(String paragraph, HashSet<String[]> keyWords)
+    public static double computeParagraph(String paragraph, HashSet<KeyWordPattern> keyWords)
     {
         HashSet<Integer> inteciesOfKeyWords = new HashSet<>();
-        for(String[] words : keyWords)
+        for(KeyWordPattern words : keyWords)
         {
-            for(String word : words) {
+            for(String word : words.getKeyWords()) {
                 int index = paragraph.toLowerCase().indexOf(word.toLowerCase());
                 inteciesOfKeyWords.add(index);
             }
