@@ -1,5 +1,9 @@
 package general.graph.theory;
 
+import general.chat.MainGUI;
+
+import javax.swing.event.MouseInputAdapter;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 /**
@@ -31,4 +35,41 @@ public class KeyWordPattern {
     {
         return this.pattern3;
     }
+    @Override
+    public String toString()
+    {
+        String stringPrint = "";
+
+        stringPrint += " | "+ Arrays.toString(this.getKeyWords());
+
+        return stringPrint;
+    }
+    @Override
+    public int hashCode() {
+        return this.getKeyWords()[1].hashCode();
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this.getClass() == obj.getClass()){
+
+
+            KeyWordPattern other =(KeyWordPattern)obj;
+            if(this.keyWords[1].equals(((KeyWordPattern) obj).getKeyWords()[1])){
+                //System.setOut(MainGUI.originalStream);
+                //System.out.println("989u8r true");
+                return true;
+            }
+        }
+        //System.setOut(MainGUI.originalStream);
+        //System.out.println("989u8r false");
+        return false;
+    }
+    /*
+    @Override
+    public int compareTo(Object anotherKeyWordPattern) {
+        if (!(anotherKeyWordPattern instanceof KeyWordPattern))
+            throw new ClassCastException("A KeyWordPattern object expected.");
+        return this.keyWords[1].compareTo(((KeyWordPattern) anotherKeyWordPattern).getKeyWords()[1]);
+    }
+    */
 }

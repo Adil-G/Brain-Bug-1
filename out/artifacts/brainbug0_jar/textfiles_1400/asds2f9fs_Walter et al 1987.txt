@@ -1,0 +1,445 @@
+<-----Page 0----->Vol. 125, No. 2
+
+AMERICAN JOURNAL OF EPIDEMIOLOGY
+
+Copyright © 1987 by The Johns Hopkins University School of Hygiene and Public Health
+All right* reserved
+
+Printed in USA.
+
+CODING ORDINAL INDEPENDENT VARIABLES IN MULTD7LE
+REGRESSION ANALYSES
+S. D. WALTER,1 A. R. FEINSTEIN,2 AND C. K. WELLS1
+
+biostatistics; regression analysis
+
+Several investigators (1-3) have discussed the question of coding schemes for
+discrete independent variables in multiple
+logistic regression and multiple linear
+regression analyses. They have described
+various ways to characterize the contrasts
+between the responses at the different
+levels (or strata) of the independent variables. Two common options are 1) to compare the responses in each stratum with the
+responses in a single referent or control
+stratum or 2) to compare the responses in
+Received for publication March 31, 1986, and in
+final form July 2, 1986.
+1
+Department of Clinical Epidemiology and Biostatistics, McMaster University, Hamilton, Ontario,
+Canada.
+'Clinical Epidemiology Unit and Robert Wood
+Johnson Clinical Scholars Program, Yale University,
+New Haven, CT.
+Reprint requests to Dr. S. D. Walter, Department
+of Clinical Epidemiology and Biostatistics, McMaster
+University, 1200 Main Street West, Hamilton, Ontario, Canada L8N 3Z5.
+This research was supported in part by the National
+Health Research and Development Program through
+a National Health Scientist award (to S. D. W.) and
+in part by Grant 6309 from the Robert Wood Johnson
+Foundation.
+
+each stratum with the average response for
+the whole sample.
+We would like to draw attention to an
+additional coding scheme that we have
+found useful in defining contrasts for
+regression analyses involving categorical
+independent variables that have discrete
+ordered categories. If the categories are
+coded by using a single variable which takes
+values in a direct numerical sequence, such
+as 1,2,3,4,..., the regression procedure will
+analyze these numbers as though they represented a true dimension, with equal intervals measured between adjacent categories. If the ordinal values are arbitrarily
+assigned rather than actually measured, the
+regression coefficient is difficult or impossible to interpret. Also, depending on how
+closely the assumed scaling (1,2,3, . ..)
+agrees with the actual dose-response relationship, the test of significance of the coefficient may or may not be powerful against
+alternative hypotheses of interest. If the
+true dose-response relationship is linear,
+with equal increments between successive
+categories, the one degree of freedom test
+
+319
+
+Downloaded from http://aje.oxfordjournals.org at University of Waterloo on May 25, 2010
+
+Walter, S. D. (Dept of Clinical Epidemiology and Biostatistics, McMaster U.,
+Hamilton, Ontario, Canada L8N 3Z5), A. R. Feinstein, and C. K. Wells. Coding
+ordinal independent variables in multiple regression analyses. Am J Epidemiol
+1987;125:319-23.
+The authors present a coding scheme for ordinal Independent variables which
+may be used in various forms of regression analysis. The scheme is useful in
+dose-response analyses, when the objective is to identify contrasts in the dependent (or response) variable between successive levels of the Independent
+variable, or to identify critical threshold values of the independent variables at
+which significant changes occur in the response. An example is given of evaluating the survival of lung cancer patients according to their stage of symptomatology. The authors discuss the interpretation of the regression coefficients when
+this coding scheme is used with linear regression, logistic regression, or in the
+proportional hazards regression model.
+
+<-----Page 1----->320
+
+WALTER ET AL.
+
+of the regression coefficient will be relatively powerful. On the other hand, if a
+threshold exists, the overall linear test of
+trend may have low power, as opposed to a
+coding scheme that can completely reproduce the threshold relationship.
+OBJECTIVES OF PROPOSED CODING
+SCHEME
+
+would correspond to the most significant
+differences in survival. This approach
+might, for instance, conclude that the largest differences in the outcome were between
+patients with any symptoms (primary, systemic, or metastatic) as opposed to those
+with no symptoms.
+DEFINITION OF CODING SCHEME
+
+x,
+
+Downloaded from http://aje.oxfordjournals.org at University of Waterloo on May 25, 2010
+
+Our general coding scheme is as follows.
+The coding we have developed is designed to preserve the ordinal ranks of the Suppose there are (k + 1) ordered levels of
+independent variable, while identifying the the independent variable; this implies that
+ranked categories in a manner suitable for we may define (up to) k dummy indepensubsequent analysis. With this type of data, dent variables Xi, X2, . . . X* to describe
+a frequent goal is to evaluate the contrasts between-strata differences. The strata will
+between the responses in the successive be labeled in sequence as 0,1,2,... k. Then,
+ordered categories. This goal involves an the values of the independent variables in
+examination of the progressive changes in each stratum are
+the dependent variable as one moves
+Dummy variable
+Stratum
+through the strata of the independent varino.
+able in their defined order. In a related but
+X*_!
+X: x 2 x 3
+different type of evaluation, the goal is to
+0
+0 0 0 .
+0
+0
+find a particular point in the sequence of
+0
+0
+.
+1
+1
+0
+0
+strata at which a substantial change occurs
+0
+0
+.
+2
+1
+0
+1
+in the dependent variable, for example, at
+a critical "threshold" value of the independent variable.
+As an example, we have been considering
+1 1 1 .
+1
+0
+k-1
+the relationship of symptom stage to sur1 1 1 .
+1
+1
+k
+vival in a series of lung cancer patients (4).
+The four levels of symptoms are asympto- In our lung cancer example, therefore, we
+matic, primary symptoms only, systemic defined three variables as follows:
+symptoms (with or without primary symptoms), and metastatic symptoms (with or
+Symptom
+v
+v
+y
+2
+3
+without primary and/or systemic sympstage
+'
+toms). Although these categories are not
+Asymptomatic
+0
+0
+0
+expressed quantitatively, their order corPrimary
+1
+0
+0
+responds to the usual clinical concepts of
+Systemic
+1 1 0
+severity. Although this order is also likely
+Metastatic
+1 1 1
+to correlate with prognosis for survival, the
+correlation is of course not a requirement Analysis of survival data requires the use
+of our proposed coding method.
+of special regression techniques, such as the
+We required a coding scheme that would Cox proportional hazards model (5). It is,
+fulfill at least two objectives. First, we however, somewhat simpler if we introduce
+wanted to estimate the prognostic differ- the general principles of our coding scheme
+ences in survival between patients in suc- by using ordinary linear regression. In a
+cessive symptom categories, for example, later section, we will discuss the interprebetween the systemic and metastatic tation of the regression coefficients when
+groups. Second, we wished to identify any using proportional hazards or logistic
+important thresholds in symptoms that regression models.
+
+<-----Page 2----->CODING ORDINAL INDEPENDENT VARIABLES
+INTERPRETATION OF GENERAL
+REGRESSION MODELS
+
+Y = 5 + X, + 2X2 + 7X3.
+
+(1)
+
+By substituting appropriate values of Xi,
+X2, and X3 into equation 1, one may calculate the average response for individuals
+in each of the categories A to D. For example, in category C, we have Xi = 1, X2 =
+1, and X3 = 0, thus, the predicted response
+for level C in equation l i s Y = 5 + l + 2
++ 0 = 8. (The reader may verify that the
+average values may be computed similarly
+for the other groups.) The large difference
+between categories C and D is reflected in
+the large coefficient for X3.
+Second, the model may include only a
+single independent variable, X, say; here,
+TABLE 1
+
+Three hypothetical response patterns and associated
+regression models
+Average value of
+dependent vanable in various
+Pattern categories (A-D)
+of an independent
+variable
+
+1
+2
+3
+
+Model
+
+A
+
+B
+
+C
+
+D
+
+5
+5
+5
+
+6
+5
+8
+
+8 15 y = 5 + Xt + 2X, + 7X3
+9 9 y = 5 + 4Xj
+8 15 y = 5 • o V -I- 7 V
+
+the coefficient of X, defines the contrast
+between the aggregated responses in level i
+and above, and the aggregated responses in
+level (i — 1) and below. For instance, in the
+previous example, the model with X2 alone
+would provide a comparison between individuals in C and D (combined) and individuals in A and B (combined). This model
+would be appropriate for pattern 2 of table
+1, where a jump in the level of response
+occurs between the two highest and two
+lowest of the ordered strata. The coefficient
+of X2 (equal to 4) represents the difference
+in response between these two sets. Individuals in categories A or B have X2 = 0
+and average response values of 5; in contrast, the other two categories have X2 = 1,
+yielding a prediction of Y = 5 + 4 = 9.
+This second model is attractive when
+"stepwise" methods are used. By adopting
+a forward inclusion rule for model selection,
+one will identify at the first step the cut
+point defining the most significant dichotomy on the scale of the independent variable X. Subsequent steps in the process will
+identify any other demarcations in the scale
+where meaningful changes occur in the response. Suppose pattern 3 of table 1 applied. With sufficient data, a stepwise algorithm will select Xi and X3 into the
+model. We would conclude that there is no
+prognostic difference between categories B
+and C, but that individuals in categories A
+and D differ from this combined "middle"
+stratum (B and C) by amounts that are
+represented by the coefficients of Xi and
+X3, equal to 3 and 7, respectively.
+We will now discuss the interpretation of
+the coefficients b, in three particular types
+of regression model, the linear, the proportional hazards, and the logistic.
+INTERPRETATION OF COEFFICIENTS IN
+SPECIFIC REGRESSION MODELS
+
+Linear regression
+The examples discussed above and
+shown in table 1 have a simple interpretation in the context of ordinary linear
+regression. The dependent variable Y is
+
+Downloaded from http://aje.oxfordjournals.org at University of Waterloo on May 25, 2010
+
+We now consider, in general, regression
+models that may include Xu X2, . . . Xk in
+various combinations. Two specific models
+are of particular interest. First, we may fit
+the model with all k independent variables
+included; in this model, the coefficient of
+X, corresponds to the difference in responses between levels i and (i — 1), and
+all such differences are estimated. Consider, for example, the hypothetical situation shown as pattern 1 in table 1. Here,
+there is a progressive increase in the dependent variable going through categories
+A, B, C, and D of the independent variable.
+The largest difference appears to be between individuals in categories C and D.
+Fitting the model with all three independent variables included yields the regression equation
+
+321
+
+<-----Page 3----->322
+
+WALTER ET AL.
+
+less of the absolute risk (proportional to
+ho(t)) or the time instant in question.
+Now with a general number of ordered
+strata as discussed earlier, the exponentials
+of the coefficients 61, b?, ... bk represent
+relative risk values, comparing various of
+the strata in the same way as for linear
+regression. For instance, if all the variables
+Xi, X2, . . . Xk are included in the model
+(analogous to pattern 1 of table 1), exp(6,)
+Proportional hazards regression
+gives the relative risk between stratum i
+In the analysis of survival data, the pro- and stratum i — 1.
+portional hazards regression model uses as
+Logistic regression
+its dependent variable the hazard function
+In logistic regression, the model is spech(t, X), where X represents the set of exified
+by
+posure variables for an individual. Under
+modeled directly, and the regression equation gives the expected value of Y itself.
+Thus, the expected value of Y is given by
+the regression equation Y = bo + biXi +
+b^X2 + . . . + b),Xk in the full model, for
+instance. This approach is appropriate if
+the dependent variable is continuous, for
+instance, systolic blood pressure or serum
+cholesterol.
+
+log(p/l - p) = 60 + 61X, + . . . + bkXk,
+
+where p is the probability of an event under
+study (e.g., the probability that a certain
+birth will have a congenital anomaly). This
++ 62X2 + . . . + bkXk), (2)
+method is widely used to analyze casewhere ho( t) is an underlying hazard, a func- control data (6).
+As before, if there is a single predictor Xi
+tion of time t only. The second component
+of h(t, X) represents the way in which the with values 0 and 1, the probability pE for
+hazard varies according to an individual's the exposed (Xa = 1) is defined by
+values of Xh X2, . . . Xk. Overall, h(t, X)
+log(p £ /l - pE) =
+bu
+gives the instantaneous probability of
+death at time t, for an individual with ex- and the probability pE for the unexposed
+posure values X.
+(Xi = 0) is given by
+If there is a single regression variable Xi,
+log(pg/l - ps) = bo.
+which takes values 0 and 1, the hazard
+function for individuals with X\ = 1 (the Hence,
+"exposed," say) is from equation 2:
+log(p £ (l - pE)/pg(l - pE) = bu
+hE =
+exp(6o + bx),
+showing that b may be thought of here as
+h(t, X) = ho(t) exp(fco + &iXx
+
+x
+
+while the hazard function for those with
+= 0 (the "unexposed") is
+hE =
+
+exp(feo).
+
+Thus, hE/hE = exp(6i), or log(hE/hE) = 6,.
+Hence, we may think of bi as a "log relative
+risk" of the "exposed" to the "unexposed"
+which, strictly speaking, applies to an infinitesimally short interval of time. Equivalently, exp(fe,) is the relative risk. Note that
+this relative risk is constant over the time
+t of follow-up; this is in fact the essence of
+the proportional hazards assumption, that
+the relative risk of X] is constant, regard-
+
+a log odds ratio; similarly, exp(6i) is the
+odds ratio itself.
+Finally, if we return again to the situation with k ordered strata, the coefficients
+6, now represent log odds ratios between
+appropriate strata. For instance, if only X,
+is fitted in the model (analogous to pattern
+2 of table 1), exp(6,) is the odds ratio between the combined strata i and above, and
+the combined strata (i — 1) and below.
+DISCUSSION
+
+We have presented a coding scheme for
+regression modeling, which is particularly
+
+Downloaded from http://aje.oxfordjournals.org at University of Waterloo on May 25, 2010
+
+the proportional hazards assumption, this
+function may be represented as
+
+<-----Page 4----->323
+
+CODING ORDINAL INDEPENDENT VARIABLES
+
+text by considering a variety of coding
+schemes to find "the most significant effect." With (k + 1) strata, there are only k
+degrees of freedom available to examine
+between-strata differences. This means
+that a maximum of k statistically independent statements about the data can be
+made. Ideally, the (up to) k contrasts to be
+tested should be specified a priori, and the
+coding scheme should be chosen accordingly.
+REFERENCES
+
+1. Lemeshow S, Hosmer DW Jr. Estimating odds
+ratios with categorically scaled covariates in multiple logistic regression analysis. Am J Epidemiol
+1984:119:147-51.
+2. Fleiss JL. Re: "Estimating odds ratios with categorically scaled covariates in multiple logistic
+regression analysis." (Letter). Am J Epidemiol
+1985:121:476-7.
+3. Dulberg C. Another view. (Letter). Am J Epidemiol 1985:121:477-8.
+4. Feinstein AR, Wells CK. Lung cancer staging: a
+critical evaluation. Clinics Chest Med 1982:3:291305.
+5. Lee ET. Statistical methods for survival data analysis. Belmont, CA: Lifetime Learning Publications, 1980.
+6. Breslow NE, Day NE. Statistical methods in cancer research. Vol 1. The analysis of case-control
+studies. Lyon: Internationa] Agency for Research
+on Cancer, 1980.
+
+Downloaded from http://aje.oxfordjournals.org at University of Waterloo on May 25, 2010
+
+useful in examining dose-response relationships for data with ordered categorical exposure strata.
+It should be pointed out that if one has
+(k + 1) strata and one parameterizes a full
+set of k independent variables, it is always
+possible to "convert" from any one coding
+scheme to any other, obtaining point estimates and variances; this will typically involve some algebraic manipulation of the
+codings, and of the corresponding variancecovariance matrices for the parameters.
+However, the overall significance test of
+association on k degrees of freedom, comparing differences between all the strata
+simultaneously, is the same for any valid
+coding scheme.
+The choice between alternative codings
+should be based on which particular contrasts between the various strata are required. The correct choice will lead directly
+to relevant parameters, such as mean differences or odds ratios, even if only a partial
+model is fitted. An incorrect coding choice
+in a partial model will yield results that are
+generally not "convertible" to another coding scheme, so reanalysis may be needed.
+As usual, one must be conscious of the
+danger of overanalysis of data, in this con-
+
+

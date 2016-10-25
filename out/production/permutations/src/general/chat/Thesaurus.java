@@ -15,11 +15,18 @@ public class Thesaurus {
         SendRequest request = new SendRequest((new Scanner(System.in)).nextLine(), "en_US", "xTuRi7OxPOyuqHaMBFkJ", "json");
         System.out.println(request.synonyms);
     }
-    public static HashSet<String> getSynonyms(String input)
+    public static HashSet<String> getSynonyms(String input, boolean isDeep)
     {
-        SendRequest request = new SendRequest(input, "en_US", "xTuRi7OxPOyuqHaMBFkJ", "json");
-        System.out.println(request.synonyms);
-        return request.synonyms;
+        if(!isDeep)
+            return new HashSet<String>();
+        else
+        {
+
+            SendRequest request = new SendRequest(input, "en_US", "xTuRi7OxPOyuqHaMBFkJ", "json");
+            System.out.println(request.synonyms);
+            return request.synonyms;
+
+        }
     }
 } // end of Thesaurus 
 
@@ -48,7 +55,7 @@ class SendRequest {
                     for(String linex : lines)
                     {
 
-                        if(true||linex.contains(" (similar term)")) {
+                        if(linex.contains(" (similar term)")) {
                             //System.out.println(linex.replaceAll(" \\(similar term\\)", "").trim());
                             this.synonyms.add(linex.replaceAll(" \\(similar term\\)", "").trim());
                         }

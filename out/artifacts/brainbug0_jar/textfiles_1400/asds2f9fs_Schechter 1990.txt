@@ -1,0 +1,1688 @@
+<-----Page 0----->Medical Decision Making
+http://mdm.sagepub.com/
+
+Sequential Decision Making with Continuous Disease States and Measurements : I. Theory
+Clyde B. Schechter
+Med Decis Making 1990 10: 242
+DOI: 10.1177/0272989X9001000402
+The online version of this article can be found at:
+http://mdm.sagepub.com/content/10/4/242
+
+Published by:
+http://www.sagepublications.com
+
+On behalf of:
+
+Society for Medical Decision Making
+
+Additional services and information for Medical Decision Making can be found at:
+Email Alerts: http://mdm.sagepub.com/cgi/alerts
+Subscriptions: http://mdm.sagepub.com/subscriptions
+Reprints: http://www.sagepub.com/journalsReprints.nav
+Permissions: http://www.sagepub.com/journalsPermissions.nav
+Citations: http://mdm.sagepub.com/content/10/4/242.refs.html
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+<-----Page 1----->Sequential Decision Making with Continuous
+Disease States and Measurements:
+I. Theory
+CLYDE B. SCHECHTER, MD
+The question of whether to perform a continuous valued test to assess a continuous valued
+health state such as blood pressure or serum cholesterol is explored by decision analysis.
+Principal assumptions are that the underlying health state and measurement variability are
+both normally distributed, and that the impact of treatment on the utility of outcomes varies
+linearly with the underlying health state. Using Bayes’ theorem, an expression for the expected utility of performing the test is derived and compared with immediate treatment or
+decision to withhold treatment. The calculations can be carried out with a pocket calculator
+and a table of the normal distribution. Iterating the analysis, a sequential decision making
+process is developed, leading to a series of no treat/test again and test again/treat thresholds
+with which a running average of independently obtained measurements can be compared
+to produce stepwise optimal results. The thresholds are readily calculated on a microcomputer. Finally, the conjugate-normal-linear model is extended to encompass the correlated
+observations that may be made on a single visit. This paper concentrates on the mathematics
+of decision making with continuous variables. The companion paper illustrates its application
+to diastolic blood pressure. Key words: decision analysis; Bayes’ theorem; conjugate-normallinear model; hypertension. (Med Decis Making 1990;10:242-255)
+
+The
+
+theory of Bayesian decision making, as develfor
+oped,
+example, by Savage,’ is designed to help make
+such decisions under conditions of uncertainty. Applying this framework to deciding when to order a
+diagnostic test, Pauker and Kassirer~ set out the threshold decision-making approach.
+Unfortunately, Pauker and Kassirer’s method is not
+applicable to hypertension, a common disease of adults,
+for three reasons. First, there is no discrete disease
+hypertension: lower blood pressures are associated
+with better health and longer life throughout the range
+observed in ambulatory patients. Observed blood pressures are continuously, unimodally distributed over a
+broad range. The distinction between &dquo;hypertensives&dquo;
+and &dquo;normotensives&dquo; is simply a dichotomization of
+a continuum, reflecting the sense that below some
+point the costs and risks associated with blood pressure reduction outweigh the benefits.
+Second, the &dquo;test&dquo; for hypertension consists of blood
+pressure determination, which does not yield a positive or negative result but estimates the blood pres-
+
+somewhat
+sure
+
+sidered normal practice and is recommended, to a
+limited extent, by national authorities.’ The considerations of these last three paragraphs also apply to
+the management of blood cholesterol levels, another
+common problem in medicine.
+There is therefore a need to apply decision analysis
+to situations with continuous health states and continuous, repeatable measurements. This paper presents such an application. I describe a specially tailored
+conjugate-normal model of such measurements and
+health states, along with a model of the relevant utilities. From these, an expression for the utility of measurement before deciding about treatment is derived
+and a decision rule formulated. A stopping rule for
+
+proposed and its implimodel is extended to
+the
+analyzed. Finally,
+obtained over
+correlated
+measurements
+encompass
+short time intervals.
+Bayesian sequential decision theory is set out in
+standard texts, e.g., the brief, lucid exposition of Lindgren,~ or the more extensive and demanding expositions of LaValle’ and DeGroot.~The purpose of this
+paper is to present the material in a style and notation
+more familiar to clinical decision analysts, emphasizing blood pressure as its focus. A companion paper’
+appears in this issue; in it, the clinical rationale for
+the assumptions of this conjugate-normal model are
+explored and the model is applied to diagnosing disequential
+
+tests is
+
+Received December 7, 1988, from the Department of Community
+Mt. Sinai School of Medicine, New York, New York, and
+the Department of Ambulatory Care, City Hospital Center, Elmhurst,
+New York. Revision accepted for publication January 16, 1990.
+Address correspondence and reprint requests to Dr. Schechter:
+Box 1043, Mt. Sinai School of Medicine, 1 Gustave L. Levy Place, New
+
+Medicine,
+
+York, NY
+
+measurements is
+
+cations
+
+sure.
+
+Third, repetition of ordinary diagnostic
+
+exceptional, whereas repeating blood presbefore making a diagnosis is con-
+
+measurements
+
+10029.
+
+242
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+<-----Page 2----->243
+
+formulated and exwith
+reference
+to
+diastolic
+blood pressure, the
+plained
+is
+more
+and
+theory
+general,
+ongoing work suggests
+that it applies with slight modification to cholesterol
+as well.
+astolic
+
+hypertension. Although
+
+me Conjugate-normal Measurement Model
+observation that if the same
+patient’s blood pressure is measured repeatedly, differing results will be obtained. The challenge to the
+clinician is to make sense of these fluctuating data, to
+know when to get more of them, and when to reach
+a final decision about intervention.
+The following model has been fitted and usefully
+applied to diastolic blood pressure in earlier work.8,9
+Assume that any patient’s diastolic blood pressure if
+measured at every instant would follow a normal
+(Gaussian) distribution. The mean of that distribution,
+denoted x, is a characteristic of that patient which I
+refer to as the &dquo;true&dquo; or &dquo;latent&dquo; blood pressure of the
+patient. Any particular measurement we obtain, denoted y, is a sample of size 1 from that distribution.
+If measurements are taken sufficiently far apart in time
+that the more persistent factors affecting blood pressure have had a chance to fluctuate, we regard a series
+of blood pressure measurements, yi, Y2)
+yn as inIt is
+
+a
+
+commonplace
+
+...,
+
+dependently sampled from this distribution. Denoting
+the variance of this distribution by T 2the probability
+distribution function,
+on x is given by:
+
+Bayesian statistician, the prior distribution
+subjective opinion, perhaps to be modified by
+subsequent measurements. The frequentist may wish
+to estimate R, a~2, and TZ from data. Methods for doing
+this have been explained elsewhere. 8,10
+We can apply Bayes’ theorem to the prior and conFor the
+
+is
+
+a
+
+ditional distributions to obtain the posterior distribution of x after a single measurement y has been
+obtained. Because both the prior and the conditional
+distributions are normal, the result is quite simple:
+
+BAYES’
+
+THEOREM WITH NORMAL PRIOR AND
+CONDITIONAL DISTRIBUTIONS
+
+Under the
+
+obtaining
+
+a
+
+(QZ
+
+the
+
++
+
+r2),
+
+in equations 1 and 2, after
+(y2/
+result y, and letting r
+distribution function, F1, for x
+
+assumptions
+
+measurement
+
+posterior
+
+=
+
+is:
+
+generally, if independent measurements yi, ...,
+have
+been obtained, let y. denote their mean
+y~
++...
+(Yi
++yn)/n, and let Rn n-r/[l + (n -1)r]. Then the
+posterior distribution, F n’, of x after n measurements
+More
+
+=
+
+is:
+
+Fylx, of a test result y conditional
+Proof of this theorem
+
+can
+
+be found in LaValle’
+
+DeGmot.~Some consequences of this
+Schechter and Adler.8
+The right side of equation 1 refers to a normal distribution with mean x and variance T~. Throughout this
+paper and its companion, the assumption about sufficient time separation between measurements to permit us to treat them as conditionally independent is
+implicit in the term &dquo;measurement.&dquo; If a device is used
+repeatedly in a short span of time during which separate results could not, for practical purposes, be regarded as conditionally independent, I refer to those
+results as &dquo;observations.&dquo; Observations will be dealt
+with near the end of this paper.
+For any person, x is unknowable. It may be estimated from measurements, but its precise value can
+never be determined. From the Bayesian perspective,
+x is a random variable. Empirically, if the entire population of a community were available and an oracle
+provided the value of x for each of them, the x’s themselves would have a frequency distribution. It is assumed that the x’s are also normally distributed; we
+let R denote the mean and QZ the variance of this prior
+distribution for x. In symbols, the prior probability
+distribution function of X, F 0’ is:
+
+are
+
+explored
+
+or
+
+in
+
+The key qualitative points to emphasize are: 1) the
+posterior distribution is again normal, which will prove
+useful for sequential decision making; 2) the variance
+of the distribution of x decreases by a factor of 1- Iin.
+Notice that we always have 0 ~ r < 1, with equality
+only under the unrealistic condition that Q2 or TZbe
+zero. The number r can be shown to equal the testretest reliability of a single measurement.&dquo; Values of
+r close to 1 reflect nearly perfect measurement; values
+near 0 correspond to noisy measurements that are
+pale reflections of x.
+For a given conditional distribution, a family of prior
+distributions that combine with it under Bayes’ theorem to produce a posterior distribution belonging to
+the family is known as a conjugate family for that conditional distribution.12 Here the conditional distribution is normal, and the conjugate family is the class
+of normal distributions. When an unknown parameter
+and conditionally independent measurements bear
+these relationships, as x and y do, it is convenient to
+refer to y as a conjugate-normal measurement of x. A
+review of the symbols introduced so far (and others
+to come later) appears in table 1.
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+<-----Page 3----->244
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+<-----Page 4----->245
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+<-----Page 5----->246
+
+Assumptions about Utilises
+
+EU(untreated natural
+
+history)
+
+=
+
+U(x)
+
+and
+TREATMENT UTILITY
+
+Risk of cardiovascular disease increases with blood
+pressure. Interventions to lower blood pressure reduce the risk; but they carry adverse effects of their
+own and impose burdens of inconvenience, time lost
+for medical follow up, and monetary expense on the
+subjects. Explicitly modeling all of these effects is an
+enormous task, beyond the scope of this manuscript,
+and has been explored by Weinstein and Stason. 13 In
+part for reasons of mathematical simplicity, and in part
+motivated by their results, I instead take the following
+holistic approach to the relevant utilities: if the utility,
+the numerical expression of patient preference, for the
+natural history of life with latent blood pressure x is
+U(x), I assume that the utility of life with pretreatment
+latent blood pressure x and treatment to reduce blood
+pressure is U(x) + some linear function of x.
+One algebraic representation of linear functions is
+especially convenient. If x is sufficiently high, treatment will be preferred to natural history; if x is sufficiently low, natural history will be preferred to
+treatment. There is some cutoff value of latent blood
+pressure, q, for which the patient is indifferent between treatment and natural history. Above q, the patient prefers treatment; below q, untreated life is
+preferred. This value of q determines the patient’s
+functional definition of &dquo;hypertension.&dquo;
+The Joint National Committee on Detection, Evaluation and Treatment of Hypertension (JNC) has, in
+essence, recommended that blood pressure be lowered when it exceeds 90 mmHg diastolic,3in effect
+prescribing the value q 90 for all persons. From the
+Bayesian perspective adopted here, however, the value
+of q should be determined from individual patient
+preferences and depends upon both external matters
+(such as other risk factors for cardiovascular diseases)
+and attitudinal factors. Of course, the practical difficulties in eliciting q from the patient should not be
+underestimated; the process is approached in the
+=
+
+companion paper.
+
+complete the specification of the expected gain
+utility from treatment as a linear function, a slope
+must be identified. This slope, denoted L, is the amount
+by which the patient’s preference for treatment over
+natural history increases for each unit increase in latent blood pressure. Its units are utiles/mmHg. I am
+not aware of procedures for determining overall utility
+slopes from patient preferences, though Miyamoto and
+Eraker’s work&dquo; parametrically connecting utility with
+quality-adjusted life years is related. In any case, once
+L is determined, we can write the expected gain in
+utility from treatment as L~ (x - q). Accordingly, for a
+To
+
+in
+
+patient with
+
+latent blood pressure
+
+x:
+
+The assumption of a linear relationship between latent
+blood pressure and effect of treatment is the most
+stringent one in this model. The evidence favoring it
+is reviewed in the companion paper.’ Relaxing this
+assumption would expand the applicability of the
+model; for this reason I call attention to each use of
+linearity in the analysis and indicate the extent to
+which it might be dispensable while still preserving
+the core of the approach.
+Nothing has been said about U(x) itself. Apart from
+using n to denote E(U(x)), nothing will; it will be seen
+to be irrelevant to decision making.
+COST OF MEASUREMENT
+
+Intuitively, one would expect that measuring blood
+pressure, by providing more information about the
+patient, would lead to a better decision about treatment. Nevertheless, such information comes at a price.
+Time, personnel, equipment, records, and space are
+allocated to it (for which the patient incurs a charge),
+and the patient must give up work or leisure time for
+the encounter, and expend time and resources on
+travel. The patient will attach some utility cost to these
+events. As with the impact of treatment, I do not propose to analyze how these various burdens combine
+to create the utility cost. I simply assume that it is
+possible to elicit from the patient the utility cost, C,
+of having a blood pressure measurement, with all that
+entails.
+In this article, a patient’s determination of C is treated
+as constant from one occasion to the next. This simplifies the notation, but nothing in the analysis depends on it. By contrast, I explicitly and crucially assume
+that C does not depend on x. Based on the explanation
+of the constituents of C in the previous paragraph, I
+believe this assumption is very reasonable.
+There is, however, a second encumbrance associated with measurement not considered above. Although the first measurement can be obtained at once,
+equation 1 will be satisfied by subsequent measurements only if enough time passes between them that
+long-term determinants of blood pressure can vary.
+Subsequent measurements, if any, entail delaying the
+treatment decision. The effects of delaying will depend
+on the ultimate treatment decision and the true blood
+pressure. For those who are ultimately not treated, the
+delay has no effect at all: they continue to receive no
+treatment throughout. In an ultimately treated severe
+hypertensive, the delay will defer, and thereby reduce,
+the benefits of treatment. In a person with below-cutoff
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+<-----Page 6----->247
+
+.
+
+blood pressure who might &dquo;mistakenly&dquo; be assigned
+to treatment, the delay attenuates the harm that would
+be done, and constitutes a net benefit. In any case, it
+seems appropriate to model the effect of a delay as a
+reduction in the impact (favorable or unfavorable, as
+the case may be) that a decision to treat would have
+for the patient. One way to model the delay is by
+reducing the parameter L. Let a denote the decrease
+in L attributable to delaying the treatment decision for
+those who will ultimately be treated. Then,
+
+EU(treatment after
+
+one
+
+delay)
+(6)
+
+-U(x)+(L-a)-(x-q)
+
+As with C, the presentation here treats a patient’s a
+as constant from one occasion to the next, a notational
+convenience not relied upon in the analysis. Also, the
+
+analysis to be presented could proceed just as well
+with other formulations of the delay effect, e.g., multiplying L by some constant less than 1. I am aware
+of no research results supporting any particular model
+of this effect. The essential point is that L is effectively
+reduced by delaying.
+It is convenient to refer to the totality of assumptions
+about distributions and utilities made as the conjugate-normal linear (CNL) model.
+
+Decision Analysis under IN Assumptions of the CHL Model
+What would
+
+we
+
+do if
+
+we
+
+couldn’t
+
+measure
+
+blood
+
+pressure? The question seems trivial at first, but posing
+and answering it will prove useful later. If measurement were not an option, two strategies, TREAT and NO
+would be available. This restricted choice is diain the top two branches of figure 1. For a
+patient with true blood pressure x, EU(NO TREAT(x) =
+U(x) and EU(TREATlx)
+U(x) + L(x - q). Not knowing x,
+we take expectations over the probability distribution
+of x in equation 2. The linear form of L(x - q) makes
+this simple. EU(NO TREAT) = n; EU(TREAT) = n +
+L~ ( ~, q). It follows that TREAT is preferred if R > q, NO
+TREAT is preferred if R < q, and the patient is indifferent
+TREAT
+
+grammed
+
+FIGURE 1. Decision tree. The filled-in circular nodes are chance nodes
+with a continuum of branches indexed by the random variable
+noted beneath.
+
+u3.) For more complicated functions, the
+of
+suitability this approach depends on the ease of
+calculating what value of R demarcates the decision
+between TREAT and NO TREAT when measurement is
+not being considered.
+Let us now assess the option of taking a single measurement. We will incur a cost C, but we will gain
+information. The value of that information can be ascertained by comparing the expected utility of a decision made after the measurement with one made
+without it. This is precisely the principle used to deduce the thresholds for prior disease probability in
+the discrete setting.’ If we choose the measurement
+option, the result y will be related to x as in equation
+1. Subsequently, our probability distribution for x is
+modified in accordance with Bayes’ theorem, as set
+u or
+
+out in
+
+=
+
+-
+
+if R = q.
+If this result
+
+seems too
+
+obvious to
+
+f(u)
+
+=
+
+equation
+
+3:
+
+Fl(x)
+
+=
+
+N(fJ.’
+
+=
+
+ry+(l&horbar;r))JL; (l&horbar;r)o~).
+
+Based on the earlier discussion, if R’ turns out to exceed q, the patient will prefer TREAT; if ~,’
+q he or
+she will be indifferent; and if R’ < q the patient will
+prefer NO TREAT. Thus, if we were to make our treatment decision after one measurement the expected
+utility would be:
+=
+
+warrant discus-
+
+sion, consider how things would be if the expected
+
+impact of treatment were, say, L- (x - q) for x > q -1,
+but - L for x S q -1. There, the total positive potential
+impact of treatment when x > q so outweighs the
+minimal negative impact for x < q that even values of
+R appreciably less than q would warrant treatment.
+Depending on the form of the function, the optimal
+decision might also depend on U2 . The linearity assumption considerably simplifies the analysis here and
+cannot be totally waived. Nevertheless, any monotone
+odd function of x - q would do so far. (f is an odd
+function of an expression u if f(- u) = - f(u), e.g. f(u) =
+
+expected value of the expresL- (x - q) if [L’ > q}, hereafter referred
+to as v. First, exploiting linearity, for a given value of
+R’, E(LOx-q))
+Lo(,....’ -q). Therefore, E(vlRl) {0 if
+w’ ~ q; L’()JL’ &horbar;q) if li’ > q}. (Again, the derivation will
+tolerate relaxation of linearity if the expectation of the
+We must evaluate the
+
+sion
+
+{0
+
+if
+
+R’
+
+~
+
+q;
+
+=
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+=
+
+<-----Page 7----->248
+
+this result into
+central result:
+
+Substituting
+our
+
+Expected utilities of TRF.AT, NO TREAT, and MEASURE strategies
+functions of VL, the mean of the prior probability distribution for
+latent blood pressure for several values of C with a
+0.
+FIGURE 2.
+as
+
+=
+
+function can be readily calculated.) To calculate the
+unconditional expectation of v, we need the distribution of ~,’ . Now, R’ is a random variable calculated
+from the random variable y in accordance with Bayes’
+theorem. From equations 1 and 2, we infer that the
+marginal distribution ofy, Fy(y) N(vL; (T2 + T2). It follows that R’ = ry + (1- d¡.L has a normal distribution
+with mean rjjL + (1 - r) ¡.L
+)JL and variance F’ (T2 + T2) =
+=
+
+=
+
+{(T2¡(T2+T2)}2o(T2+T2) = (T2)2¡(T2+T2) ro(T2. In symbols, the &dquo;pre-posterior&dquo; distribution function, G~, of
+pL’ is:l
+=
+
+Therefore,
+
+=
+
+Letting (D denote the distribution function of the standard normal distribution, we rewrite equation 10 as:
+
+7
+
+we
+
+arrive at
+
+Accordingly, the decision among TREAT, NO TREAT,
+and MEASURE, diagrammed in figure 1, can be made in
+accordance with equations 5 and 11. Let V(J.L, 0’2, r, q,
+L, C) denote
+z~.4J( - z~)] C. The preferred course of action is TREAT, NO TREAT,
+or MEASURE according to which of S2, n + L - (ii - q) or
+S2 + V(11, Q2, r, q, L, C) is largest. As promised, the
+common term S2 appears in all three expected utilities
+and therfore U(x) contributes nothing to the decision.
+Notice that the necessary calculations can be done
+with a hand calculator and a table of the standard
+normal distribution.
+It can be proven that the expression for EU(MEAUSRE)
+has certain properties that would be expected from
+its application here. Viewed as a function of r or U2
+alone, it is monotone increasing. Viewed as a function
+of [L, it is symmetric around q. If C were 0, EU(MEASURE)
+would asymptotically approach the utilities of NO TREAT
+and TREAT for very low or very high values of Vt, respectively. The last property can be grasped visually
+from figure 2.
+In reality, C > 0. This corresponds to a downward
+shift in the graph of V. If C is sufficiently large, MEASURE
+will be dominated by TREAT and NO TREAT for all values
+of (JL. That is, a sufficiently expensive measurement will
+not be worthwhile for any value of Vt. In this case, the
+single threshold value R q separates two regions: a
+TREAT-preferred region ()JL > q) and a No TREAT-preferred region ()JL < q).
+On the other hand, for sufficiently small values of
+C > 0, there are two threshold values of R, RIO and Rhi)
+where the graph of EU(MEASURE) intersects the graphs
+of EU(NO TREAT) and EU(TREAT), respectively. If pL < ~.~,;o,
+NO TREAT is preferred. If )JL >
+~Lhi, TREAT is preferred.
+For R between these thresholds, MEASURE is the most
+favored course of action.
+The findings of the last paragraph suggest comparison with threshold decision making for the discrete
+case. The thresholds RIO and [Lhi are analogous to the
+Pauker and Kassirer2thesholds in demarcating ranges
+corresponding to three options. But lilo and Rhi are
+values of the mean of the prior distribution of x; they
+are not prior probabilities of disease. Threshold disease probabilities are closely related: the test threshold, Tt = 4J( (pLi~ - q)/u) and the test-treat threshold,
+
+Lo-Vr[exp(-Zq/2)/V2TT -
+
+=
+
+This integral can be simplified by introducing a new
+variable z
+(/-1’ -/-1)/(uyr), the standardized value of
+Introducing the notation zq to denote (q- pL)/
+(Q’~), equation 9 then becomes:
+
+equation
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+<-----Page 8----->249
+
+called for by this stopping rule can be calculated under
+very loose assumptions about the limiting behavior of
+
+is defined as x > q.
+Care should be taken to distinguish the decision
+making thresholds /J-Io and jjLhi from the cutoff value q.
+The cutoff value q is the point of indifference between
+treatment and non-treatment in terms of the latent
+blood pressure. Its value is determined from patient
+preferences prior to making any decisions. The threshold /J-’s are derived values with which the current
+estimate (JL is compared in order to reach a choice
+among three actions.
+
+Tt~ _
+
+~( ( ~.~,h; - q)/Q), if &dquo;disease&dquo;
+
+the ratio
+
+A sequential decision-making procedure may be divided into two components: a rule for deciding whether
+to obtain another measurement or not (stopping rule),
+and a rule for choosing between TREAT and NO TREAT
+once a decision to stop measuring has been reached
+(decision rule). It can be shown that an optimal sequential decision-making procedure must use a decision rule that would be optimal if used under
+conditions prohibiting measurements.6 In this context
+the optimal choice is TREAT if )JL > q, No TREAT otherwise. It remains to propose a stopping rule.
+We have considered whether to obtain a single measurement. Subsequently, because the posterior distribution of x is still assumed normal, all of the
+relationships among the variables described remain
+essentially the same. There are new, updated values
+for ii, Q2, and hence for r. The delay effects referred
+to earlier also necessitate reducing L by a at each turn.
+The form of the problem is otherwise unchanged. We
+can iterate the same analysis using the new parameter
+values. That is, we can use the following stopping rule:
+continue to obtain measurements until EU(MEASURE),
+as calculated by equation 11 with current parameter
+values, is less than both EU(TREAT) and EU(NO TREAT).
+An immediate question to pose about any proposed
+stopping rule is: are we guaranteed to eventually stop?
+We can answer affirmatively. It can be proven that
+given the initial values of 0’2 and r, and a sequence of’
+values Cn (the cost of the n’th measurement, heretofore a constant C), and Ln (the slope of the utility gain
+from treatment-latent blood pressure line after n 1 delays, heretofore modeled as L - [n - ilot), an upper
+bound on the number of measurements that will be.
+.
+
+.
+
+,
+
+>
+
+grows large. A precise statement
+
+as
+
+and the value of measurement
+
+reliability will
+
+be:
+
+for n > 0. (Do not confuse r~, the reliability of the n’th
+measurement, with equation 3’s Rn, the reliability of
+the mean of all n measurements! R~ increases towards
+1, whereas r~ decreases towards 0 as n ~ 00.) The unsubscripted a2 and r in equations 12 and 13 refer to
+their original values prior to any measurements. The
+updated value of li, denoted ~ju~ depends on the measurements, of course, and cannot be determined in
+advance. So, after the n’th measurement has been obtained :
+
+From the discussion
+
+following equation 11, we know
+that unless MEASURE is dominated at all values of )JL~
+there are two threshold values, wlo,&dquo;, and Rhi,n, such
+that TREAT will be preferred if Rn > fJ-hi,n’ NO TREAT will
+be preferred if [Ln < f.A,lo,nr and MEASURE will be preferred
+for intermediate values of fJ-w These thresholds are the
+respective solutions of the following equations (with
+Zqn()JLj denoting (q- fJ-n)/((Tn&dquo;r:f2) to make the dependence
+
+EU(MEASURE) = EU(NO TREAT),
+
+=
+
+as n
+
+proof, well as the omitted proofs of other assertions, are found in appendix A.
+It would be convenient if the stopping rule were
+spelled out as a schedule of criteria with which the
+results could be compared at each decision point. This
+can, in fact, be done. Using Bayes’ theorem (equation
+3) and applying mathematical induction (appendix A),
+after the n’th measurement, the value of the variance
+of F&dquo;(x) will be:
+
+Sequential Decision Making
+
+EU(MEASURE)
+
+Cn/Ln
+
+and
+
+EU(TREAT),
+
+or, in
+
+or, in
+
+on
+
+fJ-n
+
+explicit):
+
+symbols,
+
+symbols,
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+<-----Page 9----->250
+
+knowledge, equations 15 and 16 cannot be
+solved analytically; but ~,~o,n and ~,,,;,,, can be approximated numerically on a microcomputer. This is alTo my
+
+most, but not quite, what we asked for.
+We wanted a schedule of measurement result thresholds to compare with; we have gotten a schedule of
+thresholds for the posterior mean. Translating from
+the calculated values of )JL)on and ~,h;,&dquo; to the measurement results that lead to them is simply a matter
+of applying equation 4 (Bayes’ theorem). We will have
+Rn = ILI.,N if and only if y., the average of the first n
+measurements, equals [J.Llo,n ( 1- R~ ) pL]/R~ . An analogous result for the value of y which yields the ~,.,;,n,
+can be derived. Notice that Yv...,Yn sway the decision
+through their impact on Rn, which is entirely determined by y.. The running average is, thus, sufficient
+(in both the ordinary and the statisticall5,6 senses of
+the word) for our purposes.
+I have written a computer program that calculates
+for each n (up to the n at which measurement stops)
+the threshold values of y from input values of R, or 2
+T 2q, L, a, and C; it is available upon request.*
+-
+
+Global Optimaliiy Considepions
+might hope that the foregoing has laid out the
+optimal strategy for diagnosing diastolic hypertension.
+Unfortunately, this is not quite the case. The expected
+utility of the MEASURE strategy was calculated by examining the expected utility of a TREAT vs. NO TREAT
+decision made immediately after one measurement.
+By sequentially applying the results we have covertly
+One
+
+introduced a fourth option: measure and then re-measure. Our stopping rule requires us to stop as soon as
+an immediate decision has greater utility than one
+based on the very next measurement. This rule undervalues measurement by crediting only its impact
+on an immediate decision; it overlooks the possibility
+that a decision based on two or three more measurements might be preferable to an immediate decision
+even though a decision based on one measurement
+is worse. Clearly this could happen if the cost of successive measurements decreases.
+Perhaps surprisingly, it can also happen when the
+cost of successive measurements remains constant. A
+complete analysis of this phenomenon is complicated
+and cannot be presented here. On a heuristic level,
+the value of n > 1 measurements is derived analogously to that of 1 with Rn = n - r/[l + (n &horbar; l)r] playing
+
+H + V(11, 0’2, n-r/
+TIMES)
+[1 + (n -1)r], q, L-nocx, n~C) = LQ(n~r/[1 + (n -1)r])1’z .
+[exp(-zq/2)/(2~rr)1’z-zq~(-zq)] - not, where zq =
+(q - ~,)/(Q(wr/[1 + (n -1)r])1I2). The n-C term grows linearly with n. The remainder of the expression varies
+with n in a highly nonlinear manner. A plot (not shown)
+the role of r. EU(MEASURE
+
+n
+
+=
+
+°
+
+would reveal that for suitable r and small n, the expression increases faster than linearly in n, but for large n
+it tapers off, being bounded above by the expected
+utility of perfect information. Therefore, it is possible
+for several measurements to be advantageous when a
+single one alone is not.
+This observation is somewhat disappointing. But I
+take comfort in four facts. 1) Attempts to find a globally
+optimal strategy that overcomes this limitation repeatedly lead to recurrence equations I cannot solve.
+DeGroot’ provides an extensive discussion of deciding
+whether the mean of a normal distribution exceeds a
+critical value under linear loss. That abstract decision
+problem is a minor simplification of what has been
+undertaken here. DeGroot proves that a globally optimal stopping rule for this problem exists. In fact,
+given our guarantee of stopping, it can, in principle,
+be constructed by a method known as backwards induction. In practice, however, DeGroot notes that &dquo;it
+does not seem possible to develop an explicit expression for the [globally] optimal sequential decision procedure.&dquo;6
+(p. 286) 2) Extensive numerical
+experimentation with the current model has persuaded me that the suboptimality of the stepwise approach occurs only for values of ltn within about 1
+mmHg of ~hi,n or J.Llo.nand, relative to the differences
+in utility among the three strategies, the incremental
+utility achievable by multiple measurements when the
+current model recommends stopping is very small,
+typically around 1%. 3) As illustrated in the companion
+paper, in practice this model implies that many patients ought to receive a longer series of blood pressure
+measurements prior to diagnosis than is currently recommended.’ Since this stepwise optimal rule errs only
+in failing to recommend measurement when it might
+be beneficial, my conclusions about current practices
+are, if anything, too conservative. Finally, 4) the discrete threshold decision-making model when applied
+sequentially exhibits the same behavior (see appendix
+
+B).
+
+1he Question of Multiple Observations per Measurement
+repeatedly emphasized that successive measufficiently distant in time to consider them independent, conditional on x. It is natural,
+I have
+
+*This program and another mentioned later are available without
+charge. To receive a source file written in ’C’, a brief documentation
+file, and a program executable on IBM PC-compatible equipment
+with an 80x87 co-processor, send a 5.25&dquo; DSDD floppy disk or a 3.5&dquo;
+diskette (specify 720K or 1.4MB format) with your request. Those
+not wishing to receive magnetic media may receive a listing of the
+source code. Sorry, I cannot send the files via e-mail!
+
+surements must be
+
+however, to consider obtaining more than one observation each time a patient is seen; and current
+recommendations3 advocate this. While it is unclear
+how
+
+common a
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+practice this is,8
+
+a
+
+decision
+
+analysis
+
+<-----Page 10----->251
+
+of this option would be useful. It would be in the spirit
+of this model not merely to consider a comparison of
+a fixed 1 vs. 2 vs. 3, etc., observations per measurement
+strategy but also to determine the optimal number of
+observations for any given measurement, which might
+(and does’) vary from patient to patient or visit to visit.
+When observations cluster in time, so that long-acting sources of blood pressure measurement variability
+(dietary influences, fluid and cation balances, plugs of
+cerumen in the clinician’s ears, etc.) do not fluctuate,
+equation 1 does not apply. If x is the latent blood
+pressure, and if d denotes the net effect of the longacting sources of variability, then a series of observations obtained while d remains essentially constant
+exhibits a bias: the mean of the distribution of such
+observations is x + d, not x. On a different occasion
+
+separate measurement), a different value of d would prevail. The value of d, a random
+variable, is never known. Over the long term, by defi0. The key to handling multiple
+nition of x, E(d)
+observations is to recognize that while clustered, cor-
+
+(corresponding
+
+to a
+
+Equations 18 and 19 establish that y is indeed a
+conjugate normal measurement of w; equation 20 gives
+a prior distribution for w in terms of parameters specifiable at the outset. The role played by r in the analysis of independent measurements is now fulfilled by
+(Q2 + 82)/(O&dquo;z + 82 + EZ), denoted s. This suggests that the
+apparatus already in place to determine the expected
+
+utility of a measurement can be used to determine the
+expected utility of additional observations if we express the utilities of the TREAT and ~ro TREAT options
+in terms of w instead of x.
+Expressing the utilities in terms of w is simple. EU(NO
+TREAT) = 0, of course. EU(TREAT)
+E(L(x - q)) + Il
+L(E(x) - q) + O. But Bayes’ theorem applied to equations 19 and 2 implies that, with t
+or2/((r2 + 82) :
+=
+
+=
+
+=
+
+=
+
+related yis fail to be measurements (as I use the term)
+of x, they are measurements of w x + d. Thus, w can
+be viewed as the true blood pressure prevailing during
+the time span of a single visit. Let us grapple with the
+details.
+A given observation yi can be analyzed into three
+=
+
+and, hence,
+
+.
+
+components:
+
+In
+
+being the true pressure, d being the net effect of
+influential factors that change between but not within
+a visit, and ei being the net effect of influential variables
+that do vary freely within the time span of a single
+occasion. This separation into long- and short-term
+influences is admittedly somewhat artificial. Clinical
+practice effectively defines long-term as more than a
+week or two.3 The validity of this is an open empirical
+
+thing.&dquo;
+To complete the homology with the analysis of independent measurements, we need only handle a and
+
+x
+
+question.
+We began by assuming
+
+that yi is normally distributed. Allow me to assume that x, d, and ei are stochastically independent. Assuming d and ei
+independent I find reasonable, though not axiomatic;
+assuming d and x independent I find compelling; but
+to my knowledge neither question has been studied
+empirically. Now, a theorem of H. Kramerl5 implies
+that, unless one of them is constant, both w and ei
+are themselves both normally distributed. Because w
+is normally distributed, d
+w - x is normally distributed too. Letting 8’ denote the variance of d, and
+EZ the variance of e;, we have the following probability
+distributions:
+=
+
+words, expressed as a function of w rather than x,
+the expected gain in utility from TREAT over NO TREAT
+is again linear in w, with slope tL instead of L, and
+cutoff point )JL + (q&horbar;tJL)/t. This is precisely the type of
+regression relationship one might expect when an imperfectly reliable measure is substituted for &dquo;the real
+
+C. Because the clusters of observations we are contemplating will occur in a short time, any delay will
+be negligible. For practical purposes, a
+0 between
+=
+
+observations. The cost of an additional observation will
+clearly be less than C: no special travel or arrangements must be made, incremental record keeping is
+minimal, etc. Denote this lower cost by Cobs’ We have:
+
+%pNtl Decisions aboirt Rdditional Observations
+obtained m ? 1 observations of blood presthe current visit, how will we decide among
+NO TREAT, TREAT, MEASURE, and taking another observation now (OBSERVE)? Intuitively, additional observations on this visit are cheaper, but less informative,
+than an independent measurement.
+
+Having
+
+sure on
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+<-----Page 11----->252
+
+Our probability distribution for x prior to the current
+observations was N([L; ~2) (the original values if this is
+the first visit, otherwise values updated from earlier
+measurements). From equations 17-19, the assumed
+independence of x, d, and e, and the constancy of
+both x and d over the sequence of observations, we
+derive
+
+Combined with
+
+equation
+
+2 and
+
+Bayes’ theorem, with
+updated
+
+P,n denoting U2/(or2 + 82 + Ez/ml, this yields an
+distribution, F* , for x after m observations:
+
+Therefore, the reliability of
+
+a new
+
+measurement will
+
+EZ) _ (1- r3m)rl
+(1- r3m)O’2/[(1- r3m)O’2 +
++ 1- r)
+(r- r3mr)/(l- r3mr). (The first equality
+comes from dividing numerator and denominator by
+82 +
+
+be:
+
+[(1- r3m)r
+
+=
+
+r.)
+0’2+ 82 + EZand noting that U2/((T2 + 82 + e2)
+11
+to
+our
+current
+6
+and
+Now, applying equations 5,
+parameters, we have:
+=
+
+computer program that handles this all is available
+from the author on request.
+variable number of observations per occato write out prospectively a table of
+thresholds is lost. The reason is that the variance U2 n
+is no longer predictable from the outset: it depends
+on how many observations have occurred in the measurements that have preceded it. The number of prior
+observations is itself a random variable dependent on
+the outcome of still earlier measurements and observations. This does not diminish the value of the prospective threshold table elaborated for measurements:
+the companion paper demonstrates that, perhaps
+contrary to expectations, for some values of the parameters multiple observations are never preferred to
+
+Using
+
+a
+
+sion, the ability
+
+independent measurements.7
+As with the analysis of independent measurements,
+this decision procedure falls short of global optimality:
+it may fail to recommend an observation whose remote
+effects may be beneficial if there is no immediate ben-
+
+eficial
+
+impact.
+
+Discussion
+I have tailored
+
+model of blood pressure measureanalysis can be applied. The
+can
+be
+iterated
+to
+analysis
+produce a stepwise optimal
+rule for diagnosing hypertension based on a stopping
+rule that compares the expected utility of a decision
+based on one more measurement (or observation) with
+that of choosing TREAT or NO TREAT now. The model is
+adaptable to include multiple observations per occasion as well. The calculations at each step can be done
+on a pocket calculator. When multiple observations
+per visit are excluded or their number is fixed in advance, the decision analysis can be formulated as a
+prospective schedule of upper and lower thresholds
+for comparison with the running average of measurea
+
+ment to which decision
+
+The evaluation of OBSERVE derives from equation 23.
+Since the observations are treated as independent estimates of w, we update the distribution of w directly
+from the yi with Bayes’ theorem. Analogous to equations 12 and 13, let (T2 mw
+(l-s)-((~+8~)/[l+(m-l)sL
+m&dquo;s/[l + (m -1)s] and
+s/(l + m-s). Also let Sm
+sm
+the
+distribution funct~mw
+S~y + (1- Sm)jJ.. Then,
+is F* %VM (w)
+m
+to
+the
+observations
+tion for w posterior
+of
+t
+and
+the
+values
+&dquo;w-cutoff,&dquo; pL +
+N ([t .. w; (r2 mw ). The
+the
+relationship between w and
+(q - ~,)/t, deriving from
+x in equation 19, are unchanged after observation. Thus,
+equation 23 evolves in the sequence of observations
+=
+
+=
+
+=
+
+=
+
+as:
+
+The four expected utilities in equations 26-29 are
+compared and the action corresponding to the largest
+is chosen. Implementing this decision procedure requires a fair amount of separate &dquo;bookkeeping&dquo; for preobservation and updated parameters. With sufficient
+practice and a pocket calculator having several memory registers, it can be done by hand. More simply, a
+
+ments.
+
+Those parameters relating only to the statistical behavior of measurements and observations can be empirically estimated by standard techniques. The
+distributional assumptions for measurements are reasonably well established.’ Further research in eliciting
+the functional form of patient utilities in relation to
+continuous health states is required to provide a firmer
+base for the assumptions and parameters of the utility
+model. Illustration and discussion of this appear in
+the companion article.’7
+The author is grateful to Saleffa Boni, PhD, Mark Linzer, MD, Thomas
+Pickering, MD, Carl Pieper, PhD, and David Rose, MD, for helpful
+comments on early versions of the manuscript. Two anonymous
+Medical Decision Making reviewers of the originally submitted manuscript made key suggestions which both improved readability and
+stimulated important substantive improvements in the analysis itself.
+Thanks also to Laurenia Boni and Robert LaRocco for help with the
+
+graphics.
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+<-----Page 12----->253
+
+References
+
+simplify
+1.
+
+of or2/((T2 +T 2) by r, and T2/((}’2 +T 2)
+this last expression to:
+
+currences
+
+by
+
+1- r,
+
+we
+
+Savage LJ. The foundations of statistics. 2nd ed. New York: Dover,
+1972.
+
+Pauker SG, Kassirer JP. The threshold approach to clinical decision making. N Engl J Med. 1980;302:1109.
+3. Joint National Committee on Detection, Evaluation and Treatment of High Blood Pressure: The 1988 report of the Joint National Committee. Arch Intern Med. 1988;148:1023-8.
+4. Lindgren BW. Statistical theory. Third ed. New York: MacMillan,
+2.
+
+1976.
+5. LaValle IH. An introduction to
+ence.
+
+New York:
+
+7.
+
+8.
+9.
+
+10.
+11.
+12.
+
+1970.
+
+New York: McGraw-
+
+1970.
+
+Schechter CB. Sequential decision making with continuous disease states and measurements: II. Application to diastolic blood
+pressure. Med Decis Making. 1990;10:256-265.
+Schechter CB, Adler RS. Bayesian analysis of diastolic blood
+pressure measurement. Med Decis Making. 1988;8:182-90.
+Shepard DS. Reliability of blood pressure measurements: implications for designing and evaluating programs to control hypertension. J Chronic Dis. 1981;34:191-209.
+Searle SR. Linear models. New York: John Wiley & Sons, 1971.
+Scheff&eacute; H. The analysis of variance. New York: John Wiley &
+
+Sons, 1959.
+Raiffa H, Schlaifer R. Applied statistical decision theory. Division
+of Research, Graduate School of Business Administration. Boston:
+
+Harvard
+
+University,
+
+1961.
+
+13. Weinstein MC, Stason WB. Hypertension: a policy
+Cambridge, MA: Harvard University Press, 1976.
+
+perspective.
+
+Eraker SE. Parameter estimates for a QALY
+model. Med Decis Making. 1985;5:191-214.
+15. Feller W. An introduction to probability theory and its
+cations, vol. 2. New York: John Wiley & Sons, 1966.
+14.
+
+Proof
+
+decision and infer-
+
+Holt, Rinehart and Winston,
+
+Optimal statistical decisions.
+
+6. DeGroot MH.
+
+Hill,
+
+probability,
+
+the second to last equality obtained by dividing numerator
+and denominator by (1- r)/[1 + n’r].8
+We now prove a lemma: As t- - 00, t<Kt)&horbar;>0.
+
+Miyamoto JM,
+
+utility
+
+Since the integrand is always positive, we have t(D(t) < 0
+when t < 0. But for u < - 2, we have -U2 /2 < u, and hence
+exp( -u2/2) < exp (u). Thus, when t < - 2 we must have
+
+0, implies 0 > t4$(t) > te’/(2Tr)~. But as t approaches - 00, the right hand side approaches 0.Let us adopt the notation V(~.~,, (y2 , r, q, L) =
+zq(D(- zq)) for L 2: 0, U2 > 0, and
+0<
+r < 1. Recall that zq is defined as (q - Let (r2,
+r, q, and L, be regarded as constant. Then we may define a
+function of w,
+
+So, t < -2 <
+
+Lo-Vr-(exp( -Zq/2)/V2Tr -
+
+appli-
+
+W(~,) represents the gain associated with choosing the MEAsuRE option if there is no delay penalty or cost of measurement. We wish to establish the following properties of W:
+Theorem: W is a positive function of (JL, symmetric around
+
+APPENDIX A
+
+Some Mathematical Details
+The notation in this appendix is the same as that in the
+main paper, except where stated otherwise. The aim is to
+establish some properties of the expected utility of a mea-
+
+q, and asymptotically approaches 0 as j.L ~ 00 or - 00.
+Proof First rewrite Uj.L - q) as - Layrzq’ From this it follows
+that for R
+
+2:
+
+q
+
+surement, and then to prove that the stopping rule outlined
+in the paper always stops in a finite number of steps under
+broad conditions.
+First I prove the formulas given in equations 12 and 13 of
+the text: (T2 n = (1- r) wz/[1 + (n -1)r] and rn
+r/(1 + mr).
+Proof By induction. For n 0 these equations simply
+r. Assume the relations true for
+state that U2 = U2 and ro
+n. After the n’th measurement is obtained, the variance of
+the n + 1’th distribution will, following Bayes’ theorem
+(1-rn)Qn= {(I + n’r- r)1
+(equation 3 of text), be Q~+1
+(1 + n.r)). (1 - r).U2/[1 + (n -1)r] by inductive hypothesis. The
+1 + (n -1 )r and the ( 1 + n . r - r) are equal in the numerator
+and denominator: fraction simplification leaves the desired
+result for Qn. As for rn+1, we have
+=
+
+=
+
+=
+
+=
+
+Now, from
+
+equation 10 in the main text we know that V
+integral whose integrand is positive throughout the
+range of the integral. Consequently we know that V > 0 for
+all values of its arguments. From equation A we now know
+that W is a symmetric function of p. around q. If we now let
+fJ.~ -00, then W( w)
+V( ~., (J’2, r, q, L) - 0
+is
+
+the first equality due to Bayes’ theorem and the second by
+the result for Q~+1 just proved. Dividing the numerator and
+denominator of this fraction by (J2 + T~ and replacing oc-
+
+an
+
+=
+
+=
+
+L(TVr-(exp( -Zq/2)/V2TT + (- zq)(D(- zq)). By the lemma, the
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+<-----Page 13----->254
+
+last term
+
+approaches 0, since f.L ~
+
+- 00
+
+implies Zq &horbar;>
+
+00.
+
+Hence
+
+W(~,)
+argument for f.L~ 00 follows from symmetry.
+Another useful fact is:
+Theorem : Holding ar2, r, q, and L fixed, V(w, (T 2, r, q, L) is an
+increasing function of f.L. Proof Differentiate V with respect
+we find
+to
+dV/dzq
+z ~. After a little simplification
+This is necessarily less than 0. So V is a decreasing function of zq, and therefore an increasing function
+of f.L.. By the way, one can use the formula for dV/dzq just
+given to calculate dV/dr using the chain rule. From this one
+can prove that V is an increasing function of r, all other
+arguments held constant.
+Theorem: W is a bounded function of pt, and it attains its
+maximum value when q
+pL. Proof: For )JL < q, we know
+that max (0, L(f.L - q))
+0, hence W(f.L)
+V([L, (12, r, q, L),
+which is an increasing function of li. Therefore W(q) > W(~,)
+for any )JL < q. But W is also symmetric about q. Therefore,
+if f.L > q, let f.L* = q - (W-q). Then W(f.L) W(>*) < W(q). 0
+Before proceeding to prove our stopping theorem, we note
+some implications of these theorems for the model. If measurement were free, it would always be the strategy of choice.
+But because the gain from measurement approaches 0 for
+large values of R, the imposition of a cost C > 0 ensures that
+measurement will not be preferred if R is sufficiently far
+from q. (We are not dealing with a change in L associated
+with measurement here.) If C is large enough, we will have
+W(q) < C, in which case measurement is not preferred for
+any value of R (since W(q) is the largest value W attains). But
+if W(q) > C, it follows that for values of R sufficiently close
+to q, measurement will be preferred. Because W increases
+for R < q and decreases for ~L > q, it follows that there will
+be unique thresholds pL1~; and lilo where W(w,,;) = W(f.Llo) =
+C, pL1~; > q > ~Ll.. These thresholds would demarcate the
+boundary between TREAT and MEASURE or MEASURE and NO
+TREAT, respectively. The further imposition of a delay effect
+such as the one described in the text complicates matters
+only slightly. If the reader is interested, it is a simple exercise
+to supply the details.
+We next remind the reader of some standard mathematical notation. Given two sequences An and Bn, we write An
+O(Bn) if for some constant K >- 0 and some N ~ 0, we have
+An:5 K. Bn whenever n > N. It is sometimes said that &dquo;An
+o(Bn)
+grows with order at most Bn.&dquo; We also say that An
+if An/Bn ~ 0 as n - 00. Notice that saying An
+0(1) is the
+same as saying that An ~ 0 as n approaches 00. The &dquo;o&dquo;
+notation is sometimes read as &dquo;An grows more slowly than
+-~
+
+0. The
+
+=
+
+W(/-Ln)
+
+=
+
+=
+
+=
+
+=
+
+=
+
+=
+
+&dquo;
+
+B n .&dquo;
+us now consider a mild generalization of our sequendecision-making problem. Suppose the cost of the n’th
+measurement is Cn, and the value of the utility-blood pressure slope after delaying up to the n’th measurement is L,,.
+
+Let
+
+tial
+
+(In the text
+
+L - (n-1)a;
+used Cn = constant; and Ln
+we are generalizing now.) Then the following theorem holds:
+Stopping Theorem: If the sequence Ln is non-increasing
+and Ln/Cn = o(n), then there is a number N such that the
+stepwise decision-making algorithm of the text terminates
+in at most N steps regardless of the initial value of R or
+whatever measurement results are obtained.
+Proof The algorithm terminates at the n’th stage whenever
+VftJLn’ ug, rn, q, Ln) - Cn< max (0, Ln-~fJL&horbar;q)). Since the Ln
+sequence is non-increasing, we will ensure termination if
+
+V(~Ln, (1~,
+
+=
+
+we
+
+rn, q,
+
+Ln) - Cn<
+
+max
+
+(0, Ln (R - q)),
+
+or
+
+equivalently,
+
+C~.
+
+Now
+
+W(/-Ln) ::; W(q).
+
+So to
+
+ensure
+
+stopping,
+
+it
+
+=
+
+(27T)1/Z.
+
+LcrVrf~fZq) &horbar; 1).
+
+=
+
+<
+
+suffices to ensure that W(q) < C~. But W(q)
+LnO’n(rn/27T)lIZ
+by direct substitution into the formula for W. Thus we are
+guaranteed to stop regardless of the initial R or the values
+of the observations if we attain a stage where Lngnrn 112/C <
+
+Equivalently,
+
+But from
+
+equations
+
+12 and 13 of the text we have
+
+(1~r n =
+
+CF2Hl - r)4 (1 + nr) (1 + (n -1)r)]= O(1/n2). The assumption that
+o(n) therefore
+
+ensures that the left side of equation
+Consequently, for sufficiently large n, the left side,
+approaching 0, must be less than 2,Tr.m
+Notice that the assumptions about Ln and Cn are in reality
+quite unrestrictive. The non-increasing Ln simply means that
+treatment does not become more effective if it is postponed.
+
+Ln/Cn
+
+=
+
+B is o(1).
+
+The Ln/Cn
+o(n) is very generous indeed. In realistic situations Cn will be constant or increasing. Yet this condition
+even allows Cn to decrease, provided it does so less rapidly
+than Ln/n, and stopping will still be guaranteed. Thus the
+theorem gives us guaranteed stopping with room to spare
+in any realistic circumstance.
+=
+
+APPENDIX B
+
+Stepwise Non-global Optimality
+
+in the Discrete Case
+
+appendix, the discrepancy between the stepwise
+decision making calculated by iterating a one-step
+decision rule and globally optimal decision making is explored for discrete disease states and test results. A full
+formal analysis of this phenomenon involves tedious computation. Instead, I will show that the standard analysis of
+no treat-test-treat decisions for discrete tests and outcomes
+can exhibit similar irregularity, identify qualitatively the relationships among the parameters that conspire to produce
+this irregularity, and point out how similar phenomena are
+at work in the continuous model.
+When there are only two outcomes, disease vs. no disease,
+and two test results, positive vs. negative, the decision whether
+to use the test or not is analyzed as follows. Let B denote
+the benefit conferred by treating diseased people, H the
+harm conferred by treating non-diseased people, p the prior
+probability (prevalence, if need be) of disease, I the sensitivity of the test, 0 the specificity of the test, and C the cost
+of the test. It is well known that the decision depends only
+upon these parameters and not on the utilities assigned to
+the untreated outcomes of diseased and non-diseased people. Using the expected utility of deciding NOT to treat as a
+baseline, the expected GAIN in utility from treatment is pB (1- p)H (which can be negative). The expected gain in utility
+over the same baseline from testing and then treating positive results is pIB - (1 - p) (1 - 8m - C.
+Suppose that p 0.6, 1 0.25, 8 = 0.99, B H 1, and
+C
+0.02. Values such as these might arise, for example, in
+evaluating an intravenous drug user with a tender, swollen
+wrist who is mildly febrile. The diagnostic concern is gramnegative septic arthritis, but attempted arthrocentesis has
+failed and the patient will not consent to an open procedure.
+B, representing the avoidance of a permanently ankylosed
+wrist joint, might reasonably be equated to H, an unnecIn this
+
+optimal
+
+=
+
+=
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+=
+
+=
+
+=
+
+<-----Page 14----->255
+
+essary, long hospitalization receiving nephrotoxic antibiotics
+intravenously through central catheters with their attendant
+complications. Diagnostic information might be obtained
+from a blood culture. Blood cultures rarely grow gram-negative organisms (as contaminants) when a patient has acute
+gout or cellulitis, but could, with low probability, detect the
+intermittent bacteremia associated with gram-negative septic arthritis.
+Using these values, the utility of treating is 0.2 greater than
+that of not treating. The utility of testing is only 0.126 greater
+than that of not treating. The optimal decision is therefore
+to treat without testing.
+But if we consider the possibility of doing multiple blood
+cultures the picture changes. Conditional on disease status,
+the results of several blood cultures would be more or less
+independent if they were spaced at intervals of several hours.
+If n blood cultures are ordered, and if we interpret the series
+as positive if any one is positive,* then the overall sensitivity
+of the battery is 1 - (1&horbar;~)&dquo;, and the overall specificity is
+6°. The cost, assuming additive utilities, is nC. We now find
+that a battery of two tests has an expected utility that is
+0.21454 greater than baseline. This makes a battery of two
+tests preferable to any of the previously considered strategies. In fact, a little calculation shows that ordering seven
+tests would be the optimal strategy (with expected utility
+approximately 0.353 over baseline), despite the fact that the
+
+*Expected utility calculations with these test parameters show
+that this method of interpreting a series of blood cultures is preferable to other decision rules.
+
+stepwise-best solution is
+
+to order no test at all!
+What accounts for this paradoxical result? The key facts
+are that the sensitivity of the test is poor, the specificity is
+excellent, and the test is cheap. Whereas the sensitivity of
+the test is so low that performing it once is not worth even
+its meager cost, iterating the test produces, at least initially,
+major improvement in sensitivity with negligible loss of specificity. The additional cost of the first several repetitions is
+small compared with the added value of the information
+gained. Eventually, in this case after the seventh test, further
+improvements in sensitivity are minor and are outweighed
+by the fixed additional cost of the test. (Also, at this point
+the deterioration in specificity becomes appreciable as well.)
+The phenomenon arises, then, from the large marginal gains
+that can be had from iterating a low-quality test a small
+number of times at a fixed, relatively small cost.
+Similar considerations apply to the continuous model. At
+the point where the stepwise optimal strategy fails to be
+globally optimal, the parameter r, which captures the operating characteristics of the test, is rather low. Iterating the
+measurement a few times and using the average result produces substantial increases in r with a corresponding gain
+in utility outweighing the relatively small additional cost.
+(Unlike the disjunctive interpretation of a discrete test, averaged interpretation of continuous test results improves
+both the sensitivity and the specificity of the test with respect
+to any dichotomization of the range of the underlying true
+variable, so the effect of repetition is even stronger than in
+the discrete model.) Evenutally, however, the marginal improvement in r decreases and the corresponding marginal
+increase in utility falls below the fixed increment in cost.
+
+Downloaded from mdm.sagepub.com at UNIV OF WATERLOO on July 7, 2011
+
+

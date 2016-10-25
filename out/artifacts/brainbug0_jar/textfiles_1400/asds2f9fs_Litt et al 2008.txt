@@ -1,0 +1,2337 @@
+<-----Page 0----->Available online at www.sciencedirect.com
+
+Cognitive Systems Research 9 (2008) 252–273
+www.elsevier.com/locate/cogsys
+
+Neural aﬀective decision theory: Choices, brains, and emotions
+Action editor: Ron Sun
+Abninder Litt a,*, Chris Eliasmith b,c, Paul Thagard b,d,e
+a
+
+Graduate School of Business, Stanford University, Stanford, CA 94305-5015, United States
+b
+Department of Philosophy, University of Waterloo, Ontario, Canada N2L 3G1
+c
+Department of Systems Design Engineering, University of Waterloo, Ontario, Canada N2L 3G1
+d
+Department of Psychology, University of Waterloo, Ontario, Canada N2L 3G1
+e
+Cheriton School of Computer Science, University of Waterloo, Ontario, Canada N2L 3G1
+Received 25 June 2007; accepted 29 November 2007
+Available online 14 April 2008
+
+Abstract
+We present a theory and neurocomputational model of how speciﬁc brain operations produce complex decision and preference phenomena, including those explored in prospect theory and decision aﬀect theory. We propose that valuation and decision making are emotional processes, involving interacting brain areas that include two expectation-discrepancy subsystems: a dopamine-encoded system for
+positive events and a serotonin-encoded system for negative ones. The model provides a rigorous account of loss aversion and the shape
+of the value function from prospect theory. It also suggests multiple distinct neurological mechanisms by which information framing may
+aﬀect choices, including ones involving anticipated pleasure. It further oﬀers a neural basis for the interactions among aﬀect, prior expectations and counterfactual comparisons explored in decision aﬀect theory. Along with predicting the eﬀects of particular brain disturbances and damage, the model suggests speciﬁc neurological explanations for individual diﬀerences observed in choice and valuation
+behaviors.
+Ó 2008 Elsevier B.V. All rights reserved.
+Keywords: Computational neuroscience; Decision making; Emotion; Framing; Prospect theory
+
+1. Introduction
+How do people decide what clothes to wear, what to eat
+for dinner, what car to buy, or what kind of career to pursue? In traditional economics, the standard answer is that
+people decide by maximizing expected utility, but psychologists have found many problems with this kind of decision
+theory as a description of human behavior (e.g., Camerer,
+2000; Kahneman & Tversky, 2000; Koehler, Brenner, &
+Tversky, 1997; Rottenstreich & Hsee, 2001; Tversky &
+Kahneman, 1991). Economists commonly take preferences
+as given, but from a psychological point of view it should
+
+*
+
+Corresponding author.
+E-mail address: alitt@stanford.edu (A. Litt).
+
+1389-0417/$ - see front matter Ó 2008 Elsevier B.V. All rights reserved.
+doi:10.1016/j.cogsys.2007.11.001
+
+be possible to explain how preferences arise from cognitive
+and aﬀective processes. Work in this spirit has made tremendous progress in revealing key features and dynamics
+missed by theories disconnected from the study of cognitive, emotional and socially motivated phenomena, such
+as a common hypersensitivity to losses over equivalent
+gains (Kahneman & Tversky, 1979) and the aﬀective inﬂuence of prior expectations and counterfactual comparisons
+on preference judgments (Mellers, 2000). Moreover, with
+the rise of cognitive and aﬀective neuroscience, it should
+be possible to identify precise neural mechanisms underlying these behavioral-level explanations of why people make
+the choices that they do.
+We propose neural aﬀective decision theory as a psychologically and neurologically realistic account of speciﬁc brain mechanisms underlying human preference and
+
+<-----Page 1----->A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+decision. The theory consists of four principles, which we
+shall list here and describe in detail later:
+1. Aﬀect. Decision making is a cognitive–aﬀective process,
+crucially dependent on emotional evaluation of potential actions.
+2. Brain. Decision making is a neural process driven by
+coordinated dynamic interactions among multiple brain
+areas, including parts of prefrontal cortex as well as
+major subcortical systems.
+3. Valuation. The brain forms preferences via interacting
+but distinct mechanisms for positive and negative outcomes, encoded primarily by dopamine and serotonin,
+respectively.
+4. Framing. Judgments and decisions vary depending on
+how the context and manner of the presentation of
+information initiate diﬀerent neural activation patterns.
+There is substantial empirical evidence for each of these
+principles, and when integrated in the precise manner we
+outline they can explain the ﬁndings of a wide range of psychological and neurological phenomena.
+In order to connect these principles with experimental
+results in a mathematically and neurologically rigorous
+fashion, we have developed a neurocomputational model
+called ANDREA (aﬀective neuroscience of decision
+through reward-based evaluation of alternatives). It operates within the neural engineering framework (NEF) developed by Eliasmith and Anderson (2003), using biologically
+realistic populations of neurons to encode and transform
+complex representations of relevant information.
+ANDREA simulates computations among several thousand neurons to model coordinated activities in seven
+major brain areas that contribute to valuation and decision
+making: the amygdala, orbitofrontal cortex, anterior cingulate cortex, dorsolateral prefrontal cortex, the ventral
+striatum, midbrain dopaminergic neurons, and serotonergic neurons centered in the dorsal raphe nucleus of the
+brainstem.
+ANDREA successfully produces detailed neural-level
+simulations of behavioral ﬁndings explored in prospect theory (Kahneman & Tversky, 1979) and the decision aﬀect
+theory of Mellers and colleagues (1997). It shows how speciﬁc neural processes can produce behaviors observed in
+both psychological experiments and real-world scenarios
+that have provided compelling evidence for these preference and choice theories. In particular, ANDREA provides
+neurological explanations for the major hypothesis of prospect theory that losses have greater psychological force
+than gains, as well as for the fundamental claim of decision
+aﬀect theory that the evaluation (and subsequent potential
+choice) of an option is strongly inﬂuenced by its perceived
+relative pleasure, an emotional determinant that is dependant on expectations and counterfactual comparisons. In
+our concluding discussion, we compare ANDREA to other
+models in decision neuroscience, describe promising avenues of expansion for ANDREA and neural aﬀective
+
+253
+
+decision theory, and suggest additional psychological phenomena that are likely to fall within the scope of our
+theory.
+2. Neural aﬀective decision theory
+We now examine in detail the four guiding principles of
+neural aﬀective decision theory, including connections to
+and supporting evidence provided by a diverse array of
+research in both psychology and neuroscience. The
+ANDREA implementation of the theory we describe later
+provides the formal integration of these ideas necessary for
+our detailed simulation experiments.
+2.1. Principle 1. Aﬀect
+According to our ﬁrst principle, decision making is a
+cognitive–aﬀective process, crucially dependent on emotional evaluation of potential actions. This claim rejects
+the assumption of traditional mathematical decision theory that choice is a ‘cold’ process involving the calculation
+of expected values and utilities (Kreps, 1990; Von Neumann & Morgenstern, 1947). The original 19th-century
+concept of utility was a psychologically rich, aﬀective
+one based on pleasure and pain (Kahneman, Wakker, &
+Sarin, 1997). In contrast, 20th-century economics adopted
+the behaviorist view that utilities are mathematical constructions based on preferences revealed purely by behavior. There is no room in this view for ﬁndings observed in
+both psychological experiments and everyday life that
+people’s decisions are often highly emotional, with preferences arising from having positive feelings for some
+options and negative ones for others. While psychology
+has introduced a more complex characterization of the
+cognitive processes underlying decision making, the speciﬁc inﬂuence of aﬀect on behavior has frequently been
+ignored. Rottenstreich and Shu (2004) argue that this
+neglect of aﬀect may stem from an original desire of psychological decision researchers to minimize diﬀerences
+with the terminology and general themes of classical normative decision theories.
+But there is increasing appreciation in cognitive science
+that emotions are an integral part of decision making (e.g.
+Bechara, Damasio, & Damasio, 2000, 2003; Churchland,
+1996; Lerner & Keltner, 2000; Loewenstein, Weber, Hsee,
+& Welch, 2001; Sanfey, Loewenstein, McClure, & Cohen,
+2006; Slovic, Finucane, Peters, & MacGregor, 2002; Wagar
+& Thagard, 2004). Kahneman (2003, p. 710) argues that
+‘‘there is compelling evidence for the proposition that every
+stimulus evokes an aﬀective evaluation.” Common experience suggests that emotions are both inputs and outputs
+of decision making. Preference for one option over another
+depends strongly on their relative emotional interpretations, and the process of decision making can itself generate emotions such as anxiety or relief. The relevance of
+emotion to decision making is consistent with physiological
+theories that regard emotions as reactions to somatic
+
+<-----Page 2----->254
+
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+changes (Damasio, 1994; James, 1884). It also ﬁts with
+some cognitive theories of emotions, which regard them
+as judgments about the extent to which ones goals are
+being satisﬁed (Oatley, 1992). From a neurological perspective, it is easy to see how emotions can be both cognitive
+and physiological, as there are numerous interconnections
+among the relevant brain areas.
+2.2. Principle 2. Brains
+According to our second principle, decision making is a
+neural process driven by coordinated dynamic interactions
+among multiple brain areas, including parts of prefrontal
+cortex as well as major subcortical systems. In particular,
+activity in brain regions involved in assessing and acting
+upon the appetitive or aversive nature of stimuli (commonly conceptualized as part of the brain’s reward system)
+seems most crucial to understanding judgment and choice
+behavior (for a review, see Sanfey et al., 2006). Empirical
+neuroscientiﬁc investigation of the nature of preference
+and decision has been developing rapidly, and much work
+today is identifying speciﬁc brain areas involved in producing decision-related behaviors (e.g., Bayer & Glimcher,
+2005; Breiter, Aharon, Kahneman, Dale, & Shizgal, 2001;
+Knutson, Taylor, Kaufman, Peterson, & Glover, 2005;
+McClure, York, & Montague, 2004; Montague & Berns,
+2002). This nascent ﬁeld of decision neuroscience represents
+an exciting frontier of deep exploration into how and why
+people act, think and feel as they do in choice and judgment scenarios (Shiv et al., 2005).
+But taking a neural approach to decision making allows
+for much more than simply identifying brain areas activated in the subjects of behavioral studies. The development of biologically plausible theories of how brain areas
+interact to produce preferences and choices can provide
+more reﬁned mechanistic explanations of decision behaviors. Moreover, investigation at the neural level can suggest
+novel experiments, for example the recent discovery that an
+odorless nasal spray preparation of the neuropeptide oxytocin increases trust in risky choice scenarios, including
+those involving monetary transactions (Kosfeld, Heinrichs,
+Zak, Fischbacher, & Fehr, 2005). Such a ﬁnding is one that
+decision neuroscience can reveal, but that would be missed
+by higher-level psychological study alone. Neuroscience
+can thus inform the development of more detailed predictions and richer understandings of behavioral-level
+observations.
+2.3. Principle 3. Valuation
+Our third principle states that the brain forms preferences via interacting but distinct mechanisms for positive
+and negative outcomes, encoded primarily by dopamine
+and serotonin, respectively. There is extensive evidence that
+midbrain dopamine neurons, such as those in the ventral
+tegmental area and nucleus accumbens, are involved in
+the computation of a discrepancy between the expected
+
+and actual rewarding nature of an outcome (e.g., Knutson
+et al., 2005; Schultz, 2000; Suri, 2002), although recent evidence suggests that this activity is only involved in the
+encoding of positive deviations from expectations, that is,
+getting more than one expected. (Bayer & Glimcher,
+2005). Daw, Kakade, and Dayan (2002) describe a plausible alternative brain mechanism for situations in which one
+receives less than expected, arguing that serotonin innervation from the dorsal raphe nucleus of the brainstem is crucial for producing characteristic reactions to negatively
+valued stimuli and matters being considered (e.g., options
+in a choice scenario). There are thus neurobiological reasons for viewing gains and losses as being encoded and subsequently assessed in a fundamentally diﬀerent manner by
+the brain, involving distinct neural circuits and activation
+patterns. This provides the basis for our explanation of
+the central ﬁnding of prospect theory that losses loom larger than gains. Our neurocomputational model ANDREA
+simulates how interactions of the dopamine and serotonin
+systems with the amygdala and other brain areas may
+enable this asymmetric assessment of positive and negative
+outcomes.
+2.4. Principle 4. Framing
+The last principle states that judgments and decisions
+vary depending on how the context and manner of the presentation of information initiate diﬀerent neural activation
+patterns. The importance of framing is evident from the
+long history of inﬂuential work by Tversky and Kahneman
+(1981, 1986; see also Kahneman & Tversky, 2000). They
+demonstrated that framing a decision in terms of either
+losses or gains can substantially aﬀect the choices that people make, and related phenomena have been observed in
+many real-life arenas such as the stock market and consumer choice (Camerer, 2000). We contend that framing
+can be understood even more deeply from the neural aﬀective perspective we propose in our ﬁrst two principles. The
+simulation results we describe later show how this enriched
+conception of framing allows for the integration of diverse
+lines of behavioral decision research, as well as the postulation of important new predictions and hypotheses.
+We take the concept of framing to encompass any
+potential eﬀects of the manner or context of presentation
+on decisions and judgments. Following this characterization, such ﬁndings as preference reversals when outcomes
+are evaluated jointly versus separately (e.g., Hsee, Loewenstein, Blount, & Bazerman, 1999; Hsee, Rottenstreich, &
+Xiao, 2005) might also be considered to be framing results.
+Another such framing eﬀect is illustrated by the ‘trolleyfootbridge’ dilemma (e.g., Greene, Sommerville, Nystrom,
+Darley, & Cohen, 2001): most people consider ﬂipping a
+switch to kill one person instead of ﬁve morally justiﬁed,
+but consider it immoral to personally push a person into
+the path of an oncoming trolley, killing that person but
+preventing the trolley from killing ﬁve others. We will also
+explain some of the ﬁndings of the decision aﬀect theory of
+
+<-----Page 3----->A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+Mellers and colleagues (1997) as framing eﬀects that diﬀerentially activate speciﬁc neural systems.
+These four principles make strong claims about the processes that constitute human decision making, but alone
+they are not suﬃciently precise to explain particular experimental results. We now describe a rigorously deﬁned, biologically realistic neurocomputational model that speciﬁes
+how diﬀerent brain areas might interact in a manner consistent with neural aﬀective decision theory to produce
+observed behavioral phenomena.
+
+255
+DLPFC
+
+AMYG
+5-HT
+VS
+DA
+OFC
+
+3. The ANDREA model
+ACC
+
+A neuropsychological theory consists of a set of hypotheses about how speciﬁc brain operations produce observed
+behaviors. Because of the complexity of the brain, computational models are indispensable for theoretical neuroscience, both for precisely specifying relevant neural
+structures and activities and for examining their implications through appropriate simulation experiments. Litt,
+Eliasmith, and Thagard (2006) proposed a biologically
+detailed neural model of reward system substrates of valuation and decision. We describe here the primary functional components of this model, and introduce several
+explanatorily valuable additions regarding neural response
+characteristics and the complexity of emotional arousal
+encoding. This version of the model we call ANDREA,
+for aﬀective neuroscience of decision through reward-based
+evaluation of alternatives.
+Our model applies the neural engineering framework
+(NEF) developed by Eliasmith and Anderson (2003), and
+has been implemented in MATLAB using the NEF simulation software NESim (see Appendix A). Neural populations (‘ensembles’) and their ﬁring activities are described
+in the NEF in terms of mathematically precise representations and transformations, with the dynamic characteristics
+of neural computations characterized using the tools of
+modern control theory. Appendix B outlines the exact
+mathematical nature of representation, transformation
+and dynamics as deﬁned by the NEF. This rigorous, generalized mapping of high-level mathematical entities and
+transformations onto biophysical phenomena such as spike
+patterns and currents allows for biologically constrained
+computations and dynamics to be implemented in physiologically realistic neural populations, and has proven successful in modeling phenomena ranging from the
+swimming of lamprey ﬁsh (Eliasmith & Anderson, 2000)
+to the Wason card task from cognitive psychology (Eliasmith, 2005b).
+Fig. 1 shows the connectivity structure between the different brain regions we have modeled. A comprehensive
+examination of aﬀerent and eﬀerent transmission among
+these regions would feature many more connections than
+we have included. The interactions shown represent particular paths of coordinated activity that contribute to
+observed behaviors, rather than a full characterization of
+all relevant neural activity. Appendix A provides details
+
+Fig. 1. Basic connectivity framework. Dotted arrows represent external
+inputs to the model. Abbreviations: 5-HT, dorsal raphe serotonergic
+neurons; ACC, anterior cingulate cortex; AMYG, amygdala; DA,
+midbrain dopaminergic neurons; DLPFC, dorsolateral prefrontal cortex;
+OFC, orbitofrontal cortex; VS, ventral striatum.
+
+regarding the speciﬁc numbers of neurons used to model
+each of these brain areas, as well as the physiological
+parameters used to model individual neurons in each of
+these populations. Each input–output relation symbolized
+by a connection line in Fig. 1 maps onto one or more speciﬁc mathematical transformations, as summarized in
+Appendix C. We now describe these coordinated neural
+computations as they are relevant to explaining decisions
+and valuations.
+3.1. Subjective valuation by emotional modulation
+Valuation of alternatives and other information is an
+essential part of decision making. Central to the performance of this task by ANDREA is an interaction between
+the amygdala and orbitofrontal cortex (Fig. 1). Much
+research has implicated orbitofrontal cortex in the valuation of stimuli (e.g., Rolls, 2000; Thorpe, Rolls, & Maddison, 1983), particularly in light of its extensive connections
+with sensory processing areas of the brain. Several recent
+studies have indicated an important role for orbitofrontal
+neurons in providing a sort of ‘‘common neural currency”
+(Montague & Berns, 2002) which allows for the evaluation
+and comparison of ﬁgurative (or even literal) apples and
+oranges (Padoa-Schioppa & Assad, 2006). Recent studies
+of the amygdala have challenged its traditional association
+with mainly aversive stimulus processing, showing instead
+activation based on the degree to which stimuli are salient
+or arousing, rather than a speciﬁc valence type (for a
+review, see McClure et al., 2004). This has inspired a reinterpretation of classic results as indicating that negatively
+appraised events may be in general more emotionally
+arousing than positive outcomes, perhaps because of a
+need to alter current behavior in response to aversive feedback. In accord with research on the role of the amygdala
+in emotional attention (Adolphs et al., 2005) and multiplicative scaling observations for visual attention (e.g., Treue,
+
+<-----Page 4----->256
+
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+2001), ANDREA performs a multiplicative modulation by
+amygdala-encoded emotional arousal of the valuation
+computation performed in orbitofrontal cortex (Fig. 2).
+That is, orbitofrontal valuations are modeled as being multiplicatively dampened or intensiﬁed, depending on
+whether the individual is in a lowered or heightened state
+of aﬀective arousal, respectively.
+Let V represent baseline orbitofrontal stimulus valuation, based on initial sensory and cognitive processing
+and provided as an input in our model. Taking A to represent amygdala-encoded emotional arousal, we characterize
+the output subjective valuation S at time t as
+SðtÞ ¼ AðtÞ  V ðtÞ:
+
+ð1Þ
+
+Thus, increased levels of emotional arousal will amplify the
+subjective valuation of stimuli by orbitofrontal cortex,
+while lower arousal levels lead to valuation attenuation.
+
+a
+
+As we discuss in our later account of prospect theory, ANDREA also introduces realistic biological constraints imposed by neural ﬁring saturation that help to explain
+valuation behaviors observed in humans, an advancement
+over our earlier reward system model (Litt et al., 2006).
+3.2. Surprise as deviation from expectations
+Fig. 2 shows that our model generates amygdala activity
+upsurges accompanying changes in the valuation input to
+orbitofrontal cortex, and that these upsurges are valenceasymmetric: negative changes in valuation (losses) produce
+greater aﬀective arousal increases than equivalent positive
+changes (gains). This neurological behavior is produced
+mainly through a modulation of amygdala-encoded emotional arousal by a reward prediction error signal. This is
+simply the discrepancy between expected and actual stimu-
+
+2
+
+OFC input
+
+1
+0
+–1
+–2
+
+b
+
+0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+0.6
+
+0.7
+
+0.8
+
+0.9
+
+1
+
+0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+0.6
+
+0.7
+
+0.8
+
+0.9
+
+1
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+0.6
+
+0.7
+
+0.8
+
+0.9
+
+1
+
+3
+
+AMYG output
+
+2.5
+2
+1.5
+1
+0.5
+0
+
+c
+
+2
+
+OFC output
+
+1
+0
+–1
+–2
+–3
+–4
+0
+
+time
+Fig. 2. Arousal modulation of valuation. (a) The ‘‘emotionless” input signal to orbitofrontal cortex consists here of positive and negative valuation
+changes of varying magnitude. The vertical axis can be interpreted as a sort of neural currency scale: upward steps in the graph thus represent gains, while
+stepping down indicates a loss. Positive/negative sign corresponds to appetitive/aversive valence. (b) Emotional arousal reﬂected in amygdala activity.
+Decoded output from spiking neuron populations (see Appendix B). Upsurges correspond to arousal increases coinciding with changes in the externally
+provided stimulus value signal in (a), demonstrating the role such changes play in inﬂuencing emotional engagement. (c) Multiplicative modulation of the
+activity presented in (a) by that shown in (b). Emotional arousal can induce signiﬁcant changes in valuation from the baseline input signal.
+
+<-----Page 5----->A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+lus valuation, and as such represents the eﬀect of the surprising nature of a stimulus on how emotionally arousing
+it is.
+For this computation we employ the temporal diﬀerence
+(TD) model (Sutton & Barto, 1998), due to its simple mathematical structure and robust correspondence with experimental neural activity observations (e.g., Schultz, 2000).
+TD computes reward prediction error (E) based on the difference between the latest reward valuation and a weighted
+sum of all previous rewards (P). Using our arousal-modulated signal S as the input regarding current stimulus valuation, this leads to the modeled recurrent equations
+EðtÞ ¼ SðtÞ  P ðt  1Þ
+
+ð2Þ
+
+P ðtÞ ¼ P ðt  1Þ þ a  EðtÞ;
+
+ð3Þ
+
+where a is a learning rate constant between 0 and 1. This
+activity has typically been modeled by increased midbrain
+dopamine ﬁring with positive prediction errors (that is, getting more than expected) and ﬁring rate depression for negative errors (getting less than expected) (Schultz, 1998,
+2000; Suri, 2002). While this approach seems valid for particular ranges, recent work has called into question the feasibility of midbrain dopamine acting alone to perform this
+computation (Daw et al., 2002; Dayan & Balleine, 2002). In
+particular, such physiological constraints as low baseline
+ﬁring rates make it diﬃcult to envision how activity depression could be used to well encode highly negative prediction errors, a concern supported by recent experimental
+ﬁndings (Bayer & Glimcher, 2005).
+Accordingly, we adopt an interacting opponent encoding of positive prediction errors by midbrain dopamine
+and negative errors by serotonergic neurons in the dorsal
+raphe nucleus of the brainstem. This is supported by a variety of experimental studies in humans and other animals
+(Deakin, 1983; Evenden & Ryan, 1996; Mobini, Chiang,
+Ho, Bradshaw, & Szabadi, 2000; Soubrié, 1986; Vertes,
+1991; for a review, see Daw et al., 2002). By separating
+the encodings of losses and gains, we are able to distinctly
+calibrate the modulatory eﬀects of positive and negative
+valuation changes to provide a plausible neural mechanism
+for loss aversion (Appendix C). That is, asymmetries in
+loss–gain valuation can be modeled via diﬀering amygdala
+sensitivity to inputs from dorsal raphe or midbrain areas,
+perhaps realized in actual brains through diﬀerences in speciﬁc neurotransmitter receptor concentrations in the amygdala, or similar mechanisms of connectivity strength
+variation (e.g., receptor sensitivity diﬀerences).
+3.3. Increased behavioral saliency of negative outcomes
+Valence-asymmetry in emotional arousal is further
+strengthened in our model through the activities we have
+assigned to the anterior cingulate and dorsolateral prefrontal cortices, speciﬁcally via a proposed dissimilarity in the
+inﬂuences of losses and gains on required behavioral planning. Much evidence supports the importance of dorsolat-
+
+257
+
+eral prefrontal cortex in the planning, representation and
+selection of goal-directed behaviors (e.g., Owen, 1997),
+and the anterior cingulate cortex in the detection of conﬂicts between current behavior and desired or expected
+results, interfacing appropriately with dorsolateral prefrontal in the process (e.g., Bush, Luu, & Posner, 2000). We
+hypothesize an increased behavioral saliency of negative
+reward prediction errors, as such results may indicate that
+current behavior needs to be modiﬁed, rather than be simply maintained or strengthened as a positive error would
+indicate. Such a situation would introduce the attendant
+cognitive resource requirements of new action plan formation and execution in response to the displeasing outcome,
+as well as potential environmental risks stemming from
+altering current behavior. We model this increased behavioral saliency through a corresponding increase in emotional arousal (Appendix C). Thus, feedback from
+dorsolateral prefrontal cortex and the anterior cingulate
+to the amygdala in our model further increases the aﬀective
+inﬂuence of losses over similarly sized gains.
+In combination with the previously discussed roles of
+dopamine and serotonin in inﬂuencing the amygdala, we
+arrive at our ﬁnal characterization of how emotional arousal Ais inﬂuenced by the saliency of unexpected gains and
+losses, as well as potential behavioral modiﬁcation costs
+associated with the latter:
+AðtÞ ¼ A1 ðtÞ þ b  DAðtÞ þ c  5-HTðtÞ þ CðtÞ:
+
+ð4Þ
+
+A1 represents a degree of emotional arousal determined by
+external factors unrelated to reward prediction error or the
+described dorsolateral–cingulate contribution. In previous
+work we have provided this as a straightforward input signal to the model (Litt et al., 2006). We shall describe later
+how ANDREA expands A1 arousal by incorporating prior
+expectations regarding valuation targets, which allows for
+a neurobiological explanation of decision aﬀect theory
+(Mellers, Schwartz, Ho, & Ritov, 1997). DA and 5-HT
+are the opponent encodings of positive and negative reward
+prediction error, respectively, with c chosen to be a connection-strength constant greater than b to simulate an increased inﬂuence of serotonin-encoded losses over
+dopamine-encoded gains on emotional state. Finally, C
+represents the additional costs associated with losses that
+increase their behavioral saliency, and hence emotional import, as determined by activity in the anterior cingulate and
+dorsolateral prefrontal cortices.
+4. A neural account of prospect theory
+Prospect theory, a theoretical framework for understanding risky choice developed by Kahneman and Tversky (1979, 1982, 2000), has been applied to many
+preference and choice behaviors commonly exhibited by
+people. The most famous such phenomenon is loss aversion, whereby people behave asymmetrically in their personal valuations of objectively equivalent losses and
+gains. Central to prospect theory’s resolution of this and
+
+<-----Page 6----->258
+
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+other inconsistencies between classical decision research
+and actual behavior is a redeﬁned characterization of the
+nature of subjective evaluations of decision outcomes.
+The resulting value function proposed by the theory has
+the following essential characteristics (Kahneman & Tversky, 1979; Tversky & Kahneman, 1984): (i) subjective value
+is deﬁned on gains and losses – that is, deviations from a
+neutral reference point – rather than on total wealth, as
+is typical of expected utility theory; (ii) the value function
+is concave for gains and convex for losses; and (iii) the
+curve is steeper for losses than gains. Taken together, an
+asymmetric sigmoid value function is the well-known result
+(Fig. 3).
+4.1. Loss aversion
+Neural aﬀective decision theory, via the ANDREA
+model, provides a compelling explanation of loss aversion.
+The combination of arousal modulation of subjective valuation and the increased aﬀective import of losses produces
+emotionally inﬂuenced orbitofrontal valuations that overweight losses. This can be seen in Fig. 2, and even more vividly in the simpliﬁed simulation of Fig. 4. The resulting
+eﬀects on thinking and behavior would produce the asymmetries in peoples’ evaluations of and responses to gains
+and losses that have been documented and explained by
+prospect theory.
+We turn now to extending this neural account of loss
+aversion into a detailed biological explanation for the speciﬁc shape of prospect theory’s sigmoid value function.
+4.2. The value function of prospect theory
+In developing a neural theory of preference that meshes
+with the behaviorally inspired prospect theory value function, the ﬁrst step is to identify brain regions that should
+be expected to produce responses corresponding to the
+
+Fig. 3. A hypothetical prospect theory value function, illustrating
+subjective valuation commonalities observed in tests of numerous subjects.
+
+sorts of behaviors monitored in psychological studies of
+preference and valuation. As discussed earlier, it seems natural to look to orbitofrontal cortex as the site of activity
+mapping directly onto people’s subjective valuations of
+gains and losses. It has been implicated strongly in tasks
+related to valuation and comparison of outcomes, events
+and perceived stimuli in general, and we have described a
+fundamental aﬀective modulation of this encoding that
+may form the basis of the subjective nature of ultimate outcome valuation.
+The next step is to identify features of the ANDREA
+model that might explain the speciﬁc nature of the sigmoid
+value function, as described previously in terms of three
+primary characteristics (Fig. 3). Feature (i) of the curve,
+valuation in terms of reference point deviation, identiﬁes
+the sort of input signal to be modulated in orbitofrontal
+cortex. Since the degree to which a stimulus is considered
+a loss or a gain is a representation of its divergence from
+a neutral reference, evaluating such changes in value calls
+for a step-style input, similar to those shown in Figs. 2
+and 4, where the subjective valuation of a deviation of size
+X will be determined by the emotional modulation produced by an input valuation step from 0 to X. For example,
+to produce orbitofrontal activity corresponding to the subjective valuation of a loss of $200, we measure the emotionally modulated output from orbitofrontal cortex to a step
+input that moves from 0 (the reference point) to our target
+value (200). Leaving aside feature (ii) for a moment, the
+third aspect of the prospect theory value curve, a steeper
+slope for losses than gains, is simply loss aversion (Kahneman & Tversky, 1979). The biological account of loss
+aversion we previously described will thus serve as a critical
+component of our neural explanation of the S-curve.
+The second feature of the sigmoid value function, the
+leveling-oﬀ of loss and gain valuations at the extremes,
+requires appeal to additional neurological mechanisms. In
+particular, we introduce the notion of neural saturation.
+Any type of neuron has hard biological constraints on
+how fast it can ﬁre. Each action potential is followed by
+a refractory period of repolarization during which the neuron cannot ﬁre, and issues such as cellular respiration
+requirements and local neurotransmitter depletion introduce unavoidable limitations on spike rates. In the context
+of neurocomputation in the NEF (and hence ANDREA),
+this means that the range of values that can be encoded
+by any neural population is limited. This inherent restriction can actually serve an explanatory purpose in the case
+of the prospect theory value function. To explain how
+ANDREA could produce leveling-oﬀ valuations at the
+extremes, note that we encode values through increasing
+neural spike rates in the encoding population as these values become larger (in either the positive or negative-direction). Thus, in attempting to provide subjective valuations
+for very large gains or losses, neurons in orbitofrontal cortex will begin to saturate, as they simply cannot ﬁre fast
+enough to produce linearly distinctive aﬀective responses
+to increasingly large value deviations.
+
+<-----Page 7----->A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+a
+
+259
+
+OFC input
+
+2
+
+0
+
+–2
+0
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+0.6
+
+0.7
+
+0.8
+
+0.9
+
+1
+
+0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+0.6
+
+0.7
+
+0.8
+
+0.9
+
+1
+
+0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+0.6
+
+0.7
+
+0.8
+
+0.9
+
+1
+
+b
+AMYG output
+
+0.1
+
+4
+3
+2
+1
+
+c
+
+5
+
+OFC output
+
+0
+
+0
+
+–5
+
+–10
+
+time
+Fig. 4. Unbalanced evaluation of gains and losses. (a) The input signal to orbitofrontal cortex consists of positive and negative changes in value of equal
+magnitude. (b) Arousal level modulated by prediction error and likely behavioral saliency of stimuli. The loss induces a much greater arousal increase than
+the equal gain. (c) The outcome of the unevenness displayed in (b). Reductions in stimulus valuation (losses) are disproportionately ampliﬁed compared to
+gains.
+
+An alternative encoding of value magnitude through
+activated population size, rather than the ﬁring levels of a
+ﬁxed population, would seem to deny this saturation-based
+account of diminishing marginal sensitivity. Such a scheme
+might be akin to accumulator models that have been
+applied to numerosity encoding in intraparietal regions
+(Roitman, Brannon, & Platt, 2007). However, applying this
+approach to valuation encoding seems less plausible from a
+neurophysiological resources perspective; while the salient
+brain areas do have millions of neurons, all of these would
+require direct connectivity to areas interpreting magnitude
+information in order to impart the same information as
+naturally rate-tuned transmitter release by a population
+which encodes magnitude via ﬁring rates. Indeed, accumulator models generally allow for cardinal value encodings
+on restricted integer scales such as 2-to-32, rather than
+the potentially arbitrary and quasi-analog scale on which
+valuations often lie.
+Fig. 5 illustrates the results of running simulations based
+on the preceding description. Each data point at X along
+the horizontal axes of Fig. 5b and c is the result of measuring a modulated orbitofrontal valuation output in a simulation providing orbitofrontal cortex a step input from 0 to
+X, in accord with the reference-deviation characterization
+of value in prospect theory. As expected, the eﬀects of loss
+aversion are clear, with the slope diﬀerential indicating a
+
+greater aﬀective impact of losses over equivalent gains.
+The 2:1 slope ratio observed here for moderate losses and
+gains mirrors behavioral evidence in the decision literature
+(e.g., Kahneman, Knetsch, & Thaler, 1991). Finally, the
+concavity features of the value function have been successfully replicated in these simulations. Fig. 6 shows the speciﬁc role of neural saturation in this regard. Each row in
+these spike rasters represents an individual orbitofrontal
+cortex neuron, and each point represents a single action
+potential at a speciﬁc point in time produced by the neuron
+in question. Clearly, equal changes in the size of a loss or
+gain do not necessarily produce similar changes in neural
+spiking, particularly as neurons begin to saturate. This
+causes a decreasing distinctness in ﬁring response at the
+extremes, which we propose as the neurological basis for
+the leveling-oﬀ in loss and gain valuation observed in
+behavioral studies. Overall, the mechanisms we have outlined combine to produce a detailed, biologically plausible
+neural explanation of the nature of the value function
+described by prospect theory.
+4.3. Framing through reference-value manipulation
+Understanding how individuals respond diﬀerently
+depending on the manner in which information regarding
+a situation is presented is considered to be one of the primary
+
+<-----Page 8----->260
+
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+a
+
+$50 loss
+
+n = 226
+
+event
+
+b
+
+$100 loss
+
+↓
+
+n = 344 ( 52%)
+event
+
+c
+
+$150 loss
+
+↓
+
+n = 403 ( 17%)
+event
+
+time
+
+Fig. 6. Orbitofrontal cortex spike rasters. Note the clear diﬀerence in
+activity between (a) and (b) (a 52% increase in immediate post-event
+spiking). This is in contrast to the relative similarity in spiking in (b) and
+(c) forced by neural saturation, as the $50 change moves farther away
+from the reference-value of 0. This response characteristic forms the basis
+of our neural explanation for the concavity features of the prospect theory
+value function.
+
+explanatory successes of prospect theory. A famous illustration of the power of framing is the presentation of two
+diﬀerent choice-sets to subjects regarding the consequences
+of diﬀerent plans to handle the outbreak of a disease
+expected to kill 600 people (Tversky & Kahneman, 1981,
+1986):
+Problem 1: Program A – 200 people will be saved.
+Program B – 1/3 probability 600 are saved, 2/3
+probability nobody is saved.
+Problem 2: Program C – 400 people will die.
+Program D – 1/3 probability nobody will die,
+2/3 probability 600 will die.
+Fig. 5. Value function simulation results. (a) A typical prospect theory
+value function. (b) Subjective valuation outputs from orbitofrontal cortex.
+Each data point represents the emotionally modulated valuation of the
+loss or gain value chosen along the horizontal axis. (c) Close-up of the
+central portion of (b), showing the diﬀering slopes for loss and gain
+valuations.
+
+Faced with the choice in Problem 1, 72% of subjects chose
+Program A over B, whereas only 22% of subjects chose
+Program C over D when faced with Problem 2. Clearly,
+though, Programs A and C are objectively equivalent, as
+are their respective alternatives. The framing of situations
+in terms of losses or gains may thus cause dramatic reversals of preference in decision scenarios.
+
+<-----Page 9----->A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+4.4. Predictions
+Our neurological explanation of prospect theory suggests a range of testable neural-level predictions and
+
+a
+
+600
+
+OFC in
+
+400/600 die
+200
+0
+200/600 saved
+
+b
+OFC out
+
+The mechanisms implemented in the ANDREA model
+provide a realistic neural basis for such framing eﬀects.
+We describe means by which objectively equivalent outcomes can produce markedly diﬀerent subjective valuations
+in orbitofrontal cortex, depending on the manner in which
+each is framed. In particular, note that feature (i) of the
+prospect theory value function, the deﬁnition of subjective
+valuation on deviations from some neutral reference-value,
+points towards an obvious mechanism for the framing of
+decisions: variation of the reference value itself. In the disease example, Problem 1 is framed in terms of lives saved
+rather than lives lost, while the reverse is true for Problem
+2. Thus, choosing ‘‘zero” reference points from which subjective valuations shall deviate in each case should lead to
+diﬀerent values for each problem. For Problem 1, ‘‘zero
+lives saved” would indeed correspond to 0 on a scale measuring the total number of people of our original 600 who
+are expected to be left alive after the choice of a given program for combating the disease. Crucially, however, the
+‘‘zero lives lost” reference point for Problem 2 would correspond to the value 600 when measured on this same scale,
+since 600 out of 600 people alive indicates that no lives
+have been lost, as required.
+Thus, in the case of the Program A option in Problem 1,
+a subjective valuation deviation described as ‘‘200 people
+out of 600 will be saved” represents a positive-direction deviation from 0 lives saved to 200 lives saved. In contrast, the
+objectively equivalent Program C option in Problem 2,
+described as ‘‘400 people out of 600 will die”, represents a
+negative-direction deviation from 0 lives lost to 400 lives
+lost, that is, from 600 left alive down to 200 left alive. Note
+that both deviation construals end at the value 200 on the
+scale of people still alive, since they are objectively equivalent outcomes. Nevertheless, because of our multiplicative
+modulation of valuation deviations by emotional arousal,
+opposite directions of deviation will produce subjective valuations that are emotionally ampliﬁed in opposite directions. Fig. 7 illustrates the results of characterizing this
+type of framing as a manipulation of the deviation reference
+point. We obtain a subjective valuation of orbitofrontal
+step input corresponding to Program A that is much more
+positive than that of a step input corresponding to Program
+C, simply because of opposite directions of emotional modulation. This would explain the preference reversal that
+occurs upon switching decision frames, as what was seen
+as a gain in comparison to one reference-value is suddenly
+evaluated as a loss in comparison to a diﬀerent referent.
+Later we will discuss framing eﬀects that operate in ways
+other than varying reference-values, and how these diﬀerent
+sorts of framing can in combination explain the observed
+interactions between aﬀect, prior expectations and counterfactual comparisons explored in decision aﬀect theory.
+
+261
+
+600
+
+200
+0
+
+Fig. 7. Simulation results for framing in terms of gains and losses. (a)
+Objectively equivalent outcomes (ending up with 200 people alive)
+evaluated as deviations from diﬀerent reference points. The thin-lined
+step input represents Problem 1/Program A, and the heavy line Problem 2/
+Program C (Tversky & Kahneman, 1981). (b) Opposite directions of
+deviation produce opposite directions of emotional ampliﬁcation in
+subjective valuation, leading to more a positive outlook towards Program
+A than Program C.
+
+hypotheses. Litt et al. (2006) outline several such predictions in relation to loss aversion and the behavioral inﬂuence of serotonin. For example, the extent of a particular
+individual’s hypersensitivity to losses is hypothesized to
+be correlated with the concentration in the amygdala of a
+speciﬁc serotonin receptor subtype, which would inﬂuence
+the degree to which negative reward prediction errors aﬀect
+amygdala activity. As well, degraded connectivity between
+midbrain dopamine neurons and the raphe serotonin system is predicted to increase emotionally inﬂuenced overvaluation of both gains and losses, due to mutual
+attenuation eﬀects that we have modeled between these systems. Such correlation between loss and gain sensitivity has
+indeed been shown in recent work by Tom and colleagues
+(2007). The particular neural activity they describe suggests
+the mechanism underlying this relationship may involve
+important additions to the computations captured in the
+ANDREA model, such as the eﬀects of noradrenergic
+circuits.
+Further empirical investigation of the neural correlates
+of loss aversion can provide more such tests and potential
+falsiﬁcations of the relationships proposed in ANDREA,
+although practical barriers to imaging brain stem serotonergic activity limit the capacity of the approach of the Tom
+et al. study in this respect. Additionally, this work and other
+explorations of ‘‘prospect theory on the brain” by this team
+did not show any signiﬁcant amygdala activity relevant to
+loss aversion (Tom, Fox, Trepel, & Poldrack, 2007; Trepel,
+Fox, & Poldrack, 2005). Besides the studies we have previously cited that indicate an important role for the amygdala
+in emotional valuation, signiﬁcant amygdala activity
+
+<-----Page 10----->262
+
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+directly corresponding to loss aversion has contrastingly
+been directly observed in other fMRI experiments (e.g.,
+Weber et al., 2007). Such discrepancies and limitations
+might be resolved by employing alternative experimental
+techniques; for instance, it is possible to temporarily diminish cerebral serotonin levels by an ingestion of a tryptophan
+depleting drink (Cools et al., 2005), which our model suggests would speciﬁcally diminish loss aversion. Depletion
+studies of decision-related phenomena hold much promise
+for testing the validity of neurocomputational models like
+ANDREA, as well as advancing our understanding of the
+biological bases of complex behaviors and cognitions. Various other anomalous choice-related behaviors arising from
+speciﬁc disconnections and damage patterns are also
+described by Litt et al. (2006). The enriched conceptions
+of decision phenomena provided by neural-level exploration
+allow for postulation of potential inﬂuences on behavior
+that would be missed by studies restricted to examining
+higher-level psychological processing.
+A straightforward set of additional predictions deriving
+from our ANDREA simulations would be expectations of
+activation of the brain regions described in our model
+(Fig. 1) to be observed in imaging experiments involving
+people performing preference and choice tasks. But a more
+interesting explanatory and predictive utility of the model
+involves the study of individual diﬀerences in value functions. While the general features of the curve have been
+reproduced by many diﬀerent experiments and in large
+numbers of people, the speciﬁc functions of diﬀerent individuals are known to vary widely (e.g., Kahneman & Tversky, 1982). Because our simulations essentially represent
+the value function produced by a single brain (to which
+we have complete access, as its designers and builders)
+the model oﬀers biological reasons for why and how individual value functions vary, while preserving some common general features. As discussed previously,
+connectivity strength between dorsal raphe serotonin and
+the amygdala can inﬂuence loss aversion, and thus the nature of the subjective valuations performed in orbitofrontal
+cortex. In persons with heightened serotonin sensitivity in
+the amygdala, we would expect to see a value function with
+an even steeper slope for losses than that of gains. The
+opposite also holds, in terms of lessened serotonergic inﬂuence or stronger midbrain dopaminergic connectivity, with
+either of these cases predictive of less discrepancy in slope
+between losses and gains (i.e., reduced loss aversion). The
+damaged innervation between the raphe and midbrain
+mentioned earlier would have the eﬀect of steepening both
+the loss and gain portions of the curve, although the slope
+ratio might be unaﬀected. These connectivity manipulations can be understood psychologically as altering the
+extent to which one is emotionally aroused by losses and
+gains, with this aﬀective inﬂuence central to producing subjective valuations of these deviations from a reference
+point.
+We also predict that speciﬁc neural saturation range differences between brains may underlie individual diﬀerences
+
+in value function shape, with more readily saturating
+orbitofrontal populations prone to producing curves that
+level-oﬀ quicker and more markedly. In the NEF, this saturation can itself be modeled asymmetrically around 0, so
+we can readily create a neural system of speciﬁc architecture and connectivity that yields signiﬁcant leveling-oﬀ
+for losses but much less so for gains, or vice versa. In
+sum, the ANDREA model allows for numerous experimentally testable neural-level predictions regarding prospect theoretic behavior.
+5. A neural account of decision aﬀect theory
+The hedonic inﬂuence of prior expectations and counterfactual comparisons on the subjective valuation of outcomes is characterized by the work of Mellers and
+colleagues on what they call decision aﬀect theory (Mellers & McGraw, 2001; Mellers et al., 1997; Mellers, Schwartz, & Ritov, 1999). Its fundamental claim is that
+evaluation by an individual of an outcome, event or decision option is strongly inﬂuenced by the ‘‘relative pleasure” it is considered to provide (Mellers, 2000). This
+relativity derives in part from the eﬀects of counterfactual
+comparisons, as illustrated by the ﬁnding that Olympic
+silver medalists are more likely to feel disappointed than
+bronze medalists because of generally higher personal
+expectations (McGraw, Mellers, & Tetlock, 2005).
+Another factor is the degree to which an obtained outcome is considered surprising, with greater emotional
+impact for unexpected results (either good or bad) than
+for expected outcomes. The mathematical expression of
+decision aﬀect theory is
+RO ¼ J ½uO þ dðuO  uE Þ  ð1  sO Þ
+
+ð5Þ
+
+(cf. Eq. (1) in McGraw et al., 2005). RO is the emotional
+feeling associated with the obtained outcome and J is a linear function relating the felt pleasure to a speciﬁc numerical response. uO and uE are the respective utilities of the
+obtained and expected outcomes, and d(uO  uE) is a disappointment function that models how the obtained outcome
+is compared to the alternative expected outcome. sO is the
+subjectively judged probability of the obtained outcome
+actually occurring, so the weighting by the complementary
+(1  sO) term models the degree to which the obtained outcome was not expected (i.e., the subjective probability that
+something else would occur). The importance of emotional
+inﬂuence becomes clear with the ﬁnding that people will
+choose what feels best – that is, make decisions in such a
+manner as to maximize average positive emotional experience (Mellers et al., 1997).
+Thus feelings about outcomes and choices, and hence
+the decisions people may be expected to make, are greatly
+inﬂuenced by the size and valence of the discrepancy
+between anticipated and actual results. The expected emotional reaction to gaining $20 will be vastly diﬀerent if the
+prior expectation is gaining $100, versus the case where the
+expected yield is only $1. Indeed, the degree of inﬂuence of
+
+<-----Page 11----->A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+Our earlier discussion of framing eﬀects focused on the
+type most discussed in prospect theory, concerning alternative descriptions of losses and gains. However, framing can
+aﬀect decisions in other ways, as in the trolley-footbridge
+experiments of Greene and colleagues (2001). These experiments are not reference-value manipulations, and are
+therefore not explainable by the neural mechanisms that
+we described for prospect theory. The judgment of morality reversal occurs between two outcomes that are both
+described as killing one person to save ﬁve others. The
+manipulation involved here is not one of reference point,
+but rather the personal or impersonal nature of the speciﬁc
+action performed that leads to the described outcome. It is
+thus diﬀering contexts of choice presentation (i.e., the nature of the situation story) that produce the change in situational evaluation, rather than any suggestive presentation
+of choices in terms of either losses or gains. We will call this
+emotional-context framing, in contrast to the referencevalue framing we discussed in relation to prospect theory.
+We propose that emotional-context framing in the trolley-footbridge dilemma occurs through increased arousal
+associated with the direct, personalized action of pushing
+a person to their death, compared to the more detached
+and impersonal act of ﬂipping a switch that will cause a
+trolley to divert from hitting ﬁve people towards hitting a
+single person. Such an increase in emotional engagement
+induces greater ampliﬁcation of the subjective evaluation
+of causing a death in the personal case, which would provide a neurological basis for the reversal in typical judgments of the morality of the actions in question. fMRI
+experiments by Greene and colleagues seem to support this
+neural account of the trolley-footbridge dilemma, showing
+increased amygdala and orbitofrontal activity in cases of
+highly personal characterizations of morally debatable
+actions (Greene & Haidt, 2002; Greene, Nystrom, Engell,
+Darley, & Cohen, 2004).
+Fig. 8 illustrates the neural explanation we have
+described for the type of framing produced by changing
+
+OFC in
+
+0
+
+–4
+4
+
+AMYG in
+
+b
+
+0
+
+c
+AMYG out
+
+5.1. Framing through direct emotional arousal inﬂuence
+
+a
+
+16
+
+0
+
+d
+
+4
+
+OFC out
+
+this discrepancy from anticipated results is such that an
+objectively worse outcome can sometimes be morepleasurable than one which is better. Consider the easily imaginable experience of feeling happier in stumbling across a
+20-dollar bill while walking home from work than from
+receiving an underwhelming 1% raise the same day, despite
+the monetary value of the raise being signiﬁcantly higher
+than that of the found note. Decision aﬀect theory thus
+describes in a revealing and systematic fashion the nature
+of certain situations in which less can actually feel like
+more. In describing a neural basis for the theory suggested
+by ANDREA, we shall draw upon an integration of the
+sort of framing discussed in our examination of prospect
+theory with the eﬀects of the emotional-context of information presentation on valuation and choice, which we now
+explore in depth.
+
+263
+
+–4
+
+–12
+Fig. 8. Simulation results for framing that changes emotional-context. (a)
+A step input to orbitofrontal cortex indicating a negative change in value,
+such as the consideration of a situation in which one’s actions cause the
+death another person. (b) Two diﬀerent base arousal inputs to the
+amygdala, corresponding to diﬀering levels of context-produced emotional
+engagement. (c) Because of diﬀering base arousal levels, arousal upsurges
+corresponding to the negative valuation deviation diﬀer as well. (d) Higher
+context-motivated base arousal leads to greater ampliﬁcation of the
+subjective valuation change, and thus a belief that the more arousing
+scenario is actually worse than the objectively equivalent but less arousing
+scenario.
+
+the emotional-context of the presented information. Just
+as for reference-value framing, we get diﬀerent subjective
+valuations for scenarios that have identical objective values, which would allow for preference reversals to occur
+when the decision frame is altered. The primary diﬀerence
+is that this mechanism employs a direct manipulation of
+emotional arousal state, whereas our neural basis for the
+reference-value framing caused emotional modulation
+changes indirectly though manipulation of valuation deviation reference points.
+5.2. Decision aﬀect theory as an integrated framing
+phenomenon
+Explanation of the experimental results examined in
+decision aﬀect theory requires both reference-value framing
+and emotional-context framing. The hedonic impact of
+counterfactual comparisons can be produced by setting
+the reference point of the valuation deviation for an
+obtained outcome to the value of the unobtained counterfactual result, which is exactly reference-value framing.
+
+<-----Page 12----->264
+
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+Then winning $20 when the counterfactual comparison is a
+$100 win would be construed as a loss, whereas a counterfactual comparison to winning only $1 would reframe the
+$20 win as a gain. In addition, the degree to which the
+obtained outcome was unexpected can have the eﬀect of
+emotional-context framing. We formally model this in
+ANDREA by having emotional-context inﬂuence neural
+behavior through the arousal input A1 (see Eq. (4)) in a
+manner that takes into account the perceived probability
+of the obtained outcome X actually occurring:
+A1 ðtÞ ¼ A0 ðtÞ þ k  ð1  P ½outcome X Þ:
+
+ð6Þ
+
+In this enriched conception of emotional arousal, A0 ﬁlls
+the previous role of A1 as a base arousal level determined
+by external factors and provided as an input to the model.
+A1 emotional arousal is now explicitly increased in inverse
+proportion to the expected probability of obtaining the
+outcome under consideration. Surprising, low-probability
+outcomes produce higher arousal than unsurprising outcomes, where 1  P[X] is closer to 0. The constant multiplier k may be related to the relative aﬀect-richness of the
+outcome in question, as this variable seems strongly related
+to the degree to which uncertainty aﬀects valuations (Rottenstreich & Hsee, 2001).
+This direct manipulation of base emotional arousal is a
+formalization of emotional-context framing, in this case a
+context related to outcome uncertainty. It and referencevalue framing, implemented in ANDREA by the mechanisms described earlier, together produce the canonical
+ﬁnding of decision aﬀect theory that objectively worse outcomes can sometimes feel better than more advantageous
+alternatives (Fig. 9). The mechanisms described above
+and illustrated in Fig. 9 allow us to map the standard mathematical model of decision aﬀect theory (Eq. (5)) onto speciﬁc neural structures and computations. The calculation of
+subjective utilities and their subsequent comparison, as
+embodied in the d(uO  uE) term in Eq. (5), are performed
+neurologically through step-functional deviation in orbitofrontal cortex exactly as we modeled for prospect theoretic
+subjective valuation. The ‘disappointment’ eﬀects of comparing obtained and expected outcome valuations result
+from prediction error computations by dopamine and serotonin networks feeding back to inﬂuence emotional arousal
+encoded in the amygdala, which in turn modulates orbitofrontal valuations. The subjective probability augmentation to our arousal representation (Eq. (6)) is identical to
+the (1  sO) surprise term in the decision aﬀect theory
+model of Mellers and colleagues. In combination with
+our multiplicative modulation of valuation by aﬀective
+arousal (Eq. (1)), it is clear that this enhancement also
+has similar mathematical eﬀects to that of for the surprise
+term in Eq. (5).
+Figs. 10 and 11 show the results of more comprehensive
+simulations of the behavioral ﬁndings of Mellers and colleagues (Mellers et al., 1997, 1999). In Fig. 10, the value
+of the unobtained counterfactual comparison outcome is
+held constant at $0 (i.e., neither losing nor gaining money)
+
+while the obtained outcome value and the expected probability of obtaining that outcome are varied. Fig. 11
+describes an opposing experiment where the $0 is the
+unvarying obtained outcome – that is, subjects neither lose
+nor gain any money. What is instead varied is the expected
+probability of obtaining this $0 outcome and the value of
+the unobtained outcome used as a counterfactual comparison. In both ﬁgures and in both the behavioral and
+ANDREA simulation results, lower-probability curves
+(corresponding to surprising obtained outcomes) produce
+more intense aﬀective experiences, as reﬂected by more
+extreme emotional response ratings. As well, there are cases
+in both the behavioral ﬁndings and our simulation data
+where an objectively worse outcome produces a more positive emotional response than one which is objectively
+greater. For instance, both Fig. 10a and b show more elation from winning $17.50 instead of $0 with an expected
+probability of such a win of only 0.09 than for winning
+$31.50 instead of $0 when the anticipated probability of
+this outcome is 0.94. The surprising smaller gain feels better than the unexpected larger gain. Our proposed neural
+basis for decision aﬀect theory thus provides a plausible
+and thorough biological characterization of the
+phenomenon.
+We have been able to explain the central ﬁndings of
+decision aﬀect theory using the same mechanisms that we
+applied to the phenomena explained by prospect theory,
+with the addition of framing by emotional-context. A
+major motivating factor for the exploration of any subject
+at more basic levels of explanation is the desire to unite
+ﬁndings that are disconnected at higher levels of study
+through a set of shared lower-level mechanisms. In this
+vein, an important undertaking in the neuroscientiﬁc
+exploration of the psychology of preference and choice is
+to uncover shared underpinnings for phenomena that have
+yet to be rigorously tied together at the behavioral level.
+ANDREA demonstrates such a means to connect decision
+aﬀect theory and prospect theory via the two neural mechanisms for framing we have outlined.
+5.3. Predictions
+There are undoubtedly other kinds of framing besides
+the reference-value and emotional-context types that we
+have discussed. Additional brain mechanisms may be
+required to explain other cases in which diﬀering modes
+of identical information presentation produce divergent
+results, such as the case of reversals in preference when
+options are considered jointly versus separately (e.g., Hsee
+et al., 1999, 2005). Emotional-context framing could also
+be relevant to explaining a prominent result in constructive
+memory research. In the car accident study by Loftus and
+Palmer (1974), they describe signiﬁcant eﬀects on speed-ofimpact memory judgments by subjects based simply on the
+emotiveness of the action verb used to describe the collision
+between two cars (‘‘contacted each other” producing lower
+remembered speed judgments than ‘‘smashed into each
+
+<-----Page 13----->A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+5
+
+OFC in
+
+a
+
+265
+
+Ob: 3.5
+Unob: 0
+
+Ob: 4.5
+Unob: 0
+0
+0.1
+
+AMYG in
+
+b
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+0.6
+
+0.5
+
+0.6
+
+0.5
+
+0.6
+
+0.5
+
+0.6
+
+4
+P(4.5) = 0.96
+(Unsurprising)
+
+P(3.5) = 0.04
+(Surprising)
+
+0
+0.1
+
+AMYG out
+
+c
+
+OFC out
+
+0.3
+
+3.829
+
+0.4
+
+10.5
+
+0
+0
+
+d
+
+0.2
+
+20
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+20
+7.582
+
+11.94
+
+0
+0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+time
+Fig. 9. Decision aﬀect theory as an integration of framing ideas. (a) Counterfactual comparisons between obtained and unobtained outcomes are encoded
+through appropriate setting of valuation deviation reference points, as in reference-value framing. (b) The surprising natures of obtained outcomes are
+encoded through direct manipulation of base emotional arousal input, as in emotional-context framing (Eq. (5)). (c) The eﬀect of surprise can outweigh an
+objectively larger valuation deviation, producing greater hedonic intensity for a surprising smaller gain than an unsurprising larger one in this case. (d) The
+subjective valuation of an objectively worse outcome is greater than that of the better outcome, because of the added pleasure of being surprised by the
+smaller gain here.
+
+other”). This seems analogous to the baseline emotional
+arousal manipulation inherent in our second neural framing mechanism, which in turn causes increasingly ampliﬁed
+subjective valuations that would correspond to inﬂated
+speed judgments by subjects when asked more emotively
+framed questions by Loftus and Palmer.
+Further predictions arising from the framing mechanisms we have described relate to how the neural activity
+making up these mechanisms, and hence the eﬀects of
+framing, could be induced without performing explicit
+decision framing. For instance, it might be possible to
+manipulate default subjective valuation reference points
+either upwards or downwards via positive or negative
+priming, or perhaps even through direct neuropharmacological intervention to inﬂuence orbitofrontal activity. This
+could potentially produce eﬀects similar to reference-value
+framing in a less conspicuous manner. Similarly for emotional-context framing, manipulation of aﬀective arousal
+in a manner wholly unrelated to situation context could
+cause ‘‘bleed-over” eﬀects identical to those produced by
+situation-related arousal modulation. Methods of manipulation include prior exposure to violent or sexual imagery,
+relaxing or stressful preceding tasks, and direct pharmacological modulation of amygdala activity. There is a wide
+
+variety of means by which brain activity similar or identical
+to our mechanisms of framing can be induced either
+behaviorally or neurochemically, and we predict that such
+alternative routes should produce behaviors in people similar to explicit framing eﬀects, regardless of whether or not
+they are aware of how they are being inﬂuenced.
+6. General discussion
+We have shown how neural aﬀective decision theory, as
+stated in our four principles and as implemented in the
+ANDREA model, can account for the central phenomena
+described by prospect theory and decision aﬀect theory.
+Our view of the general process of decision making is summarized in Fig. 12. People are presented with a decision
+problem by verbal or perceptually experienced descriptions
+which they must interpret based on the context in which the
+decision is being made, resulting in an overall representation of the problem that is both cognitive and emotional.
+Options, outcomes, and goals can be encoded by verbal
+and other cognitive representations, but with an ineliminable emotional content; in particular, goals are emotionally
+tagged. The translation of the presentation of a problem
+and its context into an internal cognitive–emotional
+
+<-----Page 14----->266
+
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+Fig. 10. Comparing behavioral and simulation results in decision aﬀect
+theory. (a) Behavioral ﬁndings of Mellers et al. (1997), for lotteries with a
+constant $0 unobtained counterfactual comparison and varying obtained
+outcomes and expected obtained outcome probability. Emotional
+response was reported by subjects by ratings of feelings on a scale of 50
+(extreme elation) to 50 (extreme disappointment) (b) Results of model
+simulations of the Mellers et al. experiment in (a), with data points
+determined through simulations in line with our proposed neural basis for
+decision aﬀect theory (Fig. 9).
+
+representation produces framing eﬀects, because diﬀerent
+representations will invoke diﬀerent neural aﬀective evaluations. ANDREA shows how these evaluations can be
+computed by coordinated activity among multiple brain
+areas, especially the orbitofrontal cortex, the amygdala,
+and dopamine and serotonin systems involved in encoding
+positive and negative changes in valuation. The result is
+decisions that select options inducing the highest emotional
+subjective valuations.
+ANDREA has greater explanatory scope than other
+neurocomputational models of decision and reward that
+have focused on in-depth modeling of more restricted subsystems of the brain, and accordingly limited ranges of
+behavioral phenomena. Two such examples are the model
+of reward association reversal in orbitofrontal cortex by
+Deco and Rolls (2005) and the GAGE model of cognitive–aﬀective integration in the Iowa gambling task and
+self-evaluations of physiologically ambiguous emotional
+
+Fig. 11. Comparing behavioral and simulation results in decision aﬀect
+theory, opposite experiment to that described in Fig. 10. (a) Behavioral
+ﬁndings of Mellers et al. (1997), for lotteries with constant $0 obtained
+outcome and varying unobtained counterfactual comparison outcome
+value and expected obtained outcome probability. (b) Model simulation of
+the experiment in (a), with data points determined through simulations in
+line with our proposed neural basis for decision aﬀect theory (Fig. 9).
+
+states (Wagar & Thagard, 2004). Additionally, a straightforward diﬀusion decision process implemented in superior colliculus cells seems able to accurately characterize
+accuracy and reaction time in simple two-choice decision
+tasks (Ratcliﬀ, Cherian, & Segraves, 2003). Task modeling
+of this sort is important for exploring basic details of neural mechanisms for speciﬁc phenomena, but examining
+brain processes on a larger scale is required for explaining
+more complex and wide-ranging psychological ﬁndings,
+such as prospect theory and decision aﬀect theory. Busemeyer and Johnson (2004) describe a connectionist model
+that they apply to a range of behaviors as diverse as those
+explored by ANDREA, including preference reversal
+eﬀects and loss aversion. The network model called aﬀective balance theory (Grossberg & Gutowski, 1987) also
+explores a wide range of risky decision phenomena in a
+mathematically sophisticated fashion, and proposes eﬀects
+of emotional-context on cognitive processing that are
+largely consistent with those implemented in ANDREA.
+
+<-----Page 15----->A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+267
+
+Fig. 12. Overview of neural aﬀective decision theory.
+
+The main improvement that our approach oﬀers over
+these two models is in neurological realism, as reﬂected
+by modeled characteristics of individual processing units
+(‘neurons’) and the mapping of proposed computations
+onto speciﬁc brain regions and interactions supported by
+empirical ﬁndings. The models of Grossberg and Gutowski (1987) and Busemeyer and Johnson (2004) are not
+comparable in this respect to either ANDREA or the previously mentioned works of Deco and Rolls (2005) and
+Wagar and Thagard (2004). This of course is not a criticism of such methods of modeling. Rather, it is more of
+an indication of the diﬀerent levels at which theoreticians
+can formulate explanations of behaviorally studied psychological phenomena. While the proposed mechanisms
+are interesting from the larger perspective of computational models of decision making, these artiﬁcial neural
+networks are of a fundamentally diﬀerent nature than
+ANDREA and similar models in computational cognitive
+neuroscience.
+A recent model of decision-related interactions between
+basal ganglia and orbitofrontal cortex by Frank and Claus
+(2006) recognizes the utility of taking the sort of broad-scale
+approach we employ in our design of ANDREA, and maintains a similar level of neurological realism and detail.
+Despite certain similarities regarding modeled brain regions
+and proposed computations, this model diverges from
+ANDREA in several fundamental ways, leading to both different mechanisms and diﬀerent explanatory targets for each
+of our models. After brieﬂy describing the structure of the
+Frank and Claus (2006) model, we compare it in detail with
+our own model of valuation and choice phenomena.
+The main focus of the Frank and Claus model is the
+means by which basal ganglia dopaminergic activity and
+orbitofrontal computations enable adaptive decision making responsive to contextual information. Computation
+and representation of expected decision value information
+is accomplished through a division of labor between subcortical dopamine and prefrontal networks. A basal ganglia dopaminergic network learns to make decisions
+based on the relative probability of such decisions leading
+to positive outcomes. This process is augmented by orbitofrontal circuits that provide a working memory representation of associated reinforcer value magnitudes that
+exercises top–down control on the basal ganglia activity,
+which allows more ﬂexible response to rapidly changing
+inputs. The proposed computations are detailed, elegant
+
+and well-supported by empirical data, and the model is
+eﬀective in explaining decision-related behaviors as diverse
+as risk aversion/seeking, reversal learning, and peoples’
+performance in a variant of the Iowa gambling task in both
+normal and brain-damaged scenarios.
+While ANDREA does not implement the speciﬁc computations proposed by Frank and Claus (2006), this is due more
+to diﬀering targets of explanation than to any major inconsistencies in our respective conceptions of the roles of various
+brain regions in decision making. Both models describe
+important functional diﬀerences between orbitofrontalamygdala networks and dopaminergic activity in line with
+empirical ﬁndings demonstrating the involvement of orbitofrontal cortex in valuation and dopaminergic encoding of
+reward prediction error. How these subsystems might interact is a question that both ANDREA and Frank and Claus
+(2006) address, and one that has been neglected in previous
+theoretical modeling of the neurobiology of reward. Nevertheless, whereas Frank and Claus develop a comprehensive
+characterization of how orbitofrontal cortex learns and represents reinforcer value, our goal is to describe how speciﬁc
+external inﬂuences diﬀerentially alter the magnitudes of these
+orbitofrontal-encoded values, such as via the asymmetric
+emotional modulation by losses and gains on valuations that
+we describe as the basis of loss aversion in prospect theory.
+As a result, the models are best suited to providing neural
+explanations of diﬀerent psychological phenomena, and
+where they address similar phenomena they do so with contrasting emphases on speciﬁc relevant brain mechanisms.
+The most prominent diﬀerence is that of representational complexity of amygdala activity. In both models,
+the amygdala encodes the magnitude of losses and gains
+in proportion to overall activity level, which then inﬂuences
+orbitofrontal representations of reward values. Frank and
+Claus (2006) do not explore how the amygdala forms such
+representations of reinforcer magnitude, providing them
+instead as direct model inputs. In contrast, ANDREA
+models multifaceted means by which emotional arousal
+related to outcome magnitude is encoded by the amygdala
+(Eqs. (4) and (5)). This allows for the postulation of neural
+explanations for phenomena not addressed by Frank and
+Claus (2006), such as multiple mechanisms for framing
+and the observations of decision aﬀect theory. In addition,
+while both models describe loss aversion as resulting from
+greater amygdala activation by losses than equivalent
+gains, ANDREA oﬀers speciﬁc neurological reasons of
+
+<-----Page 16----->268
+
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+how this might occur through diﬀerential calibration of distinct loss and gain reward prediction error networks, as
+well as feedback to the amygdala from dorsolateral and
+cingulate processing of behavioral saliency. Our detailed
+characterization of how the amygdala comes to represent
+magnitude information thus allows us to both explain additional phenomena and provide more complete biological
+mechanisms for valuation and decision behaviors simulated by both models.
+Important structural diﬀerences between the models
+result from their diﬀering conceptions of amygdala activity.
+The Frank and Claus (2006) model focuses primarily on
+the top–down biasing eﬀect of orbitofrontal activity on
+gradual, multi-trial learning in the basal ganglia dopamine
+network, with much less emphasis on the reciprocal inﬂuence of relative reinforcement probability computations
+on orbitofrontal activation. We are able to explore in depth
+such eﬀects in ANDREA through feedback of reward prediction error information to the amygdala that inﬂuences
+its encoding of emotional arousal, which in turn modulates
+orbitofrontal valuations. These valuations have top–down
+biasing eﬀects on reinforcement learning and action selection similar to those modeled by Frank and Claus (2006),
+for instance how diﬀering orbitofrontal representations of
+identical reward values caused by framing eﬀects produce
+diﬀerent activity in dopamine and serotonin prediction
+error subsystems.
+There are several other issues on which the models diﬀer in
+important ways. Perhaps the most obvious is regarding the
+role of serotonin acting in opponency with dopamine in
+reward prediction error. Frank and Claus (2006) argue that
+the low baseline ﬁring rates of dopaminergic cells need not
+mean that ﬁring rate depressions are less capable of encoding
+highly negative outcomes, as there may exist countervailing
+sensitivity diﬀerences in dopamine receptors to ﬁring bursts
+versus dips. While they remain open to a role for serotonin
+in negative reinforcement learning and aversive stimulus
+processing mediated within OFC, they argue for the centrality of dopamine ﬁring dips to negative valuation processing
+mediated by the basal ganglia, even in light of evidence showing these dips are physiologically limited in scope (e.g., Bayer
+& Glimcher, 2005). Our model can be considered structurally
+consistent with this line of reasoning, since the mutual biasing eﬀects we have implemented between dopamine and serotonin produce the same dopaminergic ﬁring depressions
+utilized computationally by Frank and Claus in cases where
+we describe encoding via serotonergic activity. Clearly,
+though, the models diﬀer markedly in the degree to which
+they assign explanatory import to dopamine ﬁring dips versus concomitant serotonergic ﬁring increases. Further diﬀerences are evident in respective extents of brain region
+modeling. Frank and Claus employ more complex conceptions of orbitofrontal cortex and midbrain dopamine areas
+than are implemented by ANDREA, diﬀerentially utilizing
+speciﬁc subpopulations of these broadly deﬁned brain areas.
+In contrast, ANDREA includes limited but important contributions from anterior cingulate and dorsolateral prefron-
+
+tal cortices. These include involvement in encoding the
+behavioral relevance of outcomes, how this encoding may
+diﬀer for positive and negative outcomes, and the subsequent
+eﬀects of behavioral saliency on emotional arousal. These
+are brain regions omitted in the model of Frank and Claus
+(2006) that they acknowledge may be crucial to understanding decision phenomena. Finally, ANDREA is the ﬁrst
+model to explore a possible role for neural saturation in
+explaining the nature of subjective valuation. This eﬀect is
+not examined in the Frank and Claus work, which does
+not address the leveling-oﬀ of the prospect theory value function for increasingly extreme losses and gains. Thus, while
+these two models are fairly consistent with one another
+and share similarities in their large-scale approaches to modeling the neural foundations of decision making, they both
+make unique contributions to explaining diﬀerent aspects
+of relevant behaviors and psychological processes.
+One of the most fertile areas for future applications of
+neural aﬀective decision theory and the ANDREA model
+is the burgeoning ﬁeld of neuroeconomics, which operates
+at the intersection of economics, psychology, and neuroscience (Camerer, Loewenstein, & Prelec, 2005; Glimcher &
+Rustichini, 2004; Sanfey et al., 2006). Examples of such
+applications include the previously mentioned ﬁndings
+regarding preference reversal in joint versus separate option
+evaluation (Hsee et al., 1999, 2005) and observed interactions between risk, uncertainty and emotion (Rottenstreich
+& Hsee, 2001), both of which seem explainable via the neurological mechanisms we have modeled. Unlike traditional
+economic theory, we do not take preferences as given, but
+rather explain them as the result of speciﬁc neural operations. A person’s preference for A over B is the result of a neural aﬀective evaluation in which the representation of A
+produces a more positive anticipated reward value (or at
+least a less negative value) than the representation of B. As
+depicted in Fig. 12, the neural aﬀective evaluation of options
+depends on their cognitive–emotional representation, which
+can vary depending on the presentation and context of information. This dependence explains why actual human preferences often do not obey the axioms of traditional
+microeconomic theory. In addition to neuroeconomics, we
+are exploring the relevance of our theory and model to
+understanding ethical judgments, the neural bases of which
+are under increasing investigation (Casebeer & Churchland,
+2003; Greene & Haidt, 2002; Moll, Zahn, de Oliveira-Souza,
+Krueger, & Grafman, 2005). Finally, while neural aﬀective
+decision theory is primarily intended as a descriptive account
+of how people actually do make decisions, but it can provide
+a starting point for developing a prescriptive theory of how
+they ought to make better decisions (Thagard, 2006).
+Like all models, ANDREA provides a drastically simpliﬁed picture of the phenomena it simulates, and there
+are many possible areas for improvement and extension.
+These include increasing the complexity of individual populations, adding more brain areas, modeling more relationships between brain areas, and exploring the eﬀects of
+neuronal ﬁring saturation beyond simply orbitofrontal
+
+<-----Page 17----->A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+cortex. Nevertheless, we have described a variety of neurobiologically realistic mechanisms for fundamental decision
+processes, and shown their applicability to explaining several major experimental ﬁndings in behavioral decision
+research. Besides implementing original mechanistic ideas,
+such as a role for saturation in explaining diminishing marginal sensitivity in prospect theory, ANDREA contributes
+to two important classes of explanation in decision neuroscience: (1) Generalization and novel syntheses of hitherto
+unrelated mechanisms of neural processing (e.g., multiplicative models of attention and reward reinforcement learning); and (2) Speciﬁc and detailed grounding of behaviorally
+explored psychological phenomena in such plausible and
+realistic neurocomputational mechanisms. The result, we
+hope, is a deeper understanding of how and why people
+make the choices that they do.
+Acknowledgments
+We thank Daniela O’Neill, Christopher Parisien, Bryan
+Tripp, and three anonymous reviewers for comments on
+earlier versions. This research was supported by the Natural Sciences and Engineering Research Council of Canada,
+and the William E. Taylor Fellowhip of the Social Sciences
+and Humanities Research Council of Canada.
+Appendix A. Neurocomputational details
+Our reward model was implemented in MATLAB 7.0.1
+on a PC with an Intel Pentium 4 processor running at
+2.53 GHz, with 1.00 GB of RAM available. For simulations of the extent that we have conducted and described
+here, these speciﬁcations represent close to the minimum
+required, based on the memory and other resource requirements of the most recent version of the NESim NEF simulation software running within MATLAB. NESim
+documentation and software download links are available
+online at http://compneuro.uwaterloo.ca.
+We modeled spiking activity for a total of 7600 neurons
+spread over seven speciﬁc populations (Fig. 1), using the
+common and physiologically realistic leaky-integrate-andﬁre (LIF) model for each of our modeled neurons (see
+Appendix B). In particular, we use 800–1200 neurons for
+simulating each of the amygdala, orbitofrontal cortex, ventral striatum, anterior cingulate cortex, and dorsolateral
+prefrontal cortex, representing one- to three-dimensional
+vectors as needed in the neural engineering framework
+(Appendix B). The areas representing midbrain dopaminergic neurons and the dorsal raphe nucleus of the brainstem
+are each modeled with 1200-neuron ensembles, each with
+several discrete subpopulations, in order to capture the
+additional complexities involved in the encodings and
+transformations we assign to these areas in our model
+(recurrent, rectiﬁed, biased-opponent calculation of reward
+prediction error; see Appendix C).
+Each individual neuron is based on a reduced-complexity
+biophysical model that includes features fundamental to
+
+269
+
+most neurons, including conventional action potentials
+(spikes), spike train variability, absolute refractoriness,
+background ﬁring, and membrane leak currents. The membrane time constant for our LIF neurons is set to 10 ms, with
+a refractory period (a post-spike delay during which the neuron may not ﬁre) of 1 ms. We introduce at simulation runtime 10% Gaussian, independent zero-mean noise, relative
+to normalized maximum ﬁring rates, to simulate the noisy
+environment in which our neurons operate. These choices
+are based on plausible biological assumptions (see Eliasmith
+& Anderson, 2003), and we have made reasonable eﬀorts to
+select neurobiologically realistic values for other network
+cell parameters as well. For example, our 5 ms synaptic time
+constant for dorsal raphe serotonergic neurons is consistent
+with the 3 ms decay constants observed in vivo (Li & Bayliss,
+1998). Neurons in the cortical areas we have modeled have
+been shown to have maximum ﬁring rates ranging from
+20–40 Hz in dorsolateral prefrontal and orbitofrontal areas
+(Wallis & Miller, 2003) to at least 50 Hz in anterior cingulate
+cortex (Davis, Hutchison, Lozano, Tasker, & Dostrovsky,
+2000). Thus, our selection of a 10–80 Hz saturation range
+for neurons in these model ensembles is a physiologically reasonable compromise to maintain population sizes that are
+manageable for simulation purposes. Ensembles must grow
+increasingly large to allow for meaningful representation
+with slower-ﬁring, smaller saturation-range neurons making
+up the ensembles.
+Practical considerations nonetheless made necessary
+some limitations on biological realism. Principally, the saturation ranges we selected for our modeled subcortical
+regions are appreciably higher (by roughly a factor of 10)
+than those observed empirically for typical neurons in these
+areas. The much larger neural ensemble sizes that would be
+required for clean representation and transformation using
+the extremely low experimentally observed ﬁring rates
+would have made our large-scale simulations computationally impracticable given available resources. We additionally support this compromise of biological realism by
+noting that signiﬁcantly higher ﬁring peaks (greater than
+100 Hz) are observed in the bursting behavior of both certain raphe serotonergic neurons (e.g., Gartside et al.,
+2000; Hajós, Gartside, Villa, & Sharp, 1995) and subpopulations of the amygdala (Driesang & Pape, 2000; Paré &
+Gaudreau, 1996), and to less degree in midbrain and striatum dopaminergic neurons as well (Hyland, Reynolds,
+Hay, Perk, & Miller, 2002). The speciﬁc activity our model
+produces in these subcortical areas seems well-suited to coding via bursting neurons (large but transient ﬁring upsurges
+that interpose lengthier periods of near-zero activity). While
+we do not deﬁne here an explicit alternative neuron model to
+LIF, Eliasmith (2005a) describes how bursting could be
+incorporated into the NEF, and thus NESim simulations.
+For the most part, we have chosen neuron ﬁring thresholds (that is, the respective input levels above which individual neurons begin to respond) from an even
+distribution over a range represented symmetrically around
+zero, with neuron preferred directions in the space of
+
+<-----Page 18----->270
+
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+representation also chosen from an even distribution (i.e.,
+equal numbers of ‘on’ and ‘oﬀ’ neurons; see Appendix
+B). The exceptions to this rule are single subpopulations
+of both the dorsal raphe and midbrain dopaminergic
+regions. In these cases, our establishment of minimum ﬁring thresholds of zero combines with an exclusive use of
+positively sloped ‘on’ neurons in these subpopulations to
+produce insensitivity to negative values (i.e., rectiﬁed
+reward prediction error encoding). This corresponds well
+with experimentally observed physiological limitations in
+the computation of reward prediction error in these brain
+regions (see Bayer & Glimcher (2005), as well as the discussion of dopamine and serotonin within the main text
+description of the ANDREA model).
+Appendix B. NEF representation, transformation and
+dynamics
+The NEF consists primarily of three fundamental principles regarding the representation of information in neural
+populations, the means by which these representations are
+transformed through interactions between populations,
+and the control theoretic nature of the characterization of
+neural dynamics. Eliasmith and Anderson (2003) present
+a rigorous explication and analysis of the NEF, but the
+mathematical details we outline here should be suﬃcient
+for understanding the fundamental nature and operation
+of our neural model of aﬀective choice and valuation.
+Consider a neural ensemble whose activities ai(x) encode
+some vector quantity x(t) mapping onto a real-world quantity (eye position, emotional arousal, etc.). Note that this
+quantity need not be a vector; scalars, functions, and function spaces can be represented and manipulated in the NEF
+in a near-identical fashion. The encoding of x involves a
+conversion of x(t) into a neural spike train:
+X
+ai ðxÞ ¼
+dðt  tin Þ ¼ Gi ½J i ðxðtÞÞ;
+ðB1Þ
+n
+
+where Gi[] is the nonlinear function describing the speciﬁc
+nature of the spiking response, Ji is the current in the cell
+body (soma) of a particular neuron and i and n are relevant
+indices (i indexing speciﬁc neurons, n indexing the individual
+spikes produced by a given neuron). The nonlinearity G we
+employ is the common leaky-integrate-and-ﬁre (LIF) model:
+dV i =dt ¼ ðV i  J i ðxÞRÞ=sRC
+i ;
+
+ðB2Þ
+
+~ i is the preferred direction
+the neuron, ai is a gain factor, /
+vector of the neuron in the stimulus space, J bias
+is a bias
+i
+current (accounting for any background activity) and gi
+models any noise to which the system is subject. Note in
+~ i  xi describes how a
+particular that the dot product h/
+potentially complex (i.e., high-dimensional) physical quantity, such as an encoded stimulus, is related to a scalar signal describing the input current. For scalars, the encoding
+vector is either +1 (an ‘on’ neuron) or 1 (an ‘oﬀ’ neuron).
+(B1) thus captures the nonlinear encoding process from a
+high-dimensional variable, x, to a one-dimensional soma
+current, Ji, to a train of neural spikes, d(t  tin).
+Under this encoding paradigm, the original stimulus
+vector representation can be estimated by decoding those
+activities; that is, converting neural spike trains back into
+quantities relevant for explanations of neural computation
+at the level of our chosen representations. A plausible
+means of characterizing this decoding is as a speciﬁc lineartransformation of the spike train. In the NEF, the original stimulus vector x(t) is decoded by computing an
+^ðtÞ using a linear combination of ﬁlters hi(t) that
+estimate x
+are weighted by certain decoding weights /i:
+X
+X
+^ðtÞ ¼
+x
+dðt  tin Þ  hi ðtÞ/i ¼
+hi ðt  tin Þ/i ;
+ðB4Þ
+in
+
+in
+
+where the decoding weights are calculated by a meansquared error minimization (Eliasmith & Anderson, 2003)
+and the operation ‘*’ indicates convolution. The hi(t) ﬁlters
+are linear temporal decoders, which are taken to be the
+postsynaptic currents (PSCs) in the associated neuron i
+for reasons of biological plausibility. Together, the nonlinear encoding in (B1) and the linear decoding in (B4) deﬁne
+an ensemble ‘code’ for the neural representation of x.
+The next aspect of the NEF to examine is the means by
+which computations are performed in order to transform
+the representations present in a given model. The main task
+needed to be performed is the calculation of connection
+weights between the diﬀerent populations involved in a
+transformation. As an example, let us consider the transformation z = x  y. The process of connection weight calculation can be characterized as substituting into our
+encoding Eq. (B1) the decodings of x and y (as per (B4))
+in order to ﬁnd the encoding of z, which represents our
+transformation of interest:
+
+where Vi represents somatic voltage, R the leak resistance,
+and sRC
+the RC (membrane) time constant. The system is
+i
+integrated until the membrane potential Vi crosses the
+threshold Vth, at which point a spike d(t  tin) is generated
+and Vi is reset to zero for the duration of the refractory period, sref
+i (Eliasmith & Anderson, 2003). A basic description
+of the soma current is
+
+~ k ðx  yÞ þ J bias 
+ck ðzÞ ¼ ck ðx  yÞ ¼ Gk ½ak /
+k
+"
+!
+#
+X
+X
+x
+y
+bias
+~
+¼ G k ak / k
+ai ðxÞ/ 
+bj ðyÞ/ þ J
+
+~ i  xi þ J bias þ g ;
+J i ðxÞ ¼ ai h/
+i
+i
+
+~ k /x /y represents the connection weights
+where xkij ¼ ak /
+i j
+between neurons i, j and k in the x, y, and z populations,
+respectively. It should be noted that the nonlinear neural
+activity interaction suggested in this example is avoided
+
+ðB3Þ
+
+where Ji(x) is the current input to neuron i, x is (in this
+case) the vector variable of the stimulus space encoded by
+
+i
+
+"
+¼ Gk
+
+i
+
+X
+
+xkij ai ðxÞbj ðyÞ þ
+
+j
+
+j
+
+J bias
+k
+
+k
+
+#
+;
+
+i;j
+
+<-----Page 19----->A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+in our actual model – all interactions are implemented in a
+purely linear fashion, as is typically taken to be the case in
+real neural systems (see Eliasmith & Anderson (2003), for
+complete implementation details).
+Finally, dynamics play a fundamental role in the overall
+operation of our model, such as in our recurrent reward
+prediction error computation. We can describe the dynamics of a neural population in control theoretic form via the
+dynamics state equation that is at the basis of modern control theory:
+_ ¼ AxðtÞ þ BuðtÞ;
+xðtÞ
+ðB5Þ
+where A is the dynamics matrix, B is the input matrix, u(t)
+is the input or control vector, and x(t) is the state vector. At
+this high-level of characterization we are detached from
+any neural-level implementation details. It is possible, however, to introduce simple modiﬁcations that render the system neurally plausible. The ﬁrst step in converting this
+characterization is to account for intrinsic neural dynamics.
+To do so, we assume a standard PSC model given by
+h(t) = s1et/s, and then employ the following derived relation (Eliasmith & Anderson, 2003):
+A0 ¼ sA þ I
+ðB6Þ
+B0 ¼ sB
+so that our neurally plausible high-level dynamics characterization becomes
+ðB7Þ
+xðtÞ ¼ hðtÞ  ½A0 xðtÞ þ B0 uðtÞ:
+To integrate this dynamics description with the neural
+representation code we described previously, we combine
+the dynamics of (B7), the encoding of (B1), and the population decoding
+That is, we take decP of x and u as per (B4).P
+^ ¼ jn hj ðt  tjn Þ/xj and ^
+odings x
+u ¼ kn hk ðt  tkn Þ/uk and
+introduce neural dynamics into the encoding operation as
+follows:
+E
+h D
+i
+X
+~ i xðtÞ þ J bias
+dðt  tin Þ ¼ Gi ai /
+i
+n
+
+E
+h D
+i
+~ i ½A0 x
+^ðtÞ þ B0 ^
+¼ G i ai /
+uðtÞ þ J bias
+i
+" *
+X
+~ i ½A0
+¼ Gi a i /
+hj ðt  tjn Þ/x
+j
+
+jn
+
+þB
+
+0
+
+X
+
++
+hk ðt 
+
+tkn Þ/uk 
+
+#
+þ
+
+J bias
+i
+
+kn
+
+¼ Gi
+
+"
+X
+
+xij hj ðt  tjn Þ
+
+271
+
+Table C1
+Transformation summary
+Brain
+area
+
+Inputs
+
+Outputs
+
+AMYG
+
+A0(t)
+(ext.)
+A1(t)
+DA(t)
+5-HT(t)
+C(t)
+
+A(t) = A1(t) + b  DA(t) + c  5HT(t) + C(t),
+where A1(t) = A0 (t) + k  (1  P[outcome
+X])
+
+OFC
+
+V(t) (ext.)
+A(t)
+
+S(t) = A (t)  V(t)
+
+5-HT
+
+S(t)
+E+(t)
+P(t  1)
+
+E(t) = P(t  1)  S(t)
+5-HT(t) = rE(t)  (1  r)E+(t)
+P(t) = P(t  1) + aE(t)
+
+DA
+
+S(t)
+E(t)
+P(t  1)
+
+E+(t) = S(t)  P(t  1)
+DA(t) = rE+(t)  (1  r)E(t)
+P(t) = P(t  1) + aE(t)
+
+VS
+
+DA(t)
+5-HT(t)
+
+E(t) = DA(t)  5-HT(t)
+
+ACC
+
+S(t)
+E(t)
+C(t)
+
+B(t) = 2  (S(t) P 0)-1
+R(t) = B(t)/[g + E(t)]
+C(t)
+
+DLPFC
+
+R(t)
+5-HT(t)
+
+C (t) = l  5-HT(t)
+
+A0 and V are provided as external inputs to the model. Note the recurrent
+connectivity and opponent interaction between 5-HT and DA. Abbreviations: AMYG, amygdala; OFC, orbitofrontal cortex; 5-HT, raphe dorsalis serotonergic neurons; DA, midbrain dopaminergic neurons; VS,
+ventral striatum; ACC, anterior cingulate cortex; DLPFC, dorsolateral
+prefrontal cortex.
+
+ﬁned by the control theoretic structure from (B7) in a neurally plausible network.
+Appendix C. Representation/transformation summary
+Table C1 encapsulates the complete inputs, outputs and
+transformations we use to model speciﬁc interactions
+between the brain regions included in our model (see also
+Fig. 1 and discussions of equations in the main body for
+more high-level, conceptual characterizations of connectivity and signal transformation). Variable names are as in the
+text of the Methods section.
+These equations describe explicitly the nature of the connectivity relationships and signal transformation processes
+outlined in Fig. 1 and discussed in the main body description of the ANDREA model.
+
+jn
+
+þ
+
+X
+
+#
+xik hk ðt  tkn Þ þ
+
+J bias
+i
+
+References
+:
+
+ðB8Þ
+
+kn
+
+It is interesting to note that h(t) in the above characterization deﬁnes both the neural dynamics and the decoding of
+~ i A0 /x i and xik ¼
+the relevant representations. xij ¼ ai h/
+j
+0 u
+~
+ai h/i B /k i describe the recurrent and input connection
+weights, respectively, which implement the dynamics de-
+
+Adolphs, R., Gosselin, F., Buchanan, T. W., Tranel, D., Schyns, P., &
+Damasio, A. R. (2005). A mechanism for impaired fear recognition
+after amygdala damage. Nature, 433, 68–72.
+Bayer, H. M., & Glimcher, P. W. (2005). Midbrain dopamine neurons
+encode a quantitative reward prediction error signal. Neuron, 47,
+129–141.
+Bechara, A., Damasio, H., & Damasio, A. R. (2000). Emotion, decision
+making and the orbitofrontal cortex. Cerebral Cortex, 10(3), 295–307.
+
+<-----Page 20----->272
+
+A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+
+Bechara, A., Damasio, H., & Damasio, A. R. (2003). Role of the
+amygdala in decision-making. Annals of the New York Academy of
+Sciences, 985, 356–369.
+Breiter, H. C., Aharon, I., Kahneman, D., Dale, A., & Shizgal, P. (2001).
+Functional imaging of neural responses to expectancy and experience
+of monetary gains and losses. Neuron, 30, 619–639.
+Busemeyer, J. R., & Johnson, J. G. (2004). Computational models of
+decision making. In D. Koehler & N. Harvey (Eds.), Blackwell
+handbook of judgment and decision making (pp. 133–154). Oxford:
+Blackwell.
+Bush, G., Luu, P., & Posner, M. I. (2000). Cognitive and emotional
+inﬂuences in anterior cingulate cortex. Trends in Cognitive Sciences,
+4(6), 215–222.
+Camerer, C. F. (2000). Prospect theory in the wild: Evidence from the
+ﬁeld. In D. Kahneman & A. Tversky (Eds.). Choices, Values, and
+Frames. New York: Cambridge University Press.
+Camerer, C., Loewenstein, G. F., & Prelec, D. (2005). Neuroeconomics:
+How neuroscience can inform economics. Journal of Economic
+Literature, 34, 9–64.
+Casebeer, W. D., & Churchland, P. S. (2003). The neural mechanisms of
+moral cognition: A multiple-aspect approach. Biology and Philosophy,
+18, 169–194.
+Churchland, P. S. (1996). Feeling reasons. In A. R. Damasio, H. Damasio,
+& Y. Christen (Eds.), Neurobiology of decision-making (pp. 181–199).
+Berlin: Springer.
+Cools, R., Calder, A. J., Lawrence, A. D., Clark, L., Bullmore, E., &
+Robbins, T. W. (2005). Individual diﬀerences in threat sensitivity
+predict serotonergic modulation of amygdala response to fearful faces.
+Psychopharmacology, 180(4), 670–679.
+Damasio, A. R. (1994). Descartes’ error. New York: G.P. Putnam’s Sons.
+Davis, K. D., Hutchison, W. D., Lozano, A. M., Tasker, R. R., &
+Dostrovsky, J. O. (2000). Human anterior cingulate cortex neurons
+modulated by attention-demanding tasks. Journal of Neurophysiology,
+83(6), 3575–3577.
+Dayan, P., & Balleine, B. W. (2002). Reward, motivation, and reinforcement learning. Neuron, 36, 285–298.
+Daw, N. D., Kakade, S., & Dayan, P. (2002). Opponent interactions
+between serotonin and dopamine. Neural Networks, 15, 603–616.
+Deakin, J. F. W. (1983). Roles of brain serotonergic neurons in escape,
+avoidance and other behaviors. Journal of Psychopharmacology, 43,
+563–577.
+Deco, G., & Rolls, E. T. (2005). Synaptic and spiking dynamics underlying
+reward reversal in the orbitofrontal cortex. Cerebral Cortex, 15, 15–30.
+Driesang, R. B., & Pape, H. (2000). Spike doublets in neurons of the
+lateral amygdala: Mechanisms and contribution to rhythmic activity.
+NeuroReport, 11(8), 1703–1708.
+Eliasmith, C. (2005a). A uniﬁed approach to building and controlling
+spiking attractor networks. Neural Computation, 17(6), 1276–1314.
+Eliasmith, C. (2005b). Cognition with neurons: A large-scale, biologically
+realistic model of the Wason task. In B. Bara, L. Barasalou, & M.
+Bucciarelli (Eds.), Proceedings of the XXVII annual conference of the
+cognitive science society. Mahwah, NJ: Lawrence Erlbaum Associates.
+Eliasmith, C., & Anderson, C. H. (2000). Rethinking central pattern
+generators: A general framework. Neurocomputing, 32–33(1–4),
+735–740.
+Eliasmith, C., & Anderson, C. H. (2003). Neural engineering: Computation, representation and dynamics in neurobiological systems. Cambridge, MA: MIT Press.
+Evenden, J. L., & Ryan, C. N. (1996). The pharmacology of impulsive
+behaviour in rats: The eﬀects of drugs on response choice with varying
+delays of reinforcement. Psychopharmacology (Berl.), 128, 161–170.
+Frank, M. J., & Claus, E. D. (2006). Anatomy of a decision: Striatoorbitofrontal interactions in reinforcement learning, decision making,
+and reversal. Psychological Review, 113(2), 300–326.
+Gartside, S. E., Hajos-Korcsok, E., Bagdy, E., Harsing, L. G., Sharp, T.,
+& Hajós, M. (2000). Neurochemical and electrophysiological studies
+on the functional signiﬁcance of burst ﬁring in serotonergic neurons.
+Neuroscience, 98(2), 295–300.
+
+Glimcher, P. W., & Rustichini, A. (2004). Neuroeconomics: The consilience of brain and decision. Science, 306(5695), 447–452.
+Greene, J., & Haidt, J. (2002). How (and where) does moral judgment
+work? Trends in Cognitive Sciences, 6(12), 517–523.
+Greene, J. D., Nystrom, L. E., Engell, A. D., Darley, J. M., & Cohen, J.
+D. (2004). The neural bases of cognitive conﬂict and control in moral
+judgment. Neuron, 44, 389–400.
+Greene, J. D., Sommerville, R. B., Nystrom, L. E., Darley, J. M., &
+Cohen, J. D. (2001). An fMRI investigation of emotional engagement
+in moral judgment. Science, 293, 2105–2108.
+Grossberg, S., & Gutowski, W. E. (1987). Neural dynamics of decision
+making under risk: Aﬀective balance and cognitive–emotional interactions. Psychological Review, 94(3), 300–318.
+Hajós, M., Gartside, S. E., Villa, A. E., & Sharp, T. (1995). Evidence for a
+repetitive (burst) ﬁring pattern in a sub-population of 5-hydroxytryptamine neurons in the dorsal and median raphe nuclei of the rat.
+Neuroscience, 69(1), 189–197.
+Hsee, C. K., Loewenstein, G. F., Blount, S., & Bazerman, M. H. (1999).
+Preference reversals between joint and separate evaluations of options:
+A review and theoretical analysis. Psychological Bulletin, 125(5),
+576–590.
+Hsee, C. K., Rottenstreich, Y., & Xiao, Z. (2005). When is more better?
+On the relationship between magnitude and subjective value. Current
+Directions in Psychological Science, 14, 234–237.
+Hyland, B. I., Reynolds, J. N., Hay, J., Perk, C. G., & Miller, R. (2002).
+Firing modes of midbrain dopamine cells in the freely moving rat.
+Neuroscience, 114(2), 475–492.
+James, W. (1884). What is an emotion? Mind, 9, 188–205.
+Kahneman, D. (2003). A perspective on judgment and choice: Mapping
+bounded rationality. American Psychologist, 58(9), 697–720.
+Kahneman, D., Knetsch, J. L., & Thaler, R. H. (1991). Anomalies: The
+endowment eﬀect, loss aversion, and status quo bias. Journal of
+Economic Perspectives, 5, 193–206.
+Kahneman, D., & Tversky, A. (1979). Prospect theory: An analysis of
+decision under risk. Econometrica, 47, 263–291.
+Kahneman, D., & Tversky, A. (1982). The psychology of preferences.
+Scientiﬁc American, 246(1), 160–173.
+Kahneman, D., & Tversky, A. (2000). Choices, Values, and Frames. New
+York: Cambridge University Press.
+Kahneman, D., Wakker, P. P., & Sarin, R. (1997). Back to Bentham?
+Explorations of experienced utility. Quarterly Journal of Economics,
+112, 375–405.
+Knutson, B., Taylor, J., Kaufman, M., Peterson, R., & Glover, G. (2005).
+Distributed neural representation of expected value. Journal of
+Neuroscience, 25(19), 4806–4812.
+Koehler, D. J., Brenner, L. A., & Tversky, A. (1997). The enhancement
+eﬀect in probability judgment. Journal of Behavioral Decision Making,
+10, 293–313.
+Kosfeld, M., Heinrichs, M., Zak, P. J., Fischbacher, U., & Fehr, E. (2005).
+Oxytocin increases trust in humans. Nature, 435, 673–676.
+Kreps, D. M. (1990). A course in microeconomic theory. Princeton:
+Princeton University Press.
+Lerner, J. S., & Keltner, D. (2000). Beyond valence: Toward a model of
+emotion-speciﬁc inﬂuences on judgement and choice. Cognition and
+Emotion, 14, 473–493.
+Li, Y., & Bayliss, D. A. (1998). Presynaptic inhibition by 5-HT1B receptors
+of glutamatergic synaptic inputs onto serotonergic caudal raphe
+neurones in rat. Journal of Physiology, 510(1), 121–134.
+Litt, A., Eliasmith, C., & Thagard, P. (2006). Why losses loom larger than
+gains: Modeling neural mechanisms of cognitive–aﬀective interaction.
+In R. Sun & N. Miyake (Eds.), Proceedings of the 28th annual
+conference of the cognitive science society (pp. 495–500). Mahwah, NJ:
+Lawrence Erlbaum.
+Loewenstein, G. F., Weber, E. U., Hsee, C. K., & Welch, N. (2001). Risk
+as feelings. Psychological Bulletin, 127, 267–286.
+Loftus, E. F., & Palmer, J. C. (1974). Reconstruction of automobile
+destruction: An example of the interaction between language and
+memory. Journal of Verbal Learning and Verbal Behavior, 13, 585–589.
+
+<-----Page 21----->A. Litt et al. / Cognitive Systems Research 9 (2008) 252–273
+McClure, S. M., York, M. K., & Montague, P. R. (2004). The neural
+substrates of reward processing in humans: The modern role of fMRI.
+The Neuroscientist, 10(3), 260–268.
+McGraw, A. P., Mellers, B. A., & Tetlock, P. E. (2005). Expectations and
+emotions of Olympic athletes. Journal of Experimental Social Psychology, 41, 438–446.
+Mellers, B. A. (2000). Choice and the relative pleasure of consequences.
+Psychological Bulletin, 126, 910–924.
+Mellers, B. A., & McGraw, A. P. (2001). Anticipated emotions as guides
+to choice. Current Directions in Psychological Science, 10, 210–214.
+Mellers, B. A., Schwartz, A., Ho, K., & Ritov, I. (1997). Decision aﬀect
+theory: Emotional reactions to the outcomes of risky options.
+Psychological Science, 8, 423–429.
+Mellers, B. A., Schwartz, A., & Ritov, I. (1999). Emotion-based choice.
+Journal of Experimental Psychology: General, 128, 332–345.
+Mobini, S., Chiang, T. J., Ho, M. Y., Bradshaw, C. M., & Szabadi, E.
+(2000). Eﬀects of central 5-hydroxytryptamine depletion on sensitivity
+to delayed and probabilistic reinforcement. Psychopharmacology
+(Berl.), 152, 390–397.
+Moll, J., Zahn, R., de Oliveira-Souza, R., Krueger, F., & Grafman, J.
+(2005). The neural basis of human moral cognition. Nature Reviews
+Neuroscience, 6(10), 799–809.
+Montague, P. R., & Berns, G. S. (2002). Neural economics and the
+biological substrates of valuation. Neuron, 36, 265–284.
+Oatley, K. (1992). Best laid schemes: The psychology of emotions.
+Cambridge: Cambridge University Press.
+Owen, A. M. (1997). Cognitive planning in humans: Neuropsychological,
+neuroanatomical and neuropharmacological perspectives. Progress in
+Neurobiology, 53, 431–450.
+Padoa-Schioppa, C., & Assad, J. A. (2006). Neurons in the orbitofrontal
+cortex encode economic value. Nature, 441, 223–226.
+Paré, D., & Gaudreau, H. (1996). Projection cells and interneurons of the
+lateral and basolateral amygdala: Distinct ﬁring patterns and diﬀerential relation to theta and delta rhythms in conscious cats. Journal of
+Neuroscience, 16(10), 3334–3350.
+Ratcliﬀ, R., Cherian, A., & Segraves, M. (2003). A comparison of
+macaque behavior and superior colliculus neuronal activity to predictions from models of two-choice decisions. Journal of Neurophysiology,
+90, 1392–1407.
+Roitman, J. D., Brannon, E. M., & Platt, M. L. (2007). Monotonic coding
+of numerosity in macaque lateral intraparietal area. PLoS Biology,
+5(8), e208. doi:10.1371/journal.pbio.0050208.
+Rolls, E. T. (2000). The orbitofrontal cortex and reward. Cerebral Cortex,
+10, 284–294.
+Rottenstreich, Y., & Hsee, C. K. (2001). Money, kisses and electric shocks:
+On the aﬀective psychology of risk. Psychological Science, 12, 185–190.
+Rottenstreich, Y., & Shu, S. (2004). The connections between aﬀect and
+decision making: Nine resulting phenomena. In D. J. Koehler & N.
+Harvey (Eds.), Blackwell handbook of judgment and decision making
+(pp. 444–463). Oxford: Blackwell.
+Sanfey, A. G., Loewenstein, G., McClure, S. M., & Cohen, J. D. (2006).
+Neuroeconomics: Cross-currents in research on decision-making.
+Trends in Cognitive Sciences, 10(3), 108–116.
+Schultz, W. (1998). Predictive reward signal of dopamine neurons. Journal
+of Neurophysiology, 80, 1–27.
+
+273
+
+Schultz, W. (2000). Multiple reward signals in the brain. Nature Reviews
+Neuroscience, 1, 199–207.
+Shiv, B., Bechara, A., Levin, I., Alba, J. W., Bettman, J. R., Dubé, L.,
+et al. (2005). Decision neuroscience. Marketing Letters, 16, 375–386.
+Slovic, P., Finucane, M. L., Peters, E., & MacGregor, D. G. (2002). The
+aﬀect heuristic. In T. Gilovich, D. Griﬃn, & D. Kahneman (Eds.),
+Heuristics and biases: The psychology of intuitive judgement
+(pp. 397–420). Cambridge: Cambridge University Press.
+Soubrié, P. (1986). Reconciling the role of central serotonin neurons in
+human and animal behavior. Behavioral and Brain Sciences, 9,
+319–335.
+Suri, R. E. (2002). TD models of reward predictive responses in dopamine
+neurons. Neural Networks, 15, 523–533.
+Sutton, R. S., & Barto, A. G. (1998). Reinforcement learning. Cambridge,
+MA: MIT Press.
+Thagard, P. (2006). Hot thought: Mechanisms and applications of emotional
+cognition. Cambridge, MA: MIT Press.
+Thorpe, S. J., Rolls, E. T., & Maddison, S. (1983). The orbitofrontal
+cortex: Neuronal activity in the behaving monkey. Experimental Brain
+Research, 49, 93–115.
+Tom, S. M., Fox, C. R., Trepel, C., & Poldrack, R. A. (2007). The neural
+basis of loss aversion in decision-making under risk. Science,
+315(5811), 515–518.
+Trepel, C., Fox, C. R., & Poldrack, R. A. (2005). Prospect theory on the
+brain? Toward a cognitive neuroscience of decision under risk.
+Cognitive Brain Research, 23(1), 34–50.
+Treue, S. (2001). Neural correlates of attention in primate visual cortex.
+Trends in Neurosciences, 24(5), 295–300.
+Tversky, A., & Kahneman, D. (1981). The framing of decisions and the
+psychology of choice. Science, 211, 453–458.
+Tversky, A., & Kahneman, D. (1984). Choices, values, and frames.
+American Psychologist, 39, 341–350.
+Tversky, A., & Kahneman, D. (1986). Rational choice and the framing of
+decisions. Journal of Business, 59, 251–278.
+Tversky, A., & Kahneman, D. (1991). Loss aversion in riskless choice: A
+reference dependent model. Quarterly Journal of Economics, 106,
+1039–1061.
+Vertes, R. P. (1991). A PHA-L analysis of ascending projections of the
+dorsal raphe nucleus in the rat. Journal of Comparative Neurology,
+313(4), 643–668.
+Von Neumann, J., & Morgenstern, O. (1947). Theory of games and
+economic behavior. Princeton: Princeton University Press.
+Wagar, B. M., & Thagard, P. (2004). Spiking Phineas Gage: A
+neurocomputational theory of cognitive–aﬀective integration in decision making. Psychological Review, 111, 67–79.
+Wallis, J. D., & Miller, E. K. (2003). Neuronal activity in primate
+dorsolateral and orbital prefrontal cortex during performance of a
+reward preference task. European Journal of Neuroscience, 18(7),
+2069–2081.
+Weber, B., Aholt, A., Neuhaus, C., Trautner, P., Elger, C. E., & Teichert,
+T. (2007). Neural evidence for reference-dependence in real-markettransactions. NeuroImage, 35, 441–447.
+
+

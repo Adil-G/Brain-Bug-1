@@ -1,0 +1,1992 @@
+<-----Page 0----->A Leisurely Look at the Bootstrap, the Jackknife, and Cross-Validation
+Bradley Efron; Gail Gong
+The American Statistician, Vol. 37, No. 1. (Feb., 1983), pp. 36-48.
+Stable URL:
+http://links.jstor.org/sici?sici=0003-1305%28198302%2937%3A1%3C36%3AALLATB%3E2.0.CO%3B2-Q
+The American Statistician is currently published by American Statistical Association.
+
+Your use of the JSTOR archive indicates your acceptance of JSTOR's Terms and Conditions of Use, available at
+http://www.jstor.org/about/terms.html. JSTOR's Terms and Conditions of Use provides, in part, that unless you have obtained
+prior permission, you may not download an entire issue of a journal or multiple copies of articles, and you may use content in
+the JSTOR archive only for your personal, non-commercial use.
+Please contact the publisher regarding any further use of this work. Publisher contact information may be obtained at
+http://www.jstor.org/journals/astata.html.
+Each copy of any part of a JSTOR transmission must contain the same copyright notice that appears on the screen or printed
+page of such transmission.
+
+The JSTOR Archive is a trusted digital repository providing for long-term preservation and access to leading academic
+journals and scholarly literature from around the world. The Archive is supported by libraries, scholarly societies, publishers,
+and foundations. It is an initiative of JSTOR, a not-for-profit organization with a mission to help the scholarly community take
+advantage of advances in technology. For more information regarding JSTOR, please contact support@jstor.org.
+
+http://www.jstor.org
+Sat Jan 5 14:51:33 2008
+
+<-----Page 1----->A Leisurely Look at the Bootstrap, the Jackknife, and 
+
+Cross-Validation
+BRADLEY EFRON and GAIL GONG*
+
+This is an invited expository article for The American
+Statistician. It reviews the nonparametric estimation of
+statistical error. mainly the bias and standard error of
+an estimator. or the error rate of a prediction rule. The
+presentation is written at a relaxed mathematical level,
+omitting most proofs, regularity conditions, and technical details.
+KEY WORDS: Bias estimation; Variance estimation;
+Nonparametric standard errors; Nonparametric confidence intervals; Error rate prediction.
+
+1. INTRODUCTION
+This article is intended to cover lots of ground, but at
+a relaxed mathematical level that omits most proofs,
+regularity conditions, and technical details. The ground
+in question is the nonparametric estimation of statistical
+error. "Error" here refers mainly to the bias and standard error of an estimator, or to the error rate of a
+data-based prediction rule.
+All of the methods we discuss share some attractive
+properties for the statistical practitioner: they require
+very little in the way of modeling, assumptions, or analysis, and can be applied in an automatic way to any
+situation, no matter how complicated. (We will give an
+example of a very complicated prediction rule indeed).
+An important theme of what follows is the substitution
+of raw computing power for theoretical analysis.
+The references upon which this article is based (Efron
+1979a,b, 1981a,b,c, 1982; Efron and Gong 1982) explore the connections between the various nonparametric methods, and also the relationship to familiar parametric techniques. Needless to say, there is no
+danger of parametric statistics going out of business. A
+good parametric analysis, when appropriate, can be far
+more efficient than its nonparametric counterpart. Often, though, parametric assumptions are difficult to justify, in which case it is reassuring to have available the
+comparatively crude but trustworthy nonparametric
+answers.
+What are the bootstrap, the jackknife, and cross*Bradley Efron is Professor of Statistics and Biostatistics at Stanford University. Gail Gong IS Assistant Professor of Statistics at
+Carnegie-Mellon University. The authors are grateful to Rob Tibshirani who suggested the final example in Sectlon 7 : to Samprit Chatterjee and Werner Stuetzle who suggested looking at estimators like
+"BootAve" In Section 9 : and to Dr. Peter Gregory of the Stanford
+Medical School who provided the original analysis as well as the data
+in Section 10. This work was partially supported by the National
+Science Foundation and the National Institutes of Health.
+
+36
+
+validation? For a quick answer, before we begin the
+main exposition. we consider a problem where none of
+the three methods are necessary, estimating the standard error of a sample average.
+The data set consists of a random sample of size n
+from an unknown probability distribution F on the real
+line,
+Having observed X I = x,. X, = x,, . . . , X,, = x,, we comx ,/n for use as an
+pute the sample average T =
+estimate of the expectation of F.
+An interesting fact, and a crucial one for statistical
+applications, is that the data set provides more than the
+estimate Y. It also gives an estimate for the accuracy of
+F,namely
+
+x;=,
+
+6 is the estimated standard error of X = F . the root
+mean squared error of estimation.
+The trouble with formula (2) is that it does not, in any
+obvious way, extend to estimators other than X, for
+example the sample median. The jackknife and the
+bootstrap are two ways of making this extension. Let
+
+the sample average of the data set deleting the nth
+point. Also, let Y,., = C;=,x ,,,/n, the average of the deleted averages. (Actually T,.,= Y , but we need the dot
+notation below.) The jackknife estimate of standard
+error is
+
+The reader can verify that this is the same as (2). The
+advantage of (4) is an easy generalizability to any esti, . . . , X,). The only change is to
+mator 8 = 8 ( ~ , Xz,
+= 0 ( x , , . . . , XI-,, XI+,,. . . , X,) for Y,,) and
+substitute
+8(.,= C:=,0,,,/n for Y,
+The bootstrap generalizes (2) in an apparently different way. Let F be the empirical probability distribution
+of the data, putting probability mass lln on each x,, and
+let XT,XT, . . . , Xz be a random sample from F ,
+
+4,)
+
+,.
+
+In other words each X: is drawn independently with
+replacement and with equal probability from the set { x , ,
+x,, . . . , x,). Then X* =
+Xyln has variance
+
+0 The American Statistician, February 1983, Vol. 37, No. I
+
+x;,,
+
+<-----Page 2----->"
+
+var,
+
+X* = n-1 ,C= I (x, - y)2,
+--;
+
+(6)
+
+var, indicating variance under sampling scheme (5). The
+bootstrap estimate of standard error for an estimator
+8 ( x I , Xz, . . . , X,) is
+6,
+
+=
+
+[var, ~ ( x T ,XT, . . . , X:)]"'.
+
+(7)
+
+Comparing (7) with (2) we see that [n/(n - 1)Iu2
+6 , = 6 for 8 = 2.We could make 6 , exactly equal 6 ,
+for 0 = X, by adjusting definition (7) with the factor
+[n/(n - I)]'', but there is no general advantage in doing
+so. A simple algorithm described in Section 2 allows the
+statistician to compute 6 , no matter how complicated 8
+may be. Section 3 shows the close connection between
+uBand 6,.
+Cross-validation relates to another, more difficult,
+problem in estimating statistical error. Going back to
+( I ) , suppose we try to predict a new observation from
+F, call it X,,, using the estimator X as a predictor. The
+expected squared error of prediction EIXo - XIzequals
+?
+F? is the variance of the distribu((n + l ) / n ) ~ where
+tion F. An unbiased estimate of ((n + l ) / n ) is
+~~
+
+Cross-validation is a way of obtaining nearly unbiased
+estimators of prediction error in much more complicated situations. The method consists of (a) deleting the
+points x, from the data set one at a time; (b) recalculating the prediction rule on the basis of the remaining
+n -'1 points; (c) seeing how well the recalculated rule
+predicts the deleted point; and (d) averaging these predictions over all n deletions of an x,. In the simple case
+above, the cross-validated estimate of prediction error
+is
+
+A little algebra shows that (9) equals (8) times
+n2/(n - I), this last factor being nearly equal to one.
+The advantage of the cross-validation algorithm is
+that it can be applied to arbitrarily complicated prediction rules. The connection with the bootstrap and jackknife is shown in Section 9.
+
+The observed Pearson correlation coefficient for
+these n = 15 pairs is p(xl, xz, . . . , x,:) = ,776. We want
+to attach a nonparametric estimate of standard error to
+p. The bootstrap idea is the following:
+1. Suppose that the data points x,, XI, . . . , x,, are
+independent observations from some bivariate distribution F on the plane. Then the true standard error of p
+is a function of F, indicated a ( F ) ,
+u(F)
+
+=
+
+[var, p(XI, Xz, . . . , X,)]1i2.
+
+(It is also a function of sample size n, and the functional
+form of the statistic p , but both of these are known to
+the statistician.)
+2. We don't know F , but we can estimate it by the
+empirical probability distribution F .
+1
+F : mass - on each observed data point x,,
+n
+
+3. The bootstrap estimate of u ( F ) is
+
+For the correlation coefficient and for most statistics.
+even very simple ones, the function u ( F ) is impossible
+to express in closed form. That is why the bootstrap is
+not in common use. However in these days of fast and
+cheap computation 6 , can easily be approximated by
+Monte Carlo methods:
+(i) Construct F. the empirical distribution function,
+as just described.
+(ii) Draw a bootstrap sample xT, X ; , . . . , xz by
+independent random sampling from F. In other words,
+make n random draws with replacement from {x,, xz,
+. . . , x,}. In the law school example a typical bootstrap
+sample might consist of 2 copies of point 1, 0 copies of
+point 2, 1 copy of point 3, and so on, the total number
+of copies adding up to n = 15. Compute the bootstrap
+replication, p* = p(XT, XT, . . . , X:). that is, the value
+of the statistic, in this case the correlation coefficient,
+evaluated for the bootstrap sample.
+(iii) Do step (ii) some large number "B" of times,
+
+2. THE BOOTSTRAP
+This section describes the simple idea of the bootstrap (Efron 1979a). We begin with an example. The 15
+points in Figure 1 represent various entering classes at
+American law schools in 1973. The two coordinates for
+law school i are x, = (y,, z,),
+y,
+
+=
+
+average LSAT score of entering students
+at school i ,
+
+13
+
+z, = average undergraduate GPA score of entering students at school i.
+(The LSAT is a national test similar to the Graduate
+Record Exam, while GPA refers to undergraduate
+grade point average.)
+
+2.70
+540
+
+1
+
+0 1 2
+1
+
+560
+
+1
+
+1
+
+580
+
+1
+
+1
+
+1
+
+1
+
+600
+620
+LSAT
+
+1
+
+1
+
+1
+
+640
+
+1
+
+660
+
+1
+
+1
+
+680
+
+Figure 1. The law school data (Efron 19798). The data points,
+beginning with School # 1 , are (576,3.39),(635,3.30),(558,2.81),
+
+(578,3.03),(666,3.44),(580,3.07),(555,3.00),(661,3.43),(651,
+3.36),(605,3.13),(653,3.12),(575,2.74),(545,2.76),(572,2.88),
+(594,2.96).
+
+0 The American Statistician, February 1983, Vol. 37, No. 1
+
+37
+
+<-----Page 3----->H~stogram
+
+Normal theory density
+
+H~stogram
+percentiles
+
+p^"p^
+Figure 2. Histogram of B = 1000 bootstrap replications b' for the
+law school data. The normal theory density curve has a similar
+shape, but falls off more quickly at the upper tail.
+
+obtaining independent bootstrap replications
+*,
+b*', . . . , p , and approximate 6, by
+
+b*',
+
+A
+
+cases, but has higher variability than u,, as shown by its
+higher coefficient of variation. The minimum possible
+coefficient of variation (C.V.), for a scale-invariant estimate of u ( F ) . assuming full knowledge of the parametric model, is shown in brackets. In the normal case,
+for example, .19 is the C.V. of [C(x, -~)'114]". The
+bootstrap estimate performs well by this standard considering its totally nonparametric character and the
+small sample size.
+Table 2 returns to the case of p , the correlation coefficient. Instead of real data we have a sampling experiment in which F is bivariate normal, true correlation
+p = .5, and the sample size is n = 14. The left side of
+Table 2 refers to 6, while the right side refers to the
+statistic 6= tanh-' 6 = .5 log(1 + fi)/(l - 6). For each
+estimator 6. the root mean squared error of estimation
+[ E ( 6 - o)']" is given in the column headed
+The bootstrap was run with B = 128 and B = 512,
+the latter value yielding only slightly better estimates
+u,. Further increasing B would be pointless. It can
+be shown that B = x would give
+= ,063 in the p
+case, only ,001 less than using B = 512. As a point
+of comparison, the normal theory estimate for the
+= (1 - p2)/(n - 3)''- has
+standard error of p. uNORM
+v/MSE = ,056.
+Why not generate the bootstrap observations from
+an estimate of F which is smoother than F ? This is
+done in lines 3, 4, and 5 of Table 2. Let 2 = C:=,
+(x, - x ) (x, - x)'/n be the sample covariance matrix
+of the observed data. The normal smoothed bootstrap draws the bootstrap sample X:, X : , . . . , X:
+from F $-V2(0, . 2 5 z ) , $indicating convolution. This
+amounts to estimating F by an equal mixture of the n
+distributions .Y2(x,, . 2 5 2 ) , that is by a normal window
+estimate. Smoothing makes little difference on the left
+side of the table, but is spectacularly effective in the 61
+case. The latter result is suspect since the true sampling
+distribution is bivariate normal, and the function
+6= tanh-' 6 is specifically chosen to have nearly constant standard error in the bivariate-normal family. The
+uniform smoothed bootstrap samples XT, . . . , Xz from
+F$%(o, . 2 5 z ) , where %(0. . 2 5 z ) is the uniform
+distribution on a rhombus selected so % has mean vector 0 and covariance matrix , 2 5 2 . It yields moderate
+reductions in
+for both sides of the table.
+The standard normal-theory estimates of line 8, Table
+2, are themselves bootstrap estimates, carried out in a
+parametric framework. The bootstrap sample XT, . . . ,
+X: is drawn from the parametric maximum likelihood
+distribution
+
+m.
+
+As B + x , (11) approaches the original definition (10).
+The choice of B is further discussed below, but meanwhile we won't distinguish between (10) and ( l l ) , calling both estimates u,.
+Figure 2 shows B = 1000 bootstrap replications p*'.
+. . . , fi*"""' for the law school data. The abscissa is plotted in terms of fi* - @ = fi* - ,776. Formula (11) gives
+6, = .127. This can be compared with the normal theory estimate of standard error for p, (Johnson and Kotz
+1970, p. 229),
+
+One thing is obvious about the bootstrap procedure:
+it can be applied just as well to any statistic, simple or
+complicated, as to the correlation coefficient. In
+Table 1the statistic is the 25 percent trimmed mean for
+a sample of size n = 15. The true distribution F (now
+defined on the line rather than on the plane) is the
+standard normal A"(0, 1) for the left side of the table, or
+one-sided negative exponential for the right side. The
+true standard errors u ( F ) are ,286 and .232. respectively. In both cases, I?,, calculated with B = 200 bootstrap replications, is nearly unbiased for u ( F ) .
+The jackknife estimate of standard error 6,. described in Section 3, is also nearly unbiased in both
+Table 1. A Sampling Experiment Comparing the 
+
+Bootstrap and Jackknife Estimates of Standard 
+
+Error for the 25% Trimmed Mean, 
+
+Sample Size n = 15 
+
+F Standard Normal
+Coeff
+Ave
+Sd
+Var
+
+F Negative Exponential
+Coeff
+Ave
+Sd
+Var
+
+Bootstrap 6,:
+(8 = 200)
+
+,287
+
+,071
+
+.25
+
+,242
+
+,078
+
+.32
+
+Jackknife
+
+,280
+
+,084
+
+.30
+
+,224
+
+,085
+
+.38
+
+[.I91
+
+,232
+
+I?,:
+
+True :
+[Minimum C.V.]
+
+38
+
+,286
+
+[.271
+
+a
+
+rather than the nonparametric maximum likelihood distribution F, and with only this change the bootstrap
+algorithm proceeds as previously described. In practice
+the bootstrap process is not actually carried out. If it
+were, and if B + x , then a high-order Taylor series
+analysis shows that 6 , would equal approximately
+(1 - F2)/(n - 3)". the formula actually used to compute
+line 8 for the fi side of Table 2. Notice that the normal
+
+6 The American Sraristician, February 1983, Vol. 37, No. I
+
+<-----Page 4----->Table 2. Estimates of Standard Error for the Correlation Coefficient i, and for 6 = tanh ' 6; Sample Size n
+Distribution F Bivariate Normal With True Correlation p = .5. From a Larger Table in Efron (1981b)
+
+=
+
+14,
+
+Summary Statistics for 200 Trials
+
+Ave
+1.
+2.
+3.
+4.
+5,
+
+Standard Error
+Estimates for
+Std Dev
+CV
+
+Standard Error
+Estimates for 6
+Std D ~ v
+CV
+
+Ave
+
+V
+
+~
+
+,206
+,206
+,200
+,205
+,205
+
+,066
+,063
+,060
+,061
+,059
+
+.32
+.31
+.30
+.30
+.29
+
+,067
+,064
+,063
+.062
+,060
+
+,301
+,301
+,296
+,298
+,296
+
+,065
+,062
+,041
+,058
+,052
+
+.22
+.21
+.14
+.19
+.18
+
+,065
+,062
+,041
+,058
+,052
+
+8. Normal Theory 	
+
+,217
+
+,056
+
+.26
+
+,056
+
+,302
+
+0
+
+0
+
+,003
+
+True Standard Error
+
+,218 	
+
+Bootstrap B = 128 	
+Bootstrap B = 512 	
+Normal Smoothed Bootstrap B = 128
+Uniform Smoothed Bootstrap B = 128
+Uniform Smoothed Bootstrap B = 51 2
+
+E
+
+6. Jackknife
+7. 	Delta Method
+(Infinitesimal Jackknife)
+
+,299
+
+smoothed bootstrap can be thought of as a compromise 
+
+between using F and i,,,,to begin the bootstrap
+process.
+3. 	THE JACKKNIFE
+
+The jackknife estimate of standard error was intraduced by Tukey in 1958 (see Miller 1974). Let
+pi,, = p(xl, x?, . . . , x,-,, x,,,, . . . , x,,) be the value of the
+statistic when x, is deleted from the data set. and let
+p( = (l!n) C;_,p(,,. The jackknife formula is
+
+,
+
+6,
+
+P*
+
+- Mult,,(n, P ) l n , ( P -- (lln ) (1, 1, . . . , I)'),
+
+(12)
+
+meaning the observed proportions from rz random
+draws on n categories. with equal probability l!rz for
+each category. Then
+
+[var, H ( P " ) ] ~ ~ .
+
+(13) 
+
+
+where var indicates variance under distribution (12). 
+
+(This is true because we can take P: = # { X ; = x,}!rz in
+step 2 of the bootstrap algorithm.)
+Figure 3 illustrates the situation for the case n = 3.
+There are 10 possible bootstrap points. For example.
+the point P* = (i.u)' is the second dot from the left on
+the lower side of the triangle. and occurs with bootstrap
+probability under (12). It indicates a bootstrap sample
+X ; , X ; , XS consisting of two xi's and one x?. The center
+point Po = f,
+has bootstrap probabil~ty%.
+The jackknife resamples the statistic at the n points
+
+4.
+
+t.
+
+(4. 4)'
+
+P,,, = (l!(rz
+Like the bootstrap. the jackknife can be applied to any
+statistic that is a function of n independent and identically distributed variables. It performs less well than the
+bootstrap in Tables 1 and 2, and in most cases investigated by the author (see Efron 1982), but requires less
+computation. In fact the two methods are closely related, which we shall now show.
+Suppose the statistic of interest. which we will now
+call O(xl, x2, . . . , x,,), is of funct~onalform : 0 = o ( F ) .
+where 0 ( F ) is a functional assigning a real number to
+any distribution F on the sample space. Both examples
+in Section 2 are of this form. Let P = ( P I , P2,. . . , PI,)
+be a probability vector having nonnegative weights summing to one, and define the reweighted empirical distribution F(P) : mass P, on x,, i = 1, 2, . . . , rz. Corresponding to P is a resampled value of the statistic of interest.
+)
+say O(P)= o(F(P)). The shorthand notation 0 ( ~ assumes that the data points x,, x2, . . . , x,, are fixed at
+their observed values.
+Another way to describe the bootstrap estimate uBis
+as follows. Let P" indicate a vector drawn from the
+rescaled multinomial distribution
+
+=
+
+-
+
+.
+
+1)) (1. 1, . . . . 1, 0, 1. . . . 1)'
+(0 in i th place), 
+
+
+= 1, 2, . . . , rz. These are indicated by the open circles 
+
+in Figure 3. In general there are n jackknife points, 
+
+compared with ('",;I) bootstrap points. 
+
+The trouble with bootstrap formula (13) is that O(P) 
+
+is usually a complicated function of P (think of the 
+
+examples in Sec. 2), and so var, 0 ( ~ *cannot
+)
+be evalu- 
+
+
+i
+
+1
+x
+
+n
+
+1
+
+1/27
+
+1/9
+
+-(3)
+P
+
+1/9
+
+1/27
+
+x2
+
+Figure 3. The bootstrap and jackknife sampling points in the case
+The bootstrap points (.) are shown with their probabilities.
+
+= 3.
+
+0 The Arnerican Statistician, February 1983, Vol. 37. ,Vo. 1
+
+39
+
+<-----Page 5----->ated except by Monte Carlo methods. The jackknife
+trick approximates 0 ( ~ by
+) a linear function of P , say
+0, (P). and then uses the known covariance structure of
+(12) to evaluate bar, 8L(P").The approximator (jL(P) is
+chosen t o match O(P) at the n points P = P,,,. It is not
+hard to see that
+~ , ( P ) = o ,, + (P-P')'u
+
+(14)
+
+,
+
+where 0, = ( l i n ) 2 o,,,= (lhl) 2 0 ( ~ , , , ) a. nd U is a
+column vector with coordinates U, = (n - 1) (0, - 0,,,).
+Theorem. The jackknife estimate of standard error
+equals
+
+which is [ni(n - I)]'' times the bootstrap estimate of
+standard error for eL (Efron 1982).
+In other words the jackknife is, almost,' a bootstrap
+itself. The advantage of working with OL rather than 0
+is that there is no need for Monte Carlo: var.
+0 , ( ~ " )= var. (P* - P ) ' U = ~ U ' i n ' , using the covariance matrix for (12) and the fact that ZU, = 0. The
+disadvantage is (usually) increased error of estimation,
+as seen in Tables 1 and 2.
+The fact that eJ is almost 15, for a linear approximation of 0 does not mean that 6, is a reasonable approximation for the actual 15,. That depends o n how
+well 0, approximates 0. In the case where 0 is the sample median. for instance, the approximation is very
+poor.
+4. THE DELTA METHOD, INFLUENCE
+FUNCTIONS, AND THE
+INFINITESIMAL JACKKNIFE
+There is a more obvious linear approximation to 0 ( ~ )
+than O L ( ~ ) (13).
+.
+Why not use the first-order Taylor
+series expansion for 0 ( ~ about
+)
+the point P = Po? This is
+the idea of Jaeckel's infinitesimal jackknife (1972). The
+Taylor series approximation turns out to be
+
+where
+
+6, being the ith coordinate vector. This suggests the
+infinitesimal jackknife estimate of standard error
+&,,=[var, O T ( ~ * ) ] =
+' [2U;'lt1']I'.
+
+(15)
+
+with var. still indicating variance under (12). The ordinary jackknife can be thought of as taking
+F = - li(t1 - 1) in the definition of U:'. while the in-
+
+'The factor [,I ( n - l ) ] " makes 6; unb~asedfor a' if F) 1s a linear
+statistic. e.!.. i) = X.We could multiply 6 , by this same factor. and
+achieve the same unbiasedness. but there doesn't seem to be any
+general advantage to doing so.
+
+finitesimal jackknife lets &-+(I,
+thereby earning the
+name.
+The U:' are values of what Mallows (1974) calls the
+empirical influence function. Their definition is a nonparametric estimate of the true influence function
+I F ( x ) = lim
+
+0((l
+
+-
+
+e ) F + €8,) - O(F)
+e
+
+i-~l
+
+8, being the degenerate distribution putting mass 1 on
+x . The right side of (15) is then the obvious estimate of
+the influence function approximation to the standard
+error of 0. (Hampel 1974). u ( F ) [JIF'(x)dF(x)/n]".
+The e m ~ i r i c a linfluence function method and the infinitesimal jackknife give identical estimates of standard error.
+How have statisticians gotten along for so many years
+without methods like the jackknife or the bootstrap?
+The answer is the delta method, which is still the most
+commonly used device for approximating standard errors. The method applies to statistics of the form [ ( D l ,
+D2, . . . , (TA). where t (
+. . . , . ) is a known function
+and each D,,is an observed average. D,,=C:', Q,(X,)/n.
+For example, the correlation p is a function of A = 5
+such averages: the average of the first coordinate values, the second coordinates, the first coordinates
+squared, the second coordinates squared. and the crossproducts.
+In its nonparametric formulation. the delta method
+works by (a) expanding t in a linear Taylor series about
+the expectations of the H,; (b) evaluating the standard
+error of the Taylor series using the usual expressions for
+variances and covariances of averages: and (c) substituting - y ( ~ )f or any unknown quantity y ( F ) occurring in
+(b). For example, the nonparametric delta method estimates the standard error of p by
+a
+
+,
+
+a .
+
+where. in terms of x-, = ( y , , 2 , ) .
+( z , - T)"in (Cramer 1946. p. 359).
+
+(iRh
+
+-X(y,
+
+-
+
+7)'
+
+Theorem. For statistics of the form 0 = t(&, . . . ,
+D,l). the nonparametric delta method and the infinitesimal jackknife give the same estimate of standard
+error (Efron 1981b).
+The infinitesimal jackknife, the delta method, and
+the empirical influence function approach are three
+names for the same method. Notice thut the res~tltsreported it1 line 7 of Table 2 show a severe dowtlward bias.
+Efron and Stein (1981) show that the ordinary jackknife
+is always biased upwards. in a sense made precise in that
+paper. In the authors' opinion the ordinary jackknife is
+the method of choice if one does not want to do the
+bootstrap computations.
+
+5. NONPARAMETRIC CONFIDENCE INTERVALS
+In applied work. the usual purpose of estimating a
+standard error is to set confidence intervals for the un-
+
+<-----Page 6----->known paramater. These are typically of the crude form
+0 ? z,6, with z, being the 100(1- a) percentile point of
+a standard normal distribution. We can, and do, use the
+bootstrap and jackknife estimates eB,6, in this way.
+However in small-sample parametric situations, where
+we can do exact calculations, confidence intervals are
+often highly asymmetric about the best point estimate 0.
+This asymmetry, which is 0(1/fi) in magnitude, is substantially more important than the Student's t correction (replacing 6 k z,6 by 0 5 fa&, with t, the
+100(1 - a) percentile point of the appropriate t distribution), which is only O(l1n). This section discusses some
+nonparametric methods of assigning,confidence intervals, which attempt to capture the correct asymmetry. It
+is abbreviated from a longer discussion in Efron
+(1981c), and also Chapter 10 of Efron (1982). All of this
+work is highly speculative, though encouraging.
+We return to the law school example of Section 2.
+Suppose for the moment that we believe the data come
+from a bivariate normal distribution. The standard 68
+percent central confidence interval (i.e., a = .16, 1 2a = .68) for p in this case is [.62, .87] = [p - .16, i,+
+.09], obtained by inverting the approximation 4N(+ + pl(2(n - I)), l l ( n - 3)). Compared to the crude
+interval i,? z &NORM = 6 5 &NORM = [p - .12, i) + .12],
+this demonstrates the magnitude of the asymmetry effect described previously.
+The asymmetry of the confidence interval [p - .16,
+i,+ .09] relates to the asymmetry of the normal-theory
+density curve for 6, as shown in Figure 2. The bootstrap
+histogram shows this same asymmetry. The striking
+similarity between the histogram and the density curve
+suggests that we can use the bootstrap results more
+ambitiously than simply to compute eB.
+Two ways of forming nonparametric confidence intervals from the bootstrap histogram are discussed in Efron (1981~).T he first, called the percentile method, uses
+the 100a and 100(1- a) percentiles of the bootstrap
+histogram, say
+
+,
+
+8 E [&a), 8(1 - a)],
+
+(16)
+
+as a putative 1 - 2a central confidence interval for the
+unknown parameter 8. Letting
+
+then &a) = t - ' ( a ) , 0(1 - a ) = t - ' ( l - a ) . In the law
+school example, with B = 1000 and a = .16, the 68 percent interval is p C [.65, .91] = [p - .12, p + .13], almost
+exactly the same as the crude normal-theory interval
+
+6 2 &NORM.
+Notice that the median of the bootstrap histogram is
+substantially higher than i, in Figure 2. In fact,
+t ( p ) = .433, only 433 out of 1000 bootstrap replications
+having (i*< 6. The bias-corrected percentile method
+makes an adjustment for this type of bias. Let @(z)
+indicate the CDF of the standard normal distribution,
+so @(z,) = 1 - a, and define
+
+The bias-corrected putative 1- 2a central confidence
+interval is defined to be
+8E
+
+[t-'{@(2zo - z,)},
+
+t-'{@(2zo
+
++ z,)}].
+
+(17)
+
+If t ( 0 ) = S O , the median unbiased case, then zo = 0
+and (8) reduce to the uncorrected percentile interval
+(16). Otherwise the results can be quite different. In the
+law school example zo = @(.433) = -.17, and for a =
+,16, (8) gives p E -I{@(- 1.34))~ t-l{@(.66)}] =
+[i, - .17, i, + .lo]. This agrees nicely with the normaltheory interval [i,- .16, @ + ,091.
+Table 3 shows the results of a small sampling experiment, only 10 trials, in which the true distribution F was
+bivariate normal, p = .5. The bias-corrected percentile
+method shows impressive agreement with the normaltheory intervals. Even better are the smoothed intervals, last column. Here the bootstrap replications were
+obtained by sampling from ~'?$N(o, . 2 5 2 ) , as in line
+3 of Table 2, and then applying (17) to the resulting
+histogram.
+There are some theoretical arguments supporting
+(16) and (17). If there exists a normalizing transformation, in the same sense as 4 = tanh-' p is normalizing
+for the correlation coefficient under bivariate-normal
+sampling, then the bias-corrected percentile method automatically produces the appropriate confidence intervals. This is interesting since we do not have to know the
+form of the normalizing transformation to apply (17).
+Bayesian and frequentist justifications are given also in
+Efron (1981~).N one of these arguments is overwhelming, and in fact (17) and (16) sometimes perform poorly. Some other methods are suggested in Efron (1981c),
+but the appropriate theory is still far from clear.
+
+[e
+
+6. BIAS ESTIMATION
+
+Quenouille (1949) originally introduced the jackknife
+as a nonparametric device for estimating bias. Let us
+denote the bias of a functional statistic 0 = 8(l'?) by
+Table 3. Central 68% Confidence Intervals for p, 10 
+
+Trials of X,, X,, . . . , Xi5 Bivariate Normal With True 
+
+p = .5. Each Interval Has 6 Subtracted From 
+
+Both Endpoints 
+
+
+Trial
+
+6
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+.16
+.75
+.55
+.53
+73
+.50
+,70
+.30
+.33
+.22
+
+Normal
+Theoty
+
+Smoothed and
+Bias-Corrected Bias-Corrected
+Percentile
+Percentile
+Percentile
+Method
+Method
+Method
+
+(-.29,.26)(-.29,.24) (-.28,.25)
+(-.17,.09)(-.05,.08) (-.13,.04)
+(-.25,.16) (-.24,.16) (-.34,.12)
+(-.26,.17) (-.16,.16) (-.19,,131
+(-16.10
+( - 110 ( - 11
+(-.26,.18) (-.18,.18) (-.22,.15)
+(p.20,, 1 1 1 (p.17,.12) (-.21,.lo)
+(-.29,.23) (-.29,.25) (-.33,.24)
+(-.29,.22) (-.36,.24) (-.30,.27)
+(-.29,.24) (-.50,.34) (-.48,.36)
+
+0 The American Statistician, February 1983, Vol. 37, No. I
+
+(-.28,.24) 
+
+(-.12,.08) 
+
+(-.27,.15) 
+
+(-21, .16) 
+
+(-2'0, .lo) 
+
+(-.26,.14) 
+
+(-.18,.ll) 
+
+(-.29,.25) 
+
+(-.30,26) 
+
+(-.38,.34) 
+
+
+41
+
+<-----Page 7----->P, P = E { ~ ( F-) 0(F)). In the notation of Section 3,
+Quenouille's estimate is
+Subtracting fiJ from 0, to correct the bias leads to the
+jackknife estimate of 0, 0;= n 0 - ( n - 1)0(.,,see Miller
+(1974), and also Schucany, Gray, and Owen (1971).
+There are many ways to justify (18).Here we follow
+the same line of argument as in the justification of 6 J .
+The bootstrap estimate of P, which has an obvious motivation, is introduced, and then (18) is related to the
+bootstrap estimate by a Taylor series argument.
+The bias can be thought of as a function of the unknown probability distribution F, P = P(F). The bootstrap estimate of bias is simply
+Here E, indicates expectation with respect to bootstrap
+sampling, and i'* is the empirical distribution of the
+bootstrap sample.
+In practice fiB must be approximated by Monte Carlo
+methods. The only change in the algorithm described in
+Section 2 is at step (iii), when instead of (or in addition
+to) eBwe calculate
+
+In the sampling experiment of Table 2 the true bias, of
+6 for estimating p, is p = - .014. The bootstrap estimate
+fiB, taking B = 128, has expectation - .014 and standard deviation .031 in this case, while fiJ has expectation
+-.017, standard deviation .040 Bias is a negligible
+source of statistical error in this situation compared with
+variability. In applications this is usually made clear by
+comparison of fiB with h B .
+The estimates (18) and (19) are closely related to
+each other. The argument is the same as in Section 3,
+except that we approximate 0 ( ~ with
+)
+a quadratic
+rather than a linear function of P, say eQ(P)=
+a + (Pi(P Let ' Q ( P ) be any
+such quadratic satisfying
++
+
+0 , ( ~ " )= &PC)
+
+= 0 and
+
+O Q ( ~ ( l , )= 0 ( ~ ( , ,i )=, 1, 2, . . . , n.
+
+Theorem. The jackknife estimate of bias equals
+
+and have been interested in the expectation p and the
+standard deviation u of R .) The bootstrap algorithm
+proceeds as described in Section 2, with these two
+changes: at step (ii), we calculate the bootstrap replication R * = R (XT, XT, . . . , X: ; P ) , and at step (iii) we
+calculate the distributional property of interest from the
+empirical distribution of the bootstrap replications R* ',
+R*2, . . . , R * B .
+For example, we might be interested in the probability that the usual t statistic f i ( X - k)lS exceeds 2,
+where = E { X ) and S 2 = Z ( X l - X)21(n- 1). Then
+R* = f i ( X * - x)lS*, and the bootstrap estimate is
+#{R* > 2)lB. This calculation is used in Section 9 of
+) get confidence intervals for the mean
+Efron ( 1 9 8 1 ~to
+@ in a situation where llormality is suspect.
+The cross-validation problem of Sections 8 and 9 involves a different type of error random variable R. It
+will be useful there to use a jackknife-type approximation to the bootstrap expectation of R,
+Here R O = R ( x l ,x2, . . . , x, ; p) and R ( . ,= (lln)ZR(,,,
+R(,,= R ( x l , x2, . . . , x ,-,, x , + ~. ,. . , x,; i').The justification of (20) is the same as for the theorem of this
+section, being based on a quadratic approximation
+formula.
+7. MORE COMPLICATED DATA SETS
+
+So far we have considered the simplest kind of data
+sets, where all the observations come from the same
+distribution F. The bootstrap idea, and jackknife-type
+approximations (which are not discussed
+can be
+applied to much more complicated situations. We begin
+with a two-sample problem.
+The data in our first example consist of two independent random samples,
+X I , X2, . . . , X,
+
+- F and Y 1 ,Y 2 ,. . . , Y , - G,
+
+F and G being two possibly different distributions on
+the real line, The statistic of interest is the HedgesLehmann shift estimate
+
+0 = median { y , - x , ; i
+
+=
+
+1, . . . , m , j = 1, . . . , n ) .
+
+We desire an estimate of the standard error u(F, G ) .
+The bootstrap estimate is simply
+
+e).
+
+6 B= U ( F ,
+which is n / ( n - 1) times the bootstrap estimate of bias
+for 0, (Efron 1982).
+Once again, the jackknife is, almost, a bootstrap estimate itself, except applied to a convenient approximation of 0 ( ~ ) .
+More general problems. There is nothing special
+about bias and standard error as far as the bootstrap is
+concerned. The bootstrap procedure can be applied to
+almost any estimation problem.
+Suppose that R ( X I ,X2, . . . , X,; F ) is a random variable, and we are interested in estimating some aspect of
+R's distribution. (So far we have taken R = 0 ( p ) - 0 ( F )
+42
+
+being the empirical distribution of the y , This is
+evaluated by Monte Carlo, as in Section 3, with obvious
+modifications: a bootstrap sample now consists of a random sample Xy, XT, . . . , X: drawn from F and an
+independent random sample YT, . . . , Y : drawn from
+G. (In other words, m draws with replacement from {x,,
+x2, . . . , x,), and n draws with replacement from Cy,, y2,
+. . . , y,).) The bootstrap replication 0* is the median of
+the mn differences YT - XT. Then eBis approximated
+from B independent such replications as on the right
+side of (11).
+Table 4 shows the results of a sampling experiment in
+
+O The American Statistician, February 1983, Vol. 37, No. 1
+
+<-----Page 8----->Table 4. Bootstrap Estimates of Standard Error for the 
+
+Hodges-Lehmann Two-Sample Shift Estimate; 
+
+m = 6, n = 9; True Distributions Both F and G 
+
+Uniform [0, 11 
+
+L WE
+
+Expectabon
+
+St. Dev.
+
+C. V.
+
+B=lOO
+
+.I65
+
+,030
+
+.18
+
+,030
+
+B = 200
+
+,166
+
+,031
+
+.19
+
+,031
+
+B=100
+
+,145
+
+,028
+
+.19
+
+,036
+
+B = 200
+
+,149
+
+,025
+
+.17
+
+,031
+
+True Standard Error
+
+,167
+
+Separate
+
+Combined
+
+between y and the vector of predicted values q ( P ) =
+(gl (PI, . . . , gn (PI)?
+
+x;:,
+
+The most common choice of D is D ( y , q ) =
+(Y, - rl,)?.
+Having calculated 6, we can modify the one-sample
+bootstrap algorithm of Section 2, and obtain an estimate of 13's variability:
+(i) Construct F putting mass l l r ~at each observed
+residual.
+
+F: mass lirz on 6, = y, - g, (6).
+(ii) Construct a bootstrap data set
+
+which m = 6, n = 9, and both F and G were uniform
+distributions on the interval [0, 11. The table is based o n
+100 trials of the situation. The true standard error is
+u(F, G ) = .167. "Separate" refers to bBcalculated exactly as described in the previous paragraph. The improvement in going from B = 100 to B = 200 is too
+small to show u p in the table.
+"Combined" refers to the following idea: suppose we
+believe that G is really a translate of F. Then it wastes
+information to estimate F and G separately. Instead we
+can form the combined empirical distribution
+
+where the
+calculate
+
+ET
+
+are drawn independently from F, and
+
+fi*:min
+D ( Y * , q(P)).
+B
+(iii) D o step (ii) some large number B of times, obtaining independent bootstrap replications b*', b*'.
+. . . . @*B,and estimate the covariance matrix of by
+
+0
+
+1
+H: mass -on
+m +n
+All m + n bootstrap variates X ; , . . . , X i , Y ; , . . . , Y:
+are then sampled independently from H . (We could add
+0 back to the Y ; values. but this has no effect on the
+bootstrap standard error estimate, since it just adds the
+constant i) to each bootstrap replication 0".)
+The combined method gives no improvement here,
+but it might be valuable in a many-sample problem
+where there are small numbers of observations in each
+sample. a situation that arises in stratified sampling.
+(See Efron 1982, Ch. 8.) The main point here is that
+"bootstrap" is not a well-defined verb, and that there
+may be more than one way t o proceed in complicated
+situations. Next we consider regression problems.
+where again there is a choice of bootstrapping methods.
+In a typical regression problem we observe n independent real-valued quantitives Y, = y,,
+
+The functions g , ( . ) are of known form, usually g,(P) =
+g ( P ; t,), where t, is an observed p-dimensional vector of
+covariates; p is a vector of unknown parameters we wish
+to estimate. The F, are an independent and identically
+distributed random sample from some distribution F on
+the real line,
+& , , & 2., . . , F n - F ,
+where F is assumed to be centered at zero in some
+sense, perhaps E { E )= 0 o r Prob{&< 0) = 0.5.
+Having observed the data vector Y = y = Cv,,. . . , y,,).
+we estimate p by minimizing some measure of distance
+
+In ordinary linear regression we have g, (P) = t,' P and
+D ( y , +I) = Z(y, - q ) ? . Section 7 of Efron (1979a) shows
+that in this case the algorithm above can be carried out
+theoretically, B = x , and yields
+
+This is the usual answer, except for dividing by n instead
+of n - p in u2. Of course the advantage of the bootstrap
+approach is that
+can just as well be calculated if,
+say, g, (PI = exp ( t ,P) and D (Y, q ) = C:=,ly, - ?,I.
+There is another simpler way to bootstrap the regression problem. We can consider each covariateresponse pair x, = (t,, y,) t o be a single data point obtained by random sampling from a distribution F on
+p + 1 dimension space. Then we apply the one-sample
+bootstrap of Section 2 t o the data set x , , x:, . . . , x,.
+T h e two bootstrap methods for the regression problem are asymptotically equivalent, but can perform
+quite differently in small-sample situations. The simple
+method, described last, takes less advantage of the special structure of the regression problem. It does not give
+answer (22) in the case of ordinary least squares. O n the
+other hand the simple method gives a trustworthy estimate of 0's variability ever1 if the regression model (21)
+is not correct. For this reason we use the simple method
+of bootstrapping on the error rate prediction problem of
+Sections 9 and 10.
+A s a final example of bootstrapping complicated data
+
+<-----Page 9----->we consider a two-sample problem with censored data.
+The data are the leukemia remission times listed in
+Table 1 of Cox (1972). The sample sizes are m = n = 21.
+Treatment-group remission times (weeks) are 6 + , 6. 6,
+6 , 7 . 9 + . 10 + 10. 11+, 13. 16. 17+. 19+, 20+. 22,23.
+25+. 3 2 + . 3 2 + . 34+. 35+ : control-group remission
+times(weeks)are 1. 1 , 2 . 2 . 3 , 4 . 4 . 5 , 5 . 8 , 8 , 8 . 8 , 11,
+11. 12. 12, 15, 17, 22, 23. Here 6+ indicates a censored
+remission time, known only to exceed 6 weeks, while 6
+is an uncensored remission time of exactly 6 weeks.
+None of the control-group times were censored.
+We assume Cox's proportional hazards model, the
+hazard rate in the control group equaling e P times that
+in the Treatment group. The partial likelihood estimate
+of p is = 1.51, and we want to estimate the standard
+error of 0. (Cox gets 1.65. not 1.51. Here we are using
+Breslow's convention for ties (1972). which accounts for
+the discrepancy.)
+Figure 4 shows the histogram for 1000 bootstrap replications of @". Each replication was obtained by the
+two-sample method described for the Hodges-Lehmann
+estimate:
+
+.
+
+B
+
+(i) Construct F putting mass $ at each point 6 + , 6. 6,
+
+. . . . 35+. and G putting mass & at each point 1, 1, . . . ,
+
+23. (Notice that the "points" in F include the censoring
+information.)
+(ii) Draw XT, X ; , . . . , X:, by random sampling from
+F, and likewise Yy, Yq, . . . , YT, by random sampling
+from G. Calculate @" by applying the partial-likelihood
+method to the bootstrap data.
+
+There are other reasonable ways to bootstrap censored data. One of these is described in Efron (1981a).
+which also contains a theoretical justification for the
+method used to construct Figure 4.
+
+8. CROSS-VALIDATION 
+
+Cross-validation is an old but useful idea. whose time
+seems to have come again with the advent of modern
+computers. We discuss it in the context of estimating the
+error rate of a prediction rule. (There are other important uses: see Stone 1974; Geisser 1975.)
+The prediction problem is as follows: each data point
+x, = (t,, y,) consists of a p-dimensional vector of
+explanatory variables t,, and a response variable y,.
+Here we assume y, can take on only two possible values,
+say 0 or 1, indicating two possible responses. live or
+dead, male or female. success or failure. and so on. We
+observe x , , x,, . . . , x,, called collectively the tralnlng set,
+and indicated x = (x,, x,, . . . , x,,). We have in mind a
+formula q ( t ; x) for constructing a prediction rule from
+the training set. also taking on values either 0 or 1.
+Given a new explanatory vector to, the value q(t,,: x) is
+supposed to predict the corresponding response yo
+We assume that each x, is an independent realization
+of X = (T, Y). a random vector having some distribution F on p + 1-dimensional space. and likewise for the
+"new case" XI]= (To. YIr)The true error rate err of the
+prediction rule q ( . ; x) is the expected probability of
+error over XI, F with x fixed.
+
+-
+
+B,
+
+as
+The bootstrap estimate of standard error for
+given by (1 1). is uB= .42. This agrees nicely with Cox's
+asymptotic estimate u = .41. However. the percentile
+method gives quite different confidence intervals from
+those obtained by the usual method. For a = .05,
+1 - 2 a = .90, the latter interval is 1.51 i 1.65 . .41 =
+[.83. 2.191. The percentile method gives the 90 percent
+central interval [.98. 2.351. Notice that (2.35 - 1.51)l
+(1.51 - .98) = 1.58, so that the percentile interval is
+considerably larger to the right of than to the left.
+(The bias-corrected percentile method gives almost the
+same answers as the uncorrected method in this case
+since ~ ( 0 =) .49.)
+
+B
+
+err = E{Q [YO,T( TO,x)]>.
+where Q[y, q ] is the error indicator
+
+An obvious estimate of err is the apparent error rate
+
+;C
+
+.
+
+e rr = E{Q [YO. q(To: x)]} = 1 " Q [y, q(tI ; x)I
+/-I
+
+The symbol E indicates expectation with respect to the
+empirical distribution F, putting mass lin on each x,.
+The apparent error rate is likely to underestimate the
+true error rate, since we are evaluating q ( . , x)'s performance on the same set of data used in its construction. A random variable of interest is the o~~eroptimism,
+true minus apparent error rate.
+R(x. F ) = e r r - =
+
+The expectation of R(X. F ) over the random choice of
+X,, X?, . . . X , from F,
+
+.
+
+w(F) = ER (X. F )
+is the expected overoptimism.
+The cross-validated estimate of err is
+Figure 4. Histogram of 1000 bootstrap replications of p* for the
+leukemia data, proportional hazards model. Courtesy of Rob
+Tibshirani, Stanford.
+
+41
+
+(24)
+
+~ ( t , :x,) being the prediction rule based on x,,, =
+
+C The Atnerican Stat~sticiatz.February 1983, Vol. 37, No. 1
+
+<-----Page 10----->(x,, x?, . . . , x , - ~ x, ,. I , . . . , x,,). In other words err- is the
+error rate over the observed data set. nor allowing
+x, = (r,, y , ) to enter into the construction of the rule for its
+own prediction. It is intuitively obvious that err- is a less
+biased estimator of err than is
+In what follows we
+consider how well err- estimates err. or equivalently
+how well
+W- = err- - Wr
+estimates R (x, F ) = err - err. (These are equivalent
+problems since err- - err = w- - R (x, F ) . ) We have
+used the notation w-, rather than R - , because it turns
+out later that it is actually w being estimated.
+We consider a sampling experiment involving Fisher's linear discriminant function. The dimension is
+p = 2 and the sample size of the training set is n = 14.
+The distribution F is as follows: Y = 0 or 1 with probability i, and given Y = y the predictor vector T is bivariate normal with identity covariance matrix and
+mean vector (y - 0). If F were known to the statistician, the ideal prediction rule would be to guess yo = 0
+if the first component of t,, was 5 0 , and to guess yo = 1
+otherwise. Since F is assumed unknown. we must estimate a prediction rule from the training set.
+We use the prediction rule based on Fisher's estimated linear discriminant function (Efron 1975).
+
+4,
+
+The quantities 6 and 0 are defined in terms of no and
+n,, the number of y, equal to zero and one, respectively:
+5, and t,, the averages of the t, corresponding to those
+y, equaling zero and one, respectively: and S =
+[C;, t,t: - nottJ,;- n,S,t;]/n :
+6 = [t;sl t , - 7;s -lr,]12,
+
+13 = (i? - 7,)s - I .
+Table 5 shows the results of 10 simulations ("trials")
+of this situation. The expected overoptimism. obtained
+from 100 trials. is w = ,098. so that R = err - EE is typically quite large. However. R is also quite variable from
+Table 5. The First 10 Trials of a Sampling Experiment 
+
+Involving Fisher's Linear Discriminant Function. The 
+
+Training Set Has Size n = 14. The Expected 
+
+Overoptimism is w = .096, see Table 6 
+
+
+Trial no, n,
+
+Error Rates
+Estimates of Overoptimism
+. ApparOverCross- Jack- Bootstrap
+True
+- ent optimism validation knife (8= 200)
+err
+err
+R
+at
+GJ
+6.e
+
+trial to trial, often being negative. The cross-validation
+estimate w- is positive in all 10 cases. and does not
+correlate with R. This relates to the comment that w- is
+trying to estimate w rather than R. We will see later that
+w- has expectation .091, and so is nearly unbiased for w.
+However, w- is too variable itself to be very useful for
+estimating R, which is to say that err- is not a particularly good estimate of err. These points are discussed
+further in Section 9, where the two other estimates of w
+appearing in Table 5, w, and GR,are introduced.
+
+9. 	 BOOTSTRAP AND JACKKNIFE ESTIMATES
+FOR THE PREDICTION PROBLEMS
+At the end of Section 6 we described a method for
+applying the boostrap to any random variable R (X, F ) .
+Now we use that method on the overoptimism random
+variable (23), and obtain a bootstrap estimate of the
+expected overoptimism w(F).
+The bootstrap estimate of w = w(F), (24), is simply
+
+As usual G Bmust be approximated by Monte Carlo. We
+generate independent bootstrap replications R* I , R"',
+. . . , R" B, and take
+
+As B goes to infinity this last expression approaches
+E . { R X } .the expectation of R" under bootstrap resampling, which is by definition the same quantity as
+w(p) = 6,.The bootstrap estimates G Bseen In the last
+column of Table 5 are considerabl) less variable than
+the cross-validation estimates w-.
+What does a typical bootstrap replication consist of in
+this situation? As in Section 3 let P" = (P;, PT, . . . , P i )
+indicate the bootstrap resampling proportions
+PT = # { X ; = x,)/n. (Notice that we are considering
+each vector x, = (r,, y,) as a single sample point for the
+purpose of carrying out the bootstrap algorithm.) Following through definition (13). it is not hard to see that
+
+R:'
+
+= R (X",
+
+F ) = 1(Py
+
+-
+
+Pr ) Q [ j . , , q(t, : XI)],
+
+(25)
+
+,=I
+
+where P" = (1. 1. . . . , l)'/n as before, and q ( . . X*) is
+the prediction rule based on the bootstrap sample.
+Table 6 shows the results of two simulation experiments (100 trials each) involving Fisher's linear discriminant fraction. The left side relates to the bivariate normal situation described in Section 8: sample size n = 14.
+dimension d = 2, mean vectors for the two randomly
+selected normal distributions = (*+.0). The right side
+still has n = 14, but the dimension has been raised to 5.
+with mean vectors ( 2 1 . 0. 0, 0. 0). Fuller descriptions
+appear in Chapter 7 of Efron (1982).
+Seven estimates of overoptimism were considered. In
+the d = 2 situation, the cross-validation estimate w-. for
+example. had expectation .091. standard deviation
+,073, and correlation - .07 with R. This gave root mean
+
+C The American Statistician, Februarv 1983, Vol. 37, No. 1
+
+45
+
+<-----Page 11----->Table 6. Two Sampling Experiments Involving Fisher's 
+
+Linear Discriminant Function. The Left Side of 
+
+the Table Relates to the Situation of Table 5: 
+
+n = 14, d = 2, True Mean Vectors = (k1/2, 0). 
+
+The Right Side Relates to n = 14, d = 5, 
+
+True Mean Vectors = ( k 1, 0, 0, 0, 0) 
+
+D~rnens~on
+2
+Ofmensfon 5
+Overoptfrn~srn Exp
+Sd
+Exp
+Sd
+R I X FJ
+w = 096 173 Corr l MSE w = 184 099 Corr \
+1 Ideal Constant
+2 CrossVal~dation
+3. Jackkn~fe
+4. Bootstrap
+(8=ZOO)
+5. BootRand
+( 8 =200)
+6 	 BootAve
+(8=200)
+7. Zero
+
+096
+
+0
+
+0
+
+,113
+
+,184
+
+0
+
+0
+
+,099
+
+,091
+,093
+
+,073 -.07
+,068 - 23
+
+,139
+,145
+
+,170
+,167
+
+,094
+,089
+
+-.I5
+-.26
+
+,147
+,150
+
+,080
+
+,028 -.64
+
+135
+
+103
+
+,031 -.58
+
+,145
+
+m ass
+
+~ R l i v o :
+
+087
+
+,026 - 55
+
+,130
+
+147
+
+,020
+
+-.31
+
+,114
+
+,100
+0
+
+036 - 1 8
+0
+0
+
+125
+,149
+
+,172
+0
+
+041
+0
+
+-.25
+0
+
+,118
+,209
+
+squared error. of w- for estimating R o r equivalently of
+err- for estimating err.
+[E[w- - R]']+ = [E(err- - err)']i
+
+=
+
+-
+
+rn
+
++,in
+on (t,, 1)
++,)In on (t,, 0)
+
+-
+
+This is a distribution supported on 2n points. the observed points x, = (t,, y,) and also the complementary
+points (t,, 1 - y , ) . The probabilities +, were those naturally associated with the linear discriminant function,
+
++, = l / [ l + exp - (6 + tI1p)]
+
+,139.
+
+The bootstrap. line 4. did only slightly better,
+= ,135.
+The zero estimate 6 0, line 7, had
+= ,149.
+which is also [ E ( e r r - Tr)']i. the
+of estimating
+err by the apparent error 5.
+with zero correction for
+overoptimism. The "ideal constant" is w itself. If we
+knew w, which we don't in genuine applications, we
+would use the bias-corrected estimate EiT + w. Line 1,
+left side, says that this ideal correction gives
+==
+.113.
+We see that neither cross-validation nor the bootstrap
+are much of an improvement over making no correction
+at all. though the situation is more favorable o n the
+right side of Table 6. Estimators 5 and 6, which will be
+described later, perform noticeably better.
+The "jackknife," line 3, refers to the following idea:
+since cLB = E.{RX) is a bootstrap expectation, we can
+approximate that expectation by (19). In this case (25)
+gives R " = 0, so the jackknife approximation is simply
+GJ = (n - 1) R, ,. Evaluating this last expression, as in
+Chapter 7 of Efron (1982), gives
+
+rn
+
+Even though cLn and w are closely related in theory
+and are asymptotically equivalent, they behave very differently in Table 6: w- is nearly unbiased and uncorrelated with R, but has enormous variability: 6, has
+small variability. but is biased downwards. particularly
+in the right-hand case. and highly negatively correlated
+with R. The poor performances of the two estimators
+are due t o different causes, and there are some grounds
+of hope for a favorable hybrid.
+"BootRand," line 5. modified the bootstrap estimate
+in just one way: instead of drawing the bootstrap sample
+XT, XT. . . . , Xz from F , it was drawn from
+
+(see Efron 1975). except that +, was always forced to lie
+in the interval [ . I . .9].
+Drawing the bootstrap sample X ; , . . . , X: from
+FRAhninstead of is a form of smoothing, not unlike the
+smoothed bootstraps of Section 2. In both cases we
+support the estimate of F on points beyond those actually observed in the sample. Here the smoothing is entirely in the response variable y. In complicated problems. such as the one described in Section 10, t, can have
+complex structure (censoring. missing values, cardinal
+and ordinal scales, discrete and continuous variates,
+etc.) making it difficult to smooth in the t space. Notice
+that in Table 6 BootRand is an improvement over the
+ordinary bootstrap in every way: it has smaller bias.
+smaller standard deviation, and smaller negative correlation with R. The decrease in b/MSE is especially
+impressive o n the right side of the table.
+"BootAve." line 6, involves a quantity we shall call
+w,,. Generating B bootstrap replications involves making n B predictions q(t,, X * '). i = 1, 2, . . . , n, b = 1, 2,
+. . . , B. Let
+lf
+
+PTh>O
+
+Then
+This looks very much like the cross-validation estimate,
+which can be written
+
+A s a matter of fact. cLJ and w- have asymptotic correlation one (Gong 1982). Their nearly perfect correlation can be seen in Table 5. In the sampling experiments of Table 6, corr(&,, w-) = .93 on the left side, and
+.98 o n the right side. The point here is that the crossvalidation estimate w- is, essentially, a Taylor series approximation to the bootstrap estimate As.
+46
+
+cj,, =
+
+z,,I ; Q~ [y,,	 q(t,, x4h ) ] ~ ~l T, b - m .
+
+In other words, w,, +
+is the observed bootstrap error
+rate for prediction of those y, where x , is not involved in
+the construction of q ( , X*). Theoretical arguments can
+be mustered to show that GOwill usually have expectation greater than w, while GR usually has expectation
+less than w. "BootAve" is the compromise estimator
+= (GB f G0)/2. It also performs well in Table 6,
+though there is not yet enough theoretical o r numerical
+evidence to warrant unqualified enthusiasm.
+The bootstrap is a general all-purpose device that can
+be applied to almost any problem. This is very handy,
+
+C 	The American Statistician. February 1983, Vol. 37, No. 1
+
+<-----Page 12----->Table 7. The Last 11 Liver Patients. Negative Numbers Indicate Missing Values
+Ster-
+
+Cons-- -
+
+y
+
+tant
+1
+
+Age
+2
+
+Sex
+3
+
+-aid
+4
+
+Antiviral
+5
+
+Fatigue
+6
+
+Malaise
+7
+
+Anor- Liver
+exia
+Big
+8
+9
+1
+
+Liver Soleen
+Firm
+'palp
+0
+1
+1
+
+but it implies that in situations with special structure the
+bootstrap may be outperformed by more specialized
+methods. Here we have done so in two different ways.
+BootRand uses an estimate of F that is better than the
+totally nonparametric estimate F. BootAve makes use
+of the particular form of R for the overoptimism
+problem.
+10. A COMPLICATED PREDICTION PROBLEM
+
+We end this article with the bootstrap analysis of a
+genuine prediction problem, involving many of the
+complexities and difficulties typical of genuine problems. The bootstrap is not necessarily the best method
+here, as discussed in Section 9, but it is impressive to see
+how much information this simple idea, combined with
+'massive computation, can extract from a situation that
+is hopelessly beyond traditional theoretical solutions. A
+fuller discussion appears in Efron and Gong (1981).
+Among n = 155 acute chronic hepatitis -patients, 33
+were observed to die from the disease, while 122 survived. Each patient had associated a vector of 20 covariates. On the basis of this training set it was desired to
+produce a rule for predicting, from the covariates,
+whether a given patient would live or die. If an effective
+prediction rule were available, it would be useful in
+choosing among alternative treatments. For example,
+patients with a very low predicted probability of death
+could be given less rigorous treatment.
+Let xi = (ti, yi) represent the data for patient i, i = 1,
+2, . . . , 155. Here ti is the 20-dimensional vector of covariates, and y, equals 1 or 0 as the patient died or lived.
+Table 7 shows the data for the last 11 patients. Negative
+numbers represent missing values. Variable 1 is the constant 1, included for convenience. The meaning of the
+19 other predictors, and their coding in Table 7, will not
+be explained here.
+A prediction rule was constructed in 3 steps:
+1. An a = .05 test of the importance of predictor j,
+H , : p, = 0 versus H 1 : p, f 0, was run separately for
+j = 2, 3, . . . , 20, based on the logistic model
+
+n(ti) = Probtpatient i dies).
+
+AsSpiders cites
+13
+12
+
+BiliAlk
+Varices rubin Phos
+14
+15
+16
+
+SGOT
+17
+
+Albumin
+18
+
+Protein
+19
+
+Histo-
+
+logy 
+
+#
+
+20
+
+Among these 19 tests, 13 predictors indicated predictive power by rejecting Ho:j = 18, 13, 15, 12, 14, 7, 6,
+19, 20, 11, 2, 5, 3. These are listed in order of achieved
+significance level, j = 18 attaining the smallest alpha.
+2. These 13 predictors were tested in a forward
+multiple-logistic-regression program, which added predictors one at a time (beginning with the constant) until
+no further single addition achieved significance level
+a = .lo. Five predictors besides the constant survived
+this step, j = 13, 20, 15, 7, 2.
+3. final forward, stepwise multiple-logistic-regression program on these five predictors, stopping this
+time at level a = .05, retained four predictors besides
+the constant, j = 13, 15, 7, 20.
+At each of the three steps, only those patients having
+no relevant data missing were included in the hypothesis
+tests. At step 2 for example, a patient was included only
+if all 13 variables were available.
+The final prediction rule was based on the estimated
+logistic regression
+
+where 13, was the maximum likelihood estimate in this
+model. The prediction rule was
+
+c = log 331122.
+
+Among the 155 patients, 133 had none of the predictors 13, 15, 7, 20 missing. When the rule q(t; x) was
+applied to these 133 patients, it misclassified 21 of them,
+for an apparent error rate EiT = 211133 = ,158. We
+would like to estimate how overoptimistic EE is.
+To answer this question, the simple bootstrap was
+applied as described in Section 9. A typical bootstrap
+sample consisted of x;, XT, . . . , X;,,,
+randomly drawn
+with replacement from the training set x l , x2, . . . , X 1 5 5
+The bootstrap sample was used to construct the bootstrap prediction rule q ( . , X*), following the same three
+steps used in the construction of q ( . , x), (26). This gives
+a bootstrap replication R* for the overoptimism random
+variable R = err - EE,essentially as in (25), but with a
+modification to allow for difficulties caused by missing
+predictor values.
+
+O The American Statistician, February 1983, Vol. 37, No. 1
+
+47
+
+<-----Page 13----->Figure 5. Histogram of 500 bootstrap replications of overoptimism for the hepatitis problem.
+
+Figure 5 shows the histogram of B = 500 such replications. 95 percent of these fall in the range 0 5 R* 5
+.12. This indicates that the unobservable true overoptimism err - CiT is likely to be positive. The average
+value is
+
+(see Efron 1982, Ch. VII), which by definition equals
+[E(err -EE - o)2]1'2,the
+of
++ w as an estimate of err. Comparing line 1 with line 4 in Table 6, we
+at least this big
+expect CiT + &, = .203 to have
+for estimating err.
+Figure 6 illustrates another use of the bootstrap replications. The predictions chosen by the three-step selection procedure, applied to the bootstrap training set X*,
+are shown for the last 25 of the 500 replications. Among
+all 500 replications, predictor 13 was selected 37 percent
+of the time, predictor 15 selected 48 percent, predictor
+7 selected 35 percent, and predictor 20 selected 59 percent. No other predictor was selected more than 50
+percent of the time. No theory exists for interpreting
+Figure 6, but the results certainly discourage confidence
+in the casual nature of the predictors 13, 15, 7, 20.
+[Received January 1982. Revised May 1982. ]
+
+REFERENCES
+
+B
+
+dB=+
+
+R*b=.045,
+
+b=l
+
+suggesting that the expected overoptimism is about f as
+large as the apparent error rate .158. Taken literally,
+this gives the bias-corrected estimated error rate
+.I58 + .045 = .203. There is obviously plenty of room
+for error in this last estimate, given the spread of values
+in Figure 5 , but at least we now have some idea of the
+possible bias in err.
+The bootstrap analysis provided more than just an
+estimate of w ( F ) . For example, the standard deviation
+of the histogram in Figure 5 is ,036. This is a dependable estimate of the true standard deviation of R
+
+Figure 6. Predictors selected in the last 25 bootstrap replications
+for the hepatitis program. The predictors selected by the actual data
+were 13, 15, 7, 20.
+
+48
+
+BRESLOW, N. (1972). Discussion of Cox (1974). Journal of the
+Royal Statistical Society, Ser. B, 34, 216-217.
+COX, D . R . (1972), "Regression Models With Life Tables," Journal
+of lh4 Royal Statistical Society, Ser. B, 34, 187-000.
+C R A M E R , H. (1946), Mathematical Methods of Statistics, Princeton:
+Princeton University Press.
+EFRON, B. (1975), "The Efficiency of Logistic Regression Compared to Normal Discriminant Analysis," Journal of the American
+Statistical Association, 70, 897-898.
+(1979a). "Bootstrap Methods: Another Look at the Jackknife," Annals of Statistics, 7, 1-26.
+(1979b), "Computers and the Theory of Statistics: Thinking
+the Unthinkable," S I A M Review, 21, 46CL480.
+-(1981a), "Censored Data and the Bootstrap," Journal of the
+American Statistical Association, 76, 312-319.
+(1981b). "Nonparametric Estimates of Standard Error: The
+Jackknife, the Bootstrap, and Other Resampling Methods," Biometrika, 00, WO-OGO.
+(1981c), "Nonparametric Standard Errors and Confidence
+Intervals," Canadian Journal of Statistics, 9, 139-172.
+-(1982), "The Jackknife, the Bootstrap, and Other Resampling Plans," S I A M , monograph #38, CBMS-NSF.
+EFRON, B., and G O N G , G . (1981), "Statistical Theory and the
+Computer," unpublished manuscript.
+GEISSER, S. (1975). "The Predictive Sample Reuse Method With
+Applications," Journal of the American Statistical Association, 70,
+32Q-328.
+GONG. G. (1982). "Cross-validation, the Jackknife. and the Bootstrap: Excess Error Estimation in Forward Logistic Regression".
+Ph.D. dissertation. Dept. of Statistics, Stanford University.
+HAMPEL, F. (1974), "The Influence Curve and its Role in Robust
+Estimation," Journal of the American Statirtical Association, 69,
+38S393.
+JAECKEL, L. (1972), "The Infinitesimal Jackknife.'' Bell Laboratories Memorandum #MM 72-1215-1 1.
+JOHNSON. N.. and KOTZ, S. (1970), Continuous Univariate Distributions (vol. 2), Boston: Houghton Mifflin.
+MALLOWS, C . L . (1974), "On Some Topics in Robustness", Memorandum, Bell Laboratories. Murray Hill, New Jersey.
+QUENOUILLE, M. (1949), "Approximate Tests of Correlation in
+Time Series," Journal of The Royal Statistical Society. Ser. B. 11,
+18-84.
+SHUCANY, W.: BRAY, H . : and OWEN, 0. (1971). "On Bias
+Reduction in Estimation," Journal of the American Statistical A.rsociation, 66, 524-533.
+STONE. M. (1974). "Cross-Validatory Choice and Assessment of
+Statistical Predictions," Journal of the Royal Statistical Society,
+Ser. B. 36. 111-147.
+
+O The American Statistician, February 1983, Vol. 37, No. 1
+
+

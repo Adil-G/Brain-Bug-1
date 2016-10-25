@@ -1,0 +1,2581 @@
+<-----Page 0----->ESTIMATION OF A CHANGE POINT IN MULTIPLE REGRESSION MODELS
+Jushan Bai*
+Abstract —This paper studies the least squares estimation of a change
+point in multiple regressions. Consistency, rate of convergence, and
+asymptotic distributions are obtained. The model allows for lagged
+dependent variables and trending regressors. The error process can be
+dependent and heteroskedastic. For nonstationary regressors or disturbances, the asymptotic distribution is shown to be skewed. The analytical
+density function and the cumulative distribution function for the general
+skewed distribution are derived. The analysis applies to both pure and
+partial changes. The method is used to analyze the response of market
+interest rates to discount rate changes.
+
+I.
+
+Introduction
+
+P
+
+ARAMETER instability for economic models is a
+common phenomenon. This is particularly true for
+time-series data covering an extended period, as it is more
+likely for the underlying data-generating mechanism to be
+disturbed over a longer horizon by various factors such as
+policy-regime shift. For example, for the empirical problem
+examined in this paper, we find that the response pattern of
+interest rates to the changes in discount rates varies over
+time. The timing of variation is consistent with the timing of
+changes in the Fed’s operating procedures. It is well known
+that failure to take into account parameter changes, given
+their presence, may lead to incorrect policy implications and
+predictions. On the other hand, proper treatment of parameter changes can be useful in uncovering the underlying
+factors that fostered the changes, in identifying misspecification, and in analyzing the effect of a policy change. The
+purpose of this paper is to study the parameter-change
+problem in multiple regressions with an unknown change
+point. The main concern is the estimation of the change
+point as well as the statistical theory of the change-point
+estimator. We derive some useful results under fairly general
+conditions.
+For independent and identically distributed observations
+up to a parameter shift, there is a well-developed theory
+under maximum-likelihood estimation (see Hinkley (1970),
+Bhattacharya (1987), and Yao (1987)). For a mean shift in
+linear processes estimated with the least-squares method, the
+theory is also worked out (see Bai (1994) and Antoch et al.
+(1996)). For multiple regression models, the change-point
+problem is also studied widely. Yet most of the existing work
+focuses on testing rather than estimation (e.g., Kim and
+Siegmund (1989) and Gombay and Horváth (1994)). A
+number of authors investigated the consistency property for
+the estimated change point, but the rate of convergence is not
+obtained. These include Krishnaiah and Miao (1988), Hor-
+
+Received for publication July 25, 1995. Revision accepted for publication July 23, 1996.
+* Massachusetts Institute of Technology.
+An earlier version of this paper was titled ‘‘Estimation of Structural
+Change Based on Wald Type Statistics.’’ I thank two anonymous referees
+and an editor for their constructive criticism, which led to a substantial
+improvement in the presentation. This work is supported in part by grants
+from the Provost Fund and the Dean’s Faculty Development Fund of MIT.
+
+váth (1994), and Nunes et al. and Newbold (1995), among
+others. Consistency is not enough for deriving the asymptotic distribution. The rate of convergence is needed for this
+purpose.
+In this paper we develop the asymptotic theory for the
+estimated change point in multiple regressions. These include consistency, rate of convergence, and asymptotic
+distribution. While we improve the existing consistency
+result by deriving the rate of convergence, the conditions
+required are much weaker than those in the existing literature. Our model allows for lagged dependent variables and
+trending regressors. Furthermore, the disturbances can be
+heterogeneous and dependent over time. In particular, we
+assume the disturbances form a sequence of mixingale,
+which include strong mixing, linear processes, and other
+dependent structures as special cases, as shown by Hall and
+Heyde (1980) and Andrews (1988). In addition, the rate of
+convergence is obtained for both fixed magnitude of shift
+and shrinking magnitude of shift. As for the asymptotic
+distribution, we show that it is skewed except for stationary
+or asymptotically stationary regressors and disturbances. We
+also derive the analytical density function and cumulative
+distribution function for the skewed distribution. These are
+not studied by the existing literature.
+Furthermore, the problem is considered in the context of
+partial change, in which some of the regression parameters
+hold constant throughout the sample. These parameters are
+estimated using the entire sample in order to gain efficiency.
+When all parameters are allowed to change, a pure structural
+change model is obtained. Therefore a partial structural
+change amounts to imposing parameter restrictions across
+regimes. Advantages of a partial change model include more
+efficient estimation of the regression parameters and better
+conservation of degrees of freedom. The latter is important
+for a regression problem with a limited number of observations but many regressors, which is typical for many
+economic applications.
+As an application, we study the relationship between
+changes in market interest rates and changes in discount rate.
+This relationship is found to be unstable over time. It
+appears that changes in the Fed’s operating procedures
+during the period of October 1979–October 1982 alter the
+response pattern. Through this application, we describe in
+detail the procedure for implementing the theoretical result.
+In particular, we discuss how to tackle the problem of
+multiple breaks for empirical problems in a sequential way,
+and how to construct confidence intervals.
+The rest of the paper is organized as follows. Section II
+specifies the model and the underlying assumptions. Consistency, rate of convergence, and asymptotic distribution are
+derived in this section. Construction of confidence intervals
+is considered. Section III studies the response pattern
+of market interest rates to changes in the discount rate.
+
+r 1997 by the President and Fellows of Harvard College and the Massachusetts Institute of Technology
+
+[ 551 ]
+
+<-----Page 1----->552
+
+THE REVIEW OF ECONOMICS AND STATISTICS
+
+Procedures for implementing the theoretical results are
+discussed. Concluding remarks are provided in section IV.
+Technical materials are collected in the appendices.
+
+test statistic is supk[[pT,(12p)T ] W T (k), where
+WT (k) 5
+
+II.
+
+Theoretical Result
+
+A. Model and Assumptions
+
+Consider the following linear regression with a change
+point at k0:
+yt 5 w8a
+t 1 z8d
+t 1 1 et,
+
+t 5 1, 2, . . . , k0
+
+yt 5 w8a
+t 1 z8d
+t 2 1 et,
+
+t 5 k0 1 1, . . . , T
+
+(1)
+
+where yt is an observation on the dependent variable, wt and
+zt are vectors of regressors, and et is an unobservable
+disturbance. The vectors a, d1, and d2 are unknown parameters. We assume d1 Þ d2, so that a change has taken place.
+The change point k0 is unknown. Our purpose is to estimate
+these parameters. The analysis is based on a reparameterization. Let xt 5 (w8,t z t8)8, b 5 (a8, d18)8, and d 5 d2 2 d1. Then
+equations (1) can be rewritten as
+yt 5 x8b
+t 1 et,
+
+t 5 1, 2, . . . , k0
+
+yt 5 x8b
+t 1 z8d
+t 1 et,
+
+t 5 k0 1 1, . . . , T.
+
+(2)
+
+Now zt is a subvector of xt and d Þ 0. More generally, let zt 5
+R8xt, where R is a p 3 q known matrix with full column
+rank. This defines zt as a linear transformation of xt. For R 5
+(0, I )8, with I an identity matrix, a partial change like
+equations (1) is obtained. For R 5 I, a pure change model is
+obtained.
+To present the model in a matrix format, further notation
+is necessary. Let Y 5 ( y1, . . . , yT )8, X 5 (x1, x2, . . . , x T )8,
+e 5 (e1, e2, . . . , eT )8, X1 5 (x1, x2, . . . , x k, 0, . . . , 0)8, X2 5
+(0, . . . , 0, xk11, . . . , x T )8, and X0 5 (0, . . . , 0, xk011,
+. . . , xT )8. The matrices X1 and X2 depend on k, but this
+dependence will not be displayed for notational simplicity.
+Define Z1, Z2, and Z0 in a similar way (i.e., replace xt by zt ).
+Then Z1 5 X1R, Z2 5 X2R, and Z0 5 X0R. Equations (2) can
+then be rewritten as
+Y 5 Xb 1 Z0d 1 e.
+
+(3)
+
+The least-squares method is used to estimate the model.
+Let ST (k) denote the sum of squared residuals when regressing Y on X and Z2. The change point k̂ is defined as
+k̂ 5 arg min ST (k).
+1#k#T
+
+In practice, the existence of a break may not be known. A
+hypothesis testing is often performed. The sup-Wald-type
+
+d̂k8(Z 28MZ2 )d̂k
+
+(4)
+
+ŝ2(k)
+
+with M 5 I 2 X(X 8X )21X, ŝ2 (k) 5 ST (k)/(T 2 p 2 q), p [
+(0, 21) a small number, and (b̂k, d̂k) being the least-squares
+estimator of (b, d) by regressing Y on X and Z2. Let S denote
+the sum of squared residuals by regressing Y on X alone.
+From the identity S 2 S(k) 5 d̂k (Z 28MZ 2 )d̂k (see Amemiya
+(1985, pp. 31–33)), we see that the Wald test statistic is a
+monotonic transformation of ST (k). It follows that
+k̂ 5 arg min ST (k) 5 arg max d̂k8(Z28MZ2 )d̂k
+k
+
+5 arg max WT (k).
+
+k
+
+(5)
+
+k
+
+That is, the estimator obtained by minimizing the sum of
+squared residuals is the same as maximizing Wald-type
+statistics. These statistics are used in Andrews (1993) and
+others for testing the existence of a change point. Christiano
+(1992) uses these statistics for estimating potential changes
+in U.S. gross national product (GNP). It is useful to note
+that, for empirical applications, a break point estimator is
+obtained automatically when the null hypothesis is rejected,
+combining the testing and estimation in a single step.1
+The assumptions needed for the theoretical results are
+stated below. The notation \·\ denotes the Euclidean norm,
+p
+that is, \x\ 5 (Si51
+x 2i )1/2 for x [ R p. For a matrix A, \A \
+represents the vector-induced norm.
+A1: k0 5 [tT ], where t [ (0, 1) and [ · ] is the greatest
+integer function.
+A2: The data 5( ytT , xtT , ztT ); 1 # t # T, T $ 16 form a
+triangular array. For notational simplicity, the subscript T
+will be suppressed. In addition, zt 5 R 8xt, where R is p 3 q,
+rank (R ) 5 q, zt [ R q, xt [ R p, q # p.
+j
+T
+xtx8,t (1/j)St5T2j11
+xt x8,t
+A3: The matrices (1/j)St51
+k0
+k01j
+and
+(1/j)S
+x
+x
+8have
+minimum
+eig(1/j)St5k02j11 xt x8,
+t
+t5k011 t t
+envalues bounded away from zero in probability for all large
+j. That is, there exists l . 0 such that for every e . 0, there
+exists j0 such that P(lj . l) . 1 2 e for all j . j0, where lj
+denotes the minimum eigenvalue for each of the above
+matrices. For simplicity, we assume these matrices are
+invertible when j $ p. In addition, these four matrices have
+stochastically bounded norms uniformly in j. That is, for
+example, supj$1 \(1/j)Sjt51 xt x8\
+t is stochastically bounded.
+A4: (X 8X/T ) converges in probability to a nonrandom
+and positive definite matrix.
+1 While hypothesis testing requires that k [ [Tp, T(1 2 p)] for small
+p . 0, the estimation theory does not require this restriction, provided that
+a change point is assumed to exist. In practice, the existence of a break may
+not be known a priori. If the existence is determined via a test, such a
+restriction is implicitly imposed for empirical work.
+
+<-----Page 2----->CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+
+A5: For random regressors, supt E\x t \ 41d # K for some
+d . 0 and K , `.
+A6: The disturbances 5et 6 satisfy one of the following
+two alternatives:
+a. 5et, Ft 6 form a sequence of martingale differences for Ft 5 s 2
+field 5es, x s11; s # t6. Moreover, for all t , E 0 et 0 41d , K for
+some K , ` and d . 0. Or
+b. The disturbance et is independent of the regressor xs for all t and
+s. For an increasing sequence of s fields Ft, 5et, Ft 6 form a
+sequence of L r, r 5 4 1 d, mixingales with mixingale numbers
+5ct 6 and mixingale norms 5ct 6. See Hall and Heyde (1980, p. 21)
+for the definition of L 2 mixingales and Andrews (1988) for
+general L r mixingales. In addition, Sj j 11dcj , ` for some d . 0
+and maxj 0 cj 0 , K , `.
+
+Assumption A1 assumes that the shift point is bounded
+away from the end points, which is used for asymptotic
+purpose. Assumption A2 allows for trending regressors
+written in the form (t/T )l, l . 0, or, more generally, written
+as any function of the time trend g(t/T ). Expressing them in
+this format avoids a scaling matrix that would otherwise be
+required when deriving limiting distributions. This format is
+also required by assumptions A3 and A4 because no scaling
+matrix is used in these two assumptions. A3 requires that
+there be enough data around the change point and at the
+beginning and at the end of the sample, so that the change
+point can be identified. The latter half of A3 is typically
+implied by the strong law of large numbers for the sequence
+of 5xt x86.
+t Assumptions A4 and A5 are standard for linear
+regressions, and they are used for the central limit theorem.
+Assumption A6a allows for lagged dependent regressors
+(e.g., autoregressive models); A6b allows for general serial
+correlation in the disturbances. A6 together with A4 and A5
+imply the strong law of large numbers for xtet, because
+conditions in Hansen (1991) are satisfied. These conditions
+are sufficient to obtain the rate of convergence for the
+estimated break point. Note that no stationarity for regressors or disturbances is required for consistency.
+
+553
+
+PROPOSITION 1: Assume the conditions of A1–A6. If dT
+is fixed or dT = 0 but satisfying A7, then k̂ 5 k0 1
+Op (\dT \ 22 ).
+Similar results are obtained for identically and independently distributed (i.i.d.) models up to a shift, as in Yao
+(1987) and Bhattacharya (1987). Bai (1994) derives this
+result for a mean shift in linear processes and Picard (1985)
+for a Gaussian autoregressive model. To the author’s knowledge, proposition 1 is the first result for multiple regression
+models.2 Furthermore, the conditions required in this paper
+are far less restrictive than those in the existing literature.
+This rate of convergence holds for models with lagged
+dependent variables, so that the autoregressive model is a
+special case. Our result holds for trending regressors. We
+also allow for dependent and heterogeneous disturbances.
+The disturbances can be a sequence of mixingales, thus
+including linear processes and strong mixing processes as
+special cases. Under much stronger assumptions, Horváth
+(1994) proves the consistency of t̂ 5 k̂/T, but without
+obtaining the rate of convergence. Proposition 1 implies that
+T a (t̂ 2 t) converges to zero in probability for any a , 1 for
+dT fixed. In a recent work, Nunes et al. (1995) also prove
+consistency for the estimated break fraction, but without rate
+of convergence. A fixed magnitude of shift is considered by
+these authors.
+Let b̂ 5 b̂(k̂) and d̂ 5 d̂(k̂) be the estimators of b and d
+corresponding to k̂. That is, we replace Z0 by Z2 with k 5 k̂
+and then estimate model (3). We have
+COROLLARY 1: Under the assumptions of proposition 1
+together with et being uncorrelated and Ee2t 5 s2 for all t,
+then
+
+3
+
+ÎT(b̂ 2 b)
+ÎT(d̂ 2 dT )
+
+4
+
+d
+
+= N(0, s2V 21 )
+
+where
+B. Consistency
+
+We shall establish the consistency and the rate of convergence for the change-point estimator. The rate of convergence not only describes how fast the estimator converges to
+the true value, it is also necessary in order to derive the
+limiting distribution. As will be explained later, it is useful to
+consider asymptotic distributions under shrinking magnitude of shift such that d depends on T with dT = 0. Thus we
+will need the rate of convergence for shrinking shifts.
+Apparently the magnitude of shift cannot be too small,
+otherwise it will be impossible to identify the change point.
+Assume
+1
+
+A7:
+
+1
+dT = 0, and T 22adT = ` for some a [ (0, 2).
+
+V 5 plim
+
+1
+T
+
+3
+
+T
+
+T
+
+o x x8 o x z8
+t
+
+t
+
+t t
+
+t51
+
+t5k0
+
+T
+
+T
+
+o z x8 o z z8
+t t
+
+t5k0
+
+t t
+
+t5k0
+
+4
+
+.
+
+(6)
+
+For serially correlated and heteroskedastic disturbances, the
+variance–covariance matrix of the limiting distribution is
+
+2 For the least absolute deviation (LAD) method, Bai (1995a) obtains the
+same result under stronger assumptions.
+
+<-----Page 3----->554
+
+THE REVIEW OF ECONOMICS AND STATISTICS
+
+given by V 21UV 21, with
+
+U 5 lim
+
+1
+T
+
+3
+
+T
+
+T
+
+o
+
+E(xi x8e
+j iej )
+
+i, j$1
+
+o E(x z8e e )
+i j i j
+
+i, j$k0
+
+T
+
+T
+
+o E(z x8e e ) o E(z z8e e )
+j i i j
+
+i, j$k0
+
+i j i j
+
+i, j$k0
+
+4
+
+.
+
+(7)
+
+Notice that â and b̂ have the same limiting distributions as if
+k0 were known. A similar result is obtained by Bai (1994) for
+a mean shift in linear processes.
+C. Asymptotic Distribution
+
+We consider two frameworks of asymptotic distribution.
+One is based on the fixed magnitude of a shift, the other on a
+shrinking magnitude of shift. We first consider the case of a
+fixed shift. To obtain the limiting distribution, additional
+assumptions are necessary. Assume
+`
+is strictly stationary.
+A8: The process 5zt, et 6t52`
+We define a stochastic process W *(m) on the set of
+integers as follows: W *(0) 5 0, W *(m) 5 W1 (m) for m , 0
+and W *(m) 5 W2 (m) for m . 0, with
+0
+
+W1(m)5 2d8
+
+o
+
+[rk0 ]
+
+k 21/2
+0
+
+0
+
+zi z8d
+i 1 2d8
+
+i5m11
+
+o
+
+i5m11
+
+ziei,
+
+m
+
+o z e ⇒ B (r),
+t t
+
+1
+
+t51
+
+(8)
+
+k01[r (T2k0 )]
+
+(T 2 k0 )
+
+m 5 21, 22, . . .
+W2 (m)5 2d8
+
+zero as the sample size grows unbounded. The result is that
+the limiting distribution is invariant to the underlying
+distribution of zt and et. The resulting distribution can be
+used as an approximation even for large shifts. This idea can
+be found in Bhattacharya (1987), Picard (1985), and Yao
+(1987) for various special models. This framework is
+extended here to general regression models. Moreover, we
+allow nonstationary regressors and disturbances. In this
+case, the limiting distribution turns out to be nonsymmetric.
+We derive the analytical density function and the cumulative
+distribution function (cdf ) for this general limiting distribution, so that confidence intervals can be constructed. To this
+end, we amend assumption A7 to
+A78: dT 5 d0vT, where vT is a positive number such that
+vT = 0 and T (1/2)2avT = ` for some a [ (0, 21) and d0 Þ 0.
+This amendment makes the asymptotic argument easier.
+Further assume
+A9a: (zt, et ) is second-order stationary within each regime such that Ezt z8t 5 Q1 and Ee2t 5 s21 for t # k0 and
+Ezt z8t 5 Q2 and Ee2t 5 s22 for t . k0.
+A9b: A functional central limit theorem holds for 5ztet 6
+within each regime. That is,
+
+21/2
+
+o
+
+ztet ⇒ B2 (r)
+
+t5k011
+
+m
+
+o z z8d 2 2d8 o z e ,
+i i
+
+i51
+
+i i
+
+i51
+
+(9)
+
+m 5 1, 2, . . . .
+In case of independence for (zt, et ) over t, the process W * is a
+two-sided random walk with (stochastic) drift.
+PROPOSITION 2: Under assumptions A1–A6 and A8, and
+assuming that (d8zt )2 6 (d8z8)e
+t t has a continuous distribution,
+then
+d
+
+k̂ 2 k0 = arg max W*(m).
+
+where Bi (r) is a multivariate Gaussian process on [0, 1] with
+mean zero and covariance EBi (u)Bi (v) 5 min 5u, v6Vi for
+0
+i 5 1, 2, and V1 5 lim E(k 21/2
+Skt51
+ztet )2 and V2 5
+0
+21/2 T
+2
+lim E[(T 2 k0 ) St5k011 ztet ] .
+Define
+j5
+
+d08Q2d0
+d08Q1d0
+
+f5
+
+and
+
+d08V2d0
+d08V1d0
+
+.
+
+(10)
+
+Let Wi (s), i 5 1, 2, be two independent standard Wiener
+processes defined on [0, `), starting at the origin when s 5
+0. Let
+
+m
+
+The above limiting distribution can be extended to
+nonstationary data. For simplicity, assume 5zt, et 6 are i.i.d.
+(z (1), e(1) ) for t # k0 and 5zt, et 6 are i.i.d. (z (2), e(2) ) for t . k0 in
+model (2). Then the limiting distribution still holds if one
+regards (zi, ei ) in equation (8) as i.i.d. (z (1), e(1) ) and (zi, ei ) in
+equation (9) as i.i.d. (z (2), e(2) ).
+To derive the probability function of the limiting distribution, one must know d and the distribution of 5zt, et 6. Hinkley
+(1970) studied the case for zt 5 1 and et i.i.d. normal.
+Analytical solutions for general cases are typically difficult
+to obtain. An alternative asymptotic theory is to consider
+small shifts, assuming the magnitude of shifts converges to
+
+Z(s) 5
+
+W1 (2s) 2 0s0/2,
+
+if s #0
+
+5Î
+
+fW2 (s) 2 j0s0/2,
+
+PROPOSITION 3:
+(dT8Q1dT )2
+dT8V1dT
+
+if s . 0.
+
+(11)
+
+Under assumptions A1–A6, A78, and A9,
+d
+
+(k̂ 2 k0 ) = arg max Z(s).
+
+(12)
+
+s
+
+The density function and the cdf of arg maxs Z(s) are
+derived in appendix B. The distribution of k̂ is not symmetric
+when j Þ 1 or f Þ 1. When Qi, Vi, and s2i are the same for
+
+<-----Page 4----->CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+
+each regime (j 5 1 and f 5 1), the limiting distribution
+reduces to (write Q1 5 Q2 5 Q and V1 5 V2 5 V)
+(dT8QdT )2
+dT8VdT
+
+d
+
+(k̂ 2 k0 ) = arg max 5W(s) 2 0s0/26
+
+(13)
+
+s2
+
+d
+
+(k̂ 2 k0 ) = arg max 5W(s) 2 0s0/26.
+
+(14)
+
+s
+
+In this case, the distribution is symmetric about the origin.
+Its density function is studied by Bhattacharya (1987),
+Picard (1985), and Yao (1987).
+Next we consider zt being a vector of trending regressors
+such that zt 5 g(t/T ) 5 [ g1 (t/T ), . . . , gq (t/T )]8. Clearly,
+assumption A9 will not be satisfied; we need to derive the
+limiting distribution separately.
+PROPOSITION 4: Let zt 5 g(t/T ) 5 [ g1 (t/T ), . . . , gq (t/T )]8,
+with gi (x) having a bounded derivative on [0, 1]. Assume
+that the functional central limit theorem holds for et within
+each regime. Under assumptions A1–A6,
+dT8g(t)g(t)8dT
+c21
+
+d
+
+(k̂ 2 k0 ) = arg max Z † (s)
+
+(15)
+
+s
+
+where
+W1 (2s) 2 0s0/2,
+
+Z † (s) 5
+
+by T 21STt 51 ztz8t and T 21STt51 ê2t , respectively. Define L̂ 5
+p
+d̂T8Q̂d̂ T /ŝ2. It can be shown that (L̂ 2 L)(k̂ 2 k 0 ) = 0. Thus
+equation (14) holds when dT, Q, and s2 are replaced by their
+estimators. A 100(1 2 a)% confidence interval is given by
+
+s
+
+where W(s) 5 W1 (2s) for s # 0 and W(s) 5 W2 (s) for s . 0.
+Finally, when the errors are uncorrelated, we have V 5 s2Q,
+and the limiting distribution further reduces to
+dT8QdT
+
+555
+
+5Î
+
+c2/c1W2 (s) 2 0s0/2,
+
+if s #0
+if s . 0.
+
+(16)
+
+0
+with c1 5 lim E(k 21/2
+Skt51
+et )2 and c2 5 lim E[(T 2
+0
+21/2 T
+2
+k0 ) St5k011 et ] .
+
+When et is second-order stationary for the whole sample,
+c1 5 c2 5 c 5 s2 1 2 S`j52 E(e1ej ), the limiting distribution
+reduces to dT8 g(t)g(t)8dT c22 (k̂ 2 k0 ) = arg max 5W(s) 2
+0s0/26. Furthermore, when the et are serially uncorrelated,
+c2 5 s2 5 Ee2t .
+D. Confidence Intervals
+
+The results derived above allow easy construction of
+confidence intervals for the change point. All that is needed
+is to construct consistent estimates for Qi, Vi, s2i , i 5 1, 2,
+and dT. We discuss various special cases below.
+1. (zt, et) is second-order stationary for the whole sample. In this case, the limiting distribution is characterized
+by equation (13) or equation (14). For serially uncorrelated
+disturbances, we only need estimates for dT, Q, and s2. An
+estimate for dT is already available; Q and s2 are estimated
+
+[k̂ 2 [c/L̂] 2 1, k̂ 1 [c/L̂] 1 1]
+
+(17)
+
+where c is the (1 2 a/2)th quantile of the random variable
+arg max 5W(s) 2 0s0/26; [c/L̂ ] is the integer part of c/L̂. The
+quantile c can be computed from the cdf formula (B.4) in
+appendix B. For example, for a 5 0.1, c 5 7.0 and for a 5
+0.5, c 5 11.0.
+For serially correlated disturbances we need an estimate
+for V, which can be obtained by the method of Newey and
+West (1987). Define L̂ 5 (d̂T8Q̂d̂T )2/(d̂T8V̂d̂T ). The confidence
+interval is again given by equation (17) with this new L̂.
+2. (zt, et ) is stationary within each regime. In this case,
+the limiting distribution is described by equation (12). The
+quantities to be estimated are Qi, Vi, i 5 1, 2, and dT. We
+ˆ
+T
+estimate Q1 by k̂ 21Skt51 ztz 8,t and Q2 by (T 2 k̂)21St5kˆ 11 ztz8.
+t
+The Vi are estimated by the Newey and West method, but
+V1 is computed using the subsample [1, k̂] and V 2 using
+the subsample [k̂ 1 1, T ]. For serially uncorrelated et,
+ˆ
+Vi 5 s2i Qi; s21 is estimated by k̂ 21Skt51ê2t and s22 by
+T
+(T 2 k̂)21St5kˆ 11 ê2t . Once these quantities are obtained, we
+can estimate j and f in equation (10) by the plug-in method.
+Note that d0 can be replaced by d̂T in estimating j and f.
+(Multiply both the numerator and the denominator by vT and
+use dT 5 d0vT.) When j and f are known, the quantiles for
+arg maxz Z(s) can be computed from the cdf formulas (B.2)
+and (B.3). Let c1 denote the (a/2)th quantile, and c2 the
+(1 2 a/2)th quantile. Define L̂ 5 (d̂T8Q̂1d̂T )2/(d̂T8V̂1d̂T ). Because P[c1 , L̂(k̂ 2 k0 ) , c2 ] = 1 2 a, a 100(1 2 a)%
+confidence interval is given by
+[k̂ 2 [c2/L̂] 2 1,
+
+k̂ 2 [c1/L̂] 1 1].
+
+(18)
+
+3. Trending regressors. The limiting distribution is given
+in proposition 4. First consider the simple case that et is
+stationary. Let f̂ (0) denote an estimate of the spectral density
+of et at zero (without 2p). For serially uncorrelated et, f̂ (0)
+5 ŝ2 5 T 21STt51 ê2t . Define L̂ 5 d̂T8 g(k̂/T )g(k̂/T )8d̂T /f̂ (0).
+In this case, c1 5 c2 and Z † (s ) 5 W(s) 2 0s0/2. The
+quantiles are computed from equation (B.4). The confidence
+interval is given by equation (17) with the newly defined L̂.
+When the et are only stationary within each regime,
+let f̂1 (0) be an estimate of spectral density of et for the first
+regime (using the subsample [1, k̂]) and f̂2 (0) for the second
+regime. We estimate c2/c1 by f̂2 (0)/f̂1 (0). The quantiles of
+arg max Z † (s) are computed from equations (B.2) and (B.3)
+with f 5 c2/c1 and j 5 1. Define L̂ 5 d̂T g(k̂ /T )g(k̂ /T )8
+d̂T /f̂1 (0). The confidence interval is then computed using
+equation (18).
+
+<-----Page 5----->556
+
+THE REVIEW OF ECONOMICS AND STATISTICS
+III.
+
+FIGURE 1.—CHANGES IN DISCOUNT AND INTEREST RATES (DOTTED VERTICAL
+LINES—DISCOUNT-RATE CHANGES; SOLID CURVE—INTEREST-RATE CHANGES)
+
+Empirical Result
+
+In this section we analyze the response of market interest
+rates to the changes in the discount rates. The discount rate is
+the rate at which the Fed lends and is set by the Fed. It has
+been noted by many researchers that discount-rate changes
+of the same size can have different effects on market interest
+rates (see Dueker (1992) and the references therein). The
+differentials in the response may reflect different causes that
+prompted the Fed to change the discount rates or reflect the
+conditions of the economy. Here we model the response of
+market interest rates to discount-rate changes by a simple
+linear model and examine the response pattern over time. As
+an additional purpose, this application illustrates the procedures for implementing the theoretical results.
+A. The Data
+
+Data used in this analysis can be found in Dueker (1992).
+The yields of three-month T-bills are used as the market
+interest rates. The range of data spans 1973 to 1989. Over
+this period, there were 56 changes in the discount rate made
+by the Fed. An observation is obtained every time there is a
+change in the discount rate. A change in interest rate is
+calculated as the closing T-bill rate on the day of a
+discount-rate change, minus the closing T-bill rate the day
+before the change. Thus the data are in daily level (frequency). Because discount rates are changed irregularly, the
+observations are not equally spaced in calendar time.
+Changes in the discount rate are plotted in figure 1 along
+with changes in interest rates. The vertical dotted lines
+represent the size and direction of the discount-rate changes.
+The solid line represents the changes in interest rate.
+
+on market interest rates. It is possible that an increase in the
+discount rate has a different impact on interest rates from a
+decrease, if the direction of discount-rate changes carries
+economic or financial information. Therefore we suggest a
+modified response model,
+1
+
+DTBi 5 a 1 bDDR i 1 gDDR 2
+i 1 ei
+
+(20)
+
+where DDR 1 5 max 50, DDR 6 and DDR 2 5 DDR 1 2
+DDR . When this model is fitted to the data, the adjusted R 2
+shows a marked improvement over equation (19). Also, the
+hypothesis of equal coefficients for DDR 1 and DDR 2 is
+easily rejected. Both models are to be examined. The first
+will be referred to as the symmetric response model, and the
+second as the asymmetric response model. We will compare
+the estimation results. In particular, we examine how the
+estimated change points are affected by model specification.
+
+B. The Model
+
+The following simple linear regression is used to describe
+the response relationship:
+DTBi 5 a 1 bDDRi 1 ei
+
+(19)
+
+where DDRi denotes the change in the discount rate for the
+ith observation, DTBi denotes the change in the market
+interest rate, and ei is a stochastic disturbance. Because the
+data have daily frequency and two adjacent observations are
+generally far apart over time, it is reasonable to assume that
+the ei are uncorrelated over time. In particular, under the
+efficient-market hypothesis, ei will be a sequence of martingale differences. In this case, equation (19) describes the
+market’s reaction to the ‘‘news’’ of the Fed’s discount-rate
+changes. This model is similar in spirit to the one used by
+Roley and Wheatley (1990) in their study of interest-rate
+response to the money announcement surprises. The appropriateness of this model is further discussed in the comment
+section below.
+The above simple linear relationship assumes that a
+change in the discount rate of the same size in absolute value
+(regardless of an increase or a decrease) has the same effect
+
+C. Estimation Procedure
+
+For empirical problems, more than one break may exist,
+as evidenced by the empirical application here. We discuss a
+procedure capable of detecting and locating multiple breaks.
+The procedure is based on hypothesis testing and works as
+follows. Starting from the whole sample, perform a parameter constancy test. If the test rejects the null hypothesis,
+then estimate a break point and divide the sample into two
+subsamples at the estimated break point. Perform a parameter constancy test for each subsample. Estimate an additional break whenever the subsample fails the constancy
+test. Divide the subsample at the estimated break point (if
+any) into nested subsamples and do the same analysis. This
+step is repeated until all the subsamples do not reject the null
+hypothesis. If the number of break points is known a priori,
+then no hypothesis testing is necessary. In this case, one just
+estimates the break points sequentially in the ordering for
+which the sum of squared residuals is reduced the most, until
+the specified number of breaks is obtained. This is discussed
+in Bai and Perron (1994). Analogously, if it is known that the
+number of breaks is at least m, then no testing is necessary
+for the first m break points.
+
+<-----Page 6----->CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+
+When all of the break points are obtained, a refinement is
+needed. An estimated change point should be reestimated if
+it is obtained from a sample or subsample containing more
+than one break. This reestimation procedure is called
+refinement. Suppose there are only two breaks and they are
+identified as k̂1 and k̂2, k̂1 , k̂2. If k̂1 is identified in the first
+place (i.e., from the whole sample), then k̂1 should be
+reestimated using the subsample [1, k̂2 ]. Similarly, if k̂2 is
+identified in advance of k̂1, then the second break should be
+reestimated using the subsample [k̂1, T ]. Each refined estimator has the same asymptotic distribution as if the sample had
+a single break point, so that our asymptotic theory can be
+applied, as asserted by Bai (1995b). This procedure was first
+suggested in an earlier version of this paper. A refinement
+may be performed prior to the complete estimation of all of
+the breaks.
+It is important to note that the Wald statistic is designed
+for a single break point; it has less power when multiple
+breaks exist. This is because ŝ2 (k) in equation (4) is not a
+consistent estimator of s2 and is biased upward in the
+presence of multiple breaks. Although for large samples (or
+for a large magnitude of shift) one will reject the null
+hypothesis regardless of the consistency3 of ŝ2 (k), the lack
+of power may not be negligible for small or moderate
+samples. Fortunately, the problem can be overcome by a
+simple modification of the test statistic.4 In constructing the
+test statistic (4), the residual variance in the denominator is
+estimated by allowing for more than one break. For moderate sample sizes, two or three breaks should be good enough
+in adjusting the denominator of equation (4). In our empirical application, this adjustment is made for the full sample
+test. Critical values of the hypothesis testing are obtained
+assuming 15% precent ‘‘trimming’’ and 10% significance
+level. The size of a test should be large for small samples, as
+we choose here. The critical values are 10.01 for q 5 2 and
+12.27 for q 5 3. Here q denotes the number of coefficients
+that are allowed to change (see Andrews (1993)).
+D. Test and Estimation Results
+
+Symmetric Response Model: When the whole sample is
+tested for parameter constancy, the sup-Wald statistic is
+8.05, occurring at October 9, 1979 (k 5 28). The test does
+not show instability compared with the critical value of
+10.01. However, if we proceed to divide the sample into two
+subsamples at the estimated break date and test for parameter constancy for each subsample, we will find that the
+second subsample has a sup-Wald statistic of 15.20, occurring at December 4, 1981 (k 5 38). This indicates the
+existence of a break. In addition, if we use the subsample
+[1, 37] to test parameter constancy, the sup-Wald is 58.15,
+3 Because S 2 S (k) converges to infinity as the sample size increases
+T
+and §ˆ 2 (k) is stochastically bounded, it follows that the Wald test statistic
+becomes arbitrarily large as the sample size grows.
+4 When the null hypothesis can be rejected without this modification, it
+will imply a stronger evidence of instability.
+
+557
+
+achieved at October 9, 1979 (k 5 28), strongly rejecting the
+null. Moreover, when the subsample [38, 56] is used, we
+uncover another break point at August 27, 1982 (k 5 42)
+with sup-Wald 11.44. Further tests for each resulting subsample do not show instability. Our analysis indeed indicates
+the existence of multiple breaks. The failure to uncover any
+break with the full sample proves the lack of power for the
+sup-Wald test in the face of multiple breaks. As a verification, if we use the adjustment mentioned earlier by estimating the variance using residuals based on two breaks (at
+observations 28 and 38), the sup-Wald statistic for the whole
+sample becomes 11.96, thereby rejecting the null.
+The final model has three breaks, occurring at the dates
+October 9, 1979, December 4, 1981, and August 27, 1982.
+(In terms of observation numbers, they are 28, 38, and 42,
+respectively.) Because the middle break is estimated with the
+subsample [28, 56], a refinement is obtained by reestimating
+the middle break with the subsample [28, 41]. When this is
+performed, the same break point is obtained, but the
+sup-Wald becomes 33.00. The other two breaks are refined
+already. These estimates are summarized in table 1. The first
+break point marks the beginning of the Fed’s October
+1979–October 1982 operating procedure changes. The last
+break is near the end of the Fed’s procedure changes. It
+remains an open question as to what economic activity
+induces the second break. The estimated regression coefficients are reported in table 2.
+Asymmetric Response Model: The adjusted sup-Wald
+statistic for the full sample is 13.56, rejecting the null
+hypothesis5 (the critical value is 12.27 for q 5 3). The
+maximum is again achieved on October 9, 1979 (k 5 28).
+For the subsample [1, 27], the sup-Wald statistic is 9.23,
+which is not significant compared with the critical value of
+12.26. For the subsample [28, 56], only two of the three
+coefficients (the intercept and DDR 1 ) are allowed to change,
+because of the lack of variation in the data. The sup-Wald
+statistic is 10.001, which is just shy of significance compared with the critical value of 10.01 (note that q 5 2). The
+maximum is attained on August 27, 1982 (k 5 42). This date
+will be treated as a break point for an additional reason
+besides the closeness of the test statistic to the critical value.
+When the subsample [1, 41] is used to refine the first break,
+the sup-Wald statistic is 37.07, more than triple the value
+computed for the full sample (see footnote 5). This is a sign
+of multiple breaks. The refined break point is on September
+19, 1979 (k 5 27).
+Further hypothesis testing for each resulting subsample
+does not reveal additional breaks. In particular, the middle
+break point (k 5 38) associated with the symmetric response
+model does not show up here. The sup-Wald statistic for the
+subsample [28, 41] is only 6.55, as opposed to 33.00 under
+the symmetric response model. Thus the middle break point
+identified in the first model is accounted for by the asymmetric response. In summary, two break points are identified.
+5 The adjustment assumes two breaks in estimating the variance. Without
+this adjustment, the sup-Wald statistic for the full sample is 10.25.
+
+<-----Page 7----->558
+
+THE REVIEW OF ECONOMICS AND STATISTICS
+TABLE 1.—TEST STATISTICS, BREAK POINTS,
+
+AND
+
+CONFIDENCE INTERVALS SYMMETRIC RESPONSE MODEL
+
+Sample
+
+Dataa
+
+Sup-Wald
+
+Criticalb
+Value
+
+[1, 56]
+[1, 27]
+[28, 56]
+[38, 56]
+[42, 56]
+
+1/15/73–2/24/89
+1/15/73–9/19/79
+10/9/79–2/24/89
+12/4/81–2/24/89
+8/27/82–2/24/89
+
+11.96e
+8.59
+15.20
+11.44
+2.21
+
+10.01
+10.01
+10.01
+10.01
+10.01
+
+95% Confidence Interval
+k̂
+28
+—
+38
+42
+—
+
+Symmetricc
+
+Skewedd
+
+[26, 30]
+[37, 39]
+[39, 45]
+
+[25, 29]
+[37, 39]
+[39, 44]
+
+Refinement f
+[1, 37]
+[28, 41]
+[38, 56]
+
+1/15/73–11/2/81
+10/9/79–8/16/82
+12/4/81–2/24/89
+
+58.15
+33.00
+11.44
+
+10.01
+10.01
+10.01
+
+28
+38
+42
+
+Notes: a Beginning and ending dates covered by sample.
+b Critical values corresponding to 15% trimming and 10% significance level. For q 5 2, the value is 10.01, and for q 5 3, the value is 12.27. (See
+Andrews (1993).)
+c Based on symmetric distribution.
+d Based on skewed distribution.
+e Adjusted value. Without adjustment, the value is 8.05. See section IIIC for explanation.
+f See section IIIC for explanation.
+
+These two breaks correspond to the October 1979–October
+1982 change in the Fed’s operating procedures. These results
+are reported in table 3. The estimated regression coefficients
+for the final model are provided in table 4. The middle
+regime exhibits a higher response to discount-rate changes,
+particularly to discount-rate increases.
+E. Confidence Intervals
+
+Symmetric Response Model: For this model, three breaks
+are identified, at the dates of October 9, 1979, December 4,
+1981, and August 27, 1982. (The observation numbers are
+28, 38, and 42, respectively.) We first consider constructing
+confidence intervals using the symmetric limiting distribution (derived assuming homogeneous data). Those using the
+skewed limiting distribution are given later. The first break is
+estimated with the subsample [1, 37]. From table 2 we see
+that d̂ 5 (20.403, 20.171)8. For zt 5 (1, DDRt )8, the
+1
+2
+5 7.95, where s 2
+estimated scale factor L̂ is d̂(37S37
+t
+1 zt z8)d̂/s
+is the estimated error variance. The 97.5% quantile of the
+limiting distribution is 11.0, obtained from equation (B.4).
+By equation (17), the upper boundary of the 95% confidence
+interval will be 28 1 [11.0/7.95] 1 1 5 30. By symmetry,
+the confidence interval is [26, 30]. The second break is
+estimated with the sample [28, 41] with d̂ 5 (1.028, 0.373)8.
+1
+
+2
+5 24.35.
+The estimated scale factor is L̂ 5 d̂(14S41
+t
+28 zt z8)d̂/s
+
+TABLE 2.—ESTIMATED REGRESSION COEFFICIENTS, DEPENDENT VARIABLE DTR
+SYMMETRIC RESPONSE MODEL
+Sample
+
+Date
+
+Intercept
+
+DDRt
+
+[1, 56]
+
+1/15/73–2/24/89
+
+0.046
+(1.23)
+
+0.338
+(5.57)
+
+[1, 37]
+k 5 28
+
+1/15/73–11/2/81
+10/9/79
+
+0.415
+(7.98)
+
+0.340 20.403
+(6.54)
+(6.36)
+
+20.171
+(1.84)
+
+0.73
+
+[38, 56] 12/4/81–2/24/89
+k 5 42
+8/27/82
+
+0.008
+(0.11)
+
+0.164 20.622
+(1.13)
+(1.62)
+
+20.197
+(0.33)
+
+0.45
+
+dt (k)
+
+dt (k)DDRt
+
+R2
+0.35
+
+Notes: t-statistics are provided in parentheses. The variable dt (k) is a dummy variable with dt (k) 5 1 for
+t , k and 0 for t $ k; dt (k)DDRt is the interactive term.
+
+Thus the upper boundary of the confidence interval is 38 1
+[11.0/24.35] 1 1 5 39. Again by symmetry, the confidence
+interval is [37, 39]. Using the same method, the confidence
+interval for the third break point is found to be [39, 45].
+These results are reported in table 1. Confidence intervals in
+calendar time are provided in table 5. The first two breaks
+are estimated with more precision, the last one has a larger
+interval.
+In the above construction it is assumed that the two
+neighboring regimes surrounding each break have homogeneous data. By visual inspection of figure 1 we see that this
+is not the case. For example, the magnitude of the regressors
+for the second regime, October 79–August 89, is typically
+twice the magnitude for the first regime. This suggests that
+Q1 is not equal to Q2. Thus Q1 and Q2 should be estimated
+separately. In addition, the disturbances may not have
+common variance cross regimes, thus confidence intervals
+based on a skewed limiting distribution might be more
+appropriate. For the first break point, we estimate Q1 by
+1 27
+1 37
+t Then j is estimated by the
+27St51 zt z8t and Q2 by 10St528 zt z8.
+1
+ratio of d̂8(101 S37
+and d̂8(27S27
+This gives
+t
+t
+t528 zt z8)d̂8
+1 zt z8)d̂8.
+j 5 1.08. The ratio s22/s21 is estimated by s 22/s 21, yielding
+2.556. Thus the estimated f is (s2/s1 )2ĵ 5 2.771. Using
+equations (B.2) and (B.3) for j 5 1.085 and f 5 2.771, the
+97.5% quantile is 28.0, the 2.5% quantile is 29.2. The scale
+factor L 5 d8Q1d/s21 is estimated to be 10.72. From equation
+(18), the lower boundary of the interval is 28 2 [28/10.72]
+2 1 5 25. The upper boundary is 28 2 [9.2/10.72] 1 1 5
+29. Thus an asymmetric 95% confidence interval is [25, 29].
+Using the same method, the confidence interval for the
+second break is [37, 39], and for the third break it is [39, 44].
+The skewed confidence intervals are similar to the symmetric ones, except that the first is wider.
+Asymmetric Response Model: For this model, two break
+points are identified, the first is September 19, 1979, and the
+second is August 27, 1982. (The observation numbers are 27
+and 42, respectively.) Assuming homogeneous data, the
+confidence interval for the first break is found to be [25, 29],
+
+<-----Page 8----->CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+TABLE 3.—TEST STATISTICS, BREAK POINTS,
+
+AND
+
+559
+
+CONFIDENCE INTERVALS ASYMMETRIC RESPONSE MODEL
+
+Sample
+
+Date
+
+Sup-Wald
+
+Critical
+Value
+
+[1, 56]
+[1, 27]
+[28, 56]
+[28, 41]
+[42, 56]
+
+1/15/73–2/24/89
+1/15/73–9/19/79
+10/9/79–2/24/89
+10/9/79–8/16/89
+18/27/82–2/24/89
+
+13.56a
+9.23
+10.00
+6.55
+2.01
+
+12.27
+12.27
+10.01
+10.01
+10.01
+
+[1, 41]
+[27, 56]
+
+1/15/73–8/16/89
+9/19/79–2/24/89
+
+37.07
+12.30
+
+95% Confidence Interval
+k̂
+
+Symmetric
+
+Skewed
+
+[25, 29]
+[38, 46]
+
+[22, 28]
+[38, 47]
+
+28
+—
+42
+—
+
+Refinement
+12.27
+10.01
+
+27
+42
+
+Notes: See footnotes to table 1.
+a Adjusted value. Without adjustment, the value is 10.25.
+
+TABLE 4.—ESTIMATED REGRESSION COEFFICIENTS, DEPENDENT VARIABLE DTR ASYMMETRIC RESPONSE MODEL
+Sample
+
+Date
+
+Intercept
+
+DDR 1
+t
+
+DDR 2
+t
+
+[1, 56]
+
+1/15/73–2/24/89
+
+20.253
+(2.90)
+
+0.847
+(5.76)
+
+0.205
+(1.32)
+
+0.48
+
+[1, 26]
+
+1/15/73–8/17/79
+
+0.024
+(0.32)
+
+0.178
+(1.13)
+
+20.201
+(0.95)
+
+0.23
+
+[27, 56]
+k 5 42
+
+9/19/79–2/24/89
+8/27/82
+
+20.617
+(3.36)
+
+1.414
+(3.13)
+
+1.087
+(3.27)
+
+Some Comments
+
+1. Changes in the interest rates may be affected by many
+other variables, such as money growth, unemployment, and
+industrial production. These macroeconomic variables are
+relatively smooth (lower frequency data) compared with the
+daily interest rates. We believe that these variables are
+reflected more in the level of the interest rates than in the
+changes. Changes in the daily interest rates may be treated as
+white noise in the absence of ‘‘news’’ under the efficient
+market hypothesis. On the day that the discount rate is
+altered, the change in the interest rate consists of two
+components: a response to a change in the discount rate, and
+an idiosyncratic variation, at least in the absence of other
+‘‘news.’’ This is the rationale for considering models (19)
+and (20). Nevertheless, the condition of the economy may
+affect the strength of a response. One might argue, for
+example, that high unemployment spurs a stronger reaction.
+TABLE 5.—CONFIDENCE INTERVALS
+
+OF
+
+10/9/79
+12/4/81
+8/27/82
+
+R2
+
+0.483
+(1.41)
+
+0.69
+
+CALENDAR TIME)
+
+Asymmetric Response Model
+
+95% Confidence Interval
+Symmetric
+
+20.525
+(3.40)
+
+BREAK DATES (IN
+
+Symmetric Response Model
+Break
+Date
+
+dt (k )DDR 1
+t
+
+If this is the case, then an interactive term of DDRt and the
+unemployment rate may be added as a separate explanatory
+variable. In this case, the simple model (19) amounts to an
+omitted-variable specification. However, one aspect of the
+structural change method is (or can be viewed as) identifying misspecification. Our result shows that the misspecification is due, perhaps, more to the omission of the Fed’s policy
+as a variable than to the lack of inclusion of other macroeconomic variables.
+2. We point out that observation 42 (August 27, 1982) is
+unusual. The discount rate was cut down by a half-point,
+whereas the market interest rate rose by 0.7 point. Three cuts
+were made in the month of August, each by a half-point.
+This is the only month in which the Fed changed the
+discount rate so frequently. The market reacted strongly to
+the first two cuts. Even though the timing of discount-rate
+changes is generally not easily predicted (see Dueker
+(1992)), the third cut seems to have been anticipated by the
+market. The day before the cut, the market interest rate was
+the lowest of that week.
+When a dummy variable is made to account for this
+observation, the result is not altered much for either the
+symmetric or the asymmetric response models. The number
+
+and for the second it is [38, 46]. For nonhomogeneous data,
+the confidence intervals are found to be [22, 28] and
+[38, 47], respectively. These intervals are given in table 3.
+The corresponding intervals in calendar time are given in
+table 5.
+F.
+
+dt (k)
+
+95% Confidence Interval
+
+Skewed
+
+Break
+Date
+
+Symmetric
+
+Skewed
+
+9/19/79–2/15/80
+
+7/20/79–2/15/80
+
+9/19/79
+
+7/20/79–2/15/80
+
+10/16/78–10/9/79
+
+11/2/81–7/20/82
+
+11/2/81–7/20/82
+
+7/20/82–12/14/82
+
+7/20/82–11/22/82
+
+8/27/82
+
+12/4/81–4/9/84
+
+12/4/81–11/23/84
+
+<-----Page 9----->560
+
+THE REVIEW OF ECONOMICS AND STATISTICS
+
+of breaks and their locations are the same, except that the last
+break is identified at observation 44 (November 22, 1982)
+rather than at 42. This change is not dramatic and is not
+unexpected, because observation 42 is the boundary of a
+regime in the absence of this dummy. Tests and estimation
+results for this case are not reported here.
+3. The 1979 and 1982 breaks are identified under both the
+symmetric and the asymmetric response models, suggesting
+a stronger evidence in supporting these two breaks. The
+1981 break appears only under the symmetric response,
+illustrating the sensitivity of break point estimation to model
+specification. The asymmetric response model appears to be
+a reasonable one. In the absence of breaks, the asymmetric
+model fits the data better in terms of the adjusted R 2. The
+regression coefficients of DDR 1 and DDR 2 are significantly
+different. With breaks, direct comparison of R 2 is not
+appropriate, as regression equations cover different time
+periods. An asymmetric response model will be meaningful
+if the sign of the discount-rate changes provides information
+about the Fed’s monetary policy objectives. At any rate, the
+hypothesis of asymmetric response deserves further examination in future research.
+IV.
+
+Conclusion
+
+We have studied the change-point problem in multiple
+regressions where some or all of the coefficients have a shift
+occurring at an unknown time. Consistency and the limiting
+distribution are established for the change-point estimator
+computed by the least-squares method. The results are
+obtained under very general conditions. In particular our
+results hold for a wide range of regressors such as deterministic and stochastic regressors, lagged dependent variables,
+and time trend. Dependent and heteroskedastic disturbances
+are allowed. We derived a skewed and parameter-embedded
+analytical density function and a cumulative distribution
+function for the asymptotic distribution of the change-point
+estimator. The result includes the symmetric distribution in
+the prior literature as a special case and is useful for
+constructing confidence intervals for the true break. The
+empirical analysis examined the relationship between the
+interest-rate responses to the changes in the discount rate.
+This response pattern is found to be unstable. The instability
+seems to be caused by the Fed’s change in operating
+procedures during the period of October 1979–October
+1982. In addition, we documented the asymmetry in the
+response pattern. The regression result suggests a larger
+response to an increase in the discount rate than to a
+decrease.
+REFERENCES
+Amemiya, T., Advanced Econometrics (Cambridge, MA: Harvard University Press, 1985).
+
+Andrews, D. W. K., ‘‘Laws of Large Numbers for Dependent Nonidentically Distributed Random Variables,’’ Econometric Theory 4
+(1988), 458–467.
+——— ‘‘Tests for Parameter Instability and Structural Change with
+Unknown Change Point,’’ Econometrica 61 (1993), 821–856.
+Antoch, J., M. Huskova, and Z. Praskova, ‘‘Effect of Dependence on
+Statistics for Determination of Change,’’ Journal of Statistical
+Planning and Inference (1996).
+Bai, J., ‘‘Least Squares Estimation of a Shift in Linear Processes,’’ Journal
+of Time Series Analysis 15 (1994), 453–472.
+——— ‘‘Least Absolute Deviation Estimation of a Shift,’’ Econometric
+Theory 11 (1995a), 403–436.
+——— ‘‘Estimation of Multiple Breaks One at a Time,’’ Department of
+Economics, MIT, Working Paper 95-18 (1995b).
+Bai, J., and P. Perron, ‘‘Testing for and Estimation of Multiple Structural
+Changes,’’ manuscript, Department of Economics, MIT (1994).
+Bhattacharya, P. K., ‘‘Maximum Likelihood Estimation of a Change-Point
+in the Distribution of Independent Random Variables, General
+Multiparameter Case,’’ Journal of Multivariate Analysis 23 (1987),
+183–208.
+Bhattacharya, P. K., and P. J. Brockwell, ‘‘The Minimum of an Additive
+Process with Applications to Signal Estimation and Storage Theory,’’
+Z. Wahrschein. Verw. Gebiete 37 (1976), 51–75.
+Christiano, L. J., ‘‘Searching for a Break in GNP,’’ Journal of Business and
+Economic Statistics 10 (1992), 237–250.
+Dueker, M. J., ‘‘The Response of Market Interest Rates to Discount Rate
+Changes,’’ Federal Reserve Bank of St. Louis Review 74:4 (1992),
+78–91.
+Gombay, E., and L. Horváth, ‘‘Limit Theorem for Change in Linear
+Regression,’’ Journal of Multivariate Analysis 48 (1994), 43–69.
+Hájek, J., and A. Rényi, ‘‘Generalization of an Inequality of Kolmogorov,’’
+Acta Math. Acad. Sci. Hungar. 6 (1955), 281–283.
+Hall, P., and C. C. Heyde, Martingale Limit Theory and Its Applications
+(New York: Academic Press, 1980).
+Hansen, B., ‘‘Strong Laws for Dependent Heterogeneous Processes,’’
+Econometric Theory 7 (1991), 213–221.
+Hinkley, D., ‘‘Inference about the Change Point in a Sequence of Random
+Variables,’’ Biometrika 57 (1970), 1–17.
+Horváth, L., ‘‘Detecting Changes in Linear Regressions,’’ Department of
+Mathematics, University of Utah (1994).
+Kim, H. J., and D. Siegmund, ‘‘The Likelihood Ratio Test for a Change
+Point in Simple Linear Regression,’’ Biometrika 76 (1989), 409–
+423.
+Krishnaiah, P. R., and B. Q. Miao, ‘‘Review about Estimation of Change
+Points,’’ in P. R. Krishnaiah and C. R. Rao, (eds.), Handbook of
+Statistics, vol. 7 (New York: Elsevier, 1988), 375–401.
+Newey, W., and K. West, ‘‘A Simple, Positive Definite, Heteroskedasticity
+and Autocorrelation Consistent Covariance Matrix,’’ Econometrica
+55 (1987), 703–708.
+Nunes, L., C. M. Kuan, and P. Newbold, ‘‘Spurious Break,’’ Econometrics
+Theory 11 (1995), 736–749.
+Picard, D., ‘‘Testing and Estimating Change-Point in Time Series,’’
+Advances in Applied Probability 17 (1985), 841–867.
+Roley, V., and S. M. Wheatley, ‘‘Temporal Variation in the Interest Rate
+Response to Money Announcements,’’ NBER, no. 3471 (1990).
+Yao, Yi-Ching, ‘‘Approximating the Distribution of the ML Estimate of the
+Change-Point in a Sequence of Independent R.V.’s,’’ Annals of
+Statistics 3 (1987), 1321–1328.
+
+APPENDIX A
+Proof of Proposition 1
+Define VT (k) 5 d̂8(Z
+k
+2 8MZ2 )d̂k. By equation (5), k̂ 5 arg maxk VT (k).
+21
+21 Z 8Me and d̂ 5 d 1
+Notice that d̂k 5 (Z 8MZ
+2
+2 ) (Z 28MZ0 )dT 1 (Z 8MZ
+2
+2)
+2
+k0
+T
+21 Z 8Me. It follows that
+(Z 8MZ
+0
+0)
+0
+21
+VT (k) 2 VT (k0 )5 dT8 5(Z 80 MZ2 )(Z 8MZ
+(Z 8MZ
+2
+2)
+2
+0)
+
+2 (Z 80 MZ0 )6dT 1 HT (k)
+
+<-----Page 10----->CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+where
+
+0 such that
+
+21
+HT (k) 5 2dT8 (Z 80 MZ2 )(Z 8MZ
+2 2dT8Z 80 Me
+2
+2 ) Z 8Me
+2
+
+(A.1)
+
+21
+2 e8MZ0 (Z 80 MZ0 )21Z 80 Me.
+1 e8MZ2 (Z 8MZ
+2
+2 ) Z 8Me
+2
+
+(A.2)
+
+Define for k Þ k0,
+GT (k) 5
+
+0 k0 2 k 0
+
+VT (k) 2 VT (k0 ) 5 2 0 k0 2 k 0 GT (k) 1 HT (k),
+
+.
+
+for all k.
+
+21
+$R 8 (X D8XD )(X 8Z
+(X 8X
+2 2)
+0 0 )R,
+
+(A.8)
+
+By lemma A.4 it is sufficient to show that
+
+(A.3)
+
+(A.4)
+
+where K(C) 5 5k: 0 k 2 k0 0 . C \ dT \ 22 and Th # k # (1 2 h)T 6 for a
+small number h . 0. By equation (A.4), VT (k) $ VT (k0 ) is equivalent to
+HT (k)/ 0 k0 2 k 0 $ GT (k). By lemma 2 it is sufficient to prove that
+
+1
+
+0k 2 k0 . l \ d \ 2 , e.
+HT (k)
+
+P sup
+k[K (C )
+
+T
+
+2
+
+(A.9)
+
+0
+
+Note that HT (k) is defined in expressions (A.1) and (A.2). Consider
+expression (A.1). Use Z0 5 Z2 2 ZD sgn (k0 2 k) twice, and we can rewrite
+expression (A.1) as
+21
+2dT8 (Z 80 MZ2)(Z 8MZ
+2 2dT8 Z 80 Me
+2
+2) Z 8Me
+2
+
+21
+$R 8X D8XD (X 8X 2 X 8X
+2 2 ) (X 8X2 X 80 X0 )R,
+
+k $k0.
+
+Proof: Suppose k # k0. Let A(k) 5 (k0 2 k)21X D8XD (X 28X2 )21 (X 08X0 ).
+Note that A(k) is symmetric and is positive definite when X D8XD is
+invertible. This is because A(k) can be written as [1/(k0 2 k)[(X 08 X0 )21 1
+(X D8X D )21 ]21. Then by lemma A.1, GT (k) $ dT8R8A(k)RdT $ lT (k) \ dT \ 2,
+where lT (k) is the minimum eigenvalue of R8A(k)R. It is sufficient to argue
+that, with probability tending to 1, lT (k) is bounded away from zero as k0 2
+k0
+xtx8t will be positive definite
+k increases. For large k0 2 k, X D8XD 5 St5k11
+with large probability by A3. Now \ A(k)21 \ # \ [1/(k0 2 k)X D8XD ]21 \
+21 \ . But \ (X 8X )(X 8 X )21 \ # \ X 8X\ \ (X 8 X )21 \ is bounded
+\ (X 8X
+2 2 )(X 80 X0 )
+2 2
+0 0
+0 0
+by A3 and A4. In addition, the minimum eigenvalue of [1/(k0 2 k)]X D8XD is
+bounded away from zero by A3 with large probability, so \ [1/(k0 2 k)
+X D8XD ]21 \ is bounded with large probability for all large k0 2 k. Thus
+\ A(k)21 \ is bounded with large probability for all large k0 2 k. This implies
+that the minimum eigenvalue of A(k) is bounded away from zero for all
+large k0 2 k. This is also true for R8A(k)R because R has full common rank.
+LEMMA A.3: Under assumptions A4–A6 there exists a B , ` such that
+for every c . 0 and m . 0,
+
+k
+
+0o 0 2
+
+ztet . c #
+
+t51
+
+21
+5 [2dT8 Z D8Me 2 2dT8 (Z D8MZ2)(Z 8MZ
+sgn (k0 2 k).
+2
+2) Z8Me]
+2
+
+(A.6)
+
+LEMMA A.2: Assume the conditions of A2–A4. There exists l . 0 such
+that for every e . 0, there exists C , ` such that inf0k2k0 0.C\dT \22 GT (k) $
+l \ dT \ 2 with probability at least 1 2 e.
+
+k
+
+Now Z D8Me 5 ZDe 2 Z D8 X(X8X)21 X8e. Note that Z D8X 5 0 k0 2 k 0 Op (1) and
+k0
+(X8X)21X8e 5 T 21/2Op (1). For example, for k0 2 k . 0, Z D8X 5 St5k11
+zt x8t 5 0 k0 2 k 0 Op (1). Thus dT8 Z D8Me 5 dT8 ZDe 2 0 k0 2 k 0 T 21/2 \ dT \ Op (1).
+21 Z 8Me 5 T 21/2
+Similarly, \ (Z D8MZ2 ) \ 5 0 k0 2 k 0 O p (1), and (Z 8MZ
+2
+2)
+2
+Op (1) uniformly on K(C). This implies that equation (A.10) is
+2dT8 Z D8e sgn (k0 2 k) 1 0 k0 2 k 0 T 21/2 \ dT \ Op (1).
+Furthermore, it is easy to argue that expression (A.2) is Op (1) uniformly on
+K(C). In summary,
+HT (k) 5 2dT8 Z D8e sgn (k0 2 k)
+
+Thus,
+HT (k)
+0 k0 2 k 0
+
+5 dT8
+
+1 0
+1
+k[K (C )
+
+LEMMA A.4: Under assumptions A1–A6, for every e . 0 and h . 0, there
+exists T0 . 0, so that when T . T0, P( 0 k̂ 2 k0 0 . Th) , e.
+For a proof see Bai and Perron (1994) as well as an earlier version of
+this paper.
+We are now in the position to prove proposition 1. Because VT (k̂) $
+VT (k0 ) by definition, it suffices to show that for each e . 0, there exists C .
+
+21/2
+
+Z D8e sgn (k0 2 k)
+
+\ dT \ Op (1) 1
+
+(A.12)
+
+Op (1)
+0 k0 2 k 0
+
+We can now prove expression (A.9) using equation (A.12). Consider k ,
+k0. First,
+
+(A.7)
+
+This lemma generalizes the inequality of Hájek and Rényi (1955) for
+martingale differences to mixingales. A similar result for et being a linear
+process is proved in Bai (1994). A complete proof is available upon
+request.
+
+2
+0 k0 2 k 0
+
+1T
+
+B
+c 2m
+
+(A.11)
+
+1 0 k0 2 k 0 T 21/2 \ dT \ Op (1) 1 Op (1).
+
+P sup
+.
+
+(A.10)
+
+3 Z 8Me
+sgn (k0 2 k) 2 2dT8 Z 80 Me
+2
+
+For a proof see the previous version of this paper, which is available
+upon request.
+
+1
+
+21
+5 2dT8 Z 8Me
+2 2dT8 (Z D8MZ2)(Z 8MZ
+2
+2
+2)
+
+(A.5)
+
+k , k0
+
+21
+(Z 80 MZ0 ) 2 (Z 80 MZ2 )(Z 8MZ
+(Z 8MZ
+2
+2)
+2
+0)
+
+T $k$m
+
+VT (k) $ VT (k0 )) , e.
+
+The following two inequalities hold:
+
+21
+(Z 80 MZ0 ) 2 (Z 80 MZ2 )(Z 8MZ
+(Z 8MZ
+2
+2)
+2
+0)
+
+1
+
+sup
+
+0 k2k0 0 .C \dT \22
+
+k[K (C )
+
+Let XD 5 X2 2 X0 5 (0, . . . , 0, xk11, . . . , xk0, 0, . . . , 0)8 for k , k0, XD 5
+2(X2 2 X0 ) 5 (0, . . . , 0, xk011, . . . , xk, 0, . . . , 0)8 for k . k0, and XD 5 0
+for k 5 k0. It follows that X2 5 X0 1 XD sgn (k0 2 k). Denote ZD 5 XDR.
+LEMMA A.1:
+
+P(
+
+P ( sup VT (k) $ VT (k0 )) , e
+
+21
+(Z 8MZ
+dT8 5(Z8MZ
+0
+0 ) 2 (Z 80 MZ2 )(Z 8MZ
+2
+2)
+2
+0 )6dT
+
+When k 5 k0, define GT (k0 ) 5 dT8dT. We have the following identity:
+
+P sup
+
+561
+
+#P
+
+dT8
+
+k0
+
+2
+
+o
+
+k02 k t5k11
+
+sup
+
+k#k02C \ dT \22
+
+0
+
+1
+
+0
+
+ztet .
+
+l \ dT \2
+3
+
+0
+
+k0
+
+o
+
+k0 2 k t5k11
+
+ztet .
+
+2
+
+l \ dT \
+6
+
+2
+
+.
+
+By lemma A.3 (applied with reversed data order), the right-hand side
+above is bounded by
+36
+B
+
+1
+
+l2 \ dT \ 2 C \ dT \ 22
+
+5B
+
+36
+l2C
+
+,
+
+e
+3
+
+for large C. Next, P(T 21/2 \ dT \ Op (1) . l \ dT \ 2/3) 5 P(Op (1)/(T 1/2
+\ dT \ ) . l/3) , e/3 because (T 1/2 \ dT \ )21 = 0. Finally, for k # k0 2
+C \ dT \ 22, we have Op (1)/ 0 k0 2 k 0 # \ dT \ 2Op (1)/C. Thus, P(supk[K(C)
+Op (1)/ 0 k0 2 k 0 . l \ dT \ 2/3) # P(Op (1)/C . l/3) , e/3 for large C.
+
+<-----Page 11----->562
+
+THE REVIEW OF ECONOMICS AND STATISTICS
+
+Summarizing these results yields expression (A.9). The proof of proposition 1 is complete.
+Proof of Corollary 1: Let Ẑ0 denote Z0 when k0 is replaced by k̂. Then
+the estimators b̂ and d̂ are obtained by regressing Y on X and Ẑ0. The true
+model can be rewritten as Y 5 Xb 1 Ẑ0d 1 e* with e* 5 e 1 (Z0 2 Ẑ0 )d.
+Proceeding in the usual way, we have
+
+ÎT
+
+1 2 31
+b̂ 2 b
+
+d̂ 2 dT
+
+5
+
+1 X 8X
+
+X 8Ẑ0
+
+T Ẑ 80 X
+
+Ẑ 8Ẑ
+0 0
+
+3
+
+21
+
+24
+
+1
+T
+
+Î 1
+
+1 X 8e 1 X 8 (Z02 Ẑ0 )dT
+
+2
+
+T Ẑ 8e
+0 1 Ẑ 80 (Z0 2 Ẑ0 )dT
+
+#
+5
+
+X 8 (Z0 2 Ẑ0 )dT
+
+2d8Z D8ZDd 1 2d8Z D8e sgn (k0 2 k)
+k0
+
+ÎT \ d T \
+1
+
+ÎT \ d T \
+
+0o 0
+
+xt z8t \ dT \ 2
+
+ˆ 11
+t5k
+
+Op (1) 5 op (1).
+k
+
+0
+2
+Note that the sum involves Op ( \ dT \ 22 ) terms, so \ St5k
+ˆ 11 xt z8t \ \ dT \ 5
+Op (1). Next,
+
+1
+
+1
+
+0 0
+
+k0
+
+1
+
+0 0
+
+T
+
+5
+
+2
+
+1
+T \ dT \ 2
+
+t t
+
+T
+
+ztz8t d 1 2d8
+
+t5k11
+
+0
+
+0 T Z 8 Z 2 T Ẑ 8 Ẑ 0 5 T \ d \ 0 o z z80 \ d \
+
+k0
+
+1o 2
+
+5 2d8
+
+.
+
+k0
+
+1
+
+Proof of Proposition 2
+For k , k0,
+
+All we have to show is that the limit of the right-hand side is the same as
+the limit when Ẑ0 is replaced by Z0. Let us show plim (1/ÎT )X 8 (Z0 2 Ẑ0 )
+d 5 0. Consider k̂ # k0. Then
+
+0Î
+
+0 k0 2 k 0 # C \ dT \ 22, the second term on the right-hand side of equation
+(A.11) is bounded by CT 21/2 \ dT \ 21Op (1) 5 op (1). The last term of
+equation (A.11), Op (1), which stands for expression (A.2), can be easily
+shown to be op (1) uniformly on D(C). Combining these results together
+with equations (A.4) and (A.11), we obtain the lemma.
+
+2
+
+ˆ 11
+t5k
+
+t5k11
+
+Proof of Proposition 3
+
+All other entries are handled similarly. The normality follows from the
+central limit theorem.
+Proposition 1 implies that k̂ will not lie in K(C) for large C with large
+probability. Let D(C) denote the complement set of K(C) such that
+D(C) 5 5k: 0 k 2 k0 0 # C \ dT \ 22 6. To study the limiting distribution, we
+study the behavior of VT (k) on D(C).
+LEMMA A.5: Under assumptions A1–A6, for dT 5 d fixed or for dT
+satisfying A7,
+VT (k) 2 VT (k0 ) 5 2dT8 Z D8ZDdT 1 2dT8Z D8e sgn (k0 2 k) 1 op (1)
+where op (1) is uniform on D(C).
+Proof: We prove first that 0 k0 2 k 0 GT (k) 5 dT8Z D8ZDdT 1 op (1). We use
+Z0 5 Z2 2 ZD sgn (k0 2 k) to obtain
+0 k0 2 k 0 GT (k) 5 dT8 5(Z 80 MZ0 ) 2 (Z 80 MZ2 )
+5 dT8 (Z D8MZD )dT 2 dT8 (Z D8MZ2 )
+
+(A.14)
+
+ztet.
+
+Under strict stationarity, the above has the same distribution as W1 (k 2 k0 )
+defined in equation (8). Similarly, for k . k0, the left-hand side above is
+k
+k
+z z8 )d 2 2d8St5k
+z e , which has the same distribution as
+2d8(St5k
+011 t t
+011 t t
+W2 (k 2 k0 ). Thus lemma A.5 implies that VT (k) 2 VT (k0 ) converges in
+distribution to W*(k 2 k0 ) and the convergence is uniform on any given
+bounded set of integers around k0. Now the process W*(m) has a unique
+maximum with probability 1 when (d8zt )2 1 2d8ztet has a continuous
+distribution, because P(W*(m) 5 W*(m8)) 5 0 for m Þ m8. Let m* 5
+arg maxm W*(m), then m* is Op (1) because W*(m) = 2` with probability
+tending to 1 as 0 m 0 = `. We thus have that for every e . 0, there exists
+K , ` such that P( 0 m* 0 . K) , e. Similarly by proposition 1, P( 0 k̂ 2
+k0 0 . K) , e. Let k̂K 5 arg max0k2k0 0#K VT (k) and mK* 5 arg max0m0#K
+W*(m). The uniform convergence of VT (k) 2 VT (k0 ) to W*(k 2 k0 ) on any
+bounded set of integers (the difference 0 k 2 k0 0 is bounded) implies that
+d
+k̂K 2 k0 = mK*. That is, for large T, 0 P(k̂K 2 k 0 5 j) 2 P(mK* 5 j) 0 , e for
+all 0 j 0 # K. However, if 0 k̂ 2 k0 0 # K, then k̂ 5 k̂K and if 0 m* 0 # K, then m*
+5 mK*. Thus the difference 0 P(k̂ 2 k 0 5 j) 2 P(m* 5 j) 0 is bounded by
+0 P(k̂K 2 k 0 5 j) 2 P(mK* 5 j) 0 1 P( 0 k̂ 2 k0 0 . K) 1 P( 0 m* 0 . K) , 3e.
+Since e can be arbitrarily small and K can be arbitrary large, the
+proposition is proved.
+
+Op (1) 5 op (1).
+
+21
+3(Z 8MZ
+(Z 8MZ
+2
+2)
+2
+0 )6dT
+
+o
+
+Because dT 5 d0vT, proposition 1 implies that k̂ 5 k0 1 Op (v22
+T ). For any
+given C . 0, we shall derive the limiting process of VT (k) 2 VT (k0 ) for k 5
+k0 1 [sv22
+T ] and s [ [2C, C]. Consider s # 0 (i.e., k # k0 ). By lemma A.5,
+
+1
+
+VT (k) 2 VT (k0 ) 5 2d80 v2T
+
+21
+3 (Z 8MZ
+(Z 8MZ
+2
+2)
+2
+D )dT.
+
+Now \ (Z D8MZ2) \ 5 Op (1) \ dT \ 22 and (Z 2 8MZ2 )21 5 Op (T 21 ). Thus the
+second term of equation (A.13) is bounded by Op (1)/(T \ dT \ 2 ) 5 op (1).
+Next,
+dT8 (ZD8MZD )dT 5 dT8 Z D8ZDdT 1 dT8 ZD8X (X 8X )21X 8ZDdT.
+The second term above is also Op (1)/(T \ dT \ 2 ) 5 op (1). This proves
+that 0 k0 2 k 0 GT (k) 5 dTZ D8ZDdT 1 op (1). Next consider HT (k). Because
+
+2
+
+1
+
+zt z8t d0 1 2d80 vT
+
+t5k11
+
+k0
+
+2
+
+o
+
+ztet 1 op (1).
+
+t5k11
+
+2 k0
+By assumptions A4 and A9, for k 5 k0 1 [sv22
+T ], vTSt5k11 ztz8t = 0 s 0 Q1. In
+k0
+ztet ⇒ B1 (2s), where B1 (x) is a Brownian motion
+addition, vTSt5k11
+process on [0, `) with variance xV1. Because d8B
+0 1 (2s) has the same
+1/2 W (2s), where W ( · ) is a standard Wiener
+distribution as (d8V
+0 1d0 )
+1
+1
+process on [0, `), it follows that, for s # 0, VT (k0 1 [sv22
+T ]) 2 VT (k0 ) ⇒
+1/2 W (2s). Similarly, for s . 0, V (k 1 [sv22 ])
+2 0 s 0 d08Q1d0 1 2(d8V
+0 1d0 )
+1
+T 0
+T
+1/2 W (s), where W is another Wiener
+2 VT (k0 ) ⇒ 2sd8Q
+0 2d0 1 2(d8V
+0 2d0 )
+2
+2
+process on [0, `) independent of W1. In summary,
+
+VT (k0 1 [sv22
+T ]) 2 VT (k0 ) ⇒ G (s)
+5
+
+(A.13)
+
+k0
+
+o
+
+1/2
+2 0 s 0 d8Q
+0 1d0 1 2(d8V
+0 1d0 ) W1 (2s),
+
+if s , 0
+
+1/2
+2sd8Q
+0 2d0 1 2(d8V
+0 2d0 ) W2 (s),
+
+if s $ 0.
+
+5
+
+(A.15)
+
+d
+
+By the continuous mapping theorem, v 2T (k̂ 2 k0 ) = arg maxs G(s).
+However, by a change in variable s 5 bv with b 5 (d08V1d0 )/(d08Q1d0 )2, it
+can be shown that arg maxs G(s) 5 b arg maxv Z(v), where Z(v) is defined
+d
+in equation (11). This implies that b21v 2T (k̂ 2 k0 ) = arg maxv Z(v). But
+21 2
+2
+b v T 5 (dT8 Q1dT ) /(dT8V1dT ) in view of dT 5 d0vT.
+Proof of Proposition 4
+The proof is similar to that of Bai (1995a, p. 434). The details are
+omitted.
+
+<-----Page 12----->CHANGE POINT ESTIMATION IN MULTIPLE REGRESSION MODELS
+e 2y ) dy. Carrying out the integration, we obtain
+
+APPENDIX B
+
+g (x) 5 2221b2F(2221bÎx ) 1 (j 1 221b2 ) exp [221 (f 1 j)x]
+
+Density Function of arg maxv Z(v) (see equation (11))
+Recall that the process Z(v) involves two independent Brownian
+motions with different scales (f Þ 1) and two different drifts j Þ 1. To
+obtain the density function of l* 5 arg maxv Z(v), we use the argument of
+Bhattacharya and Brockwell (1976), who considered the case in which the
+two Brownian motions have the same scale. In addition to the density
+function, we also derive the cdf of l*, which is useful for obtaining
+quantiles when constructing confidence intervals. Let m be the maximum
+and l the location of the maximum of X(t) 5 lB(t) 2 ut/2, t $ 0, where
+B(t) is a standard Brownian motion process on [0, `). That is, l 5
+arg maxt X(t) and m 5 maxt X(t). Using the result of Bhattacharya and
+Brockwell (1976) with a scale transformation, we obtain the joint density
+of (l, m) as
+fl,m (x, y) 5
+
+u
+l
+
+1 82
+
+3 1
+
+3 exp 2
+
+1 y2
+
+2 l2
+
+x 21 1
+
+u
+l
+
+24
+
+x . 0,
+
+y ,
+
+y . 0.
+
+g (x) dx 5 P (l1 [ (x, x 1 dx), m1 . m2 )
+
+e
+5 dx e
+
+`
+
+e
+
+`
+
+0
+`
+
+0
+
+5 dx
+
+0
+
+3
+
+f1 ( 0 x 0 , y)
+
+ee
+`
+
+0
+
+y
+
+0
+
+4
+
+f2 (x 8, y 8 ) dx 8 dy 8 dy
+
+f1 ( 0 x 0 , y)P (m2 , y) dy
+
+3
+
+1
+
+f1 ( 0 x 0 , y) 1 2 exp 2
+
+u
+l2
+
+24
+
+g (x) 5 2 F(22
+
+21
+
+3 F[22
+
+Î 0 x 0 ) 1 2 (1 1 2a) exp [2
+(1 1 2a)Î 0 x 0 ],
+x,0
+
+21
+
+21
+
+2 c exp (a 0 x 0 )F(2b 0 x 0 1/2 )
+
+21
+
+(B.2)
+
+1 (d 2 2 1 221 0 x 0 )F(2221 0 x 0 1/2),
+
+x,0
+
+where
+j
+
+d5
+
+f
+
+1 j
+b5 1 ,
+2 f
+
+j
+
+11 1 f2 ,
+
+(f 1 2j)2
+(f 1 j)j
+
+c5
+
+f(f 1 2j)
+j(f 1 j)
+
+,
+
+.
+
+Similarly, for x . 0,
+G (x) 5 1 1 jf21/2 (2p)21/2x 1/2 exp (2821j2f21x)
+1 c exp (ax)F(2bx 1/2 ) 1 (2d 1 2 2 221j2f21x)
+3 F(2221jf21/2x 1/2 ),
+
+(B.3)
+
+x.0
+
+where
+a5
+
+f1j
+2
+
+b5
+
+,
+
+(2f 1 j)2
+(f 1 j)f
+
+2f 1 j
+2Îf
+
+c5
+
+,
+
+j(2f 1 j)
+(f 1 j)f
+
+,
+
+.
+
+The density function and the cdf specialize for the symmetric case when
+f 5 1 and j 5 1, yielding (see Yao (1987))
+
+Carrying out the integration we obtain
+21
+
+G (x) 5 2(2p)21/2 0 x 0 1/2exp (2821 0 x 0 )
+
+d5
+y dy.
+
+x.0
+
+where b 5 j /f1/2. The cdf G(x) for x , 0 is then obtained as
+
+(B.1)
+
+The marginal distribution of m is exponential with mean l2/u. Now let
+(l1, m1 ) be the location and the maximum of 5W1 (2v) 2 0 v 0 /26, v , 0. The
+joint density of (l1, m1 ) is f1 ( 0 x 0 , y), where f1 is the same as equation (B.1)
+with u 5 l 5 1. Let (l2, m2 ) be the location and the maximum of
+5Îf )W2 (v) 2 jv /26, v . 0, with joint density f2 (x, y) (given by equation
+(B.1) with l 5 Îf and u 5 j). Because (l1, m1 ) is independent of (l2, m2 ),
+the joint density of (l1, m1, l2, m2 ) is f1 ( 0 x 0 , y) f2 (x8, y8). Let l* 5 arg
+maxv Z(v). Then l* 5 l1 if m1 . m2 and l* 5 l2 if m1 , m2. Thus the density
+function g(x) of l* for x , 0 is
+
+5 dx
+
+3 F[2(f1/2 1 221b)Îx ],
+
+a 5 221
+
+x
+
+(2p)21 exp 2u2
+
+563
+
+a(1 1 a) 0 x 0 ]
+
+where a 5 jf21 and F( · ) is the cdf of a standard normal random variable.
+`
+`
+Similarly, for x . 0, g(x) 5 e0 f2 (x, y)P (m1 , y) dy 5 e0 f2 (x, y) (1 2
+
+1
+G (x) 5 1 1 (2p)21/2Îxe 2x/8 2 (x1 5)
+2
+
+Îx
+
+1 2
+
+3F2
+
+2
+
+3
+
+3Îx
+
+1 2
+
+1 e xF 2
+2
+2
+
+for x . 0 and G(x) 5 1 2 G(2x).
+
+(B.4)
+
+

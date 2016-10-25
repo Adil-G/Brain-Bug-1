@@ -26,11 +26,11 @@ public class TestChatBotMain {
     public static void main(String[] args) throws Exception {
 
         while(true) {
-            runChatbot((new Scanner(System.in)).nextLine());
+            runChatbot((new Scanner(System.in)).nextLine(), false);
         }
 
     }
-    public static String runChatbot(String userInput) throws Exception {
+    public static String runChatbot(String userInput, boolean isDeep) throws Exception {
         // Empty chatbot log file
         list.clear();
         // String query = (new Scanner(System.in)).nextLine();
@@ -155,17 +155,27 @@ public class TestChatBotMain {
                     writeFile1(output);
 
             System.out.println("faf3ggh: " + query);
-            Message finalAnswers = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(query, originalInput);
-            JSONObject obj = new JSONObject();
-            JSONArray arr = new JSONArray();
+            Message finalAnswers = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(query, originalInput, isDeep);
+            //JSONObject obj = new JSONObject();
+            //JSONArray arr = new JSONArray();
             String answerString = "";
+            if(finalAnswers.getMessage().equals(Message.POSSIBLE))
+                answerString += "There is nothing on that specific topic.\nPlease choose from one of these topics:";
+            int i = 0;
             for(String message : finalAnswers.getAnswers())
             {
-                arr.add(message);
-                answerString += message;
+                ++i;
+                //arr.add(message);
+                if(finalAnswers.getMessage().equals(Message.POSSIBLE))
+                    answerString += message;
+                else
+                {
+                    answerString +=""+i+".\n"+ message;
+                }
             }
-            obj.put(finalAnswers.getMessage(),arr);
+            //obj.put(finalAnswers.getMessage(),arr);
             //return obj.toJSONString();//;
+            answerString = "ANSWERING THE QUESTION: \""+originalInput+"\"\n\n" +answerString;
             return answerString;
         }
         return "HPE Haven Timeout";

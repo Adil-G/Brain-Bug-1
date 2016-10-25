@@ -1,0 +1,1449 @@
+<-----Page 0----->Probability of Survival As an Investment Criterion
+Author(s): Fred Hanssmann
+Source: Management Science, Vol. 15, No. 1, Theory Series (Sep., 1968), pp. 33-48
+Published by: INFORMS
+Stable URL: http://www.jstor.org/stable/2628444 .
+Accessed: 12/09/2011 23:51
+Your use of the JSTOR archive indicates your acceptance of the Terms & Conditions of Use, available at .
+http://www.jstor.org/page/info/about/policies/terms.jsp
+JSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide range of
+content in a trusted digital archive. We use information technology and tools to increase productivity and facilitate new forms
+of scholarship. For more information about JSTOR, please contact support@jstor.org.
+
+INFORMS is collaborating with JSTOR to digitize, preserve and extend access to Management Science.
+
+http://www.jstor.org
+
+<-----Page 1----->MANAGEMENT SCIENCE
+Vol. 15, No. 1, September, 1968
+Printed in U.S.A.
+
+PROBABILITY
+
+OF SURVIVAL AS AN INVESTMENT
+CRITERION*
+FRED
+
+HANSSMANN
+
+University of Munich, Germany
+Suppose that an investing firm is primarily interested in achieving a specified minimum return, critical to its economic survival. Then it seems appropriate to maximize the probability of exceeding the aspiration level. This decision criterion will be applied in the context of several stochastic static
+investment models with budget constraint. As long as the aspiration level
+does not exceed the maximum expected return achievable with the given
+budget, the desired investment strategy must be sought among the efficient
+solutions in the Markowitz sense. For higher aspiration levels this is no longer
+true. For the special ca,se of the Markowitz model we show that all investment projects with expected yield not exceeding the aspiration level (of yield)
+should be rejected. This is a surprising confirmation of a well-known deterministic rule of investment theory and practice in a rather different context.
+
+Introduction
+
+This paper is concernedwith a probability-orientedinvestment criterionfor
+stochastic investment models. Models treated in the literatureusually assume
+that each investment alternativerequiresa deterministicinvestment and yields
+a stochastic return. We shall make the same assumption.
+The followingcriteriahave been proposedfor the analysisof investmentalternatives:
+1. Maximizationof expectedreturn;
+2. Maximizationof expectedreturnsubject to a constrainton the varianceof
+return;
+3. Maximizationof expectedutility.
+Only the first and second possibilities can be consideredas operational.As
+Weingartnerhas observed,the first criterionadds little beyond the deterministic case (Weingartner,1966). Deterministicreturnsare simply replacedby expected returns.The second approachwas introducedin a classical treatise by
+Markowitz (1959). His work was subsequently extended by Sharpe (1963),
+Baumol (1963), and Cord (1964). An investment alternativethat satisfiesCondition 2 above is referredto by Markowitzas "efficient".There is an efficient
+alternativefor each specifiedvalue of the variance (providedthat this value is
+achievableat all). As long as the decisionproblemis viewed as one of choosinga
+trade-offbetween (expected) return and variance, it is clear that the decision
+makermay confinehis attention to the set of efficientalternatives.Given these,
+he may select an alternative that accordswith his subjective attitude toward
+risk.
+In the present article we shall view the decisionproblemin a differentway.
+We assumethat the investingfirmis primarilyconcernedwith achievinga specified minimum return that is critical to its economic survival. Therefore, we shall
+endeavor to maximize the probabilityof exceedinga specifiedreturn. This decision
+
+criterionwill be appliedin the context of severalstatic investmentmodels similar to the Markowitzmodel.
+*
+
+Received October 1966, and revised April 1967, and January 1968.
+33
+
+<-----Page 2----->34
+
+FRED
+
+HANSSMANN
+
+The present study was done independently from Roy's work (Roy, 1952).
+It turns out that Roy postulates the identical decision criterion by the "safety
+first" principle but uses a different model structure. He admits of negative investments which he interprets as contracting for liabilities. We require investment variables to be nonnegative. As will be shown below, this restriction substantially changes the character of the computational problem. In addition,
+we give solutions for more general models with non-linear return functions.
+Statement
+
+of the General Problem
+
+We consider the following static investment model. A list of investment
+"projects" i = 1, * , n is given. We may invest a continuous amount,
+(la)
+
+x>i O,
+
+in project i. In addition to the Markowitz model, certain competitive bidding
+models also exhibit this structure (Hanssmann and Rivett, 1959; Friedman,
+1956). We further suppose that the firm has already decided on the total amount
+B it wiUlinvest:
+Xi = B.
+
+(lb)
+
+The individual investment xi is deterministic. It will be supposed that it yields a
+stochastic return yi. Total return from the investment program is given by the
+random variable
+Y =
+
+(2)
+
+i=1 yi.
+
+The probability distribution of the random variable yi is assumed to depend on
+xi alone. (Tliis assumption does not imply statistical independence of returns).
+In particular, the expected value of yi is given by a "return function"
+(3)
+
+1ls=~~~~~~~fi(xi),
+
+(i-
+
+.. , n).
+
+The return functions are assumed to be non-decreasing. Similarly, the standard
+deviation of yi is given by a "dispersion function"
+a-i = gi(xi),
+
+(4)
+
+(in1,
+
+,).
+
+Return functions and dispersion functions are supposed to be available. From
+Equation 3 it is clear that the expected value of the total return Y may be
+written as
+E
+
+(5)
+
+=
+
+E(x1
+
+***
+
+, xn)
+
+=
+
+=1
+
+Likewise, the standard deviation of total return is of the form
+***,
+
+(6)
+
+S
+
+Xn)
+
+S(X ,
+
+If statistical independence of returns is assumed, we may write the more explicit
+relationship,
+(7)=
+(7)
+
+~~
+
+~
+
+~
+
+~
+
+S
+
+=2
+
+En-
+
+g,2(X,),
+
+since individual variances are additive.
+Finally, let C be the critical value of total return that we wish to exceed. Since
+it is our intention to maximize the probability Pi Y _ C}, it is clear that we
+must know something about the nature of the probability distribution of total
+
+<-----Page 3----->35
+
+PROBABILITY OF SURVIVAL AS AN INVESTMENT CRITERION
+
+return.It is not sufficientto merely know mean and standard deviation from
+Equations5 and 6. Hence it appearsthat the problemis not generallysoluble.
+We shall, therefore,restrict ourselvesto those cases where the distributionof
+totalreturn can be approximatedby a normaldistribution.If N(u) designates
+the standardizedcumulativenormaldistribution,then it is clearthat the probability of exceedingthe critical return C is given by
+([C-E]/S).
+(8)
+PiY? C=l1-N
+Furthermore,becauseof the monotonicityof a cumulativedistributionfunction,
+the criticalprobabilityP will be maximizedby minimizingthe argumentof the
+cumulativenormaldistribution.In other words, it is sufficientto minimizethe
+function
+(9)
+H(xi X , x,) = [C - Z&=Jfi(fX)]/XS(X1 , * xn)
+.
+
+subject to the budget constraintof Eq. lb and the nonnegativityconstraintsof
+Eq. la. We shall distinguishthe case of linear return functions and dispersion
+functions (Markowitzmodel) fromthe generalnonlinearcase. In the linearcase
+statistical interdependenceof returnsis admitted. In the general case we shall
+have to assumestatistical independenceof returnsin orderto take advantageof
+Equation7. A computationalprocedurefor solutionwill be presentedthat relies,
+in part, on dynamic programming.
+It is worth mentioningthat our decision criterion leads to the holding of a
+single asset any time the returnon a risklessasset exceedsC. Underthese conditions, the formal proceduresto be presented break down, and the solution is
+obvious. We may thereforeexclude this case from the followingdevelopments.
+Model I: Independent
+
+Linear Returns
+
+In accordancewith the Markowitzmodel, we now assume the followinglinear form of the return and dispersionfunctions:
+(10)
+
+f(xi)
+
+=exex
+
+oi = g(xi)
+
+= sixi
+
+Ai =
+
+(i
+(i
+
+=
+
+1, *
+1
+
+n),
+
+n),
+where ei and si are constants. These are easily interpreted.If we invest an
+1 in project i, then the returnwill be a randomvariable qi with
+amount xi
+mean ei and standarddeviation si. Let us also introducethe covariances,j between the random variables 7, and qj. From the linearity of the model it is
+clear that total return may be written as
+(11)
+
+(12)
+
+Y
+
+=
+
+*
+
+,
+
+i1 xi7, .
+
+From the standpoint of stochastic variation, the decision variablesxi are constant coefficients.We are, therefore,dealing with a linear combinationof random variables. It follows from well-knownstatistical theorems that the variance of total returnmay be written as
+S = Z=1
+i six; + 2E1 EX_t SZjxixj
+(13)
+This quadraticfunction was used by Markowitz.In the presentsection we shall
+assume statistical independenceof returns. Therefore,the covariancessij vanish. We may then change the scale of each variable xi by the positive factor
+l/si. This linear transformationreduces Equation 13 to a sum of squares.If,
+
+<-----Page 4----->36
+
+FRED
+
+HANSSMANN
+
+for simplicity's sake, we designate the transformed variables by the original
+symbols x,, we have
+S2
+
+(14)
+
+=
+
+2
+
+The change of scale does not affect the linearity of the return functions. If, for
+simplicity's sake, we maintain the original notation ei for the transformed coefficients of Equation 10, then total expected return is given by
+E = Z_= eixi .
+
+(15)
+
+Similarly, the linearity of the budget constraint of Equation lb is not affected.
+However, its coefficients are no longer unity. Therefore, the budget constraint
+takes the more general linear form
+En= bixi = B,
+
+(16)
+
+where the bi are constant coefficients. Since we have made a change of scale with
+positive transformation factors, the nonnegativity constraints of Equation la
+may be maintained in the form
+x _0,
+
+(17)
+
+(i=1,.*.,n).
+
+Based on Equations 14 and 15, the objective function of Equation 9 now assumes
+the special structure
+
+(18)
+
+, x.) = (C-
+
+H(x1,
+
+n eixi)(
+
+2 112
+
+Our problem,then, is the minimizationof the nonlinearobjective function of
+Equation 18 subject to the linear constraintsof Equations 16 and 17. Equivalently, and more conveniently, we might consider the maximization of the func-
+
+tion
+(19)
+
+Z = -H(x*,
+
+x.) = (Z=
+
+eixi -
+
+(=
+
+X
+
+The problemmight be approachedby the techniqueof Lagrangianmultipliers
+if it were not for the nonnegativityconstraintsof Equation 17. These, however,
+turn out to be the principalproblem.Furthermore,the Lagrangianapproach
+might give us a minimum,a maximum,or neither.Therefore,the behaviorof the
+objectivefunction of Equation 19 must be investigatedmore directly. To do so
+we shall utilize a geometricapproach.
+Geometric
+
+Investigation
+
+of Objective
+
+Function
+
+For ease of presentation,our investigationwill be conductedin three dimensions. However,our procedureis generallyvalid, and its translationto n dimensions is straightforwardand obvious. In three-dimensionalspace, Equation 16
+representsa "budget plane". Because of Equation 17, the admissibleregion
+is a triangulararea within the budget plane. It is boundedby the intersections
+of the budget plane with the planes xi = 0, x2 = 0, and x3 = 0, respectively
+(see Fig. 1). For the moment,we shall ignorethe nonnegativityconstraintsand
+considerthe objective function Z over the entire budget plane. Let Po be the
+intersectionof the budgetplanewith its normalfromthe origin.This point represents the investment programwith minimumvariance. Let the corresponding
+expected return be Eo. Based on Equation 15 we may considera set of planes
+E = const. each of which representsa surface of constant expected return.
+
+<-----Page 5----->PROBABILITY
+
+OF SURVIVAL
+
+AS AN INVESTMENT
+
+CRITERION
+
+37
+
+Q~~~~~~~~
+
+FIG.
+
+1. Budget plane
+
+These planes intersectthe budget plane in a set of parallellines of constant expected return,the "E-lines".Since the planesE = const. are parallel,they have
+a commonnormalfrom the origin.The projectionof this normalinto the budget
+plane runs verticalto the E-lines. It will be knownas the "pivot line". In Fig. 1
+we have markedthe directionof the pivot line that correspondsto increasing
+E-values (gradientdirection).
+If we study the functionZ alonga particularE-line, it is clearthat its numerator is constant and its denominatorincreasessymmetricallyon both sides of the
+pivot line. Therefore,the Z-functionabove a given E-line may be depictedby a
+symmetricalbell-shapedcurve that falls off to zero on both sides of the pivot
+line and reachesa pivot above the pivot line (see Fig. 2). The pivot may be a
+maximumor minimumdependingon the sign of the numeratorof Equation 19.
+For a given E-line, all Z-valuesare of equal sign. Along the line E = C we have
+Z = 0. This line separatesthe negative and positive portionsof the Z-surface.
+As long as we disregardthe nonnegativityconstraints,it seems clear that the
+Z-functioncan assume a maximumonly at one of the dotted pivot points in
+Fig. 2. Therefore,the "pivot curve" connectingthese pivot points becomesof
+primaryinterest. We proceedto plot the course of the pivot curve above the
+pivot line.
+In orderto do so, let us start out with an algebraicdescriptionof the pivot
+curve.In Fig. 1 we have drawnthe line E = Eothroughpoint Po, and a parallel
+line E = Eo + AE where AE > 0. The distance between the two lines is d.
+The position of an arbitrarypoint of the pivot line may be describedby its distance d. t from POwheret is a parameter.The value t = 0 correspondsto point
+Po. Finally, let robe the length of the normalfrom the origin to point Po. It
+now followsfrom Eq. 19 and Fig. I that the Z-functionabove the pivot line may
+be written as
+(12
+(20)
+p(t) = (Eo + tAE - C)/(ro2 + d2te)",
+_
+< t < + X ).
+
+<-----Page 6----->38
+
+FRED HANSSMANN
+
+E..o
+
+FIG. 2.
+
+Z-surfaceover budget plane
+
+This is the algebraicdescriptionof the pivot curve. It followsimmediatelythat
+the pivot value p(t) = 0 is assumed for
+to = (C
+
+(21)
+
+-
+
+Eo)_AE.
+
+Furthermore, upon differentiation of Eq. 20 we obtain
+(22)
+
+[ro_AEp' (t)
+
+-
+
+=
+
+_12.
+(Bo
+
+_ C) d2t] (ro2 + d2e)
+
+The derivativep'(t) has a uniquezero at
+t* = ro2AE/[d2(Eo - C)].
+
+(23)
+
+We also note that p'(t) exhibitsa single changeof sign at t = t*. If Eo - C _ 0
+the sign changes from positive to negative; consequently,there is a maximum
+If E -C > 0, there is a minimum.We thus have the followingresults:
+(24)
+
+Case I:
+
+C _ Eo to < 0;
+
+CaseII: C>Eo
+
+to>O;
+
+t* > 0 (max.),
+
+t*<0(min.).
+
+In additionit followsreadilyfrom Eq. 20 that the pivot functionassumesfinite
+asymptoticvalues
+(25)
+
+p(+o
+
+?
+
+=
+
+AE/d.
+
+Based on Equations24 and 25 we may drawthe two types of pivot curvesshown
+in Figs. 3 and 4. Togetherwith the results of Fig. 2, it follows immediatelythat
+the Z-surfaceas definedover the entirebudget plane has a unique global maximumin CaseI and a unique global minimumin Case II. Althoughthese extreme
+points do not necessarilycoincidewith the desiredmaximumover the restricted
+budget plane, their knowledgewill be importantin the process of locating the
+solution. We thereforeproceedto derive them by the Lagrangianapproach.
+Lagrangian
+
+Solution
+
+without
+
+Nonnegativity
+
+Constraints
+
+In orderto find extremevalues of the objective function of Equation 19 subject only to the budget constraint of Equation 16, and disregarding the non-
+
+<-----Page 7----->PROBABILITY
+
+OF SURVIVAL
+
+AS AN
+
+INVESTMENT
+
+39
+
+CRITERION
+
+t~~~~~~~~
+
+/
+
+FIG. 3. Pivot function for Case I (C < Eo)
+
+negativity constraintsof Equation 17, we formthe Lagrangianfunction
+L = ( ex - C)/(ZE Xi2)1/2+ X ( bixi- B).
+(26)
+The summations in Equation 26 and the following equations always refer to
+i = 1, ... , n. It will be helpfulto introducethe distancer of the point xi from
+
+the origin:
+r
+
+(27)
+
+(Zx,2)1/2.
+
+=
+
+Using this notation,we take the partialderivativesof Eq. 26 and set them equal
+to zero:
+(28)
+
+aL/axi
+
+=
+
+teir2
+
+-
+
+Eeixi
+
+-
+
+C)xil/r3 + Xbi= 0,
+
+(i *
+
+, n).
+
+Multiplying Equation 28 by xi and summing over i we obtain
+
+C/r + XB=O,
+
+(29)
+or
+
+X= -C/Br.
+
+(30)
+
+The preceding expression may be used to eliminate the Lagrangian multiplier
+Xfrom Equation 28. After multiplication with r' Equation 30 takes the form
+(31)
+
+[ei
+
+-
+
+(C/B)bi]r2
+
+-(
+
+eix
+
+-
+
+C)xi = 0,
+
+(i
+
+=
+
+1,
+
+*.*
+
+, n).
+
+Finally, let us multiply Equation31 with the expressione; - (C/B)bi and sum
+over i. This yields:
+
+<-----Page 8----->40
+
+FRED
+
+HANSSMANN
+
+I p(t)
+
+FIG. 4. Pivot function for Case II (C > Eo)
+
+(32)
+
+(E xi2)[Z (e
+
+-
+
+(C/B)bi)2] = (E eix
+
+-
+
+[Z xi(ei -
+
+=
+
+C)[Z xi(ei
+
+-
+
+(C/B)b1)]
+
+(C/B)bi)]2
+
+The last step in Equation 32 follows since by virtue of the budget constraint
+of Equation 16 we have
+(33)
+
+,
+
+eixi
+
+-
+
+C=
+
+eixi
+
+-
+
+Z bix
+
+(C/B)
+
+=
+
+xi(ei
+
+-
+
+[C/B)bi]
+
+Eq. 32 states that the solution vector xi is parallel to the vector es If r is a factor of proportionality, we may write
+xi
+
+(34)
+
+r(ei
+
+-
+
+(C/B)bi.
+
+(C/B)bi).
+
+The factor r is easily determined from the fact that the xi* must fulfill the budget
+constraint. We therefore have
+(35)
+
+xi* = B[ei
+
+-
+
+(C/B)bi]/[Z
+
+bei
+
+-
+
+(C/B)
+
+E
+
+b2].
+
+As we would expect from our earlier considerations, the solution is unique. We
+already know that for C ? Eo it represents a global maximum whereas for
+C > Eo we have a global minimum which is of no immediate interest to our
+particular problem. Equation 35 also confirms our earlier findings about the location of the extreme point. According to Equation 35 the solution point lies
+on the plane determined by the vectors es and bi. In terms of Fig. 1, these vectors represent the E-normal and the normal of the budget plane, respectively.
+
+<-----Page 9----->PROBABILITY OF SURVIVAL AS AN INVESTMENT CRITERION
+
+41
+
+By definition,the plane determinedby both normalsintersectsthe budgetplane
+in the "pivotline" of Fig. 1. Thus, the solutionpoint of Equation35 is locatedon
+the pivot line, regardlessof the value of C.
+It is interestingto see how the solutionpoint travels along the pivot line as C
+is varied.First, let us expressC as a multiplek of the budget:
+k = C/B.
+
+(36)
+
+The followingresultsmay be obtaineddirectlyfrom Equation35. For k = the solutionvector falls in the directionof the normalbi of the budgetplane. As
+k is increased,it travelsalongthe pivot line in the directionof increasingE-values
+until for k = 0 it falls in the directionof the E-normal.Thus far, the solution
+points have positive coordinatesand therefore fulfill the nonnegativity constraints of Equation 17 also. For
+(37)
+
+kr=
+
+Min, (e,/b,),
+
+one of the coordinatesbecomeszero for the first time. If k is increasedfurther,
+it becomes negative and the admissibleregion is left. For
+
+ko= (,
+
+ebi)/(1 bV2),
+the solution point reachesinfinity. As k is increasedfurther,the solution vector
+moves to the other half of the pivot line. For
+(38)
+
+(39)
+
+ko = Maxi (e,/bO),
+
+it reenters the admissibleregion, and for k = + oo it returns to the normal
+directionof the budget plane, bi.
+The value ko in Equation 38 is of particularimportance.By definition,the
+normalbi intersectsthe budget plane at Po (see Fig. 1). By substitutingpoint
+Po into the returnfunction of Equation 15 we can verify the relationshipEo =
+koB.Thus, by Equation 36, the value k = kocorrespondsto C = Eo. In terms
+of Fig. 3, k ?< kocorrespondsto Case I, and the solution of Equation35 represents a maximum.For k > koit representsa minimumaccordingto Fig. 4. The
+location of solution points on the pivot line is illustratedby Fig. 5 (numerical
+example).
+Explicit Solution of Investment
+
+Problem
+
+Now let us introducethe nonnegativityconstraintsthat lead to the feasible
+region shown in Fig. 1. ConsiderCase I (C ? Eo, k < ko). If the Lagrangian
+maximumfalls inside the admissibleregion it obviouslyis the desiredsolution.
+According to Eq. 37, this case obtains for
+
+-
+
+oo < k < Mini e/lbi. For Mini
+
+ei/bi < k _ ko the Lagrangianmaximum is not admissible.To handle this
+case, considerFig. 3.
+Clearly,any point on the pivot line with t < t* dominatesall otherpointswith
+smaller E-values. In particular,this is true of point POwhich correspondsto
+t = 0. Since Po is an admissiblepoint, the searchfor a maximumcan obviously
+be restrictedto the areabelowthe line E = Eoin Fig. 1. This areawill be known
+as the "reducedadmissibleregion".Note that the Lagrangianmaximumoccurs
+on the pivot line in positive (gradient) directionfrom Po. We now assert that
+the desired maximumoccurs on the boundaryX3= 0. The proof proceedsindirectly. Considerany point P of the reduced admissibleregion with x3 > 0.
+
+<-----Page 10----->42
+
+FRED HANSSMANN
+
+Draw the corresponding E-line. By moving closer to the pivot line in vertical
+direction (that is, along the E-line) we can always raise the value of the objective function. It remains to be shown that this can be done without leaving the
+reduced admissible region.
+The latter assertion is trivial if the given point P lies in the interior of the reduced region. It is equally obvious for border points, as long as the E-line intercepts the pivot line in an admissible point. The only difficulty arises when the
+point of interception P1 falls outside the admissible region (see Fig. 1). Consider
+this case. We shall have to utilize the following lemma: the normal from any
+admissible point to any of the boundary lines of the admissible region intercepts the boundary line in an admissible point (the lemma is proven in the
+Appendix). According to the lemma, the normal from P to the boundary line
+0 intercepts at an admissible point P2. Clearly, the normal (E-line) from
+X3=
+P to the pivot line must intercept the boundary line X3 = 0 at an intermediate
+point P3 between P2 and P4. Now since P2 and P4 are admissible, so are all
+intermediate points. We may, therefore, increase the objective function by movinig from P to P3 .
+Having shown that the maximum occurs on the boundary, we may reduce
+our problem to a lower dimension by setting X3 = 0. Because of the symmetry
+of the model, the reduced problem has precisely the same structure as the original. Furthermore, since by Equation 37 it is the smallest ratio ei/bi that is eliminated, it follows from Equation 38 that the constant ko' of the reduced problem
+must be greater or equal ko. In other words, Case I obtains for the reduced problem also (k < k'o). In particular, the Lagrangian solution of the reduced problem represents a maximum. If it is admissible, we have reached the desired
+solution. Otherwise we can eliminate another variable. The procedure is bound
+to terminate after at most n steps. Fortunately, the result can be written down
+explicitly. Clearly, the Lagrangian solution of a reduced problem is obtained by
+omitting from Equation 35 all terms that refer to the eliminated variables, that
+is by restricting subscript i and all summations to the retained variables. To
+arrive at a feasible Lagrangian solution for the first time we must eliminate all
+variables i with xi < 0 in the original problem. The "reduced Lagrangian solution" so obtained represents the desired maximum. By Equation 35 the optimal
+program does not contain any projects with e/lbi < k but all projects with
+el/bi > k.
+This result is rather surprising in that it confirms an old and well-Inown deterministic rule for a rather different stochastic model: all projects with expected
+yield below a given threshold are rejected.
+Now consider Case II (C > En). It will be helpful to make two further distinctions. Consider first the possibility Eo < C _ Emax.where Emax is the maximum expected return that can be achieved with the available budget. Emax
+is easily calculated by allocating the entire budget to the project with the highest
+ratio el/bi. Thus, we have ko < k < Maxi ei/bi. Clearly, the line E = Emax
+passes through a vertex of the admissible region. This vertex lies below the line
+E = Eo in Fig. 1. We may now select an E-value between Emax and C. The corresponding E-line necessarily passes through the interior of the admissible region
+below the line E = E.o Along this line and below it, the Z-function of Equation
+19 assumes positive values. As long as there are any positive values in the admissible region, it is clear that the search for the maximum can be confined to
+
+<-----Page 11----->PROBABILITY
+
+OF SURVIVAL
+
+AS AN INVESTMENT
+
+43
+
+CRITERION
+
+TABLE 1
+Explicit Solutions of Investment Problem for Linear Return and Dispersion Functions
+Case
+
+Range of Critical Ratio*
+
+I: C _ Eo
+
+< k < Mini ei/b
+
+-co
+
+II: C > Eo
+
+Solution Point
+
+Lagrangian solution
+
+Mini ei/bt < k < ko
+
+Reduced Langrangian solutiont
+
+ko < k < Maxi ei/bi
+
+Reduced Lagrangian solutiont
+
+Maxi eibi < k < oo
+
+Vertex that yields
+Max, (e,
+
+-
+
+bik)
+
+* The critical ratio is defined as k = C/B.
+t Exclude all projects with el/bc _ k.
+
+these. It is also clear from Figs. 2 and 4 that the positive Z-values (corresponding to the region t ? to) increase as we move closer to the pivot line in vertical
+direction. Following exactly the same argument as in Case I we may conclude
+that the maximum occurs on the boundary X3 = 0, and we may reduce the problem by one dimension as before. Since by Equation 37 the eliminated variable
+corresponds to the smallest ratio e/lb,, we have k < Max'i e,/bi for the reduced problem. If in addition k'o < k (see Equation 38) then the reduced problem gives rise to the present version of Case II, and we may continue to eliminate variables in increasing order of e,lb,. As soon as the condition k < k'o is
+reached, the problem is reduced to Case I and we may write down the explicit
+solution. Clearly, the final result is a reduced Lagrangian solution in the sense
+defined earlier. By Equation 35 it does not contain any projects with e/lb. < k.
+On the other hand, it must include all projects with es/bi > k since the corresponding reduced problem yields k'o > k (by Equation 38) and an admissible
+Lagrangian solution. Thus we have arrived at a result identical with that of
+Case I.
+It remains to consider the case C > Emaxor equivalently k > Maxi (el/bi).
+From Equation 39 we know that the Lagrangian solution is admissible and
+represents a minimum. The same statement can be made about all reduced problems since k > Max'i (el/bi) holds. Consequently, the desired solution point
+cannot be an interior point of any reduced problem. For if it were, it would also
+have to be the Lagrangian solution of some reduced problem which, however,
+corresponds to a minimum. It follows that the maximum occurs at a vertex.
+It may be found by checking the values of the objective function at all vertices,
+that is, by selecting Max, (et - b,k).
+The various solutions are summarized in Table 1.
+Numerical
+
+Example
+
+for Independent
+
+Linear
+
+Returns
+
+(Model
+
+I)
+
+To illustrate the preceding theory, let us consider a three-dimensional example
+with the following coefficients:
+ei=3;
+(40)
+
+e2 = 2;
+b1=b2=b3=l;
+B = 30.
+
+e3 = 1;
+
+<-----Page 12----->44
+
+FRED
+
+HANSSMANN
+
+TABLE 2
+Optimal Solutions for Various Values of C
+Case
+
+I
+I
+II
+
+II
+
+Excluded
+Variables
+
+k
+
+Standard
+Standard )|of~~~~~~~Probability
+Popt
+Exceeding
+
+Optimal Solution
+
+-00
+
+10,
+
+10,
+
+10
+
+-s
+
+1.00
+
+Pb
+
+0
+
+15,
+20,
+
+10,
+10,
+
+5
+0
+
+-3.75
+-2.23
+
+1.00
+0.99
+
+PI
+PI
+Pm
+
+1.0
+
+X3
+
+1.5
+2.0
+
+X3
+
+2.5
+3.0
+4.0
+5.0
+6.0
+
+X2 ,XS
+
+X2 ,X3
+X2,
+
+X2
+X2,
+
+XS
+
+,X3
+X3
+
+X2 ,X3
+
+22.5,
+30
+
+7.5,
+0
+
+0
+0
+
+-1.59
+-1.00
+
+0.94
+0.84
+
+30,
+30,
+
+0,
+0,
+
+0
+0
+
+-0.50
+0
+
+0.69
+0.50
+
+Pm
+
+30,
+30,
+30,
+
+0,
+0,
+0,
+
+0
+0
+0
+
++1.00
++2.00
++3.00
+
+0.16
+0.02
+z ?
+
+Pm
+
+Pm
+
+Pm
+
+Pm
+
+Thus, the objective function of Equation 19 takes the form
+(41)
+
+Z = (3x1 + 2x2 +
+
+X3 -
+
+30k)/(X12
+
++
+
+X22 +
+
+X32)1/2.
+
+It is to be maximized subject to the budget constraint
+(42)
+
+X1 +
+
+X2 +
+
+X3 =
+
+30,
+
+and the nonnegativity constraints
+
+(43)
+
+X1 , X2 , X3-0.
+
+From Equation 38 it follows that
+(44)
+
+ko= 2,
+Eo= 2B.
+
+Furthermore, since el/bi = 3 is the highest ratio ei/bi, we have
+(45)
+
+Emax = 3B.
+
+Finally,
+(46)
+
+Mini ei/bi = 1
+
+From Table 1 we conclude that for values of k up to 1.0 the solution of the Lagrangian system lies inside the admissible region and represents the optimal
+solution (see Table 2). For values of k > 3.0 the optimal solution is given by
+the vertex xi = 30 (xi = X2 = 0). For intermediate values of k we may easily
+determine the variables to be excluded and the corresponding reduced Lagrangian solution. This has been carried out for k = 1.5; 2.0; 2.5; 3.0 (see Table 2).
+For all solutions given in Table 2 we may compute without difficulty the optimal values of the objective function Z and the corresponding probabilities of
+exceeding the critical return C. Fig. 5 shows the admissible region, the pivot line
+PgPr, and the location of the various solution points given in Table 2. Table 3
+exhibits the probability of exceeding the critical return C for the optimal solution and, for comparison, for a policy of spreading the budget evenly across the
+
+<-----Page 13----->OF SURVIVAL
+
+PROBABILITY
+
+AS AN INVESTMENT
+
+45
+
+CRITERION
+
+I
+'
+
+.,N
+
+/
+
+o
+
+'10
+\*\X\.~~
+
+40
+
+/
+
+/s
+
+40
+
+40
+
+4o
+
+FIG. 5. Admissible region and solution points for numerical example
+TABLE 3
+Probability of Survival for Alternate Strategies
+k
+- 00
+0
+
+Spreading Evenly
+
+1.00*
+z1.00
+
+1.00
+#1.00
+
+Maximizing Probability of
+Exceeding C
+
+1.00
+l.00
+
+1.0
+
+0.96
+
+0.98
+
+0.99
+
+1.5
+2.0
+
+0.81
+0.50
+
+0.93
+0.84*
+
+0.94
+0.84
+
+2.5
+3.0
+
+0.19
+0.04
+
+0.69*
+0.50*
+
+0.69
+0.50
+
+4.0
+
+0
+
+0.16*
+
+0.16
+
+Pb
+
+Pm
+
+Point
+*
+
+Maximizing
+Expected Return
+
+Popt
+
+Solition identical with Popt
+
+three investment opportunities (point Pb) and the policy of maximizing the expected return (point Pm). It is evident that the policy of even diversification
+yields a substantially lower probability of survival than the optimal policy,
+especially in the medium and higher ranges of k.
+
+<-----Page 14----->46
+
+FRED
+
+HANSSMANN
+
+Model II: Correlated Linear Returns
+
+We now abandon the assumption of statistically independent returns and
+return to the generalvariancefunction of Equation 13. The objective function
+of Eq. 19 must now be replacedby
+(47)
+
+Z=
+
+-
+
+C)/(n==
+
+si2xi2+
+
+Z:n
+
+J:--1 2sijxixj))2.
+
+The nonnegativity constraintsand the budget constraintremain unalteredas
+in Equationsla and lb. The quadraticform of Equation 13 is positive definite.
+It is well-knownthat it may be transformedinto purely quadraticform by a
+linearorthogonaltransformationof the variablesxi. By a subsequentchangeof
+scale of the transformedvariables the objective function may once again be
+given the simple form of Equation 19. These transformationsdo not affect the
+linearity of the budget constraint.Only the simple form of the nonnegativity
+constraintsis destroyed.At any rate it follows that the geometricpropertiesof
+the Z-surfaceabove the budget plane are essentially the same as in Model I.
+In particular,the Z-surfacehas a single maximumfor C < Eo and a single
+minimumfor C > Eo. The constant Eo may be calculated without difficulty
+as the value of the E-functionat point P0, the intersectionof the budget plane
+with its normal from the origin. We may, therefore,essentially maintain the
+solution procedureused for Model I.
+The first step is to find the unconstrainedextremevalue of the Z-surfaceover
+the budget plane by the Lagrangiantechnique.These calculationsare of course
+morecomplicatedthan in Model I, and are not presentedhere.Oncethe solution
+has been obtained,we need to eliminateall variablesthat violate the nonnegativity constraints. The desired maximumis then given by the corresponding
+reducedLagrangiansolution.
+Model III: Independent
+
+Nonlinear Returns
+
+Finally, let us considergeneralreturnfunctions, but assumingstatistical independenceof returns.From Equations 7 and 9 it follows that we should seek
+to maximizethe objective function
+
+(48)
+
+z
+
+En f (x )
+
+C)/(En=1 g9(xi)),,,
+subject to the constraintsof Eqs. la and lb. For C < Emaxthe desiredsolution
+must be efficientin the Markowitzsense. For C > Emaxit must have the property that it maximizes variancefor a given value of expected return. Since the
+latter case can be handledby analogy, we shall restrictourselvesto the former.
+In general,there is an efficientsolutionfor each specifiedvalue of the denominator. Consequently,the set of efficient programsis one-dimensional.We may
+generatea representativeset of efficientprogramsas follows.
+Since we wish to hold the denominatorof Equation48 constant,we introduce
+a Langrangianmultiplierfor this restriction.We now form the Lagrangianfunction
+=
+
+-
+
+...
+-i i
+xn I X) =
+- X=1 9(Xi).
+L(x1, *
+Supposethat we fix the numericalvalue of Xand then maximizethe functionL
+subject to the constraintsof our problem.The result is necessarilyan efficient
+point xi. By repeatingthe procedurefor differentvalues of X we can generate
+
+(49)
+
+t
+
+<-----Page 15----->PROBABILITY OF SURVIVAL AS AN INVESTMENT CRITERION
+
+47
+
+a one-dimensionalset of efficientprogramsxi. These efficientsolutionsmay then
+be substitutedinto Eq. 48 to see which yields the maximumvalue of the objective functionZ.
+The maximizationof the functionL in Equation49 subject to the constraints
+of Equationsla and lb may be accomplishedin variousways. We first note that
+we need to maximizea separablefunctionof the variablesxi subject to particularlysimplelinearconstraints.It is well-knownthat suchproblemsmay be solved
+by dynamicprogramming.Cord (1964) has used this approachto generateefficient combinationsof discreteinvestment projects. However, as Weingartner
+has pointed out in (Weingartner,1965 and 1966), there may be problemsof
+non-existenceof the Lagrangemultiplier.That is, there may be values of the denominatorin Equation48 which cannotbe achievedwith a Lagrangemultiplier,
+especiallyif the functionsfi(xi) have points of inflection.This matter must be
+investigatedin each specificapplication.The solutionmay also be accomplished
+by an iterative procedurethat relies on equating marginalgains, and that has
+been used in connection with competitive bidding strategies (Churchman,
+1957;Hanssmann,1959).
+Appendix: Proof of Lemma
+
+ConsiderFig. 1. Let X? be the locationvector of an arbitraryadmissiblepoint.
+Let Y designatethe normalvector frompoint X? to any boundaryline, say Q1Q2 .
+Thus, point X? + Y is the point of interceptionof normaland boundaryline.
+We wish to prove that it is an admnissible
+point.
+The location vectors of the vertices Q, and Q2are given by
+
+Io
+
+O0 \'l/;
+
+Q, =
+
+Q
+
+0
+
+Q2 =
+
+(B/\ b3/
+
+()O
+
+Any point of the boundary line may be written in the form A + (C - A)t
+where t is a parameter. Admissible points are characterizedby 0 < t < 1.
+Clearly, the vector Y must fulfill the normality condition
+(Q2 -
+
+Q1)Y=
+
+0,
+
+and the relationship
+Ql + (Q2
+
+Q1)t
+
+-
+
+=
+
+X + Y.
+
+In components:
+Byl/b1
+
+-
+
+By3/b3 = 0,
+
+and
+Bt/b1 = X10+ y,
+0=x20
+
+B(1-t)/b3
+
++ Y2,
+
+=X30 + Y3.
+
+From the preceding four equations we may determine the unknowns YI, Y2
+
+Y3, and t. We are particularlyinterestedin the t-value of the point of interception. Ourassertionis that 0 ? t ? 1. With the aid of the first equationwe may
+eliminatey3from the fourth. The second and fourth equationmay then be used
+
+<-----Page 16----->48
+
+FRED
+
+HANSSMANN
+
+to eliminateYi and solve for t. We only present the result:
+t
+
++ b32).
+(bj2B+ b1b32xI- b12b3x30)/B(bI2
+Recall that B and bi (i = 1, 2, 3) are positive numbers.We now utilize the fact
+that X? is an admissiblepoint on the budget plane. This implies that
+=
+
+(i = 1, 2, 3).
+Blb;,
+By utilizingthe lowerlimit of xi0and the upperlimit of X30we obtain:
+0
+
+b1b32X?-
+
+<
+
+xt
+
+-<
+
+bl2b3x30 > -b 2b3x30 >-
+
+b12B.
+
+Thus, it followsthat t > 0. Similarly,
+bb32Xl?-
+
+< b32B.
+bl2b3x30 < b1b32x10
+
+Thus, it follows that t < 1. In summary, we have 0 < t < 1 so that the point
+
+of interceptionof the normaland the boundaryline is admissible.
+References
+
+1. BATJMOL,
+W. J., "An Expected Gain-Confidence Limit Criterion for Portfolio Selection," ManagementScience 10, 1 (1963), pp. 174-182.
+W. W., "Deterministic Equivalents for Optimizing and
+2. CHARNES, A., AND COOPER,
+Satisfying under Chance Constraints," Operations Research 9, (1963), pp. 18 ff.
+3. CHARNES, A., AND STEDRY, A. C., "Search-Theoretic Models of Organization Control
+by Budgeted Multiple Goals," ManagementScience 12, 5 (1966) pp. 457-482.
+C. E., ACKOFF, R. L., AND ARNOFF, E. L., Introduction to OperationsRe4. CHUIRCHMAN,
+search,John Wiley and Sons, New York 1957.
+5. CORD,J., "A Method for Allocating Funds to Investment Projects when Returns are
+Subject to Uncertainty," ManagementScience 10, 2 (1964), pp. 335-341.
+6. FRIEDMAN, L., "A Competitive Bidding Strategy," Operations Research 4 (1956), pp.
+104 ff.
+7. HANSSMANN, F., AND RIVETT, B. H. P., "Competitive Bidding," OperationalResearch
+Quarterly10, 1 (1959), pp. 49-55.
+8. HERTZ, D. B., "Risk Analysis in Capital Investment," Harvard Business Review,
+February 1964.
+9. HILLIER,F. N. "The Derivation of Probabilistic Information for the Evaluation of
+Risky Investments," ManagementScience 9, 3 (1963), pp. 443-457.
+10. MARKOWITZ,H., PortfolioSelection,Wiley, New York 1959.
+11. Roy, A. D., "Safety First and the Holding of Assets," EconometricaXX (1952), pp.
+431-449.
+12. SHARPE,W. F., "A Simplified Model for Portfolio Analysis," ManagementScience 9, 2
+(1963), pp. 277-293.
+13. TRUELOVE, A., "Gambling for Survival," ORSA Meeting May 1966.
+14. WEINGARTNER, M. H., "Capital Budgeting of Interrelated Projects: Survey and Synthesis," Management Science 12, 7 (1966), pp. 485-516.
+15. WEINGARTNER, M. H., MathematicalProgrammingand the Analysis of Capital Budgeting
+Problems, Prentice-Hall, Englewood Cliffs 1965.
+
+

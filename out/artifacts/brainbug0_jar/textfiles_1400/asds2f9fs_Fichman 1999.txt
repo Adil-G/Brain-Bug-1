@@ -1,0 +1,1291 @@
+<-----Page 0----->Finding Patterns in Sequences: Applying
+Sequence Comparison Techniques to Study
+Behavior Processes
+Mark Fichman1
+Graduate School of Industrial Administration
+Carnegie-Mellon University
+Pittsburgh PA 15213-3890
+412-268-3699
+e-mail:mf4f@cmu.edu
+fax:412-268-7064
+Electronic Submission Identification #-11727
+Division: Research Methods
+January 8, 1999
+
+1 Thanks
+
+to Laurie Weingart for sharing her data on two person interaction
+in negotiations. Thanks to the Citicorp Behavioral Science Research Council for
+providing partial support for this research.
+
+<-----Page 1----->Abstract
+Finding Patterns in Sequences: Applying Sequence Comparison Techniques
+to Study Behavior Processes
+Studying sequences of behaviors is one way to better understand the
+mechanisms which generate behavior. Techniques for sequence comparison
+and analysis developed in computational biology can have broad application
+to the study of behavioral sequence data. We illustrate the application of
+dynamic programming methods from computational biology for global and
+local alignment of sequences. Such techniques can allow us to compare sequences to determine if sequences are similar. Using data on two person
+interaction, the application of these techniques is illustrated. The value of
+such techniques and critical decisions that need to be made in applying such
+techniques are illustrated and discussed. Such techniques have great promise
+in helping understand behavior processes and their ordering.
+Key Words - measurement, methods, dynamic programming
+
+<-----Page 2----->A fundamental interest in studying behavior are the mechanisms generating a stream of behavioral observations. Two parties negotiate, reaching
+an impasse. Two firms engage in a sequence of strategic actions, leading to
+some joint action. A child has a conversation with an adult. A supervisor and subordinate discuss a problem they are having. A distributed work
+group exchanges a series of e-mail messages while performing a task. All
+these situations can be characterized as a stream of behaviors. Such behaviors or sequence of behaviors by one or more (interacting) actors can help
+us understand the mechanisms and processes influencing behavior. In effect,
+analysis of such sequences helps answer the question ‘How did they do that?’
+(Weingart, 1997). One approach to such sequences is to determine if there
+are common sequential patterns in a set of such behavior streams.
+
+Introduction
+Statistical treatments of coded sequences of behavior have been developed
+and applied in these various domains. Markov and semi-Markov models
+(Gottman & Roy, 1990; Weingart, Prietula, Hyder & Genovese, 1997), lag
+sequential models (Bakeman & Quera, 1995; Bakeman et al., 1997), and loglinear modeling treatments (Gottman and Roy, 1990, Bakeman & Quera,
+1995) of such sequential data have been developed (See Gottman and Roy,
+1990 for a review of these developments). All consider the stream of behavior
+with attention to the sequential ordering of the elements of the stream of
+behavior. The temporal ordering information is preserved in the analysis.
+Much of this work has developed in the context of multiperson interaction,
+such as communication. A Markov process characterization of a sequence
+of behavior can also be applied to the behavior of a single actor. One can
+characterize a stream of behaviors of an individual and model its sequential
+character using these techniques. Such analyses can provide real insight into
+process and underlying mechanisms.
+Time ordered data can be studied as sequences, but sequences need not
+be time ordered. Abbott (1992) observed that sequence comparison methods
+(see Sankoff and Kruskal (1983) for a review) are potentially applicable to
+studying time ordered social processes. He applied several sequence analysis
+techniques to the study of individual careers and to the development of professionalization. While formally related to Markov modeling approaches developed to study interaction (Gottman and Roy, 1990), the focus in sequence
+1
+
+<-----Page 3----->comparison is different. The goal is not to characterize the mechanism generating a sequence of elements, but on characterizing the similarity between
+two or more strings.
+Work on sequence comparison has been done in computer science (e.g.,
+comparing string elements in files, or comparing two files to see if they are
+identical), ethology (e.g., how similar are two or more bird songs), molecular
+biology (e.g., how similar are two or more DNA or protein sequences) and
+other areas where identification (are two voice segments the same) and determination of degree of difference are an issue (e.g., error correction in vocal or
+data transmission). Abbott (1992, 1997) identified the potential for applying sequence comparison methods from computational biology to problems
+in the social sciences. In particular, these techniques can aid in the building
+of process models of behavior, rather than variance models of behavior (Abbott, 1992)1 . Sequence comparison methods can help identify patterning and
+changes in patterning of temporal sequences of behavior which can complement the sequential analytic techniques currently in use (Gottman and Roy,
+1990; Bakeman et al. cites)
+In this paper, we identify and describe some basic, useful methods from
+computational biology for sequence comparison, illustrating their value for
+identifying patterns in sequences in behavioral data. These techniques have
+been or can be implemented as computer programs and can be readily applied to behavioral sequence data. We first outline and review the types
+of sequence analysis methods that can be applied to problems in sequence
+analysis and comparison. These methods are illustrated with applications to
+data. We conclude by identifying some interesting questions and opportunities suggested by this family of sequence analysis techniques.
+
+Dynamic programming approaches to sequence
+analysis2
+The sequence comparison problem is to determine if two or more sequences
+are the same. One might ask if two phone numbers are the same or three
+1
+
+See Lieberson, 1985; Mohr, 1982; and Fichman, 1997 for arguments on the contrast
+between these two types of modeling approaches and the value of a process modeling
+perspective.
+2
+Much of this discussion is based on Kruskal & Sankoff (1983) and Boguski (1992),
+which treat sequence analysis in much greater detail than we do here.
+
+2
+
+<-----Page 4----->books have the same title. These are relatively simple tasks. “Sequence
+comparison deals with the more difficult comparison that arise when the
+correspondence is not known in advance.” (Kruskal, 1983, in Kruskal and
+Sankoff, p. 1). Sequences can be continuous or discrete. In the continuous
+case, a sequence is some continuous function of time, such as a voice recording, where there is a continuous physical signal which can be expressed as
+a mathematical function. We will not be considering continuous sequences3.
+We focus on discrete sequences such as s where
+s = (a1 , . . . , an )
+
+(1)
+
+with length l = n. s will be composed of elements ai constructed from an
+alphabet A. A alphabet could be the set of 4 nucleic acids which encode
+DNA (A-denine, C-ytosine, G-uanine and T-hymine), the 26 letters of the
+alphabet for word strings, or codes in a behavioral observation coding scheme
+(e.g., codes for the 12 Bales categories for coding group interaction).
+Two sequences s1 and s2 may be compared to each other to determine if
+they are identical. If every element an in s1 and s2 are identical and identically
+ordered, and ls1 = ls2 , then s1 = s2 . However, when s1 6= s2 , we compare the
+two sequences to determine how they are different from each other. How can
+sequences differ? If one considers s1 and s2 , then comparison begins by asking
+what steps would be required to transform s1 to s2 . Differences can arise
+due to the operations deletions, insertions, substitutions, and transpositions
+or swaps. Insertions and deletions are often called indels. Fundamentally,
+in any comparison between two sequences s1 and s2 at any position yields
+either an identity or a difference. Given a difference, one can determine what
+operation(s) are required to change a difference to an identity.
+Suppose s1 = (a, n, y) and s2 = (a, n, d), then s1 6= s2 . Let sin indicate
+element ai in sn . In this example, substituting y for d in s2 in the third position in each sequence eliminates the difference between the two sequences.
+This substitution of s32 for s31 results in s1 = s2 . One can take any pair of
+sequences s1 and s2 , determine if they are identical, and if they are not identical, identify a set of operations such that the two sequences are identical.
+By allowing spaces or gaps in our alphabet, we can compare sequences of
+different lengths. For example, one could compare sequences PS and PA.
+3
+
+In many cases, continuous sequences are dealt with by discretizing the continuous
+stream into a set of discrete units.
+
+3
+
+<-----Page 5----->
+
+PS = P S Y C H O L O G Y
+
+
+PA = P A T H O L O G Y
+
+(2)
+(3)
+
+One can now ask what operations will be required to transform PA to
+PS. One can set the task up as follows. First, align the two sequences.
+
+
+P S Y C H O L O G Y
+(4)
+P . A T H O L O G Y
+The operations required are:
+1. . → S - substitution
+2. A → Y - substitution
+3. T → C - substitution
+We can estimate the magnitude of the difference between PS and PA as
+a function of the number of steps required to complete this transformation.
+Given this notion of distance, one can try to find the minimum number of
+steps to transform one sequence into another. Depending on the application,
+operations may be equally weighted so that indels are weighted equally with
+substitutions, or different operations may be differentially weighted to reflect
+assumptions about or knowledge of the processes generating operations and
+their associated likelihoods. In biological applications, it is usually assumed
+that there are differential costs associated with how big an insertion has to
+be done at a particular point. Some mutations are found empirically to be
+less likely than others. Once such costs are introduced into the alignment
+of two sequences, different paths to align one sequence to another can have
+different costs. This can be treated as a minimization problem; take two
+sequences a and b, align them, and identify the minimum set of operations
+subject to cost constraints to transform a to b. This is done using dynamic programming to estimate the similarity or distance between sequences
+(Kruskal, 1983, Boguski, 1992). In molecular biology, the concept was first
+developed by Needleman & Wunsch (1970) and has been widely applied in
+that area. Abbott (1992) discusses applications in sociology, and Poole and
+Holmes (1995) applied this technique (referred to as optimal matching) to
+characterizing decision making sequences.
+4
+
+<-----Page 6----->Let us illustrate the dynamic programming algorithm to align the two
+sequences such as PS and PA. One sets up the two sequences along the
+two axes of lattice L as in Figure 1. Starting in the upper left hand corner,
+the algorithm traces from the upper left corner to the lower right corner,
+making insertions, deletions and substitutions when needed to determine the
+distance between the two sequences. There may be multiple paths that can
+be traced to do this. These represent different possible ways to calculate
+distance. To find the shortest distance, the paths are traced back from the
+lower right hand corner to the upper left hand corner.
+
+Figure 1
+P
+
+S
+
+Y
+
+C
+
+H
+
+O
+
+L
+
+O
+
+G
+
+Y
+
+0.0
+P
+A
+T
+H
+O
+L
+O
+G
+Y
+
+Following Kruskal (1983), one can develop a weight for insertion, deletion, and substitution which is assigned at each stage of the alignment. For
+sequences a to b, Kruskal develops the following notation and analysis. Sequences a to b have lengths m and n and entries ai and bj . Null spaces
+or gaps are denoted by φ. Weights are defined for substituting ai for bj as
+w(ai , bj ); for inserting bj as w(φ, bj ); and for deleting ai as w(ai , φ). These
+weights will help determine which is the minimal distance path.
+We set the initial cost at 0 at a0 , b0. For any segment a with length m,
+the segment is written as am . Distance between a and b is d(am , bn ).. At
+any point during the application of the algorithm when it is at am , bn ., then
+distance is d(am , bn )... The algorithm moves recursively forward, and indices
+i and j increase until the algorithm reaches location am , bn . At each forward
+5
+
+<-----Page 7----->Figure 2
+w(ai−1 , bj−1 )
+w(φ, bj−1 )
+
+w(ai−1, φ)
+d
+
+w(ai−1 , bj )
+w(φ, bj )
+
+w(ai−1 , φ)
+d
+
+w(ai , bj−1 )
+w(φ, bj−1 )
+
+w(ai , φ)
+d
+
+w(ai , bj )
+w(φ, bj )
+
+w(ai , φ)
+d
+
+ZZ~
+-
+
+?
+
+step the algorithm is executed as illustrated in Figures 2 and 3, which shows
+a section of a matrix such as the matrix in Figure 1. The equation governing
+the recursion is
+
+ d(ai−1 , bj ) +w(ai , φ)
++w(ai , bj )
+d(ai , bj ) = min d(ai , bj )
+
+i
+j
++w(φ, bj )
+d(a , b )
+
+(5)
+
+The recursion equation specifies that in Figures 2 and 3, the following
+paths will be followed to determine the distance d. Starting at a0 , b0, with
+d = 0, one can move down one cell to (a1, b0 ), or to the right one cell to
+(a0, b1), or down one cell and to the right one cell to (a1, b1). Which cell is
+chosen depends on the which of the 3 terms is the minimum value for Eqn.
+( ??). When (ai ) = (bj ), no cost is incurred since there is a match. Otherwise
+Eqn. ( ??) applies to updating the value of d. This first move would hold
+if the upper left corner in Figures 2 and 3 was the initial (a0, b0) cell, and
+then the only value in it would be 0. Once these computations are done, the
+algorithm has moved from the (0, 0) cell in the upper left of the matrix to
+the (m, n) in the lower left of the matrix.
+Let us consider the example of aligning P AT HOLOGY and P SY CHOLOGY .
+When the algorithm is applied with costs of 1 for indels (insertions or deletions) and costs of 1 for substitutions, we get the following computations in
+the cells of Figure 1, yielding Figure 4. If one traces back from cell (11, 12)
+along the path back to cell (0, 0) where each step is the minimum score,
+one finds the optimal alignment. Using globalD routine from the Sequence
+Analysis Package 2.0 (Hardy & Waterman, 1997)4 , one gets the following
+4
+
+Available on the Internet at http://www-hto/usc/seqaln/
+
+6
+
+<-----Page 8----->Figure 3
+substitution deletion
+insertion
+d
+
+substitution deletion
+insertion
+d
+
+substitution
+insertion
+
+substitution deletion
+insertion
+d
+
+ZZ~
+deletion
+d -
+
+?
+
+output.
+P---ATHOLOGY
+|
+||||||
+PSYC--HOLOGY
+The traceback is read through the following cells in Figure 4, proceeding
+from right to left.
+(1, 1), (3, 1), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9), (9, 10)
+
+(6)
+
+What has happened is each of the matching letters are aligned and gaps
+have been inserted to align the two sequences. We have assigned equal scores
+to insertions (w(φ, bj )), deletions (w(ai , φ)) and substitutions (w(ai , bj )). We
+do not have to do that. We can choose another scoring system if that is
+more theoretically appropriate. In biology, substitutions can be generated
+by mutations, where one protein or nucleotide replaces another by mutation. Chemically, certain substitutions are less likely than others. This can
+be determined analytically (by examining the structure of a protein) or empirically based on the frequency of mutations of certain protein residues in
+related protein sequences. In a word such as QUIT , certain substitutions
+(e.g., arising from errors) would be more likely (T → Z forming QUIZ)
+than others (U → A forming QAIT ). In an analysis of typing, adjacent
+letters would be more likely substitutions (e.g., t for y) than others (e.g.,
+t for l). The technique in sequence analysis is to develop a scoring matrix
+for the alphabet being used, where unlikely substitutions would generate a
+7
+
+<-----Page 9----->Figure 4
+
+0
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+P
+A
+T
+H
+O
+L
+O
+G
+Y
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+1
+P
+1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+
+2
+S
+2
+1
+1
+2
+3
+4
+5
+6
+7
+8
+
+3
+Y
+3
+2
+2
+2
+3
+4
+5
+6
+7
+8
+
+4
+C
+4
+3
+3
+3
+3
+4
+5
+6
+7
+8
+
+5
+H
+5
+4
+4
+4
+3
+4
+5
+6
+7
+8
+
+6
+O
+6
+5
+5
+5
+4
+3
+4
+5
+6
+7
+
+7
+L
+7
+6
+6
+6
+5
+4
+3
+4
+5
+6
+
+8
+O
+8
+7
+7
+7
+6
+5
+4
+3
+4
+5
+
+9
+G
+9
+8
+8
+8
+7
+6
+5
+4
+3
+4
+
+10
+Y
+10
+9
+9
+9
+8
+7
+8
+5
+4
+3
+
+The column numbers are immediately above the word PSYCHOLOGY and
+the row numbers are immediately to the left of the word PATHOLOGY.
+higher cost. Abbott (1992) gives an example where he constructs a linear
+cost schedule when aligning numeric sequences composed of digit strings,
+where the substitution cost is the absolute value of the difference between
+two digits ai and bj . In Morse code recognition, there is a reliable pattern to
+confusions (Shepard, 1962; Kruskal and Wish, 1978) and one could use the
+confusions matrix generated by paired comparisons of Morse codes to generate a scoring matrix for substitutions. Such scoring matrices are frequently
+used in biological sequencing. In the alignment problem of P AT HOLOGY
+and P SY CHOLOGY above, we implicitly used an identity scoring matrix.
+Any matches were scored 1 and any mismatches were scored 0.
+A scoring matrix is a square nxn matrix, where n is the number of distinct letters in the alphabet A in which the sequences are written. A protein
+scoring matrix would be 20x20, while a nucleotide matrix would be 4x4.
+A Morse code substitution scoring matrix for letters in the English alphabet
+(ignoring case) would be 26x26. In biology, identity matrices are viewed as in-
+
+8
+
+<-----Page 10----->sensitive to subtle differences between distantly related sequences (Boguski,
+1992) and more sensitive scoring systems were developed based on empirically determined probabilities of mutations from known related sequences.
+The method generally used is to treat mutations as first order Markov chains,
+where a series of mutations are treated as uncorrelated, independent events.
+Boguski (1992) notes that “the statistical properties of biological sequences
+are quite different from those of English words and phrases” (Boguski, 1992,
+p. 104). He suggests that if one is using alignment software with biological scoring matrices, one should be conservative in identifying statistically
+significant alignments. Statistical tests have been developed which compare
+the likelihood of obtaining a particular alignment to random shuffles of the
+same sequences. These statistics are computed as Z scores. For biological sequences, he suggests that “extensive experience has indicated that Z score(s)
+in the range of 3 to 6 may not be significant, whereas scores greater than
+6 usually are.” Our experience is that robust non-biological sequences are
+detected even when biological scoring matrices are used. Several of the techniques presented below do not require scoring matrices, but scoring matrices
+can enhance the application of sequence alignment techniques. This will be
+illustrated below.
+First, we want to apply this technique to a sample of behavioral data.
+We will analyze interaction sequences in two person negotiations studied by
+Weingart and her colleagues (Weingart, Hyder & Prietula, 1996; Weingart
+et al., 1997)5 . In this laboratory study, tactics used by negotiators in a two
+person negotiation with multiple issues were examined. The focus was on
+integrative and distributive behaviors. 90 dyads were studied in two conditions. In one condition (Knowledge condition), subjects were taught the use
+of certain negotiation tactics, such as trading off across issues (an integrative
+tactic), appearing firm (a distributive tactic) and exchanging information (a
+tactic that can serve both distributive and integrative ends). In the control
+condition (No Knowledge condition) subjects were not taught about negotiation tactics (see Weingart et al., 1996 for details). As subjects negotiated,
+their interactions were videotaped. The videotapes were coded for the use of
+these tactics. For each dyad, the data are a sequence of codes which can be
+analyzed to see what regularities might occur in the interactions. One nego5
+Thanks to Laurie Weingart for kindly providing the data for analysis and for working
+with me to understand the processes underlying both the coding and prior analyses of the
+data.
+
+9
+
+<-----Page 11----->tiator took position H (for Hamlin Bakery) and the other took position J (for
+Jacqui’s Florist). Weingart et al. (1996) developed 11 behavior codes. In the
+results we will report, we use the categories defined and coded by Weingart
+et al. (1996)6 . Since there are two negotiators, there were 22 behavior codes
+developed, 11 for the H position and 11 for the J position. Codes for each of
+the categories are outlined in Table 1. Tactics fall into 3 broader categories
+of tactic types. These tactic types are distributive behaviors (D), integrative
+behaviors (I) and behaviors which are neither I or D (coded N). Each of the
+22 possible combinations is given a single letter code7. For details on the
+negotiation materials and results, see Weingart et al. (1996).
+Here are the two sequences. td25 is 66 codes, td27 is 144 codes long.
+td25 =
+VHWNPGFNFNVGVNFNFIWNYQPRMIWGPDMRWRVWATIPGWNPISGWIVIWIWNFAYAPDYGYG
+td27 =
+RYNFEFNYDTNTNFIPAYGWMDPDPEYDFRVNYRMNKDWNPNMRRYRYQSGFIFEYNYEMRYQYNW
+ISDPILIPIYNFIPIPDPNMAPNFAYCWCSGLMMALILGYIWIWEYEYEYEYWMRVIVCYEYCYEYE
+FGWIYIYIYIY
+
+6
+
+Definitions are quoted directly from Weingart et al., 1996, Appendix C
+Single letter codes are used since in some sequencing and alignment programs, there
+is a restriction on letter codes to single alphabetic letters.
+7
+
+10
+
+<-----Page 12----->Table 1
+Tactic
+
+Definition
+
+Multi-issue offer
+
+“Make an offer on two or
+more issues under
+discussion”
+“Make an offer on
+one issue”
+“State which issues are
+more or less important to
+oneself”
+- “State preferred level
+within an issue”
+“Make arguments for own
+position against other’s
+arguments”
+“Ask which issues are
+more or less
+important to other party”
+“Ask for preferred level
+within an issue”
+Questions asking for
+substantiation
+“Positive reactions”
+“Suggest addressing one
+issue at a time” or
+“Suggest a compromise or
+willingness to concede
+on an issue”
+“Off task and low
+frequency comments ”
+
+Single-issue offer
+Information sharing
+priorities
+Information sharing
+preferences
+Substantiation
+Questions-prioritiesa
+
+Questions-preferences
+Questionssubstantion
+Positive reactions
+Procedural comments
+
+Other
+a
+
+Tactic
+type
+I
+
+J
+Position
+C
+
+H
+Position
+L
+
+D
+D
+I
+
+A
+A
+R
+
+K
+K
+M
+
+D
+
+N
+
+F
+
+D
+
+D
+
+P
+
+I
+
+#
+
+#
+
+D
+
+Q
+
+T
+
+N
+
+E
+
+S
+
+N
+D
+
+G
+H
+
+Y
+V
+
+N
+
+I
+
+W
+
+This category was deleted from the data because it occurred with extremely low
+frequency.
+
+11
+
+<-----Page 13----->Let us apply the same procedure that we applied to the word strings
+P AT HOLOGY and P SY CHOLOGY to a negotiation interaction sequence.
+We will globally align the two sequences using the globalD program (see
+Waterman, 1995; pp.192-198 for an analysis of this algorithm). We need to
+develop a scoring system for the alignment. There are 4 scores which have
+to be assigned. They are:
+1. match - the score when two letters match
+2. mismatch - the penalty when two letters do not match
+3. α - the penalty for a gap
+4. β - the penalty for additional insertions, lengthening a gap
+Gaps and gap extensions may or may not have meaning in a particular
+application. They do have meaning in biological applications, but we need to
+judge on an application by application basis what these scores and penalties
+should be to do an alignment. The results can be very sensitive to these
+choices. We illustrate with two interaction sequences from Weingart et al.
+which are taken from the Knowledge condition. In globalD, we specified 3
+parameters to create a distance score. With a match getting a score of 0,
+we need to set a mismatch, α and β score. For a k length indel, one would
+calculate a score of α + (β) × (k − 1). For α = 1 and β = 1, a 5 letter indel
+would get a score of 5. For α = 1 and β = .5, a 5 letter indel would get a
+score of 3. Using two interaction sequences, td25 and td27, we estimated 5
+
+12
+
+<-----Page 14----->global distances d(td25, td27) while varying parameters for mismatch, α and
+β. The results are as follows.
+1. mismatch = 1, α = 1, β = 1. d(td25, td27) = 113
+Score: 113 at (td25)[0..65] : (td27)[1..144]
+0 ---VHWN--PGFNF--NVG-----------VN--FNFIW--N-----YQPRMI--WGPDM
+|
+||
+|
+||
+| | |
+||
+|
+|
+1 RYNFEFNYDTNTNFIPAYGWMDPDPEYDFRVNYRMNKDWNPNMRRYRYQSGFIFEYNYEM
+32 R----W-RVWATIPGWN--PI--------------SG----WI--VIWI---------W|
+|
+|| | ||
+||
+|
+|||
+|
+61 RYQYNWISDPILIPIYNFIPIPDPNMAPNFAYCWCSGLMMALILGYIWIWEYEYEYEYWM
+55 ----NFAYAPDY--G------Y-G
+65
+|
+| |
+|
+121 RVIVCYEYCYEYEFGWIYIYIYIY 144
+
+31
+60
+54
+120
+
+2. mismatch = 5, α = 2, β = 1. d(td25, td27) = 174
+Score: 174 at (td25)[0..65] : (td27)[2..144]
+0 --VHWNPGF-NFN---VGVN-FNFI----W-----------NYQPRM--IWGPD----MR
+| | ||
+| |||
+|
+|| ||
+|
+||
+1 RY---N--FE-FNYDT---NT-NFIPAYGWMDPDPEYDFRVNY--RMNK----DWNPNMR
+33 WR--------------------VW------ATIP--GWN--PI--------------SG|
+|
+||
+| ||
+||
+45 -RYRYQSGFIFEYNYEMRYQYN-WISDPIL--IPIY--NFIPIPDPNMAPNFAYCWCSGL
+48 ---------WI------------VI------------WIWNFAY---APDY-GYG
+65
+||
+||
+||
+|
+| |
+99 MMALILGYIWIWEYEYEYEYWMRVIVCYEYCYEYEFGWI----YIYI---YI-Y144
+
+32
+44
+47
+98
+
+3. mismatch = 5, α = 20, β = 1. d(td25, td27) = 247
+Score: 247 at (td25)[0..65] : (td27)[144..144]
+0 ------------------------------------------------------------
+
+0
+
+1 RYNFEFNYDTNTNFIPAYGWMDPDPEYDFRVNYRMNKDWNPNMRRYRYQSGFIFEYNYEM
+0 ------------------------------------------------------------
+
+60
+0
+
+61 RYQYNWISDPILIPIYNFIPIPDPNMAPNFAYCWCSGLMMALILGYIWIWEYEYEYEYWM
+0 ------------------------VHWNPGFNFNVGVNFNFIWNYQPRMIWGPDMRWRVW
+
+120
+36
+
+121 RVIVCYEYCYEYEFGWIYIYIYIY------------------------------------
+
+144
+
+13
+
+<-----Page 15----->37 ATIPGWNPISGWIVIWIWNFAYAPDYGYG
+
+65
+
+144 -----------------------------
+
+144
+
+4. mismatch = 5, α = 1, β = 1. d(td25, td27) = 139
+Score: 139 at (td25)[0..65] : (td27)[1..144]
+0 --VHWNPGF-NFN---VGVN-FNFI----W-----------NYQPRM---IW-GP-DM-| | ||
+| |||
+|
+|| ||
+| | |
+1 RY---N--FE-FNYDT---NT-NFIPAYGWMDPDPEYDFRVNY--RMNKD-WN-PN-MRR
+32 -R-------------WR----VW------ATIP--GWN--PI--------------S--|
+|
+|
+||
+| ||
+|
+46 YRYQSGFIFEYNYEM-RYQYN-WISDPIL--IPIY--NFIPIPDPNMAPNFAYCWCSGLM
+47 -----G--WI------------VI------------W--IWNFAY-APDY-GYG
+65
+| ||
+||
+| |
+|
+| |
+100 MALILGYIWIWEYEYEYEYWMRVIVCYEYCYEYEFGWIYI----YI---YI-Y- 144
+
+31
+45
+46
+99
+
+5. mismatch = 1, α = 40, β = 1. d(td25, td27) = 287
+Score: 287 at (td25)[0..65] : (td27)[144..144]
+0 ------------------------------------------------------------
+
+0
+
+1 RYNFEFNYDTNTNFIPAYGWMDPDPEYDFRVNYRMNKDWNPNMRRYRYQSGFIFEYNYEM
+0 ------------------------------------------------------------
+
+60
+0
+
+61 RYQYNWISDPILIPIYNFIPIPDPNMAPNFAYCWCSGLMMALILGYIWIWEYEYEYEYWM
+0 ------------------------VHWNPGFNFNVGVNFNFIWNYQPRMIWGPDMRWRVW
+
+120
+36
+
+121 RVIVCYEYCYEYEFGWIYIYIYIY-----------------------------------37 ATIPGWNPISGWIVIWIWNFAYAPDYGYG
+65
+
+144
+
+144 -----------------------------
+
+144
+
+The first striking feature is that alignments 3 and 5 show no alignments
+at all; the distances are extremely high. This is due to the high gap penalties
+in the α scoring parameter. If the gap for penalties is high, the distance
+calculated here is very high. The second feature is how few long sequences
+there are in this data. We do see some sequences which recur a few times
+14
+
+<-----Page 16----->(refer to Table 1 for codes), such as NF (J and H sharing information),
+SG (a question asking for substantiation followed by a positive reaction),
+IWI (sequences of off-task comments), IP (off task comments followed by
+substantiation), and YGY (sequence of positive reactions, which occur rather
+unsurprisingly at the end of the negotiation). Alignments 1 and 4 have many
+gaps and are similar. Alignment 2, with a higher α, has fewer gaps. Note
+that with a mismatch score of 1, alignment 1 ‘merely’ stretches out td25 over
+td27, introducing no gaps in td27.
+The alignments show some reasonable patterning but are unsatisfying
+in several respects. First, global alignment requires us to align the entire
+sequences, and this may or may not be appropriate depending on our purposes and the underlying processes generating the sequence (in this case,
+interaction between two people in negotiation).
+
+Local alignment
+In the interactions from Weingart et al. (1996) we aligned the entire sequence. One could argue that interactions can have sets of subprocesses,
+each of which has certain characteristic interaction patterns, but that these
+subprocesses do not necessarily occur in any particular order and do not
+necessarily have similar amounts of interaction occurring between each subprocess. For example, one could suggest that early in the interaction there is
+a period where people become acquainted and share information and preferences, but sometimes people may just sit down and start bargaining without
+
+15
+
+<-----Page 17----->even an introduction to each other. If this were the case, then global alignment would not be appropriate, but local alignment(s) might be appropriate,
+where a particular local sequence occurs at different points in each sequence.
+We hope to capture some of the local features while allowing the application of dynamic programming techniques which allow for gaps, indels and
+transpositions.
+Smith & Waterman (1981) introduced local alignment methods, modifying global alignment methods to find similar segments of two sequences. The
+key modification to global alignment dynamic programming methods was to
+allow negative scores for mismatches (Boguski, 1992). By allowing negative
+scores, when a region of similarity ends and mismatches begin, the overall
+similarity score decreases, allowing regions of similarity to be distinguished.
+Boguski (1992) suggests that “Local alignment programs are probably the
+method of choice for unknown sequences, since they will find something close
+to a global alignment if the sequences are highly similar, or the region of highest similarity if they are not. Global alignment of distantly related sequences,
+on the other hand, may entirely miss their similarity.” (Boguski, 1992, p.
+132). We use the localS routine (Hardy & Waterman, 1997), which identifies local alignments between two sequences using the Smith & Waterman
+(1981) algorithm (see Waterman, 1995, section 9.6 for derivations). Similarity and distance are closely related and can be thought of interchangeably
+here. “When full sequences are aligned by distance (similarity) in global
+alignments, there is a similarity (distance) algorithm that gives the same
+set of optimal alignments; that is, finding similarity and distance alignments
+16
+
+<-----Page 18----->are dual problems.” (Waterman, 1995, p. 200). However, for local similarity, there is no dual local distance measure. Using localS, we again specify
+scores for mismatch, α and β as they were defined before. We now must
+also specify scores for a match. The score will be calculated by cumulating
+match scores and subtracting mismatch, α and β. We specified the same
+parameters for td25 and td27 as for global distance above, with a match
+score that was double the mismatch score. We can search for more than one
+local alignment in any pair of sequences. Here are the results when we search
+for two local alignments. We report the alignments and the similarity scores
+(where higher scores mean greater similarity; in the distance analyses, higher
+distance scores mean lower similarity and we tried to minimize distance).
+1. match=2, mismatch = 1, α = 1, β = 1.
+Score: 11 at (td25)[43..61] : (td27)[65..83]
+43 NPISGWIVIWIWNFAYAPD
+61
+| || | | | ||
+||
+65 NWISDPILIPIYNFIPIPD
+83
+Score: 10 at (td25)[20..34] : (td27)[32..45]
+20 NYQPRM--IWGPDMRWR
+34
+|| ||
+| | || |
+32 NY--RMNKDWNPNMR-R
+45
+
+2. match = 10, mismatch = 5, α = 2, β = 1.
+Score: 198 at (td25)[4..64] : (td27)[3..116]
+4 NPGF-NFN---VGVN-FNFI----W-----------NYQPRM---IW-GP-DMRWR---| | ||
+| |||
+|
+|| ||
+| | || |
+3 N--FE-FNYDT---NT-NFIPAYGWMDPDPEYDFRVNY--RMNKD-WN-PN-MR-RYRYQ
+35 ----------------VW------ATIP--GWN--PI--------------SG-----WI
+|
+||
+| ||
+||
+|
+50 SGFIFEYNYEMRYQYN-WISDPIL--IPIY--NFIPIPDPNMAPNFAYCWCSGLMMAL-I
+50 ---VIWIW-NFAY-APDY-GY
+64
+||||
+|
+| |
+
+17
+
+34
+49
+49
+103
+
+<-----Page 19----->104 LGY-IWIWE---YE---YE-Y
+
+116
+
+Score: 167 at (td25)[3..64] : (td27)[39..142]
+3 WNP---------GF-NF--N-------VGVN-----------FNFIWNYQPRMIWGPD-|||
+|| | |
+|
+|||
+| | ||
+39 WNPNMRRYRYQSGFI-FEYNYEMRYQY---NWISDPILIPIY-NFI----P--I--PDPN
+31 MRWRVWATIPGWN-------------PI-SG--WI------------VI----------|
+| | |
+| | ||
+||
+86 M-----A--P--NFAYCWCSGLMMAL-IL-GYIWIWEYEYEYEYWMRVIVCYEYCYEYEF
+52 -WIWNFAY-APDY-GY
+64
+||
+|
+| |
+135 GWI----YI---YI-Y
+142
+
+30
+85
+51
+134
+
+3. match = 10, mismatch = 5, α = 20, β = 1.
+Score: 55 at (td25)[43..61] : (td27)[65..83]
+43 NPISGWIVIWIWNFAYAPD
+61
+| || | | | ||
+||
+65 NWISDPILIPIYNFIPIPD
+83
+Score: 45 at (td25)[7..18] : (td27)[4..15]
+7 FNFNVGVNFNFI
+18
+| ||
+| |||
+4 FEFNYDTNTNFI
+15
+
+4. match = 10, mismatch = 5, α = 1, β = 1.
+
+Score: 233 at (td25)[4..64] : (td27)[3..116]
+4 NPGF-NFN---VGVN-FNFI----W-----------NYQPRM---IW-GP-DM---R--| | ||
+| |||
+|
+|| ||
+| | |
+|
+3 N--FE-FNYDT---NT-NFIPAYGWMDPDPEYDFRVNY--RMNKD-WN-PN-MRRYRYQS
+33 ----------WR----VW------ATIP--GWN--PI--------------SG-----WI
+|
+|
+||
+| ||
+||
+|
+51 GFIFEYNYEM-RYQYN-WISDPIL--IPIY--NFIPIPDPNMAPNFAYCWCSGLMMAL-I
+50 ---VIWIW-NFAY-APDY-GY
+64
+||||
+|
+| |
+104 LGY-IWIWE---YE---YE-Y
+116
+Score: 196 at (td25)[1..64] : (td27)[31..142]
+1 V-------HWNP---------GF-NF--N-------VGVN-----------FNFIWNYQP
+|
+|||
+|| | |
+|
+|||
+|
+31 VNYRMNKD-WNPNMRRYRYQSGFI-FEYNYEMRYQY---NWISDPILIPIY-NFI----P
+
+18
+
+32
+50
+49
+103
+
+23
+80
+
+<-----Page 20----->24 RMIWGPD--M-------RW------RVWA-TI-PG--WNPI---------SGW---IV-| || |
+|
+| | | | |
+|
+||
+81 --I--PDPNMAPNFAYC-WCSGLMM---AL-IL-GYIW--IWEYEYEYEY--WMRVIVCY
+51 ---------IWIWNFAY-APDY-GY
+64
+||
+|
+| |
+127 EYCYEYEFG-WI----YI---YI-Y 142
+
+50
+126
+
+5. match = 10, mismatch = 5, α = 40, β = 1.
+Score: 55 at (td25)[43..61] : (td27)[65..83]
+43 NPISGWIVIWIWNFAYAPD
+61
+| || | | | ||
+||
+65 NWISDPILIPIYNFIPIPD
+83
+Score: 45 at (td25)[7..18] : (td27)[4..15]
+7 FNFNVGVNFNFI
+18
+| ||
+| |||
+4 FEFNYDTNTNFI
+15
+
+In these results, we see several features. First, we have specified in localS
+that we want the two highest scoring local alignments. Alignments 1,3 and 5
+are short alignments and are very similar. They are short because the scoring
+system specifies that the ratio of match to α is relatively small (between
+
+1
+4
+
+and 2) while for alignments 2 and 4, the match to α ratio is far higher (5
+for alignment 2 and 10 for alignment 4). As the relative cost for gaps rises,
+the alignments are shorter with fewer gaps. We see similar patterns to the
+global alignments, but they are clearer, particularly in the short alignments.
+In alignments 1,3, and 5, we see interspersed I’s and N’s with some F’s
+with P and D. This is information sharing and elements of substantiation,
+reasonable types of behaviors relatively early in a negotiation (after 42 and
+64 speaking turns). the second local alignment starts earlier, at position 20
+19
+
+<-----Page 21----->and 32 respectively in alignment 1, at positions 7 and 4 in alignments 3 and 5.
+In this early local alignment in alignments 3 and 5, we see F’s and N’s, again
+information sharing which is appropriate early in a negotiation. The local
+alignment scoring 10 in alignment 1 has alternating N’s and Y’s as well as M
+and R. Again, this is information sharing about preferences and priorities, the
+sort of behavior likely to occur early in the interaction. In this sample local
+alignment, we see that the choice of scoring parameters (in this case focusing
+on the relative penalty for gaps) influences the kind of alignment we identify.
+Alignments 2 and 4 are essentially the same, and all 4 are close to the global
+alignments identified earlier. We get an overall alignment without breaking
+out the shorter relatively homogeneous alignments in 1,3 and 5. The primary
+difference between the highest scoring and second highest scoring alignment
+is that in the highest scoring alignment, the alignment puts the start of the
+interaction in closer alignment, dropping off the end of td27, which had much
+more positive reactions at the end of the negotiation (Y is very frequent from
+one party at the end of td27). The second best local alignment drops the
+beginning of td27 to bring the end of td27 in closer alignment with td25.
+However, the higher match to α ratio resulted in local alignments relatively
+similar to the global alignments reported earlier. Clearly, with the proper
+choice of scoring parameters, local alignments are more informative here.
+We have only illustrated pairwise comparisons in this negotiation data
+set, but one could construct distance measures between all pairs of sequences,
+generating a distance matrix amongst all sequences. One could then use such
+a matrix as input into a multidimensional scaling or clustering algorithm to
+20
+
+<-----Page 22----->find groupings of dyads with similar patterns of behavior. One could also
+count the number of local alignments of different kinds by condition. For
+example, do local alignments showing information sharing about preferences
+occur with differing frequency in the Knowledge and No Knowledge conditions in Weingart et al. (1996)? Such questions can be addressed using these
+measurement procedures.
+
+Choosing a Global or Local Alignment Approach
+The choice of local versus global alignment requires consideration of at least
+2 issues. First, theoretically, which is a more appropriate way to think about
+the particular sequence, globally or locally. For example, are interaction sequences composed of subsequences which can have different orderings? If so,
+then local alignment is a more appropriate technique. On the other hand, if
+one needs to look at the entire sequence as one process, global alignment may
+be more appropriate. Second, what do you want to look for in the sequence?
+In our example, theoretically, one can expect a negotiation to proceed in
+stages with information sharing occurring early, offers and counteroffers occurring later on and the negotiation ending with the exchange of reactions
+(positive if the negotiation is successful; possibly negative otherwise). In fact,
+even if the negotiating parties walk away without a deal and this is the best
+alternative for both parties (a BATNA or Best Alternative To a Negotiated
+Agreement), there may still be positive reactions. This theoretical argument
+
+21
+
+<-----Page 23----->suggests that local alignments may be a better choice for this task. However,
+even if one felt a global alignment was called for, specifying a local alignment
+might be useful if one wants to closely examine aspects of an overall process.
+An illustration of this choice is available in Dijkstra & Taris (1995), who
+examined career sequences using a measure of distance between career histories, a nice application of sequence analysis. They used a global alignment
+measure, studying the entire career. Abbott (1995), in a critique of the
+Dijkstra & Taris analysis, notes that in a career there may be a need for “algorithms that specifically weight important periods in careers . . . One might
+wish to weight important transition moments more heavily than periods before or since, and one might wish to do this without necessarily knowing
+ahead of time where these moments fall. ldots In algorithmic terms, this
+constitutes the problem of finding the best common subsequence. In theoretical terms, it arises out of the notion that careers and life courses consist
+of regular local units assembled in potentially random ways into larger whole
+lives.” (Abbott, 1995, p. 241) If one takes the random assembly of stable
+subsequences view, local alignment is an appropriate method. If one takes
+the view that careers have stable courses, global alignment may capture the
+overall flow of a career, and local alignment may capture stable subcomponents (education and apprenticeship, early job movement until a stable job
+is identified and so on).
+
+22
+
+<-----Page 24----->Conclusion
+We have introduced and illustrated the application of some basic techniques
+in computation biology which can be useful in assessing sequence similarity.
+In particular, we have illustrated how both global and local alignment of
+two sequences can be conceived and computed using variants of a dynamic
+programming algorithm to estimate distance or similarity between two sequences. Applications to two person interactions suggest both the issues
+involved in choosing the appropriate technique and scoring system, as well
+as some insights that can be obtained when using such techniques. There is
+a great deal of promise in these applications, and much work has been done
+and is continuing to be done in this area which promises to provide behavioral
+researchers with very useful tools for studying sequences of behaviors.
+
+References
+Abbott, A. (1992). From causes to events. Sociological Methods and Research,
+20(4):428–455.
+Abbott, A. (1995). Sequence analysis: New methods for old ideas. In Annual
+Review of Sociology, volume 21, pages 93–113. Annual Reviews, Inc.,
+Palo Alto.
+Abbott, A. & Barman, E. (1997). Sequence comparison via alignment and
+gibbs sampling: A formal analysis of the emergence of the modern sociological article. In Raftery, A., editor, Sociological Methodology, vol-
+
+23
+
+<-----Page 25----->ume 27, pages 47–87. Blackwell (for the American Sociological Association), Boston MA.
+Bakeman, R. & Quera, V. (1995). Analyzing Interaction: Sequential Analysis
+with SDIS and GSEQ. Cambridge University Press, Cambridge.
+Bakeman, R., Quera, V., McArthur, D. & Robinson, B. F. (1997). Detecting sequential patterns and determining their reliability with fallible
+observers. Psychological Methods, 2(4):357–370.
+Boguski, M. S. (1992). Similarity and homology. In Devereux, M. G. . J., editor, Sequence Analysis Primer, pages 90–157. Oxford University Press,
+New York.
+Dijkstra, W. & Taris, T. (1995). Measuring the agreement between sequences.
+Sociological Methods and Research, 24(2):214–231.
+Fichman, M. (1997). Explanatory theory and explaining variance: Knowing
+the difference. unpublished paper, Carnegie-Mellon University.
+Gottman, J.M., & Roy, A.K. (1990). Sequential Analysis: A guide for behavioral researchers. Cambridge University Press, Cambridge.
+Gribskov, Michael & Devereux, J., editor (1992). Sequence Analysis Primer.
+UWBC Biotechnical Resource Series. Oxford University, New York.
+Hardy, Paul & Waterman, M. S. (1997). The sequence alignment software
+library at usc.
+
+24
+
+<-----Page 26----->Kruskal, J. B. (1983). An overview of sequence comparison. In Kruskal, D.
+S. . J., editor, Time Warps, String Edits, and Macromolecules: the Theory and Practice of Sequence Comparison, pages 1–44. Addison-Wesley,
+Reading, Massachusetts.
+Lieberson, S. (1985). Making It Count: The Improvement of Social Research
+and Theory. University of California, Berkeley.
+Mohr, L. B. (1982). Explaining Organizational Behavior. Jossey-Bass, San
+Francisco.
+Needleman, S.B. & Wunsch, C. (1970). A general method applicable to
+the search for similarities in the amino acid siequences of two proteins.
+Journal of Molecular Biology, 48:443–453.
+Poole, M.S. & Holmes, M. (1995). Decision development in computer-assisted
+group decision making. Human Communications Research, 22(1):90–
+127.
+Sankoff, David & Kruskal, J. B., editor (1983). Time Warps, String Edits,
+and Macromolecules: The theory and practice of sequence comparison.
+Addison-Wesley Publishing, Reading, Massachusetts.
+Shepard, R. (1962). The analysis of proximities: multidimensional scaling
+with an unknown distance function. Psychometrika, 27:125–140,219–
+246.
+
+25
+
+<-----Page 27----->Smith, T.F. & Waterman, M. (1981). The identificaiton of common molecular
+subseqeunces. Journal of Molecular Biology, 147:195–197.
+Waterman, M. S. (1995). Introduction to Computational Biology. Chapman
+& Hall, Cambridge UK.
+Weingart, L. (1997). How did they do that? the ways and means of studying
+group process. In Cummings, B. S. . L. L., editor, Research in Organizational Behavior, volume 19, pages 189–239. JAI Press, Greenwich
+CT.
+Weingart, L.R., Hyder, E.B., & Prietula, M.J. (1996). Knowledge matters:
+The effect of tactical descriptions on negotiation behavior and outcome.
+Journal of Personality and Social Psychology, 70(6):1205–1217.
+Weingart, L.R., Prietula, M.J., Hyder, E.B. & Genovese, C. R. (1997). Tactical knowledge and the process of negotiation: A markov chain analysis.
+unpublished paper, Carnegie-Mellon University.
+
+26
+
+

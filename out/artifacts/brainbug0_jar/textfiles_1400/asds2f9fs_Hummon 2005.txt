@@ -1,0 +1,1223 @@
+<-----Page 0----->Social Networks 25 (2003) 17–49
+
+Some dynamics of social balance processes:
+bringing Heider back into balance theory
+Norman P. Hummon, Patrick Doreian∗
+Department of Sociology, University of Pittsburgh, 2J22 Wesley W. Posvar Hall,
+Pittsburgh, PA 15260, USA
+
+Abstract
+Structural (or social) balance is regarded as a fundamental social process. It has been used to
+explain how the feelings, attitudes and beliefs, which the social actors have towards each other,
+promotes the formation of stable (but not necessarily conflict free) social groups. While balance
+theory has a rich and long history, it has lost favor in recent times. The empirical work has taken
+one of two forms. Most empirical work on social balance has focused on dyads and triples, and
+findings have been inconsistent. The remaining studies focus on the structure of the group as a
+whole. Results here have been inconsistent also. One major problem is that the first line of work
+is based only on the source ideas of Heider while the second has been based only on the ideas of
+Cartwright and Harary. Some of the inconsistencies may be due to this empirical split where the two
+streams of ideas do not inform each other. We propose a new theoretical model for social balance
+in the form of an agent-based simulation model. The results we present account for several of the
+inconsistencies found in the literature. The model simulates distinct but interdependent social actors
+making positive and negative selections of each other in efforts to reach balanced cognitive states.
+The design variables for the simulations are group size, degree of contentiousness of a group and
+the mode of communicating choices regarding the existence and sign of social ties. The group level
+balance mechanism used by the dynamic model is based on the idea of partition balance, as proposed
+by Doreian and Mrvar [Soc. Netw. 18 (1996) 149]. Actor selections, over time, generate networks
+that partition group members into stable, balanced subsets at equilibrium or near equilibrium. The
+design variables have complicated impacts on the number of actor choices made to reach balance,
+the level of group imbalance, the number of actors with balanced images and the number of plus-sets
+formed.
+© 2002 Elsevier Science B.V. All rights reserved.
+Keywords: Balance theory; Structural balance; Group dynamics; Agent-based simulation
+
+∗
+
+Corresponding author. Tel.: +1-412-648-7584.
+E-mail address: pitpat@pitt.edu (P. Doreian).
+
+0378-8733/02/$ – see front matter © 2002 Elsevier Science B.V. All rights reserved.
+PII: S 0 3 7 8 - 8 7 3 3 ( 0 2 ) 0 0 0 1 9 - 9
+
+<-----Page 1----->18
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+1. Introduction
+Structural balance has been posited as a fundamental social process and used to account for the structure of affective relations of social actors towards one another. ‘Balance
+theory’ is both a general theory and a framework for conducting empirical work. Empirically, progress has been made through the use of experiments designed to reveal balance
+theoretical mechanisms as well as empirical field studies seeking to detect the operation
+of these mechanisms. At best, the results have been mixed (see below) where the results
+of some studies support balance theory, while others do not. As balance theory is both a
+theory and a framework for research, we examine the dynamics of social balance processes
+by using an agent-based computer simulation model to explore how, ideally, social actors
+use balance criteria to make affective social choices. More importantly, we examine the
+social structural consequences of these separate but coupled attempts to reach states of
+balance. Collectively, these choices create emergent group structures that most often are
+stable in the sense that structural equilibrium is reached or is approached closely. The simulation provides considerable insight into the dynamics of structural balance as a theory
+and provides guidance for empirically assessing whether balance theoretic processes are
+operating. Agent-based simulation provides a useful way for connecting micro-balancing
+processes with macro-structural processes and outcomes. It permits also the specification of how macro-structural processes constrain the operation of the micro-balancing
+processes.
+
+2. Balance theory
+We use balance theory here to study the basic sociological problem of group and subgroup
+formation for a social relation that has both positive and negative signs. Structural balance
+theory (Heider, 1958; Cartwright and Harary, 1956; Newcomb, 1961) is viewed as a set of
+generative mechanisms for changes in dyadic ties that create trajectories of signed networks
+in a coherent fashion. Further, the macro-structures (in terms of subgroup memberships)
+place constraints on the actors as they make their affective choices. The joint dynamics of tie
+formation (and dissolution) and evolution of group structures are the focus of our attention
+here.
+2.1. Foundations
+Balance theory has a rich and long history. While it is not our intent to recount that
+history here, we note the following. Heider (1946, 1958), Lewin (1951) and Newcomb
+(1961) developed the basic components of balance theory as a framework for studying the
+structural arrangements between social actors for affective ties. If these arrangements create
+imbalance (in the form of ‘tension’ or ‘strain’), a general social process by which social
+actors change their social arrangements to reduce imbalance is thought to operate.
+Heider (1946) is explicit about locating the process mechanisms in the minds of social
+actors. He introduced the concept of a pox triple where p is a focal person, o an another actor
+and x an object (which may be a third person). Fig. 1 shows the pox triples introduced by
+
+<-----Page 2----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+19
+
+Fig. 1. Balanced and imbalanced triadic configurations.
+
+Heider. Those in the top row were taken as balanced while the triples in the bottom row were
+defined as imbalanced. Balanced triples are assumed to be stable. Thus, the triple (top-left)
+where p’s attitudes towards o and x are positive, with o having a positive attitude towards x,
+is not a source of strain for p. In contrast, imbalanced triples generate tension for the actors
+involved. Suppose, in this example, that p has (or develops) a negative attitude towards x
+(as shown in the bottom-left triple of Fig. 1). This is thought to create strain or tension for p
+(because p dislikes x that o likes, while p likes o). The options for p are to dislike o and create
+balance by disliking both o and x, or deciding to like x and create the all-positive triple in
+Fig. 1. If o develops a dislike for x, and p is aware of this, it creates tension for p because p
+likes something disliked by a person p likes (see the second triple from the left in the bottom
+row in Fig. 1). Heider’s pox model specifies that to reduce tension, p must either change the
+relationship towards x or o. That is, p’s triple will be balanced if p chooses to dislike x or
+o (with o continuing to dislike x). Heider’s pox model provides the basic components of a
+dynamic model by specifying of the structural arrangements that create imbalance and the
+types of changes that create or restore balance. For all triples in the lower panel of Fig. 1,
+there are simple sign changes of links in the triples that describe movement to a triple in
+the upper panel of Fig. 1. Imbalanced triples are thought to be inherently unstable while
+balanced triples are thought to be stable.
+Newcomb (1961) extended the development of balance theory to social groups. This
+and the generalization by Cartwright and Harary (1956) were significant steps. The mechanisms for change for Heider were located in the minds of actors. The structural balance
+idea, especially for the Cartwright and Harary generalization, was specified as the outcome
+of a process operating at the group level (without denying the presence of cognitive images
+held by group members) as well as the operation of that process. This very important step
+changed the idea of balance as a process that is internal to the actor in a subtle and profound
+way: attention was focused primarily—and often exclusively—on the group structure. The
+
+<-----Page 3----->20
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+balance theoretic literature diverged into two streams. One remained faithful to Heider’s
+emphasis on affective processes in the minds of actors while the other was based on the
+Cartwright and Harary generalization of Heider’s approach (Doreian, 2002). By focusing
+exclusively on the structure of the group this line of research banished Heider’s insights
+from empirical studies of balance in human groups. This distinction need not imply an
+‘either–or’ contrast and the creation of separate streams of research seems an unfortunate
+development for structural balance as a theory and as an approach for empirical studies.
+We argue that it is far more appropriate to incorporate both micro- and macro-balance processes in a conceptualization of coupled processes operating at both the individual actor
+and group levels. In such a conception, the ‘internal’ actor dynamics operate in ways that,
+when communicated in some fashion to other actors, help generate social structures at the
+group level. There is also a group level process that operates to generate macro structures
+that both inform and constrain the operation of the micro-level processes. In short, incorporating intra-actor dynamics into a group level process creates an appropriate model of
+structural balance as a multiple level process where micro- and macro-mechanisms are
+coupled.
+2.2. Formalization of balance theory
+In 1956, Cartwright and Harary used graph theory to formalize Heider’s ideas on balance. Specifically, they proposed using graphs as a representation of the social structural
+arrangements that are the focus of balance theory. Representing social structure as a graph
+lead to significant theoretical development of both balance theory and other forms of what
+is now labeled network analysis. Cartwright and Harary noted that Heider’s use of the signs
+of the pox triples is equivalent to considering the signs of semicycle in a graph.1 Further, the
+concept of a semicycle was generalized to any signed social network. Thus, Heider’s notion
+of social balance was formally defined for any social structural arrangement of likes and
+dislikes among a group of people. Norman and Roberts (1972) proposed a set of functional
+measures based on counts of semicycles that described the degree of balance for any signed
+graph. Hummon and Fararo (1995) proposed a generalized algorithm for computing the
+balance at a point in a signed graph.
+One remarkable result of the formalization provided by Cartwright and Harary is their
+“structure theorem”. A graph is balanced if all of its semicycles are positive and, if a
+graph is balanced, the nodes can be partitioned into two subsets (called plus-sets) such that
+ties between nodes within a plus-set are all positive, and ties between nodes in different
+plus-sets are all negative. All of the triples in the top row of Fig. 1 can be partitioned in this
+fashion.2 If we can label the Cartwright and Harary result as the first structure theorem,
+Davis (1967) generalized it to the second structure theorem by reconsidering the all-negative
+triple (bottom-right in Fig. 1). He defined it as ‘balanced’ so that five of the triples in Fig. 1
+were regarded as balanced. He proved that if a signed graph was balanced in this modified
+1 In defining positive and negative ties in these graphs, the distinction between the affect tie and the ‘unit
+formation’ idea of Heider was discarded. In principle, the model proposed below can handle both kinds of ties.
+However, we do not pursue this idea here.
+2 For the all-positive triple (top-left in Fig. 1), one of the plus-sets is empty.
+
+<-----Page 4----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+21
+
+sense3 the nodes can be partitioned into two or more plus-sets, where plus-sets contain only
+positive ties, and negative ties connect nodes in different plus-sets. This result is appealing
+intuitively because empirical signed social networks having more than two subgroups that
+are mutually hostile are common.
+The structure theorems describe the (macro) structure of signed relations and it seems
+reasonable to have a method for locating the plus-sets and the corresponding partitioned
+structures. If most empirically observed signed networks are not balanced, the desired
+method has to locate those partitions that are closest to the ideal form specified in the
+structure theorems. Doreian and Mrvar (1996) proposed a general method for doing this.
+Instead of using a measure of imbalance based on semicycles, they used the line index4 of
+Harary et al. (1965). The line index of imbalance is the minimum number of ties whose
+reversal of sign creates a balanced graph. Inconsistencies with perfect balance occur in
+two forms: negative ties between vertices in the same plus-set and positive ties between
+vertices in different plus-sets. The algorithm developed by Doreian and Mrvar finds the set
+of partitions that minimize the number of inconsistencies with perfect balance in a graph. Of
+course, balanced networks are detected as such and have zero inconsistencies with balance.
+Fig. 2 presents a simple network that is not exactly balanced together with four partitions
+of this network into two and three clusters. These partitions, each with a single inconsistency
+with perfect balance, were located by using the Doreian and Mrvar (1996) method. Consider
+the two cluster partitions. For the partition {{1, 2, 4, 5, 6, 7}, {3}} in the bottom-left panel
+in Fig. 2, the tie from actor 1 to actor 2 is inconsistent with balance because it is a negative
+tie within a plus-set. For the partition {{1, 4, 5, 6, 7}, {2, 3}} in the bottom-right panel of
+Fig. 2, the tie from actor 2 to actor 4 is identified as inconsistent with balance because it
+is a positive tie between plus-sets. We note that the tie identified in this fashion depends
+on which (optimal) partition is considered. When we turn our attention to three cluster
+partitions there are another two partitions with the same number of inconsistencies with
+balance. For {{1, 5, 7}, {2, 4, 6}, {3}} partition in the top-left panel of Fig. 2, yet another
+tie is identified as being inconsistent with balance. It is the positive tie from actor 1 to actor
+4 that goes between plus-sets. For the partition {{1, 4, 5, 6, 7}, {2}, {3}} in the top-right
+panel of Fig. 2, the positive tie from actor 2 to actor 4 is identified again as inconsistent
+with balance.
+To focus our discussion, consider actor 1 and the bottom-left partition of Fig. 2 as actor
+1’s perception of the structure. Actor 1 has one option for generating a balanced structure
+in its image of the network: change the negative tie to actor 2 into a positive tie. If actor 1’s
+perception is the lower-right partition in Fig. 2, the actor has one option: change the positive
+tie to actor 4 into a negative tie. Actor 1 cannot do anything about the positive tie from actor
+2 to actor 4, except recognize it (or not). If actor 2 perceives either the top- or bottom-right
+partition of Fig. 2 as the group structure, that actor’s option is to change its positive tie to
+actor 4 to a negative tie in an effort to reach balance. Each of these changes, even though
+they are instances of the same generative process, they lead to distinct collective outcomes
+when expressed in terms of partitioned structures.
+3
+
+No cycles or semicycles have a single negative line.
+The line deletion index is the number of lines that have to be removed to reach balance. Harary et al. (1965)
+prove that the line deletion and the line reversal indexes are identical.
+4
+
+<-----Page 5----->22
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+Fig. 2. An imbalanced network with four three- and two-cluster partitions.
+
+An additional complication for the actors—and analysts trying to model their action—
+comes from actors using a fixed image of a changing structure. If, for the bottom-left
+partition, actor 1 changes its negative tie to actor 2 into a positive tie then there is no need
+for further action by actor 2 if it perceives this change in time. But if actor 1 changes its
+link to actor 2 at the same time as actor 2 turns its positive tie to actor 4 into a negative tie,
+an imbalanced structure is reached (see Fig. 3). Even though both actors acted to reduce
+balance, the aggregate outcome was a structure with the same amount of imbalance.
+We can take this one step further. Suppose actor 1 starts with the image as shown in the
+bottom-left panel of Fig. 2, changes the sign of its tie to actor 2 and updates the image with
+
+<-----Page 6----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+23
+
+Fig. 3. An imbalanced network after two changes.
+
+just its own change. The perceived structure for actor 1 is on the left of Fig. 4. Suppose
+further, that actor 2 starts with the image in the bottom-right panel of Fig. 2 and changes
+the sign of its tie to actor 4 and notes only this change. Actor 2’s image is on the right of
+Fig. 4. The aggregate structure (see Fig. 3) remains imbalanced while the two actor images
+are balanced. This becomes a plausible account for having balance as a general process
+not leading to perfect balance in the aggregate structure (at least in the short run). The
+critical difference between the two images of the overall structure is the difference in the
+information known by each actor. We will return to this idea.
+2.3. Structural balance as foundations for process models
+The two structure theorems are central to the simulation model described below because
+they drive the construction of the cognitive images held by actors as well as the form
+of the group level structure. For Heider, the ‘discomfort’ experienced by actors because
+of the ‘tension’ generated through imbalanced triples suggests that there will be movement
+towards balancing the imbalanced triples. Put differently, rational actors are motivated
+to reduce the imbalance they experience through their location in perceived imbalanced
+triples. This expected change in triples—the dynamics of which are very complicated when
+actors are embedded in multiple triples—has been extended to the fundamental empirical
+
+Fig. 4. Two balanced actor images of an imbalanced network.
+
+<-----Page 7----->24
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+Fig. 5. Core balance dynamics.
+
+structural balance hypothesis (FSBH) claiming that signed human relations tend towards
+balance through time (Doreian and Krackhardt, 2001). However, this hypothesis is not a
+part of the substantive foundation of the simulation model. What is in the foundations of
+the model (see Figs. 2 and 5) is the notion of what a signed social network looks like when
+it is balanced or approximates balance.
+We assume that if a signed structure is balanced, there are no forces for change that
+can be located in the group structure. We assume that if structures in the actor images are
+imbalanced, with respect to the distribution of affective social choices, this creates tension
+for those social actors. Actors then make choices to change their structural arrangements in
+an effort to reduce tension. These choices only invoke balance criteria in the model developed
+below.5 While specific choices, or sets of choices, are intended to reduce tension, they may
+not be successful in the short run, as illustrated in Section 2.2. However, if the balance
+hypothesis is correct, over the long run, these changes lead to a reduction in tension, both
+for individual social actors and for the group as a whole. If these tension reduction choices
+continue for a sufficient time, each actor is likely to reach an image of the group structure
+that is balanced (although the time involved could be very long). The group may or may not
+reach an equilibrium state that is balanced. Figs. 3 and 4 show a configuration where the
+5 Doreian and Krackhardt (2001) suggest potential rival mechanisms and processes that could be operative.
+While future simulations can incorporate them our central concern here is the operation of balance theoretic
+processes.
+
+<-----Page 8----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+25
+
+group structure is not balanced but actor images of it are balanced. If the remaining actors
+also have balanced images, there will be no forces operating to achieve balance at the group
+level because each actor’s image is balanced. The terminal state for the whole group may
+be perfect equilibrium with zero imbalance. However, we do not require this in the model
+specified below. Equilibrium (or dynamic equilibrium) with some minimal imbalance for
+the structure of a group is possible. In our narrative to this point, we have remained silent
+about the information available to each actor. The nature of this information is critical and
+mechanisms for generating different information states for the actors are formulated in the
+experimental core of the simulation model described below.
+We stress that the FSBH has been formulated at the group level, consistent with the
+Cartwright and Harary generalization of balance theory. The hypothesis is both simple and
+naı̈ve. (This is made clear in some of the simulation outcomes described below.) While we
+do not assume that this hypothesis is universally true, we do assume that individual actors
+do seek to minimize imbalance through their affective choices.
+2.4. Other relevant literature
+Locating the relevant literature is a difficult task because there have been many conflicting results—especially with regard to reciprocity. Newcomb (1961) found that reciprocity
+was important in the development of friendship choices. This result was replicated by
+Doreian et al. (1996) even though they used a different method of measuring reciprocity.
+However, Newcomb (1979) in another (earlier) re-analysis of these data did not confirm
+the hypothesis that with continuing acquaintance, dyads within a group will converge in
+levels of interpersonal attraction. Furthermore, Baker (1983) re-analyzed Newcomb’s fraternity data—documented in Nordlie (1958)—to test a hypothesis of dyadic mutuality. The
+hypothesis was not supported. Baker also collected new data in a college dormitory and,
+with some qualifications, the dyadic mutuality hypothesis was supported by the new data.
+Doreian et al. (1996) also studied transitivity and structural balance with Newcomb’s data
+and showed that the three processes, while coupled, had different time scales. If the time
+scales are different for these processes, greater care is needed in specifying the conditions
+under which any one of these processes are studied.
+The differing time scales may help account for some of the inconsistent findings concerning reciprocity. Given the differing time scales, the relevant literature may be restricted
+to those studies focusing on structural balance per se—providing the observation periods
+are consistent with the time scale. Epstein (1979), in an analysis of longitudinal survey data
+of friendship choices among secondary school students, found that friendship selections
+were not explained by “a single theory of balance”. Mower-White (1977, 1979) conducted
+experiments to test triadic balance hypotheses and found that balance is only one of the
+biases that affect subjects’ responses. The other biases include agreement and observer
+positivity. She also argues that social context influences balance outcomes. Truzzi (1973)
+conducted an experimental study of balance structures more complex than dyads and triples
+and found that the structural balance model predicted successfully when subjects had a positive orientation to others, but did not hold for the corresponding negative orientations. This
+result is consistent with one of Newcomb’s (1968) findings as well as one of Doreian and
+Krackhardt’s (2001) findings that structural balance processes do not appear to operate
+
+<-----Page 9----->26
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+when the tie from p to o is negative. (This does suggest that specific patterns of signed
+triples differentiated in terms of the sign of the p → o tie merit further attention beyond
+the triples being balanced or not.)
+There have been many studies of balance—sufficient to support a historical meta-analysis.
+Manhart (1995) concluded that the theory has been evolutionary in its mathematical development in the sense that new developments build on prior work, but less so in the empirical
+areas.6 Opp (1984) has a much more damaging assessment of structural balance theory and
+viewed it as an empirical failure.
+We can identify other issues that are not considered—or are considered only lightly—in
+the balance theoretic literature. First, there is little empirically based work on analyzing
+structures beyond dyads, triples and partitioned structures. (We consider partitioned structures later.) Extending measures of imbalance beyond triples runs into the problem of
+calculating measures of imbalance using semicycles in a general directed graph (digraph).
+This is not a simple computational problem and only recently has an algorithm been proposed to compute semicycle-based measures of balance on a general digraph (Hummon
+and Fararo, 1995). A second issue concerns the hypothesized movement towards balance
+with an implicit assumption that balance is achieved. However, for ‘real world’ balance
+processes, tension is reduced only to a certain point and balance at the group level is not
+reached often. It is not clear if this is embarrassing for balance theorists or that the operation of the underlying processes are incomplete in the sense that the dynamics have not
+been studied for a sufficiently long period.7 At a minimum, the idea of continual movement
+towards balance needs to be made far more conditional on the social contexts of signed
+structures. There are conditions under which imbalance will be reduced and there are conditions under which it will be increased. The FSBH does not recognize such differences.
+Third, the location of “change” in the balance status of individuals in a group is unclear. It
+can be located in the group structure (the usual object studied when attention is confined to
+the group level) or in the cognitive representations of individuals of that group structure or
+in both. Fourth, predictions regarding change in balance are limited or imprecise. Change
+can be viewed as the ties changing (in magnitude and sign), the semicycles changing (from
+imbalance to balance, or the reverse) or changes in the partition structure. Beyond this, it
+is very difficult to predict which ties change and which semicycles change in a context of
+many interdependent ties and semicycles. Finally, semicycle-based measures of balance in
+a graph impose limitations on modeling and analysis. These measures are computationally
+complex, practically limiting the size of groups that can be studied. All five of these issues
+are addressed in the structural balance theoretically based simulation model proposed here.
+The issue of whether to focus on ties or semicycles leads to a further question. If balanced outcomes are the result of choices made by actors, it is unlikely that there is a clear
+correspondence between semicycle counts and how people assess their balance status. Complicated counts of differentially weighted cycles seem beyond the capacity of human actors
+6 Moore (1979) applied balance theory to international relations. He was particularly interested in whether
+balance could be attained with more than two subgroups. He concluded the structure balance theory was valid for
+international relations.
+7 Arguments that other processes, like a desire for some level of imbalance, may be at work are not very
+convincing.
+
+<-----Page 10----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+27
+
+and are unlikely to form the basis on which actors make decisions. It seems more promising
+to think that people assess balance in terms of group and subgroup membership. It is here
+that the partitioned structures described in the structure theorems are important. They specify memberships in plus-sets. This is something that is easy to understand. The structural
+implications of a mutual positive tie between Romeo and Juliet were immediately obvious
+to all members of their respective (mutually hostile) families as well to outsiders and allies.
+It is important to realize also that descriptions of ‘actors making choices’ implicitly assume
+that these choices are made on the basis of information. We make this explicit by specifying
+ways in which actors come to have information about the signed ties among pairs of actors
+but also some of the structural implications of the distribution of those choices. Membership in plus-sets is easy to understand and can be invoked in expressions like ‘if you are not
+with us you are against us’. An approach based only on Heider’s ideas misses the structural
+implications of the distribution of signed choices because it ignores the wider structure
+generated by them. In contrast, an approach that is based only on the ideas of Cartwright
+and Harary ignores the affective mechanisms in the minds of actors. To understand balance
+theoretic processes it is necessary to combine the ideas from the two perspectives. This is
+made more complicated when there is imperfect information and actors differ in the amounts
+and accuracy of their ‘social knowledge’. The agent-based simulation model described in
+Section 3 implements these ideas.
+2.5. The cognitive basis of social choice
+Our proposed model is agent-based with the agent located in a larger signed structure. We
+think of the aggregate structure as the network formed by combining the information from
+each actor about its own links to other actors in the group. It is the signed sociogram in the
+conventional sense. The actor images of the network are distinct and we directly model them.
+However, even though we distinguish the individual actor images and an aggregate structure
+there are two important features worth noting: (1) the separate actions of the actors, when
+combined, generate the aggregate structure; and (2) the actions of each actor are guided
+by the aggregate structure as they perceive it (or have it thrust upon them by the group).
+Of course, if each actor’s perception is completely accurate (or they are identical in some
+other way) then the aggregate structure is identical with the actor images of the structure.
+In general, the group structure and perceptions of it differ through time. We assume the
+following that individual actors (1) have some knowledge—that need not be accurate—of
+other actors and their ties in the network; (2) have some awareness of the wider group
+structure; and (3) have the ability to make tension reducing social choices concerning their
+own ties.
+There is a sound cognitive basis for an agent-based social choice assumption. Freeman
+et al. (1988) found that the ability of actors to discern subgroups and boundaries between
+the subgroups evolves over time as people gain experience within the group. This is exactly
+this kind of social knowledge that is included in our simulation model. Krackhardt’s (1987)
+discussion of the perception of networks by actors of a network is instructive also as different
+actors can view relations elsewhere in a social network in different ways. In a series of
+studies (Freeman and Romney, 1987; Freeman et al., 1987, 1988), Freeman has shown
+that the accuracy of people’s recollections of social networks varies systematically with
+
+<-----Page 11----->28
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+their location in the network and their involvement in the social group whose network is
+studied.
+In short, based on the literature on cognitive structures, we assume the following of
+social actors in the simulation model proposed in Section 3. They have knowledge of the
+distribution of positive and negative ties in the networks in which they are located but
+this knowledge need not be accurate. As a part of this, they know which members belong
+to which subgroups (plus-sets) defined in terms of structural balance without assuming a
+balanced group structure. Again, this knowledge need not be accurate. We place great stress
+on the idea that choices made by actors for achieving balance are based on what they know
+at the time when they make a choice. Their social knowledge changes as they learn and react
+to their social environment. The cognitive structures of any given actor may be different
+from those of other actors, and different from the aggregate (emergent) group structure.
+This is also a caution to those social network analysts (including us) who might construct a
+group matrix/network from the choices of all actors. It is worth noting that this formulation
+is consistent with three of the six principles outlined by Stokman and Doreian (1997).
+They are: (1) actors have goals (in this case, to minimize the imbalance in their cognitive
+image of the signed network); (2) actors act (in part) on the basis of local information;
+and (3) there is parallelism (where each actor independently8 processes the information it
+has).
+
+3. Simulation methodology
+We couple two simulation approaches—a multi-thread model and a discrete event simulation (DES) model—in this study. The multi-thread model serves two purposes: (1) verifying
+exactly how the simulated actors behave by generating detailed scripts of each actor’s social knowledge and the decisions associated with that knowledge; and (2) showing how
+social balance works through dynamic graphical displays of the behavior of the simulated
+actors. DES is better suited to running Monte Carlo experiments that explore the entire
+parameter space of the model and generating the distribution of behaviors of the simulated
+process.
+The core simulation model implements two social processes: the group process determines clusters of actors that minimize total group imbalance; and the simulated actors use
+social knowledge about cluster membership to make social choices that minimize their individual social imbalances. Thus, while actors are interdependent within the aggregate group
+structure, they behave as independent agents in making choices about the relational ties
+they have with other actors. Both simulation approaches implement the same two-process
+core model. While there are differences between the two models in their management and
+the design of the interfaces of the models, these are secondary to our purposes here.9
+8 This may not be the best term. We mean that each actor processes that information it has separately and without
+regard for the actions of the action of others (either real or anticipated). The results of these parallel processing
+schemes are coupled to form the group level signed network which represents some of the real interdependence
+of the actors in the network.
+9 The simulation models are written in Java, an object oriented language. Simulated actors and the group are
+implemented as objects and the two approaches use the same actor object in the “behavioral” parts of the models.
+
+<-----Page 12----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+29
+
+Fig. 6. Balance choices for actor 1.
+
+3.1. Core components of dynamic balance model
+Fig. 5 describes the two processes of the simulation model. Actors cycle through dormant
+and active phases, with the length of the dormant phase set randomly.10 During the active
+phase, the actor performs three tasks. First, each actor processes messages received during
+the preceding dormant phase. This involves updating the knowledge about how the group
+is currently partitioned using data sent by the group process. It also involves updating the
+actor’s image of the “group network” using the tie/choice messages received from other
+actors (according to a communication mode as described below). We note that actors need
+not receive complete information about the choices made by other actors. Second, given
+current social knowledge about the group (the image network and group partitioning), the
+actor makes a decision that minimizes its social imbalance. A decision involves consideration of all possible tie statuses (no tie changes, adding a tie, deleting a tie and changing
+the sign of a tie) controlled by an actor. Third, this decision is communicated to the group
+according to the communication protocol.
+The group process functions in a (nearly) continuous manner.11 Each execution of the
+group process comprises three tasks. First, messages received from actors concerning tie
+changes are used to update the current group network structure. Second, the group partitioning algorithm is used to compute clusters with minimum imbalance in the group’s
+network. If there is more than one partition at the minimum imbalance level, one is chosen
+randomly. Third, the optimal partition is sent to all actors. This implementation of the group
+process insures that all actors share the same knowledge about the (randomly selected) minimum imbalance partition12 at all times. They need not—and often do not—share the same
+knowledge concerning the details of the distribution of ties.
+We can be more explicit about how actors make decisions. Fig. 6 displays the options
+actor 1 has in the decision process for the network in Fig. 2 where the graph is the network
+10 Scheduling actors randomly and asynchronously simulates parallel behavior typical of the real social world.
+We also note that this approach to dynamics is quite different from the synchronous, round to round, approach
+commonly used in social simulation.
+11 In the real time multi-thread version of the model, the group process is executed every 200 ms, while the actors
+are cycling through dormant and active phases on a much lower cycle frequency. In the discrete event version, the
+group process executes every generation of actor decision making.
+12 In general, when there are multiple equally well-fitting partitions they do not differ by much.
+
+<-----Page 13----->30
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+image held by actor 1. This actor can maintain the status quo or change any of the six
+possible ties to the other actors. Actor 1 can consider a total of 18 options once it has
+assessed its current level of imbalance. Six of the options involve no change (“stay”) while
+there are 12 change options. The current imbalance is a base line for comparing the impact
+each tie change has on the level of imbalance. Of course, if the image held by actor 1 is
+balanced there will be no change in its ties.
+Each actor considers each of its ties (including null ties) to all other actors in its image of
+the network. This means that, for example, actor 1 examines how imbalance would change
+if the positive tie to actor 4 were changed to a negative tie, or became null. With each change,
+a new imbalance level is computed. For actor 1, both changing the tie with actor 4 from
+positive to negative or to a null tie creates a balanced image for actor 1. In this example,
+actor 1 considers 18 options, 12 of which could change the imbalance status. These 18
+options marked with a check, along with the current status, are rank ordered, and the best
+one is selected. If there are multiple “best” choice options, one of these is chosen randomly.
+An imbalanced structure in the actor’s image of the network can change in more than one
+way and the partition structures resulting from these choices can be different. Each outcome
+results from a different instantiation of a single process. As described above, two potential
+actions for actor 1 to reach balance are changing the positive tie to actor 4 or changing the
+negative tie to actor 2. Lacking further information, actor 1 chooses one of these randomly.
+However, if the partition reported from the group process is {{1, 5, 7}, {2, 3, 4, 6}}, then
+choosing to change the negative tie to actor 4 becomes the preferred option. It is possible
+that an actor’s image of the network is balanced but when a partition structure is imposed
+on the actor’s image, that partition has ties inconsistent with the structure described by
+structure theorems. An empirical network structure can be moved to different states even if
+the process generating change is the same and the starting conditions are the same.
+If an actor makes a choice that changes the set of current social relations, it then communicates that choice to other actors and to the group process component of the model
+(see Fig. 5). There are four implemented experimental conditions for the way an actor
+communicates a change in the status of a tie.
+1. The actor communicates the change only to the other actor who was the target of the
+change. This is labeled simple dyadic communication.
+2. The actor communicates the change to all other actors with whom it has a positive tie.
+This is labeled tell friends communication.
+3. The actor communicates the change to all other actors with whom it has a tie, either
+positive or negative. This is labeled tell acquaintances communication.
+4. The actor communicates the change to all other actors in the network. This is labeled
+broadcast communication.
+All choice changes are also communicated to the group process component of the model.
+This component maintains the current group network that reflects the choices of all actors.
+The group component also continuously computes the optimal partition that minimizes
+imbalance at the group level. This partition is sent continuously as a message to all actors,
+and each actor makes balance computations using this current partition.13
+13
+
+When there are multiple equally well-fitting partitions, one is selected at random and is reported to all actors.
+
+<-----Page 14----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+31
+
+The dynamics of the balance model operate at two levels. One is located at the level
+of the individual actors where communication varies and reflects different social knowledge situations. The second is the group level where the choices of the actors generate
+a group network structure. In essence, the communication to the group structure is a cumulated report of the dyadic communications. Thus, at the group level, a group network
+emerges that is generated by the individual behaviors. In general, for a sufficiently long
+simulation time, most group networks will be balanced if the structural balance hypothesis is correct. (However, we must allow for configurations where the intra-actor image
+networks are all balanced but the group level structure is not.) We turn now to a discussion of the two forms of simulation that incorporates this core actor and group level
+behavior.
+3.2. A multi-thread simulation model
+The multi-thread simulation model represents each simulated actor and the group as
+independent threads. Actors communicate with other actors and with the group through
+pipes.14 The multi-thread model runs in “real time” in the sense that actors cycle through
+active and dormant phases according to a real time clock, with the length of the dormant
+phase set randomly.15 The group also cycles through regular active and dormant phases
+in cycles that are short relative to the cycles of the actors. This approximates continuous
+change and adjustment at the group level.
+The multi-thread simulation model is most useful for displaying the dynamics of actor
+choices. The model has a graphic user interface. This allows the user to set a number of
+parameters and then see how those parameters generate a particular balance trajectory. Fig. 7
+displays an example of a simulation run with the run’s parameter screen in the left panel
+and the resulting equilibrium network in the right panel.16
+In setting up these simulations, we had no hypotheses stating relations between variables.
+Nor did we think in terms of ‘variance explained’ where a set of variables could be used
+to account for the distribution of other variables in some linear or non-linear equation.
+Additionally, we made no effort to set up systems of differential equations to model the
+through time dynamics of variables. Instead, our basic concern was to capture the operation
+of social processes generating events which, through time, generate relations between social
+actors. While statements about relations between variables may be established from the
+simulations at some future point, we think it necessary to understand the generation of
+events and social relations over actors first. This led us to specify the following parameters
+for runs of the simulation model.
+1. The number of actors in the group (as the small group literature suggests that size
+matters).
+14 Java supports multiple threads and pipes which implement communications between threads. Threads and
+pipes in Java are much like processes and pipes in the Unix operating system.
+15 Dormant phases for actors are represented as “sleep” events in Java threads.
+16 What it does not show is the sequences of changes that generate the trajectory of changes. However, this stream
+is available to the analyst for detailed analyses.
+
+<-----Page 15----->32
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+<-----Page 16----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+33
+
+2. The length of the run time in seconds (because some processes have different time scales
+and some sets of parameters may create conditions where ‘simple’ processes have to
+operate for longer periods of time).
+3. A minimum number of ties for actors (which, primarily, gets at the ability of social actors
+to cut themselves off from others in the group and, secondarily, controls for the density
+of ties).
+4. A communication method (with one of the four experimental conditions that help generate local—and potentially inaccurate and incomplete—social knowledge).
+5. The probability of negative ties (which is fixed across actors at the initial state because
+groups vary in the extent to which they are contentious).
+6. A simulation seed for random number generator.17
+In the first example run, the group size is set to five actors and the communication method
+is simple (dyadic). An equilibrium network18 of the resulting run is shown in right panel.
+In general, partition membership is shown through color-coding the nodes in the network
+diagrams. Circles represent actors and those in the same plus-set have the same color-coding.
+In this run, actors 1 and 3 belong to the same plus-set while the remaining actors are in a
+second plus-set. The signs of ties are also coded in the conventional fashion: solid darker
+(black) ties are positive and lighter (red) lines represent negative ties. The arrows indicate
+the direction of the tie. The tie between actors 1 and 3 in Fig. 7 is a solid (black) line—as
+are the reciprocal ties between actors 0, 2 and 4. The remaining ties are (red) lighter and,
+therefore, negative.
+Fig. 8 shows a similar pair of screens. The parameter settings in Fig. 8 are identical
+to those in Fig. 7, except for a change in the simulation seed. This second run is simply
+another realization of the same balance process with the same starting configuration. The
+right panel shows this different realization. We now see three subgroups (as plus-sets) at an
+equilibrium condition. The three plus-sets each have positive (black) ties within themselves,
+and negative (red) ties going to members of other groups. The equilibrium group condition
+is another balanced partition.
+These results are important because they demonstrate that the same balance process can
+generate structural outcomes that have been characterized in the empirical literature as
+quite different. The number of plus-sets is different in Figs. 7 and 8. We have observed yet
+another equilibrium outcome has only one plus-set. Such an outcome can be viewed as a
+‘conforming’ structure in the sense that perceptions of every actor about every other actor
+in the network are shared.19 The networks of Figs. 7 and 8 have multiple plus-sets and
+there is no conformity across the group as a whole. Each plus-set contains actors in broad
+agreement with each other member in the plus-set concerning actors in the other plus-sets.
+However, there are disagreements across actors in different plus-sets.20 This can be labeled
+17 The seventh parameter in the parameter screen (minimum graph edge), controls how long edges are in the
+graphic displays of the network.
+18 This is one outcome during one run of the model. Nothing in the balance procedure guarantees this specific
+outcome and many outcomes of the balance process are possible. See Fig. 11 for another generated outcome.
+19 If the graph is complete, these are identical.
+20 These disagreements are not complete. Actors in plus-sets, say A and B, can agree with each other in their
+negative assessments of the actors in plus-set, say C. However, they may disagree in their views of each other.
+
+<-----Page 17----->34
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+<-----Page 18----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+35
+
+as a ‘partial conformity’ or a ‘segmented conformity’ structure. To the extent that partial
+conformity can be viewed as deviant, it seems that ‘conformity’ and ‘deviance’ can both be
+outcomes (realizations) of a single process.
+The graphical multi-thread simulation model can be used to study and demonstrate a
+variety of phenomena that are difficult to illustrate in an article because they are recognized
+by dynamic patterns of change. We list four of these phenomena.
+1. Some groups reach equilibrium balance very quickly, requiring only a few choices to
+eliminate imbalances, while other groups never reach complete equilibrium during default standard run times. Thus, the rate of convergence to equilibrium varies, depending
+on a complex set of initial conditions and parameter settings.
+2. As multiple groups form, some actors may be “caught in the middle”. Their group
+membership changes frequently reflecting their ambiguous status.
+3. If the minimum number of ties is reduced to zero, some actors may disassociate themselves from all of the other actors, become disconnected and remain isolates. To the
+extent that a shared view of norms and beliefs exists for members of plus-sets, these
+isolates adopt an anomic status. This can happen when the communication patterns are
+less than broadcast conditions.
+4. Reciprocated positive dyads and triples are quite stable, seldom changing during the
+course of a run.
+These types of results are important in that they demonstrate how a particular structural outcome occurs. However, the multi-thread model generates only one outcome at a
+time, and since it runs in “real time” it takes considerable time to look at multiple outcomes under controlled conditions. For these types of questions, a DES model is more
+appropriate.
+3.3. A discrete event simulation model
+The primary difference between discrete event and multi-thread models is that discrete
+event models do not run in “real time”. Instead, they schedule events (active actors receiving
+messages, making choices and sending messages) in the future at random times. To manage
+the dynamics of the simulation, a DES model keeps track of all future events in a time-based
+priority queue, and continuously processes the event at the head of the queue. Processed
+events generate new events in the future, which are inserted into the priority queue to be
+processed when they reach the head of the queue. Fig. 9 describes the DES methodology.
+For a more detailed discussion of DES simulation see Fararo and Hummon (1994).
+DES models focus on those points in a dynamic process when something changes and
+skip over those times when nothing is happening. This makes the approach very efficient
+in executing a process until some end state is reached. The DES model of balance is used
+to conduct Monte Carlo experiments with differing sets of parameters covering group size,
+incidence of negative ties and communication modes.
+Unlike the multi-thread version of the model where a single simulation run is executed
+in real time, the DES version requires an explicit stopping rule because thousands of runs
+are executed to explore the behavior of the model over the entire parameter space. We
+have defined social balance in a group as a two-level process, with both individuals and
+
+<-----Page 19----->36
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+Fig. 9. Discrete event simulation methodology.
+
+the group possibly achieving balance. Therefore, the stopping rule employed tests for each
+level plus a total run time test: first, number balanced actors = number of actors; second, group imbalance = 0; and third, run time > run time limit. If any test was true,
+the run was terminated. It was possible for more than one test to be met at the same
+time.
+In general, the “all actors balanced” condition was achieved more quickly than the condition of “group level balance”. Thus, the run time limit can effect the likelihood of which
+stopping test determines the final configurations. Run time limits were set at approximately
+10 times the mean time to achieve group level balance. Table 1 presents statistics on stopping
+conditions and the average times to finish a run.
+The percentage of runs reaching the time limits for the four sized groups is small and
+varies from 0.75% for 5 actors to 3.6% for 10 actors. Thus, most of the runs achieve balance
+at one or both levels of the process. The percentage of runs stopped by achieving group
+level balance is always less than all individuals achieving balance; however, both forms
+of balance are common. The mean times to achieve balance reveal a different view of
+the process; achieving balance at the group level takes far longer than at the individual
+level. Overall, individual level balance accounts for about half of the runs, and is achieved
+quickly, while group level balance accounts for about one-third of the runs, and takes far
+longer.
+Table 1
+Run completion statistics: percent stopping rule and mean time
+Number of
+actors
+
+Stopping rule
+Time limit
+
+All actors
+balanced
+
+Group level
+balanced
+
+Both
+
+All
+
+3
+
+1.80 (1000)
+
+46.00 (79)
+
+14.75 (109)
+
+37.45 (22)
+
+100.00 (79)
+
+5
+
+0.75 (2800)
+
+51.35 (86)
+
+34.60 (268)
+
+13.30 (29)
+
+100.00 (162)
+
+7
+
+1.20 (12000)
+
+54.20 (144)
+
+41.65 (1230)
+
+2.95 (176)
+
+100.00 (739)
+
+10
+
+3.60 (72000)
+
+54.55 (309)
+
+41.00 (8532)
+
+0.85 (71)
+
+100.00 (6260)
+
+All
+
+1.84 (37755)
+
+51.53 (159)
+
+33.00 (3121)
+
+13.64 (33)
+
+100.00 (1810)
+
+The values are given as percentage and mean time.
+
+<-----Page 20----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+37
+
+4. Discrete event simulation experiments and outcomes
+The parameters chosen for the experimental conditions focus on three interests (in addition to a general concern for the dynamics of structural balance). First, are large groups
+likely to differ from small groups? Second, will the incidence of many negative ties at the
+outset have different consequences than the presence of few negative ties? The intuition here
+is that some groups differ in the extent to which they are contentious and that this matters.
+Finally, because the amount of information available to each of the actors is critical, do
+different communication modes generate information differences?
+To explore these questions, we used the following parameter settings.
+1. Group size: n = 3, 5, 7 and 10.
+2. Probability of negative ties21 in the initial conditions: P = 0.1, 0.3, 0.5, 0.7 and 0.9,
+which we denote by P(neg).
+3. Communication methods: simple dyadic, tell friends (over positive ties), tell acquaintances (over positive and negative ties) and broadcast (tell everyone).
+Each combination of parameters (for example, n = 3, P (neg) = 0.1 and simple dyadic),
+the generation of sequences of ties was replicated 100 times. The following variables were
+measured for each run.
+1. The number of acts (actor choices) needed to reach an equilibrium (frequently a balanced
+structure).
+2. The level of group imbalance as measured by the line index (of imbalance).
+3. The number of actors that achieved balance in their cognitive images of the signed social
+network.
+4. The average number of clusters in the final partition.
+The number of acts to reach balance is a measure of how easy it is for a group to reach
+equilibrium. We have noted already that there can be a difference between balance at the
+group level, and the balance of individual actors. The second and third measures capture
+this important distinction. Finally, from the multi-thread model, we know the number of
+clusters formed during the balance process varies. We use the average number of the clusters
+in the equilibrium partitions to capture this.
+4.1. The number of acts to reach balance (or equilibrium)
+Fig. 10 presents the results for the number of acts to reach balance for each of the
+combinations of experimental conditions. The four graphs are drawn on different scales
+because of the huge differences for different group sizes.
+For groups of size 3, the trajectories for simple, broadcast and tell acquaintances are very
+close to each other and only minor differences can be noted. The lowest two trajectories
+are for simple and broadcast with a slight hint of a peak for P (neg) = 0.5. The trajectory
+for tell acquaintances is slightly higher and reaches a maximum when P (neg) = 0.7 and
+remains there. The average number acts for the tell friends communication mode is the
+21
+
+This generates different numbers of negative ties for the starting configuration of ties.
+
+<-----Page 21----->38
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+<-----Page 22----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+39
+
+highest for all values of P(neg) with a clear ‘tipping point’ at P (neg) = 0.5. Below this
+value, the number of acts to reach balance increases with contentiousness and above this
+value, the number of acts to reach balance declines as P(neg) increases. The differences
+between this communication mode and the other three is clear (although this is magnified
+by the scale used).
+For group sizes of 5, 7 and 10, the trajectories for tell friends and tell acquaintances are
+well above those for the simple and broadcast communication modes for most values of
+P(neg). All trajectories are concave down, except for the tell friends mode for groups
+of size 10 when P (neg) > 0.7. For the lowest trajectory (for the broadcast mode), the
+curves are almost flat and the average number of acts to reach balance is small. The
+next lowest trajectory (for the simple communication mode) peaks at slightly above 10,
+acts for P (neg) = 0.7 when n = 5 and peaks at around 50, for P (neg) = 0.5 when
+n = 7. The peak is higher for n = 10. The two highest trajectories (by a wide margin
+for most values of P(neg)) are for the tell friends and the tell acquaintances communication modes. These two trajectories intersect for group sizes >3, where the intersection
+points occur at P (neg) = 0.2, 0.3 and 0.4 for the respective group sizes of 5, 7 and
+10. Before the intersection points (lower values of P(neg)), the tell acquaintance trajectories are above the tell friends trajectories. This is reversed for higher values of
+P(neg).
+For the tell friends mode, the peaks for the average number of acts to reach balance are
+slightly below 15 for n = 3, slightly below 50 for n = 5, around 375 for n = 7, and above
+5000 for n = 10. The increase in ‘inefficiency’ is far from linear with group size as group
+size increases. Also, the values of P(neg) for which these maximum values occur increase
+with the size of the group. The corresponding peaks for tell acquaintances are around 4, 25,
+225 and >3000 for the four group sizes considered here. These can all be viewed as tipping
+points and all occur when P (neg) = 0.3.
+Stepping back from the numerical details, it is clear that reaching balance is done most
+efficiently for the simple and broadcast modes for all values of contentiousness. Beyond
+n = 3, the difference between these two modes and the tell friends and tell acquaintances
+modes is large for all but the extreme levels of contentiousness. In broadcast mode, all
+actors have full information and reach balance faster for all values of contentiousness.
+Indeed, contentiousness is not a particularly relevant parameter for achieving balance under
+full information conditions. For the simple communication mode, actors have accurate
+local information for the ties involving them and reach balance faster than either of the tell
+acquaintances and tell friends modes, again for all levels of contentiousness. For low levels
+of contentiousness, tell friends is more efficient than tell acquaintances. However, for higher
+levels of contentiousness, the tell friends seems least efficient because actors are likely to
+have higher levels of both incomplete and inaccurate information. It is clear also that group
+size matters.
+4.2. Average group imbalance at equilibrium
+Fig. 11 shows the results for the average group imbalance at equilibrium where the
+measure of imbalance is the line index (number of ties inconsistent with balance for partitions
+closest to the form described in the structure theorems). The triad has patterns that differ
+
+<-----Page 23----->40
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+<-----Page 24----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+41
+
+from those of the other group sizes. For groups of size 3, the level of imbalance increases
+with contentiousness for all communication modes until P(neg) is 0.5. Over this range, the
+highest imbalance is associated with the broadcast mode. This is followed by the simple
+mode and the two trajectories are close when P(neg) ranges from 0.1 to 0.3. These two
+trajectories are well above those for the other two communication modes. The tell friends
+mode comes next in average imbalance with the lowest such level being associated with
+the tell acquaintances mode. For both the simple and broadcast modes, P (neg) = 0.5 is
+another tipping point after which lower levels of group imbalance occur with increases in
+contentiousness. The trajectory increases for tell friends as P(neg) increases beyond 0.5 and
+this mode has the highest average levels of group imbalance when P(neg) exceeds 0.7. For
+tell acquaintances, there is a drop in imbalance as P(neg) increases beyond 0.5 with another
+reversal in the trajectory when contentiousness increases beyond 0.7. All average levels of
+imbalance are <1.
+There is great consistency in the results for the other three group sizes. In general, as
+the contentiousness rises for groups of sizes 5, 7 and 10, the average level of imbalance
+monotonically declines.22 The average imbalance levels increase as group size increases.
+Consistent with the results when n = 3 (for P (neg) < 0.7), the trajectories are ordered
+with average group imbalance highest for the broadcast mode, followed in order by the
+simple, tell friends and tell acquaintances communication modes. At face value, these
+results seem counter-intuitive in two ways. First, group level imbalance is lowest for the
+highest values of contentiousness. Second, the ordering of average group imbalance levels
+has the broadcast mode, where all actors have full and accurate information, as having
+the highest level of imbalance for all levels of contentiousness. If amount and accuracy
+of local knowledge is the driving force in balance dynamics, then one would expect the
+tell acquaintances condition to come next. Instead, it is associated with the lowest levels of
+average group imbalance. One consistency in the results for the number of acts to equilibrium
+and the average levels of group imbalance is that the broadcast and simple modes are at
+one extreme while tell friends and tell acquaintances is at the other. For high levels of
+contentiousness and for n = 7 and 10, the latter two conditions as very close to each other and
+to zero.
+4.3. The number of actors whose cognitive images are balanced
+Recall that actors can have different images of the group network and that these can be
+balanced even when the group as a whole is not imbalanced. One way of examining this
+is to look at the average number of actors with balanced images of the group network at
+equilibrium. This is shown in Fig. 12.
+For all group sizes and all levels of contentiousness, the number of actors with a balanced
+image of the network with the broadcast mode is always (or is very close to) the group size.
+Put differently, all actors have a balanced image for the broadcast mode. Next comes the
+simple communication mode. The average number of actors with a balanced image is close to
+the group size when the amount of contentiousness is at 0.1, the minimum value considered
+here. As contentiousness rises, the average number of actors with a balanced image of
+22
+
+The exceptions occur the higher levels of contentious for the tell friends and tell acquaintances modes.
+
+<-----Page 25----->42
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+<-----Page 26----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+43
+
+the network under the simple communication mode declines monotonically with P(neg)
+for group sizes 5, 7 and 10. For these two communication modes, the average number
+of actors with a balanced image is much greater than for the other two communication
+modes.
+For all group sizes, the number of actors with a balanced image for the tell friends
+communication mode declines monotonically with P(neg) as the level of contentiousness
+rises until P (neg) = 0.5. For groups of sizes of 3, 5 and 7, this value of P(neg) marks a
+tipping point after which the average number of actors with a balanced image of the network
+increases as the levels of contentiousness rise. For groups of size 3, this average approaches
+that of the simple communication mode for P (neg) = 0.9. For groups of size 10, this
+average declines slightly for the tell friends condition until P (neg) = 0.7, after which
+increases in contentiousness are accompanied by increases in the average number of actors
+with a balanced image of the network.
+The results for the tell acquaintances are, in the main, consistent with regard to the patterns
+for the tell friends condition with the exception that the average number of actors with a
+balanced image of the network are higher.23 The anomaly comes for groups of size 3 where
+the pattern for tell acquaintances has a distinctive trajectory in the form of a ‘W’. As P(neg)
+increases to 0.3, the average number of actors with a balanced image does decline in the
+same way as for tell friends. However, for P(neg) between 0.3 and 0.5, the average number
+of balanced actors increases with increases in the initial level of contentiousness. For P(neg)
+in the range for contentiousness (between P (neg) = 0.5 and 0.7, there is another range of
+contentiousness where there are decreases in the average number of actors with a balanced
+image as contentiousness increases. Finally, after P (neg) = 0.7, increasing contentiousness
+is associated with increases in the average number of actors with a balance image of the
+network.
+4.4. The number of clusters (plus-sets) in equilibrium partitions
+The final aspect of the balancing process studied here is the number of plus-sets that are
+formed at equilibrium. Fig. 13 presents the average number of clusters for each group size
+and all levels of contentiousness. Regardless of the group size, as contentiousness increases
+so does the average number of clusters that are formed. This is fully consistent with the
+extension of balance theory by Davis (1967) and the expectation of the formation of larger
+numbers of plus-sets with more all-negative triples in the data. For groups of size 3, the
+lowest trajectory occurs for the tell friends communication mode. The trajectories for the
+remaining three communication modes are all very close. For groups of size 5, the trajectory
+for tell friends has the smallest number of plus-sets once the initial level of contentiousness
+reaches P (neg) = 0.2 and is clearly lower for higher initial levels of contentiousness. The
+remaining three trajectories are close.
+For groups of size 7 and lower levels of contentiousness (with P(neg) between 0.1 and
+0.5), the trajectory for the tell friends communication mode remains close to the other three
+trajectories. Once contentiousness levels are higher than 0.5, the average number of plus-sets
+23 For P (neg) = 0.1, for all group sizes, except n = 5, the average is slightly lower for tell acquaintances. Also,
+for n = 10, the trajectory for tell acquaintances is slightly below that for tell friends until P (neg) = 0.3.
+
+<-----Page 27----->44
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+<-----Page 28----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+45
+
+for this communication mode is distinctly lower than for the other communication modes.
+This pattern is repeated for groups of size 10 but not until P (neg) = 0.6 and by the time
+P(neg) exceeds 0.7, this communication mode, the average number of plus-sets drops as
+P(neg) increases beyond 0.7. For the higher levels of contentiousness, it appears that the next
+smallest average number of plus-sets is associated with simple communication mode—with
+the only clear difference occurring for n = 10. For the highest level of contentiousness, the
+average number of plus-sets are associated, in order, by the broadcast, tell acquaintances,
+simple and the tell friends communication modes.
+4.5. Social balance and cliques
+The results in Fig. 13 demonstrate the strong relation between the contentiousness of
+a group, and the number of clusters or cliques that are formed. What these graphs do
+not show is a more subtle relation between cluster formation and the two types of balance
+realized by the process. Specifically, we need to examine the relation between the number of
+clusters, and the social balance measures at both individual and group levels. We estimated
+general linear models that predicted the number of balanced actors and the group level
+of imbalance, as a function of the number of acts to achieve balance and the number of
+clusters, while controlling for all experimental design factors as fixed effects (number of
+actors, contentiousness and communication mode) or random effects (stopping rule). The
+Monte Carlo repetition factor was high enough that all statistical parameters and effects
+are significant so we will not report the complete statistical models. However, what is of
+particular interest is the relation between the measures of balance and the number of clusters,
+controlling for all other variables and design effects.
+The general linear models report that an increase in the number of clusters reduces group
+level imbalance and reduces the number of balanced actors. Stated another way, within
+the overall social balance process, clique formation improves group level balance, while
+simultaneously lowering individual level balance. Recall that the level of clique formation
+is a function of the contentiousness of the group. Thus, clique formation is a critical sub
+process to social balance. Contentious groups of actors achieve social balance through clique
+formation, while at times isolating a few actors who never achieve individual balance.
+Finally, we note that we have observed this phenomena during runs of the multi-thread
+model.
+
+5. Summary and discussion
+Structural balance theory is both limited in scope and ambitious in its claim to generality.
+While dealing ‘only’ with small groups and simple psychological mechanisms, it can be
+viewed as postulating and describing a very general set of social mechanisms that operate
+in many, if not all, contexts where social relations are signed. In the simulations presented
+here we modeled a balance theoretic process with two levels. One is located in the minds of
+actors and is fully consistent with the initial (micro-level) formulation of Heider (1946, 1958)
+while the second (macro-level) is attentive to group level dynamics. At this group level, the
+simulations are consistent with the line of work initiated by Cartwright and Harary (1956)
+
+<-----Page 29----->46
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+where attention has been focused on the structure of small groups. We have coupled the two
+levels by having the micro- and macro-level processes inform and constrain each other as
+they operate. While the results that we have generated are consistent with structural balance
+(by design), the outcomes—as described above—were more complicated than we expected
+and have serious implications for the empirical study of balance theoretic processes.
+These simulations, while consistent with balance theory, do not appear to relate directly
+to either experimental studies of balance or group level studies of balance theory. One of
+the ‘design variables’ was the contentiousness of groups, operationalized by the probabilities of negative ties in the initial conditions. We have not seen this in the literature even
+though groups do differ in their levels of contentiousness. The ‘outcome variables’ were
+the number of acts that groups need to reach balance (or equilibrium), the number of actors
+whose cognitive images of the network are balanced, the number of clusters (plus-sets) at
+equilibrium and the level of imbalance at the group level. From the perspective of group
+level studies, only the last variable is featured as a relevant outcome variable. Most of the
+experimental studies that have looked at balance have considered specific triples and the
+relative frequencies of balanced and imbalanced triples in cognitive images in terms of
+their existence, pleasantness and simple recognition. Isolated triples, whether hypothetical or real, are very restrictive and in most social groups there are multiple triples. The
+simulations that we report embed individual actors in larger (social) structures and we do
+not restrict attention to the location of actors in triples. Further, having actors located in
+structures of plus-sets linked (in the main) by negative ties seems more comprehensible for
+the actors involved. Viewing actors as capable of complex computations involving semicycles of differing lengths (including triples) as an assessment of imbalance seems too
+optimistic.
+The simulation results suggest that: (1) the initial contentiousness is relevant; (2) the
+modes of communication (which generate variations in the amount of information that
+actors have concerning the groups within which they are located) is important for balance
+theoretic dynamics; (3) these dynamics are different in ‘large’ small groups compared to
+‘small’ small groups; and (4) there is a subtle relation between the number of plus-sets
+formed and the two types of balance realized by the model. Some of our results are both
+simple and provocative. The empirical structural balance theoretic hypothesis that human
+signed networks tend towards balance has an ambiguous standing. While empirical studies
+have documented movements towards balance, few social groups reach perfect balance.
+Doreian and Krackhardt (2001) suggest that there may be multiple balance mechanisms
+that may be switched on or off in given empirical contexts and Doreian (2002) suggests that
+movement towards balance, if it exists, is neither simple nor direct. Our simulations suggest
+at least two possible reasons for this. One is that if each actor has a balanced cognitive
+image of the network, there is no need for any actor to make changes in their social ties. The
+internal Heiderian mechanism is inoperative when there is no ‘tension’ requiring reduction.
+It follows that a macro-level structure can be imbalanced while all cognitive images of
+that network are balanced. A second explanation stems from the finding that group level
+balance takes far more acts to be attained than individual level balance—and this number
+of acts increases by orders of magnitude as the group size increases. It seems likely that
+most empirically observed groups have not been studied for a long enough time and that
+the empirically observed imbalanced structures represent a state that is well short of an
+
+<-----Page 30----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+47
+
+equilibrium (whether balanced or not). Doreian et al. (1996), following a re-analysis of the
+Newcomb data, observe that reciprocity, transitivity and balance theoretic mechanisms have
+different time scales. Of these, balance had the longest time scale. Our simulations suggest
+that they may have underestimated the length of the time scale for the operation of balance
+theoretic mechanisms at the group level.
+There are a variety of implications and next steps suggested by our results. One is that
+the empirical study of the evolution of human small groups would be helped if we knew
+more about the time scales of the processes studied in these groups. It would be useful
+to have more information about the acts needed to reach balance—although we recognize
+that observing these empirically would require a Herculean effort. The simulations emphasize the essential stochastic nature of evolving group structures: groups starting with the
+same initial conditions and evolving under the same process rules need not have the same
+trajectory nor the same destination structure.24 There is both ambiguity and uncertainty
+in evolving group structures, an observation reinforced by the large number of terminal
+structures generated by the simulations. The same balance process can generate a single
+cohesive plus-set of the whole group, disjoint mutually hostile plus-sets and a large plus-set
+with a small number much disliked dyads and singletons. Clearly, an additional (much
+needed) step is the construction of a catalogue of balanced (and near balanced) group
+structures.
+Simulations could shed light on the differences between the initial formulation of Heider
+and that of Newcomb (1968) concerning the p → o link in the triples of Fig. 1. While Heider
+considered all of the triples in terms of balance mechanisms, Newcomb suggested that these
+operate only if the p → o link is positive. In breaking a ‘singular’ balance mechanism into
+eight sub-mechanisms, Doreian and Krackhardt (2001) found that only some of the balance
+theoretic mechanisms appeared to operate and these all had the p → o link positive.25 It will
+be straightforward to build a ‘Newcomb balance process’ and contrast it with the ‘Heider
+balance process’ studied here. Scott (1963) suggested that actors differ in their cognitive
+complexity and that “cognitively complex persons tended towards unbalanced groupings
+(Scott, 1963, p. 66)”. Our simulations can be extended to have actors with differential
+cognitive complexities as they are embedded in larger social structures. Actors can differ
+in their memories of the processes as they unfold, yet another way in which differential
+cognitive complexity can be generated.
+The idea of differential popularity and unpopularity as a rival hypothesis to balance
+theory uncovered by Doreian and Krackhardt (2001) in signed graphs echoes the earlier
+finding of Feld and Elmore (1982) who argued that transitivity could be confused with
+differential popularity and, worse, this could lead an investigator to place primary emphasis
+on transitivity as the operating mechanism when differential popularity could be the more
+potent mechanism for generating structural patterns. Building these alternative mechanisms
+into further simulation studies would allow us to know—or at least provide us with clues for
+knowing—how to distinguish the (combined and rival) operation of these kinds of processes
+in empirical situations.
+24
+
+Recall our discussion of Figs. 3 and 4 regarding trajectories of evolving group structure.
+There were other rival hypotheses including differential unpopularity and possible recognition of actor attributes
+where p and o could agree about some q regardless of how they regard each other.
+25
+
+<-----Page 31----->48
+
+N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+Following the current status of balance theory, we chose to model social balance as
+two interacting processes, one embedded in the cognitions of social actors, and the other
+operating at the group level. Having one without the other seems problematic. The balance
+‘mechanism’ as specified by coupled group level and actor level processes means both levels
+need to be present. While it is possible, in principle, to run the simulation without the group
+level process and ask if the FSBH holds when only the Heiderian process operates, doing this
+denies the social aspect of the balance processes. Looking only at intra-actor processes has
+little or no structural relevance. Of course, studying only the group level process removes
+the intra-actor processes. Our results and modeling experiences lead us to wonder about a
+model in which both social choice mechanisms and the group partitioning process are part
+of an actor’s cognitive processing. Would we see that same patterns if all balance processes
+were executed at the actor level? This is a question that we hope to pursue.
+Structural balance theory has a long history in which it is hailed as both a success and a
+failure. Such a mixed reception is not an accident. We contend that neither the experimental
+examination of triples nor the empirical study of balance processes at the group level can
+provide adequate foundations for the study of the operation of balance. Balance theory is
+a theory (or a set of rival theories) and we do not have a clear idea about the operation of
+balance theoretic processes. Our hope is that using simulation models of the sort described
+here will put us in a position to design better observational (and also experimental) studies
+to empirically study the operation of structural balance in small groups and networks of
+humans.
+
+Acknowledgements
+We appreciate the very helpful comments of an anonymous reviewer. By responding
+to those comments and implementing suggestions for revisions, we were able to greatly
+improve the narrative of the paper.
+
+References
+Baker, P.M., 1983. The development of mutuality in natural small groups. Small Group Behavior 14 (3), 301–311.
+Cartwright, D., Harary, F., 1956. A generalization of Heider’s theory. Psychological Review 63, 277–292.
+Davis, J.A., 1967. Clustering and structural balance in graphs. Human Relations 20, 181–187.
+Doreian, P., 2002. Event sequences as generators of social network evolution. Social Networks 24, 93–119.
+Doreian, P., Krackhardt, D., 2001. Pre-transitive mechanisms for signed networks. Journal of Mathematical
+Sociology 25, 43–67.
+Doreian, P., Mrvar, A., 1996. A partitioning approach to structural balance. Social Networks 18, 149–168.
+Doreian, P., Kapuscinski, R., Krackhardt, D., Szczypula, J., 1996. A brief history of balance through time. Journal
+of Mathematical Sociology 21 (1/2), 113–131.
+Epstein, J.L., 1979. Reexamining Theories of Adolescent Friendships with Longitudinal Data. American
+Sociological Association.
+Fararo, T.J., Hummon, N.P., 1994. Discrete event simulation and theoretical models in sociology. Advances in
+Group Processes 2, 25–66.
+Feld, S.L., Elmore, R., 1982. Patterns of sociometric choices: transitivity reconsidered. Social Psychology
+Quarterly 45, 77–85.
+
+<-----Page 32----->N.P. Hummon, P. Doreian / Social Networks 25 (2003) 17–49
+
+49
+
+Freeman, L.C., Romney, A.K., 1987. Words, deeds and social structure: a preliminary study of the reliability of
+informants. Human Organization 46, 330–334.
+Freeman, L.C., Romney, A.K., Freeman, S.C., 1987. Cognitive structures and informant accuracy. American
+Anthropologist 89, 310–325.
+Freeman, L.C., Freeman, S.C., Michaelson, A.G., 1988. On human intelligence. Journal of Social and Biological
+Structures 11, 415–425.
+Harary, F., Norman, R.Z., Cartwright, D., 1965. Structural Models: An Introduction to the Theory of Directed
+Graphs. Wiley, New York.
+Heider, F., 1946. Attitudes and cognitive organization. Journal of Psychology 21, 107–112.
+Heider, F., 1958. The Psychology of Interpersonal Relations. Wiley, New York.
+Hummon, N.P., Fararo, T.J., 1995. Assessing hierarchy and balance in dynamic network models. Journal of
+Mathematical Sociology 20, 145–159.
+Krackhardt, D., 1987. Cognitive social structures. Social Networks 9, 109–134.
+Lewin, K., 1951. Field Theory in Social Science. Harper, New York.
+Manhart, K., 1995. Research program and evolution of balance theories: a diachronic theory analysis based on the
+structuralist view of theories. Zeitschrift fur Sozial Psychologie 26 (3), 194–220.
+Moore, M., 1979. Structural balance and international relations. European Journal of Social Psychology 9 (3),
+323–326.
+Mower-White, C.J., 1977. A limitation of balance theory: the effects of identification with a member of the triple.
+European Journal of Social Psychology 7 (1), 111–116.
+Mower-White, C.J., 1979. Factors affecting balance agreement and positivity biases in POQ and POX triples.
+European Journal of Social Psychology 9 (2), 129–148.
+Newcomb, T.M., 1961. The Acquaintance Process. Holt, Rinchart & Winston, New York.
+Newcomb, T.M., 1968. Interpersonal balance. In: Abelson, R.P., Aronson, E., McGiure, W.J., Newcomb, T.M.,
+Rosenberg, M.J., Tannenbaum, O.H. (Eds.), Theories of Cognitive Consistency. Holt, Rinchart & Winston,
+New York.
+Newcomb, T.M., 1979. Reciprocity of interpersonal attraction: a non-confirmation of a plausible hypothesis. Social
+Psychology Quarterly 42 (4), 299–306.
+Nordlie, P.H., 1958. A longitudinal study of interpersonal attraction in a natural group setting. Ph.D. thesis,
+University of Michigan.
+Norman, R.Z., Roberts, F.S., 1972. A measure of relative balance for social structures. In: Berger, J., Zelditch, M.,
+Bo, A. (Eds.), Sociological Theories in Progress, Vol. 2. Houghton Mifllin, New York, pp. 358–391.
+Opp, K.-D., 1984. Balance theory: progress and stagnation in a social psychological theory. Philosophy of Social
+Science 14, 27–49.
+Scott, W.A., 1963. Cognitive complexity and cognitive balance. Sociometry 26 (1), 66–74.
+Stokman, F.N., Doreian, P., 1997. Evolution of social networks: processes and principles. In: Doreian, P., Stokman,
+F.N. (Eds.), Evolution of Social Networks. Gordon and Breach, New York, pp. 233–250.
+Truzzi, M., 1973. An empirical examination of attitude consistency in complex cognitive structures. Behavioral
+Science 18 (1), 52–59.
+
+

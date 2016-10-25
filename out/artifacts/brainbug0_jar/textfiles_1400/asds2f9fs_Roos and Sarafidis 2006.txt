@@ -1,0 +1,3201 @@
+<-----Page 0----->Decision Making Under Risk in Deal or no Deal ∗
+Nicolas de Roos†
+Sydney University
+
+Yianis Sarafidis‡
+CRA International
+
+This Version: September 4, 2006
+First Version: February 7, 2006
+
+Abstract
+We analyse the choices of 399 contestants in the Australian version of the television
+game show Deal or no Deal. We calculate risk-aversion bounds for each contestant, revealing considerable heterogeneity. We then estimate a structural stochastic
+choice model that captures the dynamic decision problem faced by contestants. To
+address individual heterogeneity, we nest the dynamic problem within the settings
+of both a random effects and a random coefficients probit model. Our structural
+model produces plausible estimates of risk aversion, confirms the role of individual
+heterogeneity and suggests that a model of stochastic choice is indeed appropriate.
+We also examine generalisations to expected utility theory, finding that the rank
+dependent utility model provides substantially improved explanatory power and indicates optimism. Finally, we do not find strong evidence in favour of an endowment
+effect for lotteries.
+JEL Classification: D81, C93
+Keywords: decision-making under risk, risk aversion, expected utility, rank dependent utility
+
+∗
+
+We would like to thank Murali Agastya, Hajime Katayama, Andrew McLennan, Rohan Pitchford,
+Abhijit Sengupta, Vladimir Smirnov, Andrew Wait, and seminar participants at the University of Sydney
+and Australian National University for valuable comments and encouragement. We are grateful to the
+producers of the Australian version of Deal or no Deal for valuable discussions.
+†
+Corresponding author: School of Economics and Political Science, Merewether Building H04, University of Sydney, NSW 2006, Australia, e-mail: n.deroos@econ.usyd.edu.au, phone: +61 (2) 9351 7079,
+fax: +61 (2) 9351 4341.
+‡
+Charles River Associates International, ysarafidis@crai.com.
+
+1
+
+<-----Page 1----->1
+
+Introduction
+
+Typically game shows are designed by television producers and not researchers. However,
+with the game show Deal or no Deal, one could almost suspect an experimental economist
+interested in attitudes towards risk had dabbled in a bit of producing. Deal or no Deal has
+several distinctive features that make it particularly attractive to a researcher. First, the
+stakes are high. In the Australian version of the show, the average contestant walks away
+with $15 000 (in Australian dollars) and there is a significant probability (about 15%)
+that she can win an amount in excess of the Australian average annual income (currently
+at $41 880). Second, there is no skill involved; a contestant’s choice is contingent only
+on her preferences for lotteries, not on any perception she may have about her skill,
+as is the case in the final round of Jeopardy!, for example. Third, there are no strategic
+considerations; the contestant faces a series of decision problems under risk. Fourth, there
+is substantial variation in the attractiveness of the lotteries faced by contestants. This
+provides useful variation with which to identify individual attitudes towards risk. In this
+paper, we exploit a self-collected data set of 399 contestants on the Australian version of
+the game show Deal or no Deal to examine attitudes towards risk.
+We set out with three broad goals in mind. First, we characterise the extent and
+heterogeneity of risk-aversion in our sample. Our focus here is descriptive, and to this
+end we presume that contestants are expected utility maximisers and we employ the well
+understood metrics of constant absolute and relative risk aversion. Second, we challenge
+the expected utility hypothesis and we ask whether the rank dependent utility functional
+can better fit the data. Third, we seek for violations of rational choice theory that go
+beyond the issue of which utility functional contestants use. Let us examine briefly each
+of these goals in turn.
+Our first goal is to describe the degree of risk aversion exhibited by contestants. In
+many applications, we are interested in the attitudes towards risk of many heterogeneous
+individuals. Typically, the mean is not a sufficient statistic for the aggregation of such
+heterogeneous preferences. Therefore, the researcher might generally be interested in the
+distribution of preferences across individuals. Further, as Hey and Orme (1994) stress, the
+literature has focussed on deterministic models of choice as a tool for describing behaviour.
+However, people often have difficulty arriving at decisions, or even “change their mind”
+or make mistakes, suggesting that we may observe heterogeneity in the decisions made by
+the same individual. A deterministic model of choice does not permit such variation. To
+ascertain the importance of this issue, we exploit a panel data set of 2834 decisions made
+by 399 contestants to examine the dispersion of preferences both between contestants,
+and between decisions made by the same contestant.
+We adopt two empirical approaches. First, we solve the contestant’s problem to produce bounds on risk aversion for individual contestants. This reveals substantial dispersion
+in the extent of risk aversion between contestants. A stochastic choice model introduces
+noise, permitting an individual’s preferences to vary over time. Our second empirical
+approach employs a stochastic choice model to estimate the average level of risk aversion,
+its dispersion between individuals, and its dispersion across decisions made by the same
+individual. Our empirical strategy is designed to compare these three quantities. We nest
+the contestant’s decision problem within both a random effects and a random coefficients
+2
+
+<-----Page 2----->probit model. The random coefficients specification enables direct comparison of mean
+preferences with the extent of heterogeneity between contestants. The random effects
+specification enables direct comparison of heterogeneity between contestants and heterogeneity between decisions made by the same contestant. Our estimates suggest moderate
+risk aversion, and imply that the standard deviation of our risk-aversion parameter is of
+a similar magnitude to the mean, indicating substantial dispersion between contestants.
+Moreover, we demonstrate a similar level of heterogeneity between decisions made by the
+same contestant. This suggests to us that considerable attention to the stochastic element
+of choice is warranted.
+Our second goal is to challenge the expected utility hypothesis. While there are many
+known violations of EU theory, its continued prevalence relates to its parsimony, ease of
+application, and intuitive appeal. Of the many challengers to expected utility theory, we
+examine the rank dependent utility (RDU) functional (due to Quiggin (1982)) partially
+because it shares these traits. Under EU theory, the value of a lottery is simply the
+weighted average of the utility of all the possible outcomes, where the decision weights are
+the objective probabilities of the outcomes. Under the RDU model, the value of a lottery
+is again the weighted average utility of the outcomes, but decision weights depend not only
+on the objective probability of an outcome, but also on its preference rank ordering. That
+the rank dependent model nests expected utility theory also allows us to test statistically
+between them. From our own selfish perspective, the rank dependent model is also a
+simple model to estimate parametrically. While this is particularly important given the
+computational burden of our dynamic problem, this is also an important consideration
+for most applications.
+We employ our structural stochastic choice model to investigate this issue. Because
+the RDU model nests EU, it necessarily outperforms EU. However, we find that, for
+all specifications considered, the EU model is overwhelmingly rejected by the data. To
+provide an indication of the strength of this result, the rejection of EU in favour of RDU
+is of a similar magnitude to the rejection of a model of risk-neutrality in favour of EU.
+Our results imply a concave cumulative probability weighting function, suggesting that
+contestants overweight more favourable outcomes, or are “optimistic”. We also examine
+the relative performance of Yaari’s dual theory, a special case of the rank dependent
+utility model. We find that it modestly outperforms the most elementary model of risk
+neutrality.
+Our final goal is to investigate whether there are violations of rational choice theory
+that go beyond the issue of which utility functional contestants use. To this end, we
+exploit an idiosyncratic feature of the Australian version of Deal or no Deal to test for
+an endowment effect for lotteries. A unique feature of the Australian version of the show
+is an additional round of play (Chance/Supercase round) that may be introduced at the
+Producers’ discretion (and at the contestant’s surprise) when the contestant thinks that
+the game has ended. In this additional round, the host tempts the contestant to forgo her
+winnings and play (or buy) instead a lottery. This contrasts with what goes on during the
+regular rounds of play, where the host tempts the contestant to forgo (or sell ) a lottery
+in lieu of a sure gain. We test the hypothesis that contestants exhibit pronounced riskaversion in the Chance/Supercase round, relative to their behaviour in the regular rounds
+of play. This type of behaviour would imply, if it were to be true, that the contestants’
+3
+
+<-----Page 3----->“selling price” is higher than their “buying price”. This anomaly has been documented
+in the empirical literature and is referred to as the endowment effect. While a handful of
+contestants do conform to this anomaly, we find that the “average” contestant does not
+exhibit an endowment effect.
+
+1.1
+
+Related literature
+
+Recognised as ideal natural experiments, television game shows have been the subject of
+numerous empirical studies. Gertner (1993) analysed contestants’ decisions in the game
+showCard Sharks. He estimated the coefficient of absolute risk aversion (CARA) for
+expected utility maximisers and reported evidence in favour of the notion that contestants
+segregate risky decisions. Metrick (1995) studied contestants’ choices in the final round of
+Jeopardy! (FJ, for final jeopardy). He estimates a coefficient of absolute risk aversion that
+is not significantly different from zero, and hence the null hypothesis of risk neutrality
+can not be rejected. Beetsma and Schotman (2001) estimate risk-attitudes in the Dutch
+show Lingo, finding that contestants are risk-averse.
+Perhaps the closest predecessor to our work is the study of Hoosier Millionaire from
+Fullenkamp, Tenorio and Battalio (2003). As in Deal or no Deal, there is no skill involved,
+the stakes are high and contestants tend to be more representative of the general population. In contrast, in Card Sharks the stakes are lower and the game involves non-trivial
+probability calculations; in FJ skill (and players’ perception of their skill) is crucial and
+contestants are much more educated (hence, more likely to be wealthier, hence less riskaverse) than the “average Joe”; in Lingo the stakes are lower and perception of own skill
+is important. Fullenkamp et al. (2003) estimate coefficients of risk aversion that imply
+pronounced risk aversion for high-stakes lotteries. They also emphasise, however, that
+the same estimates imply near risk neutrality for small-stakes lotteries, and they relate
+this point to a critique of expected utility theory put forward by Rabin (2000).
+The Price is Right, another popular game show, has been the subject of Bennett and
+Hickman (1993), Berk, Hughson and Vandezande (1996), Tenorio and Cason (2002) and
+Healy and Noussair (2004). Rather than studying decision making under risk, The Price
+is Right provides the opportunity to study rational choice. The same is true of the second
+part of Metrick (1995).
+Given the ideal setting presented by Deal or no Deal and its recent international
+proliferation, it is natural that others have also shown an interest in the show. We are
+now aware of several working papers harnessing variants of this game show. The most
+closely related to our own work is an examination of behaviour in the Italian version of
+the show by Bombardini and Trebbi (2005). They employ a structural model to estimate
+average risk-aversion and contestant heterogeneity, and they relate contestant heterogeneity to some observable characteristics of participants. They depart from our work
+by adopting a deterministic choice setting, and because the Italian version of the show
+is complicated by a strategic consideration; the contestant can extract information about
+her briefcase from the bank offer she receives. The remainder of the literature focusses
+attention on variants of the bounds approach that we adopt. Post, Baltussen and van den
+Assem (2006), analyse data from 84 contestants from Belgium, Germany, and the Netherlands, relating risk-aversion bounds to observable characteristics of the contestants and
+4
+
+<-----Page 4----->the contestant’s fortunes thus far. Mulino, Scheelings, Brooks and Faff (2006) estimate
+risk-aversion bounds and obtain estimates of average risk aversion in a static formulation
+of the problem. Deck, Lee and Reyes (2006) use data from the Mexican version of the show
+to place bounds on coefficients of risk aversion. Mulino et al. also employ a probit model
+to examine the effect of observable characteristics on contestant decisions and examine
+the special rounds of the show for evidence in support of prospect theory. Blavatskyy and
+Pogrebna (2006) exploit a unique feature of the Italian version of the show (the fact that
+contestants are sometimes given the choice to switch briefcases) to test for loss aversion,
+one of the basic tenets of prospect theory. This feature is not present in the Australian
+version that we analyse.
+Turning to the experimental literature, our stochastic choice model and the testing of
+expected utility versus the rank dependent utility functional is in the spirit of Hey and
+Orme (1994). The hunt for the theory that best describes decision making under risk is
+described in Machina (1987) and Starmer (2000).
+Finally, with regards to the endowment effect, the term was coined by Thaler (1980),
+who found that the willingness to pay to eliminate a 0.001 existing risk of sudden death
+is significantly lower than the minimal amount one would demand to accept an identical
+risk. See also Kahneman, Knetch and Thaler (1991) for its relation to loss aversion and
+the status quo bias.
+The rest of this paper is organised as follows. Section 2 describes the game and the
+data. Section 3 describes the dynamic problem faced by the contestant and presents an
+empirical model of a component of this problem, the “bank” offer function. In section 4 we
+calculate upper and lower bounds for the coefficient of absolute risk aversion for individual
+contestants, under the assumption that contestants are expected utility maximisers, and
+investigate the possibility of an endowment effect for individual contestants. In section 5
+we estimate a structural model, retaining the expected utility assumption, and revisit the
+issue of an endowment effect. In section 6 we explore whether the rank dependent utility
+functional can better explain the data. We conclude in section 7.
+
+2
+
+The game show and the data
+
+The Australian version of Deal or no Deal comprises three stages. Our attention focuses
+on the last stage. In the first stage, 26 potential contestants are selected at random from
+an initial pool of 150 contestants. In the second stage, one contestant is selected to play
+the main game, based on speed and accuracy in answering three multiple-choice trivia
+questions.1
+In the final stage of the game, the contestant selects one of 26 briefcases. Each briefcase
+contains one of 26 possible monetary prizes, ranging from $0.5 to $200 000, with equal
+probability (with an expected value of $19 112.25 in Australian dollars).2 The contestant
+1
+
+We do not believe that contestants are selected based on skill or intelligence at this stage. Questions
+asked usually relate to purely trivial matters. If there is a tie for the greatest number of correct answers,
+the contestant with the fastest response to the last question is selected. Further details are contained in
+appendix A, the complete producers’ manual.
+2
+In approximately half of the shows in our sample, one of the briefcases contains, instead of a monetary
+
+5
+
+<-----Page 5----->does not know the contents of her briefcase. The game then proceeds for at most nine
+rounds.
+In round 1 the contestant opens six of the remaining 25 briefcases, revealing the monetary prize contained inside, and thereby altering her probability distribution of the prize
+contained in her own briefcase. With 20 briefcases left (including the contestant’s chosen
+briefcase), the Bank makes (through the host of the show) an offer to the contestant,
+referred to as the bank offer, that the contestant can accept or reject - Deal or no Deal.
+If the contestant accepts the offer, the game ends and the contestant walks away with the
+amount she accepted.3 If the contestant rejects the offer, the game proceeds to round 2,
+where the contestant can open five more of the remaining 20 briefcases. With 15 briefcases left, the Bank makes a new offer that the contestant can accept or reject - Deal or
+no Deal. If the contestant rejects, then in the following round she can open four more
+briefcases. This pattern continues until there are six briefcases left. From then onwards,
+in each round the contestant only opens one briefcase. After each briefcase opening, the
+contestant receives a bank offer, as before. When there are just two briefcases left, the
+contestant receives the final bank offer. If she rejects that offer, the game ends and the
+contestant walks away with the amount in her briefcase.
+In addition, there are two special features. In some games, after the contestant has
+accepted a bank offer, the host will give the contestant the option to re-consider the offer
+she accepted. This may be in the form of a Chance or a Supercase feature. In the case of
+a Chance, when the contents of all but two briefcases have been revealed, the contestant
+is given the option to forgo the offer she accepted and take her chances by playing the
+two-outcome lottery. In effect, the contestant is chancing her deal against the contents
+of her briefcase. The Chance feature occurs at the producer’s discretion, when the two
+remaining briefcases contain substantially different prizes (typically, one is of the order
+of $100 or less, while the other is of the order of several tens of thousands of dollars).
+With the Supercase feature, the contestant is given the option to forgo the offer she has
+accepted and play an eight-outcome lottery that contains the following prizes: $0.5, $100,
+$1000, $2000, $5000, $10 000, $20 000 and $30 000 (the expected value is approximately
+$8 500.)4 The Supercase feature also arises at the producer’s discretion, usually when the
+deal that has been accepted by the contestant is roughly between $4 000 and $15 000.
+A total of 420 standard shows have aired to date in Australia.5 We have a self-collected
+prize, an insert featuring the word “CAR”. This represents a car that can be won by the contestant. In
+the remaining shows, this case contains $25 000. We will treat the car as equivalent to a monetary prize
+of $25 000. During the show, the host suggests that the car’s advertised value is approximately $30 000.
+3
+In fact, the show continues, with the contestant revealing “what might have been” had she not
+accepted the deal. The remainder of the show does not concern us, except in the event that a Chance or
+Supercase are offered (see below).
+4
+In the latest series of the show, the possible Supercase prizes were altered to: $0.5, $100, $500, $1000,
+$10 000, $20 000, CAR, and $50 000 (the expected value is approximately $13 300).
+5
+An additional 20 shows have aired, with some differences to the format of the shows in our data
+set. 16 shows aired once a week in an initial run of the show. We consider these shows to be different
+from our data set because the contestants had not had an opportunity to watch the show, and familiarise
+themselves with the process by which the bank determines its offers. In addition, the stakes involved
+were larger. Four additional shows have been aired during our sample. These shows involve contestants
+selected based on specific characteristics, including a “clairvoyant special” and an “unlucky loser” show.
+
+6
+
+<-----Page 6----->data set of 399 of these shows.6 We have information on the contestant’s gender, but on
+no other individual characteristics. We see no reason for self-selection to be a serious
+issue. In private communication, the producers informed us that contestants are selected
+on the basis of being “outgoing”, but there is no screening of contestants on the basis of
+their risk preferences.
+The following are some other important characteristics of the data set. First, contestants are familiar with the rules from having repeatedly watched the show. An initial
+series screened in a prime viewing time, prior to our data. In addition, when given the
+opportunity, many contestants reveal that they have watched the show (“it always looks
+much easier at home”), but we cannot recall contestants revealing they are unfamiliar with
+the show. Second, contestants typically have a friend or partner in the audience, with
+whom they are encouraged to consult for difficult decisions. We may therefore consider
+decisions to be joint ones, although the final decision always rests with the contestant.
+Finally, the decision time available to the contestant is at the discretion of the producer.
+In practice, contestants are allowed as much time as they need to make a decision. If the
+contestant is faced with a particularly vexing decision, the host will typically throw to a
+commercial break (this adds to the tension, but it also allows extra decision-making time).
+The producers state that the time taken by the contestant to decide is approximately what
+is seen in the televised show.
+We conclude this section with some descriptive statistics. Table 1 shows the number
+of contestants that accept/reject a bank offer, by round. Table 2 presents statistics on
+the contestants’ winnings.
+Table 1: Contestants reaching and accepting by round
+
+Reached
+Accepted
+
+1
+399
+0
+
+2
+399
+0
+
+3
+399
+5
+
+Round
+4
+5
+6
+394 366 329
+28
+37
+62
+
+7
+267
+87
+
+8
+180
+78
+
+9
+102
+48
+
+Super
+Case
+44
+11
+
+Chance
+34
+13
+
+The bank offer gradually improves with each round of the show (relative to the expected value of the remaining briefcases). This is consistent with the producers’ desire
+to maximise the entertainment value of the show. However, it also provides us with useful variation with which to identify individual attitudes towards risk. Consequently, no
+contestant has ever accepted a bank offer in the first two rounds of the show, and only a
+handful have accepted in the third round. The majority of contestants accept a deal in
+one of the later rounds, with 54 contestants rejecting all offers. On average contestants
+take home approximately $15 000, noticeably less than $19 112, the ex ante expected
+value of their chosen briefcase.
+6
+
+Shows are missing from our sample for purely random reasons, arising largely from videotaping
+mishaps.
+
+7
+
+<-----Page 7----->Table 2: Contestant winnings
+Situation
+Deal and no further offers
+Deal and rejects Chance
+Deal and accepts Chance
+Deal and rejects Supercase
+Deal and accepts Supercase
+Rejects all offers
+All shows
+
+3
+
+Observations
+
+Mean
+
+267
+21
+13
+33
+11
+54
+399
+
+16898
+9616
+11140
+10525
+17736
+12573
+15238
+
+Standard
+deviation
+16806
+9654
+26505
+3864
+7773
+31592
+19021
+
+Median
+
+Min
+
+Max
+
+12650
+7380
+2000
+10000
+20000
+750
+10000
+
+6
+480
+1
+4300
+100
+1
+1
+
+105000
+44230
+100000
+17800
+30000
+200000
+200000
+
+The contestant’s problem
+
+Consider our contestant #35. In round 9 he7 faced a simple static choice problem. Should
+he accept the bank offer of $4800? Or, should he take his chances by holding on to his
+briefcase, which contains either $1500 or $7500? This is quite different from the choice
+problem that he faced in round 8. There, he had the choice of accepting a bank offer
+of $3175, or taking his chances by opening one briefcase ($2, $1500 or $7500) and then
+playing round 9 with the remaining two briefcases. But, which two briefcases will round 9
+involve, what bank offer will he receive, and how will these affect his choice in round 9? In
+other words, in round 8, as well as in all previous rounds, the contestant faces a dynamic
+choice problem. In this section, we first describe the dynamic nature of the contestant’s
+problem. Then, we model the determination of bank offers.
+
+3.1
+
+The dynamic problem
+
+We first introduce some notation. Rounds are indexed by r = 1, 2, ..., 9. We denote by
+n(r) the number of briefcases to be opened in round r, and by S the set of remaining
+|S|
+briefcases (monetary amounts) at the beginning of a round. There are N(r) = Cn(r)
+N (r)
+
+1
+subsets of S of order n(r), which we label as Sn(r)
+, ..., Sn(r) . These are all the sets of
+briefcases that the contestant may open in round r. Assuming that the contestant opens
+i
+i
+the briefcases in Sn(r)
+, then S\Sn(r)
+is the set of briefcases that the contestant faces in
+round r + 1.
+Consider now a contestant who in round r faces the set of remaining briefcases S and
+a bank offer b. Suppose that she is an expected utility maximiser with wealth w and with
+utility function u(·; θ), where θ is a scalar. The notation EU(S; θ) will denote the expected
+utility of the remaining briefcase amounts, S, given the contestant’s utility function,
+u(·; θ). Furthermore, suppose that the contestant believes that the bank generates offers
+according to some function b(S, r, ε), where ε is a noise term distributed according to the
+probability density function f (ε).
+7
+
+We use female pronouns when we refer to a generic contestant, but we use the appropriate pronoun
+when we refer to specific contestants.
+
+8
+
+<-----Page 8----->Then, we can write the contestant’s objective function as:
+V (S, b, r) =
+
+max c · u(w + b; θ) + (1 − c) · W (S, r)
+ PN (r) 1 R
+i
+i
+V (S\Sn(r)
+, b(S\Sn(r)
+, r + 1, ε), r + 1)f (ε)dε
+
+
+ i=1 N (r)
+for r = 1, 2, .., 8
+W (S, r) =
+
+
+
+EU(S; θ), for r = 9
+
+(2)
+
+max c · u(w + b; θ) + (1 − c) · EU(S; θ)
+
+(3)
+
+c∈{0,1}
+
+(1)
+
+where c ∈ {0, 1} denotes the contestant’s choice between rejecting, c = 0, or accepting,
+c = 1, the bank offer.
+In contrast, a myopic contestant who neglects the dynamic nature of her problem and
+adopts a static perspective solves:
+c∈{0,1}
+
+Given the parameter θ, we can solve either the dynamic or the static problem numerically. We make use of this numerical solution in later sections.
+For future reference, we should also note that the distinction between the static and
+the dynamic perspective has important implications for estimation purposes. To see this,
+consider a contestant, who in round 8 faces three remaining briefcases that contain $2,
+$1500 and $7500. Suppose that she is a risk-averse expected utility maximiser with zero
+1−θ
+wealth and constant relative risk-aversion utility function u(x) = x1−θ . Also, suppose that
+in round 8 she accepts a bank offer of $2800. With this information, a researcher wants
+to estimate a bound on the risk-aversion parameter θ. A static perspective would imply
+that
+1
+[u(7500) + u(1500) + u(2)] ≤ u(2800)
+(4)
+3
+and, hence, θ ≥ 0.1. Suppose instead that we adopt a dynamic perspective. Moreover,
+suppose that the contestant expects that in round 9 the bank offer will be equal to the
+expected value of the remaining briefcases. Since she is risk-averse, in round 9 she will
+accept the bank offer. Then, the acceptance of the bank offer in round 8 implies that
+1 7500 + 1500
+1 1500 + 2
+1 7500 + 2
+u(
+) + u(
+) + u(
+) ≤ u(2800)
+3
+2
+3
+2
+3
+2
+
+(5)
+
+and, hence, θ ≥ 0.34. In other words, if the contestant is forward-looking, a researcher
+who fits a static model will underestimate the contestant’s risk aversion. Vice versa, if the
+contestant treats her decision problem in a static way, a researcher who fits a dynamic
+model will overestimate the contestant’s risk aversion.
+One potential complication to our modelling strategy is worthy of mention. One might
+suspect that, when deciding whether to accept a bank offer, a rational contestant would
+consider the possibility of being offered a Supercase or Chance at the end of the game.
+These special rounds of play represent an option value that may influence a contestant’s
+decision making during the main rounds of the show, and affect our estimates of her
+degree of risk aversion. We have chosen not to explicitly model this possibility for the
+following principal reasons. First, based on observing the show, contestants do not appear
+9
+
+<-----Page 9----->to take into account the possibility of a Supercase or Chance. Contestants are often asked
+to explain their thinking when faced with a difficult decision. They routinely hypothesise
+about likely bank offers and ponder the sensitivity of their plight to the particular briefcase
+they will eliminate. We cannot recall a single instance in which a contestant discussed the
+possibility of Supercase or Chance (although on at least one occasion, the host suggested
+the possibility). Second, we might a priori expect the effect of Supercase and Chance on
+decision making to be small in any case. Very few contestants have revealed a preference
+for either Chance or Supercase (a total of 24 in our sample). Moreover, it is our judgement
+that, even for those contestants more inclined to Chance or Supercase, the option value of
+the special rounds is likely to be small when compared with the payoffs at stake. Finally,
+we are in a position to treat this issue as an empirical matter. The Supercase and Chance
+features were introduced after 140 regular shows. If the option value of these features
+plays an important role, we would expect to obtain different parameter estimates in the
+subsample of our data after their introduction. We do not find this to be the case.8
+
+3.2
+
+The bank offer function
+
+We have already seen that, for a forward-looking contestant, the decision to accept or
+reject a bank offer in the current round depends on her beliefs about future bank offers.
+We will now estimate an empirical model of the Bank’s offer process. Later, when we solve
+for a structural model of the contestant’s problem, we will assume that the contestant
+uses the predictions of this empirical model to form beliefs about future bank offers.9
+As we noted earlier, the bank offer gradually improves (relative to the expected value
+of the remaining briefcases) as we progress from one round to the next. This is illustrated
+by Table 3. The columns on the left provide descriptive statistics on bank offers by round
+in our sample, while the columns on the right contain equivalent information for the
+expected value of remaining briefcases. The average bank offer ranges from 17.5% of the
+expected value of remaining briefcases in round 1, to almost 100% in round 9. We will
+therefore estimate a separate empirical bank offer model for each round of play of the
+form:
+bir = Xir βr + εir
+(6)
+where r and i index the rounds and contestants respectively, bir is the bank offer to
+contestant i in round r, βr is the vector of parameters to be estimated and εir is a
+8
+
+We examined this issue in the context of the CARA model, using both static and dynamic formulations, and the same three specifications of the stochastic choice model that we consider in section 5.
+Of these 6 specifications, our risk-aversion estimates are significantly different after the introduction of
+the special features only in the dynamic model that does not allow individual heterogeneity. As we will
+argue below, individual heterogeneity plays a fundamental role in our data. More details are available
+upon request.
+9
+Literally speaking, this means that contestants solve multiple regressions in their head and then use
+the out-of-sample predictions to form beliefs about what the future bank offers will be. In practice,
+contestants are typically able, sometimes with aid from the host, to infer with some accuracy the Bank’s
+offer function. On numerous occasions, contestants are asked to guess the current Bank offer just before
+it is revealed, demonstrating they have a decent grasp of the bank offer function. In addition, when faced
+with a difficult decision, the contestants sometimes ask the host for his complete contingent guess about
+the next round’s Bank offer (which the host sometimes also reveals without request).
+
+10
+
+<-----Page 10----->stochastic error term. Explanatory variables considered for the matrix Xir include the
+first four moments of the remaining briefcases, order statistics on the remaining briefcases,
+the bank offer of the previous round and the briefcase amounts just revealed.
+Table 3: Bank offers and remaining cases
+
+Round
+
+Obs
+
+Mean
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+398
+398
+399
+399
+389
+351
+297
+224
+149
+
+3334.67
+5546.12
+6857.52
+9250.95
+11213.0
+12920.6
+14786.3
+20146.7
+31518.1
+
+Bank offers
+Standard Min
+deviation
+2445.60
+37
+2980.46
+200
+4107.82
+31
+6334.20
+20
+8811.08
+22
+12319.2
+8
+16425.6
+6
+22814.1
+6
+38109.2
+1
+
+Max
+12900
+16200
+20000
+35000
+46000
+80000
+74000
+89000
+140000
+
+Expected value of
+Mean
+Standard
+deviation
+19008.1
+4811.24
+18956.3
+7315.26
+19080.5
+10184.0
+19024.7
+13314.7
+19039.5
+16029.9
+18416.3
+18672.5
+18642.4
+21843.2
+23185.2
+26990.1
+31764.5
+37863.2
+
+remaining cases
+Min
+Max
+5342.15
+1394.43
+1599.23
+347.13
+198.33
+88.00
+7.88
+9.33
+0.75
+
+24826.6
+32701.8
+42461.3
+56512.5
+70917.0
+85100.0
+94125.0
+100166
+137500
+
+As we might expect, considerable heteroskedasticity is evident if (6) is estimated in
+linear form. We take natural logarithms of all variables to deal with this issue. Note
+that we have no intrinsic interest in βr ; (6) is just a forecasting model. In choosing
+between models, we face a trade off between parsimony and forecasting performance. We
+seek a simple model both to realistically approximate the contestant’s problem, and to
+minimise the computational burden for our structural estimation procedure. Based on
+these considerations, Table 4 contains the parameter estimates we take to our empirical
+model.
+Table 4: Bank offer function - simple model
+Round
+Constant
+Exp value
+Stand dev
+Observations
+R2
+2
+R
+
+9
+0.163
+(0.061)
+0.917
+(0.029)
+0.068
+(0.027)
+148
+0.996
+0.996
+
+8
+0.116
+(0.138)
+0.754
+(0.064)
+0.223
+(0.062)
+224
+0.982
+0.981
+
+7
+-0.044
+(0.174)
+0.577
+(0.108)
+0.400
+(0.118)
+297
+0.966
+0.965
+
+6
+-0.194
+(0.248)
+0.743
+(0.108)
+0.235
+(0.119)
+351
+0.934
+0.933
+
+5
+-0.166
+(0.183)
+0.908
+(0.064)
+0.056
+(0.063)
+389
+0.952
+0.952
+
+4
+-0.447
+(0.330)
+0.946
+(0.078)
+0.026
+(0.088)
+399
+0.917
+0.917
+
+3
+-1.064
+(0.521)
+1.295
+(0.113)
+-0.275
+(0.134)
+399
+0.782
+0.781
+
+2
+-1.200
+(0.429)
+1.604
+(0.123)
+-0.570
+(0.116)
+398
+0.711
+0.710
+
+Notes: Figures in parentheses are heteroskedasticity-robust standard errors.
+
+Notice that the model has a great deal of explanatory power, particularly in the
+later rounds. Given the predictive power of the bank offer function, to minimise the
+11
+
+<-----Page 11----->computational burden of our problem, we assume that the contestant uses the expected
+value of our bank offer function to predict future bank offers. The explanatory power
+is lower in the earlier rounds, but in the early rounds, the bank offers are sufficiently
+meagre to make the contestant’s decision simple. Consequently, no contestant in our
+sample accepts a deal before round 3. Note also that the fourth round bank offer function
+is relevant for a round 3 decision. Table 9 in Appendix B contains estimates for a more
+general model, with slightly greater predictive power, particularly for the early rounds.
+In the early rounds, the previous bank offer contains some predictive power, suggesting a
+minor additional complexity in these early rounds. Finally, note that the Bank offers are
+not made strategically.10 We tested whether the bank offer function may be influenced
+by the value of the briefcase held by the contestant by including this briefcase value as an
+explanatory variable in (6), using the set of explanatory variables contained in Table 9.
+There was no systematic impact of the contestant’s briefcase, it had a negative coefficient
+in 6 of the 8 rounds examined, and was positive and statistically significant in none of the
+rounds.
+
+4
+
+The bounds approach
+
+Suppose that a contestant i is an expected utility maximiser with a CARA utility function,
+u(x; θi ) = 1 − exp(−θi x). The parameter θi is contestant i’s coefficient of absolute risk
+aversion. When this contestant rejects a (worse than actuarially fair) bank offer she signals
+an upper bound on her coefficient of risk aversion, θi . When she accepts a bank offer she
+signals a lower bound. Using this observation, we calculate lower and upper bounds for
+each contestant, whenever possible. We should emphasise upfront that the CARA utility
+function (and the expected utility paradigm in general) may not be the appropriate model
+to describe contestants’ choices. For this reason, the results we report in this section are
+supposed to be interpreted in a descriptive way. In other words, they are our first (crude)
+attempt to describe average risk aversion in the data.
+For each contestant i, in each round r, we calculate the value of the parameter θ that
+would make the contestant indifferent between accepting or rejecting the bank offer. That
+is, for each contestant i and round r, we calculate the critical θ, such that:
+u(bir , θ) = W (Sir , r; θ)
+u(bir , θ) = EU(Sir ; θ)
+
+(7)
+(8)
+
+where Sir denotes the set of remaining briefcases faced by contestant i at the end of round
+r. We use equation (7) (respectively, equation (8)) for forward-looking (respectively,
+myopic) contestants.
+We take the “most favourable” (lowest critical θ) bank offer rejected as the upper
+bound and the critical θ of the bank offer accepted as the lower bound. For some contestants we can only place lower bounds, for others we can only place upper bounds and for
+10
+
+The producers were reluctant to reveal details of the bank offer function in private discussions. Our
+understanding is that a fixed algorithm has been developed to generate offers. However, it is clear that
+show-specific discretion in bank offers is occasionally employed to add humour to the show. For example,
+a bank offer of $9 999 may arise if the contestant has stated during the show that they would be satisfied
+to take home $10 000.
+
+12
+
+<-----Page 12----->some we can place no bounds. For example, if a contestant rejects all bank offers, some
+of which were better than actuarially fair (kind ), we cannot calculate any bound. (Such
+a contestant exhibits risk-loving behaviour.) Figure 1 describes the types of bounds that
+can be computed for different types of contestants.
+Figure 1: Types of risk bounds
+some "kind"
+
+rejected all
+offers
+
+none "kind"
+
+no bounds
+upper bound
+
+rejected "kind"
+offers
+no bounds
+
+accepted
+an offer
+
+offer was
+"kind"
+
+offer not
+"kind"
+
+no "kind"
+offers
+
+upper bound
+
+rejected "kind"
+offers
+
+lower bound
+rejected "better" upper
+offer
+and lower
+
+no "kind"
+offers
+rejected offers
+were "worse"
+
+4.1
+
+upper
+and lower
+
+Results from the bounds approach
+
+The results are summarised in Tables 5 and 6, for myopic and forward-looking contestants,
+respectively. We discern two notable observations.
+First, there is a very high degree of heterogeneity in the contestants’ risk-aversion
+parameter. Within every subcategory of contestants, the standard deviation of riskaversion bounds is of the same order of magnitude as the mean. The range of values is
+also dramatic, with a minimum upper bound of 4.2×10−6 and a maximum lower bound of
+1.3 × 10−3 for the dynamic formulation. Furthermore, this variety is evident even for the
+selection of contestants who do not display risk-seeking behaviour. Second, conclusions on
+risk preferences depend crucially on whether we presume contestants are forward-looking
+or myopic. Absolute risk-aversion estimates are greater by a factor of 10 in the dynamic
+model. We will further discuss these issues in the context of our structural model (see
+next section).
+We would also like to point out that there are 31 and 47 (forward-looking and myopic,
+respectively) contestants that exhibit inconsistent behaviour, in the sense that their lower
+bound is higher than their upper bound. This means that they accepted a bank offer
+that was worse (in an expected utility CARA sense) than at least one offer that they
+rejected in earlier rounds. Four more contestants (in either our forward-looking or myopic
+formulation) were inconsistent in an even more perverse sense: they rejected a better than
+13
+
+<-----Page 13----->Table 5: Risk aversion bounds - Static model
+Category
+Upper and lower
+- “consistent”
+- “inconsistent”
+Upper only
+- rejected all offers
+- accepted “kind” offers
+Lower only
+
+Type
+Lower
+Upper
+Lower
+Upper
+Lower
+Upper
+Upper
+Upper
+Upper
+Lower
+
+Obs.
+227
+180
+47
+67
+16
+51
+4
+
+Mean
+2.320e-5
+2.101e-5
+1.112e-5
+2.183e-5
+6.946e-5
+1.786e-5
+2.057e-5
+1.782e-5
+2.144e-5
+3.018e-4
+
+St dev
+5.495e-5
+1.658e-5
+9.230e-6
+1.732e-5
+1.084e-4
+1.302e-5
+1.611e-5
+1.101e-5
+1.740e-5
+5.739e-4
+
+Min
+5.000e-11
+2.410e-6
+5.000e-11
+2.820e-6
+5.410e-6
+2.410e-6
+1.100e-6
+6.470e-6
+1.100e-6
+3.890e-6
+
+Max
+4.524e-4
+1.264e-4
+5.460e-5
+1.264e-4
+4.524e-4
+7.760e-5
+7.250e-5
+4.750e-5
+7.250e-5
+1.163e-3
+
+Median
+1.030e-5
+1.650e-5
+8.420e-6
+1.670e-5
+2.950e-5
+1.500e-5
+1.660e-5
+1.365e-5
+1.710e-5
+2.034e-5
+
+actuarially fair offer, indicating risk-seeking behaviour, only to later accept a worse than
+actuarially fair offer.
+For those contestants who displayed consistent behaviour and for whom we were able
+to calculate both lower and upper risk-aversion bounds, Figures 2 (static model) and 3
+(dynamic model) provide further illustration. (Note that the risk-aversion scales differ by
+a factor of 10 for the static and dynamic models.)
+The figures on the right plot the fraction of contestants whose bounds nest the level
+of risk aversion in the x-axis. For example, in the static model for approximately 23% of
+the contestants, a risk aversion parameter of 2.5 × 10−5 falls within the interval spanned
+by their lower and upper bounds. Or in the dynamic model, for approximately 21% of
+the contestants, a risk aversion parameter of 2.5 × 10−4 falls within the interval spanned
+by their bounds.
+The figures on the left depict probability density functions of the risk aversion parameter. We account for the length of the interval spanned by a contestant’s bounds and
+assigning higher weights to contestants whose bounds span smaller intervals. This is because the smaller the interval, the closer our bounds approach comes to pinpointing that
+contestant’s “true” risk aversion parameter.11 More precisely, these figures are derived by
+the following procedure. First, for each contestant we calculate the interval spanned by
+his/her upper and lower bounds. Second, we presume that the contestant’s “true” risk
+aversion parameter is uniformly distributed in that interval. Finally, we take an average
+over all contestants in our subsample. With this approach, the figure plots the probability
+density function of the risk aversion parameter in this subsample. In other words, the
+area under the curve up to, say, 2.5 × 10−4 , represents the fraction of contestants with a
+“true” risk aversion parameter less than or equal to 2.5 × 10−4 , under the uniform prior
+assumption.12
+11
+
+Notice the spike in the right graph of Figure 3. This depicts a single contestant whose lower and
+upper bounds are very close to one another.
+12
+Suppose, for example, that the subsample consisted of just two contestants whose bounds spanned
+the intervals [1, 2] and [1.5, 2], respectively. Then, the probability density function would have height 21
+
+14
+
+<-----Page 14----->Table 6: Risk aversion bounds - Dynamic model
+Category
+Upper and lower
+- “consistent”
+- “inconsistent”
+Upper only
+- rejected all offers
+- accepted “kind” offers
+Lower only
+
+Type
+Lower
+Upper
+Lower
+Upper
+Lower
+Upper
+Upper
+Upper
+Upper
+Lower
+
+Obs.
+219
+188
+31
+67
+16
+51
+4
+
+Mean
+1.053e-4
+1.861e-4
+7.806e-5
+1.968e-4
+2.703e-4
+1.212e-4
+1.729e-4
+1.134e-4
+1.916e-4
+1.231e-3
+
+St dev
+1.498e-4
+2.081e-4
+7.610e-5
+2.146e-4
+3.067e-4
+1.495e-4
+2.314e-4
+9.135e-5
+2.369e-4
+2.393e-3
+
+Min
+5.000e-11
+4.150e-6
+5.000e-11
+9.480e-6
+6.370e-6
+4.150e-6
+3.250e-6
+1.650e-5
+3.250e-6
+3.890e-6
+
+Max
+1.345e-3
+1.835e-3
+4.057e-4
+1.835e-6
+1.345e-3
+7.303e-4
+1.313e-3
+2.630e-4
+1.313e-3
+4.820e-3
+
+Median
+6.490e-5
+1.217e-4
+5.240e-5
+1.288e-4
+1.666e-4
+6.180e-5
+1.107e-4
+7.785e-5
+1.155e-4
+5.055e-5
+
+Notes: 8 contestants are missing from the summary statistics for the dynamic model.
+We were unable to calculate upper bounds on risk aversion for 5 contestants who accepted an offer
+in round 3. We were unable to calculate lower bounds on risk aversion for 3 contestants who
+accepted an offer that was worse than the offer they would have expected next round no matter
+which briefcase was opened (under our bank offer function).
+
+These figures highlight again the dispersion in risk preferences and the difference in
+our risk-aversion inferences under the assumptions of static and dynamic behaviour. The
+modal contestant has an absolute risk-aversion of 1.0 × 10−5 and 7.0 × 10−5 in our static
+and dynamic frameworks, respectively.
+Figure 2: Risk aversion in the static model
+80000
+
+0.4
+
+60000
+
+0.3
+
+40000
+
+0.2
+
+20000
+
+0.1
+
+0
+0.0E+00
+
+2.5E-05
+
+5.0E-05
+
+7.5E-05
+
+1.0E-04
+
+0
+0.0E+00
+
+2.5E-05
+
+5.0E-05
+
+7.5E-05
+
+1.0E-04
+
+As for the magnitude of our estimates, the average lower bound for (“consistent”)
+dynamic contestants is of the same order of magnitude as the estimates of Gertner (1993)
+and Metrick (1995), in the neighbourhood of 7 × 10−5 . Our structural model, in the
+in the interval [1, 1.5] and height 23 in the interval [1.5, 2]. Hence, the probability that a randomly chosen
+contestant has a risk aversion parameter less than or equal to 1.5 is 14 . This is because this event occurs
+when a) the contestant happens to be the first one (an event that occurs with probability 12 ) and b) her
+risk aversion parameter is less than 1.5 (an event that occurs with probability 12 ).
+
+15
+
+<-----Page 15----->Figure 3: Risk aversion in the dynamic model
+8000
+
+0.4
+
+6000
+
+0.3
+
+4000
+
+0.2
+
+2000
+
+0.1
+
+0
+0.0E+00
+
+2.5E-04
+
+5.0E-04
+
+7.5E-04
+
+1.0E-03
+
+0
+0.0E+00
+
+2.5E-04
+
+5.0E-04
+
+7.5E-04
+
+1.0E-03
+
+following section, yields similar results and we refer the reader to that section for further
+discussion on the magnitude of our estimates.
+Finally, Table 7 presents further information on the behaviour of risk seekers (contestants who rejected better than actuarially fair offers). In our sample of 399 contestants,
+more than a quarter exhibited risk-seeking behaviour.
+Table 7: Risk-seeking behaviour
+Action
+Rejected “kind” offer
+- accepted no offers
+- accepted offer was “kind”
+- accepted offer was not “kind”
+
+4.2
+
+Observations
+105
+38
+63
+4
+
+Is there an endowment effect for lotteries?
+
+So far, we have restricted attention to rounds 1 through 9. Here, we extend our method
+in placing upper and lower bounds for the Chance and Supercase rounds. Our objective
+is to explore whether contestants exhibit an endowment effect for lotteries.
+Notice, that during rounds 1 through 9 it is “as if” the contestant owns her briefcase
+(essentially a lottery) and the host is trying to convince her to sell the lottery to the Bank.
+In the Chance-Supercase rounds the situation is reversed: it is “as if” the host is trying to
+convince the contestant to buy a lottery from the Bank. If it were the case that contestants
+are more risk-averse in the Chance-Supercase rounds, this would be equivalent to saying
+that the selling price (rounds 1-9) is higher than the buying price (Chance-Supercase).
+This type of anomaly, referred to as the endowment effect, is well documented, usually in
+the context of goods. Here, we explore whether it extends to lotteries.
+Our contestant #168 is a stark example. In round 6, he faced the following remaining
+briefcases: $1, $10, $150, $5000 and $10 000 (expected value of, approximately, $3000).
+He decided to reject the bank offer of $3700. In round 7, he opened the $150-briefcase,
+16
+
+<-----Page 16----->which increased the expected value of the remaining briefcases to $3750, and accepted
+the bank offer of $5100. Fair enough. In the Supercase round, however, he faced a lottery
+with expected value $8512, which he rejected in favour of the (accepted) bank offer of
+$5100. His behaviour in round 6 reveals risk-loving preferences, whereas his behaviour in
+the Supercase round reveals risk-averse preferences.
+Table 8 summarises our results for both forward-looking and myopic contestants. We
+seek evidence in favour of an endowment effect when the Chance or Supercase offers are
+rejected, despite the fact that the special offer was actuarially favourable (the expected
+value of the offer was greater than the value of the briefcase held by the contestant). In
+these instances, a lower bound is placed on the risk aversion displayed in the context of
+these special rounds of play. There are a total of 28 such instances, 13 for Supercase and
+15 for Chance. A contestant presents evidence in favour of the endowment effect when the
+lower bound for the special round is higher than the upper bound calculated for rounds
+1 through 9.
+Under the hypothesis that contestants are myopic, there is strong evidence in favour of
+an endowment effect. A total of 21 out of the 28 “eligible” contestants display greater risk
+aversion (in a CARA expected utility sense) during the Chance-Supercase special rounds.
+Moreover, 7 out of these 21 contestants (4 in Supercase and 3 in Chance) display riskseeking behaviour during the main part of the show, but are risk-averse in the special round
+(like contestant #168). The results, however, are not so clear-cut under the hypothesis
+that contestants are forward-looking. In this setting, there are only 10 contestants who
+display greater risk-aversion in the special rounds.13
+In light of these results, we conclude that an endowment effect may well be present, but
+we cannot provide a definitive answer. We will further discuss this issue in the following
+section.
+
+5
+
+Estimating a structural model
+
+The bounds approach we discussed in the previous section has the advantage that it
+allows us to extract information on the risk preferences of individual contestants. The
+downside is that we do not harness the entire data set to say something about “average”
+preferences. Here, we estimate a structural model of contestant behaviour.
+Following Hey and Orme (1994), we assume that a contestant’s decisions reflect her
+true preferences plus noise. The noise could reflect contestants having difficulty making
+decisions, the researcher being unable to observe all influences on the contestant’s choice,
+or various mistakes that the contestant makes.
+Furthermore, our earlier results on upper and lower bounds (and indeed casual observation) suggest that individual contestants differ substantially in their risk attitudes. To
+13
+
+Conversely, we should seek evidence against an endowment effect when the special offers are accepted
+and the offer is actuarially favourable. There are 23 such instances, 11 for Supercase and 12 for Chance.
+Out of these 23 “eligible” cases, there are 3 instances where contestants display less risk aversion during
+the special round. We should note, however, that 2 of these 3 contestants display inconsistent behaviour
+during the main part of the show. That is, they accepted a bank offer that was worse (in a CARA sense)
+than an offer they earlier rejected. The remaining contestant who accepted an actuarially unfavourable
+offer in the Chance round, also displayed risk-seeking behaviour during the main part of the show.
+
+17
+
+<-----Page 17----->Table 8: Endowment effect
+Total instances
+of which
+Special offer rejected
+Actuarially favourable
+Risk seekers in main show
+More risk-averse in special round
+Inconclusive
+Special offer accepted
+Actuarially favourable
+Less risk-averse in special round
+Inconclusive
+Actuarially unfavourable
+Risk seekers in main show
+
+Supercase
+44
+
+Chance
+34
+
+33
+13
+4
+1(3)
+8(6)
+11
+11
+2(0)
+9(11)
+0
+0
+
+21
+15
+3
+2(11)
+10(1)
+13
+12
+1(0)
+11(12)
+1
+1
+
+Notes: Numbers before parentheses () are based on the assumption of
+forward-looking behaviour. Numbers inside parentheses are based on the
+assumption of myopic behaviour.
+
+account for unobserved contestant-specific heterogeneity, we also allow for a contestantspecific fixed effect. Depending on how one introduces the fixed effect term (see below),
+this produces a random effects or a random coefficients model of discrete choice.
+More formally (with slight abuse of our earlier notation), we define the relative attractiveness of the bank offer to contestant i in round r, Zir , as:
+Zir (θ) = u(bir ; θ) − W (Sir , r; θ)
+Zir (θ) = u(bir ; θ) − EU(Sir ; θ)
+
+(9)
+(10)
+
+for a forward-looking and a myopic contestant, respectively.
+Let cir denote contestant i’s decision in round r. Also, let ir ∼ F (·) be the noise term
+for contestant i in round r and let νi ∼ G(·) be the contestant-specific fixed effect. We
+will also denote by f (·) and g(·) the probability density functions for the noise term, ir ,
+and the fixed effect term, νi , respectively. We then have:
+
+1 if zir (θ, νi ) + ir > 0
+(11)
+cir =
+0 otherwise
+We consider three separate specifications for the term zir (θ, νi ):
+zir (θ, νi ) = Zir (θ)
+zir (θ, νi ) = Zir (θ) + νi
+zir (θ, νi ) = Zir (θ + νi )
+
+(12)
+(13)
+(14)
+
+The first model specification, in equation (12), is our baseline model, which does not
+allow for contestant specific fixed effects. The second model specification, in equation
+18
+
+<-----Page 18----->(13), is the random effects model, while the third one, in equation (14), is the random
+coefficients model.
+We can then construct a likelihood function as follows. Given the fixed effect, νi , the
+probability of observing contestant i’s decision in round r is given by (for a symmetric
+distribution f (·)):
+P (cir |νi ) = F ((2cir − 1)zir (θ, νi ))
+(15)
+Integrating over the fixed effect, νi , the likelihood function for contestant i is given by:
+P (ci ) =
+
+Z
+
+Ri
+∞ Y
+
+F ((2cir − 1)zir (θ, νi ))g(νi )dνi
+
+(16)
+
+−∞ r=1
+
+where ci = {ci1 , ci2 , ..., ciRi } and Ri is the round in which the contestant accepts a deal.
+If the contestant never accepts a deal, then Ri = 9.
+The likelihood function for all observations in the data set is:
+P (c) =
+
+N
+Y
+
+P (ci )
+
+(17)
+
+i=1
+
+where c = {c1 , c2 , ..., cN } and N is the total number of contestants.
+Finally, we assume that f ∼ N(0, σ2 ) and g ∼ N(0, σν2 ). We then estimate the
+parameter vector {θ, σ , σν } by maximum likelihood.14
+
+5.1
+
+Results
+
+We consider each of the three model specifications (baseline, random effects and random
+coefficients) in the context of both the static and the dynamic model. We also consider
+each of these cases, in the context of both the CARA and the CRRA utility functions,
+given by:15
+u(x) = 1 − exp(−θx)
+x1−θ
+u(x) =
+1−θ
+14
+
+(18)
+(19)
+
+Because each contestant’s dynamic problem must be solved many times for each evaluation of the
+likelihood function, the dynamic formulation is computationally intensive, particularly for the random
+coefficients specification. In our empirical results below, we report dynamic estimates based on data for
+rounds 5-9 only. While this omits all contestants accepting a deal before round 5, it also omits all rejected
+offers in rounds 1-4. We have obtained estimates of the dynamic model with the CARA formulation using
+data from rounds 4-9, with similar results to those reported. These results and computational details of
+the estimation algorithm, implemented in the C programming language, are available from the authors
+on request.
+15
+Both the CARA and CRRA utility functions are unique up to an affine transformation. In order to
+mitigate heteroskedasticity in the error term, we normalise utility so that u(0) = 0 and u(200000) = 1,
+where $200 000 is the maximum possible payoff in the game. To achieve this, we divide through by
+u(200000) in (18). In (19), for specifications with positive contestant wealth, we use the normalization
+u(w)−u(w+x)
+u(w)−u(w+200000) , where w refers to wealth, while we simply divide through by u(200000) for specifications
+without wealth.
+
+19
+
+<-----Page 19----->The results are summarised in Tables 10-15, in Appendix C.
+CARA preferences
+Tables 10 and 11 summarise the results with CARA preferences for myopic and
+forward-looking contestants respectively. The even numbered columns (for each model
+specification, respectively) allow for a dummy variable that refers to the contestant’s gender (1 for female). We see no indication that female and male risk preferences differ, with
+the possible exception of the static model without contestant heterogeneity.
+The static vs. the dynamic estimates
+We should first note that the static and the dynamic estimates are substantially different, by one full order of magnitude. To appreciate this difference in practical terms,
+consider the lottery that pays $100 000 or nothing, with equal probability. The static
+estimates, in the range of 7 × 10−6 , imply a certainty equivalent in the low $40 000’s. In
+contrast, the dynamic estimates, in the range of 5 × 10−5 , imply a certainty equivalent in
+the neighbourhood of $15 000. Moreover, the fact that the dynamic estimates are higher
+than the static ones is consistent with what one would expect. This is because, relative to a myopic contestant, a forward-looking contestant faces a lottery with a smoother
+outcome distribution. Hence, all else (bank offer, risk aversion) being equal, she is more
+reluctant to accept a bank offer.
+The estimates for the coefficient of absolute risk aversion, θ
+Our dynamic estimates for the coefficient of absolute risk aversion, θ, are in the range
+of 2.7 ×10−5 to 5.7 ×10−5. These numbers are in line with the estimates of Gertner (1993)
+and Metrick (1995). The former reports estimates of 7 × 10−5 and 3 × 10−4, depending
+on the method used. The latter reports an estimate of 6.6 × 10−5 , though this is not
+significantly different from zero. To get an intuitive feeling for what these magnitudes
+imply for high-stakes lotteries, consider the lottery that pays $100 000, $20 000 or nothing,
+with equal probability. The certainty equivalent implied by, say, θ = 5 × 10−5 is in the
+neighbourhood of $15 000. Fullenkamp, Tenorio and Battalio (2003) report estimates
+that are more in line with our static estimates, in the range of 5.8 × 10−6 to 7.4 × 10−6 .
+With estimates in this range, the certainty equivalent of the lottery that pays $100 000,
+$20 000 or nothing, with equal probability, is approximately $34 000.
+The significance of the estimates for the standard deviation terms, σν and σ
+Our bounds approach from section 4 revealed substantial heterogeneity in individual
+risk preferences. The results of the structural estimation corroborate this result. To see
+this, turn attention to the random coefficients model which places the individual heterogeneity term in the same metric as our risk aversion parameter, allowing inferences to be
+made about heterogeneity in risk preferences. Our estimates of σν for both the dynamic
+and static models are comparable to our respective estimates of θ. Furthermore, turning
+attention to the random effects model, which places the individual heterogeneity term in
+the same metric as the round-specific error term, we see that the standard deviation of
+our round-specific error term, σ , is of the same order of magnitude as the standard deviation of the contestant-specific term. This suggests that the noise term may play a role
+as important as the contestant-specific fixed effect. We will return to this issue shortly.
+CRRA preferences
+20
+
+<-----Page 20----->Tables 12-15 contain the maximum likelihood estimates for the case of CRRA preferences. Again, the even numbered columns allow for a dummy variable that refers to
+the contestant’s gender, and again we see no indication of a difference in risk preferences.
+Also, notice that, as in the CARA case, as we move from the static to the dynamic models,
+the estimates for the parameter θ increase.
+The effect of initial wealth
+In contrast to the CARA case, the decisions of a CRRA expected utility maximiser
+are sensitive to her initial wealth level. Tables 12 and 13 assume an initial wealth level of
+zero, while Tables 14 and 15 assume an initial wealth level equal to the average Australian
+annual labor income of $41 880.16 The estimates of the parameter θ increase substantially
+when we introduce initial wealth and this is consistent with what one would predict. This
+is because, with CRRA preferences, initial wealth makes a decision maker less risk-averse.
+To compensate for this, the coefficient of relative risk aversion has to increase.17
+The estimates for the coefficient of relative risk aversion, θ
+Assuming zero initial wealth, our estimates for the parameter θ in the dynamic model
+are in the vicinity of 12 (see Table 13). With positive initial wealth, our estimates are
+in the range of 1.8 to 3.2 (see Table 15). We should be careful, however, in how we
+interpret different estimates for the parameter θ, obtained under different levels of initial
+wealth. For example, consider again the lottery that pays $100 000, $20 000 or nothing,
+with equal probability. Our estimates with zero initial wealth, in the vicinity of 12 , imply
+a certainty equivalent of approximately $23 000. This is not very different from the
+certainty equivalent that one obtains under our estimates with positive initial wealth
+(when the expected utility calculation is based on final wealth positions). For example,
+with θ = 2, the certainty equivalent is slightly below $22 000. With regard to estimates of
+previous studies, Fullenkamp, Tenorio and Battalio (2003) report a range of 0.64 to 1.76,
+depending on initial wealth levels. Beetsma and Schotman (2001) report a significantly
+higher estimate of 7.
+The significance of the estimates for the standard deviation terms, σν and σ
+As in the CARA model, both of our error terms play an important role. For example,
+taking the normal distribution assumption (for the fixed effect, ν) at face value, our standard deviation estimate of 0.21 in Table 13 implies that for two-thirds of the contestants,
+the parameter θ is between 0.34 and 0.76. The remaining one-third of the contestants fall
+outside this range. We view this as significant variation in the degree of risk aversion.
+16
+
+Australian annual labor income is calculated from the series “All employees total earnings” in Australian Bureau of Statistics Catalogue 6302.0, August 2005. One could argue that this measure understates contestant wealth. We have considered alternative wealth levels. Doing so merely re-calibrates our
+estimates of θ without affecting any of our conclusions. For example, the certainly equivalents we report
+below are robust to alternative choices of initial wealth. Further details are available on request.
+17
+We should also point out that assuming zero initial wealth is equivalent to adopting the stance that
+contestants approach the game show as an isolated (or segregated ) event. In other words, rather than
+maximizing the expected utility of their final wealth position, contestants maximise the expected utility
+of their game show winnings. Note that this is one of the basic tenants of prospect theory. Moreover,
+Gertner (1993) reports evidence in favour of the notion that contestants in the game show Card Sharks
+segregate decisions even during the show.
+
+21
+
+<-----Page 21----->Turning to our random effects specification (which puts the two standard deviation
+terms in the same metric), in all models, the variance of the round-specific error term
+is of the same order of magnitude as the individual heterogeneity term. In other words,
+the degree of heterogeneity at the contestant level is matched by heterogeneity at the
+individual round level. In our view, this finding strongly suggests that, if we are to
+employ an expected utility framework, a stochastic element (noise) is called for.18 This
+noise could reflect the difficulty faced by contestants in arriving at decisions, which is
+certainly evident from casual observation of the show. Alternatively, contestants may
+make mistakes or may be influenced by other factors outside of our model. The relative
+advantage of stochastic choice models, over deterministic ones, for estimating expected
+(and non-expected) utility preferences was first stressed by Hey and Orme (1994). We
+view our findings as further evidence in favour of the use of stochastic choice models in
+this context.
+
+5.2
+
+The endowment effect revisited
+
+In section 4.2 we used our approach in placing upper and lower bounds in order to test
+the hypothesis that contestants exhibit increased risk aversion during the special rounds,
+Chance and Supercase. Such behaviour would be consistent, if it were to be true, with
+a well-known observed anomaly, referred to as the endowment effect. In this section, we
+revisit this discussion in the context of our structural estimation.
+Towards this end, we restrict attention to the subsample of contestants who advanced
+to one of the two special rounds.19 We then replicate our earlier structural estimation for
+all choices, including those that these contestants made in the special rounds. A dummy
+variable controls for whether the choice occurred in a special round (dummy is 1) or not
+(dummy is 0).
+The results are summarised in Table 16. The effect of the special round is positive
+across all model specifications, i.e. contestants exhibit greater risk aversion in the special
+rounds. However, this effect is significant only for the static models (columns (1)-(3));
+under the assumption that contestants are forward-looking, the coefficients of the special
+round dummy (columns (4)-(6)) are not significantly different from zero. These results
+have the same flavour as those reported in section 4.2.
+To conclude, if contestants approach their decisions in a rational (i.e. dynamic) manner, then our verdict is that the “average contestant” does not display an endowment
+effect. To put it in different words, an argument in favour of an endowment effect can
+only be made in conjunction with an argument in favour of myopic behaviour.
+18
+
+We are unable to formally test for the (statistical) importance of stochastic choice owing to the
+existence of a substantial number of contestants who violate the maintained hypotheses of expected
+utility maximization and risk aversion.
+19
+Note that using our entire sample could cloud our estimates of an endowment effect with a selection
+effect, arising because only contestants who have accepted a bank offer are subsequently offered a Chance
+or Supercase.
+
+22
+
+<-----Page 22----->6
+
+The rank dependent utility model
+
+A maintained hypothesis throughout has been that contestants are expected utility (EU)
+maximisers. We now want to relax this presumption. In recent years a number of generalisations of the EU functional have been proposed. Here, we turn our attention to
+one of the most prominent of these generalisations, namely the rank dependent utility
+(RDU) functional, due to Quiggin (1982). In fact, the exact same reasons that made it
+so prominent also lead us to choose it over other possible alternatives: it nests expected
+utility (allowing us to test for its superiority with formal statistical tests), it is easy to
+apply, and intuitive. That it is easy to estimate is also an important consideration given
+the computational burden of our problem.
+We should point out that by restricting attention to the RDU and EU models, we are
+implicitly presuming that a contestant’s frame of reference is her initial wealth. With this
+reference point, there are no losses in the show, and therefore many of the contending
+generalisations of expected utility theory have little bite. Many contestants implicitly
+indicate that their frame of reference is their initial wealth when they utter the common
+refrain “well, I came with nothing”. We have therefore chosen to focus on the RDU model
+as the most natural challenger to EU theory.20
+The RDU functional revolves around a utility function u(·) and a probability weighting
+function π(·) that acts on the cumulative distribution function. The preference weighting
+accorded to outcome i is given by
+ωi = π (pi + . . . + pn ) − π (pi+1 + . . . + pn )
+where pi refers to the objective probability of outcome i in an n outcome lottery, with
+outcomes ordered from lowest to highest. In this way, the attention paid to an outcome
+(its decision weight) depends not only on the objective probability of that outcome, but
+also on its preference ranking. We adopt the following probability weighting function
+π(p) = pγ
+
+(20)
+
+and consider in turn the same two cases, CARA and CRRA, for the underlying utility
+function.
+This means that we must estimate the additional parameter γ in the probability
+weighting function. (Note that the RDU model reduces to the EU model when γ = 1.) We
+must also modify equations (1)-(3) and (9)-(10) appropriately, to be consistent with the
+RDU functional. Our empirical specification is also slightly altered, with the counterparts
+of equations 12 to 14 taking the form:
+zir (θ, νi ; γ, ηi ) = Zir (θ, γ)
+zir (θ, νi ; γ, ηi ) = Zir (θ, γ) + νi
+zir (θ, νi ; γ, ηi ) = Zir (θ + νi , γ + ηi )
+20
+
+(21)
+(22)
+(23)
+
+One could go further and argue that there are important methodological challenges inhibiting the
+estimation of any preference functional with a reference point that adjusts with bank offers. To see this,
+recall that the bank offer rises in expectation as the contestant plays deeper into the game. At the same
+time, it is the less risk averse contestants who are more likely to continue playing further into the game.
+By inducing a correlation between risk preferences and bank offers, this selection problem confounds the
+estimation of the preference functional.
+
+23
+
+<-----Page 23----->We should also add a few remarks concerning the estimation of the random coefficients
+RDU model, from equation (23). In this case, the contestant-specific fixed effect consists
+of two elements, νi and ηi . The former reflects the contestant-specific heterogeneity corresponding to the risk aversion parameter, θ, and is distributed according to N(0, σν2 ). The
+latter reflects the contestant-specific heterogeneity corresponding to the parameter of the
+probability weighting function, γ, and is distributed according to N(0, ση2 ). We also allow
+for the possibility that the two fixed effects are correlated, with correlation coefficient of
+ρ. Thus, one needs to estimate the parameter vector {θ, γ, σν , ση , σ , ρ}.
+
+6.1
+
+Results for the RDU models
+
+The results are in Tables 17 and 18 for the static and the dynamic models, respectively.
+The CRRA results are based on the initial wealth level of $41 880 considered earlier.
+Two observations stand out. First, the estimate for the parameter γ is less than one
+and relatively stable across all cases, in the neighbourhood of 21 for the dynamic model.
+This implies a concave cumulative probability weighting function and is suggestive of
+optimism. That is, contestants overweight favourable outcomes. Below, we show that the
+RDU model performs markedly better than EU theory in a statistical sense. In terms
+of observed behaviour, we can explain this performance as follows. We established in
+sections 4 and 5 that contestants are on average risk averse, but a substantial minority of
+contestants display risk-seeking behaviour. Moreover, we observe risk seeking for small,
+moderate, and large stakes. These patterns can be easily explained by the RDU model,
+but with much greater difficulty by EU theory. Under EU theory, even a small degree
+of concavity in utility implies a very small marginal utility for wealth when considering
+large amounts. Any risk-seeking behaviour, particularly for moderate and large stakes,
+does not then sit easily with EU theory, but can be explained simply in the RDU model
+through a larger decision weight on the most favourable outcomes.
+Our second observation is that, relative to EU models, there is a substantial rise in
+the estimates for both coefficients of absolute and relative risk aversion. We should point
+out that our two observations are consistent with each other. To see this, notice that in
+the RDU model attitudes towards risk enter via both the parameter θ and the parameter
+γ. (Assuming that the probability weighting function is of the form π(p) = pγ , a decrease
+in γ makes a contestant less risk averse.) As a result, in order to compensate for its lower
+γ (relative to the EU model, where γ = 1), the RDU model has to involve a higher θ. In
+fact, it is for the same reason that one expects the correlation coefficient ρ to be negative,
+as it is (though not significantly different from zero in the dynamic model).
+Furthermore, to get an intuitive sense for our estimates, consider once again the lottery
+from our earlier discussion that pays $100 000, $20 000 and nothing, with equal probability.
+Letting γ = 12 , the dynamic estimates of the parameter θ imply certainty equivalents of
+approximately $13 000 (for CARA with θ = 1.2 × 10−4 and for CRRA with θ = 6.5).
+
+6.2
+
+Comparisons between models
+
+Next we explore whether the RDU functional performs substantially better than EU.
+Given that the RDU preference functional nests EU (when γ = 1), we can use formal
+24
+
+<-----Page 24----->statistical tests to check whether RDU is significantly better at explaining the contestants’
+choices. Tables 17 and 18 report Likelihood Ratio tests that overwhelmingly reject the
+restriction that γ = 1 for all specifications. The Akaike information criterion and bayesian
+information criterion were also considered. Both strongly support the RDU model.
+We also explore the relative performance of a special case of the RDU functional,
+referred to as Yaari’s (1987) dual theory. This arises when the utility function, u(·), is
+linear. While Yaari’s dual theory does not nest EU, it does nest RN. Tables 19 and 20
+report maximum likelihood estimates for the risk-neutral model and Yaari’s dual theory
+model, respectively.
+Notice first that the estimate for the parameter γ in the Yaari model is greater than
+1 (and significantly so), which is consistent with contestants being risk averse. (In
+Yaari’s dual theory, risk aversion is equivalent to a convex probability weighting function.) Likelihood-Ratio tests reject RN in favour of the Yaari model. However, for the
+dynamic specification the Akaike information criterion and bayesian information criterion
+are not conclusive.
+To sum up, we conclude that the RDU preference functional substantially outperforms
+EU theory, while Yaari’s dual theory modestly outperforms the theory of risk neutrality.
+
+7
+
+Concluding remarks
+
+This paper examined attitudes towards risk in an unusual data set in which contestants
+face high-stakes lotteries, in a setting untainted by strategic considerations or selection
+issues relating to skill. As a first pass at the data, we placed upper and lower bounds on
+the degree of risk aversion of individual contestants within an expected utility framework.
+This exercise revealed substantial heterogeneity in risk preferences. We then estimated
+a structural stochastic choice model of contestant behaviour. In order to account for
+our earlier finding of substantial heterogeneity, our structural model allowed for a contestant specific fixed effect, which we modelled within both a random effects and a random
+coefficients framework. Our key findings could be summarised as follows:
+1. The magnitudes of our estimates
+For CARA EU-maximisers, we estimated coefficients of risk aversion in the neighbourhood
+of 5 × 10−5 . These are in line with the estimates of Gertner (1993) and Metrick (1995),
+obtained in the context of the game shows Card Sharks and Jeopardy!, respectively. For
+CRRA EU-maximisers (with initial wealth), our estimates are in the range of 1.8 to 3.2
+2. The role of individual heterogeneity and the importance of stochastic choice modelling
+The structural model estimation confirmed that the variance of the contestant-specific
+fixed effect is indeed substantial. Moreover, this variance is of the same order of magnitude
+as the variance of the noise term in our stochastic choice model. This finding highlights
+the appropriateness of using a stochastic choice model.
+3. Does the RDU functional outperform EU theory? Yes.
+We also estimated the structural choice model under the assumption that contestants
+use the RDU preference functional. We found that the RDU model provides substantial
+
+25
+
+<-----Page 25----->improvements in explanatory power, with restrictions to EU theory overwhelmingly rejected. In fact, one can argue that the RDU model outperforms the EU model by the
+same factor that EU outperforms risk neutrality. Our estimates suggest that contestants
+are “optimistic”, overweighting more favourable outcomes. However, Yaari’s dual theory,
+a special case of the RDU model, only modestly outperforms risk neutrality.
+4. Is there an endowment effect for lotteries? No.
+Finally, we harnessed unique features of the Australian version of the game to test the
+hypothesis of an endowment effect for lotteries. While a handful of contestants exhibit
+behaviour consistent with an endowment effect, for the “average” contestant, we cannot
+confirm the hypothesis.
+
+References
+[1] Beetsma, R. and P. Schotman (2001). “Measuring Risk Attitudes in a Natural Experiment: Data from the Television Game Show ‘Lingo’ ”, Economic Journal, 111, pp.
+821-848.
+[2] Bennett, R. and K. Hickman (1993). “Rationality and ‘The Price is Right’ ”, Journal
+of Economic Behavior and Organization, 21 (1), pp. 99-105.
+[3] Berk, J., E. Hughson and K. Vandezande (1996). “The Price is Right, But Are the
+Bids? An Investigation of Rational Decision Theory”, American Economic Review, 82
+(5), pp. 1120-41.
+[4] Blavatskyy, P. and G. Pogrebna (2006). “Loss Aversion? Not with Half-a-Million on
+the Table”, working paper.
+[5] Bombardini, M. and F. Trebbi (2005). “Risk Aversion and Expected Utility Theory:
+A Field Experiment with Large and Small Stakes”, working paper.
+[6] Deck, C., J. Lee and J. Reyes (2006). “Risk Attitudes in Large Stake Gambles: Evidence from a Game Show”, working paper.
+[7] Fullenkamp, C., R. Tenorio and R. Battalio (2003). “Assessing Individual Risk Attitudes Using Field Data from Lottery Games”, Review of Economics and Statistics, 85
+(1), pp. 218-225.
+[8] Gertner, R. (1993). “Game Shows and Economic Behavior: Risk taking on ‘Card
+Sharks’ ”, Quarterly Journal of Economics, 108 (2), pp. 507-521.
+[9] Healy, P. and C. Noussair (2004). “Bidding Behavior in ‘The Price is Right’ Game:
+An Experimental Study”, Journal of Economic Behavior and Organization, 54 (2), pp.
+231-247.
+[10] Hey, J. and C. Orme (1994). “Investigating Generalizations of Expected Utility Theory Using Experimental Data”, Econometrica, 62 (6), pp. 1291-1326.
+
+26
+
+<-----Page 26----->[11] Kahneman, D., J. Knetch and R. Thaler (1991). “The Endowment Effect, Loss Aversion and the Status Quo Bias”, Journal of Economic Perspectives, 5 (1), pp. 193-206.
+[12] Machina, M. (1987). “Choice Under Uncertainty: Problems Solved and Unsolved”,
+Journal of Economic Perspectives, 1 (1), pp. 121-154.
+[13] Metrick, A. (1995). “A Natural Experiment in ‘Jeopardy!’ ”, American Economic
+Review, 85 (1), pp.240-253.
+[14] Mulino, D., R. Scheelings, R. Brooks and R. Faff (2006). “Is a Dollar in the Hand
+Worth Two in a Lottery? Risk Aversion and Prospect Theory in ‘Deal or no Deal’ ”,
+working paper.
+[15] Post, T., G. Baltussen and M. van den Assem (2006). “Deal or no Deal? Decision
+Making Under Risk in a Large-Payoff Game Show”, working paper
+[16] Quiggin, J. (1982). “A Theory of Anticipated Utility”, Journal of Economic Behavior
+and Organization, 3, pp. 323-43.
+[17] Rabin, M. (2000). “Risk Aversion and Expected Utility Theory: A Calibration Theorem”, Econometrica, 68 (5), pp. 1281-1292.
+[18] Starmer, C. (2000). “Developments in Non-Expected Utility Theories: The Hunt
+for a Descriptive Theory of Choice under Risk”, Journal of Economic Literature, pp.
+332-282.
+[19] Tenorio, R. and T. Cason (2002). “To Spin or not to Spin: Natural and Laboratory
+Experiments from ‘The Price is Right’ ”, Economic Journal, 112, pp. 170-195.
+[20] Thaler, R. (1980). “Towards a Positive Theory of Consumer Choice”, Journal of
+Economic Behavior and Organization, 1, pp. 39-60.
+[21] Yaari, M. (1987). “The Dual Theory of Choice under Risk”, Econometrica, 55 (1),
+pp. 95-115.
+
+8
+8.1
+
+Appendices
+Appendix A: The complete producers’ manual
+
+In the television program produced by Endemol Southern Star (hereinafter “the Producer”) for
+the Seven Network entitled Deal or no Deal, one contestant will remain from an initial maximum
+of 150 contestants after 2 ROUNDS have been played. This one contestant will then go through
+to the FINAL ROUND. All contestants must sign the standard Endemol Southern Star form
+known as the “Contestant Agreement”. This “Contestant Agreement” is inseparably linked to
+these rules for Deal or no Deal, and forms an integral component part of them. Employees
+of Endemol Southern Star and their affiliated companies (and their immediate families) are
+excluded from taking part in Deal or no Deal. Employees of the Seven Network and their
+affiliated companies (and their immediate families) are excluded from taking part in Deal or
+
+27
+
+<-----Page 27----->no Deal. The Producer’s decision on all matters relating to the production will be final. The
+Producer may, in the case of unanticipated events, determine that a change in the rules is
+required.
+THE GAME
+The game involved in Deal or no Deal comprises TWO PRELIMINARY ROUNDS and a FINAL
+ROUND. Of the 150 contestants in ROUND ONE, only one will ultimately take part in the
+FINAL ROUND.
+ROUND ONE
+The audience of 150 is divided into 6 blocks of 25. One of these blocks is randomly drawn
+by the Producer. The selected block will advance into ROUND TWO. The selection of this
+block is non-negotiable, and the Producer’s decision is final. In the event that a selected block
+contains fewer than 25 contestants, additional contestants will be chosen to take the number in
+the block up to 25. These additional contestants will be selected at random by the Producer,
+whose decision is final. From the remaining 125 audience members, one is selected at random
+to join the previously selected block. This 26th contestant instantly wins a cash prize of $500.
+The selection of this 26th contestant is non-negotiable, and the Producer’s decision is final.
+ROUND TWO
+The 25 contestants from the selected block, and the additional contestant (26 contestants in
+all) are repositioned to the podium, where they will play ROUND TWO. These 26 contestants
+now play as individuals, answering three general knowledge multiple-choice questions. For each
+question they must choose between three answer options: A, B or C. The contestants are each
+awarded 10 points for every correct answer. The thinking time is 5 seconds per question and
+the contestants’ keypads will not be activated until the third option of each question (Option C)
+is displayed, and the question music starts. At the end of 5 seconds, the contestants’ keypads
+will de-activate. On all questions in this round, the computer incorporates the answering speed
+into the scores so that while the scores may be tied numerically, the positions (1st - 26th) can
+be accurately identified. After three questions, the one player with the highest score is deemed
+the winner. In the event of tied leading scores after three questions, the person who gave the
+fastest correct answer to Question 3 will be deemed the winner. This holds true whether the
+final leading score is 10, 20 or 30. If all scores are on zero after 3 questions, a new round of
+questions will be loaded, and the game will be re-played. The one winning contestant goes
+through to THE FINAL ROUND. In the event of any dispute as to the correctness of any
+answers, the Producer’s decision is final and all contestants agree to be bound by this decision.
+No discussion will be entered into. FINAL ROUND. The winning contestant from ROUND
+TWO, (hereinafter referred to as “the Finalist”) selects one briefcase from 26. The 25 remaining
+briefcases are given to the 25 unsuccessful contestants from ROUND TWO. These 25 contestants
+(hereinafter referred to as “the Briefcase Contestants”) take turns in opening their numbered
+cases, in the order decided by the Finalist. 25 of the cases contain an insert which represents a
+cash value. 1 of the cases contains an insert featuring the word “CAR”. This represents the car
+which can be won by the Finalist. These 25 cash values, and the word “CAR”, will be displayed
+on the Deal or no Deal cash board screens in the studio.
+Prior to opening their case, each of the Briefcase Contestants is allowed one guess as to what
+is inside it. They may nominate any one of the 25 cash values, or the “CAR”. If they are correct,
+they win $1 000, unless they have been awarded a ”Mega-Guess” (see below). If the Briefcase
+
+28
+
+<-----Page 28----->Contestant’s guess is wrong, they win nothing. If a Briefcase Contestant opens their case before
+the program’s Host directs them to do so, they win nothing. As each case is opened, its contents
+are revealed to the audience, and the Finalist. The cash values contained in the opened cases
+are no longer available to be won. Whatever is represented (whether it is a cash value, or the
+“CAR”) inside the Finalist’s briefcase is what the Finalist will win, unless they accept an offer
+from the “Bank” during the course of the game.
+THE DAILY PRIZE
+Inside one of the 26 briefcases, in addition to a cash amount, are 6 stars, representing a Daily
+Prize. Whichever contestant opens the case containing the 6 stars (whether they are a Briefcase
+Contestant or Finalist) will be deemed to have won the Daily Prize. The details of the Daily
+Prize will be announced by the Host, when it is won. If the Daily Prize is inside the Finalist’s
+briefcase, the Finalist will win the Daily Prize when their briefcase is opened, even if they have
+already accepted a Bank offer.
+THE BANK
+During the FINAL ROUND, the Finalist is made offers by the program’s Host on behalf of
+the Deal or no Deal Bank to sell their (the Finalist’s) briefcase for a cash sum. If the Finalist
+accepts a Bank offer, they win the cash sum offered by the Bank, and are no longer entitled to
+the sum or prize (CAR) that is eventually revealed to be in the Finalist’s briefcase. However,
+in selected circumstances, the Bank may offer the CAR instead of a cash sum. If the Finalist
+accepts the bank’s offer of a CAR, they win the CAR, and are no longer entitled to the sum that
+is eventually revealed to be in the Finalist’s briefcase. The amount of time that the Finalist will
+have to consider a Bank offer is entirely at the discretion of the Producer.
+OPENING THE BRIEFCASES
+The 26 briefcases are opened according to the following system: Six cases are opened. The Bank
+makes an offer based on the remaining 20 closed cases. The Finalist decides whether to accept or
+reject the offer - “Deal or No Deal”. Five cases are opened. The Bank makes an offer based on
+the remaining 15 closed cases. The Finalist decides “Deal or No Deal”. Four cases are opened.
+The Bank makes an offer based on the remaining 11 closed cases. The Finalist decides “Deal or
+No Deal”. Three cases are opened. The Bank makes an offer based on the remaining 8 closed
+cases. The Finalist decides “Deal or No Deal”. Two cases are opened. The Bank makes an offer
+based on the remaining 6 closed cases. The Finalist decides “Deal or No Deal”. The remaining
+unopened briefcases are then opened. In this portion of the game, one Bank offer is made to
+the Finalist after each individual case is opened. If the Finalist opens their selected case before
+the program’s Host or the Producer directs them to do so, the game will halt immediately, the
+Finalist will be eliminated and the game will be declared null and void. The Finalist will not
+be eligible to take part in any further games.
+THE “MEGA-GUESS” FEATURE
+During the briefcase opening round, a special siren may sound, announcing the “Mega-Guess”
+feature. Whichever Briefcase Contestant is chosen to open their case immediately after the
+siren has gone off, will be awarded a “Mega-Guess”. This simply means that if this Briefcase
+Contestant correctly guesses the amount, or prize (CAR), inside the briefcase they are holding,
+they will win $5 000, instead of the usual $1 000. If the Briefcase Contestant’s guess is wrong,
+they win nothing. The “Mega-Guess” feature is to be used in selected games, at the Producer’s
+discretion.
+
+29
+
+<-----Page 29----->THE “CHANCE” FEATURE
+After a Finalist has accepted a bank offer and made a deal, a “CHANCE” feature may be
+introduced by the Deal or no Deal bank. This will be introduced by a special siren and clearly
+identified on the Deal or no Deal cash board. With two briefcases remaining to be opened, the
+Bank may offer the Finalist a chance to retract their “Deal” decision. If the Finalist accepts,
+they forfeit all winnings from their previously made deal, and instead take home whatever is
+inside their selected briefcase. In effect, they are “CHANCING” their deal against the contents
+of their briefcase. Accepting the “CHANCE” offer is not compulsory. If the Finalist declines to
+take the “CHANCE”, they will still leave with the amount or prize (CAR) they accepted when
+the deal was made. The game will be played out as normal. The “CHANC” feature is to be
+used in selected games, at the Producer’s discretion.
+THE “SUPER CASE” FEATURE
+After a Finalist has accepted a bank offer and made a deal, the Super Case feature may be
+introduced by the Deal or no Deal bank. This will be introduced by a special siren and clearly
+identified on the Deal or no Deal cash board. If the Finalist elects to take the Super Case
+option, they will win whatever cash amount is revealed to be inside the Super Case, and forfeit
+their previously struck deal. For each game, one of the following cash values will be selected at
+random, and placed inside the Super Case: $0.50, $100, $1 000, $2 000, $5 000, $10 000, $20
+000, or $30 000. The “SUPER CASE” feature is to be used in selected games, at the Producer’s
+discretion.
+FRAUD
+In the event of fraud or dishonesty (including any form of cheating or collusion) on the part of
+any competitor, or if it is discovered that a contestant was not eligible to be a contestant, the
+Producer may refuse to issue prizes won or require that all prizes awarded to the contestant be
+returned immediately.
+
+8.2
+
+Appendix B: The bank offer function
+
+Table 9 contains estimates for a more general bank offer model. The set of explanatory variables
+include: the expected value of the remaining briefcases, the standard deviation of the remaining
+briefcases, the bank offer from the previous round and the briefcases that the contestant opened
+in the current round. Note that in rounds 6-9 the contestant opens only one briefcase, whereas
+in rounds 2-5 the contestant opens 5, 4, 3 and 2 briefcases, respectively.
+
+8.3
+
+Appendix C: Tables
+
+The following tables contain results from the estimation of the structural model of section 5.
+
+30
+
+<-----Page 30----->Table 9: Bank offer function
+Round
+Constant
+Exp value
+Stand dev
+Last offer
+Case 1
+Case 2
+Case 3
+Case 4
+Case 5
+Observations
+R2
+2
+R
+
+9
+0.258
+(0.068)
+0.942
+(0.031)
+0.064
+(0.025)
+-0.027
+(0.021)
+-0.008
+(0.005)
+148
+0.996
+0.996
+
+8
+0.284
+(0.130)
+0.768
+(0.076)
+0.251
+(0.070)
+-0.052
+(0.031)
+-0.011
+(0.005)
+224
+0.983
+0.982
+
+7
+0.007
+(0.180)
+0.559
+(0.109)
+0.389
+(0.114)
+0.038
+(0.031)
+-0.021
+(0.005)
+297
+0.967
+0.966
+
+6
+-0.119
+(0.256)
+0.672
+(0.147)
+0.269
+(0.125)
+0.044
+(0.063)
+-0.020
+(0.007)
+351
+0.936
+0.935
+
+5
+-0.157
+(0.150)
+0.875
+(0.072)
+0.066
+(0.063)
+0.034
+(0.035)
+-0.009
+(0.004)
+-0.008
+(0.004)
+389
+0.953
+0.952
+
+4
+-0.411
+(0.289)
+0.958
+(0.079)
+0.018
+(0.085)
+-0.008
+(0.032)
+-0.002
+(0.004)
+-0.001
+(0.005)
+0.003
+(0.004)
+399
+0.917
+0.916
+
+Notes: Figures in parentheses are heteroskedasticity-robust standard errors.
+
+31
+
+3
+-1.372
+(0.467)
+0.936
+(0.114)
+-0.061
+(0.121)
+0.220
+(0.059)
+-0.015
+(0.005)
+-0.002
+(0.007)
+-0.022
+(0.005)
+-0.006
+(0.006)
+399
+0.800
+0.797
+
+2
+-0.714
+(0.460)
+0.919
+(0.101)
+-0.184
+(0.096)
+0.320
+(0.035)
+-0.013
+(0.004)
+-0.005
+(0.003)
+-0.011
+(0.004)
+-0.018
+(0.004)
+-0.011
+(0.004)
+398
+0.823
+0.819
+
+<-----Page 31----->Table 10: Static problem with CARA preferences
+
+Parameter
+θ
+constant
+female
+
+Basic model
+(1)
+(2)
+5.839e-06
+(1.94e-07)
+5.454e-06
+(2.32e-07)
+7.795e-07
+(4.23e-07)
+
+σν
+σ
+Log-likelihood
+Observations
+Contestants
+
+0.0326
+(8.50e-04)
+-959.3
+2834
+399
+
+0.0324
+(8.67e-04)
+-958.2
+2834
+399
+
+Random effects
+(3)
+(4)
+6.972e-06
+(2.76e-07)
+6.609e-06
+(3.28e-07)
+7.107e-07
+(5.17e-07)
+0.0249
+0.0248
+(9.09e-03)
+(0.0124)
+0.0250
+0.0249
+(5.01e-03) (7.89e-03)
+-870.8
+-870.1
+2834
+2834
+399
+399
+
+Random coefficients
+(5)
+(6)
+7.473e-06
+(8.22e-07)
+7.586e-06
+(1.15e-06)
+-3.034e-07
+(1.48e-06)
+5.625e-06 5.690e-06
+(6.80e-07) (6.80e-07)
+0.0214
+0.0212
+(1.06e-03) (1.08e-03)
+-899.7
+-899.6
+2834
+2834
+399
+399
+
+Notes: Excludes special ‘feature’ shows, and assumes non-forward-looking behaviour.
+All rounds are included. Standard errors are in parentheses ().
+
+Table 11: Dynamic problem with CARA preferences
+
+Parameter
+θ
+constant
+female
+
+Basic model
+(1)
+(2)
+2.768e-05
+(2.62e-06)
+2.396e-05
+(2.97e-06)
+4.879e-06
+(4.05e-06)
+
+σν
+σ
+Log-likelihood
+Observations
+Contestants
+
+0.0995
+(3.99e-03)
+-738.6
+1244
+366
+
+0.0978
+(4.64e-03)
+-738.4
+1244
+366
+
+Random effects
+(3)
+(4)
+5.751e-05
+(4.55e-06)
+5.626e-05
+(6.54e-06)
+1.475e-06
+(7.28e-06)
+0.0779
+0.0776
+(0.0294)
+(0.0282)
+0.0688
+0.0688
+(0.0196)
+(0.0189)
+-685.0
+-685.0
+1244
+1244
+366
+366
+
+Notes: Excludes special ‘feature’ shows. Rounds 5-9 are included.
+Standard errors are in parentheses ().
+
+32
+
+Random coefficients
+(5)
+(6)
+4.616e-05
+(3.99e-06)
+4.576e-05
+(5.59e-06)
+6.923e-07
+(4.26e-06)
+3.095e-05
+3.096e-05
+(2.50e-06) (2.12e-06)
+0.0541
+0.0540
+(3.23e-03) (3.044e-03)
+-706.5
+-706.5
+1244
+1244
+366
+366
+
+<-----Page 32----->Table 12: Static problem with CRRA preferences with no initial wealth
+
+Parameter
+θ
+constant
+female
+
+Basic model
+(1)
+(2)
+0.172
+(0.0089)
+0.161
+(0.0126)
+0.0209
+(0.0161)
+
+σν
+σ
+Log-likelihood
+Observations
+Contestants
+
+0.0305
+(1.04e-03)
+-1025.7
+2834
+399
+
+0.0304
+(1.03e-03)
+-1024.8
+2834
+399
+
+Random effects
+(3)
+(4)
+0.238
+0.0084)
+0.226
+(0.0115)
+0.0246
+(0.0170)
+0.0239
+0.239
+(8.26e-03) (9.37e-03)
+0.0182
+0.0180
+(6.47e-03) (8.06e-03)
+-889.0
+-887.8
+2834
+2834
+399
+399
+
+Random coefficients
+(5)
+(6)
+0.162
+(0.0135)
+0.163
+(0.0167)
+-3.430e-03
+(0.0190)
+0.141
+0.141
+(0.0125)
+(0.0125)
+0.0160
+0.0160
+(1.30e-03) (1.30e-03)
+-978.2
+-978.2
+2834
+2834
+399
+399
+
+Notes: Excludes special ‘feature’ shows, and assumes non-forward-looking behaviour.
+All rounds are included. Contestants are assumed to have zero initial wealth.
+Standard errors are in parentheses ().
+
+Table 13: Dynamic problem with CRRA preferences with no initial wealth
+
+Parameter
+θ
+constant
+female
+
+Basic model
+(1)
+(2)
+0.460
+(0.0320)
+0.397
+(0.0380)
+0.148
+(0.0611)
+
+σν
+σ
+Log-likelihood
+Observations
+Contestants
+
+0.0557
+(3.21e-03)
+-728.5
+1244
+366
+
+0.0544
+(3.24e-03)
+-726.0
+1244
+366
+
+Random effects
+(3)
+(4)
+0.656
+(0.0304)
+0.576
+(0.0370)
+0.145
+(0.0583)
+0.0414
+0.0397
+(0.0191) (0.0180)
+0.0322
+0.0308
+(0.0143) (0.0178)
+-663.9
+-659.8
+1244
+1244
+366
+366
+
+Notes: Excludes special ‘feature’ shows. Rounds 5-9 are included.
+Contestants are assumed to have zero initial wealth.
+Standard errors are in parentheses ().
+
+33
+
+Random coefficients
+(5)
+(6)
+0.549
+(0.0645)
+0.522
+(0.0482)
+0.163
+(0.0117)
+0.215
+0.223
+(0.0461)
+(0.0135)
+0.0439
+0.0402
+(3.64e-03) (3.55e-03)
+-710.9
+-704.5
+1244
+1244
+366
+366
+
+<-----Page 33----->Table 14: Static problem with CRRA preferences with initial wealth
+
+Parameter
+θ
+constant
+female
+
+Basic model
+(1)
+(2)
+0.567
+(0.0188)
+0.535
+(0.0237)
+0.0650
+(0.0401)
+
+σν
+σ
+Log-likelihood
+Observations
+Contestants
+
+0.0298
+(7.92e-04)
+-956.4
+2834
+399
+
+0.0297
+(8.03e-04)
+-955.3
+2834
+399
+
+Random effects
+(3)
+(4)
+0.685
+(0.0241)
+0.653
+(0.0313)
+0.0628
+(0.0477)
+0.0237
+0.0237
+(6.61e-03) (7.23e-03)
+0.0210
+0.0209
+(3.84e-03) (4.42e-03)
+-852.7
+-851.9
+2834
+2834
+399
+399
+
+Random coefficients
+(5)
+(6)
+0.657
+(0.0330)
+0.615
+(0.0445)
+0.0528
+0.0614
+0.463
+0.456
+(0.0411)
+(0.0408)
+0.0164
+0.0165
+(8.80e-04) (8.94e-04)
+-894.0
+-893.8
+2834
+2834
+399
+399
+
+Notes: Excludes special ‘feature’ shows, and assumes non-forward-looking behaviour.
+All rounds are included. Contestants are assumed to have initial wealth equal to average annual
+labor income. Standard errors are in parentheses ().
+
+Table 15: Dynamic problem with CRRA preferences with initial wealth
+
+Parameter
+θ
+constant
+female
+
+Basic model
+(1)
+(2)
+1.818
+(0.152)
+1.556
+(0.150)
+0.524
+(0.240)
+
+σν
+σ
+Log-likelihood
+Observations
+Contestants
+
+0.0771
+(4.62e-03)
+-730.1
+1244
+366
+
+0.0757
+(4.64e-03)
+-729.3
+1244
+366
+
+Random effects
+(3)
+(4)
+3.231
+(0.223)
+2.857
+(0.281)
+0.532
+(0.336)
+0.0645
+0.0624
+(0.0504) (0.0318)
+0.0581
+0.0574
+(0.0383) (0.0207)
+-678.8
+-678.2
+1244
+1244
+366
+366
+
+Random coefficients
+(5)
+(6)
+2.615
+(0.237)
+2.521
+(0.286)
+0.253
+(0.436)
+3.347
+3.302
+(0.397)
+(0.394)
+0.0279
+0.0280
+(4.88e-03) (4.75e-03)
+-697.6
+-697.3
+1244
+1244
+366
+366
+
+Notes: Excludes special ‘feature’ shows. Rounds 5-9 are included.
+Contestants are assumed to have initial wealth equal to average annual labour income.
+Standard errors are in parentheses ().
+
+34
+
+<-----Page 34----->Table 16: Endowment effect with CARA preferences
+
+Parameter
+constant
+special round
+σν
+σ
+Log-likelihood
+Observations
+Contestants
+
+Static model
+Random
+Random
+effects
+coefficients
+(2)
+(3)
+9.624e-06
+1.059e-05
+(1.63e-06) (4.12e-06)
+4.455e-05
+4.685e-05
+(3.44e-06) (7.22e-06)
+0.0143
+9.330e-06
+(0.0669)
+(2.24e-06)
+0.0454
+0.0447
+0.0372
+(2.18e-03)
+(0.0113)
+(2.91e-03)
+-228.9
+-227.9
+-226.9
+555
+555
+555
+78
+78
+78
+Basic
+model
+(1)
+8.934e-06
+(1.63e-06)
+4.401e-05
+(2.56e-06)
+
+Dynamic model
+Random
+Random
+effects
+coefficients
+(5)
+(6)
+5.592e-05
+4.804e-05
+(1.22e-05) (2.21e-05)
+1.045e-05
+1.498e-05
+(1.44e-05) (3.20e-05)
+0.0297
+5.841e-05
+(1.059)
+(1.25e-05)
+0.110
+0.106
+0.0524
+(9.73e-03)
+(0.238)
+(0.0136)
+-180.5
+-180.1
+-177.6
+322
+322
+322
+78
+78
+78
+
+Basic
+model
+(4)
+5.188e-05
+(1.27e-05)
+1.351e-05
+(1.48e-05)
+
+Notes: Excludes special ‘feature’ shows; standard errors are in parentheses ().
+All rounds are included for static model; rounds 4-9 are included for dynamic model.
+
+35
+
+<-----Page 35----->Table 17: Static problem with Rank dependent utility preferences
+
+Parameter
+θ
+γ
+
+Basic
+Model
+(1)
+4.070e-05
+(3.30e-06)
+0.342
+(0.0315)
+
+σν
+
+CARA
+Random
+Effects
+(2)
+2.232e-05
+(1.94e-06)
+0.617
+(0.0309)
+0.0506
+(0.133)
+
+ση
+ρ
+σ
+Log-likelihood
+LR test a
+Observations
+Contestants
+
+0.167
+(0.0116)
+-865.0
+188.6
+2834
+399
+
+0.0788
+(0.0663)
+-848.5
+44.6
+2834
+399
+
+Random
+Coefficients
+(3)
+1.672e-05
+(1.98e-06)
+0.833
+(0.0347)
+1.077e-05
+(1.71e-06)
+0.238
+(0.0461)
+-0.806
+(0.0783)
+0.0179
+(2.38e-03)
+-817.4
+164.6
+2834
+399
+
+Basic
+Model
+(4)
+2.396
+(0.155)
+0.473
+(0.0320)
+
+0.101
+(7.80e-03)
+-813.7
+285.4
+2834
+399
+
+CRRA
+Random
+Effects
+(5)
+1.994
+(0.137)
+0.596
+(0.0318)
+0.0419
+(0.0481)
+
+0.0635
+(0.0217)
+-796.2
+113.0
+2834
+399
+
+Random
+Coefficients
+(6)
+1.806
+(0.104)
+0.704
+(0.0258)
+0.824
+0.175
+0.215
+(0.0447)
+-0.758
+(0.134)
+0.0283
+(4.65e-03)
+-778.4
+231.2
+2834
+399
+
+Notes: Excludes special ‘feature’ shows, and assumes non-forward-looking behaviour.
+All rounds are included. Standard errors are in parentheses ().
+a
+The likelihood ratio statistic is reported for the restriction γ = 1 for models (1), (2), (4), and (5),
+and for the restrictions γ = 1, ση = 0, and ρ = 1 for models (3) and (6).
+It has a χ2 (1) and χ2 (3) distribution, respectively. All LR tests are significant at the 0.001 level.
+
+36
+
+<-----Page 36----->Table 18: Dynamic problem with Rank dependent utility preferences
+
+Parameter
+θ
+γ
+
+Basic
+Model
+(1)
+1.109e-04
+(8.06e-06)
+0.476
+(0.0201)
+
+σν
+
+CARA
+Random
+Effects
+(2)
+1.215e-04
+(8.74e-06)
+0.540
+(0.0195)
+0.0614
+(0.0555)
+
+ση
+ρ
+σ
+Log-likelihood
+LR test a
+Observations
+Contestants
+
+0.118
+(5.54e-03)
+-628.9
+219.4
+1244
+366
+
+0.0824
+(0.0297)
+-612.6
+144.8
+1244
+366
+
+Random
+Coefficients
+(3)
+1.414e-04
+(4.88e-06)
+0.549
+(0.0292)
+8.476e-05
+(4.74e-06)
+0.194
+(0.197)
+-0.784
+(0.422)
+0.0610
+(5.71e-03)
+-593.9
+205.2
+1244
+366
+
+Basic
+Model
+(4)
+5.655
+(0.352)
+0.478
+(0.0247)
+
+0.107
+(5.68e-03)
+-611.9
+236.4
+1244
+366
+
+CRRA
+Random
+Effects
+(5)
+6.241
+(0.389)
+0.532
+(0.0236)
+0.0538
+(0.0676)
+
+0.0780
+(0.0336)
+-600.4
+156.8
+1244
+366
+
+Random
+Coefficients
+(6)
+7.375
+(0.484)
+0.542
+(0.0298)
+3.876
+(0.451)
+0.192
+(0.173)
+-0.635
+(0.594)
+0.0536
+(8.40e-03)
+-580.9
+233.4
+1244
+366
+
+Notes: Excludes special ‘feature’ shows. Rounds 5-9 are included.
+Standard errors are in parentheses ().
+a
+The likelihood ratio statistic is reported for the restriction γ = 1 for models (1), (2), (4), and (5),
+and for the restrictions γ = 1, ση = 0, and ρ = 1 for models (3) and (6).
+It has a χ2 (1) and χ2 (3) distribution, respectively. All LR tests are significant at the 0.001 level.
+
+Table 19: Risk-neutral preferences
+
+Parameter
+σν
+σ
+Log-likelihood
+Observations
+Contestants
+
+Static model
+Basic
+Random
+model
+effects
+(1)
+(2)
+0.0274
+(0.0230)
+0.0427
+0.0380
+(1.07e-05) (0.0104)
+-1113.8
+-1042.4
+2834
+2834
+399
+399
+
+Dynamic model
+Basic
+Random
+model
+effects
+(3)
+(4)
+0.0367
+(0.207)
+0.0769
+0.0696
+(5.81e-03)
+(0.0893)
+-770.2
+-753.3
+1244
+1244
+366
+366
+
+Notes: Excludes special ‘feature’ shows; standard errors are in parentheses ().
+
+37
+
+<-----Page 37----->Table 20: Yaari preferences
+
+Parameter
+γ
+ση
+σ
+Log-likelihood
+LR test a
+Observations
+Contestants
+
+Static model
+Random
+Random
+Effects
+Coefficients
+(2)
+(3)
+1.235
+1.134
+(9.20e-03)
+(0.0143)
+0.0169
+0.159
+(6.12e-03)
+(0.0140)
+0.0268
+0.0140
+0.0105
+(1.17e-03) (4.04e-03) (1.20e-03)
+-1088.6
+-953.8
+-993.8
+50.4
+88.6
+{0.000}
+{0.000}
+2834
+2834
+2834
+399
+399
+399
+Basic
+Model
+(1)
+1.134
+(0.0117)
+
+Dynamic model
+Random
+Random
+Effects Coefficients
+(5)
+(6)
+1.563
+1.563
+(0.160)
+(0.528)
+0.0378
+0.288
+(0.0919)
+(0.342)
+0.0727
+0.0655
+0.0727
+(1.19e-03) (0.0394)
+(4.73e-03)
+-766.9
+-746.5
+-766.2
+6.6
+13.6
+{0.010}
+{0.000}
+1244
+1244
+1244
+366
+366
+366
+Basic
+Model
+(4)
+1.268
+(0.109)
+
+Notes: Excludes special ‘feature’ shows; standard errors are in parentheses ().
+a
+The likelihood ratio statistic is reported for the restriction γ = 1. It has a χ2 (1) distribution.
+p-values are in braces {}.
+
+38
+
+

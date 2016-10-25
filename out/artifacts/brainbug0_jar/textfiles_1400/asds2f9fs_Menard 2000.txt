@@ -1,0 +1,1454 @@
+<-----Page 0----->Coefficients of Determination for Multiple Logistic Regression Analysis
+Author(s): Scott Menard
+Source: The American Statistician, Vol. 54, No. 1 (Feb., 2000), pp. 17-24
+Published by: American Statistical Association
+Stable URL: http://www.jstor.org/stable/2685605 .
+Accessed: 18/06/2011 23:13
+Your use of the JSTOR archive indicates your acceptance of JSTOR's Terms and Conditions of Use, available at .
+http://www.jstor.org/page/info/about/policies/terms.jsp. JSTOR's Terms and Conditions of Use provides, in part, that unless
+you have obtained prior permission, you may not download an entire issue of a journal or multiple copies of articles, and you
+may use content in the JSTOR archive only for your personal, non-commercial use.
+Please contact the publisher regarding any further use of this work. Publisher contact information may be obtained at .
+http://www.jstor.org/action/showPublisher?publisherCode=astata. .
+Each copy of any part of a JSTOR transmission must contain the same copyright notice that appears on the screen or printed
+page of such transmission.
+JSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide range of
+content in a trusted digital archive. We use information technology and tools to increase productivity and facilitate new forms
+of scholarship. For more information about JSTOR, please contact support@jstor.org.
+
+American Statistical Association is collaborating with JSTOR to digitize, preserve and extend access to The
+American Statistician.
+
+http://www.jstor.org
+
+<-----Page 1----->forMultipleLogistic
+ofDetermination
+Coefficients
+RegressionAnalysis
+Scott MENARD
+
+forcontinuouspredictedvalCoefficients
+of determination
+logistic
+regressionare examinedfor
+ues (R2 analogs) in
+theirconceptualand mathematicalsimilarityto the familiar R2 statisticfromordinaryleast squaresregression,and
+fordiscretepreof determination
+comparedto coefficients
+An example
+dictedvalues (indexesof predictiveefficiency).
+motivatedby substantive
+concernsand usingempiricaldata
+froma nationalhouseholdprobabilitysample is presented
+coefficients
+of deto illustratethebehaviorof thedifferent
+in theevaluationofmodelsincludingdependent
+termination
+probase rates-that is, different
+variableswith different
+portionsof cases or observationswith"positive"outcomes.
+One R2 analog appearsto be preferableto theothersbothin
+to theordinaryleast squares
+termsof conceptualsimilarity
+and in termsof its relativeinof determination,
+coefficient
+dependencefromthebase rate.In addition,base rateshould
+also be consideredwhenselectingan indexof predictiveefAs expected,theconclusionsbased on R2 analogs
+ficiency.
+are not necessarilyconsistentwith conclusionsbased on
+withrespectto whichof severaloutpredictiveefficiency,
+comes is betterpredictedby a givenmodel.
+KEY WORDS: Explained variance; Likelihood ratio;
+Logit model;Multiplecorrelationcoefficient.
+
+binarydependentvariables.Anotherhindranceto consensus is the existenceof numerousmathematicalequivalents
+to R2 in OLS, which are not necessarilymathematically
+(same formula)or conceptually(same meaningin the contextof themodel) equivalentto R2 in logisticregression.
+for both continuous
+of determination
+Some coefficients
+(predictedprobability)and discrete(predictedclassification)predictedvalues are considered,withtheformergenerallydescribedas R2 analogs and the lattergenerallydeNo claimis made
+scribedas indexesofpredictiveefficiency.
+thatthe resultspresentedhere are "typical"or "average"
+only thatthe resultsilfor the use of these coefficients,
+lustratepossible issues or concernsin using specificmeaan appropriatecoefficient
+sures.The focusis on identifying
+several
+tools for evaluatas one among
+of determination
+regressionmodel
+logistic
+ing the adequacy or utilityof a
+for a trulydichotomousor unorderedpolytomousdependentvariable.Othermeasuresof the adequacy of a logistic regressionmodel whichshouldalso be considered-but
+whichare not reviewedin detail here-include inferential
+testsfortheoverallmodelfitand fortheindividuallogistic
+and logisticregressiondiagnostics
+regressioncoefficients,
+(Landwehr,Pregibon,and Shoemaker 1984; Hosmer and
+Lemeshow 1989; Menard 1995).
+of
+1.1 CriteriaforEvaluating Coefficients
+Determination
+
+Kvalseth (1985, p. 281) proposedeightpropertiesfor a
+"good" R2 statistic.(1) R2 mustpossess utilityas a meareasonable
+In ordinaryleast squares(OLS) multipleregressionanal- sure of goodness of fitand have an intuitively
+dimensionless-that
+is, into
+be
+(2) R2 ought
+ysis thereappears to be a general consensus on the use interpretation;
+model
+variof
+the
+or explainedvariance, dependentof the unitsof measurement
+of the coefficient
+of determination
+depen- ables; (3) the potentialrange of values of R2 should be
+R2, as one indicatorof model fitfora quantitative
+to perfectfitand
+dentvariable,a measureof how stronglythe independent well definedwithendpointscorresponding
+<
+<
+R2
+1, whereR2 -1
+variables,as a set, are relatedto the dependentvariable. completelack of fit,such as 0
+In logisticregressionanalysis,by contrast,thereis as yet correspondsto a perfectfitand R2 > 0 foranyreasonable
+general
+no consensus on how we should calculate corresponding model specification;(4) R2 should be sufficiently
+measuresof thestrength
+of associationbetweenthedepen- to be applicableto anytypeof model,whetherthepredicdentvariableand the totalset of predictors.One reasonis torsare randomor nonrandomvariables,and regardlessof
+because, as describedby Efron (1978), thereis only one the statisticalpropertiesof the model variables(including
+reasonableresidualvariationcriterionforquantitativede- residual e); (5) R2 should not be confinedto any specific
+technique-thatis, it shouldonly reflectthe
+pendentvariablesin OLS, thefamiliarerrorsumof squares, model fitting
+of theway
+fit
+of themodelper se, irrespective
+of
+goodness
+_
+>(y 8)2, butthereare severalpossibleresidualvariation
+"R2
+should be
+been
+in
+model
+has
+derived,
+(6)
+which
+the
+for
+criteria(entropy,squared error,qualitativedifference)
+models fittedto the same
+such thatits values fordifferent
+datasetare directlycomparable";(7) relativevalues of R2
+Scott Menard is a Research Associate at the Instituteof Behavioral oughtto be generallycompatiblewiththose derivedfrom
+Science,University
+of Colorado,910 28th Street,Boulder,CO 80303 (Eotheracceptablemeasuresof fitsuch as standarderrorof
+mail: Scott.Menard@colorado.edu).The authorthanksthe reviewersfor
+and rootmean squaredresidual;and (8) positive
+prediction
+Additional
+theirveryhelpfulcommentson earlierdraftsofthismanuscript.
+resultsreferred
+to in the articleare available fromthe authoron request. and negativeresidualsshouldbe equally weightedby R2.
+1. INTRODUCTION
+
+(A) 2000 Amner
+ican StatisticalAssociation
+
+Statistician,
+TheAmericani
+Febluaty 2000, Vol.54, No. 1
+
+17
+
+<-----Page 2----->Of these eightcriteria,criteria1 (intuitively
+thatis taken)when
+reasonable or on each observation(themeasurement
+interpretation)
+and 3 (endpointscorresponding
+to perfectfit thereis morethanone observationper case. Such measures
+(Ohlin and Dunand completelack of fit)are centralto the followingdis- are called indexesof predictiveefficiency
+cussion.Criterion7 is consideredto some extent,chieflyby can 1949; Menard 1995), and theyuse an absolute,qualicomparingalternative
+of determination,
+coefficients
+butfor tative,"rightor wrong"standardforassessingaccuracyof
+a logisticregressionmodel some of the usual "other"ac- prediction.They are also applicable to antypredictiontaceptablemeasuresof fit(standarderrorof prediction,root ble, whethergeneratedby logisticregression,discriminant
+mean squaredresidual)may notbe appropriate.This is es- analysis,or any othertechnique.
+An alternative
+approachto asking"whether"a predicted
+peciallytrueif the focus is on discreteas opposed to continuouspredictedvalues,as typicallypresentedin theclas- value is corrector incorrectis to ask "how close" the presification
+tablesthatare includedin mostlogisticregression dicted values are to the observedvalues. This approach,
+betweena "near miss" and a
+output(e.g., in SAS, SPSS, or Stata). Criteria2, 4, 5, and 8 unlikethe first,distinguishes
+are satisfiedby all oftheproposedcoefficients
+ofdetermina- predictionthatis veryfarfromthemark.R2 analogsforlotionexaminedhere,and thusare notat issue in thepresent gisticregressionthatcomparethediscreteobservedvalues
+analysis.Criterion6 is somewhatvague as stated,but is (typicallyzero and one fora dichotomousdependentvarihereinterpreted
+(or extended)to suggestthata "good" co- able, or consecutiveintegersfor a polytomousdependent
+efficient
+of determination
+shouldbe suchthatits values for variable) withthe continuouspredictedvalues (probabilidifferent
+modelsshouldbe comparablewhetherthemodels ties) thatresultfromapplyingthelogisticregressionequadifferin one or morepredictors(as impliedin thecriterion tion take thislatterapproach.As describedand illustrated
+as stated)or in the dependentvariableor in whetherthe by DeMaris (1992), Menard (1995), and Ryan (1997), R2
+for different
+sub- and its analogs do not necessarilyproduceresultsconsismodels are specifiedas being different
+eitherwithina
+of de- tentwithmeasuresof predictiveefficiency,
+sets of the dataset.Suggestingthatthe coefficient
+models.
+shouldbe comparableacross notonlydifferent singlemodel or in comparisonsof different
+termination
+predictors,but different
+dependentvariablesand different
+2. R2 ANALOGS FOR (CONTINUOUS) PREDICTED
+subsetsof thedataset,probablyconstitutesan extensionof
+PROBABILITIES
+the criterionproposedby Kvalseth,but the extensionis a
+Althoughtheremay be instances,especiallyin applied
+reasonableone. It allowsus to answercertainquestionsthat
+in thediscrete,rightmay arise in practical,empiricalresearch,such as compar- research,whenwe are moreinterested
+isons of the adequacy of models across subgroupsdefined or-wrongpredictionsembodiedin thepredictionor classiin termsof genderor ethnicity,
+or models with different ficationtable generatedby logisticregression,in most inbut relateddependentvariables,such as more or less seri- stances we will probablybe more interestedin how well
+ous outcomes(e.g., moreor less seriousformsof crimeor the model predictsthe probabilityof group membership
+substanceuse, or moreor less seriousillnessor injury,with withrespectto thedependentvariable.In thiscase, we are
+the expectationthatbase ratesmay be higherforthe less comparinga dichotomous(or polytomous)observedvalue
+seriousformsandlowerforthemoreseriousforms).As one witha continuouspredictedvalue forthe dependentvariacross dif- able. Several alternativemeasuresor analogs of R2 have
+reviewercautions,comparisonsof performance
+ferentdatasetsmake sense onlyif theexplanatory
+variables been proposedforthispurposein logisticregression.These
+have a meaningfully
+defineddistribution-forexample,es- measuresare based on thefollowingquantities:
+timatesof populationdistributions.
+Otherwise,the criteria
+n = totalsample size, thenumberof cases (people,cities,
+are highlysensitiveto the dispersionof the explanatory
+percase, or the
+widgets)assuminga singleobservation
+variablesactuallyencounteredin the set of data, and this
+numberof observationswhen thereare multipleobmaybe somewhatarbitrary
+by explicitchoice or by design.
+servationsper case (as forexamplein discreteevent
+In theexamplesselected,theseconditionsforcomparisons
+historymodels with pooled time series and crossacross datasetsare met.
+sectionaldata; see, e.g., Allison 1995).
+LO = thelikelihoodfunctionforthemodel containingonly
+1.2 DiscreteVersus ContinuousPredictedValues of the
+theintercept.
+DependentVariable
+LM = the likelihoodfunctionforthe model containingall
+There are two basic approachesto evaluatingthe associof thepredictors.
+ationbetweentheindependent
+variablesand thedependent
+GM = -2[In (LO) - ln(LM)] = themodel chi-squarestatisvariable in logistic regressionanalysis. One approachtic.
+discussedby Ryan(1997), Menard(1995), and Hosmerand
+the predictedvalue of the dependentvariableY obLemeshow (1989)-is to comparepredictedand observed
+fromthe model,a continuousprobabilitywith
+tained
+discretevalues of thedependentvariable,usingthepredica
+value
+betweenzero and one.
+tiontable commonlyoutputin standardlogisticregression
+y
+observed
+value of thedependentvariableY, coded
+=the
+statisticalpackages such as SAS, SPSS, and Stata, and to
+integer
+value.
+as
+a
+discrete
+classifyas "errors"qualitativedifferences
+betweentheobservedand predictedoutcomesfor each case (the person,
+themeanvalue of thedependentvariableY, a continplace, or thingon whichmeasurement
+is beingperformed)
+uous probability.
+-
+
+18
+
+General
+
+<-----Page 3----->The R2 analogsto be comparedforcontinuouspredicted the proportionalreductionin errorvariancein the dependentvariablein theoriginalmetric;(3) it variesin principle
+values in thisstudyare:
+fromzero forcompletelack of fitto one forperfectfit;and
+(4) it makes possible directcomparisonsbetweenlogistic
+RO- i - E(y _ )2 /E(y _ -)2
+regressionand modelsbased on OLS.
+(theordinaryleast squares R2), (1)
+Withregardto the firstrationale,it seems superficially
+reasonableto use Ro as itsown analog (itis, afterall, math2
+ematicallyequal to Ro forOLS), but RI in OLS is based
+R
+/ln(LO)
+[ln(LO)- ln(LA/I)]
+on the quantityactuallybeing minimized.The same is not
+1- [ln(LAY)/ln(Lo)]
+trueformaximumlikelihoodlogisticregression.OLS and
+(2) maximumlikelihoodlogisticregressionare based on min(thelog likelihoodratioR2),
+quantities,which may be described
+imizingtwo different
+2
+Efron
+(1978)
+as a squarederrormeasureof residfollowing
+I (Lo/LmI)2/nh
+R
+ual variationforOLS and an entropymeasureof residual
+(thegeometricmean squared
+variationfor maximumlikelihoodlogisticregression.Ro
+(3) in maximumlikelihoodlogisticregressionis thus matheimprovement
+per observationR2),
+maticallyequivalent(same formula)but not conceptually
+equivalent(in the sense of beingbased on thequantitythat
+[I - (L0/LAI)2/n] [
+R
+(Lo )2/n]
+as a proporis being minimized,and being interpretable
+tionalreductionin thatquantity)to RI in OLS regression.
+(the adjustedgeometricmean
+(4) Withregardto the second rationaleforusing Ro in logisR2),
+squaredimprovement
+observednumerical
+tic regression,it is not the (arbitrary)
+values of the(dichotomous)dependentvariablethemselves
+and
+thatare of concern,but rathertheprobabilitythatthe dependentvariablehas one or the otherof these values. (A
+coefficient
+R2).
+RC - G
+GI/(GNI + n)(the contingency
+(5) bettercase mightbe made forRo if thedependentvariable
+is at least ordinal,butas indicatedearlier,theuse of logistic
+All of these R2 analogs can be calculatedby hand from regressionforordereddependentvariablesis notconsidered
+quantitiescommonlyprovidedin logisticregressionoutput in detailhere.)In thissense,Ro onlypartiallysatisfiesthe
+meaningful;it has a clear incriterionof being intuitively
+fromstatisticalpackages such as SAS, SPSS, and Stata.
+in logisticregression(in termsof the
+tuitiveinterpretation
+2.1 RO: The OLS R2 in LogisticRegressionAnalysis
+numericalvalues of the dependentvariable),but it is not
+in whichwe are mostinterested.
+forlogisticre- reallytheinterpretation
+One possible coefficient
+of determination
+The thirdrationaleis moreapplicable,butwould usually
+gressiondiscussed by Agresti(1990, pp. 111-112; 1996,
+p. 129), Maddala (1983, pp. 38-39), and Menard(1995, pp. notbe a compellingreasonforselectingRO over otherR2
+analogs forlogisticregression.It is truethatRO variesin
+RO - 1_ [E(y _)2/
+23-24)is theOLS R2 statistic
+(y _
+(SSE/SST) = (SST - SSE)/SST = SSR/SST principlebetweenzero and one, withzero indicatingcom1)2] =
+(fromEquation(1), and herealso expressedin termsof the plete lack of fitand one indicatingperfectfit.In practice,
+sum of squared errors),where RO is the familiarcoeffi- RI is usually less than one (just as it is in OLS regrescientof determination
+used in OLS (here subscripted"O" sion). Given the inherentinaccuracyof using a symmetric
+ofthebivarito referto OLS regression);SST
+(y _ -)2 is the total measureof associationto measurethestrength
+betweenone dichotomousvariable(theobsumof squarederrorsforthemodelwithonlytheintercept; ate relationship
+SSE = -(y _ )2 is the sum of squarederrorsforthe full servedvalue y) and one continuousvariable(thepredicted
+is
+Thefourth
+rationale
+reasonable.
+valueya),
+thisis perfectly
+and SSR = SST-SSE
+modelincludingall of thepredictors;
+is theregressionsumof squares.Note thatRO can be calcu- technicallycorrect,butagainnotverycompelling.Comparmodel and a logisticregreslatedforbothdichotomousandpolytomousdependentvari- ing Ro fora linearprobability
+in sion model maybe usefulfordidacticpurposes,butwould
+ables. For a polytomousdependentvariable,membership
+each category(coded as zero or one) can be comparedto appearto have littlepracticalapplication.
+the predictedprobabilityof membershipin each category
+2.2 RL: The Likelihood Ratio R2
+witheach categoryof
+(coded as a continuousprobability),
+the dependentvariableprovidingone observation(the obRLasdescribedby McFadden (1974; see also the footservedclassification
+percase. note in Maddala 1983, p. 40), Knoke and Burke(1980, pp.
+plus thepredictedprobability)
+The easiest computationalapproachis to simplycalculate 40X41),Hosmer and Lemeshow (1989, pp. 148-149), Dewhat Kv'alseth(1985) designatedas R6, the squared cor- Maris (1992, pp. 53-54), and Menard (1995, p. 22) may
+relationbetweenthe predictedprobabilitiesand observed be calculated as the differencebetween the initial and
+membershipor nonmembership
+in each category(butnote model -2 log-likelihoodstatistics,divided by the initial
+on theuse of R62).The rationalefor -2 log-likelihoodstatistic(Equation (2) or equivalently):
+Kvalseth'sreservations
+using Ro is (1) it is the identicalmeasurethatis used in
+RL=-2 [1n(Lo))-ln (Ls )]//-2 [1n(Lo)] =[ln (Lo)
+1
+as ln(LM)]/ln(Lo) 1-[ln(LMI)/ln(Lo)]
+ordinaryleast squares regression;(2) it is interpretable
+=GAI/ /-2[ln(Lo)],
+-
+
+-
+
+February2000, Vol.54, No. 1
+Statisticiani,
+The Americant
+
+19
+
+<-----Page 4----->whereG.Alis themodel chi-squarestatisticand -2[ln(Lo)] (SAS Institute1995) and SPSS-Windows(Norusis1997),is
+is the initial -2 log-likelihoodstatistic,both commonly R1, - 1-exp{-(2/n)[ln(LAJ)-ln(Lo)]} - 1-(Lo/LAI)2/n
+providedin the outputfromlogisticregressionsoftware. (Equation (3)) wherethe subscript"M" refersto the use
+per observaAs notedby Hosmer and Lemeshow(1989, p. 14), the -2 of the geometricmean squaredimprovement
+log-likelihoodstatisticis identicallyequal to the sum of tion interpretation
+of the statistic.Like R', R' is based
+squared errorswhen computedfor OLS. The parallel for on thelikelihoodstatisticforthelogisticregressionmodel,
+logisticregressionis close conceptuallyas well as math- and can be calculatedforpolytomousas well as dichotoematically.The quantity-2[ln(Lo)] representsthe "error mous models. Unlike R', however,it cannothave a value
+variation"(Nagelkerke1991) of the model with only the of one even whenthemodelfitsthedata perfectly,
+as noted
+interceptincluded,analogous to the total sum of squares by Maddala (1983), Nagelkerke(1991), and Ryan (1997).
+SST in OLS; -2[ln(LA(r)1similarlyis the "errorvariation" MaximumR1 = 1 - exp[21n(Lo)/n]= 1 - L2/n (Nagelkfora model withall of the predictorsincluded,analogous erke 1991). NagelkerkerecommendedadjustingRM by its
+to theOLS errorsumof squaresSSE. Justas OLS attempts maximum
+[1- L/n)2/?12/
+to produceRN = [I - (Lo/LQB
+to minimizetheerrorsum of squares,maximumlikelihood (as in Equation (4)), wherethe subscriptN here refersto
+logisticregressionseeks to minimizethe -2 log-likelihood Nagelkerke,and the n in the formularefersto the sample
+to maximizethe likelihoodfunc- size. Like R 2 , RN is includedin SPSS and SAS outputfor
+statistic(or equivalently,
+re- logisticregression.
+as theproportional
+tion).Justas RO can be interpreted
+as
+ductionin theerrorsumof squares,RL can be interpreted
+in the
+In its unadjustedform,R 2 may be interpreted
+theproportional
+reductionin the-2 log-likelihoodstatistic. OLS contextin termsof thegeometricmean improvement
+of the total and regressionsum of squared (or reductionin error)per observationproducedby thefull
+The treatment
+errorsto constructRO in OLS is thusdirectlyparallel to modelas opposedto themodelwithonlytheintercept
+(Cox
+of thetotaland regression"errorvariation"to and Wermuth1992). Geometricmean squarederroris not,
+thetreatment
+constructRL in the logisticregressionequation,including however,the criterionbeing minimizedin maximumlikeRL naturallyvaryingbetweenzero and one, and havinga lihood logisticregressionmodels,so at best
+Rm, like RO,
+reductionin errorinterpretation.
+proportional
+onlypartiallysatisfiesthecriterionof havingan intuitively
+Hosmerand Lemeshow(1989, p. 149) expressedreservaEven this partial advantageis
+meaningfulinterpretation.
+measurefor
+tionsabouttheuse of RI as a goodness-of-fit
+lost for the adjustedRN. Given the dependencenotedby
+logisticregression,notingthat"RL is nothingmore than
+Ryan (1997) of R 2 on thebase rate,ny=1/12 (theproporan expressionof the likelihoodratio test and, as such, is
+tionof cases forwhichY = 1), it shouldbe comparablein
+This likelihoodratiotest
+not a measureof goodness-of-fit.
+modelson
+bothadjustedand unadjustedformsfordifferent
+comparedfittedvalues undertwo modelsratherthancomthesame dataset,butnotnecessarilyforthesame modelon
+paringobservedvalues to those fittedunderone model."
+different
+dependentvariables,or different
+datasets,different
+Note, however,thatthe comparisonof fittedvalues under
+subsamples,since thebase ratemay varyfromone dataset
+model and a model withall
+two models (an intercept-only
+to another.
+of thepredictorsincluded)is also one conceptualinterpretationof RO, mathematically
+operationalizedin Equation
+(1); theparallelhere is betweenR3 = - (SSE/SST) for 2.4 RI and RW: The ContingencyCoefficient
+R2 and
+OLS and RL 1 - [ln(Lm)/ln(Lo)]forlogisticregression.
+the Wald R2
+Hagle and Mitchell(1992) notedthatRL2tendsto underestiAldrich and Nelson (1984) proposed the use of a
+betweenthepredictors
+matethestrength
+of therelationship
+2C
+pseudo-R2 measure calculated as in Equation (5): R2
+and the dependentvariablewhen the dichotomousdepenwherethesubscriptC is used to indicatethat
+continuousvariable. GM/(GA,++n),
+dentvariablerepresents
+an underlying
+coefficient
+thisis a variantof thecontingency
+(e.g., Agresti
+As DeMaris (1992, p. 56) noted,however,thiscriticismof
+and Finlay 1986, p. 218). Since GM is derivedfromthe
+RL is invalidwheneverthe dependentvariableis trulydilikelihoodfunction,R2 has the advantageof being based
+thatthe resultsunfavorchotomous.It is also noteworthy
+on a quantitythe model triesto maximize,and it is readable to the use of RL are limitedto the case in whichthe
+ily
+applicable to both polytomousand dichotomousmodFor skewedand biresidualsare trulynormallydistributed.
+els.
+However,R2C has the same mathematicalformas the
+modal distributions,
+RL was numericallyclosest to RO of
+coefficient
+forcontingency
+tables,and
+contingency
+squared
+all the measurescomparedby Hagle and Mitchell(1992,
+coefficient
+itcannotequal one,evenfor
+likethecontingency
+pp. 772-773).
+because of the addition
+a model thatfitsthedata perfectly,
+of the sample size n to GM in the denominator.
+Moreover,
+2.3 RM and RN: Unadjusted and Adjusted Geometric thedependenceof R2 on the samplesize n meansthatthe
+Mean Squared Improvement
+upperbound varies fromone subsampleor datasetto anAnotherproposed R2 analog, described by Maddala other.A similarproposedR2 analog, describedby Magee
+(1983, pp. 39-40), Cox and Snell (1989), Magee (1990), (1990) as Rw=W/(WV + ni),is based on the multivariate
+thesame disadvantagesforthe
+formulain a Wald statisticWi,butsuffers
+Ryan (1997, p. 267), and (using a different
+as
+different
+context,survivalanalysis) by Allison (1995, p. same reasons(theadditionof nito thedenominator)
+,
+248), and implementedin the mostrecentversionof SAS and is not examinedin detailhere.
+_
+
+20
+
+General
+
+<-----Page 5----->Hagle and Mitchell(1992) suggesteda correctionforRC
+to allow it to varyfromzero to one,butas in thecase of adjustinganycoefficient
+of determination,
+thisraisesthepossibilitythatforcomparisonsacross models or subsamples,
+theadjustedand unadjustedmeasuresmayproducecontradictoryconclusionsaboutwhichof the models or subsamples producesthebetterfit.The unadjustedRC thus(a) does
+not reallysatisfythe criterionof an intuitively
+reasonable
+interpretation
+(at least in the sense of being describableas
+a coefficient
+thatminimizesa reasonablemeasureof model
+variation)and (b) also fails to satisfythe criterionof fixed
+to perfectfitand perfectlack of fit.
+pointscorresponding
+The adjustedRC, whichis not examinedin detailhere,(a)
+is even worsewithrespectto lackingan intuitively
+reasonable interpretation,
+but(b) does have fixedendpointscorrespondingto perfectfitor completelack of fit.As withRN,
+forcomhowever,thereis reasonto questionits suitability
+paringmodels with different
+dependentvariablesor subsamples.
+
+pendentvariable;(c) fij is the numberof cases observed
+as havingdiscretevalue i and predictedas havingdiscrete
+value j; (d) fi is the numberof cases for whichthe predicted value is equal to the observedvalue; (e) fi is the
+numberof cases observedas havingdiscretevalue i (i.e.,
+the row sum >,,(fij) where the rows representobserved
+values and the columns representpredictedvalues); and
+
+(f) E(fij) = [(fJij)][j(fij)]/n
+
+is theexpectedcell fre-
+
+quencyforanycell [so E E(fii) is theexpectednumberof
+correctlyclassifiedcases], calculatedas theproductof the
+row sum >9j and the columnsum ,, dividedby thetotal
+reduction
+sample size. All threeindexeshave proportional
+in errorinterpretations
+indicat(withnegativecoefficients
+ing an increasein error),with a value of zero indicating
+no relationshipand a value of one indicatingperfectprediction.Statisticalsignificancefor all threecan be tested
+to thebinomialtest,using
+usingthenormalapproximation
+theproportionof errorswithoutthepredictorsas thecriteof errorswiththemodel as thetest
+rionand theproportion
+details
+statistic,as describedin Menard(1995). For further
+3. INDEXES OF PREDICTIVE EFFICIENCY FOR
+on the indexes,see Menard (1995); for comparisonswith
+CLASSIFICATION TABLES
+otherindexes of predictiveefficiency,
+see Menard (1995)
+The literature
+comparingindexesof predictiveefficiency and Soderstrom(1997).
+forpredictionand classificationtables (whichmaybe generatednot onlyby logisticregressionanalysis,but also by
+4. EMPIRICAL COMPARISON OF COEFFICIENTS
+discriminant
+analysis and othertechniques)goes back at
+OF DETERMINATION
+least to Ohlinand Duncan (1949), and was reviewedin deof determination,
+a
+coefficients
+To illustratethedifferent
+tail by Menard (1995). He recommendedthreeindexesof
+series
+of
+were
+estimated
+using
+logisticregressionequations
+predictiveefficiency,
+applicable to both dichotomousand
+dependentvariables.Data
+polytomousdependentvariables,withthechoice amongthe thesame predictorsbutdifferent
+threedependenton whetherthebase rateand the selection are takenfromtheNationalYouthSurvey(NYS), a national
+ratioor selectionthresholdare fixed.The base raterefersto householdprobabilitysampleof individualswho were 11theproportion
+of cases forwhichy = 1 (or fory = 0, ifthat 17 yearsold in 1976. For presentpurposes,we focuson data
+whowere 15-18 yearsold
+is the smallerof the two categories,since the codingmay from1980,from917 respondents
+of
+All data involveself-reports
+be reversedwithoutaffecting
+statisticalsignificanceor the at thetimeof theinterview.
+behaviorof friends,one's own behavior,and soThe selectionratiois thepropor- attitudes,
+magnitudeof coefficients).
+For a detaileddescription
+tionof cases forwhichy 1, and is of concernonlywhen ciodemographiccharacteristics.
+some fixedproportionof cases is in some sense "selected" of the sample,includinga discussionof thereliabilityand
+data on illegal behavior,see Elliott,
+as successes(e.g., selectedforcollege admissionor impris- validityof self-report
+onment)or equivalentlywhenthe thresholdor "cut point" Huizinga,and Menard(1989). The dependentvariablesare
+typesof illicitdruguse and otherformsof illegal
+forclassification
+is fixedat some value otherthantheusual different
+expectedvalue of 1/k,wherek is thenumberof categories behavior,deliberatelyselectedto rangefromlow (approxi50%) base rates.When
+in the dependentvariable.Eitheror both the base rate or mately1%) to high(approximately
+theselectionratiomaybe fixed,theformerby samplingon Pr(Y = 1) > .50, the model is essentiallyredundantwith
+the dependentvariableor by samplinga populationwitha a model in whichthe coding of the dependentvariableis
+knownbase rate,thelatteras a matterof policyor as a mat- reversed,from(0,1) to (1,0).
+types of
+Separate models were calculated for different
+terof ndcisionby theresearcher(e.g., settingthe selection
+offensesand for males and females.Theoretically,it has
+ratioequal to thebase rate).The indexesare definedas
+been argued that our models of illegal behaviormay be
+1
+(ri-S
+fii) /(nl-rmode ),
+bettersuitedto the explanationof more generalor minor
+1
+formsof illegal behaviorthanmore seriousformsof illeand Hirschi
+gal behavior(Elliottet al. 1989; Gottfredson
+1
+1
+-(nfii)/[Z fi(n-f):l
+1990), and also thatmodels forexplainingillegal behavior
+(and modelsin thebehavioralsciencesmoregenerally)have
+and
+been based primarilyon the behaviorof males, and thus
+may be moreapplicableto explainingmale ratherthanfeq$p =11 -n- 5fi)/[n -E
+(f)]
+male illegalbehavior(Daly and Chesney-Lind1988; Hagan
+where (a) rnis again the sample size; (b) rimode is the ob- 1989; Chesney-Lindand Shelden 1992). From a practical
+servednumberof cases in the modal categoryof the de- perspective,if such assertionsare true,thenin the designs
+-
+
+February2000, Vol.54, No. 1
+TheAmericanStatistician,
+
+21
+
+<-----Page 6----->of Determination,
+Full Sample
+Table 1. ClassificationTables and Coefficients
+tables
+Prediction/classification
+
+Dependent variable
+
+Predictiveefficiency
+Predicted
+
+Sexual assault
+
+0
+Observed:
+
+Ap=
+
+1
+
+0
+
+No
+
+909
+
+0
+
+1
+
+Yes
+
+9
+
+0
+
+R
+
+.000
+.000
+
+R=
+
+% correct= 99.0
+
+Sellingillicithard
+
+Predicted
+Observed:
+
+Ap=
+
+RO = .132
+
+.000
+
+RL = .312
+
+0
+
+1
+
+0
+
+No
+
+898
+
+0
+
+Tp =.489
+p= .000
+
+R=
+
+1
+
+Yes
+
+19
+
+0
+
+% correct= 97.9
+
+RN = .334
+
+drugs (excludes
+
+base rate = 2.1%
+
+.061
+
+R = .059
+
+Felonyassault
+
+Predicted
+
+assault with
+(battery,
+
+0
+
+1
+
+a weapon)
+
+.020
+
+RN = .196
+RC = .020
+
+base rate = 1.0%
+
+marijuana)
+
+= .052
+
+RL = .187
+
+p =.495
+p=
+
+Explained variation
+
+Observed
+
+Ap
+
+RO = .128
+
+-.022
+
+RL = .152
+
+0
+
+No
+
+823
+
+4
+
+Tp =.433
+p= .030
+
+1
+
+Yes
+
+88
+
+2
+
+%correct= 90.0
+
+base rate = 9.8%
+
+= .093
+
+R
+
+= .196
+RN
+NRC = .089
+
+Predicted
+
+Hard illicitdruguse
+
+0
+
+1
+
+0
+
+No
+
+770
+
+25
+
+1
+
+Yes
+
+88
+
+34
+
+(excludes marijuana)
+Observed:
+
+.074
+
+RO = .237
+
+Tp =.466
+.316
+%correct= 87.7
+
+RM = .190
+
+Ap=
+<=
+
+base rate = 13.3%
+
+RL = .269
+= 350
+RN
+NRC = .174
+
+Serious non-drug
+
+Predicted
+
+.121
+
+RO = .192
+
+offending
+(theftand
+
+0
+
+1
+
+p = .492
+
+RL = .194
+
+785
+
+8
+
+.257
+
+RM = .143
+RN = .261
+
+assault)
+
+Observed
+
+0
+1
+
+No
+Yes
+
+101
+
+Ap=
+
+73
+
+<p=
+
+%
+
+correct=
+
+88.1
+
+RC =. 133
+
+base rate = 13.5%
+General illicitdrug
+
+Predicted
+0
+
+1
+
+0
+
+No
+
+467
+
+83
+
+1
+
+Yes
+
+127
+
+239
+
+use (marijuanaplus
+harddrugs)
+
+Observed:
+
+Ap=
+
+.426
+
+RL = .255
+
+Tp =.522
+.512
+
+RM = .291
+
+% correct= 77.1
+
+RN = .393
+
+RC = .256
+
+General offending
+
+Predicted
+Observed:
+
+Ap=
+
+0
+
+1
+
+.397
+
+Tp=.404
+
+0
+
+No
+
+341
+
+122
+
+<=
+
+1
+
+Yes
+
+151
+
+302
+
+% correct= 70.2
+
+base rate = 49.5%
+
+of interventions
+to reduceillegal behaviorit may be inappropriateto design a single intervention
+to be universally
+applied.At theveryleast,differences
+in theeffectiveness
+of
+themodel fordifferent
+groups(defined,in thisexample,in
+termsof thetypeof offending
+or genderdifferences)
+needs
+to be consideredin benefit-cost
+calculationswhenmaking
+policy decisions.Polytomousmodels were also examined,
+primarilyto examinethe use of the different
+R2 analogs
+in the contextof polyand indexesof predictiveefficiency
+tomousmodels.For reasonsof space,resultsforthegenderspecificmodelsare summarizedbutnotpresentedin detail,
+and resultsof thepolytomousmodels,whichadded nothing
+of substanceto the resultspresentedherebased on the diGeneral
+
+= .314
+
+<=
+
+base rate = 40.0%
+
+22
+
+R
+
+.403
+
+R0 = .260
+RL =.211
+R=
+
+.254
+
+RN = .338
+RC = .226
+
+chotomousdependentvariables,are notpresentedhere,but
+thoseresultsare available on request.
+in all of themodelsare (a) gender(male or
+The predictors
+female),used to identifysubsamplesin the genderspecific
+models but used as a predictorin the models for different offenses;(b) ethnicity(non-HispanicEuropean American, AfricanAmerican,and Other;the last categoryinAsian,NativeAmerican/American
+cludesLatino/Hispanic,
+(c) an indexof how wrongthe
+Indian,and otherethnicities);
+illegal acts,
+respondentbelieves it is to commitdifferent
+coded as consecutiveintegervalues from0 to 16, withhigh
+values indicatingstrongbeliefs againstviolatingthe law;
+and (d) an index of how manyof one's friendshave comillegal acts, coded as consecutiveintegers
+mitteddifferent
+
+<-----Page 7----->of Determination
+Table 2. CorrelationsAmongBase Rate and Coefficients
+
+r (n= 7) Base rate
+Base rate
+
+1.000
+
+Ap
+
+Ap
+
+ip
+
+qp
+
+R2
+
+RL2
+
+R2
+
+R2
+
+.962
+
+-.315
+
+.863
+
+.834
+
+.002
+
+.910
+
+.597
+
+.903
+
+1.000
+
+-.052
+
+.903
+
+.852
+
+.121
+
+.910
+
+.676
+
+.900
+
+1.000
+
+Tp
+
+.018
+1.000
+
+op
+
+-.025
+.960
+
+RO
+021.000
+RL2
+
+.373
+
+-.110
+
+.169
+
+.976
+
+.739
+
+.974
+
+.317
+
+.982
+
+.832
+
+.984
+
+.184
+
+.778
+
+.181
+
+1.000
+
+.759
+
+1.000
+
+1.000
+
+1.000
+
+RN
+
+.757
+1.000
+
+RC
+
+base rate
+
+-.120
+
+.179
+
+RM
+
+r2with
+
+R2
+
+1.000
+
+.925
+
+.099
+
+.901
+
+.696
+
+.000
+
+.828
+
+.356
+
+.815
+
+are so
+of determination
+from0 to 20, withhighvalues indicatingextensiveillegal general,most of the coefficients
+behavioramong one's friends.These predictorswere se- highlycorrelatedwiththebase ratethatthebase rateitself
+lected for theoreticaland empiricalrelevance(see Elliott could practicallybe used as a coefficient
+of determination.
+et al. 1989), and also to representthe combinationof bi- This latterfindingis moreexplicitlyillustratedin Table 2,
+nary,categorical,and more or less continuouspredictors in which the intercorrelations
+coefficients
+of the different
+one would expectin logisticregressionanalysis.
+(to givejust a roughidea of the relationof determination
+for the models for the seven di- shipsamongthecoefficients),
+Summaryinformation
+and theircorrelationwiththe
+chotomousdependentvariablesforthe full 15-18 yearold base rate, are presented.Only
+Tp and RI have very low
+on (less than.100) squaredcorrelationswiththebase rate,alsample is presentedin Table 1. Detailed information
+the individualpredictorshas been omittedhere since it is thoughtheNagelkerkeRN clearlyis an improvement
+over
+notdirectlyrelevantto thediscussion,butthatinformation
+the Cox-WermuthRI in the sense of havinga lower (but
+is availableon request.The modelchi-squareforall of the
+stillsubstantial)correlationwiththebase ratethanR4. In
+in Table 1 is statistically
+modelsrepresented
+with
+significant
+the
+models,thebase rateproblempersists,
+gender-specific
+P = .000. The leftmostcolunn in Table 1 identifies
+thedeof base rate.
+withonlyRI and Tf beinglargelyindependent
+pendentvariableand indicatesits base rate (thepercentof
+,
+,
+or
+RI,
+R ,
+R R Ap,
+Substantively,
+I?p all indicate
+cases forwhichY = 1). The second columnfromthe left
+containsthe predictiontable resultsfromthe logisticre- that less serious or more general behavior is betterexgressionmodels.The thirdcolumnpresentstheindexesof plained by the model than more serious behavior.Using
+is not quite
+predictiveefficiency
+and also thepercentof cases correctly R2, however,it appearsthatgeneraloffending
+but
+well
+as
+the
+more
+serious
+index
+offending,
+as
+explained
+in
+The
+classifiedby the model the predictiontable.
+rightis
+than
+the
+more
+serious
+hard
+use
+better
+explained
+drug
+that
+most columnpresentsthe fiveR2 analogs for continuous
+are not large in either
+predictors.To illustratethe computationof the indexesof general drug use. The differences
+the
+model
+does betterin excase.
+it
+that
+Using Tp, appears
+predictionin Table 1, forhardillicitdruguse,
+plainingless seriousor more generaldruguse, but otherfii)/(nr-rnmode)
+AP 1-(nwise does a betterjob of explainingmoreseriousthanless
+The resultsfortheR2 analog RL are op= 1 - (917 - 804)/(917 - 795) = .074; seriousoffending.
+positeto theresultsfortheindexof predictiveefficiency
+Tp
+withrespectto which,druguse or otherillegalbehavior,is
+fii)/[
+betterexplainedforthemoreseriousthanfortheless serifi(nr-fi)/n]
+Tp = 1-(n-Z
+in conclusionsbeous formof thebehavior.This difference
+= 1 - (917 - 804)/[(795)(122)/917
+is
+tweenRL and Tp or otherindexesof predictiveefficiency
++(122)(795)/917] = .466;
+reasonable,and notat all unexpected,forreasons
+altogether
+detailedabove and in Menard (1995). Overall,RL and Tp,
+and
+in contrastto theothercoefficients
+of explanation,indicate
+no systematicrelationshipbetweenthe seriousnessof the
+fii)/[n-Z
+E(fii)]
+-p = 1-(n-Z
+offenseand the accuracyof predictionforthemodel.With
+= 1 - (917 - 804)/[917- (858 x 795/917
+to the gender-specific
+models,R4 and RN somerespect
++59 x 122/917)]= .316.
+timesproducecontradictory
+results,as anticipated.SpecifiRM is higherfor
+FromTable 1, it is readilyapparentthat(1) different
+co- cally,formoreseriousnondrugoffending,
+of determination
+efficients
+answersto the males,but RN is higherforfemales.In general,exceptfor
+producedifferent
+substantivequestionof whetherless seriousbehaviorsare resultsthatcan be explainedin termsof base rate depenof determination
+indicates
+betterexplainedthan more serious behaviors,and (2) in dence, none of the coefficients
+TheAmericanStatistician,
+February2000, Vol.54, No. 1
+
+23
+
+<-----Page 8----->a clear,consistentrelationshipbetweengoodness of fitor peculiarto thedata used here,or generalizableto a broader
+rangeof data.
+explanatorypowerand gender.
+[ReceivedFebruary1997. RevisedJanuary1999.]
+
+5. CONCLUSION
+
+REFERENCES
+and R2 analogs
+All of theindexesofpredictiveefficiency
+reviewedherecould reasonablybe used to comparemodels Agresti,A. (1990), CategoricalData Analysis,New York:Wiley.
+to CategoricalData Analysis,New York:
+(1996), An Introduction
+involvingdifferent
+predictorsbutthe same dependentvariWiley.
+able and the same sample,withthe arguableexceptionof Agresti,A., and Finlay,B. (1986), StatisticalMethodsfor theSocial Sciences (2nd ed.), San Francisco:Dellen/Macmillan.
+RO (because RO may decrease when additionalvariables
+are added to the model). To this extent,they all satisfy Aldrich,J. H., and Nelson, F. D. (1984), Linear Probability,Logit,and
+ProbitModels, BeverlyHills, CA: Sage.
+Kvalseth's sixthcriterion,thattheybe comparableacross
+Allison,P. D. (1995), SurvivalAnalysisUsingtheSAS System:A Practical
+different
+modelsfittedto the same dataset.All can be used
+Guide,Cary,NC: SAS Institute.
+forbothtrulydichotomousand unorderedpolytomousde- Chesney-Lind,M., and Shelden,R.G. (1992), Girls,Delinquency,and Juof determination venileJustice,PacificGrove,CA: Brooks/Cole.
+pendentvariables.All of the coefficients
+consideredherecould also be appliedto modelsforordered Cox, D. R., and Snell,E. J.(1989), TheAnalysisofBinaryData (2nd ed.),
+London: Chapmanand Hall.
+as well as unorderedpolytomousdependentvariables,but Cox, D. R., and Wermuth,N. (1992), "A Commenton the Coefficientof
+witha polytomousorderedmodel or witha dichotomous Determinationfor BinaryResponses,"The AmericanStatistician,46,
+1-4.
+model in whichthe dichotomyonlyrepresentscrudemeaJussurementof an underlyingcontinuousvariable,theremay Daly,K., and Chesney-Lind,M. (1988), "Feminismand Criminology,"
+tice Quiarterly,
+5, 497-538.
+of
+debe othermeasuresthatcould be used as coefficients
+DeMaris, A. (1992), Logit Modeling: Practical Applications,Newbury
+As notedin Menard(1995, p. 86-90) however, Park,CA: Sage.
+termination.
+models otherthanlogisticregressionmay be preferablein Efron,B. (1978), "RegressionandANOVA withZero-OneData: Measures
+of Residual Variation,"Journalof theAmericanStatisticalAssociation,
+such cases.
+73, 113-121.
+Althoughfor some purposes thereappears to be little
+Elliott,D. S., Huizinga,D., andMenard,S. (1989), MultipleProblemYouth:
+reasonforpreferring
+over
+one coefficient
+of determination
+Delinquency,SubstanceUse, and Mental Health Problems,New York:
+to theotherR2 analogsin two
+another,
+Springer-Verlag.
+RL seemspreferable
+M., and Hirschi,T. (1990), A General Theotyof Crime,Palo
+R2Lhas themostintu- Gottfredson,
+respects.Firstand mostimportantly,
+reduction Alto: StanfordUniversityPress.
+as a proportional
+itivelyreasonableinterpretation
+New Brunswick,NJ: Rutgers
+Hagan, J. (1989), StructuralCriminology,
+in errormeasure,parallelto RO. Second,RL standsout for
+Press.
+University
+its independencefromthe base rate,relativeto otherR2 Hagle,T. M., andMitchell,G. E., 11(1992), "Goodness-of-Fit
+Measuresfor
+Probitand Logit,"AmericanJournalofPoliticalScience, 36, 762-784.
+analogs,makingit the mostgenerallyapplicable and consistentlyusefulof the R2 analogs. In the presentexample, Hosmer,D. W., and Lemeshow,S. (1989), Applied LogisticRegression,
+New York:Wiley.
+on the sewitha manipulatedbase ratebut no constraints
+Knoke,D., and Burke,P. J.(1980), Log-LinearModels,BeverlyHills, CA:
+lectionratio,Tfpalso standsoutforitsrelativeindependence Sage.
+fromthebase rate,but otherresearchindicatesthatwhere Kvalseth,T. 0. (1985), "CautionaryNote AboutR2," TheAmericanStatistician,39, 279-285.
+bothbase rate and selectionratio are fixed,Op is the best
+Landwehr,J. M., Pregibon,D., and Shoemaker,A. C. (1984), "Graphi(Soderstrom1997).
+indexof predictiveefficiency
+cal MethodsforAssessingLogisticRegressionModels,"Journalof the
+The data selectedforthe presentexampleswere not seAmericanStatisticalAssociation,79, 61-7 1.
+lected specificallyto supportor refutethe utilityof any Maddala, G. S. (1983), Limited-Dependent
+and QualitativeVariablesin
+Econometrics,Cambridge,UK: CambridgeUniversityPress.
+of theindexesof predictiveefficiency,
+and some of thereoftherelationship
+ofthebase Magee, L. (1990), "R2 Measures Based on Wald and LikelihoodRatio
+sults(particularly
+thestrength
+JointSignificanceTests,"TheAmericanStatistician,44, 250-253.
+rate to Op and RN) were whollyunanticipated.It would
+McFadden,D. (1974), "The Measurementof UrbanTravelDemand,"Jourbe dangerousto draw strongconclusionsbased only on
+nal ofPublic Economics,3, 303-328.
+the presentresearch,but clearlysome warningflagshave Menard,S. (1995), AppliedLogisticRegressionAnalysis,ThousandOaks,
+of determi- CA: Sage.
+been raised regardingthe use of coefficients
+nation,particularly
+R2 analogs, otherthanRL. For future Nagelkerke,N. J. D. (1991), "A Note on a GeneralDefinitionof the Coefficient
+of Determination,"
+Biometrika,
+78, 691-692.
+research,it would be advisable to undertakeboth a more Norusis,M. J./SPSS Inc. (1997), SPSS ProfessionalStatistics7.5, Chicago:
+detailedmathematicalanalysisto determinethe natureof
+SPSS, Inc.
+the relationshipof the variousR2 analogs and indexesof Ohlin,L. E., and Duncan, 0. D. (1949), "The Efficiencyof Predictionin
+AmericanJournalof Sociology,54, 441-451.
+Criminology,"
+predictiveefficiency
+with the base rate. In addition,simRyan,T. P. (1997), ModernRegressionMethods,New York:Wiley.
+ulationresearchlike Soderstrom's(1997) researchon the
+SAS Institute(1995), LogisticRegressionExamplesUsingtheSAS System,
+indexesof predictiveefficiency
+wouldbe usefulin studying Cary,NC: SAS Institute.
+RO, RL, it, RN, and Rav to examinein moredetailtheir Soderstrom,I. (1997), "The Effectsof Base Rate,SelectionRatio,Sample
+IndicesAssoSize, and Reliabilityof Predictorson PredictiveEfficiency
+relationshipto thebase rate,theirbehaviorin thepresence
+ciatedWithLogisticRegressionModels,"presentedat theAnnualMeetof unreliability
+of measurement,
+and the extentto which
+ingof theMid-Western
+EducationalResearchAssociation,Chicago,Octhe limitedresultspresentedin the presentstudymay be
+tober15-18.
+24
+
+General
+
+

@@ -1,0 +1,1912 @@
+<-----Page 0----->Organizational Research Methods
+http://orm.sagepub.com
+
+Spatial Dependence in Entrepreneurship Research: Challenges and Methods
+Lawrence A. Plummer
+Organizational Research Methods 2010; 13; 146 originally published online Apr 10, 2009;
+DOI: 10.1177/1094428109334199
+The online version of this article can be found at:
+http://orm.sagepub.com/cgi/content/abstract/13/1/146
+
+Published by:
+http://www.sagepublications.com
+
+On behalf of:
+
+The Research Methods Division of The Academy of Management
+
+Additional services and information for Organizational Research Methods can be found at:
+Email Alerts: http://orm.sagepub.com/cgi/alerts
+Subscriptions: http://orm.sagepub.com/subscriptions
+Reprints: http://www.sagepub.com/journalsReprints.nav
+Permissions: http://www.sagepub.com/journalsPermissions.nav
+Citations http://orm.sagepub.com/cgi/content/refs/13/1/146
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 1----->Spatial Dependence in
+Entrepreneurship Research
+
+Organizational
+Research Methods
+Volume 13 Number 1
+January 2010 146-175
+# 2010 SAGE Publications
+10.1177/1094428109334199
+http://orm.sagepub.com
+hosted at
+http://online.sagepub.com
+
+Challenges and Methods
+Lawrence A. Plummer
+Clemson University
+Measures used in entrepreneurship research are often subject to spatial dependence. Spatial
+dependence renders ordinary least squares (OLS) estimation inappropriate because the
+estimates will be biased, inconsistent, and/or inefficient. The aims of this article are (a) to
+demonstrate how spatial dependence is especially problematic for entrepreneurship research
+and (b) to arm researchers with spatial modeling techniques that are more appropriate for
+such analysis. As such, not only will this article illustrate how to incorporate spatial
+dependence explicitly into the linear regression model, it also discusses how these
+techniques make it possible to explore and locate areas with particularly high levels of
+spatial dependence (i.e., hot spots). These techniques, although new to the management
+literature, are well known in both the regional science and geography literatures and are
+rapidly diffusing to economics, sociology, and related social sciences.
+Keywords:
+
+spatial methods; entrepreneurship; geography; research methods; linear regression
+
+E
+
+ntrepreneurship is a phenomenon of time and space. As individuals discover, evaluate,
+and exploit entrepreneurial opportunities, both temporal and spatial inefficiencies in
+the economy are corrected (Shane & Venkataraman, 2000). The temporal dimension of
+the entrepreneurship process suggests that researchers abandon static analyses using
+cross- sectional data in favor of longitudinal research designs (Eckhardt & Shane,
+2003; Parker, 2008). However, because time-series and panel data violate the assumption
+of independent observations, the simple ordinary least squares (OLS) estimator must be
+replaced by a technique more appropriate for repeated measures (see, e.g., Ballinger,
+2004; Bliese & Hanges, 2004). In a study of entrepreneurial behavior using panel data,
+for example, the fixed effects estimator would account for any unobserved factors idiosyncratic to each individual, whereas a dynamic panel estimator would account for any
+serial dependence created by the tendency of an individual’s behavior to persist from one
+period to the next (Parker, 2008).
+
+Author’s Note: A sincere thanks to Jeremy Short, Duane Ireland, Dave Ketchen, Phil Roth, V. Sridharan, Zoltan
+Acs, and Ali Ferguson. I especially thank the two anonymous reviewers as well as Luc Anselin and Julie
+Koschinsky at the GeoDa Center at Arizona State University. I also wish to acknowledge the financial support of
+the US Small Business Administration and the University of Colorado’s Deming Center for Entrepreneurship.
+Please address correspondence to Lawrence A. Plummer, Department of Management, College of Business and
+Behavioral Science, Clemson University, 101 Sirrine Hall, Box 341305, Clemson, SC 29634; e-mail:
+lplumme@clemson.edu.
+146
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 2----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+147
+
+The spatial dimension of the entrepreneurship process is often explicitly incorporated into
+definitions of entrepreneurship (Davidsson, 2004), but it is also widely implied by how the entrepreneurship process is commonly conceived (Andersson, 2005). Unfortunately, scholars rarely
+give equal methodological attention to entrepreneurship’s spatial dimension, despite the fact that
+virtually all data—both cross-sectional and longitudinal—are spatial in the sense that the locations of the observations are knowable (Anselin & Bera, 1998). This is not to say that the spatial
+dimension of entrepreneurship is being ignored altogether. A number of studies explore regional
+variations in entrepreneurial activity under the premise that the conditions conducive for such
+activity differ between locations (e.g., Armington & Acs, 2002; Stuart & Sorenson, 2003). The
+primary focus of these studies is the spatial heterogeneity of the entrepreneurship process.
+What is commonly overlooked in the entrepreneurship literature is the spatial dependence
+that is equally predicted by theories of entrepreneurship (Shane & Venkataraman, 2000). That
+is, just as an entrepreneur’s current behavior can be predicted by his or her past behavior (Parker, 2008), it may also be predicted by the behaviors of entrepreneurs nearby (Andersson,
+2005). As long as the observation of a variable at one location is predicted by the value of the
+same variable observed at a nearby location, then the measure is spatially dependent or spatially
+autocorrelated (Anselin & Bera, 1998). Such spatial correlation necessarily invalidates the OLS
+estimator—even in the case of cross-sectional data—and, if ignored, results in incorrect inferences, misleading conclusions, and erroneous hypothesis tests (Doh & Hahn, 2008).
+Thus, the purpose of this article is twofold. First, it demonstrates how spatial dependence
+is especially problematic for entrepreneurship research. In particular, it argues that variables
+used in entrepreneurship research, such as start-up rates, innovation, survival, or financial
+performance, are especially prone to spatial dependence and then tests this conjecture
+empirically. Indeed, because it is likely that entrepreneurship scholars will find it necessary
+to apply spatial methods even when the theoretical framework is not explicitly geographic,
+the second aim of this article is to arm scholars with techniques for mitigating the problem
+of spatial dependence in the context of linear regression. These techniques are new to management but are rapidly diffusing to related social sciences, including political science, economics, and sociology (Sarafoglou & Paelinck, 2008).
+Given these aims, this article is organized as follows: The next section provides a definition
+and description of spatial dependence, the problems it introduces into standard statistical analyses, and the reasoning for why it is a particular problem in the entrepreneurship field. Next,
+section 3 introduces spatial econometric techniques that can characterize, correct, and explore
+spatial dependence in the study of entrepreneurial activity. Section 4 illustrates two applications
+of these spatial techniques applied to point data (i.e., new firm profit) and areal data (i.e., county
+start-up rates), respectively. The first of these two illustrations tests the argument that entrepreneurship variables are especially prone to spatial correlation. The second illustrates the use of
+these methods for hot spot detection and the control of spatial dependence in linear regression.
+The final section of this article offers a summary and a few concluding remarks.
+
+The Challenge of Spatial Dependence
+Spatial dependence or spatial (auto)correlation occurs when the value of a given variable
+observed at one location is a function of an observation of the same variable at a nearby
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 3----->148 Organizational Research Methods
+
+location (Anselin, 1988). In this sense, spatial dependence is the empirical reflection of
+Tobler’s (1970)first law of geography in which ‘‘everything is related to everything else,
+but near things are more related than distant things’’ (p. 236). Given its origins in economic
+geography and regional science, spatial dependence is usually expressed (as in this article)
+in terms of physical (e.g., Euclidean) distances between locations. As it turns out, however,
+other notions of space, such as economic, technological, social, or industrial spaces, are
+readily accommodated in a spatial dependence framework (Anselin, 1988). The only
+requirement for using spatial dependence methods is a basis for defining what is meant
+by the word ‘‘nearby.’’ In other words, as Beck, Gleditsch, and Beardsley (2006) put it,
+‘‘space is more than geography.’’
+Spatial dependence should not be confused with spatial heterogeneity. Spatial heterogeneity is a lack of uniformity across space with locations varying in different ways, including
+size, shape, population, levels of economic development, political leanings of local residents, and/or industry/agricultural intensities (Anselin, 1988; LeSage, 1999). Urban, suburban, and rural areas, for example, are spatially heterogeneous. In the context of linear
+regression, one manifestation of spatial heterogeneity is heteroskedastic errors. Another
+manifestation of spatial heterogeneity is local variation in regression parameters. That is,
+the true relationship between a dependent variable (e.g., a home’s price) and a set of independent variables (e.g., house features) in one spatial setting (e.g., wealthy neighborhoods)
+is expected to differ in some other setting (e.g., low-income neighborhoods).
+In application, it is often difficult to distinguish between spatial heterogeneity and spatial
+dependence in the cross-sections of data. Does the behavior of one entrepreneur predict the
+behavior of a nearby entrepreneur because of some spatial spillover effect or because they
+are residents of the same city and thus experience a set of effects common to their locations?
+It is hard to know. Nevertheless, spatial dependence models are often preferable to those
+specific to spatial heterogeneity (Anselin, 1988). Stuart and Sorenson’s (2003) inclusion
+of state-level fixed effects in their models, for instance, resolves the spatial heterogeneity
+in their analysis but does nothing to account for the likely spillover of entrepreneurial
+activity across zip-code boundaries. In contrast, spatial dependence models are often more
+robust to the problem of spatial heterogeneity (Anselin, 1988). Because most methodological problems specific to spatial heterogeneity can be resolved with standard estimation techniques, the remainder of the discussion focuses on the problem of spatial dependence.
+
+Spatial Dependence and OLS
+Spatial dependence is a problem when using most analytical and statistical methods
+because the premise of random sampling builds on the assumption that the observations
+of the variables are (spatially) independent. Among these methods, linear regression via
+OLS estimation is arguably the most common method of hypothesis testing and is applied
+widely across an array of academic disciplines and rightly so. Under specific conditions,
+OLS is the best linear unbiased estimator (BLUE) with the benefit of low computational
+cost (Kennedy, 2003). As the BLUE, the estimator is unbiased in that the expected value
+of the parameter estimates equals the true value of the parameters, is efficient in that the
+parameters are estimated with minimum variance and is consistent in that the parameter
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 4----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+149
+
+estimates converge to the true value of the parameters as the sample size increases
+(Kennedy, 2003).
+Five assumptions must hold for OLS to be the BLUE (Kennedy, 2003). First, the
+dependent variable can be modeled as a linear function of a specific set of independent variables plus a disturbance term. This first assumption implies that no relevant independent
+variables are omitted. Second, the mean of the disturbance term is zero, and third, the errors
+are independently and identically distributed (i.i.d.; i.e., uncorrelated and homoskedastic).
+Fourth, the independent variables are fixed in repeated samples (i.e., nonstochastic), meaning that the independent variables are uncorrelated with the errors (i.e., exogenous) and are
+free of measurement errors and that the observations of the dependent variable are uncorrelated. Finally, the independent variables are free of perfect multicollinearity.
+Given these assumptions, the classic (i.e., nonspatial) linear regression model can be
+expressed in matrix notation as follows:
+yi ¼ Xi b þ ei ;
+
+ð1Þ
+
+where yi is a continuous dependent variable observed at a particular location i, Xi is a matrix
+of exogenous independent variables, b is a vector of the regression parameters, and ei is a
+normally distributed random error term. For the OLS estimator to be unbiased and consistent, the mean of the error distribution must be zero, the independent variables must be
+uncorrelated with the errors, and no relevant independent variable can be omitted. In addition, the OLS estimator’s efficiency requires that the errors are uncorrelated and homoskedastic (Kennedy, 2003).
+Spatial dependence violates the OLS assumptions in two ways that are especially critical.1 First, when the dependent variable in Equation (1) is spatially correlated, the first and
+fourth OLS assumptions are violated, making the estimator biased and inconsistent (Anselin
+& Bera, 1998). The bias is the result of an omitted variable, as the model specification
+ignores the ‘‘spatial lag’’ of the dependent variable, which should be included as an independent variable on the right-hand side of Equation (1).2 This leads to a loss of information
+in terms of statistical inference relative to an independent sample of the same size (Anselin
+& Bera, 1998). Indeed, if the spatial lag dependence is severe, the OLS estimates can be
+sufficiently biased to cause the relevant coefficient estimates to carry the ‘‘wrong’’ sign
+(Anselin, 1988; Lacombe, 2004). Fortunately, a properly specified and estimated spatial lag
+model that explicitly incorporates spatial dependence in the dependent variable remedies
+this problem.
+Second, when the residuals in Equation (1) are spatially correlated, the i.i.d. assumption
+of the error term is violated (Anselin & Bera, 1998). In this case, the OLS estimator is
+unbiased yet inefficient, meaning that the standard error estimates and t tests will be biased.
+In short, hypothesis testing can be severely affected by spatial error dependence. In this
+instance, the spatial error model is necessary to correct this problem. On the positive side,
+however, evidence of spatially correlated errors may lead to the identification of additional
+variables that could be included in the model. Indeed, because any omitted independent
+variable is consigned to the error term, evidence of spatial error dependence may indicate
+that a relevant, albeit spatially correlated, variable has not been included in the matrix of
+independent variables.
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 5----->150 Organizational Research Methods
+
+Spatial Dependence and Entrepreneurship
+This brief introduction to the challenges of spatial dependence begs the question as to
+why spatial dependence would be a particular problem for entrepreneurship research. In
+broad terms, the answer is that the variables used in the study of entrepreneurship could
+be especially susceptible to the problems of spatial dependence, a conjecture explored
+empirically later in this article. If true, entrepreneurship researchers may find it necessary
+to use spatial regression estimation techniques even if the theoretical framework being
+explored is not overtly geographic (Anselin, 2002; Goodchild, Anselin, Appelbaum, &
+Harthorn, 2000). In other words, researchers may find it necessary to apply spatial dependence models in any context in which the data are likely to exhibit spatial dependence. To
+understand why, consider two broad categories of spatial dependence: substantive spatial
+dependence because of spatial interaction effects and apparent spatial dependence attributable to measurement errors and data collection procedures (Anselin, 1988).
+The first category is substantive spatial dependence. As a classic example, LeSage and
+Charles (2008) provide evidence of how the prices of new homes are less spatially dependent than the prices of older homes. They theorize that because newly constructed homes
+reflect current buyer preferences for certain features, such as size and number of bathrooms,
+new home buyers tend to weigh the value of nearby homes less in their buying decision than
+they would when purchasing an older home. As a result, ‘‘real estate experts believe that
+newly built home sales reflect an equilibrium situation where the characteristics of these
+homes supply new home buyers with things they are willing to pay for and exclude
+characteristics perceived to have little or no value’’ (LeSage & Charles, 2008, p. 3). Thus,
+it follows that as a home’s features become less valuable with age, the prices of nearby
+homes become a stronger predictor of its price over time—this being a relationship
+predicted by theory.
+Paralleling this logic, there is good theoretical motivation for expecting that many firmlevel variables are more spatially dependent in the case of new firms rather than older firms.
+In particular, citing Almeida and Kogut’s (1997) evidence that new ventures are especially
+dependent on resources outside the firm, Cooper and Folta (2000) conclude that ‘‘although
+location in a [geographic] cluster may be important to all firms, it appears to have particular
+implications for start-ups and small firms’’ (p. 349). This suggests, as with home prices, that
+a firm’s performance is driven by the assets it holds as well as the availability of nearby
+resources. Thus, because new firms are more reliant on nearby external resources,
+especially labor and knowledge, it follows that ‘‘cluster membership probably has the most
+impact on the performance of new or small firms’’ (Cooper & Folta, 2000, p. 363).
+The premise that new firms share in the effects of agglomeration externalities is supported by evidence that co-located start-ups grow faster, are more innovative, and receive
+and generate more agglomeration economies than their older, larger counterparts (McCann
+& Folta, 2008; Rosenthal & Strange, 2004). Further evidence supports the idea that clustered new ventures are also more likely to fail compared to their nonclustered counterparts
+(McCann & Folta, 2008; Pe’er & Vertinsky, 2008). In sum, current research suggests that
+the performance, growth, and survivability of a new firm are not independent from the performance, growth, and survivability of nearby firms. Moreover, as firms age, overcome
+their early liabilities, and come to rely less on external resources, their fates become less
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 6----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+151
+
+intertwined with the fortunes of their neighbors. In other words, in the language of spatial
+dependence, it is theoretically plausible that the performance (e.g., profits) of nearby firms
+becomes a weaker predictor of a given firm’s performance over time.
+The second category is apparent (or spurious) spatial dependence caused by measurement
+errors or noise in the data (Anselin, 2001b). As it turns out, one of the simplest sources of
+spurious spatial dependence is a miscalculation in the location of an observation (e.g., errors
+in real estate agents’ judgments about which properties belong to the neighborhood set of a
+given home and which do not; Atkinson, 1995).3 A more complex source of spurious spatial
+correlation is systematic measurement bias. Suppose, for example, that several interviewers
+are dispatched by census tracts to complete a door-to-door survey of individual entrepreneurs,
+a group with a tendency to underreport information (Parker, 2004). If the interviewers differ
+systematically in their recordings of the responses or in their ability to solicit ‘‘honest’’
+responses, then a spatially correlated measurement bias may be introduced into the data by
+how the interviewers are assigned to survey the region (Haining, 1990).
+An argument can be made that measures used in entrepreneurship research are prone to
+spatially correlated measurement bias. As an example, evidence suggests that return on
+assets (ROA) is a biased measure of new firm performance, especially during periods before
+and after significant financial events, such as an initial public offering or a venture capital
+investment (Barber & Lyon, 1996; Bhagat & Jefferis, 2002). Because these firms have
+incentives to manipulate accruals to inflate earnings before the event and acquire assets
+(e.g., cash) following the event, ROA generally increases before the event date and then
+declines thereafter, decreasing more quickly in smaller firms (Fama & French, 1995).
+There are two plausible reasons to suspect that the bias in ROA is spatially correlated.
+The simplest possibility is that the bias in ROA is spatially dependent because of the diffusion of business norms or practices (Strang & Soule, 1998). For instance, it is common for
+venture capital firms to require their portfolio companies to use the services of a common
+top-tier accounting firm.4 Because venture capitalists prefer to invest in nearby firms
+(Sorenson & Stuart, 2001) requiring common accounting methods increases the probability
+of one firm’s manipulation of accruals predicting the same practice in a nearby firm. As
+the firms mature and develop internal accounting capabilities, the spatial correlation in the
+ROA bias should subside over time.
+An alternative explanation for the ROA bias to be spatially correlated hinges on the fact
+that new firms tend to cluster geographically, and thus the spatial distribution of new firms
+is not random (i.e., one firm being ‘‘new’’ predicts the likelihood of a neighboring firm
+being ‘‘new’’; Dumais, Ellison, & Glaeser, 2002). Suppose, in this case, that the bias in
+ROA is only associated with firms being ‘‘new’’ and is not inherently spatially dependent.
+If the ‘‘newness’’ of a firm is spatially correlated and, in turn, is correlated with the bias in
+ROA, then the measure of ROA might appear to be spatially dependent in the firm’s early
+years and then less so as the firm matures (Anselin, 1988).
+Three summary points follow from this discussion. First, the argument that some variables are especially subject to spatial dependence in an entrepreneurial context is offered
+as being ‘‘reasonable’’ or ‘‘plausible.’’ No doubt, reasonable or plausible counter-arguments
+can be offered to suggest the opposite, but this is not the point. Instead, the key point is that
+the suspicion of spatial dependence can be subjected to empirical testing. Indeed, the tools
+described in the next section make it possible to detect, model, and mitigate any spatial
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 7----->152 Organizational Research Methods
+
+dependence problems that would otherwise affect regression analysis and hypothesis testing. In doing so, these techniques introduce the possibility of capturing the effects of unobserved variables for which spatial dependence might serve as a proxy. LeSage and Charles
+(2008), for example, argue that the spatial correlation in home prices proxies for unobserved
+factors, such as the quality of local schools and crime rates.
+Second, it does not matter why a variable is spatially dependent for the OLS estimator to
+be affected adversely, and no statistical test is available to determine whether the spatial
+dependence is substantive or apparent. Instead, what matters is the degree to which the variable is spatially dependent because, as will be discussed in the next section, the stronger the
+spatial correlation of the variables, the more biased, inconsistent, and/or inefficient the OLS
+estimator will be (Anselin & Bera, 1998). The source of spatial dependence only matters in
+determining which spatial model is likely to be used. Substantive spatial dependence usually leads to the use of the spatial lag model, whereas apparent spatial dependence usually
+suggests the use of the spatial error model (Anselin, 1988).
+Finally, no claim is being made that any study based on nonspatial estimation techniques is necessarily flawed; the only claim being made is that the chances that spatial
+dependence is a problem are greater than entrepreneurship researchers might suspect.
+Indeed, one of the bolder claims is that these tools fulfill, to some extent, calls for added
+rigor in entrepreneurship research, especially through longitudinal studies (Davidsson,
+2004; Hitt, Gimeno, & Hoskisson, 1998). Longitudinal analyses are preferred to studies
+using cross-sectional data because of the opportunity to assess the ‘‘internal response’’
+of the dependent variable to changes in the independent variable and thus move the
+analysis closer to an explanation of causality rather than correlation (Hitt et al., 1998).
+Nevertheless, researchers often forego longitudinal analysis because of practical limitations (e.g., the lack of available data; Davidsson, 2004). In these cases, although the spatial methods discussed in the next section do not necessarily lead to better explanations of
+causality, they do provide more accurate and robust cross-sectional results in the presence
+of spatial dependence (Anselin, 2001b).
+
+Linear Regression Models for Spatial Dependence
+Two questions emerge from the previous discussion. First, how can spatial dependence
+be detected, and second, how can spatial dependence be mitigated in the context of linear
+regression? As such, this section is structured as a guide for handling the spatial dependence
+problem with reference to more technical discussions when appropriate (see, especially,
+Anselin, 1988). In particular, the discussion that follows distinguishes four phases of the
+analytical process: specifying the spatial structure of the data, testing for spatial dependence, modeling spatial dependence in linear regression, and applying diagnostic tests for
+validating the spatial model specifications. For the sake of simplicity, it is assumed in the
+discussion that follows that the dependent variable is continuous and a linear function of the
+exogenous independent variables and the data are cross-sectional. The discussion also
+assumes that the data have been spatially oriented or ‘‘georeferenced’’ either by point coordinates or by aggregated spatial units, such as county or state boundaries.
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 8----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+153
+
+Specifying the Spatial Structure of the Data
+As mentioned, spatial dependence refers to the value of a given variable, y, observed at a
+particular location i being correlated with the value of the same variable observed at a
+nearby location j (Anselin, 1988; LeSage, 1999). More formally, spatial dependence can
+be expressed as follows:
+ 
+yi ¼ f yj
+
+for all j 6¼ i:
+
+ð2Þ
+
+Although it would seem ideal to estimate the spatial dependence expressed in Equation (2)
+as a linear function across all locations of j, the fundamental problem is that there is not
+enough information in the data to estimate all of the necessary parameters (Anselin,
+2001b). This limitation is known as the incidental parameter problem.
+The incidental parameter problem can be avoided by defining or specifying the spatial
+structure of the data by means of the spatial weights matrix (W; Anselin, 2002; Anselin
+& Bera, 1998; LeSage, 1999). More formally, the spatial weights matrix is an n-by-n matrix
+capturing for each location i (rows) the other locations j (columns) that belong to its neighborhood set (Anselin & Bera, 1998). By convention, the diagonal elements of W are zero,
+indicating that a location cannot be a neighbor of itself and, usually, the matrix is row-standardized so that each row sums to one. With this information, Equation (2) can be expressed
+in terms of the spatial lag operator:
+
+
+yi ¼ f Wyj
+
+for all j 6¼ i:
+
+ð3Þ
+
+As a result of row standardizing the matrix W, the spatial lag operator (Wyj) equals the
+observations of y averaged across all j neighbors of location i. Thus, an estimate of the linear
+relationship in Equation (3) is interpreted as a correlation (Anselin & Bera, 1998).
+Specifying the spatial weights matrix—that is, deciding which j locations are neighbors
+of location i—is somewhat arbitrary and is the subject of some debate in the spatial econometrics literature. Indeed, there are no formal or generally accepted guidelines for defining
+a ‘‘correct’’ spatial weights matrix (Anselin, 2002; Anselin & Bera, 1998). The choice of a
+spatial weights specification can be driven by (a) the nature of the spatial dependence suggested by the theoretical framework, (b) prior empirical evidence and/or additional nonsample information, and/or (c) statistical tests and sensitivity analyses (e.g., goodness-of-fit
+comparisons) based on alternative weights matrix specifications (Anselin, 2002; LeSage,
+1999). LeSage (1999), for example, has written a MATLAB routine that compares the
+‘‘posterior probabilities’’ of alternative spatial weights specifications. An application of this
+routine can be found in a study by Acs, Plummer, and Sutter (in press).
+In sum, the spatial weights matrix formally expresses the spatial structure of the data and
+is central to the remaining analytical steps. Two additional points follow: first, by formally
+defining ‘‘neighbors’’ in the data set, the spatial weights matrix makes it possible to introduce any conception of space (geographic, social, industrial, cultural, etc.) into the analysis
+(Anselin & Bera, 1998). Second, in the foregoing discussion, there has been no need to distinguish between point data (observations arranged by point coordinates, such as latitude
+and longitude) and areal data (observations aggregated by spatial units, such as county
+or state boundaries). This distinction, however, affects the specification of the weights
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 9----->154 Organizational Research Methods
+
+matrix because point neighbors are usually defined by distance and areal neighbors are usually defined by contiguity. The two illustrations that follow later in this article demonstrate
+how the spatial weights matrix can be applied to point data and areal data, respectively.
+
+Testing for Spatial Dependence
+Armed with the row-standardized spatial weights matrix, spatial dependence in a variable can be detected using two statistical tests for spatial autocorrelation (for a complete
+illustration, see Doh & Hahn, 2008). First, the global Moran’s I statistic tests for a simple
+linear relationship between yi and the spatial lag operator Wyj (Anselin, 2001b). The formula for the Moran’s I coefficient is
+
+wij ðyi  yÞ yj  yÞ
+
+n P
+n
+P
+
+I ¼
+
+i¼1 j¼1
+
+n 
+P
+yi  yÞ2
+
+for all j 6¼ i;
+
+ð4Þ
+
+i¼1
+
+where yi and yj are the values of y observed at locations i and j, respectively, y is the overall
+or grand mean of the variable, and wij denotes the elements of W for each location pair ij.
+Under the null hypothesis of no spatial autocorrelation, the expected value of Moran’s I is
+given by E(I) ¼ 1/(n1). A positive (negative) and statistically significant Moran’s I statistic indicates positive (negative) spatial dependence, suggesting that some type of spatial
+regression technique is warranted.
+Second, to measure local spatial dependence (i.e., to identify the specific locations where
+the variable is spatially correlated), the numerator of Equation (4) is decomposed for each
+individual location as a local indicator of spatial association (LISA) statistic (Anselin,
+1995; Anselin, Syabri, & Smirnov, 2002). The LISA statistic is expressed as follows:
+Ii ¼ zi
+
+n
+X
+
+wij zj
+
+for all j 6¼ i;
+
+ð5Þ
+
+j¼1
+
+where zi ¼ (yi
+y) and zj ¼ (yj
+y) and wij denotes the elements of W for each location pair ij.
+In concert with the global Moran’s I estimate, the LISA statistic has two useful applications
+aside from those discussed by Doh and Hahn (2008): the Moran Scatterplot and the LISA
+Cluster Map. The former helps identify spatial outliers with high leverage on the Moran’s I
+estimate, whereas the latter makes it possible to detect the location of ‘‘hot spots’’ where the
+spatial correlation is especially strong (Anselin et al., 2002).
+
+Spatial Lag and Spatial Error Models
+Assuming that the Moran’s I and LISA statistics indicate significant spatial correlation,
+the next phase in the analysis is to model the spatial dependence explicitly. If the dependent
+variable of the linear model is spatially correlated, then the spatial lag operator can be added
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 10----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+155
+
+to Equation (1) to take into account the spatial dependence in yi (Anselin, 1988; LeSage,
+1999). The resulting spatial lag model is as follows:
+yi ¼ rWyj þ Xi b þ ei
+
+ð6Þ
+
+where Wyj is the spatial lag operator and
+autocorrelation parameter. Rearran r is the spatial
+
+ging the terms in the equation gives I  rWyj yi ¼ Xi b þ ei in which the potential for
+omitted variable bias in the estimates of b is perhaps easier to see (Anselin & Bera, 1998). In
+short, the spatial lag can be safely omitted from Equation (6) only when r ¼ 0. An analysis
+reported by Darmofal (2006), for example, indicates that omitting the spatial lag operator from
+Equation (6) can bias the estimates of b by 35% or more as the true value of r approaches 1.
+Alternatively, if the errors of the classic linear model are spatially correlated, thus violating
+the assumption of independent errors, then the spatial error model is expressed as follows:
+y i ¼ Xi b þ e i ;
+
+where ei ¼ W ej þ mi :
+
+ð7Þ
+
+Here, Wej is the spatial error operator,  is the parameter for the spatial error dependence,
+and m is the uncorrelated and homoskedastic residual (Anselin & Bera, 1998). The spatial
+error parameter, , is interpreted either as the nuisance because of measurement errors in the
+linear model or as the omission of a spatially correlated variable from the matrix, X. As
+mentioned, ignoring the spatial structure of the error term leads to biased estimates of the
+standard errors. Darmofal’s (2006) analysis indicates that as the true value of  approaches
+1, the OLS standard error estimate is only 57% the size of the true standard error when the
+spatial error operator is omitted from Equation (7).
+Even with the spatial dependence explicitly modeled, neither the spatial lag nor the spatial error model can be estimated via OLS, a complication introduced by the spatial weights
+matrix and spatial operators (Anselin & Bera, 1998). In the spatial lag model, for example,
+although the omitted variable bias has been removed, the spatial lag operator is correlated
+with the error term (i.e., it is endogenous). Thus, the OLS estimator is still biased and inconsistent in Equation (6) regardless of the error term’s properties. Likewise, the OLS estimator
+is still inefficient in Equation (7), given the spatial structure of the errors modeled by the
+spatial weights matrix. As a result, both the spatial lag and the spatial error models merit
+estimation in a maximum likelihood (ML) framework. Using the ML estimator (MLE),
+however, requires that the residuals of the model estimates in Equation (6) or (7) follow the
+normal distribution.
+
+Model Specification Diagnostics
+The last phase of the analysis is to determine whether the spatial lag or the spatial error
+model is preferable. The first step in this phase is to apply four Lagrange multiplier (LM)
+test statistics to the OLS estimates of Equation (1) to diagnose the nature of the spatial
+dependence (Anselin, 2001a). Specifically, the LM Lag statistic tests for spatial lag dependence in the model, whereas the LM Error statistic tests for spatial error dependence.
+Because both of the LM statistics may be statistically significant, the robust, or RLM Lag
+statistic, tests for spatial lag dependence in the presence of spatial error dependence,
+whereas the RLM Error statistic tests for spatial error dependence in the presence of spatial
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 11----->156 Organizational Research Methods
+
+lag dependence (Anselin & Bera, 1998). If all four diagnostic tests are significant, then the
+correct spatial model specification is identified by the relative values of the robust test statistics. That is, a spatial lag model specification is appropriate when the value of RLM Lag is
+greater than the value of RLM Error, whereas a spatial error specification is appropriate for
+the opposite inequality.
+Next, based on the comparative results of the LM tests, either the spatial lag or the spatial
+error model is estimated. The MLE estimates allow for two more statistical tests for significant spatial correlation: the likelihood ratio (LR) test is based on a comparison of the OLS
+and spatial MLE results, and the Wald F statistic is simply the square of the asymptotic t test
+for the estimated spatial parameter (r or ). In finite samples, the values of the LM, LR, and
+Wald statistics should conform to the inequality Wald  LR  LM (Anselin, 1988). The
+inequality does not imply a difference in power between the test statistics, but it does suggest that the LM test is the most conservative of the three tests and is thus sufficient for most
+analytical purposes. Moreover, violations of the inequality are not uncommon in practice
+and could suggest, among other things, the nonnormality or heteroskedasticity of the errors
+or an incorrectly specified spatial weights matrix (Anselin, 1988).
+Finally, although preferable to the OLS estimator, the properties of the spatial lag and
+spatial error models do not always favor the MLE (for a technical discussion, see Anselin,
+2001b). This complication places constraints on the allowable values of the spatial dependence parameters. In particular, a row-standardized spatial weights matrix limits the allowable values of r or  to an upper bound of less than, but not equal to, þ1. The corresponding
+lower bound of allowable values is less than 1 when the spatial weights matrix is rowstandardized.5 As a result, estimates of the spatial parameter should be ‘‘well behaved’’
+by falling in the allowable range. In other words, the estimate of r or  itself can serve
+as a kind of model diagnostic: statistical significance confirms the presence of spatial
+dependence, whereas an estimate within the allowable range suggests that the model and
+spatial weights matrix are correctly specified. The next section provides two illustrations
+of these techniques applied to point and areal data, respectively.
+
+Two Illustrations of Spatial Dependence Methods
+The first illustration explores the conjecture that the spatial correlation in new firm performance diminishes over time by using Moran’s I to assess whether the profits of neighboring firms becomes a weaker predictor of a given firm’s profit over time. In doing so, the
+analysis that follows lends preliminary empirical support to the claim that researchers may
+choose to use spatial regression models even in the context of ‘‘nonspatial’’ theories. Moreover, this particular illustration uses point data in which the data are spatially arranged by
+the latitude and longitude of each firm in the sample. Thus, the analysis demonstrates the
+specification of the spatial weights matrix based on Euclidean distances as well as the use
+and interpretation of the Moran Scatterplot. The analysis for this illustration is completed
+using the spatial analysis tools available for Stata (Pisati, 2001).
+The second illustration demonstrates the application of the spatial lag and spatial error
+models to areal data. To provide a theoretical context for this illustration, the analysis tests
+the hypothesis that the rate of high-technology firm births in a given region is positively
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 12----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+157
+
+related to the level of knowledge (i.e., number of patents granted) in that region (Acs,
+Audretsch, Braunerhjelm, & Carlsson, 2005). As such, this section demonstrates the specification of the spatial weights matrix based on the contiguity relationships between counties,
+the use of the LISA statistic for hot spot analysis, and the diagnostic procedures described
+in the previous section. It also extends Davidsson’s (2004) discussion of sampling and aggregating entrepreneurship data by spatial units, such as labor market areas (LMA) or counties,
+by considering his remarks in the context of spatial dependence. Because the spatial routines
+in Stata do not accommodate areal data (Pisati, 2001), the analysis for this illustration is done
+using the stand-alone software package, GeoDa (Anselin, Syabri, & Kho, 2006).6
+
+A Point Data Illustration of Moran’s I: Post-IPO Profits
+In this illustration, annual estimates of Moran’s I are used to explore the hypothesis that
+the spatial correlation in firms’ profits diminishes as firms age. Consistent with prior entrepreneurship studies, the sample for this application is based on manufacturing and service
+sector firms making an initial public offering between 1990 and 1991 that were 8 years or
+younger at the time of the IPO (Deeds, Decarolis, & Coombs, 1997; Gilbert, McDougall, &
+Audretsch, 2008; McDougall, Deane, & D’Souza, 1992; Stuart & Sorenson, 2003). The
+sampled firms are georeferenced by the latitude and longitude of the firm’s primary business address as reported to the Securities and Exchange Commission (SEC). Excluded from
+the sample were firms that re-located more than 75 miles during the study period, firms in
+the original sample that merged with each other, and two firms so geographically isolated
+that no neighbors could be reasonably identified in the spatial weights matrix even at a distance of 300 miles (Anselin, 1988).
+Fourteen years of financial information was collected from Compustat for each firm.
+However, because the expected value of Moran’s I under the null of no spatial autocorrelation changes with the number of observations, it is important for purposes of this illustration
+that a sufficient number of observations remain constant from year to year (Pisati, 2001).
+Thus, the sample is limited to the 124 firms that remain in the sample from 1990 to
+1999. A map of the firms’ locations is shown in Figure 1. Even with the state and national
+boundaries omitted, the general outline of the United States is readily apparent with notable
+groupings of firms around New York City, Boston, Houston, Dallas, Los Angeles, San
+Francisco, and Seattle.
+Firm profits are measured by return on assets (ROA), which many consider the most
+comprehensive measure of firm performance (Barber & Lyon, 1996). For each firm and
+year, ROA is calculated as the firm’s operating earnings before depreciation (Compustat
+data item #13) divided by the firm’s total assets (data item #6). To compensate for measurement bias and the industry component of ROA, the average ROA for each firm’s industry
+(defined by the four-digit standard industrial code) was calculated using data from the Compustat universe of firms and then subtracted from the firm’s ROA (Barber & Lyon, 1996;
+Waring, 1996). Thus, the analysis in this example is based on two measures of firm performance: Overall ROA and Firm-Specific ROA. Summary information for the two measures is
+reported in Table 1.
+With the data collected and georeferenced, the first step in the analysis is specifying the
+spatial weights matrix. With point data, a distance-based spatial weights matrix is required.
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 13----->158 Organizational Research Methods
+
+Figure 1
+Map of Post-IPO Firms
+
+Table 1
+Descriptive Statistics for IPO Data (n ¼ 124)
+Variable
+
+Mean
+
+SD
+
+Minimum
+
+Maximum
+
+Overall ROA
+Firm-specific ROA
+
+0.12
+0.25
+
+0.70
+0.63
+
+9.57
+9.67
+
+3.45
+2.95
+
+Note: ROA ¼ return on assets.
+
+In this case, each element of the spatial weights matrix, W, takes on the following values
+prior to row standardization:
+(
+wij ¼
+
+0;
+.
+1 dijf
+
+if dij > d 
+if dij < d 
+
+ð8Þ
+
+where dij is the Euclidean distance (in miles) between firms i and j, d* is the ‘‘cutoff’’ distance defining the neighborhood range, and f is a positive ‘‘friction’’ parameter (Anselin &
+Bera, 1998; Pisati, 2001). Setting f equal to zero results in a binary coded (0,1) matrix prior
+to row-standardization, indicating whether location j is a neighbor of location i. Alternatively, setting f equal to one specifies an inverse-distance spatial structure, expressing a linear decline in the interaction of locations i and j as the distance between the two locations
+increases. Similarly, setting f equal to two specifies a gravity-type spatial structure of the
+data (Anselin & Bera, 1998).
+Given the limited theoretical and empirical evidence on which to base a definition of
+‘‘neighbors’’ for a sample of IPO firms, the friction parameter in Equation (8) is set equal
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 14----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+159
+
+Table 2
+Moran’s I Estimates
+Year
+Cutoff Distance
+(d*)
+0–30
+0–60
+0–90
+0–120
+0–150
+0–180
+0–210
+0–240
+0–270
+0–300
+
+1990
+0.1
+0.108*
+0.105*
+0.102*
+0.065
+0.046
+0.058
+0.074*
+0.084*
+0.061*
+
+1991
+
+1992
+
+0.119* 0.084
+0.14*
+0.088*
+0.136* 0.082*
+0.134* 0.08*
+0.068* 0.027
+0.045
+0.016
+0.033 0.004
+0.049
+0.005
+0.058* 0.014
+0.047* 0.007
+
+1993
+
+1994
+
+1995
+
+1996
+
+1997
+
+1998
+
+1999
+
+0.171*
+0.016
+0.021
+0.011
+0.013
+0.005
+0.034
+0.027
+0.013
+0.02
+
+0.066
+0.007
+0.021
+0.014
+0.02
+0.023
+0.056
+0.042
+0.035
+0.045
+
+0.025
+0.019
+0.015
+0.02
+0.02
+0.022
+0.029
+0.035
+0.026
+0.025
+
+0.119*
+0.082
+0.05
+0.04
+0.026
+0.006
+0.001
+0.005
+0.006
+0.007
+
+0.215*
+0.051
+0.021
+0.002
+0.01
+0.019
+0.008
+0.015
+0.008
+0.028
+
+0.035
+0.05
+0.068
+0.07
+0.044
+0.052
+0.033
+0.034
+0.028
+0.045
+
+0.035
+0.025
+0.027
+0.039
+0.01
+0.022
+0.011
+0.013
+0.011
+0.014
+
+Note: Estimates from ‘‘spatcorr’’ routine in Stata (Pisati, 2001).
+*
+significant at 5% (one-tailed test); friction parameter f ¼ 0.
+
+to zero prior to the row-standardization of W. In other words, the analysis proceeds on the
+assumption that the spatial interaction between firms is constant across the entire range of
+d*. Furthermore, lacking a theoretical or empirical basis for establishing a reliable cutoff
+range, Table 2 reports the annual Moran’s I estimates for overall ROA repeated across
+10 alternative values for d* from 30 to 300 miles. To facilitate the interpretation of these
+estimates, the values in Table 2 are plotted in Figure 2. To be clear, the Moran’s I estimates
+in Table 2 can be reliably compared from year to year, but not across the cutoff distances
+because the number of observations is not constant over the range of d*. In particular, the
+cutoff distances less than 150 miles yield a number of ‘‘island’’ firms for which no neighbors can be identified (Anselin, 1988). Because the spatial lag of a variable is zero when the
+neighborhood set is empty—thus biasing the estimate of spatial correlation—these island
+observations are ignored or dropped from the calculation of Moran’s I (Pisati, 2001).
+As shown in Table 2, all of the statistically significant values of Moran’s I are greater
+than zero, indicating that ROA exhibits positive spatial correlation. Moreover, 16 of the
+19 significant Moran’s I values in the table are in the first 3 years (1990–1993) of the observations, suggesting that, as a general pattern, ROA is spatially dependent in the early years
+of a firm’s existence but less so as time passes. Indeed, beyond the 30-mile cutoff, no estimate of Moran’s I is statistically significant after 1992. The exception to this pattern is the
+Moran’s I estimates when d* is 30 miles because the peak spatial correlation at this distance
+occurred in 1997 (I ¼ 0.215, p < .05). This atypical pattern in the Moran’s I values is apparent in the upper line in Figure 2. As it turns out, however, a simple regression line fitted to
+these atypical values indicates no statistically significant upward annual trend in the
+estimates of Moran’s I when d* is 30 miles.
+Next, because the Moran’s I estimates are sensitive to outliers, the following procedure is
+repeated for each of the 90 Moran’s I estimates in Table 2. As an example, Figure 3 illustrates the Moran Scatterplot for Overall ROA in 1991 with d* at 150 miles. The horizontal
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 15----->160 Organizational Research Methods
+
+Figure 2
+Plot of Moran’s I Estimates from Table 2
+Moran's I annual estimates by distance (d*)
+0-30
+
+0-60
+
+0-90
+
+0-120
+
+0-150
+
+0-180
+
+0-210
+
+0-240
+
+0-270
+
+0-300
+
+1993
+
+1994
+
+1995
+
+1996
+
+1997
+
+1998
+
+1999
+
+0.25
+0.2
+
+Moran's I
+
+0.15
+0.1
+0.05
+0
+−0.05
+−0.1
+
+1990
+
+1991
+
+1992
+
+Year
+
+axis of the graph indicates the standardized values of ROA, and the vertical axis reports the
+standardized values of the spatial lag of ROA with the crosshairs of the scatterplot centered
+on the mean values of each. The slope of the line fitted in Figure 3 is the Moran’s I estimate
+(1991 Moran’s I ¼ 0.068, p < .05, d* ¼ 150) as shown in Table 2. The numbers in the scatterplot correspond to the ‘‘n’’th observation (or firm) in the sample. As such, it would seem
+that the 103rd firm in the data is an outlier in that this firm’s overall ROA is especially low
+relative to its neighbors. Winsorizing the extreme values of the overall ROA (Barnett &
+Lewis, 1994) or omitting the observation entirely results in higher estimates of Moran’s
+I.7 Thus, the observed values of ROA yield a more conservative estimate of Moran’s I.
+In addition to identifying spatial outliers, the Moran Scatterplot in Figure 3 distinguishes
+four types of spatial correlation. The firms in the upper right (i.e., high-high) quadrant of the
+plot are those firms that, like their neighbors, enjoy returns above the sample mean, whereas
+the lower left (i.e., low-low) quadrant indicates the cases in which the firms and their neighbors are earning profits below the sample mean. Thus, the observations in the high-high and
+low-low quadrants indicate positive spatial correlation. In contrast, the upper left (i.e., lowhigh) and the lower right (high-low) quadrants indicate negative spatial correlation and are
+particularly interesting. The 116th firm in the sample, for example, is earning returns below
+the sample mean despite the above-average returns of its neighbors within 150 miles.
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 16----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+161
+
+Figure 3
+Moran Scatterplot of Overall ROA, 1991 (d* ¼ 150 Miles)
+Moran scatterplot (Moran's I = 0.068)
+1991 roa_i
+2
+42
+
+1
+
+116
+91
+117 59
+71 14 58
+
+0
+Wz
+
+103
+
+86
+26
+108
+
+39
+67
+3694 105
+46
+43
+99
+8350
+49
+90
+52
+12
+20
+54
+70
+109
+118
+104
+75
+106
+53
+76
+113
+17
+112
+31
+121
+13
+10
+84
+765
+15
+44115
+123
+2 87 111 77
+55
+12221
+101
+23
+40
+38
+25
+22
+98
+88
+4
+92
+47
+8
+185
+6
+19
+56 9760
+41
+80
+96
+48
+51
+114
+89
+62
+34
+45
+74
+79
+107 119
+27
+78
+16
+64
+29
+37
+57
+28
+33
+8273
+63
+3100
+569
+18
+110
+24
+35
+32 11
+9 30
+124
+61
+81
+
+95
+
+-1
+-2
+
+102
+
+93
+
+-3
+
+120
+68 66
+72
+
+-4
+-8
+
+-7
+
+-6
+
+-5
+
+-4
+
+-3
+
+-2
+z
+
+-1
+
+0
+
+1
+
+2
+
+3
+
+4
+
+Correspondingly, the 61st firm in the sample is earning returns above the sample mean
+despite the below average returns of its neighboring firms. These two firms, then, would
+seem to be good candidates for follow-up case studies.
+The evidence reported here lends preliminary support to the argument that new firm performance is subject to spatial dependence and less so as the firms mature. As a general pattern, the values of the Moran’s I estimates decline over time. Given such results,
+entrepreneurship researchers might consider a spatial model when exploring the determinants of new venture performance even if the theory invoked is not inherently geographic.
+There are, however, at least three qualifications to this claim.
+First, the procedures above resulted in no statistically significant Moran’s I estimates for
+firm-specific ROA. Coupled with the fact that the majority of the significant estimates for
+ROA are reported for the years that the firms in the sample are making initial public offerings, this might imply that the spatial dependence in overall ROA is due to the measurement
+bias removed by the firm-specific ROA calculation. This result, however, could also be due
+to limiting the number of observations by excluding the firms that exited the sample during
+the study period. Doing so introduced a peculiar sample bias (because the 124 firms used for
+the estimates neither merged nor failed) that may have influenced the power of the Moran’s
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 17----->162 Organizational Research Methods
+
+I statistic in the case of firm-specific ROA. Such sample bias aside, this finding suggests
+that the firm-specific measure of ROA is preferable because it seems to be free of spatial
+correlation.
+Second, it could be argued that although the spatial correlation is statistically significant
+in many instances in Table 2, the adverse effect of spatial dependence is minimal. In the first
+3 years of the data, for example, none of the Moran’s I estimates is greater than 0.14. In
+other words, it would appear that not more than 14% of the sampled firms’ profits are
+explained by the profits of their neighbors in the sample. Thus, because the bias, inconsistency, and/or inefficiency of the OLS estimator increases with greater spatial correlation,
+the smaller Moran’s I estimates seem to suggest that the spatial dependence in the data can
+be safely overlooked. The counter argument to this point, however, is that predicting firm
+profits in the context of linear regression is extremely difficult and that it is not uncommon
+for empirical studies of profits to indicate very small goodness-of-fit measures (Goddard &
+Wilson, 1999). In this instance, ignoring even small aberrations in the OLS estimator may
+be hazardous.
+Finally, because Moran’s I estimates the simple linear relationship shown in Equation
+(3), no variables critical to the performance of a new firm, such as its market share, level
+of diversification, and research and development expenditures, have been included as control variables. The only ‘‘control’’ included in this analysis has been the average ROA of
+each firm’s industry, which were used to calculate firm-specific ROA.8 This suggests that
+an analysis paralleling LeSage and Charles’ (2008) use of appropriate spatial regression
+models is a logical next step in exploring the conjecture that measures used in entrepreneurship research are especially prone to spatial dependence. Indeed, their finding that home
+prices are more spatially dependent for old homes as compared to new homes derives from
+spatial lag model estimates that include several measures of each home’s specific features,
+including size, number of bathrooms, and age, applied alternatively to a sample of newer
+homes and a sample of older homes.
+
+An Areal Data Illustration of Spatial Regression: High-Tech Start-Ups
+This illustration tests the hypothesis that high-technology firm births in a given region
+are positively related to the level of knowledge (i.e., the number of patents granted) in that
+region using county-level data from the state of Colorado. The level of analysis is driven by
+the County Business Patterns and Business Information Tracking Series (BITS) files maintained by the US Census Bureau from which the data have been obtained. In turn, Colorado
+has been selected for two reasons: first, given empirical evidence that the spillover of
+knowledge is constrained to a distance of 50–75 miles (Anselin, Varga, & Acs, 1997)9—
+an area of 7,850 to 17,660 square miles—the relatively large land area of each Colorado
+county, plus the land areas of its first-order contiguous neighbors, adequately correspond
+to a region of knowledge spillover (Acs & Plummer, 2005). Second, the counties provide
+adequate variance in the key variables of knowledge and entrepreneurial activity.
+Data for the variables were obtained from the US Census Bureau, the US Patent and Trademark Office (USPTO), and the Bureau of Economic Analysis. Annual observations of the
+variables for each county were collected from 1990 to 2000. The start of the study period
+was determined by the earliest available year of the establishment birth data for the
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 18----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+163
+
+Table 3
+Descriptive Statistics (n ¼ 63)
+Variable
+High-Tech Births
+Income Growth
+Knowledge
+Density
+Labor Force
+
+Mean
+
+SD
+
+Minimum
+
+Maximum
+
+7.1
+0.04
+18.0
+3.5
+32,292.8
+
+16.8
+0.01
+49.4
+16.8
+68,360.7
+
+0
+0.02
+0
+0.03
+322.5
+
+72.6
+0.07
+279.8
+131.8
+283,169.1
+
+dependent variable, whereas the last year was determined by the coverage of the patent data
+obtained. Because the discussion is limited to an illustration of cross-sectional spatial
+dependence, the data were averaged across the 11 years of the study period. Thus, the
+regression results reported below can be interpreted as between-county, or long-run, estimates (Kennedy, 2003). The county observations are georeferenced by merging the data
+with the 2000 Colorado cartographic boundary files obtained from the US Census Bureau.
+The dependent variable, High-Tech Births, is the number of single-establishment births
+in high-technology industries in each county.10 As the key independent variable, Knowledge is measured as the number of patents granted in each county.11 Data for this variable
+were obtained from tabulations available from the USPTO. For control variables, data on
+county labor force and personal incomes were collected from the Bureau of Economic
+Affairs regional accounts file. Information on the number of existing business establishments and on the land area of each county was obtained from the US Census Bureau.
+Accordingly, Labor Force is the number of workers (regardless of employment status) in
+the county, Establishment Size is the number of workers divided by the number of establishments, Income Growth is the annual change in per capita income, and Density is the number
+of establishments per square mile. Table 3 reports descriptive information for the variables.
+Given the skewed distribution and outliers of the variables, as well as to facilitate
+comparison of the b coefficient estimates, the initial regression model specification is of
+log-linear form (Russell & Dean, 2000; White, Tansey, Smith, & Long, 1998):12
+logðHigh  Tech Birthsi Þ ¼ b0 þ b1 logðKnowledgei Þ þ b2 logðLabor Forcei Þ
+þ b3 logðIncome Growthi Þ þ b4 logðDensityi Þ
+þ b5 logðEstablishment Sizei Þ þ ei
+
+ð9Þ
+
+As a result, the b coefficients are interpreted as elasticities or as the percentage change in
+the dependent variable because of a 1% change in the independent variable. In this particular model, all the variables except Establishment Size are expected to be positively related
+to the number of high-technology births (Armington & Acs, 2002). From here, the analysis
+follows the four phases described in the previous section.
+Before proceeding to the analysis, however, some discussion must be given to a few
+complications specific to the data aggregated by spatial units, such as counties. As Davidsson (2004) points out, entrepreneurship researchers ‘‘want to have spatial units that make
+sense from an economic point of view rather than being based on some administrative
+criterion’’ (p. 96). For some analyses, for example, Davidsson (2004) suggests that
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 19----->164 Organizational Research Methods
+
+aggregating data by LMA might be preferable because the LMA boundaries are defined
+primarily by observed spatial attributes (e.g., county-to-county commuting patterns) and
+thus represent self-contained areas of economic activity (Armington & Acs, 2002). Alternatively, data aggregated by state or administrative regions may be preferable because the
+spatial units represent areas of policy and regulatory influence. Such aggregation invites the
+ecological regression problem of inferring micro-level relationships from macro-level data
+(Anselin, 2002).
+Sampling by spatial units as Davidsson (2004) suggests also touches on an issue that concerns spatial dependence known as the modifiable areal unit problem (MAUP). The MAUP
+arises when imposing units of spatial aggregation on measures of geographical phenomenon
+generate artificial patterns of spatial interaction (Heywood, 1998). There are two dimensions to the MAUP. First, as Davidsson (2004) correctly identifies, there is the uncertainty
+of whether the arrangement of the spatial units by which data are aggregated (e.g., by state
+or LMA) is relevant to the analysis. The second and less well-known dimension of the
+MAUP is the potential for spurious spatial correlation when the spatial scale of the aggregation corresponds poorly to the true scale of the underlying phenomenon (Anselin, 1988).
+In the field of criminology, for example, there is ongoing debate about the validity of studying crime using county-level data because the spatial scale at which crime ‘‘processes’’
+operate are smaller than counties (Messner et al., 1999). In sum, in addition to the many
+problems of sampling entrepreneurship data by spatial units discussed by Davidsson
+(2004), aggregating data by LMA as he suggests in his examples can worsen, if not induce,
+spatial dependence in the variables (Anselin, 2002).
+To be clear, provided researchers avoid naı̈ve inference of their results, the MAUP and
+ecological regression problems should not be overstated. In fact, this discussion neither suggests that studies using LMA data (e.g., Armington & Acs, 2002) are inherently flawed nor
+proposes some arbitrary rule such as ‘‘smaller areal units are always better.’’ Instead, the
+point is that any spatial dependence and estimation thereof are rarely independent of the
+scale and arrangement by which data are observed or aggregated (Anselin, 2002). Thus,
+spatial data analysis techniques offer the greatest value in these cases. In particular, because
+spatial dependence can be detected, characterized, and mitigated through spatial modeling,
+entrepreneurship researchers can adhere to Davidsson’s (2004) suggestions on sampling
+data by relevant spatial units, while being less concerned about introducing spatial dependence irregularities to the analysis.
+In light of this discussion, the first phase of the analysis is the specification of the spatial
+weights matrix. The starting assumption is that any spatial dependence in the High-Tech
+Births variable is principally substantive. Thus, based on the evidence that knowledge spillovers are constrained to a 75-mile range (Anselin et al., 1997), and given the large average
+size of Colorado’s counties, counties are defined as neighbors based on ‘‘first-order, queen’’
+contiguity. This terminology derives from the game of chess. ‘‘First-order’’ neighbors, for
+example, are those squares on the board (or counties on a map) that share a common border
+or vertex; higher-order neighbors can be specified but reduce the degrees of freedom for the
+analysis (Anselin, 2002). In turn, ‘‘queen’’ contiguity refers to the direction of the contiguity; ‘‘bishop’’ contiguity refers to diagonal neighbors sharing a common vertex, ‘‘rook’’
+contiguity refers to perpendicular neighbors sharing a common border, and ‘‘queen’’
+contiguity refers to both diagonal and perpendicular neighbors.
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 20----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+165
+
+Figure 4
+Hypothetical Map of Five Counties
+
+A
+
+B
+
+C
+
+D
+
+E
+
+F
+
+G
+
+H
+
+I
+
+For illustration, Figure 4 is a hypothetical map showing the location and arrangement of
+nine ‘‘counties’’ of a fictional state, and Table 4 shows the corresponding first-order, queen
+contiguity matrix as well as the resulting row-standardized matrix, W. In this instance, firstorder, queen contiguity means that the neighborhood set for county A includes counties B,
+D, and E, which is coded accordingly in the first row of Table 4 and then row-standardized
+in the lower portion of the table. With this specification, it is assumed that the level of entrepreneurial activity in one county influences only the level of entrepreneurial activity in
+counties sharing a common border or vertex, and any ‘‘edge effects’’ are ignored.13
+With the spatial weights matrix defined, the analysis proceeds to the second phase. Here
+the dependent variable, High-Tech Births, is subjected to the Moran’s I and LISA statistics
+based on the spatial weights matrix. As shown in Figure 5, the Moran Scatterplot indicates
+positive spatial correlation (I ¼ 0.33, p < .01).14 Because the scatterplot seems to indicate
+the undue influence of several outliers, the analysis is repeated using the log of the dependent variable. In Figure 6, the Moran Scatterplot shows that the spatial correlation of the
+logged transformation of High-Tech Births is again positive and significant (I ¼ 0.36,
+p < .01). It is also easier to see in Figure 6 that a number of observations fall in the upper
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 21----->166 Organizational Research Methods
+
+Table 4
+Spatial Weights Matrix for Figure 4
+Contiguity matrix
+Aj
+Ai
+0
+1
+Bi
+Ci
+0
+Di
+1
+Ei
+1
+Fi
+0
+Gi
+0
+Hi
+0
+Ii
+0
+
+Bj
+1
+0
+1
+1
+1
+1
+0
+0
+0
+
+Cj
+0
+1
+0
+0
+1
+1
+0
+0
+0
+
+Row-standardized weights matrix
+Aj
+Bj
+Cj
+Ai
+0
+1/3
+0
+Bi
+1/5
+0
+1/5
+Ci
+0
+1/3
+0
+Di
+1/5
+1/5
+0
+Ei
+1/8
+1/8
+1/8
+Fi
+0
+1/5
+1/5
+Gi
+0
+0
+0
+Hi
+0
+0
+0
+Ii
+0
+0
+0
+
+Dj
+1
+1
+0
+0
+1
+0
+1
+1
+0
+
+Ej
+1
+1
+1
+1
+0
+1
+1
+1
+1
+
+Fj
+0
+1
+1
+0
+1
+0
+0
+1
+1
+
+Gj
+0
+0
+0
+1
+1
+0
+0
+1
+0
+
+Hj
+0
+0
+0
+1
+1
+1
+1
+0
+1
+
+Ij
+0
+0
+0
+0
+1
+1
+0
+1
+0
+
+Dj
+1/3
+1/5
+0
+0
+1/8
+0
+1/3
+1/5
+0
+
+Ej
+1/3
+1/5
+1/3
+1/5
+0
+1/5
+1/3
+1/5
+1/3
+
+Fj
+0
+1/5
+1/3
+0
+1/8
+0
+0
+1/5
+1/3
+
+Gj
+0
+0
+0
+1/5
+1/8
+0
+0
+1/5
+0
+
+Hj
+0
+0
+0
+1/5
+1/8
+1/5
+1/3
+0
+1/3
+
+Ij
+0
+0
+0
+0
+1/8
+1/5
+0
+1/5
+0
+
+left (low-high or LH) and lower right (high-low or HL) quadrants of the scatterplot. As in
+the previous illustration using post-IPO profits, the spatial correlation of High-Tech Births
+is negative in these counties.
+To investigate these results, the spatial correlation is subjected to ‘‘hot spot’’ analysis.
+First, Figure 7 is a Percentile Map of the unlogged High-Tech Births variable, which indicates that the observation for Boulder County is alone in the 99th percentile. Next, Figure 8
+is the LISA Cluster Map for the same variable, which combines information from the LISA
+estimates with information from the Moran Scatterplot.15 The LISA Cluster Map classifies
+the counties by the four types of local spatial correlation (i.e., high-high, low-low, high-low,
+and low-high). Given the percentile and LISA Cluster Maps, it would seem that Boulder
+County is at the center of a broad area of high-tech entrepreneurial activity bounded by
+El Paso County to the south and the Wyoming border to the north. Those familiar with economic activity in Colorado are likely to find this a reasonable interpretation, especially considering that these counties are all connected by Interstate 25.
+Armed with the evidence that High-Tech Births is spatially correlated, the analysis proceeds to the third and fourth phases. The results of the linear regressions of Equation (9) are
+reported in Table 5. Including Density in the model yields a multicollinearity condition
+number above the suggested cutoff value of 30 (Belsley, Kuh, & Welsch, 1980) and is therefore dropped from the estimates. Model significance and goodness-of-fit indicators include
+the log likelihood, F-statistic, and Akaike information criterion (AIC), an MLE analog of an
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 22----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+167
+
+Figure 5
+Moran Scatterplot of High-Tech Births
+
+adjusted r-squared. The r-squared estimates are reported despite being inappropriate in an
+MLE framework (Anselin & Bera, 1998). Spatial dependence diagnostics are also reported,
+including the Moran’s I of the OLS residuals and the SARMA test.16 The normality and
+homoskedasticity of the OLS errors are not rejected by the Jarque-Bera and Breusch-Pagan
+test statistics (not reported).
+The first column of Table 5 reports the OLS estimates. Given the results of the Moran’s I
+analysis above, it is no surprise that the LM Lag statistic is significant at the 5% level. The
+statistical insignificance of the remaining diagnostics indicates that spatial dependence in
+the errors is not a concern. Thus, the second column of Table 5 reports the results of the
+spatial lag specification. As expected from the OLS diagnostics, the LR test for the spatial
+lag parameter is significant and the estimate of the spatial lag parameter, r, is positive,
+statistically significant, and within the allowable range. All of the goodness-of-fit statistics
+are improved over the OLS estimates, and the Wald  LR  LM inequality is satisfied
+(Wald ¼ 5.64, LR ¼ 4.18, and LM Lag ¼ 3.85). Although not necessary in light of the spatial diagnostic tests, column 3 of Table 5 also reports the results of the spatial error model
+specification. As expected, neither the spatial error dependence parameter, , nor the LR
+test for spatial error dependence is statistically significant at the 5% level.
+Overall, the results support the hypothesis that high-tech entrepreneurial activity is positively related to elevated levels of Knowledge (in the form of granted patents). In particular,
+the spatial lag estimates indicate that, in the long run, a 1% increase in Knowledge is associated with a 0.28% increase in the number of high-tech start-ups. The significant spatial lag
+parameter also indicates a positive association across neighboring counties in high-tech
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 23----->168 Organizational Research Methods
+
+Figure 6
+Moran Scatterplot of (log) High-Tech Births
+
+entrepreneurial activity. In addition, the results indicate that the number of high-tech startups is higher in counties with a larger Labor Force value, yet is lower in counties where
+establishment size is larger. This result is consistent with the premise that people recognize
+entrepreneurial opportunities and opt to start their own businesses when the large bureaucracies of their employers prevent their pursuit of such opportunities as internal ventures
+(Armington & Acs, 2002; McCann & Folta, 2008).
+Despite the significant spatial correlation in the dependent variable, the coefficient estimates in Table 5 vary little across the OLS, spatial lag, and spatial error specifications.
+Indeed, because a positive and significant coefficient for Knowledge is sufficient to support
+the given hypothesis, the spatial dependence in this case is not severe enough to invalidate
+the OLS results. That is, neither the direction nor the statistical significance of the estimated
+coefficients changed across the OLS, spatial lag, and spatial error estimates. With this said,
+the analysis does indicate that spatial dependence changes the inference of the coefficient
+estimates. For instance, one might conclude from the OLS estimates that the county’s stock
+of Knowledge is the ‘‘most important’’ or strongest determinant of local high-tech entrepreneurial activity in Colorado counties because the elasticity for Knowledge is largest in magnitude (i.e., absolute value). Based on the spatial lag estimates, however, one comes to the
+opposite conclusion given that, in this case, Knowledge is the least important determinant
+of entrepreneurial activity.
+In sum, the spatial models illustrated here add rigor to the hypothesis testing and allow
+for more accurate inferences about the theorized relationship between Knowledge and
+entrepreneurial activity. In particular, the spatial lag model corrects for the information lost
+in the OLS estimates when the spatial correlation in the dependent variable is ignored
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 24----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+169
+
+Figure 7
+Percentile Map of High-Tech Births in Colorado
+
+Table 5
+Determinants of (Log) High-Tech Births in Colorado, 1990–2000
+Variables
+Constant
+Log (Labor Force)
+Log (Income Growth)
+Log (Establishment Size)
+Log (Knowledge)
+r
+
+Log likelihood
+AIC
+F statistic
+R2
+Moran’s I (residuals)
+LM lag
+RLM lag
+LM error
+RLM error
+SARMA
+LR test
+
+1, OLS
+
+2, Spatial Lag
+
+3, Spatial Error
+
+0.57 (0.61)
+0.30** (0.07)
+0.28 (0.21)
+0.28* (0.11)
+0.38** (0.06)
+
+1.45* (0.65)
+0.38** (0.07)
+0.12 (0.20)
+0.41** (0.11)
+0.28** (0.07)
+0.19* (0.08)
+
+1.06þ (0.57)
+0.35** (0.07)
+0.17 (0.20)
+0.35** (0.10)
+0.33** (0.06)
+
+46.54
+103.08
+101.5**
+0.87
+0.10
+3.85*
+2.47
+1.49
+0.11
+3.96
+
+44.45
+100.91
+
+0.32þ (0.16)
+45.49
+100.97
+
+0.88
+
+0.88
+
+4.18*
+
+2.11
+
+Spatial weights matrix (W) is first-order, queen contiguity; n ¼ 63 counties; estimated standard errors in parentheses; two-tailed tests. OLS ¼ ordinary least squares; AIC ¼ Akaike information criterion; LM ¼ Lagrange
+multiplier; SARMA ¼ spatial autoregressive moving average; LR ¼ likelihood ratio.
+þ significant at 10%,
+*
+significant at 5%,
+**
+significant at 1%; homoskedasticity and normality of errors not rejected by diagnostics (not reported).
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 25----->170 Organizational Research Methods
+
+Figure 8
+LISA Cluster Map of High-Tech Births
+
+(Anselin & Bera, 1998). Thus, the results can be interpreted, and the conclusions accepted,
+with a greater degree of confidence than would be possible otherwise. More importantly,
+because these techniques allow for the empirical exploration of spatial effects and processes, the spatial dependence that undermines the validity of the OLS estimator creates
+an opportunity to advance the study of entrepreneurship in a geographic context. Indeed,
+in the context of theories of agglomeration and spatial externalities, these techniques arm
+scholars with tools capable of bringing some order to the ‘‘overly stretched, thin, and fractured’’ (Martin & Sunley, 2003, p. 29) conception of geographic clusters prevalent in many
+studies of economic activity.
+
+Conclusion
+This article argues that spatial dependence is a problem in entrepreneurship research
+even though the particular theory being explored is nongeographic. Indeed, a central
+message in this article is that the application of the spatial dependence models should be
+considered in any research context in which the data are likely to exhibit spatial correlation.
+Such spatial dependence may be substantive, as predicted by theory, or spurious, given how
+the data are collected and aggregated or how the variables are calculated. The two examples
+in the article demonstrated the use of Moran’s I as well as the spatial lag and spatial error
+models using firm-level and county-level data, respectively, but these tools could be applied
+to studies of individual entrepreneurs just as easily. In this case, the behavior of entrepreneurs may exhibit spatial dependence given evidence that people are more likely to engage
+in entrepreneurial activity after observing a friend, neighbor, or colleague engage in such
+activity (Parker, 2008).
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 26----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+171
+
+Analogous to the problem of serial dependence in longitudinal data, spatial dependence
+undermines the validity of any results produced by OLS estimation. This is particularly crucial to hypothesis testing when estimating the impact of important determinants of entrepreneurial activity with smaller effect sizes because any statistically significant effects from
+the variable of interest may be spurious or masked by the bias, inconsistency, and/or inefficiency induced by spatial dependence (Anselin, 1988). Moreover, spatial dependence is
+likely to be a problem for entrepreneurship scholars, given the tendency of entrepreneurial
+activity to cluster geographically. Indeed, the first of the two examples in this article
+indicates that—at least in terms of post-IPO financial performance—the problem of spatial
+dependence is endemic to new firms.
+Although the application of spatial dependence models to entrepreneurship research has
+promising benefits, these tools are no panacea for bad research design and come with a
+number of complications. In particular, the complexities introduced by the spatial weights
+matrix cannot be ignored or underestimated. However, the spatial weights matrix is the cornerstone of the spatial dependence models summarized in this article because it is through
+this device that conceptions of space are explicitly incorporated into the linear regression
+model. Indeed, what makes these spatial modeling techniques so promising is that space
+becomes a subject for empirical exploration rather than solely a matter of theoretical conjecture (Anselin, 1988). However, the spatial weights matrix introduces a number of computational difficulties that limit the ease with which these techniques may be applied.
+Thus, this article serves only as an introduction to spatial dependence and spatial modeling techniques, and researchers should consult comprehensive treatments of the subject
+(such as Anselin, 1988). For instance, little or no mention has been made of alternative spatial estimators, such as spatial two-stage least squares or general method of moments
+(GMM), higher order models, such as the spatial autoregressive moving average (SARMA)
+specification, and newly emerging spatial panel techniques that allow for ‘‘space-time’’
+modeling (Anselin, 2001b; Anselin, Le Gallo, & Jayet, 2008). Space limitations have also
+prevented full discussion of available software and other resources, although some mention
+has been made of the spatial analysis tools written for Stata (Pisati, 2001) and MATLAB
+(LeSage, 1999) and of the stand-alone program, GeoDa. Nevertheless, it is hoped that entrepreneurship researchers will recognize the benefits of these methods and welcome the use
+of spatial data analysis.
+
+Notes
+1. A third violation is the spatial correlation of the independent variables. Including a spatially correlated
+independent variable in Equation (1) creates minor methodological problems not addressed in this article
+(Anselin, 2002).
+2. Those familiar with time-series estimation may recognize the analogy to dynamic estimation in which
+the observation of the dependent variable from a prior period is included as an independent variable. For technical reasons, the analogy is imperfect in that what holds true for time-series or dynamic panel models does not
+necessarily hold true for spatial lag models (Anselin & Bera, 1998).
+3. Miscalculations in the locations of the data can also be the product of ‘‘mechanical’’ or ‘‘digitized’’ noise.
+In the entrepreneur survey example, suppose that the location coordinates (i.e., latitude and longitude) of the
+survey data are estimated from the street addresses of the entrepreneurs’ homes using geospatial information
+system (GIS) software. In this instance, the GIS street address data for newly constructed areas are often
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 27----->172 Organizational Research Methods
+unreliable or unavailable (Atkinson, 1995). ESRI’s ArcGIS, for example, estimates the latitude and longitude
+of the observation’s zip-code when the street address is not found in the reference data.
+4. This example of shared accounting practices was provided in a private communication with former chief
+financial officer and now entrepreneurship professor Joy Godesiabois.
+5. In the case of the spatial lag model, for example, the parameter space is 1 / omin < r < 1 / omax, where
+omin and omax are the smallest and largest eigenvalues of the spatial weights matrix, W. With W row-standardized, omax ¼ 1, whereas omin > 1. Thus, 1 / omin < 1. Furthermore, the boundary conditions on the spatial
+lag parameter suggest that the dependent variable cannot be transformed to ‘‘filter out’’ the spatial dependence
+by subtracting the value of the spatial lag operator (Wyj) from yi as one might do by first-differencing the variables in a time-series context. Doing so would be equivalent to estimating the spatial lag model in Equation (6)
+and fixing r ¼ 1, a value outside the allowable parameter space (Anselin & Bera, 1998)
+6. The GeoDa Center for Geospatial Analysis and Computation at Arizona State University offers courses
+on spatial data analysis. Information is available at http://geodacenter.asu.edu/.
+7. Omitting the 103rd observation leads to a higher value of Moran’s I (0.139, p < .05, d* ¼ 150) as does
+winsoring return on assets (ROA). Moran’s I is 0.072 (p < .01, d* ¼ 150 miles) when ROA is winsorized at 5%
+and 0.075 (p < .01, d* ¼ 150 miles) when winsorized at 10%.
+8. Firm-specific ROA equals the firm’s overall ROA less the average ROA for all the public firms (in Compustat) in its industry. As a result, the relationship in Equation (3) can be re-expressed with both the spatial lag
+and the industry average, as right-hand side variables with the parameter for the industry average variable fixed
+to one.
+9. Anselin, Varga, and Acs (1997), using the spatial regression techniques summarized in this article, find
+that the spillovers of university research on firm innovation extended over a range of 50–75 miles from the
+innovating metropolitan area.
+10. Data for this variable originated from the US Census Bureau’s Business Information Tracking Series
+(BITS) file. Because a ‘‘single establishment’’ is the lone physical location where a firm conducts its business
+or operations, a single establishment birth is a reasonable proxy for the emergence of a new firm. In turn,
+‘‘high-tech’’ industries are defined per Varga’s (1998) three simultaneous criteria: industries with (a) an
+above-average research and development to industry sales ratio at the three-digit SIC level; (b) an aboveaverage share of mathematicians, scientists, engineers, and engineering technicians relative to total industry
+occupations; and (c) an above-average number of innovations per 1,000 employees.
+11. According to the US Patent and Trademark Office (USPTO), the county-level patent counts are based
+on the inventor’s county of residence. Therefore, if an inventor lives in county A but conducts his or her work
+in county B, then the patent is counted for county A, whereas the Knowledge it measures probably resides in
+county B. This, of course, is a concern for a number of reasons. In the context of spatial dependence, the patent
+count variable is likely to exhibit spurious spatial dependence, especially if counties A and B are neighbors,
+because the recorded location of where the Knowledge actually resides may be incorrect (Atkinson, 1995).
+12. Six of the 63 observations of High-Tech Births are zero. This required the use of a ‘‘started log’’ by
+adding a small constant (0.01) to each observation before the log transformation.
+13. Space limitations preclude a full treatment of the problem of ‘‘edge effects’’ in finite samples (see Anselin, 1988). In the Colorado illustration, for example, the entrepreneurial activity in Wyoming’s Laramie
+County—arguably the northern edge of the entrepreneurial activity centered in Boulder, Colorado—is unobserved. Thus, the Colorado data are spatially biased. Corrections and adjustments for edge effects are available
+but are problematic and costly in terms of degrees of freedom (Darmofal, 2006).
+14. In GeoDa, the test of significance is based on a permutation method yielding a ‘‘pseudo’’ p value suitable only for exploratory analysis. The dotted lines in these scatterplots indicate the significance envelope for
+the Moran’s I estimate (the solid line).
+15. Given space limitations, a table of local indicator of spatial association (LISA) estimates is not included.
+See Doh and Hahn (2008) for a more complete illustration of the LISA statistic and its uses.
+16. Space limitations preclude discussion of ‘‘higher order’’ models that include both a spatial error and a
+spatial lag operator. One such model is the spatial autoregressive moving average (SARMA) specification.
+The SARMA test reported in Table 5, which is statistically insignificant, indicates that such a SARMA specification is not necessary. See Anselin (2001b) and Anselin and Bera (1998) for discussions.
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 28----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+173
+
+References
+Acs, Z. J., Audretsch, D. B., Braunerhjelm, P., & Carlsson, B. (2005). The knowledge spillover theory of entrepreneurship. Unpublished Working Paper.
+Acs, Z. J., & Plummer, L. A. (2005). Penetrating the ‘knowledge filter’ in regional economies. Annals of
+Regional Science, 39, 439-456.
+Acs, Z. J., Plummer, L. A., & Sutter, R. (in press). Penetrating the knowledge filter in ‘rust belt’ economies.
+Annals of Regional Science.
+Almeida, P., & Kogut, B. (1997). The exploration of technological diversity and the geographic localization of
+innovation. Small Business Economics, 9, 21-31.
+Andersson, D. E. (2005). The spatial nature of entrepreneurship. Quarterly Journal of Austrian Economics, 8,
+21-34.
+Anselin, L. (1988). Spatial econometrics: Methods and models. Dordrecht, The Netherlands: Kluwer Academic.
+Anselin, L. (1995). Local indicators of spatial association - LISA. Geographical Analysis, 27, 93-115.
+Anselin, L. (2001a). Rao’s score test in spatial econometrics. Journal of Statistical Planning and Inference, 97,
+113-139.
+Anselin, L. (2001b). Spatial econometrics. In B. Baltagi (Ed.), A companion to theoretical econometrics
+(pp. 310-330). Oxford, UK: Basil Blackwell.
+Anselin, L. (2002). Under the hood: Issues in the specification and interpretation of spatial regression models.
+Agricultural Economics, 27, 247-267.
+Anselin, L., & Bera, A. K. (1998). Spatial dependence in linear regression models with an introduction to spatial
+econometrics. In A. Ullah & D. Giles (Eds.), Handbook of applied economic statistics (pp. 237-246). New
+York: Marcel Dekker.
+Anselin, L., Le Gallo, J., & Jayet, H. (2008). Spatial panel econometrics. In L. Matyas & P. Sevestre (Eds.),
+The econometrics of panel data, fundamentals and recent developments in theory and practice (3rd ed.,
+pp. 625-660). Dordrecht, The Netherlands: Kluwer.
+Anselin, L., Syabri, I., & Kho, Y. (2006). GeoDa: An introduction to spatial data analysis. Geographical Analysis, 38, 5-22.
+Anselin, L., Syabri, I., & Smirnov, O. (2002). Visualizing multivariate spatial correlation with dynamically
+linked windows. Unpublished Working Paper.
+Anselin, L., Varga, A., & Acs, Z. J. (1997). Local geographic spillovers between university research and high
+technology innovations. Journal of Urban Economics, 42, 422-448.
+Armington, C., & Acs, Z. J. (2002). The determinants of regional variation in new firm formation. Regional
+Studies, 36, 33-45.
+Atkinson, P. M. (1995). A method for describing quantitatively the information, redundancy and error in digital
+spatial data. In P. Fisher (Ed.), Innovation in GIS 2 (pp. 85-96). Bristol, PA: Taylor and Francis, Inc.
+Ballinger, G. A. (2004). Using generalized estimating equations for longitudinal data analysis. Organizational
+Research Methods, 7, 127-150.
+Barber, B. M., & Lyon, J. D. (1996). Detecting abnormal operating performance: The empirical power and
+specification of test statistics. Journal of Financial Economics, 41, 359-399.
+Barnett, V., & Lewis, T. (1994). Outliers in statistical data. Chichester, UK: John Wiley.
+Beck, N., Gleditsch, K. S., & Beardsley, K. (2006). Space is more than geography: Using spatial econometrics in
+the study of political economy. International Studies Quarterly, 50, 27-44.
+Belsley, D. A., Kuh, E., & Welsch, R. (1980). Regression diagnostics. New York: John Wiley.
+Bhagat, S., & Jefferis, R. (2002). The econometrics of corporate governance. Cambridge, MA: MIT Press.
+Bliese, P. D., & Hanges, P. J. (2004). Being both too liberal and too conservative: The perils of treating grouped
+data as though they were independent. Organizational Research Methods, 7, 400-417.
+Cooper, A. C., & Folta, T. B. (2000). Entrepreneurship in high-technology clusters. In D. L. Sexton &
+H. Landstrom (Eds.), Handbook of entrepreneurship (pp. 348-367). Malden, MA: Blackwell Publishers.
+Darmofal, D. (2006). Spatial econometrics and political science. Paper presented at the Southern Political Science Association. Retrieved September 5, 2008, from http://polmeth.wustl.edu/retrieve.php?id¼575
+Davidsson, P. (2004). Researching entrepreneurship. New York: Springer.
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 29----->174 Organizational Research Methods
+Deeds, D. L., Decarolis, D., & Coombs, J. E. (1997). The impact of firm-specific capabilities on the amount of
+capital raised in an initial public offering: Evidence from the biotechnology industry. Journal of Business
+Venturing, 12, 31-46.
+Doh, J. P., & Hahn, E. D. (2008). Using spatial methods in strategy research. Organizational Research Methods,
+11, 659-681.
+Dumais, G., Ellison, G., & Glaeser, E. L. (2002). Geographic concentration as a dynamic process. Review of
+Economics and Statistics, 84, 193-204.
+Eckhardt, J. T., & Shane, S. (2003). Opportunities and entrepreneurship. Journal of Management, 29, 333-349.
+Fama, E. F., & French, K. (1995). Size and book-to-market factors in earnings and returns. Journal of Finance,
+50, 131-155.
+Gilbert, B. A., McDougall, P. P., & Audretsch, D. B. (2008). Clusters, knowledge spillovers and new venture
+performance: An empirical examination. Journal of Business Venturing, 23, 405-422.
+Goddard, J. A., & Wilson, J. O. S. (1999). The persistence of profit: A new empirical interpretation. International Journal of Industrial Organization, 17, 663-687.
+Goodchild, M. F., Anselin, L., Appelbaum, R. P., & Harthorn, B. H. (2000). Toward spatially integrated social
+science. International Regional Science Review, 23, 139.
+Haining, R. (1990). Spatial data analysis in the social and environmental sciences. Cambridge, UK: Cambridge
+University Press.
+Heywood, I. (1998). Introduction to geographical information systems. New York: Addison Wesley Longman.
+Hitt, M. A., Gimeno, J., & Hoskisson, R. E. (1998). Current and future research methods in strategic management. Organizational Research Methods, 1, 6-44.
+Kennedy, P. (2003). A guide to econometrics. Cambride, MA: MIT Press.
+Lacombe, D. J. (2004). Does econometric methodology matter? An analysis of public policy using spatial
+econometric techniques. Geographical Analysis, 36, 105-118.
+LeSage, J. P. (1999). Spatial econometrics. Retrieved July 31, 2005, from http://www.rri.wvu.edu/
+regscweb.htm
+LeSage, J. P., & Charles, J. (2008). Using home buyers’ revealed preferences to define the urban–rural fringe.
+Journal of Geographical Systems, 10, 1-21.
+Martin, R., & Sunley, P. (2003). Deconstructing clusters: Chaotic concept or policy panacea? Journal of
+Economic Geography, 3, 5-35.
+McCann, B. T., & Folta, T. B. (2008). Location matters: Where we have been and where we might go in agglomeration research. Journal of Management, 34, 532-565.
+McDougall, P. P., Deane, R. H., & D’Souza, D. E. (1992). Manufacturing strategy and business origin of new
+venture firms in the computer and communications equipment industries. Production and Operations
+Management, 1, 53-69.
+Messner, S. F., Anselin, L., Baller, R. D., Hawkins, D. F., Deane, G., & Tolnay, S. E. (1999). The spatial patterning of county homicide rates: An application of exploratory spatial data analysis. Journal of Quantitative
+Criminology, 15, 423-450.
+Parker, S. C. (2004). The economics of self-employment and entrepreneurship. Cambridge, UK: Cambridge
+University Press.
+Parker, S. C. (2008). Statistical issues in applied entrepreneurship: Data, methods and challenges. In
+E. Congregado (Ed.), Measuring entrepreneurship (pp. 9-20). New York: Springer.
+Pe’er, A., & Vertinsky, I. (2008). Firm exits as a determinant of new entry: Is there evidence of local creative
+destruction? Journal of Business Venturing, 23, 280-306.
+Pisati, M. (2001). Tools for spatial data analysis. Stata Technical Bulletin, STB-60, 21-37.
+Rosenthal, S. S., & Strange, W. C. (2004). Evidence on the nature and sources of agglomeration economies. In
+J. V. Henderson & J.-F. Thisse (Eds.), Handbook of urban and regional economics (Vol. 4, pp. 2119-2172).
+New York: North Holland.
+Russell, C. J., & Dean, M. A. (2000). To log or not to log: Bootstrap as an alternative to the parametric estimation of moderation effects in the presence of skewed dependent variables. Organizational Research Methods,
+3, 166-185.
+Sarafoglou, N., & Paelinck, J. (2008). On diffusion of ideas in the academic world: The case of spatial econometrics. Annals of Regional Science, 42, 487-500.
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+<-----Page 30----->Plummer / Spatial Dependence in Entrepreneurship Research
+
+175
+
+Shane, S., & Venkataraman, S. (2000). The promise of entrepreneurship as a field of research. Academy of Management Review, 25, 217-226.
+Sorenson, O., & Stuart, T. E. (2001). Syndication networks and the spatial distribution of venture capital investments. American Journal of Sociology, 106, 1546-1588.
+Strang, D., & Soule, S. A. (1998). Diffusion in organizations and social movements: From hybrid corn to poison
+pills. Annual Review of Sociology, 24, 265-290.
+Stuart, T., & Sorenson, O. (2003). The geography of opportunity: Spatial heterogeneity in founding rates and the
+performance of biotechnology firms. Research Policy, 32, 229-253.
+Tobler, W. R. (1970). A computer movie simulating urban growth in the Detroit region. Economic Geography,
+46, 234-240.
+Varga, A. (1998). University research and regional innovation: A spatial econometric analysis of academic
+technology transfer. Boston: Kluwer.
+Waring, G. F. (1996). Industry differences in the persistence of firm-specific returns. American Economic
+Review, 86, 1253-1265.
+White, M. C., Tansey, R., Smith, M., & Long, R. G. (1998). Generalized linear models: Loglinear modeling in
+managerial research. Organizational Research Methods, 1, 223-247.
+Lawrence A. Plummer (PhD, University of Colorado at Boulder) is an assistant professor of strategy and entrepreneurship at Clemson University and a management research fellow of the Max Planck Institute of Economics. Dr. Plummer teaches annually at Florida State University’s Entrepreneurship Bootcamp for Veterans, a
+program created by Syracuse University.
+
+Downloaded from http://orm.sagepub.com at UNIV OF WATERLOO on December 3, 2009
+
+

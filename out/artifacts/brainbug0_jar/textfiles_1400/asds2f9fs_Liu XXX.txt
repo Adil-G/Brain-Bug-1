@@ -1,0 +1,741 @@
+<-----Page 0----->SYMMETRIC AUTONOMOUS DIFFERENTIAL EQUATIONS
+AND HYPERBOLIC FORMS OF THE LOGISTIC EQUATION
+VICTOR LIU
+
+Abstract. Exponential, simple inhibited, logistic, and second-order growth
+models are often used for describing real world processes. The equations of
+these four models are varied and do not demonstrate the relationship between
+them. This paper presents symmetric autonomous differential equations and
+similarly symmetric implicit solutions to these models, demonstrating their relationship to one another and revealing a deeper significance to the logistic and
+second-order growth models. Additionally, this paper explores the relationship
+between the logistic equation and the hyperbolic tangent and cotangent functions, and how to convert to and from both forms of the logistic equation
+easily.
+
+1. Introduction
+This paper presents the study of four types of differential equations that are frequently used for modeling real world growth processes. These are:
+(1)
+(2)
+(3)
+(4)
+
+Exponential growth and decay
+Simple inhibited growth
+Logistic growth
+Second order chemical reaction
+
+The last model name, second order chemical reaction, is not as common as the
+other three names. The paper adopts it because the model is mostly used in the
+description of such chemical reaction processes.
+The paper shows that the four model equations can be all written in implicit,
+highly symmetric forms. It is the first time such efforts are made to derive a unified
+expression for these model equations despite their apparent differences in conventional formulas. The implicit solution forms can also facilitate the development of
+certain model parameter expressions. Derivations of the implicit forms are based
+on the simple method of variable substitution. The paper also uses function curve
+translation to prove that the logistic solution is just another form of the hyperbolic
+tangent and cotangent functions.
+The contents of the paper are organized as the following. The first section describes the four models and their main applications, introduces the model equations
+and their explicit solutions. The second section derives the implicit model equations and explains the significance and benefits of such equation forms. The third
+section describes the relationship between the logistic solution and the hyperbolic
+tangent and cotangent functions. The derived model equations are summarized in
+the tables at the end of the paper.
+1
+
+<-----Page 1----->2
+
+VICTOR LIU
+
+2. Growth Modeling Equations
+2.1. Exponential Growth and Decay. Exponential growth and decay can be
+represented by one of the basic forms of separable differential equations:
+dP
+= rP
+dt
+Equation 2.1 states that quantity P varies at a rate directly proportional to the
+value of P . In the equation r is the rate constant. When r > 0, the equation
+represents exponential growth; when r < 0, it represents exponential decay. Equation 2.1 can be easily solved by separation of variables. Assuming that the initial
+condition P0 occurs at t = 0, then the solution is:
+
+(2.1)
+
+(2.2)
+
+P = P0 ert
+
+Exponential growth and decay are most commonly used to model the change of
+a population, as the rate of population growth or decay is usually proportional to
+the population itself. For example, as a bacteria population increases, there are
+more individuals capable of reproduction so the rate of increase also increases. The
+decay of a radioactive substance also follows this law. As the amount of substance
+decreases, the rate of decay also decreases. Exponential growth and decay can
+also be used to model an investment with interest compounded continuously, the
+processes of a solution being diluted by fresh water, a capacitor being discharged,
+and many other cases.
+2.2. Simple Inhibited Growth. Simple inhibited growth assumes that a natural
+maximum exists such that the growth of a quantity cannot occur beyond it. The
+equation of simple inhibited growth states that quantity P varies at a rate directly
+proportional to the difference between this maximum amount, K, and P itself:
+dP
+= r (K − P )
+dt
+From equation 2.3 it can be seen that the rate of growth of P is limited by constant
+K, which is assumed to be positive in this paper. If P starts less than K, the
+growth of P is positive (assuming r > 0) until P is equal to K, at which point
+the growth of P diminishes to 0. If P is greater than K, then the growth of P
+is negative, which means P will decrease until it reaches K. Therefore K is often
+called the carrying capacity or equilibrium value of the model. Equation 2.3
+can also be solved by separation of variables. With the same initial condition as
+above, the solution is:
+(2.3)
+
+(2.4)
+
+P = K − (K − P0 ) e−rt
+
+Simple inhibited growth can model the sales of a newly advertised product, in
+which case there exists a maximum limit of the product sales. It can also model
+the processes of an object cooling down to a certain temperature or being dropped
+from a certain height with air resistance. Other cases include the processes of
+a solution being diluted by another of different concentration, a capacitor being
+charged, and certain learning patterns.
+
+<-----Page 2----->SYMMETRIC AUTONOMOUS DIFFERENTIAL EQUATIONS AND HYPERBOLIC FORMS OF THE LOGISTIC EQUATION
+3
+
+2.3. Logistic Growth. The previous two models either assume that quantity P
+varies at a rate directly proportional to itself (P ), or to its remaining room for
+growth (K − P ). Logistic growth assumes that the growth rate of P is directly
+proportional to both of these quantities:
+
+(2.5)
+
+dP
+= r0 P (K − P )
+dt
+
+Here r0 is used because the logistic equation is more commonly written in this form:
+
+(2.6)
+
+dP
+= rP
+dt
+
+
+1−
+
+P
+K
+
+
+
+where r = r0 K. In the above equation, K is the same carrying capacity for P as
+described before. The constant r is called intrinsic growth rate, or the growth
+rate in the absence of any limiting factors. Equation 2.6 shows that if P is small
+relative to the carrying capacity K, the rate of its growth will be close to the
+constant rate r of the exponential growth model. As P nears K, the rate will
+shrink toward 0, resulting in an S-shaped curve. According to this model, when
+P reaches K, the growth rate is 0, and the population will be stable. If P were
+to somehow exceed K, the rate would become negative and the population would
+decrease toward K.
+Equation 2.6 is usually solved by separation of variables with partial fraction,
+and the solution, with the same initial condition as before, is:
+
+(2.7)
+
+P =
+
+KP0
+P0 + (K − P0 ) e−rt
+
+The logistic equation is mostly used to provide a more realistic model for population growth. It is also frequently used for describing the spreading of diseases or
+rumors, the autocatalytic chemical reactions, and other processes.
+2.4. Second Order Chemical Reaction. The second order chemical reaction
+studied in this paper is represented by the following equation:
+
+(2.8)
+
+dP
+= r (a − P ) (b − P )
+dt
+
+(a 6= b)
+
+The model assumes that the rate of change of quantity P is directly proportional
+to its remaining room for growth within the limits of a and b. From equation 2.8
+it can be seen that if r > 0, P will increase as long as it is less than both a and b.
+As P approaches the smaller of a and b, its rate of change will approach 0 and its
+growth diminishes. In the case of second order chemical reaction, quantity P is the
+amount of a product generated from two reactants A and B having different initial
+quantities a and b, respectively. The reaction rate, dP
+dt , is directly proportional to
+the remaining quantities of A and B.
+Although slightly complicated, Equation 2.8 can also be solved by separation of
+variables with partial fraction and the solution is:
+
+<-----Page 3----->4
+
+(2.9)
+
+VICTOR LIU
+
+P =a+
+
+b−a
+
+0
+1 + Pb−P
+er(b−a)t
+−a
+0
+
+
+3. Implicit Equation Forms
+3.1. Derivation of Implicit Forms. The four types of growth modeling equations
+listed in the previous section can be written in implicit, highly symmetric forms 1
+for easy memorization and comparison. Derivations of the implicit equation forms
+are all based on the technique of variable substitution which is commonly used in
+solving differential equations.
+The implicit model equations are similar in format to the exponential growth
+and decay equation and its solution:
+(3.1)
+
+dP
+= rP
+dt
+
+(3.2)
+
+P = P0 ert
+
+To convert the simple inhibited growth equation and its solution into implicit
+dP
+forms, make the substitution Z = K − P , then dZ
+dt = − dt . Equation 2.3 becomes
+dZ
+dt = −rZ. This new equation of Z resembles the form of equation 2.1 except for
+the rate constant being −r. Therefore Z can be directly solved by using equation
+2.2:
+Z = Z0 e−rt
+where Z = K − P and Z0 = K − P0 . Substituting these into the above equations
+of Z to get:
+(3.3)
+
+d (K − P )
+= −r (K − P )
+dt
+
+(3.4)
+
+K − P = (K − P0 ) e−rt
+
+For the logistic growth equation and its solution, make the substitution Z =
+K
+K dP
+dP
+P 2 dZ
+, then P = Z+1
+, and also dZ
+dt = − P 2 dt or dt = − K dt . Substitute these
+into equation 2.6 and rearrange:
+
+
+P 2 dZ
+P
+−
+= rP 1 −
+Kdt
+K
+
+
+dZ
+rK
+P
+=−
+1−
+dt
+P
+K
+
+
+dZ
+1
+= −r (Z + 1) 1 −
+dt
+Z +1
+dZ
+= −rZ
+dt
+K−P
+P
+
+1Dr. Kuo Chen, Principal of Olympia Institute in San Francisco, summarized the first three
+growth equations into implicit forms. A portion of this section is adapted from his lecture notes.
+
+<-----Page 4----->SYMMETRIC AUTONOMOUS DIFFERENTIAL EQUATIONS AND HYPERBOLIC FORMS OF THE LOGISTIC EQUATION
+5
+
+Again, the solution of Z can be directly obtained as:
+Z = Z0 e−rt
+Substituting Z =
+
+K−P
+P
+
+and Z0 =
+
+K−P0
+P0
+
+into the above two equations of Z,
+
+Theorem 3.1. The implicit form of the logistic growth differential equation is
+
+
+
+
+d K −P
+K −P
+= −r
+dt
+P
+P
+and its implicit solution is
+K − P0 −rt
+K −P
+=
+e
+P
+P0
+The exponential growth and decay equation and solution can also be written in
+implicit forms so that they match the other two growth equations in format. Let
+1 dP
+dP
+2 dZ
+Z = P1 , then dZ
+dt = − P 2 dt or dt = −P dt . Substitute these into equation 2.1:
+dZ
+= rP
+dt
+dZ
+1
+= −r = −rZ
+dt
+P
+−P 2
+
+The solution of Z is:
+Z = Z0 e−rt
+Substituting Z =
+(3.5)
+
+(3.6)
+
+1
+P
+
+and Z0 =
+
+1
+P0
+
+in the above equations of Z to get:
+
+d
+dt
+
+
+
+1
+P
+
+
+
+
+= −r
+
+1
+P
+
+
+
+1
+1 −rt
+=
+e
+P
+P0
+
+The second order chemical reaction equation and its solution can be converted
+b−P
+into implicit forms by making the substitution Z = a−P
+, then aZ − P Z = b − P
+aZ−b
+or P = Z−1 . The differentials become:
+dZ
+− (a − P ) + (b − P ) dP
+b − a dP
+=
+=
+2
+2
+dt
+dt
+(a − P )
+(a − P ) dt
+2
+
+dP
+(a − P ) dZ
+=
+dt
+b − a dt
+Substituting all of these into equation 2.8 to obtain
+
+
+
+2
+(a − P ) dZ
+aZ − b
+aZ − b
+=r a−
+b−
+b − a dt
+Z −1
+Z −1
+
+
+
+aZ − a − aZ + b
+bZ − b − aZ + b
+=r
+Z −1
+Z −1
+
+
+
+b−a
+bZ − aZ
+=r
+Z −1
+Z −1
+
+<-----Page 5----->6
+
+VICTOR LIU
+2
+
+=r
+
+Z (b − a)
+
+2
+
+(Z − 1)
+
+2
+
+aZ−a−aZ+b
+b−a
+Since a − P = a − aZ−b
+= Z−1
+, the expression (a − P ) on the left
+Z−1 =
+Z−1
+side of the above equation can be replaced:
+
+2
+b−a
+2
+Z−1
+dZ
+Z (b − a)
+=r
+2
+b − a dt
+(Z − 1)
+
+1 dZ
+= rZ
+b − a dt
+dZ
+= r (b − a) Z
+dt
+Since the expression r (b − a) is a constant, the solution for Z is:
+Z = Z0 er(b−a)t
+Substituting Z =
+
+b−P
+a−P
+
+(3.7)
+
+d
+dt
+
+(3.8)
+
+
+
+and Z0 =
+
+b−P0
+a−P0
+
+into the above equations of Z to get:
+
+
+b−P
+a−P
+
+
+b−P
+b − P0
+=
+er(b−a)t
+a−P
+a − P0
+
+b−P
+a−P
+
+
+
+
+
+= r (b − a)
+
+(a 6= b)
+
+3.2. Significance of Implicit Forms. The development of the implicit forms
+is the first such attempt to systematically derive a common expression for these
+four types of diversified model equations. The method used in the derivations is
+conventional - the commonly used substitution of variables in solving differential
+equations, no special skills required. The implicit forms clearly demonstrate the
+nature of these models. For example, when r > 0, the simple inhibited growth is
+an exponential decay of the (K − P ) quantity, the logistic growth is an exponential decay of the K−P
+quantity, and the second order chemical reaction is an
+P
+b−P
+exponential growth of the a−P
+quantity if b > a, or exponential decay if b < a.
+The implicit equation forms are simple and highly symmetric. They can be easily
+compared and memorized. The implicit forms can often provide a quicker way to
+solve the more complicated logistic equation problems, as demonstrated by Example
+3.1 below. The implicit model equations can also facilitate the development of
+expressions of certain model parameters that are difficult to obtain from the explicit
+formulas. This is evidenced by following Examples 3.2 and 3.3.
+Example 3.2. A contagious disease is spreading in a town of 6000 people. Initially,
+three people are infected; 3 days later it spreads to 300 people. Suppose the disease
+spreads at a rate proportional to both the infected people and the unaffected people.
+Find the number of days for the disease to spread to 50% of the population.
+a) Use explicit solution 2.7 to solve for e−r with the known information P0 = 3,
+K = 6000 and P (3) = 300.
+300 =
+
+(6000) (3)
+3 + (6000 − 3) e−3r
+
+<-----Page 6----->SYMMETRIC AUTONOMOUS DIFFERENTIAL EQUATIONS AND HYPERBOLIC FORMS OF THE LOGISTIC EQUATION
+7
+
+3 + (6000 − 3) e−3r = 60
+1999e−3r = 19
+
+1
+19 3
+−r
+e =
+1999
+Now use the value of e−r and P = 3000 to solve for t:
+18000
+3000 =
+3 + 5997e−rt
+3 + 5997e−rt = 6
+1999e−rt = 1
+t
+
+1
+19 3
+=
+1999
+1999
+1
+3 ln 1999
+≈ 4.9 days
+t=
+19
+ln 1999
+b) Use implicit solution ?? with conditions P0 = 3, K = 6000 and P (3) = 300:
+6000 − 300
+6000 − 3 −r(3)
+e
+=
+300
+3
+
+1
+19 3
+−r
+e =
+1999
+Solving for t when P (t) = 3000:
+6000 − 3000
+6000 − 3 −rt
+=
+e
+3000
+3
+
+t
+19 3
+1 = 1999
+1999
+1
+3 ln 1999
+≈ 4.9 days
+t=
+19
+ln 1999
+Example 3.3. The following table shows the fish population in a lake in three
+consecutive decades. Assume that the population grows logistically. Estimate the
+lake’s maximum capacity for the fish population.
+Year
+1960
+1970
+1980
+Population (thousands of fish)
+61.3
+72.8
+84.0
+In this problem, the known conditions are P0 = 61.3, P1 = 72.8, P2 = 84.0,
+t0 = 0, t1 = 1, t2 = 2 and the unknown is K. The method is to derive a general
+expression for K first, then plug in the known numbers to calculate its value.
+According to implicit logistic solution ??:
+
+
+
+
+K − P1
+K − P0
+K − P2
+K − P0
+−rt1
+=
+e
+and
+=
+e−rt2
+P1
+P0
+P2
+P0
+Divide the first equation by the second:
+(K − P1 ) P2
+= er(t2 −t1 )
+(K − P2 ) P1
+Rearranging the first equation:
+(K − P0 ) P1
+= ert1
+(K − P1 ) P0
+
+<-----Page 7----->8
+
+VICTOR LIU
+
+Since t2 − t1 = t1 = 1, or ert1 = er(t2 −t1 ) , the above two equations can be equated:
+(K − P0 ) P1
+(K − P1 ) P2
+=
+(K − P1 ) P0
+(K − P2 ) P1
+Solving the above quadratic equation of K:
+2
+
+(K − P0 ) (K − P2 ) P12 = (K − P1 ) P0 P2
+
+
+P12 − P0 P2 K 2 + 2P0 P1 P2 − P0 P12 − P2 P12 K = 0
+P1 (P1 P0 + P1 P2 − 2P0 P2 )
+K1 = 0, K2 =
+P12 − P0 P2
+Obviously, K1 = 0 is not a meaningful solution, so the solution is:
+72.8 (72.8 (61.3) + 72.8 (84.0) − 2 (61.3) (84.0))
+≈ 135.0 thousand
+K=
+72.82 − (61.3) (84.0)
+Example 3.4. The census taken in 1990 and 1994 of a city’s population showed
+that it had 2.48 million and 2.67 million residents, respectively. Assume that the
+maximum capacity of the city is 3.20 million and the population increases logistically. Estimate the city’s population in 1978.
+In this problem the known conditions are P1 = 2.48, P2 = 2.67, t1 = 12, t2 = 16,
+K = 3.20, and the unknown is P0 . The same method is used to derive a general
+solution of P0 first, then to plug in the known number to solve for its value. From
+the previous example:
+(K − P1 ) P2
+(K − P0 ) P1
+= ert1 and
+= er(t2 −t1 )
+(K − P1 ) P0
+(K − P2 ) P1
+Solve for er in both equations and equate them:
+1
+ 1
+
+
+(K − P1 ) P2 t2 −t1
+(K − P0 ) P1 t1
+=
+(K − P1 ) P0
+(K − P2 ) P1
+
+ t1
+(K − P0 ) P1
+(K − P1 ) P2 t2 −t1
+=
+(K − P1 ) P0
+(K − P2 ) P1
+
+ t1
+K − P0
+K − P1 (K − P1 ) P2 t2 −t1
+=
+P0
+P1
+(K − P2 ) P1
+
+ t1
+K
+K − P1 (K − P1 ) P2 t2 −t1
+=1+
+P0
+P1
+(K − P2 ) P1
+K
+P0 =
+
+ t1
+(K−P1 )P2 t2 −t1
+1
+1 + K−P
+P1
+(K−P2 )P1
+So the final solution is:
+P0 =
+1+
+
+3.20−2.48
+2.48
+
+3.20
+
+
+(3.20−2.48)2.67
+(3.20−2.67)2.48
+
+≈ 1.68 million
+ 12
+4
+
+References
+1. D. M. Bradley. Verhulst’s Logistic Curve. The College Mathematics Journal, 32:94-98, 2001.
+
+

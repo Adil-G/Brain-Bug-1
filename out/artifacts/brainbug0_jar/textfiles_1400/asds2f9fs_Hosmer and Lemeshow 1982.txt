@@ -1,0 +1,2153 @@
+<-----Page 0----->Vol. 115, No 1
+Printed m UJSA.
+
+AMBHICAN JOURNAL or EPIDEMIOLOGY
+
+Copyright © 1982 by The Johns Hopkins University School of Hygiene and Public Health
+All rights reserved
+
+A REVIEW OF GOODNESS OF FIT STATISTICS FOR USE
+IN THE DEVELOPMENT OF LOGISTIC REGRESSION MODELS1
+STANLEY LEMESHOW AND DAVID W. HOSMER, JR.
+Lemeshow, S. (U. of Massachusetts, Amherst, MA 01003), and D. W. Hosmer, Jr. A review of goodness of fit statistics for use in the development of
+logistic regression models. Am J Epidemiol 1982;115:92-106.
+Several statistics have recently been proposed for the purpose of assessing the goodness of fit of an estimated logistic regression model. These statistics are reviewed and compared to other, less formal, procedures in the
+context of applications In epldemlologlc research. One statistic Is recommended for use and Its computation Is Illustrated using data from a recent
+study of mortality of Intensive care unit patients.
+Intensive care units; mortality; regression analysis; risk; statistics
+
+hort studies to case-control studies, both
+matched and unmatched.
+In this paper, the form of the logistic
+model to be used is as follows: let Y denote
+a dichotomous outcome variable, which is
+assigned the value 1 if the disease is present and 0 if absent. Let x = (xi^2, • •• ,
+xp) denote the vector of p known or suspected risk factors and possible confounding and effect modification variables. This
+collection of variables will be called the
+covariates. The logistic model then hypothesizes that the probability of the disease being present conditional on a value
+of x is
+
+Over the past decade, use of the multiple logistic regression model (logistic
+model) has progressed from a specialized
+tool to the point where the model is now
+regarded as a standard method for data
+analysis in epidemiologic studies. The
+model is most frequently used in studies
+in which a dichotomous outcome variable
+(e.g., presence or absence of disease) is related to a number of independent variables. Its widespread application is probably due to its ease of interpretation as
+well as its relationship to log-linear analysis of contingency tables and linear discriminant function analysis. Recent research by Holford et al. (1), Breslow et al.
+(2), Farewell (3), and Prentice and Pyke
+(4) has extended the methodology for
+application of the logistic model in co-
+
+P(X =
+
+exp - (/3n
+(1)
+
+Given a sample of n observations {yt, x(),
+i = 1, . . . ,n, two methods have traditionally been used to estimate the unknown
+parameters /30,/3,, . . . ,/3p. Specifically,
+these estimators are usually referred to
+as the discriminant function and maximum likelihood estimators. The method
+of choice in epidemiologic research is usually the maximum likelihood approach
+since the underlying assumptions which
+make this technique appropriate are less
+
+Received for publication January 20, 1981, and in
+final form May 26, 1981.
+1
+From the Biostatistics/Epidemiology Program,
+Division of Public Health, School of Health Sciences,
+University of Massachusetts, Amherst, MA 01003
+(Send reprint requests to Dr. Lemeshow at this
+address.)
+The authors express their appreciation to Drs.
+Daniel Teres and Richard Brown of Baystate Medical Center, Springfield, MA, for making their data
+on intensive care unit patients available for the
+analyses in this paper Computer tune was made
+available by a grant from the University of Massachusetts Academic Computing Center, Amherst, MA.
+92
+
+<-----Page 1----->GOODNESS OF FIT TESTS FOR LOGISTIC REGRESSION
+
+restrictive. (See the studies by Halperin
+et al. (5), Efron (6) and O'Hara et al. (7).)
+After the estimates of the coefficients
+have been obtained, an estimate of the
+probability of the presence of disease may
+be calculated for each individual in the
+study. Procedures which have been used
+to assess the adequacy of the fitted logistic model in describing the relationship
+between the probability of occurrence of
+disease (Y = 1) and the values of the covariates (x) are, for the most part, rather
+informal. Documentation of their statistical properties has not been published.
+Recent research on the problem of developing a goodness of fit statistic by Halteman (8), Hosmer and Lemeshow (9), Shillington (10), and Tsiatis (11) has resulted
+in a collection of chi-square-like statistics
+whose properties have been studied both
+theoretically and by computer simulation
+techniques. The objectives of the present
+paper are 1) to compare the proposed sta- j
+tistics from the point of view of application in epidemiologic research, and 2) to
+illustrate the computations necessary to
+apply the statistics proposed by Hosmer
+and Lemeshow (9).
+
+93
+
+groups will have slightly different numbers. In the discussion of goodness of fit in
+this paper it will be assumed that n/10 is
+integer valued. Intuitively, if the model
+presented in equation 1 holds, then the
+P(X|) for those individuals who have the
+disease should fall into the upper deciles.
+With this in mind, procedures have been
+proposed which compare the observed
+number of persons who have the disease
+(o) with an estimated expected number (e)
+of persons for each interval. The expected
+number has most often been calculated as
+the sum of the estimated probabilities for
+all persons in a particular decile. For notational convenience let
+(3)
+
+e, = 1 P(x(),
+
+(4)
+
+I = 1 , . . . ,10, and where D, denotes the
+(n/10) individuals in the Zth decile of risk.
+The pairs (o(,e,) I = 1, . . . ,10 have been
+analyzed in several ways. Graphically,
+the 10 points can be plotted to see if they
+follow a line with slope 1 and intercept 0.
+Examples of this approach can be found
+A REVIEW OF METHODS FOR
+in the papers by Brand et al. (12) and
+ASSESSMENT OF FIT
+the Coronary Drug Project Research
+Additional notation is needed to review Group (13).
+the methods of assessment of fit. Let bn, A statistic which has been used to combu . . . ,bv be the estimates of the param- pare these values is
+eters /30, . . . ,&, of the logistic model in
+equation 1, either discriminant function
+(5)
+V2 _
+or maximum likelihood. Let P(x() be the
+x
+~
+estimated probability of disease for subThe
+distributional
+properties of X2 have
+ject i defined as
+never been studied but it is often compared to a chi-square with degrees of free(2)
+P(x,) = l/{l + exp - (60 +
+dom equal to 10 - (p + 1). Obviously, if
+(p + 1) > 10 then more groups would
+Given the values of P(x,), P(xs), . . . , have to be used. Gordon et al. (14) discuss
+P(xH) one informal approach has been to the use of this statistic and they conclude
+rank order these n values and establish that, because its distribution has not been
+"deciles of risk." That is, the first decile specified, about all that one can say is
+contains the smallest n/10 values of P(x(), that a small value is2 better than a large
+etc. If n/10 is not integer valued, the 10 value. The statistic X , with similar terms
+
+<-----Page 2----->94
+
+LEMESHOW AND HOSMER
+
+added for those without disease, does have
+a chi-square distribution when the number of response patterns formed by the
+variables are few enough so that the data
+may be tabulated in a contingency table
+prior to estimation of the coefficients. For
+example, if there were only two dichotomous independent variables, then there
+are only four different values of (xb x2)
+and there is one degree of freedom for testing lack of fit. In this rather restrictive
+situation the theory for estimation of the
+coefficients of the multiple logistic regression model and testing for fit follows from
+the usual methods for contingency tables.
+In many epidemiologic applications the
+number of possible response patterns is
+usually large relative to the sample size.
+In fact this was the primary motivation
+for Truett et al. (15) to apply the logistic
+regression model. Despite the lack of justification, the deciles of risk approach has
+been widely used. Examples of this may
+be found in Truett et al. (15), Kleinbaum
+et al. (16), Wilhelmsen et al. (17), and
+Keys et al. (18).
+Another approach which has been incorrectly used as a goodness of fit statistic
+is the likelihood ratio chi-square statistic
+for testing the hypothesis that the coefficients are zero (i.e., Ho: /3j = 0, for some or
+all,/). One method utilizes an appropriate
+comparison of the likelihood of two different models. In one model /3j = 0 while in
+the other /3j = bj. Another method uses
+the score functions (Rao (19)). Each procedure only tests whether >3j = 0 and is
+not a true goodness of fit test. This is analogous to testing for no slope using the F
+statistic in multiple linear regression, yet
+goodness of fit is more appropriately
+assessed through the use offl*. Several ft2
+type statistics have been proposed. For
+maximum likelihood estimates one of
+these is
+1
+
+/.
+
+where /] is the log-likelihood evaluated at
+
+(&oA> • • • ,bP) and l0 is the log likelihood
+evaluated at 6, = 0,,/ = 1, . . . ,p. A second
+statistic which is discussed in Gordon et
+al. (14) is the average proportion of variation explained (AVPE) where
+AVPE =
+
+PQ ~
+PQ
+
+where P, = P(xt), Q, = 1 - P,, P =
+and Q = 1 - P. The problem with the
+average proportion of variation explained
+statistic is that the upper bound for the
+statistic may take widely different values
+depending on assumptions about the distribution of P(x) (see Gordon et al. (14)).
+Efron (20) has studied the general problem of measures of residual variation of
+regression with zero-one data. In this
+paper a number of measures were developed which could be useful in formulating
+other R2-type measures.
+Pregibon (21) proposes using modifications of the graphical techniques used to
+assess the adequacy of multiple regression models. These methods may be difficult to use unless one has available a computer package such as generalized linear
+interactive modeling (GLIM) (22), which
+gives the user considerable control over
+the analysis.
+The wise use of the logistic regression
+model and the problems associated with
+previously described methods have provided the impetus for developing a "good
+method" for assessing fit. Within the last
+two years contributions have been made
+by Halteman (8), Hosmer and Lemeshow
+(9), Shillington (10) and Tsiatis (11). Each
+of these authors used a slightly different
+approach and formulated a chi-squarelike statistic and derived its distribution.
+A brief comparison of these statistics
+follows.
+Halteman (8) and Tsiatis (11) have proposed the same statistic which compares
+a vector of differences between observed
+and estimated frequencies, for example,
+{(o, - e,), (o2 - e2), . . . , (o10 - e10)}, to an
+
+<-----Page 3----->GOODNESS OF FIT TESTS FOR LOGISTIC REGRESSION
+
+estimate of its variance-covariance matrix. Evaluation of the test statistic requires the computation of a generalized
+inverse of the estimated variance-covariance matrix or the inverse of the matrix
+of appropriately reduced dimension.
+Halteman (8) provides the technical details which prove that the statistic follows
+a chi-square distribution with g — 1 degrees of freedom, x2C? ~ D> where g is the
+number of groups in the covariate space
+induced by the partitioning of the P(x()'s
+into g intervals. This result is independent ofp (number of covariates) and holds
+under fairly general regularity conditions. The theory behind this test is easily
+understood by considering it to be a score
+test as discussed by Tsiatis (11). From this
+point of view, the Halteman-Tsiatis procedure is a test for constant intercept (/30) in
+the g groups. In practical terms, the precision of the result is offset by the computations needed to evaluate the statistic.
+The use of generalized inverse matrices
+may be familiar to most statisticians, but
+this type of matrix calculation is unfamiliar to many epidemiologists. In addition,
+the statistic does not lend itself readily to
+subsequent analysis to determine potential sources of significant differences.
+The test can be calculated using a computer program which performs iterativereweighted least squares for generalized
+linear models. The computer package
+GLIM (22) was used to perform the calculations for the Halteman-Tsiatis statistic
+in this paper.
+The statistic proposed by Shillington
+(10) requires that the data be placed into
+fixed groups (cells) before estimation. This
+amounts to requiring the formation of
+groups of risk before computing bo,blt . . . ,
+bp, which is clearly impossible in most
+practical applications. Shillington has not
+derived the exact distribution of the statistic for the case of using maximum likelihood from ungrouped data, but the distribution is bounded by a x2(& - p - 1)
+and x2(£ ~ 1), where g is chosen so g > p
+
+95
+
++ 1. The theoretical work done by Hosmer and Lemeshow (9), Halteman (8), and
+Durst (23) could probably be used to relax
+the assumption offixed-in-advancegroups
+required by Shillington.
+Hosmer and Lemeshow (9) used a contingency table type of approach to develop
+several statistics (#*, ti%, C* and C*)
+which are no more difficult to compute than
+the usual chi-square test of independence.
+They derived the exact distribution of
+these statistics and used computer simulations to support a conjecture that the
+exact distribution may be approximated
+by a x2(g — 2) distribution. Other statistics which were developed (Jiu, Ha, Cu and
+Cu) require significantly more computer
+assistance in calculation and, while demonstrated to be distributed as x2(2g - 5),
+do not appear to be viable choices for the
+practicing epidemiologist. Hence, it would
+appear that the best choice for the epidemiologist is between one of the former
+Hosmer-Lemeshow statistics and the
+Halteman-Tsiatis statistic. A comparison
+of the computer simulations in Halteman
+(8) and Hosmer and Lemeshow (9) shows
+about the same degree of adherence for
+small samples of the Halteman-Tsiatis
+statistic to the x2(g ~ D &n(i of the Hosmer-Lemeshow statistics to the x2(g ~~ 2)
+distribution. These statistics have sampling distributions with means, variances
+and tail probabilities which are close to
+the proven or conjectured chi-square distribution. Hence, any of these could be
+used to test the fit of the logistic model
+with a specified type I error. None of the
+statistics demonstrates a great deal of
+power against reasonably competitive
+models to the logistic. An exception to
+this is the statistic fiu proposed by Hosmer and Lemeshow (9). This statistic did
+demonstrate power; however, as mentioned previously, it is more difficult to
+evaluate than the other suggested statistics.
+In summary, the computer simulations
+show that there is little difference be-
+
+<-----Page 4----->96
+
+LEMESHOW AND HOSMER
+
+tween the actual performance of the
+Halteman-Tsiatis statistic and HosmerLemeshow statistics. We recommend the
+use of one of the Hosmer-Lemeshow statistics by epidemiologists because of the
+associated computational simplicity. The
+quantities needed for the calculations are
+obtained from contingency-type tables
+making the availability of special programs unnecessary. Easily performed subsequent analyses are also possible which
+may be used to locate potential sources
+of significant deviation from the fit of the
+logistic model.
+In the next section the details necessary
+to understand and compute the HosmerLemeshow statistics are presented.
+COMPUTATION OF THE
+HOSMER-LEMESHOW STATISTICS
+
+Before discussing the details of their calculations, a rationale for the statistics will
+be developed beginning with the statistic
+X2 given in equation 5. That statistic can
+be thought of as resulting from a table of
+observed and estimated expected values,
+as shown in table 1.
+It should be reemphasized that ouo2,
+. . . ,oio as defined in equation 3 are the
+observed numbers of persons among the
+n/10 subjects in each decile with the disease (Y = 1). Theei,e 2 , . . . ,e, 0 are sums of
+probabilities of disease present for all nllO
+subjects falling within each decile. It
+should be noted at this point that while
+most applications of this method have
+used g = 10 groups, there is no reason for
+not using fewer or more than 10 groups.
+The theoretical development given by
+Hosmer and Lemeshow (9) requires only
+that g > (p + 1). For the sake of conTABLE 1
+
+Observed and expected frequencies in each decile '
+of risk for subjects with disease present
+1
+Observed
+Expected
+
+2
+
+Deciles of risk
+3
+
+10
+
+Ot
+
+0,
+
+Oio
+
+et
+
+e.
+
+«10
+
+tinuity the discussion will continue using
+g = 10.
+Table 1 uses only observed data on
+those subjects with the disease present
+(Y = 1). Considerable information is potentially lost by not considering the (n/10
+- Oi) individuals in each decile (/ = 1,2,
+. . . ,10) with the disease absent (Y = 0).
+Hosmer and Lemeshow (9) suggest using
+table 2 which summarizes the numbers of
+subjects with the disease present or absent within each decile.
+To assess goodness of fit, estimated expected values must be calculated for each
+of the 20 cells in table 2. These observed
+and estimated expected frequencies are
+obtained by modifying equations 3 and 4
+as follows:
+(6)
+
+On =
+
+= S (i -
+
+(7)
+
+feilj
+
+(8)
+itL>i
+
+and
+(9)
+feO;
+
+A statistic which compares observed and
+estimated expected frequencies is
+1
+
+10
+
+•>* - Y Y (°A< ~
+'» — Z- Z
+p
+lt-0 J-l
+
+(10)
+
+*'
+
+A comparison of X 2 as defined in equation
+5 and C% as defined in equation 10 shows
+that C*u uses all the available subjects in
+assessing fit, whereas X1 uses only those
+subjects with disease present. Hosmer
+and Lemeshow (9) have shown via computer simulations that if the number of
+covariates plus one is less than the number of groups (i.e.,p + 1 <g), then the statistic C% has a distribution which is closely approximated by a chi-square distribution with g — 2 degrees of freedom when
+
+<-----Page 5----->97
+
+GOODNESS OF FIT TESTS FOR LOGISTIC REGRESSION
+TABLE 2
+
+Observed
+Disease status
+Present (Y = 1)
+Absent (Y = 0)
+Total
+
+frequencies in each decile for subjects with disease present or disease absent
+Deciles of nsk
+1
+
+2
+
+3
+
+On
+Ooi
+
+On
+
+Ol3
+
+n/10
+
+n/10
+
+n/10
+
+10
+
+Total
+
+Oo.lO
+
+n,
+no
+
+n/10
+
+n
+
+Oi.io
+
+Ho is true. Hence if p + 1 < 10, then C%
+(11)
+as given in equation 10 will be distributed
+k-0 1-1
+approximately chi-square with 8 degrees
+of freedom. As mentioned previously, the
+The computer simulations reported in
+distributional properties of X 2 have not Hosmer and Lemeshow (9) indicated that
+been established.
+H*a was more powerful than C*u and hence
+The statistic C% is computed using the may be the preferred statistic. However,
+empirical deciles. This decile of risk meth- one disadvantage of H*u is that, when the
+od is the one which has been most fre- total sample size n is small, m, could be
+quently reported in the epidemiologic lit- small for some intervals. These simulaerature. One positive feature of this ap- tions along with subsequent, as yet unproach is that it assures that each group published, ones suggest that this does not
+has a reasonable number (rc/10) of sub- adversely affect the distributional properjects. A negative feature of this approach ties of the statistic.
+is that the actual values of the estimated
+One additional statistic which has been
+probabilities of developing the disease are studied by Hosmer and Lemeshow (9) uses
+ignored. As an alternative strategy, Hos- the table of observed values given above
+mer and Lemeshow (9) suggest forming but the estimated expected values are calgroups based on fixed cutpoints. For ex- culated in a different manner. The develample, one might use as cutpoints 0.1, opment of expressions for these expected
+0.2, . . . ,0.9. These cutpoints would pro- values involves the assumption that the
+duce a table of observed values (o'), as covariates are multivariate normally disshown in table 3.
+tributed within the two subpopulations
+The observed (o') and associated esti- defined by Y = 0 and Y = 1. Under these
+mated expected (e') values in table 3 are assumptions, determination of the estidefined as in equations 6 - 9 where D, now mated expected values involves using
+contains the m, individuals whose esti- numerical integration procedures. This
+mated probabilities fall in the Zth interval statistic, denoted Hu, seemed to have betfor / = 1, 2, . . . , 10. Let H* denote the ter power than H*o or C%. However, simustatistic calculated using these intervals lations performed by Korn (24) suggest
+some sensitivity to the distributional asas follows:
+TABLE 3
+
+Observed frequencies for subjects with disease present or disease absent m intervals based on fixed cutpoints
+Disease status
+
+[0-0.1)
+
+[0 1-0 2)
+
+[0.9-10]
+
+Total
+
+Present (Y = 1)
+Absent (Y = 0)
+
+Oil
+
+o\.
+
+oi,
+
+Oa
+
+Oi.io
+oi.io
+
+n,
+n0
+
+Total
+
+m,
+
+m,
+
+"110
+
+n
+
+<-----Page 6----->98
+
+LEMESHOW AND HOSMER
+
+sumptions when all the covariates are
+Table 4 presents the patient condition
+discrete. Simulations (Hosmer and Leme- and treatment characteristics to be used
+show (9)) suggest that if p + 1 < g, then in the predictive model of mortality. It
+the distribution of flu may be closely ap- should be noted that those variables havproximated by a chi-square with 2g - 5 ing three outcome states were recoded
+degrees of freedom. The degrees of free- using dummy variables.
+dom of 2g - 5 are due to the way in which
+As indicated in table 4, 97 of the 558 pathe expected values are calculated.
+tients (17.4 per cent) died prior to hospital
+It should be noted that while the pre- discharge. The objective of the analysis is
+vious discussion has defined statistics to obtain an estimate of the probability
+using maximum likelihood estimates, that a patient will die conditional on the
+any of the goodness of fit statistics could characteristics associated with that pabe used with discriminant function esti- tient's experience in the intensive care
+mates of the logistic coefficients. In the unit. The model chosen for this analysis is
+work by Hosmer and Lemeshow (9), sta- the multiple logistic regression model.
+tistics computed using the discriminant
+From the original set of 23 independent
+function estimates are C%, R*o, and fla. variables (X'u . . . ,X'2^), a smaller set was
+In the next section an example is pre- sought for inclusion into the logistic modsented which illustrates the use and in- el. Two methods were available for the
+terpretation of the statistics tiu, £[*0, and identification of this subset. The first,
+C%. The Halteman-Tsiatis statistics cor- stepwise discriminant analysis, is availresponding to the partitions used in form- able in package form at most computing
+ing ft* and C* are denoted HT* and tlTC*. centers and can be used at nominal cost.
+The second, stepwise logistic regression
+AN ILLUSTRATIVE EXAMPLE
+using maximum likelihood, is not yet
+A total of 558 patients were studied available in package form at many comprospectively in the two intensive care puter centers. For example, the stepwise
+units at the Baystate Medical Center in logistic regression program BMDPLR
+Springfield, Massachusetts. The data (25) was not available prior to the Auwere collected during the months of April, gust, 1979, release and few computer cenOctober, and November, 1978. The Spring- ters have this program operational at
+field campus, staffed by residents 24 hours present. The program described by Hoseach day, had 341 intensive care unit ad- mer et al. (26) is not widely used. Stepmissions while the Wesson Memorial wise selection using maximum likelihood
+campus, a community hospital without is too costly and time consuming to run on
+fixed resident coverage in the intensive a large data set.
+care unit, had 217 admissions during this
+The decision was made to first use steptime period.
+wise discriminant analysis to identify
+Five infection control nurses collected those variables to be included in a prethe data which involved keeping detailed liminary logistic regression model. Prorecords on each patient from date of ad- gram BMDP7M, Dixon and Brown (25),
+mission to the unit to date of discharge was run with an F-to-enter value of 2 and
+from the unit as well as discharge status an F-to-remove value of 1.9. Of the original
+from the hospital (alive or dead). Vari- 23 variables, 14 were selected for entry
+ables were collected dealing with each pa- into the model using these F-to-enter and
+tient's condition, therapy and infection F-to-remove criteria.
+status. Of the original 558 patients, 18
+Fourteen variables were thought to be
+were excluded from analysis as data were too many to provide a useful and easily
+missing on some key variables.
+interpreted model. In order to further re-
+
+<-----Page 7----->GOODNESS OF FIT TESTS FOR LOGISTIC REGRESSION
+
+duce the number of variables, odds ratios
+were calculated for each of the 14 covariates in thejnitial subset. These are obtained as OR) = eff.j = 1, . . . ,14. Confidence intervals were then constructed
+about each of these estimates as follows:
+g(6j - 1 96SEU>j»
+
+QR
+
+96SE(6j)).
+
+If the resulting confidence interval contained values between 0.5 and 2.0, the covariate was eliminated. That is, only
+those covariates which demonstrated very
+high (OR > 2 or < 0.5) association with
+mortality were kept in the model. Three
+(Shock 2, Coma, CPR) of the originally
+identified 14 covariates satisfied this
+requirement. In addition, age was added
+because of its potential as a possible confounding variable. The maximum likelihood estimates were obtained for the
+model containing these four covariates.
+Table 5 presents the estimates for the covariates in this "main effects" model along
+with the estimated odds ratio and confidence interval for the odds ratio of each.
+Note that the original requirement that
+OR > 2 or < 0.5 does not necessarily hold
+once the maximum likelihood estimates
+were recalculated on the smaller set of
+covariates.
+In addition to the model including these
+variables, the potential for interaction between them was also considered by the
+formulation of a second logistic model.
+The interactions eligible for inclusion
+were determined by examining all possible three-way contingency tables where
+mortality was cross-classified with two
+treatment or condition variables. Variables were selected for potential inclusion
+in multiplicative interaction form if the
+three-way table displayed a significant
+(p < 0.05) second order interaction. Twenty pairs of variables were so identified
+and of these, only three pairs actually
+entered the model after forcing in the 14
+main effect variables, using the previously described stepwise discriminant analysis approach.
+
+99
+
+The 17 variables so identified were further reduced using the same procedure as
+described above for the "main effects"
+model. Of the original 17 variables, five
+(Shock 2, CPR, Renal 2 x Coma, Shock 1
+x Coma, Shock 2 x Coma) met the stated
+criterion and were included in the model
+along with age. Maximum likelihood estimates were recalculated on this reduced
+set of six covariates. The resulting coefficients estimates, estimated odds ratios,
+and confidence intervals for the odds ratios are presented in table 5 for each of
+the variables in this "interactive" model.
+Tables 6-8 present the contingency
+tables used to evaluate the fit of these two
+models. Computation of the previously
+defined statistic X2 as in equation 5 would
+involve comparison of the observed and
+estimated expected frequencies in the
+Y = 1 (die) row of the tables used in the
+evaluation of C%. Since the distributional
+properties of this statistic are unknown,
+the computation of X2 will not be presented here. Alternatively, a plot of the
+10 points representing the observed and
+expected frequencies in each cell of the
+Y = 1 row could be examined to see if they
+follow a line through the origin with slope
+1. This procedure, as with most graphic
+procedures, can be useful as an adjunct
+to formal testing procedures using the
+two statistics tl% and C% discussed earlier.
+These statistics show that the main effects model fits but not well (ft% = 14.87,
+df = 8,j = 0.06; C* = 11.72, df = 8 ^ =
+0.16;HT* = 16.56, df=9,p = 0.06;HTC*
+= 15.57, df = 9, p = 0.08). The inclusion
+of interaction terms into the model appears to improve the fit. (The resulting
+statistics are:fi%= 12.45, df =^8,p = 0.13;
+C* = 8.40, df = 8, p = 0.40; HT* = 14.61,
+df = 9, p = 0.10; i / r c * = 12.13, df = 9,
+p = 0.21.) Based on these results, one
+might conclude that it is helpful to include the interactions in the model for
+the estimation of the probability of survival given the patient condition and
+treatment variables.
+
+<-----Page 8----->TABLE 4
+
+No CPR in ICU
+CPR in ICU
+
+0
+1
+
+0
+1
+
+0
+1
+
+Xa Granulocytopenia
+
+X, Cardiac arrest
+(CPR in the ICU)
+
+Xe Fever
+
+Temperature <40 C
+Temperature >40 C on 2 occasions
+
+WBC >1500 and PMN >1000
+WBC <1500 and/or PMN <1000
+
+0
+1
+
+Xt Coma
+
+535
+23
+
+515
+43
+
+537
+21
+
+505
+53
+
+(95.9)
+( 4.1)
+
+(92.3)
+( 7 7)
+
+(96.2)
+( 3.8)
+
+(90.5)
+( 9.5)
+
+(17.2)
+
+X'n
+
+Y'
+
+X'.
+
+(57.7)
+(25 1)
+
+322
+140
+
+BP >90, HR <150 no vasopressors
+BP *90 or HR >150 for 3 hrs, no
+vasopressors
+BP *90 and HR >150 for 3 hrs
+or vasopressors
+None or coma <48 hours
+Coma >48 hours
+
+0
+1
+
+X, Shock
+
+96
+
+Xj_
+X',
+0
+1
+
+2
+
+0
+0
+1
+0
+1
+0
+
+(90 0)
+( 3.0)
+( 4 5)
+
+0
+0
+
+1
+
+502
+17
+25
+
+0
+0
+
+BUN <70 and CREAT <4
+BUN 70-90 or CREAT 4 - 6
+BUN >90 or CREAT >6
+
+Xi
+
+x\
+
+0
+1
+2
+
+Xi
+
+X, Renal failure
+
+18 5
+
+4.6
+
+0
+1
+0
+
+54.9
+
+4.2
+
+Variables recoded*
+
+(65 4)
+(21.5)
+(10 4)
+
+(82.6)
+(17 4)
+
+SD
+
+365
+120
+58
+
+461
+97
+
+Mean
+
+No infections
+1 infection
+2 or more infections
+
+Age in years
+
+Stay in ICU in days
+
+LIVE
+DIE in hospital
+
+(%>
+
+0
+1
+2
+
+0
+1
+
+No
+
+Xt No of infections
+
+Condition characteristics
+X, Age
+
+Z length of stay in ICU
+
+Outcome characteristics
+Y mortality
+
+Code
+
+Summary of outcome, condition and treatment characteristics m 558 patients in two intensive care units (ICUs) at
+Baystate Medical Center, Springfield, Massachusetts, April, October, November, 1978
+
+i
+
+I
+
+O
+
+©
+O
+
+<-----Page 9----->508
+50
+
+538
+20
+
+452
+106
+
+429
+69
+57
+
+541
+17
+
+(81.0)
+(19 0)
+
+(76 9)
+(12.4)
+(10 2)
+
+(87 1)
+(12 9)
+
+(92.3)
+( 7 7)
+
+(97 0)
+( 3 0)
+
+(79 6)
+(20.4)
+
+(710)
+(17 7)
+(112)
+
+(61.1)
+(38.9)
+(38.9)
+
+(910)
+( 9.0)
+
+(96.4)
+( 3.6)
+
+0
+1
+0
+
+IB
+
+Xi,
+
+Y'
+A
+
+y
+
+x; 7
+
+xu
+
+x;3
+
+1
+
+0
+0
+
+• Names assigned to recoded variables: X\ = Age; Xi = Inf 1; Xj = Inf 2, X't = Renal 1; Xi = Renal 2, X'e = Shock 1, X'7 = Shock 2; Xi = Coma;
+X; = WBC; X| o = CPR, X|, = Fever, X[, = MI, Xi, = Coag, X'lt = Campus; X;5 = MVent 1, X;8 = MVent 2, Xi7 = Lines; XI8 = Hemo;
+X;9 = Mult Op; XJo = Hep; X{, = Blood 1; XJ, = Blood 2; Xi, = Lidocaine.
+
+No
+Yes
+
+X,» Lidocaine infusion
+
+Not given or given >q6°
+Given q6° or continuously
+
+X,6 Hepann (therapeutic,
+not prophylactic)
+0 - 4 units
+5-9 units
+s=10 units
+
+486
+72
+
+No
+Yes (excluding gastrostomy,
+tracheostomy, A-V shunt)
+
+X18 Multiple operations
+
+X17 Blood infusion
+
+515
+43
+
+No
+Yes
+
+Xu Hemodialysis
+
+444
+114
+
+<7 tubes, drains, catheters
+5=7 tubes, drains, catheters
+
+X, 3 No. of lines
+
+396
+99
+63
+
+Springfield (resident covered)
+341
+Wesson (community physician covered) 217
+217
+
+Platelets >50,000 and PTT <100
+Platelets <50,000 and/or PTT >100
+or DIC
+
+No MI other than admitting D,
+MI other than admitting Dx
+
+No or <24 hours
+MVENT 1-4 days, no PEEP
+MVENT s>5 days or PEEP
+
+0
+1
+
+0
+1
+
+X,j Mechanical
+ventilation
+
+Treatment characteristics
+Xn Campus
+
+X lo Coagulopathy
+
+X, Myocardial infarction
+
+z
+
+o
+
+{g
+
+o
+
+o
+
+5
+
+50
+
+3
+
+<-----Page 10----->102
+
+LEMESHOW AND HOSMER
+
+For comparative purposes, the statistics
+AVPE and R] were evaluated. For the
+main effects model AVPE = 0.427 while
+for the interactive model AVPE = 0.453.
+R'2, = 0.762 for the main effects model and
+0.771 for the interactive model. With
+either statistic, the interactive model
+demonstrates negligible improvement in
+fit over the main effects model although
+it is unlikely that the improvement is statistically significant. The actual values of
+these two statistics are difficult to interpret since well-defined upper bounds are
+not available or depend on the distribution of P(x) in the population.
+The statistic tlu discussed by Hosmer
+and Lemeshow (9) was also calculated.
+Table 8 shows the contingency tables used
+in calculating fiu with the two models.
+(For the main effects model, fia = 97.22,
+df = 15, p < 0.001 while for the interactive model tla = 106.55, df = 15, p <
+0.001.) Clearly, with either model the statistic fiu indicates the fit of the logistic
+
+model is poor. What appears to be happening is that the estimated frequencies
+(e's) are much larger than the observed
+frequencies (o's) for the middle intervals.
+The meaning of the large values of tla in
+this example is not clear because of the
+previously noted sensitivity of its distribution to discrete covariates. Hence, this
+statistic is not generally recommended for
+use in models containing predominantly
+discrete covariates.
+DISCUSSION
+
+Goodness of fit statistics proposed over
+the last two years have been reviewed. A
+number of statistics (fl*B and C%) have been
+suggested as being most easily applied to
+epidemiologic research. These statistics
+were used to assess the fit of an estimated
+logistic regression model to mortality
+data on 540 patients in two intensive care
+units. It would appear that these goodness of fit statistics have great potential
+for objectively evaluating the fit of the
+
+TABLE 5
+
+Maximum likelihood estimates, estimated variances, estimated odds ratios (OR) and
+confidence interval for the odds ratios for main effects and interactive models
+
+ft
+
+SE(ft)
+
+/\
+OR
+
+Confidence
+interval
+for OR
+
+Mam effects model
+Constant
+Age
+
+Shock 2
+Coma
+
+CPRt
+
+-4.58
+0.03
+135
+
+3 12
+2 59
+
+0.599
+0.0O9
+0.348
+0.446
+0.485
+
+1.38*
+3 87
+20.22
+13 40
+
+(1 16,1.65)
+(1.96,7.65)
+(9.42,54.09)
+(5 18,34 63)
+
+Interactive model
+Constant
+Age
+
+Shock
+CPRt
+Renal
+Shock
+Shock
+
+2
+2 x Coma
+1 x Coma
+2 x Coma
+
+-4.96
+0 04
+117
+
+2.65
+-233
+4.02
+5.00
+
+0.672
+0.010
+0 393
+0.497
+1.377
+0.727
+1.213
+
+148*
+3.22
+14.10
+0 05
+55 69
+149.03
+
+(1 22,1.80)
+(1.49,6.96)
+(5 33,37.33)
+(0.00,0 80)
+(13.38,231 73)
+(13.84,1605.16)
+
+* These odds ratios and associated confidence intervals are based on a change of 10 years of age
+t CPR = cardiopulmonary resuscitation
+
+<-----Page 11----->Die
+
+20.50
+
+344.50
+
+9.25
+
+H\
+
+64.76
+
+74
+
+65
+
+9
+
+0 1-02
+
+14.99
+
+6.01
+
+53.93
+
+1.07
+
+187
+
+53
+
+8 50
+
+450
+
+294
+
+57 06
+
+60
+
+58
+
+2
+
+356
+
+66.44
+59
+
+57
+
+2
+
+0 054-0 064
+
+&. - 1172, d f - 8,p - 0 16
+
+51 13
+
+1
+
+52
+
+Expected (e)
+
+55
+
+55
+
+0
+
+13
+
+9
+
+4
+
+0 3-0 4
+
+- 14 87, df = 8, p = 0 06
+
+20
+
+15
+
+5
+
+0 2-0 3
+
+0 - 0 026 0.026-0 042 0 042-0 054
+
+365
+
+344
+
+21
+
+Observed (o)
+
+Total
+
+Live
+
+Die
+
+Total
+
+Live
+(Y - 0)
+
+( K - 1)
+
+*
+
+0-0 1
+
+TABLE 6
+
+2 72
+
+228
+
+47
+
+42
+
+5
+
+43 74
+
+3 26
+
+0 064-0 074
+
+2
+
+3
+
+0 4-0 5
+
+438
+
+5 62
+
+52
+
+43
+
+9
+
+47 83
+
+4 17
+
+0 074-0 086
+
+Pr{Dying}
+
+10
+
+4
+
+6
+
+0 5-0 6
+
+Pr{Dying}
+
+3 3S
+
+6 61
+
+52
+
+50
+
+2
+
+47 03
+
+4 97
+
+0 086-0 105
+
+10
+
+0
+
+10
+
+0 6-0 7
+
+194
+
+6 06
+
+2 10
+
+1190
+
+14
+
+4
+
+10
+
+0 8-0 9
+
+47 36
+
+6 64
+
+54
+
+36
+
+19
+
+35 92
+
+18.08
+
+0 164-0 695
+
+15 57, df ° 9 , p - 0 08
+
+54
+
+47
+
+7
+
+0 105-0 164
+
+16 56, df - 9, p - 0 06
+
+8
+
+5
+
+3
+
+0 7-0 8
+
+Evaluation of fit of the main effects model using the statistics ft%, C%, &T* and HTC%
+
+0 74
+
+64
+
+8 57
+
+45.43
+
+9
+
+45
+
+0 596-10
+
+21
+
+0
+
+21
+
+20 26
+
+0 9-1.0
+
+540
+
+448
+
+92
+
+Total
+
+540
+
+448
+
+92
+
+Total
+
+O
+CO
+
+o
+
+a
+
+o
+
+o
+
+s
+
+so
+
+3
+
+<-----Page 12----->91
+
+102
+
+330.44
+Lave
+(Y = 0) 328
+
+Total
+
+88.40
+
+13 60
+
+1132
+
+368
+
+7
+
+5
+
+2
+
+4 61
+
+2 39
+
+0.3-0.4
+
+- 12.45, df - 8,p •> 0 13
+
+16
+
+11
+
+4
+
+0 2-0 3
+
+1
+
+5
+
+3 2£
+
+2 72
+
+0 4-0 5
+
+54
+
+54
+
+Live
+(Y - 0)
+
+Total
+
+53 18
+
+0 82
+
+2.55
+
+66
+
+64
+
+51 79
+55
+
+53
+
+2
+
+3 21
+
+fr. = 8.40, d f - 8 , p = 0 40
+
+55
+
+53 46
+
+1
+
+53
+
+52 35
+
+1
+
+1.65
+
+Expected (e)
+Obaerved (o)
+
+0
+
+Die
+(V - 1)
+
+54
+
+50
+
+4
+
+50 25
+
+3 72
+
+0-0 022 0 022-0 038 0 038-0.052 0 062-0 063 0 063-0 075
+
+349
+
+11
+
+0.1-0 2
+
+#
+18 66
+Dio
+(Y = 1) 21
+
+0-0.1
+
+768
+
+4 32
+
+0
+
+3
+
+106
+
+194
+
+0 6-0 7
+
+55
+
+46
+
+9
+
+60 41
+
+4 59
+46 64
+62
+
+48
+
+4
+
+5 36
+
+0 075-0 090 0 090-0 115
+
+Pr{Dying(
+
+9
+
+3
+
+Pr{Dyic
+0 5-0 6
+
+322
+
+9 78
+
+10
+
+0
+
+10
+
+142
+
+858
+
+0 8-0.9
+
+46 76
+
+*
+
+36 44
+52
+
+36
+
+16
+
+15.66
+
+0 166-0 670
+
+54
+
+8
+
+46
+
+6 70
+
+47.30
+
+540
+
+448
+
+92
+
+Total
+
+540
+
+27
+
+0 570-10
+
+448
+
+0 5^
+
+92
+
+Total
+
+1
+
+26
+
+26 41
+
+0 9-1.0
+
+= 12 13, df - 9, p - 0 21
+
+64
+
+45
+
+9
+
+7 24
+
+0.116-0 166
+
+HT* = 14 61, d f - 9 , p = 0 10
+
+13
+
+6
+
+7
+
+0.7-0.8
+
+Evaluation of fit of the interactive model using the statistics H%, 6*0,1?t% and HTC*0
+
+TABLE 7
+
+03
+
+O
+
+o
+
+<-----Page 13----->21
+
+10.52
+
+0-0 1
+
+36 36
+
+20
+
+15
+
+5
+
+349
+
+72.99
+
+102
+
+91
+
+11
+
+12.22
+
+0 1-0.2
+
+33 54
+
+15
+
+11
+
+4
+
+10.93
+
+0 .2-0 3
+
+Expected (e)
+
+19.61
+
+7
+
+5
+
+2
+
+18.84
+
+10 01
+
+0 3-0.4
+
+13
+
+9
+
+4
+
+0.2-0 3 0.3-0 4
+11.82
+10.41
+
+ft. ° 106.55, df = 15, p < 0.001
+
+Observed (o)
+
+Total
+
+Live
+266.15
+(Y = 0) 328
+
+Die
+[Y = 1)
+
+83.00
+
+74
+
+65
+
+9
+
+13 86
+
+0 .1-0.2
+
+8, «• 97 22, df = 15, p < 0.001
+
+365
+
+Total
+
+264 .65
+
+344
+
+21
+
+* n
+
+.60
+
+0-0 1
+
+Live
+(y = 0)
+
+(y = D
+
+Die
+
+TABLB 8
+
+11.96
+
+1
+
+5
+
+11.82
+
+9.60
+
+0 .4-0.5
+
+2
+
+3
+
+9.70
+
+0 4-0.5
+
+7.87
+10
+
+12
+
+9
+
+3
+
+7.96
+
+9.68
+
+0 .5-0.6
+
+0
+
+10
+
+0
+
+3
+
+5.59
+
+10.36
+
+0.6-0 7
+
+5.34
+
+988
+
+0 .6-0.7
+
+Interactive model
+Pr{Dying}
+
+10
+
+4
+
+6
+
+9 56
+
+0 5-0.6
+
+Main effects model
+Pr{Dying}
+
+3.51
+
+13
+
+6
+
+7
+
+3 94
+
+11.84
+
+0.7-0 8
+
+5
+
+3
+
+10.51
+
+0 7-0 8
+
+1.94
+
+10
+
+0
+
+10
+
+2 55
+
+14 58
+
+0.8-0. 9
+
+14
+
+4
+
+10
+
+0 8-0.9
+10.88
+
+Evaluation of the fit of the mam effects model and the interactive model using the statistic n ,
+
+27
+
+1
+
+26
+0.92
+
+15.59
+
+540
+
+448
+
+92
+
+540
+21
+
+0.9-10
+
+448
+
+0 47
+
+92
+
+Total
+
+0
+
+21
+
+09-1 0
+7 .05
+
+O
+
+o
+
+o
+
+SO
+
+s
+
+o
+
+<-----Page 14----->106
+
+LEMESHOW AND HOSMER
+
+logistic model to a set of data. They may
+also provide some guidance for choosing
+between competitive models containing
+different numbers of independent variables.
+REFERENCES
+
+1 Hertford TR, White C, Kelsey JL Multivanate
+analysis for matched case-control studies. Am J
+Epidemiol 1978; 107 245-55.
+2. Breslow N, Day NE, Halvorsen DT, et al. Estimation of multiple relative risk functions in
+matched case-control studies. Am J Epidemiol
+1979,108:299-307.
+3 Farewell VT Some results on the estimation of
+logistic models based on retrospective data.
+Biometnka 1979,66:27-32.
+4 Prentice RL, Pyke R. Logistic disease incidence
+models and case control studies Biometnka
+1979;66:4O3-ll.
+5 Halperin M, Blackwelder WC, Verter JI Estimation of the multivanate logistic risk function a comparison of the discriminant function
+and maximum likelihood approaches. J Chronic
+Dm 1971;24 125-58
+6. Efron B The efficiency of logistic regression
+compared to normal discriminant analysis J
+Am Stat ABSOC 1975,70 892-8.
+7 O'Hara T, Hosmer DW, Lemeshow S, et al A
+comparison of the discriminant function and
+maximum likelihood procedures in the estimation of logistic risk function coefficients for
+categorical scaled data J Stat Computat Simul.
+In press.
+8. Halteman WA. A goodness of fit test for binary
+logistic regression, unpublished doctoral dissertation, Department of Biostatistics, University
+of Washington, Seattle, WA, 1980
+9. Hosmer DW, Lemeshow S. Goodness of fit tests
+for the multiple logistic regression model.
+Commun Stat 1980;A9 1043-69.
+10. Shillington ER. A generalized chi-square goodness of fit test for logistic regression Unpublished doctoral dissertation, Department of
+Statistics, University of Waterloo, Canada, 1979.
+11 Tsiatis AA. A note on a goodness of fit test for
+the logistic regression model. Biometrika 1980;
+67:250-1
+12. Brand RJ, Rosenman RH, Sholte RI, et al Multivariate prediction of coronary heart disease in
+
+the Western Collaborative Group Study compared to the findings of the Framingham Study.
+Circulation 1976,53 348-55.
+13. Coronary Drug Project Research Group Factors
+influencing long-term prognosis after recovery
+from myocardial infarction—three-year findings of the Coronary Drug Project J Chronic
+Dis 1974;27 267-85
+14. Gordon T, Kannel WB, Halperin M. Prediction
+of coronary heart disease. J Chronic Dis 1979;
+32:427-40.
+15. Truett J, Cornfield J, Kannel W. A multivanate
+analysis of the risk of coronary heart disease
+in Framingham. J Chronic Dis 1967,20:511-24.
+16. Kleinbaum DG, Kupper LL, Cassel JC, et al
+Multivariate analysis of risk of coronary heart
+disease in Evans County, Georgia Arch Intern
+Med 1971;128.943-8
+17 Wilhelmsen L, Wedel H, Tibblin G Multivanate analysis of risk factors for coronary heart
+disease. Circulation 1973,48:950-8
+18. Keys A, Aravanis C, Blackburn H, et al Probability of middle-aged men developing coronary
+heart disease in five years. Circulation 1972,45:
+815-28
+19. Rao CR. Linear statistical inference and its applications 2nd ed. New York. John Wiley and
+Sons, 1973
+20 Efron B Regression and Anova with zero-one
+data; measures of residual variation. J Am Stat
+Assoc 1978,73 113-31.
+21 Pregibon D Logistic regression diagnostics.
+Ann Stat 1981,9705-24
+22. Baker RJ, Nelder JA The GLIM system release
+3 generalized linear interactive modeling. Oxford Numencal Algonthms Group, 1978
+23 Durst MC. Donsker, Vapnik-Chervonenkis
+classes and chi-square tests of fit with random
+cells Unpublished doctoral dissertation, Department of Mathematics, M.I.T., Cambridge,
+MA, 1980.
+24. Korn L Some goodness of fit statistics for
+assessing the fit of the logistic regression model
+Unpublished Master's thesis, University of
+Massachusetts, Division of Public Health, Amherst, MA, 1980.
+25. Dixon WJ, Brown MB, eds. BMDP-79 Biomedical Computer Programs P-Senes. Berkeley, CA:
+University of California Press, 1979.
+26 Hosmer DW Jr, Wang C-Y, Lin I-C, et al. A
+computer program for stepwise logistic regression using maximum likelihood estimation.
+Comput Programs Biomed 1978;8 121-34
+
+

@@ -1,0 +1,3469 @@
+<-----Page 0----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+The Neural Basis of
+Decision Making
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+Joshua I. Gold1 and Michael N. Shadlen2
+1
+
+Department of Neuroscience, University of Pennsylvania, Philadelphia,
+Pennsylvania 19104-6074; email: jigold@mail.med.upenn.edu
+
+2
+
+Howard Hughes Medical Institute and Department of Physiology and Biophysics,
+University of Washington, Seattle, Washington 98195-7290;
+email: shadlen@u.washington.edu
+
+Annu. Rev. Neurosci. 2007. 30:535–74
+
+Key Words
+
+The Annual Review of Neuroscience is online at
+neuro.annualreviews.org
+
+psychophysics, signal detection theory, sequential analysis, motion
+perception, vibrotactile perception, choice, reaction time
+
+This article’s doi:
+10.1146/annurev.neuro.29.051605.113038
+c 2007 by Annual Reviews.
+Copyright 
+All rights reserved
+0147-006X/07/0721-0535$20.00
+
+Abstract
+The study of decision making spans such varied ﬁelds as neuroscience, psychology, economics, statistics, political science, and computer science. Despite this diversity of applications, most decisions
+share common elements including deliberation and commitment.
+Here we evaluate recent progress in understanding how these basic
+elements of decision formation are implemented in the brain. We
+focus on simple decisions that can be studied in the laboratory but
+emphasize general principles likely to extend to other settings.
+
+535
+
+<-----Page 1----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+of this approach for inferring principles of
+higher brain function.
+
+Contents
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+INTRODUCTION . . . . . . . . . . . . . . . . .
+Elements of a Decision . . . . . . . . . . .
+Conceptual Framework . . . . . . . . . . .
+EXPERIMENTS . . . . . . . . . . . . . . . . . . .
+Perceptual Tasks. . . . . . . . . . . . . . . . . .
+Simple Motor Latencies: Deciding
+When to Initiate an Action . . . . .
+Value-Based Decisions . . . . . . . . . . . .
+CONCLUSIONS . . . . . . . . . . . . . . . . . . .
+
+536
+536
+538
+542
+542
+556
+560
+561
+
+INTRODUCTION
+A decision is a deliberative process that results
+in the commitment to a categorical proposition. An apt analogy is a judge or jury that must
+take time to weigh evidence for alternative
+interpretations and/or possible ramiﬁcations
+before settling on a verdict. Here we evaluate progress in understanding how this process is implemented in the brain. Our scope
+is somewhat narrow: We consider primarily
+studies that relate behavior on simple sensorymotor tasks to activity measured in the brain
+because of the ability to precisely control sensory input, quantify motor output, and target
+relevant brain regions for measurement and
+analysis. Nevertheless, our intent is broad: We
+hope to identify principles that seem likely
+to contribute to the kinds of ﬂexible and nuanced decisions that are a hallmark of higher
+cognition.
+The organization of this review is as follows. We ﬁrst describe the computational elements that comprise the decision process.
+We then brieﬂy review signal detection theory (SDT) and sequential analysis (SA), two
+related branches of statistical decision theory
+that represent formal, mathematical prescriptions for how to form a decision using these
+computational elements. We then dissect several experimental results in the context of this
+theoretical framework to identify neural substrates of decision making. We conclude with
+a discussion of the strengths and limitations
+
+SDT: signal
+detection theory
+SA: sequential
+analysis
+
+536
+
+Gold
+
+·
+
+Shadlen
+
+Elements of a Decision
+The decisions required for many sensorymotor tasks can be thought of as a form
+of statistical inference (Kersten et al. 2004,
+Rao 1999, Tenenbaum & Grifﬁths 2001, von
+Helmholtz 1925): What is the (unknown)
+state of the world, given the noisy data provided by the sensory systems? These decisions
+select among competing hypotheses h1 . . . hn
+(often n = 2) that each represent a state of
+the world (e.g., a stimulus is present or absent). The elements of this decision process
+(see Figure 1) are described in terms of probability theory, as follows.
+The probability P(hi ), or prior, refers to
+the probability that hi is true before obtaining any evidence about it. In the courtroom
+analogy, priors correspond to prejudices that
+can bias jurors’ judgments. Bayesian inference prescribes a more positive role for priors, which are necessary to convert measurable properties of evidence (the values it can
+attain when hi is true) to inferred ones (the
+probability that hi is true given a particular observation). For a sensory-motor task, a prior
+typically corresponds to the predicted probability of seeing a particular stimulus or receiving a particular reward on the upcoming
+trial, which can be instructed (e.g., Carpenter
+& Williams 1995, Basso & Wurtz 1998, Dorris & Munoz 1998, Platt & Glimcher 1999) or
+inferred from its relative frequency of occurrence on previous trials (Sugrue et al. 2004).
+The evidence (e) refers to information that
+bears on whether (and possibly when) to commit to a particular hypothesis. A strand of hair
+found at a crime scene can be used as evidence
+if it supports or opposes the hypothesis that a
+certain person was present at that location.
+For a perceptual task, neural activity that represents immediate or remembered attributes
+of a sensory stimulus can be used as evidence.
+However, like hair at a crime scene, this sensory activity is evidence only insofar as it bears
+
+<-----Page 2----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+In the world
+
+In the brain
+
+Context
+e.g., instruction
+
+Motivation to
+perform the task
+
+Two possible states
+
+Consideration of
+two propositions
+(hypotheses)
+
+Contextual cues and
+prexisting knowledge
+
+{up, down}
+
+h1 :up or h2 : down
+Sensory data
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+One state holds
+e.g., up
+
+x = { x1 , x2 , ... }
+
+Information flow
+for each decision
+
+Useful form
+of evidence
+
+e
+
+Consequence
+of action & state
+(4 possible)
+
+Decision variable
+e.g., y ≈ ...
+
+l12 (e) ≡
+
+One action
+e.g., answer “up”
+
+Evaluation
+
+P ( e h1 )
+
+P ( e h2 )
+
+or logLR12 ≡ log [ l12 (e)]
+
+Apply decision rule
+e.g., choose left if
+
+l12 (e) ≥ criterion
+
+Statistical knowledge
+likelihoods: P ( e hi )
+
+priors: P ( hi )
+
+values: v (Hj hi )
+
+Establish
+decision rule
+based on goals
+
+Experience payoff or cost
+value or utility
+
+vij∈{1,2}
+
+Figure 1
+Elements of a simple decision between two alternatives. The left side represents elements of the world.
+The right side represents elements of the decision process in the brain. Black elements establish context.
+Red elements form the decision. Blue elements evaluate and possibly update the decision process.
+
+on a hypothesis. Thus e is useful when it can
+be interpreted in the context of conditional
+probabilities such as P(e | h i ), the “likelihood”
+function describing the values that e can attain
+when hi is true. Perceptual tasks are useful for
+studying decision formation in part because
+of the ability to control precisely the quantity and quality of the sensory evidence and
+measure the impact on likelihood functions
+obtained from relevant sensory neurons.
+
+Value (v) is the subjective costs and beneﬁts
+that can be attributed to each of the potential
+outcomes (and associated courses of action)
+of a decision process. Value can be manipulated by giving explicit feedback or monetary rewards to human subjects or preferred
+food or drink to nonhuman subjects. Value
+can also reﬂect more implicit factors such as
+the costs associated with wasted time, effort,
+and resources. Here we make no distinction
+www.annualreviews.org • Decision Making
+
+537
+
+<-----Page 3----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+between value and utility, disregarding their
+technical meanings and opting instead for a
+more general concept that describes subjective inﬂuences on the decision process.
+The decision variable (DV) represents the
+accrual of all sources of priors, evidence, and
+value into a quantity that is interpreted by the
+decision rule to produce a choice. It is a conceptual entity corresponding to the deliberations in a trial leading up to the verdict. Note
+that here “deliberations” does not imply that
+the DV is necessarily computed rationally and
+without emotion; rather, it emphasizes that
+the DV is capable of accounting for multiple
+sources of information (priors, evidence, and
+value) that are interpreted over time. Thus,
+the DV is not tied to the (possibly ﬂeeting)
+appearance of stimuli but spans the time from
+the ﬁrst pieces of relevant information to the
+ﬁnal choice. Also, unlike the choice, which is
+discrete, it is often best thought of as an analog quantity. We spend much of this chapter
+reﬁning the concept of a DV and describing
+efforts to ﬁnd its neural correlates.
+The decision rule determines how and
+when the DV is interpreted to arrive at a commitment to a particular alternative Hi (the
+choice associated with hypothesis hi ). The rule
+causes the jury to declare, “we have a verdict.”
+A conceptually simple rule is to place a criterion value on the DV. This rule requires a
+DV whose magnitude reﬂects the balance of
+support and opposition for a hypothesis. Such
+a rule allows the decision maker to achieve at
+least one of several appealing long-term goals,
+including maximizing accuracy or reward or
+achieving a target decision time.
+The course of action that follows the commitment to an alternative is often necessary
+to reap the costs and beneﬁts associated with
+that alternative. In these cases, the decision
+itself might be best thought of not as an
+abstract computation but rather as the explicit intention to pursue (or avoid) a particular course of action. This idea is a form
+of “embodiment” that places high-order cognitive capacities such as decision making in
+the context of behavioral planning and execu-
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+DV: decision
+variable
+
+538
+
+Gold
+
+·
+
+Shadlen
+
+tion (Cisek 2007, Clark 1997, Merleau-Ponty
+1962, O’Regan & Noë 2001). A key practical implication is that the parts of the brain
+responsible for selecting (or planning) certain
+behaviors may play critical roles in forming
+decisions that lead to those behaviors.
+The goals of a decision maker are to
+achieve desired outcomes and avoid undesired ones. Desired outcomes include “getting it right” or maximizing the percentage
+of correct responses in tasks that have right
+and wrong answers or, more generally, maximizing expected value (Green & Swets 1966).
+Undesired outcomes include getting it wrong,
+minimizing value and wasting time, effort,
+or resources. Goals are critical because the
+decision process is assumed to be intended,
+and perhaps even optimized, to achieve them.
+Indeed, optimality can be assessed only in
+the context of a goal. Thus, behavior that is
+“suboptimal” with respect to certain objective
+goals such as maximizing accuracy might in
+fact be optimal with respect to the idiosyncratic goal(s) of the decision maker.
+Evaluation, or performance monitoring,
+is necessary to analyze the efﬁcacy or optimality of a decision with respect to its
+particular goals. For laboratory tasks, evaluation can occur with or without explicit feedback (e.g., Carter et al. 1998, Ito et al. 2003,
+Ridderinkhof et al. 2004, Schall et al. 2002,
+Stuphorn et al. 2000). In either case it is likely
+to play a critical role in shaping future decisions via learning mechanisms that, in principle, can affect every aspect of the process, from
+incorporating the most appropriate priors, evidence, and value into the DV to establishing
+the most effective decision rule.
+
+Conceptual Framework
+Signal detection theory. SDT is one of the
+most successful formalisms ever used to study
+perception. Unlike information theory and
+other biostatistical tools commonly used for
+data analysis, SDT prescribes a process to
+convert a single observation of noisy evidence
+into a categorical choice. Early applications
+
+<-----Page 4----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+allowed psychologists to infer from behavior
+properties of the underlying sensory representation (Green & Swets 1966). Later, pioneering work in retinal and somatosensory
+physiology established SDT as a valuable tool
+to relate the measured responses of sensory
+neurons to the limits of detection and discrimination (for reviews see Parker & Newsome
+1998, Rieke et al. 1997). More recently, it has
+begun to shed light on decision mechanisms.
+According to SDT, the decision maker obtains an observation of evidence, e. In perceptual psychophysics, e is derived from the
+senses and might be the spike count from
+a neuron or pool of neurons, or a derived
+quantity such as the difference between spike
+rates of two pools of neurons. It is caused
+by a stimulus (or state) controlled by the experimenter; e.g., h1 (stimulus present) or h2
+(stimulus absent). If e is informative, then its
+magnitude differs under these states. However, e is also corrupted by noise. Thus e is
+a random variable described by a distribution
+whose parameters (e.g., the mean) are set by h1
+or h2 . These conditionalized distributions describe the likelihoods P(e | h 1 ) and P(e | h 2 ).
+Unlike standard statistical methods, the object of SDT is not to determine whether the
+parameters describing these distributions are
+different but instead to decide which of the
+states gave rise to the observation e.
+The decision requires the construction of
+a DV from e. For binary decisions, the DV is
+typically related to the ratio of the likelihoods
+of h1 and h2 given e: l 12 (e) ≡ P(e | h 1 )/P(e | h 2 ).
+A simple decision rule is to apply a criterion to
+the DV; e.g., choose h1 if and only if l 12 (e) ≥ β,
+where β is a constant. A strength of SDT is
+that a variety of goals can be reached by simply
+using different values for the criterion. If the
+goal is accuracy and the two alternatives are
+equally likely, then β = 1. If the goal is accuracy and the prior probability favors one of the
+hypotheses, then β = P (h 2 )/P(h 1 ). If the goal
+is to maximize value (where vij is the value associated with choice Hj when hypothesis hi is
+22 + v21 )P (h 2 )
+true), then β = (v
+. For more details,
+(v11 + v12 )P (h 1 )
+the reader should refer to the ﬁrst chapter of
+
+Green & Swets (1966), where these expressions are derived.
+SDT thus provides a ﬂexible framework
+to form decisions that incorporate priors,
+evidence, and value to achieve a variety of
+goals. Unfortunately, this ﬂexibility also poses
+a challenge to neurobiologists. The above expressions were obtained assuming that the DV
+is the likelihood ratio (LR), l 12 (e). However,
+equivalent expressions (that is, those that will
+achieve the same goals) can be obtained (by
+scaling β) using any quantity that is monotonically related to the LR. In other words, these
+equations do not constrain the priors, e, value,
+the DV, or β to take on any particular form,
+only that they interact in a certain way. Thus
+it is difﬁcult to assign a quantity measured in
+the brain to any one of these elements without knowing how the others are represented.
+One powerful approach to unraveling this conundrum is to exploit differences in the time
+scales of these elements in decision formation.
+
+LR: likelihood ratio
+logLR: logarithm of
+the likelihood ratio
+
+Sequential analysis. SA is a natural extension to SDT that accommodates multiple
+pieces of evidence observed over time. SA
+assumes that the decision has two parts: the
+usual one between h1 and h2 , and another
+about whether it is time to stop the process
+and commit (Figure 2). In its most general
+form, SA allows the procedure for constructing the DV and the decision rule to be adjusted
+with each new sample of evidence. However,
+many decisions can be understood by assuming ﬁxed deﬁnitions for these elements. A simple DV constructed from multiple, independent pieces of evidence, e 1 , e 2 , . . . , e n , is the
+logarithm of the LR (logLR, or “weight of evidence”), which is just the sum of the logLRs
+associated with each piece of evidence:
+log L R12 ≡ log
+=
+
+n
+
+i=1
+
+P(e 1 , e 2 , . . . , e n |h 1 )
+P (e 1 , e 2 , . . . , e n |h 2 )
+log
+
+P (e i | h 1 )
+.
+P (e i | h 2 )
+
+1.
+
+A simple stopping rule is to update this DV
+with new pieces of evidence until reaching a
+www.annualreviews.org • Decision Making
+
+539
+
+<-----Page 5----->ANRV314-NE30-21
+
+ARI
+
+a
+
+21 May 2007
+
+13:44
+
+Sequential analysis framework
+
+e0
+
+Stop
+or
+
+→
+
+→ f0 ( e0 ) ⇒
+
+e1 →
+
+→
+
+f1 ( e0 , e1 ) ⇒ Stop
+or
+e2 →
+
+f1 ( e0 , e1 , e2 )
+
+⇒ Stop
+or
+…
+
+b
+
+f1 ( e0 , e1 , …, en ) ⇒ …
+
+Symmetric random walk
+Choose H 1
+
+A
+
+Accumulated
+evidence
+for h1 over h2
+
+e
+Mean of e depends
+on strength of
+evidence
+
+0
+
+Mean drift rate = mean of e
+
+-A
+Choose H 2
+
+c
+
+Race model
+Accumulated
+evidence for h2
+
+Choose H1
+
+Accumulated
+evidence for h1
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+en →
+
+A
+
+B
+
+Choose H 2
+
+Figure 2
+Sequential analysis. (a) General framework. The decision is based on a sequence of observations. After
+each acquisition, a DV is calculated from the evidence obtained up to that point; then more evidence can
+be obtained or the process can be terminated with a commitment to H1 or H2 . In principle, both the
+fi (· · ·)s, which convert the evidence to a DV, and the criteria can be dynamic (e.g., to incorporate the cost
+of elapsed time). e 0 can be interpreted as the evidence bearing on the prior probability of the hypotheses.
+(b) In random walk models, the DV is a cumulative sum of the evidence. The bounds represent the
+stopping rule. If e is a logLR, then this process is the SPRT (see The Sequential Probability Ratio Test).
+When the evidence is sampled from a Gaussian distribution in inﬁnitesimal time steps, the process is
+termed diffusion with drift μ, or bounded diffusion. (c) In the race model, two or more decision processes
+represent the accumulated evidence for each alternative. When there are two alternatives and the
+accumulations are inversely correlated, the race model is nearly identical to a symmetric random walk.
+
+540
+
+Gold
+
+·
+
+Shadlen
+
+<-----Page 6----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+positive or negative criterion (the bounds in
+Figure 2b).
+Together, this DV and stopping rule comprise the sequential probability ratio test
+(SPRT) (see The Sequential Probability Ratio
+Test), which is the most efﬁcient test for deciding between two hypotheses on this kind
+of problem: It achieves a desired error rate
+with the smallest number of samples, on average (Wald & Wolfowitz 1947). This procedure played a prominent role in allowing Alan
+Turing and colleagues to break the German
+enigma cipher in World War II (Good 1979,
+1983). Their success depended on not only
+deducing the contents of intercepted messages correctly, but also doing so in time for
+the information to be of strategic use.
+SA in numerous guises has been a valuable tool for psychophysical analysis, particularly for studying the trade-off between speed
+and accuracy (Luce 1986, Smith & Ratcliff
+2004). In recruitment or race models, evidence supporting the various alternatives is
+accumulated independently to ﬁxed thresholds (Audley & Pike 1965, LaBerge 1962,
+Logan 2002, Reddi et al. 2003, Vickers 1970).
+In other models that are more closely related to the SPRT, a weight of evidence is
+accumulated to support one alternative versus another (Busemeyer & Townsend 1993,
+Diederich 2003, Laming 1968, Link 1992,
+Link & Heath 1975). These models mirror
+the mathematical description of a random
+walk or diffusion process (Ratcliff & Rouder
+1998, Ratcliff & Smith 2004, Smith 2000,
+Smith & Ratcliff 2004): The accumulation
+of noisy evidence creates a virtual trajectory
+equivalent to the dancing movements of a tiny
+particle in Brownian motion (Figure 2).
+SA promises to play an important role in
+the neurobiology of decision making. First,
+investigators continue to develop neurobiologically inspired implementations of SA that
+will help to identify where and how the brain
+carries out the underlying computations (Lo
+& Wang 2006, Usher & McClelland 2001,
+Wang 2002). Second, SA provides a means to
+distinguish evidence from the DV. Evidence is
+
+THE SEQUENTIAL PROBABILITY RATIO
+TEST
+Consider the following toy problem. Two coins are placed in a
+bag. They are identical except that one is fair and the other is
+a trick coin, weighted so that heads appears on 60% of tosses,
+on average. Suppose one of the coins is drawn from the bag,
+and we are asked to decide whether it is the trick coin. We
+can base our decision on a series of any amount of tosses. The
+SPRT works as follows. Each observation (toss) e i is converted
+to a weight of evidence, the logLR in favor of the trick coin
+hypothesis. There are only two possible values of evidence,
+heads or tails, which give rise to weights (wi ):
+⎧
+P (e i = heads|h 1 : trick coin)
+⎪
+⎪
+log
+⎪
+⎪
+P (e i = heads|h 2 : fair coin)
+⎪
+⎪
+⎪
+⎪
+⎪
+⎨ = log 0.6 = 0.182 if heads
+0.5
+wi =
+⎪
+P(e i = tails|h 1 : trick coin)
+⎪
+⎪
+log
+⎪
+⎪
+⎪
+P (e i = tails|h 2 : fair coin)
+⎪
+⎪
+⎪
+0.4
+⎩
+= −0.223 if tails
+= log
+0.5
+According to SPRT, the decision variable is the running sum
+(accumulation) of the weights. After the nth toss, the decision
+variable is
+n
+
+wi
+yn =
+i=1
+
+We apply the following rules:
+1−α
+answer “trick”
+if yn ≥ log
+α
+β
+if yn ≤ log
+answer “fair”
+1−β
+1−α
+β
+ y n  log
+get more evidence
+if log
+1−β
+α
+where α is the probability that a fair coin will be misidentiﬁed
+[i.e., a type I error: P (H1 | h 2 )] and β is the probability that
+a trick coin will be misidentiﬁed [a type II error:P(H2 | h 1 )].
+For example, if α = β = 0.05, then the process stops when
+|yn | ≥ log(19). The criteria can be viewed as bounds on a
+random walk. To achieve a lower rate of errors, the bounds
+must be moved further from zero, thus requiring more samples of evidence, on average, to stop the process.
+
+momentary, whereas the DV evolves in time.
+Changes to either can affect accuracy or decision times differently and can, in principle,
+be distinguished in neural recordings (Hanks
+et al. 2006). Third, SA includes a termination
+www.annualreviews.org • Decision Making
+
+SPRT: sequential
+probability ratio test
+
+541
+
+<-----Page 7----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+VTF: vibrotactile
+frequency
+
+13:44
+
+rule. Analogous mechanisms in the brain are
+required to make decisions and commit to alternatives on a time frame that is not governed
+by the immediacy of sensory input or motor
+output, a hallmark of cognition.
+
+EXPERIMENTS
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+Below we summarize key experimental results
+that shed light on how the brain implements
+the elements of a decision. We focus ﬁrst on
+perceptual decisions and how to distinguish
+sensory evidence from the DV and the decision rule. We then describe simple motor tasks
+that appear to engage similar decision mechanisms. Finally we discuss value-based decisions that weigh expectation and preference
+as opposed to sensory evidence.
+
+Perceptual Tasks
+Vibrotactile frequency (VTF) discrimination. Developed in the 1960s by Mountcastle and colleagues, the VTF paradigm
+requires the subject, typically a monkey, to
+compare the frequency of vibration of two
+tactile stimuli, f 1 and f 2, separated by a
+time gap (Figure 3a). The range of frequencies used (∼10–50 Hz) does not activate specialized frequency detectors but instead requires the nervous system to extract
+the intervals or rate of skin depression (Luna
+et al. 2005, Mountcastle et al. 1990). This information is used to decide whether the frequency is greater in the ﬁrst or second interval. The monkey communicates its answer
+by pressing a button with the nonstimulated
+hand.
+
+a
+500 ms
+
+Base (f1)
+
+b
+
+1
+0.8
+
+Comparison (f2)
+
+KU PB
+
+f1 = 20 Hz
+
+Proportion
+0.6
+of choices
+f2 > f1 0.4
+0.2
+0
+10
+
+15
+
+20
+
+25
+
+30
+
+Frequency of comparison (Hz)
+Figure 3
+Neural correlates of a decision about vibrotactile frquency. (a) Testing paradigm. A test probe delivers a
+sinusoidal tactile stimulus to the ﬁnger at base frequency f 1. After a delay period, a comparison stimulus
+is delivered at frequency f 2. Then the monkey must decide whether f 2 > f 1, a decision it indicates by
+releasing a key (KU) and pressing a button (PB) with its free hand. (b) Psychometric function. The task is
+difﬁcult when the base (20 Hz) and comparison frequencies are similar ( f 2 ≈ f 1). (c) Response of a
+typical S1 neuron. Rasters show spikes from individual trials, grouped by the combination of base and
+comparison frequencies (left). The neuron responds to the vibration stimulus in both the base and the
+comparison periods. The ﬁring rate encodes the vibration frequency similarly in the base and comparison
+periods (brown and purple graphs, respectively), but it does not reﬂect the monkey’s choice (black and white
+lines and data points in the lower panels). The neuron is uninformative in the interval between base and
+comparison stimuli. (d ) Response of a neuron in ventral premotor cortex. Same conventions as in (c).
+This neuron carries information about the base frequency during the interstimulus interval (blue). In the
+comparison epoch (purple), the neuron is more active when f 2 < f 1. Note that for all trials, the base and
+comparison frequencies differ by 8 Hz. Adapted with permission from Hernandez et al. (2000), Romo
+et al. (2004).
+542
+
+Gold
+
+·
+
+Shadlen
+
+<-----Page 8----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+ARI
+21 May 2007
+13:44
+
+Figure 3
+
+(Continued )
+
+www.annualreviews.org • Decision Making
+
+543
+
+<-----Page 9----->ARI
+
+21 May 2007
+
+13:44
+
+Signals that encode the VTF stimulus have
+been traced from the periphery into the primary somatosensory cortex (S1). For most
+S1 neurons, the average ﬁring rate increases
+monotonically with increasing stimulus frequency. For many S1 neurons, ﬁring rate
+modulations also follow the periodicity of the
+stimulus (Figure 3c). However, the average
+ﬁring rate is thought to represent the evidence used to perform the task. First, behavioral sensitivity more closely matches the discriminability of S1 responses when average
+rates, rather than periodic modulations, are
+used. Second, trial-to-trial variations in the
+rates, but not the periodic modulations, of
+S1 neurons predict to a slight but signiﬁcant
+degree the monkeys’ choices (Salinas et al.
+2000). This relationship, termed the choice
+probability (Parker & Newsome 1998), is expected for neurons that provide noisy evidence for the decision, especially if the same
+trial-to-trial variations are shared by other S1
+neurons ( Johnson 1980a,b; Kohn & Smith
+2005; Shadlen et al. 1996; Zohary et al. 1994).
+Third, replacing the VTF stimulus in the ﬁrst
+and/or second interval with electrical microstimulation of S1, in some cases using aperiodic stimuli that lack regular intervals
+between activations, elicits nearly the same
+behavioral responses as does the physical stimulus (Romo et al. 1998, 2000).
+The ﬁring rate of S1 neurons thus represents the sensory evidence that underlies the
+decision. Why the evidence and not the DV?
+To make a decision, the brain must compare f 2
+with f 1. This comparison cannot occur until
+f 2 is applied, and it must incorporate information about f 1 that has been held in working
+memory. S1 responses reﬂect the f 1 stimulus
+during the ﬁrst interval and the f 2 stimulus
+during the second interval (Figure 3c). They
+therefore do not provide the comparison.
+Activity in several brain areas, including
+the second somatosensory cortex (S2; Romo
+et al. 2002) and the dorsolateral prefrontal
+cortex (dlPFC, or Walker area 46; Brody et al.
+2003, Romo et al. 1999) but especially the
+medial and ventral premotor cortices (MPC
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+544
+
+Gold
+
+·
+
+Shadlen
+
+and VPC), more closely resembles a DV.
+Many neurons in these areas persist in ﬁring
+through the delay period between f 1 and f 2
+(Figure 3d, blue insert). Moreover, during the
+second interval, the activity of some of these
+neurons reﬂects a comparison between f 2 and
+f 1 (Figure 3d, purple insert). However, identifying the nature of this comparison can be difﬁcult. For the example neuron in Figure 3d,
+it is unknown whether the activity during
+the comparison period reﬂects the difference
+f 2 − f 1 or merely the sign of the difference
+(which is more closely related to the decision
+outcome than the DV) because in every case
+f 2 − f 1 = 8 Hz. A less direct analysis using
+choice probability suggests that some neurons
+in these brain areas might represent the difference between f 2 and f 1 (see Hernandez et al.
+2002, Romo et al. 2004).
+This extraordinary body of work provides
+to date the most complete picture of the diversity of brain areas that contribute to decision formation on even a simple sensorymotor task. For some areas, their role in task
+performance seems clear. S1 provides the sensory evidence. Primary motor cortex helps to
+prepare and execute the behavioral response.
+However, for the remainder of these brain areas (and doubtless others yet to be studied)
+that lie at intermediate stages between sensory
+input and motor output, many challenges lie
+in the way of an equally precise recounting of
+their roles in decision formation.
+One challenge is to understand the apparent redundancy. For example, memory traces
+of f 1 and f 1/f 2 comparisons are both found
+in S2, VPC, MPC, and dlPFC. Do the subtle
+differences in how those computations manifest in the different brain areas indicate subtly different roles in these processes? Or is
+there simply a continuous ﬂow of information through these circuits, such that each performs a unique role but has continuous access
+to the computations performed by the other
+circuits?
+Another challenge lies in linking neural activity to a particular element of the decision
+process. For example, in several brain regions,
+
+<-----Page 10----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+but especially in the dlPFC, delay-period activity resembles a working memory trace of
+the evidence provided by f 1. An alternative
+explanation is that the delay-period activity
+represents the DV: a prediction of the decision, given f 1. Speciﬁcally, if f 1 is low, the
+answer is (or might seem) likely to be f 2 > f 1.
+If f 1 is high, f 2 < f 1 might seem more likely.
+This DV would later be updated by the f 2
+evidence. Consistent with this idea, manipulating properties of the f 1 stimulus can bias
+choices under some conditions (Luna et al.
+2005). Contrary to this idea, dlPFC delayperiod activity reﬂects f 1 when using a stimulus set in which the value of f 1 cannot be
+used to predict f 2 (Romo et al. 1999). However, little is known about the task-related expectations that might be represented during
+the delay period.
+Random-dot motion (RDM) direction discrimination. Similar to the VTF paradigm,
+the RDM paradigm (Figures 4 and 5) was
+developed to study the relationship between
+sensory encoding and perception. Unlike the
+VTF task, the RDM task requires a single
+stimulus presentation and thus eliminates the
+need for working memory. The monkey decides between two possible (opposite) directions of motion that are known in advance.
+Task difﬁculty is controlled by varying the
+percentage of coherently moving dots. The
+direction decision is typically indicated with
+an eye movement.
+The evidence used to form the direction
+decision has been traced to neurons in the
+middle temporal area (MT/V5) tuned for the
+direction of visual motion. SDT analyses of
+the strength and variability of MT responses
+provided a foundation for understanding behavioral accuracy (Britten et al. 1992, 1993;
+Shadlen et al. 1996). Choice probabilities indicated that individual MT neurons weakly
+but signiﬁcantly predict the monkey’s direction decisions, including errors (Britten et al.
+1996). Lesion and microstimulation studies,
+exploiting the systematic organization of MT
+with respect to motion location and direction,
+
+further established a causal link for MT activity and task performance (Ditterich et al.
+2003; Newsome & Paré 1988; Salzman et al.
+1990, 1992).
+Two aspects of the task facilitate the study
+of the neural mechanisms of decision formation. The ﬁrst aspect is that the time needed
+to make the decision is particularly long for
+perceptual tasks, typically many 100s of ms.
+Thus researchers have characterized neural
+correlates of the decision process as it unfolds in time. For a version of the RDM
+task in which motion viewing time (t) is controlled by the experimenter, performance im√
+proves as roughly t (Figure 4b), the relation expected if at each successive moment the
+brain acquired (i.e., integrated) an independent sample of noisy evidence. Performance
+on other perceptual tasks, including even a
+version of the RDM task, can show little or
+no improvement with prolonged viewing duration (Ludwig et al. 2005, Uchida et al. 2006,
+Uka & DeAngelis 2003, Watson 1986). In this
+sense the RDM task may be less representative of perception than of cognitive decision
+making, which can involve multiple sources of
+evidence acquired over a ﬂexible time scale.
+The second beneﬁt of the RDM task is
+the imposed link between the direction decision and a particular course of action, the
+eye-movement response. This link enables investigators to treat the decision as a problem of movement selection. Thus, the search
+for the DV has focused on parts of the brain
+involved in the selection and preparation of
+eye movements, including the lateral intraparietal area (LIP), superior colliculus (SC),
+frontal eye ﬁeld (FEF), and dlPFC (Horwitz &
+Newsome 1999, 2001; Kim & Shadlen 1999;
+Shadlen & Newsome 1996, 2001).
+In one experiment (Figure 4), motion
+viewing was interrupted at a random time
+during decision formation by turning off the
+RDM stimulus and applying a brief electrical
+current to the frontal eye ﬁeld (FEF) (Gold &
+Shadlen 2000, 2003). The microstimulation
+caused a short-latency saccade whose amplitude and direction were determined by the
+www.annualreviews.org • Decision Making
+
+RDM: random-dot
+motion
+
+545
+
+<-----Page 11----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+a
+Fixation
+
+Voluntary
+saccade
+
+Evoked
+saccade
+
+Motion
+
+Time
+
+b
+
+Y position (º)
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+Threshold (% coh)
+
+c
+25.6
+
+12.8
+
+6.4
+100
+
+200
+
+400
+
+800
+
+Amount of deviation (º)
+
+1.5
+
+Up
+Fix
+Down
+
+0
+-5
+
+-5
+
+Viewing duration (ms)
+
+d
+
+5
+
+0
+
+5
+
+10
+
+X position (º)
+51.2% coh
+25.6%
+6.4%
+
+1.0
+
+0%
+0.5
+
+0
+100
+
+300
+
+500
+
+Viewing duration (ms)
+Figure 4
+Representation of an evolving DV by the motor system. (a) Interrupted direction discrimination task.
+The monkey decides the net direction of motion, here shown as up versus down. Task difﬁculty is
+governed by the fraction of dots that move coherently from one movie frame to the next (% coherence).
+The motion viewing is interrupted prematurely, and on a fraction of trials, a brief current is applied to the
+FEF to evoke a saccade. The monkey makes a second, voluntary movement to a choice target to indicate
+his decision. (b) Decision accuracy improves as a function of motion-viewing duration. Psychophysical
+√
+threshold is deﬁned as the motion coherence supporting 82% correct. Threshold falls by t (slope of
+line ﬁt on log-log plot = –0.46; 95% CI: –0.59 to –0.33). These data are from trials in which no
+stimulation occurred. Similar data were obtained on stimulated trials. (c) Examples of eye movement
+trajectories. Fixation point is at the origin. The two larger circles are the choice targets. The random-dot
+stimulus (not shown) was centered on the ﬁxation point. The symbols mark eye position in 2-ms steps.
+FEF stimulation during ﬁxation, in the absence of motion and choice targets, elicited a rightward saccade
+(trace marked “Fix”). Stimulation while viewing upward and downward motion induced saccades that
+deviated in the direction of the subsequent, voluntary eye movements. (d ) The average amount of
+deviation depends on motion strength and viewing time. The amount of deviation toward the chosen
+target was estimated using the evoked saccades from 32 stimulation sites (14,972 trials). This result shows
+that the oculomotor system is privy to information about the evolving decision, not just the ﬁnal outcome
+of the decision process. Adapted from Gold & Shadlen (2000, 2003) with permission.
+
+546
+
+Gold
+
+·
+
+Shadlen
+
+<-----Page 12----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+site of stimulation, a deﬁning feature of the
+FEF (Bruce et al. 1985, Robinson & Fuchs
+1969). This evoked saccade tended to deviate
+in the direction governed by the eye movement associated with the monkey’s ultimate
+choice. The amount of deviation, even when
+measured early in the decision process, paralleled the evolution of a DV that explained
+accuracy as a function of motion strength and
+viewing time. This result is inconsistent with
+the notion that a central decision maker completes its operation before activating the motor structures to perform the necessary action. Instead, it implies that, at least under
+some conditions, information ﬂow from sensory neurons to motor structures is more or
+less continuous (Spivey et al. 2005).
+To measure the correspondence more precisely in time of neural activity with elements
+of the decision process, a reaction-time (RT)
+version of the RDM task was developed. This
+task allowed the monkey to indicate its choice
+as soon as a commitment to one of the alternatives is reached. Figure 5b shows examples of
+choice and RT functions for a monkey. Mean
+RT increases as task difﬁculty increases. For
+easy stimuli, RT varies with stimulus strength
+even when choice accuracy is perfect. It ultimately approaches an asymptote that represents time that is not used on the decision
+per se. This nondecision time (328 ms in this
+data set) includes visual and motor latencies
+and possibly other processing stages that are
+less understood (see below). For difﬁcult stimuli, the nondecision time is relatively short
+compared with the RT, implying long decision times. In contrast, this nondecision time
+often takes up the lion’s share of RT for simpler tasks, an important caveat for interpreting
+many RT studies.
+Studies of neural mechanisms underlying
+the decision process on the RT task have focused on area LIP. LIP is anatomically positioned midway through the sensory-motor
+chain, with inputs from MT and MST and
+outputs to the FEF and SC (Andersen et al.
+1990, 1992; Asanuma et al. 1985; Blatt et al.
+1990; Fries 1984; Lewis & Van Essen 2000a;
+
+Lynch et al. 1985; Paré & Wurtz 1997). This
+area has been implicated in other high-order
+processes involved in the selection of saccade
+targets, including working memory, allocation of attention, behavioral intention, spatial inference, and representation of bias, reward, expected value, and elapsed time (Assad
+& Maunsell 1995, Chafee & Goldman-Rakic
+2000, Dorris & Glimcher 2004, Eskandar
+& Assad 1999, Friedman & Goldman-Rakic
+1994, Janssen & Shadlen 2005, Leon &
+Shadlen 2003, Platt & Glimcher 1999, Sugrue
+et al. 2004). Moreover, neural activity in
+LIP—particularly in its ventral subdivision,
+termed LIPv (Blatt et al. 1990, Lewis & Van
+Essen 2000b)—reﬂects decision formation on
+a ﬁxed-duration version of the RDM task
+(Shadlen & Newsome 1996, 2001).
+Figure 5c,d illustrates the responses of
+LIP neurons during the RT paradigm. In
+these experiments, one of the choice targets
+(Tin) is in the response ﬁeld (RF) of the
+LIP neuron; the other target (Tout) and the
+RDM stimulus lie outside the neuron’s RF
+(Figure 5a). Thus, these neurons are studied under conditions in which they are apt to
+signal the monkey’s choice (via the associated
+action). What is more interesting is that their
+activity reﬂects the decision process that leads
+to that choice.
+Aligning the responses to stimulus onset
+(t = 0 on the left side of Figure 5c) provides a glimpse into the brain’s activity in
+the epoch when the animal is forming the
+decision but has yet to commit overtly to a
+choice. Initially, there is a brief dip in the
+ﬁring rate followed by a rise in activity that
+is independent of the direction and strength
+of motion or the monkey’s ultimate choice.
+Then, after ∼220 ms, the average response
+begins to reveal differences in the evidence
+and outcome of the decision. On trials that
+end in a Tin choice, the ﬁring rate rises like a
+ramp, on average. On trials that end in a Tout
+choice, the ﬁring rate meanders or tends to
+decline. This dependence on choice is evident
+even when the stimulus is ambiguous (0%
+coherence).
+www.annualreviews.org • Decision Making
+
+RT: reaction time
+MST: medial
+superior temporal
+area
+
+547
+
+<-----Page 13----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+Aligning the responses to saccade initiation (Figure 5c, right) reveals a correlate of
+commitment: a threshold rate of ﬁring before Tin choices. When separated by motion
+strength, the curves overlap considerably just
+prior to the saccade and thus make it impossible to identify a single point of convergence because each motion strength leads to
+a broad distribution of RTs. When these same
+responses are grouped by RT instead of mo-
+
+tion strength, they achieve a common level
+of activity ∼70 ms before saccade initiation
+(arrow in Figure 5d ). Thus the decision
+process appears to terminate when the neurons associated with the chosen target reach
+a critical ﬁring rate. When the monkey
+chooses Tout, another set of neurons—the
+ones with the chosen target in their RFs—
+determines the termination of the decision
+process.
+Behavior
+
+a
+
+Targets
+
+Fixation
+
+1
+
+Percent correct
+
+Saccade
+
+Motion
+
+0.8
+0.6
+0.4
+900
+
+Mean RT (ms)
+
+RF
+)
+RT
+e(
+
+im
+nt
+
+tio
+
+ac
+
+Re
+
+800
+700
+600
+500
+400
+0
+
+2.5 5
+
+10
+
+20
+
+40
+
+Motion strength (% coh)
+
+c
+70
+
+Motion
+strength
+
+Motion
+on
+
+Eye
+movement
+
+51.2
+12.8
+0
+
+Select Tin
+
+60
+
+d
+
+RT (ms)
+400
+500
+600
+700
+800
+900
+
+50
+
+Select Tout
+
+40
+
+30
+
+Firing rate (sp s–1)
+
+70
+
+Firing rate (sp s–1)
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+b
+
+60
+
+50
+
+40
+
+45
+
+MT
+
+30
+
+5
+
+20
+0
+
+200
+
+400
+
+600
+
+800
+
+Time (ms)
+548
+
+Gold
+
+·
+
+Shadlen
+
+-200
+
+0
+
+–1000
+
+–500
+
+0
+
+Time from saccade (ms)
+
+<-----Page 14----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+The pattern of LIP activity matches predictions of diffusion/race models (Figure
+2b,c). The coherence-dependent rise appears
+to reﬂect an accumulation of noisy evidence.
+This evidence comes from a difference in activity of pools of MT neurons with opposite direction preferences (Figure 5c, shaded
+insert), which is thought to approximate the
+associated logLR (Gold & Shadlen 2001).
+However, some caveats should be noted. The
+dashed curves of Figure 5c (right) do not end
+in a common lower bound and instead look
+like the average of paths of evidence for, say,
+right when the left choice neurons win in a
+race model (Mazurek et al. 2003). Also, the
+DV is represented only from ∼220 ms after
+motion onset until ∼70–80 ms before saccade
+initiation. Reassuringly, these times taken together nearly match the nondecision time
+from ﬁts of the diffusion model to the choiceaccuracy behavioral data. Whereas the initial
+∼220-ms latency is long in comparison with
+latencies of neural responses in MT (which
+show direction selectivity ∼100 ms after onset
+of a RDM stimulus; Figure 5c, insert) and LIP
+(which can indicate the presence of a target in
+<60 ms; Bisley et al. 2004), behavioral measurements also indicate that evidence does not
+affect decisions until after this critical waiting
+time (Huk & Shadlen 2005, Kiani et al. 2006).
+
+Studies using electrical microstimulation
+have helped to establish further the causal
+roles of MT and LIP in representing the evidence and DV, respectively (Ditterich et al.
+2003, Hanks et al. 2006). Earlier studies using a ﬁxed-duration version of the RDM task
+showed that microstimulation of directionselective MT neurons causes monkeys to bias
+their decisions in favor of the preferred direction of the stimulated neurons (Salzman et al.
+1990, 1992). This result could be attributed
+to a perturbation of the evidence, the DV, or
+both. The RT task makes it possible to distinguish these alternatives (Figure 6). MT microstimulation has strong effects on all subsequent choices and RTs, biasing the monkey
+toward more, faster choices in the preferred
+direction of the stimulated neurons and fewer,
+slower choices in the opposite direction. This
+ﬁnding is consistent with an additive offset of
+the evidence, which causes an increased rate
+of rise of its integral, the DV. Conversely, LIP
+microstimulation has small effects on choice
+and modest effects on RT, which is consistent
+with an additive offset of the DV that does
+not affect its rate of rise but rather pushes it
+closer to (or further from) the threshold for
+terminating the decision (Hanks et al. 2006).
+A further test of the idea that LIP neurons represent the DV used weak motion
+
+←−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+Figure 5
+Neural mechanism of a decision about direction of motion. (a) Choice-reaction time (RT) version of the
+direction discrimination task. The subject views a patch of dynamic random dots and decides the net
+direction of motion. The decision is indicated by an eye movement to a peripheral target. In the RT task,
+the subject controls the viewing duration by terminating each trial with an eye movement whenever
+ready. The gray patch shows the location of the response ﬁeld (RF) of an LIP neuron. (b) Effect of
+stimulus difﬁculty on accuracy and decision time. Solid curves are ﬁts of the diffusion model (see Palmer
+et al. 2005), which accounts simultaneously for choice and decision time. (c) Response of LIP neurons
+during decision formation. Average ﬁring rate from 54 LIP neurons is shown for three levels of difﬁculty.
+Responses are grouped by motion strength and direction of choice, as indicated. Left: The responses are
+aligned to onset of random-dot motion. Averages are shown during decision formation (curves truncated
+at the median RT or 100 ms before the eye movement). Shaded insert shows average responses from
+direction selective neurons in area MT to motion in the preferred and antipreferred directions. After a
+transient, MT responds at a nearly constant rate. Right: The responses are aligned to the eye movement.
+The LIP ﬁring rates approximate the integral of a difference in ﬁring rate between MT neurons with
+opposite direction preferences. (d ) Responses grouped by RT. Only Tin choices are shown. All trials
+reach a stereotyped ﬁring rate ∼70 ms before saccade initiation (arrow). Adapted with permission from
+Shadlen et al. (2006) and Roitman & Shadlen (2002); insert from online database used in Britten et al.
+(1992), http://www.neuralsignal.org database nsa2004.1.
+www.annualreviews.org • Decision Making
+
+549
+
+<-----Page 15----->ANRV314-NE30-21
+
+a
+
+ARI
+
+21 May 2007
+
+13:44
+
+Stimulate rightward MT neurons
+
+DV in LIP
++A
+
+Bound for right choice
+
+Mean
+Evidence
+for right
+(R – L)
+
+0
+
+0
+
+stim adds cumulatively
+
+0
+
+Motion strength
+–A
+
+b
+
+Bound for left choice
+
+Strong
+leftward
+
+Strong
+rightward
+
+Stimulate right choice LIP neurons
+Small effect on choice,
+modest effect on RT:
+not equivalent to added rightward motion
+
+Momentary evidence in MT
+
+DV in LIP
++A
+
+Bound for right choice
+
+mean
+Evidence
+for right
+(R – L)
+
+0
+
+0
+
+Stim adds constant
+
+Proportion
+Reaction time rightward choices
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+Momentary evidence in MT
+
+Proportion
+Reaction time rightward choices
+
+Relatively large effect on choice and RT:
+equivalent to added rightward motion
+
+0
+–A
+
+Motion strength
+Bound for left choice
+
+Strong
+leftward
+
+Strong
+rightward
+
+Figure 6
+Effects of microstimulation in MT and LIP. In both areas microstimulation (red curves) causes a change in
+both choice and RT. The schematic shows the consequences of adding a small change in spike rate to the
+evidence or to the DV. The graphs on the right are theoretical results obtained using the bounded
+diffusion model. They resemble the pattern of data in Hanks et al. (2006). (a) MT microstimulation
+mimics a change in stimulus strength (evidence). (b) LIP microstimulation mimics an additive offset to
+the DV (or, equivalently, the height of the bounds).
+550
+
+Gold
+
+·
+
+Shadlen
+
+<-----Page 16----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+perturbations in the background of the RDM
+display (Huk & Shadlen 2005). Each perturbation was a subtle boost or decrement in
+motion energy lasting just 100 ms. The effects on RT and choices were consistent with
+a process of integration. The motion pulses
+affected choices that occurred up to 800 ms
+after the pulse, and they affected RTs through
+a sustained effect on the DV (like MT microstimulation). LIP neurons also registered
+these brief motion perturbations with longlasting changes in ﬁring rate consistent with a
+process of integration.
+We do not know how or where this integral is computed. It might be computed
+in LIP itself, or it might be computed elsewhere and merely reﬂected in LIP. A model
+of LIP can achieve integration by mixing feedback excitation—using N-methyl-Daspartate (NMDA) channels with relatively
+long conductance times—within neuronal
+pools that share a common RF with an inhibitory antagonism between pools representing opposite directions (Wang 2002). This
+hybrid of biophysical and large-scale neural
+modeling was originally designed to simulate
+working memory. That the model can also
+form a DV in a manner consistent with many
+aspects of the physiological results, including deviations from perfect integration (Wong
+et al. 2005, Wong & Wang 2006), suggests
+that this kind of persistent activity might serve
+multiple roles in the brain. Indeed, the question of how neurons or neural circuits can integrate is not limited to the study of decision
+making and working memory but extends to
+motor control and navigation as well (Major
+& Tank 2004). Progress in this area is likely
+to shed light on cognitive functions that operate on time scales longer than biophysical and
+signaling time constants in single cells.
+We also know little about how the criterion
+is applied to the DV. Neurons that achieve a
+threshold level of activity in anticipation of
+a saccadic eye movement on RT tasks have
+been found not just in LIP but also in FEF
+and SC (Hanes & Schall 1996, Ratcliff et al.
+2003). However, how this criterion is set and
+
+what happens when it is reached are unknown.
+Because the criterion controls the trade-off
+between speed and accuracy (Palmer et al.
+2005), parts of the basal ganglia sensitive to
+both reward and movement onset have been
+suggested as possible substrates (Lo & Wang
+2006). An alternative possibility is that a single neural circuit can represent the DV and
+its conversion to a binary choice, which would
+suggest that the criterion is an intrinsic property of LIP, FEF, or SC (Machens et al. 2005,
+Wang 2002, Wong & Wang 2006).
+Heading discrimination. Optic ﬂow is the
+pattern of motion that occurs when we move
+through the environment (Gibson 1950). A
+natural candidate for the momentary evidence
+used to infer heading direction from optic ﬂow
+is in the medial superior temporal cortex (area
+MST). MST neurons are tuned for expansion,
+rotation, translation and other large-ﬁeld motion patterns that comprise optic ﬂow (Duffy
+& Wurtz 1991, 1995, 1997; Graziano et al.
+1994; Lagae et al. 1994; Saito et al. 1986;
+Tanaka et al. 1986; Tanaka & Saito 1989).
+Indeed, for a one-interval heading directiondiscrimination task using a RDM ﬂow ﬁeld,
+signal-to-noise measurements of MST activity correlate with behavioral sensitivity in a
+manner similar to results from MT using the
+RDM direction task (Britten & van Wezel
+2002, Heuer & Britten 2004).
+However, microstimulation experiments
+have provided only weak evidence for a causal
+role of MST neurons for the heading decision (Britten & van Wezel 1998). Microstimulation can cause the monkey to bias choices
+for one heading direction, but often it is in
+the direction opposite the preferred heading
+of the stimulated neurons. This might be explained by a lack of a clustered organization of
+neurons tuned to similar optic ﬂow patterns
+(Britten 1998). A more tantalizing explanation comes from the fact that many MST neurons receive visual and vestibular inputs that
+both contribute to heading sensitivity (Gu
+et al. 2006) but, for about half these neurons,
+have opposite direction preferences. Thus,
+www.annualreviews.org • Decision Making
+
+551
+
+<-----Page 17----->ARI
+
+21 May 2007
+
+13:44
+
+microstimulation intended to bias judgments
+in a particular direction using visual cues
+might instead activate a local circuit dominated more by vestibular tuning in the opposite direction. Consistent with this idea,
+choice probabilities (the weak correlations between the variable discharge of MST neurons
+and the trial-to-trial variations in the monkey’s decisions) also appear to depend on the
+vestibular tuning of the neuron (DeAngelis
+et al. 2006).
+We do not know where the DV is represented for this task. One possibility is MST itself, which contains many neurons with spiking activity that persists even in the absence
+of a stimulus. However, the lack of buildup activity as the decision is formed and
+weak choice probability support the idea that
+MST represents only the momentary evidence (Heuer & Britten 2004). Another possibility is the ventral intraparietal area (VIP),
+which receives direct input from MT and
+MST and contains many neurons with response properties similar to MST on optic ﬂow and heading tasks (Bremmer et al.
+2002a,b; Zhang et al. 2004; Zhang & Britten
+2004). However, as in MST, it is difﬁcult to
+tell if VIP represents a DV or the momentary evidence used by other brain structures to
+decide whether, say, an object is nearing the
+head and needs to be avoided (Colby et al.
+1993, Duhamel et al. 1998, Graziano et al.
+1997). In our view, the DV for the heading
+task is likely to be represented in structures
+that provide high-level control of the behavioral (eye movement) response; e.g., area LIP.
+If the monkey were trained to reach for buttons, likely candidates would be parietal and
+prefrontal cortical areas that provide analogous control of reaching movements.
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+Disparity discrimination. MT neurons are
+selective for not only motion direction but
+also the binocular disparity of images presented to the two eyes, a cue for depth
+(Maunsell & Van Essen 1983, Uka &
+DeAngelis 2006). Recent studies using a
+one-interval depth-discrimination task with
+552
+
+Gold
+
+·
+
+Shadlen
+
+a RDM stimulus viewed stereoscopically
+showed that the sensitivity of MT neurons
+to noisy perturbations in disparity rivaled the
+behavioral sensitivity of the monkey (Uka &
+DeAngelis 2003). Electrical microstimulation
+experiments, aided by the clustered organization of MT with respect to disparity, further
+established their causal role in providing evidence for decisions about depth (DeAngelis
+et al. 1998, 1999; Krug et al. 2004).
+Can MT neurons that provide evidence
+about depth provide, in a different context, evidence about direction? To test this,
+monkeys were trained on a RDM directiondiscrimination task in which the dots could
+be presented with task-irrelevant disparities.
+Electrical microstimulation at sites with weak
+disparity tuning tended to have the largest
+effects on performance. Microstimulation at
+sites with strong disparity tuning had weaker
+effects on performance, even when those sites
+were strongly tuned for direction (DeAngelis
+& Newsome 2004). The results suggest that
+the DV tended to discount MT neurons
+whose responses were sensitive to disparity,
+possibly because that variable was irrelevant
+to the direction task. This kind of contextdependent read-out implies a critical role for
+learning in establishing the ﬂow of information from neurons that represent the evidence
+to neurons that form the DV (Freedman &
+Assad 2006, Law & Gold 2005).
+Less is known about the role of MT neurons in decisions that require both depth
+and motion information. Nevertheless, a task
+requiring a decision about the direction of
+rotation of a transparent, sparsely textured
+cylinder has provided a striking result for
+MT choice probabilities. An observer viewing such a cylinder sees the texture (e.g.,
+dots) on the front and back surfaces move
+in opposite directions. The opposing motion
+gives rise to a distinct pattern of ﬁring rates
+among direction-selective MT neurons that
+can be unambiguously associated with transparency. However, if not for the depth cues,
+the cylinder can appear to rotate in a clockwise or counterclockwise direction depending
+
+<-----Page 18----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+on whether the two motion directions are associated with the front and back or vice versa
+(Ullman 1979).
+MT neurons that are both disparity and
+direction selective furnish evidence to remove
+this ambiguity (Bradley et al. 1998). For example, an MT neuron preferring near disparities
+and rightward motion responds best when the
+nearer plane is moving to the right. Such a
+neuron provides positive evidence for the interpretation that a vertical cylinder is rotating
+in accordance with a right-hand rule (front
+surface to the right) (Dodd et al. 2001). A
+strong trial-to-trial correlation exists between
+the variable discharge of these neurons and
+the monkeys’ rotation judgments (Krug et al.
+2004). In fact, this choice probability is larger
+than for any of the decision tasks reviewed in
+this article, leading us to suspect that it is a
+sign of feedback from elements in the brain
+that have rendered a decision, as opposed to
+feedforward variations of noisy evidence that
+underlie difﬁcult decisions near psychophysical threshold.
+Face/object discrimination. Neurons selective for images of faces and other complex objects are found in the ventral stream
+“what” or “vision for perception” pathway
+(Goodale & Milner 1992, Ungerleider &
+Mishkin 1982). Recent studies have begun to
+examine how these neurons contribute to perceptual decisions by comparing brain activity
+and behavior (Allred et al. 2005, Baylis et al.
+2003, Dolan et al. 1997, Freedman et al. 2002,
+2003; Grill-Spector et al. 2000, Op de Beeck
+et al. 2001, Rainer et al. 2004). In one study,
+monkeys performed a one-interval discrimination of face versus nonface images masked
+by white noise (Afraz et al. 2006). Electrical microstimulation applied during stimulus
+viewing to clusters of neurons in the inferotemporal (IT) cortex that showed a preference
+for faces biased decisions toward face versus
+nonface. The magnitude of the bias was comparable to that found using MT microstimulation on direction and disparity tasks, equivalent to a change in stimulus strength on the
+
+order of psychophysical threshold. This ﬁnding provided the ﬁrst direct evidence that faceselective IT neurons play a causal role in the
+perception of faces. It suggests that IT activity
+represents the evidence used to solve the task
+but does not rule out the possibility that IT
+represents a DV or even the outcome of the
+perceptual categorization (Sheinberg & Logothetis 1997, 2001).
+In a related study, measurements of blood
+oxygen level differences (BOLD) in fMRI
+were used to identify correlates of a DV that
+reads out object categorization evidence from
+IT (Heekeren et al. 2004). Human subjects
+were trained to perform a one-interval discrimination between faces and houses masked
+by noise. The two sets of stimuli were used
+because distinct regions of IT are activated
+for unmasked images from the two categories
+(Haxby et al. 1994, Kanwisher et al. 1997). A
+candidate DV was found in the dlPFC. Activity in this area was strongest when the sensory
+evidence was strongest and tended to covary
+with the magnitude of the difference in the
+BOLD signal measured on single trials in the
+“face” and “house” areas. Such fMRI experiments provide an essential link between monkey neurobiology and human brain function,
+although they lack the spatial and temporal
+resolution to characterize fully the neuronal
+dynamics that distinguish evidence from the
+DV.
+Electroencephalography (EEG), which is
+not burdened by the same temporal resolution problem, has been measured in human
+subjects for similar one-interval categorization tasks requiring a discrimination between pictures of faces and pictures of cars
+(Philiastides et al. 2006, Philiastides & Sajda
+2006, VanRullen & Thorpe 2001). Two signal kernels could best differentiate the car and
+face stimuli on single trials. An early potential
+that appeared ∼170 ms after stimulus onset
+was selective for faces and only weakly predictive of errors, a possible correlate of sensory
+evidence. A later potential appearing ∼300 ms
+after stimulus onset appeared to reﬂect the
+difﬁculty of the decision linking the sensory
+www.annualreviews.org • Decision Making
+
+553
+
+<-----Page 19----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+evidence to the subject’s choice, a quality of
+the DV. However, localization of the signals is
+hampered by the limitations of EEG recording and the powerful technique used in this
+study to combine signals across electrodes.
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+Olfactory discrimination. To date, there
+have been few experiments on the neurobiology of decisions in animals beside the monkey. However, the availability of techniques
+to study molecular and cellular mechanisms
+in rodents hints at tremendous possibilities
+if they could be trained on decision-making
+tasks. Several recent studies have begun to
+make progress by using tasks that exploit two
+of their natural strengths: foraging behavior
+and olfactory processing.
+In one study, rats were trained to discriminate between a pair of odors using a oneinterval task with mixtures of the two odors
+(Uchida & Mainen 2003). The patterns of activation in the olfactory bulb were distinctive
+when the stimulus was behaviorally discriminable and less distinctive otherwise, a ﬁrst
+step toward identifying signals comprising the
+sensory evidence. However, the rats appeared
+to form their decisions in a single sniff and
+did not beneﬁt from more time (Kepecs et al.
+2006, Uchida et al. 2006). Such a short time
+scale clouds the distinction between evidence
+and DV and thus exposes possible limitations
+of this model for the study of decision making.
+However, it seems unlikely that rats cannot accrue evidence in time. A recent study
+demonstrated a trade-off between speed and
+accuracy in a similar odor-discrimination task
+(see also Abraham et al. 2004, Rinberg et al.
+2006). A window of integration of ∼400
+ms was identiﬁed, which rivals the integration times for monkey’s performing the
+RDM direction-discrimination task. Combined with the recent discovery of the olfactory receptor genes (Buck 1996, Buck &
+Axel 1991) and subsequent progress in understanding the stable, topographic organization
+of the olfactory bulb (e.g., Rubin & Katz 1999,
+Meister & Bonhoeffer 2001, Mombaerts et al.
+1996) these results suggest a promising future
+554
+
+Gold
+
+·
+
+Shadlen
+
+for combined psychophysical and physiological experiments on olfactory decision making
+in rodents.
+Detection. Detection experiments are
+the archetypical SDT paradigm, yet they
+present serious challenges to neurobiologists
+trying to understand the underlying decision
+process. According to SDT, detection begins
+with a sample of evidence generated by
+either a signal plus noise or noise alone. The
+DV based on this sample is monotonically
+related to the LR in favor of h 1 : “S present”
+and against h 2 : “S absent”. The decision
+is H1 : “Yes” if the DV exceeds a criterion,
+which is set to achieve some desired goal,
+and H2 : “No” otherwise. This procedure
+seems straightforward but glosses over an
+important question: When should the DV
+incorporate evidence if there is temporal
+uncertainty about when the stimulus will
+appear? Obtaining samples at the wrong time
+might miss the signal [i.e., high P (H2 | h 1 )].
+In contrast, accumulating samples over time
+will accumulate noise alone in all epochs
+that do not contain the signal, causing more
+misses in signal-present conditions and more
+false alarms [P(H1 | h 2 )] in signal-absent conditions. The consequence of these errors will
+be a loss of sensitivity (Lasley & Cohn 1981).
+This problem has several possible solutions. One is to use an integrator that leaks,
+causing irrelevant information to affect the
+decision process for only a limited amount of
+time (Smith 1995, 1998). Other approaches
+include taking a time derivative of the evidence to identify changes or using knowledge
+of the spatial and temporal structure of the
+stimulus to guide a more directed search for
+the evidence. Some studies in the psychophysical literature hint of such mechanisms (e.g.,
+Henning et al. 1975, Nachmias & Rogowitz
+1983, Verghese et al. 1999, Schrater et al.
+2000), but to date there is little understanding
+of their general role in detection.
+Despite these challenges, several recent
+studies have begun to shed light on detection mechanisms. In one study, monkeys
+
+<-----Page 20----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+a
+Coherent
+motion
+at one
+patch
+(750 ms)
+
+b
+
+0% Coherent
+(500 - 8000 ms)
+
+Fixation
+point
+
+1
+
+Proportion
+“yes” responses
+
+Time
+
+0
+10
+
+20
+
+30
+
+Motion coherence
+
+MT
+377
+
+35
+312
+
+411
+446
+492
+561
+
+35
+694
+
+Threshold
+
+Missed
+
+False alarms
+
+10
+0
+
+VIP
+
+d
+
+Time (ms)
+
+600
+
+309
+
+374
+
+406
+
+440
+483
+549
+
+Firing rate (sp s–1)
+
+c
+
+Firing rate (sp s–1)
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+0
+
+Static cue
+
+Receptive
+field
+
+10
+
+Missed
+False alarms
+
+0
+
+Time (ms)
+
+600
+
+Figure 7
+Motion detection. (a) Detection task. The monkey views a RDM stimulus without any net direction of
+motion and must release a bar when the motion becomes coherent. Task difﬁculty is controlled by the
+intensity of the motion step (% coherence). (b) Probability of deciding Yes plotted as a function of
+stimulus intensity. (c, d ) Average ﬁring rates from neurons in MT and VIP. The responses are aligned to
+onset of the motion step and grouped by RT. Yes decisions are predicted by a rise in ﬁring rate in both
+areas. The horizontal dashed line is a criterion derived to match the animal’s performance. The missed
+detections (motion step, but decision = No) are explained by a failure of the ﬁring rate to reach this
+level. According to SDT, the false alarms (no motion step, but decision = Yes) should reach this level,
+but with responses aligned to the lever release at 750 ms, they do not; a possible explanation is a variable
+relationship between the end of the decision process and the time of the lever release. Adapted with
+permission from Cook & Maunsell (2002a,b).
+
+were trained to detect the onset of partially
+coherent motion in a RDM display (Figure 7)
+(Cook & Maunsell 2002b). Activity in both
+MT and VIP was correlated with trial-bytrial detection performance and RT. However,
+single-unit responses were far less reliable detectors of the stimulus than were the monkey subjects. This ﬁnding contrasts results
+from discrimination experiments and seems
+
+702
+
+likely to result, in part, from the temporal
+uncertainty problem described above. Nevertheless, population analyses using a leaky accumulator model provide some insight into
+the decision process. For MT, population responses on hit trials deviated from baseline
+at a time that was closely coupled with motion onset and then rose steadily with a rate
+of rise that was correlated with RT. Responses
+www.annualreviews.org • Decision Making
+
+555
+
+<-----Page 21----->ARI
+
+21 May 2007
+
+13:44
+
+on miss trials were similar but failed to attain
+the same level of activation as hits. In contrast, responses on false alarm trials deviated
+little from baseline. These results suggest that
+MT provides a preliminary form of evidence.
+In contrast, VIP population responses were
+less coupled to motion onset and were more
+stereotypical with respect to the behavioral response, suggesting they represent either the
+DV or simply the outcome of the decision
+process.
+Similar detection experiments were conducted using the VTF stimulus (Figure 8)
+(de Lafuente & Romo 2005). As for the discrimination task, S1 activity appears to represent the sensory evidence and not the DV
+or choice. Increasingly intense stimuli (deeper
+skin depressions) lead to high ﬁring rates that
+are more easily differentiated from neural activity when no stimulus is present (Figure 8c,
+d ). Moreover, trial-to-trial variations in the
+responses to a weak stimulus are correlated,
+albeit weakly, with the monkey’s yes and no
+decisions. This weak choice probability is similar in magnitude to that found for MT neurons on the RDM direction-discrimination
+task (Britten et al. 1996).
+In contrast to S1, MPC responses are modulated by not only stimulus intensity but also
+the monkey’s behavioral report (Figure 8e).
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+These results suggest that MPC represents
+the DV that converts the evidence into a
+choice. However, inspection of Figure 8e
+suggests that different stimulus intensities
+cause primarily differences in latency, the expected behavior of a neuron that simply responds stereotypically after the decision has
+ended. Nevertheless, even if MPC neurons
+represent the decision outcome and not the
+DV, they do not do so in a trivial matter.
+The responses are not simply associated with
+the button press. Moreover, electrical microstimulation of MPC without presentation
+of the tactile stimulus leads to similar perceptual reports. These results have been used
+to support the bold (and currently unveriﬁable) assertion that MPC responses provide
+a neural correlate of the subjective perception of the tactile stimulus (see also Ress et al.
+2000, Ress & Heeger 2003 for a similar assertion about activity in early visual cortex, measured using fMRI, for a contrast-detection
+task).
+
+Simple Motor Latencies: Deciding
+When to Initiate an Action
+In this section, we consider easy decisions that
+do not tax perceptual processing but instead
+simply trigger a movement. Commonly used
+
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−→
+Figure 8
+Vibrotactile detection. (a) Task. The VTF probe is placed on the ﬁnger pad. After a random delay, a
+20-Hz sinusoidal indentation is applied on half the trials. The monkey must decide whether the stimulus
+was present. Detection is indicated by removing a ﬁnger of the other hand from a key and pushing a
+button. (PD, probe down; KD, key down; PU, probe up; MT, movement to the response button).
+(b) Psychometric function. The monkey is more likely to decide Yes at larger vibration amplitudes. The
+false alarm rate is ∼8%. (c) Response of a typical S1 neuron. The top half of the raster shows trials in
+which vibration was applied. Red marks indicate missed-detection errors. The bottom half of the raster
+shows trials in which no stimulus was shown. Red marks indicate false-alarm errors. (d ) Distributions of
+ﬁring rates in S1 during the stimulus period. Each curve represents a frequency distribution associated
+with vibration at one intensity (indicated by color). The vertical line shows a possible criterion that the
+brain could apply to decide yes or no. (e) Response of a typical MPC neuron. Same conventions as in
+panel c. The neuron responds strongly when the monkey reports Yes even when there is no stimulus
+present (false alarms). Notice that on some trials on the top half of the graph, the neuron seems to
+indicate a detection decision before the stimulus is applied. These trials appear as correct detections, but
+they are probably lucky mistakes. ( f ) Average ﬁring rate of S1 and MPC neurons as a function of
+stimulus intensity. The ﬁring rates are for the epoch of stimulus presentation. Only correct responses
+(Yes when amplitude >0) are included. Adapted with permission from de Lafuente & Romo (2005).
+556
+
+Gold
+
+·
+
+Shadlen
+
+<-----Page 22----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+ARI
+21 May 2007
+13:44
+
+www.annualreviews.org • Decision Making
+
+557
+
+<-----Page 23----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+tasks require a saccadic eye movement to a
+visual target that might appear at an unpredictable time or location but is unambiguous
+once it appears. Insights into the underlying
+decision process have come primarily by analyzing the distributions of latencies from visual instruction to saccade initiation.
+Motor latencies for these tasks average
+∼200 ms but can range from ∼90 ms to
+>400 ms (Carpenter 1988, Sparks 2002,
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+a
+
+Reaction time
+distribution
+Threshold ST
+Rate of
+rise (r)
+Start level S 0
+
+Latency
+Infinite-time
+intercept
+
+Percent cumulative
+frequency
+
+b
+95
+90
+
+←−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−
+
+Median
+
+50
+
+Figure 9
+
+10
+5
+
+100
+
+200
+
+500 1000 inf
+
+Reaction time (ms)
+
+c
+Changing S0 causes reciprobit swivel
+
+S0
+
+Changing μ causes reciprobit shift
+
+μ = mean(r)
+
+558
+
+Gold
+
+·
+
+Shadlen
+
+Westheimer 1954). By comparison, the time
+it takes to register visual input in visuo-motor
+areas such as LIP, FEF, and SC can be <50 ms
+(Bisley et al. 2004, Pouget et al. 2005,
+Schmolesky et al. 1998) and to elicit saccadic
+eye movements via electrical microstimulation of FEF or SC is <40 ms (Bruce et al. 1985,
+Robinson 1972, Robinson & Fuchs 1969,
+Schiller & Stryker 1972, Tehovnik 1996). Together, these measurements do not account
+for much of the length and variability of RTs,
+prompting speculation that the underlying
+decision process is more sophisticated than
+a mere trigger, perhaps necessarily including
+procrastination to allow for censorship of an
+action and indeterminacy to make actions less
+predictable (Carpenter 1981).
+A simple model can account for these motor latencies (Figure 9). Latency distributions
+typically have a single mode with a longer
+tail toward larger values. The distribution
+of reciprocal latency thus appears Gaussian
+(Carpenter 1981, 1988; Carpenter &
+Williams 1995). Accordingly, the cumulative
+distribution of reciprocal latencies plotted on
+
+A simple model for “go” reaction times. (a) The
+LATER model. Instead of accumulating random
+draws of momentary evidence, the DV is a ramp
+with a slope drawn from a Gaussian distribution.
+The movement starts when the ramp reaches the
+threshold (ST ). The distribution of predicted RT
+is skewed; the reciprocals would obey a Gaussian
+distribution. (b) Reciprobit plot. Predicted
+cumulative distribution of RTs is a line on
+transformed axes. The abscissa scale is RT−1 ; the
+ordinate scale is the z-transformed (i.e., inverse
+Normal) probability. Extrapolation of the graph
+predicts a point intersecting the vertical line at
+RT = ∞. The height of this point corresponds to
+the probability that the slope of the ramp is ≥0.
+(c) Shape of the reciprobit plot as a diagnostic aid.
+If the threshold changes, the median RT shifts, but
+the graph retains the same extrapolated value at
+RT = ∞. The graphs swivel about this point. If
+there is a change in the rate of rise (mean or
+standard deviation), the median RT shifts and the
+graph simply translates along the abscissa. Adapted
+with permission from Sinha et al. (2006).
+
+<-----Page 24----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+a probability scale (a reciprobit plot) is nearly
+linear (Figure 9b). To produce this distribution, assume that a DV begins at level S0 at
+t = 0 then rises linearly with slope r. The
+saccade is initiated when the DV reaches
+ST at t = t1 . Critically, r is not determined
+precisely but is rather a random number
+drawn from a Gaussian distribution with
+mean μ and standard deviation σ . Because on
+any trial ri = (ST − S0 )/ti , the reciprocals of
+the response latencies (1/ti ) obey a Gaussian
+distribution. The harmonic mean of the RT
+is the threshold height (ST − S0 ) divided
+by μ. This model is called LATER (linear
+accumulation to threshold with ergodic rate),
+which emphasizes that the DV is simply the
+accumulation of a constant. It makes testable
+predictions about how the distribution of RT
+should change for two different mechanisms:
+changes in the threshold height (ST − S0 ) or
+the mean rate of rise (μ) (Figure 9c).
+This formulation has some shortcomings.
+It typically deals with only one alternative
+and short RTs, conditions under which evidence accumulation can be reduced to a single
+number. Moreover, several possible sources of
+variability are not explored as alternate hypotheses for resulting RT distributions, including latencies outside the decision process
+(e.g., sensory and motor delays), changes in
+the variance of the rate of rise (r), and variance in the starting point or threshold. These
+factors can cause real data not to conform
+neatly to the prescriptions for lines, swivels,
+and shifts illustrated in Figure 9. When they
+do, however, the overall simplicity of LATER
+is appealing, and it has been used to explain
+several interesting phenomena.
+One study tested the idea that prior probability affects the threshold for initiating an
+action (Carpenter & Williams 1995). Priors
+were manipulated by changing the probability that the target would be shown to the right
+or left of ﬁxation. Not surprisingly, the latencies for eye movements to the target at the
+more probable location were faster, on average, than to the other location. Differences
+
+in the distributions of RT for different priors conformed to the “swivel” prediction, suggesting a change in the threshold (relative to
+the starting point) and not in the rate of rise
+of the DV. The threshold appeared to change
+as a linear function of the logarithm of the
+prior, which suggested that the DV has units
+log(P ). This idea is important because it implies a form of probabilistic reasoning, with
+the DV representing a level of certainty that
+the prepared movement should be executed.
+Further studies have shown that different decision strategies that favor urgency, certainty,
+or prior expectations seem to trade off in these
+units of log(P) (Reddi et al. 2003, Reddi &
+Carpenter 2000).
+Several physiological results provide qualiﬁed support for the LATER model. First,
+the rate of rise (r) in the activity of FEF
+movement cells (Bruce & Goldberg 1985)
+prior to a saccade is variable and predicts RT,
+whereas the ﬁnal level of activation (ST ) is relatively ﬁxed regardless of RT (Hanes & Schall
+1996). However, other studies of the FEF,
+the SC, and primary motor cortex have found
+that prestimulus activity (S0 ) is more predictive than r of trial-to-trial variability of RTs
+(Connolly et al. 2005, Dorris et al. 1997,
+Dorris & Munoz 1998, Everling & Munoz
+2000, Lecas et al. 1986, Riehle & Requin
+1993). Second, priors affect the responses of
+build-up cells in the SC (Basso & Wurtz 1997,
+1998; Dorris & Munoz 1998). In general, the
+higher the probability is of making a saccade
+to a particular target, the higher the level
+is of activity that occurs just before the target appears (S0 ) and the shorter the RT is.
+Third, behavior on a countermanding task,
+in which the subject must occasionally withhold a planned saccade, is consistent with a
+race between two independent LATER processes representing “stop” and “go” (Hanes
+& Carpenter 1999, Logan et al. 1984). These
+two processes have correlates in the activity
+of ﬁxation- and saccade-related cells, respectively, in the FEF and SC (Hanes et al. 1998,
+Munoz & Wurtz 1993, Paré & Hanes 2003).
+
+www.annualreviews.org • Decision Making
+
+559
+
+<-----Page 25----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+Value-Based Decisions
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+Decisions that are based primarily on the
+subjective value associated with each of the
+possible alternatives are the focus of the
+nascent ﬁeld of neuroeconomics (for reviews
+see Glimcher 2005, Sanfey et al. 2006, Sugrue
+et al. 2005). A multitude of approaches, including behavior and imaging in human subjects and behavior and electrophysiology in
+non-human primates, are being used to examine how the brain assigns, stores, retrieves,
+and uses value to make decisions. Here we
+limit our remarks to a few key concepts from
+perceptual decisions that seem relevant to the
+study of value-based decisions.
+Neurobiological correlates of value have
+been described in orbitofrontal and cingulate
+cortex and the basal ganglia, areas of the brain
+traditionally associated with reward-seeking
+behavior (Kawagoe et al. 2004; Lauwereyns
+et al. 2002; McCoy et al. 2003; Schultz 1992,
+1998; Schultz et al. 1997; Tremblay & Schultz
+1999, 2000; Watanabe 1996; Watanabe et al.
+2003). Some neurons in orbitofrontal cortex appear to represent value independently
+from evidence, choice, and action (PadoaSchioppa & Assad 2006). Anterior cingulate
+cortex is thought to represent negative value
+(Carter et al. 1998, Gehring & Willoughby
+2002, Yeung & Sanfey 2004). Recent studies have shown additional representations of
+reward size or probability in parietal and prefrontal association areas in the same neurons implicated in perceptual decision making (Kobayashi et al. 2002, Leon & Shadlen
+1998, Platt & Glimcher 1999). In LIP and
+dlPFC, the representation of value seems to
+be dynamic, adjusted on the basis of the recent history of choices and their consequences
+(Barraclough et al. 2004, Dorris & Glimcher
+2004, Sugrue et al. 2004).
+It is tempting to try to analyze these phenomena in the context of the elements of a decision listed above. An obvious place to start
+would be to try to distinguish representations
+of the DV from representations of its raw
+materials (reward/value/utility). Regions like
+
+560
+
+Gold
+
+·
+
+Shadlen
+
+LIP that represent the DV on perceptual tasks
+might represent the DV on value-based tasks,
+as well. Indeed, according to SDT and SA,
+value can, in principle, be treated the same
+way as priors and sensory evidence in forming
+a decision and can be applied to either the DV
+or the criterion. Thus a neural circuit that represents a DV by integrating sensory evidence
+on a perceptual task might be equally suited
+to integrate value in a different context.
+Of course, this line of inquiry has serious
+challenges. Little is known about the units in
+which value is represented in the brain, although some studies suggest that quantities
+like expected utility—the product of subjective reward value and probability—might be
+represented directly (Breiter et al. 2001, Dorris & Glimcher 2004, Knutson et al. 2005,
+Padoa-Schioppa & Assad 2006, Platt & Glimcher 1999, Schultz 2004). Moreover, unlike
+for sensory evidence on a perceptual task, the
+time course of a value representation is not
+easily deﬁned or manipulated, making it difﬁcult to identify.
+Scholars also debate whether the basic
+mechanisms we have described for perceptual
+decisions even apply to value-based decisions.
+This debate is concerned with randomness.
+Choices on both perceptual and value-based
+tasks often appear to be governed by a random
+process. For perceptual tasks, this randomness
+is typically explained by considering the evidence as a mixture of signal plus noise. The
+DV and decision rule are both formulated to
+minimize the effects of this noise in pursuit
+of a particular goal. However, for value-based
+decisions, the randomness is often assumed to
+be part of the decision process itself. That is, a
+subjective measure like utility is used to assign
+the relative desirability of each choice. The
+decision rule is then probabilistic: a random
+selection weighed by these relative measures
+(Barraclough et al. 2004, Corrado et al. 2005,
+Glimcher 2005, Lee et al. 2005, Sugrue et al.
+2005).
+One argument supporting this idea comes
+from the theory of games (Glimcher 2005,
+von Neumann & Morgenstern 1944). In
+
+<-----Page 26----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+competitive games, subjects outsmart their
+opponents by making choices that appear to
+an opponent as random. Not doing so would
+make them vulnerable to an opponent able to
+exploit predictability. A second argument is
+that randomness facilitates exploration, which
+is essential for discovery of nonstationary features of the environment and is thus found
+in many learning algorithms (Kaelbling et al.
+1996). A third argument comes from the simple observation that average behavior is apparently random under many circumstances,
+such as when following a matching law in foraging (Herrnstein 1961).
+A recent study provided an intriguing analysis to support this idea (Corrado et al. 2005).
+The study examined the sequences of choices
+made by monkeys on a simple oculomotor
+foraging task (Sugrue et al. 2005). The monkeys made eye movements to one of two visual targets, each of which was rewarded on a
+dynamic, variable-interval schedule. Consistent with previous reports, the monkeys typically exhibited matching behavior, in which
+the fraction of choices to one of the targets
+matched the fraction of total rewards they
+earned for that choice. A model that successfully described the monkeys’ behavior and
+could generate realistic choice sequences was
+based on a deterministic, noise-free calculation of the DV (in this case describing expected reward) based on the recent history
+of rewards, followed by a random (Poisson)
+process that generates a choice based on the
+DV. Critically, the values of the parameters of the model that provided the best ﬁt
+to the data were very close to optimal in
+terms of maximizing the average reward received per trial. However, alternative models that assumed that noise was present in
+the DV instead of (or in addition to) the
+decision rule were not tested, so it is difﬁcult to assess which model is the more likely
+implementation.
+In general, it is not clear why core principles of decision making that apply to perceptual tasks should be abandoned to account for
+these phenomena. The key issue is whether
+
+behavior that appears, on average, to be random reﬂects a decision mechanism that explicitly generates randomness or instead enacts a rule to achieve a goal but is faced with
+noisy input (Herrnstein & Vaughan 1980, Lau
+& Glimcher 2005). The former is certainly
+possible: We can explicitly decide to try to
+generate random behavior. However, the latter mechanism is central to our perceptual
+abilities. It can, in principle, deal with the
+appropriate kind of input—in this case information about value, expected outcomes, and
+dividends/costs associated with exploration—
+and produce the best possible choice. Thus,
+a series of value-based choices might appear
+random for the same reason that a series of
+perceptual decisions appears random under
+conditions of uncertainty.
+Reconsider the speed-accuracy trade-off.
+It arises because each observation, e, is equivocal; e by itself cannot be used to distinguish
+perfectly the alternative hypotheses. Thus,
+the decision maker is left in a quandary. Gathering more observations might improve accuracy, but at the cost of speed. What is the right
+thing to do? The correct answer is, it depends.
+If speed is valued, gather less evidence. If accuracy is valued, gather more evidence. If both
+are valued, attempt to maximize quantities like
+the rate of reward (Gold & Shadlen 2002).
+The point is that even perceptual decisions
+have, at their core, value judgments. Noisy input leads to imperfect output. Because no universal prescription exists for which imperfections are acceptable and which are not, their
+relative values must be weighed and then used
+to shape the decision process. It thus seems
+reasonable to posit that value-based decisions
+can exploit these same mechanisms. This remains to be seen.
+
+CONCLUSIONS
+In this review we have evaluated progress in
+understanding how the brain forms decisions.
+Our focus was intentionally narrow, considering only decisions on simple sensory-motor
+tasks that are amenable to behavioral and
+www.annualreviews.org • Decision Making
+
+561
+
+<-----Page 27----->ARI
+
+21 May 2007
+
+13:44
+
+neurophysiological studies in the laboratory.
+We have presented a theoretical framework
+from statistical decision theory that describes
+how to form decisions using priors, evidence, and value to achieve certain desirable goals. We have used the elements of
+this framework—particularly the distinction
+between evidence and the DV—to analyze
+experimental results from tasks requiring
+perceptual decisions (discrimination and detection), simple motor decisions, and valuebased decisions.
+Even these simple sensory-motor tasks require nuanced and ﬂexible mechanisms that
+seem likely to play general roles in decision
+making. However, one must consider several qualifying factors. First, there is a strong
+degree of automaticity in subjects performing these tasks over and over, in some cases
+for weeks or months at a time. This is in
+stark contrast to many of the decisions we encounter in real life, such as deciding whom to
+marry, which require more deliberation and
+often have few or no similar experiences from
+which to draw. In fact, the case has been made
+for two distinct decision-making systems: one
+“intuitive,” which controls simple behaviors
+learned through repeated experience, and the
+other “deliberative,” which is designed to
+achieve goals in a dynamic environment (Kahneman 2002). However, there is little evidence
+for these distinct mechanisms in the brain
+(Sugrue et al. 2005). As we have argued, even
+the simplest sensory-motor decisions seem to
+be based on deliberative elements.
+A second qualifying factor is that many
+tasks require a selection between two alternatives. This design, long favored by psychophysicists, allows for rigorous quantiﬁcation of the relationship between stimulus and
+response. It is also consistent with decision algorithms, such as SPRT, that are based on the
+value of a ratio (e.g., logLR) that is an explicit
+comparison of the two alternatives (see The
+Sequential Probability Ratio Test). However,
+it is unclear how or even if the mechanisms
+responsible for these simple comparisons can
+generalize to more complex decisions in-
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+562
+
+Gold
+
+·
+
+Shadlen
+
+volving many alternatives. Recent theoretical
+work has begun to explore algorithms to solve
+these decisions [e.g., the multiple sequential
+probability ratio test (MSPRT); McMillen &
+Holmes 2006] and how they might be implemented in the brain (Gurney & Bogacz 2006,
+Roe et al. 2001, Usher & McClelland 2001),
+but much work remains to be done.
+A third qualifying factor is the explicit link
+between the decision and a speciﬁc course of
+action (e.g., an eye or hand movement) enforced in most tasks. As described above, many
+neurophysiological studies exploit this design
+by treating the decision process as a problem
+of movement selection. The search for neural correlates of the decision can thus focus
+on parts of the brain known to select and prepare the associated movement. This approach
+has shown that the mechanisms of movement
+selection appear to incorporate all the elements of a deliberative decision. However, it
+leaves open the question of how and where
+the brain forms decisions that are not used to
+select a particular movement. One possibility
+that maintains this intention-based architecture is that abstract decisions are formed by
+circuits involved in abstract forms of behavioral planning, e.g., ﬂexible rules that involve
+future contingencies, of the sort thought to
+be encoded in areas of the prefrontal cortex
+(Wallis et al. 2001).
+The path from simple decisions to complex ones may be more straightforward than
+it appears. Consider a simple decision about
+the direction of RDM that is not tied to a particular action (Gold & Shadlen 2003, Horwitz
+et al. 2004). For this abstract decision, the DV
+and decision rule are likely recognizable but
+are carried out in circuits linked to working
+memory, long-term planning, or behavioral
+contingencies (e.g., the context/motivation
+boxes in Figure 1) as opposed to speciﬁc actions. Other complex decisions are made using sources of evidence that, like priors and
+value, do not come from the senses but instead derive entirely from memory (Wagner
+et al. 1998). Indeed, the speed and accuracy of certain decisions that require memory
+
+<-----Page 28----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+retrieval are consistent with the framework of
+SA (Ratcliff 1978). These considerations may
+one day allow us to extend insights obtained
+
+from simple sensory-motor paradigms to the
+kind of complex decisions that comprise the
+fabric of cognition.
+
+SUMMARY POINTS
+1. A decision is a process that weighs priors, evidence, and value to generate a commitment to a categorical proposition intended to achieve particular goals.
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+2. Signal detection theory and sequential analysis provide a theoretical framework for
+understanding how decisions are formed. They describe speciﬁc, mathematical operations that correspond to key decision elements including deliberation and commitment.
+3. Studies that combine behavior and neurophysiology, typically in monkeys, have begun
+to uncover how the elements of decision formation are implemented in the brain.
+4. Perceptual tasks have been particularly useful for distinguishing between sensory
+evidence, which transiently encodes information from the senses, and a decision variable, which accumulates and stores evidence over time until the ﬁnal commitment is
+reached.
+5. The speed-accuracy trade-off on perceptual tasks and variable reaction times on simple
+motor tasks can be explained by a basic mechanism that appears to be central to many
+forms of decision making: a decision rule equivalent to comparing an evolving decision
+variable to a ﬁxed criterion.
+
+FUTURE ISSUES
+1. How and where in the brain does information pertaining to priors, sensory evidence,
+and/or values combine? Which units are used?
+2. Is the decision variable simply a useful abstraction or an explicitly represented quantity
+that is critical for decision formation?
+3. How do neural circuits integrate information as a function of time?
+4. How and where in the brain is the decision rule (e.g., a bound crossing) implemented?
+5. How does the brain form decisions that involve more than two alternatives?
+6. Under which conditions does the decision rule explicitly invoke randomness when
+making the ﬁnal choice?
+7. How and where are decisions formed that are not tied to speciﬁc behavioral output?
+8. How does experience optimize decision mechanisms to achieve particular goals?
+
+ACKNOWLEDGMENTS
+We thank many colleagues for helpful discussions of the issues in this paper: Ken Britten, Roger
+Carpenter, Eric Cook, Greg DeAngelis, Paul Glimcher, Tim Hanks, Ben Heasly, Bharathi
+Jagadeesh, Roozbeh Kiani, Victor de Lafuente, Brian Lau, Jeff Law, John Maunsell, Bill
+Newsome, Ranulfo Romo, Xiao-Jing Wang, and Tianming Yang.
+www.annualreviews.org • Decision Making
+
+563
+
+<-----Page 29----->ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+LITERATURE CITED
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+Abraham NM, Spors H, Carleton A, Margrie TW, Kuner T, Schaefer AT. 2004. Maintaining
+accuracy at the expense of speed: Stimulus similarity deﬁnes odor discrimination time in
+mice. Neuron 44:865–76
+Afraz SR, Kiani R, Esteky H. 2006. Microstimulation of inferotemporal cortex inﬂuences face
+categorization. Nature 442:692–95
+Allred S, Liu Y, Jagadeesh B. 2005. Selectivity of inferior temporal neurons for realistic pictures
+predicted by algorithms for image database navigation. J. Neurophysiol. 94:4068–81
+Andersen RA, Asanuma C, Essick G, Siegel RM. 1990. Corticocortical connections of anatomically and physiologically deﬁned subdivisions within the inferior parietal lobule. J. Comp.
+Neurol. 296:65–113
+Andersen RA, Brotchie PR, Mazzoni P. 1992. Evidence for the lateral intraparietal area as the
+parietal eye ﬁeld. Curr. Opin. Neurobiol. 2:840–46
+Asanuma C, Andersen RA, Cowan WM. 1985. The thalamic relations of the caudal inferior
+parietal lobule and the lateral prefrontal cortex in monkeys: divergent cortical projections
+from cell clusters in the medial pulvinar nucleus. J. Comp. Neurol. 241:357–81
+Assad J, Maunsell J. 1995. Neuronal correlates of inferred motion in primate posterior parietal
+cortex. Nature 373:518–21
+Audley RJ, Pike AR. 1965. Some alternative stochastic models of choice. Br. J. Math. Stat.
+Psychol. 18:207–55
+Barraclough DJ, Conroy ML, Lee D. 2004. Prefrontal cortex and decision making in a mixedstrategy game. Nat. Neurosci. 7:404–10
+Basso MA, Wurtz RH. 1997. Modulation of neuronal activity by target uncertainty. Nature
+389:66–69
+Basso MA, Wurtz RH. 1998. Modulation of neuronal activity in superior colliculus by changes
+in target probability. J. Neurosci. 18:7519–34
+Baylis V, Salter L, Locke R. 2003. Pathways for continence care: an audit to assess how they
+are used. Br. J. Nurs. 12:857–63
+Bisley JW, Krishna BS, Goldberg ME. 2004. A rapid and precise on-response in posterior
+parietal cortex. J. Neurosci. 24:1833–38
+Blatt GJ, Andersen RA, Stoner GR. 1990. Visual receptive ﬁeld organization and corticocortical connections of the lateral intraparietal area (area LIP) in the macaque. J. Comp.
+Neurol. 299:421–45
+Bradley DC, Chang GC, Andersen RA. 1998. Encoding of three-dimensional structure-frommotion by primate area MT neurons. Nature 392:714–16
+Breiter HC, Aharon I, Kahneman D, Dale A, Shizgal P. 2001. Functional imaging of neural
+responses to expectancy and experience of monetary gains and losses. Neuron 30:619–39
+Bremmer F, Duhamel JR, Ben Hamed S, Graf W. 2002a. Heading encoding in the macaque
+ventral intraparietal area (VIP). Eur J. Neurosci. 16:1554–68
+Bremmer F, Klam F, Duhamel JR, Ben Hamed S, Graf W. 2002b. Visual-vestibular interactive
+responses in the macaque ventral intraparietal area (VIP). Eur J. Neurosci. 16:1569–86
+Britten KH. 1998. Clustering of response selectivity in the medial superior temporal area of
+extrastriate cortex in the macaque monkey. Vis. Neurosci. 15:553–58
+Britten KH, Newsome WT, Shadlen MN, Celebrini S, Movshon JA. 1996. A relationship
+between behavioral choice and the visual responses of neurons in macaque MT. Vis.
+Neurosci. 13:87–100
+Britten KH, Shadlen MN, Newsome WT, Movshon JA. 1992. The analysis of visual motion:
+a comparison of neuronal and psychophysical performance. J. Neurosci. 12:4745–65
+564
+
+Gold
+
+·
+
+Shadlen
+
+<-----Page 30----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+Britten KH, Shadlen MN, Newsome WT, Movshon JA. 1993. Responses of neurons in
+macaque MT to stochastic motion signals. Vis. Neurosci. 10:1157–69
+Britten KH, van Wezel RJ. 2002. Area MST and heading perception in macaque monkeys.
+Cereb. Cortex 12:692–701
+Britten KH, van Wezel RJ. 1998. Electrical microstimulation of cortical area MST biases
+heading perception in monkeys. Nat. Neurosci. 1:59–64
+Brody CD, Hernandez A, Zainos A, Romo R. 2003. Timing and neural encoding of somatosensory parametric working memory in macaque prefrontal cortex. Cereb. Cortex 13:1196–207
+Bruce CJ, Goldberg ME. 1985. Primate frontal eye ﬁelds. I. Single neurons discharging before
+saccades. J. Neurophysiol. 53:603–35
+Bruce CJ, Goldberg ME, Bushnell MC, Stanton GB. 1985. Primate frontal eye ﬁelds. II. Physiological and anatomical correlates of electrically evoked eye movements. J. Neurophysiol.
+54:714–34
+Buck L, Axel R. 1991. A novel multigene family may encode odorant receptors: a molecular
+basis for odor recognition. Cell 65:175–87
+Buck LB. 1996. Information coding in the vertebrate olfactory system. Annu. Rev. Neurosci.
+19:517–44
+Busemeyer JR, Townsend JT. 1993. Decision ﬁeld theory: a dynamic-cognitive approach to
+decision making in an uncertain environment. Psychol. Rev. 100:432–59
+Carpenter RHS. 1981. In Eye Movements: Cognition and Visual Perception, ed. DF Fischer, RA
+Monty, JW Senders, pp. 237–46. Hillsdale, NJ: Lawrence Erlbaum
+Carpenter RHS. 1988. Movements of the Eyes. London: Pion
+Carpenter RHS, Williams MLL. 1995. Neural computation of log likelihood in control of
+saccadic eye movements. Nature 377:59–62
+Carter CS, Braver TS, Barch DM, Botvinick MM, Noll D, Cohen JD. 1998. Anterior cingulate
+cortex, error detection, and the online monitoring of performance. Science 280:747–49
+Chafee MV, Goldman-Rakic PS. 2000. Inactivation of parietal and prefrontal cortex reveals interdependence of neural activity during memory-guided saccades. J. Neurophysiol.
+83:1550–66
+Cisek P. 2007. Cortical mechanisms of action selection: the affordance competition hypothesis.
+Philos. Trans. R. Soc. B. In press
+Clark A. 1997. Being There: Putting Brain, Body, and World Together Again. Cambridge, MA:
+MIT Press. 269 pp.
+Colby CL, Duhamel JR, Goldberg ME. 1993. Ventral intraparietal area of the macaque:
+anatomic location and visual response properties. J. Neurophysiol. 69:902–14
+Connolly JD, Goodale MA, Goltz HC, Munoz DP. 2005. fMRI activation in the human frontal
+eye ﬁeld is correlated with saccadic reaction time. J. Neurophysiol. 94:605–11
+Cook EP, Maunsell JH. 2002a. Attentional modulation of behavioral performance and neuronal responses in middle temporal and ventral intraparietal areas of macaque monkey. J.
+Neurosci. 22:1994–2004
+Cook EP, Maunsell JH. 2002b. Dynamics of neuronal responses in macaque MT and VIP
+during motion detection. Nat. Neurosci. 5:985–94
+Corrado GS, Sugrue LP, Seung HS, Newsome WT. 2005. Linear-nonlinear-Poisson models
+of primate choice dynamics. J. Exp. Anal. Behav. 84:581–617
+DeAngelis GC, Cumming BG, Newsome WT. 1998. Cortical area MT and the perception of
+stereoscopic depth. Nature 394:677–80
+DeAngelis GC, Ghose GM, Ohzawa I, Freeman RD. 1999. Functional micro-organization of
+primary visual cortex: receptive ﬁeld analysis of nearby neurons. J. Neurosci. 19:4046–64
+www.annualreviews.org • Decision Making
+
+565
+
+<-----Page 31----->ARI
+
+21 May 2007
+
+13:44
+
+DeAngelis GC, Gu Y, Angelaki DE. 2006. Role of area MSTd in cue integration for heading discrimination: II. Analysis of correlations between neural responses and perceptual
+decisions. J. Vis. 6(Abstr. 408):408a
+DeAngelis GC, Newsome WT. 2004. Perceptual “read-out” of conjoined direction and disparity maps in extrastriate area MT. PLoS Biol. 2:E77
+de Lafuente V, Romo R. 2005. Neuronal correlates of subjective sensory experience. Nat.
+Neurosci. 8:1698–703
+Diederich A. 2003. MDFT account of decision making under time pressure. Psychon. Bull. Rev.
+10:157–66
+Ditterich J, Mazurek M, Shadlen MN. 2003. Microstimulation of visual cortex affects the speed
+of perceptual decisions. Nat. Neurosci. 6:891–98
+Dodd JV, Krug K, Cumming BG, Parker AJ. 2001. Perceptually bistable three-dimensional
+ﬁgures evoke high choice probabilities in cortical area MT. J. Neurosci. 21:4809–21
+Dolan RJ, Fink GR, Rolls E, Booth M, Holmes A, et al. 1997. How the brain learns to see
+objects and faces in an impoverished context. Nature 389:596–99
+Dorris MC, Glimcher PW. 2004. Activity in posterior parietal cortex is correlated with the
+relative subjective desirability of action. Neuron 44:365–78
+Dorris MC, Munoz DP. 1998. Saccadic probability inﬂuences motor preparation signals and
+time to saccadic initiation. J. Neurosci. 18:7015–26
+Dorris MC, Paré M, Munoz DP. 1997. Neuronal activity in monkey superior colliculus related
+to the initiation of saccadic eye movements. J. Neurosci. 17:8566–79
+Duffy CJ, Wurtz RH. 1991. Sensitivity of MST neurons to optic ﬂow stimuli. I. A continuum
+of response selectivity of large-ﬁeld stimuli. J. Neurophysiol. 65:1329–45
+Duffy CJ, Wurtz RH. 1995. Response of monkey MST neurons to optic ﬂow stimuli with
+shifted centers of motion. J. Neurosci. 15:5192–208
+Duffy CJ, Wurtz RH. 1997. Medial superior temporal area neurons respond to speed patterns
+in optic ﬂow. J. Neurosci. 17:2839–51
+Duhamel JR, Colby CL, Goldberg ME. 1998. Ventral intraparietal area of the macaque: congruent visual and somatic response properties. J. Neurophysiol. 79:126–36
+Eskandar EN, Assad JA. 1999. Dissociation of visual, motor and predictive signals in parietal
+cortex during visual guidance. Nat. Neurosci. 2:88–93
+Everling S, Munoz DP. 2000. Neuronal correlates for preparatory set associated with prosaccades and antisaccades in the primate frontal eye ﬁeld. J. Neurosci. 20:387–400
+Freedman DJ, Assad JA. 2006. Experience-dependent representation of visual categories in
+parietal cortex. Nature 443:85–88
+Freedman DJ, Riesenhuber M, Poggio T, Miller EK. 2002. Visual categorization and the
+primate prefrontal cortex: Neurophysiology and behavior. J. Neurophysiol. 88:929–41
+Freedman DJ, Riesenhuber M, Poggio T, Miller EK. 2003. A comparison of primate prefrontal
+and inferior temporal cortices during visual categorization. J. Neurosci. 23:5235–46
+Friedman HR, Goldman-Rakic PS. 1994. Coactivation of prefrontal cortex and inferior parietal cortex in working memory tasks revealed by 2DG functional mapping in the rhesus
+monkey. J. Neurosci. 14:2775–88
+Fries W. 1984. Cortical projections to the superior colliculus in the macaque monkey: a retrograde study using horseradish peroxidase. J. Comp. Neurol. 230:55–76
+Gehring WJ, Willoughby AR. 2002. The medial frontal cortex and the rapid processing of
+monetary gains and losses. Science 295:2279–82
+Gibson JJ. 1950. Perception of the Visual World. Boston: Houghton-Mifﬂin
+Glimcher PW. 2005. Indeterminacy in brain and behavior. Annu. Rev. Psychol. 56:25–56
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+566
+
+Gold
+
+·
+
+Shadlen
+
+<-----Page 32----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+Gold JI, Shadlen MN. 2000. Representation of a perceptual decision in developing oculomotor
+commands. Nature 404:390–94
+Gold JI, Shadlen MN. 2001. Neural computations that underlie decisions about sensory stimuli.
+Trends Cogn. Sci. 5:10–16
+Gold JI, Shadlen MN. 2002. Banburismus and the brain: decoding the relationship between
+sensory stimuli, decisions, and reward. Neuron 36:299–308
+Gold JI, Shadlen MN. 2003. The inﬂuence of behavioral context on the representation of a
+perceptual decision in developing oculomotor commands. J. Neurosci. 23:632–51
+Good IJ. 1979. Studies in the history of probability and statistics. XXXVII A.M. Turing’s
+statistical work in World War II. Biometrika 66:393–96
+Good IJ. 1983. Good Thinking: The Foundations of Probability and Its Applications. Minneapolis:
+Univ. Minn. Press
+Goodale M, Milner A. 1992. Separate visual pathways for perception and action. Trends Neurosci.
+15:20–25
+Graziano MS, Andersen RA, Snowden RJ. 1994. Tuning of MST neurons to spiral motions. J.
+Neurosci. 14:54–67
+Graziano MSA, Hu XT, Gross CG. 1997. Visuospatial properties of ventral premotor cortex.
+J. Neurophysiol. 77:2268–92
+Green DM, Swets JA. 1966. Signal Detection Theory and Psychophysics. New York: Wiley
+Grill-Spector K, Kushnir T, Hendler T, Malach R. 2000. The dynamics of object-selective
+activation correlate with recognition performance in humans. Nat. Neurosci. 3:837–43
+Gu Y, Watkins PV, Angelaki DE, DeAngelis GC. 2006. Visual and nonvisual contributions
+to three-dimensional heading selectivity in the medial superior temporal area. J. Neurosci.
+26:73–85
+Gurney K, Bogacz R. 2006. The basal ganglia and cortex implement optimal decision making
+between alternative actions. Neural Comput. 19:442–77
+Hanes DP, Carpenter RH. 1999. Countermanding saccades in humans. Vis. Res. 39:2777–91
+Hanes DP, Patterson WF, Schall JD. 1998. Role of frontal eye ﬁelds in countermanding
+saccades: visual, movement, and ﬁxation activity. J. Neurophys. 79:817–34
+Hanes DP, Schall JD. 1996. Neural control of voluntary movement initiation. Science 274:427–
+30
+Hanks TD, Ditterich J, Shadlen MN. 2006. Microstimulation of macaque area LIP affects
+decision-making in a motion discrimination task. Nat. Neurosci. 9:682–89
+Haxby JV, Horwitz B, Ungerleider LG, Maisog JM, Pietrini P, Grady CL. 1994. The functional
+organization of human extrastriate cortex: a PET-rCBF study of selective attention to faces
+and locations. J. Neurosci. 14:6336–53
+Heekeren HR, Marrett S, Bandettini PA, Ungerleider LG. 2004. A general mechanism for
+perceptual decision-making in the human brain. Nature 431:859–62
+Henning GB, Hertz BG, Broadbent DE. 1975. Some experiments bearing on the hypothesis
+that the visual system analyzes patterns in independent bands of spatial frequency. Vis. Res.
+15:887–89
+Hernandez A, Zainos A, Romo R. 2000. Neuronal correlates of sensory discrimination in the
+somatosensory cortex. Proc. Natl. Acad. Sci. USA 97:6191–96
+Hernandez A, Zainos A, Romo R. 2002. Temporal evolution of a decision-making process in
+medial premotor cortex. Neuron 33:959–72
+Herrnstein RJ. 1961. Relative and absolute strength of response as a function of frequency of
+reinforcement. J. Exp. Anal. Behav. 4:267–72
+Herrnstein RJ, Vaughan W. 1980. Melioration and behavioral allocation. In Limits to Action:
+The Allocation of Individual Behavior, ed. J Staddon, pp. 143–76. New York: Academic
+www.annualreviews.org • Decision Making
+
+567
+
+<-----Page 33----->ARI
+
+21 May 2007
+
+13:44
+
+Heuer HW, Britten KH. 2004. Optic ﬂow signals in extrastriate area MST: comparison of
+perceptual and neuronal sensitivity. J. Neurophysiol. 91:1314–26
+Horwitz GD, Batista AP, Newsome WT. 2004. Representation of an abstract perceptual deccision in macaque superior colliculus. J. Neurophysiol. 91:2281–96
+Horwitz GD, Newsome WT. 1999. Separate signals for target selection and movement speciﬁcation in the superior colliculus. Science 284:1158–61
+Horwitz GD, Newsome WT. 2001. Target selection for saccadic eye movements: prelude
+activity in the superior colliculus during a direction-discrimination task. J. Neurophysiol.
+86:2543–58
+Huk AC, Shadlen MN. 2005. Neural activity in macaque parietal cortex reﬂects temporal integration of visual motion signals during perceptual decision making. J. Neurosci. 25:10420–
+36
+Ito S, Stuphorn V, Brown JW, Schall JD. 2003. Performance monitoring by the anterior
+cingulate cortex during saccade countermanding. Science 302:120–22
+Janssen P, Shadlen MN. 2005. A representation of the hazard rate of elapsed time in macaque
+area LIP. Nat. Neurosci. 8:234–41
+Johnson KO. 1980a. Sensory discrimination: decision process. J. Neurophysiol. 43:1771–92
+Johnson KO. 1980b. Sensory discrimination: neural processes preceding discrimination decision. J. Neurophysiol. 43:1793–815
+Kaelbling LP, Littman ML, Moore AW. 1996. Reinforcement learning: a survey. J. Artif. Intel.
+Res. 4:237–85
+Kahneman D. 2002. Nobel prize lecture: Maps of Bounded Rationality: a perspective on intuitive judgment and choice. In Nobel Prizes 2002: Nobel Prizes, Presentations, Biographies, &
+Lectures, ed. T Frangsmyr, pp. 416–99. Stockholm: Almqvist & Wiksell Int.
+Kanwisher N, McDermott J, Chun MM. 1997. The fusiform face area: a module in human
+extrastriate cortex specialized for face perception. J. Neurosci. 17:4302–11
+Kawagoe R, Takikawa Y, Hikosaka O. 2004. Reward-predicting activity of dopamine and
+caudate neurons—a possible mechanism of motivational control of saccadic eye movement.
+J. Neurophysiol. 91:1013–24
+Kepecs A, Uchida N, Mainen ZF. 2006. The sniff as a unit of olfactory processing. Chem. Senses
+31:167–79
+Kersten D, Mamassian P, Yuille A. 2004. Object perception as Bayesian inference. Annu. Rev.
+Psychol. 55:271–304
+Kiani R, Hanks TD, Shadlen MN. 2006. Improvement in sensitivity with viewing time is
+limited by an integration-to-bound mechanism in area LIP. Soc. Neurosci. Abstr. 605.7
+Kim JN, Shadlen MN. 1999. Neural correlates of a decision in the dorsolateral prefrontal
+cortex of the macaque. Nat. Neurosci. 2:176–85
+Kohn A, Smith MA. 2005. Stimulus dependence of neuronal correlation in primary visual
+cortex of the macaque. J. Neurosci. 25:3661–73
+Knutson B, Taylor J, Kaufman M, Peterson R, Glover G. 2005. Distributed neural representation of expected value. J. Neurosci. 25:4806–12
+Kobayashi S, Lauwereyns J, Koizumi M, Sakagami M, Hikosaka O. 2002. Inﬂuence of reward
+expectation on visuospatial processing in macaque lateral prefrontal cortex. J. Neurophysiol.
+87:1488–98
+Krug K, Cumming BG, Parker AJ. 2004. Comparing perceptual signals of single V5/MT
+neurons in two binocular depth tasks. J. Neurophysiol. 92:1586–96
+LaBerge DA. 1962. A recruitment theory of simple behavior. Psychometrika 27:375–96
+Lagae L, Maes H, Raiguel S, Xiao DK, Orban GA. 1994. Responses of macaque STS neurons to
+optic ﬂow components: a comparison of areas MT and MST. J. Neurophysiol. 71:1597–626
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+568
+
+Gold
+
+·
+
+Shadlen
+
+<-----Page 34----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+Laming DRJ. 1968. Information Theory of Choice-Reaction Times. London: Academic
+Lasley DJ, Cohn T. 1981. Detection of a luminance increment: effect of temporal uncertainty.
+J. Opt. Soc. Am. 71:845–50
+Lau B, Glimcher PW. 2005. Dynamic response-by-response models of matching behavior in
+rhesus monkeys. J. Exp. Anal. Behav. 84:555–79
+Lauwereyns J, Takikawa Y, Kawagoe R, Kobayashi S, Koizumi M, et al. 2002. Feature-based
+anticipation of cues that predict reward in monkey caudate nucleus. Neuron 33:463–73
+Law C, Gold JI. 2005. Physiological correlates of perceptual learning in monkey areas MT and
+LIP. Soc. Neurosci. Abstr. 621.15
+Lecas JC, Requin J, Anger C, Vitton N. 1986. Changes in neuronal activity of the monkey
+precentral cortex during preparation for movement. J. Neurophysiol. 56:1680–702
+Lee D, McGreevy BP, Barraclough DJ. 2005. Learning and decision making in monkeys during
+a rock-paper-scissors game. Brain. Res. Cogn. Brain. Res. 25:416–30
+Leon MI, Shadlen MN. 1998. Modulation of dorsolateral prefrontal cortex neurons by varying
+expectations of reward magnitude. Soc. Neurosci. Abstr. 24:1425
+Leon MI, Shadlen MN. 2003. Representation of time by neurons in the posterior parietal
+cortex of the macaque. Neuron 38:317–27
+Lewis JW, Van Essen DC. 2000a. Corticocortical connections of visual, sensorimotor, and
+multimodal processing areas in the parietal lobe of the macaque monkey. J. Comp. Neurol.
+428:112–37
+Lewis JW, Van Essen DC. 2000b. Mapping of architectonic subdivisions in the macaque monkey, with emphasis on parieto-occipital cortex. J. Comp. Neurol. 428:79–111
+Link SW. 1992. The Wave Theory of Difference and Similarity. Hillsdale, NJ: Lawrence Erlbaum
+Link SW, Heath RA. 1975. A sequential theory of psychological discrimination. Psychometrika
+40:77–105
+Lo CC, Wang XJ. 2006. Cortico-basal ganglia circuit mechanism for a decision threshold in
+reaction time tasks. Nat. Neurosci. 9:956–63
+Logan GD. 2002. An instance theory of attention and memory. Psychol. Rev. 109:376–400
+Logan GD, Cowan WB, Davis KA. 1984. On the ability to inhibit simple and choice reaction
+time responses: a model and a method. J. Exp. Psychol. Hum. Percept. Perform. 10:276–91
+Luce RD. 1986. Response Times: Their Role in Inferring Elementary Mental Organization. New
+York: Oxford Univ. Press
+Ludwig CJ, Gilchrist ID, McSorley E, Baddeley RJ. 2005. The temporal impulse response
+underlying saccadic decisions. J. Neurosci. 25:9907–12
+Luna R, Hernandez A, Brody CD, Romo R. 2005. Neural codes for perceptual discrimination
+in primary somatosensory cortex. Nat. Neurosci. 8:1210–19
+Lynch JC, Graybiel AM, Lobeck LJ. 1985. The differential projection of two cytoarchitectonic
+subregions of the inferior parietal lobule of macaque upon the deep layers of the superior
+colliculus. J. Comp. Neurol. 235:241–54
+Machens CK, Romo R, Brody CD. 2005. Flexible control of mutual inhibition: a neural model
+of two-interval discrimination. Science 307:1121–24
+Major G, Tank D. 2004. Persistent neural activity: prevalence and mechanisms. Curr. Opin.
+Neurobiol. 14:675–84
+Maunsell JHR, Van Essen DC. 1983. Functional properties of neurons in the middle temporal
+visual area (MT) of the macaque monkey: II. Binocular interactions and the sensitivity to
+binocular disparity. J. Neurophysiol. 49:1148–67
+Mazurek ME, Roitman JD, Ditterich J, Shadlen MN. 2003. A role for neural integrators in
+perceptual decision making. Cereb. Cortex 13:1257–69
+www.annualreviews.org • Decision Making
+
+569
+
+<-----Page 35----->ARI
+
+21 May 2007
+
+13:44
+
+McCoy AN, Crowley JC, Haghighian G, Dean HL, Platt ML. 2003. Saccade reward signals
+in posterior cingulate cortex. Neuron 40:1031–40
+McMillen T, Holmes P. 2006. The dynamics of choice among multiple alternatives. J. Math.
+Psychol. 50:30–57
+Meister M, Bonhoeffer T. 2001. Tuning and topography in an odor map on the rat olfactory
+bulb. J. Neurosci. 21:1351–60
+Merleau-Ponty M. 1962. Phenomenology of Perception. London: Routledge & Kegan Paul
+Mombaerts P, Wang F, Dulac C, Chao SK, Nemes A, et al. 1996. Visualizing an olfactory
+sensory map. Cell 87:675–86
+Mountcastle VB, Steinmetz MA, Romo R. 1990. Frequency discrimination in the sense of ﬂutter: psychophysical measurements correlated with postcentral events in behaving monkeys.
+J. Neurosci. 10:3032–44
+Munoz DP, Wurtz RH. 1993. Fixation cells in monkey superior colliculus. I. Characteristics
+of cell discharge. J. Neurophys. 70:559–75
+Nachmias J, Rogowitz BE. 1983. Masking by spatially-modulated gratings. Vis. Res. 23:1621–29
+Newsome WT, Paré EB. 1988. A selective impairment of motion perception following lesions
+of the middle temporal visual area (MT). J. Neurosci. 8:2201–11
+Op de Beeck H, Wagemans J, Vogels R. 2001. Inferotemporal neurons represent lowdimensional conﬁgurations of parameterized shapes. Nat. Neurosci. 4:1244–52
+O’Regan JK, Noë A. 2001. A sensorimotor account of vision and visual consciousness. Behav.
+Brain Sci. 24:939–73
+Padoa-Schioppa C, Assad JA. 2006. Neurons in the orbitofrontal cortex encode economic
+value. Nature 441:223–26
+Palmer J, Huk AC, Shadlen MN. 2005. The effect of stimulus strength on the speed and
+accuracy of a perceptual decision. J. Vis. 5:376–404
+Paré M, Hanes DP. 2003. Controlled movement processing: superior colliculus activity associated with countermanded saccades. J. Neurosci. 23:6480–89
+Paré M, Wurtz RH. 1997. Monkey posterior parietal cortex neurons antidromically activated
+from superior colliculus. J. Neurophysiol. 78:3493–98
+Parker AJ, Newsome WT. 1998. Sense and the single neuron: probing the physiology of
+perception. Annu. Rev. Neurosci. 21:227–77
+Philiastides MG, Ratcliff R, Sajda P. 2006. Neural representation of task difﬁculty and decision
+making during perceptual categorization: a timing diagram. J. Neurosci. 26:8965–75
+Philiastides MG, Sajda P. 2006. Temporal characterization of the neural correlates of perceptual
+decision making in the human brain. Cereb. Cortex 16:509–18
+Platt ML, Glimcher PW. 1999. Neural correlates of decision variables in parietal cortex. Nature
+400:233–38
+Pouget P, Emeric EE, Stuphorn V, Reis K, Schall JD. 2005. Chronometry of visual responses
+in frontal eye ﬁeld, supplementary eye ﬁeld, and anterior cingulate cortex. J. Neurophysiol.
+94:2086–92
+Rainer G, Lee H, Logothetis NK. 2004. The effect of learning on the function of monkey
+extrastriate visual cortex. PLoS Biol. 2:E44
+Rao RPN. 1999. An optimal estimation approach to visual perception and learning. Vis. Res.
+39:1963–89
+Ratcliff R. 1978. A theory of memory retrieval. Psychol. Rev. 85:59–108
+Ratcliff R, Cherian A, Segraves M. 2003. A comparison of macaque behavior and superior
+colliculus neuronal activity to predictions from models of two-choice decisions. J. Neurophysiol. 90:1392–407
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+570
+
+Gold
+
+·
+
+Shadlen
+
+<-----Page 36----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+Ratcliff R, Rouder JN. 1998. Modeling response times for two-choice decisions. Psychol. Sci.
+9:347–56
+Ratcliff R, Smith PL. 2004. A comparison of sequential sampling models for two-choice reaction time. Psychol. Rev. 111:333–67
+Reddi BA, Asrress KN, Carpenter RH. 2003. Accuracy, information, and response time in a
+saccadic decision task. J. Neurophysiol. 90:3538–46
+Reddi BA, Carpenter RH. 2000. The inﬂuence of urgency on decision time. Nat. Neurosci.
+3:827–30
+Ress D, Backus BT, Heeger DJ. 2000. Activity in primary visual cortex predicts performance
+in a visual detection task. Nat. Neurosci. 3:940–45
+Ress D, Heeger DJ. 2003. Neuronal correlates of perception in early visual cortex. Nat. Neurosci.
+6:414–20
+Ridderinkhof KR, Ullsperger M, Crone EA, Nieuwenhuis S. 2004. The role of the medial
+frontal cortex in cognitive control. Science 306:443–47
+Riehle A, Requin J. 1993. The predictive value for performance speed of preparatory changes
+in neuronal activity of the monkey motor and premotor cortex. Behav. Brain Res. 53:35–49
+Rieke F, Warland D, de Ruyter van Steveninck RR, Bialek W. 1997. Spikes: Exploring the Neural
+Code. Cambridge, MA: MIT Press
+Rinberg D, Koulakov A, Gelperin A. 2006. Speed-accuracy tradeoff in olfaction. Neuron
+51:351–58
+Robinson DA. 1972. Eye movements evoked by collicular stimulation in the alert monkey. Vis.
+Res. 12:1795–807
+Robinson DA, Fuchs AF. 1969. Eye movements evoked by stimulation of frontal eye ﬁelds. J.
+Neurophysiol. 32:637–48
+Roe RM, Busemeyer JR, Townsend JT. 2001. Multialternative decision ﬁeld theory: a dynamic
+connectionist model of decision making. Psychol. Rev. 108:370–92
+Roitman JD, Shadlen MN. 2002. Response of neurons in the lateral intraparietal area during
+a combined visual discrimination reaction time task. J. Neurosci. 22:9475–89
+Romo R, Brody C, Hernandez A, Lemus L. 1999. Neuronal correlates of parametric working
+memory in the prefrontal cortex. Nature 399:470–73
+Romo R, Hernandez A, Zainos A. 2004. Neuronal correlates of a perceptual decision in ventral
+premotor cortex. Neuron 41:165–73
+Romo R, Hernandez A, Zainos A, Brody CD, Lemus L. 2000. Sensing without touching:
+psychophysical performance based on cortical microstimulation. Neuron 26:273–78
+Romo R, Hernandez A, Zainos A, Lemus L, Brody CD. 2002. Neuronal correlates of decisionmaking in secondary somatosensory cortex. Nat. Neurosci. 5:1217–25
+Romo R, Hernandez A, Zainos A, Salinas E. 1998. Somatosensory discrimination based on
+cortical microstimulation. Nature 392:387–90
+Rubin BD, Katz LC. 1999. Optical imaging of odorant representations in the mammalian
+olfactory bulb. Neuron 23:499–511
+Saito H, Yukie M, Tanaka K, Hikosaka K, Fukada Y, Iwai E. 1986. Integration of direction
+signals of image motion in the superior temporal sulcus of the macaque monkey. J. Neurosci.
+6:145–57
+Salinas E, Hernandez A, Zainos A, Romo R. 2000. Periodicity and ﬁring rate as candidate
+neural codes for the frequency of vibrotactile stimuli. J. Neurosci. 20:5503–15
+Salzman CD, Britten KH, Newsome WT. 1990. Cortical microstimulation inﬂuences perceptual judgements of motion direction. Nature 346:174–77
+Salzman CD, Murasugi CM, Britten KH, Newsome WT. 1992. Microstimulation in visual
+area MT: effects on direction discrimination performance. J. Neurosci. 12:2331–55
+www.annualreviews.org • Decision Making
+
+571
+
+<-----Page 37----->ARI
+
+21 May 2007
+
+13:44
+
+Sanfey AG, Loewenstein G, McClure SM, Cohen JD. 2006. Neuroeconomics: cross-currents
+in research on decision-making. Trends Cogn. Sci. 10:108–16
+Schall JD, Stuphorn V, Brown JW. 2002. Monitoring and control of action by the frontal lobes.
+Neuron 36:309–22
+Schiller PH, Stryker M. 1972. Single-unit recording and stimulation in superior colliculus of
+the alert rhesus monkey. J. Neurophysiol. 35:915–24
+Schmolesky MT, Wang Y, Hanes DP, Thompson KG, Leutgeb S, et al. 1998. Signal timing
+across the macaque visual system. J. Neurosci. 79:3272–78
+Schultz W. 1992. Activity of dopamine neurons in the behaving primate. Semin. Neurosci.
+4:129–38
+Schultz W. 1998. Predictive reward signal of dopamine neurons. J. Neurophysiol. 80:1–27
+Schultz W. 2004. Neural coding of basic reward terms of animal learning theory, game theory,
+microeconomics and behavioural ecology. Curr. Opin. Neurbiol. 14:139–47
+Schultz W, Dayan P, Montague PR. 1997. A neural substrate of prediction and reward. Science
+275:1593–99
+Schrater PR, Knill DC, Simoncelli EP. 2000. Mechanisms of visual motion detection. Nat.
+Neurosci. 3:64–68
+Shadlen MN, Britten KH, Newsome WT, Movshon JA. 1996. A computational analysis of
+the relationship between neuronal and behavioral responses to visual motion. J. Neurosci.
+16:1486–510
+Shadlen MN, Hanks TD, Churchland AK, Kiani R, Yang T. 2006. The speed and accuracy
+of a simple perceptual decision: a mathematical primer. In Bayesian Brain: Probabilistic
+Approaches to Neural Coding, ed. K Doya, S Ishii, R Rao, A Pouget, pp. 209–37. Cambridge,
+MA: MIT Press
+Shadlen MN, Newsome WT. 1996. Motion perception: Seeing and deciding. Proc. Natl. Acad.
+Sci. USA 93:628–33
+Shadlen MN, Newsome WT. 2001. Neural basis of a perceptual decision in the parietal cortex
+(area LIP) of the rhesus monkey. J. Neurophysiol. 86:1916–36
+Sheinberg DL, Logothetis NK. 1997. The role of temporal cortical areas in perceptual organization. Proc. Natl. Acad. Sci. USA 94:3408–13
+Sheinberg DL, Logothetis NK. 2001. Noticing familiar objects in real world scenes: the role
+of temporal cortical neurons in natural vision. J. Neurosci. 21:1340–50
+Sinha N, Brown JT, Carpenter RH. 2006. Task switching as a two-stage decision process. J.
+Neurophysiol. 95:3146–53
+Smith PL. 2000. Stochastic dynamic models of response time and accuracy: a foundational
+primer. J. Math. Psychol. 44:408–63
+Smith PL, Ratcliff R. 2004. Psychology and neurobiology of simple decisions. Trends Neurosci.
+27:161–68
+Smith PL. 1995. Psychophysically principled models of visual simple reaction time. Psychol.
+Rev. 102:567–93
+Smith PL. 1998. Bloch’s law predictions from diffusion process models of detection. Aust. J.
+Psychol. 50:139–47
+Sparks DL. 2002. The brainstem control of saccadic eye movements. Nat. Rev. Neurosci. 3:952–
+64
+Spivey MJ, Grosjean M, Knoblich G. 2005. Continuous attraction toward phonological competitors. Proc. Natl. Acad. Sci. USA 102:10393–98
+Stuphorn V, Taylor TL, Schall JD. 2000. Performance monitoring by the supplementary eye
+ﬁeld. Nature 408:857–60
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+572
+
+Gold
+
+·
+
+Shadlen
+
+<-----Page 38----->Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+ARI
+
+21 May 2007
+
+13:44
+
+Sugrue LP, Corrado GS, Newsome WT. 2004. Matching behavior and the representation of
+value in the parietal cortex. Science 304:1782–87
+Sugrue LP, Corrado GS, Newsome WT. 2005. Choosing the greater of two goods: neural
+currencies for valuation and decision making. Nat. Rev. Neurosci. 6:363–75
+Tanaka K, Hikosaka H, Saito H, Yukie Y, Fukada Y, Iwai E. 1986. Analysis of local and wideﬁeld movements in the superior temporal visual areas of the macaque monkey. J. Neurosci.
+6:134–44
+Tanaka K, Saito H. 1989. Analysis of motion of the visual ﬁeld by direction, expansion/
+contraction and rotation cells clustered in the dorsal part of the medial superior temporal area of the macaque monkey. J. Neurophysiol. 62:626–41
+Tehovnik EJ. 1996. Electrical stimulation of neural tissue to evoke behavioral responses. J.
+Neurosci. Methods 65:1–17
+Tenenbaum JB, Grifﬁths TL. 2001. Generalization, similarity, and Bayesian inference. Behav.
+Brain Sci. 24:629–40
+Tremblay L, Schultz W. 1999. Relative reward preference in primate orbitofrontal cortex.
+Nature 398:704–8
+Tremblay L, Schultz W. 2000. Reward-related neuronal activity during Go-nogo task performance in primate orbitofrontal cortex. J. Neurophysiol. 83:1864–76
+Uchida N, Kepecs A, Mainen ZF. 2006. Seeing at a glance, smelling in a whiff: rapid forms of
+perceptual decision making. Nat. Rev. Neurosci. 7:485–91
+Uchida N, Mainen ZF. 2003. Speed and accuracy of olfactory discrimination in the rat. Nat.
+Neurosci. 6:1224–29
+Uka T, DeAngelis GC. 2003. Contribution of middle temporal area to coarse depth discrimination: comparison of neuronal and psychophysical sensitivity. J. Neurosci. 23:3515–30
+Uka T, DeAngelis GC. 2006. Linking neural representation to function in stereoscopic depth
+perception: roles of the middle temporal area in coarse versus ﬁne disparity discrimination.
+J. Neurosci. 26:6791–802
+Ungerleider LG, Mishkin M. 1982. Two cortical visual systems. In Analysis of Visual Behavior,
+ed. DJ Ingle, MA Goodale, RJW Mansﬁeld, pp. 549–80. Cambridge, MA: MIT Press
+Ullman JD. 1979. The Interpretation of Visual Motion. Cambridge, MA: MIT Press
+Usher M, McClelland JL. 2001. The time course of perceptual choice: the leaky, competing
+accumulator model. Psychol. Rev. 108:550–92
+VanRullen R, Thorpe SJ. 2001. The time course of visual processing: from early perception to
+decision-making. J. Cogn. Neurosci. 13:454–61
+Verghese P, Watamaniuk SNJ, McKee SP, Grzywacz NM. 1999. Local motion detectors cannot
+account for the detectability of an extended trajectory in noise. Vis. Res. 39:19–30
+Vickers D. 1970. Evidence for an accumulator model of psychophysical discrimination. In
+Contemporary Problems in Perception: Ergonomics, ed. AT Welford, L Houssiadas, pp. 37–
+58. London: Taylor & Francis
+von Helmholtz HLF. 1925. Treatise on Physiological Optics. New York: Dover
+von Neumann J, Morgenstern O. 1944. The Theory of Games and Economic Behavior. Princeton:
+Princeton Univ. Press
+Wagner AD, Schacter DL, Rotte M, Koutstaal W, Maril A, et al. 1998. Building memories:
+remembering and forgetting of verbal experiences as predicted by brain activity. Science
+281:1188–91
+Wald A, Wolfowitz J. 1947. Optimum character of the sequential probability ratio test. Ann.
+Math. Statist. 19:326–39
+Wallis JD, Anderson KC, Miller EK. 2001. Single neurons in prefrontal cortex encode abstract
+rules. Nature 411:953–56
+www.annualreviews.org • Decision Making
+
+573
+
+<-----Page 39----->ARI
+
+21 May 2007
+
+13:44
+
+Wang XJ. 2002. Probabilistic decision making by slow reverberation in cortical circuits. Neuron
+36:955–68
+Watanabe K, Lauwereyns J, Hikosaka O. 2003. Neural correlates of rewarded and unrewarded
+eye movements in the primate caudate nucleus. J. Neurosci. 23:10052–57
+Watanabe M. 1996. Reward expectancy in primate prefrontal neurons. Nature 382:629–32
+Watson AB. 1986. Temporal sensitivity. In Handbook of Perception and Human Performance. ed.
+K Boff, J Thomas, pp. 6.1–6.43. New York: Wiley
+Westheimer G. 1954. Mechanism of saccadic eye movements. AMA Arch. Ophthalmol. 52:710–
+24
+Wong KF, Huk A, Shadlen MN, Wang XJ. 2005. Time integration in a perceptual decision
+task: adding and subtracting brief pulses of evidence in a recurrent cortical network model.
+Soc. Neurosci. Abstr. 621.5
+Wong KF, Wang XJ. 2006. A recurrent network mechanism of time integration in perceptual
+decisions. J. Neurosci. 26:1314–28
+Yeung N, Sanfey AG. 2004. Independent coding of reward magnitude and valence in the human
+brain. J. Neurosci. 24:6258–64
+Zhang T, Britten KH. 2004. Clustering of selectivity for optic ﬂow in the ventral intraparietal
+area. NeuroReport 15:1941–45
+Zhang T, Heuer HW, Britten KH. 2004. Parietal area VIP neuronal responses to heading
+stimuli are encoded in head-centered coordinates. Neuron 42:993–1001
+Zohary E, Shadlen MN, Newsome WT. 1994. Correlated neuronal discharge rate and its
+implications for psychophysical performance. Nature 370:140–43
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+ANRV314-NE30-21
+
+574
+
+Gold
+
+·
+
+Shadlen
+
+<-----Page 40----->AR314-FM
+
+ARI
+
+20 May 2007
+
+16:26
+
+Annual Review of
+Neuroscience
+
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+Contents
+
+Volume 30, 2007
+
+Information Processing in the Primate Retina: Circuitry and Coding
+G.D. Field and E.J. Chichilnisky p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p1
+Orbitofrontal Cortex and Its Contribution to Decision-Making
+Jonathan D. Wallis p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p 31
+Fundamental Components of Attention
+Eric I. Knudsen p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p 57
+Anatomical and Physiological Plasticity of Dendritic Spines
+Veronica A. Alvarez and Bernardo L. Sabatini p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p 79
+Visual Perception and Memory: A New View of Medial Temporal
+Lobe Function in Primates and Rodents
+Elisabeth A. Murray, Timothy J. Bussey, and Lisa M. Saksida p p p p p p p p p p p p p p p p p p p p p p p p 99
+The Medial Temporal Lobe and Recognition Memory
+H. Eichenbaum, A.P. Yonelinas, and C. Ranganath p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p123
+Why Is Wallerian Degeneration in the CNS So Slow?
+Mauricio E. Vargas and Ben A. Barres p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p153
+The Head Direction Signal: Origins and Sensory-Motor Integration
+Jeffrey S. Taube p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p181
+Peripheral Regeneration
+Zu-Lin Chen, Wei-Ming Yu, and Sidney Strickland p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p209
+Neuron-Glial Interactions in Blood-Brain Barrier Formation
+Swati Banerjee and Manzoor A. Bhat p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p235
+Multiple Dopamine Functions at Different Time Courses
+Wolfram Schultz p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p259
+Ventral Tegmental Area Neurons in Learned Appetitive Behavior and
+Positive Reinforcement
+Howard L. Fields, Gregory O. Hjelmstad, Elyssa B. Margolis,
+and Saleem M. Nicola p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p289
+
+v
+
+<-----Page 41----->AR314-FM
+
+ARI
+
+20 May 2007
+
+16:26
+
+Copper and Iron Disorders of the Brain
+Erik Madsen and Jonathan D. Gitlin p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p317
+The Micromachinery of Mechanotransduction in Hair Cells
+Melissa A. Vollrath, Kelvin Y. Kwan, and David P. Corey p p p p p p p p p p p p p p p p p p p p p p p p p p p p p339
+Neurobiology of Feeding and Energy Expenditure
+Qian Gao and Tamas L. Horvath p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p367
+Mechanisms that Regulate Establishment, Maintenance, and
+Remodeling of Dendritic Fields
+Jay Z. Parrish, Kazuo Emoto, Michael D. Kim, and Yuh Nung Jan p p p p p p p p p p p p p p p p p399
+Annu. Rev. Neurosci. 2007.30:535-574. Downloaded from www.annualreviews.org
+by University of Waterloo on 12/18/10. For personal use only.
+
+Dynamic Aspects of CNS Synapse Formation
+A. Kimberley McAllister p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p425
+Adhesion Molecules in the Nervous System: Structural Insights into
+Function and Diversity
+Lawrence Shapiro, James Love, and David R. Colman p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p451
+Development of Neural Systems for Reading
+Bradley L. Schlaggar and Bruce D. McCandliss p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p475
+Molecular Architecture of Smell and Taste in Drosophila
+Leslie B. Vosshall and Reinhard F. Stocker p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p505
+The Neural Basis of Decision Making
+Joshua I. Gold and Michael N. Shadlen p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p535
+Trinucleotide Repeat Disorders
+Harry T. Orr and Huda Y. Zoghbi p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p575
+Indexes
+Cumulative Index of Contributing Authors, Volumes 21–30 p p p p p p p p p p p p p p p p p p p p p p p p623
+Cumulative Index of Chapter Titles, Volumes 21–30 p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p627
+Errata
+An online log of corrections to Annual Review of Neuroscience chapters (if any, 1997
+to the present) may be found at http://neuro.annualreviews.org/
+
+vi
+
+Contents
+
+

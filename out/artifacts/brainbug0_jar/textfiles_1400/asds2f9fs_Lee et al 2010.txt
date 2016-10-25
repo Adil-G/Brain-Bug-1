@@ -1,0 +1,3165 @@
+<-----Page 0----->Testing for threshold effects
+in regression models
+Sokbae Lee
+Myung Hwan Seo
+Youngki Shin
+
+The Institute for Fiscal Studies
+Department of Economics, UCL
+cemmap working paper CWP36/10
+
+<-----Page 1----->TESTING FOR THRESHOLD EFFECTS IN REGRESSION MODELS
+SOKBAE LEE, MYUNG HWAN SEO, AND YOUNGKI SHIN
+Abstract. In this article, we develop a general method for testing threshold effects in
+regression models, using sup-likelihood-ratio (LR)-type statistics. Although the sup-LRtype test statistic has been considered in the literature, our method for establishing the
+asymptotic null distribution is new and nonstandard. The standard approach in the literature for obtaining the asymptotic null distribution requires that there exist a certain
+quadratic approximation to the objective function. The article provides an alternative,
+novel method that can be used to establish the asymptotic null distribution, even when
+the usual quadratic approximation is intractable. We illustrate the usefulness of our approach in the examples of the maximum score estimation, maximum likelihood estimation,
+quantile regression, and maximum rank correlation estimation. We establish consistency
+and local power properties of the test. We provide some simulation results and also an
+empirical application to tipping in racial segregation. This article has supplementary materials online.
+Key words. Davies problem, empirical process, maximum score estimation, maximum
+rank correlation estimation, U-process, threshold model.
+AMS Subject Classification. 62F03, 62F05.
+
+Date: 17 November 2010.
+We would like to thank Jesse Rothstein for providing the data used in the article and also thank two referees
+and an associate editor for their helpful comments. Lee thanks the Economic and Social Research Council
+for the ESRC Centre for Microdata Methods and Practice (RES-589-28-0001) and the European Research
+Council for the research grant (ERC-2009-StG-240910-ROMETA). Shin thanks the Social Sciences and
+Humanities Research Council of Canada (410-2010-0345) for the research grant.
+1
+
+<-----Page 2----->2
+
+LEE, SEO, AND SHIN
+
+1. Introduction
+This article develops general tests for threshold effects in a variety of regression models,
+including mean, median and quantile regression, binary response, censored or truncated
+regression, and proportional hazards models as special cases. To illustrate our testing
+problem, consider a binary regression model as an example. In this model, an observed
+binary outcome Y is modeled typically as Y = 1(Y ∗ ≥ 0), where 1(A) denotes the indicator
+function, i.e., 1(A) = 1 if A is true and zero otherwise, and Y ∗ is a latent continuous variable
+that determines the binary outcome Y (see e.g. Manski, 1988). Suppose that Y ∗ has the
+following form:
+(1.1)
+(1.2)
+
+Y ∗ = g (W, θ0 , γ0) + U,
+g (w, θ, γ) = x0 β + z0 α1 {t > γ} ,
+
+where W is a vector of regressors that consist of distinct elements of (X, Z, T ), U is an
+unobserved random variable, and θ0 := (β00 , α00 )0 and γ0 are unknown true parameter values
+and belong to Θ := B × A and Γ, respectively, which are subsets of finite-dimensional
+Euclidean spaces. Without loss of generality, assume that the vector Z is a subset of X
+such that Z = R0 X for some known matrix R and that T might be an element of X. The
+random variable T is the threshold variable and γ0 is the unknown threshold parameter.
+Note that we specify the threshold effect as a change-point due to an unknown threshold
+in a particular covariate.
+Threshold models have a large number of applications in empirical research. In economics and sociology, racial segregation can be modeled as a threshold effect. For example,
+Card et al. (2008) recently investigated the existence of race-based tipping in neighborhoods using U.S. Census data. In their setup, the hypothesis of interest is whether there
+exist discontinuities in the dynamics of neighborhood racial composition: once the minority share in a neighborhood exceeds a threshold level (“tipping point”), most of the whites
+would leave the neighborhood. In a simple model developed by Card et al. (2008), whites’
+
+<-----Page 3----->TESTING FOR THRESHOLD EFFECTS
+
+3
+
+willingness to pay for homes depends on the neighborhood minority share. In their model,
+the location of the tipping point can vary depending on whites’ preferences, thereby implying that the location of the tipping point is unknown. In Section 4, we illustrate our
+methodology by applying it to the data used by Card et al. (2008).
+There are more examples of threshold models. In economics, Durlauf and Johnson (1995)
+argue that cross-country growth models with multiple equilibria can exhibit threshold effects. In addition, Khan and Senhadji (2001) examine the existence of threshold effects
+in the relationship between inflation and growth. In empirical finance, Pesaran and Pick
+(2007) argue that the effect of financial contagion (see, e.g. Forbes and Rigobon, 2002)
+can be described as a discontinuous threshold effect, hence testing for threshold effects
+implies testing for the presence of financial contagion. In biostatistics, dose-response models are typically specified with some unknown threshold parameters (see, e.g. Cox, 1987;
+Schwartz et al., 1995). In epidemiology, logistic regressions with unknown change-points
+are used to model the relationship between the continuous exposure variable and disease
+risk (see Pastor and Guallar, 1998; Pastor-Barriuso et al., 2003).
+We consider a test of no threshold effect against the presence of threshold effects. That
+is, the null and alternative hypotheses are that
+H0 : α0 = 0 for any γ0 ∈ Γ vs. H1 : α0 6= 0 for some γ0 ∈ Γ.
+In general, unknown parameters in (1.2) are identifiable under the alternative hypothesis;
+however, the threshold parameter γ0 is not identified under the null hypothesis. This feature
+that the threshold parameter is not identified under the null hypothesis is an example of
+the so-called “Davies problem” (see Davies, 1977, 1987).
+As common in the literature (see, e.g., Andrews and Ploberger, 1995; Hansen, 1996;
+Andrews, 2001), we develop our tests following Roy’s union-intersection principle (Roy,
+1953) to deal with the Davies problem. Specifically, in our setup, we suppose that there
+exist an objective function and a corresponding extreme estimator for the null hypothesis
+
+<-----Page 4----->4
+
+LEE, SEO, AND SHIN
+
+of no threshold model and those for the alternative hypothesis of a threshold model. Then
+our test statistic is based on the difference between the maximum values of the objective
+functions under the null and alternative hypotheses. This test statistic can be viewed as a
+sup-likelihood-ratio (LR)-type statistics.
+The main objective of this article is to provide a general testing framework in regression
+models using the sup-LR-type statistic under weak conditions. Most of the prior literature
+has focused mainly on applications in time series analysis (see, e.g., Tong, 1990; Chan, 1993;
+Andrews and Ploberger, 1994; Hansen, 1996; Cho and White, 2007). More recently, threshold models have been considered for nonparametric models (e.g. Delgado and Hidalgo,
+2000), for panel data models (e.g. Hansen, 1999), for transformation models (e.g. Pons,
+2003; Kosorok and Song, 2007), and for binary response models (e.g. Lee and Seo, 2008),
+among others.
+In this article, we focus on cross-sectional applications and aim to provide a unifying testing framework that includes objective functions that are sufficiently different from standard
+log-likelihood functions. For example, we consider an objective function for the maximum
+score estimator (Manski, 1975, 1985), and also consider an objective function based on
+U-processes such as the maximum rank correlation estimator (Han, 1987). To our best
+knowledge, we are the first to propose tests for threshold effects that can include maximum
+score and maximum rank correlation estimators as special cases.
+
+1.1. Related Literature. Although the sup-LR-type test statistic is well known in the
+literature, our method for establishing the asymptotic null distribution is new and nonstandard. The standard approach in the literature for obtaining the asymptotic null distribution
+requires that there exist a certain quadratic approximation to the objective function (see,
+e.g., Andrews, 2001; Liu and Shao, 2003; Zhu and Zhang, 2006; Song et al., 2009). For example, Andrews (2001) assumes that the objective function has a quadratic expansion in
+identifiable parameters for each value of a nuisance parameter that is unidentified under the
+null hypothesis. In this article, we provide an alternative, novel method that can be used
+
+<-----Page 5----->TESTING FOR THRESHOLD EFFECTS
+
+5
+
+to establish the asymptotic null distribution, even when the usual quadratic approximation
+such as one in Andrews (2001) is intractable (see Section 3 for details). For example, no
+existing method can be applied to the objective function for the maximum score estimator.
+However, it is worth noting that when quadratic approximations are available, Andrews
+(2001) covers a more general case such as one where parameter vectors may lie on the
+boundary of the parameter space under the null hypothesis.
+In the literature, there exist articles that establish asymptotic distributions for likelihood
+ratio types of statistics, without requiring usual asymptotic quadratic approximations. For
+example, Fan et al. (2000) establish that Wilks results hold as long as likelihood contour
+sets are fan-shaped. As a result, they show that the likelihood ratio statistics can still be
+asymptotically chi-squared, even if the maximum likelihood estimator is not asymptotically normal. In addition, Zhang and Li (1993) develop an empirical process approach to
+deriving the asymptotic null distribution of the sup-LR-type statistics without requiring
+the usual quadratic approximation to the likelihood function, using the general result in
+Zhang and Cheng (1989). Their approach is closely related to ours in that it employs the
+empirical process method; however, their method is different from ours in the sense that
+they focus on the case when the objective function is a likelihood function and when the
+class of likelihood functions is assumed to be Hölder continuous in parameters. Again, neither Fan et al. (2000) nor Zhang and Li (1993) can include our maximum score estimator
+example as a special case.
+
+1.2. Structure of the Paper. The remainder of the article is as follows. In Section 2,
+we provide an informal description of our test statistic and a couple of examples. Section
+3 provides an informal overview of our method for obtaining the asymptotic null distribution. Section 4 illustrates the usefulness of our test by applying it to real data used by
+Card et al. (2008). Formal results are given in Section 5 and they are illustrated in Section
+6. A summary of Monte Carlo simulation results are provided briefly in Section D. In
+Section 8, we provide some concluding remarks. All the proofs, some additional theoretical
+
+<-----Page 6----->6
+
+LEE, SEO, AND SHIN
+
+results, and details of Monte Carlo experiments are contained in the online supplementary
+materials.
+
+2. The Test Statistic
+This section describes our test statistic. To develop a general testing framework without
+being tied down to a particular statistical model, we suppose that under the null hypothesis,
+the remaining unknown parameters in (1.2) can be estimated by optimizing a particular
+objective function and also that under the alternative hypothesis, all unknown parameters including α0 can be estimated by optimizing a suitable objective function. In other
+words, we develop our test statistic based on the distance between optimized restricted and
+unrestricted objective function values.
+To be more specific, let Qn : Θ ⊗ Γ 7→ R denote an objective function of interest based on
+a random sample {(Yi , Wi ) : i = 1, . . . , n}. For a given γ ∈ Γ, let θ̂ (γ) denote an estimator
+
+
+of θ0 that maximizes the objective function Qn (θ, γ). Define Qn (γ) := Qn θ̂ (γ) , γ to be
+
+a profiled objective function and let
+
+γ̂ = argmax Qn (γ) , θ̂ = θ̂ (γ̂) , and Q̂n = Qn (γ̂) .
+γ
+
+In addition, let
+β̃ = argmax Qn (θ, γ) and Q̃n = max Qn (θ, γ) .
+β:α=0
+
+β:α=0
+
+Recall that Qn does not depend on γ when α = 0. That is, Q̃n is the maximum value of
+the objective function under the null hypothesis and Q̂n is the maximum value without
+imposing the null hypothesis.
+Our test statistic is based on the difference between Q̂n and Q̃n , analogous to the likelihood ratio (LR) statistic. Define the quasi-LR (QLR) statistic by
+QLRn =
+
+rn2
+
+
+
+
+
+Q̂n − Q̃n ,
+
+<-----Page 7----->TESTING FOR THRESHOLD EFFECTS
+
+7
+
+where rn is a rate of convergence in probability of θ̂ (γ) for a given γ. Let
+h
+i
+QLRn (γ) = rn2 Qn (γ) − Q̃n
+for each γ, and note that
+QLRn = sup QLRn (γ) .
+γ∈Γ
+
+Thus, the statistic QLRn can be viewed as a sup LR-type statistic. This statistic is relatively easier to implement and analyze than some alternative statistics, e.g. a sup Wald
+test statistic because it would not be straightforward to studentize the latter and to show
+the uniform tightness of α̂ (γ) in some cases, e.g. in the maximum score estimation for
+binary response models. Also, we expect that the objective-function-based statistic would
+have better finite sample performance as it is more immune to local maxima problems.
+We consider two types of Qn (θ, γ): the first type is a sample mean statistic and the
+second type is a U-statistic. For the first case, the objective function has the form
+n
+
+1X
+q (Yi , Wi ; θ, γ) ,
+Qn (θ, γ) =
+n i=1
+
+(2.1)
+
+where q is a known function up to parameters θ and γ. For example, the maximum score
+estimator maximizes Qn (θ, γ) with
+q (y, w; θ, γ) = (2y − 1) 1 {g (w, θ, γ) ≥ 0} .
+In this example, the rate of convergence is rn = n1/3 . For the second case, the objective
+function has the form
+(2.2)
+
+Qn (θ, γ) =
+
+X
+2
+χ (Yi , Wi , Yj , Wj ; θ, γ) ,
+n(n − 1) 1≤i<j≤n
+
+where χ is again a known function up to parameters, and is symmetric in the sense that
+χ (yi , wi , yj , wj ; θ, γ) = χ (yj , wj , yi , wi ; θ, γ) . For example, the maximum rank correlation
+
+<-----Page 8----->8
+
+LEE, SEO, AND SHIN
+
+estimator maximizes Qn (θ, γ) with
+χ (y1 , w1 , y2, w2 ; θ, γ) = 1 {y1 > y2 } 1 {g (w1 , θ, γ) > g (w2 , θ, γ)}
++ 1 {y1 < y2 } 1 {g (w1 , θ, γ) < g (w2 , θ, γ)} .
+In this example, rn = n1/2 . In both cases, we assume that q or χ depends on (θ, γ) only
+through the regression function g.
+Additional examples include the maximum likelihood estimator of the probit (or logit)
+model, the quantile regression estimator (see Koenker, 2005, for the comprehensive treatment of the methodology), and the partial maximum likelihood estimator of the proportional hazard model (see Cox, 1972, 1975) in the first class, and various rank correlation
+based estimators such as the monotone rank estimator (Cavanagh and Sherman, 1998) and
+the pairwise rank estimator (Abrevaya, 1999) in the second class.
+
+3. Informal Overview of the Results
+This section provides an informal overview of our method for obtaining the asymptotic
+null distribution. Formal results are given in Section 5. The main idea is to represent
+our test as a continuous functional of an empirical process for a certain transformation of
+objective functions of interest without referring to the estimators under the null and alternative hypotheses. Therefore, our method for obtaining the asymptotic null distribution
+does not require an expansion of the objective functions, and can be used even in cases
+when the usual quadratic approximation is unavailable or difficult to obtain. In general, the
+asymptotic null distribution is not pivotal; however, a method for computing asymptotic
+p-values is illustrated with a couple of examples (subsampling is another option).
+In what follows, we use the conventional notation in empirical process theory. Denote
+by P the common probability measure, by Pn the empirical measure of the random sample
+of size n from P, and by Gn the empirical process indexed by a class F of functions q such
+√
+that Gn q = n (Pn − P) q.
+
+<-----Page 9----->TESTING FOR THRESHOLD EFFECTS
+
+9
+
+To provide the main idea behind our method, we focus on M-estimation, that is the
+objective function has the form (2.1). Define
+mξ,γ = qθ,γ − q̃b ,
+where ξ = (θ0 , b0 )0 , qθ,γ = q (y, w; θ, γ) , and q̃b = q(b0 ,0)0 ,γ . Note that q̃b is the same for any
+γ and thus it is a function of b only. We have introduced the index b to denote arguments
+for β0 in the objective function with the restriction α = 0 to distinguish this from the index
+β that denotes arguments for β0 in the unrestricted objective function.
+Also, note that qθ,γ is the same for all γ if θ = θ0 , using the fact that α0 = 0 under H0 .
+Thus, under H0 , qθ0 ,γ = q̃β0 , and when b is restricted to β0 ,
+mξ,γ = qθ,γ − qθ0 ,γ .
+Similarly, when θ is fixed at θ0 ,
+mξ,γ = qθ0 ,γ − q̃b .
+It now follows that
+QLRn =
+(3.1)
+
+=
+
+rn2
+rn2
+
+
+
+
+
+sup Pn qθ,γ − sup Pn q̃b
+θ,γ
+
+b
+
+
+
+
+
+sup Pn mξ,γ − sup (−Pn mξ,γ ) ,
+
+ξ,γ:b=β0
+
+ξ,γ:θ=θ0
+
+which is a continuous transformation of rn2 Pn mξ,γ .
+Note that since ξ := (θ0 , b0 ), b is still a free parameter after fixing θ at θ0 and also θ is
+still a free parameter after fixing b = β0 . That is, we treat θ and b separate parameters.
+The reason why mξ,γ is defined in this way is to write the QLR test as a continuous
+transformation of an empirical process for mξ,γ . Note also that mξ0 ,γ = 0 for any γ, where
+ξ0 = (θ00 , β00 )0 . Then the convergence of rn2 Pn mξ,γ can be derived using the empirical process
+
+<-----Page 10----->10
+
+LEE, SEO, AND SHIN
+
+theory through the decomposition
+(3.2)
+
+r2
+rn2 Pn mξ,γ = √n Gn mξ,γ + rn2 Pmξ,γ .
+n
+
+Since the supremum is obtained at θ = θ̂ (γ) for each γ and at b = β̃, respectively, with
+the convergence rate rn , we examine a rescaled version of the process in (3.2) to obtain the
+asymptotic null distribution.
+3.1. Example 1: Probit. We use the probit model as our first illustrative example. Define
+Wγ := (X0 , Z0 1{T > γ})0 . The function q(y, w; θ, γ) for the probit model has the form
+(3.3)
+
+q (y, w; θ, γ) = y log Φ (g (w, θ, γ)) + (1 − y) log Φ (−g (w, θ, γ)) ,
+
+where Φ (·) is the cumulative distribution function (CDF) of the standard normal distribution and g (W, θ, γ) = Wγ0 θ. It will be shown formally in Section 6 that the limiting
+distribution of the test statistic is the supremum of a chi-square process indexed by γ as
+in (5.10) . Let φ(·) denote the probability density function of the standard normal distri
+
+bution. Let e = (2Y − 1) φ (X0 β0 )/Φ ((2Y − 1) X0 β0 ) and V (γ) = E −e2 Wγ Wγ0 . Also,
+let G denote a Gaussian process with the covariance kernel
+
+
+
+K (γ1 , γ2 ) = E e2 Wγ1 Wγ0 2 .
+Then, the asymptotic distribution of the QLRn test becomes
+(3.4)
+
+
+
+1
+0
+−1
+0 −1
+sup G(γ) V (γ) G(γ) − G1 Vβ G1 ,
+2 γ
+
+where G1 and Vβ denote the first kβ elements of G and the first kβ × kβ block of V (γ),
+respectively. Here, kβ denotes the dimension of β.
+Note that we cannot tabulate the critical values due to the nonstandard asymptotic
+distribution and need a simulation method to conduct the testing procedure. For example,
+we can adopt the p-value transformation method as in Hansen (1996). The basic idea is to
+approximate the asymptotic distribution by simulating the Gaussian process, which is the
+
+<-----Page 11----->TESTING FOR THRESHOLD EFFECTS
+
+11
+
+empirical process of the score function in our case. For each i = 1, . . . , n, let
+∇θ q̂i = Wγ,i (2Yi − 1)
+∇b q̃i = Xi (2Yi − 1)
+
+0
+φ(Wγ,i
+θ̂(γ))
+0
+Φ[(2Yi − 1)Wγ,i
+θ̂(γ)]
+
+,
+
+φ(X0i β̃)
+,
+Φ[(2Yi − 1)X0i β̃]
+
+where Wγ,i := (X0i , Z0i 1{Ti > γ})0 . We now carry out the following steps to simulate the
+p-value.
+(1) to generate i.i.d. N (0, 1) random variables {vij }ni=1 for j = 1, ..., J for a sufficiently
+large J;
+(2) to simulate unrestricted and restricted score functions, respectively:
+n
+
+Gjn,θ
+
+n
+
+1 X
+1 X
+(γ) = √
+∇θ qbi (γ) vij and Gjn,b = √
+∇b qei vij ;
+n i=1
+n i=1
+J
+
+(3) to simulate test statistics {Dnj }j=1 using the simulated score functions above and
+the sample analogue of the asymptotic distribution in (3.4):
+Dnj
+
+i
+1h j
+0 b−1 j
+j0 b−1 j
+Gn,θ (γ) Iθ,γ Gn,θ (γ) − Gn,b Ib Gn,b
+= sup
+γ 2
+
+P
+P
+−1
+where Ibθ,γ
+= (1/n) ni=1 ∇θ qbi (γ) ∇θ qbi (γ)0 and Ibb−1 = (1/n) ni=1 ∇b qei ∇b qei0 , respectively;
+
+(4) to set pbJn = (1/J)
+
+n
+o
+j
+bn .
+1
+D
+>
+D
+n
+j=1
+
+PJ
+
+3.2. Example 2: Quantile Regression. We now consider the quantile regression model.
+The function q(y, w; θ, γ) for the quantile regression model has the form
+(3.5)
+
+q(y, w; θ, γ) = −ρτ [y − g(w, θ, γ)] ,
+
+where ρτ (u) := u(τ − 1(u < 0)) is the ‘check’ function and g (W, θ, γ) = Wγ0 θ. As in the
+probit model, it will be shown formally in Section 6 that the limiting null distribution of
+
+<-----Page 12----->12
+
+LEE, SEO, AND SHIN
+
+the QLR statistic is characterized by
+
+
+1
+0
+−1
+0 −1
+sup G(γ) V (γ) G(γ) − G1 V1 G1 ,
+2 γ
+
+(3.6)
+
+where G is a mean-zero Gaussian process with covariance kernel
+K (γ1 , γ2) = τ (1 − τ )EWγ1 Wγ0 2 ,
+
+(3.7)
+
+
+
+V (γ) is a matrix such that V (γ) = E Wγ Wγ0 fY |W (X0β0 |W) , and G1 and V1 denote the
+first k1 elements of G and the first kβ ×kβ block of V (γ), respectively. As before, kβ denotes
+
+the dimension of β. Now the p-values can be simulated in the following way:
+
+(1) to generate i.i.d. Unif [0, 1] random variables {uij }ni=1 for j = 1, ..., J for a sufficiently
+large J;
+(2) to simulate the following functions, respectively:
+n
+
+Gjn
+
+n
+
+1 X
+1 X
+(γ) = √
+Wγ,i [τ − 1(uij ≤ τ )] and G̃jn = √
+Xi [τ − 1(uij ≤ τ )];
+n i=1
+n i=1
+J
+
+(3) to simulate test statistics {Dnj }j=1 by:
+Dnj = sup
+γ
+
+where
+
+n
+1 X
+0
+b
+V (γ) =
+Wγ,i Wγ,i
+K
+nhn i=1
+
+(3.8)
+
+(4) to set
+
+i
+1h j
+e −1 G̃j
+Gn (γ)0 Vb (γ)−1 Gjn (γ) − G̃j0
+V
+n
+n
+2
+
+n
+1 X
+e
+Xi X0i K
+V =
+nhn i=1
+
+pbJn
+
+= (1/J)
+
+Yi − X0i β̃
+hn
+!
+Yi − X0i β̃
+;
+hn
+
+!
+
+, and
+
+n
+o
+j
+b
+j=1 1 Dn > Dn .
+
+PJ
+
+In step (3), K is a kernel function and hn is a bandwidth. Recall that β̃ is the estimator
+of β0 under the null. When the regression error is independent of the regressors, then we
+
+<-----Page 13----->TESTING FOR THRESHOLD EFFECTS
+
+13
+
+can estimate Vb (γ) and Ve by
+# "
+" n
+!#
+n
+0
+X
+X
+1
+1
+Y
+−
+X
+β̃
+i
+i
+0
+Vb (γ) =
+Wγ,i Wγ,i ×
+K
+, and
+n i=1
+nhn i=1
+hn
+(3.9)
+# "
+!#
+" n
+n
+0
+X
+X
+1
+Y
+−
+X
+β̃
+1
+i
+i
+Xi X0i ×
+K
+.
+Ve =
+n i=1
+nhn i=1
+hn
+4. Application: Tipping in Segregation
+
+We apply the proposed testing procedure to check whether there exists a tipping point
+for segregation. Using U.S. Census tract-level data, Card et al. (2008) recently showed
+that the neighborhood’s white population decreases substantially when the minority share
+in the area exceeds a tipping point (or threshold point).
+In this application, we use a subsample of the dataset originally used by Card et al.
+(2008). Among three different base years, we choose a sample of which base year is 1980.
+Next we pick four major cities and tested if there is a tipping point. To illustrate our
+testing procedure, we first consider the probit model. We suppose that data {(Yi , Xi , Ti ) :
+i = 1, . . . , n} are generated from
+Dwi = β0 + α0 1{Ti > γ0 } + X0i δ0 + i ,
+Yi = 1 {Dwi > 0} ,
+where Dwi is the ten-year change in the neighborhood’s white population, Ti is the base-year
+minority share in the neighborhood, and Xi is a vector of six tract-level control variables.
+The X variables include the unemployment rate, the log of mean family income, the fractions of single-unit, vacant, and renter-occupied housing units, and the fraction of workers
+who use public transport to travel to work. See Card et al. (2008) for details on the dataset
+and variables. In the original dataset, Dwi is observed but for the time being, we treat this
+as a latent variable to illustrate our testing procedure for the probit model. The error term
+i follows the standard normal distribution. Thus, the null and alternative hypotheses in
+
+<-----Page 14----->14
+
+LEE, SEO, AND SHIN
+
+our setting are
+H0 : α0 = 0 and H1 : α0 6= 0,
+
+(4.1)
+respectively.
+
+The four cities we have chosen are Boston, Chicago, New York, and Philadelphia. The
+p-values are calculated by the simulation method described in Section 3 with 1,000 simulations. For estimating a tipping point (γ) under the alternative, we use the grid search
+method. The grid points are constructed from Ti that fell in the interval [l, 50%], where l
+is the maximum of 5% and the 5th percentile of {Ti }.
+Table 1. Test for Tipping in Segregation: Probit Model
+
+City
+Boston, MA
+Chicago, IL
+New York, NY
+Philadelphia, PA
+
+obs.
+
+p-value
+
+700
+1813
+2430
+1300
+
+2.8%
+0.0%
+0.0%
+0.0%
+
+Tipping
+EX [∆Pr(y = 1|X)]
+Points (γ̂)
+46.80
+-0.25
+48.74
+-0.34
+14.01
+-0.09
+39.64
+-0.30
+
+We summarize the result in Table 1. The last column of each table shows the average
+changes in probability that the white population would increase when the minority share
+crosses the tipping point. We calculate this average marginal effect as
+EX [∆Pr(y = 1|X)] =
+
+1 X
+ˆ	
+Φ(β̂ + X0i δ̂) − Φ(β̂ + α̂ + X0i δ)
+n i
+
+where Φ(·) is the CDF of the normal distribution.
+First of all, testing results show that there exist tipping points in all four cities. Second,
+the tipping points vary from 14.01% in New York to 48.74% in Chicago. This shows that
+cities are heterogeneous in whites’ preferences, among other things, implying that tolerance
+levels against minority shares are quite different across different cities. Third, the average
+marginal effects are also different across cities. New York shows that the probability drops
+less than 10%. Meanwhile, Chicago shows that it drops more than 30%.
+
+<-----Page 15----->TESTING FOR THRESHOLD EFFECTS
+
+15
+
+We now illustrate our testing procedure for the median regression model using observed
+Dwi directly, instead of Yi . We now suppose that data {(Dwi , Xi , Ti ) : i = 1, . . . , n} are
+generated from
+Dwi = β0 + α0 1{Ti > γ0 } + p(Ti ) + X0i δ0 + i ,
+where median(i |Xi , Ti ) = 0 and p(T ) is the 4th-order polynomial of T . Note that Card et al.
+(2008) considered the mean regression model (that is, E(i |Xi , Ti ) = 0) with the 4th-order
+polynomial in p(T ). The null and alternative hypotheses are the same as those in (4.1).
+The p-values are calculated by the simulation method described in Section 3 with 2,000
+simulations. In the application, we estimated Vb (γ) and Ve by (3.8) since we do not know
+
+whether regression errors are independent of regressors. For estimating a tipping point (γ)
+
+under the alternative, we used the grid search method. The grid points were constructed
+from Ti that fell in the interval [l, 60%], where l is the maximum of 5% and the 5th percentile
+of {Ti }.
+Table 2. Median regression model with the 4th-order polynomial
+
+City
+Boston, MA
+Chicago, IL
+New York, NY
+Philadelphia, PA
+
+obs.
+
+p-value
+
+700
+1813
+2430
+1300
+
+4.7%
+2.9%
+1.5%
+1.2%
+
+Tipping Size of the
+Point (γ̂) Jump (α̂)
+51.75
+-17.640
+48.45
+-13.929
+23.70
+-7.309
+39.65
+-11.599
+
+We summarize the result in Table 2. Testing results show that there exist tipping points
+in all four cites at the 5% level. The tipping points vary across these cities and are not
+much different from those from the probit model, especially in Chicago and Philadelphia.
+5. The Asymptotic Null Distribution
+This section provides asymptotic theory for obtaining the asymptotic null distribution.
+Our assumptions are quite general and allow for a nonsmooth objective function Qn , which
+
+<-----Page 16----->16
+
+LEE, SEO, AND SHIN
+
+may not permit usual quadratic approximations. As in Section 3, we focus on the Mestimation in this section. In the online supplements, we provide asymptotic theory for the
+case when objective functions are based on U-processes and verify regularity conditions for
+the maximum rank correlation (MRC) estimator. The consistency and local power of the
+test are included in the online supplements as well.
+5.1. M-estimation. This section considers the first case when the objective function has
+the form in (2.1). Our estimators need not be exact maximizers, which might have measurability issues. Thus, we consider an estimator θ̂γ for a given γ ∈ Γ such that
+
+
+
+Qn θ̂γ , γ = sup Qn (θ, γ) + opγ rn−2 ,
+θ∈Θ
+
+where opγ (1) indicates the sequence under consideration is op (1) uniformly over γ ∈ Γ. We
+define oγ (1) and Opγ (1) similarly. Also, let β̃ satisfy
+ 
+
+Q̄n β̃ = sup Q̄n (β) + op rn−2 ,
+β∈B
+
+where Q̄n denotes the restrictive objective function with α = 0.
+To derive the asymptotic distribution of the statistic QLRn , we impose some high-level
+assumptions, which will be verified later for each example. We first introduce some notation.
+Let
+(5.1)
+
+Fδ = {qθ,γ − qθ0 ,γ : |θ − θ0 | < δ, γ ∈ Γ} ,
+
+where |·| is the Euclidean norm for a vector (we use the notation k·k to indicate a generic
+norm for a function space). An envelope function of a class F is a function F such that
+PF 2 < ∞, |f (x)| ≤ F (x) for any x and f ∈ F . An envelope function for Fδ is denoted
+by Fδ .
+Weak convergence of the statistic QLRn draws on the size of the class Fδ measured by
+entropy with or without bracketing. Let N (ε, F , k·k) and N[ ] (ε, F , k·k) denote covering and
+bracketing numbers, respectively. The logarithm of the covering number is called entropy
+
+<-----Page 17----->TESTING FOR THRESHOLD EFFECTS
+
+17
+
+(without bracketing) and that of the bracketing number is called entropy with bracketing.
+1/r
+R
+We mostly use the Lr (Q)-norm, kf kQ,r =
+|f |r dQ
+, where Q is a probability measure.
+
+When the entropy without bracketing is concerned, it is common that the required condition
+is in terms of uniform entropy, supQ log N (ε, F , Lr (Q)) , where the supremum is taken
+over all the possible probability measures on the sample space, with 0 < QF r < ∞. While
+
+the measurability is an issue in the formal discussion of uniform entropy conditions, it
+hardly matters in applications. We assume measurability throughout the article. See e.g.
+van der Vaart and Wellner (1996) for more general discussions on the empirical process
+method.
+We now present a set of assumptions, whose details will be discussed later on.
+Assumption 5.1 (Uniform Consistency). θ̂ (γ) = θ0 + opγ (1) and β̃ = β0 + op (1) .
+A set of sufficient conditions for the uniform consistency in Assumption 5.1 is that
+(i) uniform convergence of the objective function Qn ; (ii) separability of the true value.
+Formally, we present it as Lemma 5.2 in Section 5.2.
+
+
+Assumption 5.2 (Uniform Rates of Convergence in Probability). rn β̃ − β0 = Op (1) and
+
+
+rn θ̂ (γ) − θ0 = Opγ (1) .
+Most often, the rate rn in Assumption 5.2 is already known for linear models and rn must
+be the same for θ̂ (γ) for each γ since g (w, θ, γ) is a linear function in θ. Thus, Assumption
+5.2 has mainly to do with verifying the uniformity. However, the entropy conditions below
+in Assumption 5.4 are almost sufficient to ensure it, as will be shown in Lemma 5.3 in
+Section 5.2.
+In what follows, fix 0 < K < ∞ and assume the following.
+Assumption 5.3 (Lindeberg Condition and L2 -Continuity). For any η > 0,
+rn4
+2
+= O (1) ,
+PFK/r
+n
+n
+
+ 2
+√
+rn
+rn4
+2
+PFK/rn 1 √ FK/rn > η n = o (1) .
+n
+n
+
+<-----Page 18----->18
+
+LEE, SEO, AND SHIN
+
+In addition, for any decreasing sequence ηn → 0,
+(5.2)
+
+sup
+|h1 −h2 |<ηn
+|γ1 −γ2 |<ηn
+
+2
+rn4
+P qθ0 +h1 /rn ,γ1 − qθ0 +h2 /rn ,γ2 = o (1) .
+n
+
+Assumption 5.3 is a minimal set of conditions on the moments of the envelope function F
+and on the smoothness of the limit objective function. These are straightforward to verify.
+Assumption 5.4 (Entropy Conditions). For some δ0 > 0, assume that
+(5.3)
+
+Z
+
+r
+
+1
+
+sup sup
+0 δ<δ0
+
+Q
+
+Z
+
+r
+
+
+
+log N ε kFδ kQ,2 , Fδ , L2 (Q) dε < ∞
+
+or
+(5.4)
+
+1
+
+sup
+
+0 δ<δ0
+
+
+
+log N[ ] ε kFδ kP,2 , Fδ , L2 (P ) dε < ∞.
+
+It is not always trivial to verify these entropy conditions. However, there are wellknown classes of functions that satisfy either of the conditions. For example, VapnikČervonenkis (VC) classes of functions have the covering numbers that are bounded by a
+polynomial in ε−1 , thus satisfying (5.3) as long as the VC indexes are bounded in n. The
+bracketing numbers for classes of smooth functions, monotone functions, convex functions,
+or Lipschitz functions are known, see e.g. Section 2.7 of van der Vaart and Wellner (1996).
+In particular, the bracketing number of the collection of Lipschitz functions are bounded
+by the covering number of the index set, thus, being at most the polynomial in (1/ε)p ,
+where p is the dimension of the parameter space.
+Partition h into (h0θ , h0b )0 according to the dimensions of θ and b, respectively.
+Assumption 5.5 (Finite-Dimensional Weak Convergence). Let h1n = ξ0 + h1 rn−1 and
+h2n = ξ0 + h2 rn−1 . Then, for any K > 0, any γ1 , γ2 ∈ Γ, and any h1 and h2 whose Euclidean
+norms are less than K,
+rn4
+P (mh1n ,γ1 − mh2n ,γ2 )2 → E (G1 (h1 , γ1 ) − G1 (h2 , γ2 ))2 ,
+n
+
+<-----Page 19----->TESTING FOR THRESHOLD EFFECTS
+
+19
+
+where G1 is a zero-mean Gaussian process. Furthermore, let hn = ξ0 + hrn−1 . Then
+rn2 Pmhn ,γ −→ G2 (h, γ)
+uniformly in h and γ over any compact set, for some non-stochastic G2 . Finally, G1 and
+G2 satisfy that
+G2 (h, γ)
+EG1 (h, γ)2
+→ 0 and
+→ −∞
+r
+|hθ |
+|hθ |r+1/2
+
+(5.5)
+
+as |hθ | → ∞, for any γ, hb , and some r > 0.
+The limit process over which the supremum will be taken is characterized by the terms
+given in Assumption 5.5. Considering the definition of mξ,γ , the Gaussian process G1 (h, γ)
+is likely to be degenerate in h as shown in later examples. Condition (5.5) in Assumption
+5.5 guarantees that the restricted suprema (as in the definition of QLRn in (3.1)) of G1 +G2
+are Op (1). When G2 (h, γ) is quadratic in h and G1 (h, γ) is linear in h for a given γ, then
+one can choose r = 1 in (5.5).
+We now present our main theorem.
+
+Theorem 5.1. Under Assumptions 5.1-5.5,
+(5.6)
+
+QLRn ⇒ sup
+γ
+
+
+
+
+
+sup G (h, γ) − sup (−G (h, γ)) ,
+
+h:hb =0
+
+h:hθ =0
+
+where G = G1 + G2 .
+While the asymptotic null distribution of QLRn is well-defined under the restriction in
+Assumption 5.5, the asymptotic critical values cannot be tabulated due to the unknown covariance kernel of G1 . Therefore, we need to simulate critical values or asymptotic p-values.
+Alternatively, we need to use resampling methods such as the bootstrap or subsampling.
+Subsampling works more generally including all the examples we examined in this article.
+When we can solve out the maximizers explicitly for the expression inside the bracket in
+
+<-----Page 20----->20
+
+LEE, SEO, AND SHIN
+
+(5.6), simulating the critical values in the spirit of Hansen (1996) can also be applied. Two
+examples in Section 3 belong to this case.
+5.2. Low-Level Sufficient Conditions for Assumptions. This section provides lowlevel sufficient conditions for Assumptions 5.1-5.5. First, we present the following lemma
+that can be used to verify Assumption 5.1.
+Lemma 5.2. Let F be a class of functions {qθ,γ : (θ, γ) ∈ Θ × Γ} with envelope F such that
+PF < ∞. Suppose either of the following two conditions is satisfied: (i) N[ ] (ε, F , L1 (P)) <
+∞ for every ε > 0; (ii) For FM defined as the class of functions f 1 {F ≤ M} for f ∈ F ,
+log N (ε, FM , L1 (Pn )) = op (n) for every ε and M > 0. Then,
+p
+
+sup |Qn (θ, γ) − Q (θ, γ)| −→ 0,
+θ,γ
+
+where Q (θ, γ) = Pqθ,γ . Furthermore, assume that
+(5.7)
+
+
+
+
+
+sup sup {Q (θ0 , γ) − Q (θ, γ)} > 0
+γ∈Γ
+
+θ ∈Θ
+/ 0
+
+for every open set Θ0 that contains θ0 . Then, θ̂ (γ) − θ0 = opγ (1) .
+While there are different ways to present sufficient conditions for Assumption 5.1, we
+choose this way as the subsequent discussion also draws on the entropy conditions. The
+entropy conditions in Lemma 5.2 are automatically satisfied if Assumption 5.4 holds. Thus,
+separability is the one we need to check. Recall that Q (θ0 , γ) is the same for all γ since γ
+is not identified under the null. However, once we establish the consistency for a given γ
+and that Q (θ0 , γ) > supθ∈Θ
+/ Q (θ, γ), the verification of the separability is not very difficult
+since γ appears only through an indicator function.
+We now consider sufficient conditions for Assumption 5.2. The following lemma generalizes a standard method in van der Vaart and Wellner (1996) for obtaining the convergence
+rate to the case where a uniform rate is needed due to the presence of a nuisance parameter.
+See Andrews (2001) for a different approach when the quadratic approximation is plausible.
+
+<-----Page 21----->TESTING FOR THRESHOLD EFFECTS
+
+21
+
+Lemma 5.3. Assume that for every θ in a neighborhood of θ0 ,
+sup P (qθ,γ − qθ0 ,γ ) ≤ −C |θ − θ0 |2 ,
+
+(5.8)
+
+γ
+
+for some finite constant C > 0 and that for every n and sufficiently small δ,
+(5.9)
+
+E sup sup |Gn (qθ,γ − qθ0 ,γ )| = O (φ (δ)) ,
+γ
+
+|θ−θ0 |<δ
+
+for a function φ such that φ (δ) /δ r is decreasing for some r < 2. If Assumption 5.1 holds,
+then
+
+
+
+
+
+rn θ̂ (γ) − θ0 = Opγ (1) ,
+for every rn such that rn2 φ (1/rn ) ≤
+be stated for δ = K/rn and φ (δ) =
+
+√
+
+√
+
+n for every n. If the rate rn is known, then (5.9) can
+
+n/rn2 .
+
+The first condition (5.8) is not difficult to verify. Often, Pqθ,γ is twice continuously
+differentiable at θ0 for all γ. In this case, a sufficient condition is the existence of nonsingular
+second derivative matrices at θ = θ0 whose maximum eigenvalues are uniformly bounded
+away from zero.
+The second condition (5.9) is implied by Assumptions 5.3 and 5.4. It is known that the
+left-hand side term in the equation (5.9) is bounded by the product of the L2 norm of the
+envelope function, P1/2 (Fδ2 ) , and the uniform entropy integral or the bracketing integral,
+which is defined respectively by
+sup
+Q
+
+or
+
+Z
+
+1
+
+0
+
+Z
+
+0
+
+1
+
+r
+
+r
+
+
+
+1 + log N ε kFδ kQ,2 , Fδ , L2 (Q) dε
+
+
+
+1 + log N[ ] ε kFδ kP,2 , Fδ , L2 (P) dε.
+
+See e.g. Theorems 2.14.1 and 2.14.2 in van der Vaart and Wellner (1996). These are
+bounded by Assumption 5.4. Thus, in case when the rate rn is not known a priori, it
+
+<-----Page 22----->22
+
+LEE, SEO, AND SHIN
+
+is typical that φ2 (δ) = PFδ2 yields the correct rate, leading to the rate as the solution of
+2
+∼ n. This is in fact the first condition in Assumption 5.3.
+rn4 PF1/r
+n
+
+We now provide sufficient conditions for Assumption 5.4. Many interesting examples
+feature the estimating function q in the form of Lipschitz of order r transformation in the
+sense that qθ,γ = q (y, g (w, θ, γ)) and
+|q (y, g (w; θ1 , γ1 )) − q (y, g (w, θ2 , γ2))| ≤ Lr (w) |g (w; θ1 , γ1 ) − g (w; θ2 , γ2)|r ,
+where Lr is square integrable in P. In this case, verification of the entropy conditions and
+the conditions on the envelope function is straightforward as in the following lemma.
+
+Lemma 5.4. Suppose that Fδ is a class of functions qθ,γ , which are Lipschitz of order
+r ∈ (0, 1] transformations, where |θ − θ0 | < δ and γ ∈ Γ. Then, for some δ0 > 0,
+Z
+
+1
+
+sup sup
+0 δ<δ0
+
+Q
+
+r
+
+
+
+log N ε kFδ kQ,2 , Fδ , L2 (Q) dε < ∞.
+
+Let φ (δ) = δ r . Then, there exists an envelope function Fδ such that for every η > 0,
+
+	
+lim φ−2 (δ) PFδ2 1 Fδ > ηδ −2 φ2 (δ) = 0.
+
+δ→0
+
+The lemma specifies the functional form of φ (δ) as δ r , resulting in the convergence rate
+rn = n1/(4−2r) , upon verifying conditions on Pqθ,γ . There are quite a few examples that are
+Lipschitz of order 1. They include the quantile regression model and the probit model in
+Section 3.
+If Pqθ,γ is twice continuously differentiable at θ = θ0 with a unique maximum at θ0 ,
+Assumptions 5.1 and 5.2 may be implied by other conditions as discussed above. Then,
+the following corollary is more convenient to apply than the main theorem. It provides
+conditions under which G2 (h, γ) is quadratic in h for a given γ and most applications
+belong to this case.
+
+<-----Page 23----->TESTING FOR THRESHOLD EFFECTS
+
+23
+
+Corollary 5.5. Suppose that the function Q (θ, γ) has a well-separated maximum θ0 in
+the sense of (5.7) and it is twice continuously differentiable at θ0 with a negative second
+derivative matrix, say −V (γ), whose maximum eigenvalues are bounded away from zero
+for all γ. Let Vβ denote the block of V (γ) that is associated with the second derivative with
+respect to β. Then, rn2 Pmhn ,γ −→ − 21 h0θ V (γ) hθ + 12 h0b Vβ hb = G2 (h, γ) , uniformly over any
+
+
+compact set. If Assumptions 5.3 and 5.4 hold with a sequence rn , then rn θ̂ (γ) − θ0 =
+
+
+Opγ (1) and rn β̃ − β0 = Op (1). If Assumption 5.5 holds as well, then
+QLRn ⇒ sup
+γ
+
+
+
+
+
+sup G (h, γ) − sup (−G (h, γ)) .
+
+h:hb =0
+
+h:hθ =0
+
+If in addition G1 (h, γ) is linear in h for a given γ, then a more explicit form of the
+asymptotic null distribution is available. By construction, we may write
+G1 (h, γ) = h0 G (γ) = (hβ − hb )0 G1 + hα G2 (γ) ,
+where G (γ) = G10 , G2 (γ)0
+
+0
+
+is a Gaussian process with some covariance kernel K(γ1 , γ2 ).
+
+Then, simple algebra shows that the limiting distribution of QLRn has the form
+(5.10)
+
+
+
+1
+0
+−1
+0 −1
+sup G(γ) V (γ) G(γ) − G1 Vβ G1 .
+2 γ
+
+Standard linear algebra allows us to write this as
+1
+sup G (γ)0 Hα (γ) Hα (γ)0 G (γ) ,
+2 γ
+where Hα (γ) is a full-column rank matrix whose rank is the dimension of α, say kα .
+Furthermore, if efficient estimators are used for both restricted and unrestricted models,
+then for each γ, Hα (γ)0 G (γ) is distributed as standard multivariate normal with dimension
+kα . Thus, 2QLRn converges in distribution to the supremum of a chi-square process indexed
+by γ. This is the case with the homoskedastic linear regression model with ordinary least
+squares estimators (Hansen, 1996) and also with maximum likelihood estimators for logit
+and probit models.
+
+<-----Page 24----->24
+
+LEE, SEO, AND SHIN
+
+6. Examples
+This section presents a few well-known statistical models as examples to illustrate how
+to check the regularity conditions given in Section 5.
+
+6.1. Maximum Score Estimation. The estimating function for the maximum score estimation is
+(6.1)
+
+q (y, w; θ, γ) = (2y − 1) 1 {x0 β + z0 α1 {t > γ} ≥ 0} .
+
+To check the entropy condition (5.3) in Assumption 5.4, we show that the class F of
+these functions qθ,γ , where θ and γ belong to any compact subset in the Euclidean space,
+is a VC class of functions. Indeed, the set {x0 β + z0 α1 {t > γ} ≥ 0} can be represented by
+union and intersection of half-spaces in the Euclidean space. Since half spaces are VC class
+of sets and the VC feature is preserved under unions and intersections, see Lemma 2.6.17
+in van der Vaart and Wellner (1996), the sets constitute a VC class, so do the indicator
+functions of the sets. Now, Fδ = {qθ,γ : |θ − θ0 | < δ, γ ∈ Γ} is also a VC class of functions
+of the same index at most as F . Thus, the covering numbers of FK/rn is bounded in a
+
+polynomial in (1/ε)−1 , not depending on n, and thus (5.3) is satisfied.
+
+To find an envelope function for Fδ , note that |qθ,γ − qθ0 ,γ | ≤ 1 and that it takes nonzero
+values only when x0 β0 and x0 β + z0 α1 {t > γ} take different signs. The latter implies that
+the distance between the two is greater than x0 β0 in absolute values. Thus,
+|x0 β0 | ≤
+
+max |x0 (β − β0 ) + z0 α1 {t > γ}| ≤ 2δ |x| ,
+
+θ:|θ−θ0 |≤δ
+
+which yields an envelope function
+Fδ = 1 {|x0 β0 | ≤ 2δ |x|} .
+
+<-----Page 25----->TESTING FOR THRESHOLD EFFECTS
+
+25
+
+It is shown in Theorem 6.1 below under some regularity conditions on P that this envelope
+function satisfies the conditions in Assumption 5.3 with the rate obtained in Kim and Pollard
+(1990) for β̃, that is, with rn = n1/3 .
+The following assumption is imposed, which is somewhat more restrictive than required
+to simplify the exposition. Let Wγ = (X0 , Z0 1{T > γ})0 .
+Assumption 6.1. (i) The parameter θ has unit length, that is, Θ is the surface of the unit
+sphere in Rk , and γ ∈ Γ, which is an open subset of the support of T.
+(ii) The distribution of U conditional on W = w, denoted by FU |W (·|w), is absolutely continuous with respect to Lebesgue measure and the corresponding conditional density is uniformly continuous and positive everywhere with probability one. In addition, FU |W (0|w) =
+0.5 for almost every w and it is continuously differentiable with respect to w.
+(iii) X has a continuously differentiable density pX (·) and the angular component of X,
+considered as a random element in the unit sphere, has a bounded, continuous density with
+respect to surface measure on the sphere. Furthermore, the density pX has compact support.
+R
+(iv) 1 {x0 β0 = 0} pW (w) d$ > 0, where $ denotes the Lebesque measure on {w : x0 β0 = 0} .
+(v) T is continuously distributed.
+
+The following theorem shows that conditions in Theorem 5.1 are satisfied.
+Theorem 6.1. Suppose Assumption 6.1 hold and h, h1 and h2 belong to the null space of
+ξ0 . Let ` (w; h1, h2 , γ1, γ2 ) be the sum of the lengths of two intervals (I1 − I2 ) and (I2 − I1 ) ,
+where I1 is the interval between wγ0 1 h1θ and wγ0 2 h2θ and I2 is the interval between x0 h1b and
+x0 h2b . Also, let
+
+(6.2)
+
+κ(w) := E [1 {g (W; θ0 , γ0 ) + U ≥ 0} − 1 {g (W; θ0 , γ0 ) + U < 0} |W = w]
+= 1 − 2FU |W [−g(w, θ0, γ0 )|w].
+
+Then, the covariance kernel of the limit Gaussian process G1 is characterized by
+2
+
+E (G1 (h1 , γ1) − G1 (h2 , γ2 )) =
+
+Z
+
+` (w; h1 , h2 , γ1, γ2 ) 1 {x0 β0 = 0} pW (w) d$,
+
+<-----Page 26----->26
+
+LEE, SEO, AND SHIN
+
+and
+Z 
+2 
+2
+0
+0
+G2 (h, γ) =
+(x hb ) − wγ hθ
+1 {x0 β0 = 0} [(∂/∂x0 ) κ (w) β0 ] pW (w) d$.
+Furthermore,
+QLRn ⇒ sup
+γ
+
+
+
+
+
+sup G (h, γ) − sup (−G (h, γ)) ,
+
+h:hb =0
+
+h:hθ =0
+
+where qθ,γ for QLRn is defined using (6.1) and G = G1 + G2 .
+Theorem 6.1 establishes the asymptotic null distribution for the maximum score estimation. The corresponding distribution is nonstandard and cannot be tabulated; however,
+statistical inference can be carried out by subsampling as in Delgado et al. (2001). Since
+without Theorem 6.1, it would be difficult to obtain the validity of subsampling, one of the
+merits of Theorem 6.1 is to provide the asymptotic validity of subsampling.
+
+6.2. The Probit Model. We now verify regularity conditions for the probit model. Note
+that the function q(y, w; θ, γ) in (3.3) is Lipschitz of order 1 transformation and twice
+continuously differentiable in θ. Therefore, applying Lemma 5.4 and Corollary 5.5, we
+only need to check the separability condition (5.7) and Assumption 5.5. We assume the
+following regularity conditions:
+
+Assumption 6.2. (i) The parameters θ and γ are in the interior of compact sets Θ and
+Γ where Γ is contained in an open subset of the support of T.
+
+
+(ii) For any γ, the matrix E Wγ Wγ0 exists and is nonsingular.
+(iii) T is continuously distributed.
+
+
+
+We first verify the separability condition. Let γ be given. Since E Wγ Wγ0 is nonsingu-
+
+lar, it is positive definite. This implies that Wγ0 θ0 6= Wγ θ for any θ 6= θ0 . Therefore, strict
+monotonicity of Φ (·) assures identification for each γ, which establishes the separability
+condition.
+
+<-----Page 27----->TESTING FOR THRESHOLD EFFECTS
+
+27
+
+Since q (·) is twice continuously differentiable, it follows from the discussion following
+Corollary 5.5 that the limiting distribution of the test statistic is the supremum of a chisquare process indexed by γ as in (5.10) . Then the desired result in (3.4) follows. Using
+identical arguments, we can obtain the null asymptotic distribution of the test statistic for
+the logit model. In general, similar arguments can apply to statistical models for which the
+test statistic can be constructed based on the maximum likelihood estimator.
+
+6.3. Quantile regression. Note that the function q(y, w; θ, γ) in (3.5) is Lipschitz of
+order 1 as a function of g(w, θ, γ). Therefore, the bracketing entropy condition (5.4) and
+the condition on the envelope function in Assumption 5.3 are satisfied due to Lemma 5.4.
+√
+Furthermore, rn = n. We verify the other conditions in Corollary 5.5.
+Assume that the density of Y conditional on W and that of T conditional on the other
+elements in W exist and are continuously differentiable with uniformly bounded derivatives.
+Let fY |W (·|w) denote the conditional density of Y given W = w. Then, Pqθ,γ is twice
+continuously differentiable in any (θ, γ) , implying the last condition in Assumption 5.3 is
+satisfied. Furthermore, G1 is linear in h as to be shown below. Thus, the limit distribution
+is characterized by (5.10) with
+
+
+V (γ) = E Wγ Wγ0 fY |W (X0 β0 |W) ,
+and a mean-zero Guassian process G with covariance kernel in (3.7). To see this, write
+∆τ (a) := ρτ (y − a) − ρτ (y − a0 ) − [1(y < a0 ) − τ ](a − a0 ).
+Then as in Pollard (1991), simple algebra yields that
+(6.3)
+
+|∆τ (a)| ≤ |a − a0 |1{|y − a0 | ≤ |a − a0 |}.
+
+Define
+ϕh,γ (y, w) := [1(y < x0 β0 ) − τ ] (x0 (hβ − hb ) + z0 hα 1{t > γ}) .
+
+<-----Page 28----->28
+
+LEE, SEO, AND SHIN
+
+By (6.3),
+nE |mhn ,γ − ϕhn ,γ |2
+(
+ 0 )
+
+
+0
+Wγ hθ 
+ 0 
+|X
+h
+|
+b
+0
+0
+0
+≤ E Wγ hθ  1 |Y − X β0 | ≤ √
++ E |X hb | 1 |Y − X β0 | ≤ √
+n
+n
+
+→ 0.
+
+Therefore, the covariance kernel is given by that of ϕh,γ by applications of Cauchy-Schwarz
+inequality, which is given by (3.7).
+Note that in this example, the asymptotic null distribution is not the supremum of a chisquare process indexed by γ. This is due to the fact that the quantile regression estimator
+is not an efficient estimator. However, critical values can be simulated by the same method
+as in the maximum likelihood estimation, which was illustrated in section 3.
+
+7. Monte Carlo Simulations
+In this section, we report Monte Carlo simulation results for all four examples considered
+in the article. Details of simulation designs and testing procedures are provided in the online
+supplement.
+Figure 2 summarizes the results of the simulation study, by showing the power functions
+for four examples with three different sample sizes: n = 50, 100, and 200. The top right
+and left panels report results from the probit example and those from the maximum score
+estimation example, respectively. In addition, the bottom right and left panels report
+results from the quantile regression example and those from the maximum rank correlation
+estimation example, respectively. First of all, the figure shows the finite sample size of the
+test when the nominal level is 5%. Under the null hypothesis (α = 0), the rejection rates
+of the test are close to the nominal level in most cases. Secondly, Figure 2 shows the power
+of the test when α increases from 0 to 1. The result indicates that, in all cases, the power
+increases fast as the parameter value of α is farther away from zero and also it increases as
+n gets large.
+
+<-----Page 29----->TESTING FOR THRESHOLD EFFECTS
+
+29
+
+Figure 1. Power Functions of Threshold Models
+Threshold Probit
+
+Threshold MSE
+
+1
+
+1.0
+
+n=200
+
+n=200
+
+n=100
+n
+100
+
+n=100
+
+n=50
+0.8
+
+n=50
+
+size: 5%
+
+0.8
+
+0.6
+
+size: 5%
+
+Power
+
+Power
+
+0.6
+
+04
+0.4
+
+0.4
+
+0.2
+0.2
+
+0
+0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+0.0
+
+1
+
+0
+
+Slope Variable
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1
+
+Slope Variable
+
+Threshold Quantile
+
+Transformation Model (MRC)
+
+1.0
+
+1.0
+
+n=200
+
+n=200
+
+n=100
+
+n=100
+
+n=50
+0.8
+
+n=50
+0.8
+
+size: 5%
+
+Power
+
+0.6
+
+Power
+
+0.6
+
+size: 5%
+
+0.4
+
+0.4
+
+0.2
+
+0.2
+
+0.0
+
+0.0
+0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1
+
+0
+
+Slope Variable
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1
+
+Slope Variable
+
+8. Conclusions
+We have developed a general testing procedure for threshold effects and have proposed a
+new method for establishing the asymptotic null distribution. Since the new approach does
+not require to approximate the objective function in a quadratic form, we can construct
+the test statistic for nonstandard cases like the maximum score estimation. Furthermore,
+we have proposed the test statistic when the objective function is a U-process. We believe
+our approach would prove useful in many other occasions where objective function based
+inferences are made.
+
+<-----Page 30----->30
+
+LEE, SEO, AND SHIN
+
+Fan et al. (2001) show that a class of the generalized likelihood statistics based on some
+appropriate nonparametric estimators are asymptotically chi-squared in nonparametric
+testing problems. However, they do not consider the Davies problem. It is an interesting research topic to see whether one can generalize the methodology of Fan et al. (2001)
+to cover the case when there may be a nuisance parameter that appears under the alternative, but not under the null. Such examples are partially linear regression models and
+varying coefficient models with a change-point due to a covariate threshold.
+We have provided local power results in the online supplements, but have not established
+the asymptotic admissibility of the test we proposed. Andrews and Ploberger (1995) have
+established the asymptotic admissibility of the likelihood ratio test. It might be possible
+to extend their results to more general cases, including our QLR statistics. Alternatively,
+following Andrews and Ploberger (1994) and Song et al. (2009), we may introduce a class
+of tests of the following form:
+Exp − QLRn =
+
+rn2
+
+
+
+(1 + c)
+
+−p/2
+
+Z
+
+exp
+
+
+
+
+
+1 c
+QLRn (γ) dJ (γ) ,
+2c+1
+
+where p is the dimension of b, J (·) is a prespecified weight function over values of γ
+in Γ, and c is a prespecified scalar constant.
+
+It might be possible to establish that
+
+Exp − QLRn has some weighted average power properties in our setup, along the lines
+of Andrews and Ploberger (1994) and Song et al. (2009). These are interesting topics for
+future research.
+
+Appendices
+The appendices contain all the mathematical proofs, additional theoretical results, and
+Monte Carlo simulation results. In particular, (i) we provide the proofs of all the theorems; (ii) we provide asymptotic theory for the case when objective functions are based
+on U-processes and verify regularity conditions for the maximum rank correlation (MRC)
+
+<-----Page 31----->TESTING FOR THRESHOLD EFFECTS
+
+31
+
+estimator; (iii) we discuss the consistency and local power of the test when the null hypothesis is false; and (iv) we report details of Monte Carlo simulation designs and testing
+procedures.
+
+Appendix A. Proofs of Theorems
+Proof of Theorem 5.1. As supremum is a continuous operator, we need to establish the
+weak convergence of the process rn2 Pn mξ,γ . Also note that in view of Lemma 2.5 of Kim and
+Pollard (1990) the supremum of the limit process G is Op (1) under Assumption 5. Under
+the uniform convergence rate given in Assumption 2, it is sufficient to consider the process
+rn2 Pn mξ,γ only on the rn−1 neighborhood of ξ0 . Furthermore, given the decomposition (3.2)
+of rn2 Pn mξ,γ and Assumption 5, it remains to obtain the weak convergence of the empirical
+process indexed by the sequence of classes of functions
+Mn =
+
+
+
+
+rn2
+√ mhn ,γ : |h| ≤ K, γ ∈ Γ ,
+n
+
+where hn is defined in Assumption 5. That is, we derive the weak convergence of
+r2
+√n Gn mhn ,γ ,
+n
+for any given K > 0. Then, an application of the continuous mapping theorem concludes
+the proof.
+We apply either Theorem 2.11.22 or 2.11.23 of van der Vaart and Wellner (1996) to obtain the weak convergence. While our assumptions are sufficient for both theorems, they
+are presented in terms of functions q not of functions m. Thus, we need to show that the
+conditions on q are preserved under the transformation yielding m. First, we verify that the
+boundedness of both entropy conditions (5.3) and (5.4) is preserved under summation. For
+the latter, note that the definition of the bracketing numbers implies that for two classes
+F and G of functions,
+N[ ] (2ε, F + G, Lr (Q)) ≤ N[ ] (ε, F , Lr (Q)) N[ ] (ε, G, Lr (Q)) .
+
+<-----Page 32----->32
+
+LEE, SEO, AND SHIN
+
+Therefore, the bounded entropy condition (5.4) for Fδ implies the boundedness of the
+entropy condition for the class
+Mδ = {mξ,γ : |ξ − ξ0 | < δ} .
+For the former case of uniform entropy, we refer to Theorem 2.10.20 of van der Vaart and Wellner
+(1996), which shows
+
+
+
+
+
+
+
+
+log N ε k2Fδ kQ,2 , Fδ + Fδ , L2 (Q) ≤ 2 log N ε kFδ kQ,2 , Fδ , L2 (Q) .
+Thus, it is shown that the class Mδ also satisfies either the entropy conditions (5.3) or (5.4),
+which also satisfies that of either Theorem 2.11.22 or 2.11.23 of van der Vaart and Wellner
+(1996). An envelope function Mδ for Mδ is given by 2Fδ , which satisfies the conditions
+of Theorem 2.11.22 or 2.11.23 of van der Vaart and Wellner (1996) under Assumption 3.
+This completes the proof.
+
+Proof of Lemma 5.2. The proof of this lemma is omitted since the first conclusion is a restatement of Theorems 2.4.1 and 2.4.3 in van der Vaart and Wellner (1996) and the second
+conclusion follows immediately from Lemma A-1 of Andrews (1993). Specifically speaking,
+Condition (a) of Lemma A-1 of Andrews (1993) is satisfied by Theorem 2.4.1 and Theorem
+2.4.3 in van der Vaart and Wellner (1996).
+
+Proof of Lemma 5.3. To prove the lemma, we modify the peeling device in the proof of
+Theorem 3.2.5 in van der Vaart and Wellner (1996). For each n, the parameter space
+can be partitioned into the shells Sj,n = {θ : 2j−1 < rn |θ − θ0 | ≤ 2j } for integer j’s. If
+
+
+
+
+rn supγ θ̂ (γ) − θ0  is larger than 2M for a given M, θ̂ (γ) is in one of the shells for some
+γ. In that case supθ,γ Pn qθ,γ − Pn qθ0 ≥ 0, where the supremum is taken over the shell for θ
+
+<-----Page 33----->TESTING FOR THRESHOLD EFFECTS
+
+33
+
+and γ ∈ Γ, due to the definition of θ̂. Therefore, for any η > 0,
+(
+)
+
+
+
+
+X
+
+
+≤
+Pr
+sup Pn qθ,γ − Pqθ0 ≥ 0
+Pr rn sup θ̂ (γ) − θ0  > 2M
+γ
+
+j≥M,2j ≤ηrn
+
+θ∈Sj,n ;γ
+
+
+
+
+
+
+
++ Pr 2 sup θ̂ (γ) − θ0  ≥ η .
+γ
+
+The two terms in the right side of the inequality can be shown to be made arbitrarily
+small by the same argument in the proof of Theorem 3.2.5 in van der Vaart and Wellner
+(1996).
+
+Proof of Lemma 5.4. Let Gδ denote the collection of g (w; θ, γ)s such that |θ − θ0 | < δ and
+ḡδ an envelope function of Gδ . Then, it follows from Theorem 2.10.20 of van der Vaart and Wellner
+(1996) that the uniform entropy integral of Fδ is bounded by
+(A.1)
+
+Z
+
+1
+
+0
+
+sup
+Q
+
+r
+
+
+ dε
+log N ε kḡδ kQ,2r , Gδ , L2r (Q) 1−r ,
+ε
+
+where the supremum is taken over all finitely discrete probability measures Q. It is clear that
+Gδ constitutes a VC class of functions since the subgraphs are represented by intersections
+and unions of half spaces as discussed in Section 6.1. Since the VC-index does not depend
+on δ and the covering number of a VC class is polynomial in (1/ε) , the uniform entropy
+integral in (A.1) is bounded uniformly in δ. This in turn implies that the uniform entropy
+integral condition in (5.3).
+An envelope function for Fδ is given by Fδ = 2Lr · ḡδr since
+|q (y, g (w; θ, γ)) − q (y, g (w; θ0 , γ0 ))|2 ≤ 4L2r (w) ḡ 2r (w) .
+To check the conditions on the envelope function, note that ḡδ (w) = |w| δ is an envelope
+function for Gδ using the Cauchy-Schwarz inequality. Then, it is straightforward to see that
+
+<-----Page 34----->34
+
+LEE, SEO, AND SHIN
+
+with φ (δ) = δ r
+
+	
+
+φ−2 (δ) PFδ2 1 Fδ > ηδ −2 φ2 (δ)
+= E 4L2r (W) |w|2 1 {2Lr (W) |w| δ r > η}
+→ 0,
+
+as δ → 0 for any η > 0.
+
+Proof of Corollary 5.5. From the second order expansion of Pmhn ,γ , the functional form
+of G2 is obvious since the first derivative is zero at ξ = ξ0 from the first order condition.
+The consistency of θ̂ (γ) (and thus β̃) follows from Lemma 5.2, and the convergence rates
+follow from Lemma 5.3 since (5.8) is satisfied due to the presence of the second derivative
+matrix Vθ (γ) and (5.9) is implied by Assumption 5.4. The last convergence then follows
+from Theorem 5.1.
+
+Proof of Theorem 6.1. We prove the conditions in Theorem 5.1. Assumption 5.4 is also discussed in the text. The first two conditions for the envelope function FK/rn in Assumption
+3 are verified in Kim and Pollard (1989) .
+To show the uniform consistency, we need to verify the condition (5.7) . Since γ0 is not
+identified, it is an arbitrary fixed number, say, zero. Then it can be shown that
+(A.2)
+
+∆∗ (θ, γ) = P (qθ0 ,γ0 − qθ,γ )
+h
+
+= E κ(W) 1 {g (W; θ, γ) ≥ 0 > g (W; θ0 , γ0 )}
+i
+− 1 {g (W; θ0, γ0 ) ≥ 0 > g (W; θ, γ)} .
+
+By the assumption that FU |W [0|w] = 0.5, note that κ(w) ≥ 0 when g(w; θ0, γ0 ) ≥ 0 and
+that κ(w) < 0 when g(w; θ0, γ0 ) < 0. Define
+h
+i
+Q(θ, γ) = w ∈ supp(W) : {g(w; θ, γ) ≥ 0 > g(w, θ0 , γ0)} ∪ {g(w, θ0, γ0 ) ≥ 0 > g(w, θ, γ)} .
+
+<-----Page 35----->TESTING FOR THRESHOLD EFFECTS
+
+35
+
+By arguments identical to those used to prove Proposition 2 of Manski (1988), θ0 is identified
+if and only if inf γ Pr(W ∈ Q(θ, γ)) > 0 for any θ 6= θ0 . Therefore, supγ ∆∗ (θ, γ) is nonpositive everywhere and is equal to zero only when (θ, γ) = (θ0 , γ0).
+The uniform convergence with rn = n1/3 can be argued from Lemma 5.3 upon proving
+(5.8) , which will be verified when we derive the limit of rn2 Pmhn ,γ .
+Now we present the covariance kernel of the limit gaussian process G1 and verify the last
+condition in Assumption 3. The following decomposition is useful: for any ξ1 , ξ2, γ1 , and
+γ2 ,we have
+rn P (mξ1 ,γ1 − mξ2 ,γ2 )2
+= rn P (|1 {g (W, θ1 , γ1) ≥ 0} − 1 {g (W, θ2 , γ2 ) ≥ 0}|)
++ rn P (|1 {X0 β1 ≥ 0} − 1 {X0β2 ≥ 0}|)
+− rn 2P (1 {g (W, θ1 , γ1 ) ≥ 0} − 1 {g (W, θ2 , γ2 ) ≥ 0}) (1 {X0 β1 ≥ 0} − 1 {X0β2 ≥ 0})
+=: A1 + A2 + A3 .
+Some reparameterization and change of variables are useful. In particular to impose the
+normalization restriction, |θ| = |b| = 1, we characterize the localized parameters as
+hn =
+=
+
+0
+h0nβ , h0nα , h0nb
+!0
+r
+r
+
+2
+
+2
+
+
+
+
+1 − ḣθ /rn  β00 + ḣ0β /rn , h0α /rn , 1 − ḣb /rn  β00 + ḣ0b /rn ,
+
+   
+   
+where ḣβ  , ḣb  < K and ḣβ and ḣb are orthogonal to β0 . Note here that since α0 = 0 the
+parameter hα is not constrained. Let gn be defined in the same way. Note here that we
+
+index by h and g rather than h1 and h2 to ease the exposition. Accordingly, decompose x
+into
+(A.3)
+
+x = ζβ0 + η,
+
+<-----Page 36----->36
+
+LEE, SEO, AND SHIN
+
+where β00 η = 0. Then, x0 hnβ = ζ
+
+r
+
+
+2
+
+
+1 − ḣθ /rn  + η 0 ḣβ /rn . Now, take A1 and note that
+
+A1 = rn P1 {g (W, θ1 , γ1 ) ≥ 0 > g (W, θ2, γ2 )} + rn P1 {g (W, θ2 , γ2) ≥ 0 > g (W, θ1 , γ1 )} .
+0
+0
+Let Zγ = Z 1 {T > γ} and pW (x, w−x ) = pW (w) for W = X0 , W−x
+. Also recall that
+z = R0 x = R0 β0 ζ + R0 η and let Rγ = R1 {T > γ} . Take the first term with substitution of
+(A.3) , θ1 = hnθ and θ2 = gnθ , that is, consider
+(
+
+rn P ζ
+
+r
+
+ 2
+ 
+1 −  ḣrnθ  +
+
+β00 Rγ1 hα
+rn
+
+!
+
+
+η0 
++
+ḣβ + Rγ1 hα
+rn
+r
+ 2
+ 
+1 −  rġnθ  +
+≥0>ζ
+
+β00 Rγ2 gα
+rn
+
+!
+
+)
+η0
++
+(ġβ + Rγ2 gα ) ,
+rn
+
+which becomes, after rearranging terms and changing the variable ξ = ζ̇/rn ,
+ZZ
+(A.4)
+
+1
+
+
+
+η0 (ḣβ +Rγ1 hα )
+−
+
+q
+2
+1−|ḣθ /rn | −β00 Rγ1 hα /rn
+
+0
+
+×1 {η β0 = 0} pW
+
+≤ ζ̇ < √
+−
+
+η0 (ġβ +Rγ2 gα )
+1−|ġθ /rn |2 −β00 Rγ2 gα /rn
+
+!
+ζ̇
+β0 + η, w−x dζ̇d$,
+rn
+
+
+
+and converges to
+Z  h
+
+i
+η 0 ḣβ − ġβ + R (hα 1 {t > γ1 } − gα 1 {t > γ2 })
+
++
+
+1 {η 0 β0 = 0} pW (η, w−x ) d$,
+
+where (x)+ = x1 {x > 0} and $ denote the Lebesque measure on {w : x0 β0 = 0} . The
+convergence follows from the dominated convergence theorem.
+Then, after sorting out notation, the limit function of A1 with ξ1 = hn and ξ2 = gn can
+be represented by
+
+ZZ
+
+ 0
+
+wγ hθ − wγ0 gθ  1 {x0 β0 = 0} pW (w) d$,
+1
+2
+
+where hθ and gθ take values on the space orthogonal to θ0 . By the same reasoning, that of
+A2 is given by
+
+ZZ
+
+|x0 [(hb − gb )]| 1 {x0 β0 = 0} pW (w) d$,
+
+<-----Page 37----->TESTING FOR THRESHOLD EFFECTS
+
+37
+
+where hb and gb orthogonal to β0 .
+Note that the limit of A1 (and A2 ) is an integral of the length of the interval between
+two points indexed by (hθ , γ1 ) and (gθ , γ2 ) (and by hb and gb ) and that the limit of A3 is a
+composite of union and intersection of the two intervals. Then, using the notation in the
+text, we can write
+2
+
+E (G1 (h, γ1 ) − G1 (g, γ2)) =
+
+Z
+
+` (w; h, g, γ1, γ2 ) 1 {x0 β0 = 0} pW (w) d$,
+
+for h and g in the null space of ξ0 . It can also be seen that the condition (5.2) in Assumption
+
+
+
+
+
+5.3 is satisfied, observing (A.4) is bounded by ḣβ − ġβ  + |hα − gα | (1 + o (1)) .
+
+Next, turn to G2 (h, γ) or rn2 Pmhn ,γ = rn2 P (qhθ ,γ − q̃hb ) . We analyze rn2 Pqhθ ,γ , then the
+
+limit of rn2 Pq̃hb can be derived in the same way. Write rn2 Pqhθ ,γ = B1n + B2n , recalling
+(A.2) , where
+B1n = rn2 E (κ (W) 1 {X0 β0 < 0 ≤ g (W, hn , γ)})
+B2n = −rn2 E (κ (W) 1 {X0 β0 ≥ 0 > g (W, hn , γ)}) .
+The first term B1n can be written as, using the decomposition of x in (A.3) and keeping
+the relevant notation there,
+(A.5a)
+
+B1n = rn
+
+ZZ
+
+1
+
+
+
+η0 (ḣβ +Rγ hα )
+−
+
+q
+
+×1 {η 0 β0 = 0} κ
+
+(A.5b)
+
+2
+
+1−|ḣθ /rn | −β00 Rγ hα /rn
+
+≤ ζ̇ < 0
+
+!
+ζ̇
+β0 + η, w−x pW
+rn
+
+
+
+!
+ζ̇
+β0 + η, w−x dζ̇d$,
+rn
+
+which, using the fact that κ (w) = 0 for w such that x0 β0 = 0 and an expansion for κ with
+a mean value ζ̃,
+κ
+
+ζ̇
+β0 + η, w−x
+rn
+
+!
+
+∂
+= κ (η, w−x ) + 0 κ
+∂x
+
+ζ̃
+β0 + η, w−x
+rn
+
+!
+
+ζ̇
+β0
+rn
+
+!
+
+,
+
+<-----Page 38----->38
+
+LEE, SEO, AND SHIN
+
+converges by the dominated convergence theorem to
+Z
+
+n
+
+
+o
+0
+ζ̇1 −x ḣβ + Rγ hα ≤ ζ̇ < 0 1 {x0 β0 = 0} [(∂/∂x0 ) κ (w) β0 ] pW (w) dζ̇d$
+Z
+2
+1  0
+x ḣβ + Rγ hα
+1 {x0 β0 = 0} [(∂/∂x0 ) κ (w) β0 ] pW (w) d$.
+= −
+2
+Similarly, we can see that B2n − (−B1n ) → 0. And the limit of rn2 Pq̃hb is also obvious.
+Since this result also implies (5.8) , we verified all the conditions of Theorem 5.1.
+Appendix B. Estimation Based on U-Processes
+In this section, we provide asymptotic theory for the case with objective functions based
+on U-processes. To do so, let Un denote the random discrete measure putting mass 2/n(n−
+1) for each of the points {(Yi , Wi , Yj , Wj ) : 1 ≤ i < j ≤ n}. Since we assume that χ in
+(2.2) depends on (θ, γ) only through the regression function g (W, θ, γ) in this case as well,
+arguments identical to those in Section 5.1 yields
+QLRn =
+=
+
+rn2
+rn2
+
+
+
+
+sup Qn (θ, γ) − sup Qn (β)
+θ,γ
+
+sup
+γ
+
+
+
+β
+
+
+
+sup Un µξ,γ − sup (−Un µξ,γ ) ,
+
+ξ:b=β0
+
+ξ:θ=θ0
+
+where
+µξ,γ (yi , wi , yj , wj ) := χθ,γ (yi , wi , yj , wj ) − χ̃b (yi , wi , yj , wj )
+and χ̃b := χ(b0 ,0)0 ,γ . Therefore, QLRn is a continuous transformation of rn2 Un mξ,γ . General
+theory on U-processes provides a method for approximating rn2 Un mξ,γ by its projection
+uniformly in ξ and γ (e.g. see Ghosal et al., 2000, Appendix). Therefore, the derivation
+of the asymptotic null distribution is similar to that of Section 5.1.
+In this section, we consider the case with rn = n1/2 since all the estimators, which we
+are aware of, based on U-Processes are n−1/2 consistent. To state an additional regularity
+condition for this section, consider a class of functions
+Mδ = {χθ,γ − χθ0 ,γ : |θ − θ0 | < δ, γ ∈ Γ}
+
+<-----Page 39----->TESTING FOR THRESHOLD EFFECTS
+
+39
+
+with an envelope function Mδ .
+
+Assumption B.1 (Envelope Function and Entropy Condition). (1) Let Q denote the
+2
+product measure P ⊗ P. Then, QMK/n
+1/2 → 0 for any positive K < ∞. (2) For some
+
+δ0 > 0, we have that
+Z
+
+1
+
+
+
+sup sup log N ε kMδ kQ,2 , Mδ , L2 (Q) dε < ∞.
+
+0 δ<δ0
+
+Q
+
+The first condition in Assumption B.1 is reasonable given that Mδ is defined only for
+a local neighborhood around θ0 . The entropy condition here is more stringent than that
+of Assumption 5.4. However, VC classes of functions have the covering numbers that are
+bounded by a polynomial in ε−1 , thus still satisfying condition (2) of Assumption B.1 as
+long as the VC indexes are bounded in n.
+Consider a class of functions F̄δ that is the same as in (5.1) with q = Πχ, where
+Πχθ,γ (y, w) = 2 [Eχθ,γ (Y, W, y, w) − Qχθ,γ ] .
+An envelope function for F̄δ is denoted by F̄δ . In addition, define
+Πµξ,γ (y, w) = 2 [Eµξ,γ (Y, W, y, w) − Qµξ,γ ] .
+The following theorem establishes the asymptotic null distribution when an estimator is a
+maximizer of a U-Process.
+
+Theorem B.1. Let Assumptions 5.1 and 5.2 hold with rn = n1/2 . Let Assumption 5.3
+hold with Fδ = F̄δ and q = Πχ, and Assumption 5.5 hold with m = Πµ. In addition, let
+Assumption B.1 hold. Then
+QLRn ⇒ sup
+γ
+
+
+
+
+
+sup G (h, γ) − sup (−G (h, γ)) ,
+
+h:hb =0
+
+h:hθ =0
+
+where G = G1 + G2 is redefined suitably with m = Πµ.
+
+<-----Page 40----->40
+
+LEE, SEO, AND SHIN
+
+Proof of Theorem B.1. Define
+bn µξ,γ := Qµξ,γ + Pn Πµξ,γ .
+U
+
+Then by Theorem A.1 of Ghosal et al. (2000) and comments following this theorem, there
+exists a universal constant C < ∞ such that
+!
+bn µξ,γ |
+E
+sup
+|Un µξ,γ − U
+µξ,γ ∈MK/n1/2
+−1
+
+≤ Cn
+
+2
+1/2
+(QMK/n
+1/2 )
+
+−1
+
+= o(n ),
+
+Z
+
+1
+
+0
+
+
+ 
+
+sup log N ε MK/n1/2 Q,2 , MK/n1/2 , L2 (Q) dε
+Q
+
+where the last equality follows from Assumption B.1. Then since PΠµξ,γ = 0 and rn = n1/2 ,
+we have that
+r2
+rn2 Un µξ,γ = rn2 Qµξ,γ + √n Gn Πµξ,γ + op (1),
+n
+uniformly over Mδ . All regularity conditions of Theorem 5.1 are assumed directly except for Assumption 5.4. By Lemma A2 of Ghosal et al. (2000), the entropy condition
+of Assumption B.1 is sufficient for Assumption 5.4. Therefore, Theorem 5.1 proves this
+theorem.
+
+Since the asymptotic distribution is identical to the M-estimation case with the projected
+function Πµξ,γ , a corollary similar to Corollary 5.5 can be established. The discussion
+following the corollary is also valid. Therefore, if Qχθ,γ is twice differentiable at θ0 with
+relevant rank conditions satisfied and if G1 is linear in h, then the asymptotic representation
+in (5.10) would be obtained.
+
+<-----Page 41----->TESTING FOR THRESHOLD EFFECTS
+
+41
+
+B.1. Maximum Rank Correlation Estimation. The objective function of the maximum rank correlation (MRC) estimator is a second-order U-process with kernel
+χ (y1 , w1 , y2 , w2 ; θ, γ)
+:= 1 {y1 > y2 } 1 {g (w1 , θ, γ) > g (w2 , θ, γ)} + 1 {y1 < y2 } 1 {g (w1 , θ, γ) < g (w2 , θ, γ)} .
+Recall that the MRC estimator can be applied to a general regression model defined as
+Y = H ◦ F (g (W, θ0 , γ0 ) , U) ,
+where H is a non-degenerate monotone function and F is a strictly monotone function
+for both arguments. To provide its asymptotic null distribution, we need to check the
+separability condition, Assumptions 5.3, 5.5, and B.1. We assume the following conditions
+which are slight modification of the standard regularity conditions of the MRC estimator
+in Sherman (1993) to reflect the threshold effects.
+
+Assumption B.2. (i) The first element of θ, say θ1 , is normalized to be 1.
+(ii) The first component of W has an everywhere positive Lebesgue density conditional on
+f=w
+e for all w.
+e
+the remaining components W
+
+(iii) W is independent of U, and the support of Wγ is not contained in any proper linear
+subspace of Rdim(X)+dim(Z) for any γ.
+
+(iv) T is continuously distributed.
+(v) Let N be a neighborhood of θ0 . Then, the following conditions hold: (a) all mixed second
+partial derivatives of Πχθ,γ with respect to θ exist on N for all γ ∈ Γ; (b) There exists an
+integrable function M (y, w) such that
+sup |∇θθ0 Πχθ,γ (Y, W) − ∇θθ0 Πχθ0 ,γ (Y, W)| ≤ M (Y, W) |θ − θ0 | ;
+γ
+
+
+P  ∂ 2
+
+(c) supγ P |∇θ Πχθ0 ,γ | < ∞; (d) supγ P i,j  ∂θi ∂θj Πχθ0 ,γ  < ∞; and (e) P∇θθ0 Πχθ0 ,γ is
+2
+
+negative definite for all γ ∈ Γ.
+
+<-----Page 42----->42
+
+LEE, SEO, AND SHIN
+
+Since the functions H and F are monotone, the support condition of W implies that
+Pr (Y1 > Y2 |W1 , W2 ) > Pr (Y1 < Y2 |W1 , W2 ) ⇔ g (W1 , θ0 , γ) > g (W2 , θ0 , γ)
+for any γ. This condition combined with the identification arguments in Han (1987) completes the separability condition. We next turn our attention to Assumption B.1. Consider
+the class of functions
+
+	
+MK/n1/2 = χθ,γ − χθ0 ,γ : |θ − θ0 | < K/n1/2 , γ ∈ Γ .
+From the arguments in Section 5 of Sherman (1993) and in the example of maximum score
+estimation, we can show that MK/n1/2 is a VC-class of functions and that MK/n1/2 has an
+
+ 	
+envelope function MK/n1/2 = 1 |x0 β0 | ≤ C K/n1/2 |x| for a constant C. Therefore, it
+
+satisfies the conditions in Assumption B.1. To verify Assumption 5.3, consider the following
+class of projected functions
+
+	
+F̄K/n1/2 = Πχθ,γ − Πχθ0 ,γ : |θ − θ0 | < K/n1/2 , γ ∈ Γ .
+
+Then, Assumptions 5.3 follows from the finite envelope and the smoothness condition of
+Πχθ,γ . It remains to show Assumption 5.5. However, it follows from the differentiability of
+Πχθ,γ that the asymptotic representation in (5.10) applies. In particular, the covariance
+
+
+kernel of G (γ) is given by P (∇θ Πχθ0 ,γ1 ) (∇θ Πχθ0 ,γ2 )0 and V (γ) = P∇θθ0 Πχθ0 ,γ .
+Appendix C. Consistency and Local Power
+In this section, we present asymptotic properties of our test statistic when the null
+hypothesis is false. We first consider a fixed alternative g (w) such that
+g (w) 6= x0 β,
+for any β. Let P1 denote the common probability measure under this alternative.
+
+<-----Page 43----->TESTING FOR THRESHOLD EFFECTS
+
+43
+
+Theorem C.1. Let F be a class of functions qθ,γ with envelope F such that P1 F < ∞. Assume either of the following two conditions: (i) N[ ] (ε, F , L1 (P1 )) < ∞ for every ε > 0; (ii)
+For FM defined as the class of functions f 1 {F ≤ M} for f ∈ F , log N (ε, FM , L1 (Pn )) =
+op (n) for every ε and M > 0. Let Q1 (θ, γ) = P1 qθ,γ and assume that there exists (θ, γ) such
+that Q1 (θ, γ) > supθ:α=0 Q (θ, γ) . Then, the test QLRn is consistent against the alternative
+g, that is, the rejection probability of our test goes to one under P1 .
+This theorem states conditions under which our test is consistent. This theorem might
+not be very constructive to convey some meaningful insight into what alternatives our test
+can detect as it is difficult to determine the functional form of Q1 without a specific q and
+P1 . Roughly speaking, however, it implies that the test can detect an alternative which is
+better approximated by a piecewise linear structural form than linear one. Clearly, if
+g (w) = x0 β0 + z0 α0 1 {t > γ0 }
+for some α0 6= 0, the test is consistent under the other conditions of the above theorem.
+Furthermore, Theorem C.1 suggests that the test be powerful against some other nonlinear
+alternatives, as we demonstrate via Monte Carlos experiments in Section D.
+Next, we investigate the asymptotic power property of our tests under sequences of local
+alternatives:
+0
+gn (w) = x0 β0 + ρ−1
+n · x α (t) ,
+
+where α is a vector-valued integrable function defined on the support of T and ρn → ∞.
+This alternative is a natural generalization of the threshold model to encompass smooth
+transition models and varying coefficient models. Let Pn denote the probability measure
+for each n under the local alternatives. As above, general statement is less informative
+than examination of specific examples since local power depends largely on whether or not
+the limit of rn Pn mhn ,γ is different from that of rn Pmhn ,γ .
+When ρn = rn , the local asymptotic distribution of QLRn under Pn can be obtained
+under minor modification of previous assumptions. We discuss this. We keep Assumption 1
+
+<-----Page 44----->44
+
+LEE, SEO, AND SHIN
+
+and 2. Assumptions 3-5 need to be restated in terms of Pn . The uniform entropy condition
+(5.3) in Assumption 4 remains the same since it does not depend on the true measure (see
+e.g. section 2.11.1 of van der Vaart and Wellner (1996)). Lemmas 1 and 2 are valid under
+these modifications on Assumption 3 and 4 and thus Assumptions 1 and 2 can be verified
+in the same way as under the null. The limit quantities in Assumption 5 would not the
+same as those under P. Either of the covariance kernel of G1 or the functional form of G2
+or both change under Pn , yielding the local power. The methods to verify Assumptions
+1-5 are similar as under P. When Pmξ,γ is twice differentiable, its first derivative is zero
+at ξ = ξ0 , where ξ0 := (β00 , 00 , β00 )0 , and G2 is quadratic in its second derivative. On the
+other hand, the first derivative of Pn mξ,γ is not zero at ξ = ξ0 but rn (∂/∂ξ) Pn mξ0 ,γ has
+a non-vanishing limit. This is usually called the “noncentrality parameter”, which is the
+source of the local power and yields the consistency when ρn = o (rn ) . All of our examples
+have nontrivial noncentrality parameters.
+We now present two of previous examples to illustrate power properties of our test, focusing on the noncentrality parameter. First, consider the maximum score estimation of
+the binary response model. We begin with rn2 Pn mhn ,γ . As shown in section 6.1, rn2 Pmhn ,γ
+converges to a quadratic function in h without a linear term as the first term in the expansion vanishes under P. We show that the linear term does not vanish under Pn . In
+particular, note that κ (w) in (6.2) need to be replaced by
+κn (w) = 1 − 2FU |W −x0 β0 − rn−1 x0 α (t) |w
+
+
+
+ −1 0
+0
+= κ (w) + 2fU |W −x0 β0 − ρ−1
+·
+x
+α̃
+(t)
+|w
+ρn x α (t) ,
+n
+
+where α̃ is the mean value. Then, following the steps to derive the limit of rn2 Pmhn ,γ in
+the proof of Theorem 6.1 with κ (w) replaced by κn (w) , we can see that the difference
+rn2 Pn mhn ,γ − rn2 Pmhn ,γ , that is, the noncentrality parameter is given by
+2
+
+Z Z
+
+
+ rn
+α (t)0 (xx0 (hβ − hb ) + xx0 1 {t > γ} hα )
+1 {x0 β0 = 0} fU |W (0|w) pW (w) d$.
+ρn
+
+<-----Page 45----->TESTING FOR THRESHOLD EFFECTS
+
+45
+
+If α (T ) is nonzero with positive probability, then the noncentrality parameter is nonzero
+for some γ, regardless of h unless hα = 0. On the other hand, we can easily see from the
+proof of Theorem 6.1 that the covariance kernel of G1 does not change. Therefore, our test
+has local power with ρn = rn and is consistent when ρn = o (rn ) .
+√
+Next consider the MLE of the probit model. Let ρn = rn = n and examine the score
+functions for q (y, w; θ, γ) and q̃ (y, w; b) under Pn . Their expected values are zero under
+P but non-zeros and different from each other under Pn , which yields the noncentrality
+parameter. In particular, a direct calculation of the expected value with an expansion of
+√
+the term Φ (x0 β0 + x0 α (t) / n) at x0 β0 yields
+√
+
+
+
+→ E
+
+
+
+
+
+
+
+
+φ (X β0 ) 
+∂
+ φ X0 β0 + X0 α̃√(T ) X0 α (T )
+nPn q (y, w; θ0, γ) = E 
+0
+∂θ
+Φ (X β0 )
+n
+X1 {T > γ}
+
+
+
+
+
+
+0
+X
+φ (X β0 ) 
+ φ −X0 β0 − X0 α̃√(T ) X0 α (T )
++E 
+0
+Φ (−X β0 )
+n
+X1 {T > γ}
+
+
+0
+
+2
+
+0
+
+X
+
+φ (X β0 )
+0
+Φ (X β0 ) Φ (−X0 β0 )
+
+
+
+
+0
+
+XX α (T )
+XX 01 {T > γ} α (T )
+
+
+
+ ,
+
+where α̃ lies between α and 0. Similarly,
+√
+
+
+
+φ2 (X0 β0 )
+∂
+0
+nPn q̃ (y, w; β0) → E
+XX α (T ) .
+∂b
+Φ (X0 β0 ) Φ (−X0 β0 )
+
+Then, the noncentrality parameter becomes
+
+φ2 (X0 β0 )
+0
+XX α (T ) 1 {T > γ} =
+6 0
+E
+Φ (X0 β0 ) Φ (−X0 β0 )
+
+
+for some γ as long as α (T ) is not zero with positive probability. Therefore, the test has nontrivial local power against local alternatives of the above form as well as of the threshold
+√
+type. Furthermore, if ρn = o ( n) , then the noncentrality parameter diverges to infinity
+to yield the consistency of our test.
+
+<-----Page 46----->46
+
+LEE, SEO, AND SHIN
+
+Appendix D. Monte Carlo Simulations
+In this section we investigate finite sample properties of the proposed test by Monte Carlo
+experiments. we report Monte Carlo simulation results for all four examples considered in
+the article.
+
+D.1. Binary Response Models: Probit, Logit, and Maximum Score. First, we
+report Monte Carlo simulation results when the samples are generated from a simple probit
+or logit model. To see whether the test has power against an alternative that is different
+from a threshold model, we consider the smooth transition model as well as the threshold
+model as alternatives. Therefore, we have 4 different models in total, and the baseline
+model has the following form:
+Y ∗ = β0 + β1 X + αZψ (T, γ) + U
+Y
+
+= 1 {Y ∗ > 0} ,
+
+where ψ (T, γ) = 1 {T > γ} for the threshold model and ψ (T, γ) = 1/ (1 + exp (− (T − γ)))
+for the smooth transition model. The true parameter values are set as β0 = 0.5, β1 = 1,
+γ = 0.5 for the threshold model, and γ = 0 for the smooth transition model. When the null
+hypothesis is true, the parameter α is equal to zero. Under the alternatives, α has various
+non-zero values from 0.2 to 1. The covariates X and Z are generated independently from
+N (0, 1) and N (0, 2), respectively. The covariate T follows the uniform distribution on the
+interval [0, 1] for the threshold model and N (0, 1) for the smooth transition model. The
+error term U is generated from either N (0, 1) or the logistic distribution.
+Parameters other than γ are estimated by the Newton-Raphson’s method, and the threshold parameter γ is estimated by the grid search. For the grid, we used the data points of T
+after trimming at lower and upper 10th percentiles. We considered three different sample
+sizes, n = 50, 100, and 200, and replicated each simulation design 1000 times. For the
+simulation number of the score functions, we set J = 2000.
+
+<-----Page 47----->TESTING FOR THRESHOLD EFFECTS
+
+47
+
+Figure 2. Power Functions of Threshold Models
+Threshold Probit
+
+Threshold Logit
+
+1
+
+1
+
+n=200
+
+n=200
+
+n=100
+n
+100
+
+n=100
+n
+100
+n=50
+
+n=50
+0.8
+
+0.8
+
+size: 5%
+
+size: 5%
+
+0.6
+
+Power
+
+Power
+
+0.6
+
+04
+0.4
+
+04
+0.4
+
+0.2
+
+0.2
+
+0
+
+0
+0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+0
+
+1
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1
+
+Slope Variable
+
+Slope Variable
+
+Figure 3. Power Functions of Smooth Transition Models
+Smooth Transition Probit
+
+Smooth Transition Logit
+
+1
+
+1
+
+n=200
+
+n=200
+
+n=100
+n
+100
+
+n=100
+n=50
+
+n=50
+0.8
+
+0.8
+
+size: 5%
+
+0.6
+
+size: 5%
+
+Power
+
+Power
+
+0.6
+
+04
+0.4
+
+0.4
+
+0.2
+
+0.2
+
+0
+
+0
+0
+
+0.2
+
+0.4
+
+0.6
+
+Slope Variable
+
+0.8
+
+1
+
+0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1
+
+Slope Variable
+
+Figures 2–3 summarize the result of the simulation study. Overall, the test performs well
+as expected from the theory. First, under the null hypothesis (α = 0), the rejection rates of
+the test are close to the nominal level in most cases. Second, Figures 2–3 show the power
+of the test when α increases from 0 to 1. The result indicates that, in all cases, the power
+increases fast as the parameter value of α is farther away from zero. The test shows good
+performance even with a relatively small sample size, say n = 100.
+We now report simulation results for testing the null hypothesis that α0 = 0 for the
+probit threshold model above with the maximum score objective function. This amounts
+
+<-----Page 48----->48
+
+LEE, SEO, AND SHIN
+
+Figure 4. Power Functions of the Probit Threshold Model with Maximum
+Score Estimation
+Threshold MSE
+1.0
+
+n=200
+n=100
+n=50
+0.8
+
+size: 5%
+
+Power
+
+0.6
+
+0.4
+
+0.2
+
+0.0
+0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1
+
+Slope Variable
+
+to the case when a researcher only relies on the assumption that U has conditional median
+zero without knowing that U follows the standard normal distribution. The critical values
+are obtained via subsampling. The subsample sizes (m) and original sample sizes (n) were
+(m, n) = (20, 50), (30, 100), (35, 200), respectively.
+Figure 4 shows the power functions with the 5% level test. Not surprisingly, relative to
+the left panel of Figure 2, the power does not increase rapidly as α gets large or n increases.
+Note that this is consistent with the theoretical result that the test with the maximum score
+estimation has local power at a rate of n−1/3 .
+D.2. Quantile Regression. In this section we investigate finite sample properties of the
+proposed test for the quantile regression model. In particular, we consider the median
+regression model (τ = 0.5):
+Y
+
+= β0 + β1 X + αZψ (T, γ) + U,
+
+where ψ (T, γ) = 1 {T > γ}. The true parameter values are set as β0 = 0.5, β1 = 1,
+γ = 0.5. When the null hypothesis is true, the parameter α is equal to zero. Under the
+alternatives, α has various non-zero values from 0.2 to 1. The covariates X and Z are
+generated independently from N (0, 1) and N (0, 2), respectively. The covariate T follows
+
+<-----Page 49----->TESTING FOR THRESHOLD EFFECTS
+
+49
+
+the uniform distribution on the interval [0, 1] for the threshold model. The error term U is
+generated from the standard normal distribution.
+Parameters other than γ are estimated by the linear programming method for the standard linear quantile regression model, and the threshold parameter γ is estimated by the
+grid search. For the grid, we use the data points of T after trimming at lower and upper
+10th percentiles. We consider three different sample sizes, n = 50, 100, and 200, and replicate each simulation design 1000 times. For the simulation number of the score functions,
+we set J = 2000.
+In addition, we estimate Vb (γ) and Ve by (3.9) since regression errors are independent of
+
+regressors. Finally, we use the standard normal density as the the kernel function K and
+Silverman’s rule of thumb for h = 1.06 × σ̃n−1/5 , where σ̃ is the sample standard deviation
+of Ũ := Yi − X0i β̃.
+
+Figure 5. Power Functions of Threshold Quantile Regression Models
+Threshold Quantile
+1.0
+
+n=200
+n=100
+n=50
+0.8
+
+size: 5%
+
+Power
+
+0.6
+
+0.4
+
+0.2
+
+0.0
+0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1
+
+Slope Variable
+
+Figure 5 shows the power functions for the 5 % level test. Under the null of α = 0, the
+rejection rates of the test are about 2% lower than the nominal level. The figure shows the
+power of the test increases fast as α or n gets large.
+
+<-----Page 50----->50
+
+LEE, SEO, AND SHIN
+
+D.3. Maximum Rank Correlation Estimation. For the simulation study of the MRC
+estimator, we use the following data generating procedure:
+T (Y ) = β1 X1 + β2 X2 + αZ · 1 (T > γ) + U
+where covariates, X1 , X2 , Z and T, are generated independently from N (0, 4) , N (0, 1) , N (0, 1) ,
+and the uniform distribution on the interval [0, 1] , respectively. The error term U is generated from N (0, 1) . We set the transformation function T (y) log y. The parameter β1 is
+normalized as 1, and other parameters are set as β = 1 and γ = 0.5. The parameter α is
+equal to zero under the null hypothesis, and varies from 0.2 to 1 under the alternatives.
+Note that the constant term is not identified in the unknown transformation model, so we
+drop it from the model.
+We estimate all parameters using the grid search. The girds used for each parameter
+are as follows: the 51 points equally spaced on the interval [−1, 3] are used for estimating
+β2 , the 51 points on [−1, 2] for α, and the 36 points on [0.1, 0.9] for γ. We consider three
+sample sizes, n = 50, 100, and 200, and replicate each design 1,000 times. We calculate the
+simulated p-value with J = 1, 000.
+
+Figure 6. Power Functions of Threshold Models with Maximum Rank Correlation Estimation
+Transformation Model (MRC)
+1.0
+
+n=200
+n=100
+n=50
+0.8
+
+size: 5%
+
+Power
+
+0.6
+
+0.4
+
+0.2
+
+0.0
+0
+
+0.2
+
+0.4
+
+0.6
+
+Slope Variable
+
+0.8
+
+1
+
+<-----Page 51----->TESTING FOR THRESHOLD EFFECTS
+
+51
+
+Simulated critical values can be obtained using numerical derivatives as in Section 7 of
+Sherman (1993). Specifically, we use the smooth objective function in the simulation step
+by substituting the standard normal cdf for the indicator function with an appropriate
+bandwidth. Figure 6 shows the power functions for the 5 % level test. Overall, test seems
+to perform well as in previous examples.
+We now explain how to obtain critical values in detail below:
+(1) Given the data, estimate the parameter under the null and the alternative, βe and
+ 
+θ̂, γ̂ , respectively. Construct the test statistic QLRn using the estimates.
+
+(2) Recall some notation here:
+
+Qn (θ, γ) = Un χθ,γ (Yi , Yj , Wγ,i , Wγ,j )
+X
+
+1
+0
+0
+1 (Yi > Yj ) 1 Wγ,i
+θ > Wγ,j
+θ
+=
+n (n − 1) i6=j
+and
+µξ,γ (Yi , Yj , Wi , Wj ) = χ(Yi , Yj , Wγ,i , Wγ,j ) − χ
+eb (Yi , Yj , Xi , Xj )
+
+
+
+
+0
+0
+= 1 (Yi > Yj ) 1 Wγ,i
+θ > Wγ,j
+θ − 1 X0i b > X0j b .
+
+Replace indicator functions in the objective function with the standard normal cdf.
+Now, µξ,γ is twice differentiable with respect to ξ (slightly abuse notation and use
+the same µ, χ etc.) The first order derivative of µξ,γ is
+
+
+where
+
+∂
+χ
+∂θ θ,γ
+
+
+
+∂
+,
+µξ,γ = 
+∂ξ
+∂
+− ∂b χ
+eb
+ 
+
+
+∂
+(Wγ,i − Wγ,j )0 θ Wγ,i − Wγ,j
+Yi − Yj
+φ
+χθ,γ = Φ
+∂θ
+a
+a
+a
+ 
+
+0 
+(Xi − Xj ) b Xi − Xj
+Yi − Yj
+∂
+φ
+χ
+eb = Φ
+.
+∂b
+a
+a
+a
+
+<-----Page 52----->52
+
+LEE, SEO, AND SHIN
+
+The bandwidth a is set as a = 2σ̂n(−3/5) where σ̂ is the sample standard deviation
+of the argument in the function, i.e. Yi − Yj , (Wγ,i − Wγ,j )0 θ etc. The second
+derivative is
+
+
+
+∂
+µξ,γ = 
+∂ξ∂ξ 0
+
+∂2
+χ
+∂θ∂θ 0 θ,γ
+
+0
+
+0
+
+∂2
+eb
+− ∂b∂b
+0χ
+
+where diagonal elements can be computed easily.
+
+
+
+,
+
+b n , for each (i, j), we mul(3) To generate the simulated empirical U-process, say U
+
+tiply Vij = Vi + Vj to µξ,γ (Yi , Yj , Wi , Wj ), where Vi and Vj are generated from
+
+Gamma(0.25, 0.5), independently.
+(4) Then the simulated test statistic is
+0 
+−1  
+
+ 
+ ∂
+ ∂
+2
+1
+∂
+bn − Un
+bn − Un
+sup
+−Un
+rn U
+.
+rn U
+µ
+µ
+µ
+∂ξ ξ̃,γ
+∂ξ∂ξ 0 ξ̃,γ
+∂ξ ξ̃,γ
+γ 2
+
+(5) Simulate the same statistic J times for a large J, and calculate the simulated pvalue as in the main text (that is, the proportion of simulated test statistics that
+are greater than the original test statistic).
+References
+Abrevaya, J. (1999). Leapfrog estimation of a fixed-effects model with unknown transformation of the dependent variable. Journal of Econometrics 93 (2), 203–228.
+Andrews, D. W. K. (1993). Tests for parameter instability and structural change with
+unknown change point. Econometrica 61 (4), 821–856.
+Andrews, D. W. K. (2001). Testing when a parameter is on the boundary of the maintained
+hypothesis. Econometrica 69 (3), 683–734.
+Andrews, D. W. K. and W. Ploberger (1994). Optimal tests when a nuisance parameter is
+present only under the alternative. Econometrica 62 (6), 1383–1414.
+Andrews, D. W. K. and W. Ploberger (1995). Admissibility of the likelihood ratio test
+when a nuisance parameter is present only under the alternative. The Annals of Statistics 23 (5), 1609–1629.
+
+<-----Page 53----->TESTING FOR THRESHOLD EFFECTS
+
+53
+
+Card, D., A. Mas, and J. Rothstein (2008). Tipping and the dynamics of segregation.
+Quarterly Journal of Economics 123 (1), 177–218.
+Cavanagh, C. and R. Sherman (1998). Rank estimation for monotonic index models. Journal of Econometrics 84 (2), 351–381.
+Chan, K. S. (1993). Consistency and limiting distribution of the least squares estimator of
+a threshold autoregressive model. Annals of Statistics 21, 520–533.
+Cho, J. S. and H. White (2007). Testing for regime switching. Econometrica 75 (6), 1671–
+1720.
+Cox, C. (1987). Threshold dose-response models in toxicology. Biometrics 43 (3), 511–523.
+Cox, D. (1972). Regression models and life tables. Journal of the Royal Statistical Society
+Series B 34, 187–220.
+Cox, D. (1975). Partial likelihood. Biometrika 62, 269–276.
+Davies, R. B. (1977). Hypothesis testing when a nuisance parameter is present only under
+the alternative. Biometrika 64, 247–254.
+Davies, R. B. (1987). Hypothesis testing when a nuisance parameter is present only under
+the alternative. Biometrika 74 (1), 33–43.
+Delgado, M. A. and J. Hidalgo (2000). Nonparametric inference on structural breaks.
+Journal of Econometrics 96 (1), 113–144.
+Delgado, M. A., J. M. Rodriguez-Poo, and M. Wolf (2001). Subsampling inference in cube
+root asymptotics with an application to Manski’s maximum score estimator. Economics
+Letters 73 (2), 241–250.
+Durlauf, S. N. and P. A. Johnson (1995). Multiple regimes and cross-country growth
+behavior. Journal of Applied Econometrics 10 (4), 365–384.
+Fan, J., H.-N. Hung, and W.-H. Wong (2000). Geometric understanding of likelihood ratio
+statistics. Journal of the American Statistical Association 95 (451), pp. 836–841.
+Fan, J., C. Zhang, and J. Zhang (2001). Generalized likelihood ratio statistics and wilks
+phenomenon. The Annals of Statistics 29 (1), pp. 153–193.
+
+<-----Page 54----->54
+
+LEE, SEO, AND SHIN
+
+Forbes, K. J. and R. Rigobon (2002). No contagion, only interdependence: Measuring stock
+market co-movements. Journal of Finance 57 (5), 2223–2261.
+Ghosal, S., A. Sen, and A. W. van der Vaart (2000). Testing monotonicity of regression.
+Annals of Statistics 28 (4), 1054–1082.
+Han, A. K. (1987). Non-parametric analysis of a generalized regression model : The maximum rank correlation estimator. Journal of Econometrics 35 (2-3), 303–316.
+Hansen, B. E. (1996). Inference when a nuisance parameter is not identified under the null
+hypothesis. Econometrica 64 (2), 413–430.
+Hansen, B. E. (1999). Threshold effects in non-dynamic panels: Estimation, testing, and
+inference. Journal of Econometrics 93 (2), 345–368.
+Khan, M. S. and A. S. Senhadji (2001). Threshold effects in the relationship between
+inflation and growth. IMF Staff Papers 48 (1), 1–21.
+Kim, J. and D. Pollard (1990). Cube root asymptotics. Annals of Statistics 18 (1), 191–219.
+Koenker, R. (2005). Quantile Regression, Volume 38 of Econometric Society monographs.
+Cambridge University Press.
+Kosorok, M. R. and R. Song (2007). Inference under right censoring for transformation
+models with a change-point based on a covariate threshold. Annals of Statistics 35 (3),
+957–989.
+Lee, S. and M. H. Seo (2008). Semiparametric estimation of a binary response model with
+a change-point due to a covariate threshold. Journal of Econometrics 144 (2), 492–499.
+Liu, X. and Y. Shao (2003). Asymptotics for likelihood ratio tests under loss of identifiability. Annals of Statistics 31 (3), 807–832.
+Manski, C. F. (1975). Maximum score estimation of the stochastic utility model of choice.
+Journal of Econometrics 3 (3), 205–228.
+Manski, C. F. (1985). Semiparametric analysis of discrete response. Asymptotic properties
+of the maximum score estimator. Journal of Econometrics 27 (3), 313–333.
+Manski, C. F. (1988). Identification of binary response models. Journal of the American
+Statistical Association 83 (403), 729–738.
+
+<-----Page 55----->TESTING FOR THRESHOLD EFFECTS
+
+55
+
+Pastor, R. and E. Guallar (1998). Use of tow-segmented logistic regression to estimate
+change-points in epidemiologic studies. American Journal of Epidemiology 148 (7), 631–
+642.
+Pastor-Barriuso, R., E. Guallar, and J. Coresh (2003). Transition models for change-point
+estimation in logistic regression. Statistics in Medicine 22, 1141–1162.
+Pesaran, M. H. and A. Pick (2007). Econometric issues in the analysis of contagion. Journal
+of Economic Dynamics and Control 31 (4), 1245–1277.
+Pons, O. (2003). Estimation in a Cox regression model with a change-point according to a
+threshold in a covariate. Annals of Statistics 31 (2), 442–463.
+Roy, S. (1953). On a heuristic method of test construction and its use in multivariate
+analysis. Ann. Math. Stat. 24, 220–238.
+Schwartz, P. F., C. Gennings, and V. M. Chinchilli (1995). Threshold models for combination data from reproductive and development experiments. Journal of the American
+Statistical Association 90 (431), 862–870.
+Sherman, R. (1993). The limiting distribution of the maximum rank correlation estimator.
+Econometrica 61 (1), 123–137.
+Song, R., M. Kosorok, and J. Fine (2009). On asymptotically optimal tests under loss of
+identifiability in semiparametric models. Annals of Statistics 37, 2409–2444.
+Tong, H. (1990). Non-linear Time Series: A Dynamical System Approach. New York:
+Oxford University Press.
+van der Vaart, A. W. and J. A. Wellner (1996). Weak Convergence and Empirical Process.
+Springer, New York.
+Zhang, J. and P. Cheng (1989). The asymptotic powers of some pp tests. Jour. Sys. Sci.
+and Math. Sci. 9, pp. 370–382.
+Zhang, J. and G. Li (1993). A new approach to asymptotic distributions of maximum
+likelihood ratio statistics. In K. Matusita, M. L. Puri, and T. Hayakawa (Eds.), Statistical
+Science and Data Analysis: Proceedings of the third Pacific Area Statistical Conference,
+the Netherlands, pp. 325–336. International Science Publishers.
+
+<-----Page 56----->56
+
+LEE, SEO, AND SHIN
+
+Zhu, H. and H. Zhang (2006). Asymptotics for estimation and testing procedures under
+loss of identifiability. Journal of Multivariate Analysis 97 (1), 19–45.
+Department of Economics, Seoul National University, 599 Gwanak-ro, Gwanak-gu, Seoul,
+151-742, Republic of Korea, and Centre for Microdata Methods and Practice, Institute
+for Fiscal Studies, 7 Ridgmount Street, London, WC1E 7AE, UK.
+E-mail address: sokbae@gmail.com
+URL: http://www.ifs.org.uk/people/profile?id=46.
+Department of Economics, London School of Economics, Houghton Street, London,
+WC2A 2AE, UK.
+E-mail address: m.seo@lse.ac.uk
+URL: http://personal.lse.ac.uk/SEO.
+Department of Economics, University of Western Ontario, 1151 Richmond Street N,
+London, ON N6A 5C2, Canada.
+E-mail address: yshin29@uwo.ca
+URL: http://publish.uwo.ca/~yshin29.
+
+

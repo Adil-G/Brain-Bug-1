@@ -1,0 +1,1306 @@
+<-----Page 0----->140
+
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 49, NO. 1, MAY 2002
+
+A Search Strategy for Assessing a
+Business Opportunity
+Dean A. Shepherd and Moren Lévesque
+
+Abstract—The optimal stopping model presented here explores
+opportunity assessment with reference to a tradeoff between, on
+the one hand, reducing decision accuracy and, on the other hand,
+both increasing search costs and a higher probability that the opportunity is grasped by a competitor. From this model we propose
+a heuristic that specifies three threshold lines to define four decision areas. Decision area 1 prescribes the business opportunity be
+accepted, decision areas 2 and 4 prescribe that search continue,
+and decision area 3 prescribes that the business opportunity be
+rejected. We use a simulation to investigate the robustness of the
+heuristic beyond the model’s boundary conditions.
+Index Terms—Decision model, dynamic programming, entrepreneurship, innovation, opportunity recognition/search,
+optimal stopping, sequential information gathering.
+
+I. INTRODUCTION
+
+F
+
+UNDAMENTAL questions that must be addressed to
+better understand business opportunities include: (1)
+why, when and how some people can discover an opportunity
+and (2) why, when and how some people can exploit these
+opportunities while others cannot or do not [26]. Based on
+Hayek [13], Venkataraman [30] argues that the possession of
+useful knowledge varies among individuals and these differences matter in the decision to exploit an opportunity as well
+as the success of the exploitation process. Therefore, a key
+component of the successful exploitation of an opportunity is
+the accumulated information that the manager has at hand. This
+introduces a number of important research questions: What is
+the nature of the search for information and the accumulation
+of knowledge about the viability of an opportunity? When
+should a manager stop searching for information about the
+attractiveness of an opportunity and grasp it before the window
+of opportunity closes?
+Opportunity assessment represents the use of knowledge (accumulated over time or through current information searching)
+to accept or reject a specific business opportunity before the
+window of opportunity closes. Two bodies of theory are relevant here—the prior learning theory considers how fast information can be assimilated; and the neoclassical information search
+theory considers how long managers may search for information in the face of time pressures to decide.
+Manuscript received May 9, 2000; revised July 15, 2001. Review of this manuscript was arranged by Department Editor A. Marucheck.
+D. A. Shepherd is with the Leeds School of Business, University of Colorado
+at Boulder, Boulder, CO 80309-0419 USA.
+M. Lévesque is with the Weatherhead School of Management, Case
+Western Reserve University, Cleveland, OH 44106-7235 USA (e-mail:
+moren.levesque@weatherhead.cwru.edu).
+Publisher Item Identifier S 0018-9391(02)01596-9.
+
+This article’s focus on how opportunity assessment complements recent research on opportunity recognition (e.g., [11]). In
+one study, managers reported that “new venture ideas are a dime
+a dozen. Evaluation is the key” [15, p. 34]. While there has been
+some research about the evaluation of an opportunity and especially of firms pursuing opportunities [15], these assessments
+have been static in that they often ignore the fact that windows
+of opportunity can close. In contrast, our model considers two
+dynamic factors: the probability that the window of opportunity
+will close (so that the firm may lose a good opportunity to a
+competitor) and the effects of the accumulation of knowledge
+on (probabilistic) decision accuracy.
+In what follows, we first investigate models of optimal search
+strategies and target those that relate to the search for information about an opportunity for innovation. Second, we discuss neoclassical theory on the benefits and costs of information
+searching, and the prior learning theory that the ability to assimilate information is a function of the richness of one’s pre-existing knowledge. These theories lead to a number of assumptions to be included in the formulation of a model of opportunity
+assessment. Third, we formulate the optimal stopping problem,
+derive a heuristic decision rule, and present implications from
+the model. Fourth, we conduct a simulation and assess the performance of the heuristic outside its constraining assumptions.
+Finally, we offer some concluding remarks.
+II. LITERATURE REVIEW AND RELATED MODELS
+The economic-R&D literature offers a decision-theoretic approach to market entry that best relates to our search model.1
+A dynamic R&D investment problem is treated as a one-firm
+optimization problem where the optimal stream of R&D expenditures is characterized over time and, if not already predetermined, the optimal stopping time of the project is estimated. Specifically, Cohen et al. [5] investigate the tradeoff between maximizing new product quality and minimizing time to
+market. They present a multistage model of new product development and investigate how time to market and product performance are affected by profit margins, length of the window
+of opportunity, firm’s speed of product improvement, and competitor product performance, to name a few. They show that “an
+improvement in the speed of product improvement does not necessarily lead to an earlier time-to-market, but always leads to
+1The economic-R&D literature has been categorized into game-theoretic and
+decision-theoretic models. In the game-theoretic literature, reviewed by Reinganum [24], firms compete in the development of a new product. The decision-theoretic approach is used here. Kamien and Schwartz [18] and Granot
+and Zuckerman [12] offer a review of this literature.
+
+0018-9391/02$17.00 © 2002 IEEE
+
+<-----Page 1----->SHEPHERD AND LÉVESQUE: A SEARCH STRATEGY FOR ASSESSING A BUSINESS OPPORTUNITY
+
+enhanced products” (p. 173). Lévesque [19] builds on Cohen et
+al. [5] and focuses on startup firms where the flow of funding
+is modeled stochastically over time and, for a special class of
+revenue functions, show that an improvement in the effect of
+funding on quality does not necessarily lead to an enhanced
+product. Although these models parallel some of the elements
+of our opportunity search model—for example, knowledge and
+search expenditures—they do not incorporate the dynamics of
+decision accuracy on the opportunity.
+Chi, Liu, and Chen [3] present an optimal stopping formulation of an investment project that takes an uncertain length
+of time to develop and can provide a partial return if not
+completed. They also propose functional forms to characterize
+the uncertainty and learning potential about the project’s
+completion time. Granot and Zuckerman [12] study R&D
+projects involving choices of activities at various stages of the
+development process. They incorporate aspects of learning as
+well as resource allocation into a basic model, and propose a
+greedy-type procedure to derive the optimal resource allocation
+of a single-stage R&D project. While these models also capture
+some elements of our model—for example, the search for
+information—they do not incorporate the dynamics of decision
+accuracy on the opportunity.
+Scholars have long been interested in peoples’ search for information [31]; for example, analytical models have been developed to describe an individual’s search for jobs [29], [33]
+and consumers’ search for products and the resulting market
+price dispersion [9], [14], [20], [29]. Of great interest to our
+model has been the modeling of demand for an innovative technology, which incorporates the dynamics of decision accuracy
+([17], [21]). Olivia [22] describing McCardle [21] states: “A
+firm evaluating an innovation or new technology starts out with
+some information and a corresponding estimate of the innovation’s profitability. One of three conditions exists: (1) the profit
+estimate is very high and the firm adopts because the potential
+gains outweigh the risks; (2) the profit estimate is very low and
+the firm does not adopt; and (3) the profit estimate is in between,
+causing the firm to gather more information before making a decision” (p. 607). This process of sequentially gathering information and updating of prior profit estimates reduces the level of
+uncertainty surrounding a decision to adopt a new technology.
+An assumption of sequential information gathering studies to
+date has been that the opportunity is always available.2 While
+these studies have made a substantial contribution to the literature, we can make a further contribution by incorporating aspects of the decision not previously considered together: (1) that
+the decision horizon may be randomly truncated at any time because a competitor accepts the opportunity before the manager
+makes a decision and (2) reducing the uncertainty (increasing
+the accuracy of the decision) regarding the expected profit of
+the business opportunity by sequentially gathering information.
+We now explore the search process further. Neoclassical
+search theory recognizes that the search for information has
+both benefits and costs and thereby provides guidance on how
+much time should be invested in gathering information before
+2For
+
+example, McCardle [21] states “the origin and timing of the innovation
+is not of interest” (p. 1374).
+
+141
+
+making the decision to accept or reject an alternative. Fuhrer
+[10] suggests that an unspecified amount of information is
+necessary to ensure “model certainty,” which is a necessary
+condition to form rational expectations. The manager considers
+the true outcome to be among a finite set of outcomes, each
+of which is assigned an initial probability of being true. This
+allows a statistical evaluation of the benefits of additional information: more information resolves some model uncertainty,
+increasing the probability of grasping a “good” opportunity and
+lowering that of choosing a “bad” one. A good opportunity is
+one that, if exploited by the manager, will generate gains while
+a bad opportunity exploited will generate losses.
+The costs of continued search include money and time (both
+of which represent an opportunity cost for a manager), not to
+mention an increased probability of being pre-empted by a competitor (the window of opportunity closing). Stigler [29] comments that information costs are the costs of transportation from
+ignorance to omniscience, and seldom can a trader afford to
+make the entire trip. Search for information should stop when
+the costs of search exceed its benefits [16], [29]. There is evidence from research on the learning curve that knowledge increases with experience, but at a decreasing rate, although this
+exponential curve is not always smooth [27].3
+Baumol [1] proposes that managers’ assessments are based
+on expected payoffs. The manager has the choice to accept the
+opportunity for exploitation, continue to search for information that will better reveal the attractiveness of the opportunity,
+or reject the opportunity (do not exploit the opportunity and
+cease searching). The attractiveness of the opportunity (good
+or bad) is independent of the entrepreneur’s decision. However,
+the ability to make a decision may be lost if the window of opportunity closed. We propose that accepting a good opportunity
+generates a gain while accepting a bad one generates a loss. Additionally, when a good opportunity is rejected or lost because
+the window of opportunity closed, the manager may be “penalized” by losing the opportunity to a competitor. Such a penalty
+represents a loss (a loss from a penalty is smaller than that from
+accepting a bad opportunity which involves the added costs of
+exploitation). Search costs are not considered in a manager’s
+payoff structure but modeled separately. The existing literature
+leads us to the following assumptions.
+Assumption 1: Knowledge increases over time yet at a
+stochastically decreasing rate.
+Assumption 2: There is a search cost and this accumulates
+(at a constant rate) over time.
+Assumption 3: (a) The probability that an accepted opportunity will prove good increases with knowledge. (b) The
+probability that a rejected opportunity will prove good decreases with knowledge.
+Assumption 4: The probability of the window of opportunity closing increases over time.
+Assumption 5: (a) The payoff from a good opportunity
+accepted is a gain. (b) The payoff from a good opportunity
+rejected or lost because the window of opportunity closed
+3See Yelle [32] for the learning curve and production costs and Besanko, Dranove, and Shanley [2] for a discussion of the learning curve and higher product
+quality, more effective pricing decisions, and lower marketing costs.
+
+<-----Page 2----->142
+
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 49, NO. 1, MAY 2002
+
+is a penalty. (c) The payoff from a bad opportunity accepted
+is a loss. (d) There is no payoff from a bad opportunity
+rejected or lost because the window of opportunity closed.
+III. AN OPTIMAL STOPPING APPROACH TO OPPORTUNITY
+SEARCH DECISIONS
+Conventional profit maximizing models determine the best
+time to stop an activity when the objective function (e.g., maximizing profits) can be expressed as a deterministic function
+of time. However, in many problem formulations, the objective function depends on the state of the decision system, which
+evolves in a random manner over time, thus preventing it from
+being a deterministic function of time. Only once the state satisfies the conditions for optimality should the decision maker
+stop the activity. These conditions for optimality are found by
+formulating the opportunity assessment problem as an optimal
+stopping model. In this section, we formulate the optimal stopping problem, derive a search strategy for assessing a business
+opportunity, and present implications of the model.
+A. Problem Formulation
+We formulate the business opportunity assessment problem
+as a discrete-time continuous-state Markov decision process.
+For more details on Markov decision processes, see Puterman
+[23]. Let represent a period and the length (in number of
+0
+be the state
+periods) of the planning horizon. Let
+represents the level of knowlspace where an element
+an upper bound on knowledge for any . Let
+edge at and
+be the incremental knowledge at , which is a nonnegative
+that decreases
+bounded above random variable of mean
+stochastically over time, that is,
+for all
+and all .4 Therefore (e.g., [25]),
+is nonincreasing
+over time. Knowledge at can thus be expressed as
+(1)
+where initial knowledge, , is (without loss of generality) zero.
+By knowledge, we mean accumulated information that allows
+one to recognize the value of a new opportunity, assimilate new
+information about the viability of this opportunity, and apply
+it to commercial ends (adapted from [6]). Knowledge could be
+measured by the total number of years experience of the managerial team and/or members of the R&D department (the cognitive science literature suggests that experience is a good proxy
+for knowledge; [28], [4]).5 Possible operationalizations of the
+model’s key parameters are offered in Appendix D (see Table
+II).
+Each period the manager must choose to stop or continue the
+search. The manager incurs a search cost due to continuing
+the search one more period. The search cost is a fee involved
+with searching or sampling to increase the accuracy of one’s assessment of an opportunity’s attractiveness. Examples of search
+4An upper bound on k is not a real restriction since T is finite and X is
+bounded for any t in [0; T ].
+5There is the possibility of knowledge depreciation [7], e.g., from false information, although in aggregate we argue (along with other sequential information
+scholars) that knowledge increases with search.
+
+costs include the financial expense involved in conducting focus
+group research to try and determine whether a market exists for
+the opportunity; developing prototypes to indicate technological
+and/or manufacturing feasibility; researching trends in demographics, psychographics, and other key market trends. While
+there is the possibility that in some situations previous period
+search could provide an “experience effect” reducing search
+costs, we argue that the information for assessing an opportunity
+at a point in time is idiosyncratic and, therefore, search efficiencies generated from experience would be minimal. We propose
+that a linear function provides a good approximation of this relationship and keeps the mathematics tractable.
+If the manager chooses to stop at period (given that the
+window of opportunity is currently open), the new venture’s expected profit will depend on expected gain at and on accumulated search costs at . The portion of expected profit that is due
+to expected gain (which can be a negative gain—a loss) depends
+on the decision of accepting or rejecting the opportunity and the
+accuracy of this decision. Therefore, the set of allowable acis
+continue, accept, reject ,
+tions given state
+where continue refers to continuing the search, accept refers
+to stopping the search and accepting the business opportunity,
+while reject refers to stopping the search and rejecting the business opportunity. Selecting accept or reject (i.e., termination)
+moves the system to state , where it remains forever with
+continue ; the state space is revised here to become
+. A search policy specifies an action
+for
+each state and time period .
+The payoff from an opportunity at depends on the entrepreneur’s decision and her/his state of knowledge at . We must
+thus compare the expected values of accepting and rejecting an
+opportunity, where the expectation is taken over the probability
+distribution of a good versus a bad opportunity (which distribution depends in turn on whether the opportunity is accepted or
+rejected). Consequently, we model decision accuracy by a set of
+four conditional probabilities. Specifically, decision accuracy is
+measured by the probability that an accepted opportunity will
+prove good, which increases with knowledge and is denoted by
+. We choose the functional form
+,
+is the rate at which this probability increases with
+where
+(to ensure that the
+knowledge and must be smaller than
+). Decision accuracy is also measured
+probability stays in
+by the probability that a rejected opportunity will prove bad,
+.
+which increases with knowledge and is denoted by
+, where
+We choose the functional form
+is the rate at which this probability increases with knowledge
+.6
+and must be smaller than
+The manager’s objective is to maximize the expected total
+reward (referred to as expected profit), which is received only
+is the
+upon stopping (termination). The expected profit if
+6We utilize linear functional forms for these probabilities for mathematical
+tractability reasons. However, the structure of the heuristic is robust with respect
+to some changes in these functional forms. For instance, if p
+= f (k )
+and p
+= f (k ) where f can be inverted (e.g., decision accuracy increases
+with knowledge at a decreasing rate with f (k ) = k ), then the heuristic takes
+on a similar form. Of course, the thresholds on knowledge will take on different
+values (e.g., with f (k ) = k , these thresholds would be the square of their
+current expressions).
+
+p
+
+p
+
+<-----Page 3----->SHEPHERD AND LÉVESQUE: A SEARCH STRATEGY FOR ASSESSING A BUSINESS OPPORTUNITY
+
+level of knowledge at the beginning of period , and the action
+is to accept the opportunity is7
+(2)
+The manager can expect a gain when a good opportunity is accepted, but expect a loss when a bad opportunity is accepted.
+The manager thus weighs the risk of a big gain if a good opportunity is accepted against the risk of a loss if a bad opportunity is
+accepted; at the search cost has accumulated to . When the
+decision is to reject, the manager encounters a penalty when
+the opportunity happens to be good, since competitors have access to the good opportunity and will use it to increase their
+market share at the manager’s expense. Therefore, when the decision is to reject the opportunity, the expected profit if is the
+level of knowledge at the beginning of period is
+(3)
+Equations (2) and (3) correspond to the value of the reward
+, and the decision is to acfunction when
+and
+cept and reject, respectively. Reward is zero when
+when
+. When the manager decides to continue one
+more period rather than making a decision now, the fact that the
+window of opportunity may close must be taken into consideration in the evaluation of the reward function. If the window
+has closed, then there is no further decision to be made and the
+manager is responsible for the accumulated search costs so far
+and the possible penalty cost for missing a good opportunity.
+the probability the window of opportunity
+We denote by
+closes, which is an increasing function of time . We choose the
+, where
+0 is the rate at which
+functional form
+the window of opportunity closes and must be smaller than 1
+(to ensure that the probability stays in 0, 1 ).
+In our setting, however, the value of the reward function
+from choosing to continue cannot be easily formulated as it
+depends on whether or not one is penalized from accepting
+a bad opportunity, rejecting a good one, or being caught by
+the window of opportunity closing on a good opportunity.
+We, therefore, restrict our formulation to conditional rewards
+that will be shown sufficient to characterize an optimal search
+strategy from applying a dynamic programming result with a
+myopic property on future rewards. Hence, if the window of
+opportunity is still open at , the expected profit associated with
+continuing the search one more period and then accepting the
+opportunity, given knowledge at , is expressed by
+
+143
+
+has a probability of 1
+1 . (The probability the window of
+opportunity closes depends on .) The expected profit associated
+with continuing the search one more period and then rejecting
+the opportunity, given knowledge at is
+
+(5)
+where again there is a penalty from missing a good opportunity, whether because a good opportunity was rejected or because the window of a good opportunity closed.8
+The manager’s objective is to decide when to stop searching
+and whether or not to accept this opportunity so as to maximize
+the expected profit. We utilize a standard dynamic programming
+result to derive conditions under which a relatively simple-form
+policy is optimal. This dynamic programming result utilizes
+conditional expectations that are taken over
+and
+in (4) and (5) according to the proba. This result and proof of its applicability distribution of
+tion are in Appendix A. In essence, this result demonstrates that
+one can maximize expected profit by continuing the search just
+as long as the incremental expected profit of the next period is
+positive, and stop just before it becomes negative. Thus, we can
+assure the manager that it never makes sense (on average, under
+the assumptions of our model) to continue searching when incremental expected profit is decreasing in the hope that the situation will turn around and become more profitable later.
+B. Stopping Decision Rule
+We propose a decision rule that has two steps:
+Step 1) Has the window of opportunity closed yet? If YES
+then stop (there is no additional decision to be made).
+If NO then one moves on to Step 2.
+Step 2) If
+
+then one should stop the search now with a payoff
+equal to
+
+else one should continue the search one more period
+with an expected payoff equal to
+
+(4)
+where there is a penalty from missing a good opportunity. The
+second term in (4) is similar to the first two terms in (2), but is
+diminished by the fact that the window must still be open, which
+7Notice that we choose to talk about expected profit because an expected value
+is evaluated based on the probability distribution of accepting a bad versus a
+good opportunity.
+
+On the basis of the dynamic programming result utilized (see
+Appendix A), the choice of opportunity search strategy depends
+on an assessment of the environment—specifically, an assessment of the (observed) knowledge . Fig.1 describes an opportunity search decision for Step 2, and Fig. 2 a “time slice” of the
+opportunity search strategy model for that step. Since we have
+8Notice
+
+that (5) is actually independent of ! .
+
+<-----Page 4----->144
+
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 49, NO. 1, MAY 2002
+
+(1)
+
+(2)
+Fig. 1. Opportunity search decision trees (Step 2). (1) Payoff tree. (2) Knowledge-threshold tree.
+
+assumed that all but one parameter, namely the expected incre, be constant
+ment in knowledge for the following period
+over time, we choose to illustrate the search strategy in Fig. 2 in
+a two-dimensional diagram where one dimension is represented
+while the other by
+. The value assigned by both of
+by
+these dimensions can be plotted on Fig. 2. The corresponding
+point will be located in one of the four “decision areas” defined
+by the three threshold lines. Fig. 1 defines each “decision area”
+(with reference to the threshold lines in part 2) as well as the corresponding search strategy (when to stop the search and whether
+to accept or reject the opportunity).
+For simplification of presentation, we define (as in Fig. 1)
+(see the equation at the bottom of the following page.) Hence,
+the horizontal threshold line in Fig. 2 is associated with an
+upper knowledge bound corresponding to . The two diagonal
+
+threshold lines are also associated with bounds on knowledge,
+which depend on the expected increment in knowledge from
+one period to the next and on period . The negatively sloped
+defines a condition on knowledge
+threshold line
+that applies only when knowledge is below its upper bound
+(decision areas 3 and 4), while the positively sloped threshold
+applies only when knowledge is above its upper
+line
+bound (decision areas 1 and 2).
+at is larger than
+(Case a
+If knowledge
+in Fig. 1), then the relative benefits of waiting and continuing
+to search are decreased and the relative benefits of accepting
+(rather than rejecting) the opportunity are increased (represented
+on Fig. 2 as decision area 1). The manager should accept the
+opportunity now. However, if knowledge at is smaller than
+(Case b in Fig. 1), then the relative benefits of
+
+<-----Page 5----->SHEPHERD AND LÉVESQUE: A SEARCH STRATEGY FOR ASSESSING A BUSINESS OPPORTUNITY
+
+145
+
+Fig. 2. Decision areas for a business opportunity assessment.
+
+waiting and continuing to search are decreased, and the relative
+costs of accepting the opportunity are higher than those of rejecting it (represented on Fig. 2 as decision area 3). The manager
+should reject the opportunity now. Otherwise, when knowledge
+or the interval
+, the relative
+belongs to the interval
+benefits of waiting and continuing to search are increased, and
+even if the window of opportunity were to close, the lost benefit
+would be minimal (represented on Fig. 2 as decision areas 2 and
+4). The manager should continue the search.
+We would like to point out that in Fig. 2 the thresholds on
+and , are fixed over time. However,
+knowledge, namely
+the decision boundaries associated with the diagonal lines in
+Fig. 2 are not, and we next characterize how these lines move
+over time (technical details are shown in Appendix B). We derive a sufficient condition on the per-period search cost, namely
+, under which the negmoves upward over time. Conatively sloped line
+sequently, decision area 3 (stop the search and reject the op-
+
+and
+
+portunity) is increased over time, but decision area 4 (continue
+the search) is decreased. Over time the expected increment in
+knowledge,
+, decreases, and it thus becomes more likely
+for the manager to stop the search (and reject the opportunity).
+rotates counterclockwise
+The positively sloped line
+over time, and hence does not allow one to conclude whether
+decision areas 1 and 2 are increased or decreased over time.
+C. Conditions for Optimality
+For mathematical simplification, we have assumed that
+(6)
+and that
+(7)
+Conditions (6) and (7) ensure that the proposed structure for
+
+<-----Page 6----->146
+
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 49, NO. 1, MAY 2002
+
+the decision rule makes sense.9 Condition (6) imposes a lower
+bound condition on the gain from accepting a good opportunity
+while Condition (7) imposes an upper bound condition on the
+rate over time at which the window of opportunity closes.
+The dynamic programming result imposes a condition [Condition (2) in Appendix A] where once the manager chooses to
+stop the search, the expected incremental loss exceeds the expected incremental gain at any period following the stop. Since
+this dynamic programming result is based on a myopic property,
+it is sufficient to verify that, once the manager chooses to stop,
+the expected profit associated with stopping the search now exceeds that from continuing the search one more period (induction property). We show in Appendix A that (8) and (9) are sufficient for optimality, where
+(8)
+and
+(9)
+Condition (8) requires that the expected increment in knowledge from one period to the next be larger than a critical value,
+while (9) imposes a lower bound on the per-period search cost.
+We should acknowledge that, when (6) and (8) hold, two of the
+paths in Fig. 1 will never occur because the minimal expected increment imposed on knowledge will make knowledge too large
+(the bound on becomes negative).10
+Condition (9) appears to be quite restrictive since if it holds
+(technical details are offered in Apone has
+, and the
+pendix C). Hence,
+observed knowledge at any given time period should only be
+compared to threshold , which is fixed over time (and thus independent of the expected increment in knowledge of the fol). Therefore, the optimality proof in Aplowing period,
+pendix A holds for a simplified decision tree where one could
+make a decision of rejecting or accepting the opportunity, but
+one could never choose to continue the search. This makes sense
+intuitively because our condition on the minimum per-period
+search cost [(9)] is so restrictive that it would always cost too
+much to continue the search one additional period. Relaxing
+this condition makes an analytical proof unattainable. Therefore, we choose next to investigate how well the decision rule of
+Fig. 1—which we now refer to as a heuristic—performs under
+less restrictive conditions relative to a solution under perfect information.
+
+0
+
+0
+
+these conditions ensure that ( + L) ; ( + )
+L, and ( + L)  !t( + L + ) stay positive on the planning
+horizon and thus, for the purpose of Fig. 1 and for any t [0; T ];
+9More specifically,
+
+0
+
+0
+
+2
+
+L 0  0 !tL
+0
+( + L) 0  0 !t( + L + )
+L 0  0 !tL
+L0
+<
+<
+:
+( + L) 0  0 !t( + L + ) ( + L) 0 
+10A nonlinear form for p
+would not affect our decision rule per se, but (7)
+and (9) would read, respectively, p (T ) < (( + L) )=(( + L + ))
+and  > ( + L) + p (T )L, and !t or ! (t + 1) would be interpreted
+as ! function of t or t + 1, rather than ! multiplied by t or t + 1.
+
+0
+
+IV. SIMULATION
+Since the sufficient conditions (on the model parameters) for
+optimality given by (6)–(9) may be highly restrictive, we undertake a simulation analysis to study the robustness of the heuristic
+proposed by Fig. 1. We begin by describing how the simulation
+model is built. Then, we present an analysis of the robustness
+of our proposed heuristic for multiple situations. Details of the
+simulation analysis are available upon request.
+A. The Simulation Model
+First, we select a combination of model parameters where (6)
+and (7) are always satisfied, but (8) and/or (9) are sometimes violated.11 Given a combination of parameters, 1000 simulations
+: (1) a Bernoulli variable
+are run where, for periods 1 2
+of parameter
+simulates whether the window of opportu1 if the window has closed and
+nity has closed or not, with
+0 otherwise (we prevent the window from opening in future periods once it has closed); (2) a normally distributed variable of
+mean and standard deviation 1.5 simulates , where
+is the increment in knowledge.12 The expected rate at which the
+knowledge increment decreases over time is kept constant, with
+.13 For each simulation, knowledge is evalu, and expected profit are computed,
+ated, where
+where
+
+and
+
+These simulations provide a stopping time, a strategy to “accept” or “reject” the opportunity, and its corresponding expected
+profit. When the proposed best time occurs after the window has
+closed, the recorded data corresponds to that for the maximal
+profitability for the period before the closing (we keep track of
+how often this occurs to ensure a selection of numerical values
+for the parameters that will produce a reasonable distribution of
+“accept,” “reject,” and “window closed”). This corresponds to
+a situation where the decision maker would have perfect information on when the window closes and, therefore, represents a
+“solution under perfect information”.14
+11Conditions (6) and (7) ensure that the proposed structure for the heuristic
+makes sense. For instance it is possible for threshold A in Fig. 1 to be
+below threshold B when (6) does not hold (more specifically one needs
+ > (=)L ). Therefore, the heuristic is not applicable when these
+conditions are violated.
+12We truncate above the random variable X to satisfy the upper bound condition on knowledge K , which is used to ensure that  and  are small enough
+to keep the probabilities p
+(k ) and p
+(k ) in [0; 1]. This variable is also
+truncated below, since negative increments in knowledge are not permitted in
+our model.
+13If T = 4; c = 10, and  = 160, then  = 170;  = 180, and
+ = 190, i.e., the expected increment in knowledge from one period to the
+next decreases at a rate that is equal to c.
+14In this case, the decision maker never incurs a penalty from the window of
+opportunity closing.
+
+0
+
+<-----Page 7----->SHEPHERD AND LÉVESQUE: A SEARCH STRATEGY FOR ASSESSING A BUSINESS OPPORTUNITY
+
+The objective of this simulation model is to compare the
+“solution under perfect information” with the “heuristic”
+decision—that is, with the decision rule of Section III in
+circumstances where the decision-maker does not have perfect
+information. Therefore, we now investigate the robustness of
+the heuristic by comparing it to the “solution under perfect
+information” when conditions (8) and/or (9) are violated. To
+determine this heuristic decision we use a number of steps.
+First, we use the simulated time for the closure of the window
+of opportunity. Then, we utilize the stream of simulated
+, and derive the
+values for knowledge,
+stopping time as proposed by Fig. 1. Hence, as long
+as the window of opportunity is still open, the current
+,
+expected
+profit
+[
+as given by (2) and (3)] is compared to the
+expected profit from continuing one more period
+,
+[
+as given by (4) and (5)]. The strategy (accept or reject) and
+expected profit are then recorded for the period one chooses to
+stop. If in the interim the window closes, then the recorded
+decision for the heuristic is the closure of the window
+of opportunity, whereas for the “solution under perfect
+information” the manager has perfect knowledge and can
+choose the best strategy before the window closes. Therefore,
+the “solution under perfect information” always outperforms
+the heuristic (with its imperfect window-information), even
+when (6)–(9) are met. We chose to compare our heuristic to the
+“solution under perfect information” policy because it is a
+conservative test, and can thus argue that even a performance
+of, say, 70% for the heuristic is good.
+The best times to stop the search for both the “solution under
+perfect information” and the heuristic are then compared. In addition to keeping track of how often the two approaches provide the same stopping time, we evaluate how often the strategy
+selection (accept or reject, or the window closes before a decision is made) is also the same and we calculate a percentage
+expected profit difference as follows: (Please see the equation at
+the bottom of the page.) We are interested in only the magnitude
+of the percentage expected profit difference and not its sign because a negative sign simply means that the expected profit for
+the “solution under perfect information” and the heuristic’s solution were negative.15
+B. Robustness of the Heuristic
+Each measure of heuristic performance is calculated by the
+average on 10 runs of the 1000 simulations for three scenarios.
+15For example, percentage expected profit difference might be negative when
+the search costs are very high and both the optimal and the heuristic models
+produce losses. The biotechnology industry is one where even the successful
+companies exhibit negative profits for the short to medium term because the
+search and testing costs for new drugs is so expensive.
+
+147
+
+Four time periods are considered
+4 . For each of these
+three scenarios, numerical values for the parameters have been
+chosen so as to satisfy (6)–(9). The major differences between
+the three scenarios are the values of the penalty from rejecting
+a good opportunity or from the window on a good opportunity
+and the loss from accepting a bad opportunity
+.
+closing
+In scenario 1, both and are relatively small, in scenario 2 intermediate, and in scenario 3 both are relatively high. While the
+change in values are not as large for the following parameters,
+they are also increased from scenario 1 to 3: upper bound on
+, gain from accepting a good opportunity
+,
+knowledge
+, and the smallest decrease in the
+search cost per period
+expected increment of knowledge from one period to the next
+.
+Within each scenario, key parameters are increased to test
+the sensitivity of the heuristic’s performance. Heuristic performance is captured by (1) the percentage of time the heuristic and
+the “solution under perfect information” times are equal (“%
+time equal”), (2) the percentage of time their times and decisions are equal (“% time and decision equal”), and (3) the percentage expected profit difference (“% profit difference”). The
+results are reported in Table I. It must be noted that the summary proposes a trend in heuristic performance based on five
+(and sometimes only four) data points across a specified range.
+More simulations and a greater range could more specifically
+determine the nature of these relationships, although for the purpose of this paper our analysis provides sufficient indication of
+the sensitivity of heuristic performance to changes in scenarios,
+parameter values, and measures of heuristic performance.
+As demonstrated in Table I, when none of the conditions are
+violated, the heuristic and “solution under perfect information”
+produced the same stopping time, on average, 90% of the time.
+It produced the same stopping time and accept/reject decision
+82% of the time.16 Moreover, the mean difference in expected
+profit was only 8.25%. How does the heuristic perform when
+there are changes in key parameters that cause (8) and/or (9) to
+be violated? These are now explored.
+Increases in the smallest decrease in the expected increment
+decrease “%
+of knowledge from one period to the next
+time equal,” “% time and decision equal,” and increases “%
+profit difference” across all scenarios. Note that an increased
+“% profit difference” represents a decrease in heuristic performance for this measure. Interestingly, when only (8) is violated,
+the heuristic appears to perform even better than when no conditions are violated, i.e., mean “% time equal” was 97% and 97%,
+“% time and decision equal” was 87% and 86%, and “% profit
+difference” was only 3% and 2% for scenarios 2 and 3, respectively. It appears that when the expected increment in knowledge
+is so small, there is little benefit in continuing to search and it
+16Note that it is possible for the heuristic to stop on a window closing, and
+thus no accept/reject decision can be made. However, the “solution under perfect
+information” always stops enabling an accept/reject decision.
+
+solution under perfect information expected profit
+heuristic expected profit
+solution under perfect information expected profit
+
+%
+
+<-----Page 8----->148
+
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 49, NO. 1, MAY 2002
+
+TABLE I
+SIMULATION RESULTS FOR TESTING THE SENSITIVITY OF THE THREE MEASURES OF HEURISTIC PERFORMANCE
+
+is, therefore, better to stop and make a decision. Despite the expectation that the “% time equal” is going to be higher when the
+number of relevant time periods is reduced, it is encouraging to
+find the heuristic performs well in selecting whether to accept
+or reject the business opportunity in this situation.
+increase “%
+Increases in the search cost per period
+time and decision equal” across all scenarios; increase “%
+time equal” for scenarios 1 and 2, but yield a U-shaped relationship for scenario 3; yield a U-shaped relationship across
+
+all scenarios for “% profit difference.” Due to higher search
+costs, we would expect that the manager should stop earlier
+and, therefore, it is not surprising that the “% time equal” and
+“% time and decision equal” are higher. It is interesting to note
+that there is a consistent U-shaped relationship for “% profit
+difference” across the scenarios. A possible explanation is that
+when search costs are low the expected profits for both the
+“solution under perfect information” and heuristic are higher
+(and the denominator in calculating the percentage difference
+
+<-----Page 9----->SHEPHERD AND LÉVESQUE: A SEARCH STRATEGY FOR ASSESSING A BUSINESS OPPORTUNITY
+
+is higher) lowering the difference between the two expected
+profit outcomes. As search costs increase, the denominator for
+calculating the percentage difference decreases—this decrease
+in the denominator increases the “% profit difference.” However, further increasing the search cost encourages a decision
+be made earlier, thus increasing the likelihood that the same
+time will be chosen and decreasing “% profit difference.”
+In the following sensitivity analyses, search costs are relatively low to ensure variation in stopping times (i.e., high search
+costs would likely lead to the decision to stop in the first period
+and we already know that the heuristic performs well under such
+circumstances). Increases in the rate at which the probability of
+an accepted opportunity being good increases with knowledge
+increase “% profit difference” in all scenarios; and decrease
+“% time equal” and “% time and decision equal” in scenario 1,
+but yield relatively stable performances for these two measures
+in scenario 2. The range of values is too restrictive to determine
+performance trends in scenario 3. It is possible that the range
+of values used for is too narrow to “detect” trends in “% time
+equal” and “% time and decision equal” in scenario 2. It is interesting to note an apparent performance tradeoff in scenario 1 between, on the one hand, decreased “% time equal” and “% time
+and decision equal,” and on the other hand, increased “% profit
+difference.” The increased value on the rate at which the probability of an accepted opportunity being good increases with
+encourages the manager to gain more knowlknowledge
+edge with a longer search, extending the number of periods and
+decreasing the likelihood of the “solution under perfect information” and heuristic prescribing the same time period. However,
+given that they search for longer, there is an increased likelihood that an accepted opportunity is good increasing the total
+expected profit (an increase in the denominator decreases the
+percentage difference).
+Increases in the rate at which the probability a rejected opyield relaportunity being bad increases with knowledge
+tively stable measures of heuristic performance in all scenarios
+with the possible exception that “% time and decision equal” is
+decreasing in scenario 2. Again, we wish to point out that stability may be a result of the chosen range of values for being
+too narrow to detect changes in heuristic performance. As discussed above, simulations using a greater range of parameter
+values could more specifically determine the nature of this relationship.
+Increases in the penalty from rejecting a good opportunity
+yield a
+or from the window on a good opportunity closing
+U-shaped relationship for “% time equal” for all scenarios, but
+decrease “% time and decision equal” (at a decreasing rate) and
+“% profit difference” for all scenarios. A consistent finding is
+that a low level of appears to provide a boost to “% time and
+decision equal” although an increase in rapidly diminishes this
+performance benefit with further increases in having little to
+no effect. At a low , other elements of the payoff structure have
+more influence on the decision, but a small increase in the importance of increases the salience of the tradeoff between
+and accepting a good opportunity and also the tradeoff within
+between being penalized from stopping too early to reject a good
+opportunity and being penalized for searching too long and the
+window of opportunity closing. Further increases in the impor-
+
+149
+
+tance of the tradeoff have little affect on “% time and decision
+equal”.
+Increases in the loss from accepting a bad opportunity
+decrease “% profit difference” in all scenarios; increase “% time
+equal” in scenarios 1 and 3, but appear to decrease this measure
+of performance in scenario 2; and increase “% time and decision equal” in scenario 1, but decrease this measure of performance in scenarios 2 and 3. It is interesting to note the apparent
+tradeoff in “% time and decision equal” between scenario 1 and
+scenarios 2 and 3. It appears that increasing loss from accepting
+when there is a low penalty from rejecting
+a bad opportunity
+a good opportunity or from the window on a good opportunity
+(i.e., scenario 1) increases the likelihood of both the
+closing
+“solution under perfect information” and heuristic choosing the
+accept decision. is higher as we move from scenario 1 to scenarios 2 and 3, and increasing only increases the salience of
+the tradeoff between and making the decision to accept less
+obvious decreasing “% time and decision equal.”
+Increases in the gain from accepting a good opportunity
+decrease “% time equal” and “% time and decision equal” for
+scenario 1; yield relatively stable performance for “% time
+equal” and “% time and decision equal” in scenario 2; and
+increase “% profit difference” in scenarios 1 and 2. There is
+insufficient data for scenario 3. Similar to the explanation for
+, these differences in
+loss from accepting a bad opportunity
+trends across scenarios might be explained by tradeoffs within
+the payoff structure. In scenario 1, there is a low value on the
+penalty from rejecting a good opportunity or from the window
+and the loss from accepting a
+on a good opportunity closing
+and, therefore, increases in increasingly
+bad opportunity
+encourage both the “solution under perfect information” and
+heuristic to focus less on the reject alternative. However, at
+(in scenario 2), increasing only
+higher levels of and
+increases the difficulty for the heuristic to choose between the
+alternatives.
+V. CONCLUSION
+“When should a manager stop searching for information
+about the attractiveness of an opportunity and grasp it before
+the window of opportunity closes?” We propose that the answer
+depends on the marginal benefit of additional knowledge, the
+possibility that the window of opportunity may close, the costs
+of search, and the payoffs associated with a good opportunity
+accepted, and a bad opportunity rejected. Specifically, our
+mathematical model proposes threshold values for knowledge
+that determine whether the managers should (1) accept the
+opportunity now, (2) reject the opportunity now, or (3) continue the search for information about the opportunity. The
+simulation results indicate that the model is a useful heuristic
+even when one of the conditions is not satisfied [i.e., (8) that
+requires the expected increment in knowledge from one period
+to the next be larger than a critical value]. The usefulness of
+the heuristic when the other condition is violated [i.e., (9)] that
+imposes a lower bound on the per-period search cost] depends
+on the cause of the violation—the parameter values.
+A number of important industry sectors appear to satisfy Condition (9). For example, biotechnology is well known for its high
+
+<-----Page 10----->150
+
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 49, NO. 1, MAY 2002
+
+search costs (expenditures on research and development to determine the effectiveness of a drug and any possible side effects).
+The opportunity assessment strategy proposed here would be
+useful for biotechnology companies in deciding whether they
+should continue searching for information about the attributes of
+a drug before seeking Federal Drug Administration (FDA) approval, stop searching and abandon the project, or stop searching
+and submit the drug to the FDA. However, for those situations
+when the relative search costs are not high, the level of other
+parameter values must be considered in determining the usefulness of the heuristic.
+We believe that this model makes a contribution to our understanding of evaluating a business opportunity, complementing
+recent research on opportunity recognition, decision-theoretic
+approaches to market entry, and sequential information gathering models. The optimal stopping approach used here reflects
+the dynamic nature of the managerial process and builds on previous research that relies on a static perspective and/or does not
+account for a window of opportunity closing.
+
+continuing the search one more period is exceeded by the expected profit associated with stopping the search now.
+A. Case (a), Fig. 1
+First, we identify what is optimal (accept or reject) if the manager stops the search now (period ) and, second, what is optimal
+). Third, we
+if s/he continues one more period (up until
+characterize the condition under which the manager is better off
+stopping the search now rather than continuing it one more period. Fourth, we demonstrate that once the manager chooses to
+stop, the expected profit associated with continuing the search
+one more period is exceeded by the expected profit associated
+with stopping the search now (a unique optimal stopping time).
+These steps allow us to develop, under certain sufficient conditions, an optimal opportunity search strategy as offered in Fig. 1.
+In Case (a) of Fig. 1, if the manager stops the search at period
+he/she maximizes expected profit by accepting the opportunity,
+, which from (2) and (3) is
+i.e.,
+equivalent to the state of the system at t satisfying
+
+APPENDIX A
+PROOF OF OPTIMALITY[8]
+
+(A1)
+
+1 2
+be a sequence of -fields of a sample
+Let
+with
+1 2
+. Let
+be a sequence of
+measurable with respect to
+and
+random variables with
+exists and is finite for all . Let be the class of
+such that
+. If there exists a stopping
+all stopping rules such that
+with
+rule
+1)
+2)
+
+If the manager decides to wait and stop the search one period
+later, then he/she maximizes expected profit by also accepting
+the opportunity in this case, i.e.,
+, which from (4) and (5) is equivalent
+to the state of the system at satisfying
+(A2)
+One can easily verify that under (6)
+
+when
+when
+for almost all
+that
+
+; and if there is some
+
+such
+
+3)
+for all
+then
+In the context of the present paper, the -field
+is gener. The random variable is the expected
+ated by
+profit from stopping the search at period .17 Expected profit depends on whether the manager accepts or rejects the business
+opportunity, and it is expressed by either (2) or (3).
+Condition (1) is satisfied because we operate on a finite
+planning horizon. Condition (3) holds since the incremental
+expected profit from one period to the next is bounded.
+For Condition (2) to hold (a unique optimal stopping time),
+we verify that once the manager chooses to stop the search
+(based on the decision rule offered in Fig. 1), the expected incremental loss overcomes the expected incremental gain at any
+period following the stop. It is sufficient to verify that, once the
+manager chooses to stop, the expected profit associated with
+17Please remember that we choose to talk about expected profit because an
+expected value is evaluated based on the probability distribution of accepting a
+bad versus a good opportunity.
+
+(A3)
+and, therefore, (A1) is sufficient for (A2) to hold. Consequently,
+under (A1), the manager accepts the opportunity whether he/she
+stops the search now or next period. The next question is: When
+should the manager stop the search?
+The manager should stop the search and accept
+1 if and only if
+the opportunity at, say,
+(there is
+an incremental loss from searching one additional period, i.e.,
+2), which from (2) and (4) is equivalent to
+up until period
+the state of the system at satisfying
+
+(A4)
+1 to be the optimal stopping time, we must
+However, for
+next verify that the expected profit if the manager were to stop
+2 is below that from stopping the search at
+the search at
+1; therefore there is no expected gain from continuing
+1.
+the search after period
+1
+. Therefore,
+In this case, A1 holds at
+(A5)
+
+<-----Page 11----->SHEPHERD AND LÉVESQUE: A SEARCH STRATEGY FOR ASSESSING A BUSINESS OPPORTUNITY
+
+Consequently,
+also belongs to Case (a) (with
+1)
+of Fig. 1, and the expected profit associated with continuing
+2 is below that from making a dethe search to period
+1 as long as
+cision at
+, which from (2) and (4) is equivalent to
+1 satisfying
+the state of the system at
+
+(A6)
+being nonincreasing with , it is straightforward to
+With
+verify that the right-hand side of (A4) is larger than that for
+, (A6) must hold. The above
+(A6). Therefore, since
+1 is replaced by
+developments still hold when period
+2, and
+2 becomes
+3 (induction proof) and,
+period
+therefore, the manager would incur incremental losses from
+1.
+continuing the search beyond period
+
+151
+
+In this case,
+can belong to either Case (a) or Case (b)
+1) of Fig. 1. If
+satisfies Case (a), then
+(with
+(A10)
+The expected profit associated with continuing the search to pe2 is exceeded by that from making a decision at
+1
+riod
+)
+(i.e.,
+as long as (A6) is satisfied. One can easily demonstrate that
+under Condition (9) the right-hand side of (A6) is negative and,
+therefore, (A6) holds as cannot be negative. These develop1 is replaced by period
+2,
+ments still hold when period
+2 becomes
+3 (induction proof). Therefore, the manand
+ager would incur incremental losses from continuing the search
+1.
+beyond period
+satisfies Case (b), then
+If
+
+B. Case (b), Fig. 1
+We utilize a similar approach to what we have demonstrated
+above. In Case (b) of Fig. 1, if the manager stops the search
+at period he/she maximizes expected profit by rejecting the
+, which from
+opportunity, i.e.,
+(2) and (3) is equivalent to the state of the system at satisfying
+(A7)
+If the manager decides to stop the search one period later,
+then he/she maximizes expected profit by accepting the
+opportunity in this case, i.e.,
+, which from (4) and (5) is equivalent
+to the state of the system at satisfying
+(A8)
+The manager should stop the search and reject the opportunity
+1 if and only if
+at, say,
+, which from (2) and (4) is equivalent to the state
+of the system at satisfying (A9).[Please see (A9) at the bottom
+1 to be the optimal stopping time,
+of the page.] However, for
+we must next verify that the expected profit if the manager were
+2 is below that from stopping the
+to stop the search at
+1; therefore there is no expected gain from
+search at
+1.
+continuing the search after period
+
+(A11)
+The expected profit associated with continuing the search to pe2 is exceeded by that from making a decision at
+1
+riod
+) as
+(i.e.,
+long as (A12) holds. (Please see (A12) at the bottom of the
+page.) It is straightforward to verify that under (8) and (9) the
+right-hand side of (A12) is larger than the upper bound on
+in (A11), and thus (A12) must hold. Here again, the same devel1 is replaced by period
+2,
+opments apply when period
+2 becomes
+3 (induction proof). Therefore, the manand
+ager would incur incremental losses from continuing the search
+1.
+beyond period
+C. Unreachable Paths, Fig. 1
+For the upper part of the tree in Fig. 1(1), if the manager stops
+the search at period he/she maximizes expected profit by ac,
+cepting the opportunity, i.e.,
+which from (2) and (3) is equivalent to the state of the system at
+satisfying
+(A13)
+
+(A9)
+
+(A12)
+
+<-----Page 12----->152
+
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 49, NO. 1, MAY 2002
+
+If the manager stops the search one period later, then
+he/she maximizes expected profit by rejecting the opportunity in this case, i.e.,
+, which from (4) and (5) is equivalent
+to the state of the system at satisfying
+
+through coordinates
+(B2)
+and
+(B3)
+
+(A14)
+However, one can easily verify that under (6)
+
+By using first order derivatives with respect to , it is straightforward to demonstrate that the second coordinate in (B2) increases
+as is increased whenever
+(B4)
+
+(A15)
+and, therefore, one can never satisfy both (A13) and (A14). This
+decision path is unattainable under our model Conditions.
+For the lower part of the tree in Fig. 1(1), if the manager
+stops the search at period he/she maximizes expected profit by
+,
+rejecting the opportunity, i.e.,
+which from (2) and (3) is equivalent to the state of the system
+at satisfying (A7). If the manager stops the search one period
+later, then he/she maximizes expected profit by also rejecting
+the opportunity in this case, i.e.,
+, which from (4) and (5) is equivalent
+to the state of the system at satisfying (A14). It follows from
+(A15) that (A14) is sufficient for (A7) to hold. Consequently,
+under (A14) the manager rejects the opportunity whether he/she
+stops the search today or the following period.
+We can verify in this case that the manager should stop the
+1 if and only if
+search and reject the opportunity at, say,
+, which from (2)
+. However, under (8), the
+and (4) is equivalent to
+right-hand side of (A14) is bounded above by
+
+and that the first coordinate in (B3) increases as is increased
+under no condition.
+As for the positively sloped threshold line, it is represented
+by
+
+(B5)
+This line passes through coordinates
+(B6)
+
+(B7)
+
+and
+
+It is also straightforward to verify that both the second coordinate in (B6) and the first coordinate in (B7) increase as is
+increased. Therefore, this line rotates over time.
+APPENDIX C
+ORDERING OF THE KNOWLEDGE THRESHOLDS
+For any period , one can verify that
+
+whenever
+
+(A16)
+(C1)
+which is negative under (6). Since knowledge cannot be negative, this decision path is unattainable under our model Conditions.
+APPENDIX B
+THRESHOLD LINES’ MOVEMENTS IN FIG. 2
+In Fig. 2, the negatively sloped threshold line is represented
+by (B1), found at the bottom of the page. This line passes
+
+whenever (C1) does not hold. One can
+and that
+also verify under (9) that the right-hand side of (C1) is smaller
+.
+than zero and, therefore, one can only have
+APPENDIX D
+OPERATIONALIZATION OF PARAMETERS
+See Table II.
+
+(B1)
+
+<-----Page 13----->SHEPHERD AND LÉVESQUE: A SEARCH STRATEGY FOR ASSESSING A BUSINESS OPPORTUNITY
+
+153
+
+TABLE II
+OPERATIONALIZATION OF PARAMETERS
+
+ACKNOWLEDGMENT
+The authors would like to thank M. Laguna, A. Marucheck,
+and three anonymous reviewers for their valuable comments on
+an earlier draft of this paper.
+REFERENCES
+[1] W. J. Baumol, Entrepreneurship, Management, and the Structure of Payoffs. Cambridge, MA: MIT Press, 1993.
+[2] D. Besanko, D. Dranove, and M. T. Shanley, Economics of
+Strategy. New York: Wiley, 1997.
+[3] T. Chi, J. Liu, and H. Chen, “Optimal stopping rule for a project with
+uncertain completion time and partial salvageability,” IEEE Trans. Eng.
+Manage., vol. 43, pp. 54–66, Nov. 1996.
+[4] F. Choo and K. T. Trotman, “The relationship between knowledge structure and judgments for experienced and inexperienced auditors,” Account. Rev., pp. 464–485, July 1991.
+[5] M. A. Cohen, J. Eliashberg, and T. H. Ho, “New product development:
+Performance and time-to-market tradeoff,” Manage. Sci., vol. 42, pp.
+173–186, 1996.
+
+[6] W. M. Cohen and D. A. Levinthal, “Absorptive capacity: A new perspective on learning and innovation,” Administr. Sci. Quart., vol. 35, pp.
+128–152, 1990.
+[7] E. D. Darr, L. Argote, and D. Epple, “The acquisition, transfer, and depreciation of knowledge in service organizations: Productivity in franchises,” Manage. Sci., vol. 41, no. 11, pp. 1750–1762, 1995.
+[8] C. Derman and J. Sacks, “Replacement of periodically inspected equipment (an optimal optional stopping rule),” Nav. Res. Logist. Quart., vol.
+7, pp. 597–607, 1960.
+[9] A. Fishman, “Search technology, staggered price-setting, and price dispersion,” Amer. Econ. Rev., vol. 82, pp. 287–298, 1992.
+[10] J. C. Fuhrer, “Information gathering and expectation formation under
+model uncertainty,” Southern Econ. J., vol. 53, pp. 685–701, 1987.
+[11] C. M. Gaglio, “Opportunity identification: Review, critique and suggested research directions,” Advances in Entrepreneurship, Firm Emergence and Growth, vol. 3, pp. 139–202, 1997.
+[12] D. Granot and D. Zuckerman, “Optimal sequencing and resource allocation in research and development projects,” Manage. Sci., vol. 37, pp.
+140–156, 1991.
+[13] F. A. Hayek, “The use of knowledge in society,” Amer. Econ. Rev., vol.
+XXXV, pp. 519–530, 1945.
+[14] J. Hey, Uncertainty in Microeconomics. New York: New York Univ.
+Press, 1974.
+
+<-----Page 14----->154
+
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL. 49, NO. 1, MAY 2002
+
+[15] G. E. Hills and R. C. Shrader, “Successful managers’ insights into opportunity recognition,” Frontiers of Entrepreneurship Res., pp. 30–43,
+1998.
+[16] J. Hirshleifer and J. G. Riley, “The analytics of uncertainty and information—An expository survey,” J. Econ. Lit., vol. 17, pp. 1375–1421,
+1979.
+[17] R. Jensen, “Adoption and diffusion of an innovation of uncertain profitability,” J. Econ. Theory, vol. 27, pp. 182–193, 1982.
+[18] M. I. Kamien and N. L. Schwartz, Market Structure and Innovation. Cambridge, U.K.: Cambridge Univ. Press, 1982.
+[19] M. Lévesque, “Effects of funding and its return on product quality in
+new ventures,” IEEE Trans. Eng. Manage., vol. 47, pp. 98–105, Feb.
+2000.
+[20] R. Manning and P. Morgan, Optimal Search. London, U.K.: Univ. of
+Western Ontario, 1982.
+[21] K. McCardle, “Information acquisition and the adoption of new technology,” Manage. Sci., vol. 31, no. 11, pp. 1372–1389, 1985.
+[22] T. A. Oliva, “Information and profitability estimates: Modeling the
+firm’s decision to adopt a new technology,” Manage. Sci., vol. 37, pp.
+607–623.
+[23] M. L. Puterman, Markov Decision Processes: Discrete Stochastic Dynamic Programming. New York: Wiley, 1994.
+[24] J. F. Reinganum, “The timing of innovation: Research, development,
+and diffusion,” in Handbook of Industrial Organization, R. Schmalensee
+and R. D. Willig, Eds. Amsterdam, The Netherlands: North-Holland,
+1989, ch. 14, pp. 849–908.
+[25] S. M. Ross, Stochastic Processes. New York: Wiley, 1983.
+[26] S. Shane and S. Venkataraman, “The promise of entrepreneurship as a
+field of research,” Acad. Manage. Rev., vol. 25, pp. 217–226, 2000.
+[27] D. A. Shepherd, E. J. Douglas, and M. T. Shanley, “New venture survival: Ignorance, external shocks and risk reduction strategies,” J. Bus.
+Ventur., to be published.
+[28] H. Simon, “What we know about the creative process,” in Frontiers in
+Creative and Innovative Management, R. Kuhn, Ed. Cambridge, MA:
+Ballinger, 1985, pp. 3–20.
+[29] G. Stigler, “The economics of information,” J. Political Econ., vol. 65,
+pp. 213–225, 1961.
+[30] S. Venkataraman, “The distinctive domain of entrepreneurship research:
+An editor’s prespective,” in Advances in Entrepreneurship, Firm Emergence, and Growth, J. Katz and R. Brockhaus, Eds. Greenwich, CT:
+JAI, 1997.
+[31] M. Weitzman, “Optimal search for the best alternative,” Econometrica,
+vol. 47, pp. 641–654, 1979.
+[32] L. Yelle, “The learning curve: Historical review and comprehensive
+survey,” Decision Sci., vol. 10, pp. 302–308, 1979.
+
+[33] B. J. Yoon, “A model of unemployment duration with variable search
+intensity,” Rev. Econ. Stat., vol. 63, pp. 599–609, 1981.
+
+Dean A. Shepherd received the B.App.Sc. degree
+from the Royal Melbourne Institute of Technology,
+Melbourne, Australia, and the M.B.A. degree and
+Ph.D. degree in strategy and entrepreneurship from
+Bond University, Robina, Australia.
+He is currently an Assistant Professor at the
+Leeds School of Business, University of Colorado,
+Boulder. He has served as the Chair of the Research
+Committee for the Academy of Management Entrepreneurship Division. He has authored numerous
+published articles that have appeared in Management
+Science, European Journal of Operational Research, Journal of Business
+Venturing, Entrepreneurship Theory and Practice, Journal of High Technology
+Management Research and Business Ethics Quarterly. His research interests
+include entry strategy, venture capitalists and entrepreneurial decision-making,
+opportunity recognition.
+
+Moren Lévesque received the B.Sc. degree in
+mathematics and the M.Sc. degree from Université
+Laval, Québec, Canada, and the Ph.D. degree in
+management science from the University of British
+Columbia, Canada.
+She is an Assistant Professor at the Weatherhead
+School of Management, Case Western Reserve
+University, Cleveland, OH, where she teaches
+operational research, operations management,
+statistics, and entrepreneurship at the undergraduate
+and graduate levels. She has taught at the Faculté
+des Sciences de l’Administration of Université Laval, Québec, Canada; the
+Graduate School of Industrial Administration, Carnegie Mellon University,
+Pittsburgh, PA; the Lally School of Management and Technology, Rensselaer
+Polytechnic Institute, Troy, NY; and at the Wirtschaftswissenschaftliche
+Fakultät of Humboldt Universität zu Berlin, Germany. She has authored
+numerous articles published in the IEEE TRANSACTIONS ON ENGINEERING
+MANAGEMENT, European Journal of Operational Research, Journal of
+Business Venturing, Entrepreneurship Theory and Practice and Business
+Ethics Quarterly. Her research applies the methodologies of analytical and
+quantitative disciplines to the study of entrepreneurial decision-making.
+
+

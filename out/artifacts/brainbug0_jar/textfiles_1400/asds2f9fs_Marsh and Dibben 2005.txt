@@ -1,0 +1,815 @@
+<-----Page 0----->Trust, Untrust, Distrust and Mistrust – An
+Exploration of the Dark(er) Side
+Stephen Marsh1 and Mark R. Dibben2
+1
+
+National Research Council Canada, Institute for Information Technology
+steve.marsh@nrc.gc.ca
+2
+Lincoln University, New Zealand
+dibbenm@lincoln.ac.nz
+
+Abstract. There has been a lot of research and development in the ﬁeld
+of computational trust in the past decade. Much of it has acknowledged
+or claimed that trust is a good thing. We think it’s time to look at
+the other side of the coin and ask the questions why is it good, what
+alternatives are there, where do they ﬁt, and is our assumption always
+correct?
+We examine the need for an addressing of the concepts of Trust, Mistrust, and Distrust, how they interlink and how they aﬀect what goes on
+around us and within the systems we create. Finally, we introduce the
+phenomenon of ‘Untrust,’ which resides in the space between trusting
+and distrusting. We argue that the time is right, given the maturity and
+breadth of the ﬁeld of research in trust, to consider how untrust, distrust
+and mistrust work, why they can be useful in and of themselves, and
+where they can shine.
+
+1
+
+Introduction
+
+Computers, and the world they touch, are interesting. For example, issues of IT
+security mean that, to coin a phrase, everyone is distrusted equally, but some
+are distrusted more equally than others1 , while ‘trusted computing’ would have
+us believe that we are capable of trusting our computers and our networks, as
+it were, with just a little more eﬀort in the design and implementation process.
+ECommerce vendors compete for the trust of consumers, tweaking websites, designing online experiences and generally falling over themselves in their eagerness
+to put right what has been pointed out as wrong (a major research area in its own
+right, that of trust in online experiences, see for example [1, 2, 3, 4, 5, 6]), which is
+odd considering that distrust is an important motive force in such transactions
+as result [7]. A great deal of excellent research has gone into computational trust,
+trust management, online trust, and so on in the past decade or so, and now, we
+ﬁnd ourselves at a crossroads.
+1
+
+As an aside, we believe that the use of the term ‘trust’ in IT security requires much
+more careful thought, but that’s a story, and a recurrent argument, for another time.
+
+P. Herrmann et al. (Eds.): iTrust 2005, LNCS 3477, pp. 17–33, 2005.
+c Springer-Verlag Berlin Heidelberg 2005
+
+
+<-----Page 1----->18
+
+S. Marsh and M.R. Dibben
+
+There is, in the literature and the world, an overwhelming consideration that
+trust is a fundamentally positive force that, when applied in many diﬀerent
+areas, from society to computation, will bear positive fruit. As trust researchers,
+we tend to agree, but there’s a caveat – Trust has a ‘darker’ side, Distrust, and
+this is almost uniformly ignored, or glossed over as something to be addressed at
+another time. Invariably, distrust causes problems with computational formulae –
+what exactly is it, how does it get represented and, when it is represented, what
+does it really mean? Just as invariably, we promise we’ll think about it another
+time and head oﬀ with a greater understanding of trust and none of distrust. The
+time is right to examine the darker side of trust. Distrust is not a simple reversal
+of the concept, although it is tightly coupled [8]. It’s also not Mistrust or Untrust,
+although again it’s related. To our knowledge, the question of how it’s related,
+where, and to what extent it comes into play, and how one can become another,
+has not been adequately addressed in the computational sciences literature ([7,
+9, 10] notwithstanding). For the sake of a complete understanding, it’s time this
+was done. Finally, it’s also time to discuss what the space between trusting and
+distrusting is, and how it works.
+This paper serves as a next step in that process, as a call to arms to the
+Trust researchers and developers to turn their thoughts to Untrust, Distrust and
+Mistrust, to consider them as unique entities in their own right, and to develop
+systems and architectures that utilise their strengths in a concrete manner that
+acknowledges where one ends and another begins. The organisation of this paper
+is as follows. Firstly, we believe that it is necessary to understand our terms
+of reference before we proceed. Accordingly, section 2 presents and discusses
+deﬁnitions of trust, untrust, distrust, and mistrust, and by doing so creates a
+concrete foundation from which to move into our explorations. To discuss the
+concepts further, in section 3 we expand the formalisation in [11] to include
+explicit consideration of distrust and mistrust, and to make it more applicable
+to computational trust as it now stands. Section 4 discusses why the phenomena
+of untrust, distrust and mistrust are important, where they can be used and
+why, and how they contribute to trust research and the ultimate conception of
+trust as a positive thing.Finally, we apply the new formalisation and end with a
+call to arms for understanding and further work in this area in section 5.
+
+2
+
+Definitional Issues and Discussions
+
+A short review of trust literature in the social sciences reveals an increasing interest in distrust. What was once regularly considered as a side-eﬀect of trust
+violation [12, 13], rather than necessarily a construct of its own, has now assumed more signiﬁcance. Most understandings of distrust appear to take their
+cue from Luhmann’s [14] suggestion that those who choose not to trust “must
+adopt another negative strategy to reduce complexity” [15–page 24] and that
+Golembiewski and McConkie’s ‘self-heightening cycle of trust’ [16] applies in
+the opposite way to its supposed corollary [17–page 38]. The signiﬁcance of distrust as a separate concept is brought into stark relief when coupled with ideas
+
+<-----Page 2----->Trust, Untrust, Distrust and Mistrust – An Exploration of the Dark(er) Side
+
+19
+
+from risk management and social, or public, trust – and this is an area we will
+develop later. Suﬃce to say that from the perspective of risk communication,
+public distrust is a ‘cultural tendency’ [18–page 60], ameliorated by better information [19] which recognises that “lay-people’s conceptions of risk reﬂect a
+richer and broader rationality” [20–page 130]. That is to say, distrust is a human response to a lack of information. Thus, distrust is often considered as the
+“negative mirror-image of trust” [21–page 26], a “conﬁdent negative expectation
+regarding anothers conduct” [22–page 439] in a situation entailing risk to the
+trusting party. Mistrust, for its part, can be considered as “either a former trust
+destroyed, or former trust healed” [21–page 27].
+While we’ve mentioned (and criticised) before [23] that it seems that every
+paper in computational trust at least seems to have its own need for a deﬁnition
+of trust, that’s certainly true here. Not only that, but we also need deﬁnitions
+for distrust untrust, and mistrust. Importantly, we argue that in fact they are
+not the same.
+In many ways, this paper represents an evolution from [11], where we discussed distrust and ignorance. There, we stated that distrust was negative of
+trust. Here, we’re evolving that deﬁnition because of the work that has been
+done in the area, and a greater understanding of the concept because of this
+work. That given, it’s still surprisingly diﬃcult to ﬁnd deﬁnitions of distrust
+that don’t use mistrust as synonymous (even the otherwise excellent [9] confuses the two). In fact, we believe this is a mistake because it removes a tool
+for trust researchers to be able to focus on what they are researching. We use a
+corollary with information as a pointer to the direction we will take. From the
+Oxford English Dictionary, we ﬁnd that the term ‘misinformation’ can be taken
+to mean information that is incorrect. This can be a mistake on the part of the
+informer, and generally speaking, it can be spotted after the fact. The term ’disinformation’ removes all doubt – it’s information that is deliberately false and
+intended to deceive. That is, disinformation is misinformation that is deliberately and knowingly planted. From this, we can move to a better understanding
+of distrust and mistrust, and what untrust is.
+A simple comparison between the concepts is probably necessary. For the
+sake of argument, following [24, 25, 26, 27, 14, 11], let’s say that trust, in general,
+is taken as the belief (or a measure of it) that a person (the trustee) will act in
+the best interests of another (the truster) in a given situation, even when controls
+are unavailable and it may not be in the trustee’s best interests to do so. Given
+this, we can now examine untrust, distrust and mistrust in the following ways.
+Given that Misinformation is passive in some form (that is, it may or may not
+be intentional, and is a judgment usually attained after the fact), we conjecture
+that Mistrust is misplaced trust. That is, in a situation where there was a
+positive estimation of the trustee and trust was betrayed, we can say that trust
+has been misplaced (not always ‘betrayed,’ since the trustee may not have had
+bad intentions). Thus, the truster mistrusted the trustee. Thus, as we see in
+[28] mistrust is deﬁned so “When a trustee betrays the trust of the truster, or,
+
+<-----Page 3----->20
+
+S. Marsh and M.R. Dibben
+
+in other words, defaults on trust, we will say that a situation of mistrust has
+occured, or that the truster has mistrusted the trustee in that situation.” (p.47).
+Somewhere between distrust and trust there is a potentially large gap. In this
+gap exists ‘Untrust’. Untrust is a measure of how little the trustee is actually
+trusted. That is to say that if we say a trustee is untrusted, then the truster has
+little conﬁdence (belief, faith) in the trustee acting in their best interests in that
+particular situation. This is not quite the same as being the opposite of trust.
+In [11] the concept of untrust, while not explicitly acknowledged as such at the
+time, is covered in the situation of Situational Trust being less than Cooperation
+Threshold – I trust you, but not enough to believe you’ll be of any help in this
+situation if push comes to shove. Thus, untrust is positive trust, but not enough
+to cooperate. In this instance, as has been noted elsewhere [9], it is possible to
+put into place measures that can help increase trust, or at least remove the need
+to rely on the trustee. These can include legal necessities such as contracts, or
+veriﬁcation techniques, for example observation until the truster is satisﬁed, and
+so on: “Trust, but verify,” as Reagan said.
+Distrust, by comparison is a measure of how much the truster (we obviously
+use the term loosely here!) believes that the trustee will actively work against
+them in a given situation. Thus, if I distrust you, I expect you’ll work to make
+sure the worst (or at least not the best) will happen in a given situation. Interestingly, while trust (and mistrust and untrust) are situational, it’s hard to
+imagine many examples where a distrusted person can be trusted by the same
+truster in a diﬀerent situation, but there may well be some. Again, [28] deﬁnes
+distrust as “to take an action as if the other agent is not trusted, with respect
+to a certain situation or context. To distrust is diﬀerent from now having any
+opinion on whether to trust or not to trust . . . Although distrust is a negative
+form of trust, it is not the negation of trust” (p.47, my emphasis). As will be
+seen in section 3, it is possible to represent distrust as negative trust, which is
+not the same as the negation of trust.
+For further clariﬁcation, consider the statements ‘I mistrusted the information
+John just gave me,’ ’I don’t trust the information Bill just handed me’ and ’I
+distrust what Paula just told me’ – in the ﬁrst, the information was trusted
+but revealed to be incorrect, in the second, it may or may not be correct, but
+what we’re saying is that we’d need more assurance before trusting it. In the
+third case, we are actively sure that the information is incorrect; moreover, that
+Paula intended it to be incorrect. Mis- versus dis-information relates here to misversus dis-trust.
+Luhmann [14] states that distrust is functionally equivalent to trust. That is,
+it is possible to imagine distrust working in a complex situation to the detriment
+of the (dis)truster. Distrust results in the need for evidence, veriﬁcation, and so
+on, and thus increases the complexity of a situation (where, as Luhmann claims,
+trust reduces that complexity). While Untrust is passive in the sense that it
+allows the truster to know that a trustee may be trustworthy in a situation, but
+isn’t for this truster, Distrust is active, and allows the (dis)truster to know that
+
+<-----Page 4----->Trust, Untrust, Distrust and Mistrust – An Exploration of the Dark(er) Side
+
+21
+
+Fig. 1. The Continuum: From Distrust to Trust
+
+a trustee is not to be trusted in this situation. Untrust is a measure of how much
+a person is trusted (and is a positive measure), Distrust is a negative measure.
+Figure 1 illustrates how untrust, mistrust and trust conceptually relate. With
+some thought, it can be seen that there are still avenues in need of work (what is
+a trust value of zero anyway?). However, the diagram serves to illustrate where
+our deﬁnitions of Untrust, Distrust and Trust lie. Mistrust doesn’t ﬁt on this
+diagram because it’s a misplaced value that was positive and misplaced. As such,
+it would usually be in the trust section of the graph before cooperation.
+Distrust, and untrust, are important not because of what they potentially
+stop, but because of what they can allow to continue. Thus, while I may mistrust
+or distrust you, this gives me a measure of what it is necessary for me to do or
+for you to undertake before I can be comfortable relying on you. This can include
+recourse to legal niceties, but can also include guarantees or other personal
+activities. Mistrust is important because of what it tells a truster after everything
+goes horribly wrong.
+There is evidence to suggest that distrust, untrust2 and mistrust are at least
+as important as trust, for example in E-Commerce [7], in government and organizations [29, 30], and in life [14, 8]. In fact, we conjecture, given the recent drops
+in trust in government, for example in the US [29], that distrust has become a
+more prevalent way to manage relationships that are at arms length than trust.
+That is to say, trust is the grease in the wheels of personal, private relationships,
+while distrust is the means by which every other relationship is measured and
+controlled. While this may seem to be something of a dark conjecture, it holds a
+certain amount of promise. Distrust (and its cousins) really can be important in
+high risk situations [7], limiting exposure, being more risk averse, and exposing
+more gradually in risky situations than trust would result in. Since the spiral
+of trust can hopefully lead to more exposure and more trust as trustworthy
+behaviour is exhibited [11, 16], it is reasonable to assume that untrust, placed
+2
+
+Although no-one calls it that, in fact, no-one calls it anything.
+
+<-----Page 5----->22
+
+S. Marsh and M.R. Dibben
+
+correctly, can lead to trust. There exist more problems with distrust, of course,
+that we will address below.
+
+3
+
+Introductory Formalisations
+
+Several formalisations of trust (and distrust) exist. Rahman’s thesis documents
+them particularly well [28], and in fact his own formalisation is one of the more
+ﬂexible ones. However, we’re less interested in how such models work with trust,
+but how it is possible to represent distrust, and/or untrust.
+Bearing in mind that distinct trust levels are ambiguous at best (at least in
+terms of semantics and subjectivity [28–p.124]), we’ll use them anyway. We believe beneﬁts far outweigh their disadvantages, and include the ability to narrow
+down and discuss subconcepts (as is shown below), (computational) tractability and the ability to discuss and compare to some extent, and given a limited
+amount of space here, we’ll argue the point at length elsewhere. From [11] we
+use the notation shown in table 1. For more information discussions on the use
+of values and their ultimate frailties, see [11, 31, 32], amongst others.
+The formalisations in [11] attempted to answer questions about trust in cooperative situations. That is, given the choice between cooperation and noncooperation, whether to cooperate with a speciﬁc trustee or not. Two formulae
+are used, the ﬁrst being to estimate Situational Trust. To estimate situational
+trust, x uses:
+
+(1)
+Tx (y, α) = Ux (α) × Ix (α) × T
+x (y)
+The second formulae considers a Cooperation Threshold:
+Cooperation Thresholdx (α) =
+
+Perceived Riskx (α)
+
+Perceived Competencex (y, α) + T
+x (y)
+
+× Ix (α)
+
+Table 1. Summary of notation (‘Actors’ are truster, trustee and others)
+Description
+Situations
+Actors
+Set of Actors
+Societies of Actors
+
+Representation Value Range
+α, β, . . .
+a, b, c, . . .
+A
+S1 , S 2 . . .
+Sn ∈ A
+Knowledge (e.g., x knows y)
+Kx (y)
+True/False
+Importance (e.g., of α to x)
+Ix (α)
+[0, +1]
+Utility (e.g., of α to x)
+Ux (α)
+[−1, +1]
+Basic Trust (e.g., of x)
+Tx
+[−1, +1)
+General Trust (e.g., of x in y)
+Tx (y)
+[−1, +1)
+Situational Trust (e.g., of x in y for α)
+Tx (y, α)
+[−1, +1)
+
+(2)
+
+<-----Page 6----->Trust, Untrust, Distrust and Mistrust – An Exploration of the Dark(er) Side
+
+23
+
+Finally we state that,
+Tx (y, α) ≥ Cooperation Thresholdx (α) ⇒ Will Cooperate(x, y, α)
+The speciﬁcs of the formulae are not overly relevant here. What we are considering is a situation where, given some information, knowledge, and experience,
+x has to decide whether to cooperate or not with y. While a simpliﬁcation, we
+have always seen this as a decision founded on trust.
+The next question that naturally arises is ‘what if the thresholds are too
+high?’ That is, what if x doesn’t trust y enough in a situation, or what if the
+resultant values are negative. These are, respectively, situations of untrust and
+distrust.
+3.1
+
+Modeling Untrust
+
+For a situation of mistrust, the following must be true:
+Tx (y, α) > 0 & Tx (y, α) < Cooperation Thresholdx (α) ⇒ Untrust(x, y, α) (3)
+That is, if Tx (y, α) is less than the Cooperation Threshold but larger than 0,
+x is in a state of untrust in y. That is, x ‘doesn’t trust’ y. Generally speaking,
+that means x will not enter into cooperation with y in this situation. In fact,
+this is somewhat simplistic because of course there may be little choice but for
+x to rely on y in α (note that it is possible to rely on someone without trusting
+them [28]). As has been noted above, this puts x into an interesting situation.
+She knows that y is not trusted enough to cooperate with (but note that y is
+trusted to some extent) but there’s not much of a choice about who else to work
+with. As will be seen, there are answers to this dilemma.
+3.2
+
+Modeling Distrust
+
+Distrust, as discussed above, is an active judgment in the negative intentions of
+the other. That is to say:
+Tx (y, α) < 0 ⇒ Distrust(x, y, α)
+
+(4)
+
+Because of the way the formulae work, this can occur in situations where there
+is a negative importance or utility for α. This is a potential shortcoming of the
+formalisation that has already been pointed out (see [11] for indepth discussions),
+but is easily checked in computational trust. However, while outside the scope
+of this article, it is worth thinking about what negative importance or negative
+utility might actually mean.
+Whatever the case, a negative situational trust value can be taken to mean
+that the truster expects the trustee to behave contrary to their best interests
+in the situation. Clearly, the truster should not then enter into the situation.
+Again, questions arise as to what happens if there is no choice. Of course, we
+argue that distrust in this circumstance gives one a choice – it may be better
+not to enter in and face the consequences than to jump into the situation with
+the trustee, and distrust can give a measure of whether or not the consequences
+
+<-----Page 7----->24
+
+S. Marsh and M.R. Dibben
+
+of not entering into the situation are worse than those of entering into it and a
+(subjectively estimated) subsequent betrayal. Ultimately, this can be a question
+of risk, consequences, utility and so on.
+Consider an example. A security program controls access to data warehouse
+that is queried by an autonomous agent searching for information. To attain
+access to the information, the agent must be given some security clearance. Calculations suggest a distrust (negative trust) in the agent, but if the program does
+not grant access, there may be legal costs involved, or the reputation of the data
+warehouse could be adversely aﬀected, so what to do? The program could grant
+access, knowing that the other will steal or perhaps alter valuable information,
+or it could deny access, with the resultant negative eﬀects. Importantly, knowing
+that there may be a violation of trust means the security program can create
+defences (backing up data more frequently, for example). The resultant damage
+to the reputation of the repository could well be more damaging than the cost of
+making ready for violations of trust. As another example, consider my need to
+ﬂy to Europe to give a talk. In an examination of sub-goals, I can calculate that
+I do not trust (in fact, this could be distrust or untrust, depending somewhat
+on my notions of a global baggage handler conspiracy!) the baggage handlers to
+get my luggage to me correctly (perhaps something can be damaged or stolen,
+or simply routed wrongly). The costs are potentially minimal, but could include
+the loss of all my clothes for the week I am in Europe. The cost of not going
+is loss of reputation when I cancel last minute, subsequent shame, and so on.
+Despite the fact I mistrust baggage handlers, I consider that the cost of losing
+reputation is higher than that of a t-shirt and a pair of socks. I board the plane
+with a change of underwear in my carry on bag. . .
+3.3
+
+Dealing with Lack of Trust: Making x Comfortable
+
+One of the most important aspects of trust is that it enables a decision maker to
+act in situations of doubt, distrust, or untrust [33]. In equation 3, x is in a state
+of mistrust in y for situation α. As we’ve noted, there is still the possibility of
+x having no choice but to rely on y, or perhaps of yy, despite a low trust value,
+being the most trusted of several alternatives3 . This, or other similar situations
+where x is constrained, being the case, it falls to x and y to negotiate a way in
+which x can become comfortable enough to enter into α with y.
+Because of the way in which the formulae above work, we can examine some
+options4 :
+–
+–
+–
+–
+3
+4
+
+Reduce the Perceived Risk inherent in α
+Reduce the Importance of α
+Increase the Perceived Competence of y
+Reduce the potential Utility of α for x
+
+Note here that the main strength of using values, whether subjective or not, is this
+inherent ability to perform such rankings internally to the actor.
+Given other formalisations, this list would alter. What is important to us is that a
+list is available for the actors to work through.
+
+<-----Page 8----->Trust, Untrust, Distrust and Mistrust – An Exploration of the Dark(er) Side
+
+25
+
+Examining these, we can come up with solutions for the dilemma x ﬁnds
+herself in. We consider some (a non-exhaustive list) now. To reduce risk, x xan
+get some assurances from y that y will behave carefully, or be bound in some way.
+To increase the perceived competence, y could present credentials or examples
+of previous experience.
+Reducing the importance of a situation, and the utility of a situation, are
+more interesting. In both cases, it would seem that such actions require that α
+in fact become a completely diﬀerent situation (let’s call it β). It could also, for
+example, involve splitting α into two or more other situations, each of which lead
+toward the goal of α but each of which has less importance than α. This is of
+course a goal-directed approach. What if α is not workable in this way? Then,
+other considerations must be made.
+Conceptually, it’s easy to understand this dilemma. In practice, it’s often
+diﬃcult for an actor to work through solutions. The use of the formalisation
+allows an actor to at least see the considerations. From there, they can make
+alternative plans.
+3.4
+
+When It All Goes Horribly Wrong: Mistrust
+
+As discussed above, Mistrust is misplaced trust, that is trust that was placed
+and was subsequently betrayed in some way. In [11, 34], we brieﬂy examined
+how betrayal of trust aﬀects the general trust of the trustee by the truster, and
+determined that the disposition of the truster had an eﬀect on both general trust
+and subsequent adjustments of how much the trustee is trusted from them on.
+Put simply, there is an adjustment to make to trust in the trustee following
+the conclusion of a situation. For time t:
+Tx (y)t+1 = Tx (y)t + ∆(Tx (y))
+
+(5)
+
+What the ∆ is here is what is of interest. Much work remains to be done in
+this area, but brieﬂy consider two circumstances and how this can aﬀect trust
+subsequently. In the ﬁrst instance, the trustee betrayed the trust of the truster
+but did not intend to (this can be as a result of lack of competence, circumstances
+outside the control of the trustee, and so forth). In other words, they should have
+been untrusted. In this circumstance, the ∆ can be a small percentage of original
+Tx (y)t . However, if it turns out that the trustee was disposed to betray the truster
+before the situation took place, in other words should have been distrusted,
+then the ∆ would be a great deal larger. This is in keeping with the behaviour
+of trust that has been observed across various disciplines (see e.g. [24, 35, 14, 36]).
+
+4
+
+Related Work, Discussions and Pointers
+
+Thus far we have raised the issue of distrust (i.e. a ‘conﬁdent negative expectation. . . ’ as opposed to trust’s ‘conﬁdent positive expectation. . . ’) and untrust
+(i.e. insuﬃcient trust of the other party in the particular situation under consideration) as concepts certainly not as well recognised in computer science as in
+
+<-----Page 9----->26
+
+S. Marsh and M.R. Dibben
+
+social science. Recognising the need to develop information systems modelling
+that more accurately reﬂects the behaviour of human agents, we have then put
+together a formalisation of the impact of distrust and untrust on the co-operative
+behaviour of autonomous agents. This, however, is only a ﬁrst step.
+Our purpose in the remainder of the paper is to move the discussion forward by considering what implications recent advances in the understanding of
+trust, conﬁdence and distrust in speciﬁc branches of the social sciences (most
+notably public policy, health care and management studies) may have for ‘information systems trust management’ (iTrust). We do this by brieﬂy (1) critically
+comparing the formalism with Lewicki et als formal distinctions between trust
+and distrust [22]; and (2) exploring the almost taken-for-granted association
+between conﬁdence and trust arising out of the adoption of Luhmanns [8] connection between the two concepts (that Lewicki et al also adopt), in the light
+of what has been termed the problem of ‘public sector accountability’ through
+clinical governance and performance indicators (e.g. [37, 38]). Such discussions
+lend themselves to areas for further research.
+4.1
+
+Questioning the Bi-polar Construct Principle
+
+The formalism we have developed thus far is characterised by an understanding
+that trust relationships are both situation speciﬁc (i.e. they are mutlifaceted) and
+that they are processual (i.e. ever-changing; [39]). This is in contrast to more
+normative views arising largely out of traditional sociologies of exchange (e.g.
+[40, 41]) that see trust relationships as rather more homeostatic and consistent
+states [42, 43]. However, the formalism does entertain an assumption that trust
+and distrust can be described as one bi-polar construct. This assumption has its
+basis in early psychological research that viewed them as being at opposite ends
+of a single continuum [44]). This has a natural implication for co-operation in
+terms of no co-operation arising from distrust and co-operation arising from trust
+(e.g. [45, 46, 47]). While we have already said here and elsewhere [11, 48, 49] that
+such a stark distinction is perhaps misleading and that no co-operation might be
+more indicative of insuﬃcient trust (‘untrust’) rather than any active distrust,
+the inherent bi-polar construct principle has been brought into question by [22].
+Basing their thinking on Luhmanns [14] argument that both trust and distrust simplify the social world by allowing actors to (diﬀerently) manage social
+uncertainty (the principle of functional equivalency), Lewicki et al suggest that
+in fact trust and distrust are entirely separate dimensions. This is because “low
+distrust is not the same as high trust, and high distrust is not the same as low
+trust” [22–page 445]. They argue that it is perfectly possible to have conditions
+of a) simultaneous low trust and low distrust, b) simultaneous high trust and low
+distrust, c) simultaneous low trust and high distrust and d) simultaneous high
+trust and high distrust. This rendering can be seen as a description of the history
+of the relationship between two actors, as perceived from one actors perspective.
+For example, low trust, low distrust is characteristic of a relationship where
+there are no grounds for either high trust or high distrust in a situation, most
+common in newly established relationships. We wonder whether this may be an
+
+<-----Page 10----->Trust, Untrust, Distrust and Mistrust – An Exploration of the Dark(er) Side
+
+27
+
+extension of the notion of blind trust, or even Meyerson et al’s swift trust [50].
+High trust, low distrust is characteristic of a relationship in which the actor
+has a situational trust that has been rewarded with positive experiences and
+few, if any, instances of trust violation. Low trust, high distrust is perhaps the
+most diﬃcult relationship to manage, according to Lewicki et al, since “they
+must ﬁnd some way to manage their distrust” [22–page 447]. Most often, this
+is achievable by the establishment of clearly identiﬁed and deﬁned parameters
+within which the relationship proceeds, and through which “constrained trust
+relations that permit functional interaction within the constraints” (ibid.) can
+emerge and be fruitful. High trust, high distrust relations are characterised by
+actors having some conﬂicting and some shared objectives. This leads to many
+positive experiences and many negative experiences, reinforcing both trust and
+distrust. In these circumstances, the relationship can be managed by limiting
+the actors dependence to those situations that reinforce the trust and strongly
+constrain those situations that engender distrust, to the extent that the outcome
+can be contained, if not entirely predicted.
+The importance of such a rendering of trust and distrust as co-existing to our
+understanding of artiﬁcial intelligence agents and their operation in (for example)
+search engines, may lie in the practical importance of building and maintaining
+trust relationships with sources of information while at the same time treating
+with suspicion much of the information received from those sources. Lewicki et
+al argue that dysfunction in relationships arises not from distrust, but rather
+from trust without distrust and from distrust without trust. They argue that
+it is the “dynamic tension” between trust and distrust that allows relationships
+between actors to be productive, in the best interests of both conﬁding parties
+and as a source of long-lasting stability for relationships [22–page 450]. This
+dynamic tension is certainly evident in studies of doctor patient relations (e.g.
+[39], where the blind faith in a doctors ability to cure illness is replaced – often
+after considerable trust violation – with what has been termed a relationship
+of ‘guarded alliance’ [51, 52]. This is one in which the patient recognises the
+limitations of the doctor and works within them to manage their illness while
+seeking (or not) a cure. We wonder:
+– Whether and how it would be possible to model such trust and distrust
+relations in more formal (computational) terms;
+– What impact this may have on the behaviour of such agents; and
+– Whether such behaviour would be productive from a user perspective – even
+if it were more ‘realistic,’ i.e. closer to the experience of human relations.
+4.2
+
+The Confidence Problem – And Carole Smith’s Solution
+
+The complexity and risk-laden nature of health care scenarios has also led to a
+re-evaluation of the nature and role of conﬁdence in human interaction. While
+at the heart of much trust research, the understanding (often associated with
+Luhmann; [43]) of conﬁdence in terms of an association with willingness to conﬁde in another, or have a positive belief about another party, has recently been
+implicitly called into question through a quite diﬀerent interpretation of the
+
+<-----Page 11----->28
+
+S. Marsh and M.R. Dibben
+
+concept. In sum, this interpretation, having a risk and operations management
+basis derived from the need to achieve clinical governance and public sector accountability, suggests that the search for conﬁdence is indicative of – at best –
+insuﬃcient trust in the other party [53]. More likely, it is indicative of the need
+to explicitly and critically compare the performance of others rather than take
+their word for it [37] – something which in our eyes seems more akin to distrust.
+We shall now proceed to examine this deﬁnitional problem more closely.
+It is interesting to note that Luhmann drew a very clear distinction between
+trust and conﬁdence that calls into question research suggesting trust is a ‘conﬁdent expectation. . . ’ Luhmann suggested that conﬁdence is indicated by a lack
+of consideration for the risks involved [whereas] trust is indicated by a consideration of the risks involved [8–pages 97–103]; see also [48–page 274] for further
+discussion). We may ask how conﬁdence can then be a part of trust at all? To
+complicate matters further, there is also the issue of self-trust, the trust of the
+trusting agent in itself to act in the best interests of itself. To avoid an explicitly psychological emphasis that would lead one away from an account of the
+situation and the other party, we have previously handled this in terms of perceptions of self-competence [48]; i.e. as a co-operation criterion). In other words,
+a more complete account of the behaviour of the trusting agent requires an estimation of that agents conﬁdence in itself to act in its best interests according
+to its recognised abilities in the situation, and as compared with its perceived
+competence of the other agent. In sum, therefore, we can surmise four diﬀerent
+interpretations of competence. First, conﬁdence as concerning a trust of another
+party suﬃcient to be willing to conﬁde in that party (e.g. [10]). Second, conﬁdence as being conﬁdent in ones own decision to place trust (or distrust) in
+another (e.g. [24]. Third, conﬁdence as self-assuredness to the extent of acting
+without consideration for risk [8]. Fourth, conﬁdence in oneself as an agent based
+on ones assessment of ones own competence, as a conceptual proxy for self-trust
+[48]. Is there any new means by which to better clarify the distinction between
+trust and conﬁdence?
+One contentious, but potentially helpful way of understanding the diﬀerence
+has been proposed by Carole Smith as a result of studying social work and
+the public sector accountability of such activity. Research in public policy and
+management has revealed the need to better comprehend how trust sustains wellfunctioning organisations, ‘especially those agencies in the public sector that lack
+market discipline [54, 38, 55, 56]. The impact of public trust comes to the fore in
+such circumstances, as it has an impact on the nature and extent of the accountability systems put in place by public sector managers (e.g., [57, 58, 51]). Such
+accountability systems are intended to provide appropriate reassurance to the
+public and enable eﬀective corrective action to be taken to ensure public safety.
+These accountability systems, however, rely largely on explicit measurement of
+individual performance and organisational outcomes to establish conﬁdence intervals that can be proven to be an accurate account of the organisation and
+the work of its employees. Such intense focus on performance measurement, coupled with a range of potential indictments for any failure to meet organisational
+
+<-----Page 12----->Trust, Untrust, Distrust and Mistrust – An Exploration of the Dark(er) Side
+
+29
+
+objectives has,[53] argues, eroded the trust between employees and managers
+necessary for eﬀective professional relationships, such as those found in hospitals. In this sense, therefore the drive for public accountability through the
+establishment of explicit quantitative measures of performance standards, i.e.
+the drive for the establishment of public conﬁdence, is in direct conﬂict with
+interpersonal trust [59].
+To unpack this problematic, Smith [53] draws a stark distinction between
+trust and conﬁdence, suggesting the two concepts are indeed very diﬀerent, but
+not in the way Luhmann proposed. For Smith, trust concerns uncertainty about
+outcomes, an ambiguity of objective information and the exercise of discretion
+about action. It is also an internal attribution, a moral exercise of free will that
+assumes most signiﬁcance in situations where there is a lack of regulation or
+means of coercion. Conﬁdence, on the other hand, concerns the establishment
+of explicitly predictable outcomes, information is objective, standardised and
+scientiﬁc and there is little opportunity or even need to exercise discretion about
+action. In this sense, therefore, systemic conﬁdence is seen an external attribution
+lacking morality that assumes most signiﬁcance in situations where there are
+extensive regulatory mechanisms and / or opportunities for coercion of individual
+agents.
+In sum, according to Carole Smith, the institutional or managerial search for
+conﬁdence is indicative of a lack of trust, perhaps even genuine distrust. Further,
+such a search for conﬁdence may in fact have a tendency to instil distrust among
+professional colleagues, as a result of the increased sense of scrutiny and critical
+peer comparison. This is clearly a very diﬀerent interpretation of what is mean
+by conﬁdence. We wonder:
+– Whether and how it would be possible to model such trust vs. conﬁdence
+distinctions and inter alia impact in more formal (computational) terms;
+– What impact this may have on the behaviour of such agents; and again
+– Whether such behaviour would be productive from a user perspective – even
+if it were more realistic, i.e. closer to the experience of human relations.
+
+5
+
+Conclusions and a Call to Arms
+
+We have noticed in recent literature that, some notable exceptions aside, there
+is an overarching acceptance that trust is a positive phenomenon that should be
+encouraged, for example to get people to buy more stuﬀ, or get jobs done, or
+share information. While lack of trust is paid attention to, it is seen more as a
+byproduct of the trust phenomenon everyone has to adhere to.
+We argue that Distrust and Untrust, respectively negative and ‘not enough
+Trust,’ allied under the wider umbrella of trust, are valuable and positive means
+to achieving concrete foundations to action in environments of uncertainty and
+doubt. We argue that there are ways to estimate and work with values for these
+phenomena that allow autonomous agents or other actors to behave sensibly
+in such situations. This behaviour can include, but is not limited to, recourse
+
+<-----Page 13----->30
+
+S. Marsh and M.R. Dibben
+
+to other authorities, adjustment of resources or expectations, manipulation of
+situations to achieve comfort, and so on. Finally, we argue that Mistrust, the
+misplacing of trust, can tell an agent a great deal more about who to trust next
+time, or what went wrong, when allied with Untrust and Distrust information
+or conjecture.
+To an extent, this paper represents something of a ‘call to arms’ to trust
+researchers to examine the phenomena and strengths and weaknesses of trust,
+untrust, distrust and mistrust to achieve their goals in a more rounded way.
+This includes the need for better models of the darker side of trust. We have
+made a ﬁrst eﬀort at this discussion and look forward to much more detailed
+explorations in the research to come.
+For our part, we are examining how the phenomena work in multi-agent
+systems and information sharing architectures to allow partial access, modiﬁed
+access, or simply curtailed access to information, for example in CSCW, P2P
+architectures or community-based information sharing agents (cf [60]). Taking
+the concept further, we are examining how the related phenomenon of forgiveness
+can work in conjunction with trust and its darker components to create a gentler
+side to the security ‘arms race’ we ﬁnd ourselves embroiled in.
+
+References
+1. Nielsen, J.: Trust or bust: Communicating trustworthiness in web design. Alertbox
+(http://www.useit.com/alertbox/990307.html) (1999)
+2. Cheskin/Studio Archetype: Ecommerce trust (available online at: http://www.
+cheskin.com/p/ar.asp?mlid=7&arid=40&art=0). Technical report (1999)
+3. Cheskin/Studio Archetype: Trust in the wired americas (available online at:
+http://www.cheskin.com/p/ar.asp?mlid=7&arid=12&art=0). Technical report
+(2000)
+4. Head, M., Hassan, K.: Building online trust through socially rich web interfaces.
+In Marsh, S., ed.: Proceedings of PST 2004, International Conference on Privacy,
+Security and Trust (http://dev.hil.unb.ca/Texts/PST/). (2004)
+5. Egger, F.: From Interactions to Transactions: Designing the Trust Experience for
+Business-to-Consumer Electronic Commerce. PhD thesis, Eindhoven University of
+Technology (2003)
+6. Sillence, E., Briggs, P., Fishwick, L., Harris, P.: Trust and mistrust of online health
+sites. In: Proceedings of the 2004 conference on Human factors in computing
+systems. (2004) 663–670
+7. McKnight, D.H., Kacmar, C., Choudhury, V.: Whoops... Did I use the Wrong
+concept to Predict E-Commerce Trust? Modeling the Risk-Related Eﬀects of Trust
+versus Distrust Concepts. In: 36th Hawaii International Conference on Systems
+Sciences. (2003)
+8. Luhmann, N.: Familiarity, conﬁdence, trust: Problems and alternatives. In Gambetta, D., ed.: Trust. Blackwell (1990) 94–107
+9. McKnight, D.H., Chervany, N.L.: Trust and distrust deﬁnitions: One bite at a
+time. In Falcone, R., Singh, M., Tan, Y.H., eds.: Trust in Cyber-Societies. Volume
+2246 of Lecture Notes in Artiﬁcial Intelligence. Springer-Verlag, Berlin, Heidelberg
+(2001)
+
+<-----Page 14----->Trust, Untrust, Distrust and Mistrust – An Exploration of the Dark(er) Side
+
+31
+
+10. Lewicki, R.J., McAllister, D.J.B., Bies, R.J.: Trust and distrust: New relationships
+and realities. Academy of Management Review 23 (1998) 438–458
+11. Marsh, S.: Formalising Trust as a Computational Concept. PhD thesis, Department of Computing Science, University of Stirling (1994) Available online via
+http://www.stephenmarsh.ca/Files/pubs/Trust-thesis.pdf.
+12. Kramer, R.M.., Tyler, T.R.: Trust in Organisations: Frontiers of Theory and Research. Thousand Oaks: Sage (1996)
+13. Hollis, M.: Trust Within Reason. Cambridge University Press (1998)
+14. Luhmann, N.: Trust and Power. Wiley, Chichester (1979)
+15. Lane, C., Bachmann, R., eds.: Trust Within and Between Organisations: Conceptual Issues and Empirical Applications. Oxford University Press (1998)
+16. Golembiewski, R.T., McConkie, M.: The centrality of interpersonal trust in group
+processes. In Cooper, C.L., ed.: Theories of Group Processes. Wiley (1975) 131–185
+17. Sydow, J.: Understanding the constitution of interorganisational trust. In Lane, C.,
+Bachmann, R., eds.: Trust Within and Between Organisations. Oxford University
+Press (1998)
+18. Cvetkovich, G.: The attribution of social trust. In Cvetkovich, G., Lofstedt, R.,
+eds.: Social Trust and the Management of Risk. London: Earthscan (1999) 53–61
+19. Earle, T.C., Cvetkovich, G.: Social trust and culture in risk management. In
+Cvetkovich, G., Lofstedt, R.E., eds.: Social Trust and the Management of Risk.
+London: Earthscan (1999) 9–21
+20. Gowda, M.V.R.: Social trust, risk management and culture: Insights from native
+america. In Cvetkovich, G., Lofstedt, R.J., eds.: Social Trust and the Management
+of Risk. London: Earthscan (1999) 128–139
+21. Sztompka, P.: Trust: a Sociological Theory. Cambridge University Press (1999)
+22. Lewicki, R.J., McAllister, D.J., Bies, R.J.: Trust and distrust: New relationships
+and realities. The Academy of Management Review 23 (1998) 438–458
+23. Marsh, S., Briggs, P., Wagealla, W.:
+Enhancing collaborative environments on the basis of trust.
+Available online at http://www.
+stephenmarsh.ca/Files/pubs/CollaborativeTrust.pdf (2004)
+24. Boon, S.D., Holmes, J.G.: The dynamics of interpersonal trust: resolving uncertainty in the face of risk. In Hinde, R.A., Groebel, J., eds.: Cooperation and
+Prosocial Behaviour. Cambridge University Press (1991) 190–211
+25. Low, M., Srivatsan, V.: What does it mean to trust an entrepreneur? In Birley, S.,
+MacMillan, I.C., eds.: International Entrepreneurship. Routledge, London (1995)
+59–78
+26. Noteboom, B., Berger, H., Noordehaven, N.: Eﬀects of trust and governance on
+relational risk. Academy of Management Journal 40 (1997) 308–338
+27. Deutsch, M.: Cooperation and trust: Some theoretical notes. In Jones, M.R., ed.:
+Nebraska Symposium on Motivation, Nebraska University Press (1962)
+28. Abdul-Rahman, A.: A Framework for Decentralised Trust Reasoning. PhD thesis,
+Department of Computer Science, University College London (2004 (Submitted))
+29. Nye, Jr., J.S., Zelinkow, P.D., King, D.C., eds.: Why People Don’t Trust Government. Harvard University Press (1997)
+30. Kramer, R.M.: Trust and distrust in organizations: Emerging perspectives, enduring questions. Annual Review of Psychology 50 (1999) 569–598
+31. Mui, L.: Computational Models of Trust and Reputation: Agents, Evolutionary
+Games, and Social Networks. PhD thesis, Massechusetts Institute of Technology,
+Department of Electrical Engineering and Computer Science (2002)
+
+<-----Page 15----->32
+
+S. Marsh and M.R. Dibben
+
+32. Seigneur, J., Jensen, C.D.: The role of identity in pervasive computational trust.
+In Robinson, P., Vogt, H., Wagealla, W., eds.: Privacy, Security and Trust within
+the Context of Pervasive Computing. Volume 780 of Kluwer International Series
+in Engineering and Computer Science. Kluwer (2005)
+33. Kramer, R.M.: Trust rules for trust dilemmas: How decision makers think and
+act in the shadow of doubt. In Falcone, R., Singh, M., Tan, Y.H., eds.: Trust in
+Cyber Societies. Springer Verlag, Lecture Notes in Artiﬁcial Intelligence, LNAI
+2246 (2001) 9–26
+34. Marsh, S.: Optimism and pessimism in trust. In Ramirez, J., ed.: Proceedings
+Iberoamerican Conference on Artiﬁcial Intelligence/National Conference on Artiﬁcial Intelligence (IBERAMIA94/CNAISE94), McGraw-Hill (1994)
+35. Lagenspetz, O.: Legitimacy and trust. Philosophical Investigations 15 (1992) 1–21
+36. Daughtrey, T.: Costs of trust for e-business. Quality Progress (2001)
+37. Davies, H., Mannion, R.: Clinical governance: Striking a balance between checking
+and trusting. In Smith, P.C., ed.: Reforming Markets in Health Care: An Economic
+Perspective. London: Open University Press (1999)
+38. Davies, H.T.O.: Falling public trust in health services: Implications for accountability. Journal of Health Service Research and Policy 4 (1999) 193–194
+39. Dibben, M.R.: Exploring the processual nature of trust and co-operation in orgnisations: A whiteheadian analysis. Philosophy of Management 4 (2004) 25–40
+40. Blau, P.: Exchange and Power in Social Life. New York: John Wiley and Sons
+(1964)
+41. Berger, P.: Sociology Reinterpreted. London: Penguin (1982)
+42. Lewicki, R.J., Bunker, B.B.: Trust in relationships: A model of trust, development
+and decline. In Bunker, B.B., Rubin, J.Z., eds.: Conﬂict, Cooperation and Justice.
+San Francisco: Josey Bass (1985) 133–173
+43. Lewicki, R.J., Bunker, B.B.: Developing and maintaining trust in working relationships. In Kramer, R.M., Tyler, T.R., eds.: Trust in Organizations: Frontiers of
+Theory and Research. Thousand Oaks: Sage (1996) 114–139
+44. Rotter, J.B.: Generalized expectancies for interpersonal trust. American Psychologist 25 (1971) 443–452
+45. Arrow, K.J.: The Limits of Organization. New York: Norton (1974)
+46. Axelrod, R.: The Evolution of Cooperation. Basic Books, New York (1984)
+47. Coleman, J.S.: The Foundations of Social Theory. The Belknap Press of the
+University of Harvard (1990)
+48. Dibben, M.R.: Exploring Interpersonal Trust in the Entrepreneurial Venture. London: MacMillan (2000)
+49. Marsh, S., Dibben, M.R.: The role of trust in information science and technology. In
+Cronin, B., ed.: Annual Review of Information Science and Technology. Volume 37.
+Information Today Inc. (2003) 465–498
+50. Meyerson, D., Weick, K., Kramer, R.M.: Swift trust and temporary groups. In
+Kramer, R., Tyler, T., eds.: Trust in Organisations: Frontiers of Theory and Research. Thousand Oaks: Sage (1996) 166–195
+51. Mechanic, D.: Changing medical organization and the erosion of trust. Millbank
+Quarterly 74 (1996) 171–189
+52. Mechanic, D., Meyer, S.: Concepts of trust among patients with serious illness.
+Journal of Social Science and Medicine 51 (2000) 657–668
+53. Smith, C.: Trust and conﬁdence: Possibilities for social work in ‘high modernity’.
+British Journal of Social Work 31 (2001) 287–305
+54. Cvetkovich, G., Lofstedt, R.E., eds.: Social Trust and the Management of Risk.
+London: Earthscan (1999)
+
+<-----Page 16----->Trust, Untrust, Distrust and Mistrust – An Exploration of the Dark(er) Side
+
+33
+
+55. Waren, M.E.: Democracy and Trust. Cambridge University Press (1999)
+56. Waterhouse, L., Beloﬀ, H., eds.: Hume Papers on Public Policy: Trust in Public
+Life. Volume 7 of Hume Papers on Public Policy. Edinburgh: Edinburgh University
+Press (1999)
+57. Davies, H., Lampell, J.: Trust in performance indicators? Quality in Health Care
+7 (1998) 159–162
+58. Harrison, S., P. J, L.: Towards a High-Trust NHS: Proposals for Minimally Invasive
+Reform. London: Her Majesty’s Stationery Oﬃce (1996)
+59. Dibben, M.R., Davis, H.T.O.: Trustworthy doctors in conﬁdence-building systems.
+Quality & Safety in Health Care 13 (2004) 88–89
+60. Marsh, S., Ghorbani, A.A., Bhavsar, V.C.: The ACORN Multi-Agent System.
+Web Intelligence and Agent Systems 1 (2003) 65–86
+
+

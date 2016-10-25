@@ -1,0 +1,1685 @@
+<-----Page 0----->Hindawi Publishing Corporation
+International Journal of Quality, Statistics, and Reliability
+Volume 2008, Article ID 471607, 10 pages
+doi:10.1155/2008/471607
+
+Research Article
+Sensitivity Analysis to Select the Most Influential
+Risk Factors in a Logistic Regression Model
+Jassim N. Hussain
+School of Mathematical Sciences, University Sains Malaysia, 11800 Penang, Malaysia
+Correspondence should be addressed to Jassim N. Hussain, j nassir2000@yahoo.com
+Received 1 August 2008; Revised 17 October 2008; Accepted 25 November 2008
+Recommended by Myong K. (MK) Jeong
+The traditional variable selection methods for survival data depend on iteration procedures, and control of this process assumes
+tuning parameters that are problematic and time consuming, especially if the models are complex and have a large number of risk
+factors. In this paper, we propose a new method based on the global sensitivity analysis (GSA) to select the most influential risk
+factors. This contributes to simplification of the logistic regression model by excluding the irrelevant risk factors, thus eliminating
+the need to fit and evaluate a large number of models. Data from medical trials are suggested as a way to test the eﬃciency and
+capability of this method and as a way to simplify the model. This leads to construction of an appropriate model. The proposed
+method ranks the risk factors according to their importance.
+Copyright © 2008 Jassim N. Hussain. This is an open access article distributed under the Creative Commons Attribution License,
+which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.
+
+1. Introduction
+Sensitivity analysis (SA) plays a central role in a variety of
+statistical methodologies, including classification and discrimination, calibration, comparison, and model selection
+[1]. SA also can be used to determine which subset of input
+factors (if any) accounts for most of the output variance (and
+in what percentage); those factors with a small percentage
+can be fixed to any value within their range [2]. In such usage,
+the focus is on determination of the important variables to
+simplification of the model; the original motivation for our
+research lay in a search for how to best arrive at such a
+determination. Although SA has been widely used in normal
+regression models to extract important input variables from
+a complex model so as to arrive at a reduced model with
+equivalent predictive power, it has limited use for selection
+of risk factors despite the presence of a large number of
+risk factors in survival regression models. The limited use
+of these methods to select appropriate subsets in survival
+regression models illustrates the desirability of development
+of a new method of SA-based variable selection to avoid the
+drawbacks of traditional methods and also simplify survival
+regression models by choosing the appropriate subsets of risk
+factors.
+
+A considerable number of methods of variable selection
+have been proposed in the literature. The fundamental developments are squarely in the context of normal regression
+models and particularly in the context of multivariate linear
+regression models [3]. A comprehensive review of many
+variable selection methods is represented in [4]. Methods
+such as forward, backward, and stepwise selection and subset
+selection (Akaike information criterion (AIC)) and Bayesian
+information criterion (BIC)) are available; however none
+of these methods can be recommended for use in either
+a logistic regression model or in other survival regression
+models. They give incorrect estimates of the standard errors
+and P-values. They also can delete variables whose inclusion
+is critical [3]. In addition, these methods regard all the risk
+factors of a situation as equal, and they seek to identify the
+candidate subset of variables sequentially; furthermore, most
+of these methods focus on the main eﬀects and ignore higherorder eﬀects (interactions of variables).
+New methods of variable selection, such as least absolute
+shrinkage and selection operator (LASSO) in [5], and the
+smoothly clipped absolute deviation (SCAD) method in [6],
+are at the center of attention recently in the field of survival
+regression models. These methods use the penalized likelihood estimation and the shrinkage regression approaches.
+
+<-----Page 1----->2. Background of Constructing
+a Logistic Regression Model
+Often the response variable in clinical data is not a numerical
+value but a binary one (e.g., alive or dead, diseased or not
+diseased). When the latter occurs, a binary logistic regression
+model is an appropriate method to present the relationship
+between the disease’s measurements and its risk factors. It is
+a form of regression used when the response variable (the
+disease measurement) is a dichotomy and the risk factors
+of the disease are of any type [9]. A logistic regression
+model neither assumes the linearity in the relationship
+between the risk factors and the response variable, nor does
+it require normally distributed variables. It also does not
+assume homoscedasticity, and in general has less stringent
+requirements than linear regression models. However, it
+does require that observations are independent and that
+the independent risk factors are linearly related to the logit
+of the response variable [10]. However, models involving
+the association between risk factors and binary response
+variables are found in various disciplines such as medicine,
+engineering, and the natural sciences. How do we model
+the relationship between risk factors and binary response
+variable? The answer to this question is the subject of the next
+subsections.
+
+2.1. Constructing a Logistic Regression Model
+The first step in modeling binomial data is a transformation
+of the probability scale from range (0, 1) to (−∞, ∞)
+instead of using the linear model for the response variable
+of the probability of success on risk factors. The logistic
+transformation or logit of the probability of success (π) is
+log {π/(1 − π)}, which is written as logit (π) and defined
+as the log odds of success. It is easily seen that any value of
+(π) in the range (0, 1) corresponds to the value of logit (π)
+in (−∞, +∞). Usually, binary data results from a nonlinear
+relationship between {π(x)} and (x), where a fixed change in
+
+1−π
+
+π
+
+
+
++∞
+
+
+
+These two approaches diﬀer from traditional methods in
+their deletion of the nonsignificant covariates in the model by
+estimating their eﬀects as 0. A nice feature of these methods
+is that they perform estimation and variable selection
+simultaneously, but, nevertheless, these methods suﬀer from
+some calculation and characteristics problems that are dealt
+with in more detail in [7, 8].
+This study aims to use SA to extend and develop an
+eﬀective, eﬃcient, and time-saving variable selection method
+in which the best subsets are identified according to specified
+criteria without resorting to fitting all the possible subset
+regression models in the field of survival regression models.
+The remainder of this study is organized as follows: Section 2
+gives the background of building a logistic regression model,
+and Section 3 deals with the proposed method. The results
+of implementing this method and logistic regression model
+are the subject of Section 4, and Section 5 consists of the
+discussion and conclusions.
+
+International Journal of Quality, Statistics, and Reliability
+
+Logit = ln
+
+2
+
+0
+
+0.5
+
+1
+
+Probability (π)
+
+−∞
+
+Figure 1: Logit = ln(π/(1 − π)) as a function of the value of
+probability (π), the logit ranges from (−∞) to (+∞) as probability
+ranges from (0) to (1). The logit = 0 when probability = 0.5.
+
+(x) has less impact when {π(x)} is near (0 or 1) than when
+{π(x)} is near (0.5). This is illustrated in Figure 1 (see [11]).
+Thus, the appropriate link is the log odds transformation
+(the logit). Then if there are n binomial observations of the
+form πi = yi /ni for i = 1, 2, . . . , n, where the expected value
+of the random variable associated with ith observation, yi , is
+E(Yi ) = ni πi . The logistic regression model for association of
+πi on the values x1i , x2i , . . . , xki of k risk factors X1 , X2 , . . . , Xk
+is such that [10]
+
+
+ 
+
+Logit πi = Log
+
+πi
+
+
+
+1 − πi
+= β0 + β1 x1i + β2 x2i + · · · + βk xki ,
+
+(1)
+
+and the equation of success probability is
+
+
+πi =
+
+
+
+exp β0 + β1 x1i + · · · + βk xki
+
+.
+1 + exp β0 + β1 x1i + · · · + βk xki
+
+(2)
+
+The linear logistic model is a member of a family of
+generalized linear models (GLM). The next subsection
+explains this model fitting process.
+
+2.2. Fitting Logistic Regression Models
+The mechanics of maximum likelihood (ML) estimation
+and model fitting for logistic regression model are a special
+case of GLM fitting, and then fitting the model requires
+estimation of the unknown parameters (β j ) of the ML
+function of this model using the Bernoulli ML as in the
+following [12]:
+L(β) =
+
+n 	 
+
+
+ni
+i=1
+
+yi
+
+y
+
+
+
+πi i 1 − πi
+
+ni − yi
+
+.
+
+(3)
+
+<-----Page 2----->International Journal of Quality, Statistics, and Reliability
+The problem now is to obtain those values (β0 , β1 , . . . , βk )
+that maximize {L(β)} or its equivalent {Log L(β)} where it
+is as follows:
+Log L(β)
+=
+
+n 
+
+i=1
+
+=
+=
+
+	 
+
+
+
+
+
+
+
+
+ni
+Log
++ yi Log πi + ni − yi Log 1 − πi
+yi
+
+n 
+
+
+	 
+
+
+i=1
+n 
+
+
+	 
+
+
+	
+
+πi
+n
+Log i + yi Log
+yi
+1 − πi
+
+i=1
+
+
+
+
+ 
+
+
+
++ ni Log 1 − πi
+
+
+
+
+
+
+
+
+ 
+n
+Log i + yi ηi − ni Log 1 + eηi ,
+yi
+
+(4)
+
+
+where {ηi = ki=0 β j x ji } and (x0i = 1) represent all values of
+(i). The derivative of this log-likelihood function with respect
+to the (k + 1) unknown β-parameters is given by
+n
+n
+
+
+−1
+∂Log L(β) 
+  =
+yi x ji − ni x ji eηi 1 + eηi ,
+∂ βi
+i=1
+i=1
+
+(5)
+
+j = 0, 1, 2, . . . , k.
+
+yi x ji −
+
+i
+
+
+
+ni πi x ji = 0,
+
+j = 0, 1, 2, . . . , k,
+
+(6)
+
+i
+
+where πi = eηi (1 + eηi )−1 is the ML estimate of {πi }. There
+are two methods to solve (6) and obtain the maximum
+likelihood estimation of (β ). The one most often used is
+known as the Newton-Raphson method. This method begins
+with determination of the score matrix {U(β)} and the
+information matrix {I(β)} as in the following [13]:
+
+  ∂L(β) 
+
+
+U (t)
+j β =
+∂β 
+=
+
+
+
+j
+
+β(t)
+
+
+
+yi − ni πi(t) xi j ,
+
+i
+
+
+∂2 L(β) 
+
+(t)  
+
+I jk β =
+∂β j ∂βk β(t)
+
+(t) 
+(t) 
+= − xi j xik ni πi 1 − πi .
+
+(7)
+
+i
+
+Here (π (t) ) is obtained from {β(t) } through (2), then we use
+{U(t) } and {I(t) } with the following formula {β(t+1) = β(t) −
+−1
+(I (t) ) U (t) } to obtain the next value (β(t+1) ) as
+
+
+
+
+
+
+ −1
+
+β(t+1) = β(t) + X diag ni πi(t) 1 − πi(t) X
+where
+
+(t)
+{μ i
+
+=
+
+ni πi(t) },
+
+this is to obtain
+
+(π (t+1) ),
+
+
+
+describes reality well, it tends to provide more accurate estimates of the quantities of interest. Agresti [9] stated that “we
+are mistaken if we think that we have found the true model,
+because any model is a simplification of reality.” In light of
+this assertion, what then is the logic of testing the fit of a
+model when we know that it does not truly hold? The answer
+lies in the evaluation of the specific properties of this model
+by using criteria such as deviance, the R2 , the Wald Score test,
+the Person chi-square, and the Hosmer-Lemshow chi-square
+tests; for more details, see [9, 10]. Usually the first stage of
+construction of any model presents a large number of risk
+factors. Inclusion of all of them may lead to an unattractive
+model from a statistical viewpoint. Thus, as an important
+step towards an acceptable model, a decision should be made
+early about the proper methodology to use to select the
+appropriate and important risk factors. Because traditional
+methods of selecting variables have many limitations in their
+applicability to survival regression models, a new method of
+variables selection will be developed by using GSA to select
+the most influential factors in the model. This is the subject
+of the following section.
+
+3. Sensitivity Analysis to Select the Most
+Influencing Risk Factors
+
+Then the likelihood equations are
+
+
+3
+
+There are two key problems in variable selection procedure:
+(i) how to select an appropriate number of risk factors
+from the set of risk factors, and (ii) how to improve final
+model performance based on the given data. So answering
+these questions is the objective of our proposed method
+by applying GSA to select the influential risk factors in the
+logistic regression model.
+
+3.1. General Concept of GSA
+GSA was defined in [14] as “the study of how the uncertainty
+in the output of a model (numerical or otherwise) can be
+apportioned to diﬀerent sources of uncertainty in the model
+input.” Hence one possible way to apportion the importance
+of the input factors with respect to the model response is to
+apply GSA. In general the importance of a given risk factor
+Xi can be measured via the so-called sensitivity index, which
+is defined as the fractional contribution to the model output
+variance because of the uncertainty in Xi . For k risk factors,
+the sensitivity indices can be computed using the following
+decomposition formula for the total output variance V (Y )
+of the output Y [15]:
+V (Y ) =
+
+
+
+X y − μ(t) ,
+(8)
+
+
+
+V (Xi ) +
+
+i
+
+i
+
+A simple model that fits adequately has the advantage of
+model parsimony. If a model has relatively little bias and
+
+
+
+
+
+
+
+
+
+V Xi , X j + · · · + V X1 , . . . , Xk ,
+
+j>i
+
+(9)
+where
+
+ 
+
+and so on.
+
+2.3. Evaluating the Fitted Model
+
+
+
+
+
+
+
+
+
+V Xi = Vxi Ex−i Y | Xi ,
+
+
+
+
+
+
+
+
+V Xi , X j = VXi X j EX−i j Y | Xi X j
+
+
+
+
+
+− VXi EX−i (Y | Xi
+
+
+
+
+− VX j EX− j Y | X j ,
+
+(10)
+
+<-----Page 3----->4
+
+International Journal of Quality, Statistics, and Reliability
+
+where V (Y ) is the unconditional variance of output of the
+model (incidence of CHD), V (Xi ) is the conditional variance
+of risk factor Xi , and V (Xi , X j ) is the variance of interaction
+between Xi and X j , and so on. A first measurement of the
+fraction of the unconditional output variance V (Y ) that is
+accounted for by the uncertainty in Xi , which is the firstorder sensitivity index (Si ) for the factor Xi is given as
+Si =
+
+V (Xi )
+.
+V (Y )
+
+(11)
+
+The second terms in (9) are known as the eﬀect of
+interactions. It is a fact that the number and importance
+of the interaction terms usually grow (i) with the number
+of risk factors k, and (ii) with the range of variation of the
+risk factors [16]. This means that if all of the V (Xi ) terms
+
+are computed, then most likely ki=1 V (Xi ) would still be
+lower than the total V (Y ), because the diﬀerence V (Y ) −
+k
+i=1 V (Xi ) is a measure of the impact of the interactions.
+
+Consequently, when ki=1 Si = 1, then the model is additive
+(i.e., without interactions among its input factors), and
+thus the first order of conditional variances of (10) are all
+we need to decompose the model output variance. For a
+nonadditive model, higher-order sensitivity indices account
+for interaction eﬀects among sets of input factors. However,
+higher-order sensitivity indices are usually not estimated
+directly because if the model consists of k risk factors, then
+the total number of indices (including the Si ’s) that should
+be estimated is as high as 2k − 1. For this reason, a more
+compact sensitivity measurement is used; this measurement
+is the total eﬀect sensitivity (ST ) index, which concentrates
+in one single term on all the interactions involving a given
+factor Xi . For example, for a model of k = 3 risk factors, the
+three total sensitivity indices would be [2]
+
+
+
+
+V (Y ) − VX2 X3 EX1 Y | X2 X3
+ST1 =
+V (Y )
+= S1 + S12 + S13 + S123 ,
+
+
+
+(12)
+
+3.2. GSA in a Logistic Regression Model
+In this study, partitioning the total variance of the objective
+function V (Y ) is the way to estimate Si and STi so as
+to perform a GSA. How can this model be extended to
+deal with a binary response variable? Although partitioning
+of variances is uncomplicated in models with a continuous response variable and a normal error distribution,
+the extension of this partitioning to models with binary
+responses is not simple [18]. Consequently, to extend the
+variance partitioning method to our binary response variable
+(incident of coronary heart disease (CHD)), suppose that
+the data is consisting of yi , the number of people who
+have CHD. The actual response probability of the incidence
+of CHD for the ith observation πi will have a Bernoulli
+distribution with a mean of pi , where pi is the proportion
+of the patients who have a disease. This response probability
+is therefore a random variable where E(πi ) = pi . The
+variance of πi must be equal to zero when pi is zero or unity,
+and then a relationship between the unknown probability
+and our risk factors can be fitted. Typically a logistic
+regression model represents this relationship between yi for
+a sample with n people who have a binomial distribution
+(i.e., {Yi ∼ B(n, πi )}, i = 1, 2, . . . , n), and the corresponding
+response probability of the incidence of the disease is πi =
+yi /n for ith observation and the k risk factors X1 , X2 , . . . , Xk
+as in (4) and (5). This model assumes independence between
+the n observations, and then all the variations conditional on
+the estimates of the probabilities will be binomial with equal
+variance:
+ 
+
+
+
+(15)
+
+The binomial is not the only possible distribution for fitting
+proportion data. Other distributions exist that have greater
+variation (known as overdispersion) or less variation (known
+as underdispersion) than the binomial distribution conditional on the values of πi ’s. The simplest function for the true
+probability of the ith observation uses a multiplicative scale
+factor to determine the variance of the response as
+ 
+
+and analogously
+
+
+
+V Yi = nπi 1 − πi .
+
+
+
+
+
+var πi = r pi 1 − pi ,
+ST2 = S2 + S12 + S23 + S123
+ST3 = S3 + S13 + S23 + S123 ,
+
+(13)
+
+where the conditional variance in (12) expresses the total
+contribution to the variance of Y because of non-Xi , (i.e., to
+the k − 1 remaining factors), so that V (Y ) − VX−i (EXi (Y |
+X−i )) includes all terms (i.e., a first order as well as
+interactions in (9)) that involve risk factor Xi . For a given
+risk factor Xi , the coeﬃcient of importance (ICi ) is the
+diﬀerence between STi and Si that reflects an important role
+of interactions for that risk factor in Y,
+ICi = STi − Si .
+
+(14)
+
+Explaining the interactions among risk factors helps us
+to improve our understanding about the model structure.
+Estimators for both (Si , STi ) are provided by a variety of
+methods such as Sobol, the Fourier amplitude sensitivity test
+(FAST), and others; for more details, see [17].
+
+(16)
+
+where r is a scale factor that is equal to 1. If we have
+a binomial variation, it will be greater than 1 if there is
+overdispersion and less than 1 if there is underdispersion,
+and πi is an unobservable random variable [19]. The
+advantages of the multiplicative approach are that it will
+allow both over- and underdispersions. The random variable
+Yi is associated with the observed number of incidences
+of the disease for the ith unit, yi . It will have a binomial
+distribution, and then the mean of Yi , conditionalon πi , is
+
+
+
+
+E Yi | πi = nπi
+and the conditional variance of Yi is
+
+
+
+
+
+
+(17)
+
+
+V Yi | πi = rnπi 1 − πi .
+
+(18)
+
+Since πi cannot be calculated, then the observed proportion
+of the disease incidence pi has to be an estimate of πi as
+yi
+pi = .
+(19)
+n
+
+<-----Page 4----->International Journal of Quality, Statistics, and Reliability
+
+5
+
+According to a standard result from the conditional probability theory, the unconditional expected value of a random
+variable Y can be obtained from the conditional expectation
+of Y given X using the equation
+
+
+E(Y ) = E E(Y | X)
+
+
+
+(20)
+
+Positive skew
+
+Symmetric
+
+Negative skew
+
+Figure 2: Common shapes of three types of probability distribution.
+
+and the unconditional variance of Y is given by [20]
+
+
+
+
+
+
+0.6
+
+(21)
+0.5
+
+Applying these two results on our response variable gives
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+
+
+E Yi = E E Yi | πi
+
+V Yi = E V Yi | πi
+
+
+
+
+
+= E nπi = npi ,
+ 
+
++ V E Yi | πi ,
+
+(22)
+(23)
+
+Contributions
+
+
+
+V (Y ) = E V (Y | X) + V E(Y | X) .
+
+0.4
+0.3
+0.2
+
+now
+ 
+
+E V Yi | πi
+
+
+
+ 
+
+= E nπi 1 − πi )
+  
+ 
+= n E πi − E πi2
+  
+    2 
+= n E πi − V πi − E πi
+
+
+
+
+= n pi − r pi 1 − pi − pi2
+
+
+= npi 1 − pi (1 − r)
+
+0.1
+0
+Diab
+
+ 
+
+
+
+ 
+
+
+= var nπi = n2 r pi 1 − pi ,
+
+
+
+V Yi = nr pi 1 − pi
+
+
+
+ 
+
+
+
+
+
+BMI
+
+Hypt
+
+W/H
+
+(25)
+
+(26)
+
+in the absence of random variation in the response probability, Yi would have a binomial distribution, B(n, pi ), and in
+this case when r = 1 as required, then
+V Yi = npi 1 − pi .
+
+Age
+Gen
+Risk factors
+
+Figure 3: Sensitivity indices: the main eﬀect Si , the total eﬀect STi
+and the interaction eﬀect ICi for each risk factor.
+
+and so
+ 
+
+HDL
+
+Si
+STi
+Interaction
+
+also
+var E Yi | πi
+
+Chol
+
+(24)
+
+(27)
+
+If, on the other hand, r is greater than 1, then a variation in
+the response probability occurs and the variance of Yi will
+exceed npi (1 − pi ), the variance under binomial sampling
+that leads to overdispersion. But if r is less than 1, then the
+variation in the response probability and the variance of Yi
+will be less than npi (1 − pi ), the variance under binomial
+sampling that leads to underdispersion. To use GSA to select
+the important covariates from the available set of covariates
+and construct an appropriate logistic regression model, it
+involves three steps.
+(1) The first step is identification of the probability
+distribution f (x) of each covariate in the model. Usually sensitivity analysis starts from probability distribution functions
+(pdfs) given by the experts. This selection makes the use of
+the best information available of the statistical properties of
+the input factors. One of the methods used to obtain the
+pdfs starts with visualizing the observed data by examining
+its histogram to see if it is compatible with the shape of any
+distribution, as illustrated in Figure 2.
+A visual approach is not always easy, accurate, or valid,
+especially if the sample size is small. Thus it would be
+
+better to have a more formal procedure for deciding which
+distribution is “best.” A number of significance tests are
+available for this such as the Kolmogorov-Smirnoﬀ and chisquare tests. For more details, see [21].
+(2) In the second step, the logistic regression model as in
+(1) and the information about the covariates obtained in step
+one are used to create a Monte Carlo simulation to generate
+the sample that will be used in the decomposition and to
+estimate the unconditional variance of response probability
+and the conditional variation for covariates as in (23) to (26).
+(3) These results from step two will be used in performing GSA in the binary logistic regression model using (11),
+and in the result of decomposing as in (24) and (26), where
+the main eﬀect indices are
+
+
+
+
+npi 1 − pi (1 − r)
+
+
+Si =
+nr pi 1 − pi
+and the total eﬀect indices are
+
+
+
+
+ 
+
+V Y j − V E Y j | X−i
+ 
+STi =
+V Yj
+ 
+
+=
+
+E V Y j | X−i
+ 
+V Yj
+
+
+
+(28)
+
+
+(29)
+
+,
+
+where X−i are all X’s but Xi , and the coeﬃcients of
+importance are
+ICi = STi − Si .
+
+(30)
+
+These results and the two datasets are used to test and
+compare the performance of the proposed GSA method as
+
+<-----Page 5----->6
+
+International Journal of Quality, Statistics, and Reliability
+Table 1: Estimated coeﬃcients and standard errors for diﬀerent variable selection methods.
+
+Methods
+Factors
+Intercept
+X1
+X2
+X3
+X4
+X12
+X32
+X1 X2
+X1 X3
+X1 X4
+X2 X3
+X 2 X4
+X3 X4
+
+MLE
+
+Best subset AIC
+
+Best subset BIC
+
+LASSO
+
+SA Si (STi )
+
+3.70 (0.25)
+0 (—)
+0 (—)
+0 (—)
+−0.28 (0.09)
+−1.71 (0.24)
+−2.67 (0.22)
+0 (—)
+0.36 (0.22)
+0 (—)
+−0.10 (0.10)
+0 (—)
+0 (—)
+
+Constant
+0.487 (0.536)
+0.014 (0.125)
+0.143 (0.218)
+0.003 (0.034)
+0.013 (0.057)
+0.032 (0.091)
+0.014 (0.237)
+0.362 (0.502)
+0.001 (0.042)
+0.016 (0.075)
+0.003 (0.047)
+0.019 (0.307)
+
+5.51 (0.75)
+
+4.81 (0.45)
+
+6.12 (0.57)
+
+6.09 (0.29)
+
+−8.8 (2.97)
+
+−6.49 (1.75)
+
+−12.15 (1.81)
+
+−12.2 (.08)
+
+2.30 (2.00)
+
+0 (—)
+0 (—)
+0.30 (0.11)
+−1.04 (0.54)
+−4.55 (0.55)
+0 (—)
+5.69 (1.29)
+0 (—)
+0 (—)
+0 (—)
+0 (—)
+
+−2.77 (3.43)
+−1.74 (1.41)
+−0.75 (.61)
+−2.7 (2.45)
+
+0.03 (0.34)
+7.46 (2.34)
+0.24 (0.32)
+−2.15 (1.61)
+−0.12 (0.16)
+1.23 (1.21)
+
+0 (—)
+
+0 (—)
+
+−6.93 (0.79)
+
+−7.0 (0.21)
+
+−0.29 (0.11)
+
+0 (—)
+0 (—)
+0 (—)
+0 (—)
+9.84 (0.14)
+0 (—)
+0 (—)
+0 (—)
+0 (—)
+
+0 (—)
+0 (—)
+0 (—)
+9.83 (1.63)
+0 (—)
+0 (—)
+0 (—)
+0 (—)
+
+Table 2: Sensitivity indices and risk factors ranking.
+Factors
+Diab
+Chol
+HDL
+Age
+Gen
+BMI
+Hypt
+W/H
+Sum.
+
+SCAD
+
+Si
+0.2018
+0.2434
+0.2243
+0.2636
+0.0256
+0.5161
+0.003
+0.2706
+1.7484
+
+STi
+0.22657
+0.258
+0.25424
+0.28507
+0.03844
+0.56173
+0.04207
+0.29714
+1.96326
+
+ICi
+0.008
+0.015
+0.03
+0.022
+0.013
+0.046
+0.039
+0.027
+0.2
+
+Si (%)
+12
+14
+13
+15
+1
+30
+0
+15
+
+Ranks
+6
+4
+5
+3
+7
+1
+8
+2
+
+a variable selection method to identify the important risk
+factors obtained from these datasets with the results obtained
+from other existing methods of selecting variables.
+
+4. Numerical Comparisons
+The purpose of this section is to compare the performance
+of the proposed method with existing ones. We also use a
+real data example to illustrate our SA approach as a variable
+selection method. In the first examples in this section, we
+used the dataset and the results of the penalized likelihood
+estimate of best subset (AIC), bust subset (BIC), SCAD, and
+LASSO that were computed by [7] as a way to compare the
+performance of the proposed method with these methods.
+
+4.1. The First Example
+In this example, Fan and Li [7] applied the proposed
+penalized likelihood methodology to burn data collected
+by the General Hospital Burn Center at the University of
+Southern California. The dataset consists of 981 observations. The binary response variable Y is 1 for those victims
+who survived their burns and 0 otherwise. Risk factors
+are X1 = age, X2 = sex, X3 = log (burn area + 1), and
+
+binary variable X4 = oxygen (0 normal, 1 abnormal) was
+considered. Quadratic terms of X1 and X3 , and all interaction
+terms were included. The intercept term was added, and
+the logistic regression model was fitted. The best subset
+variable selection with the AIC and the BIC was applied
+to this dataset. The unknown parameter λ was chosen
+by generalized cross-validation: it is 0.6932 and 0.0015,
+respectively, for the penalized likelihood estimates with the
+SCAD and LASSO. The constant a in the SCAD was taken as
+3.7. With the selected λ, the penalized likelihood estimator
+was obtained at the sixth, 28th, and fifth step iterations
+for the penalized likelihood with the SCAD and LASSO.
+Table 1 contains the estimated coeﬃcients and standard
+errors for the transformed data, based on the penalized
+likelihood estimators, and the calculation of the sensitivity
+indices obtained by using SimLab software to compare the
+performance of GSA as a variable selection method with
+other methods. The first five columns were calculated by [7].
+In addition to GSA indices, Table 1 consists of the results
+of two traditional methods of variable selection (AIC and
+BIC) and two new methods (LASSO and SCAD). The
+traditional method, best subset procedure via minimizing
+the BIC scores, chooses five of 13 risk factors, whereas the
+SCAD chooses four risk factors. The diﬀerence between them
+is that the best subset keeps X4 . Neither SCAD nor the
+best subset variable selection (BIC) includes X12 and X32 in
+the selected subset, but both LASSO and the best subset
+variable selection (AIC) included them. LASSO chooses the
+quadratic terms of X1 and X3 rather than their linear terms.
+It also selects an interaction term X2 X3 , which may not
+be statistically significant. LASSO shrinks noticeably large
+coeﬃcients. The last column in Table 1 shows that GSA
+selected the variables X1 , X3 , and X1 X3 , in addition to the
+intercept, which resembles the SCAD method, and diﬀers
+from the other methods. According to the results in the last
+column of Table 1, the risk factors can be ranked according to
+sensitivity indices Si and STi . Age (X1 ) is the first and the most
+influential risk factor, with a percent of contribution of 0.487,
+and the second most important risk factor is the interaction
+
+<-----Page 6----->International Journal of Quality, Statistics, and Reliability
+
+7
+
+Table 3: The overall fitting criteria for the BEM for a logistic regression model.
+Step
+6
+7
+8
+
+−2Log L
+
+357.813
+359.021
+360.189
+
+χP2
+7.268
+6.061
+4.892
+
+Df
+3
+2
+1
+
+Sig.
+0.064
+0.048
+0.027
+
+Table 4: The estimated parameters and their significance for a
+logistic regression model using BEM.
+Steps
+Step 6
+
+Step 7
+
+Step 8
+
+Risk factors
+CHOL
+SAGE
+BMI
+Constant
+CHOL
+BMI
+Constant
+CHOL
+Constant
+
+β
+0.538
+0.151
+−0.325
+−1.711
+0.610
+−0.300
+−1.758
+0.605
+−1.946
+
+Sig. (P)
+0.061
+0.271
+0.241
+0.000
+0.029
+0.276
+0.000
+0.030
+0.000
+
+2
+χHL
+8.465
+0.055
+—
+
+df
+8
+2
+—
+
+Sig.
+0.389
+0.973
+—
+
+Nag. R2
+0.30
+0.25
+0.20
+
+(2) Diabetes (debt, X1 ): According to the criteria published by American College of Endocrinology (ACE)
+& American Association of Clinical Endocrinologists (AACE) [24] the participant has diabetes 1 if
+the Stabilized Glucose >140 mg/dL or Glycosylated
+Hemoglobin >7% or both of them more than these
+limits, and he has no diabetes 0 otherwise.
+(3) Total cholesterol (Chol, X2 ): if a participant has total
+cholesterol of >200 mg/dL, he will be given a 1 and a
+0 otherwise [25].
+(4) High density lipoprotein (HDL, X3 ): a participant
+with HDL of <40 mg/dL will be given a 1 and a 0
+otherwise [25].
+(5) Age (X4 ): standardized values are used (X − μ)/σ.
+
+between X1 and X3 , with a percentage of contribution of
+0.362. The third influential risk factor is the log (area of
+burn + 1) (X3 ) with a percentage of contribution of 0.143 as
+shown in Table 1. Consequently, we find that the proposed
+GSA variable selection method resembles SCAD in choosing
+the same risk factors.
+
+4.2. The Second Example
+A new dataset emerges from the original dataset prepared
+in [22] as a way to compare SA and the traditional method
+(backward elimination) as variable selection methods. Originally this study was undertaken to determine the prevalence
+of CHD risk factors among a population-based sample of
+403 rural African-Americans in Virginia. Community-based
+screening evaluations included the determination of exercise
+and smoking habits, blood pressure, height, weight, total and
+high-density lipoprotein (HDL) cholesterol, and glycosylated
+hemoglobin, and other factors. The results of this study were
+presented as percentages of prevalence for most factors such
+as diabetes (13.6% of men, 15.6% of women), hypertension
+(30.9% of men, 43.1% of women), and obesity (38.7% of
+men, 64.7% of women), without building any models to
+study the relationship between CHD and its risk factors.
+For more details, see [8]. A new dataset was generated
+based on the first one as a way to calculate SA indices to
+extract the important risk factors for CHD from among
+these new factors, and then implement the logistic regression
+model to test the performance of the proposed method as
+follows.
+(1) CHD (Y) 10-year percentage risk is generated according to Framingham Point Scores. This risk is classified
+as 1 if the percentage of the risk is ≥20% and 0
+otherwise [23].
+
+(6) Gender (Gan, X5 ): 1 is for a male and 2 for a female.
+(7) Body mass index (BMI, X6 ): values for this standard
+are calculated from the following equation: BMI =
+height/(weight)2 , and the participant gets 1 if BMI is
+>30 and a 0 otherwise [25].
+(8) Blood pressure (hypertension, Hyp, X7 ): a participant
+has Hyp (1) if systolic blood pressure is >140 or if
+diastolic blood pressure is >90 or if both of them
+exceed these limits and 0 otherwise [25].
+(9) Waist/hip ratio (X8 ), in addition to BMI, is a second
+factor in the determination of obesity.
+This dataset was used to perform SA through the use of
+SimLab software and the partitioning variance methodology
+discussed in Section 3. An evaluation of the eﬃciency of
+the proposed method was performed by fitting all factors
+into logistic regression models so as to obtain comparisons
+of factors chosen by the proposed method with those
+selected by traditional variable selection method (backward
+elimination). SPSS software was used to get the results that
+follow from fitting logistic regression models.
+
+4.2.1. The Important Risk Factors
+Implementation of the GSA method for this dataset gave the
+results in Table 2, which shows the ranking of the risk factors
+in order of importance and the contribution of each one to
+explaining the total variance of the CHD response variable.
+According to the first order of sensitivity indices Si , the
+BMI is the first and the most influential factor, and the waisthip ratio ranks second. Both are components of the obesity
+factor. Age is the third influential factor and so on through
+the other factors as listed in Table 2. The total sensitivity
+index for a given risk factor provides a measure of the overall
+contribution of that risk factor to the output variance, taking
+
+<-----Page 7----->8
+
+International Journal of Quality, Statistics, and Reliability
+
+into account all possible interactions with the other risk
+factors. The diﬀerence between the total sensitivity index
+and the first-order sensitivity index for a given risk factor
+is a measure of the contribution to the output variance of
+the interactions involving that factor; see (12) and (13). The
+second column in Table 2 shows the values of STi , which
+gives the same rank as Si for the risk factors. These indices
+point to the simple interaction between these risk factors as
+illustrated in the third column in the same table. Figure 3
+shows the compression between the first order Si , the total STi
+sensitivity indices, and the interactions between risk factors.
+
+Logit CHD = 0.365 − 0.266 Diab + 0.557 Chol − 0.246 HDL
++ 0.161 Age − 0.147 Gend − 0.295 BMI
++ 0.024 Hypt − 1.874 W/H ratio
+Sig (P)
+(0.862)
+(0.480)
+(0.054)
+(0.419)
+(0.304)
+(0.624)
+(0.317)
+(0.935)
+(0.389),
+(31)
+−2 log L f = 355.687,
+
+χP2 = 9.394,
+
+2
+χHL
+= 12.509,
+
+Sig. (P) = 0.310,
+
+= 0.71,
+
+χP2
+
+= 16.791,
+
+(32)
+These results showed the significance of the overall fit of the
+2
+model according to the values of χP2 and χHL
+in spite of the
+2
+low value of Nag. R ; also showed that the individual eﬀect
+for all risk factors is not significant, which means that H0
+cannot be rejected from the following null hypothesis:
+(33)
+
+Second, application of the logistic regression model by
+using those risk factors that appear in Table 2 as highly
+ranked by the proposed method also shows that this method
+ranks each risk factor according to its contribution to the
+incidence of the CHD response variable. The question also
+becomes how many variables must be selected in order to
+apply the logistic regression model. The possibility exists
+that the selection procedure may tend to underfit or overfit
+the model by selecting too few or too many variables. In
+the face of such a possibility, our objective becomes to
+find the model that uses the least number of variables
+while simultaneously explaining a reasonable percentage of
+variance in the dependent variable relative to the percentage
+explained by all the variables in the full model. Thus two
+models may be fitted from Table 2 to compare the results.
+The first logistic regression model consisted of the obesity
+
+(34)
+
+−2 log LR = 357.584,
+
+= 7.497,
+
+Sig. (P) = 0.112,
+
+Sig. (P) = 0.320.
+(35)
+
+The results in (34) showed that using these criteria for the
+overall fit for this model demonstrated their significance
+collectively and individually as risk factors that influence
+the incidence of CHD and raise the value of R2 to 71% in
+comparison with the full model in (31) The second logistic
+regression model is fitted by adding another risk factor, HDL,
+to increase the percentage of explanation to 87%. The results
+of fitting this model as in (36) are
+Logit CHD = −0.331+0.552 Chol − 0.316 HDL+0.175 Age
+− 0.306 BMI − 1.351 W/H
+Sig. (P)
+(0.085)
+(0.056)
+(0.28)
+(0.022)
+(0.028)
+(0.05),
+(36)
+−2 log L1st = 357.584,
+
+Sig. (P) = 0.130,
+
+H0 : β = 0 versus H1 : β =
+/ 0.
+
+−2 log L0 = 365.081,
+2
+χHL
+
+Does the proposed method yield a reliable model? To investigate the reliability of the proposed method, we compared the
+results of the fitted models. Basically, when the full logistic
+regression model is fitted, the results are
+
+Nag. R2 = 0.39,
+
+Logit CHD = −0.866 + 0.537 Chol + 0.170 Age
+− 0.352 BMI − 0.939 W/H ratio
+Sig (P)
+(0.026)
+(0.024)
+(0.023)
+(0.021)
+(0.036),
+Nag. R2
+
+4.2.2. Implementing the Logistic
+Regression Model
+
+−2 log L0 = 365.081,
+
+factors (BMI, and W/H ratio), age, and total cholesterol
+factors that explained 74% of the total variance of the CHD
+response variable according to the individual eﬀect (Si ) as in
+Table 2. The results of fitting this model in this manner and
+applying SPSS software were
+
+Nag. R2
+
+= 0.698,
+2
+χHL
+
+χP2
+
+= 4.850,
+
+−2 log L2nd = 356.434,
+= 8.648,
+
+Sig. (P) = 0.124,
+
+Sig. (P) = 0.773.
+(37)
+
+These results showed that adding the HDL risk factor does
+not improve the results of the first logistic regression model,
+but the parameter of this risk factor is not significant when
+we test the following hypothesis:
+H0 : βHDL = 0
+
+versus H1 : βHDL =
+/ 0.
+
+(38)
+
+Note that the diﬀerence between the deviances of the two
+models is minor. Furthermore, the value of R2 does not
+improve. Thus, according to the principle of parsimony,
+the first model should be considered the best model and
+the risk factors used to construct this model are those
+that are the most influential in causing CHD. Moreover,
+showing the diﬀerent results obtained from these two models
+demonstrates the diﬀerences between fitting the full model
+with all risk factors and fitting it with only selected risk
+factors.
+The eﬃciency of the proposed method of variable
+selection (GSA) can be measured by comparing its results
+as in (34) with the results gained from fitting the logistic
+regression model by using the backward elimination method
+(BEM). These results are shown in Tables 3 and 4.
+
+<-----Page 8----->International Journal of Quality, Statistics, and Reliability
+Table 3 shows the overall fitting criteria required for the
+last three steps of a logistic regression model fitted by the use
+of the BEM.
+Also Table 4 shows the last three steps of iteration to
+choose the important risk factors. These results represent
+the sequential elimination of the factors, which requires
+eight steps to rank these risk factors according to their
+importance; however, the proposed method does not need
+these iterations.
+
+5. Conclusions
+The results in Tables 1 to 4 and (31) to (36) for the two
+examples confirm that the proposed method is capable
+of distinguishing between important and unimportant risk
+factors. The proposed method ranked the risk factors
+according to their decreasing importance as shown in Tables
+1 and 2. In the example in which we compared the proposed
+method with those methods that are typically used, we found
+that its performance very much resembled the SCAD method
+in which the same risk factors are selected. From the first
+example, we found that the important risk factors are age, the
+area of the burns, and the interaction between them. In the
+second example we found that the obesity factors (BMI and
+W/H) are the most influential risk factor on the incidence
+of CHD, the second risk factor is age, and the third risk
+factor is the total cholesterol. These play the major roles,
+representing approximately 74% of the incidence of CHD.
+Thus, they are considered the most important risk factors
+according to their individual percentages of contribution in
+the incidence of CHD as shown in Table 1. Compression
+between the results of the fitting of the full logistic regression
+model as in (31) and the chosen models as in (34) and
+(36) confirm the eﬃciency of the proposed method in its
+selection of the most important risk factors. Equation (34)
+represents the best model, according to the model evaluation
+criteria, because it consists of the most influential risk factors.
+Therefore, a medical care plan and medical interventions
+should comply with this ordering of these factors. Also,
+to further confirm these results, one of the traditional
+variable selection methods was used (backward elimination
+method), which yields diﬀerent results after eight steps, but
+the proposed method orders the risk factors without iteration
+and without the need to fit multiple regression models.
+Finally, these results together confirm and emphasize the
+importance of GSA as a variable selection method.
+
+Acknowledgment
+This work was supported by USM fellowship.
+
+References
+[1] A. Saltelli, K. Chan, and E. M. Scott, Sensitivity Analysis, John
+Wiley & Sons, Chichester, UK, 2000.
+[2] A. Saltelli, M. Ratto, S. Tarantola, and F. Campolongo,
+“Sensitivity analysis for chemical models,” Chemical Reviews,
+vol. 105, no. 7, pp. 2811–2827, 2005.
+
+9
+[3] A. Khalili and J. Chen, “Variable selection in finite mixture
+of regression models,” Journal of the American Statistical
+Association, vol. 102, no. 479, pp. 1025–1038, 2007.
+[4] A. J. Miller, Subset Selection in Regression, Chapman &
+Hall/CRC, London, UK, 2nd edition, 2002.
+[5] R. Tibshirani, “The lasso method for variable selection in the
+Cox model,” Statistics in Medicine, vol. 16, no. 4, pp. 385–395,
+1997.
+[6] J. Fan and R. Li, “Variable selection for Cox’s proportional
+hazards model and frailty model,” Annals of Statistics, vol. 30,
+no. 1, pp. 74–99, 2002.
+[7] J. Fan and R. Li, “Variable selection via nonconcave penalized
+likelihood and its oracle properties,” Journal of the American
+Statistical Association, vol. 96, no. 456, pp. 1348–1360, 2001.
+[8] H. H. Zhang and W. Lu, “Adaptive Lasso for Cox’s proportional hazards model,” Biometrika, vol. 94, no. 3, pp. 691–703,
+2007.
+[9] A. Agresti, Categorical Data Analysis, John Wiley & Sons,
+Hoboken, NJ, USA, 2nd edition, 2002.
+[10] D. Collett, Modeling Binary Data, Chapman & Hall/CRC, Boca
+Raton, Fla, USA, 2nd edition, 2003.
+[11] J. Cohen, P. Cohen, S. G. West, and L. S. Alken, Applied
+Multiple Regression/Correlation Analysis for the Behavioral
+Sciences, Lawrence Erlbaum Associates, Mahwah, NJ, USA, 3rd
+edition, 2003.
+[12] D. R. Cox and E. J. Snell, Analysis of Binary Data, Chapman &
+Hall/CRC, New York, NY, USA, 2nd edition, 1989.
+[13] T. M. Therneau and P. M. Grambsch, Modeling Survival Data:
+Extending the Cox Model, Springer, New York, NY, USA, 2000.
+[14] A. Saltelli, “Global sensitivity analysis: an introduction,” in
+Sensitivity Analysis of Model Output, K. M. Hanson and F. M.
+Hemez, Eds., pp. 27–43, Los Alamos National Laboratory, Los
+Alamos, NM, USA, 2005.
+[15] A. Saltelli, S. Tarantola, and K. P.-S. Chan, “A quantitative
+model-independent method for global sensitivity analysis of
+model output,” Technometrics, vol. 41, no. 1, pp. 39–56, 1999.
+[16] A. Saltelli, S. Tarantola, and F. Campolongo, “Sensitivity
+analysis as an ingredient of modeling,” Statistical Science, vol.
+15, no. 4, pp. 377–395, 2000.
+[17] K. Chan, S. Tarantola, A. Saltelli, and I. M. Sobol’, “Variance
+based methods,” in Sensitivity Analysis, A. Saltelli, K. Chan,
+and M. Scott, Eds., pp. 167–197, John Wiley & Sons, New York,
+NY, USA, 2000.
+[18] J. Neter, H. K. Michael, J. N. Christopher, and W. William,
+Applied Linear Statistical Models, McGraw-Hill, New York, NY,
+USA, 1996.
+[19] J. S. Long, Regression Models for Categorical and Limited
+Dependent Variables, Sage, Thousand Oaks, Calif, USA, 1997.
+[20] M. Saisana, A. Saltelli, and S. Tarantola, “Uncertainty and sensitivity analysis techniques as tools for the quality assessment
+of composite indicators,” Journal of the Royal Statistical Society.
+Series A, vol. 168, no. 2, pp. 307–323, 2005.
+[21] A. Heiat, “Using an Excel extension for selecting the probability distribution of empirical data,” Spreadsheets in Education,
+vol. 2, no. 1, pp. 95–100, 2005.
+[22] J. B. Schorling, J. Roach, M. Siegel, et al., “A trial of churchbased smoking cessation interventions for rural African
+Americans,” Preventive Medicine, vol. 26, no. 1, pp. 92–101,
+1997.
+[23] J. I. Cleeman, S. M. Grundy, D. Becker, et al., “Expert panel on
+detection, evaluation, and treatment of high blood cholesterol
+in adults (adult treatment panel III),” The Journal of the
+American Medical Association, vol. 285, no. 19, pp. 2486–2497,
+2001.
+
+<-----Page 9----->10
+[24] J. T. DiPiro, R. L. Talbert, G. C. Yee, G. R. Matzke, B. G.
+Wells, and L. M. Posey, Pharmacotherapy: A Pathophysiologic
+Approach, McGraw-Hill, New York, NY, USA, 6th edition,
+2005.
+[25] M. A. Koda-Kimble, L. Y. Young, W. A. Kradian, B. J.
+Guglielmo, B. K. Allderege, and R. L. Corelli, Applied Therapeutics, The Clinical Use of Drugs, Lippincott Williams &
+Wilkins, Baltimore, Md, USA, 8th edition, 2005.
+
+International Journal of Quality, Statistics, and Reliability
+
+

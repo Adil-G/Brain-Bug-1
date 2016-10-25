@@ -1,0 +1,937 @@
+<-----Page 0----->Business Negotiation Support: Theory and Practice1
+Aldo de Moor and Hans Weigand
+Infolab, Dept. of Information Systems and Management,
+Tilburg University
+PO Box 90153
+5000 LE Tilburg
+The Netherlands
+tel. +31-13-4663020, fax +31-13-466-3069
+e-mail: ademoor/weigand@uvt.nl
+
+1
+
+International Negotiation, 9(1):31-57, 2004.
+
+<-----Page 1----->Abstract
+Business negotiation support systems (NSS) are slowly entering the market, although they lack a
+clear theoretical basis as of yet. Negotiation is a complicated process with many aspects that have
+only partially been described with the formal rigidity needed to build support systems. Most
+theories about negotiation are descriptive and not prescriptive, which, among other things, prevents
+their use as a basis for negotiation support systems. Complicating matters is that a negotiation
+process consists of several distinct stages, each with its own characteristics. Furthermore, there are
+many types of negotiations, depending on the domain. This suggests that we should not strive for
+one general negotiation support system, but for a set of domain-specific tools. To ground the
+development and application of these tools in different scenarios of use, we propose an integrated
+theoretical framework. After giving an overview of existing negotiation support approaches, we
+construct a business negotiation support metamodel for NSS analysis. The metamodel is illustrated
+through analyzing the case of the MeMo project, which concerns contract negotiations in small and
+medium enterprises in the European construction industry. The MeMo system is one of the first
+business NSS with an explicit international orientation.
+Keywords: business negotiation, negotiation support systems, metamodel, MeMo.
+
+2
+
+<-----Page 2----->1. Introduction
+Electronic commerce is quickly transforming from hype into reality. Many popular e-commerce
+applications have thus far focused on rather straightforward business-to-customer applications,
+such as information kiosks and ordering portals, and simple electronic auctions, in which vendors
+can offer consumer goods for sale and individual customers can bid on these goods.1 However, for
+more complex forms of e-commerce, especially those in the business-to-business domain, more
+extensive support is needed. In many cases, it is not sufficient merely to facilitate the selection of
+business partners, retrieval of information profiles, ordering of products, or monitoring of order
+status information. Also, oftentimes quite complex negotiations need to be conducted for a deal to
+close. However, negotiation theory is still relatively young, and only a few applications have been
+developed that provide the kind of support actually needed in practical business cases. If theory is
+to progress and more adequate support systems for business negotiations are to be designed, then a
+clear conceptual framework should be developed and applied to the analysis of real-world systems.
+In Section 2 we survey some concepts that are important to the development of a theory on
+business negotiation. In Section 3 we show how this process can be supported and give an
+overview of some influential negotiation support systems. Based on our discussion of theoretical
+concepts and practical support systems, we construct a business negotiation support metamodel. In
+Section 4 we describe and analyze empirical findings from the MeMo system, which supports
+complex business contract negotiations in relatively well-defined domains with many players. We
+end the paper with some conclusions and directions for future research in Section 5.
+2. Towards a Theory of Business Negotiation Support
+A mature theory on business negotiation support does not yet exist. On the one hand, there are
+several generic negotiation theories, drawing from such diverse fields as conflict resolution, game
+and decision theory, and even cultural anthropology. Important contributions have been made by
+Raiffa (1982) on decision-theoretic issues, Fisher and Ury (1981) on how to use win-win strategies,
+and Mastenbroek (1989) on emotional aspects, among others. However, these theories do not
+sufficiently meet the need for an applied business negotiation theory that can be used as a basis for
+negotiation support systems (NSS). This need is becoming increasingly clear as research on ecommerce progresses. A comprehensive theory is needed, in which elements from these generic
+negotiation theories are positioned in an integrated business framework. Robinson and Volkov
+(1998) have examined this objective with their framework for supporting the negotiation life cycle.
+Still, their work does not address important issues. We, therefore, will also refer to other theories
+that offer additional ideas relevant to business negotiation support models, with the aim of
+generating some high-level synthesis.
+This paper presents only an initial outline of what such an integrated theory should look like. We
+briefly describe some key concepts and explain their relevance to a theory of business negotiation.
+First, we discuss the concept of negotiation itself. Then, we present several models of negotiation
+that show different ways of looking at this process. We discuss the contents of the negotiation
+process in more detail by examining negotiation stages, products, and roles. Finally, we consider
+the role of negotiation protocols and patterns in supporting the negotiation process.
+
+3
+
+<-----Page 3----->2.1. Negotiation
+There are numerous definitions of negotiation; we provide three characteristic examples. Gulliver
+(1979: 79) defines negotiation as a process in the public domain in which two parties, with
+supporters of various kinds, attempt to reach a joint decision on issues under dispute. Robinson and
+Volkov (1998) view negotiation as a process in which participants bring their goals to a bargaining
+table, strategically share information, and search for alternatives that are mutually beneficial.
+According to Putnam and Roloff (1992), negotiation is a special form of communication that
+centers on perceived incompatibilities and focuses on reaching mutually acceptable agreements.
+Although these definitions differ in their details, they share some common elements: in negotiation
+(1) there are two or more interdependent participants, (2) each of whom has some individual goals
+that may be partially incompatible. In some form of (3) process, (4) alternatives are investigated
+(5) with the purpose of agreeing upon one of them.
+This definition is also applicable to business negotiation. We do not want to go as far as Gulliver,
+who sees disputes as the driving force of negotiations. Rather, we are especially interested in the
+kind of negotiations involving some form of mutual exchange of goods, services, and money. The
+driving force behind these negotiations is a voluntary cooperation between two or more business
+partners who would like to explore potential business opportunities that might result in a contract
+explicitly formalizing mutual obligations. Note that this particular type of business negotiation
+focuses on trade. Other kinds of business negotiations are conceivable, such as merger or labor
+management negotiations. Sometimes the negotiations are political in nature. However, we think
+that a focus on trade is important, as sales comprise the vast majority of business transactions. We
+hope that our analysis can be extended to other types of business negotiations later. Based on the
+analysis to follow, in Section 3.3 we construct a business negotiation support metamodel in. Such a
+metamodel offers a generic framework with parameters that can be tailored to the particular
+negotiation situation at hand.
+2.2. Types of Negotiation Models
+Negotiation models can be classified along different dimensions. A first key dimension is the
+degree of guidance that they offer in the actual negotiation support - their normative status, in other
+words. The second dimension is the perspective by which the negotiation is modelled.
+Model Status. An important distinction in negotiation models is whether they are descriptive or
+prescriptive (Gulliver 1979; Kersten and Cray 1996). Descriptive models try to carefully describe
+what actually happens, whereas prescriptive models are normative in the sense that they prescribe
+what negotiators should do to achieve the desired result.
+Kersten and Cray (1996) offer some guidelines that recommend the appropriate role in negotiation
+support for both kinds of models. Any negotiation supporting method should first of all be based
+on a descriptive model that analyzes and explains the cognitive perspectives and behavior of the
+participants without making unrealistic assumptions about their rationality. Only after this
+cognitive level has been described is it useful to provide predictive and prescriptive support at the
+instrumental level. Negotiation support should allow contrasting descriptive representations to be
+developed. Then, predictions and prescriptions can be generated based on an analysis of the needs
+of the opponent, the specifics of the situation, and decision-making conditions. Instead of trying to
+predict outcomes, often, only the decision options for the various participants need be identified.
+4
+
+<-----Page 4----->The participants then make the actual decisions based on their interpretation of rich, albeit informal,
+context knowledge.
+Next, we introduce some modelling perspectives. Although models of both a descriptive and a
+prescriptive nature can be developed in all the following perspectives, they are not always relevant
+in each case. For example, as we shall see, game-theoretical models often oversimplify reality so
+that their descriptive qualities are sometimes questionable.
+Model Perspective. Negotiation models can be analyzed from different perspectives.
+perspectives provide a focus for identifying key processes and structural constructs.
+
+These
+
+Many different classifications of negotiation models exist, some of which are described in Putnam
+and Roloff (1992). Because negotiation is very much dependent on the specific application domain
+in which it is conducted, some kind of domain classification is useful. Lim and Benbasat (1992)
+see political, economic, and social settings as important application domains; they therefore
+distinguish between political, economic, and social-psychological models. Political models aim to
+predict political behavior by analyzing potential conflicts of interest. Economic models are
+dynamic and focus both on process and outcome. They are often quite specific in terms of the
+domain covered and stress the formation of expectations regarding the behavior of the other
+negotiation parties. Socio-psychological models are mostly descriptive as opposed to prescriptive,
+analyzing various behaviors in socio-psychological terms.
+Negotiation is not only characterized by content matter, but also by its communication aspects.
+There are three key characteristics of a communications perspective on negotiation: micro
+elements; dynamics; and systems of meaning (Putnam and Roloff 1992). First, communication
+processes consist of many micro elements that occur in a specific context. For instance, messages
+are related to previous and subsequent messages in the context of a particular goal. Second, the
+dynamics of communication need to be studied. For example, it is important to examine how offers
+are formulated and changed. Third, systems of meaning from individual, interpersonal, situational,
+and cultural perspectives need to be uncovered to guide the negotiation process in a proper manner.
+Especially in computer-mediated business negotiations, sufficient attention needs to be paid to
+developing an appropriate communication model. Patterns, such as those needed to construct
+offers or information requests, must be defined. Defining who can do what and how the various
+information products are changed in negotiation subprocesses is very important. Different sets of
+meanings adopted by, for example, business partners from different countries need to be carefully
+defined. In this way, computer support can be made sufficiently sensitive to the complexity and
+dynamics of real negotiation situations. Much research has been done on communication aspects in
+face-to-face negotiations (e.g. (Ulijn and Strother 1995)). However, most research in computermediated negotiations so far has focused on analyzing relatively simple context-free and artificial
+negotiation situations, while little is known about the determinants of, for instance, intercultural
+negotiations (Kersten and Noronha 1999). Some interesting work in this respect includes the
+Culture Classification Model of Schuster and Copeland (1996), which can be used to analyze
+differences between cultures in the roles of time, task, and relationships in making business
+negotiation decisions. These dimensions have implications for communication styles that should
+be acknowledged in the design of negotiation support systems.
+2.3. Negotiation Stages
+
+5
+
+<-----Page 5----->Each negotiation process has a life cycle consisting of a number of stages. Depending on the
+negotiation model used, the definitions of these stages differs considerably.
+Some only take into account the planning and conduct of the negotiation itself, while not directly
+paying attention to final results. Robinson and Volkov (1998), inspired by the software life cycle,
+talk about the negotiation analysis, design, and implementation stages. The first two stages
+together form the preparatory stage, whereas the actual conduct of the negotiation takes place in the
+implementation stage (note that to them, implementation refers to the negotiation process, whereas
+often it concerns what happens to the end results once this process is complete).
+An example of an elaborate decision theoretic stage model has been proposed by Lim and Benbasat
+(1999). They distinguish an issue identification stage, a range specification stage of the values of
+the negotiation variables, a utility definition stage in which participants specify their own utility
+curves and those of their opponents, and finally the negotiation dance in which the negotiation itself
+takes place.
+One of the most extensive socio-psychological/cultural stage models is provided by Gulliver. In
+his developmental model of negotiation (Gulliver 1979: 82), he distinguishes eight stages: (1)
+searching for an arena; (2) formulating an agenda and working definitions of the issues to be
+negotiated; (3) making preliminary statements of demands and offers, exploring the dimensions and
+limits of issues, and emphasizing the differences between the parties; (4) narrowing the differences
+and reaching agreement on some issues; (5) preliminaries to final bargaining; (6) final bargaining;
+(7) ritual confirmation of the final outcome; and (8) the implementation of the outcome.
+In summary, most process models agree that there is at least some form of (1) negotiation
+preparation, (2) actual conducting of the negotiations, and (3) implementation of the results,
+sometimes including their renegotiation (e.g. Gulliver 1979; Kersten and Noronha 1999). When
+constructing a particular negotiation model using a metamodel, not all stages necessarily have to be
+included, but at least their absence should be justified.
+Bargaining. Some authors consider the negotiation and bargaining processes to be identical (Lim
+and Benbasat 1992; Putnam and Roloff 1992). However, we adopt Gulliver's narrower definition
+of bargaining as a subprocess of negotiation that consists of the presentation and exchange of more
+or less specific proposals for the terms of agreement on particular issues (Gulliver 1979: 71).
+We focus on bargaining here because of the complex nature of communication involved, and
+because detailed protocols for it already exist. This stage in particular requires - and can obtain automated negotiation support. The pre- and post-bargaining stages of the negotiation process also
+deserve attention, but especially in contract negotiations, bargaining is a key element.
+The utility functions used for alternative generation in decision theoretical approaches offer one
+form of automated business negotiation support for the bargaining process. A participant first
+specifies his or her own utilities and then estimates those of the other party. Sophisticated
+(computer) analyses subsequently are done on these data, after which opening offers are made (see
+e.g. Belluci and Zeleznikow 1997; Lim 1999).
+The use of utility-based bargaining processes is questionable in many types of negotiations
+(Kersten and Cray 1996). In many cases, such utility analyses can only be done informally by the
+negotiation participants. This seems an obvious limitation in, for instance, political negotiations
+because these are influenced by many subtle interests that are hard to formalize, let alone quantify.
+
+6
+
+<-----Page 6----->However, business negotiations also involve many factors that are hard to quantify, if not in theory
+then at least in practice. Much tacit knowledge, for example, is needed in business contract
+negotiations to assess credibility, trust, etc. Decision-making support in the form of automated
+utility analysis therefore should at most play a supportive, not decisive, role in business
+negotiations.
+2.4. Negotiation Products
+In the various stages of the negotiation process, a number of (intermediate) negotiation products are
+created and used as input. In general, negotiation products become more clearly defined in the later
+stages. Robinson and Volkov (1998) propose a negotiation support model in which they describe
+the products of the negotiation process and their relations. The four main types of products are
+agent models (issues, goals, and preferences), conflicts (goals and means conflicts), alternatives,
+and deals.
+In business negotiations, all four categories of products are needed, although some products may
+need to be more formally and explicitly defined than others. Agent models are required to
+determine what participants want and why they do so. Conflicts must be modelled to focus
+negotiation efforts. Alternatives provide options from which the parties can choose. Deals come in
+the form of contracts in which commitments are made explicit. Other kinds of additional
+intermediate products are needed as well, such as many kinds of business documents and
+communication results.
+2.5. Negotiation Roles
+The negotiation process is executed by participants not acting as autonomous individuals, but
+playing different actor roles. To know what actions are acceptable for a particular participant,
+these roles need to be well understood.
+Surprisingly, not much work has been done on actor role classifications. One of the most extensive
+classifications of negotiation roles is presented by Robinson and Volkov (1998). They distinguish
+six main roles: owner (main stakeholder of outcome), analyst (formulates owner's goals and
+analyzes domain alternatives), designer (plans the negotiation process), technologist (provides the
+communication infrastructure), facilitator (facilitates the actual negotiations), and negotiator
+(conducts the negotiations on behalf of the owner). A facilitator is also referred to as a mediator,
+who can be an interested party (directly related to one of the parties) or neutral in the sense of not
+having a direct interest in the outcome (Gulliver 1979). Others, however, consider a mediator to
+play a more controlling role than mere facilitation (Rangaswamy and Shell 1997). At any rate, role
+classifications and their integrations with other negotiation process constructs, like norms, could
+benefit from substantial future research.
+2.6. Negotiation Protocols
+If negotiation is to be adequately supported, it is not enough to merely describe the various aspects
+of this process. Instead, prescriptive guidance in the form of negotiation protocols is also needed.
+These can be defined as protocols that standardize agents’ communication patterns through an
+ordered interchange of structured messages. Using this definition, Robinson and Volkov claim that
+7
+
+<-----Page 7----->negotiation protocols regulate four types of behavior: revealing agent models; identifying conflicts;
+searching for alternatives/conflict resolution; and selecting an alternative. Using these protocols,
+negotiation strategies can be employed that consist of the plans by which agents interact with each
+other to achieve a desired goal (Robinson and Volkov 1998). Of course, such agents can be
+humans or machines, or a combination of both, although it is still theoretically unclear when to use
+what kind of agent.
+In business negotiations, protocols can play an important role. They increase the transparency of
+the process and help engender trust. They also can make the negotiation process more efficient.
+To prevent the reinvention of the wheel again and again, standard protocols are very helpful. When
+the parties make use of a support system, it can implement the protocol by showing at each moment
+what actions are permitted or required and by making explicit the effects of a particular step at a
+certain stage (e.g., is this quote legally binding?). Protocols are necessary when the negotiation
+process is being delegated to software agents.
+Being transparent and showing options or limits is very important in business negotiations. The
+parties involved are often strangers, especially in the new markets enabled by the Internet, and
+sometimes are not familiar with the acceptable cultural and technological practices. Trust in the
+negotiation process and knowledge of its context are therefore essential.
+Negotiation Patterns. Given that proper negotiation classifications can be made, it should be
+possible to develop negotiation patterns (Weigand and van den Heuvel 1998). Sources of these
+classifications can be, for instance, organizational or cultural variables. The patterns can combine
+entities such as process steps, roles, products, etc., and can help configure quickly the negotiation
+protocols in a context-dependent way. Such patterns can thus act as reference models, which help
+increase the efficacy of the negotiation process, similar to the use of these models in structuring
+complex communication processes like information system specification (van der Rijst and de
+Moor 1996). So far, only little research has been done on the development of negotiation reference
+models and patterns. The creation of useful patterns will, to a large extent, depend on the analysis
+of numerous cases. The findings should be interpreted in theoretical frameworks generic enough to
+allow cross-case comparisons while at the same time sufficiently precise to deal with the specifics
+of each case.
+
+3. Negotiation Support Systems
+To enable the various negotiation processes across time and space, negotiation support systems
+(NSS) are needed. Such systems should not replace human participation in negotiations, but should
+be used to augment and mediate their involvement (Jarke et al. 1987; Rieke and Sillars 1984;
+Robinson and Volkov 1998). NSS can be defined as a composite of computer techniques that
+support the social or analytical aspects of the negotiation life cycle (Robinson and Volkov 1998).
+NSS are useful because, first, they improve the quality of negotiation outcomes through their
+various functionalities.
+Computers are better than people at providing many of these
+functionalities, e.g., keeping track of and ordering intermediate negotiation results. Second, as the
+frequency and amount of business being conducted electronically increases, the need for electronic
+negotiation support increases as well (Rangaswamy and Shell 1997).
+
+8
+
+<-----Page 8----->However, attention must be paid to the following issues: (1) general purpose systems are too
+unconstrained, so NSS should focus on specific domains; (2) in practice, most systems tend to be
+used rarely in actual negotiations, so special care must be taken to adapt them to the context of their
+use; and (3) there is a trend away from quantitative (e.g. decision theoretic) systems towards
+systems that support more qualitative negotiation processes (see Belluci and Zeleznikow 1997 for a
+more refined discussion of these aspects).
+Negotiation support systems evolved from the general class of decision support systems (DSS)
+(Kersten and Cray 1996). NSS consist of two parts: a DSS and some kind of group support system
+(GSS). As such, they can be considered a subclass of group decision support systems (GDSS).
+The DSS is used for example to rank alternatives and analyses; the GSS supports the
+communication process (Delaney et al. 1997; Lim and Benbasat 1992). Empirical evidence
+suggests that such comprehensive NSS result in more successful negotiations than do DSS without
+a GSS component (Delaney et al. 1997; Foroughi et al. 1995). However, most studies have been
+conducted in a restricted laboratory context, an exception being the comprehensive case study of
+real labor management contract negotiations in the University of Arizona’s electronic meeting
+room (Carmel et al. 1993).
+DSS can be useful in supporting the decision-making processes required for negotiation. They help
+prepare and weigh alternatives, calculate scenarios, etc. Such systems are becoming quite
+advanced. For example, Kersten and Cray (1996) propose increasing the reasoning capabilities of
+DSS by applying insights from cognitive science and artificial intelligence. Thus, in these cases,
+‘agentware’ can be used, in addition to the groupware-systems that support human negotiators
+(Robinson and Volkov 1998). Some propose the use of intelligent agents that either have a
+complete set of possible strategies in their memory or are in the form of learning agents (e.g. Beam
+and Segev 1997). Such agents use automated negotiation techniques such as sophisticated goal
+analysis methods (which, for instance, classify goal interactions as being cooperative or conflicting)
+and resolution generation methods (which create new decision alternatives such as new values or
+goals) (Robinson and Volkov 1998). However, communication can only be formalized so much.
+Thus, human actors remain essential in providing the analytical capabilities needed for decisionmaking situations (Rieke and Sillars 1984; Weigand and Dignum 1997).
+Empirical studies have shown that the GSS component of an NSS increases satisfaction among
+negotiators compared with negotiation support systems that do not use electronic means to
+communicate (Delaney et al. 1997). On the other hand, electronic communication can also slow
+down and inhibit certain parts of negotiations, especially the bargaining process. This results in a
+lack of synchronization between the different parties, which is problematic as bargaining phases
+alternate between differentiation and integration of opinions, positions, etc. Synchronization can be
+improved, however, by having a set procedure or agenda coordinating the moves, and the media not
+being too slow or too hard to learn (Poole et al. 1992).
+
+3.1. NSS Components
+The above is a conceptual subdivision that applies to each NSS. However, in practice, these
+systems consist of many components, which can be analyzed both based on the negotiation
+functionalities they provide and the tools by which they are implemented.
+
+9
+
+<-----Page 9----->NSS Functionalities. Rangaswamy and Shell (1997) distinguish between negotiation preparation
+and evaluation systems (to help individuals prepare and evaluate negotiation information), process
+support systems (to restructure the dynamics and procedures of the negotiation process in order to
+promote integrative bargaining), mediation systems (in which the computer model substitutes or
+assists the human mediator in prompting parties into action, while directing all communication
+through the mediator), and interactive bargaining systems (which enable parties to communicate
+directly). Robinson and Volkov (1998), on the other hand, distinguish between such categories as
+autonomous software agents, standard DSS, and so-called component configuration systems
+(systems that support policy definition or resolution of resource allocation conflicts), such as
+contract systems. Yet another classification of functionalities is provided by Lim and Benbasat
+(1992), who want NSS to first support requirements analysis, second, strategic analysis, including
+the assessment of the needs of the other party, and, third, the interaction itself. A sophisticated
+class of NSS are cognitive support systems (Kersten and Cray 1996). These systems allow decision
+makers to generate stories describing sequences of situations. Because the needs and abilities of
+the decision maker are paramount, metamodels are used to interpret the situation and assess
+problem parameters, which are both quantitative and qualitative.
+The systems build
+representations, select and organize the appropriate formal models, retrieve relevant information,
+and determine the order of processing.
+Contract Management. It is interesting that in most perspectives, negotiation is only viewed as a
+dialogue - a process in which messages are exchanged - whereas in practice the collaborative
+drafting of texts often plays an important role – since the results of the negotation can easily be lost
+if they are not recorded in some permanent form. In business negotiations, the texts are typically
+(versions of) contracts. So, when supporting contract negotiations, both the communication
+process and the structure and contents of the contract need to be addressed (Weigand et al., 2003).
+The structure of the contract includes contract elements and the relations between them. Contract
+elements can be derived from templates and include unalterable as well as negotiable components
+(Gisler et al. 1999). There is a great variety of contract elements, depending on the domain, the
+purpose, and the users of the contract.
+Contract management includes, aside from the core negotiation process, contract validation
+(ensuring that the contract satisfies the validity rules of the contract domain), contract monitoring
+(ensuring that the performed activities correspond to the contract), contract enforcement (ensuring
+that corrective action is taken if the contract has not been honored) and contract arbitration
+(settling contract disputes) (Gisler et al. 1999).
+To model and provide automated support for contract negotiation processes, some formal language
+is needed. One such language is the Formal Language for Business Communication (FLBC)
+(Kimbrough 1998). FLBC allows for business communication processes to be modelled as
+sequences of speech acts, thus providing a powerful and comprehensive framework for describing
+the contents of business transactions as well as specifying precisely the roles that business partners
+are to play. This framework has been extended by Weigand and van den Heuvel (1998), who
+specifically define the semantics of the contract elements and negotiation processes.
+3.2. NSS Tools
+The required functionalities of NSS are implemented by sets of information tools, ranging from
+generic e-mail applications to dedicated web servers. The media or tools that are used in
+10
+
+<-----Page 10----->negotiations are not neutral and actively shape negotiation situations and outcomes (Putnam and
+Roloff 1992). Furthermore, no single tool is best suited for all (sub-) stages of the negotiation
+process (Poole et al. 1992). Thus, to assemble successful support systems, the choice of the right
+mix of tools is not trivial, and complex social context factors must be assessed (Preece 2000). For
+example, e-mail-mediated negotiation is known to be less successful than face-to-face negotiation
+due to the lack of social context cues. Nevertheless, e-mail-based negotiation is known to be more
+productive when negotiators establish trust and rapport, which they themselves can promote by
+mutual self-disclosure. Experiments have shown how this can be facilitated by making available
+personal information about counterparts (e.g. through home pages on the web) and by having a
+non-task-related conversation prior to the actual negotiation process, mediated, for instance, by an
+electronic chat tool like ICQ (Moore et al. 1999).
+Complex tool configurations can be represented as combinations of elementary media. For
+example, a (complex) computer conference system can be said to consist of a text editing tool plus
+a particular type of group decision support system (Poole et al. 1992). Furthermore, it is very
+important that elementary or more complex tools are matched to the particular negotiation stages or
+functionalities as described above. For example, for issue identification, electronic brainstorming
+plus an evaluation tool may be used, while for utility function definition a spreadsheet could prove
+useful (Lim 1999).
+NSS Tool Examples. Many specialized NSS tools exist. In this section, we only describe a sample,
+as our goal is to illustrate conceptual elements of negotiation support systems, but not to be
+comprehensive in our survey.
+An example of a sophisticated tool is the INSPIRE (InterNeg Support Program for Intercultural
+Research) (Cray and Kersten 1999). This system supports negotiation using conjoint analysis for
+utility construction, a messaging facility for the argumentation process, and a visualization facility
+for the construction of graphs representing negotiation dynamics and history. It applies a phasemodel of negotiation: the negotiation phase consists of climate setting, presenting, mid-point
+bargaining, and closing. The post-settlement stage consists of the support system checking the
+efficiency of the compromises made by taking into account the entered utility values.
+Three commercially available business-to-business NSS tools are Fair Internet Trader, diCarta and
+Ozro Negotiate. An example of a simple communication model-based NSS is the Fair Internet
+Trader.2 One can act either as a buyer or a seller. An offer is negotiated using some simple
+parameters like product, quantity, price, and VAT. An order is then produced, and a payment can
+be made. For this reason, the system pays a lot of attention to security. diCarta3 provides
+negotiation support in the context of contract management, which considers the complete contract
+life cycle, including negotiation, contract drafting, fulfilment, renewal and evaluation. diCarta
+offers substantial support for the management aspects of contract negotiation, such as planning,
+proper party involvement, authorizations, version control, etc. The negotiation process is based on
+collaborative document drafting. Ozro Negotiate4 also offers business-to-business negotiation
+support. Negotiation here is considered to be the exchange of requests and offers using
+standardized forms that typically include bill-of-materials lists and standardized contract terms (e.g.
+delivery terms). Increased speed, reduced error, and security are mentioned as key benefits of this
+system.
+In summary, there are many advanced NSS tools. Still, their functionalities are generally
+specialized and hard to change, as process models are embedded in the software and not
+parameterized. Matching complex negotiation functionality requirements with the restricted
+
+11
+
+<-----Page 11----->functionalities provided by these tools is not a trivial process. To adequately support complex
+communication processes like negotiation, such functionality matching deserves careful attention
+(de Moor and van den Heuvel 2001).
+
+3.3. The Business Negotiation Support Metamodel
+Negotiation being such a complex process, support systems must help in identifying context
+factors, tailoring process model and support system designs, and making implicit assumptions
+explicit. A metamodel would be valuable here, as it would provide a checklist of components to
+consider. It could also be used to compare different models and support systems, allowing for
+strengths and weaknesses of a particular system to be identified and benchmarks to be developed.
+Figure 1: The Business Negotiation Support Metamodel
+Previously in this paper, we defined the core components necessary in the construction of useful
+negotiation support systems. In Figure 1, we relate the most important of these elements in a
+Business Negotiation Support Metamodel. Our model only includes the basic categories of
+constructs to be considered, leaving further subdivision open to others. The model does, however,
+allow for theoretical constructs and practical findings to be defined, related, and seen in their
+context.
+Each negotiation process is embedded in a social context. More or less explicit norms govern
+acceptable behavior of the negotiators. For example, various cultures have different norms with
+respect to acceptable task, time, and relationship aspects (Schuster and Copeland 1996). Based on
+these informal norms, explicit protocols can be defined that prescribe acceptable negotiation steps,
+communication moves, and decision making process procedures. These protocols formalizing the
+norms are the foundation of automated negotiation support.
+The following are the core elements of the negotiation process:
+•
+•
+•
+
+•
+
+Each negotiation process consists of a sequence of stages. These stages comprise the
+preparation, conduct, and implementation of negotiation results, although their particular
+classification is left up to the users of the model.
+In each stage, participants play different negotiation roles. Although the specific roles
+differ per negotiation model, they should include such responsibilities as defined in Section
+2.5, like owners, analysts, designers, and facilitators.
+The participants in their various roles interact in a communication process. Such a process
+consists of sequences of communication moves, like series of related speech acts.
+Acceptable moves are governed by norms that are operationalized in communication
+protocols. For example, a negotiation owner is permitted to request that a negotiator present
+alternatives to the opponent, after which the negotiator can accept them or request
+additional instructions.
+Embedded in this communication process are one or more individual or group decisionmaking processes. These processes can be partially automated, for example in the form of
+utility analysis software. Human interpretation also plays a role here, for example in
+selecting the best alternative from a set of options prepared by the analysis software.
+Decision-making processes are triggered by communication moves. In the negotiation
+preparation stage, for instance, decision making must take place for relevant agenda items.
+12
+
+<-----Page 12----->•
+
+Decision-making software can analyze participants’ priorities, calculate expected durations,
+and furnish a recommended set of agenda items to be evaluated by the negotiators. This
+process could be triggered after the negotiation participants have agreed to create an
+electronic negotiation workspace in some predefined communication process.
+The communication processes lead to one or more intermediate and final negotiation
+products in each stage. For example, in the agenda formulation stage, intermediate products
+can be the set of potential agenda items, while a final product might be the agenda agreed
+upon by all negotiators.
+
+The negotiation sub-processes are enabled by the functionalities of the NSS. The entire system is
+implemented by a set of either dedicated negotiation tools or more generic all-purpose information
+tools such as mailers or spreadsheets. The functionality enabled by these tools must be matched
+carefully with the functionality required by the negotiation community, paying attention to both
+sociability (human interactions) and usability (human-computer interactions) (Preece 2000).
+Community members should be actively involved in these complex design processes. Which users
+to involve at what time in system adaptation is defined by communal norms (de Moor and Jeusfeld
+2001) and should be reflected in the negotiation protocols for the NSS to remain adequate and
+current.
+The metamodel can be used for several purposes. One application is to serve as a template for NSS
+analysis, which would allow for the examination of how a tool fits its context of negotiation use.
+Another use is as a reference model, which allows for best practices to be recorded (van der Rijst
+and de Moor 1996). Yet another application is to serve as an instrument for comparing different
+applications by clarifying similarities, differences, and gaps in functionality. In the next section,
+we show an example of how the metamodel assists in analyzing the usefulness of one particular
+NSS, the MeMo system, which is used to support contract negotiations in the construction industry.
+4. MEdiating & MOnitoring electronic commerce
+Electronic Commerce means doing business via electronic networks such as the Internet.
+Electronic commerce can be seen as the successor of Electronic Data Interchange (EDI), but it goes
+far beyond EDI in that it aims to support complete external business transactions. Such
+transactions consist of three stages: the information stage; negotiation stage; and fulfilment stage.
+Nowadays, the information stage of the transaction process is already supported in several ways.
+Information about potential business partners can be obtained through specialized databases,
+chambers of commerce, and more recently on the WWW. The fulfilment stage of the transaction is
+also well served. There exist many systems that support electronic payment, either directly or
+through some documentary credit facilities. Furthermore, order control can be managed
+electronically through the use of EDI messages.
+However, there is still limited support for the negotiation stage. The coordination and execution of
+this stage thus far has had to be done manually, which has presented a major obstacle for the uptake
+of electronic commerce by small and medium-sized enterprises (SMEs). Big companies can
+usually afford to undertake the time and cost of negotiating interchange agreements because they
+can establish long-term relations with their suppliers (or customers) and they have in-house
+expertise. For smaller-sized companies, however, the expense and efforts incurred are often
+prohibitive.
+
+13
+
+<-----Page 13----->The MeMo (Mediating and Monitoring Electronic Commerce) project was a European initiative in
+which several research and industrial partners collaborated to design e-commerce support systems
+for SMEs.5 MeMo was dedicated to finding ways for SMEs to negotiate transactions via the
+Internet and then generate the necessary fulfilment procedures (EDI or more advanced)
+automatically.
+Figure 2 denotes the different stages through which business transactions pass (on a very high
+level) and the (electronic) support that is offered by MeMo at each level.
+Figure 2: Overview of the MeMo system
+The main innovation of MeMo is its support of the negotiation stage, which focuses specifically on
+negotiation communication processes that result in the complex contract negotiation product.
+4.1. MeMo requirements
+The design of the MeMo system is based on the assumption that to be of practical use in
+international trade, the support of the electronic commerce process should meet the following three
+requirements:
+•
+•
+•
+
+It should be possible to use product and business information from many different sources.
+It is not realistic to assume that companies are willing to submit their databases to one
+central database. Indeed, this assumption has been confirmed by MeMo user groups.
+Support for the information and negotiation stage should inspire a level of trust among the
+partners, such that they are willing to enter the fulfilment stage (payment and delivery)
+based on the negotiated contract.
+Several different payment and delivery models should be supported in the fulfilment stage
+to accommodate all the possible contracts and cope with different cultural practices and the
+many different legal requirements in international trade.
+
+The purpose of the MeMo Project was to obtain knowledge and expertise to construct an open
+environment to serve as an Electronic Commerce Broker Service (ECBS) for SMEs in order to
+promote cross-border e-commerce activities. A prototype of the ECBS was delivered in June 2001.
+4.2. Main activities in the MeMo project
+The MeMo project included the following key activities: the development of partner searching as
+well as negotiation and contracting mechanisms; business data management; operational and
+product integration support; and extensive user evaluations.
+Partner Searching Mechanism. The partner searching mechanism is a tool that allows companies
+to quickly and efficiently locate potential business partners and specific products and services.
+Traditional e-commerce systems offer almost no such facilities other than a searchable catalogue.
+Although browsing catalogues might be efficient for business-to-consumer electronic commerce,
+inter-company trade in a rapidly-changing environment requires specialized search support in order
+to adequately respond to business opportunities. Incorporated within the MeMo electronic
+commerce brokering service is a range of supported search strategies, ranging from basic keyword
+searching, via browsable specialized subject gateways, to full-fledged knowledge navigation tools
+using industry-related concepts.
+14
+
+<-----Page 14----->Negotiation and Contracting Mechanism. The Negotiation Module of MeMo supports business-tobusiness negotiations and contract building. A precondition for business relations is a sense of trust
+between all business partners. This trust depends on informal personal contact on the one hand and
+formal contracts and legislation on the other hand. The MeMo negotiation module does not replace
+human informal communication, but enables human agents to structure their communication using
+the Formal Language for Business Communication (Weigand and van den Heuvel 1998). Figure 3
+provides an example of how this is implemented on the WWW. Because results of negotiations are
+typically enumerated in a contract, MeMo also offers a repository of standard contracts and a
+shared workspace in which a standard document can be adapted by the partners to suit their
+particular needs. It facilitates different scenarios and provides SMEs with safe "negotiation
+rooms." Since language is often a large barrier for international trade, especially for small
+companies in Europe, the Negotiation Module also contains a multilingual thesaurus in which key
+terms in international trade are presented in multiple languages. In this way, it is possible for the
+human agents to personalize their MeMo interface with their particular language. Using these
+means, MeMo is one of the first systems that actually facilitates practical business negotiation via
+the Internet.6
+Figure 3: MeMo negotiation menu
+Business Data Management. A metadata repository that forms the memory of the electronic
+commerce broker has been developed. The repository provides a common access point for all
+information that is available in the broker system, including information that is integrated from
+external heterogeneous information sources, e.g. company profiles from the chambers of commerce
+and product profiles from the individual companies.
+Operational Support and Product Integration. Although fulfilment is not the main focus of the
+MeMo project, it is important to show SMEs the interaction between new R&D outcomes and
+traditional standardization schemes, like EDIFACT messaging. EDIFACT is a UN standard that
+regulates the electronic exchange of business documents and messages7. The new initiatives
+developed in MeMo take into account that there is wide implementation of this standard in the
+different branches of the market and that it is widely used between SMEs and medium-to-large size
+companies. For that reason, the MeMo Negotiation System is linked to an EDIFACT-based EDI
+workflow manager.
+During the project, it was found that negotiation support can also be offered during the fulfilment
+stage. This is because contracts are sometimes negotiated in steps, starting with a general statement
+and continuing with more levels of detail. Another need for negotiation support arises from dispute
+resolution. Contracts often have to be renegotiated because one of the parties fails to deliver or
+because there are important changes in the environment. The document-based negotiation protocol
+of MeMo seems particularly useful to support dispute resolution. The mere on-line availability of
+the contracts is nevertheless already helpful to parties when something goes wrong during the
+fulfilment.
+User Evaluation. In order to involve a group of SMEs in the project, MeMo formed an SMEs
+Round Table in Spain, Germany and the Netherlands. These user group round tables provided a
+good environment to discuss continually incremental developments and test the EC-Brokering
+Service (ECBS) with SME-user companies. The most extensive evaluation of the system has taken
+place in the Dutch construction industry.
+
+15
+
+<-----Page 15----->One of the results of this evaluation was the finding that traditional non-automated negotiation
+causes agreements to contain many errors, resulting in high failure costs in the fulfilment stage. An
+integrated system like MeMo can help reduce errors as less copying is needed from one medium to
+another and because it can include automatic checks. In other words, the primary business value of
+an electronic NSS seems to be the potential to improve the quality of communication.
+Another result was arriving at the conclusion that negotiation means quite different things for
+different roles in the value chain, and that a system like MeMo must be tuned to a particular role
+before it can be used effectively. For example, a wholesaler negotiates with manufacturers about
+frame contracts on a yearly basis. Wholesalers negotiate with contractors on a project-by-project
+basis. During and after these negotiations, the wholesaler forwards specific orders (electronically)
+to the manufacturers within the boundaries of the frame contract. Negotiation and fulfilment are
+not strictly distinguishable because contracts are modified and updated many times before the final
+delivery. Contractors negotiate with wholesalers on a project-by-project basis, and do this typically
+by asking several parties for quotes and then using this information in bargaining. The bargaining
+is seldom merely about price, but more often about delivery options and extra services. So, for the
+manufacturer it is important that MeMo supports frame contracts and automatic processing of
+orders based on these frame contracts. For the wholesaler, it is important that the system supports
+him in his task as intermediary, which means that he is often simultaneously involved in two
+related negotiations (and many unrelated). For contractors, MeMo should provide tendering
+functions, and in general, MeMo should fit in their project management environment.
+
+4.3. The MeMo Negotiation Model
+To illustrate the use of the Business Negotiation Support Metamodel, we apply it to the MeMo
+negotiation support system.
+MeMo takes a communication perspective towards negotiation, as it mainly focuses on the support
+of the communication processes and does not offer much support for the decision processes at each
+stage. It also clearly has a strong socio-psychological perspective, given its focus on supporting
+informal, and often international and intercultural, negotiation processes.
+There is a great variety of norms in MeMo because of the strong, traditional customs in the
+construction industry and the various cultural backgrounds of users. Many of these norms are
+implicit, although a substantial amount has been made explicit in the form of detailed, official
+construction guidelines and procedures. An example of informal norms is the importance of fair
+competition (leading to some kind of tender-based protocol). This norm is typically more
+important in public tenders. Cultural differences between the participants may also be an indicator
+for a certain type of protocol - for example, one in which implicit steps are made more explicit. In
+future research, we consider addressing more explicitly cultural reference models used to generate
+situated protocols (protocols that take into account the cultural background of the participants).
+Such reference models could be informed by work like the Culture Classification Model mentioned
+in Section 2.2 and the Ulijn group’s research (Ulijn and Campbell 1997; Ulijn and Lincke 2002).
+Protocols are prominent in MeMo. One of the design goals of the project is to support different
+protocols in order to allow for the variation in business contexts and cultural settings. For that
+reason, MeMo supports the specification of protocols in a declarative language XLBC (Weigand
+and Hasselbring 2001). XLBC not only allows the designer to specify message types (based on
+16
+
+<-----Page 16----->speech-act theory), but also larger communicative units (transactions, conversations). Although it
+has been proven hard to generate the operational system completely on the basis of an XLBC
+protocol specification - especially because the layout and style of the screens are hard to specify on
+an abstract level - the result has been that MeMo offers a number of protocols and new ones can be
+added with relatively little effort.
+Based on experiences in the Dutch construction industry, three types of negotiation protocols have
+been distinguished: quotation-based (also called norm-based); tender-based; and document-based
+(Weigand et al., 2003). The first group of protocols is aimed at bilateral negotiations. These
+consist of multiple stages, and each stage has a clear result in terms of commitments, for instance,
+the commitment to prepare a quote. Tender-based protocols are aimed at negotiations with
+multiple partners. To assure fair competition, it is necessary to make the protocol completely
+transparent. Therefore, it is usually not possible to start a discussion on some item with only one
+party. The document-based protocol family is based on the drafting of a document such as a
+purchase order.
+MeMo provides comprehensive support for all stages of the negotiation process: information
+(preparation); negotiation (conduct); and fulfilment (implementation).
+These stages are
+interrelated, for example, by the use of integrated business data management facilities.
+The roles supported by MeMo are still rather primitive. There are buyers and sellers, but little
+attention is paid to others, such as intermediaries that could fulfill services, like, possibly,
+tendering, preparing summary reports of new product developments, financial services, etc. Formal
+roles might be defined in the future for banks, industry associations, and government agencies, so
+that more tailored support can be provided.
+Communication processes are extensively supported. For example, in bilateral negotiations, a
+distinction is made between a success layer and a discussion layer. The negotiations take place at
+the success layer. The discussion layer is entered when there is a question or a problem, for
+example, about the validity of a certain claim, or an exchange of proposals on a certain issue.
+When such a discussion is finished, the partners can continue from the point at which the success
+layer was interrupted. The communication process in the document-based process consists of
+proposals and counter-proposals. It is possible to subdivide the document in parts and assign a
+specific stage in the negotiation process to each part.
+The decision process functions of MeMo are limited in comparison to a system like INSPIRE,
+mentioned above. This is because MeMo was meant mainly to support the communication process.
+Still, some decision support for the evaluation of tenders is included in the system since this task is
+directly related to the semantics of the tender protocol. Furthermore, the stance was taken that, in
+the future, each party is free to add a DSS, intelligent agent, or already available ERP system, to
+perform tasks such as ranking alternatives or generating a quoteThe connection of such systems to
+MeMo is relatively easy, since MeMo makes use of structured messages based on XML (Extended
+Markup Language)8. XML is a meta-language that allows the structure and meaning of messages
+and documents to be precisely defined.
+MeMo produces a wide range of complex, often related products.
+For example, in tender
+negotiations, typical intermediate products are calls for tenders and the tenders themselves. The
+final product is the announcement of the selected party. In a document-based type of negotiation,
+intermediate products are document parts upon which some level of commitment has been
+achieved. The final product is an agreed upon contract such as a completed purchase order form.
+
+17
+
+<-----Page 17----->The final product can also be a contract ready for execution, that is, the configuration of a
+fulfilment procedure using EDI.
+The MeMo system offers a wide set of functionalities in the form of services, using various
+information tools. For example, the multilingual thesaurus discussed earlier provides a basic
+translation service. A shared workspace gives the participants the opportunity to exchange
+background documents of any type. Furthermore, a repository of contract templates is available,
+such as the ICC international sales contract. Originally, MeMo planned to offer some contract
+verification services as well, based on formal logical representations of the contract, but these
+services have not yet been implemented.
+An interesting question is whether the use of the Internet in general, and an NSS in particular,
+impacts the negotiation climate (Mastenbroek 1989). The MeMo system has been evaluated in the
+context of the Dutch construction industry. As part of the evaluation, contractors, manufacturers
+and wholesalers were asked whether the Internet would change their negotiation behavior.
+Although the answers varied to some degree depending on the parties’ different roles, generally, it
+was believed that the Internet would make the negotiators more tenacious (less concessive), more
+dominating, and more evasive (rather than explorative). In other words, the Internet would create a
+more hostile climate. In a business domain where relationships and mutual trust are considered
+important, this would not be a positive development. One way to counter-balance this development
+is to move into hybrid forms: to use the Internet for the first phases of negotiation and to move into
+face-to-face negotiations with selected parties afterwards. However, there will be consequences for
+NSS systems like MeMo One consequence is that these systems should give extra support for the
+initial selection phases and perhaps the final contracting phase. Most importantly, the system
+should not assume that all negotiations are conducted only through the system. This would also
+entail that significant attention be paid to aligning system-generated negotiation products with
+results from the informal negotiations.
+5. Conclusions
+Examining the academic literature on business negotiations on the one hand, and the commerciallyavailable systems on the Internet on the other hand, a wide gap looms between theory and practice.
+In this paper, we have tried to bring theory and practice closer together. We have given an
+overview of negotiation theory in general and, more particularly, the theory of negotiation support
+systems. A business negotiation support metamodel was defined that can be used in the analysis of
+strengths and weaknesses of current systems. Furthermore, we have described the MeMo project in
+which a complete NSS was built to support European SMEs in business negotiations. Empirical
+findings from MeMo were analyzed using the metamodel.
+As we said, theory and practice still differ widely in their focus. Much of the formal theory is
+based on decision theory and the search for optimal strategies. In practice, however, the demand is
+primarily for communication process support, as was demonstrated by the MeMo user evaluations.
+Theory-based decision and communication tools are valuable, but need to be embedded in business
+practice and deal with all the related requirements, such as cultural norms, language issues, legal
+aspects, standard and frame contracts, role assignments, document management, and integration
+with back-office systems. The challenge to theory is to take all these considerations into account, if
+it wants to be relevant, and to systematically analyze and compare the findings. Theoretical
+reflections, in turn, can inspire the design of higher quality practical systems. In this analysis
+
+18
+
+<-----Page 18----->process, our business negotiation support metamodel could be useful.
+analyses, we hope to extend and refine the model.
+
+By doing more case
+
+In addition, more empirical research is needed to improve the implementation of the currently
+available systems. Traditionally, empirical research on negotiation has focused mostly on face-toface settings or, in the last few years, e-mail. With complex and structured NSS for practical use,
+such as MeMo, becoming available, comparative studies involving several media can be set up to
+assess the effectiveness of NSS and to gain better knowledge about the media effects. What is
+important is that this knowledge goes beyond the purely descriptive to address the level of norms
+that are or should be used in negotiation processes. In this way, it will be possible to translate this
+knowledge more effectively into design requirements for future NSS.
+Notes
+1
+
+One of the most successful examples being eBay: http://www.ebay.com.
+http://www.semper.org
+3
+http://www.dicarta.com
+4
+http://www.tradeaccess.com
+5
+http://infolab.uvt.nl/prj/past/memo/
+6
+At the time of finalizing this paper, the Dutch parliament started an investigation of large-scale
+fraud in tender contract negotiations in the Dutch construction industry. One key problem concerns
+the lack of competition at the regional level. Internationally operating NSS like MeMo, by
+increasing the number of potential suppliers, could - to some extent - help increase the fairness of
+free market operations.
+7
+http://www.unece.org/trade/untdid/
+8
+http://www.w3.org/XML
+2
+
+References
+C. Beam and A. Segev (1997), "Automated Negotiations: A Survey of the State of the Art,"
+Wirtschaftsinformatik, 39(3): 263-268.
+E. Belluci and J. Zeleznikow (1997), "Family-Negotiator: An Intelligent Decision Support System
+for Negotiation in Australian Family Law," Proc. of the 4th Conference of the International
+Society for Decision Support Systems, Lausanne, July 21-22.
+E. Carmel, B. Herniter, and J. F. Nunamaker (1993), "Labor Management Contract Negotiation in
+an Electronic Meeting Room: A Case Study," Group Decision and Negotiation, 2(1): 2760.
+D. Cray and G. Kersten (1999), "Negotiating Inefficient Compromises: Is Less Better than More?,"
+presented at Proc. of the 5th International Conference of the Decision Science Institute,
+Athens, July 4-7.
+A. de Moor and M. A. Jeusfeld (2001), "Making Workflow Change Acceptable," Requirements
+Engineering, 6(2): 75-96.
+A. de Moor and W. J. van den Heuvel (2001), "Making Virtual Communities Work: Matching their
+Functionalities," Proc. of the 9th International Conference on Conceptual Structures,
+Stanford, July 30-August 3.
+M. Delaney, A. Foroughi, and W. Perkins (1997), "An Empirical Study of the Efficacy of a
+Computerized Negotiation Support System (NSS)," Decision Support Systems, 20(3): 185197.
+
+19
+
+<-----Page 19----->R. Fisher and W. Ury (1981), Getting to Yes: Negotiating Agreement without Giving In. Boston,
+MA: Houghton Mifflin.
+A. Foroughi, W. C. Perkins, and M. T. Jelassi (1995), "An Empirical Study of an Interactive,
+Session-Oriented Computerized Negotiation Support System (NSS)." Group Decision and
+Negotiation, 4(6): 485-512.
+M. Gisler, H. Häuschen, Y. Jöhri, A. Meier, O. Müller, B. Schopp, and K. Stanoevska (1999),
+"Requirements on Secure Electronic Contracts, Technical Report.," Universität St. Gallen,
+Institut für Medien und Kommunikationsmanagement, St. Gallen, Switzerland, Technical
+Report.
+P. Gulliver (1979), Disputes and Negotiations: A Cross-Cultural Perspective. New York, NY:
+Academic Press.
+M. Jarke, M. T. Jelassi, and M. F. Shakun (1987), "Mediator: Towards a Negotiation Support
+System," European Journal of Operational Research, 31(3): 314-334.
+G. Kersten and D. Cray (1996), "Perspectives on Representation and Analysis of Negotiation,"
+Group Decision and Negotiation, 5:433-468.
+G. Kersten and S. Noronha (1999), "WWW-Based Negotiation Support: Design, Implementation,
+and Use," Decision Support Systems, 25: 135-154.
+S. Kimbrough (1998), "Formal Language for Business Communication: Sketch of a Basic Theory,"
+International Journal of Electronic Commerce, 3(2): 23-44.
+J. Lim (1999), "Multi-Stage Negotiation Support: A Conceptual Framework," Information and
+Software Technology, 41(5): 249-255.
+J. Lim and I. Benbasat (1989), "A Theoretical Perspective of Negotiation Support Systems,"
+Journal of Management Information Systems, 9(3): 27-44.
+W. Mastenbroek (1989), Negotiate. Oxford, UK: Blackwell.
+D. Moore, T. Kurtzberg, and L. Thompson (1999), "Long and Short Routes to Success in
+Electronically Mediated Negotiations: Group Affiliations and Good Vibrations,"
+Organizational Behaviour and Human Decision Processes, 77(1): 22-43.
+M. Poole, D. Shannon, and G. DeSanctis (1992), "Communication Media and Negotiation
+Processes," in Framing, Reframing, and Issue Development, Putnam, L. and Roloff, M.,
+Eds.: Newbury Park, CA: Sage: 46-66.
+J. Preece (2000), Online Communities : Designing Usability, Supporting Sociability. Chichester;
+New York, NY: John Wiley.
+L. Putnam and M. Roloff (1992), "Communication Perspectives on Negotiation," in
+Communication and Negotiation, Putnam, L. and Roloff, M., Eds.: Newbury Park, CA:
+Sage: 1-17.
+H. Raiffa (1982), The Art and Science of Negotiation: Cambridge, MA: Harvard University Press.
+A. Rangaswamy and G. Shell (1997), "Using Computers to Realize Joint Games in Negotiations:
+Toward an 'Electronic Bargaining Table,'" Management Science, 43(8): 1147-1163.
+R. Rieke and M. Sillars (1984), Argumentation and the Decision Making Process, 2nd ed: New
+York, NY: Wiley.
+W. Robinson and V. Volkov (1998), "Supporting the Negotiation Life Cycle," Communications of
+the ACM, 41(5): 95-102.
+C. Schuster and M. Copeland (1996), "Cross-Cultural Communication: Issues and Implications," in
+International Business Negotiations, Ghauri, P. and Usunier, J. C., Eds. Oxford: Elsevier
+Science: 131-152.
+J. Ulijn and C. Campbell (1997), "International Paragraphing: What Can Cultures Learn from Each
+Other in the Communicative and Managerial Field?," in Human Contact through Language
+and Linguistics, Smieja, M. and Tasch, M., Eds. Frankfurt am Main: Peter Lang: 491-500.
+J. Ulijn and A. Lincke (2004), "The Effect of CMC and FTF on Negotiation Success between R&D
+and Manufacturing Partners in the Supply Chain (Comparing Monocultural and
+
+20
+
+<-----Page 20----->Intercultural Conflict Resolution)," International Negotiation 9 (1). J. Ulijn and J. Strother
+(1995), Communicating in Business and Technology: From Psycholinguistic Theory to
+International Practice. Frankfurt am Main: Peter Lang.
+N. van der Rijst and A. de Moor (1996), "The Development of Reference Models for the RENISYS
+Specification Method," Proc. of the 29th Hawaii International Conference on System
+Sciences, Maui, January 3-6.
+H. Weigand and F. Dignum (1997), "Formalization and Rationalization of Communication," Proc.
+of the Second International Workshop on Communication Modelling, the Language/Action
+Perspective (LAP'97), Veldhoven, The Netherlands, June 9-10.
+H. Weigand and W. Hasselbring (2001), "An Extensible Business Communication Language," ,
+International Journal of Cooperative Information Systems, 10(4):423-441.
+H. Weigand, M. Schoop, A. de Moor, and F. Dignum (2003), “B2B Negotiation Support: The Need
+for a Communication Perspective,” Group Decision and Negotiation, 12(1):3-29.
+H. Weigand and W. J. van den Heuvel (1998), "Meta-Patterns for Electronic Commerce
+Transactions Based on the Formal Language for Business Communication," International
+Journal of Electronic Commerce, 3: 45-65.
+
+21
+
+<-----Page 21----->[Fig.1 The Business Negotiation Support Metamodel]
+
+Norms
+
+Context
+Protocols
+
+Negotiation Process
+Stage 1
+
+Stage n
+
+Roles 1
+
+Com m.Process
+1
+
+Roles n
+
+...
+
+Comm.Process
+n
+
+Products 1
+
+Dec.Pr.n
+
+Dec.Pr.1
+
+Functionalities
+
+Info T ools
+
+22
+
+Products n
+
+<-----Page 22----->[Fig.2 Overview of the MeMo System]
+
+23
+
+<-----Page 23----->24
+
+<-----Page 24----->[Fig.3 MeMo Negotiation Menu]
+
+25
+
+

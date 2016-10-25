@@ -1,0 +1,998 @@
+<-----Page 0----->Interactive Process Quality Improvement
+Author(s): Richard L. Marcellus and Maqbool Dada
+Source: Management Science, Vol. 37, No. 11 (Nov., 1991), pp. 1365-1376
+Published by: INFORMS
+Stable URL: http://www.jstor.org/stable/2632440
+Accessed: 08/05/2009 12:36
+Your use of the JSTOR archive indicates your acceptance of JSTOR's Terms and Conditions of Use, available at
+http://www.jstor.org/page/info/about/policies/terms.jsp. JSTOR's Terms and Conditions of Use provides, in part, that unless
+you have obtained prior permission, you may not download an entire issue of a journal or multiple copies of articles, and you
+may use content in the JSTOR archive only for your personal, non-commercial use.
+Please contact the publisher regarding any further use of this work. Publisher contact information may be obtained at
+http://www.jstor.org/action/showPublisher?publisherCode=informs.
+Each copy of any part of a JSTOR transmission must contain the same copyright notice that appears on the screen or printed
+page of such transmission.
+JSTOR is a not-for-profit organization founded in 1995 to build trusted digital archives for scholarship. We work with the
+scholarly community to preserve their work and the materials they rely upon, and to build a common research platform that
+promotes the discovery and use of these resources. For more information about JSTOR, please contact support@jstor.org.
+
+INFORMS is collaborating with JSTOR to digitize, preserve and extend access to Management Science.
+
+http://www.jstor.org
+
+<-----Page 1----->MANAGEMENT SCIENCE
+Vol. 37, No. 11, November 1991
+Printed intU.S.A.
+
+INTERACTIVE PROCESS QUALITY IMPROVEMENT*
+RICHARD L. MARCELLUS AND MAQBOOL DADA
+Department of Industrial Engineering, Northern Illinois University, DeKalb, Illinois 60115
+Department of Information and Decision Sciences, University of Illinois at Chicago,
+P.O. Box 4348, Chicago, Illinois 60680
+An ongoing production process produces defective parts at random intervals. Each defective
+part provides a learning opportunity which the decision maker may use to improve the process
+by investing resources to identify and remove the causes of the defective. For various cost criteria,
+it is optimal to invest in learning until the probabilityof producing a defective becomes sufficiently
+small. This policy has economic interpretations in terms of marginal benefits. In addition, the
+optimal policy for expected discounted present cost has an interpretation in terms of tradeoffs
+between "cost of failure" and "cost of prevention". The shape of the tradeoff curve gives insight
+into the controversy between the traditional and zero defects views towards cost of quality.
+(PRODUCTION CONTROL; PROCESS IMPROVEMENT; DYNAMIC PROGRAMMING)
+
+1. Introductionand Summary
+The success of Japanese production strategies attracts increasingly careful scrutiny.
+For example, Fine (1983, 1986, 1988), Porteus (1986), and Zangwill (1987) each use
+analytic models to examine aspects of the "Japanesepoint of view". According to Schonberger(1982), an important component of Japanesesuccess is the interactiveidentification
+and removal of sources of low quality. The appearance of a defective part is seen as an
+opportunity to identify and remove its cause. This close monitoring of the production
+process leads to incremental but steady and continuous improvement. The alternative
+philosophy is to focus not on the future benefits of an improved process, but on the lost
+revenue due to interrupted production. A manager with this philosophy will deal with
+problems by restoring the process to its original working state as quickly as possible.
+These two philosophies have been called "preventive control" and "reactive control" by
+Hayes, Wheelwright, and Clark (1988).
+This paper presents a simple control model for a production process which, at random
+intervals, produces a part that does not conform to specifications. The decision maker
+may then respond to the defective part from either of the above two points of view. This
+model is used to examine some of the tradeoffs involved in choosing an optimal process
+improvement policy. In particular, the relations among discount rates, cost of imperfect
+production, cost of process improvement, and length of the planning horizon are examined. The need for such a model has been adequately demonstrated by Fine (1983,
+1986, 1988).
+The model examined here is closely related to those in Porteus (1986) and Fine (1983,
+1988), but extends them in important directions. Porteus discusses process improvement
+but does not allow for dynamic, interactive improvement. In his model, all improvements
+must be made before the process starts.Fine considers dynamic interactive improvement,
+but in an environment where problems can only be discovered by close inspection. In
+addition, he restricts attention to two policies-the decision maker will either never
+improve, or always improve. Fine's work is path-breaking because it shows how to incorporate learning into process control models. However, we believe that the particular
+model chosen by Fine is not the best tool for quantitative investigation of the tradeoffs
+involved in interactive improvement. There are two reasons for this.
+* Acceptedby StephenC. Graves;receivedJune22, 1988.Thispaperhasbeenwiththe authors12 months
+for 3 revisions.
+1365
+0025-1909/91/371 1/1365$0 1.25
+Copyright ? 1991, The Institute of Management Sciences
+
+<-----Page 2----->1366
+
+RICHARD L. MARCELLUS AND MAQBOOL DADA
+
+The first is that Fine's model deals at the same time with two fundamentally different
+issues: when to inspect a process that may need correction, and how to respond to a
+process which does need correction. Sharperresults are obtained by considering a model
+which deals only with the latter issue.
+The second reason is that, in Fine's model, a decision maker with sufficient evidence
+that the process needs correction has only one option-he must attempt to improve the
+process. This requirement has a somewhat strange consequence. Even though the cost
+of an improvement remains constant and the marginal benefit from each improvement
+decreases, it seems to be optimal to invest in improvement no matter how small the
+failure rate becomes. However, this result is illusory because Fine has given the decision
+maker no other choice.
+The model examined here was inspired by Fine's, but differs from it in important
+respects. In Fine's model, the process has two states, a normal operating state, and a
+failed state. The process moves from the normal operating state to the failed state at rate
+h(n) where n is a time variable. While in the normal operating state, the proportion of
+defectives produced is ql. While in the failed state, the proportion of defectives produced
+is q2. The decision maker improves the process by repeatedly decreasing the value of the
+process failure rate from h( n) to yh(n). The problem is complicated by the fact that the
+states are only partially observable.
+We have chosen to model a process which is always in one state, completely observable.
+The model does not fully describe the dynamics of learning in all situations, but rather
+focuses on the contribution of learning opportunities at problem situations, such as the
+appearance of a defective part. The process produces a proportion q of defectives. At the
+appearance of each defective, the decision maker may or may not respond by decreasing
+the proportion of defectives from q to yq. This allows us to focus directly on the problem
+of when learningis optimal. For discounted present cost, we find that when the proportion
+of defectives becomes sufficientlysmall, furtherimprovements are suboptimal. This result
+about q is exactly opposite to Fine's result about h( n). The correspondence between the
+two models is shown in Table 1, with some additional notation introduced in ?2. Another
+interesting connection between the two models results from formally identifying q with
+h( n), and setting q1 = 0 and q2 = 1. Then, if Fine's model is augmented to include the
+routine action, the functional equations for the two models are virtually identical.
+A general model for interactive improvement has been defined by Fine and Porteus
+(1989). Fine and Porteus, however, optimize a cost functional which differs from ours.
+The interactive-improvement model examined here has close relationships to other operations research models-in particularnew technology models (Goldstein, Ladany, and
+Mehrez 1988), equipment replacement models (Pierskalla and Voelker 1976), and reliability growth models (Pollock 1969). The interactive-improvement model is like a
+TABLE 1
+CorrespondenceBetween Two Models for Learning
+
+Probability q of defective
+Cost d of defective
+Cost L to improve q
+Routine action
+Learn action for q
+
+Rate h(n) from normal state to failed state
+Probability q, of defective in normal state
+Probability q2 of defective in failed state
+Cost d of defective
+Cost L to improve h(n)
+
+q improved to oyq
+
+Learn action for h(n)
+Continue action
+h(n) improved to yh(n)
+
+Marcellus and Dada
+
+Fine
+
+<-----Page 3----->INTERACTIVE PROCESS QUALITY IMPROVEMENT
+
+1367
+
+new technology model in the sense that the option to improve the process is like an
+option to purchase new technology. The interactive-improvement model differs from
+new technology models because new technology may be introduced at any time-not
+just at the occurrence of a problem. The same remark applies to equipment replacement
+models. In reliability growth models such as that in Pollock ( 1969), optimization is not
+considered. In addition, reliability growth models allow the process intervention to be
+ineffective or harmful.
+The production process is defined in ?2. The infinite horizon present cost is analyzed
+in ?3 through ?5, yielding a control-limit optimal policy, an intuitive interpretation of
+the control limit, and some interesting trade-off analysis. In ?6, the total expected cost
+over a finite horizon is considered, showing how the worth of learning can depend on
+the lifetime of the production process. The long-run average cost is also considered as a
+limiting case. ?7 gives a summary and suggestions for extensions.
+2. The Production Process
+Suppose a decision maker (dm) must care for a production process which from time
+to time, at random intervals, produces a defective part. The process is subject to 100%
+inspection, so the defective part is detected immediately. When the defective part appears,
+the dm suffers cost beyond the ordinary cost of providing parts that meet specifications.
+However, he also has an opportunity to improve the process by attempting to discover
+and eliminate the cause of the defective part, thus gradually improving the process. As
+time goes by, more and more factors leading to defective parts will be removed and
+defective parts will occur with decreasing frequency.
+Specifically, suppose that at each production epoch exactly one part is produced. This
+part is defective with probability q > 0. The cost of a defective part is d > 0, incurred at
+the time the defective part is produced. When a defective part is produced, the dm may
+either
+(a) rectify the defective part, ignoring the learning opportunity, or
+(b) at an additional cost of L decrease the value of q to yq where 0 < y < 1.
+The dm's two options are called (a) the routineactionand (b) the learnaction.
+3. Expected Discounted Cost over an Infinite Horizon
+An optimal policy for the infinite horizon expected discounted present cost has the
+following simple control-limit form: If the probability of producing a defective part is
+below a certain number, q*, then the learn action should not be taken. If the probability
+of producing a defective part is above q*, then the learn action should be taken until
+this probability is reduced below q*.
+By-products of this result include a formula for calculating the expected cost resulting
+from following an optimal policy, and the distribution and expected value of the time
+required to complete optimal learning startingfrom an initial value of q. These quantities
+can also be calculated for the cost and time required to reduce a given value of q to an
+arbitrarilylower value q.
+Such information has several uses. For example, an approximate release date can be
+calculated for a process which must achieve the target value qjbefore release. The formulas
+can also be used to measure the implied benefits of factors not included in the model. If
+a manager believes that q should be reduced to q with q < q*, then the difference between
+the expected cost for an optimal policy and the expected cost for reducing to q is an
+estimate of the benefits which cause the managerto reduce to a value below the prescribed
+optimum. Alternatively, if reduction is made to q due to belief that improvements attract
+benefits that are impossible to predict before the improvements are made, as suggested
+by Crosby ( 1979), then the above diffierenceis a measure of how large these benefits
+
+<-----Page 4----->1368
+
+RICHARD L. MARCELLUS AND MAQBOOL DADA
+
+must be to justify the improvements. The implied benefits of perpetual improvement
+can also be measured in this way.
+At time 0, with q the probability of producing a defective part, let W( q) be the optimal
+expected future cost. At the first production epoch, one of two things can happen:
+(a) with probability 1 - q, a defective part is not produced, and the dm does not
+interfere with the process;
+(b) with probability q, a defective part is produced, and the dm chooses the better of
+the routine action and the learn action.
+Thus
+
+W(q) = (1- q) aW(q) + q d + min aL+oW(q))
+= min
+
+qd + aW(q),
++qaW(yq)
+\q(d + L) + (1-q)aW(q)
+
+(1)
+
+A simple calculation shows that it is optimal to learn if and only if L ? a( W(q)
+W( yq)). A relation similar to this, but more explicit (equation (7) below), is central
+to the solution of (1). The equation has the form of a dynamic programming equation
+for a Markov decision process. However, a certain subtlety is involved. In a traditional
+Markov decision process, an action is taken at each time point, and the dynamic programming equation is used to decide the action for the next time point. In contrast, the
+equation for W( q) is used to decide the action at the appearance of the next defect. Thus,
+the "immediate" decision does not take immediate effect.
+From the theory of dynamic programming (Blackwell 1965), the optimal expected
+discounted present cost is attained by a nonrandomized stationary policy. Thus, in order
+to find an optimal policy, only nonrandomized stationary policies need be considered.
+For this particularproblem, the nonrandomized stationarypolicies can be easily identified
+and evaluated. Let R be the policy which never takes the learn action. Let L"R be
+the policy which takes the learn action exactly n times. Let L ' be the policy which always
+takes the learn action. For R?, let CO(q)be the expected discounted present cost which
+results from following this policy when q is the probability of a defective at time 0. Let
+Cn(q) and C,, (q) be the corresponding quantities for LnR and L?, respectively.
+-
+
+PROPOSITION3.1. The optimal expected discounted present cost is attained by
+either R Ln Ro, orL'.
+
+PROOF. From the above functional equation, only stationary policies need be considered. If a policy prescribes the learn action after a sequence of routine actions, then,
+since the routine action leaves the state unchanged, it prescribes different actions for the
+same state at different times, and cannot be stationary. The only policies which do not
+prescribe the learn action after a sequence of routine actions are those enumerated. W
+Since each of the stationary policies has a particularly simple structure, it is possible
+to compare them analytically, and find an optimal nonrandomized stationary policy for
+each q. This leads to the following explicit statement of the policy structure
+described above.
+y), R' is the
+PROPOSITION3.2. For 0 < q ? q*, where q* = L(1- a)/a/d(1
+-ld
+optimal stationary nonrandomizedpolicy. For q*/ z n-l < q c q*/ 'n L" R is the optimal
+stationary nonrandomized policy.
+This result is based on three important facts.
+PROPOSITION3.3. For q*/yf
+
+?
+
+q ? q*/n
+
+CO(q) ?
+
+Cl(q)
+
+?
+
+**
+
+Cn(q).
+
+<-----Page 5----->INTERACTIVE PROCESS QUALITY IMPROVEMENT
+
+For q*/,yfl
+
+PROPOSITION3.4.
+PROPOSITION
+
+? q ? q*/,yf,
+
+1369
+
+C,(q) ? C +I(q) <
+
+3.5. CcOO
+(q) = lim,1O Cn(q).
+
+From (3.4) and (3.5), it is clear that L cannot be an optimal policy. From this, and
+LnR
+is an optimal
+? q ? q*/,yf,
+(3.3) and (3.4) it is clear that for n 2 0 and q*/yn-l
+policy, as stated in (3.2).
+The above three facts follow from two fundamental relations, which are based on
+arguments similar to that which produced (1):
+Co(q) = qd + aCo(q)
+
+(2)
+
+and, for n > 1,
+CQ(q) = q(L + d)
+
++ (I1-q)atCn( q) + qatCn- (,yq) *
+
+(3 )
+
+By utilizing these relationships, it is possible to show that, for n 2 2,
+Cn(q)
+
+-
+
+= Kn(q)(Cl(n-y1q)
+
+C,-(q)
+
+-
+
+Co(yn-1q)),
+
+(4),
+
+with K2(q) = qa/(l - (1
+where for n ? 3, Kn(q) = (qa/(l - (1 - q)a))Kn_j(yq)
+- q) a) > 0. Thus, the problem of comparing the nonrandomized stationary policies is
+reduced to comparing R and LR .
+From (2) and (3),
+qd
+
+Co (q)=
+
+C1 (q) - Co (q)
+
+(
+
+=
+
+and
+
+1-a
+
+q
+
+(5)
+
+) - (L + a(Co( yq)
+
+-
+
+-
+
+Co(q))).
+
+(6)
+
+From (6), Cl (q) - CO(q) is the product of two factors,the firstof which is nonnegative.
+The sign of Cl (q) - CO(q) is thus completely determined by the second factor. Since
+from (5)
+L + a(Co(Qyq)
+
+-
+
+Co(q))
+
+= 0
+
+(7)
+
+is a linear equation in q, the second factor is nonnegative if and only if 0 ? q ? q*. Thus
+is preferred to LR for 0 ? q ? q*, and LR0 is preferredto R" otherwise.
+Applying the same argument to (4) immediately yields the following fundamental lemma.
+
+R??
+
+LEMMA
+
+3.6.
+
+1, Cj1(q)
+
+For]j
+
+? q ? q*/<y
+
+? Cj(q)for0
+
+1,
+
+and Cj_I(q)
+
+2 Cj(q)
+
+? 1.
+
+forq*/,yj-I?q
+
+This lemma proves (3.3) and (3.4) immediately. The proof of (3.5) has little relevant
+intuitive content, and is thus omitted.
+REMARK 3.7. Since (3.2) gives the optimal number of learn actions for each q, W( q)
+may be calculated recursively from (3) or from (4). Let n*(q) be the optimal number
+of learn actions when the probability of a defective is q. That is, n*( q) is the smallest n
+> 0 such that , nq c q*. Then the result of the calculation is
+W(q)
+where Kn(q)
+
+=
+
+L + d n*(q)
+=
+
+a
+
+i-l
+
++
+
+K1+1(q)+ d
+
+n*(q)q
+
+1-af
+
+Kti*(q)+1I
+
+iil K2(yj-'q).
+
+The distribution of the time required to reduce the probability of a
+defective part below q* is also readily available. For q 2 q* the time required to reduce
+REMARK 3.8.
+
+<-----Page 6----->1370
+
+RICHARD L. MARCELLUS AND MAQBOOL DADA
+
+q to lyn*(q)q is the sum of n *( q) independent geometrically distributed random variables,
+with expected values
+1 1
+
+1
+
+1
+
+q 'q
+
+*'*(q)-lqy
+
+'2q
+
+REMARK 3.9. To alter (3.7) and (3.8) for the related problem of arbitrarilyreducing
+q to a target value qj, define n( q, q) to be the smallest n ? 0 such that 'y'q ? q-and replace
+n*( q) by n(q, q). Proposition (3.5) may be used to approximate the cost of perpetual
+improvement with as much accuracy as desired.
+REMARK 3.10. Additional insight into the equation in (3.7) may be gained by analyzing Cn(q) in the extensive form
+-n
+
+??
+
+E (L + d)
+
++
+
+aN
+
+d
+
+i=l
+
+a Ni]
+i=n+l
+
+where N' is the time at which the ith defective appears. The first term in the above is the
+expected cost incurred while learning, and the second term is the expected cost incurred
+after all the learn actions have been taken. Since the actions are taken at random times,
+the discounted cost for each action is also random and representedby the random discount
+factors a N The expected value is easily calculated from the following four relations:
+a
+
+=
+
+f
+
+a
+
+j= 1
+
+where No
+
+=
+
+0;
+q
+
+E[aN1]
+E[NjN]=
+
+1I
+
+for 2 ?j
+
+?
+
+q)
+
+1-a(1
+
+ay~'
+
+a(1
+
+-
+
+7
+
+~~q)
+
+n; and
+
+E[a NJ-NJ']
+
+=
+
+a
+
+l
+
+1 - a(1 -
+
+ynlq)
+
+for j > n. Using these relations gives
+=
+
+Cnf(q)
+
+L+d
+L
+a
+
+t'ayl-q
+
+I.i
+1=1
+
+j=1
+
+I-a(
+-+a(
+
+--yq) j-1
+
+dy "q
+J
+1 - a -7
+j-11 1
+
+ay'' q
+a(1
+
+-
+
+yJj~q)
+
+*
+
+(8)
+
+From this and the above four relations, it is clear that K2(q)/ a is the expected discount
+factor from the time of the first defective, and K1+I(q) /a is the expected discount factor
+from the time of the ith defective. The expected discount factor for N' differs from the
+others since N1 is equal to zero with probability q.
+REMARK 3.1 1. Many production processes, for example those involving grain, liquids,
+and yarn, are continuous rather than discrete. If q is the rate of a Poisson process instead
+of the probability of a defect at discrete time units, then recurrence relations in terms of
+one time unit cannot be written. However, conditioning on the time at which the first
+defect occurs gives the following equations, where r is the opportunity cost of one unit
+of capital:
+
+<-----Page 7----->INTERACTIVE PROCESS QUALITY IMPROVEMENT
+
+Co(q) =
+
+qe-qte-rt(d+ Co(q))dt
+
+Cn(q) =
+
+qe-qte-rt(d + L + C,1(yq))dt.
+
+1371
+
+and
+
+From these two equations, the above argumentscan be repeatedalmost verbatim, resulting
+in q* = Lr/d( 1 - 'y). Remark 3.7 also holds with K2(q) redefined as q/(r + q).
+4. Interpretation of the Policy Structure
+In the following paragraphs,the optimum prescribed in the preceding section is given
+intuitive content in two ways. First, allowing the policy to vary for fixed q shows that
+the optimal policy is the best compromise in a classical tradeoff between conflicting
+objectives. However, in spite of the fact that an optimal level of defectives exists, the
+shape of the cost curve gives credibility to perpetual reduction of the level of defectives.
+Second, the control limit has a marginal interpretation which explains reluctance to
+invest in further improvements after the percentage of defectives is reduced sufficiently.
+This is true in spite of the fact that "quality is free" in the sense that ordinary operating
+cost does not increase when the percentage of defectives decreases.
+For a fixed percentage of defectives, the cost C12(q)is the total expected discounted
+cost of providing quality: each investment of L lowers the frequency at which defectives
+appear and each defective is discovered and rectified with cost d. These two types of cost
+have been called "cost of prevention" and "cost of failure" (Schmenner 1984, for example). From (8), C, can be decomposed into the sum of these two types of costs:
+LCnl(q) + dCn2(q)
+
+Cn(q)
+C12
+l(q)=
+
+Cn2(q)
+
+-
+
+E
+ai
+
+fi
+j-1
+
+Cn 1(q) +
+
+1
+
+1-
+
+ao(l
+a
+
+ft 1
+_
+
+where
+and
+
+q)
+a -yiq
+
+a(l
+
+-
+
+yJlq)
+
+Simple subtractions show that Cn1is increasing in n, and that CG2is decreasing in n.
+Optimizing Cnover n emerges as a classical tradeoff between increasing cost of preventing
+defectives and decreasing cost of defectives. Each additional investment in learning decreases the future costs of defectives. Thus, in managerial cost accounting, at least part
+of L should be considered a capital investment rather than a direct cost.
+Similar subtractions show that Cn1 is concave in n, and that C,2 is convex in n. This
+is unlike the traditional cost of quality curves such as those in Fine ( 1986) and Chase
+and Acquilano (1981) where the cost of prevention is strictly convex which implies
+decreasing economies of scale and thus nonzero optimal proportion of defectives. This
+is because the analog to L is assumed to grow without bound as the process is improved.
+The model presented here also results in a nonzero optimal proportion of defectives.
+However, our model implies a bounded cost for the policy of approaching zero defects
+through perpetual improvement. In this sense, our model reconciles the traditional view
+with the "zero defects" view. It assumes constant preventive cost per defective like the
+"zero defects" view (Schmenner 1984) but implies decreasing marginal benefit per improvement as in the traditional view.
+More detailed analysis shows that both cost components approach constant limits as
+n becomes large and the long-term percentage of defectives becomes small. Specifically,
+let
+
+<-----Page 8----->RICHARD L. MARCELLUS AND MAQBOOL DADA
+
+1372
+
+------________________________
+
+(L+d)w
+
+0
+
+Lw---
+
+----------------
+
+Failure Cost
+0@
+
+______________________n
+
+_____X_____;_
+
+0
+
+Numberof Planned LearnActions
+Starting at q
+FIGURE 1.
+
+Costs versus Learn Actions.
+
+w liMn,,1
+
+j-1
+ai=,
+
+=1
+
+I-
+
+a(1
+
+-
+
+yJlq)
+
+Then the "cost of prevention"approachesLw from below, the "cost of failure"approaches
+dw from above, and the total cost approaches (L + d)w. The total cost thus depends on
+the sum of L and d while the optimal quality level depends on their ratio. The long-term
+ratio of "preventive cost" to "failure cost" is Lld.
+In distinction to most tradeoff curves, such as that which produces the Economic
+Order Quantity (EOQ), the total cost is constant in the limit. The total cost curve may
+thus be very flat on the right of the optimum. If this is so, the marginal cost for perpetual
+improvement is small and very little incentive is needed to make it attractive. The general
+shape of the curve for L > d is given in Figure 1. When L < d, the total cost curve has
+the same shape, but the two component curves do not intersect. Tables 2 through 4 in
+Marcellus and Dada ( 1990) give examples of the total cost where L + d is held constant,
+but the ratio of L to d varies. The optimal costs for these examples are very close to one
+another. Typically, the total cost curve is very flat on the right of the optimum, but not
+on the left. Too many learn actions are thus better than too few. (The total cost curve
+for the EOQ model, in contrast, is flat on both sides of the optimum.)
+A marginal interpretation of the optimum comes from recognizing that if r is the
+opportunity cost of one unit of capital, then the traditional present cost is calculated
+with a discount factor of 1/(1I + r). If a = 1/ (1I + r), then (1I - a) /a = r. Thus, in
+terms of r, the control-limit law specifies the routine action if
+d(q - yq)?<Lr.
+
+(9)
+
+The left-hand side of this inequality is the expected reduction in cost per period if the
+learn action is taken. The right-hand side is the amount that could be earned if L dollars
+were invested for one peiod (the opportunity cost of capital). The control-limit law thus
+
+<-----Page 9----->INTERACTIVE PROCESS QUALITY IMPROVEMENT
+
+1373
+
+has the following interpretation: if the expected reduction in the cost of quality is less
+than the opportunity cost of the learn action, then the learn action is not economical.
+Thus, if a firm's hurdle rate r is set too high, as is often the case (Hayes, Wheelwright,
+and Clark 1988), then even short-term learning is discouraged. Further, for any hurdle
+rate r, traditional capital investment analysis fails to justify investment in perpetual
+improvement. This is in spite of the fact that the cost of perpetual improvement may be
+very close to the optimal cost so that very little motivation is then needed to make
+perpetual improvement attractive.
+A similar interpretation exists when a is some other measure of the future's value. For
+example, if a n- ( 1 - a) is the probability that the production process ends immediately
+prior to epoch n, then a'2is the probability that the projected future cost at epoch n will
+actually be incurred. Thus, since q* decreases as a increases, an increased belief in the
+existence of future costs motivates learning. In fact, q* is still strictly positive even for
+the most favorable learning opportunity imaginable ( y = 0), but can be driven arbitrarily
+close to zero by increasing a. Thus, the most important motivation for learning is the
+avoidance of future costs.
+5. Scope of the Results
+The extremely precise policy structure results from two features:
+(a) The learn action never increases the probability of producing a defective part, and
+for each q, each possible reduction to some lower probability can be achieved in a fixed
+finite number of reduction steps.
+(b) Costs are stationary with respect to time.
+The first feature makes it possible to write the recurrence relation (3). The second
+feature makes it possible to write the relations (4), which makes it possible to reduce the
+problem to finding the roots of an equation involving Co only. Any alteration of the
+model which preserves these two features can be treated similarly. Examples of such
+alterations are listed briefly, with details left to the reader. These examples define the
+scope and limitations of the techniques used in ?3.
+(1) Suppose the learn action reduces q to rq, where F is a random variable. If P{ r'
+1} 11- 3 and P{ P = y} = 3, then (a) and (b) still hold. However, this appears to
+be the only distribution for which this is true. If L'R ? is redefined to mean that the
+learn action is repeated until exactly n successful reductions have occurred, then all the
+above analysis carries through.
+(2) Suppose the learn action takes a nontrivial amount of time, say T, and its cost is
+no longer constant, but some stationary function of the problem parameters, say L(q,
+T, a, -y). Then (a) and (b) still hold, and the optimal policy depends on the roots of an
+expression similar to the right-hand side of (6). If L(*) is independent of a, a tradeoff
+interpretation exists. A marginal interpretation exists for all L(*).
+(3) Suppose the cost of rectifying the defective part is spread over two time units, do
+in the first and d, in the second, and the learn action occurs in the third time period,
+with appropriatediscounting. Then L + aCo( yq) - Co(q) becomes quadratic in q rather
+than affine. However, it can be shown by elementary methods that this quadratic expression is nonnegative for q = 0, and that there is at most one root between zero and one.
+Thus the policy once again has a control-limit structure. The existence of tradeoff and
+marginal interpretations is unaffected by this change.
+(4) Suppose the learn action reduces q to y(q) instead of yq, where ay(q) is some
+increasing function of q satisfying 0 ? y(q) ? q for all q. Then all the above analysis
+carries through, except that additional assumptions are necessary to give a control-limit
+policy and convexity of Cr2.
+Similar extensions can be made for the continuous time case of (3.1) .
+-
+
+<-----Page 10----->1374
+
+RICHARD L. MARCELLUS AND MAQBOOL DADA
+
+6. Total Expected Cost over a Finite Time Horizon
+Optimal policies for the finite horizon problem are qualitatively different from those
+for the infinite horizon problem. In the infinite horizon problem, the dm chooses to
+make a fixed number of improvements and is guaranteed an opportunity to make each
+of them, although he may have to wait an extremely long time. In the finite horizon
+problem, there is positive probability that no opportunities at all will occur, or that they
+will occur so close to the horizon that investing in learning is uneconomical. Instead of
+choosing a fixed number of improvements to make, the dm chooses a collection of
+"windows of opportunity". These windows are lengths of time during which the dm will
+invest in learning if an opportunity occurs. Given a horizon of length M and an initial
+percentage of defectives q, the lengths of the windows decrease both as improvements
+are made and as the horizon approaches. Due to this complexity, an analysis of cost as
+the policy varies, as in ?4, would be extremely complicated. However, equation (9) does
+have an analog, given in (10).
+The policy structurefollows from the fact, shown below, that there is a separatecontrollimit rule for each production epoch and the control limits increase as the epochs approach
+the horizon, as shown in Figure 2. From this picture, it is clear that for each q there is a
+minimal horizon, m*(q), such that for all smaller horizons, learning is never optimal.
+In fact, m *( q) is the smallest m such that q > q*7. Thus, for a planning horizon of length
+M, the initial window of opportunity is either 0 or M - m*( q) + 1. When a defective
+occurs at production epoch j, the next window of opportunity can be found from
+Figure 2.
+The policy structure is presented in terms of the total expected cost, but applies also
+to the expected average cost per time since the one can be derived from the other by
+dividing by the length of the horizon.
+
+qm
+
+1
+
+41-
+
+n~
+0
+
+~
+
+~~~~~er
+
+Acio Opia
+
+Routine 'Action
+Optimal
+
+0
+
+X____
+
+m*(q)
+
+Length of Planning Horizon
+FIGURE 2.
+
+Probability of Defective versus Planning Horizon.
+
+<-----Page 11----->1375
+
+INTERACTIVE PROCESS QUALITY IMPROVEMENT
+
+-0.
+
+Let W(q, m) be the total expected cost for a horizon of length m, and let W(q, 0)
+Then, in analogy with (1),
+W(q, m) = mi
+W(q
+m)= mn
+
+qd+ aW(q,m1)
+i
+m - 1) + qaxW(,yq,m -1)}
+q(d + L) + (I1-q)aW(q,
+
+Let
+WR(q, m) = qd + aW(q, m - 1)
+WL(q, m) = q(d + L) + (1
+
+-
+
+q)aW(q, m
+
+-
+
+and
+
+1) + qaW(,yq, m
+
+-
+
+1).
+
+Then
+W(q, m) = min
+
+q mi))
+
+(W(
+
+where WR(q, m) is the expected future cost given that the routine action is planned for
+period m with an optimal policy followed thereafter,and WL(q, m) is the corresponding
+quantity for the learn action.
+m ati. Let q* = 1. For m > 2, let
+For ae> 0, let Am IJ=
+* = min (1
+
+Amfl
+
+L
+
+)d)
+
+The following proposition shows that the finite horizon thresholds are given by the sequence q*. The proof exploits the fact that the sequence q* converges downward for all
+ae> 0 and that q* > q* for all m.
+PROPOSITION 6.1. When the remaining lifetime of the production process is m
+periods, the learn action is optimalfor q ? q* and the routine action is optimalfor q
+C qm.
+
+PROOF. See Marcellus and Dada (1990).
+C]
+If q* < 1 and a = 1/(1 + r) as in ?4, then the control limits of the theorem specify
+the routine action when there are m periods remaining if
+
+d(q - yq)?<:L -(
+(10)
+(1 + r) - 1
+The second factor on the right is the coefficient which "annualizes" a present cost of L
+over m - 1 periods. Thus, it is optimal to learn when the expected incremental savings
+is more than the equivalent periodic income which could be produced by investing L
+dollars for m - 1 periods. As expected, the right-hand side of (10) approaches Lr as m
+becomes arbitrarilylarge.
+When a = 1, the sequence q* converges to zero. This suggeststhat an optimal threshold
+for the expected long-run average cost per unit time is zero, and that a policy of perpetual
+interactive improvement is supported by this cost criterion. This is true as long as nonstationary policies are ignored. However, nonstationary policies such as R'L ? and
+(R'L) are inconsistent with perpetual interactive improvement and also achieve minimal cost. Thus, the expected long-run average cost criterion does not provide clear
+support for the strategy of perpetual interactive improvement.
+These remarks are proved in Marcellus and Dada (1990).
+7. Conclusions and Suggestions for Future Research
+We present an analytic model which gives insight into the manufacturing problem of
+process improvement. Our model captures the interactive nature of such improvement,
+
+<-----Page 12----->1376
+
+RICHARD L. MARCELLUS AND MAQBOOL DADA
+
+unlike that of Porteus (1986), and allows true competition between "preventive control"
+and "reactive control," unlike that of Fine ( 1988 ), who only considers the former. The
+model is used to examine the relationships among discount rates, cost of imperfect production, cost of process improvement, and length of the planning horizon. We find that
+common measures of effectiveness have optimal policies of control-limit type.
+The control limits have economic interpretations in terms of marginal benefits. In
+addition, the optimal policy for expected discounted present cost has an interpretation
+in terms of tradeoffs between "cost of failure" and "cost of prevention". The structure
+of the tradeoff curve gives insight into the controversy between the traditional and zero
+defects views towards cost of quality. A manager needs very little incentive to justify a
+policy of "preventive control" over "reactive control," even though traditional capital
+investment policies might suggest the latter.
+The simple first-cut model of the present paper can be extended in several directions.
+More realistic models would allow for increases in the defective rate as the result of
+clumsy or ineffectual intervention, for inherent nonremovable causes of defects, for problems due to exogenous factors not subject to control, for nongeometric times between
+defectives, and for imperfect observation of the production process. However, the analytic
+form of the policies can serve as guidelines for finding heuristic optimal policies for more
+complicated processes.1
+1 We would like to thank Professor Stephen C. Graves, the Associate Editor, and the referees for helpful
+comments which greatly improved the presentation and content of the paper.
+
+References
+BLACKWELL,DAVID, "Discounted Dynamic Programming,"Ann. Math. Statist., 36 (1965), 226-235.
+CHASE, R. B. AND N. J. ACQUILANO, Production and OperationsManagement, Richard D. Irwin, Homewood,
+
+IL, 1981.
+CROSBY, PHILIP B., Quialityis Free, McGraw Hill, New York, 1979.
+FINE, CHARLES, "Quality Control and Learning in Productive Systems," Ph.D. thesis, Graduate School of
+
+Business, Stanford University, 1983.
+,"Quality Improvement and Learning in Productive Systems," Management Sci., 32, 10 (1986), 13011315.
+,"A Quality Control Model with Learning Effects," Oper. Res., 36, 3 (1988), 437-444.
+AND EVAN L. PORTEUS, "Dynamic Process Improvement," Oper. Res., 37, 4 (1989), 580-591.
+GOLDSTEIN,T., S. P. LADANY AND A. MEHREZ, "A Discounted Machine-ReplacementModel with an Expected
+Future Technological Breakthrough,"Naval Res. Logist. Quart., 35 (1988), 209-220.
+HAYES, ROBERT H., STEVEN C. WHEELWRIGHT AND KIM B. CLARK, Dynamic Manutfactulring, Macmillan,
+Inc., New York, 1988.
+MARCELLUS,RICHARD L. AND MAQBOOLDADA, "Interactive Process Quality Improvement,"
+College of Business Administration, University of Illinois at Chicago, 1990.
+PIERSKALLA, W. AND J. VOELKER,
+
+Working Paper,
+
+"A Survey of Maintenance Models," Naval Res. Logist. Quart., 23 (1976),
+
+353-388.
+POLLOCK, STEPHEN M., "A Bayesian Reliability Growth Model," IEEE Trans. Reliability, R-17, 4 (1969),
+
+187-198.
+PORTEUS, EVAN L. "Optimal Lot Sizing, Process Quality Improvement and Setup Cost Reduction,"
+
+Oper.
+Res., 34, 1(1986), 137-144.
+SCHMENNER, ROGER W., Produiction/OperationsManagement: Concepts and Situtations, Science Research
+Associates, Inc., Chicago, 1984.
+SCHONBERGER,
+ZANGWILL,
+
+J., Japanese Manufacturing Techniques, Free Press, New York, 1982.
+I., "From EOQ to ZI," Management Sci., 33, 10 (1987), 1209-1223.
+
+RICHARD
+
+WILLARD
+
+

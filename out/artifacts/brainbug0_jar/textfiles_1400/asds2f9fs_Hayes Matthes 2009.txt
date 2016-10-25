@@ -1,0 +1,1811 @@
+<-----Page 0----->Behavior Research Methods
+2009, 41 (3), 924-936
+doi:10.3758/BRM.41.3.924
+
+Computational procedures for probing
+interactions in OLS and logistic regression:
+SPSS and SAS implementations
+Andrew F. Hayes
+
+Ohio State University, Columbus, Ohio
+and
+
+Jörg Matthes
+
+University of Zurich, Zurich, Switzerland
+Researchers often hypothesize moderated effects, in which the effect of an independent variable on an outcome
+variable depends on the value of a moderator variable. Such an effect reveals itself statistically as an interaction
+between the independent and moderator variables in a model of the outcome variable. When an interaction is
+found, it is important to probe the interaction, for theories and hypotheses often predict not just interaction but a
+specific pattern of effects of the focal independent variable as a function of the moderator. This article describes
+the familiar pick-a-point approach and the much less familiar Johnson–Neyman technique for probing interactions in linear models and introduces macros for SPSS and SAS to simplify the computations and facilitate the
+probing of interactions in ordinary least squares and logistic regression. A script version of the SPSS macro is
+also available for users who prefer a point-and-click user interface rather than command syntax.
+
+Behavioral science researchers long ago moved beyond
+the business of theorizing about and testing simple bivariate cause and effect relationships, since few believe that
+any effects are independent of situational, contextual, or
+individual-difference factors. Furthermore, we understand
+some variable’s effect on another better when we understand
+what limits or enhances this relationship, or the boundary
+conditions of the effect—for whom or under what circumstances the effect exists and where and for whom it does not.
+Theoretical accounts of an effect can be tested and often are
+strengthened by the discovery of moderators of that effect.
+So testing for moderation of effects, also called interaction,
+is of fundamental importance to the behavioral sciences.
+A moderated effect of some focal variable F on outcome
+variable Y is one in which its size or direction depends on
+the value of a third, moderator variable M. Analytically,
+moderated effects reveal themselves statistically as an interaction between F and M in a mathematical model of Y.
+In statistical models such as ordinary least squares (OLS)
+regression or logistic regression, moderation effects frequently are tested by including the product of the focal independent variable and the moderator as an additional predictor in the model. When an interaction is found, it should
+be probed in order to better understand the conditions (i.e.,
+the values of the moderator) under which the relationship
+between the focal predictor and the outcome is strong versus weak, positive versus negative, and so forth.
+
+One approach for probing interactions that we have
+seen used in the literature is the subgroup analysis or
+separate regressions approach, where the data file is split
+into various subsets defined by values of the moderator
+and the analysis is repeated on these subgroups. But this
+method does not properly represent how the focal predictor variable’s effect varies as a function of the moderator, especially when additional variables in the model are
+used as statistical controls. For details about the problems
+with this method—a method we do not recommend—see
+Newsom, Prigerson, Schulz, and Reynolds (2003) and
+Stone-Romero and Anderson (1994).
+Fortunately, there are more rigorous and appropriate
+methods for probing interactions in linear models, two of
+which we will describe in this article. The first method
+we discuss, the pick-a-point approach, is one of the more
+commonly used. This approach involves selecting representative values (e.g., high, moderate, and low) of the
+moderator variable and then estimating the effect of the
+focal predictor at those values (see, e.g., Aiken & West,
+1991; Cohen, Cohen, West, & Aiken, 2003; Jaccard &
+Turrisi, 2003). A difficulty with this approach is that, frequently, there are no nonarbitrary guidelines for picking
+the points at which to probe the interaction. An alternative
+is the Johnson–Neyman (J–N ) technique (Johnson & Fay,
+1950; Johnson & Neyman, 1936; Potthoff, 1964), which
+identifies regions in the range of the moderator variable
+
+A. F. Hayes, hayes.338@osu.edu
+
+© 2009 The Psychonomic Society, Inc.	
+
+924
+
+<-----Page 1----->MODPROBE for Probing Interactions in SPSS and SAS     925
+where the effect of the focal predictor on the outcome is
+statistically significant and not significant. Although this
+method has been around for decades, it is rarely used, to
+our knowledge, probably due to a lack of researchers’ familiarity with the method and its lack of implementation
+in popular data analysis programs. Here, we will describe
+this method as applied to OLS and logistic regression and
+provide a way to easily implement the J–N technique, as
+well as the pick-a-point approach, in SPSS and SAS in the
+form of a macro that adds a new command, ­MODPROBE,
+to these two languages.1 Since an appreciation of the
+methods requires an understanding of how to interpret
+the regression coefficients in a linear model, we will start
+with a brief overview of some basic principles.
+Testing for Interaction in a Linear Model:
+Fundamental Principles
+In a linear model, a set of k predictor variables is used
+to model some outcome variable Y:
+	
+
+k
+
+Yˆ = a + b1 F + b2 M + ∑ bW
+i i,	
+
+(1)
+
+i=3
+
+where Ŷ is the estimate of the outcome variable Y, F and M
+are the focal and moderator variables, respectively, in the
+discussion that follows below, and W is one or more additional predictor variables that are in the model for the
+purpose of statistical control. When Y is a continuous variable, the ordinary least squares criterion is typically used
+to derive weights for each of the k predictor variables (the
+k values of b in Equation 1) that produce a linear combination of the predictors that minimizes the sum of the
+squared differences between Y and Ŷ across all n cases
+in the analysis. In models of a binary outcome, which we
+will consider later, an iterative maximum-likelihood-based
+method is typically used to estimate weights that produce
+the best-fitting model of the probability of an arbitrarily
+defined event, such as whether a person responds yes to a
+question rather than no, or is a member of one group rather
+than another.
+In OLS, b1 in Equation 1 estimates the expected difference in Y between two cases that differ by a single unit
+on F but are equal on M and all W variables. This model
+cannot be used to test whether M moderates the effect of
+focal predictor F, for it constrains the effect of F to be
+independent of the values of M—exactly the opposite of
+what a moderation hypothesis proposes. To test whether
+the effect of the focal predictor variable differs systematically as a function of a proposed moderator variable,
+this mathematical constraint must be eliminated. A widely
+used approach is to estimate Equation 1 with the addition
+of the arithmetic product of the focal predictor variable
+and the moderator variable (F 3 M) to the model:
+	
+
+Yˆ = a + b1 F + b2 M + b3 ( F × M ) +
+
+k +1
+
+∑ bW
+i i. 	
+
+(2)
+
+i=4
+
+In this model, b3 estimates how the effect of F on Y changes
+as M changes by one unit, holding constant all k 2 3 of the
+remaining variables (W ) in the model. Questions about
+interaction usually focus on the size and significance of
+b3 in models such as Equation 2. By rearranging the terms
+
+in Equation 2, it can more easily be seen that the inclusion
+of the product of F and M makes F’s effect on Y a function of M:
+	
+
+Yˆ = a + ( b1 + b3 M ) F + b2 M +
+
+k +1
+
+∑ bW
+i i. 	
+
+(3)
+
+i=4
+
+Observe from Equation 3 how the expected difference
+in Y as a function of differences in F, quantified now as
+b1 1 b3 M, clearly depends on M. Typically, b3 will be some
+value other than zero when the coefficients are estimated
+using available data. A hypothesis test will allow the analyst
+to decide whether b3 is sufficiently different from zero to
+warrant the inclusion of the interaction term in the model.
+Although it is tempting to interpret the coefficients and
+hypothesis tests for F and M (i.e., b1 and b2) in Equation 2
+as main effects, such an interpretation is not generally
+justified or correct, except under limited conditions (see,
+e.g., Hayes, 2005, pp. 452– 456; Irwin & McClelland,
+2001; Jaccard & Turrisi, 2003, p. 24). These are conditional effects, not main effects as they are understood in
+the ANOVA. In Model 2, b1 is interpreted as the expected
+difference in Y between two cases that differ by one unit
+in F but are at zero on M, with all W variables being held
+constant. Similarly, b2 is the expected difference in Y between two cases that differ by one unit on M but are at zero
+on F, with all the W variables being held constant. The
+t and p values for these coefficients are used to test the null
+hypothesis that these conditional effects are equal to zero.
+Although there is some interpretative value to centering
+M and F prior to calculating their product, which renders
+these effects as conditional at the other variable being at
+the sample mean rather than zero, the need to center predictor variables is more one of choice or interpretational
+convenience than one of necessity (see, e.g., Cronbach,
+1987; Jaccard & Turrisi, 2003, pp. 27–28; Kromrey &
+Foster-Johnson, 1998). In all the discussions below, we
+will not mean center the predictors.2
+In a model such as Equation 2, the interaction between
+F and M is quantified with a single regression coefficient.
+Thus, it is sometimes called a single-degree-of-freedom
+(df ) interaction, because it requires only one df to estimate it. Interactions between two dichotomous predictors, between a dichotomous and a quantitative predictor,
+or between two quantitative predictors are also single-df
+interactions. In the remainder of this article, we will discuss how to deconstruct and interpret interactions of this
+sort by focusing the analysis on examining how the effect
+of the focal predictor varies depending on the moderator variable, starting first with an interaction between a
+dichotomous and a quantitative predictor. We will review
+the mathematics and describe macros that we have written
+for SPSS and SAS to simplify the computations in OLS
+regression. With the procedures described in that context,
+we then will extend these methods to interaction between
+two quantitative predictor variables and show how the
+same computational macros we have written can be used
+for this problem. In the discussion that follows, we will
+focus on OLS regression models. At the end, we will note
+the application of these principles to logistic regression
+and describe how our macros handle binary outcomes.
+
+<-----Page 2----->926     Hayes and Matthes
+
+Coefficient
+SE
+t
+p
+a: constant
+2.6826
+0.0873
+30.7211
+,.0001
+b1: condition (F )
+20.0515
+0.1237
+20.4163
+.6775
+b2: ideology (M )
+0.0669
+0.0292
+2.2891
+.0229
+b3: F 3 M
+0.1022
+0.0426
+2.3986
+.0172
+Note—R 5 .3845, R2 5 .1478, F(3,244) 5 14.1084, p , .0001.
+
+Interaction Between a Quantitative and
+a Dichotomous Variable
+The data we will use for illustration come from Reineke
+and Hayes (2007), who investigated whether news coverage of the relative fund-raising success of candidates running for a political office can affect inferences that people
+make about the characteristics of those candidates and
+whether any such effect differs as a function of the political ideology of the perceiver. The participants in the study
+read a newspaper clipping describing a debate between
+two politicians running for mayor of Topeka. Both politicians self-identified as political independents, but one
+espoused positions during the debate usually advanced by
+political liberals, whereas the other advocated positions
+characteristic of a conservative politician. Imbedded in
+the article was information about how much money each
+candidate had raised from donors. For the participants
+randomly assigned to the liberal success condition, the
+candidate with the liberal platform was reported to have
+raised more money (about $720,000 more) than the conservative candidate. The participants randomly assigned
+to the conservative success condition read a version of the
+story that was identical, except that the more conservative
+candidate reportedly had raised more ($720,000 more)
+than the liberal candidate. After reading the story, the participants were asked to respond to a number of questions
+assessing their perceptions of the two candidates, including how characteristic the terms good leader, intelligent,
+and knowledgeable were of each of the candidates on a
+scale of 1 (not at all well) to 4 (extremely well ). Their responses were aggregated to create a single scale quantifying perceptions of the competence of each candidate (with
+higher values representing greater competence). The data
+also included a measure of the political ideology of the
+respondent, scaled between 0 (very liberal ) and 6 (very
+conservative).
+We will restrict our discussion in this example to the
+analysis of perceptions of the conservative candidate. For
+analysis, experimental condition (F ) was dummy coded,
+where 0 5 liberal success and 1 5 conservative success,
+and political ideology (M) was kept in its original 0-to-6
+metric. Because the nature of the inference one can make
+about the experimental manipulation may depend on
+whether it is consistent across the ideology of the reader
+or varies systematically as a function of ideology, we want
+to assess whether condition and political ideology interact
+in affecting the perceived competence of the candidate.
+To do so, we estimate an OLS regression including ex-
+
+perimental condition, political ideology, and their product
+as predictors:
+Yˆ = a + b1 F + b2 M + b3 ( F × M ), 	
+
+	
+
+(4)
+
+where Ŷ is the estimated perceived competence of the candidate with the conservative platform. The results are presented in Table 1. As can be seen, experimental condition
+and political ideology do interact (b3 5 0.1022, t 5 2.3986,
+p , .02). This interaction, depicted visually in Figure 1,
+is interpreted to mean that the effect of the experimental
+manipulation on perceived competence depends on the political ideology of the reader. We can also derive from b2
+that among those assigned to the liberal success condition
+(F 5 0), someone who is one unit higher on the ideology
+scale (i.e., one unit more conservative) is expected to evaluate the conservative candidate 0.0669 units higher on the
+competence scale, a difference that is statistically significant (t 5 2.2891, p , .05). We can also claim from b1 that
+among the most liberal on the ideology scale (i.e., M 5 0),
+the participants assigned to the conservative success condition (F 5 1) are estimated to evaluate the conservative
+candidate as 0.0515 units lower in competence (because the
+coefficient is negative), as compared with those assigned to
+the liberal success condition (F 5 0). However, this is not
+statistically different from zero (t 5 20.4163, p 5 .6775).
+We know from the interaction that the size of the effect
+of the manipulation differs as a function of ideology, but
+how can we characterize this interaction more precisely?
+We will turn to this question next.
+Pick-a-point approach. The pick-a-point approach
+(called so by Rogosa, 1980; see also Bauer & Curran,
+2005) to probing interactions requires the investigator to
+pick a point on the moderator variable, estimate the size of
+the focal predictor at that point, and then either conduct a
+hypothesis test or construct a confidence interval (CI) to
+ascertain whether the effect of the focal predictor is different from zero at that point. The computation of the effect
+of experimental condition (F ) when political ideology (M)
+
+Estimated Perceived Competence
+
+Table 1
+OLS Regression Estimating Perceived Competence of the
+Conservative Candidate From Experimental Condition,
+Political Ideology, and Their Interaction
+
+Experimental Condition
+
+3.75
+
+Liberal success (F = 0)
+Conservative success (F = 1)
+
+3.50
+3.25
+3.00
+2.75
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+Political Conservatism (M)
+Figure 1. A visual depiction of the interaction between experimental manipulation and political ideology.
+
+<-----Page 3----->MODPROBE for Probing Interactions in SPSS and SAS     927
+equals some value θ, which we will denote b1 | M 5 θ, can
+be derived (from Equation 3 above) as
+b1 | (M 5 θ) 5 b1 1 b3θ,	
+
+	
+
+(5)
+
+with standard error equal to
+	
+
+sb | M =θ =
+1
+
+sb2 + 2θ sb2 b + θ 2 sb2 	
+1
+
+1 3
+
+3
+
+(6)
+
+(see, e.g., Cohen et al., 2003, p. 273), where s 2b 1 and s 2b 3 are
+the variances (i.e., squared standard errors) of b1 and b3,
+respectively, and s 2b 1b 3 is the covariance between b1 and b3
+(obtained as optional output by most statistical analysis
+programs). For this analysis, s 2b 1 5 0.0153, s 2b 3 5 0.0018,
+and s 2b 1b 3 5 20.0044. Although we do not recommend
+hand computation and, instead, advocate the use of the
+macros we will describe later, we will step through this
+one example by hand to illustrate the computations.
+Suppose we want to know the expected difference in
+competence ratings between the experimental conditions
+among those who are “average” in their political conservatism, using the sample mean as our definition of “average.” In these data, M
+w 5 2.4435, so 2.4435 is our value
+for θ. Applying Equations 5 and 6 results in the combined
+equation at the bottom of this page. Under the null hypothesis that the manipulation had no effect among those
+average in political conservatism, the ratio b1 | M 5 2.4435
+to its standard error is t distributed, with df equal to the
+residual df for the regression model. Here, dfresidual  5 244,
+and so t(244) 5 0.1982/0.0674 5 2.9407, p , .01. Among
+those average in political conservatism, the experimental
+manipulation did have an effect, with those assigned to the
+conservative success condition perceiving the conservative candidate as more competent (by 0.1982 units) than
+did those assigned to the liberal success condition. A c%
+CI could be constructed in the usual way as
+	
+
+(b1 | M
+
+(
+
+)
+
+= θ ) ± t(100 − c )/ 2 sb | M = θ , 	
+1
+
+(7)
+
+where t (1002c)/2 is the t  value that cuts off the upper
+(100 2 c)/2 percent of the t(dfresidual ) distribution from
+the rest of the distribution. Here, the 95% CI for the effect of the manipulation among those who are average
+in their conservatism is 0.1982  6 1.9697(0.0674), or
+0.0654–0.3310.
+These computations are tedious to do by hand, and the
+potential for computational error is high. Fortunately, they
+can be done by computer by capitalizing on the interpretation of b1 in the regression model. Recall that b1 is the
+effect of F (the experimental manipulation here) when
+M 5 0. What we would like is for b1 to estimate the effect
+of F when M 5 θ. This is simple enough to get by centering M around θ. To do so, subtract θ from all values of M
+
+in the data with the function M′ 5 M 2 θ and then reestimate Equation 4 above, substituting M′ for M throughout.
+In the resulting model, the coefficient for F is the estimated effect of F when M 5 θ, and the estimated standard
+error for this effect will be the same as that produced by
+Equation 6 (see Aiken & West, 1991, pp. 18–19; Darlington, 1990, pp. 325–326; Hayes, 2005, pp. 457–458; Irwin
+& McClelland, 2001; Jaccard & Turrisi, 2003, p. 27).
+But how does one go about selecting a value of θ?
+Sometimes, choices of θ are easy to make because specific values of θ have some kind of important substantive
+or theoretical meaning. In the absence of clear practical
+or theoretical guidance on what values of θ to choose, one
+common strategy is to estimate the effect of the focal variable among those relatively low, moderate, and high on the
+moderator. Using this strategy, low is typically defined as
+one standard deviation (SD) below the sample mean, moderate as the sample mean, and high as one SD above the
+sample mean, although other definitions could be used.
+In these data, M
+w 5 2.4435, SD 5 1.5833, so low, moderate, and high values of ideology would be θ 5 0.8602
+(relatively liberal), θ 5 2.4435 (somewhat liberal), and
+θ 5 4.0269 (relatively conservative), respectively. Applying Equations 5 and 6 for values of the moderator low
+and high (moderate was computed above) yields b1 | (M 5
+0.8602) 5 0.0364 and b1 | (M 5 4.0269) 5 0.3600. Coincidentally, the standard error for both conditional effects is
+0.0952. So among those relatively liberal, the experimental manipulation had no effect on perceived competence
+of the conservative candidate [t(244) 5 0.3824, p . .20].
+Among those relatively conservative, the manipulation
+did have an effect [t(244) 5 3.7815, p , .001], such that
+among these more conservative readers, the conservative candidate was perceived as higher in competence (by
+0.3600 units) when he had raised more money, as compared with when he had raised less.
+As was noted earlier, we do not recommend hand computation, and the centering approach, although easier
+than hand computation, is easy to misapply if the user is
+not comfortable with regression principles. As a computational aide, we have developed a macro for SPSS and
+SAS, called MODPROBE, that can be downloaded from
+www.comm.ohio-state.edu/ahayes/macros.htm and that
+makes the pick-a-point approach easy to implement. The
+macro produces the usual regression output, as well as
+estimates of the effect of the focal predictor variable at
+values of the moderator variable. Once the macro is activated, the MODPROBE command in SPSS
+MODPROBE y 5 comp/x 5 cond ideology.
+yields the output in Appendix A corresponding to this example analysis. The syntax convention requires the pre-
+
+b1 | ( M = 2.4435) = −0.0515 + 0.1022( 2.4435) = 0.1982
+sb | M = 2.4435 = 0.0153 + 2( 2.4435)( −0.0044 ) + 2.44352 (0.0018) = 0.0674
+1
+
+<-----Page 4----->928     Hayes and Matthes
+Table 2
+MODPROBE Macro Output for Ŷ As a Function of the Focal
+Predictor Variable and Moderator
+Moderator values are the sample mean and plus/
+minus one SD from mean
+Data for Visualizing Conditional Effect of
+Focal Predictor
+Cond
+Ideology
+Comp
+.0000
+.8602
+2.7402
+1.0000
+.8602
+2.7766
+.0000
+2.4435
+2.8461
+1.0000
+2.4435
+3.0443
+.0000
+4.0269
+2.9520
+1.0000
+4.0269
+3.3120
+Note—Comp 5 Ŷ.
+
+dictor variables to be listed in a specific order, with the
+moderator variable listed last and the focal predictor variable listed second to last. (As will be discussed later, any
+other variables in the predictor variable list that precede
+the focal and moderator predictors are treated as statistical controls.) In the absence of an instruction from the
+user otherwise, the macro also estimates the effects of the
+focal variable at low (one SD below the mean), moderate
+(sample mean), and high (one SD above the mean) values
+of the moderator.
+To assist in the visualizing of the interaction, the macro
+can produce a table containing Ŷ as a function of the focal
+predictor variable and moderator. This information is
+requested by specifying subcommand “est 5 1.” Doing
+so produces the additional output shown in Table 2. This
+table could be input into the graphing program to produce
+a visual plot of the interaction, and the macro produces a
+data file like the one above to facilitate this.
+Suppose that you want to calculate the effect of the focal
+predictor variable at a specific value of the moderator other
+than low, moderate, or high as defined above and produced
+by default by the macro. The subcommand “modval 5 θ,”
+where θ is the value of the moderator variable for which
+the effect is desired, produces an estimate of the effect of
+the focal variable at moderator value θ. For example, the
+SPSS command MODPROBE y 5 comp/x 5 cond
+ideology/modval 5  6 produces the output after
+the regression model shown in Table 3, which tells us that
+when ideology 5 6 (highly conservative), the estimated
+effect of the manipulation is 0.5616 [t(244) 5 3.3847, p ,
+.001], with a 95% CI from 0.2348 to 0.8885.
+With a little practice, syntax is easy to master, but it
+can be frustrating to the uninitiated. To simplify the use of
+our macro still further, we have produced an SPSS script
+(which can be downloaded from the same page noted
+above) that completes all the computations that we have
+
+described here and that follow, without the need to enter
+correctly formatted syntax. Running the script produces
+a Windows-style dialog box where the user sets up the
+problem and selects options. A screen shot of the dialog
+box can be seen in Figure 2.
+Johnson–Neyman technique. The J–N technique was
+originally designed for the two-group ANCOVA problem
+when the homogeneity of regression assumption could not
+be justified (Johnson & Fay, 1950; Johnson & Neyman,
+1936; Potthoff, 1964). Later, this method was generalized
+to the broader category of linear models (Bauer & Curran,
+2005). It avoids the potential arbitrariness of the choice
+of θ in the pick-a-point approach by mathematically deriving the point or points along the continuum of the moderator where the effect of the focal predictor transitions
+between statistically significant and nonsignificant. Such
+points, if they exist, provide information about the range
+of values of the moderator where the focal predictor has a
+statistically significant effect and where it does not.
+The pick-a-point approach will produce a statistically
+significant result for a chosen θ if the absolute value of the
+ratio of the conditional effect (Equation 5) to its standard
+error (Equation 6) exceeds the critical value of t(dfresidual )
+for a hypothesis test at level of significance α. The J–N
+technique asks, at what values of θ does t equal or exceed
+the critical t so as to produce a p value for t no greater
+than α? This problem is solved by finding the values of θ,
+if they exist, where this ratio is equal to the critical t. These
+values define limits of the regions of significance for the
+focal predictor variable along the moderator variable continuum and are calculated as shown in Equation 8 on the
+next page (see Bauer & Curran, 2005, for more detail on
+the derivation). The application of Equation 8 will yield
+two values of θ that produce a ratio of Equations 5 and 6
+exactly equal to the critical t (tcrit in Equation 8) for the
+null hypothesis test that the effect of the focal predictor
+on Y equals zero at moderator value θ at a chosen level
+of significance. However, not all values of θ from Equation 8 will be solutions in the range of the measurement of
+the moderator. For example, one or both could be imaginary numbers or be based on a projection of the pattern
+of interaction above the maximum or below the minimum
+possible measurement on the moderator variable. So the
+only θs worth interpreting are those that lie in the range
+of observation on the moderator variable. If no θs meet
+this criterion, this means that the effect of the focal variable is statistically significant across the entire observed
+range of the moderator or it never is. Any θ meeting this
+criterion marks a point of transition for the effect of the
+focal predictor as it changes from statistically significant
+to nonsignificant. It is possible for there to be two points
+of transition, meaning that as the moderator increases, the
+
+Table 3
+MODPROBE Macro Output After the Regression Model
+Conditional Effect of Focal Predictor at Values of the
+Moderator Variable
+Ideology
+b
+se
+t
+p
+LLCI(b)
+ULCI(b)
+6.0000
+.5616
+.1659
+3.3847
+.0008
+.2348
+.8885
+
+<-----Page 5----->MODPROBE for Probing Interactions in SPSS and SAS     929
+
+Figure 2. SPSS MODPROBE script dialog box.
+
+effect of the focal predictor changes from significant to
+nonsignificant (or nonsignificant to significant) and then
+back to significant (or nonsignificant).
+Our macro implements the J–N technique with the
+addition of the subcommand “jn 5 1” by producing the
+values of θ from Equation 8 and a table that aides in the
+identification of the region(s) of significance. As can be
+seen in the output in Appendix A, the macro identifies
+1.8787 on the political ideology scale as a point of transition between a statistically significant and a statistically
+nonsignificant effect of the manipulation (using α 5 .05
+as the level of significance; this can be changed using subcommands ­“­alpha 5 .10” or “alpha 5 .01” in the command line). At that point, the effect of the manipulation
+is 0.1405, meaning that those assigned to the conservative success condition perceive the conservative candidate
+as more competent (by 0.1405 units) than do those assigned to the liberal success condition [t(244) 5 1.9697,
+p 5 .05]. Examining the table more closely reveals that
+for ideology values below 1.8787, down to the minimum
+value of ideology observed in the data (0), the effect of
+the manipulation is nonsignificant. But above 1.8787 up
+to the maximum value observed (6), the effect of the manipulation is statistically significant and positive. So the
+region of significance for the experimental manipulation
+is all values of ideology equal to or higher than 1.8787.
+Treating the dichotomous variable as the moderator. When the moderator variable is dichotomous, probing
+of the interaction will focus on estimating the coefficient
+
+	
+
+θ=
+
+(
+
+) ( 2t
+
+2 2
+sb b − b1b3 ±
+−2 tcrit
+1 3
+
+2 2
+crit sb1b3
+
+2
+
+(
+
+for the focal predictor at both levels of the moderator.
+From a mathematical perspective, the roles of focal predictor and moderator are arbitrary in a linear model with
+interactions. It is the substantive or theoretical question
+that distinguishes between them. Had we instead conceptualized the experimental manipulation as the moderator
+of the effect of ideology and estimated the coefficients in
+Equation 4, the model would be Ŷ 5 2.6826 1 0.0669F 2
+0.0515M 1 0.1022(F 3 M). This model is, for the most
+part, mathematically identical to the regression model estimated earlier and presented in Table 1, but what was b1
+is now b2, and what was b2 is now b1. The coefficient for
+the interaction is, of course, unaffected by the arbitrary
+labeling of the two predictor variables as F or M. It is still
+0.1022 and statistically different from zero.
+The coefficient for political ideology tells us that among
+those assigned to the liberal success condition (M 5 0),
+two people who differ by one unit in their political ideology are estimated to differ by 0.0669 units in their evaluation of the competence of the conservative candidate. In
+terms of Equation 5, this is b1 | (M 5 0), and it is statistically different from zero [t(244) 5 2.2891, p , .05]. The
+model also provides information that allows us to estimate
+the effect of ideology among those assigned to the conservative success condition (M 5 1). Setting θ to 1 yields
+b1 | (M 5 1) 5 b1 1 b3(1) 5 0.0669 1 0.1022(1) 5 0.1691
+(from Equation 5) with a standard error of 0.0310 (from
+Equation 6). So, in the conservative success condition,
+two people who differ by one unit in ideology are expected
+to differ by 0.1691 units in their perceptions of the competence of the conservative candidate, an effect that is
+statistically significant [t(244) 5 5.4543, p , .001] and
+larger than the effect of ideology in the liberal success
+condition.
+The MODPROBE macro automatically detects whether
+the moderator is dichotomous and, if so, calculates the effect of the focal predictor at each value of the moderator
+observed in the data. So the command modprobe y 5
+comp/x 5 ideology cond produces the usual OLS
+regression output for the model, as well as the output
+shown in Table 4.
+Interaction Between Two Quantitative Variables
+In the prior example, one of the two variables defining
+the interaction was dichotomous. The same strategies for
+probing interactions apply when both the focal and predictor variables are quantitative. Thus, there is no need to
+dichotomize one or both of the predictors prior to testing
+for and probing interactions in linear models, a procedure
+that is still woefully common in spite of numerous warnings against this practice (Bissonnette, Ickes, Bernstein, &
+Knowles, 1990; Irwin & McClelland, 2001; ­MacCallum,
+Zhang, Preacher, & Rucker, 2002; Stone-Romero & An-
+
+− 2b1b3
+
+2 2
+tcrit
+t sb3
+
+−
+
+)
+
+2
+
+b32
+
+(
+
+)(
+
+2 2
+2 2
+− 4 tcrit
+sb − b32 tcrit
+sb − b12
+
+)
+
+3
+
+1
+
+)
+
+	
+
+(8)
+
+<-----Page 6----->930     Hayes and Matthes
+Table 4
+MODPROBE Macro Output for Focal Predictor
+at Values of Moderator Variable
+Conditional Effect of Focal Predictor at Values of the
+Moderator Variable
+Cond
+b
+se
+t
+p
+LLCI(b)
+ULCI(b)
+.0000
+.0669
+.0292
+2.2891
+.0229
+.0093
+.1245
+1.0000
+.1691
+.0310
+5.4543
+.0000
+.1080
+.2302
+
+derson, 1994). In this section, we will illustrate the use of
+our macro and also show how covariates are included in
+the macro command line in order to control for their potential influence on regression coefficient estimates.
+The data for this example come from a telephone survey
+of 1,200 residents of Switzerland just prior to a national referendum about legal procedures required for immigrants to
+become Swiss citizens. The outcome variable, dangerous
+discussion, was responses of the participants to various
+questions about how frequently they engage in conversation with others who have an opinion different from their
+own about the referendum, scaled from 1 (not at all) to
+5 (very frequently). They were also asked about the extent
+to which they believed that other people in their community agreed with their own opinion about the referendum,
+also scaled from 1 (not at all) to 5 ( fully), a variable that
+we call perceived opinion climate. An additional set of
+questions was used to quantify the respondents’ certainty
+about their own attitude about the topic of the referendum,
+scaled from 1 (very uncertain) to 5 (very certain).
+The goal of the analysis is to estimate the effect of the
+perceived opinion climate on frequency of dangerous discussion and how much, if at all, that effect depends on
+attitude certainty. Thus, perceived opinion climate is the
+focal predictor (F ), and attitude certainty is the proposed
+moderator (M ). To do so, F, M, and F 3 M are included as
+predictors in an OLS regression predicting dangerous discussion frequency. We also include four additional variables as statistical controls: respondent sex (W1: 1 5 male,
+0 5 female), age (W2: in years), and the language the interview was conducted in (W3: 1 5 German, 0 5 French).
+The final control variable, general discussion frequency
+(W4), is a measure of frequency of discussion about the
+referendum with friends and family, scaled 1 (not at all )
+to 5 (very often). The model estimated is
+Yˆ = a + b1 F + b2 M + b3 ( F × M )
+	
+
++ b4W1 + b5W2 + b6W3 + b7W4 . 	
+
+Information pertinent to this model can be found in
+Table 5, and the command line and output from the SAS
+version of the macro can be found in Appendix B. In the
+command line, any variable listed prior to the focal predictor in the predictor variable list (recall that the focal
+predictor is listed second to last and the proposed moderator goes last) is treated as a covariate. As can be seen,
+the perceived opinion climate and attitude certainty do
+interact [b3 5 20.0727; t(1193) 5 22.6409, p , .01].
+The coefficient for the interaction means that as attitude
+certainty increases by one unit, the coefficient for opinion
+climate decreases (because the coefficient is negative) by
+
+0.0727. Figure 3 plots this interaction graphically using
+the coefficients from this model, setting the covariates to
+their sample mean. As can be seen, when attitude certainty
+is near the bottom of the scale (i.e., closer to 1), the coefficient for perceived opinion climate is positive, whereas
+at higher levels of certainty (closer to 5), the coefficient
+is negative. So it seems that respondents who are relatively lacking in confidence about their attitude about the
+referendum report more frequent dangerous discussion
+when they perceive relatively greater support for their
+own opinion in the community. However, there is little
+relationship, or even a slightly negative one, between
+perceptions of support for one’s opinions and dangerous
+discussion among those who report greater confidence in
+their attitude.
+With evidence that opinion climate and attitude certainty interact, we now will probe how the effect of the
+focal predictor, perceived opinion climate, varies as a
+function of the moderator, attitude certainty. Using Equation 5 or information from the macro printed by default,
+we could derive and interpret the coefficient for opinion
+climate when attitude certainty is equal to the mean (θ 5
+4.2581), as well as one SD above (θ 5 5.2015) and below
+(θ 5 3.3147) the sample mean:
+b1 | (M53.3147) 5 0.292720.0727(3.3147) 5 0.0517
+b1 | (M54.2581) 5 0.292720.0727(4.2581) 5 0.0169
+b1 | (M55.2015) 5 0.292720.0727(5.2015) 5 0.0855.
+The section of the macro output in Table 6 provides these
+conditional effects by default. It would seem that only
+among those relatively high in attitude certainty is there
+a statistically significant negative relationship between
+perceived opinion climate and frequency of dangerous
+discussion [t(1193) 5 22.3731, p , .02], with a 95% CI
+from 20.1563 to 20.0148. Such a claim would be mistaken, for observe that 5.2015 is beyond the upper bound
+
+Table 5
+OLS Regression Estimating Frequency of Dangerous Discussion
+From Perceived Opinion Climate, Attitude Certainty,
+and Their Interaction, With Various Statistical Controls
+Coefficient
+SE
+t
+p
+a: constant
+0.0670
+0.4246
+0.1579
+.8746
+b1: climate (F )
+0.2927
+0.1222
+2.3958
+.0167
+b2: certainty (M )
+0.2432
+0.0929
+2.6187
+.0089
+b3: F 3 M
+20.0727
+0.0275
+22.6409
+.0172
+b4: sex (W1)
+0.1799
+0.0593
+3.0329
+.0025
+b5: age (W2)
+20.0021
+0.0018
+21.1743
+.2405
+b6: language (W3)
+20.1815
+0.0721
+22.5183
+.0119
+b7: discussion (W4)
+0.5215
+0.0257
+20.2929
+,.0001
+Note—R 5 .5238, R2 5 .2744, F(7,1193) 5 64.4442, p , .0001.
+
+<-----Page 7----->Estimated Dangerous Discussion Frequency
+
+MODPROBE for Probing Interactions in SPSS and SAS     931
+2.6
+2.4
+2.2
+2.0
+
+Attitude Certainty
+Very uncertain (M = 1)
+M=2
+M=3
+M=4
+Very certain (M = 5)
+
+1.8
+1.6
+1
+
+2
+
+3
+
+4
+
+5
+
+Perceived Opinion Climate (F)
+Figure 3. A visual depiction of the interaction between perceived opinion climate and attitude certainty.
+
+of the measurement scale for attitude certainty, so the conditional estimate when attitude certainty 5 5.2015 is actually somewhat nonsensical (and the output will warn the
+user accordingly). A better approach would be to estimate
+the conditional effect of opinion climate at values nearer
+to the bottom of the scale as well or, alternatively, using
+the J–N technique to derive regions of significance, which
+allows us to avoid entirely the arbitrariness of the choice
+values of θ. We will do both below.
+First, we will estimate the conditional effect of perceived opinion climate at the lowest (1) and second lowest
+(2) point on the attitude certainty scale to supplement the
+conditional estimates already calculated. Adding the modval option to the MODPROBE command yields the desired
+estimates. Using the SAS version as an example, running
+the macro twice with modval values of 1 and 2 provides
+the output below the regression model shown in Table 7.
+Observe that among those with relatively little confidence
+in their attitudes (1 or 2 on the scale), the coefficient for
+perceived opinion is positive and statistically different
+from zero [b1 | (M 5 1) 5 0.2200, t(1193) 5 2.3035, p ,
+.05, 95% CI from 0.0326 to 0.4074; b1 | (M 5 2) 5 0.1473,
+t(1193) 5 2.1187, p , .05, 95% CI from 0.0109 to 0.2837].
+So respondents with relatively little confidence in their attitudes report more frequent dangerous discussion when
+they perceive greater support for their own opinions in the
+community, relative to when they perceive less support.
+Among those higher in confidence, there is no relation-
+
+ship between perceived opinion climate and frequency of
+dangerous discussion.
+Regions of significance are calculated using the “jn 5 1”
+subcommand. The SAS output (Appendix B) shows two
+points of transition. When attitude certainty is 2.4583 or
+below, the coefficient for opinion climate is significantly
+positive. By contrast, when attitude uncertainty is above
+4.8453, the coefficient is significantly negative. Between
+2.4583 and 4.8453, the coefficient is not detectably different from zero. So it appears that respondents with relatively
+uncertain attitudes talk more frequently to those who disagree with them when they perceive more support for their
+own opinions in the surrounding community. But among
+those highly confident in their attitudes, the opposite effect
+is observed, with more dangerous discussion among those
+who feel relatively less support from the community, as
+compared with those who feel relatively more support.
+As in the prior example, the “est 5 1” subcommand
+could be used to produce Ŷ from the model for various
+values of the focal and moderator variables. When there
+are covariates, the estimates are derived using the sample
+mean for each of the covariates. The resulting table can be
+used to mentally visualize the interaction or plugged into a
+graphing program, as was done to generate Figure 3.
+Extensions
+Binary outcomes. We have restricted our discussion of
+probing interactions and the implementation of the macros to OLS regression. But the same methods can be used
+in logistic regression as well. In logistic regression, the
+probability of a binary outcome’s taking an arbitrary value
+(such as Y 5 1, the event, rather than, for example, Y 5 0)
+is modeled as a function of predictors each weighted by a
+logistic regression coefficient. Formally, the log odds of
+the event is modeled as
+P(Y = 1)
+=τ
+ln 
+P(Y = 0)
+	
+
+k +1
+
+= a + b1F + b2 M +b3(F × M ) + ∑ biWi . 	 (9)
+i=4
+
+The estimated log odds can be converted to an estimated
+probability with the function pˆ  5 eτ/(1 1 eτ). In Equation 9,
+b1 estimates the change in the log odds of the event as F increases by one unit, conditioned on M 5 0 and all Ws held
+constant. Raising e to the power of b1 yields an odds ratio;
+specifically, it is the ratio of the odds of the event when
+F 5 γ to the odds of the event when F 5 γ 2 1, conditioned
+on M 5 0 and all Ws held constant. As in OLS regression,
+b3 quantifies the interaction between F and M—how the
+
+Table 6
+MODPROBE Macro Output For Focal Predictor
+at Values of Moderator Variable
+Conditional Effect of Focal Predictor at Values of the
+Moderator Variable
+CERTAIN
+b
+se
+t
+p
+LLCI(b)
+ULCI(b)
+3.3147
+0.0517
+0.0387
+1.3339
+0.1825
+-0.0243
+0.1277
+4.2581
+-0.0169
+0.0269
+-0.6290
+0.5295
+-0.0698
+0.0359
+5.2015
+-0.0855
+0.0360
+-2.3731
+0.0178
+-0.1563
+-0.0148
+
+<-----Page 8----->932     Hayes and Matthes
+Table 7
+MODPROBE Output: Estimating the Conditional Effect of
+Focal Predictor at Specific Values of the Moderator
+%modprobe (data5immig, y5danger, x5lang discuss sex age climate certain, modval51);
+Conditional Effect of Focal Predictor at Values of the Moderator Variable
+CERTAIN
+b
+se
+t
+p
+LLCI(b)
+ULCI(b)
+1.0000
+0.2200
+0.0955
+2.3035
+0.0214
+0.0326
+0.0474
+%modprobe (data5immig, y5danger, x5lang discuss sex age climate certain, modval52);
+Conditional Effect of Focal Predictor at Values of the Moderator Variable
+CERTAIN
+b
+se
+t
+p
+LLCI(b)
+ULCI(b)
+2.0000
+0.1473
+0.0695
+2.1187
+0.0343
+0.0109
+0.2837
+
+change in the log odds of the event as F increases by one
+unit itself changes as M increases by one unit, all Ws held
+constant. Raising e to the power of b3 yields a ratio of odds
+ratios, which quantifies the factor change in the odds ratio
+for F when M increases by one unit.
+A significant interaction in logistic regression begs probing, just as in OLS regression, and the pick-a-point approach
+and J–N techniques can be used with very little modification to the procedures just described. In OLS regression,
+the ratio of a variable’s regression coefficient to its standard
+error is distributed as t under the null hypothesis of no effect
+of that variable on the outcome. In logistic regression, this
+ratio is typically treated as a standard normal variable or,
+when squared, a chi-square statistic with one df (typically
+printed in software packages as the Wald statistic). The conditional effect of F when M 5 θ and its standard error can
+be derived using Equations 5 and 6, and a p value for their
+ratio calculated from the standard normal or (if squared)
+the χ2(1) distribution. Alternatively, the J–N technique can
+be used by replacing t 2crit in Equation 8 with the critical
+χ2(1) for a hypothesis test at the α level of significance.
+The MODPROBE macro (and SPSS script) will automatically detect whether or not the outcome variable is binary, and if so, it estimates the model using logistic regression rather than OLS. The logistic regression coefficients
+are estimated using maximum likelihood and iterating to a
+solution with the Newton–Raphson method. The user can
+control the number of iterations and convergence criteria
+if desired (which default to 10,000 and .0000001). Space
+constraints preclude printing an example of the use of the
+macro with a binary outcome here. A worked example can
+be found where the macro can be downloaded, at www
+.comm.ohio-state.edu/ahayes/macros.htm.
+Higher order interactions. Higher order interactions
+involving dichotomous or quantitative predictor variables
+can also be represented with a single regression coefficient.
+Consider, for instance, a three-way interaction between a
+focal predictor (F), a moderator (M) of the effect of F, and
+a third predictor variable (Z) proposed to moderate the size
+of the interaction between F and M. A model with a threeway interaction would typically be estimated as such:
+Yˆ = a + b1 F + b2 M + b3 Z + b4 ( M × Z ) + b5 ( F × Z )
++ b6 ( F × M ) + b7 ( F × M × Z ).
+In this model, b7 estimates the three-way interaction between F, M, and Z—the extent to which the two-way in-
+
+teraction between F and M varies across values of Z. A
+statistically significant three-way interaction begs probing
+in the same way that a two-way interaction does. In this
+case, focus would be on how the effect of F as a function
+of M (the two-way interaction between F and M) varies as
+a function of Z. If Z were dichotomous, this would involve
+estimating the two-way interaction between F and M for
+the two values of Z. If Z were a quantitative dimension, the
+pick-a-point approach or the J–N technique could be used
+to ascertain where on the Z continuum the two-way interaction between F and M is large, small, positive, negative,
+significant, and not significant.
+Our macros can be used to probe single-df three-way interactions. When the string of predictor variables is listed,
+the macro automatically generates the product of the last
+(the moderator) and the second to last (the focal predictor)
+variables in the list prior to estimating the model. In this
+case, the focal predictor variable would be the product of
+F and M, and the moderator variable would be Z, so those
+should be listed second to last and last, respectively, in the
+“x 5” section of the command. All the products representing the two-way interactions must be generated first,
+and those products not functioning as the focal predictor
+entered into the command as covariates.
+Consider, for instance, an extension of the first example
+by including a three-way interaction between sex (sex:
+coded 0 5 males, 1 5 females), experimental condition,
+and political ideology. The following SPSS commands
+would accomplish the analysis:
+compute sexXcond 5 sex*cond.
+compute sexXideo 5 sex*ideology.
+compute conXideo 5 ideology*cond.
+modprobe y 5 comp/x 5 cond ideo sexXcond
+sexXideo conXideo sex.
+
+Because sex is a dichotomous moderator in this example,
+the macro will automatically generate estimates of the
+three-way interaction as well as the two-way interaction between condition and ideology for the two values of the moderator variable (males and females). If the moderator variable were a quantitative variable, such as age, by default the
+macro would produce estimates of the two-way interaction
+between condition and ideology when age is at the sample
+mean as well as a standard deviation above and below the
+sample mean. The modval subcommand could be used to
+estimate the interaction between condition and ideology at
+specific values of the moderator, or the JN subcommand
+
+<-----Page 9----->MODPROBE for Probing Interactions in SPSS and SAS     933
+could be used to ascertain the region of significance on the
+moderator continuum for the two-way interaction.
+Simultaneous inference. The J–N technique allows
+one to claim that for any single point selected on the moderator continuum within the region of significance, the
+effect of the focal predictor is statistically significant at
+the chosen α level. However, it is not accurate to say that
+at the α level of significance, the effect of the focal predictor is statistically significant simultaneously at all values
+of the moderator within the region(s) of significance. The
+probability of a Type I error for this claim is larger than α.
+Potthoff (1964) recognized this as a problem similar to
+the one faced by the data analyst interested in post hoc
+pairwise comparisons between means in an ANOVA while
+maintaining the probability of a Type I error across the
+entire set of comparisons at a desired α level. His solution
+2 in Equation 9 when
+was to substitute F(2,dfresidual ) for t crit
+deriving regions of significance. Using this method, the
+region(s) of significance will be smaller with this procedure, as compared with the J–N method described earlier.
+Our macro implements the Potthoff procedure for OLS
+regression (but not logistic regression) by specifying
+“jn 5 2” at the end of the command line. Applied to the
+first example above, the point of transition on the ideology
+scale between a statistically significant and nonsignificant effect of the experimental manipulation was 2.158. In
+other words, the region of significance is smaller using this
+method (ideology $ 2.158, as compared with $1.8787
+for the nonsimultaneous J–N technique). Potthoff (1964,
+p. 244) recognized that this procedure may be overly conservative for some tastes and suggested using a higher α
+level so as to ensure that the region of significance not be
+so small as to render the procedure largely useless.
+Summary
+In this article, we discussed two methods for probing interactions in linear models—the pick-a-point approach and
+the J–N technique. We provided two examples and illustrated the implementation of these methods using macros
+written for SPSS and SAS to ease the computational burden
+on the investigator. We hope that this article will serve as a
+useful aide to researchers and that the macros will enhance
+the likelihood of rigorous probing of interactions detected
+by investigators and reported in the research literature.
+
+multiple regression/correlation analysis for the behavioral sciences
+(3rd ed.). Mahwah, NJ: Erlbaum.
+Cronbach, L. J. (1987). Statistical tests for moderator variables: Flaws
+in analyses recently proposed. Psychological Bulletin, 102, 414-417.
+Darlington, R. B. (1990). Regression and linear models. New York:
+McGraw-Hill.
+Hayes, A. F. (2005). Statistical methods for communication science.
+Mahwah, NJ: Erlbaum.
+Irwin, J. R., & McClelland, G. H. (2001). Misleading heuristics and
+moderated multiple regression models. Journal of Marketing Research, 38, 100-109.
+Jaccard, J., & Turrisi, R. (2003). Interaction effects in multiple regression (2nd ed.). Thousand Oaks, CA: Sage.
+Johnson, P. O., & Fay, L. C. (1950). The Johnson–Neyman technique,
+its theory and application. Psychometrika, 15, 349-367.
+Johnson, P. O., & Neyman, J. (1936). Tests of certain linear hypotheses
+and their application to some educational problems. Statistical Research Memoirs, 1, 57-93.
+Karpman, M. B. (1983). The Johnson–Neyman technique using SPSS
+or BMDP. Educational & Psychological Measurement, 43, 137-147.
+Karpman, M. B. (1986). Comparing two non-parallel regression lines
+with the parametric alternative to analysis of covariance using ­SPSS-X
+or SAS—the Johnson–Neyman technique. Educational & Psychological Measurement, 46, 639-644.
+Kromrey, J. D., & Foster-Johnson, L. (1998). Mean centering in moderated multiple regression: Much ado about nothing. Educational &
+Psychological Measurement, 58, 42-67.
+MacCallum, R. C., Zhang, S., Preacher, K. J., & Rucker, D. D.
+(2002). On the practice of dichotomization of quantitative variables.
+Psychological Methods, 7, 19-40.
+Newsom, J. T., Prigerson, H. G., Schulz, R., & Reynolds, C. F., III
+(2003). Investigating moderator hypotheses in aging research: Statistical, methodological, and conceptual difficulties with comparing
+separate regressions. International Journal of Aging & Human Development, 57, 119-150.
+O’Connor, B. P. (1998). SIMPLE: All-in-one programs for exploring
+interactions in moderated multiple regression. Educational & Psychological Measurement, 58, 836-840.
+Potthoff, R. F. (1964). On the Johnson–Neyman technique and some
+extensions thereof. Psychometrika, 29, 241-256.
+Preacher, K. J., Curran, P. J., & Bauer, D. J. (2006). Computational
+tools for probing interactions in multiple linear regression, multilevel
+modeling, and latent curve analysis. Journal of Educational & Behavioral Statistics, 31, 437-448.
+Reineke, J. B., & Hayes, A. F. (2007, November). Reporting on campaign finance success: Effects on perceptions of political candidates.
+Paper presented at the annual meeting of the National Communication
+Association, Chicago.
+Rogosa, D. (1980). Comparing nonparallel regression lines. Psychological Bulletin, 88, 307-321.
+Stone-Romero, E. F., & Anderson, L. E. (1994). Relative power of
+moderated multiple regression and the comparison of subgroup correlation coefficients for detecting moderator effects. Journal of Applied
+Psychology, 79, 354-359.
+
+Author Note
+
+Notes
+
+Correspondence concerning this article should be addressed to A. F.
+Hayes, School of Communication, Ohio State University, 154 N. Oval Mall,
+3016 Derby Hall, Columbus, OH 43210 (e-mail: hayes.338@osu.edu).
+
+1. Although we are not the first to produce SPSS code for probing interactions in OLS regression (O’Connor, 1998), including the J–N technique
+for the simple two-group ANCOVA problem (Karpman, 1983, 1986), the
+macros we describe here can be used for a variety of interactions, rather
+than requiring the investigator to use different programs for different types
+of interactions. None of the existing programs applies the J–N technique
+to probing interactions between two quantitative variables, none works for
+binary outcomes, and none of them automatically controls for additional
+variables in a model if the user desires such control. There is a Web-based
+tool that implements the J–N technique (Preacher, Curran, & Bauer, 2006)
+for OLS regression (but not logistic regression) that is somewhat tedious to
+use, in that it requires the investigator to plug various coefficients and variance estimates into the proper location into a form, and the likelihood for
+error in use is high. O’Connor’s SPSS programs require more knowledge
+of syntax than we believe most users are likely to have and do not permit
+the addition of covariates in a model without first residualizing variables
+
+References
+Aiken, L. S., & West, S. G. (1991). Multiple regression: Testing and
+interpreting interactions. Thousand Oaks, CA: Sage.
+Bauer, D. J., & Curran, P. J. (2005). Probing interactions in fixed and
+multilevel regression: Inferential and graphical techniques. Multivariate Behavioral Research, 40, 373-400.
+Bissonnette, V., Ickes, W., Bernstein, I., & Knowles, E. (1990).
+Personality moderating variables: A warning about statistical artifact
+and a comparison of analytic techniques. Journal of Personality, 58,
+567-587.
+Cohen, J., Cohen, P., West, S. G., & Aiken, L. S. (2003). Applied
+
+<-----Page 10----->934     Hayes and Matthes
+manually. SPSS users not comfortable with macros can use our SPSS
+script instead, which uses an SPSS dialog box for setting up the model.
+2. The usual justification for mean centering is to reduce the deleterious effects of multicollinearity on the estimation process. The correlations between the lower order and product variables are reduced by mean
+centering prior to computing the product, thereby removing nonessential
+
+multicollinearity (Cohen et al., 2003, pp. 202–203). This can stabilize
+the mathematics and reduce the likelihood that rounding error will creep
+into computations, which can be important when there are several interactions in a model. For those who prefer to mean center, the macros we
+describe do have an option for mean centering the focal and predictor
+variables prior to estimation of the model.
+
+Appendix A
+Example SPSS Macro Output
+MODPROBE y 5 comp/x 5 cond ideology.
+Outcome Variable: comp
+Focal Predictor Variable: cond
+Moderator Variable: ideology
+Regression Summary
+	
+R-sq	
+F	
+df1	
+df2	
+p
+	
+.1478	
+14.1084	
+3.0000	
+244.0000	 .0000
+5555555555555555555555555555555555555555555555555555
+	
+b	
+se	
+t	
+p
+constant	
+2.6826	 .0873	 30.7211	 .0000
+cond	
+-.0515	 .1237	 -.4163	 .6775
+ideology	
+.0669	 .0292	 2.2891	 .0229
+interact	
+.1022	 .0426	 2.3986	 .0172
+Interact is defined as:
+  cond X     ideology
+5555555555555555555555555555555555555555555555555555
+Conditional Effect of Focal Predictor at Values of the Moderator Variable
+	 ideology	
+b	
+se	
+t	
+p	 LLCI(b)	
+ULCI(b)
+	
+.8602	 .0364	
+.0951	
+.3827	 .7023	
+-.1509	
+.2237
+	
+2.4435	 .1982	
+.0672	 2.9491	 .0035	
+.0658	
+.3306
+	
+4.0269	 .3600	
+.0954	 3.7751	 .0002	
+.1722	
+.5478
+Alpha level used confidence intervals: .05
+Moderator values are the sample mean and plus/minus one SD from mean
+By adding “/jn 5 1” to the end of the command, the J–N output is produced below the regression model:
+MODPROBE y 5 comp/x 5 cond ideology/jn 5 1.
+Moderator Value(s) Defining Johnson-Neyman Significance Region(s) 1.8787
+Conditional Effect of Focal Predictor at Values of Moderator Variable
+	 Ideology	
+b	
+se	
+t	
+p	 LLCI(b)	
+ULCI(b)
+	
+.0000	 -.0515	 .1237	 -.4163	 .6775	
+-.2953	
+.1922
+	
+.3000	 -.0209	 .1132	 -.1842	 .8540	
+-.2439	
+.2022
+	
+.6000	 .0098	 .1032	
+.0949	 .9245	
+-.1935	
+.2131
+	
+.9000	 .0405	 .0939	
+.4309	 .6669	
+-.1445	
+.2254
+	
+1.2000	 .0711	 .0855	
+.8322	 .4061	
+-.0972	
+.2394
+	
+1.5000	 .1018	 .0782	 1.3013	 .1944	
+-.0523	
+.2558
+	
+1.8000	 .1324	 .0725	 1.8264	 .0690	
+-.0104	
+.2753
+	
+1.8787	 .1405	 .0713	 1.9697	 .0500	
+.0000	
+.2810
+	
+2.1000	 .1631	 .0687	 2.3725	 .0184	
+.0277	
+.2985
+	
+2.4000	 .1937	 .0672	 2.8820	 .0043	
+.0613	
+.3262
+	
+2.7000	 .2244	 .0681	 3.2942	 .0011	
+.0902	
+.3586
+	
+3.0000	 .2551	 .0713	 3.5758	 .0004	
+.1146	
+.3956
+	
+3.3000	 .2857	 .0766	 3.7316	 .0002	
+.1349	
+.4365
+	
+3.6000	 .3164	 .0834	 3.7913	 .0002	
+.1520	
+.4807
+	
+3.9000	 .3470	 .0916	 3.7884	 .0002	
+.1666	
+.5275
+
+<-----Page 11----->MODPROBE for Probing Interactions in SPSS and SAS     935
+Appendix A (Continued)
+	
+	
+	
+	
+	
+	
+	
+	
+
+Ideology	
+4.2000	
+4.5000	
+4.8000	
+5.1000	
+5.4000	
+5.7000	
+6.0000	
+
+b	
+.3777	
+.4084	
+.4390	
+.4697	
+.5003	
+.5310	
+.5616	
+
+se	
+.1007	
+.1106	
+.1210	
+.1318	
+.1429	
+.1543	
+.1659	
+
+t	
+3.7496	
+3.6929	
+3.6289	
+3.5636	
+3.5003	
+3.4404	
+3.3847	
+
+p	
+.0002	
+.0003	
+.0003	
+.0004	
+.0006	
+.0007	
+.0008	
+
+LLCI(b)	
+.1793	
+.1905	
+.2007	
+.2101	
+.2188	
+.2270	
+.2348	
+
+ULCI(b)
+.5761
+.6262
+.6773
+.7293
+.7819
+.8350
+.8885
+
+Alpha level used for Johnson-Neyman method and confidence intervals: .05
+
+%modprobe
+certain);
+
+Appendix B
+Example SAS Macro Output
+(data5immig, y5danger, x5lang discuss
+
+sex
+
+age
+
+climate
+
+SAS Macro for Probing Interactions in OLS and Logistic Regression
+Variables
+Outcome Variable:	
+DANGER
+Focal Predictor Variable:	 CLIMATE
+Moderator Variable:	
+CERTAIN
+	
+	
+
+R-sq	
+0.2744	
+
+F	
+64.4442	
+
+Regression Summary
+df1	
+df2	
+7.0000	 1193.0000	
+
+p	
+0.0000	
+
+n
+1201.0000
+
+5555555555555555555555555555555555555555555555555555
+Model
+		
+b	
+se	
+t	
+p
+	
+CONSTANT	
+0.0639	
+0.4433	
+0.1441	
+0.8855
+	
+LANG	
+0.1815	
+0.0721	
+2.5183	
+0.0119
+	
+DISCUSS	
+0.5215	
+0.0257	
+20.2929	
+0.0000
+	
+SEX	
+-0.1799	
+0.0593	
+-3.0329	
+0.0025
+	
+AGE	
+-0.0021	
+0.0018	
+-1.1743	
+0.2405
+	
+CLIMATE	
+0.2927	
+0.1222	
+2.3958	
+0.0167
+	
+CERTAIN	
+0.2432	
+0.0929	
+2.6187	
+0.0089
+	
+INTERACT	
+-0.0727	
+0.0275	
+-2.6409	
+0.0084
+INTERACT is defined as
+CLIMATE   X     CERTAIN
+5555555555555555555555555555555555555555555555555555
+Conditional Effect of Focal Predictor at Values of the Moderator Variable
+	
+CERTAIN	
+b	
+se	
+t	
+p	
+LLCI(b)	
+ULCI(b)
+	
+3.3147	 0.0517	 0.0387	
+1.3339	 0.1825	
+-0.0243	
+0.1277
+	
+4.2581	 -0.0169	 0.0269	 -0.6290	 0.5295	
+-0.0698	
+0.0359
+	
+5.2015	 -0.0855	 0.0360	 -2.3731	 0.0178	
+-0.1563	
+-0.0148
+Alpha level used for confidence intervals:
+0.05
+Moderator values are the sample mean and plus/minus one SD from mean
+Warning: One SD above the mean is beyond the available data
+
+(Continued on next page)
+
+<-----Page 12----->936     Hayes and Matthes
+Appendix B (Continued)
+By adding “jn 5 1” to the command line, the output below is produced:
+%modprobe (data5immig, y5danger, x5lang discuss sex age climate certain,
+jn 5 1);
+Moderator Value(s) Defining Nonsimultaneous Johnson-Neyman Significance
+Region(s)
+2.4583
+4.8453
+Conditional Effect of Focal Predictor at Values of Moderator Variable
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+CERTAIN	
+1.0000	
+1.2000	
+1.4000	
+1.6000	
+1.8000	
+2.0000	
+2.2000	
+2.4000	
+2.4583	
+2.6000	
+2.8000	
+3.0000	
+3.2000	
+3.4000	
+3.6000	
+3.8000	
+4.0000	
+4.2000	
+4.4000	
+4.6000	
+4.8000	
+4.8453	
+5.0000	
+
+b	
+0.2200	
+0.2055	
+0.1909	
+0.1764	
+0.1618	
+0.1473	
+0.1327	
+0.1182	
+0.1139	
+0.1036	
+0.0891	
+0.0746	
+0.0600	
+0.0455	
+0.0309	
+0.0164	
+0.0018	
+-0.0127	
+-0.0273	
+-0.0418	
+-0.0563	
+-0.0596	
+-0.0709	
+
+se	
+0.0955	
+0.0902	
+0.0850	
+0.0798	
+0.0746	
+0.0695	
+0.0645	
+0.0595	
+0.0581	
+0.0546	
+0.0499	
+0.0454	
+0.0411	
+0.0371	
+0.0335	
+0.0305	
+0.0283	
+0.0271	
+0.0269	
+0.0279	
+0.0298	
+0.0304	
+0.0326	
+
+t	
+2.3035	
+2.2769	
+2.2462	
+2.2104	
+2.1685	
+2.1187	
+2.0588	
+1.9861	
+1.9620	
+1.8966	
+1.7847	
+1.6429	
+1.4612	
+1.2262	
+0.9225	
+0.5362	
+0.0648	
+-0.4692	
+-1.0121	
+-1.4993	
+-1.8887	
+-1.9620	
+-2.1739	
+
+p	
+0.0214	
+0.0230	
+0.0249	
+0.0273	
+0.0303	
+0.0343	
+0.0397	
+0.0472	
+0.0500	
+0.0581	
+0.0746	
+0.1007	
+0.1442	
+0.2203	
+0.3564	
+0.5919	
+0.9484	
+0.6390	
+0.3117	
+0.1341	
+0.0592	
+0.0500	
+0.0299	
+
+LLCI(b)	
+0.0326	
+0.0284	
+0.0242	
+0.0198	
+0.0154	
+0.0109	
+0.0062	
+0.0014	
+0.0000	
+-0.0036	
+-0.0089	
+-0.0145	
+-0.0206	
+-0.0273	
+-0.0348	
+-0.0435	
+-0.0538	
+-0.0659	
+-0.0801	
+-0.0965	
+-0.1149	
+-0.1193	
+-0.1349	
+
+ULCI(b)
+0.4074
+0.3825
+0.3577
+0.3329
+0.3082
+0.2837
+0.2592
+0.2349
+0.2279
+0.2109
+0.1871
+0.1636
+0.1406
+0.1182
+0.0967
+0.0763
+0.0574
+0.0404
+0.0256
+0.0129
+0.0022
+0.0000
+-0.0069
+
+Alpha level used for Johnson-Neyman method and confidence intervals:
+0.0500
+(Manuscript received October 2, 2008;
+revision accepted for publication March 4, 2009.)
+
+

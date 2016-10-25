@@ -1,0 +1,1351 @@
+<-----Page 0----->The Analysis of Dependence in Cross-Classifications Having Ordered Categories, Using LogLinear Models for Frequencies and Log-Linear Models for Odds
+Author(s): Leo A. Goodman
+Source: Biometrics, Vol. 39, No. 1 (Mar., 1983), pp. 149-160
+Published by: International Biometric Society
+Stable URL: http://www.jstor.org/stable/2530815 .
+Accessed: 03/03/2011 14:54
+Your use of the JSTOR archive indicates your acceptance of JSTOR's Terms and Conditions of Use, available at .
+http://www.jstor.org/page/info/about/policies/terms.jsp. JSTOR's Terms and Conditions of Use provides, in part, that unless
+you have obtained prior permission, you may not download an entire issue of a journal or multiple copies of articles, and you
+may use content in the JSTOR archive only for your personal, non-commercial use.
+Please contact the publisher regarding any further use of this work. Publisher contact information may be obtained at .
+http://www.jstor.org/action/showPublisher?publisherCode=ibs. .
+Each copy of any part of a JSTOR transmission must contain the same copyright notice that appears on the screen or printed
+page of such transmission.
+JSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide range of
+content in a trusted digital archive. We use information technology and tools to increase productivity and facilitate new forms
+of scholarship. For more information about JSTOR, please contact support@jstor.org.
+
+International Biometric Society is collaborating with JSTOR to digitize, preserve and extend access to
+Biometrics.
+
+http://www.jstor.org
+
+<-----Page 1----->BIOMETRICS 39, 149-160
+March1983
+
+The Analysisof Dependencein Cross-Classifications
+Having
+OrderedCategories,Using Log-LinearModels forFrequencies
+and Log-LinearModels forOdds
+Leo A. Goodman
+Departmentof Statistics,
+Universityof Chicago, 5734 UniversityAvenue,
+Chicago,Illinois60637,U.S.A.
+SUMMARY
+
+To analysethe dependenceof a qualitative(dichotomousor polytomous)responsevariableupon one
+or more qualitativeexplanatoryvariables,log-linearmodels forfrequenciesare comparedwithloglinearmodelsforodds, whenthe categoriesof the responsevariableare orderedand the categoriesof
+each explanatoryvariablemay be eitherorderedor unordered.The log-linearmodelsforodds express
+theodds (or log odds) pertainingto adjacentresponsecategoriesin termsof appropriatemultiplicative
+(or additive)factors.These modelsincludethe 'null log-oddsmodel',the 'uniformlog-oddsmodel',the
+'parallellog-oddsmodel',and otherlog-linearmodelsfortheodds. Withthesemodels,thedependence
+of theresponsevariable(withorderedcategories)can be analysedin a manneranalogous to theusual
+multipleregressionanalysisand relatedanalysisof varianceand analysisof covariance.Applicationof
+log-linearmodelsfortheodds shedslighton earlierapplicationsoflog-linearmodelsforthefrequencies
+in contingency
+tableswithorderedcategories.
+
+1. Introduction
+When the categoriesof a qualitative(dichotomousor polytomous)responsevariable are
+ordered,theodds foradjacentresponsecategories,and how theseodds depend upon one or
+more qualitativeexplanatoryvariables,can be of considerableinterest.We shall consider
+modelsthatexpresstheseodds in termsof appropriatemultiplicative
+factorspertainingto the
+joint categoriesof thequalitativeexplanatoryvariables,or,equivalently,modelsthatexpress
+thecorresponding
+log odds in termsof appropriateadditivefactors.These log-linearmodels
+fortheodds can be applied in situationsin whichtheresponsecategoriesare orderedand the
+categoriesof each explanatoryvariablemay be eitherorderedor unordered.
+The log-linearmodels for the odds are related to certain log-linearmodels for the
+frequenciesin contingency
+tableswithorderedcategories.Using themodelsconsideredhere
+fortheodds,we shall reanalysetwosetsof data thathave been analysedpreviouslywithloglinear models used for the frequencies;our findingsshed additional lighton the earlier
+analysesand on thedata.
+The models consideredhere forthe odds can be describedin rathersimpleterms,being
+somewhatanalogousto theusual modelsused in multipleregressionanalysis,theanalysisof
+varianceand the analysisof covariance.They also give further
+insightinto the meaningof
+therelatedlog-linearmodelsforthefrequencies.
+Thereare a greatmanylog-linearmodelsforthefrequenciesin contingency
+tables(see, for
+example, Goodman, 1970; Haberman, 1974a). With the introductionof odds log-linear
+models,we exclude fromconsiderationall those frequencylog-linearmodels that are not
+relevantwhen one of the variablesin the contingencytable is a responsevariable and the
+othervariablesare possibleexplanatoryor regressorvariables,and we also focus attention
+Keywords.Log-linear
+models;Contingency
+tables;Orderedcategorical
+data;Dependenceanalysis.
+149
+
+<-----Page 2----->Biometrics, March 1983
+
+150
+
+Table 1
+
+Lengthofstayin hospitalfor132schizophrenic
+patients,classifiedby visiting
+patternsthathad been
+ascribedin thehospital
+
+Lengthofstayinhospital
+Visiting
+pattern20yaso
+
+2-10years 10-20years 20 yearsor
+more
+
+or patientwent
+Receivedvisitorsregularly
+home
+Receivedvisitors
+infrequently;
+patientdid not
+go home
+Neverreceived
+visitors;
+patient
+didnotgohome
+
+Total
+
+43
+
+16
+
+3
+
+62
+
+6
+9
+
+11
+18
+
+10
+16
+
+27
+43
+
+upon a particularsubsetof the relevantlog-linearmodels thatis usefulin many situations
+wherethe categoriesof theresponsevariableare ordered.
+To illustratehow themodelsconsideredherecan be used,we shall applythemto reanalyse
+Tables 1 and 2. Table 1 showsthe lengthof stayin hospitalfor 132 schizophrenicpatients
+classifiedaccordingto thevisitingpatternsthathad been ascribedin hospital;Table 2 shows
+thenumberof deathsin 657 littersof miceclassifiedby littersize and treatment.
+Table 1 was
+analysedby Wing (1962), Haberman(1974a) and Fienberg(1977). Table 2 was analysedby
+Kastenbaumand Lamphiear(1959),Darroch(1962), Plackett(1962), Goodman (1963, 1964),
+Ku and Kullback (1968), Berkson(1968, 1972), Grizzle, Starmerand Koch (1969), Koch,
+Tolleyand Freeman(1976),Whittakerand Aitkin(1978), Paul (1979), and by P. McCullagh
+in a paper presentedat the 42nd Session of the InternationalStatisticalInstitute,Manilla,
+1979.Some new insightsintothesedata will be obtainedhere.
+In Table 1 we viewthepatient'slengthof stayin hospitalas theresponsevariableand his/
+hervisitingpatternas a possibleexplanatoryor regressorvariable;in Table 2 the numberof
+deaths in a litteris the responsevariable and the littersize and treatmentare explanatory
+variables.Table 1 is a two-waycross-classification,
+and Table 2 is three-way.
+The modelsand
+methodsconsideredhere can be applied to an m-waycross-classification
+(m = 2, 3, ...)
+whenthecategoriesof theresponsevariableare ordered.
+2. Log-LinearModels forFrequenciesand Log-LinearModels forOdds
+table fortwo qualitativevariables,say,A and B,
+Firstconsidera two-wayI x J contingency
+whereA is an explanatoryvariableand B is theresponsevariable.Letfij denotetheobserved
+Table2
+
+Numberof deathsin 657 littersofmiceclassifiedbylittersize and treatment
+
+size
+Litter
+7
+8
+9
+10
+11
+
+Treatment
+A
+B
+A
+B
+A
+B
+A
+B
+A
+B
+
+Numberofdeaths
+0
+58
+75
+49
+58
+33
+45
+15
+39
+.4
+5
+
+1
+11
+19
+14
+17
+18
+22
+13
+22
+12
+15
+
+2 ormore
+5
+7
+10
+8
+15
+10
+15
+18
+17
+8
+
+Total
+74
+101
+73
+83
+66
+77
+43
+79
+33
+28
+
+<-----Page 3----->withOrderedCategories
+Cross-Classifcations
+
+151
+
+frequency
+in the ith categoryof VariableA and in thejth categoryof Variable B (i = 1, 2,
+... , I; j = 1,2, ... , J), and let Fij denotethe corresponding
+expectedfrequencyundersome
+effects
+model.The log-linearmodelsfortheFij statethattheFij are additivein thesystematic
+ofA, B and theirinteractions,
+whenmeasuredon a logarithmicscale:
+log Fi=
+
++ XA + XjB+
+
+B
+
+(1)
+
+wherelog denotesthenaturallogarithm(see, forexample,Goodman, 1970).The Xparameters
+When the categoriesof,
+are requiredto satisfyappropriateconstraints
+to ensureestimability.
+withthe
+say,A are ordered,thesecategories(levels) can sometimesbe treatedas quantitative,
+X parameters,AAand .41B,expressedas functionsof the level i (i = 1, 2, ... .
+corresponding
+I) that can take account of linear, quadratic and higher-order
+effects(see, for example,
+Haberman,1974a). When the categories(levels) of B are ordered,a similarremarkapplies
+X parameters,
+also to thecorresponding
+XjBand /X_B.
+factorshave orderedlevelstheremay be
+The readerwill appreciatethatwhenexplanatory
+how to deal withthesituationin which
+advantagesin treatingthefactorlevelsas quantitative;
+responsevariableshave orderedlevels is less obvious and we shall considerthishere.With
+log-linearmodels we can directlyconsidersituationsin which responsevariables and/or
+explanatoryvariableshave orderedlevels.
+For adjacent categories,say j and j + 1, pertainingto the responsevariableB, we define
+as followsthe odds U20AB
+based upon theexpectedfrequencies:
+j = 1, 2,
+
+Fe/Fi,j+1,
+
+t.7=
+
+.. .,
+
+(2)
+
+J - 1;
+
+and we let 'iJy denotethe naturallogarithmof E2.iB(i.e. the log odds). We nextconsider
+threesimplemodels forthe log odds *AJi,namely,the 'null log-oddsmodel', the 'uniform
+log-oddsmodel',and the'parallellog-oddsmodel'. When thecategoriesof B are ordered,use
+in data analysis.
+of thesesimplemodelswill oftenturnout to be worthwhile
+The null log-oddsmodel is
+j = 1, 25 ... ., J - 1;
+
+=
+
+t.7
+
+3
+
+theuniformlog-oddsmodel is
+=
+
+qfAB
+
+j = 1, 2, ... ., J
+
+aA5
+
+1,
+
+4
+
+wherethe4A parametersare unspecified;and the parallellog-oddsmodel is
+t.7
+
+=IA+
+
+j
+
+j = 1, 2, ... ., J-
+
+1,
+
+(5)
+
+wherethe 4jB parameterssatisfyan appropriateconstraint.From (1) and (2), we see that
+Model (3) is equivalentto Model (1) with
+and XAB= 0,
+j = 1, 2, ..., J.
+Similarly,we findthatModel (4) is equivalentto Model (1) with
+XjB =
+
+Aj
+
+=
+
+0
+
+{j - '(J + 1)})i and
+
+A =
+
+{]-
+
+2(J+
+
+j)},
+
+1= 1, 2, .. ., J,
+
+(6)
+
+(7)
+
+wheretheparameterfi is unspecifiedand thefO parameterssatisfyan appropriateconstraint;
+and Model (5) is equivalentto Model (1) with
+t.7
+
+j_1J+1}A
+2
+
+j = 1, 2, . . ., J.
+
+(8)
+
+Restrictions
+of the kind describedby (7) and (8) were introducedin the log-linearmodel
+framework
+by Haberman(1974a), and werealso discussedby,forexample,Fienberg(1977).
+Withthelog-oddsmodelsintroducedin thepresentpaper,namelyModels (3), (4) and (5), we
+obtaindifferent
+formulations
+ofthemodelsthatmaybe moreeasilyunderstood:forexample,
+
+<-----Page 4----->152
+
+Biometrics,March 1983
+
+compare(4) and (7). These formulationswill yield some new resultsfor the models, for
+example,Equation (9) below,and also affordotheradvantagesthatwill be consideredlater.
+From(3) and (6) we see thatthenull log-oddsmodel (3) is equivalentto theconditionthat
+Fil =
+
+Fi2 =
+
+*..
+
+= FiJ.
+
+In otherwords,(3) statesthatthe categoriesof Variable B are conditionallyequiprobable,
+when Variable A is in the ith category(Goodman, 1970). We now describe further
+theuniformand parallellog-oddsmodels(4) and (5).
+Model(4) statesthatthelogodds*JAjB areequalforj = 1,2, .. , J- 1. Thisis equivalent
+that2AB = wiA for] = 1, 2, . . ., J - 1, whichis,in turn,equivalent
+to thecondition
+to the
+conditionthat
+Fij
+
+Fil (w4A)'-,
+
+j = 1, 25 ... ., J.
+
+(9)
+
+Thus, theuniformlog-oddsmodel (4) statesthatthe conditionalprobabilitydistribution
+for
+B is the truncatedgeometric,whenA is in the ith category.(When Wi >- 1, the geometric
+is definedwiththe levelsof B numberedconsecutively
+distribution
+fromj = 1 to j= J; and
+when oi < 1,thedistribution
+is definedwiththelevelsnumberedin reverseorder.)When all
+1 (i = 1, 2, ... , I) or all w-i < 1 (i = 1,2, ... , I), ifthelevelsof VariableA are ordered
+X>
+accordingto the magnitudesof the wit,the expectedfrequenciesin the I x J table will be
+isotropic(see, forexample,Yule and Kendall, 1950,p. 57; Goodman, 1979, 198la).
+The parallellog-oddsmodel (5) statesthatthe effectof the ith level ofA on the log odds
+ijAB iS the same foreach value ofj (j = 1, 2, ...,
+J - 1). When the levelsof A are ordered
+and the4'Aparameterin (5) is, say,a linearfunctionof the level i withslope a, thenthe log
+odds *A5B can be describedby parallel lines withslope a. (When J = 2, the parallel and
+uniform
+log-oddsmodelsreducesimplyto a model forthe iAfB) From Model (5), we obtain
+as specialcases theuniformlog-oddsmodel (when 4jB = 0, forj= 1, 2, ..., J - 1), the null
+log-oddsmodel (when4i = 0 and 4jB = 0), and theusual model of statisticalindependence
+betweenA and B (when_A4= 4, for i = 1, 2, . . ., I).
+Withthelog odds *1A1B definedin termsof adjacentcategoriesfortheresponsevariableB,
+the analysisof theselog odds will take into accountthe orderingof thesecategories.When
+thecategoriesoftheexplanatoryvariableA are notordered,we use theusual parameterization
+oftheadditiveeffectsas in theusual two-wayanalysisof variance.When thecategoriesofA
+are ordered,we can use insteada corresponding
+setof parametersthatwill takethisordering
+into account: for example, parametersthat pertainto linear, quadratic and higher-order
+effectscan be used. However,in some situations,such as when thereis a plateau effector
+some similareffect,
+theseparametersmay notbe particularly
+helpfuland alternativeformulationswillthenbe preferable.
+The uniformlog-odds model (4) is analogous to a one-way analysis-of-variance
+modelappliedto the1jB, withJ - 1 replications(j = 1,2, .. . , J - 1) in theithcategoryof
+A. Similarly,whenthe A effectis linearin the uniformlog-oddsmodel,thenthismodel is
+analogousto a corresponding
+simplelinearregressionmodel withJ - 1 replicationsat Level
+i ofA. The parallellog-oddsmodel (5) includesthe 4jB effect(j = 1, 2, ..., J - 1) in order
+to distinguishbetweenthe different
+replications.We could also introduceinto Model (5) a
+rowx columninteraction
+effectf4,B, butforthesake of simplicity
+we postponeconsideration
+of thisuntillater.
+The log odds *ADB can be viewedas entriesin a I x (J - 1) two-waytable,and a testofthe
+parallellog-oddsmodel (5) is analogous to a testof the hypothesisthatthe row x column
+interaction
+effectis zero in theI x(J - 1) table.Thus,therewillbe (I - 1)(J - 2) degreesof
+freedom(df) in testingthis model. Similarly,a testof the uniformlog-odds model (4) is
+analogousto a testofthehypothesis
+thattheJ- 1 entries AB in theithroware equal to{-A
+(i = 1, 2, . .., I), and so therewill be I(J -2) df in testingthismodel. Table 3 gives the
+
+<-----Page 5----->Cross-Classifications
+withOrderedCategories
+
+153
+
+Table3
+Degreesoffreedom
+fortesting
+oddsmodelsappliedtotheI x J
+contingency
+table
+Oddsmodels
+Parallellog-oddsmodels
+WithfullA effect
+WithlinearA effect
+WithnullA effect
+Uniform
+log-oddsmodels
+WithfullA effect
+WithlinearA effect
+WithnullA effect
+Nulllog-oddsmodel
+Atall I levelsofA
+
+Degreesoffreedom
+(I - 1)(J - 2)
+IJ - I - J
+
+(I-1)(J-1)
+
+I(J - 2)
+IJ - I- 2
+IJ- I -1
+I(J - 1)
+
+degreesof freedomused in testingthe modelsconsideredin thissection.Note thatthereare
+J - 2 more degreesof freedomin testingthe uniformlog-oddsmodels than in testingthe
+corresponding
+parallellog-oddsmodels;and thatthemaximumnumberofdegreesoffreedom
+is used in testingthenull log-oddsmodel.
+The class of log-oddsmodelsconsideredhere differsfromthe class of associationmodels
+consideredby Goodman (1979). The null and uniformlog-oddsmodelsare notequivalentto
+associationmodels:the fittedmarginaltotalsforthe responsevariablewill usuallynot equal
+thecorresponding
+observedmarginaltotalsunderthenull and uniformlog-oddsmodels.On
+theotherhand,Model (5) can be expressedin a formequivalentto therow-effect
+association
+model of Goodman (1979); and whenthe parameterAA in Model (5) is a linearfunctionof
+the level i, the model thus obtainedcan be expressedin a formequivalentto the uniform
+associationmodel. (For furtherdetails on the relationshipbetweenlog-odds models and
+associationmodels, see Goodman, 1981b.) The models given by McCullagh (1980) are
+different
+fromthelog-oddsmodelsconsideredhereand the associationmodelsof Goodman
+(1979).
+In the analysisof two-waycontingencytables,it will oftenbe sufficient
+to considerlogodds models of the kind describedabove; and in the analysisof m-waycontingencytables
+extensionsof these
+to considerstraightforward
+(m = 3, 4, . . . ), it will oftenbe sufficient
+simplemodels. Our analyses of Tables 1 and 2 will provideexamples of the use of these
+models.
+3. The AnalysisofTable 1
+chi
+chi square and thelikelihood-ratio
+In Table 4 we presentthevalues ofthegoodness-of-fit
+1.
+in
+in
+Table
+models
+the
+data
+the
+introduced
+to
+?2
+square obtainedby applying
+log-odds
+to in the bottompart of Table 4 will be discussedlaterin this
+Additionalmodels referred
+section.
+The models in the firsttwo parts of Table 4 are equivalent to models presentedby
+Haberman (1974a) forthese data, but his developmentof these models was expressedin
+termsthan those used here: he consideredfrequencylog-linearmodels,some of
+different
+in thepresentcontext.Withintheclass of modelsapplied by Haberman
+whichare irrelevant
+chi
+to Table 1,themostparsimoniousmodel thatwas not rejectedyieldeda likelihood-ratio
+squarevalue of 3.20, with3 df; thismodel is equivalentto the uniformlog-oddsmodel (4)
+withfullA effect.This modelwas also describedby Fienberg(1977) in termssimilarto those
+used by Haberman(1974a).
+In thethirdpartof Table 4, we considerthenull log-oddsmodel applied at all threelevels
+
+<-----Page 6----->Biometrics,March 1983
+
+154
+
+Table 4
+
+Chisquarevalues
+modelsappliedtothedatain Table1
+forlog-odds
+Oddsmodels
+Parallellog-oddsmodels
+WithfullA effect
+WithlinearA effect
+WithnullAeffect
+Uniform
+log-oddsmodels
+WithfullA effect
+WithlinearA effect
+WithnullA effect
+Nulllog-oddsmodels
+AtLevels1,2, 3 ofA
+AtLevels2 and3 ofA
+Additional
+log-oddsmodels
+Parallellog-oddsModelI
+Parallellog-oddsModelII
+Uniform
+log-oddsModelI
+Uniform
+log-oddsModelII
+
+Degreesof
+freedom
+
+Goodness-of-fit
+Likelihood-ratio
+chisquare
+chisquare
+
+2
+3
+4
+
+0.02
+7.31
+35.17
+
+0.02
+7.12
+38.35
+
+3
+4
+5
+
+3.26
+8.97
+34.51
+
+3.20
+9.48
+38.60
+
+6
+4
+
+44.96
+4.67
+
+48.24
+5.00
+
+3
+4
+4
+5
+
+0.03
+0.19
+3.27
+5.46
+
+0.03
+0.19
+3.20
+5.81
+
+of A, and also the corresponding
+model applied only at the second and thirdlevels. The
+in
+fit
+obtained
+with
+the
+lattermodel is dramatic.This model statessimplythat
+improvement
+theclassesof the responsevariable,B, are conditionallyequiprobablewhentheexplanatory
+variable,A, is eitherat Level 2 or Level 3. The model is parsimonious(with4 df) and fitsthe
+data in Table 1. This model can also be describedas follows:it statesthat(i) theeffectsofA
+on the*1JB are equal at Levels 2 and 3, (ii) the *A B and *A,B are equal to zero,and (iii) the
+22 and l32B are equal to zero. Additionalinsightintothe data in Table 1 can be obtained
+by applyingConditions(i), (ii) and (iii) separatelyto thelog-oddsmodelsconsideredearlier.
+Some of the resultsthusobtainedare summarizedbrieflyin the fourthpartof Table 4.
+Parallellog-oddsModels I and II in Table 4 wereobtainedby applyingConditions(i) and
+(iii), respectively,
+to the parallel log-odds model with full A effect;the uniformlog-odds
+Models I and II were obtained similarlyfromthe correspondinguniformlog-oddsmodel.
+The uniformlog-oddsModel II statessimplythat the uniformlog-odds model applies at
+Level 1 of VariableA, and the null log-oddsmodel applies at Levels 2 and 3 ofA.
+Fromthechi square values in Table 4, we see thatthereare a numberof log-oddsmodels
+thatfitthedata in Table 1. Comparisonof thesechi square values will shed further
+lighton
+the data. For example,comparisonof the chi square value forthe uniformlog-oddsmodel
+withfullA effect(with3 df) and thecorresponding
+value fortheuniformlog-oddsModel II
+(with5 df) indicatesthattheformermodelcan be made moreparsimoniousby usingthenull
+log-oddsmodel at Levels 2 and 3 ofA. A similarkindof comparisoncan be made withthe
+parallellog-oddsmodels.
+If the A effectin Table 1 is viewed only in termsof the usual polynomialcomponents
+sincethe
+thenthefullA effectcannotbe simplifiedfurther
+(i.e. linearand quadraticeffects),
+quadratic(nonlinear)componentcannotbe ignoredin thiscase. All of the earlierliterature
+on thistopicconsideredtheeffectsof theexplanatoryvariable(or variables)onlyin termsof
+theusual polynomialcomponents.However,our analysisof Table 1 demonstrates
+that,ifwe
+do not limitconsiderationto these components,then more parsimoniousmodels can be
+obtainedin some cases.
+Various methodscan be applied to choose amongthe log-oddsmodels in Table 4 thatfit
+thedata; and theconclusionsreachedwill dependupon theparticularselectionmethodused
+and the particularlevel of significancespecified(Goodman, 1971; Haberman,1974a; Spj0t-
+
+<-----Page 7----->Cross-Classifications
+withOrderedCategories
+
+155
+
+voll, 1977; Aitkin,1980; Atkinson,1980, and the relatedliteraturecited). The methodof
+we shall notpursuethis
+modelselectionis stilla disputedsubject;and forthesake ofbrevity,
+here. The interestedreader will find that Table 4 provides a concise summaryof the
+information
+used by thevariousmethodsof selection.
+4. The Analysisof Table 2
+Table 1 is a two-waytable,and now we shall considerthethree-waytable,Table 2.
+We firstintroduceappropriatenotation.Considerthe three-wayI x J x K contingency
+tablepertaining
+to threequalitativevaribles,sayA, B and C, whereA and B are explanatory
+variablesand C is a responsevariable. Let fijk denote the observedfrequencyin the ith
+categoryofA, thejth categoryof B, and kth categoryof C (i = 1,2, ..., I; j = 1, 2....,J;
+k = 1,2,. . ., K), and letFijk denotethecorresponding
+expectedfrequencyundersomemodel.
+The usual log-linearmodelsfortheFik can be expressedas
+log F=
+
++ XAC
+
++
+
+C + XAB +
+
++
+
+.BC +
+
+XABC.
+
+(10)
+
+see Goodman (1970) and Haberman(1974a).
+For adjacentcategories,say k and k + 1, pertainingto the responsevariable,C, we define
+theodds E2ABC based upon theexpectedfrequenciesas
+uiJk
+
+k = 1,2, . . ., K - 1,(1)
+
+Fijk IFi,j,k+l,
+
+and we let iJk'c denotethe naturallogarithmof iJ3C, i.e. the log odds. We nextconsider
+simplemodelsfor iAkBC
+simply
+The parallellog-oddsmodel for ikBis
+PkC=
+
+k = 1,2,...,K-
+
+1pB+pkC
+
+1,
+
+(12)
+
+wherethe 44AB parametersare unspecifiedand the 4c parameterssatisfyan appropriate
+constraint.
+[Compare(12) with(5).] From Model (12) we obtainas special cases the uniform
+log-oddsmodel (when 4c = 0 for k = 1, 2, ..., K - 1), the null log-odds model (when
+4c = 0 and Ai4B = 0), and the usual model of statisticalindependencebetweenthe response
+variable,C, and thejoint explanatoryvariable,(A, B) (when 44ijB = 4 fori = 1, 2, ..., I,
+effectsikC, 4yJkCand
+j = 1,2, ... , J). We could also introduceintoModel (12) theinteraction
+thisis consideredlater.
+AiJkC, but forthe sake of simplicity
+From (10) and (11), we see thatthe parallel log-oddsmodel (12) is equivalentto Model
+(10) with
+iAC =
+
+{k
+
+-
+
+2(K + 1)}p)
+
+AJk
+
+=
+
+{k
+
+and
+
+-
+
+1(K + 1)}j
+
+XABC=
+
+{k -(K
+
++ 1)}pIAB
+
+k = 1,2, . . ., K, (13)
+
+wherethey parameterssatisfyappropriateconstraints.
+[Compare(13) with(8).] Similarly,we
+findthattheuniformlog-oddsmodel obtainedfrom(12) with4c = 0 is equivalentto Model
+(10) with the XAC X J?BCand XAkBC parameterssatisfying(13) and with the Xc parameter
+the additionalcondition
+satisfying
++ 1))p,
+
+A={k-2'(K
+
+k = 1,2, ... ., K.
+
+(14)
+
+[Compare(13) and (14) with(7).]
+The parallellog-oddsmodel (12) can be rewritten
+as
+tiJk
+
++
+
++ {i I
+
++ {j
+
++ {ij
+
+k
+Ak,
+
+(15)
+
+Thus, we see thatthe uniform
+wherethe parametersin (15) satisfyappropriateconstraints.
+log-oddsmodel obtained from(15) when 44C= 0 is analogous to a two-wayanalysis-ofvariancemodel applied to the '1'Ak/C, withK -1 replications(k = 1, 2, . .., K -1) in each
+
+<-----Page 8----->Biometrics,March 1983
+
+156
+
+categoryofthecorresponding
+two-waytable. Similarly,whenthecategoriesofA are ordered
+and theparametersAA~ and iP4B are linearin i, thentheuniformlog-oddsmodel is analogous
+modelwithK - 1 replicationsat Level i ofA in the
+to a corresponding
+analysis-of-covariance
+of
+B.
+The
+model (15) includesthe 4c effect(k = 1, 2,
+category
+parallel
+log-odds
+jth
+K - 1) in orderto distinguish
+betweenthedifferent
+replications.
+The log odds ij{Ak C can be viewedas entriesin an IJ x (K - 1) two-waytable,and a test
+is analogousto a testof
+oftheparallellog-oddsmodel (15), withfullA, B and A x B effects,
+the hypothesisthatthe row x columninteractionis zero in the IJ x (K - 1) table. Thus,
+therewill be (IJ - 1)(K - 2) df fortestingthismodel. This resultforthe parallel log-odds
+model associated with the I x J x K contingencytable is a direct extensionof the
+resultin Table 3 fortheparallellog-oddsmodel (withfullA effect)associated
+corresponding
+withtheI x J contingency
+table.The otherresultsin Table 3 forthevariouslog-oddsmodels
+to theI x J contingency
+tablecan also be directlyextendedto thelog-oddsmodels
+pertaining
+fortheI x J x K contingency
+table.
+Table 5 gives the chi square values obtainedwhen some log-oddsmodels are applied to
+Table 2. In Table 5, the chi square values obtained for the parallel log-odds model M1
+values obtainedfortheuniform
+indicatethatthismodel fitsthedata, and thecorresponding
+log-oddsmodel M' indicatethat this more parsimoniousmodel also fitsthese data. The
+remainingmodelsin Table 5 (viz. M2- M5 and M' - M') are directlyanalogous to models
+used in theusual analysisof covariance,withthecategoriesofA viewedas ordered.Since,in
+Table 2, B is dichotomous,thelinearB effectis equivalentto thefullB effect.In Table 5, for
+M2 and M2, theslope oftheA effect
+can differin each categoryof B sincethemodelsinclude
+Table 5
+Chi squarevaluesfor log-oddsmodelsappliedto thedata in Table 2 and in a modifledform
+of Table 2
+Likelihood-ratio
+Degrees of Goodness-of-fit
+freedom
+chi square
+chi square
+
+Odds models
+
+For Table 2
+Parallellog-oddsmodels
+Ml: Full A, B andA x B effects
+M2: LinearA, B and A x B effects
+M3: LinearA and B, and nullA x B effects
+M4: LinearA, and null B and A x B effects
+M5: Null A, B and A x B effects
+Uniformlog-oddsmodels
+M': FulIA, BandA X B effects
+M'2: Linear,A, B and A x B effects
+M'3: LinearA and B, and nullA x B effects
+M4: LinearA, and null B and A x B effects
+M5: Null A, B and A x B effects
+
+9
+15
+16
+17
+18
+
+11.15
+12.26
+15.39
+20.10
+107.01
+
+10.57
+12.01
+15.12
+20.07
+107.02
+
+10
+16
+17
+18
+19
+
+12.02
+13.28
+16.60
+21.77
+119.29
+
+11.71
+13.21
+16.43
+21.57
+113.64
+
+8
+13
+14
+15
+16
+
+3.88
+4.21
+7.91
+12.21
+87.95
+
+3.81
+4.22
+8.24
+13.01
+86.72
+
+9
+14
+15
+16
+17
+
+6.64
+7.07
+11.19
+16.28
+105.22
+
+6.67
+7.10
+11.35
+16.40
+95.84
+
+For modifiedTable 2
+Parallellog-oddsmodels
+M1: FullA, BandA x B effects
+M2: LinearA, B and A x B effects
+M3: LinearA and B, and nullA x B effects
+M4: LinearA, and null B and A x B effects
+M5: Null A, B and A x B effects
+Uniformlog-oddsmodels
+M': FullA, B andA x B effects
+M2: LinearA, B andA x B effects
+M3: LinearA and B, and nullA x B effects
+M4: LinearA, and null B and A x B effects
+M'5: Null A, B and A x B effects
+
+<-----Page 9----->withOrderedCategories
+Cross-Classifications
+
+157
+
+an A x B interactioneffect;forM3 and M', the slope of the A effectis the same in each
+categoryof B sincetheA x B interaction
+effectis null in thesemodels;etc.These modelscan
+be used,as in theusual analysisof covariance,to testwhethertheA x B interactionis null,
+whetherthe B effectis null,etc.
+None of the log-oddsmodels in Table 5 are equivalentto any of the models applied to
+thesedata by Whittakerand Aitkin(1978), exceptforthe parallel log-oddsmodel withnull
+whichis, in turn,equivalentto the model thatstatesthatVariable C is statistically
+effects,
+independentofthejoint variable(A, B). The log-oddsmodelsin Table 5 are easy to interpret
+and are particularly
+well-suitedforthe analysisof manykindsof contingency
+tables. They
+are also more parsimoniousthan the correspondingmodels consideredby Whittakerand
+Aitkin.
+The modelsthatwereapplied by theseauthorsto thedata in Table 2 do not take account
+of the factthatthe categoriesof the responsevariable in thistable are ordered.When this
+orderingis taken into account, the models consideredby Whittakerand Aitkin can be
+replaced in this case by the log-odds models introducedhere, and greaterparsimonyis
+obtained.
+Furtherexaminationof Table 2 would lead some researchersto considerthe possibility
+thatentriesin the last row of the table (i.e. littersize of 11,TreatmentB) may be aberrant,
+and so we have includedin the bottompart of Table 5 a summaryof the resultsobtained
+whenTable 2, modifiedby thedeletionof the last row,is analysed.The difference
+between
+thechi square value obtainedfor,say,theparallellog-oddsmodel (withfulleffects)applied
+value obtainedwiththe modifiedTable 2 can be used to
+to Table 2 and the corresponding
+fromthose
+test whetherthe entriesin the last row of Table 2 are significantly
+different
+expectedunderthe model,withthe assumptionthatthe model holds trueforthe modified
+table. Using the likelihood-ratio
+chi square values,we obtain a difference
+of 6.76 (i.e. 10.57
+- 3.81) with 9 - 8 = 1 df. For some different
+but relatedresults,using models that are
+different
+fromthose introducedhere,see McCullagh's 1979 paper presentedat Manilla. A
+testbased on thedifference
+in thechi squarevalue obtainedwithTable 2 and thecorresponding value obtainedwiththe modifiedTable 2 would not have the usual level of statistical
+ifthedeletionof the last rowin Table 2 was data-based.The assessmentof this
+significance
+difference
+shouldtake accountof whateverprocedurewas used in determining
+the modified
+formof Table 2.
+Some researchers,
+in examiningTable 2, may also wishto considerlog-oddsmodels that
+are moregeneralthantheparallellog-oddsmodel (15) [viz.models in whichthe interaction
+effects4ikC,4jBkC and A4BC maybe introducedinto(15)]; and we shallcommentbrieflyon this
+now.
+The variousparallellog-oddsmodelsin Table 5 could be comparedwiththecorresponding
+modelsobtainedwhentherelated4 interaction
+effectsare insertedintothemodel in orderto
+see whethertheinclusionoftheadditionalinteraction
+effects
+mightlead to a realimprovement
+in the fitof the model to the data. This can be done, in part,by comparingthe chi square
+values presentedin Table 5 forthese models withthe values presentedby Whittakerand
+Aitkin(1978) forthecorresponding
+These comparmodelsthatincludetheadditonaleffects.
+isonsindicatethatthe additionaleffectsdo not providea real improvement
+in fit.
+There are a greatmanylog-linearmodels forthe frequenciesin a multiwaycontingency
+table.In manysituationsin whichthe categoriesof the responsevariableare ordered,it will
+be sufficientto consider only those models in which the A interactioneffectsbetween
+variablesand theresponsevariableare linearwithrespectto thecategoriesofthe
+explanatory
+responsevariable,and thosemodels in whichthe main effectA forthe responsevariableis
+also linear [see (13) and (14)]. These models are simplythe parallel and uniformlog-odds
+models.
+Withthe approach introducedhere,the analysisof the contingencytable could begin in
+
+<-----Page 10----->158
+
+Biometrics,March 1983
+
+some cases withtheparallellog-oddsmodel withthefulleffectsof theexplanatoryvariables
+[see (12)], whilein othercases it could beginwitha moreparsimoniousmodel. For example,
+in theanalysisof Table 1,we could beginwiththenull log-oddsmodelsdiscussedin ?3; and
+in theanalysisof Table 2, we could begin,as withtheusual sequenceof modelstestedin the
+analysisof covariance,by consideringin turn,say, Models M2, M3, . . ., in Table 5. If the
+parallellog-oddsmodelwiththefulleffectsoftheexplanatoryvariablesdoes notfitthedata,
+of
+we would thenconsiderthe moregenerallog-oddsmodels obtainedby the introduction
+we could
+additional4 interactioneffectsinto Model (15) as indicatedearlier.Alternatively,
+beginwithan analysisof themoregenerallog-oddsmodels,and thendeterminewhetherthe
+modelsthusobtainedcan be replacedby themoreparsimoniousparallelor uniformlog-odds
+models.The moregenerallog-oddsmodelswill be equivalentto log-linearmodelsin which
+theAinteraction
+effects[see (1) and (10)] betweentheexplanatoryvariablesand theresponse
+variableare notlinearwithrespectto thecategoriesoftheresponsevariable.Even withthese
+moregenerallog-linearmodels,it maystillbe illuminating
+to interpret
+themin termsof logodds models pertainingto adjacent categoriesof the responsevariable.All of thesemodels
+can be analysedusinggeneralcomputerprogramsforlog-linearmodels (Haberman, 1974a,
+1974b;Baker and Nelder, 1978).
+Beforeclosingthissection,we notethat,ifthegeneralcomputerprogramGLIM (Release
+3) (Baker and Nelder, 1978) is applied to analysethe modelsconsideredin thispaper,there
+are small discrepanciesbetweenthe generalizedPearson chi square values obtained with
+GLIM and the corresponding
+goodness-of-fit
+chi square values presentedin Tables 4 and 5.
+In thispaper, the Pearson goodness-of-fit
+chi square values were obtained withthe usual
+formula[viz. the sum of the (observed-fitted)2/fitted],
+and these values are essentiallythe
+same as those obtainedby computingthe sum of the squared residuals(withthe residuals
+obtained fromProgramDISPLAY of GLIM 3); but they are slightlydifferent
+fromthe
+generalizedPearson chi square values (computed in Program FITMOD of GLIM 3).
+Althoughthe GLIM 3 Manual (Baker and Nelder, 1978,p. 6) statesthat the generalized
+Pearsonchi square is the sum of squares of the standardizedresiduals,thisstatementis not,
+strictly
+speaking,correct(see ProgramFITMOD of GLIM 3).
+5. The ConditionalDistribution
+of the Response Variable
+When the conditionaldistribution
+of a polytomousresponsevariable is consideredat each
+joint categoryof the explanatoryvariables(withthe fulleffectsof the explanatoryvariables
+at each joint
+included),in the uniformlog-oddsmodel the usual multinomialdistribution
+categoryis replaced by a distributionhaving a single parameter,namely,the truncated
+and the parallellog-oddsmodel introducessome additionalparamegeometricdistribution,
+ters.For theresponsevariablesin Tables 1 and 2, we foundthattheuniformand parallellogoddsmodelsfitthesedata well.We shallnowcommentfurther
+on theconditionaldistribution
+of theresponsevariablein Table 2.
+To describethisconditionaldistribution,
+Koch, Tolleyand Freeman(KTF) (1976) proposed
+the binomialmodel,wherethe parameterP is the probabilitythata givenmouse will die.
+They notedthatthismodel did not satisfactorily
+characterizethedata, but theynevertheless
+used the parameterdefinedby the model to analyse these data. In this model the usual
+multinomial
+distribution
+fortheresponsevariableis replacedby a distribution
+havinga single
+and in theuniformlog-oddsmodelitis replacedby a different
+distribution
+parameter,
+having
+a singleparameter,namely,the truncatedgeometric.Since thereare 10 joint categoriesfor
+theexplanatoryvariablesin Table 2, each of thesemodelscan be testedwith10 df.For the
+KTF model,thelikelihoodratiochi square value is 31.59; whereasforthe uniformlog-odds
+model,the correspondingvalue is 11.71. The improvementin fitis dramatic.Additional
+improvement
+in fitcan be obtainedby applyingtheuniformlog-oddsmodel to themodified
+Table 2; the likelihood-ratio
+chi square values thusobtainedis 6.67,with9 df.
+
+<-----Page 11----->withOrderedCategories
+Cross-Classifications
+
+159
+
+Whittaker
+and Aitkin(1978) notedthatthefitoftheKTF binomialmodelcan be improved
+somewhatbyusinginsteadthePoissonor negativebinomial,and Paul (1979) obtainedfurther
+with a restrictedbeta-binomial.The lattermodel introducesan additional
+improvement
+in fit,whereastheotherthreemodelsand theuniform
+parameterto obtaintheimprovement
+log-oddsmodeldo not.The uniformlog-oddsmodel fitsthedata muchbetterthantheKTF
+binomialmodel,thePoissonmodel,and thenegativebinomialmodel;and it also fitsthedata
+in fitwithouttheneed
+beta-binomial,achievingthisimprovement
+betterthanthe restricted
+chi square
+beta-binomial,thelikelihood-ratio
+foran additionalparameter.For therestricted
+value forthe uniformlog-oddsmodel is
+value is 12.93with9 df,whereasthe corresponding
+11.71with10 df. In additionto the advantagesof the uniformlog-oddsmodel notedabove,
+of thismodel also adds to itsattractiveness.
+thesimplicity
+beta-binomialare compared
+Whentheestimatedexpectedfrequenciesundertherestricted
+we
+the
+ratio
+chi
+square value of 12.93with
+withtheobservedfrequencies, obtain
+likelihood
+9 df,whereasPaul obtained9.29 by comparingthe likelihoodestimatedunderthe restricted
+beta-binomial.Althoughthelatter
+beta-binomialwiththatestimatedundertheunrestricted
+modelis saturatedin thiscase, Paul notedthatit actuallydid not fitthefullset of data, and
+thatthiscomplicationaffectedthe soundnessof his approach. It may also be worthnoting
+effectand treatmenteffectis testedin Paul's model
+thatthe interactionbetweenlitter-size
+with(I - 1)(J - 1) df (4 df in thiscase), whereastheA x B interactioneffectin Model M2
+or M2 of Table 5 is tested.as in the usual analysisof covariance,withJ - 1 df (1 df in this
+case).
+ACKNOWLEDGEMENTS
+
+This researchwas supportedin part by Research ContractNo. SOC 76-80389 fromthe
+Divisionof the Social Sciencesof the National Science Foundation.For helpfulcomments,
+theauthoris indebtedto J.Whittaker,
+S. Haberman,P. McCullagh and D. Wallace.
+RESUME
+en
+d'unevariablereponsequalitative
+(dichotomique
+ou polytomique)
+Pouranalyserla dependance
+d'uneou de plusieurs
+variablesqualitatives
+des modeleslog-lineaires
+pourles
+fonction
+exploratoires,
+de la
+sontcompares
+auxmodeleslog-lineaires
+(odds),quandlescategories
+pourlesrapports
+frequences
+sontordonnees
+etquandcellede chaquevariableexploratoire
+ou non.
+variablereponse
+sontordonnees
+correspondant
+les rapports
+(ou leurlogarithme)
+expriment
+Les modeleslog-lineaires
+pourles rapports
+en fonction
+de facteurs
+(ou additifs).
+de reponseadjacentes
+appropries
+multiplicatifs
+a descategories
+le 'modeleuniforme
+le 'modele
+le 'modelenulllog-rapports',
+Ces modelescomprennent
+log-rapports',
+et d'autresmodeleslog-lineaire
+desrapports.
+Avecces modeles,
+la dependance
+paralklelog-rapports',
+de la variablereponse(aveccategories
+a cellede
+ordonnees)
+peutetreanalyseed'unefaconidentique
+des
+ou a celled'analyses
+de varianceet de covariance.
+L'application
+multiple,
+l'analysede regression
+des modeleslogaux rapports
+applications
+apporteun eclairagesurd'anciennes
+modeleslog-lineaires
+aux frequen6es
+dansdestablesde contingence
+a categories
+ordonnees.
+lineaires
+REFERENCES
+
+Aitkin,M. (1980). A noteon the selectionof log-linearmodels.Biometrics
+36, 173-178.
+A. C. (1980). A noteon thegeneralizedinformation
+Atkinson,
+criterion
+forchoiceofa model.Biometrika
+67, 413-418.
+Baker,R. J.and Nelder,J.(1978). The GLIM System.Release 3. Oxford:NumericalAlgorithms
+Group.
+Berkson,J. (1968). Applicationof minimumlogitx2estimateto a problemof Grizzle witha notation
+on theproblemof "no interaction".
+Biometrics
+24, 75-96.
+Berkson,J. (1972). Minimumdiscrimination
+information,
+"no interaction"problemand the logistic
+function.Biometrics
+28, 443-468.
+Darroch,J. N. (1962). Interactionsin multi-factor
+contingency
+tables.Journalof theRoyal Statistical
+Society,SeriesB 25, 179-188.
+Fienberg,S. E. (1977). The Analysisof Cross-Classified
+CategoricalData. Cambridge,Massachusetts:
+MIT Press.
+
+<-----Page 12----->160
+
+Biometrics,March 1983
+
+Goodman, L. A. (1963). On Plackett'stestfor contingencytable interactions.Journalof the Royal
+StatisticalSociety,SeriesB 25, 179-188.
+in contingency
+Goodman,L. A. (1964). Simple methodsforanalysingthree-factor
+interactions
+tables.
+JournaloftheAmericanStatisticalAssociation59, 319-352.
+Goodman, L. A. (1970). The multivariateanalysis of qualitativedata: Interactionsamong multiple
+classifications.
+JournaloftheAmericanStatisticalAssociation65, 226-256.
+tables:Stepwiseproceduresand
+Goodman,L. A. (1971). The analysisof multidimensional
+contingency
+directestimationmethodsforbuildingmodelsformultipleclassifications.
+Technometrics
+13, 33-61.
+Goodman, L. A. (1979). Simple models forthe analysisof associationin cross-classifications
+having
+orderedcategories.JournaloftheAmericanStatisticalAssociation74, 537-552.
+Goodman, L. A. (1981a). Association models and canonical correlationin the analysis of crossclassifications
+havingorderedcategories.JournaloftheAmericanStatistical
+Association76,320-334.
+Goodman, L. A. (1981b). Three elementaryviews of log-linearmodels for the analysis of crossclassifications
+havingorderedcategories.In SociologicalMethodology1981,S. Leinhardt(ed.). San
+Francisco:Jossey-Bass.
+Grizzle,J. E., Starmer,C. F. and Koch, G. G. (1969). Analysisof categoricaldata by linearmodels.
+Biometrics
+25, 480-504.
+Haberman,S. J.(1974a). Log-linearmodelsforfrequencytableswithorderedclassifications.
+Biometrics
+30, 589-600.
+Haberman,S. J. (1974b). TheAnalysisofFrequencyData. Chicago: Universityof Chicago Press.
+Kastenbaum,M. A. and Lamphiear,D. E. (1959). Calculationof chi-squareto calculatethe no threefactorinteraction
+hypothesis.Biometrics
+15, 107-115.
+Koch, G. G., Tolley,D. and Freeman,J. L. (1976). An applicationof the clumpedbinomialmodel to
+theanalysisof clusteredattributedata. Biometrics
+32, 337-354.
+Ku, H. H. and Kuilback,S. (1968). Interactionin multidimensional
+contingency
+tables-an information
+theoreticapproach.JournalofResearchoftheNationalBureauof StandardsB 72, 159-199.
+McCullagh,P. (1980). Regressionmodelsforordinaldata. JournaloftheRoyal StatisticalSociety,Series
+B 42, 109-142.
+Paul, S. R. (1979). A clumpedbeta-binomialforthe analysisof clusteredattributedata. Biometrics
+35,
+821-824.
+Plackett,R. L. (1962). A note on interactionin contingencytables. Journalof the Royal Statistical
+Society,SeriesB 24, 162-166.
+to plottingCp in multipleregression.Biometrika64, 1-8.
+Sp0tvoll,E. (1977). Alternatives
+J.and Aitkin,M. (1978). A flexiblestrategy
+forfitting
+Whittaker,
+complexlog-linearmodels.Biometrics
+34, 487-495.
+in mentalhospitals.BritishJournalofSocial and ClinicalPsychology
+Wing,J.K. (1962). Institutionalism
+1, 38-51.
+Yule, G. U. and Kendall,M. G. (1950). An Introduction
+to theTheoryofStatistics(14thed.). New York:
+Hafner.
+ReceivedJune1979;revisedOctober1979 and November1981
+
+

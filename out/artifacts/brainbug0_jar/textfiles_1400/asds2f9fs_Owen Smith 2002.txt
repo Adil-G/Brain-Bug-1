@@ -1,0 +1,1334 @@
+<-----Page 0----->A Comparison of U.S. and European
+University-Industry Relations in
+the Life Sciences
+Jason Owen-Smith • Massimo Riccaboni • Fabio Pammolli • Walter W. Powell
+509 CERAS Building, Stanford University, Stanford, California 94305-3084
+University of Siena, EPRIS, Via Banchi di Sotto 55, Siena 53100, Italy
+University of Florence, DSA, Faculty of Economics, Via Montebello 7, Florence 50123, Italy
+509 CERAS Building, Stanford University, Stanford, California 94305-3084
+jdos@stanford.edu • mriccaboni@unisi.it • pammolli@cln.it • woodyp@stanford.edu
+
+W
+
+e draw on diverse data sets to compare the institutional organization of upstream life
+science research across the United States and Europe. Understanding cross-national
+differences in the organization of innovative labor in the life sciences requires attention to
+the structure and evolution of biomedical networks involving public research organizations
+(universities, government laboratories, nonproﬁt research institutes, and research hospitals),
+science-based biotechnology ﬁrms, and multinational pharmaceutical corporations. We use
+network visualization methods and correspondence analyses to demonstrate that innovative research in biomedicine has its origins in regional clusters in the United States and in
+European nations. But the scientiﬁc and organizational composition of these regions varies
+in consequential ways. In the United States, public research organizations and small ﬁrms
+conduct R&D across multiple therapeutic areas and stages of the development process. Ties
+within and across these regions link small ﬁrms and diverse public institutions, contributing
+to the development of a robust national network. In contrast, the European story is one of
+regional specialization with a less diverse group of public research organizations working
+in a smaller number of therapeutic areas. European institutes develop local connections to
+small ﬁrms working on similar scientiﬁc problems, while cross-national linkages of European regional clusters typically involve large pharmaceutical corporations. We show that the
+roles of large and small ﬁrms differ in the United States and Europe, arguing that the greater
+heterogeneity of the U.S. system is based on much closer integration of basic science and
+clinical development.
+(University-Industry Relations; National Innovation Systems; R&D Networks; Spatial Clustering;
+Network Visualization)
+
+1.
+
+Introduction
+
+Universities in the United States and Europe are often
+compared with respect to their divergent levels of
+involvement in the private economy. The U.S. university system, with its mix of both public and private institutions, has long played a signiﬁcant role
+Management Science © 2002 INFORMS
+Vol. 48, No. 1, January 2002 pp. 24–43
+
+in conducting research that contributes to technological development and industrial performance (Geiger
+1988, Rosenberg and Nelson 1994). Historically, this
+“knowledge plus” orientation, in which high-quality
+public and academic research tends to be driven
+by “joint goals of understanding and use” (Stokes
+0025-1909/02/4801/0024$5.00
+1526-5501 electronic ISSN
+
+<-----Page 1----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+1997, p. 15) was contrasted to the European scene,
+where universities were believed to contribute more
+to knowledge for its own sake and to the preservation
+of distinctive national cultures (Ben-David 1977).
+Over the past decade, the development of a number
+of key science and technology-based industries—most
+notably information and communication technologies, and biotechnology—has helped spark economic
+growth. The United States has broad commercial leadership in a number of these new areas, and commentators suggest that U.S. universities and research
+institutes played a signiﬁcant role in this process
+(Mowery and Nelson 1999, Mowery et al. 2001).
+The diverse interfaces between U.S. research universities and the private sector have been widely documented (Link 1999, Mowery 1999). Patenting by
+U.S. universities increased nearly sevenfold over the
+period 1976–1998 (Owen-Smith 2000) and licensing
+revenues from the sale of intellectual property have
+grown briskly as well. The science-based start-up ﬁrm
+has been the cornerstone of the commercial ﬁeld of
+biotechnology, with university researchers playing a
+signiﬁcant role as founders, consultants, and members
+of scientiﬁc advisory boards.
+In contrast, industry-university relations in Europe
+have lagged behind, in part because of legal prohibitions in some countries against faculty collaboration with commercial entities and cultural predispositions against academic involvement with commerce.
+Since the late 1980s, however, European attention has
+shifted to technology policy and academic technology
+transfer (Howells and McKinlay 1999). In a climate
+of strong anxiety about European Union competitiveness in science-based industries, programs developed
+following the Single European Act of 19871 encourage
+matches between universities and ﬁrms, placing particular emphasis on quick delivery of tangible commercial results (Peterson and Sharp 1998).
+Strong contrasts exist between European and U.S.
+research infrastructures, however. Consider, as an
+illustration, differences in university organization and
+1
+The Single European Act provided, for the ﬁrst time, a legal basis
+for European R&D programs (framework programs) developed
+by the European Commission to complement national programs
+and funds.
+
+Management Science/Vol. 48, No. 1, January 2002
+
+governance between the United States and Germany.
+The U.S. system is highly decentralized. Even public
+universities rely on diverse funding sources, including state and national governments, foundations and
+corporate supporters, tuition revenues, and alumni
+gifts. Private universities, especially elite ones, are
+also supported by generous endowments. Financing is considerably more centralized within European
+nations, and this centralization entails more hierarchical control. Faculty members in the United States
+have much more research independence at early
+career stages, and academic scientists frequently
+move between universities in an effort to better their
+labor market position. In France and elsewhere on the
+continent, there is much less autonomy and mobility
+for younger scientists (Gittelman 2000). In addition,
+blurring boundaries between basic and goal-oriented
+research and increased competition for research support and funding enable greater mixing of disciplines
+in the United States (Galambos and Sturchio 1998,
+Morange 1998). In Germany, a number of the highly
+prestigious Max Planck institutes are organized hierarchically around a single ﬁeld, such as biochemistry,
+genetics, or immunology. Elite research institutes in
+the United States, such as Cold Spring Harbor, Salk,
+or Scripps, routinely bring together faculty from multiple disciplines.
+Against this background, we undertake a broad
+comparison of linkages between research universities,
+public research institutes and the private sector in the
+ﬁeld of the life sciences and analyze how differences
+in the pattern of these relationships have shaped the
+development of biotechnology in the United States
+and Europe. The explosion of knowledge in molecular biology and genetics has generated a wide range
+of new medical opportunities. Because the relevant
+scientiﬁc knowledge and organizational skills are
+broadly dispersed, no single organization has been
+able to internally master and control all the competencies required to develop a new medicine (Powell
+et al. 1996, Pammolli et al. 2000, Orsenigo et al.
+2000). Biomedicine, then, is characterized by extensive
+reliance on collaboration among many parties, including universities, research institutes, new biotechnology ﬁrms, and mature pharmaceutical and chemical
+corporations (Arora and Gambardella 1994, Lerner
+25
+
+<-----Page 2----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+and Merges 1998, Stuart et al. 1999, Arora et al. 2000).
+These varied combinations of organizations afford us
+the opportunity to analyze cross-national differences
+in the roles these diverse organizations play in the
+process by which biomedical research moves from
+academic laboratories into clinical development.
+In §2, we sketch the institutional terrains in Europe
+and the United States that have shaped the division
+of labor in biomedical innovation. The research systems in the United States and Europe are organized
+in qualitatively different ways, hence any comparison must be sensitive to variation on multiple dimensions. We use the methods of correspondence analysis and large-scale network analysis to capture these
+systemic differences. Methods and data sources are
+discussed in §3. In §4, we present the comparative
+analyses, beginning with relational data on collaborative R&D projects. We look at R&D projects that were
+originated by public research organizations (PRO),2
+and subsequently developed by an array of different types of organizations. The distribution shows
+U.S.-European variation, as well as numerous crossnational linkages. To better understand these linkages,
+we examine the position of countries in an international network of collaborative R&D projects. We then
+view these national patterns more closely through an
+assessment of patent co-assignment relationships. We
+ﬁnd, again, strong national-level patterns. We analyze these national-level characteristics by looking at
+the focus of R&D at leading research organizations
+in Europe and the United States, matching patenting activity with therapeutic categories. These analyses point out the heterogeneity of the U.S. system,
+on both scientiﬁc and organizational dimensions. We
+examine this heterogeneity by mapping the evolution
+of interorganizational ties in the United States at the
+regional level. We conclude our analyses with a ﬁnegrained view of the Boston area, one of the leading
+centers for biotechnology in the United States.
+We assess the implications of our analyses in §5,
+stressing the twin importance of integrative capacity (i.e., the ability to move back and forth from
+2
+We deﬁne PRO as any government research laboratory, public
+or private university, or nonproﬁt or public research hospital or
+institute.
+
+26
+
+basic research to clinical development) and relational
+capability (i.e., the ability to collaborate with diverse
+kinds of organizations). We conclude by noting that
+while many analyses of the biomedical systems in
+the United States and Europe highlight differences
+in ﬁnancial and labor markets and note key policy
+differences (for a review, see Gambardella 2000), we
+stress fundamental variation in the organization of the
+upstream R&D process.
+
+2.
+
+Trajectories of Development in
+the United States and Europe
+
+The canonical explanation for differences in the rate
+of development of U.S. and European biomedicine
+is straightforward, emphasizing ﬁrst-mover advantage in the growth of small, research-intensive U.S.
+biotechnology ﬁrms. Along with the biotech boom,
+emphasis has been placed on the evolution of
+supporting institutions—ranging from federal policy
+initiatives (e.g., the 1980 Bayh-Dole Act) to the availability of venture capital, intellectual property (IP)
+law ﬁrms, and university technology transfer. We
+think this story is accurate, but incomplete. We focus,
+in contrast, on the upstream division of innovative
+labor. We highlight the importance of the underlying
+science and the diversity of organizations involved
+in R&D activities. Using data on public-private R&D
+relationships, we demonstrate that there are very different constellations of players in R&D networks in
+Europe and the United States, and that these participants are engaged in different kinds of research and
+clinical activities. The contrasting stories are signiﬁcant because our argument suggests that while legal
+and ﬁnancial reforms and the availability of venture
+capital are necessary, these elements alone may not be
+sufﬁcient to generate dense linkages between public
+research organizations and industry.
+To foreshadow our argument, the United States
+is characterized by relationships between U.S. public research organizations and ﬁrms located in dense
+regional clusters that span therapeutic areas, cross
+multiple stages of the development process, and
+involve diverse collaborators. In contrast, European
+innovative networks are characterized by sparser,
+more specialized relationships among a more limited
+Management Science/Vol. 48, No. 1, January 2002
+
+<-----Page 3----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+set of organizational participants located in national
+clusters. Both U.S. and European networks are geographically clustered, then, but in quite different fashions. From these disparate starting points, European
+and U.S. innovative networks branch out in divergent
+ways.
+The science underlying biotechnology was developed in university and government laboratories.
+The leading centers of research in the new molecular biology were dispersed widely throughout
+advanced industrial nations.3 Initial technological
+breakthroughs—most notably Herbert Boyer and
+Stanley Cohen’s discovery of recombinant DNA
+methods and George Köhler and Cesar Milstein’s cell
+fusion technology to create monoclonal antibodies—
+occurred in Californian and British universities. But
+from the outset, U.S. universities and academic scientists actively worked to help create the biotechnology industry and reap rewards from their involvement (Liebeskind et al. 1996, Zucker et al. 1997,
+Mowery et al. 2001). Consequently, small sciencebased ﬁrms were ﬁrst located in close proximity
+to key universities and research institutes. In time,
+established pharmaceutical companies (EPCs) were
+also attracted to the ﬁeld, initially collaborating with
+biotech ﬁrms in research partnerships and providing a set of downstream skills that were lacking in
+the R&D-intensive startups. Eventually, the considerable promise of biotechnology led nearly every EPC
+to develop, with varying degrees of success, both
+in-house capacity in the new science and a wide
+portfolio of alliances with small biotech ﬁrms (Arora
+and Gambardella 1990, Gambardella 1995, Henderson
+et al. 1999).
+The early development of dedicated biotech ﬁrms
+(DBFs) created an initial advantage for the United
+States in biotechnology, as close contact between DBFs
+and universities became commonplace by the mid1980s. Important differences in the nature and level of
+support for academic life science research have also
+3
+
+A survey of high impact publications in molecular biology
+and genetics between 1988 and 1992 lists the Institute Chemie
+Biologique in Strasbourg, the MRC lab in Cambridge, UK, the Institute Pasteur in Paris, and the Karolinska Institute in Stockholm
+among the most proliﬁc research centers. See Science Watch,
+July/August 1993, Vol. 4, No. 7, Institute for Scientiﬁc Information.
+
+Management Science/Vol. 48, No. 1, January 2002
+
+played a key role in shaping the comparative advantage of the U.S. system (Gambardella et al. 2000).4
+The structure of the research system and the strategies
+pursued by funding agencies are crucially important.
+In the United States, substantial R&D monies have
+been administered through the National Institutes
+of Health (NIH), which has supported signiﬁcant
+interaction between the producers of fundamental
+biological knowledge and those involved in clinical
+research and drug development at public research
+centers and universities. Moreover, the U.S. biomedical research system is characterized by numerous
+alternative sources of support, with selection mechanisms that complement the NIH and act according to
+different principles (Stokes 1997). These varied funding sources permit diversity to be explored.
+In Europe, funding has tended to be administered at the national level, with strongly differentiated approaches apparent across countries. European
+funding patterns may have hindered the development
+of a critical mass, especially in smaller countries. In
+many cases, resources have either been spread among
+a large number of “small” laboratories, or they have
+been excessively concentrated in the one or two centers of excellence. Support coming from the various
+European-wide programs has only partially changed
+the situation. In addition, research funds are much
+less likely to support integration between basic science and clinical development.
+European biomedical research has also been considerably less integrated with teaching. The relevance
+of the research-teaching nexus in fostering highquality scientiﬁc research and integrating academic
+and industrial science should not be understated. In
+particular, the diffusion of molecular biology into general training in many European countries is a relatively recent phenomenon. As compared to the United
+States, molecular biology research has tended to be
+conﬁned to highly specialized university and research
+institute laboratories (Morange 1998). Particularly
+in Continental Europe, policies have been targeted
+mainly to creating speciﬁc organizational devices to
+4
+Pavitt (2000) estimates that the resources devoted to academic
+research in the life sciences in the United States are 50% larger than
+in Europe.
+
+27
+
+<-----Page 4----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+manage technology transfer, such as science and technology parks. These intermediary institutions may
+even increase the distance between universities and
+industry by introducing an additional layer to the
+relationship. We argue that these institutional differences in funding, and the relationships among
+research, clinical work, and teaching, shape the structure of university-industry R&D networks in the
+United States and Europe.
+Partly as a consequence of the institutional differences sketched above, the founding of new biotechnology companies in Europe was more difﬁcult. Rates
+of formation of start-ups are strongly correlated with
+the strength of university and public research institutes in the underlying science (Zucker et al. 1997). In
+the absence of small local ﬁrms, the large European
+companies turned to small American partners to tap
+new competencies as they struggled to catch up.
+Given the head start and faster rates of technological development in the United States, European
+start-ups may have been pre-empted by American
+ﬁrms. Moreover, the more dominant large European
+pharmaceutical ﬁrms have had a pronounced effect
+on the development of European R&D networks, as
+these organizations serve a “clearing-house” function
+for the development of more specialized innovations
+from national research clusters.
+
+3.
+
+Data and Methods
+
+Analyzing cross-national differences in research funding, organization, and practice, as well as differential
+integration across R&D, clinical activity, and teaching is most effectively accomplished with methods
+that visually represent these patterns of relationships.
+We are less interested in the attributes of individual research organizations and much more concerned
+with the linkages that structure innovation systems.
+Hence we utilize methods that capture these relational
+features graphically. We use correspondence analysis and graph-drawing techniques to examine key
+characteristics of life science knowledge networks.
+Correspondence analysis is an analytical technique
+for studying the canonical correlations between two
+(or more) sets of categorical variables.5 We perform
+5
+
+For illustration, see Greenacre (1984, 1993).
+
+28
+
+correspondence analyses to visually represent correlations among therapeutic patent classiﬁcations and
+public research organization assignees in a common
+two-dimensional space.
+We adopt a general analytical technique based on
+the theory of random ﬁelds (Ising 1925, Guyon 1994)
+to graphically display collaborative networks at the
+national, cross-national, and organizational level.6
+Speciﬁcally, we applied the Fruchterman-Reingold
+(FR) algorithm (1991) to simulate our network of
+collaborations as a system of interacting particles
+with repelling forces u v x = c12 /dxu  xv  between
+every pair of nodes u v ∈ V , and additional attracting forces u v x = dxu  xv 2 /c1 , which are in place
+only between connected nodes, where dxu  xv  is the
+Euclidean distance of locations xu and xv of nodes
+u
+
+and v, respectively. The parameter c1 is set to c2 A/n,
+where A is the desired layout area, n is the number
+of nodes, and c2 is an experimentally chosen constant.
+The FR algorithm aims to minimize the force on each
+node, which is equivalent to minimizing the energy,
+U , of the overall random ﬁeld:
+
+
+au v x − u v x if nodes u and v are
+connected
+Uu v x =
+
+
+u v x
+otherwise
+More precisely, the FR algorithm is designed to ﬁnd
+a stable conﬁguration corresponding to a local minimum. To prevent the algorithm from resting in suboptimal local outcomes and to improve the ﬁt of the
+ﬁnal conﬁguration, we run the algorithm with several
+randomly chosen initial layouts. At the end, the drawings we present to illustrate our argument capture not
+only the pattern and density of collaborative activity, but also are a meaningful indicator of the extent
+to which such collaborations create actual clusters of
+tightly connected partners.
+6
+
+The theory of random ﬁelds provides a uniﬁed theoretical framework to cope with large systems of interacting agents in the natural and social sciences. The reader interested in the relationship between the theory of random ﬁeld and graph-drawing techniques is referred to Brandes and Wagner (1997), Guyon (1994), and
+Winkler (1995). A software package for large network analysis is
+available online at http://vlado.fmf.uni-lj.si/pub/networks/pajek.
+Pajek has been used to analyze multiple types of large networks
+(Batagelj and Mrvar 2000, Albert et al. 2000).
+
+Management Science/Vol. 48, No. 1, January 2002
+
+<-----Page 5----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+We draw on several complementary data sets to
+analyze European and U.S. research organizationindustry innovation networks for the period spanning
+1988–1999. Two patent data sets and two research
+collaboration data sets form the core of our analyses. The databases, referred to in the tables and ﬁgures as “U.S. Biomedicine,” developed by Powell and
+Kenneth Koput and by Owen-Smith, focus primarily on the United States. In their examination of the
+role research universities play in the commercial ﬁeld
+of the life sciences, they ﬁnd 1,026 linkages between
+public research organizations and dedicated biotech
+ﬁrms over the 12-year period. For each relationship,
+data are available on the purpose of the afﬁliation, its
+duration, and the identities of the participants. These
+relationships represent formal contractual ties established between ﬁrms or through the auspices of the
+United States Patent and Trademark Ofﬁce. The larger
+database from which these relationships are extracted
+focuses on dedicated biotechnology ﬁrms (Powell and
+Koput) and Research One (R1) universities as designated by the Carnegie Foundation classiﬁcation system (Owen-Smith 2000). Both databases have been
+used extensively in previous research (Powell et al.
+1996, Powell et al. 1999, Owen-Smith 2000, 2001).7
+The biotech database covers independently operated, proﬁt-seeking entities involved in human therapeutic and diagnostic applications of biotechnology.8
+The sample includes 482 ﬁrms, 180 of which exist in
+all years over the period 1988–1999. There were 229
+entrants during the period, and 91 exits overall. The
+7
+
+For detail on the Powell-Koput database, see Powell et al. (1996,
+pp. 124–129) and Powell et al. (1999, pp. 136–140). For detail on
+the Owen-Smith database, see Owen-Smith (2000, pp. 59–66 and
+76–81).
+8
+These data focus on dedicated human biotechnology ﬁrms. Companies involved in veterinary and agricultural biotech, which draw
+on different scientiﬁc capabilities and operate in a much different regulatory climate, are omitted. We also exclude companies
+that are wholly owned subsidiaries of pharmaceutical and chemical corporations. We do, however, include biotech companies that
+have minority or majority investments in them by other ﬁrms, so
+long as the company is independently traded on the stock market. Our rationale for excluding both biotech subsidiaries and large
+diversiﬁed corporations is that the former do not make decisions
+autonomously and biotechnology may represent only a small portion of the latter’s activities.
+
+Management Science/Vol. 48, No. 1, January 2002
+
+database, like the industry, is largely centered in the
+United States, although in recent years there has been
+signiﬁcant expansion in Europe. In 1999, 80% of the
+companies were located in the United States, whereas
+10% made their homes in Europe. The U.S. university
+database focuses on the role that research-intensive
+campuses have played in biotechnology through the
+speciﬁc lens of patent co-assignment. Using a data
+set coded from bibliographic information drawn from
+patents assigned to 89 R1 universities from 1976–1998,
+we identiﬁed 181 co-assigned pharmaceutical patents
+that were jointly owned by R1 universities and dedicated biotech ﬁrms or non-university research institutes and hospitals.9
+Pammolli and Riccaboni have developed two comprehensive data sets with extensive coverage of
+Europe and the United States. The Pharmaceutical
+Industry Database (referred to as PHID) developed
+at the University of Siena covers 4,358 collaborative
+R&D projects among industrial and nonindustrial
+sources.10 For each R&D project, the PHID database
+distinguishes the organization that originated a new
+pharmacologically active compound from the organization(s) that licensed that patent for further
+development. In addition to this originator-developer
+distinction, each project is classiﬁed according to
+the Anatomic Therapeutic Classiﬁcation (ATC), which
+identiﬁes pharmacological actions and biological
+targets.11
+9
+To accomplish this we use a recent Ofﬁce of Technology Assessment and Forecasting crosswalk between United States Patent
+Ofﬁce subject area classiﬁcations and three-digit Standard Industrial Classiﬁcation product codes. Patent co-assignment represents
+shared ownership of intellectual property and, as such, indicates a
+particularly close and potentially consequential form of interorganizational collaboration. Co-assignment limits each partner’s ability
+to unilaterally appropriate rents from intellectual property. Thus, it
+is not a relationship that organizations (especially for-proﬁt organizations) enter into lightly. Co-assignment is common in cases where
+patents have multiple inventors who are employed by different
+organizations.
+10
+
+For further details about the PHID, see Riccaboni (2000, pp. 9–11
+and 31–33).
+
+11
+
+The ATC classiﬁcation has been developed and maintained since
+1971 by the European Pharmaceutical Marketing Research Association. The three-digit ATC designation is a widely accepted standard
+for classifying pharmaceutical products and is used by anti-trust
+associations around the globe.
+
+29
+
+<-----Page 6----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+The second database, referred to in the tables as
+“Patents,” draws on 8,031 patents for therapeutically
+useful compounds or processes issued by major world
+patent ofﬁces (United States, United Kingdom, Germany, France, Japan, European, and the Patent Cooperation Treaty legal ofﬁce) and assigned to the 98 most
+proliﬁc nonindustrial research organizations worldwide.12 These 98 institutions represent more than 70%
+of all nonindustrial patents in this sample. Thus, there
+is a natural cutoff point at 98, as the remainder of
+the distribution is very widely dispersed across hundreds of organizations. These patents were also coded
+according to the same pharmacological classiﬁcation
+used for R&D projects.
+Taken together, these four data sources permit us
+to develop a comprehensive and novel view of patent
+co-assignment and collaborative networks involving
+European and U.S. biotechnology ﬁrms, pharmaceutical corporations, and public research organizations.
+Our data are broad in scope and involve thousands of
+relationships among multiple types of organizations,
+enabling us to map qualitative differences in publicprivate R&D networks in the life sciences.
+
+4.
+
+Analyses: Cross-National
+Networks and Organizational
+Competencies in R&D
+
+We begin by presenting data on R&D projects generated by PROs and developed collaboratively with
+12
+
+Information on the patents is found in Patent Fast Alert, published
+by Current Drugs, Ltd., London, U.K.
+Table 1
+
+other organizations.13 We distinguish the roles of
+originators and developers, with the former responsible for the underlying basic science, focusing on
+the early stages of target identiﬁcation/validation
+and drug discovery, and the latter handling downstream stages of R&D and subsequent manufacture
+and/or marketing. We identify originators as the
+institution that started the R&D project and, typically, held the relevant patent. Note that a variety of
+organizations—PROs, DBFs, and EPCs—perform the
+roles of developing, producing, and commercializing
+new biomedical products.
+As Table 1 indicates, the bulk of the collaborative
+projects occurs within the United States, while a much
+smaller number are carried out in Europe. We are
+somewhat less interested in the scale of activity than
+in what kind of organizations are involved. In the
+United States, dedicated biotech ﬁrms do the lion’s
+share of the development work (nearly 55%) on PROoriginated innovations. When a U.S. PRO turns to a
+European partner, the large multinational corporation
+is the dominant option. In Europe, there are real differences in collaboration within and across nations. In
+local within-country collaborations, European PROs
+turn to DBFs and other PROs. But when collaboration occurs across European countries, the EPCs again
+become the dominant partner. When European PROs
+reach across the Atlantic, U.S. DBFs are the primary
+developers. The picture that emerges is one of very
+13
+
+In this article we focus only on the PROs as originators, and
+do not examine cases where DBFs and EPCs are sources of new
+research opportunities or cases where PROs were developers for
+PRO originators.
+
+Developers for Public Research Organization–Originated R&D Projects
+Type of Developer
+
+Euro PRO –> Euro Partnertotal
+Euro PRO –> Euro Partnerw/in country
+Euro PRO –> Euro Partneracross country
+Euro PRO –> U.S. Partner
+U.S PRO –> Euro Partner
+U.S PRO –> U.S. Partner
+n by developer
+
+EPC
+
+DBF
+
+PRO
+
+n by pair type
+
+239%
+139%
+487%
+226%
+662%
+176%
+1,170
+
+429%
+466%
+337%
+494%
+259%
+544%
+2,078
+
+332%
+395%
+176%
+280%
+71%
+280%
+1,110
+
+669
+476
+193
+243
+719
+2727
+4358
+
+Source. PHID.
+
+30
+
+Management Science/Vol. 48, No. 1, January 2002
+
+<-----Page 7----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+different roles for small ﬁrms and large multinationals in Europe and the U.S. The large pharmaceuticals
+are responsible for the bulk of cross-national collaborations in Europe, while the small biotechs are the key
+developers in the U.S. We turn now to an in-depth
+examination of these organizational differences.
+Organizational Underpinnings
+Figure 1 represents the R&D projects data graphically,
+locating the position of nations in a global network.
+In this ﬁgure the spatial position of the nodes represents the relative centrality of individual nations
+in the international R&D project network. The size
+of the nodes corresponds to the number of biomedical patents held by PROs in each nation. Thus,
+node size reﬂects relative differences in the stock of
+patented biomedical knowledge held by PROs in each
+nation, and indicates the volume of innovations generated by each national research system. The numbers
+
+Figure 1
+
+associated with the lines are counts of the number of cross-national R&D agreements. For example, the close connection between the United States
+and the United Kingdom represents 441 individual
+R&D project ties between PROs and commercial entities. Figure 1 portrays several key characteristics of
+the international biomedical R&D projects network,
+reﬂecting relative national positions in terms of both
+stocks and international ﬂows of knowledge.
+Note the centrality and size of the American node.
+The large and diverse public research system in the
+United States dominates global patenting and is central in the cross-national project network. This centrality is reﬂected in the spatial location of the node
+(a result of Pajek’s clustering algorithm), in multiple
+connections to otherwise isolated European nations
+(e.g., the Netherlands, Spain, Belgium, and Denmark),
+and in high volume cross-national ties. Note that each
+international link involving the United States rep-
+
+Cross-National Network of R&D Projects Involving PROs and Commercial Entities, 1990–1999
+
+Source. PHID, Patents.
+
+Management Science/Vol. 48, No. 1, January 2002
+
+31
+
+<-----Page 8----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+resents a higher volume of individual R&D agreements than any of the cross-national ties between
+other nations. Figure 1 clearly implies that the public
+research organizations in the United States are structurally central and quantitatively dominant in crossnational R&D project networks.
+The nationally aggregated picture presented in
+Figure 1 does not tell the full story, however. R&D
+projects and patented biomedical innovations stem
+from the work of scientists and clinicians in organizations. Figure 2 examines the upstream collaborative
+network among individual PROs to analyze relationships among organizations whose patenting activity
+drives the size of the nodes in Figure 1. Figure 2 is
+based on patent co-assignment networks among public research organizations. Each node is a university,
+research institute, or hospital, and each tie represents
+two or more patent co-assignments between the organizations. As was the case with Figure 1, the relative spatial position of nodes is a reﬂection of the
+minimum-energy algorithm we employ using Pajek.
+Several features stand out in this image.
+Consider ﬁrst the regional and national clustering
+of organizations that we highlight with dashed and
+dotted lines. The tightly clustered French, German,
+and British research organizations on the left side of
+the ﬁgure and the densely connected U.S. regions in
+the image’s upper right-hand quadrant are the result
+of minimum-energy network drawing techniques and
+not of arbitrary placement. In addition to demonstrating the coherence of national and regional R&D
+systems, the patterns of patent co-assignment help
+explain the causes of the U.S. dominance apparent
+in Figure 1. Note the organizational homogeneity of
+the French and German national clusters, which do
+not include hospitals and have no identiﬁed universities.14 The United Kingdom has a somewhat higher
+degree of organizational diversity, reﬂected by the
+presence of both government and nonproﬁt research
+and funding agencies. Contrast these relatively isolated and homogeneous national clusters with the
+large and densely interconnected Boston region in the
+14
+
+Scientists at the CNRS or Max Plancks may well have university laboratories, but the government institute is identiﬁed as their
+primary afﬁliation on the patents.
+
+32
+
+upper quadrant of the ﬁgure. Boston is composed of
+tight, repeated interconnections among a diverse set
+of PROs. Elite universities (Harvard, MIT), research
+institutes (the Dana-Farber Cancer Center), and hospitals (Brigham and Women’s and Massachusetts General) play central roles in innovative collaborations
+both within Boston and across U.S. regions.
+Closely knit regional networks such as those
+found in Boston help account for the global centrality of American PROs. But connections across
+U.S. regions (note, for instance, the ties between
+Harvard, Stanford, and the UC system, connections
+from Dana-Farber to the University of Chicago, and
+from Brigham and Women’s Hospital to Duke University) and co-assignment ties linking geographically dispersed universities to the National Institutes
+of Health illustrate a public research system that
+also reaches across regions and organizational forms.
+Recall that these relationships represent patent coassignments, a particularly close form of R&D collaboration. We argue that these systemic cross-national
+variations in the organization of early-stage research
+collaborations explain national differences in biomedical commercialization above and beyond variations
+in policies or later-stage technology transfer infrastructures. Consequently, we expect the structural
+clustering of European nations and U.S. regions, and
+the consolidating effect of inter-regional ties in the
+U.S., to result from characteristics of the science
+underlying these patent co-assignment networks. To
+consider this assertion, we turn to correspondence
+analyses of the speciﬁc therapeutic areas covered by
+public research institute patents in the United States
+and Europe. As we use the term here, a therapeutic
+class is one of 102 speciﬁc disease areas on which a
+patented innovation focuses. Thus we can distinguish
+both the scientiﬁc content and the speciﬁc target of
+patented research in the United States and Europe.
+The Organizational Division of Scientiﬁc Labor
+Figures 3 and 4 display the outputs from correspondence analyses relating U.S. and European
+public research organizations and the therapeutic
+classes in which they patent. Correspondence analysis is applied here to capture substantial differences
+Management Science/Vol. 48, No. 1, January 2002
+
+<-----Page 9----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+Figure 2
+
+Organizational Level Patent Co-assignment Network for PROs, 1990–1999
+
+Source. PHID, Patents.
+
+Management Science/Vol. 48, No. 1, January 2002
+
+33
+
+<-----Page 10----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+Figure 3
+
+Correspondence Analysis: Co-location of Proliﬁc European Patentors and Therapeutic Classes, 1990–1999
+
+Source. Patents.
+∗
+The percentages represent the proportion of interinstitutional variance in technological proﬁle accounted for by the x and y axes.
+
+between leading U.S. and European research institutions in terms of scientiﬁc specialization.15 As an
+output, correspondence analysis provides a graphical
+representation in a chi-squared metric such that institutions with proﬁles close to the average are plotted
+near the origin, while more specialized proﬁles are
+plotted on the periphery. In Figures 3 and 4, the boldfaced labels represent the most proliﬁc PROs in terms
+15
+
+Correspondence analysis allows us to deal simultaneously with
+organizational and scientiﬁc proﬁles of the U.S. and European public research systems. For readers not familiar with dual scaling techniques, it may be worthwhile to notice that correspondence analysis
+is essentially a variant of principle component analysis tailored to
+categorical rather than continuous data (Hill 1974, Greenacre and
+Hastie 1987, p. 437). As with principle component analysis, correspondence analysis does not provide cut-and-dried conclusions,
+instead it is an explanatory technique that offers a framework for
+interpretation (Greenacre 1993, p. 85).
+
+34
+
+of number of patents, while the lighter labels denote
+therapeutic macro-classes. Institutions and therapeutic categories play dual roles, weighting organizational proﬁles and rescaling the dimensions of the
+ﬁgures. Here again, the spatial relationships among
+PROs and therapeutic classes are meaningful representations of quantitative relationships. Interpoint
+distances are reﬂective of differences in institutional
+therapeutic proﬁles. For example, if a given institution
+holds the same number of patents for each therapeutic
+category, then it will be centrally located. In contrast,
+an institution specialized in one class will appear on
+the periphery of the correspondence map.16
+16
+
+To allow the same interpretation for therapeutic classes in the
+space deﬁned by research organizations, we rescaled organization scores as suggested in Carroll et al. (1986). As a result,
+the plots in Figures 3 and 4 that report both institutions and
+
+Management Science/Vol. 48, No. 1, January 2002
+
+<-----Page 11----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+Figure 4
+
+Correspondence Analysis: Co-location of Proliﬁc U.S. Patentors and Therapeutic Classes, 1990–1999
+
+Source. Patents.
+∗
+The percentages represent the proportion of interinstitutional variance in technological proﬁle accounted for by the x and y axes.
+
+Figures 3 and 4 demonstrate that while research
+is proceeding on substantively similar topics across
+the continents, the division of organizational labor
+that produces it varies greatly. Note the big differences in the types of core actors. In the European case (Figure 3) universities are underrepresented. Instead, research institutes such as France’s
+Institute Pasteur and Germany’s Max Planck and
+Max Delbruck centers play important roles. This centrality is not surprising, given the preeminent role
+of these institutes in the history of molecular biology (Morange 1998). In contrast, Figure 4 reprises
+Figure 2, showing that the core actors in the U.S.
+innovation system are much more organizationally
+therapeutic categories in rescaled standard coordinates are symmetric
+(Greenacre 1993).
+
+Management Science/Vol. 48, No. 1, January 2002
+
+diverse. Note the centrality of the U.S. government
+(the National Institutes of Health complex), Johns
+Hopkins University, and the University of California
+System. But also observe the key presence of elite
+research institutes such as Scripps and Salk, major
+research hospitals and medical schools (Brigham and
+Women’s, Massachusetts General, and Baylor College
+of Medicine), as well as other top research universities
+(MIT, Stanford, Pennsylvania, Duke, and Rockefeller).
+The clear implication is that the universe of central
+public research organizations is much more heterogeneous in the United States than in Europe.
+Observe the relative dispersion of therapeutic
+classes that appears in both Figures 3 and 4. For
+Europe, Figure 3 indicates a fairly dispersed set
+of therapeutic classes, suggesting that the organizations associated with them are specialized innovators
+35
+
+<-----Page 12----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+whose patents focus on speciﬁc sets of therapies and
+biological targets. In contrast, therapeutic classes are
+not clearly separable in Figure 4, indicating that leading U.S. PROs hold patents that span multiple substantive areas. Finally, consider the co-location of therapeutic classes and public research organizations in
+the two ﬁgures. Figure 3 highlights not only specialization by organizational form, but also national
+specialization in areas of innovation. There are two
+apparent clusters of research institutes and therapeutic classes. The French institutes on the left-hand
+side of Figure 3 are located close to each other and
+co-located on a distinctive set of therapeutic classes
+relating primarily to infectious disease and AIDS
+research. German research institutes, at the right-hand
+side of the ﬁgure, are more involved with hereditary cardiovascular diseases. The more dispersed
+and diverse British institutions, e.g., Cancer Research
+Campaign (CRC), Medical Research Council (MRC),
+and the British Technology Group (BT), are somewhat broader in focus but still cluster in therapeutic
+classes largely related to cancer research. The greater
+breadth of the British research system, and its higher
+degree of diversity compared to France and Germany,
+may explain its more central role in international
+R&D networks (recall Figure 1). Figure 4, on the other
+hand, tells a quite different story. In the U.S. national
+innovation system, diverse public research institutions play the role of generalist innovators regardless of geographic location, though the prevalence
+of Boston- and California-based research organizations in the core suggests the importance of regional
+agglomeration.
+These differences in the organization of science
+are critical, suggesting that increases in scale alone
+will not alter the focus of R&D efforts. Organizations typically engage in local search, and thus continue to patent in those areas in which they are most
+skilled. In essence, then, we argue that one reason
+for greater integration across and within U.S. regions
+can be found in the scientiﬁc overlap among generalist patentors. Alterations in the scale of patenting
+activity without corresponding shifts in this division
+of labor will not make the European system resemble its American counterpart. Instead, we contend
+36
+
+that mere increases in scale might deepen specialization and heighten fragmentation among European
+national research systems.
+One key message of the correspondence analyses is
+that national specialization in Europe falls along scientiﬁc lines. In the United States, there is abundant
+regional clustering, but, unlike the European case,
+agglomeration is not driven by scientiﬁc specialization. Points of excellence develop in both the United
+States and European systems, but in Europe those
+clusters are limited to narrower medical specialties
+and speciﬁc nations. The U.S. has a very different proﬁle, characterized by diverse, substantively generalist research organizations connected both within and
+across key regional clusters. To further understanding of the organization of the U.S. national system,
+we turn to an analysis of its growth out of a few key
+regional clusters.
+A National System from Regional Origins
+We have stressed the dual role of universities and
+start-up ﬁrms in biotechnology’s origins. Here, we
+present data that conﬁrm the co-location of universities, research institutes, and dedicated biotech
+ﬁrms in a small number of geographic regions in
+the United States. In 1988, 73% of all collaborations
+between DBFs and PROs occurred in just six areas:
+Boston, the New York metropolitan area, Seattle, San
+Diego County, the Bay Area, and Texas (principally
+Houston).17 This phenomenon has been attributed to
+a range of intellectual, economic, and social factors.
+Knowledge spillovers are clearly important, especially
+when novel discoveries are involved. The availability of skilled labor and access to venture capital
+17
+
+Those six regions contain 14.6% (13) of the universities, 14.3% (24)
+of the research institutes and hospitals, and 27.2% (131) of the DBFs
+in our sample. Clearly the aggregate concentration of ties in clusters
+is a function of their concentration in a handful of organizations.
+We do not attempt to separate the effects of organizational and geographic concentration of ties here. Instead, we content ourselves
+with noting their importance for a full understanding of regional
+and industry development. We treat each of the clusters as coherent
+units for the purposes of cross-national comparison, but we recognize that each area is itself a complex system of relationships with
+a core and periphery and a distinctive evolutionary trajectory. The
+same factors that we expect to affect industry development at the
+national level also play out within regions.
+
+Management Science/Vol. 48, No. 1, January 2002
+
+<-----Page 13----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+are critical as well. Extensive social ties and reputational credibility catalyze further relationships, sustaining a process of increasing returns. But how do
+initial locational advantages and rapid technological
+development interact? In addition to institutional and
+labor market differences, we argue that the structure
+of scientiﬁc knowledge in biomedicine plays a key
+role.
+The ﬁeld of the life sciences has witnessed a rapid
+expansion of knowledge that has taken the form of
+a branching process, in which general hypotheses
+have given rise to subhypotheses, and in turn to further inquiries (Orsenigo et al. 2001). The structure
+of knowledge is hierarchical, highly cumulative, and,
+in the industry’s early years, difﬁcult to appropriate without close contact with cutting edge academic
+researchers. But discoveries that were considered revolutionary at the outset were soon incorporated into
+the standard toolkit of laboratory practice. As the
+skills became widely accessible and new transversal
+technologies (e.g., genomics, combinatorial chemistry,
+and high throughput screening) allowed for sophisticated production and screening of new molecular
+structures absent contact with established research
+centers, DBF dependence on prestigious university
+researchers declined, and the central importance of
+network connections to local partners waned.
+We seek to explain how the evolution of the science has affected the network of collaborative relationships. Several possibilities can be sketched, with
+different roles for various types of institutions. For
+example, universities and ﬁrms that were ﬁrst movers
+on the research frontier could continue their close ties
+as the research moved into clinical development. But
+as initial successes are achieved and publicized, many
+other participants are attracted to the ﬁeld, both in
+the United States and abroad. An alternative process
+could involve the initial entrants as the carriers of
+the ﬁeld, moving from co-localized relationships to
+more distant linkages with other ﬁrms and universities. This process might be driven by a production
+logic, in which diffusion occurs with movement from
+upstream R&D to downstream commercialization. A
+different trajectory would emphasize the catalyzing
+role of geographic centers, stressing the capacity of
+Management Science/Vol. 48, No. 1, January 2002
+
+initial entrants to identify new knowledge and relevant skills developed outside their regions. In this scenario, the most well-connected early entrants would
+be the most capable at accessing new ideas (Koput
+and Powell 2001). Combined with the overwhelming
+initial importance of regional clusters, this latter pattern implies that we should observe a process of delocalization of PRO-DBF ties over time. This delocalization would be facilitated by the generalist research
+focus of core organizations highlighted in Figure 4.
+We begin by mapping alterations in the level
+of geographic clustering of PRO-DBF relationships
+in the United States. The biotechnology industry’s
+early development in the United States depended
+on regional concentrations of co-located universities, ﬁrms, research organizations, and key resource
+providers such as law and venture capital. Thus the
+earliest linkages between biotech ﬁrms and public
+research organizations should be dominated by relationships in which both partners are co-located in
+the same geographic region. If this sector evolves as
+established “local” players expand their set of potential partners and as new technologies become standard practice, then the proportion of ties with regionally co-located or “local” partners should decline over
+time.
+Figure 5 presents both graphical and quantitative
+evidence for the process of industry evolution. The
+ﬁgure on the left represents 1988, on the right, 1998.
+The triangles represent the six most active regions
+where biotechnology originated, and their location on
+the pyramid reﬂects the volume of the interorganizational linkages that connect them to other areas.
+The size of the triangle reﬂects the number of ties
+within the region. Thus, Boston is both the most
+connected region internally and the most extensively
+linked externally.
+Note the aggregate decline in the percentage of
+local ties from a high of just over 40% in 1988 to a
+low of 8% in 1998. This decline occurs in the context
+of a rising volume of collaborations, the number of
+ties active in 1998 is more than double the number a
+decade before. The combination of an increasing number of collaborations and a decreasing proportion of
+local connections represents the declining importance
+of ties within the initial regional clusters. Figure 5
+37
+
+<-----Page 14----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+Figure 5
+
+(A) Interorganizational Linkages by Region in the United States, 1988 (B) Interorganizational Linkages by Region in the United States, 1998
+
+Source. U.S. Biomedicine.
+
+indicates that the growing volume of PRO-industry
+ties in U.S. biomedicine occurred in the context of
+a shift in the distribution of those ties, such that
+the importance of geographic propinquity decreased,
+while the prevalence of network linkages between
+organizations in different areas increased.
+As noted above, the sharp decline in local ties
+within established regions could, in the context of
+an aggregate increase in connections, result from
+three very different trajectories: (1) deepening ties
+across established regions (e.g., links between triangles in Figure 5); (2) connections from established
+regions to other areas of the nation (e.g., ties connecting nodes above the dashed lines to those below
+it); or (3) increasing linkages involving two partners located outside established regions. Figure 5
+shows that the second of these options describes the
+38
+
+bulk of changes in the regional distribution of ties
+as the U.S. national network expanded over a 10year period. While within-cluster and cross-cluster
+ties declined, and ties that do not involve established
+clusters showed only a slight increase, the proportion
+of linkages involving a partner in an established cluster and one in another region of the country more
+than doubled, accounting for about 54% of all connections by 1998.
+We contend that this important structural shift illuminates a dual process of network expansion that
+encompasses both increased scale and a shifting geographic distribution. In our view, this transformation is enabled by both the generalist scientiﬁc role
+played by elite PROs within established regional clusters (recall Figure 4) and by the integrative role of
+the National Institutes of Health (recall Figure 2).
+Management Science/Vol. 48, No. 1, January 2002
+
+<-----Page 15----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+Moreover, the regional clusters that gave birth to the
+U.S. national network may have already contained the
+seeds of this change.
+We turn to closer analysis of one U.S. regional
+“starting point” to examine this possibility. A persistent question we have entertained is whether the
+U.S. system is simply different and more diverse
+because of its larger scale. So we examine a single
+regional cluster at an early point in its development to
+ascertain whether organizational diversity and integration between research and the clinic were present
+from the founding of the ﬁeld. Consider Figure 6,
+which presents two views of interorganizational linkages involving the Boston region, the most prominent
+regional cluster apparent in Figures 2 and 5. Figure
+6A represents only linkages internal to Boston in 1988.
+These are the speciﬁc interorganizational ties represented by the size of the Boston node in Figure 5.
+Figure 6B highlights all ties involving at least one
+partner in the Boston area in the same year. In both
+Figure 6
+
+cases, the shape of nodes represents the type of organization. Triangles are universities, circles are DBFs,
+and squares are research institutes or hospitals. Node
+size is a function of network degree such that the
+largest nodes are the most connected. As with other
+Pajek representations, the location of nodes relative to
+each other is a function of the strength and pattern
+of ties among them. Figure 6B adds shading to the
+image to capture the geographic location of partners.
+Black nodes (of any shape) are located in the Boston
+metro area. Gray nodes are located in one of the other
+established regional clusters (Figure 5’s triangles), and
+white nodes are located in other areas of the country.
+In Figure 6A, the organizational diversity of the
+Boston area in 1988 is clear. Firms (e.g., Seragen,
+Genzyme, Cambridge Bio), universities (Tufts, Harvard, MIT, BU), research institutes (Dana-Farber), and
+hospitals (Brigham and Women’s, Massachusetts General) are connected to local partners. Nevertheless,
+that organizational diversity is apparent in a rela-
+
+(A) DBF Ties Internal to the Boston Region, 1988 (B) PRO–DBF Ties Internal and External to the Boston Region, 1988
+
+Source. U.S. Biomedicine.
+
+Management Science/Vol. 48, No. 1, January 2002
+
+39
+
+<-----Page 16----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+tively sparse network of connections that makes the
+Boston region look less clustered than our earlier analyses suggest. A key research institute and a hospital
+(Brigham and Women’s and Dana-Farber) are isolated
+from the central network corridor. Viewed through
+a Boston-only lens, the region appears composed of
+loosely connected clusters surrounding MIT and Harvard. Organizational heterogeneity was common in
+Boston in 1988, but the early density of the Boston network appears to be a function of organizations located
+in other areas of the nation.
+At a glance, Figure 6B looks more like a coherent regional network than Figure 6A. Three important clusters (surrounding Dana-Farber, Harvard, and
+MIT) are brought into closer connection by diverse
+organizations located outside of Boston. Consider the
+structural roles played by the UC system, Stanford,
+Centocor (a Philadelphia-based DBF), and the SloanKettering Cancer Institute (located in New York City).
+These four organizations add a coda to our story
+of organizational diversity. While Boston is internally diverse, the density of the region’s innovation networks is greatly increased by the inclusion
+of diverse organizations from other geographic locations. Figure 6B captures a single regional “starting
+point” and demonstrates that the diversity and density of Boston’s networks is a function of both local
+depth and ties that connect multiple regions. Note
+also the key role played by Boston DBFs in reaching out to PROs located in other areas of the country.
+Recall from Figure 5 that it is exactly this type of tie
+(indicated by connections from black nodes to white
+nodes in Fig. 6B) that promotes the expansion of the
+U.S. national system. Unpacking the structure of the
+PRO-DBF network in Boston at an early time provides
+two key insights into the development of the U.S.
+national systems documented in Figure 5. First, the
+seeds of that expansion were already present in one
+focal region as early as 1988. The lesson of Figure 6B
+is that ties to key organizations in other parts of the
+country helped make Boston a major regional starting
+point. Second, Figure 6B emphasizes the central role
+that small science-based ﬁrms played in connecting
+with other areas of the nation. A quick glance at the
+local Boston nodes (black) in the ﬁgure suggests that
+40
+
+it is DBFs such as T Cell Sciences that connect to geographically distant PROs rather than the elite PROs
+linking to distant ﬁrms.
+In essence, the dual process we highlight reveals
+that a national U.S. biomedical network grew from
+regionally clustered beginnings on the strength of
+overlapping scientiﬁc expertise, the critical integrative effect of the NIH, and the expansive role played
+by small ﬁrms. In the European case, the absence
+of strong scientiﬁc overlap (recall the national scientiﬁc specialization apparent in Figure 3), a single key upstream institution such as the NIH, or
+rapidly developing small ﬁrms mitigate against this
+type of network expansion. These critical differences,
+we argue, have several notable consequences. First
+the relative homogeneity of elite European PROs—
+few European universities and no European hospitals
+appear in either Figure 2 or Figure 3—suggests that
+in addition to scientiﬁc specialization, European networks will be less integrated across the development
+process than their U.S. counterparts, which include
+universities, hospitals, and research institutes. Second,
+the integrative role played by the U.S. National Institutes of Health occurs much further downstream in
+Europe, as large pharmaceutical companies undertake
+the bulk of cross-national European research collaborations (recall Table 1). Finally, there is a very different role for small science-based ﬁrms in the U.S.
+and European contexts. Where Figure 6 shows that as
+early as 1988 it was small ﬁrms in Boston that were
+linked to disparate and geographically diffuse PROs,
+Table 1 indicates that in Europe, small ﬁrms play
+a local role, deepening ties within scientiﬁcally specialized national clusters rather than reaching across
+them.
+
+5.
+
+Conclusions
+
+Our analyses of university-industry interfaces in the
+United States and Europe emphasize the importance
+of the division of innovative labor. We do not object to
+arguments that the United States’ ﬁrst-mover advantage was critical in establishing the trajectory of the
+ﬁeld. But we supplement this explanation by stressing the diversity of actors involved and the varied
+roles played by scientiﬁc specialists and generalists.
+Management Science/Vol. 48, No. 1, January 2002
+
+<-----Page 17----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+Without recognizing these elements in the context
+of an evolutionary trajectory shaped by distinct cultural and institutional contexts, European efforts to
+“catch up” to the United States by mirroring established policies and arrangements will likely be misguided. Central to the U.S. system are two key factors:
+relational and integrative capability. A wide diversity of U.S. organizations has established protocols in
+place for fostering research collaboration. Moreover,
+these alliances span organizations with different missions and serve to link basic research with clinical
+development.
+The institutional structure of biomedical research
+evolved quite differently in Europe and the
+United States. The diversity of the U.S. public research
+system, a highly mobile scientiﬁc labor force, and a
+host of regulatory and policy initiatives promoted
+widespread commercialization of academically originated research, largely through the founding of small
+biotechnology ﬁrms. In addition, the generalist technological role and integrative development proﬁles
+of U.S. public research organizations have capitalized
+on scientiﬁc developments in molecular biology that
+more closely link goal-oriented therapeutic research
+with fundamental biological investigation. European
+universities developed competencies in molecular biology less quickly than specialized research
+institutes. The disciplinary focus of these institutes,
+combined with the centralizing effects of national
+R&D funding infrastructures and regulatory contexts,
+serve to limit universities’ participation in commercially oriented R&D and concentrate R&D networks
+in specialized national clusters.
+We also observe qualitively different paths in the
+development of local centers of excellence in the
+United States and Europe. In the former case, generalist regional clusters developed around public research
+organizations that integrated innovation and development work. These clusters planted the seeds of
+accumulative advantage as the regions attracted talented researchers, high quality students, and increasing shares of R&D funding, in addition to for-proﬁt
+ﬁrms dedicated to the commercialization of new technologies. In Europe, national clusters of specialists
+may also have beneﬁtted from accumulative advantage in research funding and talent, but the funding sources were national rather than European, and
+Management Science/Vol. 48, No. 1, January 2002
+
+research priorities and a community of local specialist ﬁrms may have deepened already narrow competencies rather than enabling broad exploration.
+The role that European pharmaceutical corporations
+played as clearinghouses for innovations developed
+within these national clusters may have also mitigated
+against the broadening of regional scientiﬁc and organizational competencies.
+Finally, notable differences in the constellation of
+organizations able to capture and develop innovations aided in pushing U.S. and European industries in different evolutionary directions. We observe
+divergent roles played by public research organization originators, dedicated biotechnology ﬁrms,
+and large pharmaceutical companies that contribute
+to disparate industry outcomes in Europe and the
+United States. Our emphasis on the diversity of types
+of organizations and their multiple roles stands as a
+corrective to policy attempts to develop high volume
+collaborations in Europe through copying American
+policies. Our focus on the division of innovative labor
+implies that European efforts to adopt U.S. policies
+should be directed more at generating integration
+between basic research and clinical development and
+fostering extensive linkages among universities, small
+ﬁrms, and the heretofore dominant public institutes
+and large pharmaceutical companies.
+Acknowledgments
+
+This research was supported by grants from the Association for
+Institutional Research (Grants #99-129-0, 00-129-1, Jason OwenSmith, PI), the National Science Foundation (Grant #9710729,
+W. W. Powell & K. W. Koput, PIs, Grant #0097970, J. Owen-Smith
+and W. W. Powell, PIs), the Merck Foundation (EPRIS Project, F.
+Pammolli PI), the European Commission (Contract #SOE1-CT 981116, DG 12-SOLS: ESSY Project). We are grateful to audiences
+at Georgia Tech, Columbia University, the University of Gothenberg, the Centre de Sociologie des Organisations in Paris, the NPRNet Workshop in Paris, and the comparative workshop at Stanford’s IIS for useful feedback. We thank Ashish Arora, Paul David,
+Louis Galambos, Bronwyn Hall, Hannah Kettler, Georg Kruecken,
+Richard Nelson, Kenneth Pavitt, Scott Shane, Deepak Somaya, Ed
+Steinmueller, and Paula Stephan for their helpful comments. The
+paper was a fully collaborative effort, authors’ names are listed in
+chronological order.
+
+References
+
+Albert, R., H. Jeong, A. Barabasi. 2000. Error and attack tolerance
+in complex networks. Nature 406 378–382.
+
+41
+
+<-----Page 18----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+Arora, A., A. Fosfuri, A. Gambardella. 2001. Markets for Technology.
+MIT Press, Cambridge, MA.
+, A. Gambardella. 1990. Complementarity and external linkages: The strategies of large ﬁrms in biotechnology. J. Indust.
+Econom. 38 361–379.
+,
+. 1994. Explaining technological information and utilizing it: Scientiﬁc knowledge, capacity, and external linkages in
+biotechnology. J. Econom. Behavior Organ. 24 91–114.
+,
+, F. Pammolli, M. Riccaboni. 2000. The nature and the
+extent of the market for technology in biopharmaceuticals.
+International Conference on Technology Policy and Innovation: Economic and Historical Perspectives, Paris, France.
+Batagelj, V., A. Mrvar. 2000. Drawing genealogies. Connections 21
+47–57.
+Ben-David, J. 1977. Centers of Learning: Britain, France, Germany, and
+the United States. McGraw-Hill, New York.
+Brandes, U. D., D. Wagner. 1997. Random ﬁeld models for graph
+layout. Konstanzer Schriften in Mathematik und Informatik,
+Nr. 33, Universität Konstanz, Konstanz, Germany.
+Carroll, J. D., P. E. Green, C. M. Schaffer. 1986. Interpoint distance comparisons in correspondence analysis. J. Market Res.
+23 271–280.
+Fruchterman, T., E. Reingold. 1991. Graph drawing by forcedirected replacement. Software—Practice Exper. 21 1129–1164.
+Galambos, L., J. Sturchio. 1998. Pharmaceutical ﬁrms and the transition to biotechnology: A study in strategic innovation. Bus.
+Hist. Rev. LXXII 250–278.
+Gambardella, A. 1995. Science and Innovation. The U.S. Pharmaceutical Industry During the 1980s. Cambridge University Press,
+New York.
+, L. Orsenigo, F. Pammolli. 2000. Global competitiveness in
+pharmaceuticals: A European perspective. European Commission, Brussels, Belgium http://dg3.eudra.org/pharmacos/
+comdoc_doc.htm.
+Geiger, R., 1988. Research and Relevant Knowledge: American Research
+Universities since World War II. Oxford University Press,
+New York.
+Gittelman, M. 2000. Mapping national knowledge networks: Scientists, ﬁrms and institutions in biotechnology in the United
+States and France. Ph.D. dissertation, The Wharton School,
+University of Pennsylvania, Philadelphia, PA.
+Greenacre, M. J. 1984. Theory and Applications of Correspondence Analysis. Academic Press, London, U.K.
+. 1993. Correspondence Analysis in Practice. Academic Press, London, U.K.
+Guyon, X., 1994. Random Fields on a Network. Springer, Berlin,
+Germany.
+. 1993. Correspondence Analysis in Practice, Academic Press, New
+York.
+Henderson, R., L. Orsegnigo, G. Pisano. 1999. The pharmaceutical
+industry and the revolution in molecular biology. D. Mowery,
+R. R. Nelson, eds. Sources of Industrial Leadership. Cambridge
+University Press, New York, 267–3111.
+
+42
+
+Howells, J., McKinlay. 1999. Commercialization of university
+research in Europe. Report to the Advisory Council on Science
+and Technology, Ontario, Canada.
+Ising, E., 1925. Beitrag zur Theorie des Ferromagnetismus. Z. Physik
+31 235–258.
+Koput, K., W. W. Powell. 2001. Organizational growth and collaborative capacity: Science and strategy in a knowledge-intensive
+ﬁeld. Manuscript.
+Lerner, J., R. Merges. 1998. The control of technology alliances:
+An empirical analysis of the biotechnology industry. J. Indust.
+Econom. 46 125–156.
+Liebeskind, J., A. Oliver, L. Zucker, M. Brewer. 1996. Social networks, learning, and ﬂexibility: Sourcing scientiﬁc knowledge
+in new biotechnology ﬁrms. Organ. Sci. 7 428–443.
+Link, A. 1999. Public/private partnerships in the United States.
+Indust. Innov. 6 191–217.
+Morange, M. 1998. A History of Molecular Biology. Harvard University Press, Cambridge, MA.
+Mowery, D. 1999. America’s industrial resurgence? An overview.
+U.S. Industry in 2000: Studies in Competitive Performance.
+National Academy Press, Washington, D.C., 1–16.
+, R. R. Nelson, eds. 1999. Sources of Industrial Leadership. Studies of Seven Industries. Cambridge University Press,
+New York.
+,
+, B. N. Sampat, A. A. Ziedonis. 2001. The growth of
+patenting and licensing by U.S. universities: An assessment of
+the effects of the Bayh-Dole Act of 1980. Res. Policy 30 99–119.
+Orsenigo, L. 1989. The Emergence of Biotechnology. St Martin’s Press,
+New York.
+, F. Pammolli, M. Riccaboni. 2001. Technological change and
+network dynamics. Lessons from the pharmaceutical industry.
+Res. Policy 30 485–508.
+Owen-Smith, J. 2000. Public science, private science: The causes and
+consequences of patenting by research One universities. Ph.D.
+dissertation, University of Arizona, Tucson, AZ.
+. 2001. New arenas for university competition: Accumulative advantage in academic patenting. J. Croissant, ed. Degrees
+of Compromise: Industrial Interests and Academic Values. SUNY
+Press, New York.
+Pammolli, F., M. Riccaboni, L. Orsenigo. 2000. Variety and irreversibility in scientiﬁc and technological systems. A. Nicita,
+U. Pagano, eds. The Evolution of Economic Diversity. Routledge,
+London, U.K.
+Pavitt, K. 2000. Academic Research in Europe, SPRU Working paper,
+no. 43.
+Peterson, J., M. Sharp. 1998. Technology Policy in the European Union
+Macmillan, Basingstoke, U.K.
+Powell, W. W., K. W. Koput, L. Smith-Doerr. 1996. Interorganizational collaboration and the locus of innovation in biotechnology. Admin. Sci. Quart. 41 116–145.
+,
+, L. Smith-Doerr, J. Owen-Smith. 1999. Network position and ﬁrm performance: Organizational returns to collaboration in the biotechnology industry. S. Andrews, D. Knoke,
+
+Management Science/Vol. 48, No. 1, January 2002
+
+<-----Page 19----->OWEN-SMITH, RICCABONI, PAMMOLLI, AND POWELL
+U.S. and European University-Industry Relations in the Life Sciences
+
+eds. Research in the Sociology of Organizations. JAI Press, Greenwich, CT, 129–159.
+Riccaboni, M. 2000. Network evolution in drug discovery. Ph.D.
+dissertation, Sant’Anna School of Advanced Studies, Pisa,
+Italy.
+Rosenberg, N., R. R. Nelson. 1994. American universities and technical advance in industry Res. Policy 23 323–348.
+Stokes, D. E. 1997. Pasteur’s Quadrant: Basic Science and Technological
+Innovation. Brookings Institution Press, Washington D.C.
+
+Stuart, T. E., H. Hoang, R. C. Hybels, 1999. Interorganizational
+endorsements and the performance of entrepreneurial ventures. Admin. Sci. Quart. 44 315–349.
+Winkler, G. 1995. Image analysis, random ﬁelds and dynamic
+Monte Carlo models. Applications of Mathematics 27, Springer,
+Berlin, Germany.
+Zucker, L. G., M. R. Darby, M. B. Brewer. 1997. Intellectual human
+capital and the birth of U.S. biotechnology enterprises. Amer.
+Econom. Rev. 88 290–306.
+
+Accepted by David C. Mowery and Scott Shane; received December 2000. This paper was with the authors 9 months for 1 revision.
+
+Management Science/Vol. 48, No. 1, January 2002
+
+43
+
+

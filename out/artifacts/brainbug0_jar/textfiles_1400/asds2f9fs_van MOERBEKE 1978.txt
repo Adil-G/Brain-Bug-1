@@ -1,0 +1,3218 @@
+<-----Page 0----->AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+BY
+P I E R R E vA~r M O E R B E K E
+
+The Universityof Louvain, Louvain, Belgium(1)
+
+1. Introduction
+A gambler is to make one of two decisions: quitting or pursuing the game purely on
+the basis of present information. Both decisions are not equally favorable, but their efficiency depends on the unknown outcome of t h e game. A reward function measures this
+efficiency: the higher its value, the better the situation from t h e gambler's viewpoint.
+Hence he has to decide whether the future gain will outweigh the loss due to stopping or
+further unfavorable moves. We aim at studying the decision rules'or strategies yielding
+the best possible average gains.
+Such problems involve the time t and a position x, meaning the "state of affairs". We
+deal only with the case in which X moves according to a brownian motion. This is not w
+special a problem as it m a y seem; it is in fact typical and most of the problem studied
+to date either exhibit a brownian behavior, genuine or transformed, or can be so approximated by a suitable scaling, provided only that the number of trials is very large.
+The game is now specified by fixing the "reward function" g =g(x,: t) with the following
+meaning: if the gambler decides to quit a t time t when his state of affairs is x, ~his reward
+will be g(x, t). Contrariwise, if he decides to p l a y for a possibly random period of time ~,
+his average reward would be
+
+Eg (x+x~, t +~)
+where xt is the brownian motion starting at Xo= O. Notice t h a t (x + %,, t § s) is the customary space-time brownian motion starting at (x, t); it is the graph of the usual brownian
+motion.
+Of course, it is not permitted to the gambler to foresee the future. This is built in by
+allowing only "stopping times" T, b y which you will understand t h a t the event ~ < t de(!) Supported in part by National Science Foundation grant GP-36418 X.
+
+<-----Page 1----->112
+
+P I E R R E VAN M O E R B E K E
+
+ponds upon the brownian motion up to time t only and not upon what it does afterwards.
+This paper deals only with games whose playing time is bounded above by some T <
+(games with a finite horizon).
+The optimal reward ~(x, t) starting at time t and with a state of affairs x is now obtained b y maximizing
+
+Eg(x+x~,t+~)
+over all stopping time ~ ~<T - t .
+
+The optimal policy or strategy is the stopping time v
+
+achieving this maximum. This m a x i m u m is attained for some stopping time, provided g
+satisfies a growth condition, reminiscent of Tychonov's condition for the uniqueness of
+the solution to the heat equation. This optimal stopping time consists of stopping as soon
+as you hit the region where ~ = g . This region is called the stopping region, i.e. the region
+where no policy is better than just pulling out of the game. I n its complement, the socalled continuation region (where ~ > g), it pays to go on playing the game. The boundary
+
+x = s(t) separating these two regions is the optimal (stopping) boundary. The problem also
+has a potential theoretical version and a physical interpretation in terms of Stefan's icemelting problem. Proofs and additional information can be found in P. van Moerbeke
+[30]. Section 2 contains a succinct exposition of these basic facts.
+The purpose of this paper is to give a description of the optimal boundary for a class
+of rewards where a gambler loses one per unit time as long as he plays and is only rewarded at the horizon T with an amount h(y), if the brownian motion reaches the horizon at
+y. The highest expected reward of a gambler starting at (x, t) is obtained by maximizing
+- E (3; ~ < T - t) + E(h(x + xr-t); v = T - t),
+
+(1)
+
+over all stopping times T ~<T - t. The reward function g is somewhat disguised in this formulation, but from section 2.2 it will appear t h a t
+g= T-t
+
+t< T
+
+= h ( x ) >l O
+
+(2)
+
+t = T
+
+is the reward function corresponding to (1). Theorem 1 aims at giving a description of the
+continuation region for a compact final gain h(x), more precisely:
+THEOREM 1: Let
+
+g=T-t
+
+t<T
+
+=h(x) > 0
+
+t=T,-a<x<a
+
+=0
+
+t=T,
+
+Ixl>~a.
+
+Let h(x) be C 3 in [ - a , a], subjee~ to the lateral conditions (a/ax)h( +_a) = 0 and 89
+
+++a)
+
+<-----Page 2----->AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+
+= 1. Moreover assume that 89
+
+changes sign at most twice in [ - a , a] and 89
+
+113
+1
+
+at most a finite number o] times.
+
+Then the continuation region is a (simply) connected bounded region C, whose boundary x = s ( t ) has a continuous derivative (Ig[ < ~ ) except for one critical point too, the latter corresponds to the lowest level of the continuation region (see figure 1). Moreover, the
+number of zeros of g cannot exceed the number of zeros of -89
+
+It
+
++ 1.
+
+t=~
+= s(O
+
+t
+
+s~
+
+x
+
+F i g. 1
+
+The proof of this theorem which will be presented in section 3 goes through rather involved arguments. The main difficulty arises from a lack of monotonicity inherent to
+this problem, opposed to Stefan's ice-melting problem where the water-ice interface
+only moves in one d i r e c t i o n ; t h e relation of the optimization problem with a modified
+Stefan problem will be explained in sections 2.5 and 4.1.
+The final section will be devoted to the study of the boundary near the critical point
+Qo. This discussion aims at a number of heuristic arguments in favor of the fact that the
+boundary either exhibits a cusp at the critical point, or behaves flatter than
+~//--tr162 fort~t~r
+and not flatter than
+:1 ~ e )
+
+2(t2-tcc)10glogt_t~
+
+for any e > 0 and for t ~ t~.
+I wish to express my deep gratitude to my teacher, ProfesSor Henry P. McKean,
+who most generously guided my path throughout this work (and milch more). I am grateful
+to Professor Mark Kac for a number of fruitful conversations withregard to some crucial
+steps in this proof.
+8 - 742908 A c t a mathematica 132. Imprim6 le 18 Mars 1974
+
+<-----Page 3----->114
+
+PIERRE VAN MO~RBEKE
+
+2. Background
+2.1. The potential theory for the space-time brownian motion
+This potential theory was developed b y J. L. Doob [8]. The reader will find a short
+description of this theory in I t o - M c K e a n [15].
+A real-valued function ] defined on R ~ is called excessive for the space-time brownian
+motion in an open d o m a i n D of R ~, if
+(i) ] is b o u n d e d below;
+(if) E/(x +x~, t +~)</(x, t) for every stopping time ~ not exceeding the first exit time
+
+VDfrom D.
+(iii) E/(x+xrn, t + T , ) f ](x,t) for every sequence of stopping times ~,<~D such t h a t
+P ( ~ ~ 0)= 1.
+This definition is equivalent to another in which (ii) and (iii) are replaced b y
+(if') E/(x+xs^,~, t+sA VD)</(X, t) for every s>~O.
+(iii') E/(x+x,^,~, t + s h To) ~ ](x, t) when s r O.
+Note t h a t (iii') is superfluous if I is continuous. I n such a case, exeessivity is a local property, indeed, a continuous function which is bounded below is excessive as soon as
+E/(x+z~
+
+, t +~n) <-</(x, t)
+
+for all (x, t ) E D and large n, where Tn is the first exit time from the disc of radius 1/n centered at (x, t). (Blumenthal-Getoor [4], p. 93).
+Consider now functions b o u n d e d from below with at least two continuous derivatives
+in x and one in t. Assume
+Ejo
+
+Ox
+
+T h e n I t o ' s l e m m a tells you t h a t
+
+E/(x +
+where H=a]/~t+ 89
+
+x , , t + v) - l(x, t) = E J : H ( x + x,, t + s) d~
+
+(3)
+
+F o r a proof of this fact, see section 2.3.5 of "Stochastic
+
+I n t e g r a l s " b y H. P. M c K e a n [19]. F o r m u l a (3) gives an alternative characterization of
+excessivity for sufficiently differentiable functions: exeessivity in the domain D is the
+same as H<~0 for all (x, t) in D.
+A function / is called parabolic in a domain D c R ~ if
+(i) ] is excessive in D,
+(if) EI(x +x~ o, t +vv) =l(x, t),
+
+<-----Page 4----->AN
+
+OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+
+115
+
+where vv is the first exit time from any open set U with compact closure in D. Parabolic
+functions arc C ~176
+and enjoy the property
+
+St+ 1 S~I
+Conversely any function bounded from below satisfying this equation is automatically
+parabolic in view of (3).
+Finally a boundary point (x, t) will be called regular for an open region D if
+
+P(x+x~, t + s E D , s ~ O) =0.
+
+2.2. Definition and further characterizations of the optimal reward
+Throughout section 2, definition and lemmas will be stated for more general rewards
+than is actually needed in Theorem 1. Assume t h a t the reward g is bounded below, is
+C ~ in t < T and has limits g(x, T - )
+
+for t f T; a discontinuity at t = T is permitted, but
+
+g(x, T) itself is to be continuous. The notation
+h(x) = g(z, T ) - g ( z , T - )
+is often employed and h will be called t h e / i n a l gain. You m a y assume h(x) >~0; the motivation is that, if h(x) < 0 in an interval, it is more favorable to stop the game a little before
+hitting the final horizon t = T.
+Henceforth we impose upon g a growth condition, called the Tychonov condition. This
+condition will be useful in matters like the continuity of ~, the existence of an optimal
+strategy, etc., ... If the functions
+Sg Sg S~g S2g Sag
+g' St' dx' Sx ~' SxSt' Sx a
+and
+
+are bounded b y e~
+
+h, Sh S2h and sahSx' Sx 2
+Sx a
+when JxJ tends to ~ uniformly in a n y strip of finite depth [t, T],
+
+then g is said to satisfy the Tychonov condition.
+The optimal reward is the supremum
+sup Eg(z + x~, t + T) = O(x, t)
+over all stopping times ~ < T - t. The stopping regions S is defined as the set of points where
+quitting is best, i.e. where ~ =g. Its complement C is called the continuation region; this is
+
+<-----Page 5----->116
+
+PIERRE VAN MOERBEKE
+
+where it pays to play the game, i.e., where ~ > 9. The optimal boundary separates the two
+regions.
+As already observed by J. L. Snell [25] in the context of martingales, d can be regarded as the smallest excessive function exceeding g and the backwards induction used
+by several authors in the discrete case is adapted to the present case in the form
+~(z, t) = sup g,,(x, t)
+n
+
+where go=g and
+
+g,~(x, t) =
+
+E gn-l (X + xs, t+ s).
+
+sup
+O~s~T-t
+
+Moreover, from I t o ' s lemma,
+( 9 - g ) (x, t ) = sup [ E I T H (x+ x,, t + s - ) d s
+T~T--tL
+
+where
+
++ E(h(x + xr_t);t+ v = T) 1 ,
+
+(4)
+
+J
+
+Jo
+
+H---
+
+0
+
++
+
+1 02g
+
+2 ~x~
+
+t<T
+
+can be interpreted as the payoH-rate. From (4), it is obvious t h a t maximizing (1) is the
+same as maximizing
+
+Eg(x+x~, t +~)
+over all stopping times ~ < T - t, where g is given b y (2). Also as a consequence of (4) one
+never stops at a point where H > 0, as proceeding a little while will improve one's gain.
+
+2.3. Analytical characterizations of the op~'hnal reward
+We state here a few lemmas without proof, to be used in the sequel:
+LEMMA 1: (E. B. Dynkin [9]) ~ is continuous throughout and is parabolic in the con-
+
+tinuation region, i.e.
+(~+1~)~=0~
+
+in C.
+
+LEMMA 2: (H. M. Taylor [28]). Stopping at ~ =g is the best policy.
+LEMMA 3;, (J. A. B a t h e r [1]). At a boundary point (x, t)regular ]or the continuation
+
+region C,
+
+aj
+
+ag
+Ox ~x
+
+LEMMA 4: (Gcvrey [13]), Let u satis/y the equation
+
+~u +
+
+1 02u
+
+= H(x, t)
+
+<-----Page 6----->A N O P T I M A L S T O P P I N G P R O B L E M WITll L I N E A R R E W A R D
+
+117
+
+with continuous H in a region C with zero boundary data. Whenever its boundary is Lipschitz continuous, the derivative (Ou/~x) is continuous up to the boundary and its limit equals
+its value at the boundary.
+The next lemma will play an important role in the proof of Theorem 1.
+LEMMA 5: Let the optimal boundary x = s( t ) be continuously di]]erentiable ( l ~ l < ~ ) in
+
+an interval (to, tl); then in this interval,
+(a) (O/Ox) (~-g) and (~/Ot) (~-g) both are continuous across and they vanish at the bound-
+
+ary.
+(b) 1(0~/0x2) (~ - g ) i8 continuous in C up to the boundary and equals - H at the boundary.
+(c) (02/~xOt)(~-g) is continuous in C up to the boundary and equals 2H(s(t), t) g(t) at the
+
+boundary.
+(d) (02/Ot~)(~-g) (s(t), t) exists and equals -2H(s(t), t)$2(t) at a boundary point where
+~>0.
+
+Proo/. Thanks to Lemma 1, ~ - g is continuous everywhere and satisfies
+0
+
+1 0~
++ ~ ~x~) ( ~ - g) = - H in C with ( ~ - g) (s(t), t) = 0.
+
+(5)
+
+By assumption, s(t) is differentiable between to and t 1. Therefore, using Lemma 4,
+
+(O/Ox)(~-g) exists and is continuous up to the boundary and according to Lemma 3,
+O(~-9)(s(t),t)=O
+Ox
+
+to<t<t a
+
+(6)
+
+which is half of (a). Now (O/Ox) ( ~ - g) is continuous in (to, tl) and satisfies
+(0+1
+
+~z) 0 ~
+
+and, at the boundary
+
+OH
+
+~x ( ~ - g) (s(t), t) = O.
+
+According to Lemma 4 again, (~2/Ox~)(~-g) exists everywhere and is continuous up to the
+boundary. Since ~ satisfies the backward heat equation this automatically implies that
+
+(O/~t)(~-g) exists and is continuous up to t h e boundary. Differentiating (~-g)(s(t), t)
+with respect to t and taking into account (6) yields
+~ t ( ~ - g) (s(t), t) = 0
+which is the other half of (a).
+
+to < t < ti
+
+(7)
+
+<-----Page 7----->118
+
+P I E R R E VAN MOERBEKE
+
+From (7) it develops that
+1 a=(~
+g-- g),
+2
+
+a x~
+
+(s(t), t) = - H(s(t), t),
+
+to< t < t:
+
+(8)
+
+which establishes (b). Next observe that
+a
+u = 85- (~ - g)
+is continuous and satisfies
+au 1 a2u
+at- + 2 ~ - and, at the boundary,
+
+0H
+at in CN(t o,tz)
+
+u(s(t), t) = o.
+
+Again Lemma 4 applied to u leads to the continuity of ( ~ ] a x b t ) ( ~ - g ) up to the boundary.
+Its value at the boundary is given by differentiating ( a / a x ) ( ~ - g ) (s(t), t) with respect to t:
+82
+
+~(t) ~
+
+( ~ - g) (s(t), t) + ~
+
+82
+
+( ~ - g) (s(t), t) = o
+
+which combined with (8) completes the proof of point (e).
+Finally, as to (d), if g >0, then
+a
+fit (~- g) (s(t), t) = o
+implies
+
+0 = ~] (a(~,)(s(t+6),t+6)
+
+a(O-g)(s(t),t))
+at
+
+a(~ - g)
+
+_ s(t + 6) - s(t)
+6
+
+- -
+
+at
+
+a ( ~ - g)
+
+- -
+
+at
+
+(s(t), t + 6)
+
+s(t + 6) - s(t)
+
+~(~ - g)
+- (s(O, t + ~)
++
+
+(~(t + 6), t + 6)
+
+at
+
+o(~- g)
+- (s(t), t)
+Ot
+
+6
+
+Hence, by making 6 r 0,
+~ ( ~ - a)
+~t ~
+
+.., o ~ (~- g)
+= - s(~j ~ -
+
+(s(t), t) = - 2 ~(t) ~ H ( s ( t ) , t),
+
+using (c) in the last equality. This establishes (d).
+We are now in a position to state
+PROPOSlTIOI~ 1. A s s u m e the continuation region C = ( ~ > g ) to be bounded by one or
+more continuous curves x = s(t), which are once continuously dilferentiable, except possibly
+
+<-----Page 8----->AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+
+119
+
+/or a number o/isolated singular points (i.e. where s(t) does not exist or where J$(t)l = ~ ) .
+Then
+.lOg
+
+d(s(t), t)=
+
+,,
+
+d(x, t)= g(s(t), t)
+
+lim
+
+(10)
+
+(x, t)-->(s(t)0 t)
+
+Ox (S(t), t) =
+
+lim
+
+a-~g(x,t)=~g(s(t),t)
+
+(x. t)-~(s(t), t) a X
+
+where
+
+OX
+
+I 1< ~ .
+
+~(x, T) = g(x, T).
+
+(11)
+
+(12)
+
+Recall from section 2.2 t h a t H < 0 in the region ~--g.
+The boundary conditions (10) and (11) are called the "smooth fit" relations. The
+problem determined b y (9), (10), (11) and (12) constitutes a "free boundary problem".
+The converse of proposition 1 is also true; more precisely
+PROPOSITION 2. Let u be a Tychonov.type /unction defined in t <~T. Let C be an open
+
+set in that region with boundary curve x =s(t) which is di//erentiable, except possibly/or a
+finite number o/isolated points where ~ blows up. I / ( S l a t ) u + 89
+
+= 0 in C,
+
+u = g at (x, t) = (s(t), t),
+a u = a g at (x,t)=(s(t),t)
+ax Ox
+
+i/ [~l< c~,
+
+u(x, T)= g(x, T),
+u > g in C and u = g elsewhere,
+and
+
+H < 0 in Re\C,
+
+then u is actually ~ and s(t) the optimal stopping boundary.
+
+2.4. The integral equation for the optimal boundary
+For conversation's sake, let the continuation region be bounded on either side b y two
+curves x = si(t), i = 1, 2, with $~(t) continuous, bounded and s 1 <s~. Also ~ is assumed to have
+at least 4 derivatives in x between and up to s 1 and s2. Then from L e m m a 5 it develops t h a t
+the auxiliary function
+0
+v--~i(Y-g)
+satisfies the following free boundary problem
+
+<-----Page 9----->120
+
+PIERRE VAN MOERBEKE
+
+0v 1 0~v
+~t + 2 0x 2
+
+0H r
+~t (x, t) in C
+
+v(s,(t), t) = 0
+
+(14)
+
+0v
+
+O~x(s,(t), ~) = 2H(s,(t), t) g,(t)
+
+1 02h
+
+v(x, T) = - ~ Ox
+~ (x) - H(x, T-), S1 (T) ~ x <. s~ (T).
+
+and
+
+(13)
+
+(15)
+
+(16)
+
+Green's theorem applied to this boundary value problem yields a system of two integral
+equations in s t (t):
+
+fj
+
+H(s~(t),t)~(t)=
+
+-t
+
+p,<r-,> 0K
+
+~H
+
+dtJs,(T_,)-~x(S~(t),T-t; ~,T)~-~(~,T-'K)d~
+
++ f j - t OK
+~x(S~(t),T-t;s2(T-'K),'K)H(s2(T-'K),T-'K)h2(T-'K)d'K
+
+f
+
+-Jo
+
+r-t ~K
+~x ( S t ( t ) ' T - t ; s x ( T - ' K ) ' ' K ) H ( s l ( T ' T ) ' T - ' K ) s i ( T - ' K ) d ' c
+
+rs,(r) ~K
++ J~,(r) ffxx (s,(t), T - t ; ~, O) v(~, T) d~
+
+(17)
+
+where v(~, T) is given by (16).
+
+2.5. Relation to Stefan's ice melting problem
+A natural time-reversal shows that w(x, 7:)= -v(x, T - T ) and ai(T)--st(T-T) satisfy
+0w
+0T
+
+1 02w
+aH
+20x ~=-~-(x'T-v)
+
+in C
+
+w(at('K), "K) = 0
+
+Ow
+O~ (a~ ('K), "K)= 2H(a~ ('K), T - 7:) dt ('K)
+and
+
+w(x, O) = ~1 02h (X) -}- H(x, T-'K),
+
+O'I(0)<X<IT2(0).
+
+(18)
+
+This free boundary problem is at least formally Stefan's ice melting problem: w
+satisfies the heat equation with a possible heat in- or output, the temperature at the interface vanishes and the heat flux is proportional to the rate of melting (because H <0), with
+a variable heat-capacity; (89
+
+T-)) plays the role of the initial tempera-
+
+<-----Page 10----->AN OPTIMAL STOPPING PROBLEM ~
+
+LINEAR REWARD
+
+121
+
+ture. If you will visualize the interval 01(0 ) < x <a2(0) as filled with water at temperature
+
+w(x, 0) and ~ <~1(0) and x ~>~2(0) with ice at zero temperature, then the b o u n d a r y x =~I(T)
+is the curve described b y the interface between water and ice.
+
+2.6. A local theorem
+The optimal b o u n d a r y is continuously differentiable for a little while starting from the
+horizon. Such is the object of Proposition 3. This statement plays an essential role in
+Theorem 1. Its proof can be found in P. v a n Moerbeke [30].
+PROPOSITION 3. Let g be a C5(1) reward ]unction in t < T and let the ]inal gain satis/y
+
+the conditions
+(i) h(x) is positive and C a in xl < x < x 2 and vanishes Outside,
+
+Oh
+(ii) ~x (x~) = 0
+
+i = l, 2,
+
+1 02h
+(iii) ~ ~x2 (x~)= - H(x~, T - ) > 0 .
+
+Moreover let H < 0 in x ~ x 1 and x >tx~.
+Then the continuation regio n is bounded on either side by two continuously di//erentiable
+curves st(t), starting at s~(T)=xi, in a small time interval ( T - e , T], whose length depends
+only upon
+1-03h ( x , ) + O H
+T-)
+20x 3
+7x (x,
+M=max
+i=1.~
+H(x~, T - )
+
+(19)
+
+and upon the supnorm on D O/the/unctions
+OH OH 02H
+03h
+H , Ox' Ot ' OxOt and Ox--~,
+where
+
+D ={Xl-M(T-t
+
+) < x < x2+M(T-t),
+
+(20)
+t > 0}.
+
+3. Proof of Theorem 1
+We shall spell out the proof to Theorem 1, under the simplifying assumption t h a t
+
+h(x) is an even ]unction; then the continuation region is symmetric in x. The extension of
+the proof to the general case requires no major changes b u t rather clumsier notations.
+(1) a cn-functi0n g has bounded and continuous partials
+
+Or+sg
+oxrst s
+
+with r § 2s ~<n.
+
+<-----Page 11----->122
+
+P I E R R E V A N MOFLRBEKE
+
+Outline of the proof: from Proposition 3 we know that, starting from the finite horizon, g does not blow up for a little while. Extend the boundary down to a point t o where
+ceases to exist. If S(to)=0, you would have reached the bottom of C [see Fig. 1] and since
+h is even, the proof would be finished. Therefore the main point is to prove that, if s(to) > 0,
+then s(t) can be extended a bit below to in a continuously differentiable way. An argument
+involving Proposition 3 shows that this is so as soon as ]g] is bounded in (t0, T].
+Therefore all the effort of Theorem 1 is put into proving that ]~ ] is bounded in (t0, T].
+The proof of the latter is achieved through a sequence of lemmas, from 6 to 14. The reader
+familiar with Kae's [16] "principle of not feeling the curvature" knows that a brownian
+observer close enough to the boundary will feel it only as a straight line, to a first approximation. This idea is now adapted to the space-time brownian motion so that the boundary
+can actually be replaced by a tangent line near the point under consideration. The estimates are then performed in this simplified region.
+
+Remark: Theorem 1 proves the smoothness of the boundary in the half open interval
+(too, T]; it remains an open question to establish smoothness of s(t) as a curve at the critical point. I n section 4.2 we discuss the shape of the boundary near too.
+Theorem 1 refers to a linear reward in t < T, which is the easiest situation to handle.
+For general g, one expects a statement of the following nature: the boundary is differentiable except at a finite number of critical points, provided some conditions are imposed
+upon the level lines of H, as will transpire from Lemma 9. The present theorem can be
+generalized to the case where g is merely concave in x, below t = T, with a considerable
+loss of simplicity. Further extensions get more and more delicate and the answers are unsatisfactory.
+The lateral conditions for h at the points • a are essential to give the boundary a
+nice start at t = T. If (~/~x)h(+a)=0, but if 89
+
+would be different from 1, the
+
+boundary would get off the horizon approximately as a parabola x = ~ V T - t , whose opening ~ can be computed using the methods of [29] or [30]. If, however, (~/Ox)h(+a)<0
+and (9/~z)h(-a) > 0, then the boundary m a y behave in a much more singular way.
+
+L E ~ M A 6. Assume the condition8 o/ Theorem 1. Let the boundary x = • s(t) o / t h e continuation region be continuously di//erentiable in (to, T] and Tick a Toint x = s(t) on the boundary with
+
+to <
+
+t < T chosen so that $(t) > O. Then the/ollowing expansion is valid
+
+(~- g) (x, t + 8) =-~ ~ ( g - g) (x, t) + o (~=).
+Proo/. If a function /(t) is continuously differentiable on the real line and if the
+second derivative exists at a point t, then we have the following Taylor expansion:
+
+<-----Page 12----->AN OPTIMAL STOPPING PROBLEM "~rl;ii LINEAR REWARD
+
+/(t + r = / ( t ) + (~/(t) +
+
+123
+
+-~ 1" (t) + o ((~).
+
+L e m m a 5 affirms t h a t ~ - g and ( a / ~ t ) ( ~ - g ) ( x , t) vanish at the boundary; t h e y are continuous near the b o u n d a r y and (52]~ta)(6j-g) (s(t), t) exists whenever $ > 0 , whence
+
+(~- g)
+
+(d - g) + o (~)
+
+(x, t + t) = (~ - g) (x, t) + ~ ~t (d - g) (x, t) + ~ ~
+= ~ ~
+
+( g - a) + o (0').
+
+L E M M A 7. Let D be the rectangle - b < x < b, 0 < t < ~ .
+
+Let u be continuous i n D and
+
+satis/y
+~u
+~t
+u(x, 0) = r
+
+where r
+
+1 ~u .
+~n D
+20x ~
+
+< 0 / o r x < 0 and 4,(x) > 0 / o r x ~ O.
+
+u( - b , t) =~p~(t) < 0
+u(b, t) = ~p2(t) > 0
+with in[initely di//erentiable Y~I and y~ (c[. [igure 2).
+
+-b
+
+6<0
+
+~i < 0
+
+x = e(t)
+
+/
+
+6>0
+
+b
+
+~x
+
+lY2
+>0
+
+Fig. 2
+T h e n the set {u(x, t ) = 0 } is a continuqus curve x =~(t) with Q(0)=0, and - b < q ( t ) < b .
+Proo]. Since u is C% for almost all e > 0 , {u = e} does n o t contain points where
+((~/~x)u, (~/~t)u)=(O, 0) (A. B. B r o w n [6]). Hence { u = e } is a continuous arc in the (x, t)
+
+plane for almost all e. Choose two such
+e, e' < min (min Iv211, min lye21).
+There is a continuous are A~, where u = ~ (resp. ~4_~, where u = - s ' ) starting somewhere
+between - b and b, which inside Ix I < b extends as far as y o u like, b y choosing e (g) small
+enough. W e now prove t h a t a n y horizontal line t = t o cuts this curve ~4~ (resp. ,~_~,) in exactly
+one point. If t = t o would cut A~ in more t h a n one point, then perhaps, after a slight reehoos-
+
+<-----Page 13----->124
+
+PIERRE
+
+VAN
+
+MOERBEKE
+
+b
+
+e
+
+~
+
+b.-x
+v
+
+t = t~
+
+It
+
+Fig. 3
+ing of to, a piece of the arc ,,4~ would lie above an interval of the line t =to; see figure 3. But,
+because of the m a x i m u m principle, u = e along this interval. This contradicts the fact t h a t
+
+u(x, t), a solution of the heat equation, is analytic in x. Hence any horizontal line t = t o
+cuts A~ in exactly one point. Therefore A~ and ~4_~, can be represented by two continuous
+curves ~+(t):and e~.(t); they constitute part of the boundary of {u>e} and { u < - e ' } .
+Moreover, it is always possible to pick
+e,+,(t) >Q~(t)
+
+for all t,
+
+whenever el>ez. With this choice, ~o,+(t) decreases to Qff(t) which is upper semi-continuous
+as a decreasing limit of continuous functions, while p~,(t) increases to a lower semi-continuous function Qff(t), and
+
+Q~(t)/> eo (t).
+Assume t h a t
+
+~)g(t) > ~ (t),
+
+i.e., pick x such that o~(t)>x >Q~(t). I n Figure 2, the heat is flowing downwards, i.e., in
+the t-direction, while the corresponding brownian motion is running upwards. If ~ is the
+first hitting time of ~, or ~: or t =0, then, since u is parabolic,
+
+Eu(x + x~, t +~) =u(x, t)
+which can be made arbitrarily small, b y choosing ~ and e' small. Because, for all e and e'
+e;, (t) < eo (t) < e~ (t) < e,+ (t),
+
+u must vanish everywhere between p~(t) and ~(t), which is absurd in view of u's analyticity. Hence ~ff(t)=~d-(t) and its eommon value ~0(t) is a continuous curve. Because of the
+m a x i m u m principle again you deduce that u does not vanish either in ( - b , Q0(t)) nor in
+
+(po(t), b), which implies t h a t ~0(t) is the only place where u vanishes. For a different proof
+of this theorem originally conjectured by Sturm [27], see P61ya [21](1).
+(1) Private communication by M. Sehreiber.
+
+<-----Page 14----->AN OPTIMAL STOPPING PROBLEM "WITH LINEAR REWARD
+L E M M A 8:
+
+125
+
+Let g be as in Theorem 1. Then h(t) changes sign only a/inite number o/
+
+times in (to, T].
+Proo]. The p e r t i n e n t expression
+a ,
+u=~(g-g)=
+
+1 ~0
+2ax2
+
+~g
+
+a~ =
+
+1 as
+2~-~x~+ l
+
++ 1, which has a finite n u m -
+
+is even i n x a n d a t the horizon it coincides with -89
+
+ber of zeros. S t a r t i n g at t = T, the zeros of u trace out c o n t i n u o u s curves, a t least for a little
+while. W e now establish t h a t such a curve can be c o n t i n u e d as long as it does n o t intersect
+a n y other such curve. T h a t these curves have limits, when t converges to a p o i n t tl, is
+obvious, b e c a u s e otherwise
+
+u(x, tl) would v a n i s h i n a n interval, which would c o n t r a d i c t
+
+u ' s a n a l y t i c i t y . A t t v consider a box D as i n Figure 4. The m a x i m u m principle is responsible
+for the fact t h a t u > 0 or u < 0 inside the respective regions b o u n d e d b y the curves where
+
+u'x T"
+
+y~(t)
+,,
+
+,/'/
+"
+
+I/
+
+//
+
+1I
+
+t
+
+10~h
+
+,,""~(0 ]8(0
+
+:
+
+/
+
+/
+
+t~
+
+/ ////
+
+Fig. 4
+
+u = 0. H e n c e on the top t = t 1 of the box, u < 0 to the left a n d u > 0 to the right of the p o i n t
+where u = 0 . Moreover the fact t h a t u is c o n t i n u o u s implies t h a t u is n e g a t i v e on one side
+a n d positive on the other side for a little while. L e m m a 7 tells you t h a t the set u = 0 consists of exactly one curve in the box D as long as u does n o t v a n i s h on the sides.
+W e conclude t h a t e a c h "root curve" is c o n t i n u o u s a n d can be. e x t e n d e d up to the
+p o i n t where it meets a n o t h e r such. The m a x i m u m principle also implies t h a t two curves
+which have intersected each other now stop a n d have no c o n t i n u a t i o n below. Therefore a t
+
+<-----Page 15----->126
+
+PIERRE VAN MOERBEKE
+
+each level t, the n u m b e r of roots of u never exceeds the (initial) n u m b e r of roots of
+- 89
+
+2) h + ].
+
+Observe t h a t each time a " r o o t " curve meets the b o u n d a r y +_s(t) (let it be in Q), the
+slope of the b o u n d a r y g(t) changes sign. F o r example, in Figure 4, u > 0 in the region between the root curve rz(t ) and the b o u n d a r y s(t) ahead of Q; so at the b o u n d a r y (O/ax)u < 0
+and since
+Ou
+t)
+O~ "~
+a~ (s(t),
+= ~
+~ g - g) = - 2 ~,
+
+is positive there. F u r t h e r m o r e u < 0 between the next root curve r~(t) and the b o u n d a r y
+below t 2. Hence $ < 0 for t<t2 down to the point where r2(t ) meets s(t). As a straightforward by-product, the n u m b e r of zeros of $ will never exceed the n u m b e r of zeros of
+- 89
+
+h + 1.
+COROLLARY. I / the hypotheses o/ Theorem 1 are satisfied and i / s ( t ) is continuously
+
+di//erentiable /or t > to, then lim s(t), t 4 t o exists.
+Proo[. Since s(t) is continuous in (to, T] and is m o n o t o n e except for a finite n u m b e r
+of sign changes of ~, lim s(t) exists when t converges to t o.
+LEbIMA 9. Consider g as in Theorem 1 and let s be continuously di//erentiable /or t >t o.
+
+Then (a2/ax2)~ > 0 in a strip o/fixed width around the boundary extending down to t o.
+Proo/.
+
+is continuous in -s(t)<~x<,.s(t) for
+
+F r o m L e m m a 5 we know t h a t 89
+
+t o < t ~<T, satisfies the backward heat equation in the continuation region between t o and
+T and, at the b o u n d a r y
+1 8=~ ( + s(t), t) = 1.
+
+2 ax ~
+
+-
+
+1 a=h
+t~T
+
+i,/
+IIIr(t)
+
+Fig. 5
+
+I~(0
+/
+
+<-----Page 16----->AN OPTIMAL STOPPING PROBLEM W I T H L I N E A R REWARD
+
+127
+
+Since ~ fits smoothly with g, we also have a "heat" conservation law
+sa) 1 ~
+
+1(~_~
+
+sa) 2 ~x~=2
+
+a~
+
+)
+
+(s(t),t)-~x (-S(t),t) = 0 ,
+
+(21)
+
+Using an argument similar to the one used in Lemma 8, there are at most two curves where
+
+u=89
+
+=0.
+
+I t is to be proved that the two root curves +r(t) of 89
+
+cannot intersect the
+
+boundary +_s(t) as long as to<t <~T; see figure 5. Suppose the contrary; for example, let
+
+r(t) meet the b o u n d a r y - - s a y - - a t time tl>~to. Then on the one hand, since the interval
+(r(t), s(t)) becomes smaller and smaller when t decreases to tl, the total amount of (positive)
+heat contained therein would decrease to zero, by the maximum principle. By symmetry,
+the same is true for the interval (-s(t),-r(t)). But on the other hand 89
+
+would
+
+remain negative in the interval ( - r ( t ) , r(t)). Hence the net amount of "heat" in the interval (-s(t), s(t)) would become negative, when t approaches tl; this violates the conservation law (21). ~qow r(t) cannot intersect s(t) in the time interval [to, T] and consequently
+89
+
+remains positive in a strip around the boundary.
+L~MMA 10. Let g be as in Theorem 1 and let s be continuously di//erentiable /or t > t o.
+
+Then
+Then
+~>inf
+
+l Oah
+~x a in (t0, T].
+
+Proo/. Consider the situation pictured in Figure 6. Let T 1, T~, T 3, etc. be the values of
+t where ~ changes sign. The boundary s(t) satisfies the integral equation (17) which simplities to
+
+fT-t ~K
+
+-~(t)=-Jo
+_ _
+
+~x (S(t)'T-t;s(T-~)'T)d(T-~)d~"
+
+IT-tOK
+.Io
+
+-~x ( s( t ), T -
+
+t; - s( T - T), ~) ~( T - v) dT
+
++ ( ~ K(s(t), T - t ; ~, 0) v'(~, T) d~,
+d-
+
+where
+
+(22)
+
+a
+
+v=~(~-g)
+
+and v ' ( ~ , T ) =
+
+1 ~3h
+
+In the region (i) where $ ~<0, the integrands of the first two integrals of (22) are both
+non-negative and its left-hand side is nonnegative. This leads to the inequality
+
+-~(t)<. f
+Hence in region (i)
+
+K ( s ( t ) , T - t ; ~ , O ) ( - 1 ) ~'~h
+- ~ (~) d~.
+
+<-----Page 17----->128
+
+P I E R R E VAN M O E R B E K E
+
+__ . . . . . .
+
+ii
+
+Tx
+
+s-~>~--
+
+T~
+
+----~--~-
+
+Ta
+~x
+v
+
+Fig. 6
+axl<o -
+
+~x~!
+
+~K(s(0' T - t ; $, 0) d~
+
+= sup [ 1 ~3h'~ i
+Ixl<a ~ -- 2 ~xxa]
+,J
+
+a-s(t)
+CT:Z 1
+e_n,/2
+- a-s(t) ~f~ dr/
+.
+r T-~
+
+Since both ( a - s ( t ) ) / [ / T - t <~0 and ( - a - s ( t ) ) / ~
+ceed 89 and
+- g(t) -< 1_ sup (
+"~ 2 Ixl<a \ - 2
+Moreover
+
+(8+1
+
+~2) (1_~2(~_9!~
+2 ~ x z \2 ~x~t ] = 0
+
+<~O, the latter integral does not ex-
+
+1 ~3h~
+~x3] "
+
+(23)
+
+in l x l < s ( t ) , t < T ,
+
+so the maximum principle tells you that 89 (~21~x~t)(~- g) reaches its maximum along
+the boundary x = + s(t) or at the final horizon t = T. But since 89(~2/~x ~t) (~ - g) (s(t), t) = - g(t)
+and since 89(a2/~x~t)(~ - g) (x, T) = 89( - 89(~3/~x3) h),
+1 0~(~g)<
+2 ~X~t
+
+(
+
+1(
+
+sup - ~ ( 0 , ~
+T,'<t•T
+Ixi<a
+
+-
+
+~/].
+
+(24)
+
+Since already in strip (i)
+03h~
+'
+(
+- ~(t) < ~ sup
+N-<~ - z ~x~!
+
+(25)
+
+(24) becomes
+1 ~2 ( ~ - g)
+1 ~3h
+2 ~ x ~ ~< - inf 4
+Izl<a ~xa"
+In the strip [T2, T1] labeled by (ii) in Fig. 6, ~ > 0 . Again by the maximum principle
+
+(26)
+
+<-----Page 18----->AN OPTIMALSTOPPINGPROBLEMWITH LINEAR REWARD
+1 ~2(~_g)
+2
+
+<max
+
+~
+
+t=Ts
+
+129
+
+sup ~1 (33a(~-x O ~g) (x, T1), sup -,~(t))
+\lzl ~<s(r,)
+r,<~t<~T,
+
+~<max{ sup
+
+1 ~- ( ~- - g ) (x, TD, O)
+
+and using inequality (26)
+l~2(g-g)
+
+~<max(-inf la3h
+Ixl.<.<a
+
+O)
+
+(27)
+
+Notice that the zero may be deleted on the right-hand side of the latter inequality, because
+(~2/~x2) h must have a minimum from the assumption on h. The same inequality holds for
+T 2 replaced by T4, by T6, etc., with T ~ > t 0. Lemma 8 assures there are only a finite number of T2~ > t0. Hence in the continuation region between to and T,
+
+1~(~-9)~<__
+~x~t
+
+2
+
+1 mI
+. o ~ah
+41xl<a~X
+
+1 ~3h
+>~ inf 4
+Ixl<a ~ X 3"
+
+and, in particular,
+which estabhshes Lemma 10.
+
+LEMMA 11. Let g be as in Theorem 1 and let s be continuously diHerentiable /or t > t o.
+Consider a boundary point (x, t) where h > 0 and consider the optimal stopping time T viewed
+/rom (x, t +~) /or a positive, su//iciently small increment ~. The/oUowing inequality will now
+be established:
+-Hh2+~
+
+h(x+xr-t-8)T-t
+
+2 1 ~ h~ ( x + x T - t - 8 ) + ~
+
+.
+
+(28)
+
+Both quantities o(1) tend to zero with ~ and the one under the expectation sign does so uni[ormly over the brownian paths.
+t=T
+~-
+
+T-~
+(x+x~,t+~+~)
+(z, t+ ~)..Sj)f (~+ z,, t +~)
+
+~
+
+/
+
+Fig. 7
+9 - 742908 Acta mathematica 132. Imprim6 1r 20 Mars 1974
+
+<-----Page 19----->130
+
+PIERRE
+
+VAN MOERBEKE
+
+Proo/. If 3 is the optimal stopping time viewed from the point (x, t + O), denote by 35
+the same stopping time but for paths starting at (x, t), so that in fact Ta =~ (ef. figure 7).
+Since (x, t) is a stopping point
+
+Eg(x +x~x t +3a) <~~(x, t) = g(x, t)
+
+(29)
+
+Multiply both sides by g(x, t-l-O)/g(x, t). The expectation in (29) can be split into two parts
+
+EL
+
+g(x + x~, t + v~)
+]
+g~,~
+g(x,t+O);t+ 3 a < T - O
++ E [ g"( x + x ~ ) T - O ) g ( x , t + O ) ; t §
+L
+g(, )
+
+] <g(x,t+O)
+
+~(x, t +O) = Eg(x+x~, t +O+v)
+
+and
+
+(30)
+(31)
+
+can be decomposed similarly. Subtracting (30) from (31) we obtain
+
+~(x,t+0)-g(x,t+0)
+[
+
+<~E Ig(x + x~, t + O+ ~) -
+
+g(x § T,r$~ t § 38)
+g(x, t)
+
+L
+
++E h(x+xr_t_ D -
+
+~(X+XT-t-a, T - O )
+
+g(x,t + O);t +O+ 3< T]
+]
+
+~,~
+
+g(x,t+O);t+O+v=T .
+
+(32)
+
+Notice that, since g(x, t)= T - t for t < T,
+
+g(x § x~, t § O § v) -
+
+g(x + x~, t + 3~)
+g(x, t)
+
+g(x, t § O) = - T ~
+
+O
+
+~ 0
+
+(33)
+
+while
+h(x + Xr-t-~) -- ~(X + xr-t-~, T - 0) g(x, t + 0)
+g(x, t)
+= (h(x + Xr-t-D -- ~(x + Xr-t-~, T -- O)) + ~
+
+--O ~(x+xr_t_~,T)+o(1)
+
+)
+
++
+
+~(x + xr-t-a, T - O)
+
+(h(x+xr_t_8)+o(1)),
+
+(34)
+
+where o(1) tends to zero with 0, uniformly over all brownian paths, because both ~ and
+
+(~/~t) are continuous in Ixl <~s(t), T >1t >1to. Since
+~
+1 ~29 (y, T ) ~ (y, T)-- - 2 ~y~
+(34) equals
+
+O L[h(x§
+
+t
+
+21Ox~zh(X§247
+
+1 ~2h
+2 ~y~ (y)'
+
+<-----Page 20----->131
+
+Alq OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+According to L e m m a s 5 and 6,
+
+(:~, t + ~)
+
+( g - g) (~2
+
+(35)
+
+= - H ~ + o(1).
+
+The inequality (32) with (33), (34) and (35) p u t in yields (28), which establishes L e m m a 6.
+LEMMA 12. Let u satis/y
+
+~u
+
+1 ~2u
+
+in the shaded wedge (see Figure 8). It vanishes at the boundary x =~v(t)= b ( t - to), and at the
+/inal horizon T, it assumes the value r
+
+where ~ is a continuous/unction vanishing beyond
+
+N and far to the le/t, with N < M = b ( T - t o ) .
+(O, to)
+
+jg~(~i,
+
+Then
+
+to)e 2(r-to)r
+
+<constant • 1]r
+
+/or all b, provided T - t o and M - N remain bounded away/rom zero.
+t
+
+t=T
+
+p
+
+N
+
+o
+
+MI
+
+v
+
+Fig. 8
+(For the proof, see the Appendix)
+LEMMA 13. Let g be as in Theorem 1 and let s be continuously diHerentiable /or t > t o.
+
+Consider a boundary point (x, t) where not only 5(t) >~0, but also ~(t) >~$(u) /or all u between t
+and T. Then at such a point ~ satis/ies the inequality(1)
+1
+
+T-t
+
++-2 E k~x2 ] (X+Xr_t) <~constant x
+
+provided ~ is/arqe enoufh and T - t bounded away/rom zero.
+(1) ( )-, resp. ( )+ means take negative, resp. positive part.
+
+t
+
+~h
+
+-
+
+<-----Page 21----->132
+
+PIERRE VAN MOERBEKE
+~t
+t=T
+
+N.
+
+.j
+
+:x, 0
+
+~x
+
+Fig. 9
+
+Proo/. This lemma is a consequence of Lemmas 11 and 12. I n the inequality (28)
+you m a y as well replace -89
+
+and o(1) by their positive part -89
+
+and
+
+o(1)+:
+
+..~6E\
+
+T-t
+
+2!-~xz] (X+Xr_t_~)+o(1)+;t+6+v=T
+
+(36)
+
+where H = - 1.
+I n the next step replace the continuation region -s(t)<x <s(t) b y the wedge shaped
+by the lines t= T and y = x + b ( u - t ) , as in figure 9, where b =$(t). By the assumption t h a t
+~(t) ~>$(u) for all u, t ~ u <.T, the wedge contains the continuation region, at least ahead
+of t. Let ~z be the first hitting time of the oblique line. I n the inequality (36) you m a y replace the expectation b y the overestimate
+
+E ~h(x+xr:t-~) 1 /~h~\
+
+T-t
+
+2[~x
+
+z) (X+Xr-t-D+~
+
+)
+
+"
+
+(37)
+
+This expression is the solution to a boundary value problem for the backwards heat equation vanishing at the oblique line y = x +b(u-t) and taking on at t = T the values
+
+T - t
+
+y
+
+-
+
+o
+
+Hence the limit of 1/6 times (37) when ~ tends to zero is the t-slope of this solution at
+the boundary (i.e., at the oblique line).
+Now we are in a position to use L e m m a 12, which affirms t h a t
+
+<-----Page 22----->133
+
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+
+1
+
+lim 1 (h(x+xr_~_$)
+~o~ E
+T-t
+
+2 \~]-(x
+
++ x~_~_,) + o(1)+; t + a + ~ = T
+
+f~
+
+b2
+
+)
+
+1
+
+_o V 2 ~ ( T - t) e
+
++constant •
+
+Th t
+
+1
+
+a~h
+
+-
+
+(38)
+
+Now let 8 tend to zero in (36) and combine it with (38). You get
+~<~E~
+
+p(x+
+
+-
+
+~
+
+~Lax~! ( ~ + ~ _ , )
+
+)
+
++constant • ] l T h t
+
+1
+
+~2h
+
+-
+
+which completes Lemma 13.
+LEMMA 14. Consider
+
+=T-t
+g = h(x)
+
+t<T
+t= T
+
+and require that
+(i) h(x) ~<(1 §
+2 in x<~O /or some ~ >0, and h(x) =0 in x > 0 ;
+(ii) h(x)>~bx2 /or - M <~x<~O, /or some 0 < b < l .
+
+I/, lot some 8o > O, the optimal boundary s is continuously ditferentiable above T - 80, then
+inf
+
+(T-t)-Eh(x+xT-t)=Q>O
+
+z=s(o
+
+T -
+
+(39)
+
+t
+
+/or some 0 < 51 < 80, with constants Q and 81 depending on 7, b and M only.
+Proo/. Step I. For some 81<80 depending only on M and b, you have s ( t ) > ~ a V T - t ,
+0 ~<T-t-~<81 where a~ is the largest root of the equation:
+
+~_~v~e- (z+~) dZ--b.
+gal
+To begin with, the boundary must belong to the region
+
+Eh(x+xT_t) ~ T - t ;
+namely in the stopping region, playing to the end must be worse than quitting. Since
+
+h>~bx 2 in I - M , 0]
+the boundary must a/ortiori belong to the region where
+
+<-----Page 23----->134
+
+PIERRE VAN MOERBEKE
+
+E(b(x+xT_t)2; - M <~X+XT_t <-O)<~T-t,
+i.e.,
+
+bf
+
+,1'
+yl (x + y)9.dy <~T
+1
+2<r-t)
+M-: 1/-{~( T - t) e
+
+- t.
+
+Therefore the required portion of the boundary lies in the set
+
+{(~l/~t,t);O<~T-t<~Oo
+
+--~M
+1
+f_v~_t_~
+l/~e
+
+and
+
+_z,/2(~+z)2dZ<~b}"
+
+(40)
+
+Choose a positive 51 < ~0 small enough, such t h a t
+
+f--~
+
+--1 e_:,/S(z+a)2dz=~1
+
+(4U
+
+has two roots ~1< g2. Because of this choice of ~ , the set
+
+{
+
+f-=
+
+1 e_Z,/2(z+~)SdZ<b}
+
+consists of two disjoint sets U1 and Us, corresponding to the shaded region in Figure 10;
+Ux, resp. U2, is bounded to the right, resp. left, by x = : q TlfT--t, rcsp.
+
+x=a2VT-t.
+
+More-
+
+over ~2 < O, because for all ~ ~>0
+it
+
+t=T
+
+~---x
+
+Fig. l0
+
+-: M 1 e -~':2(z+=)Sdz<~:-: 1 e-:':2(z+~)~dz<~l< 1
+So far we know that s(t) belongs to the set Ux U U~. Since s(O) =0, ~ < ~ in [ T - ~ x , T] and
+~s < O, the second component U s must contain the boundary. This is exactly the statement
+of Step I.
+In
+
+Step II,
+
+we establish the inequality
+
+(T-t)-Eh(x+xT_t)>
+T-t
+
+• &e_<:_=),dw
+
+-(l+~)(-=le-v'(w+v)'dw
+J_.r 1/.
+
+,
+
+(42)
+
+<-----Page 24----->135
+
+AN OPTIMAL STOPPING PROBLEM ~-ITH LINEAR REWARD
+
+valid in the intersection of the stopping region and the strip T-O0 < t < T; a denotes
+
+/TV 7-t.
+Consider a game with the same reward, but allowing only three alternatives: not
+playing at all, playing for a period of time (T-t)~2, or playing until the end T. The
+stopping region for such a game is
+
+(x-y) s
+oo
+
+1
+
+e 2 T2
+" t
+
+( m a x ( E h (y + x(T_t)/2),
+
+evidently, it contains the stopping region for the original game. A few elementary manipulations of the integral in (43) transforms the inequality into
+
+Eh(x+xT-t) +
+
+~o l / ~ ( T - t ) e
+
+r-t dy
+
+-Eh(y+x(r-t)l~)
+
+< T-t.
+
+(44)
+
+Recall that h(x) <~(1 +~/)x ~ for x~<0, with ~ >0. It gives
+
+T --h (t y + x ( r _ t ) , ~ ) ]
+[T
+
++ >~ [ -T-2- ( lt+ ~ / ) ( ( y +
+
+X(r_t)/2)_)2] +.
+
+(45)
+
+Putting (45) into (44), you see that the set (43) is contained in
+
+(x,t) lEh(x+xT_t)+
+
+~r
+
+,_~:~_)e (r-Ody
+
+~)E((y+xcr_t)/~)-) ~
+
+<T-
+
+the latter is the same as
+
+(T-t)-Eh(x+xr_t)
+T-t
+
+z
+> T--t
+
+_ -~T_t)
+
+e (r-t) dY
+
+-(1+~)
+
+_
+
+V_~ (_T - t )
+
+]+}
+
+e ~=--t ( y + z)2 d z
+
+.
+
+(46)
+
+Make a few changes in variables z / V T - t =v and y/VT ~- t =w; call xl~/-T- ~ t = r162Then
+the set (46) becomes
+(T - t) - Eh (x + Xr_t)
+> ~r
+T-t
+
+l~-e-(~-W)'dw
+
+-(1+
+
+v)2dw
+
+(47)
+
+which settles Step II.
+
+Step I l l finishes the proof of Lemma 14. The reader easily convinces himself that
+the right-hand s i d e o f the inequality in (47) is increasing in a. According to Step I,
+
+<-----Page 25----->136
+
+PIERRE VAN MOERBEKE
+
+= x/b/T~-t >~:r
+
+in the stopping region, provided T - 6 x ~<t ~<T. Hence in the stopping
+
+region, the right-hand side of the inequality in (47) is b o u n d e d below b y
+
+/_= !~-~'(~
+V~
++ v)~dw]+
+Q= f_= ~1 e-'"-="dw[89 + n)-=
+which only depends on ~/, b, a n d M. Combining this with the result of Step I I finishes the
+proof.
+
+Proo] o/ Theorem
+
+1. According to Proposition :3, the b o u n d a r y is continuously dif-
+
+ferentiable in a time interval (t0, T]. Choose t o as low as possible, so t h a t $ ceases to exist
+there. Can the b o u n d a r y be extended below t o under the assumption t h a t the two boundaries have n o t y e t intersected? The main point is to establish t h a t ~(t) is bounded in (to, T];
+this is the content of (a), (b), (e), (d), and (e) below. The remaining task is to prove t h a t
+s(t) can be extended in a smooth w a y a bit below
+
+to; this
+
+contradicts t0's choice as the point
+
+where ~ ceases to exist.
+(a) L e m m a 10 provides us with the lower estimate
+~(t)>~ inf
+
+1 O3h
+---
+
+-a<~x<~a40X 3~
+
+t0 < t ~ < T .
+
+(b) Supplying an upper estimate is a more delicate affair. We apply L e m m a s 13 and
+14 to the new reward
+
+gi(x, t) { : Tl-t
+hl(x ) - [~(x, T i ) - g ( x ,
+
+for to < T1 < T. I t is plain t h a t
+
+gl's optimal
+
+T1)
+
+for t < T 1
+for t = T 1
+
+s(t)
+a =s(T1)=
+
+boundary, denoted b y sl(t ), is the same as
+
+below the level T r Moreover gl satisfies all the conditions of Theorem 1, with
+Sl(T1), using L e m m a s 5, 8 and 9. Also gl'S s y m m e t r y is preserved.
+
+Since Sl is continuously differentiable for t o < t < T1, we are now in a position to apply
+L e m m a 13 to gl with the result t h a t
+
+81(t)2(Tl-t-Ehl(X+XT'-t)
+T 1- t
+
+l
+
++~E
+
+(O~hx~)-
+
+(x + XT,-t)
+
+)
+
+h, 21 i~ !%11II="
+~<consent • ]T~:t
+
+(48)
+
+This inequality yields an upper bound to $, provided the s u p n o r m on the right-hand
+side is bounded and the expression between brackets on the left is b o u n d e d a w a y from zero,
+both irrespective of T 1. The former is obvious, if T a - t exceeds a fixed positive n u m b e r
+
+<-----Page 26----->137
+
+AN OPTIMAL STOPPING PROBLEM V~ITIi LINEAR REWARD
+
+($t/2, say (cf. L e m m a 14); the point is t h a t b o t h hl(x ) =~(x,
+
+T1)-g(x, T1) a n d
+
+(~2/~y2)ht=
+
+(a~/ay~)~(y, T1) are b o u n d e d in the continuation region between t o a n d T.
+L e m m a 14 takes care of the left-hand side. Therefore conditions (i) a n d (ii) m u s t be
+verified. To see (i), you first observe t h a t hl(x ) vanishes outside ( - ~ , s(T1) ) and t h a t
+
+h t (x) = h l (s(T1)) + ~hi
+~x (s(T~)) ( z - s(T~)) + ~2h
+~ t (s(T~)) (x
+
+-- 8(TZ))3
+
+2
+
++ ~hl
+for some 0 with O< O< 1.
+~x 3 (x+O(x-s(T~))) (x-s(T1))3
+6
+I t simplifies to:
+= ( x - S(Ts)) ~
+
+[1+ ( x - Sl~T ~., ~1 03hl
+~ (x + O(x _ 8(T1)))]
+J
+
+b y smooth fit; see L e m m a 5. B y application of the m a x i m u m principle to ~3~/~x3,
+
+~8~
+
+[.o
+~sh
+oShtoax (x + O(x - s(T1))) >1min "\- a.<z<amI-3,8~ T,<f<~infT ~Xa (s(t), t)
+
+)
+g
+
+----min|
+
+mz
+
+~-~,
+
+inf
+
+45(0]/>
+
+inf
+
+0ah
+
+b y L e m m a 10. Notice t h a t this expression is negative. Since x - 8(Tx) < O,
+h 1 (X) = (X -- S(T1)) 2 1 + (X -- s(T1) ) g ~
+
+(x + O(x - s(T1)))
+
+(
+
+1 03h
+
+~< ( x - s (Tt)) 2 1 + (x - s(Tt)) ~ inf ~xxa] ~< ( x - s(T1)) a (1 + ~),
+where ~ > 0 is a n u m b e r exceeding - 2 maXto<t<TS(t) • ~ inf (0a/0x3) k > 0.
+
+Of course,
+
+m a x s(t) < ~ because $ is bounded below in (to, T]. I t remains to prove (ii). B y L e m m a 9,
+hi (x) >/b(x - s(T1)) 2 for - M < x - s(Tt) < 0, where 2 b = in t. (0a/0x ~) ~ in the strip of fixed
+width M a r o u n d the boundary, which does the trick.
+L e m m a 14 m a y now be applied to p r o v e
+(c)
+
+min
+
+x=s(t)
+
+(Tl-t)-Ehl(X+XT'-t)=Q > 0
+
+Tz-t<~Ot
+
+T 1-
+
+t
+
+independently of T r Moreover
+(d)
+
+(~2h, ~ 0 < - E \ ~x~ ] (x + XT,-t) <~Q/2
+
+b y a new choice of ~1, if need be. This follows also from L e m m a 9 a n d the boundedness
+of (~/~x2)~ in the continuation region.
+1 0 - 742908 Acta mathematica 132. Imprim6 lc 20 Mars 1974
+
+<-----Page 27----->138
+
+P I E R R E VAN MOERBEKE
+
+These two facts (e) and (d) combined imply
+
+(e)
+
+9 ~,(tt [
+
+T 1- t
+
+T~-t<.O,
+
+Putting the results.achieved so far into (48),
+
+sup
+
+< constant
+
+II
+
++
+
+irrespective of T 1. This provides an upper estimate for $ in the whole of interval (to, T].
+So far we have proven that d is bounded in the interval (to, T]. The final job is to
+show that then
+
+s(t) can be extended in a smooth way a bit below
+
+t 0. The maxmum prin-
+
+ciple combined with the boundary estimate
+
+-~ (~(t), t) =4~(t)
+implies t h a t (~3/~xa)~ is bounded throughout Che continuation region between t o and T.
+But now Proposition 3 applies to
+
+gl(x, t) and tells you that the optimal boundary is con-
+
+tinuously differentiable in a time interval (T 1 - e , T1] whose length e isAndependent of T I,
+namely
+03hl
+I~a0
+~X~X
+3 ~< sup
+
+sup
+- $(T,)~X <~ s(T,)
+
+(z,t)eC
+
+I
+
+(x,t) < ~ ,
+
+to<t~<T
+
+is independent of T r Therefore, by choosing T 1 > t o close enough to to, the optimal boundary is seen to be differentiable below to, as advertised.
+But it remains to check that the optimal reward { associated with
+
+s(t) exceeds g. Assume the contrary, namely that for some x in(-s(t),s(t)), {(x: ii=g(x: t). F r o m the aSsumptions on h, (a/@x)h has exactly one zero i n the interval ( : s ( t ) , s(t)i. Moreover, since
+(~/~x) (~-g) satisfies the backward heat equation and since its total integral
+, (s(t)
+=J
+
+there is a unique zero curve, with
+
+_8.) ,-~ (~-
+
+g) az = 0,
+
+(~/~x)(~-g) different from zero in the interior of the two
+
+regions separated by the zero curve (maximum principle)i This implies ~hat ~ y ' h a s
+be increasing and then decreasing when x moves from
+vanish at the sides •
+
+to
+
+-s(t) to 8(t), so that it can only
+
+whence the result. As a side-result, the continuation region is
+
+simply connected.
+The continuation region must be bounded, because any point (x, t) with
+
+<-----Page 28----->AN OPTIMAL STOPPING p R O B L E M W I T H L I N E A R R E W A R D
+
+t<~T-
+
+1:39
+
+sup h(x)
+-a<x<~a
+
+is a stopping point. To see this, introduce the reward function
+= constant =
+
+sup
+
+h(x)
+
+for t = T
+
+-a~x~a
+
+] =T-t
+~th
+
+for t < T
+
+optimal reward
+
+I = constant =
+
+sup h(x)
+
+for t > T - sup h(x)
+fo r t ~ T - sup h(x )
+
+and continuation region T > t > T - sup h(x). Since ] ~>g, g's continuation region must be
+contained in the~ region T > t >:T - sup h(x). This fact combined w i t h t h e lower estimate
+for g~ implies t h a t g's Continuation region is b o u n d e d .
+Finally the continuation region m u s t close at its bottom,, because if not,: the optimal
+boundary would be ~xtendible, contradicting the fact t h a t 9's continuation region is bounded: Finally it is connected because if you, would have another patch of continuation points
+having no point in common with the horizon, g's excessivity (H = - 1) and ~'s parabolieity
+would imply:g:< g, which is a b s u r d
+
+This establishes T h e o r e m 1.
+
+4. Concluding remarks
+
+4.1. Some further comments concerning the Stefan problem
+According to section 2.5, wix, T)= • ('~/~t)(g-g)(x, T - z )
+
+g=T-t
+= h(x)
+
+with
+
+t<T
+t = T,
+
+chosen as in Theorem 1 and symmetric, and a ( T ) = s ( T - 3 ) satisfy
+~w 1 ~*w
+~- = ~ ~
+in [-- a@), a(T)],
+
+"w( + a(T), ~) = O,
+c~w
+
+~-~ ( _+ ~(T), T)= -T 2~(T),
+1 02h
+w(x, O) ' 2 Ox~
+
+1.
+
+The boundary +a(T) represents the position in time of the interface between water
+and ice, water at temperature w(x, T) in the region Ix[ <a(T) and ice at zero temperature
+in the Complementary region: Of course, you permit the temperature of the water to be
+
+<-----Page 29----->140
+
+PIERRE VAN MOERBEKE
+
+negative, i.e., supercooled, and positive in the different areas. As was remarked in L e m m a
+9, at each moment v, the total amount of heat equals the total amount of heat needed to
+freeze all the water, i.e.,
+"(~) w(x, v) dx = - 2 a(~)
+
+(49)
+
+aO:)
+
+and, in particular,
+
+I a w(x, O) dx = - 2 a.
+J-
+
+(50)
+
+a
+
+Both relations follow from the smooth fit conditions, and (50) would still be valid even if
+they were not true; then the initial temperature would contain ~-functions but would still
+satisfy (50). Relation (49) follows merely from (50) and the heat conservation law.
+That for optimal stopping problems with a compact final gain the total amount of
+heat equals the total amount of heat required to freeze the water is an important fact: it
+is responsible for the compactness of the continuation region and for the fact t h a t the continuation region closes down at the bottom. I t is instructive to see what occurs when the
+total amount of heat does not equal the total amount of heat necessary to freeze the water.
+This question was raised by B. W. Knight.(1)
+(a) First assume t h a t the total amount of heat would exceed the amount necessary to
+freeze the liquid:
+,(r) O~h
+s(r) ~-~ < 0,
+i.e., the liquid would not be sufficiently supercooled to become completely solid (el. figure
+11). Then there always would be a residual amount of unfrozen water, and it is intuitively
+
+),/
+Fig. 11
+(x) P r i v a t e c o m m u n i c a t i o n .
+
+<-----Page 30----->141
+
+AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+
+obvious t h a t this residual amount equals the excess amount of heat which would have to
+be extracted from the system to achieve complete freezing. I n view of L e m m a 9, this case
+corresponds to the situation where the root curves of
+
+(~Z/~x~)~ meet
+
+each other before
+
+meeting the boundary. Then, the boundary can be extended indefinitely, as a result of a
+small modification of Theorem 1.
+(b) Next suppose t h a t the total initial amount of heat would be less than the amount
+necessary to freeze the liquid:
+f ] ~ ~Zh
+~x--~ < 0,
+i.e., the liquid would be too cold (cf. figure 12). Then one expects a swift freezing of the
+water and the smaller the distance between both pieces of ice, the smaller the temperature
+gets in view of the fact t h a t an inescapable amount of cold (negative heat) will remain.
+But the m a x i m u m principle does not allow the water to decrease its temperature below
+the minimum of the initial temperature. I n a n y case as long as the root curves of
+
+(OZ/Ox2)~
+
+do not intersect the boundary, the arguments of Theorem 1 show t h a t the boundary can
+be extended downwards in a smooth way. At the very m o m e n t the root curves of
+
+(OZ/Ox~)
+
+meet the boundary, the solution ceases to exist, because the boundary condition
+
+\
+
+\
+
+I
+
+0'0 .
+
+/
+
+0'0 .
+
+e=/
+
+9
+
+\,,
+
+/
+
+/
++o(,)
+
+i/
+'T
+F i g. 12
+
+~
+
+( + ~(~), 3) = 1
+
+cannot be satisfied anymore; one m a y think of this as a sudden and instantaneous freezing of all the water.
+These two arguments have shown t h a t if the ice-melting picture is to come from an
+optimal stopping problem, you must actually have (50).
+
+<-----Page 31----->142
+
+PIERRE
+
+VAN MOERBEKE
+
+4.2. The shape of the boundary near critical points
+
+Here the r e w a r d function g is as in Theorem 1 and
+
+h(x) even. P u t the origin of the
+
+(x, t)-axes at the lowest point, i.e., the critical point. I t will be shown heuristically t h a t the
+boundary either exhibits a cusp at the critical point, or behaves flatter than e~/t and not
+flatter than (1 + e) 1/2 t log log (1/t) for a n y e > 0. I t remains an open question whether both
+can exist or only the latter.
+The continuation region is a bounded open set with continuously differentiable boundary x =
+
+is(t) for t >0, given b y the solution to the equation (17):
+-
+
+-
+
+--
+
+(T-t s(t) - s(T - z)
+
+'e
+
+j.T--to V2zt(T-s(Tt -, z)
+8(t) +
+
+e
+
+(s(t)-s(r-v))'
+<~a)+,(T-~>>'
+
+2(T-t-,> g ( T - v ) dv
+
+~)a
+
+t"sTt)
+
+-J_~,TK(S(t),T-t;~,O)
+From L e m m a 8 it follows t h a t
+
+( ---2-~]183h~
+
+(~)d~ O<t<<.T.
+
+(51)
+
+s(t) must be non-decreasing in the neighborhood of the
+
+critical point. So we m a y as well p u t the final horizon T a bit ahead of the critical point
+so as to make the boundary monotone for 0 ~<t~< T, as in Figure, I3. Now we have two
+possibihties, either
+--a
+
+a
+
+tffiT
+
+/~
+~x
+
+Fig. 13
+(1) l i m d < cr or (2) l i m d = ~ , when t ~ 0.
+Case (1) implies t h a t
+
+s(t) is Lipschitz continuous in the closed interval [0, T]; hence the
+
+integrals on the right-hand side of (51) would have limits when t tends to zero, Therefore
+lim~ 0 d(t) would:eXist and would be finite. When t 4 0, the sum of the two:first integrals
+on the right-hand side of (51) would cancel each other and the last integral would vanish
+because (~a/axa)h is an odd function. Hence ~(0 + ) = 0 and the continuation region would
+be cusp shaped down at the bottom. This fact is rigorous; the rest will be heuristic.
+
+<-----Page 32----->AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+
+143
+
+I n case (2), we merely proceed by exclusion, b y limiting the discussion to curves such
+t h a t s(t) is a power' or a power times a slowly varying function.(1) We show that:
+(a) The critical point is regular for the continuation region, under the assumption t h a t
+
+s(t)/Vt is monotone near t =0. Indeed, since $ >~0, (51) yields the inequality
+(s(t)-s(T-~;))z
+
+(r-, s(t) - s ( T - r)
+
+- j 0 V-2 (T
+
+e
+
+r?
+
+2(T.t-v)
+
+8(T - r) d r
+
+(r162
+Hence
+
+(r-,-,)dr]
+~(t) < sup I~(u)[ [(r-t s(T -r)--_s (t) - ,(s(,)-8(r-,)),
+~.<~r
+LJ0 V2~(~,-t- r)~ e
+(52)
+If the critical point would be irregular (cf. section 2.1)and since t-1/2s(t) is decreasing,
+Kolmogorov's test (cf. I t o - M c K e a n [15]) states t h a t
+
+?r-
+
+s ( T - r)
+
+~(r-,),
+
+T > 0 can always be chosen so small t h a t t h e integral (53)js smaller t h a n 1. From this
+we expect t h a t ~he integral
+
+for-t s ( T - r) - s(t)
+
+(~a)-~(r-~)),
+
+gets below 1 when t converges to zero. Hence it wouId follow from (52) t h a t ~ is bounded;
+this contradicts the assumption t h a t the critical point is irregular.
+(b) s(t) cannot behave like,g, 1 > e > 1/2 near t =0. Indeed, a standard integration b y
+parts permits you to write the integral between brackets in (52) as
+s(t)+s(T)
+
+_2~-
+
+~--~-~-t 1 e_Z./2dz+2~ r t
+
+g
+
+~(T-r)
+
+Jo V2 (T.t.r)
+
+e (s(t)-s(r-,)), d r .
+
+Therefore
+
+sup 1,(~)12[(*-'
+g(T--T)
+[A
+V2~--~-t-f)
+
+~(t)< t<u<.T
+
+e
+
+c,,t).,<r-,~,,
+
+2(T-t-V)d
+
+v]
+
+~-Constant.
+
+(54)
+
+(1) A slowly var~ng function ~(t) converges to zero or to qnfinity more slowly than any power
+of t, when t~0.
+
+<-----Page 33----->144
+
+PIERRE VAN MOERBEKE
+
+If s(t) would behave as announced under (b), the integral between the brackets in (54)
+would be bounded and could be made smaller than 1; hence d(t) would be bounded, which
+is absurd. By comparison, also t~to(t), 1 > e > 1/2, with a slowly varying function to(t), can
+be excluded.
+
+(c) s(t) cannot behave like t ll~ for t 4 0. We recaU t h a t v = ~(~-g)/St satisfies (13), (14),
+(15) and (16). Without loss of generality, you can assume - ~(~h/Ox~) + 1 >~0; cf. L e m m a 8.
+Apply Green's theorem over the boundary of the shaded region D in figure 13 to the form
+
+(55)
+
+2 vwdx - (uw~ -vw,)dt,
+X
+
+where
+
+1
+
+z'
+,,
+
+is a solution of the heat eqution. On the one hand, the line integral of (55) equals
+
+(2vw)) dxdt=O,
+and on the other hand it equals
+
+,(t)2v(x,t)x
+
+. o
+
+t ~
+
+9It
+
+1
+
+e_~,lZtdx+ f ao
+
+7;
+
+2V-2-~e
+
+z
+
+_1_
+
+e-X,/2 r dx
+
+2v(x, T) T @
+
+z:vz(s(7;)'T)dT;'}
+
+v(0,T)
+
+dl~.
+
+P u t in the boundary condition %(s(7;), 7;)= -2~(7;). Then
+
+rs(7;)h(7;)
+
+-
+
+1
+2~
+
+1
+
+~(')"
+
+(Zv(O, 7;)dT;
+Jt ~
+
+r s(t)
+
+- I
+
+Jo
+
++
+
+x
+
+v(x, t) ~ ~
+
+1
+
+V2ztt
+
+fl ~
+
+x
+
+e - ~ ' ~ dx
+
+1
+
+e -z'/2r dx.
+
+1
+
+e-~'12Tdx.
+
+v(~, T) ~ V2~----T
+
+Moreover since v >/0, we get the following inequality:
+
+-~
+
+V~n e " dT;
+
+< 2--~1Jtl"r~dtv(O'
+t) + Fv(x ' T ) ~ x
+"JO
+
+(56)
+
+<-----Page 34----->AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+
+145
+
+Suppose s(t) would behave like ~ ~ near t = 0. Then the inequality (56) would imply
+0~2
+
+2
+
+a*'2 l ' r d ~
+
+e- ' [ - ~ ~ ~
+Jt 9
+
+2
+
+1
+
+(r v(0, T)
+
+~,s(r)
+
+d~ + |
+
+L --Tv-
+
+v(x, T) X
+
+. o
+
+1
+
+e-X,12r dx.
+
+T
+
+Because of this inequality and the fact that the left side blows up to infinity, as t r 0, v(0, v)
+cannot tend to 0. Since the critical point is regular, any Diriehlet solution, e.g., v(x, ~),
+assumes its proper boundary value, whence we have a contradiction and s(t) ~- ~Vt cannot
+be a valid assumption.
+(d) s(t) cannot behave like Vto~(t), where ~o(t) is a slowly varying function, converging
+to zero with t.
+The probability of not hitting a parabola x = _ al'~ before time T behaves like tB(~),
+where -2fl(~) is the largest pole of the function
+D_~ (0) + Da(0)
+D-a (~) + Da (~)'
+Da and D-a denote the parabolic cylinder functions. You find that
+0</3(~)<~,
+
+limfl(~)=0,
+~t~
+
+limfl(~)=~o,
+~o
+
+andfl(1)=l.
+
+This follows easily from a result by L. Breiman [5].
+Assume s(t) would behave like ~w(t). By comparison, u(0, t), alias the probability of
+not hitting the parabola before time T, must behave at least like tr(t) where 7(t) tends to
+infinity for t 4 0. The most important contribution of the integrand on the left-hand side
+of (56) is of order eo~(v)/Ta12 for small v, while on the right-hand side it is of order Tv[t)/~ 31~.
+This implies that the inequality in (56) cannot hold under this assumption, whence the
+result under (d).
+The upshot of the results in (a), (b), (c), and (d) is to substantiate (though not really
+to prove) the assertion under section 4.2.
+
+Appendix: Proof of Lemma 12
+The proof of Lemma 12 will require a number of propositions:
+PROPOSITION 1. (Sonine [26]). Consider the equation:
+f[
+
+- -1
+
+Vu -
+
+e
+
+_b,
+
+= fly),
+
+where ix'(t) stands/or the derivative ol la a n d / ( 0 ) = O. Its solution is
+
+(57)
+
+<-----Page 35----->146
+
+PIERRE
+
+p(t)
+
+=
+
+VAN
+
+MOERBEKE
+
+1
+
+(58)
+
+p(O)+ ~ Jo dy/(y) K(t
+
+where the bernel K is given by
+i'bv-~
+
+K(s)=2bJo dxe-X'/2-F 2e-b'S/2V-s
+This proposition will be used to solve the following Dirichlet problem:
+PROPOSITIO~ 2. Let u be a bounded solution o/ (~/~t)u + 89
+in the shaded
+region o/ Figure 8 which vanishes at the boundary x=~p(t)=b(t-to) and, at the horizon T,
+agrees with a bounded continuous/unction q~ vanishing beyond N (N < M = b( T - to)).
+Then
+
+u(x, t) = (N
+
+1
+V 2 g ( T - t)
+
+(x-y)s
+
+2(T-t-----)~(y)dy§
+
+f ~-t
+
+1
+
+V2~r(T_t_~)e
+
+(x-~(T-v))l
+
+2(r-t-~) l~'(T)d ~
+
+(59)
+
+where ~ is given by (58) with
+
+(M- bs-y)s
+28
+
+r
+
+dy.
+
+Proo[. Since the right-hand side of (59) satisfies the heat equation, we may assume that
+u has that form for some choice of #'. Besides the initial condition, which u obviously satisfies, it ought to vanish at the boundary x=b(t-to) , i.e.,
+
+~r
+O=u(b(t_to),t)=
+
+f
+
+1
+
+(b(t't~
+
+~r V2~r(T_t~)e
+
+~T-t
+
+j
+
+2(T-O ~(y) dy
+
+1
+
+(b(L-ta)-b(T-v-te))l
+--
+
+o
+
+2(T-t-v)
+
+V2~r(T - t - ~) e
+
+!~'(~) d%
+
+which amounts to solving the integral equation
+1
+
+-~(T-t-~) ,. "tit
+
+T_V-T--Ly~_~ e
+
+~ ~
+
+-=
+
+2(r-t) r
+~ TV-T-~-t e
+
+Its solution p'(t) is given by the derivative of (58),
+
+~'(t)=~ Jl/'(Y)K(t-y)dy
+which finishes Proposition 2,
+
+<-----Page 36----->147
+
+AN OPTIMAL s T o P P I N G PROBLEM WITH LINEAR REWARD
+
+PRoP 0 S~riot, 3. For the Diriehlet solution u o! Proposition 2,
+
+[<constant
+• IIr
+
+IOu (,0 to)+ ~b2 I(T' to)
+
+provided M , N and T - t o remain bounded away ]rom zero.
+Proo/. The derivative of (59) can be expressed as
+Ou,0
+
+bz (r-t0
+
+-~( 't~176
+
+Jo
+
+d~
+e-~'(r-to-,)ff'da],(a)K(T_a)
+]/~-z(TLto_~)
+
+1 frLto
+dv
+e-~(r-to-~)f~d~l,,(~)K(.v:_a) '
+~Jo
+1/2~(T-to- ~)
+.o
+d t''
+
+where
+
+1
+
+(60)
+
+Y'
+
+g(t~ = ~o J_~ V2z~(T_ to) e 2(r-to)r
+
+Add (b~/(2-~)l t o both sides of ,(60) and make the substitution ~ = b 2 ( T - t o - 3) in the
+integrals. After some rearrangements, you obtain:
+~ u + bz
+-~ ~/=
+(i)
+
+= g(to)
+
+(ii)
+
+= 2--~ -- -o
+
+(iii)
+
+(iv)
+
+~Jo
+
+-
+
+_
+
+1 ,'~-~2
+
+-!
+
+2~ L
+a "o r
+j
+
+-- Jo
+
+(i) + (ii) + (iii) + (iv) + (v), where
+
+b 2~
+
+.,o
+
+b I/2Jr
+
+Jo
+
+d~
+
+~e-~-/
+
+~
+
+-'~
+~
+
+f v-~(T_to_ ~0 _ ~)
+
+, ' ~ , 0d -a ~f f ( a ) 2 b | , ' o 1 / ~
+
+L
+
+V2~
+
+J0
+
+~",-,.-~
+
+-~j
+
+Jo
+
+(61)
+
+bd
+
+....
+
+-~
+
+dxe 2
+
+e-~(~-''-~'-")
+
+It is easy to see that / and all its derivatives satisfy the bound
+
+~-a)
+
+<-----Page 37----->148
+
+PIERRE VAN MOERBEKE
+
+I/'"1
+
+<
+
+C,l~,ll~
+
+b(T-to) > N; indeed this proviso implies t h a t the whole
+region swept out b y the line x = b(t -to), when b increases, remains bounded away from the
+
+independently of b, provided M =
+
+support of r The constants C, depend on the order n of the derivative, the distance M - N
+and the pivot (0, to). From now on the letter C is used to denote anyone of several constants
+t h a t depend on the pivot (0, to) and the distance M - N, only.
+Bounding (61) (i) does not cause any trouble:
+
+Ig(to) l <
+
+Constant x II~ll~o-
+
+The term (53) (ii) can be decomposed in the following fashion:
+
+(a)
+
+52
+
+2~r
+
+--e
+
+~|
+
+bV~
+
+o
+
+da/'((~)2bJ
+
+Jo
+
+--e
+
+dxe -~
+
+op--V-~.-o
+
+2
+
+dxe --~
+
+d~/'(~) 2b
+0
+
+(~)
+
+(~)
+
+2 d~ -
+
+5 284
+
++~
+
+-
+
++~ J
+
+and since
+
+we have
+
+9;-~-~
+,-1,,.
+
+da]'(a) 2b
+
+- ~ ' - D~..
+)
+
+d~/'I~12b
+T-to- ~
+
+b~ ~
+2 d~ - ~
++ 2-~ J b~F-~,b ~'~
+Jo
+
+As to (~), since
+we have
+
+T-,.-~,
+
+~
+0
+
+(~)
+
+b [/2-~e
+
+~
+T - to - ~ ~ T - to
+
+O~ a < ~ -
+
+f bi / - ; 1 V ~ "
+
+d~-~
+0
+
+da/'(~)2b
+
+0<~<-<
+
+~
+
+b VT 2
+
+d~ ~
+
+to
+'
+
+b 2 ( T - t o)
+3
+4 b~
+- - ~ ( T - to),
+
+(T-$o- ~),
+
+~ _ - a >~ V~ V3(T~-- t o )
+
+b~T - t- ~
+
+~,
+
+dxe -~
+-a
+
+<-----Page 38----->149
+
+AN OPTIMAL STOPPING PROBLEM W I T H L I N E A R R E W A R D
+
+Then using the standard bound
+
+~
+
+zl
+
+~-~
+Z,
+
+dx-~
+
+it is seen that
+-2 ~'~r
+
+2 d~
+
+___e-r ~o b ~ ~ b'~dcrll,(a)12b
+
+b~ 21
+
+1
+
+dxe-g
+
+g b(T- to)
+8
+
+which is exponentially small, for large b.
+The term (fl) is even easier to bound:
+
+I(t~)l<- 4 !
+
+-
+
+e-~supl/'l(T-to)89
+
+-
+
+which is also exponentially small for large b.
+In (7), let a=T-to-(~2/b~). Then, using three consecutive changes in variables
+T =a-er, x/(bV~)=y and v =u2/(b2y2), you find
+
+b
+
+a
+
+,Jb Vh~-a
+
+which is overestimated by
+
+Therefore
+
+b2
+Ib~ V-~
+~ ~-~f"b 1,,,
+"-~ ~,,"d.f
+lTl~<~supl/'14
+2~T,
+
+""
+
+-~e
+
+As to (~),
+I O [ < -b2_t,br
+- V2~ !
+
+2~
+
+J0
+
+2 - - ~ e -~
+
+V2~
+
+< ~bs2,
+u9 p l l ' l V ~ f0 = 2 -~-d#~
+
+,ill V L
+
+dx~-~x'
+
+~ l ' 2 d " e - 2 <~"C l l r
+
+f[_t:_~
+
+d~l/'(~)l
+
+_,
+
+_~2
+~ - < b2supl/,i
+b, 2 ~
+b2
+
+2zt
+
+d~-~'~<vllr
+
+<-----Page 39----->150
+
+P I E R R E VAN MOERBEKE
+
+while (e) is exponentially small. S u m m i n g up our efforts
+[ii I ~< C ]1,~11,oi
+Consider now
+
+] (iii)] =
+
+I%
+
+Jo
+
+'a r(a)f~ 0
+
+using integration b y parts and the fact t h a t ['(0i = 0 . This is overestimated b y a constant
+multiple of
+sup
+
+II"1 <
+
+oll, ll
+
+a n d similar estimates apply to (iv) and (v), so the proof of Proposition 3 is complete.
+
+References
+
+[1]. BATHER, J'. A., Optimal stopping problems f o r br0wnian motion. Advances in Appl.
+Prob., 2 (1970), 259-286.
+[2]. BELLING, A., An extension of the Riemann mapping theorem. Acta Math., 90 (1953),
+117-130.
+[3]. - Conformal mapping and Schlicht functions. Seminar, The institute for Advanced
+Study, Princeton, N.J.
+[4]. BLUMEI~rHAL, R. M. & GETOOR, R. K., Markov Processes and Potential Theory. Academic
+Press, New York, 1968.
+[5]. BREZMAN, L., First exit times from a s q uare root boundary. Fifth Berkeley Symposium,
+Calif., (1965), 9-16.
+[6]. BROW~, A. B., Functional dependence. Trans. Amer. Math. Soc., October (1934), 379394.
+,~ :=
+[7]. CA~ON, J. R. & HILL, C. D., Existence, uniqueness, stability and monotone dependence
+in a Stefan problem. J. Math, Mech., i7 (1967), 1-14.
+:
+' i :
+[8]. DOOR, J. L., A probability approach to the heat equatiom Trans. Amer. Math. See., 80
+(1955), 216-280.
+[9]. D Y e ) r , E. B., Optimal selection of stopping time for a Markov process. Dokl. Akad.
+Nauk USSR, 150, 2 (1963), 238,240 (Russian), Soviet Math. (English translation),
+4 (1963), 627-629.
+[10]. FRIEDMAN, A., Free boundary problems for parabolic equations I: Melting of Solids. J.
+Math. Mech., 8 (1959), 499-518.
+[11]. - Partial Di/]erential Equations el Parabolic Type. Prentice Hall, Eng!ewood Cliffs,
+N.J., 1964.
+[12]. FULKS, W. & GUENTHER, R. B., A free boundary problem a n d an extension of Muskat's
+model. Acta Math., 122 (1969), 273-300.
+[13]. GEVREY, M., Sur les 6quations aux ddriv6es partielles du type parabolique. J . Math. Pure
+Appl., Ser. 6, Vol. 9 (1913), 305-475.
+
+<-----Page 40----->AN OPTIMAL STOPPING PROBLEM WITH LINEAR REWARD
+
+151
+
+[14]. GRIGELIONIS, B. I. & SHIRYAEV, A. N., On Stefan's problem and optimal stopping rules
+for Markov processes. Theor. Probability Appl., 9 (1966), 541-558.
+[15]. ITo, M. & MCKEAN, H. P., Di]]usion Processes and Their Sample Paths. Springer Verlag,
+New York, 1965.
+[16]. KAc, M., Can one hear the shape of a drum? Amer. Math. Monthly, 73, 4, I I (1966) 1-23.
+[17]. KOTLOW, D. B., A free b o u n d a r y problem connected with the optimal stopping problem
+for diffusion processes. To appear in Trans. Amer. Math. Soc.
+[18]. MIRA~KE~, W. L., A free b o u n d a r y value problem for the heat equation. Quart. Appl.
+Math., 16, 2 (1958), 121-130.
+[19]. MCKEAN, H. P., Stochastic Integrals. Academic Press, 1971.
+[20]. - Appendix: A free b o u n d a r y problem for the heat equation arising from a problem
+in mathematical economics. Industrial Management Review, 6, 2 (1965), 32-39.
+[21]. POLYA, G., Qualitatives fiber W~rme ausgleich. Z. Angew. Math. Mech., 13 (1938), 125-128.
+[22]. ROBBINS, H. & SIEGlYKU/~'D,D. 0., Great expectations: the theory o/optimal stopping. Houghton Mifflin, Boston, 1970.
+[23]. SCHATZ, A., Free b o u n d a r y problems of Stefan t y p e with prescribed flux. J. Math.
+Anal. Appl., 28, 3 (1969), 569-580.
+[24]. SHEPP, L. A., Explicit solutions to some problems of optimal stopping. Ann. Math.
+Statist., 40, 3 (1969), 993-1010.
+[25]. SNELl, J. L., Applications of martingale system theorems, Trans. Amer. Math. Soc., 73
+(1952), 293-312.
+[26]. SONINE, N., Sur la g6n~ralisation d'une formule d'Abel. Acta Math., 4 (1884), 171-176.
+[27]. STU~M, Ch., M~moire sur une classe d'equatlons ~ differences partielles. J. Math. Pures
+Appt., Ser. 1, VoJ. 1 (1836), 373-344.
+[28]. TAYLOr, H. M., Optimal stopping in a Markov process. Ann. Math. Statist., 39 (1968),
+1333-1344.
+[29]. VA~ MOERBEKE, P. L. J., Optimal stopping and free b o u n d a r y problems. To appear in
+the Proceedings of the Conference on Stochastic Differential Equations, Edmonton, (Alberta), Rocky Mountain J. Math., 1974.
+[30]. - A b o u t optimal stopping problems. Arch. Rational Mech. Anal., to appear.
+
+Received April 8, 1973
+Received in revised ]orm August 2, 1973
+
+

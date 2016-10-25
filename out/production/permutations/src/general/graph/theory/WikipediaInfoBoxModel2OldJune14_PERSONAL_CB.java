@@ -38,6 +38,11 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
     public static String dataDirectoryName = "openNLP\\";
     public static String mainFileName = "";
     public static String mainFileDir = "";
+    public static PrintStream dummyStream = new PrintStream(new OutputStream() {
+        public void write(int b) {
+            //NO-OP
+        }
+    });
     //final public static String DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";
     public static String DELIMITER = "[\\.\\?!]+";
 
@@ -86,7 +91,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         return str.substring(0,str.length()-1);
     }
 
-    public static general.graph.theory.Message chatbotTypeSept11(String question, String origionalQuestion) throws Exception {
+    public static general.graph.theory.Message chatbotTypeSept11(String question, String origionalQuestion, boolean isDeep) throws Exception {
         String newQuestion = new String();
         for(String part :Parse(question))
             newQuestion += part + " ";
@@ -157,11 +162,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         }
         System.out.println("query>>> " + query);
 
-        PrintStream dummyStream = new PrintStream(new OutputStream() {
-            public void write(int b) {
-                //NO-OP
-            }
-        });
+
         dummyStream = MainGUI.originalStream;
         ComparePhrases.keyWords.clear();
         ComparePhrases.keyWordsVerbOrAdjective.clear();
@@ -188,11 +189,11 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             }
         }
         */
-        HashSet<KeyWordPattern> newKeyWordsNouns = new HashSet<>();
-        HashSet<KeyWordPattern> newKeyWordsVerbsOrAdjectives = new HashSet<>();
+        HashSet<KeyWordPattern> newKeyWordsNouns = new HashSet<KeyWordPattern>();
+        HashSet<KeyWordPattern> newKeyWordsVerbsOrAdjectives = new HashSet<KeyWordPattern>();
         // NOuns
-        HashSet<KeyWordPattern> newKeyWordsFullNouns = new HashSet<>();
-        HashSet<KeyWordPattern> newKeyWordsFullVerbsOrAdjectives = new HashSet<>();
+        HashSet<KeyWordPattern> newKeyWordsFullNouns = new HashSet<KeyWordPattern>();
+        HashSet<KeyWordPattern> newKeyWordsFullVerbsOrAdjectives = new HashSet<KeyWordPattern>();
         for (String keyword : ComparePhrases.keyWords) {
             // find the root word
             String rootWord = LuceneSnowBallTest.getStem(keyword);
@@ -232,266 +233,62 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         int prevValue = 0;
         newKeyWordsFullNouns = newKeyWordsNouns;
         newKeyWordsFullNouns.addAll(newKeyWordsVerbsOrAdjectives);
-        HashMap<String, HashSet<KeyWordPattern>> keyword2SynonymMap = general.FindKeyWordsTest.getSynonyms(newKeyWordsFullNouns);
-        for (File result : listOfFiles) {
-            try {
-                //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
-                if (result.getName().toLowerCase().endsWith(".txt")
-                        && !result.getName().toLowerCase().startsWith(".")
-                        && !(Paths.get(statementsFileName).equals(result.toPath()))
-                        ) {
-
-                    int charsize = 0;
+        HashMap<KeyWordPattern, HashSet<KeyWordPattern>> keyword2SynonymMap = general.FindKeyWordsTest.getSynonyms(newKeyWordsFullNouns,isDeep);
 
 
-                    String biggestText = FileUtils.readFileToString(
-                            result, "utf-8").toLowerCase();
-                    //String[] sentences = biggestText.split("[\\.\\?!\\n]+");
-                    boolean isRelevant = false;
-                    for(Map.Entry<String, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
-                    {
-                        if(isRelevant)
-                            break;
-                        for(KeyWordPattern keyWord : subKeyWord.getValue()) {
-                            if (biggestText.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[0])
-
-                                        /*||
-
-                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                ||
-                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
-                                        */
-                                    ) {
-
-                                isRelevant = true;
-                                break;
-                            }
-                        }
-                    }
-                    if(!isRelevant)
-                        continue;
-                    HashSet<ParagraphInfo> sentsNouns = new HashSet<>();
-                    HashSet<ParagraphInfo> sentsVerbsOrAdjFinal = new HashSet<>();
 
 
-                    String publicationName = result.getName()
-                            .substring(0, result.getName().lastIndexOf("."));
-                    int parNum = 0;
-                    // split by pages first
-                    int pageNum = 0;
+        /*int bookNumber = 0;
 
-                    for (String page : biggestText.split("<-----page \\d+----->"))
-                        {
-                            ++pageNum;
-                            // then split by sentence
-                            isRelevant = false;
-                            for(Map.Entry<String, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
-                            {
-                                if(isRelevant)
-                                    break;
-                                for(KeyWordPattern keyWord : subKeyWord.getValue()) {
-                                    if (page.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[0])
-
-                                        /*||
-
-                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                ||
-                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
-                                        */
-                                            ) {
-
-                                        isRelevant = true;
-                                        break;
-                                    }
-                                }
-                            }
-                            if(!isRelevant) {
-                                continue;
-                            }
-                            parNum = 0;
-                         for (String y : page.split(DELIMITER))
-                         {
-                        /*
-                            */
-                            parNum++;
-                             isRelevant = false;
-                             for(Map.Entry<String, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
-                             {
-                                 if(isRelevant)
-                                     break;
-                                 for(KeyWordPattern keyWord : subKeyWord.getValue()) {
-                                     if (
-                                             y.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[0])
-
-                                        /*||
-
-                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                ||
-                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
-                                        */
-                                             ) {
-
-                                         isRelevant = true;
-                                         break;
-                                     }
-                                 }
-                             }
-                             if(!isRelevant)
-                                 continue;
-                            HashSet<String> usedKeywords = new HashSet<>();
-                            int keyWordCount = 0;
-                             HashSet<String> usedKeywords_2 = new HashSet<>();
-                             int keyWordCount_2 = 0;
-                            int exactKeyWordCount = 0;
-                            System.setOut(MainGUI.originalStream);
-
-                            for (KeyWordPattern keyWord : newKeyWordsFullNouns) {
-                                Pattern wb0 = keyWord.getPattern1();
-                                Pattern wb1 = keyWord.getPattern2();
-
-                                Pattern wb3 = keyWord.getPattern3();
-                                if (wb0.matcher(y.toLowerCase()).find()||
-                                        wb1.matcher(y.toLowerCase()).find()
-
-                                        /*||
-
-                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                ||
-                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
-                                        */
-                                        ) {
-
-                                    keyWordCount++;
-                                    usedKeywords.add(keyWord.getKeyWords()[1]);
-                                    exactKeyWordCount += 1;
-                                    if(wb3.matcher(y.toLowerCase()).find())
-                                        exactKeyWordCount += 1;
-                                }
-                            }
-                                for(Map.Entry<String, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
-                                 {
-                                     Pattern wba = Pattern.compile("\\b"+subKeyWord.getKey().toLowerCase());
-                                     Pattern wbb = Pattern.compile("\\b"+subKeyWord.getKey().toLowerCase());
-                                     if (wba.matcher(y.toLowerCase()).find()||
-                                             wbb.matcher(y.toLowerCase()).find()
-
-                                        /*||
-
-                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                ||
-                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
-                                        */
-                                             ) {
-
-                                         keyWordCount_2++;
-                                         usedKeywords_2.add(subKeyWord.getKey());
-                                         continue;
-                                     }
-                                    for(KeyWordPattern keyWord : subKeyWord.getValue()) {
-                                        Pattern wb0 = keyWord.getPattern1();
-                                        Pattern wb1 = keyWord.getPattern2();
-                                        if (wb0.matcher(y.toLowerCase()).find()||
-                                                wb1.matcher(y.toLowerCase()).find()
-
-                                        /*||
-
-                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                ||
-                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
-                                        */
-                                                ) {
-
-                                            keyWordCount_2++;
-                                            usedKeywords_2.add(keyWord.getKeyWords()[1]);
-                                            break;
-                                        }
-                                    }
-                                 }
-
-                            //keyWordCount = 0;
-                            System.setOut(dummyStream);
-                            ParagraphInfo info = new ParagraphInfo(y, publicationName, String.valueOf(pageNum));
-                            //newKeyWordsFullNouns.size()
-
-                            if (usedKeywords.size() > clamp(newKeyWordsFullNouns.size() - 1, 0)) {
-                                keyWordCount = keyWordCount + exactKeyWordCount;
-                                System.setOut(MainGUI.originalStream);
-                                if (totalFinalfinalSetOfWordsTree.containsKey(keyWordCount)) {
-                                    HashSet<ParagraphInfo> dummy = totalFinalfinalSetOfWordsTree.get(keyWordCount);
-                                    dummy.add(info);
-                                    totalFinalfinalSetOfWordsTree.put(keyWordCount, dummy);
-
-                                } else {
-                                    HashSet<ParagraphInfo> dummy = new HashSet<>();
-                                    dummy.add(info);
-                                    totalFinalfinalSetOfWordsTree.put(keyWordCount, dummy);
-
-                                }
-                                //totalFinalfinalSetOfWords.add(info);
-                                System.out.println("298gj2f keyword count " + info.getText());
-                                System.out.println("298gj2f size " + newKeyWordsFullNouns.size());
-                                System.out.println("298gj2f" + info.getText());
-                                System.setOut(dummyStream);
-                            } else {
-                                if (closestMatchedQueries.size() > 0) {
-                                    if (keyWordCount > closestMatchedQueries.firstKey()) {
-                                        HashSet<HashSet<String>> currentQueries = new HashSet<>();
-                                        currentQueries.add(usedKeywords);
-                                        closestMatchedQueries.put(keyWordCount, currentQueries);
-                                    } else if (keyWordCount == closestMatchedQueries.firstKey()) {
-                                        HashSet<HashSet<String>> currentQueries = closestMatchedQueries.get(keyWordCount);
-                                        currentQueries.add(usedKeywords);
-                                        closestMatchedQueries.put(keyWordCount, currentQueries);
-                                    }
-                                } else {
-                                    HashSet<HashSet<String>> currentQueries = new HashSet<>();
-                                    currentQueries.add(usedKeywords);
-                                    closestMatchedQueries.put(keyWordCount, currentQueries);
-                                }
-                                if (closestMatchedQueries.size() > 0) {
-                                    if (keyWordCount_2 > closestMatchedQueries.firstKey()) {
-                                        HashSet<HashSet<String>> currentQueries = new HashSet<>();
-                                        currentQueries.add(usedKeywords_2);
-                                        closestMatchedQueries.put(keyWordCount_2, currentQueries);
-                                    } else if (keyWordCount_2 == closestMatchedQueries.firstKey()) {
-                                        HashSet<HashSet<String>> currentQueries = closestMatchedQueries.get(keyWordCount_2);
-                                        currentQueries.add(usedKeywords_2);
-                                        closestMatchedQueries.put(keyWordCount_2, currentQueries);
-                                    }
-                                } else {
-                                    HashSet<HashSet<String>> currentQueries = new HashSet<>();
-                                    currentQueries.add(usedKeywords_2);
-                                    closestMatchedQueries.put(keyWordCount_2, currentQueries);
-                                }
-                            }
-
-
-                        /*if (y.length() < 400)
-                            if (totalFinalfinalSetOfWordsTree.containsKey(keyWordCount)) {
-                                HashSet<ParagraphInfo> dummy = totalFinalfinalSetOfWordsTree.get(keyWordCount);
-                                dummy.add(info);
-                                totalFinalfinalSetOfWordsTree.put(keyWordCount, dummy);
-
-                            } else {
-                                HashSet<ParagraphInfo> dummy = new HashSet<>();
-                                dummy.add(info);
-                                totalFinalfinalSetOfWordsTree.put(keyWordCount, dummy);
-
-                            }
-                            */
-
-                        }
-
-                        System.out.println(sentsNouns.size());
-
-                        //totalFinalfinalSetOfWordsTree.addAll(sentsNouns);
-                    }
+        ArrayList<ParagraphInfo> ResultsToArrayList =
+                new ArrayList<>(totalFinalfinalSetOfWords);
+        int totalNests = ResultsToArrayList.size();
+        int step = totalNests / NUM_OF_CORES;
+        ArrayList<HashSet<ParagraphInfo>> newstedListInception = new ArrayList<>();
+        for(int i =0;i<NUM_OF_CORES;i++)
+        {
+            newstedListInception.add( new HashSet<>(ResultsToArrayList.subList(step * i, step * (i+1))));
+        }*/
+        int NUM_OF_CORES = 16;
+        ArrayList<File[]> chunks = ArrayChunks.chunks(new ArrayList<>(Arrays.asList(listOfFiles)),NUM_OF_CORES);
+        NUM_OF_CORES = chunks.size();
+        //File[] someFile = chunks.get(0);
+        Thread[] threads = new Thread[NUM_OF_CORES];
+        Scan scan = new Scan();
+        HashSet<KeyWordPattern> finalNewKeyWordsFullNouns = newKeyWordsFullNouns;
+        for (int i = 0; i < NUM_OF_CORES; i++) {
+            int finalI = i;
+            threads[i] = new Thread() {
+                public void run() {
+                    // do stuff
+                    File[] someFiles = chunks.get(finalI);
+                    scan.scanit( totalFinalfinalSetOfWordsTree
+                            ,someFiles, keyword2SynonymMap
+                            , finalNewKeyWordsFullNouns);
                 }
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-
+            };
         }
+        System.setOut(MainGUI.originalStream);
+
+        ExecutorService service = Executors.newCachedThreadPool();
+
+        for (int i = 0; i < NUM_OF_CORES; i++) {
+            service.execute(threads[i]);
+        }
+
+        // wait for termination
+        service.shutdown();
+        boolean finshed = service.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
+
+        System.out.println("330981fj09s");
+        //System.exit(100);
+
+        //es.shutdown();
+        // = es.awaitTermination(Integer.MAX_VALUE, TimeUnit.MINUTES);
+
+
+
+
 
         /*String test= "";
         for(ParagraphInfo para : totalFinalfinalSetOfWords)
@@ -540,6 +337,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             }
         else if(match.size()<1)
         {
+            /*
             HashSet<String> possibleQueries = new HashSet<>();
             if(closestMatchedQueries.size()<1)
             {
@@ -598,11 +396,25 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                         && numberOfMissedWords >0)
                     possibleQueries.add(possibleQuery);
             }
+            */
             ArrayList<String> answers = new ArrayList<>();
+            String finalsAns = "";
+            int kwCount = 0;
             for(Map.Entry<Integer, HashSet<HashSet<String>>> map :closestMatchedQueries.entrySet())
             {
-                answers.add(map.getValue().toString());
+
+
+                for(HashSet<String> kwElement :map.getValue()) {
+                    String message = "";
+                    for (String kw : kwElement) {
+                        message += " + " + kw;
+                    }
+                    ++kwCount;
+                    finalsAns += "\n\nSuggestion #" + kwCount + ".\n" + message;
+                }
+
             }
+            answers.add(finalsAns);
             return new Message(Message.POSSIBLE,answers);
 
         }

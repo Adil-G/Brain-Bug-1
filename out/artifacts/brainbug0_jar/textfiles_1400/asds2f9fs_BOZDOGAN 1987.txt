@@ -1,0 +1,2078 @@
+<-----Page 0----->PSYCHOMETRIKA--VOL.52, NO. 3, 345-370
+SEPTEMBER1987
+SPECIALSECTION
+
+MODEL SELECTION AND AKAIKE'S INFORMATION
+C R I T E R I O N (AIC): T H E G E N E R A L T H E O R Y A N D
+ITS ANALYTICAL EXTENSIONS
+HAMPARSUM BOZDOGAN
+UNIVERSITY OF VIRGINIA
+
+During the last fifteen years, Akaike's entropy-based Information Criterion (AIC) has had a
+fundamental impact in statistical model evaluation problems. This paper studies the general
+theory of the AIC procedure and provides its analytical extensions in two ways without violating
+Akaike's main principles. These extensions make AIC asymptotically consistent and penalize
+overparameterization more stringently to pick only the simplest of the "true" models. These
+selection criteria are called CAIC and CAICF. Asymptotic properties of AIC and its extensions
+are investigated, and empirical performances of these criteria are studied in choosing the correct
+degree of a polynomial model in two different Monte Carlo experiments under different conditions.
+Key words: model selection, Akaike's information criterion, AIC, CAIC, CAICF, asymptotic
+properties.
+
+1.
+
+Introduction and Purpose
+
+D u r i n g the last fifteen years, A k a i k e ' s (1973) e n t r o p i c i n f o r m a t i o n criterion, which is
+k n o w n as AIC, has h a d a f u n d a m e n t a l i m p a c t in statistical m o d e l e v a l u a t i o n problems.
+T h e i n t r o d u c t i o n of A I C furthered the r e c o g n i t i o n of the i m p o r t a n c e of g o o d m o d e l i n g in
+statistics. As a result, m a n y i m p o r t a n t statistical m o d e l i n g techniques have been develo p e d in various fields of statistics, c o n t r o l theory, econometrics, engineering, p s y c h o metrics, a n d in m a n y o t h e r fields.
+D e s p i t e the a c c u m u l a t i o n of m a n y successful results o b t a i n e d by AIC, a n d despite its
+e x t r e m e p o p u l a r i t y a n d g r o w i n g school of adherents, the e n t r o p i c criterion A I C has been
+a l m o s t universally a c c e p t e d in s o m e areas of statistics, while in o t h e r areas it is still n o t
+k n o w n or well u n d e r s t o o d .
+Since m o s t of the m a t e r i a l on A I C is scattered in a wide r a n g e of j o u r n a l s a n d
+proceedings, a n d A k a i k e ' s (1973) original p a p e r is n o t readily available, the m a i n p u r p o s e
+o f this p a p e r is to s t u d y the general t h e o r y of his i m a g i n a t i v e w o r k , discuss its m e a n i n g
+a n d the basic p h i l o s o p h y , i n t r o d u c e its a n a l y t i c a l extensions using the s t a n d a r d results
+e s t a b l i s h e d in m a t h e m a t i c a l statistics w i t h o u t v i o l a t i n g A k a i k e ' s basic principles, a n d
+s h o w their a s y m p t o t i c p r o p e r t i e s a n d give the results on their inferential e r r o r rates.
+
+The author extends his deep appreciation to many people. These include Hirotugu Akaike, Donald E.
+Ramirez, Marvin Rosenblum, and S. James Taylor for reading and commenting on some parts of this manuscript through various stages of its development. I especially wish to thank Yoshio Takane, Jim Ramsay, and
+Stanley L. Sclove for critically reading the paper and making many helpful suggestions. I also wish to thank
+Julie Riddleberger for her excellent typing of this manuscript.
+This research was partially supported by NIH Biomedical Research Support Grant (BRSG) No. 5-24867 at
+the University of Virginia.
+Requests for reprints should be sent to the author at the Department of Mathematics, Math-Astronomy
+Building, University of Virginia, Charlottesville, VA 22903.
+0033-3123/87/0900-SS03 $00.75/0
+© 1987 The Psychometric Society
+
+345
+
+<-----Page 1----->346
+
+PSYCHOMETRIKA
+
+As is well known, a fundamental difficulty in statistical analysis is the choice of an
+appropriate model, estimating and determining the order or dimension of a model. This is
+a common problem when a statistical model contains many parameters. The main purpose of model evaluation is to "understand" the observed data. According to Parzen
+(1982), statistical data modeling is a field of statistical reasoning that seeks to fit models to
+data without knowing what the "true" model is or might be.
+Consequently, one seeks to learn the model and study the quality of the model by a
+process which is called statistical model identification or evaluation. In recent years, in the
+literature, the necessity of introducing the concept of model selection or model evaluation
+has been recognized and the problem is posed how to choose the "best approximating"
+model among a class of competing models with different numbers of parameters by a
+suitable model selection criterion given a data set. Also, there is presently a great deal of
+interest in simple criteria represented by parsimony of parameters for choosing one of a
+set of competing models to describe a given data set. As discussed in ,Stone (1981),
+parsimony can take into account a variety of attributes of the selected model. One such
+attribute is the cost of measuring the models required to implement the model. Measurement cost, which was emphasized by Lindley (1968), is especially relevant in certain
+applications. A second attribute is the complexity of the selected model. The general
+principle is that for a given level of accuracy, a simpler or a more parsimonious model is
+preferable to a more complex one, known as Occam's Razor. Occam's Razor emphasizes
+the desirability of selecting the accurate and parsimonious models of reality. Therefore,
+the best model is the one with least complexity, or equivalently the highest information
+gain. For example, in factor-analytic models, parameter parsimony requires that we
+choose the smallest number of factors such that the corresponding model fits the data.
+The selection of a parsimonious model, in general, is a nontrivial problem without the aid
+of model selection criteria. They are called "figures of merit" for competing models. That
+model, which optimizes the criterion, is chosen to be the best model.
+Akaike, in a very important sequence of papers, including Akaike (1973, 1974, 1977,
+and 1981a), was perhaps one of the first who laid the foundation of the modern field of
+statistical data modeling, statistical model identification or evaluation. He developed the
+information-theoretic, or entropic AIC criterion for the identification of an optimal and a
+parsimonious model in data analysis from a class of competing models which takes model
+complexity into account. The AIC criterion is a simple and versatile procedure which can
+be viewed as a relatively logical and predictable expression of earlier work of N e y m a n
+and Pearson (1928, 1933), Wald (1943), and Kullback (1959), among others. It has enormous practical importance and is one more demonstration of the importance of the
+likelihood ratio criterion in statistical inference.
+In the next section, section 2, we give the necessary theoretical background needed
+for the development of AIC.
+2.
+
+2.1
+
+Information Quantity as a Measure of Goodness of Fit
+
+Kullback-Leibler Information Quantity or Negentropy
+
+In any statistical problem we are given a set of observations. These observations are
+the values of some random variables whose probability distribution is usually unknown
+to us, or we have some knowledge of it. F r o m the information provided by the data, we
+draw inferences about the unknown aspects of the underlying distribution, such as the
+unknown "true" parameter values of the distribution which govern the generation of the
+observed data and also govern the generation of any future observations if we adopt the
+predictive point of view.
+
+<-----Page 2----->HAMPARSUM BOZDOGAN
+
+347
+
+We shall express a model in the form of a probability distribution and regard fitting
+a model to the data as estimating the true probability distribution from the data and treat
+the estimation and the evaluation of a model together as one entity rather than separating
+them. In the statistical literature during the past fifty years, there has been a meaningless
+separation of estimation and testing which did not help the development of a practical and
+successful statistical model selection and evaluation procedure (Akaike, 1974).
+If we had an objective measure (a metric) of the distance between the model and the
+true distribution, a good inference procedure ought to make this distance as small as
+possible. One measure of this type is Boltzmann's (1877) generalized entropy, or the negentropy which is also known as the Kullback-Leibler (1951) information quantity. Hereafter,
+we refer to this as K-L information quantity for brevity.
+Even though the development of AIC has its origins in time series modeling where its
+practical utility has been thoroughly studied. However, the major development of AIC lies
+in the direct extension of an entropic or information-theoretic interpretation of the
+method of maximum likelihood. Its introduction is based on the entropy maximization
+principle, or minimizing its negative; it is based on the minimization of the K-L information quantity.
+To develop this point further, suppose X is an absolutely continuous random vector
+characterized by a probability density function f(x[0) which is known apart from the
+K-dimensional parameter vector 0 = 0 r = (01, 02 . . . . , OK), OK ~ ff~r. Assume that there
+exists a true parameter vector 0* of 0 with its probability density denoted by f(xl0*).
+Within this setup, it is required that we select 0 "closest" to the true parameter vector 0".
+Thus, we will measure the "closeness," or the "goodness-of-fit," off(xl0*) with respect to
+f ( x I0) by the generalized entropy B of Boltzmann (1877), or K-L information quantity I:
+B(0*; 0) = - I(0"; O).
+
+(1)
+
+This is defined by
+B(0*; 0) = E[log f ( X I 0) - log f ( X I 0")]
+=
+
+ftx 10,)logf(x,0)dx-f f ( x , 0 * ) l o g f ( x l 0 * ) dx
+
+= n(0*; 0) -- n(0*; 0"),
+
+(2)
+
+where E denotes the expectation with respect to the true distribution f(xl0*) of x,
+H(0*; 0) = ~ f(xl0*) log f ( x l 0 ) dx is the cross-entropy which determines the goodness of
+fit o f f ( x l 0 ) to f(xt0*), H(0*; 0") --= H(0*) the usual Shannon negative entropy which is
+constant for a givenf(x I0"), and where "log" means natural logarithm.
+Instead of maximizing the entropy criterion (2), we minimize the K-L information
+quantity:
+t ( 0 * ; 0) = -
+
+B(0*; 0)
+
+= H(0*; 0") - H(0*; 0).
+
+(3)
+
+Since H(0*; 0") = H(0*) is a constant in both (2) and (3), we only have to estimate the
+cross-entropy or the expected log likelihood
+H(0*; 0) = E[logf(X 10)]
+=
+
+ff(x
+
+I 0.) log f ( x Io) dx.
+
+(4)
+
+Following Wilks (1962, p. 408), if we assume t h a t f ( x 10) is regular with respect to its first
+
+<-----Page 3----->348
+
+PSYCHOMETRIKA
+
+and second partial derivatives for 0 E R r, then, under these conditions, H(0*; 0) in (4) can
+be differentiated twice under the integral sign with respect to 0 and evaluated at 0 = 0",
+yielding
+
+H'(0*; 0") = 0,
+(5)
+/-t"(0*; 0") = - J(0*),
+where J(0*) is the Fisher's (1922) amount of information pertaining to 0* per observation
+from f(xl0*). From (5), we note that Fisher's information per observation is the second
+derivative of the K-L information quantity. To put it another way, J(0*) essentially
+measures the curvature of the expected log likelihood H(0*; 0) at its maximum value
+which occurs at 0 = 0". The quantity H(0*; 0) plays a crucial role in the development of
+AIC, and is of basic importance in statistical information theory.
+The analytic properties of I(0"; 0) are extensively discussed by KuUback (1959). Here
+we list some of the important ones.
+(i) I(0"; 0) > 0 wheneverf(xl0*) ~ f ( x [ 0 ) ,
+(ii) I(0"; 0) = 0, if and only i f f ( x l 0 * ) = f ( x l 0 ) a.e. (almost everywhere) in the possible range of x, when the model is essentially true,
+(iii) if X 1, X 2, ..., X n are independent and identically distributed (i.i.d.) random
+variables, then the K-L information quantity for the whole sample is
+
+xn(0*; 0) = nl(0*; 0).
+This last property says that if the random variables are independent, the K-L information
+quantity is additive.
+We note that K-L information quantity is perhaps the most general of all information measures in the sense of being derivable from minimal assumptions and it represents a relative measure.
+As it stands, the K-L information quantity in (3) is not directly observable or estimable. To see this, we give the following simple example as an illustration.
+
+Example 2.1.1. Let F be the family of normal distributions {N(#, a2): --ov < g < or,
+0 < a 2 < ~}. L e t f ( x l 0 * ) ~ N(#*, a .2) be the true distribution with the parameter vector
+0 " = (~*, a,2), and let f(xlO)~ N(¢, a 2) be our model with 0 = (4, tr2)- Computing
+I(0"; 0) = l[f(xl 0*);f(x I 0)], we obtain
+/(0.; o) = ~ log \ o2 /
+
+I o2
+~-~
+
+(/~* - ~)2-I
+~ . i _1
+
+(6)
+
+We see that the distance between the means contributes to the K-L information quantity
+quadratically; while the contribution of the variances is through the ratio tr*2/tr2. Further,
+we note from this example, and in general, that the K-L information quantity needs to be
+estimated from the observed data since it depends on the true distribution, and consequently on the unknown true and model parameters. The important question we need to
+answer is: How can we make the K-L information quantity operationalized, or approximated, from the observed data so that we can use it to compare the goodness of fit of
+various models, measure the distance or deviation of the fitted model from the "true"
+model?
+
+<-----Page 4----->HAMPARSUM BOZDOGAN
+
+349
+
+2.2 Mean Log Likelihood as an Estimate of K-L Information Quantity
+or Negentropy
+
+In this section we introduce the concept of mean log likelihood as a measure for the
+goodness of fit of a model and state entropy maximization principle (EMP) according to
+Akaike (1977).
+Suppose that the generation of data is described by a model given by a probability
+density function f(x]0). Given n independent observations from the same distribution
+regarded as a function of a vector-valued parameter, 0 = (01, 02, ..., OK), k = t, 2, ..., K,
+the likelihood function for the set of data is
+n
+
+L(O) = f ( x 1. . . . . x, 10) = 1-If(x, 10).
+
+(7)
+
+t=1
+
+The log likelihood function, d(0) (often called the support), is the natural logarithm of L(0)
+and is defined by
+d(O) -- log L(O) = ~. log f(x~ I 0),
+
+(8)
+
+i=l
+
+regarded as a random variable, is the sum of i.i.d, random variables log f(xtlO), i = I, 2,
+...,
+
+n.
+
+We define the average or mean log likelihood of the sample by
+1
+1
+_1 d(0) = - l o g L ( 0 ) = n
+
+n
+
+hi=
+
+/, log f(x~]O )
+1
+
+= :.(0),
+
+(9)
+
+which can be interpreted as an estimator of the "distance" between the true probability
+densityf(x I 0") and the modelf(x 10).
+As we discussed in the previous section, the K-L information quantity is not observable. However, it can be consistently estimated from the observed data and operationalized.
+Let ]'(0"; 0) denote an estimator of the K-L information quantity I(0"; 0). Then (3)
+becomes
+r(O*; O) --/7(0"; 0") --/7/(0*; 0),
+
+(10)
+
+R(0*, 0) -- --I(0"; e) +/7(0*; e*).
+
+(I1)
+
+or
+
+This tells us that maximizing the expected log likelihood /~(8"; 0) is asymptotically
+equivalent to minimizing the K-L information quantity, ~0", 0), and it is not necessary to
+know/7(0*; 0") =/7(0"), since it is an additive constant and can be dropped. However,
+we will retain it for the clarity of our exposition.
+Assuming that a sample of n observations x = (xx, x 2 . . . . . x~) is used to provide an
+estimate 0 = 6(x) of 0, we observe that the mean log likelihood in (9) is a natural estimator of/-7(0*; e), the expected log likelihood. That is,
+Z(0) ~
+
+E I 1 d(0)l =/~(0"; 0 ) = E[log f ( X 10)],
+
+(12)
+
+where again the expectation is taken relative to the true distributionf(x ] 0") of x, and that
+the maximum likelihood estimator (MLE) 0 is a natural estimator for 0", so (10) can then
+
+<-----Page 5----->350
+
+PSYCHOMETRIKA
+
+be consistently estimated by
+~(0"; ~}) =//(O*) -- 1 ~ log f(xi t O)
+/~" i = 1
+
+= .,q(o*) - -~ :(6),
+--n
+
+(13)
+
+or
+
+1:(6)
+= I(O* ;~l) +/-7(0*).
+?'/
+
+(14)
+
+Certainly, one approach to measure how well the maximum likelihood modelf(xi I(})
+"matches" the data would be to test the hypothesis that the K-L information quantity
+1(0"; 0) = 0. Such a test might be based on (n)X/2r(0*; 6), but establishing the asymptotic
+closed form expression of the distribution of this statistic is a nontrivial problem (White,
+1982). It is for this reason that we need to appeal to the asymptotic behavior of the mean
+log likelihood and also to asymptotic approximations to derive AIC.
+From Property (ii) in section 2.I, we have seen that 1(0"; 0 ) = 0, if and only if,
+f ( x l 0 * ) = f ( x l 0 ) a.e. in the possible range of x, when the model is essentially true. Hence,
+from (9), we note that asymptotically the maximum of :~(0) = 1/n log/_,(0) (the mean log
+likelihood) will be H(0*) --= Sf ( x I0") log f ( x I 0") dx, the negative Shannon entropy, and
+this will be attained when f(x[0*) = f ( x [0) a.e. This result can also be obtained from the
+property of the function z(0) or/7(0"; 0), the expected log likelihood in (12) which is: z(0)
+o r / / ( 0 " ; 0) attains its maximum value at 0 = 0", and if distributions on the sample space
+corresponding to different parameters are essentially different, then for no other 0 is z(0)
+equal to z(0*) (Silvey, 1975, p. 74).
+Since our estimation of K-L information quantity is based on the mean log likelihood (which is also an estimate of the expected log likelihood), and since the maximum
+likelihood estimates are biased, then there is the inevitable risk of error of estimation of
+the K-L information quantity when the maximum likelihood estimators of the parameters
+of the model is used.
+In the case where 0 is a real parameter, for large n, we depict the general behavior exhibited by the mean log likelihood 1/n:(O) and the expected log likelihood z(O)=
+E[1/n:(O)] = E[log f ( X [O)] in Figure 2.1.
+From Figure 2.1, we see that /-7(0*; 0) assumes its maximum value at 0", and that
+1/n:(O) is uniformly near /-7(0*; 0) ensures that 1/n¢(O) assumes its maximum value at a
+point near 0", that is, O(x) near 0* as discussed in Silvey (1975). In other words, for finite
+n, we would like to have the observed values of the mean log likelihood (dashed lines) to
+behave like the theoretical points (solid line) of Figure 2.1. To achieve this, the bias
+introduced by the maximum likelihood estimates of the parameters needs to be adjusted
+or corrected.
+Empirical justification of the behavior of the mean log likelihood plotted against the
+number of parameters are illustrated in detail by Atilgan (1983), and Atilgan and Bozdogan (1987) in smoothing and density estimation under various basis functions including
+those of B-splines, normal kernels, and logistic density transform.
+Since the quantity H(0*; 0) is not directly observable, maximization of the mean log
+likelihood is carried out, and asymptotically an unbiased estimator of the mean expected
+log likelihood is searched by correcting the bias of the observed mean log likelihood, En(6).
+Indeed, in defining AIC, Akaike (•973, 1974) has exactly this consideration of the bias
+
+<-----Page 6----->351
+
+HAMPARSUM BOZDOGAN
+
+.//-
+
+*,,
+0-0
+
+Plot
+
+of H(o*;o),
+
+|
+
+expected
+
+log likelihood
+
+(solid line) and ~ ~ ( O ) , mean log likelihood
+n
+(dashed line) (Silvey, 1975, p. 76).
+by penalizing extra parameters when the maximum likelihood estimates are used in
+estimating the expected log likelihood by the mean log likelihood.
+Now we are in a position to give the definition of entropy maximization principle
+emphasized by Akaike (1977) which is quite different from (and should not be confused
+with) Jayne's (1957) maximum entropy principle.
+
+Definition 1: Entropy maximization principle (EMP). Formulate the object of statistical inference as the estimation of the true distributionf(x I0") from the data x = (x 1, x 2 ,
+.... x,) and try to search for an approximate model f ( x l 0 ) which will maximize expected
+entropy:
+Ex[B(O*; 0)] = f B(O*; O)f(x I0") dx
+= ExrH(O*; 0)1
+
+= Ex{E[logf(XlO)] }.
+
+(15)
+
+Equivalently, we minimize the expected K-L information quantity.
+Large expected log likelihood E[logf(XI0)] means large entropy, and it also means
+that the model f ( x l 0 ) is a good fit to f(xl0*), or, equivalently, the low value of I(0"; 0)
+means that the model f ( x t 0) is a good fit to f ( x I0"). Thus, it is by the mean of B(0*; 0),
+1(0"; 0), or the mean expected log likelihood over the sampling distribution of the estimator of 0 that we will judge a particular model and measure our ignorance about the
+true structure of the model.
+This definition will play an important role in that, since entropy or negentropy is
+nothing but a log odds ratio between the fitted model f ( x t0) and the true distribution
+f(xl0*), it can be used as a loss function, and its expected value can be used as a risk
+function to measure the average estimation error of the fitted model from the true one as
+suggested by Akaike (1973).
+Next, we derive AIC in detail as a natural sample estimate of E[logf(XI0)], the
+expected log likelihood.
+
+<-----Page 7----->352
+
+PSYCHOMETRIKA
+
+~
+"K
+
+/ /
+
+/
+
+/
+
+I
+I
+I
+I
+
+I
+
+/
+/
+
+S
+
+~
+
+.
+
+3.
+
+Parametric
+
+estimation
+
+interpreted
+
+projection
+
+from ~K t o ~k.
+
+as E u c l i d e a n
+
+Akaike's Information Criterion (AIC) as an Estimate of Negentropy
+
+Suppose that we have a general model f ( . 10) from which all the K competing
+models are generated by simply restricting the general parameter vector 0. In terms of the
+parameters, we represent the full model with K parameters by
+MODEL(K):
+
+f ( . [0),
+
+0 = Or = (01, 02 . . . . . Ok, Ok+l . . . . . Or).
+
+(16)
+
+We denote the "true" value of the parameter vector 0 by 0* with 0* e R ~. Following
+Akaike (1973), the problem of statistical model identification can be formulated as the
+problem of selecting a model f ( x 10k) based on n observations. In terms of parameters, Ok
+is restricted to the space with Ok+ 1 = Ok+2 . . . . .
+OK = 0, or equal to a prescribed value
+of 0 k , and that a particular restricted model with k parameters is given by
+MODEL(k):
+
+f ( . 10k), Ok = (01, 02 . . . . . Ok, 0, 0 . . . . . 0).
+
+(17)
+
+Often k, the number of free parameters of MODEL(k), is called the dimension or order of
+the model. If werepresent parametric estimation geometrically in terms of a Euclidean
+projection shown in Figure 3.1, we denote the maximum likelihood estimate of Or by Or
+both of which lie in R r (the K-dimensional Euclidean space). We let 0* denote the true
+parameter vector with 0 e R x, and define 0~' as the parameter vector of the best fitting or
+approximating mbdel with 0f ~ R ~ (k-dimensional parametric subspace Rk of the original
+space Rr). We note that the parameter vector 0f is the projection of the true parameter
+vector O* in the subspace R k. Next, we let 0 k denote the restricted maximum likelihood
+estimator of Ok of MODEL(k) which lies in R ~, and which is also the projection of 0x in
+R k. Thus, geometrically ( 0 f - Ok) will constitute our random error. It can be viewed
+
+<-----Page 8----->353
+
+HAMPARSUM BOZDOGAN
+
+approximately as the projection of (0" - 0x) into the subspace ~k. On the other hand,
+(0" - 0~') is deterministic and is the bias due to selecting an approximate parameter space.
+To elaborate further, following Clergeot (1984), if for different values of k, subspaces
+R k are chosen so that R k c R k+l, the bias, which is the distance of 0* to the subspace R k,
+is a nonincreasing function of k, while the r a n d o m error increases monotonically with k.
+Thus, our goal here will be to find some optimal value of k so that the compromise
+between bias and random error will give the smallest estimation error.
+The AIC statistic which we next state in the form of a proposition and sketch its
+derivation is designed to approximate the real model by a lower dimensional model so as
+to minimize the average estimation error.
+
+Proposition 1: Akaike's information criterion (AIC): Let {Mk: k = 1, 2 . . . . . K} be a set
+of competing models indexed by k = 1, 2, ..., K. Then the criterion
+AIC(k) = - 2 log L(0k) + 2k,
+
+(18)
+
+which is minimized to choose a model M k over the set of models is a natural sample
+estimator of twice the negentropy, 2E[I(0*; Ok)'] , o r minus twice the expected log likelihood, - 2E[log f ( X I Ok)], of the true distribution with respect to a model with the parameters determined by the method of m a x i m u m likelihood.
+
+Proof. Following Akaike (1973, 1974, 1976), and Kitagawa (1979), we first assume a
+model which specifies a probability density function f(xlOk) of n observations with a free
+parameter vector Ok and then find the M L E 0 k of 0 k with Ok e R k by maximizing the
+likelihood function
+L(Ok IX) = L(0k Ix1, x2 . . . . . xn) ---- l~I f(xilOk) ,
+
+(19)
+
+i=1
+
+with respect to Ok . By taking the natural logarithm of the likelihood function, and dividing by the sample size n, we get
+
+l ( 0 k ) _----1log C(0k Ix) =--1 ~ log f(x, IOk),
+n
+
+n
+
+(20)
+
+n i=l
+
+the average or mean log likelihood which is a natural consistent estimator of
+E [ l o g f ( X I 0 k ) ] = f 1ogf(xl0k)f(xl0k) dx,
+
+(21)
+
+the expected log likelihood.
+Since the purpose of estimating the parameters of the true model f ( x l 0 * ) is to base
+our decision o n f ( x 16) where 0 -= 0r is an estimate of 0", then the discussion in section 2
+suggests the use of K - L i n f o r m ~ i o n quantity
+
+I 'xo"]
+r
+
+(22)
+
+Ex[l(0* ; 0)] = f I(0"; 0)f(x I 0") dx
+
+(23)
+
+I(0"; O) = - B(O*; O) =
+
+log Lf(x ~T-~ J(x 0") dx,
+
+as the loss function, and
+
+as the risk function according to Definition 1 E M P of Akaike (1977).
+Expanding I(0"; 0) in a Taylor series with respect to its second argument around 0",
+
+<-----Page 9----->354
+
+PSYCHOMETRIKA
+
+we have an a p p r o x i m a t i o n (see, e.g., also Kullback, 1959) given as follows.
+1(0"; 0* + A0) - ½11A0 112,
+
+(24)
+
+tt n o Jt2 = II o - o* I12 = (0 - 0*)'J(0 - o*)
+
+(25)
+
+where
+
+and J is the (K x K) Fisher information matrix which is positive definite and defined by
+
+As shown in Figure 3.1, we next restrict 0 to lie in k-dimensional restricted p a r a m e t e r
+space, O k, while the true p a r a m e t e r vector, 0*, lies in a K-dimensional full p a r a m e t e r
+space t~ K, where k < K. D e n o t i n g by 0* the projection of 0* onto O k and using the
+m a x i m u m likelihood estimate Ok of 0* in O k, we have
+21(0"; Ok) ~ 21(0"; Ok),
+
+(27)
+
+SO that using the a p p r o x i m a t i o n in (3.7), we have
+21(0"; 0~) ~ II 0* - 0k 112
+
+112
+
+II 0 * - 0~' 112 + II 0~' - Ok
+
+by the P y t h a g o r e a n theorem.
+Thus, for large n, a measure of the average estimation error is given by the expectation of the K - L information quantity:
+
+2nE[I(O*; Ok)] -~ E[n II 0* - 0~' 112 + n 110* - Ok 1123
+= n
+
+II
+
+0*
+
+-
+
+0~'
+
+112 + E[n II 0~'
+
+-
+
+0k IIs],
+2
+
+(28)
+
+where the first term in (28) is the bias and the second term is a m e a s u r e of the variance of
+the r a n d o m error ( 0 * - Ok)- F o r the second term, that is, for n II0 * - 04112 under the
+expectation, for sufficiently large n, we have
+a.d.
+
+n [[ 0* -- Ok 1I2 = I1(n)l/2(O* -- Ok)II2 "" Z 2
+
+(29)
+
+with k degrees of freedom, and a.d. stands for asymptotically distributed. Since E(Z 2) = k,
+its degrees of freedom, then (28) for large n a p p r o x i m a t e l y becomes
+
+2nE[l(O*; Ok)] g n II 0* - 0~' 112 + k
+6 + k.
+
+(30)
+
+E q u a t i o n (30) represents the overall risk of statistical modeling which measures the
+extent to which Ok deviates from the true p a r a m e t e r vector 0". As we note, it is c o m p o s e d
+of two c o m p o n e n t s ; one which involves 6 = n tl 0* - 01' 112, is the error or bias due to
+selecting an a p p r o x i m a t e p a r a m e t e r space for the restricted p a r a m e t e r space for 0*, and
+the other which involves k, is a m e a s u r e of variance or the r a n d o m error due to estimating
+the specified p a r a m e t e r vector.
+O f course, it is impossible to minimize (30) directly since the bias 6 = n 110* - 0 f It2 is
+unknown, but it is deterministic. It needs to be estimated in practice with finite samples.
+Akaike (1973) cleverly estimates 6 using Wald's (1943) results on the a s y m p t o t i c distribution of the log likelihood ratio statistic, namely, that when x is a vector of observations
+of independently identically distributed r a n d o m variables under certain regularity con-
+
+<-----Page 10----->355
+
+HAMPARSUM BOZDOGAN
+
+ditions the likelihood ratio statistic
+"
+
+kl']K
+
+=
+
+--
+
+f(xi
+
+10k)
+
+(3t)
+
+2 log/1 = LR(x) = -- 21~1°g--2-1Jt'xi [ uJ~'x"
+
+is used to estimate I(0"; Ok), since the m e a n log likelihood is a consistent estimate of
+I(0"; Ok), and that (31) is asymptotically distributed as a noncentral X2 r a n d o m variable.
+T h a t is,
+a.d.
+
+kt/K = - - 2 Iog 2 ~ Z.,Z(6)
+
+(32)
+
+with v = K -- k degrees of freedom and the noncentrality p a r a m e t e r 6 = n I10* - 0~' 113.
+Since
+E [ x ,,2 (a)] = 6 + v,
+
+(33)
+
+kttr = - - 2 log /t --~ E [ - - 2 log 2] = E[Z~z(6)] = 6 + v,
+
+(34)
+
+and since
+
+solving for 6, we have
+6 = n II 0 * - 0 f II2 ~
+
+--2 log/1 - v
+
+(35)
+
+=-21og/1-(K-k).
+
+It follows that (30) becomes
+
+- 2 nEEB(O*; O~)] = 2nEEIEO*; 0k)]
+-~ - 2 log/1 - (K -- k) + k.
+
+(36)
+
+Simplifying the right hand side of (36), we have
+-21og/1+2k-K=--21og~r)
+
+L(Ok)
+
++2k-K
+
+= - - 2 [ l o g t(Ok) -- log L(0r) ] + 2k -- K
+= - 2 log L(Ok) + 2k + 2 log L(0x) -- K,
+
+(37)
+
+so that
+-
+
+2ng[B(O*; 0k)] = 2neU(o*; 0k)]
+- - 2 log L(Ok) + 2k + 2 log L(Or) - K,
+kt/r + 2k -- K.
+
+(38)
+
+It follows from the above discussion that if the K - L information quantity, I(8"; Ok), is
+a d o p t e d as the loss function in our model building with the associated risk function (i.e.,
+the expected loss), then from (36) we note that
+~((OK; Ok) = 1 ( - 2 log/1 + 2k - K)
+._n
+
+(39)
+
+serves as a useful estimate of this risk function, namely, E[I(O*; Ok)I, at least for the case
+where n is sufficiently large, and K and k are relatively large integers. In practical applications, K sometimes m a y h a p p e n to be very large, or conceptually infinite integer, and
+
+<-----Page 11----->356
+
+PSYCHOMETRIKA
+
+may not be defined clearly. Even under such circumstances we choose limited number of
+k's, assuming K to be equal to the larger hypothesized value of k. Since we are only
+concerned with finding out the Ok which will give the minimum of ~ ( r r ; Ok) in (39), or
+equivalently, the minimum of 2nE[I(O*; 0k)] in (38), we have only to compute either
+f ( x , I 0~________)
+k V r = k r / r + 2 k = - - 2 ~ ,= 1 log f(xi 10K) + 2k,
+
+(40)
+
+or, ignoring the constant terms in (38) common to every model, we reduce the form of
+AIC to a much simpler form
+n
+
+AIC(k) = - 2 ~ log f ( x i [Ok) + 2k
+i=1
+
+= --2 log L(Ok) + 2k,
+
+(41)
+
+and choose the minimum of AIC over k = 1, 2. . . . . K.
+This completes the derivation of AIC and the sketch of the proof of the proposition.
+[]
+We note that AIC(k) in (41) is an unbiased estimator of minus twice the mean
+expected log likelihood, or equivalently - ½ AIC(k) is asymptotically an unbiased estimator of the mean expected log likelihood. This result suggests that asymptotically a
+reasonable definition of the likelihood of a model is
+
+L(k) = exp {-- ½ AIC(k)}
+
+(k = 1, 2. . . . . K).
+
+(42)
+
+In fact, with the assumption of equal prior probability for the models, the distribution of
+(42) defines the posterior distribution of models. If there are several models with almost
+equal values of AIC, it is useful to consider the averaged model by using (42) as the
+"likelihood" of each model as discussed in Akaike (1978, 1979).
+We interpret the result in (41) as follows. The first term in (41) is a measure of
+inaccuracy, badness of fit, or bias when the maximum likelihood estimators of the parameters of the model are used. The second term, on the other hand, is a measure of
+complexity or the penalty due to the increased unreliability or compensation for the bias
+in the first term which depends upon the number of parameters used to fit the data.
+Thus, when there are several competing models the parameters within the models are
+estimated by the method of maximum likelihood and the values of the AIC's are computed and compared to find a model with the minimum value of AIC. This procedure is
+called the minimum AIC procedure and the model with the minimum AIC is called the
+minimum AIC estimate (MAICE) and is chosen to be the best model. Therefore, for us the
+best model is the one with least complexity, or equivalently, the highest information gain.
+In applying AIC, the emphasis is on comparing the goodness of fit of various models with
+an allowance made for parsimony.
+4.
+
+Consistent Akaike's Information Criterion: CAIC(k)
+
+As we saw in the derivation of AIC in the previous section, one of the important
+virtues of AIC is the penalty represented by the term 2 x (number of free parameters)
+clearly demonstrates the necessity of choosing a class of models, at least one of which will
+be able to provide a good approximation to the distribution of the data without adjusting
+too many parameters. However, in the literature, the particular specifications put on the
+crucial structure-dependent term in AIC, that is, the so-called "magic number" 2, has been
+
+<-----Page 12----->HAMPARSUM BOZDOGAN
+
+357
+
+questioned unfairly as being coincidental or arbitrary (Rissanen, 1978). If one follows the
+derivation of AIC in section 3, the emergence of the magic number 2 is hardly debatable.
+The debating questions should be: Is the magic number 2 enough, should it be greater
+than 2, how do we choose such a number, or on what does it depend, and so forth?
+Based on the frequency of choice of the correct model from a simulation study, many
+authors, including Bhansali and Downham (1977), in a time series model, arbitrarily
+considered the range of the magic number to be between 1 and 4. The propriety of such a
+choice has been criticized by both Akaike (1979) and Atkinson (1980) on the grounds of
+lack of objectivity and the need for more explicit analytical formulation.
+Objections have been raised that minimizing AIC does not produce an asymptotically consistent estimate of model order (Bhansali and Downham, 1977; Schwarz,
+1978; Woodroofe, 1982; and others). However, consistency is an asymptotic property, and
+any real problem has a finite sample size n as stated in Sclove (1987). Certainly, from a
+mathematical point of view, consistency is an attractive asymptotic property to expect
+from a model selection procedure, but any consideration of consistency presupposes that
+there exist "true" order of a model. In the case of real data, the concept of the true order is
+not known and is suspect.
+Even though the AIC procedure is not claimed to be consistent and is not designed
+to be such (Akaike, 1981b; Quinn, 1980), its inconsistency is not necessarily a defect in the
+method, and the virtue of consistency should not be exaggerated (Hannah, 1986). Shibata
+(1983) extensively studied the asymptotic behavior of AIC procedure and its variants in
+terms of asymptotic efficiency under a quadratic loss function. He found that AIC actually
+achieves the implicit goal that motivated Akaike--it does the best that any modelselection procedure can do in minimizing negentropy, or the expected log likelihood, at
+least for a large sample size n (Larimore & Mehra, 1985).
+In general, the major dilemma here is how to balance optimally the underfitting and
+overfitting risks, or how to optimally adjust the bias in the log likelihood ratio when the
+maximum likelihood estimates are used.
+Without violating Akaike's principles, using the established results in mathematical
+statistics, we improve and extend AIC analytically in two ways. These extensions make
+AIC asymptotically consistent, and that we penalize overparameterization more stringently to pick the simplest of the true models whenever there is nothing to be lost in
+doing so.
+In section 2.2, we discussed the fact that when the mean log likelihood is used to
+estimate the K-L information quantity, the bias introduced by the maximum likelihood
+estimates of the parameters needs to be adjusted or corrected. In the derivation of AIC,
+this bias comes out as a noncentrality parameter, 6, which is a very large unknown but
+deterministic constant. It depends not only on the number o f observations but also the
+specific estimation method used. For example, in our case this method is the maximum
+likelihood (ML) method. Moreover, the distributional change in 6 for different sample
+sizes is also crucial to justify the correction of the bias further. That is, we do not want to
+have a very large 6, since it varies with the basic model. As is well known, noncentrality
+parameters determine the power of test procedures, and the estimation of 6 on the basis of
+preliminary data may be necessary to choose among competing models.
+We note from (35) that one such correction in 6 is already given in deriving AIC, that
+is, 6 - - 2 log 2 - (K -- k). Also we note that this correction factor v = (K - k) is independent of the sample size n. However, in testing a null hypothesis (or a model) distinguished from the alternative hypothesis (or hypotheses) by the value of a parameter, if
+the test statistic has a noncentral chi-square distribution which is the case here, then the
+
+<-----Page 13----->358
+
+PSYCHOMETRIKA
+
+degrees of freedom is an increasing function of the sample size n (Kendall & Stuart, 1967).
+This suggests that to make AIC consistent, the multiplier of the number of free parameters in the penalty term must be made to depend on the sample size by setting
+
+v = a(nXK - k),
+
+(43)
+
+where a(n) is an increasing function of n. In AIC, we note that a(n) = 1. As discussed in
+Davis and Vinter (1985), the selection of the function a(n) is important, and it should be
+chosen so that it has various desirable properties for the corresponding estimates. Recapitulating Davis and Vinter (1985), the properties of a(n) which might be required are:
+(i) high probability of choosing the correct dimension of the model, or order for finite
+data sets; and
+(ii) consistency, that is, asymptotically correct choice of k as n--} ~ ,
+Presently, in the literature there is no theory available as to how to choose the
+correct dimension of a model with high probability. On the other hand, consistency holds
+almost surely for certain choices of a(n) including the choice a(n) = log n, where "log"
+denotes the natural logarithm. Therefore, we choose a(n)= !og n since it provides a
+monotonically increasing function of the sample size n, such that a(n)/n---, 0 as n---} oo (see
+also, e.g., Akaike, 1978). We shall denote this type of modified AIC by a generic name,
+CAIC. So if we take v = (K - k) log n, then we have the following proposition.
+
+Proposition 2.
+
+(44)
+
+CAIC(k) = - 2 log L(6k) + k[(log n) + 1].
+
+Proof. Recall from (30) that
+2nEll(O*; Ok)] ~ 6 + k.
+
+(45)
+
+6 ~- --2 log 2 -- v,
+
+(46)
+
+6 ~ - 2 log A - (K - k) log n.
+
+(47)
+
+Since
+
+and since v = (K - k) log n, then
+
+Substituting this into (46) and simplifying, we get
+2nE[/(O*; Ok)] --~ --2 log L(O~) + k log n
++ k + 2 log L(@r,) -- K log n.
+
+(48)
+
+Since CAIC estimates the quantity 2nE[l], that is, twice the expected Kullback information, then
+CAIC(k) = - 2 log L(@k)+ k log n + k + 2 log L(0r) - K log n.
+
+(49)
+
+Since the constants do not effect the results of comparison of models, we drop the additive
+terms and reduce the form of CAIC(k) to a much simpler form, namely
+CAIC(k) = - 2 log L(Ok) + kl-(log n) + 1].
+
+[]
+
+(50)
+
+This shows that AIC can be fairly easily extended to make it consistent, even though
+a practical difficulty is that consistency is a weak property (Atkinson, 1980). Note that
+CAIC(k) is similar to the Schwarz's (1978) Criterion of k log n, and that the term
+[k log n + k] has the effect of increasing the "penalty term." Consequently, the mini-
+
+<-----Page 14----->HAMPARSUM BOZDOGAN
+
+359
+
+mization of CAIC leads, in general, to lower dimensional models than those obtained by
+minimizing AIC.
+In the literature, Hannan and Quinn (1979) proposed a(n) = c log log n, where c > 2.
+Their objective was to provide a consistent criterion in which a(n) increases with n but at
+as slow a rate as possible. If we let k < k(n), where k is an upper bound of k, possibly
+depending on n, other choices of a(n) are:
+
+a(n) = (log n) l+b
+
+and
+
+k(n) = (log n)c,
+
+(51)
+
+where b and c are arbitrary strictly positive constants.
+Next, we give yet another analytical extension of AIC which will unify all these
+procedures.
+5.
+
+Consistent AIC with Fisher Information: CAICF(k)
+
+In this section, exploiting the large sample asymptotic distributional properties of the
+maximum likelihood estimators, we propose a different estimator for minus twice the
+expected entropy to extend AIC analytically to make it consistent without deviating from
+Akaike's original premise. In this manner we penalize overparameterization more
+strongly, in particular, for large samples. Therefore, instead of dropping the term
+2 log L(Or) in (38) as we do in simplifying the expression to obtain a simple form for AIC,
+we retain this term and propose a different approximation to L(Or) which estimates the
+likelihood function L(0*) of the true model. This means that one can specify the true
+model to be the most general of the models to be selected and consider the fact that the
+observations are generated by the true density f ( x l 0 * ) instead o f f ( x l 0 ~ ) . This way we
+can estimate the unknown parameters of the true and approximate models by using the
+maximum likelihood estimators and their properties, and obtain the following proposition.
+
+Proposition 3.
+CAICF(k) = - 2 log L(Ok) + k[(log n) + 2] + log I J(0k) l
+-- mIf(k) + k log n + log I J(0k) l.
+
+(52)
+
+T o show the derivation of this proposition, we consider x i.i.d., and we assume that
+the true parameter vector 0* satisfies the restrictions set by the following model in terms
+of the parameters:
+MODEL(k): Ok = (01, 02 . . . . . Ok,
+
+0, .... 0),
+
+(53)
+
+and that Ok*-- 0k = O(n- 1/2), where O denotes the "order of."
+Using the properties of the maximum likelihood estimates for regular models, it is
+well known that the MLE Ok of 0~' is, at least asymptotically, a sufficient statistic for 0~'.
+This can be shown easily by the factorization theorem of the likelihood of the kind to
+establish sufficiency (Cox & Hinkley, 1974). Assuming that 0 k is at least asymptotically
+sufficient for 0~, under this assumption, it is easy to establish the following theorem for
+asymptotic normality.
+
+Theorem 1. A maximum likelihood estimator Ok is asymptotically distributed as
+multivariate normal with mean vector 0f and covariance matrix (nJ)- 1. That is,
+a.d.
+
+Ok ,'~ Nk(Ok*;(nd(0*))- 1).
+
+(54)
+
+<-----Page 15----->360
+
+PSYCHOMETRIKA
+
+So the asymptotic multivariate normal density of Ok is given by
+g(0k) ~
+
+In J(0*)I"
+
+exp { -- {(Ok -- 0*)'n J(0")(0 k -- 0")},
+
+(55)
+
+where Ok is the maximum likelihood estimate of 0* and inverse covaraince matrix is
+c(0,)
+
+= -
+
+2
+
+log d0*)] =- nJ(O*),
+
+(56)
+
+I
+
+0000'
+
+where d(e*) is the Fisher information matrix at 0* with respect to one observation.
+For large samples, we approximate the likelihood o f f ( x 10*) the true density at 0* by
+L(e*; 0k) = O(e*)L(0*) = O(0*) exp {log L(0*)}, using Taylor series expansion of 9(0*) and
+exp {log L(0*)} around the ML estimate Ok. Taking the product of two Taylor series
+expansions and using the leading terms, we obtain
+L(O*; Ok) - (nk I J(0D I)1/2
+(27t)k/2
+exp { -- }(Ok - Ok*') nJ(O k*)(O
+^k - 0,)} [1 + O(n- 1/2)].
+
+(57)
+
+Hence, using asymptotic sufficiency, we can write
+L(0*) = h(x)C(0*; Ok)
+
+(58)
+
+by the factorization criterion, where h(x) is independent of the particular parameter vector
+0 we choose, and the second factor L(0*; Ok) depends on x only through the value of
+Ok - 0k(X), which is sufficient for 0".
+Now, in (38) we replace L(OK) by L(0,) given in (58) assuming that 0* (the true
+parameter vector) is situated near 0" (the restricted or pseudotrue parameter vector) and it
+"almost" satisfies the restrictions set in (53) and get
+kt/K = --2 log L(fik) + 2 log L(O*).
+
+(59)
+
+So, from (58) and (57), we have
+log L(0,) = log h(x) + log L(0*; Ok)
+k
+k
+= log h(x) + ~ log n + x2 log I J(ODI - ~ log (21t)
+-- ½(0 k - a*)'nJ(a*)(O k -- 0") + l o g [1 +
+
+O(n-
+
+x/z)].
+
+(60)
+
+Now, multiplying both sides of (60) by 2, we get
+2 log L(0*) = 2 log h(x) + k log n + log IJ ( 0 * ) l - k log (2n)
+--
+
+,t
+,
+(Ok -- Ok)nJ(O
+k)(O
+k,
+
+--
+
+0") + 2 log I-1 + O(n-112)].
+
+(61)
+
+Since log [1 + O(n-1/2)] is about of order n-a/2, since (e* - Ok) is of order n-x/2,
+nd(O*) is of order n, which implies (Ok -0~,')'nJ(0*)(0k- 0,) is of order O(1), then (61)
+reduces to
+2 log L(0*) = 2 log h(x) + k log n + log I J(0*)l - k log (2x) + O(n-I/2).
+
+(62)
+
+Thus, the approximation involves an error of order n-x/2.
+In Equation (62), by ignoring the constant terms, the term involving x, and O(n-x/2),
+we have
+2 log L(O*) = k log n + log {J(O*)l.
+
+(63)
+
+<-----Page 16----->HAMPARSUM BOZDOGAN
+
+361
+
+~K = --2 log L(0k) + k log n + log I J(0*)l
+
+(64)
+
+Hence, (59) reduces to
+
+Now estimating J(0*) by
+result into (38), we obtain
+
+2nE[l(O*; Ok)'] ~
+
+J(Ok)in (64) where
+--2 log
+
+Ok is the M L E of Ok*, and substituting the
+
+L(Ok)+ k log
+
+n + log
+
+I J(0~)I
+
++ 2k - K
+
+= --2 log L(0k) + k[(log n) + 2] + log IJ(0~)I - g .
+
+(65)
+
+Simplifying (65) further, we have
+CAICF(k) = - 2 log L(0g) + kE(log n) + 2] + log I J(0k) l
+= AIC(k) + k log n + log I J(0k) l.
+
+(66)
+
+We note that if we take the first two terms in (66), CAICF is similar to CAIC of
+section 4, and also Schwarz's criterion (SC, 1978).
+Hence, this way, without relying on the arbitrary frequency of choice of the correct
+model to modify AIC heuristically, we can analytically extend AIC to make it consistent.
+In this manner we penalize the overparameterization more strongly, in particular, for
+large samples. Note that we have not deviated from Akaike's original principle: we are
+still estimating minus twice the expected entropy. Also, note that we have not followed a
+Bayesian approach.
+The incorporation of the Fisher information matrix J(Ok) within the penalty component of CAICF has many practical and theoretical importance. Generally, when we are
+using model-selection criteria, we fit the models under a specified parametric probability
+distribution of the model. The correct specification of the probability model is a sufficient,
+but by no means a necessary condition. For example, even when the true distribution is
+not normal, we still find the maximum likelihood estimators under the assumption of
+normality which yields consistent estimates of the mean and the variance. But it is the
+consistency of the mean log likelihood which ensures us the basis for robust estimation,
+and that it provides us the basis for constructing specification tests. Therefore, we need to
+check or test first whether the probability model is misspeeified or not before we actually
+fit and evaluate the models. This is very important in practice which is often ignored. For
+this reason, following White (1982), we give a simple test of information matrix equivalence
+to check the misspecification of a model. First, we define the following matrices
+J.(0*) = - - { ~
+
+~ c~2 l°gf(x'10k*)~
+,o1
+
+R.(0*) =
+
+n,
+
+0log:( ,,0 )alogf( ,10 )}
+d0,
+
+dOs
+
+(67)
+
+'
+
+If the expectations exist, we define
+
+a0, o0s
+(68)
+
+R(Ok*)= {E[.a l°gf(XlO*) . O l°gf(XlO*)}
+where both in (67) and (68), r, s = 1, 2 . . . . , k.
+
+<-----Page 17----->362
+
+PSYCHOMETRIKA
+When the appropriate inverses exist, we define
+Cn(O*) = J.(Ok*)- 1Rn(Ok*)J~(Ok*)- 1 ----Jn- 1R. J~- 1,
+(69)
+C(0*)=
+
+j(Ok)
+k)
+, - 1 R(Ok)J(O
+,
+,-1
+
+- j- IRj
+
+1,
+
+where J(0*) is the Fisher's information matrix which is positive-definite, and C(0*) is the
+covariance matrix. When the model is correctly specified and certain assumptions hold as
+in White (1982, p. 6), we have the following result.
+Theorem 2: Information matrix equivalence. If f ( x ) - f ( x t 0 * ) for 0* in f~r, then
+0* = 0~' and J(0*) = R(0~'), so that the covariance C(0~') = J(0~')- 1 = R(0~')- 1
+Note that, in general, J(0*) will not equal R(0~') when the model is misspecified.
+However, when the model is correctly specified, then this theorem says that the information matrix can be expressed in either Hessian form, J(0*), or outer product form,
+R(0*), giving equivalently,
+J(O*) -- R(O*) = O.
+
+(70)
+
+The matrix in (70) is not directly observable, but we can consistently estimate it by
+J(Ok) -- g(Ok) = 0,
+
+(71)
+
+and construct an appropriate test statistic to test whether a model misspecified or not.
+For example, if the equality in (71) fails, then this indicates that the probability model is
+misspecified. In practice, this misspecification may have many serious consequences when
+the classical inferential procedures are used. Furthermore, the failure of information
+matrix equivalence might also indicate misspecifications which render the M L E to be
+inconsistent for particular parameters of interest. Therefore, (71) is a useful indicator of
+misspecifications which cause either parameter or covariance matrix estimator inconsistency.
+If we find that J(0k), the estimated information matrix, is singular (or nearly singular)
+and so indefinite, we have an indication that the K-L information quantity has no unique
+minimum at 0", the true parameter vector. Therefore, CAICF as a large sample asymptotic estimator of the mean K-L information quantity will not have a unique minimum
+also. Furthermore, this in practice means that there are parameter vectors 0 ¢ 0* such
+that the expected mean log likelihood z(0) = z(0*) given in (12), and this in turn means
+that there are different parameters yielding the same distribution so that 0 is not identifiable. Thus, lack of identifiability of 0 implies singularity of information matrix and vice
+versa (Silvey, 1975, p. 82). Near singularity of the information matrix will also give us an
+indication of high variances for the estimators which is not preferred. In either case, the
+parameters may not be estimated with any high degree of accuracy. In this respect, one
+advantage of using CAICF in (66) is that it generalizes and unifies model selection
+procedures, and that, whenever possible, one should compute J(Ok), test whether the
+model is correctly specified or not, and then proceed with model fitting and evaluation.
+Indeed, if we cannot achieve a unique minimum by using CAICF, then this should be an
+indication that we have problems in identifying the parameters. In that case, we should
+bring in a priori information in order to impose restrictions on the model or tackle the
+problem with reparametrizing the model.
+As discussed in Sclove (1987), Kashyap (1982), taking the Bayesian approach, took
+the asymptotic expansion of the logarithm of the posterior probabilities a term further
+
+<-----Page 18----->HAMPARSUM BOZDOGAN
+
+363
+
+than did Schwarz (1978) and obtained the criterion approximately given by
+KC(k) = - 2 log L({Jk)-- log f(0~) + k log n + log [ n(lJ~)[,
+
+(72)
+
+where f(0~') is the prior probability density on the parameter vector 0~'. B((Jk) is the
+negative of the matrix of second partials of log L(0k), evaluated at the maximum likelihood estimates. In Gaussian linear models, this is the covariance matrix of the maximum
+likelihood estimates of the regression coefficient; in general, the expectation of B({Jk),
+evaluated at the true parameter values, is Fisher's information matrix. If we assume equal
+probabilities for f(0*), the term togf(0~') in (72) will be ignored, and thus we can see the
+relationship between K C and our extension of AIC, i.e., the CAICF given in (66). Similar
+results are also given in Haughton (1983) by extending the Schwarz's criterion for exponential families a term further than did Schwarz.
+6.
+
+Asymptotic Properties and Inferential Error Rates of the Criteria
+
+It is well known that the classical theory of hypothesis testing is concerned with the
+problem: Is a given observation consistent with some stated hypothesis or is it not? In the
+hypothesis testing tradition, frequently ignoring power considerations, we choose an arbitrary significance level ~, for example, the celebrated 5%, 2.5%, or 1%, and then we try to
+determine (at least approximately) a critical value from the standard tables of the test
+procedures to make our decision. Almost automatically, we also apply the hypothesis
+testing procedures to the situation where actually multiple decision procedures are required. However, this involves the choice of a number of dependent significance levels
+without knowing what the overall error rate might be. Also, test procedures do not have
+the provision to penalize overparameterization since usually an unstructured saturated
+model is always used as a reference (Akaike, 1987).
+On the other hand, when we use the information-theoretic model selection criteria,
+we do not specify what the arbitrary significance level ~ should be or ought to be. This is
+due to the fact that in using model selection criteria, the situation is totally the opposite of
+the classical inferential procedures. In this case, we are concerned with: Choosing a
+critical value which then determines, approximately, what the significance level is or
+might be. Therefore, the significance level is implicitly incorporated within the model
+selection criteria which depends on the specific functional form of the penalty component
+of the criteria and on the number of observations.
+In general, for model selection criteria, the inferential error rate decreases exponentially as we increase n, the number of observations. Following Efron (1967), suppose we
+are given n independent and identically distributed (i.i.d.) observations x 1, x 2 . . . . . x, of a
+random variable X having probability density functionf(x). Suppose we are asked to test
+the simple hypothesis:
+vs.
+
+Ho: f(x) -~fo(x)
+nt:
+
+(73)
+
+f(x) =-ft(x)
+
+at some significance level ~, 0 < ~ < 1. It is well known that the most powerful test which
+rejects H o for large values of the likelihood ratio
+2 = f i fl(x~)
+
+(74)
+
+~°1 fo(x,)
+
+has an "error of the second kind," that is, fl = P{Type II error} (probability of mistakenly
+
+<-----Page 19----->364
+
+PSYCHOMETRIKA
+
+accepting the null hypothesis) satisfying
+
+/~(~)
+
+lim - -
+
+= --I,
+
+(75)
+
+n
+
+where I is the K - L information quantity
+(76)
+
+L
+F r o m this, we have the following:
+
+Theorem 3. F o r a specified level of significance ct, 0 < at < 1, under the null h y p o t h esis in (73), we have
+fl(~) = P { T y p e II error} = exp { - - n I + O(1)}.
+
+(77)
+
+T h e Converse of this result is also true if we try to minimize ct = P { T y p e I error}
+(probability of mistakenly rejecting the null hypothesis), keeping fl only fairly small satisfying
+lim
+n~oo
+
+~(/~)
+
+= -I.
+
+(78)
+
+n
+
+So, following ~ e n c o v (1982, p. 122), we state the following:
+
+Theorem 4. F o r a specified fl, 0 < fl < 1, under the null hypothesis in (73), we have
+~t(fl) = P { T y p e I error} = exp { - n I + O(1)}.
+
+(79)
+
+This means that b o t h 0t and fl cannot tend to zero faster than the exponential rate
+where lim,_.~ 0(1) = 0. Thus, for example, ~t is small when the K - L information quantity
+is large, and vice versa. This rate of convergence to zero of ct can also be used as a
+criterion for evaluating the a s y m p t o t i c p e r f o r m a n c e of the information-theoretic procedures. Typically, for consistent criterion, this rate is exponential as stated in the a b o v e
+theorems.
+T o show the T y p e I error for A I C and CAIC, suppose that the "true' dimension is
+o b t a i n e d when k = k*. We consider what h a p p e n s to the probability of choosing a
+dimension k' > k* asymptotically by these criteria.
+F o r AIC, this means
+P{AIC(k') < AIC(k*)}
+= P{2[log L(Ok, ) -- log L(Ok,)] > 2(k' -- k*)}
+2
+-+ P{Ztk,-k*)
+> 2(k' -- k*)}
+
+as n - + oo
+
+> 0.
+
+(8o)
+
+F o r C A I C , this means
+P{CAIC(k') < CAIC(k*)}
+
+= P{2[log L(Ok, ) -- log L(Ok,)] > (k' -- k*)(log n + 1)}
+
+P(Z~k,-k*) > ~ }
+--0.
+
+as n ~ o0
+
+(81)
+
+<-----Page 20----->HAMPARSUM BOZDOGAN
+
+365
+
+Therefore, using AIC it is possible to choose a dimenison k' > k* (the true dimension), the probability of Type I error stays positive but decreases exponentially as
+(k' - k*) gets larger and the critical value (i.e., 2) of the test remains finite n ~ oo. So, even
+asymptotically, there is a positive probability of overestimating the true dimension or the
+size of the model. Therefore, model selection criteria, including AIC, which have this
+property are often called dimension inconsistent. On the other hand, with CAIC and
+CAICF, the probability of Type I error goes to zero as n--~ oo. It also decreases exponentially as ( k ' - k * ) gets larger, but at a much faster rate. Therefore, asymptotically, the
+probability of overestimating the true dimenson or size of the model with these criteria
+equals zero, making them dimension consistent. (For more on the properties of model
+selection criteria, we refer the reader to Ter~isvirta & Mellin, 1986; and Woodroofe, 1982.)
+Without going into detailed proofs, we simply state the following results.
+Result 1. Using CAIC or CAICF if k' < k*, where k* is the true dimension of the
+model, the probability of underfitting a model goes to zero as n---~ oo.
+Result 2. Using CAIC or CAICF if k' > k*, the probability of overfitting a model
+disappears as n ~ ~ .
+
+Note that when we use AIC, CAIC, and CAICF, the "level of significance" is adjusted
+in such a way that the corresponding probability of rejection of the simpler model
+decreases as the degrees of freedom or complexity increase. These procedures, therefore,
+have tendencies to adopt simpler models compared with the chi-square test procedure as
+the degrees of freedom increase. Comparing to AIC, for CAIC, the implied ~ values
+rapidly decrease as the degrees of freedom increase. The same is also true for CAICF.
+However, this rate of decrease depends on n, the number of observations. For large
+samples, as the degrees of freedom increase, the implied ~ values for these criteria decrease
+very sharply.
+This connection between model selection criteria and the level of significance ~,
+provides us a way to test the validity of different restrictions of a model. Also, it gives us a
+yardstick in comparing every possible model and choosing the model giving the smallest
+probability of rejection to be the best fitting model. This fact justifies the comparison of
+the model selection criteria in a class of models which cannot necessarily be compared by
+the classical goodness of fit test. We can use these results to decide what the level of
+significance should be per complexity or restriction when we do classical hypothesis
+testing rather than arbitrarily deciding what ct should be on a priori grounds. Thus, in the
+sense of Theorem 3 and 4, these model selection procedures can be called inferential-errorrate consistent.
+
+7.
+
+A Numerical Example
+
+In this section, to demonstrate the practical utility and to show the empirical performances of the model selection criteria, we provide a Monte Carlo example in determining the degree of a polynomial model in one variable. Choosing the degree of a polynomial model is a major problem that arises when the relationship between y and x is
+considered to be curvilinear. Fitting a polynomial with the maximum degree K is a
+multiple decision problem which is often formulated in terms of a sequential hypothesis
+testing to test whether the coefficients are zero, starting with the highest specified degree.
+Following Graybill (1976), we consider the polynomial model of degree K given by
+Yi = flo + fllx~ + f12 X2 --I- "'" .-~ flK XiK .4- e
+
+i = 1, 2, ..., n > K + 1,
+
+(82)
+
+<-----Page 21----->PSYCHOMETRIKA
+
+366
+
+TABLE 7.1
+
+g r e ~ e ~ c y o f Chooslr~ the Correct Degree o1" a PoJynomlol
+Model I n 100 l~pJ~catlon~ ol" the Monte CnrJo Bxperl~ent
+f o r Varying n and Residual Variance 02
+i
+
+i,ili
+
+i
+
+Estimated
+
+Experiment
+
+n ; 50
+
+1.
+
+~2 = 0.25
+
+n = 100
+2.
+
+~2 , 0.50
+
+n = 200
+3.
+
+~2 . 1.00
+
+NOTB:
+
+The t r u e
+
+Criterion
+
+1
+
+2
+
+3*
+
+AIC
+
+0
+
+0
+
+86
+
+CAIC
+
+0
+
+0
+
+CAICF
+
+0
+
+AIC
+
+0
+
+0
+
+81
+
+i uJ,i,,,,,,it
+
+Degree
+
+Proportion
+
+of
+
+4
+
+5
+
+6
+
+0verflttlng
+
+Under f i t t i n g
+
+14
+
+0
+
+0
+
+.14
+
+0
+
+99
+
+1
+
+0
+
+0
+
+.01
+
+0
+
+0 100
+
+0
+
+0
+
+0
+
+0
+
+0
+
+19
+
+0
+
+0
+
+.19
+
+0
+
+CAIC
+
+0
+
+0
+
+98
+
+2
+
+0
+
+0
+
+.02
+
+0
+
+CAICF
+
+0
+
+0 100
+
+0
+
+0
+
+0
+
+0
+
+0
+
+AIC
+
+0
+
+0
+
+80
+
+20
+
+0
+
+0
+
+.20
+
+0
+
+CAIC
+
+0
+
+0
+
+97
+
+3
+
+0
+
+0
+
+.03
+
+0
+
+CAICF
+
+0
+
+0 100
+
+0
+
+0
+
+0
+
+0
+
+0
+
+cubic
+
+polynomial
+
+model
+
+Is:
+
+y * l+Sx-l.25x2+0.15x3~.,
+
+t ~ N(0,¢2).
+
+S
+
+Correct
+
+degree.
+
+where K is a specified positive integer. We assume that the degree of the polynomial
+model in (82), say k, is less than or equal to K (given), and the problem is to determine the
+exact degree. As we mentioned, the procedure is to test the hypothesis H o : / ~ = 0, then
+test ilK- 1 = 0, then test ilK- 2 = 0, and so on against the alternative of nonzero coefficient
+until a hypothesis is rejected. Suppose /~k = 0 is the first hypothesis that is rejected, then
+we declare that the model of degree k is the correct model. If no H 0 is rejected, then we
+declare the simple model Yi = flo + e~ is the correct model.
+It has been shown by Anderson (1962) that this procedure for determining the degree
+of a polynomial model has some desirable optimality properties. However, as we know,
+application of test procedures to such multiple-decision problems involves the choice of a
+number of dependent significance levels. This creates the problem of how to control the
+overall error rate of the test procedures for determining the correct degree of a polynomial model. As an alternative to the classical inferential procedures, here we propose
+the use of model selection procedures to determine the degree of a polynomial model.
+To demonstrate this, we carried out a Monte Carlo study under the true cubic
+polynomial model given by
+y = 1 + 5 x - - 1.25x 2 + O.15x 3 + 5,
+
+(83)
+
+<-----Page 22----->HAMPARSUM BOZDOGAN
+
+367
+
+TABLE 7.2
+
+Frequency o f Choosing the Correct Degree o f a Polynomial
+Model In I00 Repllcatlons of the Monte Carlo Experiment
+Eor Varying n and Sasne Residual Variance 0 2
+iii,
+
+.~
+
+Estimated Degree
+Experiment
+
+2.
+
+3.
+
+n
+
+=
+
+50
+
+n = 100
+
+n = 200
+
+NOTE:
+
+The t r u e
+
+of
+
+4
+
+5
+
+6
+
+Overflttlng
+
+gnderflttlng
+
+73
+
+14
+
+10
+
+0
+
+.24
+
+.03
+
+0
+
+81
+
+10
+
+5
+
+0
+
+.15
+
+.04
+
+0
+
+23
+
+0
+
+0
+
+0
+
+0
+
+.77
+
+0
+
+0
+
+80
+
+11
+
+9
+
+0
+
+.20
+
+0
+
+CAIC
+
+0
+
+0
+
+93
+
+5
+
+2
+
+0
+
+.07
+
+0
+
+CAICF
+
+0
+
+0 100
+
+0
+
+0
+
+0
+
+0
+
+0
+
+AIC
+
+0
+
+0
+
+88
+
+12
+
+0
+
+0
+
+.~2
+
+0
+
+CAIC
+
+0
+
+0
+
+94
+
+6
+
+0
+
+0
+
+.06
+
+0
+
+CAICF
+
+0
+
+0 100
+
+0
+
+0
+
+0
+
+0
+
+0
+
+Criterion
+
+1
+
+2
+
+3
+
+0
+
+CAIC
+
+4
+
+CAICF
+
+77
+
+AIC
+
+AIC
+1,
+
+Proportion
+
+cubic
+
+polynomial
+
+3*
+
+Is:
+
+y = 1+5x-1.25x2+O.15x3+¢,
+
+¢ ~ N(O,G2),
+
+w h e r e G2 = 5 .
+
+8
+
+Correct
+
+degree.
+
+w h e r e it is a s s u m e d t h a t e -~ N(0, a2). I n the first design of the M o n t e C a r l o study, we
+b o t h v a r i e d n, the n u m b e r o f o b s e r v a t i o n s , a n d a 2, the residual v a r i a n c e s i m u l t a n e o u s l y
+a c r o s s three different e x p e r i m e n t s in c h o o s i n g the correct degree o f k = 3, a n d in s t u d y i n g
+the relative p e r f o r m a n c e s o f A I C , C A I C , a n d C A I C F b y fitting the p o l y n o m i a l m o d e l s o f
+degree r a n g i n g from 1 to 6. I n the s e c o n d design o f the M o n t e C a r l o study, we increased
+the residual v a r i a n c e a 2, b u t k e p t it the s a m e a n d v a r i e d the s a m p l e size n across three
+different e x p e r i m e n t s in s t u d y i n g the relative p e r f o r m a n c e s o f A I C , C A I C , a n d C A I C F .
+All the c o m p u t a t i o n s are c a r r i e d o u t using o u r P O L Y R E G a l g o r i t h m in d o u b l e
+p r e c i s i o n o n one o f the P R I M E 750 c o m p u t e r s o f the U n i v e r s i t y o f Virginia. T h e results
+a r e given in T a b l e 7.1 a n d 7.2 as follows.
+L o o k i n g at T a b l e 7.1, we see t h a t A I C has the t e n d e n c y to overfit the correct degree
+o f the p o l y n o m i a l as the s a m p l e size n gets large a n d the residual variance 62 varies. This
+suggests t h a t a s t r o n g e r p e n a l t y for m o d e l c o m p l e x i t y c o u l d be beneficial as we discussed
+before. F o r C A I C , there a p p e a r s to be a slight t e n d e n c y to overfit the correct degree o f the
+p o l y n o m i a l model, b u t this is very insignificant. O n the o t h e r hand, across all the three
+
+<-----Page 23----->368
+
+PSYCHOMETRIKA
+
+experiments, the condition for the consistency of order determination by C A I C F holds
+perfectly.
+Looking at Table 7.2, we note that the results are different from that of Table 7.1.
+This is due to the fact that we increased the residual variance t72 to 5 in 100 replications of
+the M o n t e Carlo Experiment. F o r n = 50, AIC and C A I C are performing much better
+than C A I C F in choosing the correct degree (k = 3) of the polynomial model. In fact, the
+proportion of underfitting for C A I C F is 77%. However, for CAICF, the underfitting
+diminishes as n, the sample size, gets large and the condition of consistency holds. These
+results suggest that when n is small and residual variance ~2 is large, C A I C F might have
+the tendency to underfit the true order of a polynomial model. But, as we saw, this
+behavior of C A I C F disappears as n gets large. We emphasize the fact that this was the
+only extreme example for C A I C F when n = 50 a m o n g m a n y repetitions of the M o n t e
+Carlo experiment.
+Overall, we observe that AIC, CAIC, and C A I C F are powerful tools to determine the
+best fitting model. They are superior to classical inferential methods in terms of their
+computational simplicity, in terms of not arbitrarily specifying a significance level ~, and
+not worrying what the overall inferential error rate might be or ought to be in determining the degree of a polynomial model, and in general.
+8.
+
+Conclusions and Discussion
+
+In this paper, we studied the general theory of the AIC procedure, presented its
+mathematical derivation and showed the emergence of the magic number 2 in its derivation. We provided analytical extensions of AIC in two ways without violating Akaike's
+main principles which make AIC asymptotically consistent and penalize overparameterization more stringently rather than relying on the heuristic or arbitrary modifications.
+We investigated the asymptotic properties of AIC and its analytical extensions. We
+studied the inferential error rates of these procedures for testing the validity of different
+complexities. The preference of one or the other of these criteria in a given situation
+depends on how "conservative" or "liberal" we want to be in terms of setting the level of
+significance a per complexity and avoid overfitting and underfitting risks.
+If we want to avoid overfitting a model, then we should use the consistent criteria:
+C A I C and CAICF, sometimes at the cost of underfitting a model in finite samples, which
+leads to a significant increase in bias. Of course, as the number of observations gets large,
+for the consistent criteria, the probability of underfitting and overfitting a model will
+diminish. This suggests that one should use these consistent criteria for large samples. If
+we want to avoid underfitting a model, then we should use AIC.
+There is no single criterion which will play the role of a panacea in model selection
+problems. Presently, however, AIC has become part of a general m o v e m e n t away from a
+purely inferential and restrictive approach to model selection. As a consequence, it provided us a new and modern way of thinking of how to tackle m a n y important statistical
+modeling problems. F o r this reason, the profession is greatly in debt to Akaike for
+repeatedly calling our attention to the very important model evaluation and selection
+problem.
+
+References
+Akaike, H. (1973). Information theory and an extension of the maximum likelihood principle. In B. N. Petrov &
+B. F. Csaki (Eds.), Second International Symposium on Information Theory, (pp. 267-281). Academiai Kiado:
+Budapest.
+
+<-----Page 24----->HAMPARSUM BOZDOGAN
+
+369
+
+Akaike, H. (1974). A new look at the statistical model identification. IEEE Transactions on Automatic Control,
+AC-19, 716-723.
+Akaike, H. (1976). Canonical correlation analysis of time series and the use of an information criterion. In R. K.
+Mehra & D. G. Lainiotis (Eds.), System identification (pp. 27-96). New York: Academic Press.
+Akaike, H. (1977). On entropy maximization principle. In P. R. Krishnaiah (Ed.), Proceedin#s of the Symposium
+on Applications of Statistics (pp. 27-47). Amsterdam: North-Holland.
+Akaike, H. (1978). On newer statistical approaches to parameter estimation and structure determination. International Federation of Automatic Control, 3, 1877-1884.
+Akaike, H. (1979). A Bayesian extension of the minimum AIC procedure of autogressive model fitting. Biometrika, 66, 237-242.
+Akaike, H. (1981a). Likelihood of a model and information criteria. Journal of Econometrics, 16, 3-14.
+Akaike, H. (1981b). Modern development of statistical methods. In P. Eykhoff (Ed.), Trends and pro#tess in
+system identification (pp. 169-184). New York: Pergamon Press.
+Akaike, H. (1987). Factor Analysis and AIC. Psychometrika, 52.
+Anderson, T. W. (1962). The choice of the degree of a polynomial regression as a multiple decision problem.
+Annals of Mathematical Statistics, 33, 255-265.
+Atilgan, T. (1983). Parameter parsimony, model selection, and smooth density estimation. Unpublished doctoral
+dissertation, Madison: University of Wisconsin, Department of Statistics.
+Atilgan, T., & Bozdogan, H. (1987, June). Information-theoretic univariate density estimation under different
+basis functions. A paper presented at the First Conference of the International Federation of Classification
+Societies, Aachen, West Germany.
+Atkinson, A. C. (1980). A note on the generalized information criterion for choice of a model. Biometrika, 67,
+413-418.
+Bhansali, R. J., & Downham, D. Y. (1977). Some properties of the order of an autoregressive model selected by
+a generalization of Akaike's FPE criterion. Biometrika, 64, 547-551.
+Boltzmann, L. (1877). t2ber die Beziehung zwischen dem zweitin Hauptsatze der mechanischen W/irmetheorie
+und der Wahrscheinlichkeitsrechnung respective den S~itzen fiber das W,~irmegleichgewicht. Wiener
+Berichte, 76, 373-435.
+t~encov, N. N. (1982). Statistical decision rules and optimal inference. Providence, RI: American Mathematical
+Society.
+Clergeot, H. (1984). Filter-order selection in adaptive maximum likelihood estimation. IEEE Transactions on
+Information Theory, IT-30 (2), 199-210.
+Cox, D. R., & Hinkley, D. V. (1974). Theoretical statistics. London: Chapman and Hall.
+Davis, M. H. A., & Vinter, R. B. (1985). Stochastic modelling and control. New York: Chapman and Hall.
+Efron, B. (1967). The power of the likelihood ratio test. Annals of Mathematical Statistics, 38, 802-806.
+Fisher, R. A. (1922). On the mathematical foundations of theoretical statistics. Royal Society of London. Philosophical Transactions (Series A), 222, 309-368.
+Graybill, F. A. (1976). Theory and application of the linear model. Boston: Duxbury Press.
+Hannan, E. J. (1986). Remembrance of things past. In J. Gani (Ed.), The craft ofprobabilistic modellin#. New
+York: Springer-Verlag.
+Hannah, E. J., & Quinn, B. G. (t979). The determination of the order of an autoregression. Journal of the Royal
+Statistical Society, (Series B), 41, 190-195.
+Haughton, D. (1983). On the choice of a model to fit data from an exponential family. Unpublished doctoral
+dissertation, Massachusetts Institute of Technology, Department of Mathematics, Cambridge, MA.
+Jaynes, E. T. (1957). Information theory and statistical mechanics. Physical Review, 106, 620-630.
+Kashyap, R. L. (1982). Optimal choice of AR and MA parts in autoregressive moving average models. IEEE
+Transactions on Pattern Analysis and Machine Intelhgence, 4, 99-104.
+Kendall, M. G., & Stuart, M. A. (1967). The Advanced Theory of Statistics, Vol. 2, Second Edition. New York:
+Hafner Publishing.
+Kitagawa, G. (1979). On the use of AIC for the detection of outliers. Technometrics, 21, 193-199.
+Kullback, S. (1959). Information theory and statistics. New York: John Wiley & Sons.
+Kullback, S., & Leibler, R. A. (1951). On information and sufficiency. Annals of Mathematical Statistics, 22,
+79-86.
+Larimore, W. E., & Mehra, R. K. (1985, October). The problems of overfitting data. Byte, pp. 167-180.
+Lindley, D. V. (1968). The choice of variables in multiple regression (with discussion). Journal of the Royal
+Statistical Society (Series B), 30, 31-36.
+Neyman, J., & Pearson, E. S. (1928). On the use and interpretation of certain test criteria for purposes of
+statistical inference. Biometrika, 20A, 175-240 (Part I), 263-294 (Part II).
+Neyman, J., & Pearson, E. S. (1933). On the problem of the most efficient tests of statistical hypotheses. Royal
+Society of London. Philosophical Transactions. (Series A), 231, 289-337.
+
+<-----Page 25----->370
+
+PSYCHOMETRIKA
+
+Parzen, E. (1982). Data modeling using quantile and density-quantile functions. In J. T. de Oliveira & B. Epstein
+(Eds.), Some recent advances in statistics (pp. 23-52). London: Academic Press.
+Quinn, B. G. (1980). Order determination for a multivariate autoregression. Journal of the Royal Statistical
+Society (Series B), 42, 182-185.
+Rissanen, J. (1978). Modeling by shortest data description. Automatica, 14, 465-471.
+Schwarz, G. (1978). Estimating the dimension of a model. Annals of Statistics, 6, 461-464.
+Sclove, S. L. (1987). Application of model-selection criteria to some problems in multivariate analysis. Psychometrika, 52.
+Shibata, R. (1983). A theoretical view of the use of AIC. In O. D. Anderson (Ed.), Time series analysis: Theory
+and practice, Vol. 4 (pp. 237-244). Amsterdam: North-Holland.
+Silvey, S. D. (1975). Statistical inference. London: Chapman and Hall.
+Stone, C. J. (1981). Admissible selection of an accurate and parsimonious normal linear regression model.
+Annals of Statistics, 9) 475-485.
+Ter~isvirta, T., & Mellin, L (1986). Model selection criteria and model selection tests in regression models.
+Scandinavian Journal of Statistics, 13, 159-171.
+Wald, A. (1943). Tests of statistical hypotheses concerning several parameters when the number of observations
+is large. Transactions of the American Mathematical Society, 54, 426-482.
+White, H. (1982). Maximum likelihood estimation of misspecified models. Econometrica) 50, 1-26.
+Wilks, S. S. (1962). Mathematical Statistics. New York: John Wiley & Sons.
+Woodroofe, M. (1982). On model selection and the arc sine laws. Annals of Statistics, 10, 1182-1194.
+
+

@@ -1,0 +1,832 @@
+<-----Page 0----->TIC-STH 2009
+
+Model-driven coding with VPAT:
+The Verbal Protocol Analysis Tool
+Danielle Lottridge , Mark Chignell , Monika Kastner2, Quan Zhang , Adrian Alexandar , and Sharon Straus2!
+1
+
+1
+
+1
+
+1. Interactive Media Lab, Mechanical & Industrial
+Engineering, University of Toronto
+Toronto, Canada
+
+2. Department of Health Policy, Management and
+Evaluation, Faculty of Medicine, University of Toronto,
+Toronto, Canada
+
+common task that is encountered by many disciplines, in
+addition to usability engineering. Software tools have emerged
+to assist in the performance of this task. These tools can be
+roughly divided into two classes depending on their coding
+philosophy or approach that they follow. Bottom-up analysis
+tools are designed to assist in labeling the data with categories
+and codes that can be modified on the fly, adjusting to the
+content actually observed. In contrast, top-down tools assume
+pre-existing codes or categories based on some theoretical
+framework or taxonomy. This distinction between top-down
+and bottom-up analysis caused considerable subsequent debate
+between the founders of grounded theory [4] concerning the
+issue of whether grounded theory is fundamentally a welldefined (top-down) coding paradigm, or a more ad hoc
+(bottom-up) process of code assignment.
+
+Abstract—We present the coding tool VPAT (Verbal Protocol
+Analysis Tool), specifically designed to facilitate model driven
+analysis of users’ verbal data. Such model-driven coding presents
+challenges in terms of efficiency and reliability. Engineers and
+researchers need effective means of coding with complex,
+hierarchical, multi-level coding schemes. VPAT allows input of
+customizable coding schemes, quick and easy insertion of codes
+into text documents with a user-friendly interface, and extraction
+of codes for analysis purposes. VPAT was developed for research
+purposes with user-centered design methods with various
+stakeholders. The VPAT prototype runs in conjunction with MS
+Access and MS Excel. Comparative task analysis breakdowns of
+main coding tasks in VPAT and a leading coding application are
+presented to demonstrate advantages and tradeoffs. A case study
+of coding usability data for a healthcare information retrieval
+system is presented to demonstrate usage and benefits. VPAT is a
+specific tool suited to model-based coding, and was shown to
+increase speed and reliability.
+
+Text analysis tools that are frequently used in content
+analysis of usability think-aloud protocols such as NVIVO [5]
+and MacShapa [6] tend to encourage a bottom up style of
+coding. These and a number of other tools (AtlastTI,
+HyperResearch, MAXqda, The Ethnograph) have been
+compared based on available features [7]. All of the coding
+packages are described to support “qualitative research”, which
+tends to imply a bottom-up or grounded style of text analysis.
+NVivo is the most widely-used coding support tool for verbal
+text analysis. Hughes and Parkes reviewed two decades of
+Verbal Protocol research and found a lack of software available
+to support model-based coding with verbal protocols [8].
+
+Keywords-coding schemes, model-driven coding, verbal
+protocol analysis, cognitive engineering, user requirements,
+usability.
+
+I.
+
+INTRODUCTION
+
+Information gained from users or consumers is a key part of
+engineering research and practice. For example, requirements
+analysis is an essential early step in the engineering design
+process [1], and requirements are frequently discovered using
+techniques such as focus groups, interviews, and ethnography.
+User feedback is often used to test design hypotheses and make
+design choices, and certain classes of responses are expected.
+Thus, users’ verbal data gathered through think aloud protocols
+can be used to guide design or to verify models [2]. Verbal data
+can be coded into categories to transform it into a usable form
+for analysis. In engineering projects with specific design
+models, a top-down (model-, or hypothesis-driven) approach
+can be more powerful and appropriate than a bottom-up
+(grounded) approach, where categories are created during
+coding.
+
+The bottom-up style of coding has the benefit of allowing
+coding categories to evolve as the coding process continues but
+at the cost of making codes somewhat inconsistent and
+dependent on the order in which content is experienced and the
+time at which it was coded. The resulting inconsistency in
+coding tends to result in lower inter-coder reliability, when it is
+measured, as well as adding error variance to subsequent
+quantitative analysis of code frequencies in the coded data.
+These issues can be dealt with by using a top-down coding
+strategy, sacrificing some of the generality of a bottom up
+coding approach in favour of a theory driven approach where
+codes are presumed to be known in advance. Engineers, in
+particular may benefit from a theory-driven top-down approach
+to coding. Usability evaluation, for instance, has well known
+usability heuristics and concerns (e.g., Nielsen’s Heuristics [9])
+
+Usability evaluation with users is beneficial in the
+implementation of human-machine systems [3]. Think-aloud
+protocols inform designers on why, as well as how, problems
+occur. The coding of text into categories or type of event is a
+
+978-1-4244-3878-5/09/$25.00 ©2009 IEEE
+
+1
+
+808
+
+<-----Page 1----->that can guide content analysis and coding. The use of
+predetermined codes seems even more advisable in specific
+domains such as usability engineering in healthcare. As an
+example of this, Kushniruk et al [10] developed a coding
+scheme designed to capture usability evaluation data from think
+aloud protocols collected while using prototype healthcare
+applications.
+
+codes based on hierarchical relationships between higher and
+lower level codes enables coders to recognize codes instead of
+recalling them.
+III.
+
+We created a software tool VPAT (Verbal Protocol
+Analysis Tool) to meet the coding needs concerning the
+iterative usability testing a medical evidence-base resource, and
+then expanded on this software to be suitable for general
+model-based coding. VPAT allows input of unique coding
+schemes, quick and easy insertion of codes into text documents
+with a user-friendly interface, and extraction of codes for
+analysis purposes. The following sections describe the
+development and features of VPAT.
+
+This paper presents the tool (VPAT), designed to facilitate
+model driven analysis of user interfaces during the iterative
+design and analysis of human-machine systems. We first
+provide a more detailed account of the theory-driven, top down
+approach to coding. We then introduce VPAT, and how we
+designed the tool to ease the coding tasks associated with
+model driven analysis of verbal text. We illustrate its benefits
+using simplified task analysis breakdowns. Finally, a medical
+case study illustrates usage and benefits of the tool.
+II.
+
+A. Design Motivations
+The need for streamlining the coding process was born out
+of the analysis for the Phase I usability study of a low-fidelity,
+HTML-based prototype with search interface screens and
+medical evidence based content [12]. The coding of the verbal
+data from 15 participants (one 70-minute task-based usertesting session per participant) was time-consuming and led to
+certain types of coding errors. Each transcript took
+approximately 5 hours to code (Takeshita, verbal
+communication, 2004). The coding scheme was complex and
+hierarchical, leading to the placement of 3rd, 4th and 5th level
+codes at incorrect levels, and to imperfect adherence to the
+dependent hierarchy of certain categories. For example, the
+attribute ‘pocketPC’ should logically be placed under the
+category DeviceFormFactor, but not under Content; this
+minimizes error and allows for straightforward coding
+frequency analyses.
+
+MODEL-BASED CODING
+
+Verbal reports from think-aloud usability studies generate a
+large amount of text. This text needs to be coded in some
+manner in order to extract measures that can be analyzed and
+tested in various ways. To meet this challenge, coding schemes
+are created that capture the verbalizations relevant to the
+researchers’ goals and hypotheses. Ericsson and Simon [11]
+name this Model-Based Coding. A coding scheme is built a
+priori, and the verbalizations that fit within that framework are
+coded. For example, types of statements are distinguished.
+1.
+
+Intentions (goals, future states; recognized by verbs
+“shall”, “will”, “must”, etc)
+
+2.
+
+Cognitions (information based on what is attended to;
+recognized by statements indicating immediacy)
+
+3.
+
+Planning (possibilities; recognized by conditional
+constructions like “if X then Y and if Z…”
+
+4.
+
+Evaluations (comparisons; recognized by key words
+“no”, “yes”, “fine”, etc)
+
+A complex set of hierarchical coding categories were
+developed during Phase I for characterizing the system’s
+usability and usefulness, based on previous research on medical
+systems [10] and on the usability literature [13]. The scheme
+included categories for subject comments regarding ergonomic
+issues (e.g. interface consistency, navigation, response time),
+usefulness and applicability of medical content (e.g.
+comprehension of content, terminology, confidence of content)
+and use of resources and information needs (e.g. resources
+currently used, drug information needs). Numerous
+subcategories were created under the main three categories and
+revised to accommodate the data adequately. A single code in
+the transcript consisted of six levels and was designed to
+describe one coherent thought explicitly uttered by a
+participant.
+
+However, this is a relatively simple, 1-level deep coding
+scheme. Figure 1 shows a portion of a relatively simple 2-level
+coding scheme. Attributes, coding levels, and categories must
+be added to represent all the features of interest in a usability
+test to deal with multi-featured prototypes. In this scenario,
+potentially hundreds of aspects of the interface could be
+represented; for example, a website containing 20 pages with
+30 elements per page. The difficulty of moving to such a
+complex coding systems is that coders need to keep all of their
+choices in memory when coding each statement, in addition to
+hierarchical properties of each choice. One solution to this
+challenge is to create built-in support for certain memory
+subtasks of the coding process. For instance, showing relevant
+E-mail
+
+VPAT: THE VERBAL PROTOCOL ANALYSIS TOOL
+
+Within the iterative cycle of the design of the medical
+resource, the findings from the Phase I usability testing were
+required to guide development of a revised prototype for Phase
+II. Finding differences between groups of individuals suggests
+opportunities or necessities for personalizing the presentation
+of clinical evidence according to the type of individual using
+that evidence (cf. [14]). Thus, moving to a larger sample size
+created a particular need for efficiency for analysis using verbal
+protocols in order to test hypotheses regarding quantifiable user
+group differences.
+
+Eudora (version #)
+Outlook (version #)
+Thunderbird (version #)
+
+Fax
+Mail
+
+Figure 1. Example of a hierarchical code with attributes. In this example, the
+first level of the coding scheme represents different communication methods.
+The ‘Email’ category extends to a second level of email software. Each of
+these codes has an attribute to indicate the version of the software.
+
+809
+
+<-----Page 2----->other advantage of drop-down menus is that they can change
+dynamically to only reveal the codes that pertain to higherlevel categories. This feature addresses the problems of either
+choosing codes at wrong levels, or of coding outside the
+prescribed hierarchy of the scheme. For example, once a code
+from level 1 is selected, only the associated sub-categories
+shown in level 2 are displayed. Thus, the coders are constrained
+to adhere to the pre-determined hierarchy. These problems and
+design solutions are summarized in Table 1.
+
+B. Requirements Analysis
+Software requirements for the verbal protocol software
+centred around streamlining the coding process used in Phase I
+to increase efficiency for the larger scale Phase II analysis
+(Figure 2). Two in-depth interviews with the two main Phase I
+coders revealed the following areas for improvement. The
+manual coding process was time-consuming. In addition to
+typing in the codes free-form, coders ‘copied and pasted’ from
+previous codes. The process of copying and pasting may
+influence judgments. If only certain codes were visible to the
+coder, he or she may be more likely to copy that code instead
+of choosing a different code from memory. There were
+inconsistencies in codes in that the same code would be used at
+different levels.
+Phase I Usability
+Analysis
+15 participants
+
+Phase II
+Usability
+Analysis
+47 participants
+Figure 2.
+
+C. Using VPAT
+VPAT was built to support the series of tasks involved in
+model-driven coding. The coding scheme is first defined using
+a simple structure input into an excel file (the user manual is
+available for syntax specifications). First, the text files are
+loaded. Then, the transcripts are shown in the coding interface
+(Figure 3). Blocks of text are coded by coders using the dropdown menus showing the user-defined coding scheme. Images
+may be associated to the codes (Figure 4).
+
+Manual
+Coding
+Identification
+of coding
+software
+requirements
+
+The image feature was important because images of the
+content or experimental setup can provide context to
+disambiguate the transcript text. For example, a participant
+might point to an aspect of the screen and say “this works for
+me, but I don’t understand these links”. Easy insertion of
+capture screenshots provides context to understand those
+statements during coding analysis. Reports can be generated
+that can show text and the code frequencies.
+
+Coding
+using
+VPAT
+
+Usability cycle and requirements gathering for VPAT system.
+
+Two usability experts worked with one designer to
+construct features that addressed the above problems. Specific
+design solutions were proposed to solve the key problems
+identified when looking at the manual coding process (Table
+1). A simultaneous view of the text and of the available codes
+addresses the problem of navigating through documents to cut
+and paste the desired code. Thus, a portion of the screen would
+be devoted to the text, another portion to the coding categories,
+and a third portion to any images associated to the event.
+Having pre-parsed text at critical punctuation points assisted
+the coders in breaking up events (i.e., explicit statements
+representing one coherent thought).
+To address the problem of slow labor-intensive typing, or
+cutting and pasting, a drop-down menu widget allows
+recognition (and selection) of the codes instead of recall. The
+TABLE I.
+
+Figure 3.
+
+VPAT coding screen, with shading for confidentiality purposes.
+
+USER REQUIREMENTS FOR MODEL-DRIVEN CODING AND
+VPAT FEATURES
+
+Key Task Requirements
+Need to locate content
+bearing verbal events
+Need to keep available codes
+in memory
+Need to formulate relevant,
+correct codes
+
+Design Solutions
+Pre-parse text for easy subselection
+Codes shown beside transcript
+
+Drop-down menus prepopulated for only
+hierarchically relevant codes
+Need to quickly and easily
+Drop-down menus for quick
+associate codes with relevant
+selection, and cutting and
+text
+pasting of codes also supported
+
+Figure 4. Example of an associated image.
+
+810
+
+<-----Page 3----->IV.
+
+for coding purposes and mentally selecting the section of text
+to highlight are not included in the tasks analyses. For these
+tasks, it is assumed that the coding scheme is already inputted
+into the coding software. For the example presented in Table
+2, the coding category is ‘usability’ within a one-level (flat)
+coding scheme.
+
+COMPARATIVE TASK ANALYSIS
+
+VPAT and NVivo were compared to highlight tradeoffs
+between the software designs. Two independent junior
+industrial engineers completed the analyses [15] with guidance
+from the authors. This section discusses a selection of the
+findings. The team conducted simplified task analyses using
+real transcripts and coding schemes. Key tasks were compared
+using flat, small, medium and large coding schemes.
+
+Table 2 highlights a slight benefit to VPAT over NVivo by
+reducing the coding procedure by one step. The benefit
+becomes more important when a large number of transcripts
+are coded, with repetitive coding required. The dragging step
+involved with using NVivo may cost the user more time when
+compared to the clicking subtasks. VPAT was designed to
+optimize this task by reducing the number of subtasks
+involved.
+
+Coding Schemes Used in the Analysis: The tasks analyses
+for the simple coding schemes (flat and small) used simulated
+coding schemes, such as the one shown in Figure 1. The
+medium coding scheme was derived from research pertaining
+to the design of an osteoporosis treatment decision-support
+tool, and modeled after the large coding scheme described in
+section III. The coding scheme was created by the primary
+investigator of that project, based on the hypotheses of relevant
+features and formatting concerns of the tool. The coding
+scheme contains four levels. For example, level one consisted
+of the categories: Usability, Content and Use/Needs. The two
+subcategories under Usability were CDSSs (clinical decision
+support systems) and OP-DMT (the abbreviation of the tool
+under study). The third subcategories under the Usability
+branch were Physical, Navigation, Interface and Data
+Processing, and these code combinations could be qualified as
+positive, neutral or negative (which consisted of the 4th level).
+The transcripts that were coded from focus groups conducted to
+discuss the development, format and function of the tool.
+Further, the focus groups explored primary care and general
+internal medicine (GIM) physicians’ understanding of disease
+management and CDSSs; their perception of the facilitators
+and barriers to using CDSSs. Lastly, the focus groups gathered
+feedback on which critical features, functions, format, and
+evidence are necessary to include in the tool. Further details on
+the methods and results from this research will be available
+from a manuscript in progress [16].
+
+The second task that was analyzed using task analysis was
+insertion of models (coding schemes) into the software. The
+steps were counted to insert flat, small (two-level), medium
+(four-level) and large (six-level) coding schemes, in both
+NVivo and VPAT.
+Creating a coding scheme in NVivo involves creating all
+the nodes as either tree nodes or free nodes. If a code has more
+than one level, the only way to create a hierarchical coding
+scheme is through a series of tree nodes. To perform this task,
+the user must start at the first level, and gradually build the
+subsequent levels as branches off of the previous ones. The
+process in which this occurs can be tedious when there are
+numerous levels. The time consuming issue is that the
+branching system for each node much be created separately,
+even if the code is the same off several nodes. This creates a
+substantial inefficiency for inputting complex, interdependent
+coding schemes.
+Creating a coding scheme in VPAT involves inputting
+categories into a pre-defined excel worksheet. Repeated
+subcategories can be entered into a list and pointed to by
+multiple higher level categories.
+
+The large coding scheme used for these tasks analyses is
+the one described in section III of this paper. The reader is
+referred to that section for details on the large coding scheme
+and associated transcripts used in this analysis.
+
+The numbers of steps for the coding scheme input tasks are
+shown in Table 3. This comparison illustrates the increasing
+benefit of VPAT when larger, more complex coding schemes
+are used.
+
+Comparison of Key Tasks: A simplified task analysis
+procedure is used to broadly outline the steps involved in key
+tasks associated with coding transcripts, for illustration
+purposes. Factors such as target size, mental processing and
+distance on the screen are not included.
+
+The task breakdowns discussed in this section illustrate the
+strengths of VPAT: insertion of larger hierarchical coding
+schemes, and support for repetitive coding tasks. One of the
+key tasks in bottom-up coding is insertion of new categories
+into the coding scheme. VPAT does not easily support this
+task; the user must edit the coding scheme via the excel file
+where the coding scheme resides. The task analyses presented
+in this section highlight how VPAT was designed to optimize
+specific task needs of model-based coding.
+
+The main task that is of interest is that of coding relevant
+portions of text. The subtasks of navigating through transcripts
+TABLE II.
+
+TASK STEPS REQUIRED TO CODE TEXT IN NVIVO AND VPAT
+
+NVivo
+1. Highlight relevant
+section
+2. Click on “+” beside the
+category usability
+3. Click on the highlighted
+section of text
+4. Drag selection to node
+under usability
+
+VPAT
+1. Click on the relevant
+textbox
+2. Click on the first pull-down
+menu
+3. Click on the menu item
+usability
+
+TABLE III.
+
+VPAT
+NVivo
+
+811
+
+TASK STEPS REQUIRED TO INSERT CODING SCHEMES IN
+NVIVO AND VPAT.
+
+Create
+Flat
+18
+10
+
+Create
+Small
+39
+110
+
+Create
+Medium
+80
+211
+
+Create
+Large
+127
+1215
+
+<-----Page 4----->V.
+
+Regarding form-factor, a significant interaction with the
+user groups and the ratio of positive to negative comments
+occurred between devices (F[2,44]=4.94, p=.012). Residents
+and general internists had a near-even ratio of positive to
+negative comments for the tablet, while family physicians had a
+higher ratio of positive comments towards the tablet. Residents
+and internists had a higher ratio of positive to negative
+comments for the pocketPC than family physicians. The
+finding implies that family physicians preferred larger screens
+and were less concerned about mobility, while internists were
+most concerned about mobility. Residents presented the most
+challenging design problem in their wish for both large screen
+size and high mobility. These verbal protocol findings are
+echoed in the exit questionnaire [19].
+
+CASE STUDY
+
+A health care study that used VPAT to code the transcripts
+from user-testing sessions is used to illustrate the benefits using
+the software, and also the types of results that it assists in
+finding.
+VPAT was used to analyze the verbalization from the 47
+physicians that participated in the Phase II usability testing of
+the prototypes. Physicians from three different user groups
+(with different levels of medical expertise, varying degrees of
+familiarity with evidence-based resources, and from two
+different settings: urban and rural) were recruited to participate:
+internal medicine residents; general internists; family
+physicians. Participants completed 70 minute test sessions
+which required that they work through scenarios relevant to
+their clinical practice using the evidence resources provided to
+them on the mobile computers. The sessions began with
+participants completing an online background questionnaire
+that collected demographic data (e.g. age, gender, type of
+practice, year of medical school graduation) as well as their
+exposure to evidence-based medicine, search engines, internet
+databases and handheld devices. Participants were encouraged
+to think-aloud as they browsed and searched through the
+prototype's content looking for information relevant to the
+scenarios (cf. [17]). See [18] for a detailed account of the
+methods and results of this study.
+
+Design Recommendations: A number of design
+recommendations were indicated from the verbal protocol
+results. The cells in Table 4 show a summary of the findings
+obtained as they apply to each group of physicians. An ‘X‘ in
+a cell indicates a requirement for further customization
+TABLE IV.
+
+NVivo
+Family
+Physicians
+Residents
+General
+Internists
+
+Coding: A modified version of the Phase I coding was
+input into VPAT. Two junior usability engineers independently
+coded 15% of the transcripts. VPAT’s generated reports
+facilitated quick calculation of inter-coder reliability, which
+was satisfactory (kappa=0.73). Using the IDs as markers for
+different portions of the text and codes, it was easy to scan for
+differences and discuss them. Thus, the codes from each
+transcript were compared and disagreements were resolved
+through team discussion. The VPAT reports facilitated
+identification of the coding differences, to target key problems
+and identify patterns.
+
+USER GROUP CUSTOMIZATION REQUIREMENTS.
+
+Content
+Sufficient
+Detail
+
+Form Factor
+Small
+Portability
+Screen
+X
+X
+
+X
+
+X
+X
+
+The following customization requirements may be inferred
+from the verbal protocol analysis results in this case study:
+•
+
+Family physicians preferred some of the bottom-line
+format of the content. They did not want to use the
+small screen form factor.
+
+A total of 2367 events were coded. The codes were then
+merged with participant’s questionnaire data to allow for
+statistical analysis.
+
+•
+
+Residents’ needs were met with the content as they
+responded with more positive comments. They
+wanted more screen real-estate for viewing.
+
+The analysis of data was done in two stages. First, one-way
+and two-way analyses of variance were conducted on
+background variables, and questionnaire data. The second stage
+of data analysis focused on quantitative content analysis.
+
+•
+
+General Internists were critical of the amount of detail
+provided (they wanted more).
+
+•
+
+Both Residents and General Internists liked the
+portability of the small-sized form factor.
+
+Results: We observed significant differences in the
+frequency of codes for content-related user needs. The groups
+differed in their comments on the amount of detail of
+information: family physicians and residents had a high ratio of
+positive:negative comments (4:1) whereas the general
+internists’ ratio was more even (1:1) (!2 [2]=12.06, p=.002).
+This finding implied that groups had different needs for the
+amount of evidence shown and the level of detail provided.
+Some examples of coded comments: “Statistics would be
+helpful because some issues are very individual and can't be
+answered by evidence” and “It would be useful if drugs were in
+a table, then we can have direct comparisons in specific areas”.
+Family physicians preferred bottom-line guideline information
+more than the other groups.
+
+Process Overview: Analysis of verbal protocol transcripts
+can be particularly revealing in developing customized
+requirements. Code frequencies were compared between user
+groups to uncover significant relationships. Overall, the
+strongest group differences were observed for physician type,
+with factors such as age, gender, and previous experience with
+the Internet and medical databases having relatively little effect
+on how the physicians responded to the prototype
+implementations.
+Phase I and II coders reflected on the time that it took to
+code the 15-20 page text transcripts from the Phase I and II 70minute user testing sessions. On average, the Phase I coders
+took 5 hours per transcript, including resolving disagreements
+
+812
+
+<-----Page 5----->in the use of the codes. For the Phase II coders using VPAT,
+coding took approximately 2.5 hours per transcript, including
+discussion of mismatched codes. The use of a more rigid
+hierarchical coding scheme and the structured coding interface
+constrained possible disagreements within the coders
+VI.
+
+Sam Lam, Lindsay Bernrot, Asako Hagiwara for their hard
+work and contributions. Special thanks to Anna Malandrino for
+the tremendous support that she provided in many aspects of
+the project. Thanks to Bell University Labs (BUL) for funding
+this research.
+
+DISCUSSION AND CONCLUSIONS
+
+REFERENCES
+
+VPAT demonstrates coding software designed specifically
+to support a top down, model-driven method. Complex,
+hierarchical coding schemes are easy to load in to the software,
+and well-supported during the repetitive task of coding
+segments of text. In VPAT, portions of the screen are devoted
+to areas necessary for coding, allowing a persistent view of the
+coding scheme. Statements are automatically broken up based
+on speaker and length of text. These pieces of text are easily
+coded using drop-down menus, which have been pre-populated
+from the user-defined coding scheme.
+
+[1]
+[2]
+[3]
+[4]
+[5]
+
+A tasks analysis comparison between VPAT and the
+leading coding software NVIVO revealed that VPAT reduced
+the repetitive task of coding by one step, and facilitated
+insertion of large, complex coding schemes. VPAT was
+designed to optimize these key tasks in model-based coding.
+
+[6]
+[7]
+[8]
+
+Regarding the process of coding the user-testing session
+transcripts, it was found that VPAT enabled shared discussion
+of coding using the generated reports. The reports were easy to
+scan and facilitated comparison between the coders, which
+made the resolution of coding discrepancies more efficient.
+Last but not least, when comparing Phase I (manual coding)
+and Phase II (coding with VPAT), the time to code comparable
+transcripts was approximately halved (2.5 hours compared to
+about 5 hours).
+
+[9]
+[10]
+
+[11]
+[12]
+
+The case study of the analysis of a health care information
+retrieval system is an example for how coding verbal protocol
+analysis can lead to identification of significant differences in
+types of comments made during usability testing. The analysis
+assessed the differential requirements of distinct subgroups of
+users within a sample. These differences allowed the
+identification of design requirements.
+
+[13]
+[14]
+[15]
+
+In summary, VPAT is a tool which was design specifically
+to support verbal protocol coding, particularly model-based
+coding with complex, customized coding schemes. VPAT was
+iteratively designed to solve a number of issues that occurred
+during manual coding using a large coding scheme, and tasks
+analyses illustrate improvements in the efficiency in key tasks
+involved in model-based coding of transcripts. VPAT supports
+research using verbal protocol analysis, which can be
+particularly useful in coding transcripts for usability or user
+requirements verbal data.
+
+[16]
+
+[17]
+[18]
+
+[19]
+
+ACKNOWLEDGMENTS
+Thanks to the Romana Danicic-Mizdrak and Harumi
+Takeshita for their feedback and input. Thanks to Jennifer Guo,
+
+813
+
+D.G. Ullman, The Mechanical Design Process. London: McGraw-Hill,
+2003.
+G. Deffner, “Verbal protocols as a research tool in human factors,” in
+HFES 34th Annual Meeting, Santa Monica: The Human Factors Society,
+1990, pp. 1263-1264
+M. R. Ebling, and B. E John, “On the contributions of different
+empirical data in usability testing,”
+Symposium on Designing
+Interactive Systems, New York: ACM Press, 2000.
+B. G. Glaser, and A. L. Strauss, The Discovery of Grounded Theory:
+Strategies for Qualitative Research, New York: Aldine Publishing, 1967.
+NVIVO Software, QSR International, http://www.qsrinternational.com/
+2009
+P.M. Sanderson, J.M. James, and K.S. Seidler, “SHAPA: an interactive
+software environment for protocol analysis,” Ergonomics vol. 32, 12711302, 1989.
+S. Friese, “Software Overview”
+http://www.quarc.de/software_overview_table.pdf (2004)
+J. Hughes, and S. Parkes, “Trends in the use of verbal protocol analysis
+in software engineering research,” Behaviour & Information
+Technology, vol 22, 2, pp127-140, 2003.\
+J. Nielsen, Usability Engineering. Boston: Academic Press, 1993.
+A.W. Kushniruk, V.L. Patel, and J.J. Cimino, “Usability testing in
+medical informatics: cognitive approaches to evaluation of information
+systems and user interfaces,” in AMIA Annual Fall Symposium, 1997,
+pp 25-29.
+K. A. Ericsson, and A. H. Simon, Protocol Analysis: Verbal Reports as
+Data. Cambridge: MIT Press, 1984.
+H. Takeshita, D. Davis, and S.E. Straus, “Clinical Evidence at the Point
+of Care in Acute Medicine: A Handheld Usability Case Study,” in HFES
+46th Annual Meeting, Santa Monica:The Human Factors Society, 2002,
+pp. 1409-1413.
+A.W. Kushniruk, and V.L. Patel, “Cognitive computer based video
+analysis,” in: 8th World Conference on Medical Informatics, 1995, pp.
+1566-1569.
+D. E. Egan, “Individual differences in human-computer interaction,” in
+Helander, M., Ed. Handbook of Human-Computer Interaction, 1988, pp.
+543-568.
+L. Bernrot, and A. Hagiwara, “Comparison of Task Analysis for NVivo
+and VPAT,” Unpublished undergraduate thesis, Dept. of Mech. & Ind.
+Eng., University of Toronto, 2008.
+M. Kastner, J. Li, D. Lottridge, C. Marquez, D. Newton, S.E. Straus,
+“Bridging the gap between evidence and practice: Development of a
+Clinical Decision Support Tool Prototype in Osteoporosis Disease
+Management at the Point of Care,” in progress.
+M.T. Boren, and J. Ramey, “Thinking Aloud: Reconciling Theory and
+Practice, “ IEEE Transactions on Prof. Comm. vol 43, 3, New York:
+IEEE Press, pp. 261-278, 2000.
+D. Lottridge, M. Chignell, R. Danicic-Mizdrak, N.J. Pavlovic, A.
+Kushniruk, and S.E. Straus, “Group Differences in Physicians Responses
+to Handheld Presentation of Clinical Evidence: A Verbal Protocol
+Analysis,” BioMedCentral Med. Inf. and Deci. Making vol 7, 22, 2007.
+D. Lottridge, M. Chignell, and S.E. Straus, “Physicians Responses to
+Handheld Presentation of Clinical Evidence: Analysis of Group
+Differences,” in HFES 48th Annual Meeting, pp. 1783--1787. Santa
+Monica: The Human Factors Society, 2004.
+
+

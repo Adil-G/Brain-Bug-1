@@ -1,0 +1,749 @@
+<-----Page 0----->CHOICE BY SEQUENTIAL PROCEDURES∗
+JOSE APESTEGUIA† AND MIGUEL A. BALLESTER‡
+Abstract. In the model of choice by sequential procedures, the successive application of
+criteria gradually reduces the set of alternatives to a unique element, which is the one actually chosen. We offer a simple property, Independence of One Irrelevant Alternative, and
+show it is equivalent to choice by sequential procedures. Our property is instrumental for
+the understanding of choice by sequential procedures, and provides a novel tool with which
+to study how other behavioral concepts relate to it. We show that the notions of rationalizability by game trees, agenda rationalizability, and choice functions exhibiting a status-quo
+bias are special cases of choice by sequential procedures.
+Keywords: Individual rationality, Bounded rationality, Behavioral economics.
+JEL classification numbers: D01.
+
+1. Introduction
+In the model of choice by sequential procedures, a decision-maker (DM) faced with a choice
+problem, applies a number of criteria in a fixed order of priority, gradually narrowing down
+the set of alternatives until one is identified as the choice (see Manzini and Mariotti 2007;
+see also Tversky 1972). The model of choice by sequential procedures is very appealing from
+a behavioral perspective. It consists of a method that guides the DM through the complex
+problem of choice. As such, it has attracted a great deal of attention from the psychology,
+marketing, and management literatures.1
+For the sake of illustration, imagine that our DM is about to buy a house. She may
+handle the complexity of the choice problem by first screening out some houses on the basis
+of location. Although the DM may not have formed a complete ranking over all possible
+locations, she may prefer some locations over others, and use this criterion to eliminate some
+houses. Next, the DM may care about the layout of the house, and have some idea of what
+kinds of layout she dislikes. Hence, from the surviving set of houses, the DM eliminates a
+∗
+
+September, 2009. We thank Raphael Giraud, Paola Manzini, Marco Mariotti, Jordi Massó, Prasanta
+
+Pattanaik, David Pérez-Castrillo, Ariel Rubinstein, Michael Richter, Karl Schlag, Rany Spiegler, Yongsheng
+Xu, and Lin Zhou for their valuable comments.
+†
+
+Universitat Pompeu Fabra. E-mail: jose.apesteguia@upf.edu.
+
+‡
+
+Universitat Autonoma de Barcelona. E-mail: miguelangel.ballester@uab.es.
+
+1
+
+See, e.g., Tversky 1972, Manrai and Sinha 1989, and Kohli and Jedidi 2007.
+1
+
+<-----Page 1----->2
+
+further number of houses based on their layout. The DM proceeds in this way, applying
+additional relevant criteria and gradually shrinking the menu of alternatives, before finally
+making her choice from the surviving set of alternatives on the basis of price, for example.
+This sequential process does not necessarily satisfy the standard axioms of choice, and
+hence is able to accommodate decisions that are incompatible with the classical model of
+rational choice. For example, let the set of houses be {x, y, z}. Suppose that, in terms of
+location, the only clear comparison for our DM is that z is superior to y; that, in terms
+of layout, she clearly prefers x to z; and finally that the cheapest house is y. If our DM
+first applies the location criterion, and follows it with the layout criterion and finally the
+price criterion, the choices we would observe are y from {x, y}, z from {y, z}, and x from
+{x, z} and from {x, y, z}. The choices of our house buyer are cyclic, and hence cannot be the
+outcome of the maximization of any preference relation.2 Therefore, although the choices are
+perfectly compatible with choice by sequential procedures, they cannot be accommodated
+within the model of rational choice.
+An immediate question is whether all sorts of choice patterns can be accommodated by
+the sequential application of criteria. A simple example shows that this is in fact not the
+case. Suppose that we observe that our DM chooses house x from {x, y} and from {x, z},
+but chooses house y from {x, y, z}. It is impossible to reconcile this behavior with choice
+by sequential procedures. Whatever criterion the DM entertains first, it will lead to a
+contradiction. That is, the first criterion cannot eliminate house x from {x, y, z}, because
+this would imply eliminating x from {x, y} or {x, z}, which is the actual choice from these
+menus. It obviously cannot eliminate house y from {x, y, z}. Therefore, the first criterion
+must eliminate only house z from {x, y, z}. But then, the choices of house x from {x, y} and
+of house y from {x, y, z}, which has been reduced to {x, y}, are incompatible.3
+It is therefore the case that choice by sequential procedures is able to explain some deviations from the rational model, but not all. For choice by sequential procedures to be
+a meaningful model of choice, it is necessary to understand what sorts of choice patterns
+can be rationalized by the sequential application of criteria. Manzini and Mariotti (2007)
+took some very important first steps in this direction by precisely delimiting the types of
+
+2Classic
+
+papers documenting systematic cyclic choice behavior include May (1954), Grether and Plott
+
+(1979), and Loomes, Starmer and Sugden (1991).
+3Kalai, Rubinstein, and Spiegler (2002) propose a model where the DM partitions the set of choice
+problems into different categories and applies one criterion to each category. Clearly, every possible choice
+pattern can be explained by their model.
+
+<-----Page 2----->3
+
+revealed choices that are consistent with the application of two or three criteria.4 However,
+the general question was left unanswered.
+The former wonders about what deviations from the rational model can be explained by
+choice by sequential procedures. Another crucial question is how choice by sequential procedures relates to other prominent choice models. Given the growing number of alternative
+choice models that are flourishing in the literature, it is of great importance to impose some
+structure on the relevant models.
+In this paper we offer a property, Independence of One Irrelevant Alternative (IOIA), that
+addresses the two questions posed above. IOIA can be described as follows. First, from the
+menu of alternatives A, the DM pinpoints a single pair, which she identifies by following
+a rule that is totally consistent across menus of alternatives. There are several behavioral
+interpretations of this rule. For example, the DM may be more used to comparing some
+pairs of alternatives than others, and may therefore decide to focus on the most familiar
+pair in every choice problem with which she is faced. Relatedly, pairs of alternatives may
+differ in terms of the similarity of the alternatives. So, for any choice problem A, the DM
+may focus on the pair with the most (or the least) similar alternatives. The DM may
+also perceive the alternatives in a particular physical order and observe that order when
+identifying the first two alternatives in a choice problem A. Then, having identified a single
+pair of alternatives from the menu, IOIA requires that the choice from A should not depend
+on the dominated member of that pair. Thus, IOIA has two parts. It is the result of the
+interplay of a fully consistent component, the rule identifying the binary problems, and a
+potentially inconsistent component, the choices in the binary problems.
+IOIA delimits what kinds of deviation from the rational model can be explained by the
+model of choice by sequential procedures. In our first result we show that IOIA is equivalent
+to the notion of choice by sequential procedures, regardless of the number of rationales
+required. IOIA provides a tool that is easy to use in applications to determine whether
+observed behavior is or is not consistent with choice by sequential procedures. Moreover,
+IOIA helps to explain which kinds of deviation from the rational model are compatible with
+choice by sequential procedures. Interestingly, the fully consistent part of IOIA, that is,
+the rule identifying the binary problems, is the mechanism through which irrational binary
+choices spread over choice problems.
+Furthermore, IOIA serves as an instrument to link choice by sequential procedures with
+other prominent choice models in the literature. In particular, we show that the notion of
+rationalizability by game trees, due to Xu and Zhou (2007), which, in principle, had little to
+4Salant
+
+and Rubinstein (2008) also delimit the case of two rationales, within the framework of a ‘limited
+
+attention’ model.
+
+<-----Page 3----->4
+
+do with choice by sequential procedures, is a special case of the latter. We also show that
+agenda rationalizability, a rationalizability notion that is introduced here and is rooted in
+certain models of choice by ordered elimination, as well as in voting mechanisms based on
+successive elimination, is also a strict refinement of choice by sequential procedures. Finally,
+we show that choice functions exhibiting the well-known status-quo bias also are contained
+in the model of choice by sequential procedures.
+The paper is organized as follows. Section 2 introduces the notation and the main definitions to be used thereafter. Section 3 presents our property IOIA and shows that it is
+equivalent to choice by sequential procedures. Section 4 contains three applications of our
+property IOIA. Section 5 concludes. The proofs are collected in Appendix A. Appendix B
+establishes the formal relation between our model of choice by sequential procedures, and
+other prominent models.
+
+2. Basic Notation and Definitions
+Let X be a finite set of n ≥ 2 objects. A choice function c assigns to every non-empty
+A ⊆ X a unique element c(A) ∈ A.
+Denote by B(X) the collection of 2-alternative sets (binary problems). A binary selector
+f is a function that for every choice problem A with at least two alternatives, gives a binary
+problem in A, i.e. f (A) ∈ B(X) with f (A) ⊆ A. Given a binary selector f , the direct
+revealed relation S on B(X) is defined by (B1 , B2 ) ∈ S if and only if there is a choice
+problem A such that B1 = f (A) and B2 ⊆ A. Denote the transitive closure of S by S. We
+say that the binary selector f is consistent if and only if, for all A, and for all B1 , B2 ⊆ A,
+B1 6= B2 , B1 SB2 implies that B2 6= f (A). The latter is simply the Strong Axiom over the
+space of binary problems, where a choice problem A is understood as the collection of binary
+problems from which it is composed.
+Denote by P an acyclic binary relation on X. That is, for any collection x1 , . . . , xr ∈ X,
+with r > 1, whenever (xi , xi+1 ) ∈ P for all i = 1, . . . , r − 1, it is not true that (xr , x1 ) ∈ P .
+We will often refer to P as a rationale. For any A, M (A, P ) refers to the set of maximal
+elements in A with respect to P , that is, M (A, P ) = {x ∈ A : (y, x) ∈ P for no y ∈ A}. Let
+M (∅, P ) be equal to ∅.
+In the classical approach a choice function c is said to be rationalizable if there is a rationale P such that, for any choice problem A, c(A) = M (A, P ). Let Mij (A) with i ≤ j denote
+the set Mij (A) = M (M (. . . M (M (A, Pi ), Pi+1 ), . . . , Pj−1 ), Pj ). That is Mij (A) is the set of
+alternatives surviving from A the sequential application of rationales Pi , Pi+1 , . . . , Pj−1 , Pj .
+
+<-----Page 4----->5
+
+Choice by Sequential Procedures: A choice function c is a choice by sequential procedures whenever there exists a non-empty ordered list {P1 , . . . , PK } of rationales on X such
+that c(A) = M1K (A) for all A ⊆ X. In that case we say that {P1 , . . . , PK } sequentially
+rationalizes c.
+This notion of choice by sequential procedures largely follows Manzini and Mariotti (2007).
+In their original formulation, the only structure that is imposed on the rationales applied by
+the DM is asymmetry, hence allowing for cycles in the rationales. We believe that the essence
+of choice by sequential procedures lies in the incompleteness of the criteria, which reflects the
+crudeness of the binary relations sequentially applied by the DM in order to reach a choice.
+The use of cyclic criteria may be controversial from a behavioral perspective, since they
+may appear unrealistic. It seems natural, therefore, to study possibly cyclic choice behavior
+arising from the sequential application of acyclic binary relations. This is the position we
+adopt here. In Appendix B we clarify the relation between these two models of sequential
+choice.5
+3. Choice by Sequential Procedures and Independence of One Irrelevant
+Alternative
+The classic notion of rationalizability of a choice function c deals with whether or not
+there exists a rationale that explains choice behavior as the result of maximization. A wellknown result establishes that a choice function c is rationalizable if and only if c satisfies
+Independence of Irrelevant Alternatives (IIA). IIA is a consistency property that forbids any
+menu-dependency. It states that if an element x is chosen from a set A, it should also be
+chosen from any subset of A in which x is present.
+IIA can be equivalently described as follows. Suppose that, given a menu of alternatives
+A, the DM pinpoints any binary problem in A, and discards the dominated alternative in
+the binary problem. It is immediate that if the choices of the DM satisfy IIA, the choice
+from A will be the same as the choice from A minus the dominated alternative. Moreover,
+the reverse also applies. Hence, we can write IIA as follows:6
+Independence of Irrelevant Alternatives (IIA): For any consistent binary selector f
+and any A ⊆ X, c(A) = c(A \ {x∗ }), with x∗ = f (A) \ c(f (A)).
+5See
+
+Bossert, Sprumont and Suzumura (2005) and Ehlers and Sprumont (2008) for a thorough discussion
+
+of models of rationalization by a single asymmetric or a single acyclic rationale.
+6The
+
+equivalence between the two statements of IIA is proved in the Appendix, in Lemma A.1.
+
+<-----Page 5----->6
+
+IIA imposes a great deal of structure on choice by forbidding menu dependencies for every
+possible consistent way of identifying the binary problems. We offer a property, Independence of One Irrelevant Alternative (IOIA), which constitutes a strict weakening of IIA.
+Independence of One Irrelevant Alternative (IOIA): There is a consistent binary selector f such that, for any A ⊆ X, c(A) = c(A \ {x∗ }), with x∗ = f (A) \ c(f (A)).
+It is immediate that IOIA imposes less structure than IIA. IOIA only requires the DM
+to be consistent when identifying binary problems in certain ways. For example, the DM
+must be consistent when focusing on, say, the most salient binary problem for her. Saliency
+may be determined by the DM’s familiarity with the alternatives, or in terms of a particular
+physical order of presentation of the alternatives, etc. Therefore, contrary to IIA, IOIA
+allows for menu dependencies when identifying binary problems in other ways.
+We show next that IOIA is equivalent to the notion of choice by sequential procedures,
+regardless of the number of rationales required.
+Theorem 3.1. c is a choice by sequential procedures if and only if c satisfies IOIA.
+The proof of Theorem 3.1 shows that, to assess whether c is a choice by sequential procedures, one simply has to check whether there is a linear order over the binary sets such that,
+for every choice problem A and for the first binary problem B ⊆ A, the choice from A does
+not depend on the dominated alternative in B. This makes the IOIA property particularly
+manageable in applications, and easy to use in practice.
+IOIA also helps us to understand how deviations from rationality emerge in the model of
+choice by sequential procedures. The sequential procedure has two dimensions. The first is
+that it addresses the complexity of the choice problem by gradually shrinking the menu of
+alternatives in sequential steps. The second has to do with the nature of the alternatives that
+are eliminated in each step. Therefore, deviations from the rational model may emerge from
+the first dimension, from the second, or from a combination of both. Manzini and Mariotti
+(2007) show that if behavior in the binary problems is fully consistent so is behavior in larger
+menus, and vice-versa. The property of No Binary Cycles captures the notion of consistent
+behavior in the binary problems:
+No Binary Cycles: For all x1 , . . . , xr+1 ∈ X, c(xj , xj+1 ) = xj , j = 1, . . . , r, implies that
+c(x1 , xr+1 ) = x1 .
+Now, it is easy to reproduce their result by way of our property IOIA.
+
+<-----Page 6----->7
+
+Lemma 3.2. c satisfies IOIA and No Binary Cycles if and only if c satisfies IIA.
+IOIA can be understood as the interplay of a fully consistent component, the binary
+selector f , and a potentially irrational component, choices from binary problems. Now,
+IOIA together with Lemma 3.2, shows not only that the type of irrational behavior that
+can be accommodated by choice by sequential procedures starts from cycles in the binary
+problems, but also that the totally consistent binary selector f is the mechanism through
+which the irrationality over the binary problems spreads over larger menus of alternatives.
+Interestingly, if the starting point is that a DM behaves according to choice by sequential
+procedures, the above lemma shows that to asses whether the DM is rational one only needs
+to evaluate whether his binary choices are consistent.
+
+4. Applications
+4.1. Rationalizability by Game Trees. We begin this section by establishing the relation between choice by sequential procedures and a rationalizability notion due to Xu and
+Zhou (2007): rationalizability by game trees. Xu and Zhou study those choice functions that
+can be rationalized by extensive games with perfect information. More specifically, we say
+that (G; R = (R1 , . . . , RK )) denotes a game tree whenever: (i) G is an extensive game with
+perfect information that has alternatives X as terminal nodes, such that each alternative in
+X appears once and only once as a terminal node of G (hence, X and G can be identified),
+and (ii) every node i in the tree G represents the possible choices of an agent i endowed with
+a linear order Ri over X. Denote by G|A the reduced tree of G that retains all the branches
+of G leading to terminal nodes in A, and SP N E(Γ) stands for the subgame perfect Nash
+equilibrium outcome of Γ.
+Rationalizability by Game Trees: A choice function c is rationalizable by game trees
+whenever there exists a game tree (G; R) such that c(A) = SP N E(G|A; R) for all A ⊆ X.
+The relationship between rationalizability by game trees and choice by sequential procedures is not clear-cut a priori. On the one hand, the game tree structure of the preferences
+in the former is much richer than the linear structure of the rationales in the latter. On the
+other hand, the preferences of the players in rationalizability by game trees are imposed to
+be linear orders, whereas in choice by sequential procedures the rationales are only imposed
+to be acyclic. The following result establishes a perhaps unexpected relationship between
+the two notions.
+
+<-----Page 7----->8
+
+Theorem 4.1. If c is rationalizable by game trees, c is a choice by sequential procedures.
+The converse is not necessarily true.
+4.2. Agenda Rationalizability. Let us assume that the n elements in X are linearly ordered by <. This order may be interpreted as, say, a particular physical presentation of
+the objects. For any choice problem A in X, write the l elements in A ordered by < as
+a(1) < a(2) < · · · < a(l). Consider a tournament T .7 The DM chooses from A according
+to the following elimination process. First she chooses between a(1) and a(2) using T , then
+compares the chosen element from a(1), a(2) with a(3) and makes a new choice according to
+T . The DM continues in this ordered manner until the surviving element is compared with
+the last element a(l); this last choice determines the final choice in A. Denote by e(<, T, A)
+the alternative chosen from A by this process, given the agenda <, and the tournament T .
+Similar choice-by-ordered-elimination procedures are studied in the choice-theory literature. The models studied in Rubinstein and Salant (2006) and Salant and Rubinstein (2008),
+for example, include this one as a special case. See also Masatlioglu and Nakajima (2008).
+But binary choices between alternatives may also be the outcome of majority voting, for
+example. Therefore voting mechanisms such as those based on successive elimination are
+also connected to the above (see Dutta, Jackson, and Le Breton, 2002). Consider now the
+following notion of rationalizability.
+Agenda Rationalizability: A choice function c is agenda rationalizable whenever there
+exists a linear order < over the set of alternatives (an agenda) and a tournament T such
+that, for every A ⊆ X, c(A) = e(<, T, A).
+Theorem 4.2 establishes the relation between agenda rationalizability and choice by sequential procedures.
+Theorem 4.2. If c is agenda rationalizable, c is a choice by sequential procedures. The
+converse is not necessarily true.
+4.3. Status-Quo Bias. There is a large literature supporting the view that DMs typically
+value an alternative more highly when it is regarded as the status quo, than they would
+otherwise. This is the so-called status-quo bias. Masatlioglu and Ok (2005) provide a
+theoretical treatment of choice behavior that allows for the presence of a status-quo bias.8
+7A
+
+tournament T is a binary relation that is asymmetric and connected.
+Apesteguia and Ballester (2009) for a theoretical treatment of choice behavior dependent on reference
+
+8See
+
+points in general, and for references to the empirical and theoretical literature on the status-quo bias in
+particular.
+
+<-----Page 8----->9
+
+In Masatlioglu and Ok’s setting, a choice problem is a pair (A, x) where A is the set of
+alternatives, and x ∈ A or x = . When x ∈ A, the pair (A, x) represents a choice problem
+with a status quo, while if x = , the choice problem is standard in the sense that it is
+without a status quo. Thus, choice is defined over the collection of all choice problems (A, x).
+Masatlioglu and Ok introduce a set of properties for choice behavior that are equivalent to
+the following status-quo biased choice model. The DM evaluates the alternatives by means
+of a vector-valued utility function u, in a multi-criteria style. If the DM confronts a choice
+problem without a status quo, then she simply maximizes an aggregation h of these criteria.
+If there is a status quo, then the DM compares the status quo with all the alternatives in
+the set using all the criteria. She will stay with the status quo unless there is an alternative
+that dominates it in terms of all the decision criteria. This represents a marked status-quo
+bias. If there are alternatives that dominate the status quo by all the criteria, then the DM
+chooses from them using the same aggregator h as above.
+The following definition is a reformulation of Masatlioglu and Ok’s Theorem 1 to our setting.
+Status-Quo Biased Choice Function: A choice function c is status-quo biased if there
+exists an element x ∈ X, a positive integer q, an injective function u : X → Rq and a strictly
+increasing map h : u(X) → R such that:
+(1) For all A ⊆ X with x 6∈ A, c(A) = arg max h(u(x)).
+x∈A
+
+(2) For all A ⊆ X with x ∈ A:
+
+c(A) =
+
+
+ x
+
+
+if A ∩ {x ∈ X : u(x) > u(x)} = ∅,
+arg max
+
+h(u(y))
+
+if A ∩ {x ∈ X : u(x) > u(x)} =
+6 ∅.
+
+y∈A∩{x∈X:u(x)>u(x)}
+
+Theorem 4.3 shows that status-quo biased choice functions are choice by sequential procedures.9
+Theorem 4.3. If c is a status-quo biased choice function, c is a choice by sequential procedures. The converse is not necessarily true.
+9It
+
+can be proved that the set of status quo biased choice functions is contained in the set of agenda
+
+rationalizable choice function, and that the latter is at the same time contained in the set of choice functions
+that are rationalizable by game trees. In order to illustrate the applicability of our property, IOIA, we have
+chosen to offer direct links between choice by sequential procedures and these notions of choice.
+
+<-----Page 9----->10
+
+5. Final Remarks
+In this paper we have studied the behavioral structure of choice by sequential procedures
+and its relationship with other choice models. We have proposed a simple relaxation of
+the classical IIA property, IOIA, and shown that it is equivalent to the notion of choice
+by sequential procedures, regardless of the number of rationales required. Further, we have
+shown that our property does not only allow a better understanding of choice by sequential
+procedures, but it is useful in the sense that it facilitates investigation of the relationships
+between different models of choice. We have shown that the notions of rationalizability by
+game trees, agenda rationalizability, and choice functions exhibiting a status-quo bias are
+special cases of the model of choice by sequential procedures.
+We believe it is crucial to the future development of the field to investigate the links
+between the relevant models of choice. Manzini and Mariotti (2009) take a further step in
+this direction. In line with our property IOIA and our Theorem B.1, they show that choice
+by sequential procedures is equivalent to the model of choice by lexicographic semiorders
+(see Tversky, 1969). Interestingly, Manzini and Mariotti (2009) build on our paper to offer
+an alternative property that is also equivalent to choice by sequential procedures.
+Our property IOIA suggests promising new lines for future research. Specifically, it would
+be natural to investigate the nature of the process by which binary problems are identified in
+certain environments, that is, to determine the essence of the rule f that makes one binary
+problem stand out from any others. Relatedly, it might be particularly interesting to study
+the role of marketing strategies or that of a principal in shaping the f of a consumer in a
+market interaction environment.
+Appendix A. Proofs
+Lemma A.1. The following two statements are equivalent:
+(1) For any A, B ⊆ X, if c(B) ∈ A ⊆ B then c(A) = c(B).
+(2) For any consistent binary selector f and any A ⊆ X, c(A) = c(A \ {x∗ }), with
+x∗ = f (A) \ c(f (A)).
+Proof of Lemma A.1: (1) ⇒ (2). Consider a consistent binary selector f and a set A ⊆ X.
+We first claim that c(A) 6= x∗ , with x∗ = f (A)\c(f (A)). If c(A) 6∈ f (A), it is straightforward
+that c(A) 6= x∗ . If c(A) ∈ f (A) ⊆ A then, by (1), it must be c(A) = c(f (A)) and thus,
+c(A) 6= x∗ as desired. Now, since c(A) ∈ A\{x∗ } ⊆ A, (1) guarantees that c(A) = c(A\{x∗ }).
+(2) ⇒ (1). Let A, B ⊆ X, such that c(B) ∈ A ⊆ B. If B = A the result is obvious.
+Denote c(B) = x1 , the elements in B \ A as x2 , x3 , . . . , xk , with k > 1, and finally the rest
+of elements in X as xk+1 , . . . , xn . Let the binary selector f select, for any D ⊆ X with
+
+<-----Page 10----->11
+
+|D| ≥ 2, the first two elements in D according to the previous ordering. It is immediate
+that f is consistent. Then, by (2) we know that x1 = c(B) = c(B \ {x∗ }), and hence
+it can only be x∗ = x2 and c(B) = c(B \ {x2 }). Iterating this argument it follows that
+c(B) = c(B \ {x2 , x3 , . . . , xk }) = c(A), as desired. 
+Proof of Theorem 3.1: We start by proving that IOIA is a sufficient condition for choice
+by sequential procedures. IOIA implies that there is a consistent binary selector f such that,
+for every A ⊆ X, c(A) = c(A \ {x∗ }), with x∗ = f (A) \ c(f (A)). Since f satisfies the Strong
+Axiom, the transitive revealed relation S over B(X) is also antisymmetric. Suppose not.
+That is, there are binary sets B1 , B2 , W1 , . . . , Wr such that B1 SB2 and B2 SW1 S · · · SWr SB1 .
+By definition B1 SWr , and by the Strong Axiom it cannot be that Wr SB1 , a contradiction.
+Now, it is well-known that the asymmetric part of a transitive and antisymmetric binary
+relation can be extended to a linear order. Denote by C the linear order over B(X) extended
+from S. Consequently, for every A with |A| ≥ 2, f (A) is the first binary problem contained
+in A according to C. Denote, then, the ordered collection of binary problems with two
+n(n−1)/2
+
+alternatives according to C by {ai , bi }i=1
+
+. Without loss of generality, let it be assumed
+n(n−1)/2
+
+that ai = c(ai , bi ), i = 1, . . . , n(n − 1)/2. Define Pi = {(ai , bi )}. Clearly, {Pi }i=1
+
+is a
+
+collection of rationales.
+n(n−1)/2
+
+We prove, by induction over the cardinality of choice problems A ⊆ X, that {Pi }i=1
+
+sequentially rationalizes c. It is obvious for the case of |A| ≤ 2. Supposing that the claim
+is true for |A| = t, we show it to be true for |A| = t + 1. By IOIA, c(A) = c(A \ {x∗ }),
+n(n−1)/2
+
+with x∗ = f (A) \ c(f (A)). By the inductive hypothesis c(A \ {x∗ }) = M1
+
+n(n−1)/2
+
+and by the definition of x∗ and the construction of the rationales, M1
+n(n−1)/2
+
+M1
+
+n(n−1)/2
+
+(A). Therefore, c(A) = M1
+
+(A \ {x∗ }),
+
+(A \ {x∗ }) =
+
+(A), as desired.
+
+In the other direction, we now show that if c is a choice by sequential procedures, then
+IOIA holds. Let {P1 , . . . , PK } sequentially rationalize c. First, construct the collection of
+rationales {P10 , . . . , PK0 } from {P1 , . . . , PK }, as follows: for all j = 1, . . . , K, (x, y) ∈ Pj0 if
+and only if (x, y) ∈ Pj and there is no i < j such that (x, y) ∈ Pi or (y, x) ∈ Pi . Clearly,
+{P10 , . . . , PK0 } is an ordered collection of rationales that sequentially rationalizes c. Assume,
+without loss of generality, that the constructed collection {P10 , . . . , PK0 } is composed of nonempty rationales (otherwise, simply remove the empty rationales and re-number them).
+Now, consider a rationale Pj0 in the constructed collection of rationales {P10 , . . . , PK0 },
+that contains more than one pair of alternatives. Since Pj0 is acyclic, there is a pair of
+alternatives (a, b) in Pj0 , such that (b, c) 6∈ Pj0 for every c ∈ X. We can split the rationale Pj0 into two rationales, {(a, b)} and Pj0 \ {(a, b)}. We show that for every A ⊆ X,
+M (A, Pj0 ) = M (M (A, {(a, b)}), Pj0 \ {(a, b)}). If either a or b is not in A, then clearly
+
+<-----Page 11----->12
+
+M (A, Pj0 ) = M (A, Pj0 \ {(a, b)}), and since M (A, {(a, b)}) = A, it follows that M (A, Pj0 \
+{(a, b)}) = M (M (A, {(a, b)}), Pj0 \ {(a, b)}). Thus, M (A, Pj0 ) = M (M (A, {(a, b)}), Pj0 \
+{(a, b)}).
+
+If, on the contrary, a, b ∈ A, then M (A, {(a, b)}) = A \ {b}.
+
+Given that
+
+(a, b) in Pj0 and that (b, c) 6∈ Pj0 for every c ∈ X, M (A, Pj0 ) = M (A \ {b}, Pj0 ). Hence,
+M (A, Pj0 ) = M (M (A, {(a, b)}), Pj0 \ {(a, b)}), as desired. It then follows that the ordered
+0
+0
+collection of rationales {P10 , . . . , Pj−1
+, {(a, b)}, Pj0 \ {(a, b)}, Pj+1
+, . . . , PK0 } also sequentially
+
+rationalizes c. By iterating this rationale-splitting process, we end up with a collection of ra∗
+tionales {P1∗ , . . . , Pn(n−1)/2
+}, each of which contains one pair of alternatives and sequentially
+
+rationalizes c.
+Construct the binary selector f as follows. For every A with |A| ≥ 2, f (A) = {a, b} if
+and only if {(a, b)} = Pl∗ and there is no {d, e} ⊆ A with {(d, e)} = Pm∗ and 1 ≤ m < l ≤
+∗
+}
+n(n−1)/2. It is immediate that f satisfies the Strong Axiom. Given that {P1∗ , . . . , Pn(n−1)/2
+
+sequentially rationalize c and given the construction of f , it follows that c(A) = c(A \ {x∗ }),
+with x∗ = f (A) \ c(f (A)), and hence IOIA holds.
+Proof of Lemma 3.2: The if part is immediate, so let us show the only if part. It is obvious
+for the case of |A| ≤ 2. Supposing that the claim is true for |A| = t, we show it to be true for
+|A| = t+1. By IOIA there is a consistent binary selector f such that c(A) = c(A\{x∗ }), with
+x∗ = f (A) \ c(f (A)). By the inductive hypothesis c(A \ {x∗ }) = M (A \ {x∗ }, P ), where P is
+a linear order. By definition x∗ 6= c(f (A)), by the inductive hypothesis c(f (A)) = M (f (A)),
+and given that P is a linear order, it must then be that M (A \ {x∗ }, P ) = M (A, P ), and we
+are done.
+Proof of Theorem 4.1: Let c be a choice function rationalizable by game trees. We will
+prove that c satisfies IOIA and is therefore a choice by sequential procedures. Consider a
+game tree (G; R = (R1 , . . . , RK )) that rationalizes c. Suppose, without loss of generality,
+that players are indexed by a linear order < such that i < j if i is a successor of j in
+the game tree G. We say that i is resolute on {x, y}, if Ri determines the outcome over
+0
+{x, y}. That is, whenever SP N E(G|{x, y}; R) = SP N E(G|{x, y}; (R−i
+, Ri )) for any vector
+0
+of linear orders of players other than i, R−i
+. Define the minimal resolute player in A ∈ P(X)
+
+by m(A) = min{i ∈ {1, . . . , K} : i is resolute over a pair {x, y} contained in A}.
+Consider the following linear order C on B(X). Let {a, b}, {d, e} ∈ B(X), with a = c(a, b)
+and d = c(d, e),
+(
+{a, b} C {d, e} ⇔
+
+m({a, b}) < m({d, e}), or
+m({a, b}) = m({d, e}), (b, e) ∈ Rm({a,b}) .
+
+<-----Page 12----->13
+
+We now show that IOIA holds with respect to the constructed linear order C. By rationalizability of game trees, c(A) = SP N E(G|A; R), and also c(A \ {x∗ }) = SP N E(G|(A \
+{x∗ }); R), where x∗ is the dominated alternative in the first binary problem in A according to C. We show that SP N E(G|A; R) = SP N E(G|(A \ {x∗ }); R). By definition of
+subgame perfect Nash equilibrium, SP N E(G|A; R) = SP N E(G|(A \ {z}); R), where z is
+every dominated alternative in A according to the minimal resolute player in A. Clearly, by
+construction, x∗ satisfies these conditions, and hence the claim follows.
+We now show by way of an example that the inclusion is strict. Let X = {1, . . . , 4}
+and c be such that: Ac [1] = {(1, 3, 4), (1, 3)}, Ac [2] = {(1, 2, 4), (1, 2), (2, 4)}, Ac [3] =
+{(1, 2, 3, 4), (1, 2, 3), (2, 3, 4), (2, 3), (3, 4)} and Ac [4] = {(1, 4)}, where A ∈ Ac [x] ⇒ c(A) = x.
+It can be easily checked that IOIA follows with respect to the following linear order C over
+B(X): (2, 4) C (2, 1) C (3, 4) C (3, 2) C (1, 3) C (4, 1), and then by Theorem 3.1 c is a choice by
+sequential procedures. To see that c is not rationalizable by game trees, we show that c does
+not satisfy the divergence consistency property, which Xu and Zhou prove to be a necessary
+condition for rationalizability by game trees.10 Note that in c, 1 diverges before 3 and 4, and
+3 diverges before 1 and 2. At the same time, we have that c(1, 3) = 1 but c(2, 4) = 2, which
+contradicts divergence consistency. Therefore, c is not rationalizable by game trees and the
+theorem follows.
+Proof of Theorem 4.2: Suppose that c is agenda rationalizable by the agenda < and the
+tournament T . Define the binary selector f by f (A) = {a(1), a(2)} for every A with |A| ≥ 2.
+Clearly, f satisfies the Strong Axiom. By construction, and by agenda rationalizability
+x∗ = a(1) if (a(2), a(1)) ∈ T and x∗ = a(2) if (a(1), a(2)) ∈ T . Hence, it follows that
+c(A) = e(<, T, A) = e(<, T, A \ {x∗ }) = c(A \ {x∗ }). Then, IOIA holds, and by Theorem 3.1
+c is a choice by sequential procedures.
+Consider now the choice function c defined in the proof of Theorem 4.1. We showed that c
+is a choice by sequential procedures. To show that c is not agenda rationalizable, note that,
+since 1 diverges before 3 and 4, any agenda < that rationalizes c should be of the form 3 < 1
+and 4 < 1. Furthermore, since 3 diverges before 1 and 2, the agenda should also be of the
+form 1 < 3 and 2 < 3. But this is obviously absurd, and therefore, there is no agenda that
+rationalizes c.
+
+10For
+
+any triple x, y, z, x diverges before y and z, if c(x, y) = x, c(y, z) = y, and c(z, x) = z, and
+
+c(x, y, z) = x. Divergence consistency: for any four alternatives x1 , x2 , y1 , y2 , if x1 diverges before y1 and
+y2 , and y1 diverges before x1 and x2 , then c(x1 , y1 ) = x1 if and only if c(x2 , y2 ) = y2 .
+
+<-----Page 13----->14
+
+Proof of Theorem 4.3: Take a status-quo biased choice function c. Define the following two
+classes of binary problems: B1 (X) = {{x, y} ∈ B(X) : it is not true that u(y) > u(x)} and
+B2 (X) = B(X) \ B1 (X). Take any linear order C on B(X) such that for every {a, b} ∈ B1 (X)
+and {c, d} ∈ B2 (X), {a, b} C {c, d}.
+Take any A with |A| ≥ 2 and let x∗ denote the dominated alternative in the first binary
+problem in A according to C. In showing that c satisfies IOIA, we distinguish between four
+cases.
+Case 1: x ∈ A and {x, y} ∈ B1 (X) for every y ∈ A. Given that A ∩ {x ∈ X : u(x) >
+u(x)} = (A \ {x∗ }) ∩ {x ∈ X : u(x) > u(x)} = ∅, then c(A) = c(A \ {x∗ }) = x.
+Case 2: x ∈ A and {x, y} ∈ B2 (X) for every y ∈ A. Since A ∩ {x ∈ X : u(x) > u(x)} =
+A \ {x} =
+6 ∅, then c(A) = arg max h(u(y)). The latter being c(A \ {x}).
+y∈A\{x}
+
+Case 3: x ∈ A and there are two alternatives y, z ∈ A such that {x, y} ∈ B1 (X)
+and {x, z} ∈ B2 (X). By construction, x∗ 6= x, and f (A) = {x, x∗ } ∈ B1 (X). Then
+A ∩ {x ∈ X : u(x) > u(x)} = (A \ {x∗ }) ∩ {x ∈ X : u(x) > u(x)} =
+6 ∅, then c(A) =
+arg max
+y∈A∩{x∈X:u(x)>u(x)}
+
+h(u(y)) =
+
+arg max
+
+h(u(y)) = c(A \ {x∗ }).
+
+y∈(A\{x∗ })∩{x∈X:u(x)>u(x)}
+
+Case 4: x 6∈ A then, obviously c(A) = c(A \ {y}) for every y 6= c(A).
+To show that the inclusion is strict, consider the example in Theorem 4.1. If x ∈ {2, 4},
+there is a pairwise cycle in X \{x} which contradicts (1) in the definition of status quo biased
+choice functions. If x ∈ {1, 3}, then 3 = c(1, 2, 3) 6∈ {1, 2, 3} ∩ {x ∈ X : u(x) > u(x)} 6= ∅,
+thus contradicting (2) in the mentioned definition.
+
+Appendix B. Different Models of Choice by Sequential Procedures
+While in this paper we take the rationales to be acyclic, Manzini and Mariotti (2007)
+impose only asymmetry, and hence allow for cycles in the rationales. The models share the
+same intuition in that they consider a DM who gradually narrows down the set of alternatives
+by applying a set of crude criteria in a fixed order. They nevertheless differ in terms of the
+structure imposed on the rationales. In this section we clarify the relation between these
+and other models of sequential choice. We first need some definitions.
+We say that a binary relation P is asymmetric if, for any x, y ∈ X, whenever (x, y) ∈ P ,
+it is not true that (y, x) ∈ P . We say that P is transitive if, for any x, y, z ∈ X, whenever
+(x, y), (y, z) ∈ P , then (x, z) ∈ P . We say that P is simple whenever P is a singleton set
+containing a pair of different elements of X, i.e., P = {(x, y)} with x, y ∈ X, x 6= y. We say
+that P is α whenever the structure of α lies between the structure of a simple rationale and an
+acyclic one. Examples of α rationales are (strict) partial orders (transitive and asymmetric)
+
+<-----Page 14----->15
+
+or semiorders (a special case of a transitive and asymmetric binary relation; see Manzini and
+Mariotti, 2009).
+We can now define the notion of choice by sequential procedures on the basis of the
+structure imposed on the criteria sequentially applied. To this end, take the definition of
+choice by sequential procedures of section 2 and say that c is a choice by sequential procedures
+by asymmetric rationales CSP(As), or by acyclic rationales CSP(Ac), or by simple rationales
+CSP(S), or by α rationales CSP(α) when the ordered collection of rationales is made up of
+asymmetric rationales, acyclic rationales, simple rationales, and α rationales respectively.
+Denote by C ω , with ω ∈ {CSP(As),CSP(Ac),CSP(S),CSP(α)}, the class of choice functions
+that are CSP(As), CSP(Ac), CSP(S), and CSP(α). Finally, denote by C RSM the set of
+choice functions that are Rational Shortlist Methods, that is, that are choice by sequential
+procedures by two asymmetric rationales (Manzini and Mariotti, 2007).
+Theorem B.1 shows that it is in fact the case that SR(Ac) and SR(As) are two different
+notions of sequential choice, and that any model of choice that imposes structure that lies
+between SR(S) and SR(Ac) is equivalent to SR(S) and SR(Ac).
+Theorem B.1. C RSM ⊂ C CSP (S) = C CSP (α) = C CSP (Ac) ⊂ C CSP (As) .
+Proof of Theorem B.1: We start by proving that C RSM ⊆ C CSP (Ac) . Suppose c is an RSM.
+Then, there exists a pair of asymmetric rationales {P1 , P2 } that sequentially rationalizes
+c. We now construct a collection of acyclic rationales {P10 , . . . , PK0 } that also sequentially
+rationalizes c. Let P10 = P1 and given P2 = {(a12 , b12 ), . . . , (ar2 , br2 )}, define the following simple
+0
+= {(aj2 , bj2 )}, 1 ≤ j ≤ r. First, we prove that all rationales are acyclic.
+rationales Pj+1
+0
+. Suppose, by way of contradiction,
+This is immediate for the simple rationales P20 , . . . , Pr+1
+
+that P10 = P1 is cyclic. Then, there exists a collection x1 , . . . , xr ∈ X, with r > 1, such
+that (xi , xi+1 ) ∈ P1 , i = 1, . . . , r − 1, and (xr , x1 ) ∈ P1 . Then M ({x1 , . . . , xr }, P1 ) = ∅,
+contradicting the fact that {P1 , P2 } sequentially rationalizes c. Therefore, all rationales are
+acyclic.
+0
+Second, we show that the collection {P10 , . . . , Pr+1
+} sequentially rationalizes c. Take any A.
+
+Suppose that M1r+1 (A) contains two or more distinct elements. Take any two such elements
+x, y ∈ M1r+1 (A), x 6= y. Then, for j = 1, . . . , r + 1, it is neither the case that (x, y) ∈ Pj0 nor
+that (y, x) ∈ Pj0 . But then, for i = 1, 2 it is neither true that (x, y) ∈ Pi nor that (y, x) ∈ Pi .
+This contradicts the fact that {P1 , P2 } rationalizes the choice in {x, y} and therefore M1r+1 (A)
+contains at most one element. We now prove that c(A) belongs to M1r+1 (A). Given that c
+is sequentially rationalized by {P1 , P2 }, it follows that c(A) ∈ M (A, P1 ) = M (A, P10 ) and,
+for any y ∈ M (A, P10 ), it cannot be the case that (y, c(A)) ∈ P2 . Therefore, there is no Pj0 ,
+j = 2, . . . , r+1, such that (y, c(A)) ∈ Pj0 , and then c(A) ∈ M1r+1 (A). Hence, c(A) = M1r+1 (A)
+
+<-----Page 15----->16
+0
+} is a collection of acyclic binary relations that rationalizes c. Therefore,
+and {P10 , . . . , Pr+1
+
+it follows that C RSM ⊆ C CSP (Ac) .
+We now show that the inclusion is strict, i.e., C CSP (Ac) 6⊆ C RSM . To do so, we define a
+choice function c1 that is in C CSP (Ac) , but is not an RSM.
+Let X = {1, . . . , 4} and c1 be such that: Ac1 [1] = {(1, 3)}, Ac1 [2] = {(1, 2)}, Ac1 [3] =
+{(1, 2, 3, 4), (1, 2, 3), (2, 3, 4), (2, 3), (3, 4)}, and Ac1 [4] = {(1, 2, 4), (1, 3, 4), (1, 4), (2, 4)}. Consider the ordered collection of simple rationales {P1 , . . . , P6 } = {{(2, 1)}, {(1, 3)}, {(4, 1)},
+{(3, 2)}, {(4, 2)}, {(3, 4)}}. It is easy to check that this collection sequentially rationalizes
+c. Note, however, that 4 = c1 (1, 2, 4) = c1 (1, 3, 4) but c1 (1, 2, 3, 4) = 3. This means that
+c1 violates the classic Expansion property, and then by Theorem 1 in Manzini and Mariotti
+(2007), c is not an RSM.11 Therefore, C RSM ⊂ C CSP (Ac) .
+We now show that C CSP (S) = C CSP (Ac) . That C CSP (Ac) ⊇ C CSP (S) is immediate, and
+C CSP (Ac) ⊆ C CSP (S) follows from the rationale-splitting argument used in the proof of Theorem 3.1. Now, given that C CSP (S) = C CSP (Ac) , since an α rationale lies, in terms of structure,
+between a simple and an acyclic rationale, it follows immediately that C CSP (S) = C CSP (α) =
+C CSP (Ac) .
+Lastly, we show that C CSP (Ac) ⊂ C CSP (As) . The fact that C CSP (Ac) ⊆ C CSP (As) is obvious,
+so we now prove that the inclusion is strict. Consider the following example.
+Let X = {1, . . . , 6} and c2 be such that: Ac2 [1] = {(1, 3, 4, 5), (1, 3, 4), (1, 3, 5), (1, 4, 5), (1, 3),
+(1, 5)}, Ac2 [2] = {(2, 3, 6), (2, 5, 6), (2, 5), (2, 6)}, Ac2 [3] = {(2, 3, 4, 5, 6), (2, 3, 4, 5), (2, 3, 5, 6),
+(3, 4, 5, 6), (2, 3, 4), (2, 3, 5), (3, 4, 5), (3, 5, 6), (2, 3), (3, 4), (3, 5)}, Ac2 [4] = {(2, 4, 5, 6), (1, 4, 6),
+(2, 4, 5), (2, 4, 6), (1, 4), (2, 4), (4, 6)}, Ac2 [5] = {(1, 3, 4, 5, 6), (1, 3, 5, 6), (1, 4, 5, 6), (1, 5, 6),
+(4, 5, 6), (4, 5), (5, 6)}, Ac2 [6] = {(1, 3, 4, 6), (2, 3, 4, 6), (1, 3, 6), (3, 4, 6), (1, 6), (3, 6)}, and c2 (A) =
+c2 (A \ {2}) whenever {1, 2} ⊆ A.
+We first show that c ∈ C CSP (As) . Consider for instance P1 = {(1, 2)}, P2 = {(1, 3), (3, 4), (4, 2),
+(2, 5), (5, 6), (6, 1)}, P3 = {(5, 4), (1, 5), (2, 6), (6, 3), (3, 5), (4, 6)} and P4 = {(4, 1), (3, 2)}.
+One can verify that all choices are sequentially rationalized by this ordered collection of
+asymmetric rationales.
+Suppose that c2 is sequentially rationalized by the ordered collection of simple rationales
+{P1 , . . . , PK } with Pi = {(ai , bi )}, i = 1, . . . , K. Let T be the smallest positive integer
+such that PT 6= {(1, 2)} and PT 6= {(2, 1)}. T is well-defined since the collection of simple
+rationales must rationalize the choice in set {1, 3}, for instance.
+We now show that for every A with {aT , bT } ⊆ A and {1, 2} 6⊆ A, it must be that c2 (A) =
+c2 (A \ {bT }). If T = 1, it is immediate that c2 (A) = M1K (A) = M1K (A \ {b1 }) = c2 (A \ {b1 }).
+11Expansion:
+
+For all A, B ⊆ X, x = c(A) = c(B) ⇒ x = c(A ∪ B).
+
+<-----Page 16----->17
+
+If T > 1, ∪i<T {ai , bi } = {1, 2}, and then it follows that c2 (A) = M1K (A) = MTK (A) =
+MTK (A \ {bT }) = M1K (A \ {bT }) = c2 (A \ {bT }). Consider now the following cases:
+• c2 ({1, 3, 4, 5, 6}) = 5 6= 6 = c2 ({1, 3, 4, 5, 6} \ {5}) implies (aT , bT ) 6∈ {(1, 5), (3, 5)}.
+• c2 ({1, 3, 4, 5, 6}) = 5 6= 3 = c2 ({1, 3, 4, 5, 6} \ {1}) implies (aT , bT ) 6∈ {(4, 1), (6, 1)}.
+• c2 ({1, 3, 4, 5, 6}) = 5 6= 1 = c2 ({1, 3, 4, 5, 6} \ {6}) implies (aT , bT ) 6∈ {(4, 6), (5, 6)}.
+• c2 ({1, 3, 4, 6}) = 6 6= 4 = c2 ({1, 3, 4, 6} \ {3}) implies (aT , bT ) 6∈ {(1, 3), (6, 3)}.
+• c2 ({2, 3, 4, 6}) = 6 6= 3 = c2 ({2, 3, 4, 6} \ {6}) implies (aT , bT ) 6= {(2, 6)}.
+• c2 ({2, 3, 4, 6}) = 6 6= 2 = c2 ({2, 3, 4, 6} \ {4}) implies (aT , bT ) 6= (3, 4).
+• c2 ({2, 3, 4, 5, 6}) = 3 6= 6 = c2 ({2, 3, 4, 5, 6} \ {5}) implies (aT , bT ) 6= (2, 5).
+• c2 ({2, 3, 6}) = 2 6= 6 = c2 ({2, 3, 6} \ {2}) implies (aT , bT ) 6= (3, 2).
+• c2 ({2, 4, 5}) = 4 6= 5 = c2 ({2, 4, 5} \ {2}) implies (aT , bT ) 6= (4, 2).
+• c2 ({2, 4, 5}) = 4 6= 2 = c2 ({2, 4, 5} \ {4} implies (aT , bT ) 6= (5, 4).
+Thus, (aT , bT ) 6∈ {(1, 2), (1, 5), (3, 5), (4, 1), (6, 1), (4, 6), (5, 6), (1, 3), (6, 3), (2, 6), (3, 4),
+(2, 5), (3, 2), (4, 2), (5, 4)}. Given the binary choices in c2 , (aT , bT ) is then a pair such that
+bT = c({aT , bT }). However, M1K ({aT , bT }) = MTK ({aT , bT }) = aT leading to a contradiction
+with the fact that the simple rationales sequentially rationalize c2 . Therefore, no collection
+of simple rationales can sequentially rationalize c2 . Since c2 6∈ C CSP (S) implies c2 6∈ C CSP (Ac) ,
+it follows that c2 ∈ C CSP (As) \ C CSP (Ac) , which concludes the proof of the theorem.
+Having shown that CSP(As) differs from CSP(Ac), it is not difficult to prove that a
+property along the lines of IOIA is equivalent to CSP(As). The only modification one needs
+to make is to allow f to pinpoint from any choice problem A more than one binary problem.
+That is, to define f as a correspondence.
+
+References
+[1] Apesteguia, J. and M.A. Ballester (2009), “A Theory of Reference-Dependent Behavior,” Economic
+Theory, 40:427-455.
+[2] Bossert, W., Y. Sprumont, and K. Suzumura (2005), “Maximal-Element Rationalizability,” Theory and
+Decision 58:325-350.
+[3] Dutta, B., M. Jackson, and M. Le Breton (2002), “Voting by Successive Elimination and Strategic
+Candidacy,” Journal of Economic Theory, 103:190-218.
+[4] Ehlers, L. and Y. Sprumont (2008), “Weakened WARP and Top-Cycle Choice Rules,” Journal of Mathematical Economics, 44:87-94.
+[5] Grether, D.M. and C.R. Plott (1979), “Economic Theory of Choice and the Preference Reversal Phenomenon,” American Economic Review, 69:623–638.
+[6] Loomes, G., C. Starmer, and R. Sugden (1991), “Observing Violations of Transitivity by Experimental
+Methods,” Econometrica, 59:425–439.
+
+<-----Page 17----->18
+
+[7] Kalai, G., A. Rubinstein, and R. Spiegler (2002), “Rationalizing Choice Functions by Multiple Rationales,” Econometrica, 70:2481–88.
+[8] Kohli, R. and K. Jedidi (2007), “Representation and Inference of Lexicographic Preference Models and
+Their Variants,” Marketing Science, 26:380–399.
+[9] Manrai, A.J. and S. Prabhakant (1989), “Elimination-By-Cutoffs,” Marketing Science, 8:133–152.
+[10] Manzini, P. and M. Mariotti (2007), “Sequentially Rationalizable Choice,” American Economic Review,
+97:1824-1839.
+[11] Manzini, P. and M. Mariotti (2009), “Choice by Lexicographic Semiorders,” mimeo, University of
+London.
+[12] Masatlioglu, Y. and D. Nakajima (2008), “Theory of Choice by Elimination,” mimeo, University of
+Michigan.
+[13] Masatlioglu, Y. and E.A. Ok (2005), “Rational Choice with Status Quo Bias,”Journal of Economic
+Theory, 121:1-29.
+[14] May, K.O. (1954), “Intransitivity, Utility, and the Aggregation of Preference Patterns,” Econometrica,
+22:1–13.
+[15] Rubinstein, A. and Y. Salant (2006), “A Model of Choice from Lists,” Theoretical Economics, 1:3–17.
+[16] Salant, Y. and A. Rubinstein (2008), “(A, f ): Choice with Frames,” Review of Economic Studies,
+75:1287–1296.
+[17] Tversky, A. (1969), “Intransitivity of Preferences,” Psychological Review, 76:31–48.
+[18] Tversky, A. (1972), “Elimination By Aspects: A Theory of Choice,” Psychological Review, 79:281–299.
+[19] Xu, Y. and L. Zhou (2007), “Rationalizability of Choice Functions by Game Trees,” Journal of Economic
+Theory, 134:548–556.
+
+

@@ -1,0 +1,131 @@
+<-----Page 0----->Computers & Operations Research 33 (2006) 1871 – 1873
+www.elsevier.com/locate/cor
+
+Foreword
+
+Special issue on operations research in sport
+I am most thankful to Gilbert Laporte for the opportunity to edit this special issue of Computers and
+Operations Research. I am especially grateful to the authors who submitted. The present collection is
+a good cross-section of the cutting edge of operations research in sports. It begins with a number of
+scheduling/timetabling papers. Also included are papers on computing streak probabilities, an analysis
+of a curling paradox and an ancient Chinese horse race problem, ranking Olympic achievements, and an
+interesting betting/gambling paper. I have learned a lot from each of these papers. I hope that readers of
+Computers and Operations Research will also enjoy them.
+In my view, the heart of OR in sports is providing decision support to practising managers, coaches,
+and athletes. If I had to deﬁne it, a simple variant of Morse and Kimball’s [1] seminal deﬁnition would
+do quite well:
+A scientiﬁc method of providing coaches/managers/players with a quantitative basis for decisions
+regarding the team/competition/match etc. under their control.
+Two aspects of this deﬁnition are important. The ﬁrst is that the analytic methods are scientiﬁc: games/
+matches/competitions are observed, data is collected and analysed, and conclusions recommending
+changes in strategies and tactics are supported by a scientiﬁc argument rather than intuition and judgement. The second is that it is a process whose end-purpose is to suggest a change to management. The
+OR scientist does not usually make the decision; the manager responsible for the decision does. In my
+experience, the most difﬁcult part of any OR study is the interface between the decision-maker and OR
+scientist. This interface is particularly problematic in the world of sport for two good reasons:
+1. Strongly held beliefs on the part of coaches/managers that past practice is the best. Most managers/coaches have been brought up in their sport. For instance, a professional hockey coach will
+almost certainly have played the game at the professional level, will have cut his teeth coaching in the
+minor leagues before making the jump to an elite league. His whole life has been devoted to hockey.
+When this top-of-the-mountain coaching opportunity ﬁnally arrives, one he has spent his whole life
+preparing for he is conﬁdent that his experience-based knowledge will allow him to succeed. It is
+natural for him to believe that what has worked in the past is the only way to manage the future. A
+scientist with a computer who believes that he or she can give this coach an edge is walking straight
+uphill.
+0305-0548/$ - see front matter 䉷 2004 Elsevier Ltd. All rights reserved.
+doi:10.1016/j.cor.2004.09.038
+
+<-----Page 1----->1872
+
+W.J. Hurley / Computers & Operations Research 33 (2006) 1871 – 1873
+
+2. There is a knowledge gap between practising sport managers and OR scientists. Suppose that a sport
+manager/coach is willing to listen to an OR scientist who is suggesting a tweak of current practice.
+Then the scientist must be able to convince the manager that his tweak will give the manager an edge.
+This argument will be a difﬁcult one because the manager is usually not versed in the scientiﬁc method,
+and the scientist usually does not possess the coach’s sport-speciﬁc knowledge. The OR scientist must
+think long and hard about how to approach this interaction. Academic cant will not cut it. He has to be
+able to give the coach some hard evidence in terms the coach can understand. Otherwise the coach will
+be resorting to faith, a quality that is not in abundant supply when a suggestion collides with existing
+practice.
+An operations researcher must overcome these two difﬁculties if his or her suggestions are to be implemented. Not surprisingly, there are few examples of operations research changing management practice
+in sports.
+An exception is the approach Billy Beane and Sandy Alderson have taken to managing Major
+League Baseball’s Oakland Athletics. Their story has been documented in Michael Lewis’s best-seller
+“Moneyball” [2]. Alderson was appointed General Manager in 1983; Beane succeeded him in 1997. On
+the basis of a considerable amount of scientiﬁc research on what wins baseball games, including the work
+of Bill James, Carl Morris, George Lindsey and others, Alderson and Beane decided that baseball games
+were won by batters with high on-base percentages and slugging percentages, and a pitching staff that
+kept runners off-base. Their basic strategy was to draft and trade for players with these talents which the
+baseball market undervalued. As Lewis writes, Alderson and Beane have been highly successful arbitraguers in baseball talent. To give some idea of the magnitude of this success, consider the following table.
+It lists the top four teams in Major League Baseball over the period 1999–2002 as measured by the total
+number of wins along with their payrolls:
+Team
+
+Number of wins
+
+Payroll (in millions)
+
+Atlanta Braves
+New York Yankees
+Oakland Athletics
+Boston Red Sox
+
+387
+383
+382
+354
+
+86
+105
+33
+93
+
+What is remarkable is that Beane was able to put together one of the top Major League teams at a small
+fraction of the salary levels of the other three teams.
+The interesting question is what led Beane and Alderson to this different approach. For the most part,
+the implementation of strategies and decisions based on operational research knowledge is not a bottomup process. Typically, it requires a champion with decision-making power within an organization. The
+baseball scientists found friends in Beane and Alderson. It is clear form Lewis’s book that Beane is a very
+bright, energetic, hard-working manager with an intense desire to compete and win. Early in his baseball
+career he turned down an athletic scholarship to Stanford to sign with the Mets. Alderson was a graduate
+of Dartmouth College and Harvard Law and served 4 years as a Marine infantry ofﬁcer with a tour in
+Vietnam. Both embraced the new knowledge produced by baseball scientists (sabermatricians) and used
+it to make sound draft and trade decisions based on value for money. Moreover, other teams have adopted
+the approach. The Boston Red Sox recently hired Bill James, and Toronto Blue Jays’ General Manager
+
+<-----Page 2----->W.J. Hurley / Computers & Operations Research 33 (2006) 1871 – 1873
+
+1873
+
+J.P. Riccardi, himself a disciple of Alderson and Beane, has hired sabermatrician Keith Law. But the
+point to be emphasized is that the origin of this new way to manage a baseball team has two fundamental
+inputs: new baseball knowledge based on scientiﬁc principles of analysis and friends in high places. It
+was not enough to produce the knowledge. Champions needed to see its value and then act on it.
+These problems of implementation aside, it is interesting to speculate whether OR analysis has a future
+in other professional sports. Certainly North American football is a logical candidate. There are lots
+of publicly available data. Moreover, OR researchers have produced some interesting insights about a
+number of tactical in-game decisions. But there have been few analyses that seek to answer the fundamental
+question: What wins football games. So OR researchers need to produce the knowledge. And once the
+knowledge is available, a General Manager or Head Coach will have to resolve to use it. In my view, OR
+in North American football is in its infancy.
+As for other major sports like soccer and hockey, clearly they are more difﬁcult to analyse because they
+are much less “discrete”. Whereas baseball and football games progress from one well-deﬁned state to
+another, soccer and hockey are games of ﬂow. That is not to say they cannot be analysed. I have discussed
+with colleagues a number of ways to get at the “value” of hockey players. These focus on a player’s
+“plus/minus” statistic (the number of goals scored by the player’s team while he is on the ice less the
+number of goals the opposing team scores while he is on the ice), and techniques which try to separate
+out what part of that statistic is due to the player himself and what part is due to his teammates. Sufﬁce
+it to say that OR analysis in these “ﬂow” sports is at the embryonic stage.
+In sum, I believe the future of OR in Sports is bright. There are lots of interesting problems. And we
+have to believe that, at some point, good OR will be implemented.
+References
+[1] Morse PM, Kimball GE. Methods of operations research. Cambridge, MA: MIT Press; 1950.
+[2] Lewis M. Moneyball: the art of winning an unfair game. W. W. Norton and Company; 2003.
+
+W.J. Hurley
+Guest Editor
+Department of Business Administration
+Royal Military College of Canada
+Kingston, Ont.
+Canada K7M 5L0
+E-mail address: hurley_w@rmc.ca
+
+

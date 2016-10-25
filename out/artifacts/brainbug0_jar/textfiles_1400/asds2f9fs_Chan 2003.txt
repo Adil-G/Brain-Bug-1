@@ -1,0 +1,986 @@
+<-----Page 0----->Group & Organization Management
+http://gom.sagepub.com/
+
+Data Analysis and Modeling Longitudinal Processes
+David Chan
+Group & Organization Management 2003 28: 341
+DOI: 10.1177/1059601102250814
+The online version of this article can be found at:
+http://gom.sagepub.com/content/28/3/341
+
+Published by:
+http://www.sagepublications.com
+
+Additional services and information for Group & Organization Management can be found at:
+Email Alerts: http://gom.sagepub.com/cgi/alerts
+Subscriptions: http://gom.sagepub.com/subscriptions
+Reprints: http://www.sagepub.com/journalsReprints.nav
+Permissions: http://www.sagepub.com/journalsPermissions.nav
+Citations: http://gom.sagepub.com/content/28/3/341.refs.html
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 1----->10.1177/1059601102250814
+GROUP
+Chan
+/ DATA
+& ORGANIZATION
+ANALYSIS
+MANAGEMENT
+
+ARTICLE
+
+Data Analysis and
+Modeling Longitudinal Processes
+DAVID CHAN
+National University of Singapore
+This article presents a nontechnical overview of the major data analysis techniques for modeling
+longitudinal processes, with an explicit focus on their advantages and disadvantages as tools for
+drawing inferences about different specific aspects of change over time. It is argued that traditional longitudinal analysis techniques offer limited ways of addressing many specific questions
+about change. Recent advances in latent variable techniques, when adequately driven by theory,
+design, and measurement, offer a unified and flexible framework for addressing such questions.
+Keywords: longitudinal analysis; assessment of change; latent variable; growth modeling
+
+In group and organizational management research, many of the questions of
+interest concern longitudinal processes that focus on the pattern of intraunit
+change over time. The unit of theory may be at the individual, group, or organizational level of conceptualization. Examples of these three levels are a
+study of changes in the extent of information seeking by organizational newcomers over time, a study of changes in group cohesion over time, and a study
+of changes in organizational culture over time, respectively.
+In quantitative longitudinal research, regardless of the unit of theory, the
+process nature or time-based change of the data has to be explicitly modeled
+by an appropriate data analysis technique to translate the longitudinal data
+obtained into substantive inferences about the longitudinal process of interest. Recent advances in data analysis allow researchers to apply appropriate
+techniques to make more direct inferences from longitudinal data. Unfortunately, the majority of the work in data analysis, particularly recent advances
+in latent variable modeling, is highly technical and may not be easily understood by group and organizational management researchers who may not be
+experts in data analysis. Moreover, although individual cookbook or how-to
+treatments and substantive applications of specific techniques are available,
+there is a lack of an integrative overview of the various longitudinal analysis
+Group & Organization Management, Vol. 28 No. 3, September 2003 341-365
+DOI: 10.1177/1059601102250814
+© 2003 Sage Publications
+
+341
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 2----->342
+
+GROUP & ORGANIZATION MANAGEMENT
+
+techniques to serve as a framework or heuristic to guide researchers in the
+selection of the appropriate technique for application in their specific substantive investigations. To attempt to bridge this gap, this article presents a
+nontechnical overview of the major longitudinal data analysis techniques,
+with an explicit focus on their advantages and disadvantages as tools for
+drawing inferences about different aspects of change over time. In the interest of space, only the basic logic of each technique and the features necessary
+for understanding its relationship with specific aspects of change over time
+are presented. More details, particularly technical information, of each technique are readily available in the relevant literature, some of which is listed in
+the Reference section.
+Before one can select the appropriate data analysis technique, the specific
+question about the change over time in the longitudinal process must be
+explicated (Chan, 1998a). One way to broadly classify these questions is to
+group them into descriptive and explanatory questions. A descriptive question asks how an individual, group, or organization changes over time on one
+or more focal variables (e.g., feedback seeking, group cohesion, organizational climate for safety). For example, in a study of changes in group cohesion over time, one may ask whether the change in group cohesion is reversible. That is, does the trajectory of change in cohesion follow some
+monotonically increasing or decreasing (e.g., linear) functional form that
+represents an irreversible (at least within the longitudinal time period studied) change or some nonmonotonic functional form (e.g., an inverted U) that
+represents reversible change over time? Another example of a descriptive
+question is whether the change in the focal variable is simply a direct quantitative change in magnitude, often referred to as alpha change, or a qualitative
+change in the conceptualization, often referred to as gamma change, of the
+construct of interest (Chan, 1998a; Golembiewski, Billingsley, & Yeager,
+1976). In newcomer adaptation research, an interesting question concerns
+whether organizational commitment is changing in strength only (alpha
+change) or in dimensionality (gamma change) over time.
+Although the descriptive question is concerned with the what or how of
+the change trajectory, the explanatory question focuses on the why by seeking to understand and predict the pattern of intraunit change over time
+described by (i.e., obtained from) the data. The variation to be explained or
+predicted here is typically the interunit differences in intraunit changes over
+time. Consider the case where all groups follow a positive linear trajectory of
+change in group cohesion but differ in the rate of change (i.e., slope). If this
+intergroup variation in rate of change is systematic and not due to measurement error, then addressing the explanatory question may involve seeking to
+understand and predict the variation by incorporating one or more explan-
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 3----->Chan / DATA ANALYSIS
+
+343
+
+atory variables (e.g., group size) in the model of change and estimating their
+predictive validity. The explanatory variable can either be a time-invariant or
+a time-varying predictor.
+Descriptive and explanatory questions constitute broad ways of categorizing questions about longitudinal processes. These broad categories are
+useful in helping researchers generate or identify relevant questions about
+longitudinal processes. However, an adequate study requires explicit linkages among theory/hypotheses, selection of study variables/measures/
+design, data analysis, and inferences from results. To explicate these linkages, it is necessary to go beyond each broad category to more specific questions about particular aspects of the change over time. The adequacy to which
+the relevant specific change questions are addressed forms a primary component of the basis on which researchers evaluate the appropriateness of the
+application of a data-analytic technique in a particular substantive investigation. There are at least nine fundamental questions corresponding to different
+aspects of change over time. I have given extensive treatment of these questions in Chan (1998a). I only briefly summarize the questions below. The
+major longitudinal analysis techniques are then discussed in terms of their
+strengths and weaknesses in addressing the relevant specific change questions. I argue that traditional techniques are limited in their ability to answer
+many of these questions, whereas recent advances in latent variable techniques offer a unified and flexible framework for addressing such questions.
+
+FUNDAMENTAL QUESTIONS ON CHANGE OVER TIME
+Chan’s (1998a) nine fundamental questions highlight the complexities
+involved when considering change over time and the importance of clarifying the specific question asked of the change phenomenon (i.e., identifying
+the specific aspect of change), which in turn provides the basis for evaluating
+the change analysis and the substantive inferences made from data. The questions are summarized below.
+Question 1: Is an observed change over time (and observed between-group differences in change over time) due to meaningful systematic differences or random fluctuations resulting from measurement error?
+
+If measurement error is not adequately taken into account when specifying
+the data analysis model and estimating the parameters, results of the analyses
+can be severely affected by measurement error. The classic independence-oferrors assumption, which is common among many traditional data analysis
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 4----->344
+
+GROUP & ORGANIZATION MANAGEMENT
+
+techniques, may be violated when assessing change over time in longitudinal
+designs. This violation is likely to occur when the longitudinal data are collected on measurement occasions closely spaced together using identical
+measures.
+Question 2: Is the change over time reversible?
+
+The question on the reversibility of change over time can be construed in
+terms of the functional form of the intraunit growth (change) trajectory. For
+example, monotonically increasing or decreasing (e.g., linear) functional
+forms represent irreversible (within the time period studied) change in the
+sense that there is no returning or restoring to previous levels on the focal
+variable, at least during the period under investigation. On the other hand, a
+nonmonotonic functional form (e.g., an inverted U) would represent reversible change over time.
+Question 3: Is the change over time proceeding in one single pathway or through
+multiple different pathways?
+
+Two (or more) groups of individuals may follow the same or different trajectories as they proceed from one time point to another (through intervening
+time points measured in the study). For example, in a four-time-point study,
+two groups may have the same value on the focal variable at initial status
+(Time 1) and at end point (Time 4), but one group may follow a positive linear
+trajectory and the other a positively accelerated, monotonically increasing
+trajectory. That is, change from one value of the focal variable at Time 1 to
+another value at Time 4 could proceed through multiple different pathways.
+Question 4: Is the change on the quantitative variable proceeding in a gradual
+manner or is it best characterized as large-magnitude shifts at each time
+interval?
+
+Quantitative change over time may proceed gradually as characterized by a
+linear trajectory with a low slope or it may be characterized in terms of largemagnitude changes as represented by a high slope.
+Question 5: Is the change over time (or across groups) to be considered as alpha,
+beta, or gamma change?
+
+Golembiewski et al. (1976) distinguished three types of change: alpha, beta,
+and gamma. Alpha change refers to changes in absolute levels given a constant conceptual domain and a constant measuring instrument. One can
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 5----->Chan / DATA ANALYSIS
+
+345
+
+meaningfully speak of alpha change only when there is measurement
+invariance of responses across time. Measurement invariance across time
+exists when the numerical values across time waves are on the same measurement scale (Drasgow, 1984, 1987). Measurement invariance could be construed as absence of beta and gamma changes. Beta change refers to changes
+in absolute level complicated by changes in the measuring instrument given a
+constant conceptual domain. Beta change occurs when there is a
+recalibration of the measurement scale. That is, in beta change, the observed
+change results from an alteration in the respondent’s subjective metric or
+evaluative scale rather than an actual change in the construct of interest.
+Gamma change refers to changes in the conceptual domain. Gamma change
+(i.e., change in the meaning or conceptualization of the construct[s] of interest) can take a variety of forms. For example, in the language of factor analysis, the number of factors (a factor representing a construct) assessed by a
+given set of measures may change from one time point to another.
+Question 6: Is the change over time occurring at the individual, the group, or both
+levels of conceptualization?
+
+Change over time can be conceptualized and assessed at the individual level,
+the group level (e.g., team, department), or both levels. Any analytic technique that is restricted to only one level of conceptualization and analysis is
+limited in an important way because the assumption of no or irrelevant
+change at the other level is not tested.
+Question 7: In addition to detecting interunit in intraunit change, can one predict
+(and hence increase understanding of) these differences?
+
+Units (e.g., individuals) may systematically differ in the way they change
+over time. Understanding can increase if the longitudinal modeling can
+incorporate additional variables and assess their efficacy in predicting the
+different aspects of these interunit differences (e.g., individual differences in
+rate of change, individual differences in trajectory forms).
+Question 8: Are there cross-domain relationships in change over time?
+
+Changes in one focal variable may be related to changes in another focal variable. For example, during the period of newcomer adaptation, the rate of
+change in information seeking may be positively correlated with the rate of
+change in task mastery. An adequate longitudinal modeling technique would
+allow researchers to explicitly model these cross-domain relationships.
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 6----->346
+
+GROUP & ORGANIZATION MANAGEMENT
+
+Question 9: Do the various relationships with respect to specific facets of change
+over time vary or remain invariant across groups?
+
+Different groups may either share or differ in the various specific facets of
+intraunit changes. An adequate longitudinal modeling technique would
+allow researchers to explicitly model and test the various hypotheses concerning between-group differences or similarities in change over time.
+
+TECHNIQUES FOR ANALYZING LONGITUDINAL DATA
+The major longitudinal analysis techniques reviewed here are classified as
+traditional or latent variable techniques. Traditional techniques include (a)
+difference scores, (b) repeated measures analysis of variance and regression,
+and (c) time series model. Latent variable techniques include (d) longitudinal
+factor analysis, (e) longitudinal mean and covariance structures analysis, and
+(f) longitudinal growth modeling, which together lead to a unified analytical
+framework.
+DIFFERENCE SCORES
+
+Traditionally, intraunit change has been examined using data collected at
+two points in time and assessed by some two-wave analysis such as computing a difference score or a residual change score (Willett, 1989). Two-wave
+designs are widely employed in longitudinal studies in organizational
+research. However, two-wave analyses have been a source of much debate.
+Within the organizational and management literature, the debate over the
+appropriateness of difference scores for change analysis, which started in the
+1950s and continued into the 1990s (for a recent debate, see Edwards [1994]
+and Tisak & Smith [1994a, 1994b]), has attracted most attention. The difference score has been criticized for its purported inability to be reliable and
+valid, its frequent negative correlation with initial status, and its relatively
+low reliability (e.g., Bereiter, 1963; Cronbach & Furby, 1970; Linn & Slinde,
+1977). Some critics have even argued that the use of difference scores for
+change assessment should be discontinued (e.g., Cronbach & Furby, 1970;
+Johns, 1981; Werts & Linn, 1970). However, many of these criticisms were
+subsequently shown to be founded on misconception, and Rogosa and others
+(e.g., Rogosa, Brandt, & Zimowski, 1982; Rogosa & Willett, 1983, 1985;
+Zimmerman & Williams, 1982) have demonstrated that the difference score
+can be an intuitive and unbiased simple measure of individual growth
+(change).
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 7----->Chan / DATA ANALYSIS
+
+347
+
+Although the difference score can be an unbiased measure of individual
+change, only very limited information on intraunit change over time can be
+obtained from a difference score analysis. The problem lies in the limitation
+of the two-wave design rather than in any inherent deficiency in the difference score. In addition to the well-established validity problems inherent in
+two-wave designs for assessing change over time (e.g., Campbell & Stanley,
+1963; Cook & Campbell, 1979; Cook, Campbell, & Peracchio, 1990), such
+designs are problematic for assessing change over time because measurements are repeated at only two points in time and, as such, they provide no
+precise information on intraunit change over time. That is, no precise individual growth curves (trajectories) can be plotted for the units. In two-wave
+designs, there are two observations over time for a single individual, and the
+most complex functional form that can be fitted is a straight line passing
+through the two data points. There is no way to evaluate the adequacy of the
+straight-line functional form for the growth (i.e., change over time). In addition, there is no way to compare the fit between the straight-line function and
+other growth curves such as quadratic or cubic curves that could pass perfectly through the same two data points (Rogosa, 1995). The two-wave
+design represents two snapshots of a continuous growth process (Bryk &
+Weisberg, 1977). Without the ability to assess the functional form of the trajectory that most adequately describes intraunit change over time, the simple
+difference score analysis of data from two time points clearly fails to answer
+the fundamental descriptive questions on change over time. Descriptive
+questions such as whether the change over time is reversible or follows a
+hypothesized functional form cannot be addressed.
+To address two-wave problems, repeated measurement from individuals
+over multiple (i.e., three or more) time points is needed. Multiwave repeated
+measurement within a longitudinal design allows the assessment of the
+intraunit change process as it unfolds over time. A large number of techniques have been developed to analyze data collected from these multiwave
+designs. In addition, other techniques, which are within-subjects analyses
+rather than specifically developed to analyze longitudinal data, can be and
+have been employed to assess change over time in multiwave designs. The
+best-established examples of such techniques are repeated measures
+ANOVA and repeated measures regression, which are described next.
+REPEATED MEASURES ANOVA AND REGRESSION
+
+Repeated measures ANOVA and repeated measures regression, which
+were developed to handle within-subjects factors/predictors, can be applied
+to the analysis of longitudinal data by simply treating time as the
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 8----->348
+
+GROUP & ORGANIZATION MANAGEMENT
+
+within-subjects factor/predictor. Both repeated measures techniques attempt
+to detect differences in means of the focal variable as it repeats over time
+within the longitudinal design.
+Although these repeated measures analyses are straightforward extensions of the general linear model, substantive application of these techniques
+to longitudinal analysis is often problematic. Bergh (1995) reviewed how
+repeated measures analysis has been applied in the organizational literature.
+On the basis of a content analysis of 86 studies, Bergh concluded that organizational researchers, when applying repeated measures analysis techniques,
+often failed to control for violations in data assumptions, perform analysis of
+characteristics of differences in measurement means, and fully test
+multivariate models.
+In addition to the issues raised by Bergh (1995), researchers need to pay
+more attention to the explicit linkage between the logic of the repeated measures analysis and the underlying theory of change as it relates to the nine fundamental questions discussed above. To illustrate, consider the notion of violation of analytical assumptions in repeated measures ANOVA. The validity
+of the repeated measures ANOVA application is dependent on several
+important data assumptions. One assumption is that the common,
+orthonormalized variance-covariance matrix of the time observations is
+spherical. That is, the matrix demonstrates constant variance across time
+observations and constant covariance between time observations. Huynh and
+Mandeville (1979) demonstrated that sphericity is a necessary and sufficient
+condition for the validity of repeated measures ANOVA. When sphericity is
+violated, the F test in repeated measures ANOVA becomes too liberal and
+biases the value upward. Box’s (1954) epsilon is an index of the departure
+from sphericity and can be used to correct the biased F test. However, as
+noted by Chan (1998a), it is important to realize that in the context of
+intraunit change over time, it is simplistic to conceptualize the sphericity
+assumption as merely a statistical hurdle to be cleared for appropriate application of an analytic technique (i.e., repeated measures ANOVA) to the
+change assessment. As noted above, individuals (or some other level of unit
+of theory) may differ systematically in their individual growth parameters.
+For example, all individuals may share a positive (increasing) linear trajectory and be very similar in initial status (at Time 1) but differ in their rate of
+change (slope). Given this pattern of intraindividual change, one would
+rightly expect lack of constant variance across time observations. However,
+this lack of constant variance (i.e., violation of sphericity) is substantively
+meaningful because it reflects systematic interindividual differences in
+intraindividual change over time. Repeated measures ANOVA fails to structure these meaningful differences in intraindividual change patterns, and the
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 9----->Chan / DATA ANALYSIS
+
+349
+
+very existence of these true differences violates the statistical assumption of
+the technique. Hence, repeated measures ANOVA is inherently deficient for
+examining differences in individual growth trajectories. When such differences exist, it makes little sense to correct for departure from sphericity.
+Techniques that do not assume sphericity and can directly address the fundamental questions of change are needed.
+Because repeated measures ANOVA and repeated measures regression
+assume that the same construct is repeatedly measured over time and with the
+same precision (in fact, without measurement error) and focus on the detection of differences in means over time, they suffer from many common inadequacies as techniques for assessing change over time. These inadequacies
+become clear when one relates the techniques to the fundamental questions
+on change. When these traditional repeated measures techniques are applied
+to assess change over time, it is generally assumed that the change of interest
+is a quantitative change (over time or across groups) on the same continuous
+variable as opposed to a qualitative change or conceptual difference (over
+time or across groups) in the focal construct (Question 4). This is part of the
+larger assumption that only alpha change exists and there are no beta or
+gamma changes (Question 5). Often, measurement error is not accounted for
+in the analysis, and the researcher has to assume that any measurement error
+that exists does not obscure the true nature of the change patterns (Question
+1). Also, change over time is generally assumed to be unitary rather than
+multipath (Question 3). It is not clear how the growth trajectories of individuals who have similar levels in initial status and similar levels at the last time
+wave can be grouped into different pathways. This problem is largely a result
+of the fact that the techniques used do not have a model for structuring individual growth trajectories and identifying and comparing different functional forms of trajectories because no individual growth parameters are
+defined or estimated. It follows that there is no systematic way of relating
+interunit differences in intraunit changes over time to individual predictors of
+these differences (Question 7). In addition, many traditional techniques do
+not allow the researcher to model the distinction between change patterns
+occurring at the group level and those occurring at the individual level (Question 6). Although some idea on reversibility of change over time (Question 2)
+may be inferred at the group level by plotting the focal variable over time, no
+precise definition and representation of the functional form of the growth trajectory is provided, and reversibility at the individual level of analysis is not
+assessed because no individual growth trajectories are specified. Because of
+the above inadequacies, it is not meaningful to talk about cross-domain relationships of change patterns over time (Question 8) or multiple-group comparisons of specific facets of change patterns (Question 9).
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 10----->350
+
+GROUP & ORGANIZATION MANAGEMENT
+
+TIME SERIES MODELS
+
+In the most general sense, time series models include all longitudinal analysis techniques insofar as time series models analyze a sequence of observations generated through time (Schmitz, 1990; Vandaele, 1983). In practice,
+the term time series models is often used to refer to specific classes of techniques developed to describe a relatively long series of observations typically
+consisting of several tens of time points. One way to classify these time series
+techniques is to distinguish between two general subclasses of models,
+namely, time domain and frequency domain models. Autoregressive integrated moving average (ARIMA) models are representative of time domain
+models, whereas spectral analysis models are representative of frequency
+domain models.
+Time domain and frequency domain models differ in how they represent
+the same time series information. Time domain models analyze the longitudinal data and make inferences based on the autocorrelations in the sequence
+of observations (autocorrelation refers to the correlation between later items
+in a time series and earlier items; when the time series is completely random,
+the autocorrelation is zero). The time series is expressed in terms of an
+autoregressive or some other time-based parameter. In these models, a given
+observation in time is characterized as a weighted function of past observations of the same underlying process. These time series models, such as
+ARIMA models, are typically used for forecasting purposes. Frequency
+domain models, on the other hand, express and account for the time series
+data in terms of trigonometric functions such as sine and cosine functions.
+These functions are used to represent rhythms or cycles assumed to underlie
+the time series data. Clearly, the choice between the two classes of models is
+dependent on the nature of the research question at hand. For example, questions that forecast time points call for time domain models, whereas those
+that assess rhythms or cycles within the data call for frequency domain
+models.
+Although both classes of time series models have potential applied value
+in substantive longitudinal research in group and organizational management (e.g., frequency domain models can be applied to the study of mood
+variability at the workplace), the requirement of a large number of repeated
+measurements (i.e., at least tens of time points; Metzler & Nickel, 1986) in
+the longitudinal design limits the actual applied value of these time series
+models, at least in the current state of research.
+More fundamentally, the researcher should evaluate the use of time series
+models in terms of how they succeed or fail to address the various facets of
+intraunit change over time in his or her specific research questions. Similar to
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 11----->Chan / DATA ANALYSIS
+
+351
+
+the traditional repeated measures techniques discussed earlier, the application of time series models assumes, without demonstrating it, that the change
+of interest is a quantitative change (over time or across groups) on the same
+continuous variable as opposed to a qualitative change or conceptual difference (over time or across groups) in the focal construct (Question 4). Again,
+this is part of the larger and untested assumption that only alpha change exists
+and there are no beta or gamma changes (Question 5). Measurement error is
+not explicitly accounted for in time series analyses, and the researcher has to
+assume that any measurement error that exists does not obscure the true
+nature of the change patterns (Question 1).
+Use of time series allows the study of reversibility of change over time
+(Question 2) because each time series model presents the functional form of
+the trajectory representing intraunit change. However, to assess whether
+change over time is unitary or multipath (Question 3), one has to compare different distinct time series models, with each model representing an individual’s time series data or a group’s time series data. More important, within a
+given time series model, the technique does not allow the researcher to model
+the distinction between change patterns occurring at the group and those
+occurring at the individual level (Question 6). Although it is possible to fit a
+time series to an individual’s repeated observations (hence compare different
+individuals’ function by comparing distinct time series models) or to the
+summary statistics of a group of individuals (hence compare different
+groups’ functions by comparing distinct time series models), it is not possible
+to do both at the same time. That is, it is not possible, within a single time
+series model, to examine a group’s intraindividual change function at the
+aggregate (group) level and, at the same time, individual differences in
+intraindividual change functions (Rovine & von Eye, 1991).
+Without the flexibility to systematically represent, within a single analytic
+model, individual differences in the parameters of individual change functions, there is no systematic way of relating interunit differences in intraunit
+changes over time to predictors of these differences (Question 7). The inability to represent both individual- and group-level growth (intraindividual
+change over time) information within a single analytic model also limits the
+flexibility of time series for representing cross-domain relationships of
+change patterns over time (Question 8) or making multiple-group comparisons of specific facets of change patterns (Question 9).
+In short, traditional techniques are limited in important ways with respect
+to addressing various aspects of change over time. In contrast, recent
+advances allow several latent variable techniques to be integrated into a unified framework for assessing intraunit change over time.
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 12----->352
+
+GROUP & ORGANIZATION MANAGEMENT
+
+In latent (unobserved) variable approaches to longitudinal modeling, a
+variety of structural equation models can be fitted to the longitudinal data to
+describe, in alternative ways, the change over time. Structural equation models make use of a set of hypothesized relationships between variables, both
+observed and latent, to account for the observed pattern of relationships in a
+covariance structure. Various parameters of the model are estimated from the
+set of structural equations. An advantage of latent variable approaches is the
+ability to explicitly take into account both cross-sectional and longitudinal
+measurement errors. These approaches allow the researcher to model a variety of error covariance structures and assess any distorting effects that crosssectional or longitudinal measurement errors may have on the various parameter estimates of true change.
+The different latent variable approaches differ in what they assert about
+the various aspects of change over time. The next three subsections describe
+the relevant latent variable approaches, which lead to an integrative twophase unified framework for conceptualizing and assessing intraunit change
+over time. However, first note that autoregressive latent models, which are
+among the simplest latent variable approaches, are inadequate for the analysis of longitudinal data representing intraunit change over time. In general,
+autoregressive models estimate scores on a variable based on values of the
+same variable. Proponents of the inclusion of autoregressive models in the
+longitudinal modeling of intraunit change argue that the autoregressive
+effect (the effect of the Time 1 measure on the Time 2 measure of the same
+variable) is a legitimate competing explanation for an observed effect and
+therefore must be included before causal inferences can be made regarding
+the influence of other predictors of change over time. The inclusion of
+autoregressive effects in longitudinal modeling of intraunit change is problematic because they tend to remove all potentially important predictors of
+change except those that predict changes in rank order of the observations
+over time. For example, in a monotonically stable growth process in which
+all individuals increase at a constant rate (i.e., linearly) while maintaining the
+same rank order, the important predictors of the individual slopes would be
+eliminated with the inclusion of autoregressive effects. The autoregressive
+model fails when intraunit change is accompanied by high-rank-order stability over time (Stoolmiller & Bank, 1995). In addition, the autoregressive
+effect is questionable as a true causal effect, and researchers have argued that
+proponents of its application in longitudinal modeling have misinterpreted
+the autoregressive effect as a parameter representing a true causal effect
+when it is in fact a stability coefficient representing the boundary or initial
+values of the system. For more comprehensive discussions of the problems
+associated with including autoregressive effects in longitudinal modeling of
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 13----->Chan / DATA ANALYSIS
+
+Figure 1:
+
+353
+
+Representation of a Single-Factor Longitudinal Factor Analysis Model
+
+intraunit change, see Rogosa and Willett (1985) and Stoolmiller and Bank
+(1995).
+LONGITUDINAL FACTOR ANALYSIS
+
+Longitudinal factor analysis (LFA) requires multiple indicators (observed
+measures) of the latent construct (i.e., the focal variable being examined for
+intraunit change over time) at each time point of the longitudinal design. Figure 1 depicts a four-wave longitudinal factor-analytic model in which the
+focal latent variable is measured by the same three indicators or items at each
+time point. As shown in the figure, within each time point, the model is simply a single-common-factor model. Within each time point, the common factor (construct) loadings and unique factor (error term) loadings allow the separation of the observed variance in the items into common and specific
+variance. In addition, because the same items are used over time, the model
+separates the common covariance over time from the specific covariance
+over time.
+The LFA model directly addresses the questions of measurement
+invariance over time in terms of whether the same construct is being measured over time and measured with the same precision (Questions 4 and 5).
+That is, in addition to hypotheses on quantitative changes, LFA allows
+hypotheses about qualitative changes over time to be tested. For example, a
+researcher may hypothesize an integration process describing how an individual develops psychological safety climate perceptions. Let us suppose
+that the hypothesized development is an integration process, moving from an
+initial state in which distinct beliefs about various safety practices are
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 14----->354
+
+GROUP & ORGANIZATION MANAGEMENT
+
+unrelated or, at best, loosely interrelated through progressive states in which
+these separate beliefs become increasingly interrelated to the eventual state
+in which they become integrated into a single global belief (Chan, 1998b).
+The researcher now requires an analytical technique to test these hypothesized qualitative changes represented by the integration process. LFA is well
+suited for this purpose.
+In LFA, tests of qualitative change (also known as factorial change in the
+language of LFA) are accomplished using widely used chi-square difference
+tests of nested structure equation models. It is generally accepted (e.g., Alwin
+& Jackson, 1981; Reise, Widaman, & Pugh, 1993; Sörbom, 1974) that evidence of measurement invariance across time is present if each time point has
+the same number of factors (in this case, we expect a single factor at each time
+point) with the same specific items loading on each factor (this equal factor
+pattern is called configural invariance) and the factor loadings corresponding
+to the identical items are equal across time points (this equal factor loading is
+also called factorial invariance).
+To perform the chi-square test of invariance over time, a LFA model in
+which factor loadings across time are freely estimated (usually, one item is
+selected as the reference indicator and its loading is fixed to 1 at each time
+point for scaling purpose, i.e., λ11 = λ42 = λ73 = λ10,4 = 1 in Figure 1; Bollen,
+1989) is first fitted to the data. Next, a second and more constrained model in
+which factor loadings of the identical items are fixed to be equal and estimated (i.e., λ21 = λ52 = λ83 = λ11,4; λ31 = λ62 = λ93 = λ12,4) is fitted to the data. The
+second model is nested under the first model and the difference in chi-square
+values from both models is used as a test of statistically significant change in
+fit between the models. A nonsignificant reduction in fit from the first (free
+loadings) model to the second (equal loadings) model is taken as evidence of
+equality of factor loadings, that is, evidence of measurement invariance. This
+in turn indicates that if we fit a trajectory to represent intraunit change over
+time, the trajectory would represent quantitative variations on the same construct rather than different noncomparable quantitative values from qualitatively different constructs. Conversely, a significant reduction in fit from the
+less to the more constrained model would indicate inequality of factor loadings, that is, evidence of a lack of invariance. In this case, the researcher has
+to reevaluate his or her theories of change and perhaps reformulate hypotheses or direct efforts to instrument development. If the researcher ignores this
+lack of measurement invariance and proceeds to uncritically fit trajectories of
+intraunit change over time, then results obtained from the trajectory models
+are likely to be misleading.
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 15----->Chan / DATA ANALYSIS
+
+355
+
+Before fitting and directly comparing trajectories across groups, there is a
+need to first establish evidence of measurement invariance across groups for
+the same reason of comparability described earlier. The popular multiplegroup approach described by Jöreskog and Sörbom (1989) is used to assess
+invariance across groups. The logic is similar to the nested model comparisons just described except that we now have two mutually exclusive samples
+(groups). In this multiple-group assessment, a LFA model is fitted to the two
+groups simultaneously. First, a model in which factor loadings are freely estimated (except for loadings of the reference indicator, which are fixed) across
+groups is fitted to the data. Next, a second and more constrained model in
+which factor loadings of the identical indicators are fixed to be equal across
+groups is fitted to the data. As before, a nonsignificant reduction in fit from
+the free-loadings model to the equal-loadings model indicates equality of
+factor loadings across groups and is taken as evidence of measurement
+invariance across groups. Conversely, a significant reduction in fit would
+indicate inequality of factor loadings, that is, evidence of a lack of invariance.
+Substantive examples on how LFA models can be used to systematically test
+for measurement invariance across time can be found in Vandenberg and Self
+(1993). For examples of testing invariance across time and groups, see Chan
+(1998a).
+LONGITUDINAL MEAN AND
+COVARIANCE STRUCTURES ANALYSIS (LMACS)
+
+Another latent variable technique is LMACS, which is an extension of
+LFA whereby mean-level information is analyzed in addition to the variancecovariance information analyzed in LFA. A LMACS model is identical to the
+LFA model depicted in Figure 1 with the exception that two types of parameter estimates are added to the model. The two are the intercepts (means), τs,
+of the indicators and the factor means, µs.
+Because the LMACS model is simply an LFA model with additional
+parameters estimated, we can test for measurement invariance across time
+and groups in a LMACS model in exactly the same way as in the LFA model
+just described. However, the inclusion of factor means in LMACS provides a
+useful way to change assessment that goes beyond testing for measurement
+invariance. Specifically, the invariance or the lack of invariance of the factor
+means, variances, and covariances across time or groups may reflect true
+change patterns (Chan, 1998a). For example, if the true intraindividual
+change over time for all individuals in a group follows a positive linear
+growth trajectory and all individuals change at the same rate, then we would
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 16----->356
+
+GROUP & ORGANIZATION MANAGEMENT
+
+expect the factor means to increase rather than remain equal over time. Alternatively, if all individuals follow a positive linear growth trajectory and they
+have similar levels at initial status but differ systematically in their individual
+slopes, then we would expect differences in factor variances (increasing)
+across time. In the two examples just described, the differences in factor
+means and factor variances should be interpreted as a result of substantive
+intraindividual change and substantive individual differences in
+intraindividual change, respectively, rather than a lack of measurement
+invariance, assuming we have demonstrated that there is a single factor
+across time with corresponding equality of factor loadings. In areas of
+research in which there are no well-established theories to derive specific
+functional forms of the trajectories of change (e.g., changes in adaptive performance; Chan, 2000a, 2000b), LMACS serves as a useful preliminary
+analysis, which both suggests and constrains the specific trajectory forms
+from a virtually infinite number of possible trajectory forms to be fitted to the
+data.
+LATENT GROWTH MODELING (LGM),
+EXTENSIONS USING MULTIPLE INDICATORS (MLGM),
+AND THE INTEGRATIVE LMACS-MLGM FRAMEWORK
+
+Latent growth modeling (LGM) is a flexible latent variable technique that
+offers a direct and comprehensive assessment of the nature of true intraunit
+changes and interunit differences in these changes. LGM also allows the estimation of the associations between these differences and time-invariant or
+time-varying predictor variables, and hence addresses explanatory questions
+on change over time.
+A basic LGM model can be elaborated into a multiple-indicator model
+(MLGM). The latter is essentially a LGM analysis in which the focal variable
+of change is modeled as a latent variable represented by multiple indicators. I
+have described LGM and MLGM in detail elsewhere (LGM: Chan, 2002;
+Chan, Ramey, Ramey, & Schmitt, 2000; Chan & Schmitt, 2000; MLGM:
+Chan, 1998a) and will only summarize the logic of the models here.
+LGM represents the longitudinal data by modeling interunit differences in
+the attributes (i.e., parameters) of intraunit changes over time (i.e., individual
+growth curves). The model depicted in Figure 2 represents the basic form of a
+univariate LGM (without multiple indicators) in which two parameters,
+intercept (representing initial status) and slope (representing rate of change),
+together describe a linear pattern of intraunit change over time. The variables
+Y1 to Y4 refer to the focal variable measured at four points in time at equal
+intervals. As shown in the figure, the LGM resembles the classic
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 17----->Chan / DATA ANALYSIS
+
+Figure 2:
+
+357
+
+Representation of a Basic Linear Trajectory Latent Growth Model
+
+confirmatory factor analysis. However, because repeated measures data
+from the same variable (Y) are used, the latent factors are actually interpreted
+as chronometric (time) common factors representing intraunit differences
+over time rather than psychometric (measurement) common factors
+(McArdle, 1988). Repeated measures polynomial ANOVA models are actually special cases of LGMs in which only the factor means are of interest
+(Meredith & Tisak, 1990).
+Using LISREL notation, we say that the first latent factor, labeled Intercept, ηI, is a constant for any given unit (e.g., individual) across time, hence
+the fixed values of 1 for factor loadings on the repeated measures. The intercept factor represents information about the mean, µI, and variance,σ 2I , of the
+collection of intercepts of each unit’s growth curve. The second latent factor,
+labeled Slope, ηS, represents information about the mean, µS, and variance,
+σ 2S , of the collection of slopes of each unit’s growth curve (for technical
+details concerning choice of slope factor loadings and the variety of growth
+models such as those that leave the shape of trajectory unspecified, include
+additional growth factors to represent different curvilinear functions [Question 2], and has unequal time intervals, see Chan, 1998a). Both latent factors,
+which are estimated from the data, are allowed to covary (estimated as σSI) as
+indicated by the double-headed curved arrow between the factors. The εs
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 18----->358
+
+GROUP & ORGANIZATION MANAGEMENT
+
+represent error variances in the repeated measures. The error variances can
+either be freely estimated or fixed at certain values. They can also be constrained to be equal across repeated measurements. Similarly, provided that
+the model is identified, any of the error covariances can either be freely estimated or fixed at certain values including zero, thus allowing a variety of a
+priori error covariance structures to be modeled (Question 1).
+In an LGM analysis, we can estimate the means and variances of the two
+growth parameters (intercept and slope factors) and examine whether the two
+parameters are correlated with each other. The means and variances allow us
+to examine, within a single analytic model, intraindividual change at the
+group level and individual level, respectively (Question 6). The LGM analysis can also be used to examine associations between the growth parameters
+and predictor variables (Question 7). For example, in newcomer adaptation
+research, we can use LGM to predict initial status and rate of change in information seeking from a proactive personality (Chan & Schmitt, 2000). Different univariate latent growth models can also be combined to form a
+multivariate latent growth model. In a multivariate growth model, parameters from different change trajectories can be correlated to examine crossdomain associations (i.e., relationships between two focal variables being
+examined for intraunit change over time, Question 8). For example, in a study
+of interpersonal relationships, rate of change in relationship building can be
+correlated with rate of change in social integration. One or more predictors
+can also be included in the multivariate model, thereby allowing tests of
+hypotheses regarding differential predictions (using the same predictor) of
+intraunit change across domains. Finally, latent growth models (univariate or
+multivariate) can be fitted simultaneously to different groups of units (e.g.,
+gender, ethnic, occupational, experimental groups), and multiple-group
+LGM analyses can be performed to test for across-groups invariance of one
+or more of the specified relationships in the latent growth model (Questions 3
+and 9). Any two distinct growth models, provided they share a nested relationship, can be tested for statistical significance of difference in model fit
+using the chi-square difference test of nested latent variable models as
+described earlier.
+The majority of LGM applications have not incorporated measurement
+invariance concerns in the model specification. To address these concerns
+within the LGM framework, LGM can be extended to a MLGM in which the
+focal variable of change is modeled as a latent variable assessed by multiple
+indicators as opposed to a manifest variable as is typically the case in prior
+work on LGM. In MLGM, the focal change variable is represented as a firstorder latent variable at each time point, the intercept and slope factors are
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 19----->Chan / DATA ANALYSIS
+
+359
+
+represented as second-order latent factors, and the predictors, if any, are represented as exogenous latent variables with structural effects on the intercept
+and slope factors (represented as endogenous latent variables). For details,
+see Chan (1998a).
+The use of multiple indicators in a latent growth model allows both random and nonrandom measurement errors to be taken into account when
+deriving the intercept and slope/shape factors. The use of multiple indicators
+to assess the focal construct allows reliable (nonrandom) variance to be partitioned into true score common (construct) variance and true score unique
+variance. True score unique variance is nonrandom and it is that portion of
+variance in a measure that is not shared with other measures of the same construct. In LGM, the same measures are repeatedly administered over time.
+Hence, a failure to partition nonrandom variance into true construct variance
+and unique variance leads to distorted (inflated) estimates of true change in
+the focal construct over time (Question 1). Because only scale/composite
+level but no item-level (multiple indicator) information on the focal variable
+is used in the standard LGM described earlier, the procedure does not provide
+the isolation of nonrandom error variance from reliable variance and it takes
+only random errors into consideration. MLGM addresses the problem.
+Finally, Chan (1998a) combined the latent variable approaches described
+above into a two-phase analytical procedure that provides a unified framework for conceptualizing and assessing change over time. In Phase 1 of this
+integrative LMACS-MLGM framework, LMACS (of which LFA is simply a
+subset) is used to examine issues of measurement invariance across time and
+across groups (Questions 4 and 5). These issues have logical priority because
+establishing invariance provides evidence that results of subsequent growth
+modeling constituting Phase 2 of the procedure are meaningful. Building
+invariance assessments into the analytic procedure as the first logical step to
+longitudinal modeling contrasts with the analytical models that left untested
+the assumption of measurement invariance across time or groups (e.g., the
+traditional techniques discussed earlier). In addition to invariance assessments, Phase 1 of the procedure helps in the preliminary assessment of the
+basic form of intraunit change by identifying the constraints on the patterns
+of true score (factor) means and variances over time. In Phase 2, MLGM is
+used to directly assess change over time by explicitly and simultaneously
+modeling the group and individual growth trajectories of the focal variable as
+well as their relationships to other time-invariant predictors and/or timevarying correlates (i.e., growth trajectories in a different domain). As
+explained above, LMACS and MLGM together provide a unified framework
+for directly addressing the nine fundamental questions on change over time.
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 20----->360
+
+GROUP & ORGANIZATION MANAGEMENT
+
+For a detailed example of a substantive application of the LMACS-MLGM
+framework in organizational research, see Chan (1998a).
+
+SOME CAUTIONARY REMARKS
+For all the latent variable techniques described in this article, the focal
+change variable is assumed to be continuous in nature. The techniques were
+not intended to handle categorical variables, although it is possible to adapt
+them to accommodate categorical and other nonnormal variables (Muthen,
+1984, 1996). In cases where the change variable is categorical and the interest
+is in modeling qualitative changes or shifts over time from one categorical
+state to another, analytic models such as survival analysis, event history analysis, and latent class analysis for stage-sequential dynamic variables are well
+suited. Excellent examples of substantive applications of these three analytic
+models are available, respectively, in Morita, Lee, and Mowday (1989); Harrison and Hulin (1989); and Collins (1991).
+The strengths of latent variable techniques include the ability to explicitly
+account for the biasing effects of random measurement error and model different a priori error covariance structures, test a variety of complex theoretical interrelationships among variables, make more direct inferences from
+and enhance the explanatory power of nonexperimental data by testing and
+ruling out alternative models, assess the effects of imposing restrictive
+assumptions on a set of relationships, and assess a variety of specific measurement and structural relationships across multiple groups. Latent variables models including LGM can also be easily extended to specify
+mediational effects linking predictors to focal change variables via intervening variables.
+Because the problem of attrition is typical in studies employing longitudinal designs, the issue of small sample sizes is likely to be problematic in
+applications of latent variable techniques, which require large sample sizes.
+When subjects are lost at different repeated measurement occasions, we have
+incomplete data at the individual level across the selected number of time
+waves. To obtain adequate models of growth trajectories, recent extensions
+of standard latent growth models have been developed to deal with this
+incomplete data problem. These extensions essentially apply the logic of
+convergence analysis to “recover” missing longitudinal information.
+Accounts and empirical examples of these extensions are available in
+Duncan and Duncan (1994); Duncan, Duncan, and Hops (1994); and
+McArdle and Hamagami (1991). Note, however, that although these
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 21----->Chan / DATA ANALYSIS
+
+361
+
+extensions may be able to deal adequately with random missing data situations, they are likely to lead to model misspecifications and misleading interpretations due to biased parameter estimates when applied indiscriminately
+to situations of nonrandom patterns of missing data.
+Like any other analytic model, latent variable techniques have no magical
+solutions if a study has poor design and instrument development, or if the
+measurements, time intervals, and duration of study selected fail to capture
+the true causal intervals underlying the change process over time. For example, a change that is in fact continuous and gradual can appear in the results as
+large in magnitude if the time interval (i.e., the interval between Timet and
+Timet+1) is too large. The converse of the problem can also occur: A change
+that is in fact large in magnitude would not be revealed in the results if the
+time period selected for study is smaller than the true causal interval. The
+time interval for repeated measurements can have dramatic effects on the
+results of the analysis performed, including substantial changes in the magnitude of the effect sizes (e.g., Cohen, 1991; Collins, 1991; Gollob &
+Reichardt, 1991). In organizational research, we almost never have a good
+approximation of what the true causal interval is. Researchers have to make
+some judgments when selecting time intervals and the time period in the
+study based on some educated guess from theory and previous research
+findings.
+As in all data analysis, the application of any longitudinal technique has to
+base the change analysis on adequate theoretical foundations. For example,
+in latent growth analysis, it is almost always possible to get an empirically
+good-fitting growth model simply by sequentially increasing the fit of the
+model through a series of atheoretical nested models differing in the number
+of freely estimated parameters in the error variance-covariance matrix. The
+resulting atheoretical model would probably have little substantive meaning
+and would probably not cross-validate in a different sample. When fitting
+error structures, the researcher should, ideally, have a theory of error (e.g.,
+specifying a particular form of method variance), model and test the hypothesized and alternative error structures, and provide convergent validity for the
+theory by further modeling and testing relevant error structures using additional measures (e.g., including an additional measure of the hypothesized
+method variance construct; see Chan, 2001, and Williams & Anderson,
+1994). In short, the latent variable techniques described in this article, when
+driven by adequate theory, design, and measurement, provide a unified
+framework for addressing the different questions on change over time corresponding to various aspects of the longitudinal process of interest.
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 22----->362
+
+GROUP & ORGANIZATION MANAGEMENT
+
+REFERENCES
+Alwin, D. F., & Jackson, D. J. (1981). Application of simultaneous factor analysis to issues of
+factor invariance. In D. J. Jackson & E. F. Borgatta (Eds.), Factor analysis and measurement
+in sociological research (pp. 249-279). Beverly Hills, CA: Sage.
+Bereiter, C. (1963). Some persisting dilemmas in the measurement of change. In C. W. Harris
+(Ed.), Problems in measuring change (pp. 3-20). Madison: University of Wisconsin Press.
+Bergh, D. D. (1995). Problems with repeated measures analysis: Demonstration with a study of
+the diversification and performance relationship. Academy of Management Journal, 38,
+1692-1708.
+Bollen, K. A. (1989). Structural equations with latent variables. New York: John Wiley.
+Box, G. E. P. (1954). Some theorems on quadratic forms applied in the study of analysis of variance problems: Effect of inequality of variance in the one-way classification. Annals of
+Mathematical Statistics, 25, 290-302.
+Bryk, A. S., & Weisberg, H. I. (1977). Use of the nonequivalent control group design when subjects are growing. Psychological Bulletin, 85, 950-962.
+Campbell, D. T., & Stanley, J. C. (1963). Experimental and quasi-experimental designs for
+research. Chicago: Rand McNally.
+Chan, D. (1998a). The conceptualization and analysis of change over time: An integrative
+approach incorporating longitudinal means and covariance structures analysis (LMACS)
+and multiple indicator latent growth modeling (MLGM). Organizational Research
+Methods, 1, 421-483.
+Chan, D. (1998b). Functional relations among constructs in the same content domain at different
+levels of analysis: A typology of composition models. Journal of Applied Psychology, 83,
+234-246.
+Chan, D. (2000a). Conceptual and empirical gaps in research on individual adaptation at work.
+International Review of Industrial and Organizational Psychology, 15, 143-164.
+Chan, D. (2000b). Understanding adaptation to changes in the work environment: Integrating
+individual difference and learning perspectives. Research in Personnel and Human
+Resources Management, 18, 1-42.
+Chan, D. (2001). Modeling method effects of positive affectivity, negative affectivity, and
+impression management in self reports of work attitudes. Human Performance, 14, 77-96.
+Chan, D. (2002). Latent growth modeling. In F. Drasgow & N. Schmitt (Eds.), Measuring and
+analyzing behavior in organizations: Advances in measurement and data analysis (pp. 302349). San Francisco: Jossey-Bass.
+Chan, D., Ramey, S., Ramey, C., & Schmitt, N. (2000). Modeling intraindividual changes in
+children’s social skills at home and at school: A Multivariate latent growth approach to
+understanding between-settings differences in children’s social skills development.
+Multivariate Behavioral Research, 35, 365-396.
+Chan, D., & Schmitt, N. (2000). Interindividual differences in intraindividual changes in
+proactivity during organizational entry: A latent growth modeling approach to understanding newcomer adaptation. Journal of Applied Psychology, 85, 190-210.
+Cohen, P. (1991). A source of bias in longitudinal investigations of change. In L. M. Collins & J.
+L. Horn (Eds.), Best methods for the analysis of change (pp. 18-25). Washington, DC: American Psychological Association.
+Collins, L. M. (1991). Measurement in longitudinal research. In L. M. Collins & J. L. Horn
+(Eds.), Best methods for the analysis of change (pp. 137-148). Washington, DC: American
+Psychological Association.
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 23----->Chan / DATA ANALYSIS
+
+363
+
+Cook, T. D., & Campbell, D. T. (1979). Quasi-experimentation: Design and analysis issues for
+field settings. Boston: Houghton Mifflin.
+Cook, T. D., Campbell, D. T., & Peracchio, L. (1990). Quasi experimentation. In M. D. Dunnette
+& L. M. Hough (Eds.), Handbook of industrial and organizational psychology (Vol. 1, pp.
+491-576). Palo Alto, CA: Consulting Psychologists.
+Cronbach, L. J., & Furby, L. (1970). How we should measure “change”—or should we? Psychological Bulletin, 74, 68-80.
+Drasgow, F. (1984). Scrutinizing psychological tests: Measurement equivalence and equivalent
+relations with external variables are central issues. Psychological Bulletin, 95, 134-135.
+Drasgow, F. (1987). Study of measurement bias of two standardized psychological tests. Journal of Applied Psychology, 72, 19-29.
+Duncan, S. C., & Duncan, T. E. (1994). Modeling incomplete longitudinal substance use data
+using latent variable growth curve methodology. Multivariate Behavioral Research, 29,
+313-338.
+Duncan, T. E., Duncan, S. C., & Hops, H. (1994). The effects of family cohesiveness and peer
+encouragement on the development of adolescent alcohol use: A cohort-sequential approach
+to the analysis of longitudinal data. Journal of Studies on Alcohol, 55, 588-599.
+Edwards, J. R. (1994). Regression analysis as an alternative to difference scores. Journal of
+Management, 20, 683-689.
+Golembiewski, R. T., Billingsley, K., & Yeager, S. (1976). Measuring change and persistence in
+human affairs: Types of change generated by OD designs. Journal of Applied Behavioral
+Science, 12, 133-157.
+Gollob, H. F., & Reichardt, C. S. (1991). Interpreting and estimating indirect effects assuming
+time lags really matter. In L. M. Collins & J. L. Horn (Eds.), Best methods for the analysis of
+change (pp. 243-259). Washington, DC: American Psychological Association.
+Harrison, D., & Hulin, C. (1989). Investigation of absenteeism: Using event history models to
+study the absence-taking process. Journal of Applied Psychology, 74, 300-316.
+Huynh, H., & Mandeville, G. K. (1979). Validity conditions in repeated measures designs. Psychological Bulletin, 86, 964-973.
+Johns, G. (1981). Difference score measures of organizational behaviors: A critque. Organizational Behavior and Human Performance, 27, 443-463.
+Jöreskog, K., & Sörbom, D. (1989). LISREL 7: A guide to the program and applications (2nd
+ed.). Chicago: SPSS.
+Linn, R. L., & Slinde, J. A. (1977). The determination of the significance of change between preand posttesting periods. Review of Educational Research, 47, 121-150.
+McArdle, J. J. (1988). Dynamic but structural equation modeling of repeated measures data. In
+R. B. Catell & J. Nesselroade (Eds.), Handbook of multivariate experimental psychology
+(2nd ed., pp. 561-614). New York: Plenum.
+McArdle, J. J., & Hamagami, F. (1991). Modeling incomplete longitudinal and cross-sectional
+data using latent growth structural models. In L. M. Collins & J. L. Horn (Eds.), Best methods
+for the analysis of change (pp. 276-304). Washington, DC: American Psychological
+Association.
+Meredith, W., & Tisak, J. (1990). Latent curve analysis. Psychometrika, 55, 107-122.
+Metzler, P., & Nickel, B. (1986). Zeitreihen- und Verlaufsanalysen. Leipzig, Germany: Hirzel.
+Morita, J. G., Lee, T. W., & Mowday, R. T. (1989). Introducing survival analysis to organizational researchers: A selected application to turnover research. Journal of Applied Psychology, 74, 280-292.
+Muthen, B. O. (1984). A general structural equation model with dichotomous, ordered categorical, and continuous latent variable indicators. Psychometrika, 49, 115-132.
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 24----->364
+
+GROUP & ORGANIZATION MANAGEMENT
+
+Muthen, B. O. (1996). Growth modeling with binary responses. In A. V. Eye & C. Clogg (Eds.),
+Categorical variables in developmental research: Methods of analysis (pp. 37-54). San
+Diego, CA: Academic.
+Reise, S. P., Widaman, K. F., & Pugh, R. H. (1993). Confirmatory factor analysis and item
+response theory: Two approaches for exploring measurement invariance. Psychological
+Bulletin, 114, 552-566.
+Rogosa, D. R. (1995). Myths and methods: “Myths about longitudinal research” plus supplemental questions. In J. M. Gottman (ed.), The analysis of change (pp. 3-66). Hillsdale, NJ:
+Lawrence Erlbaum.
+Rogosa, D. R., Brandt, D., & Zimowski, M. (1982). A growth curve approach to the measurement of change. Psychological Bulletin, 92, 726-748.
+Rogosa, D. R., & Willett, J. B. (1983). Demonstrating the reliability of the difference score in the
+measurement of change. Journal of Educational Measurement, 20, 335-343.
+Rogosa, D. R., & Willett, J. B. (1985). Understanding correlates of change by modeling individual differences in growth. Psychometrika, 50, 203-228.
+Rovine, M. J., & von Eye, A. (1991). Applied computational statistics in longitudinal research.
+Boston: Academic.
+Schmitz, B. (1990). Univariate and multivariate time series models: The analysis of
+intraindividual variability and intraindividual relationships. In A. von Eye (Ed.), Statistical
+methods in longitudinal research (Vol. 1, pp. 351-386). Boston: Academic.
+Sörbom, D. (1974). A general method for studying differences in factor means and factor structures between groups. British Journal of Mathematical and Statistical Psychology, 27, 229239.
+Stoolmiller, M., & Bank, L. (1995). Autoregressive effects in structural equation models: We
+see some problems. In Gottman, J. M. (Ed.), The analysis of change (pp. 261-278). Hillsdale,
+NJ: Lawrence Erlbaum.
+Tisak, J., & Smith, C. S. (1994a). Defending and extending difference score methods. Journal of
+Management, 20, 675-682.
+Tisak, J., & Smith, C. S. (1994b). Rejoinder to Edward’s comments. Journal of Management,
+20, 675-682.
+Vandaele, W. (1983). Applied time series analysis and Box-Jenkins models. Orlando, FL:
+Academic.
+Vandenberg, R. J., & Self, R. M. (1993). Assessing newcomers’ changing commitments to the
+organization during the first 6 months of work. Journal of Applied Psychology, 75, 557-568.
+Werts, C. E., & Linn, R. L. (1970). A general linear model for studying growth. Psychological
+Bulletin, 73, 17-22.
+Willett, J. B. (1989). Some results on reliability for the longitudinal measurement of change:
+Implications for the design of studies of individual growth. Educational and Psychological
+Measurement, 49, 587-602.
+Williams, L. J., & Anderson, S. E. (1994). An alternative approach to method effects by using
+latent-variable models: Applications in organizational behavior research. Journal of Applied
+Psychology, 79, 323-331.
+Zimmerman, D. W., & Williams, R. H. (1982). Gain scores in research can be highly reliable.
+Journal of Educational Measurement, 19, 149-154.
+
+David Chan received his Ph.D. in industrial and organizational psychology from Michigan State University and is associate professor at the National University of Singapore.
+He is also scientific advisor to the Center for Testing and Assessment in Singapore and
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+<-----Page 25----->Chan / DATA ANALYSIS
+
+365
+
+consultant to the Prime Minister’s Office, the Ministry of Community Development and
+Sports, the Singapore Police Force, and the Singapore Prison Service. He has published
+over 30 journal articles, authored several book chapters, coauthored a book in the fields
+of measurement and industrial and organizational psychology, and serves on the editorial boards of six journals. The research awards he has received include the Distinguished Early Career Contributions Award, the Williams Owens Scholarly Achievement
+Award, the Edwin Ghiselli Award for Innovative Research Design presented by the Society for Industrial and Organizational Psychology, and the Dissertation Research Award
+presented by the American Psychological Association. In 2000, he was ranked 9th in the
+top 100 most published researchers of the 1990s in the field of industrial and organizational psychology.
+
+Downloaded from gom.sagepub.com at UNIV OF WATERLOO on August 31, 2010
+
+

@@ -1,0 +1,523 @@
+<-----Page 0----->Fisher's Exact Test
+Author(s): Graham J. G. Upton
+Source: Journal of the Royal Statistical Society. Series A (Statistics in Society), Vol. 155, No. 3
+(1992), pp. 395-402
+Published by: Blackwell Publishing for the Royal Statistical Society
+Stable URL: http://www.jstor.org/stable/2982890
+Accessed: 22/07/2010 21:37
+Your use of the JSTOR archive indicates your acceptance of JSTOR's Terms and Conditions of Use, available at
+http://www.jstor.org/page/info/about/policies/terms.jsp. JSTOR's Terms and Conditions of Use provides, in part, that unless
+you have obtained prior permission, you may not download an entire issue of a journal or multiple copies of articles, and you
+may use content in the JSTOR archive only for your personal, non-commercial use.
+Please contact the publisher regarding any further use of this work. Publisher contact information may be obtained at
+http://www.jstor.org/action/showPublisher?publisherCode=black.
+Each copy of any part of a JSTOR transmission must contain the same copyright notice that appears on the screen or printed
+page of such transmission.
+JSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide range of
+content in a trusted digital archive. We use information technology and tools to increase productivity and facilitate new forms
+of scholarship. For more information about JSTOR, please contact support@jstor.org.
+
+Royal Statistical Society and Blackwell Publishing are collaborating with JSTOR to digitize, preserve and
+extend access to Journal of the Royal Statistical Society. Series A (Statistics in Society).
+
+http://www.jstor.org
+
+<-----Page 1----->J. R. Statist. Soc. A (1992)
+155, Part 3, pp. 395-402
+
+Fisher's Exact Test
+By GRAHAM
+
+J. G. UPTONt
+
+University of Essex, Colchester, UK
+[Received May 1991. Revised August 1991]
+SUMMARY
+
+This paper reviews the problems that bedevil the selection of an appropriate test for the
+analysis of a 2 x 2 table. In contradiction to an earlier paper, the author now argues the case
+for the use of Fisher's exact test. It is noted that all test statistics for the 2 x 2 table have
+discrete distributions and it is suggested that it is irrational to prescribe an unattainable fixed
+significance level. The use of mid-P is suggested, if a formula is required for prescribing a
+variable tail probability. The problems of two-tail tests are discussed.
+Keywords: GOODNESS OF FIT; MID-P; SIGNIFICANCE; TEST PROCEDURES; TWO-TAILED TESTS;
+2 x 2 TABLE
+
+1. INTRODUCTION
+
+Barnard(1984) noted that 'argumentsabout 2 x 2 tables have now gone on for 70
+years', while Cox (1984) describedthese argumentsas representing'a saga, a story
+with deepimplications'.Barnardand Cox wererespectivelyproposingand seconding
+the vote of thanksof the Royal StatisticalSocietyfor the paperby Yates(1984). Both
+speakersprofferedthe hope that Yates'spaperwould, in the wordsof ProfessorCox,
+'squashonce and for all variousmisconceptions'.However,despitethesewishes,that
+paperhas by no meansbroughtthe discussionsof this contentioustopic to a halt. This
+is evidencedby the flurryof recentpapersthat includethose by Haber(1986),Overall
+et al. (1987), Rice (1988), Lloyd (1988), D'Agostino et al. (1988), Barnard (1989),
+
+Little(1989),Camilli(1990),Richardson(1990),StorerandKim(1990)and Cormack
+and Mantel (1991).
+A decadeago I wrotea paper(Upton, 1982),frequentlyreferencedsubsequently,in
+whichI madea case againstthe use of Fisher'sexacttest. The purposeof this paperis
+to announcemy conversion,broughtabout by conversationswith ProfessorBarnard
+and the stimulusof his recentpapers(Barnard,1989, 1990).The argumentfor the use
+of the conditionaltest statisticis set out briefly in the next section. The subsequent
+sections are concernedwith the associatedproblemsof significancelevels and tail
+probabilities which have both helped in the past to confuse discussions of the
+problem.
+2. PURPLE FLOWERS,TEST PROCEDURESAND THE EXACT TEST
+
+I find that Fisher'sexampleof the purpleflowers,recountedby Barnard(1984)and
+set out at length in Table 3 of Camilli (1990), representsa clinching argument
+concerningthe need for conditioning. A modified form of the same example is
+tAddress for correspondence: Department of Mathematics, University of Essex, Wivenhoe Park, Colchester,
+Essex, C04 3SQ, UK.
+? 1992 Royal Statistical Society
+
+0035-9238/92/155395
+
+$2.00
+
+<-----Page 2----->396
+
+UPTON
+
+[Part 3,
+
+discussedby Little(1989),and a similarexampleis presentedby Cormackand Mantel
+(1991).
+
+The exampleis concernedwith a numberof plants (four in the originalexample)
+each of which may, or may not, flower. The question at issue is the proportionof
+plantsthat, on flowering,bear purpleflowers. The essenceof the argumentis that,
+assumingthat floweringis independentof flowercolour, it cannotmakesensefor the
+test to dependon the numberof plantsthat happento flower.
+Barnard(1979)distinguishedbetweentests and test procedures,and it may help to
+set out a possible test procedurefor this example. To make mattersmore realistic,
+assume that there are 12 (rather than four) plants, and that the hypotheses are
+H0:P(purple)= 0.5 and H1:P(purple)> 0.5. The proposedtest procedure,which
+assumesthatthe nuisanceparameter7r,the probabilityof flowering,is independentof
+the flower colour, is set out in Table 1.
+When7r= 2, the overalltype I errorof this procedureis 0.036, when7r= 7 it is 0.046
+and for 7r= 1 it reachesa maximumat 0.073. However,it is not theseoverallprobabilities that will concern the experimenter, but rather the relevant (conditional)
+probabilitygiven in the final column of Table 1. The word 'relevant'here appliesto
+the actualnumberof plantsthat happento flower. Once that numberis known, the
+values in the other rows of the table are irrelevant.
+The argument for the exact test exactly parallels that for the purple flowers.
+Suppose,for example,that we areinterestedin the equality(HO),or otherwise(HI), of
+the germinationratesof seedsfrom two differentsourcesand that six seedshavebeen
+obtainedfrom each source. A possibletest procedureis set out in Table 2.
+If the commonprobabilityof germinationis I, then this test procedurehas a type I
+errorof 0.039, whereasthe chanceof a situationarisingin whichno decisioncan be
+made is 0.146. This latter situation predominatesif the true value of the nuisance
+parameteris near 0 or 1.
+Commonto these two examplesis the preceptthat we would not considerthe performanceof a test procedurewith respectto its use in cases that have not occurred.
+Indeed,if we wereto do so, then it wouldbe difficultto know whereto stop-should
+we, perhaps, be aiming at a global significancelevel for all statisticiansover all
+significancetests? This is patently absurdbut is, I regret, no more than a logical
+developmentof my 1982argument.
+TABLE 1
+
+Proposed test procedure for the case of 12 seeds
+No. flowering
+12
+11
+10
+9
+8
+7
+6
+6
+4
+<4
+
+Condition for rejecting Ho
+9 or more plants have purple flowers
+9 or more plants have purple flowers
+8 or more plants have purple flowers
+8 or more plants have purple flowers
+7 or more plants have purple flowers
+6 or more plants have purple flowers
+All 6 plants have purple flowers
+All 5 plants have purple flowers
+All 4 plants have purple flowers
+No decision
+
+P(rejection)
+0.073
+0.033
+0.055
+0.020
+0.035
+0.062
+0.016
+0.031
+0.063
+
+<-----Page 3----->1992]
+
+FISHER'S EXACT TEST
+
+397
+
+TABLE 2
+
+Proposed test procedure for the case of six seeds from each of two sources
+No. germinating
+>8
+8
+7
+6
+
+5
+4
+<4
+
+Condition for rejecting HO
+No decision
+6 from one source and 2 from the other
+6 from one source and 1 from the other
+5 or 6 from one source, 1 or 0 from the other
+5 from one source and 0 from the other
+4 from one source and 0 from the other
+No decision
+
+P(rejection)
+
+0.061
+0.015
+0.080
+0.015
+0.061
+
+3. SIGNIFICANCETESTSAND THE 5% TRAP
+Part of the blame for the continuing controversy over the selection of an appropriate test procedure can be laid at the door of Fisher himself, since it was Fisher who
+introduced tables with preselected tail probabilities for the x2-table 'owing to copyright restrictions' (Fisher, 1958). Since the introduction of these, and similar tables,
+generations of statistics teachers have had to steer an uneasy line between the
+convenience of the tables and the inevitable brainwashing of their students that arises.
+Readers of this paper should need no reminding that an outcome associated with a tail
+probability (measured in some agreed way!) of 0.0501 should be treated in essentially
+the same way as an outcome that produces a tail probability of 0.0499. For all
+practical purposes the two outcomes are equally 'significant'.
+Barnard (1990) refers to 5% and 1Woas 'magic values' and gives an interesting
+historical account of the development of the increasing 'significance' of significance.
+Both Barnard (1990) and Camilli (1990) quote the remark by Fisher (1973) that
+'no scientificworkerhas a fixed level of significanceat whichfrom yearto year, and in all
+circumstances,he rejectshypotheses;he rathergiveshis mindto eachparticularcase in the
+light of his evidenceand ideas'.
+The experimenter must keep in mind that significance at the 5% level will only
+coincide with practical significance by chance! There are therefore legitimate
+conceptual reasons for departing from the 5Wolevel, in addition to the pragmatic
+reason that it may be unattainable.
+4. FLEXIBLEP-VALUES
+The quote from Fisher in the previous section is, in effect, a directive to use
+'flexible' P-values, varying from case to case. The determinants of this flexibility will
+be associated with the actions consequent on the decisions that we take. A decision
+that results in very costly consequences will not be taken lightly: the evidence will need
+to be very persuasive.
+A second determinant will be the sample size on which the decision rests, since this
+will determine the power of the test procedure. Among others, Johnstone (1986) and
+Barnard (1989) advocate reducing the tail probability judged as critical, as the sample
+size increases. Both stress the need for flexibility in significance levels. McPherson
+
+<-----Page 4----->398
+
+UPTON
+
+[Part 3,
+
+(1989)also advocatesflexibilityin a valuableextendedcritiqueof the use of P-values.
+Detailed prescriptionsfor varying significance levels in the analysis of multidimensionalcontingencytables have been advocatedby severalresearchers.Aitkin
+(1979, 1980) proposes a simultaneoustest procedurefor testing null hypotheses
+concerninggroupsof parameterswhichinvolvesglobal significancelevelsof between
+25%oand 50%0and resultsin individualsignificancetests at manyintermediatelevels.
+Raftery(1986)advocatesthe use of the Bayesianinformationcriteriondueto Schwarz
+(1978)for the selectionof an appropriatemodel. This procedureresultsin a formula
+that directlyrelates significancelevels to sample size. Supportfor this procedureis
+providedby the work of Koehlerand Murphree(1988) and an exampleof its use is
+providedby Upton (1990).
+5. THE EXACT TEST IS NOT CONSERVATIVE!
+
+Some of the recent papers on 2 x 2 tables begin with the statement, taken as
+due to Yates (1934))is a conaxiomatic,that the exact test (or the X2-approximation
+servativetest (e.g. D'Agostino et al. (1988)and Storerand Kim (1990)).Othershave
+conductedstudiesof a varietyof contingencytablesand havethen come to that same
+conclusion(Overallet al., 1987;Richardson,1990).Theselatterpapersaremerelythe
+most recentin a long line of studieswhich includesUpton (1982). It is now my view
+that all these papers are in error because they start with a preposterouspremise,
+namelythat a test proceduremustbe definedto havea constantsignificancelevelover
+all implementations.
+As an example,considerthe approachthat I adoptedin my 1982paper.I askedthe
+question 'Which of the competingtests, when employed at a nominal significance
+level a, most nearlygives a truetype I errorequalto a?'. This echoedthe frequentist
+approachof Neymanand Pearson. However,my concernwith this questionwas not
+basedon theoreticalconsiderationsbut was purelypragmatic.I took the view that, if
+usersof a test believethat it has a type I errorequalto a, thentheirbelief shouldnot be
+too far from the truth. This led me to concludethat Fisher'sexact test and the close
+approximationobtained using the Yates correction to the X2-test(Y) were not
+appropriatebecause,in theirusual implementation,theiractualtail probabilitiesare
+usuallymuch smallerthan the nominaltail probability.
+However,therearetwo key phrasesnearthe beginningof the previousparagraph:
+'nominalsignificancelevel' and 'if usersof a test believethat it has a type I errorequal
+to a'. It is this idea of a pre-setsignificancelevel, whichis rarelyexactlyattainableby
+the test statistic,that is the sourceof all the confusion. If we quoteonly the attainable
+significancelevels consonantwith the particularset of fixed marginsfor the data at
+hand then the exact test is not conservative.
+Tocher(1950)showedthat the exact-test,augmentedwith an auxiliaryrandomization to achievea desiredsignificancelevel, wasthe uniformlymost powerfulunbiased
+test. This augmentationwas describedas 'repugnant'by Mantel and Greenhouse
+(1968). If we are contentto workwith achievablesignificancelevelsthen the need for
+the auxiliaryexperimentdisappears,but it is then difficult to make sense of the
+unbiasednessproperty.It is amusingto note that the much quoted case of the 2 x 2
+tablein whichall four marginsareequalto 3 andin whichthe cell frequenciesare(3,0,
+0, 3) correspondsto a conditional single-tailprobabilityof precisely5 Wo,without
+recourseto randomization.
+
+<-----Page 5----->1992]
+
+FISHER'S EXACT TEST
+
+399
+
+6. DISCRETEDISTRIBUTIONSAND MID-P
+
+Most of the problemsthat arisein consideringtests for the 2 x 2 table arisebecause
+of the inherent discretenessof any test statistic that we may wish to use (unless
+augmentedby the 'repugnant'randomization).The discretenessis most apparentfor
+the exact test but is equally true for all other test statistics. For example, with the
+uncorrected'x2-statistic',the true distributionis not x2, but a closely approximating
+discretedistribution.The idea of a tail probability,so transparentwhenconsideringa
+continuousdistribution,becomes, for a discretedistribution,morebafflingthe more
+that one pondersover it. For a continuousdistributionwe can happilycalculatethe
+value of T(x), where T(x) = P(X ) x) and x is the observedvalue of the random
+variableX. In this case, as required,E{ T(X)} = 0.5. However, when X is discrete,
+E{T(X)} > 0.5, implying that the Fisher tail areas 'are "biased" in an upward
+direction'(Barnard,1989).To correctthis problemLancaster(1949)suggestedthe use
+of the mid-P-value M(x), given by
+M(x)
+
+=
+
+P(X>x)
+
++ 0.5P(X=x).
+
+(1)
+
+Furthersupportfor the use of mid-P is to be found in Stone (1969)and Anscombe
+(1981).
+Thetest proceduresspecifiedin Tables1and2 werebasedon nothingotherthanthe
+requirementthat the tail probabilitiesshouldbe reasonablyclose to 0.05. No rigorous
+rule was used in their formulation. However, if this requirementis deemed to be
+sensibleand a ruleis required,then mid-Pprovidesa convenientrule-one selectsfor
+rejectionthose casescorrespondingto mid-Pvalueslessthan0.05 (Barnard,1989).As
+it happens,the proceduressuggestedin Tables 1 and 2 satisfythis criterion.Barnard
+suggeststhat mid-P may be thought of as 'assessingthe strengthof evidenceagainst
+the null hypothesis'.Barnardalso observesthat, sincethe exacttest is freeof nuisance
+parameters,it is simpleto computethe powerof a test procedureas a functionof the
+odds ratio. An examinationof the power function may influence a decision concerningthe test procedureto be used.
+7. YATES'SCORRECTIONAND THE EXACT TEST
+
+My supportfor Fisher'sexact test might be construedas implyingsupportfor its
+close approximator,Y, the Yates-correctedversionof the familiarX2-test.However,I
+see a dangerinherentin the use of Ythat does not occurwiththe use of Fisher'sexact
+test. This dangeris that the userof Ymay be seducedby the continuousnatureof the
+x2-distributioninto forgettingthat Y is being used to approximatea sum of discrete
+probabilities.It is then only a short step to forgettingthat the true type I erroris not
+what it appearsto be!
+8. MID-P AND THE UNCORRECTEDTEST
+
+We begin by consideringthe general case in which Z is a continuous unimodal
+randomvariablehavingthe samemeanandvarianceas a discretevariableX. Suppose
+that we are interestedin the probabilityof exceedinga criticalvalue x, lying in the
+uppertail of the distributionof X. Using the distributionof Z to approximatethat of
+X, and using the continuitycorrection,we have the familiarresults
+
+<-----Page 6----->400
+
+[Part 3,
+
+UPTON
+
+and
+P(X=x)
+
+= P(x-
+
+< Z < x) + P(x < Z < X+ 2)
+
+(3)
+
+In many cases, a reasonable further approximation is that
+P(X-2
+
+< Z<
+
+X) = P(X < Z<X+
+
+2)'
+
+(4)
+
+in which case
+P(X=x)
+
+= 2P(x < Z < x+
+
+).
+
+Combining equations (1), (3) and (5), we have
+M(x) = P(Z > x).
+
+(5)
+(6)
+
+These results treated a general case. In the specific instance of the 2 x 2 table, the
+equality in equation (4) must be replaced by an inequality, since the density function
+Of X2 is monotonically decreasing. For a two-tailed test the inequality works in an
+opposite fashion in each tail. The two discrepancies from inequality largely cancel
+themselves out, with the result that the use of mid-P is tantamount to the use of the
+uncorrected X2-test.
+Fortunately these discussions are becoming increasingly academic owing to the
+increasing number of statistical packages that report exact tail probabilities. A
+notable example is STATXACT, reviewed by Sprent (1990), which also reports midP-values.
+9.
+
+ONE-SIDED AND TWO-SIDED TESTS
+
+Here we are faced with two contentious issues. First, can it make sense to perform a
+one-tailed test? Second, if we perform a two-tailed test, how do we reconcile the
+information from an observation in one of the tails with the probabilities (of events
+that did not occur, but might have occurred) in the other tail?
+The argument against the existence of one-tailed tests is that, although the experimenter may be anticipating, or hoping for, an outcome in one tail of the distribution,
+he (or she) will surely not disregard an extreme result in the opposite tail. It may, for
+example, draw attention to some defect in the test procedure.
+However, Fisher clearly often used one-tailed tests when analysing 2 x 2 tables. In
+1957, writing to E. B. Wilson, Fisher stated that
+'[in the context of] the 2 x 2 table, when making an exact calculation I always use the single
+tail, and if I want to compare significance with cases where both tails are used, I simply
+
+doublethe valueobtained, withoutregardto the questionof how lumpythe othertail may
+be [myitalics].Usually, indeed, I thinkthat the singletail is appropriate,thoughof course
+not always'(Bennett, 1990).
+We can reconcile these views by requ'iringthe experimenter to set out clearly his or
+her test procedure before conducting the experiment. This has many benefits. It
+avoids an unconscious bias on the part of the experimenter towards a choice of critical
+region that conveniently includes the observed outcome! It also draws attention to
+problems caused by small sample sizes: the hawk-owl experiment described by Rice
+(1988) might not have been conducted if it had been observed that the most extreme
+result gave a tail probability of 1/15-though any experimentation is better than
+none. Finally, although the experimenter may be expecting, or hoping for, a result in
+
+<-----Page 7----->1992]
+
+FISHER'SEXACT TEST
+
+401
+
+one tail of the distribution, it forces him or her to consider the consequences of an
+outcome in the opposite tail.
+The previous quotation from Fisher shows clearly that he considered each tail as a
+separate entity. In determining the form of the test procedure, we can presume that
+Fisher would have considered each tail separately. How then would Fisher have
+formulated a test procedure? It seems to me that, using either mid-P or the tail
+probability, as appropriate, he would have made separate decisions for each tail concerning where, in that tail, he wished to draw the dividing line or lines between the
+possible decisions.
+Note that there may be a range of outcomes for the original experiment for which
+the most appropriate conclusion may be that there is a need for the collection of
+further data before a final decision is reached. In this context the paper by Berger and
+Sellke (1987) on posterior probabilities is relevant, and we should perhaps take to
+heart the view of Good (1987) in the ensuing discussion that
+'the conventionalP value of approximately.05 [should]be correctlyinterpreted:not as a
+good reasonfor rejectingHobut as a reasonfor obtainingmoreevidenceprovidedthat the
+originalexperimentwas worth doing in the first place'.
+10. SUMMARIZINGREMARKS
+Although the primary concern of this paper has been with the 2 x 2 table, the ramifications extend beyond this specialized situation. For example, the issues raised by
+unattainable significance levels apply to simple hypotheses concerning any discrete
+distribution.
+In effect we have evolved a general prescription for the method of conducting a
+general significance test, based on the need to prescribe before conducting the
+experiment the nature of the conclusions to be drawn from the possible outcomes of
+the experiment. This might be thought to be standard practice-it is certainly an
+uncontentious conclusion. Nevertheless, implicit in the thoughtless use of a fixed
+but unattainable significance level in the context of 2 x 2 tables is an abuse of this
+practice.
+ACKNOWLEDGEMENT
+I wish to thank Professor Barnard for the conversations that stimulated the
+production of this paper. To a considerable extent this paper plagiarizes his views
+expressed in the papers referenced earlier, and I am grateful for his comment to the
+effect that he is never averse to people repeating what he has been advocating! I am
+also grateful to him for bringing to my attention the letter from Fisher to Wilson, cited
+earlier. Nevertheless, despite the above, misrepresentations of facts or opinions are,
+of course, my own responsibility. REFERENCES
+Aitkin, M. (1979) A simultaneous test procedure for contingency table models. Appl. Statist., 28,
+233-242.
+(1980) A note on the selection of log-linear models. Biometrics, 36, 173-178.
+Anscombe, F. J. (1981) Computing in Statistical Science through APL, pp. 288-289. New York:
+Springer.
+
+<-----Page 8----->402
+
+UPTON
+
+[Part 3,
+
+Barnard, G. A. (1979) In contradiction to J. Berkson's dispraise: conditional tests can be more efficient.
+J. Statist. Planng Inf., 3, 181-187.
+(1984) Discussion on Tests of significance for 2 x 2 contingency tables (by F. Yates). J. R. Statist.
+Soc. A, 147, 449-450.
+
+(1989) On alleged gains in power from lower P values. Statist. Med., 8, 1469-1477.
+(1990) Must clinical trials be large?: the interpretation of P values and the combination of test
+results. Statist. Med., 9, 601-614.
+Bennett, J. H. (1990) Statistical Inference and Analysis: Selected Correspondence of R. A. Fisher,
+p. 239. Oxford: Oxford University Press.
+Berger, J. 0. and Sellke, T. (1987) Testing a point null hypothesis: the irreconcilability of P values and
+evidence: J. Am. Statist. Ass., 82, 112-122.
+Camilli, G. (1990) The test of homogeneity for 2 x 2 contingency tables: a review of and some personal
+opinions on the controversy. Psychol. Bull., 108, 135-145.
+Cormack, R. S. and Mantel, N. (1991) Fisher's exact test: the marginal totals as seen from two different
+angles. Statistician, 40, 27-34.
+Cox, D. R. (1984) Discussion on Tests of significance for 2 x 2 contingency tables (by F. Yates). J. R.
+Statist. Soc. A, 147, 451.
+D'Agostino, R. B., Chase, W. and Belanger, A. (1988) The appropriateness of some common
+procedures for testing equality of two independent binomial proportions. Am. Statistn, 42,
+198-202.
+Fisher, R. A. (1958) Statistical Methods for Research Workers, ch. 4. Edinburgh: Oliver and Boyd.
+(1973) Statistical Methods and Scientific Inference, p. 45. New York: Hafner.
+Good, I. J. (1987) Comment. J. Am. Statist. Ass., 82, 125-128.
+Haber, M. (1986) An exact unconditional test for the 2 x 2 comparative trial. Psychol. Bull., 99, 129-132.
+Johnstone, D. J. (1986) Tests of significance in theory and practice. Statistician, 35, 491-504.
+Koehler, A. B. and Murphree, E. S. (1988) A comparison of the Akaike and Schwarz criteria for
+selecting model order. Appl. Statist., 37, 187-195.
+Lancaster, H. 0. (1949) Statistical control of counting experiments. Biometrika, 39, 419-422.
+Little, R. J. A. (1989) Testing the equality of two independent binomial proportions. Am. Statistn, 43,
+283-288.
+Lloyd, C. J. (1988) Doubling the one-sided P-value in testing independence in 2 x 2 tables against a twosided alternative. Statist. Med., 5, 629-635.
+Mantel, N. and Greenhouse, S. W. (1968) What is the continuity correction? Am. Statistn, 22, 27-30.
+McPherson, G. (1989) The scientists' view of statistics-a neglected area. J. R. Statist. Soc. A, 152,
+221-240.
+Overall, J. E., Rhoades, H. M. and Starbuck, R. R. (1987) Small-sample tests for homogeneity of
+response probabilities in 2 x 2 contingency tables. Psychol. Bull., 102, 307-314.
+Raftery, A. E. (1986) A note on Bayes factors for log-linear contingency table models with vague prior
+information. J. R. Statist. Soc. B, 48, 249-250.
+Rice, W. R. (1988) A new probability model for determining exact P values for 2 x 2 contingency tables
+when comparing binomial proportions. Biometrics, 44, 1-22.
+Richardson, J. T. E. (1990) Variants of chi-square for 2 x 2 contingency tables. Br. J. Math. Statist.
+Psychol., 43, 309-326.
+Schwarz, G. (1978) Estimating the dimensions of a model. Ann. Statist., 6, 461-464.
+Sprent, P. (1990) Review of STATXACT. Appl. Statist., 39, 391-394.
+Stone, M. (1969) The role of significance testing: some data with a message. Biometrika, 56, 485-493.
+Storer, B. E. and Kim, C. (1990) Exact properties of some exact test statistics for comparing two
+binomial proportions. J. Am. Statist. Ass., 85, 146-155.
+Tocher, K. D. (1950) Extension of the Neyman-Pearson theory of tests to discontinuous variates.
+Biometrika, 37, 130-144.
+Upton, G. J. G. (1982) A comparison of alternative tests for the 2 x 2 comparative trial. J. R. Statist.
+Soc. A, 145, 86-105.
+
+(1990) The exploratory analysis of survey data using log-linear models. Statistician, 40, 169-182.
+Yates, F. (1934) Contingency tables involving small numbers and the x2 test. J. R. Statist. Soc., Suppl.,
+1, 217-235.
+(1984) Tests of significance for 2 x 2 contingency tables (with discussion). J. R. Statist. Soc. A,
+147, 426-463.
+
+

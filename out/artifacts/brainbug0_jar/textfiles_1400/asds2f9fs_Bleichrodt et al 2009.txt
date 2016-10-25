@@ -1,0 +1,1232 @@
+<-----Page 0----->MANAGEMENT SCIENCE
+
+informs
+
+Vol. 55, No. 5, May 2009, pp. 863–873
+issn 0025-1909  eissn 1526-5501  09  5505  0863
+
+®
+
+doi 10.1287/mnsc.1080.0978
+© 2009 INFORMS
+
+Additive Utility in Prospect Theory
+Han Bleichrodt
+Erasmus School of Economics, Erasmus University, 3000 DR Rotterdam, The Netherlands,
+bleichrodt@ese.eur.nl
+
+Ulrich Schmidt
+Kiel Institute for the World Economy and Department of Economics, University of Kiel,
+24098 Kiel, Germany, uschmidt@bwl.uni-kiel.de
+
+Horst Zank
+Economics, School of Social Sciences, University of Manchester, Manchester M13 9PL,
+United Kingdom, horst.zank@manchester.ac.uk
+
+P
+
+rospect theory is currently the main descriptive theory of decision under uncertainty. It generalizes expected
+utility by introducing nonlinear decision weighting and loss aversion. A difﬁculty in the study of multiattribute utility under prospect theory is to determine when an attribute yields a gain or a loss. One possibility,
+adopted in the theoretical literature on multiattribute utility under prospect theory, is to assume that a decision
+maker determines whether the complete outcome is a gain or a loss. In this holistic evaluation, decision weighting
+and loss aversion are general and attribute-independent. Another possibility, more common in the empirical
+literature, is to assume that a decision maker has a reference point for each attribute. We give preference foundations for this attribute-speciﬁc evaluation where decision weighting and loss aversion are depending on the
+attributes.
+Key words: additive utility; prospect theory; decision weighting; loss aversion
+History: Received March 5, 2008; accepted December 1, 2008, by David E. Bell, decision analysis. Published
+online in Articles in Advance February 12, 2009.
+
+1.
+
+Introduction
+
+In this paper, we study multiattribute utility theory
+under prospect theory (Kahneman and Tversky 1979,
+Tversky and Kahneman 1992). Prospect theory is currently the most inﬂuential theory of decision making under uncertainty. It models two major deviations
+from expected utility: nonlinear decision weighting
+and loss aversion, i.e., the tendency that people treat
+outcomes as deviations from a reference point and
+are more sensitive to losses than to gains of the same
+magnitude. Both nonlinear decision weighting and
+loss aversion are widely documented in the empirical
+literature. Despite its popularity, some evidence has
+been accumulated recently revealing limitations of the
+theory (see the summaries of Marley and Luce 2005
+and Birnbaum 2008).
+Fishburn (1984), Miyamoto (1988), Dyckerhoff
+(1994), and Miyamoto and Wakker (1996) also studied multiattribute utility under nonexpected utility,
+but only considered outcomes of the same sign. Like
+us, Zank (2001) and Bleichrodt and Miyamoto (2003)
+studied multiattribute utility theory under prospect
+theory but their approach was different than the
+approach of this paper, as we explain next.
+A central issue in multiattribute prospect theory
+is to determine when an attribute yields a gain or
+a loss. Consider, for example, a research associate
+
+Many decision situations involve outcomes that consist of several attributes. In applied decision analyses, it is useful to decompose the utility function
+over these multiattribute outcomes into separate utility functions over the different attributes to reduce the
+number of preference elicitations. This is only justiﬁed if the decision-maker’s preferences satisfy particular assumptions. Several authors have identiﬁed the
+preference conditions that allow decomposing multiattribute utility functions into additive, multiplicative, and related decompositions (e.g., Farquhar 1975,
+Fishburn 1965, Keeney and Raiffa 1976).
+Most of these decomposition results have been
+derived under expected utility. Abundant evidence
+exists, however, that (subjective) expected utility is
+not valid as a descriptive theory of decision under
+(uncertainty) risk. The descriptive deﬁciencies of
+expected utility complicate the empirical assessment
+of the preference conditions underlying decompositions: it cannot be excluded that observed violations of preference conditions are due to violations of
+expected utility rather than to violations of a decomposition. To obtain robust tests of the appropriateness
+of decompositions, it is desirable to derive conditions
+that are valid even when expected utility is violated.
+863
+
+<-----Page 1----->864
+(RA) who contemplates changing jobs. In evaluating different jobs, the RA has to consider several
+aspects, e.g., salary, commuting time, cost of living, amount of research time, etc. How does the
+RA determine whether a particular job offer is an
+improvement (a gain) compared with her reference
+point (presumably her current job)? One possibility is
+that she ﬁrst determines whether the job offer, as a
+whole, is a gain or a loss compared to her reference
+point, and then applies the decomposition to determine how attractive the job offer is compared with
+other offers. This holistic evaluation was used by Zank
+(2001) and by Bleichrodt and Miyamoto (2003).
+Another approach, the focus of this paper, is that
+the RA determines a reference point for each attribute
+and evaluates job offers as gains and losses on each
+attribute. This attribute-speciﬁc evaluation seems plausible when the number of attributes is large and
+the choice is complex. A decision context where the
+attribute-speciﬁc evaluation is particularly intuitive is
+welfare theory: there we are interested in whether
+each individual’s welfare is above some reference
+level. The attribute-speciﬁc evaluation is commonly
+assumed in empirical studies on loss aversion for
+trade-offs under certainty and was found to be
+descriptively accurate by some studies (Bateman
+et al. 1997, Bleichrodt and Pinto 2002, Tversky and
+Kahneman 1991). Also empirical studies for decision
+under risk relied on the attribute-speciﬁc evaluation.
+See, for example, Payne et al. (1984) who study managers’ choices among capital budget proposals involving cash ﬂows at two points in time, and Fischer
+et al. (1986) who consider both risky, multiperiod
+cash ﬂows and risky job alternatives. Both studies
+use attribute-speciﬁc reference points. No preference
+foundation of the attribute-speciﬁc evaluation existed
+until now. Providing such a foundation is the topic of
+this paper.
+The difference between the holistic and the attribute-speciﬁc evaluation is that in the former, loss
+aversion and decision weighting are attribute-independent, whereas in the latter they depend on the
+attributes. As we show in §5, the holistic and the
+attribute-speciﬁc evaluation are in general equivalent
+only when people behave according to expected utility, i.e., when loss aversion does not affect people’s
+preferences and there is no decision weighting. An
+example to further clarify the difference between the
+holistic and the attribute-speciﬁc evaluation is in §3.
+This paper gives preference foundations for additive utility under prospect theory and the attributespeciﬁc evaluation. We restrict our attention to the
+additive decomposition for two reasons: First, it is
+commonly applied in many areas of economics and
+decision analysis. Second, other decompositions, such
+
+Bleichrodt, Schmidt, and Zank: Additive Utility in Prospect Theory
+Management Science 55(5), pp. 863–873, © 2009 INFORMS
+
+as multiplicative and multilinear utility, raise special problems under the attribute-speciﬁc evaluation.
+Solving these problems is beyond the scope of this
+paper.
+The remainder of this paper is organized as follows.
+Section 2 gives notation and explains prospect theory for single-attribute outcomes. In §3, we move to
+multiattribute utility where we ﬁrst assume, for ease
+of exposition, that there are just two attributes, both
+numerical. Section 4 gives preference foundations
+for prospect theory with additive utility under the
+attribute-speciﬁc evaluation. As mentioned, weighting functions are deﬁned per attribute and they may
+differ across attributes in the attribute-speciﬁc evaluation. To force them to be equal across attributes
+requires additional conditions. We will characterize
+this special case in §5. We extend our results to the
+case where there are more than two attributes in §6
+and to the case of nonnumeric outcomes in §7. Section 8 concludes the paper with some observations
+on the empirical measurement of additive utility in
+prospect theory under the attribute-speciﬁc evaluation. All proofs are in the appendix.
+
+2.
+
+Prospect Theory for
+Single-Attribute Outcomes
+
+We consider a decision maker in a situation where
+there is a ﬁnite number, n ≥ 2 of distinct states of
+nature, exactly one of which obtains. S = 1     n
+denotes the ﬁnite set of states of nature. Subsets of S are
+called events. In a medical decision problem, the states
+of nature can, for example, be mutually exclusive diseases, and the decision maker has to choose between
+different treatments before knowing what the actual
+disease is. We consider decision under uncertainty
+where the probabilities for the states of nature may,
+but need not, be given. The assumption of a ﬁnite
+number of states of nature is made for expositional
+purposes. The results of this paper can be extended
+to an inﬁnite state space using tools from Wakker
+(1993). The extension to decision under risk, i.e., the
+case where probabilities are objectively given, is as in
+Köbberling and Wakker (2003, §5.3).
+The decision-maker’s problem is to choose between
+prospects. Each prospect is an n-tuple of outcomes, one
+for each state of nature. Formally, a prospect is a function from the set of states of nature to the set of outcomes C. We denote the set of prospects as P = C n .
+We shall write f1      fn  for the prospect f that
+gives fj if state j occurs. A constant prospect gives
+the same outcome for each state of nature. For ease
+of exposition, we assume in this section that outcomes are one-dimensional. The set of outcomes C is
+a nondegenerate convex subset of . Outcomes are
+deﬁned with respect to a reference point. The reference
+
+<-----Page 2----->Bleichrodt, Schmidt, and Zank: Additive Utility in Prospect Theory
+
+865
+
+Management Science 55(5), pp. 863–873, © 2009 INFORMS
+
+point is a constant prospect, that we will denote as r.
+We assume that the reference point is ﬁxed, i.e., we
+restrict attention to preferences with respect to one
+reference point. Variations in the reference point are
+analyzed by Schmidt (2003).
+Let  denote a preference relation on the set of
+prospects. As usual,  denotes the asymmetric part
+of  (strict preference) and ∼ denotes the symmetric
+part of  (indifference), and  and ≺ denote reversed
+preferences. We shall use the same notation for the
+binary relations on C, derived through constant prospects. An outcome x  r is a gain and an outcome
+x ≺ r is a loss.
+A prospect f is rank-ordered if f1  · · ·  fn . For
+each prospect, there exists a permutation , such that
+f1  · · ·  fn . For each permutation , let P =
+f ∈ P 	 f1  · · ·  fn . That is, P is the set of all
+prospects that are rank-ordered by . If two prospects
+can be rank-ordered by a common , then they are
+comonotonic. For each event A ⊂ S, the set P A contains
+those prospects that yield gains for states in A, and no
+gains for states not in A. We deﬁne the set PA as the
+intersection of P A and P . Subsets of sets PA are signcomonotonic.
+A real-valued function V 	 P →  represents  on
+P if for all f , g ∈ P we have f  g if and only if
+(iff) V f  ≥ V g. A function V is a ratio scale if it
+is unique up to unit, i.e., if V can be replaced by
+U if and only if U = 
+V for positive 
+. A weighting
+function or capacity W is a function on 2S , such that
+W 
+ = 0, W S = 1, and for any two events A and B,
+if B ⊂ A then W B ≤ W A. W is strictly increasing if
+W B < W A whenever B is a proper subset of A.
+Prospect theory holds if there exists a utility function
+U 	 C →  with U r = 0 such that prospects f ∈ PA
+with A = 1     k for some k ≤ n are evaluated by
+PTf  =
+
+k
+
+j=1
+
++
+j
+U fj  +
+
+n
+
+
+−
+j
+U fj 
+
+(1)
+
+j=k+1
+
+From now on C = C1 × C2 is a product of two
+nondegenerate convex subsets of . Hence we now
+deal with two product structures: the two-dimensional
+structure of C and the n-dimensional structure C n .
+In what follows, the index i will refer to the attributes,
+and the index j to the states of nature. Hence fji
+denotes the ith attribute of the outcome that is
+obtained under state j Outcomes in C will be denoted
+as x = x1  x2  or as x1 x2 for short. Note that although
+we assumed x1 and x2 to be numerical, the notation
+x1 x2 should not be interpreted as multiplication.
+Let P1 denote the set of prospects on C1n and P2 the
+set of prospects on C2n  For a ﬁxed f2 ∈ P2 , we deﬁne a
+preference relation 1 on P1 by f1 1 g1 iff f1 f2  g1 f2 .
+In §4 we impose a condition that implies that the
+choice of f2 is immaterial. By restricting attention to
+constant prospects in P1 , we can deﬁne a preference
+relation 1 on C1  In a similar fashion we can deﬁne
+2 on P2 and on C2 .
+A function U 	 C →  is additive if U 	 x → U1 x1  +
+U2 x2  where Ui is a real-valued function on Ci ,
+i = 1 2. The functions U1 and U2 are joint ratio scales if
+U1 and U2 can be replaced by V1 and V2 if and only if
+Vi = 
+Ui , 
+ > 0 That is, any common change in unit
+is allowed.
+In the holistic evaluation, any outcome x that is
+indifferent to r can also be interpreted as a reference
+point. Hence, it does not make sense to consider gains
+or losses on any separate dimension in the holistic
+evaluation. What matters in the holistic evaluation is
+whether an outcome x is a gain or a loss compared
+to r (i.e., whether x  r or x ≺ r, respectively).
+Under the holistic evaluation, additive decomposability means that a prospect f ∈ PA with A =
+1     k for some k ≤ n is evaluated as
+PTf  =
+
+k
+
+
++
+j
+U1 fj1  + U2 fj2 
+
+j=1
+n
+
+
+−
+j
+U1 fj1  + U2 fj2 
+
+(3)
+
+j=k+1
+
+(2a)
+
+and
+−
+j
+= W − jn−W − j +1n
+
+Prospect Theory for Two-Attribute
+Outcomes
+
++
+
+with
++
+j
+= W + 1j−W + 1j −1
+
+3.
+
+(2b)
+
+and choices and preferences correspond with this evaluation. PTf  denotes the prospect theory value, or PT
+value for short, of f , and W + and W − are weighting
+functions for gains and losses, respectively. We will
+assume throughout that U is strictly increasing, i.e., for
+all x y ∈ C, U x ≥ U y iff x ≥ y, and continuous. If
+prospect theory holds, then utility is a ratio scale and
+the weighting functions are uniquely determined.
+
+where the decision weights are deﬁned as in Equations (2a) and (2b). The uniqueness results of prospect
+theory apply, which implies that the attribute utility functions are joint ratio scales and the weighting function is unique. There is only one permutation
+function that applies to both attributes. In this representation, the decision weight that is assigned to a
+single-attribute utility function Ui , i = 1 2 depends
+on whether the entire outcome is a gain or a loss. If
+an outcome x is a gain then the decision weight  +
+is applied, if it is a loss then  − is applied. Preference foundations for Equation (3) were given by Zank
+(2001) and Bleichrodt and Miyamoto (2003).
+
+<-----Page 3----->Bleichrodt, Schmidt, and Zank: Additive Utility in Prospect Theory
+
+866
+
+Management Science 55(5), pp. 863–873, © 2009 INFORMS
+
+The attribute-speciﬁc evaluation assesses for each
+attribute separately whether it yields a gain or a loss
+and the magnitude of each. That is, the attributespeciﬁc evaluation interprets reference-dependence
+for each attribute separately. We will denote the
+reference point on the ﬁrst attribute by r1 and the reference point on the second attribute by r2 . x1 ∈ C1 is a gain
+if x1 1 r1 , and a loss if x1 ≺1 r1 , and x2 ∈ C2 is a gain
+if x2 2 r2 , and a loss if x2 ≺2 r2 . We assume that preferences are monotonic in each attribute. Then, unlike
+in the holistic evaluation, the reference point will be
+unique. We further assume that r1 is an interior point
+of C1 and that r2 is an interior point of C2 . This ensures
+that C1 and C2 both contain outcomes that are gains
+and outcomes that are losses, and that genuine tradeoffs between gains and losses exist for both attributes.
+For each prospect f , there exist permutations 1
+and 2 such that f1 11  · · ·  f1 n1 and f2 12  · · · 
+f2 n2 . Let P1 = f ∈ P 	 f1 11  · · ·  f1 n1 . That is,
+P1 is the set of all prospects where outcomes are
+rank-ordered by 1 . P2 is deﬁned similarly. For each
+event A1 ⊂ S, the set P A1 contains those prospects
+that yield gains on the ﬁrst attribute for states in A1
+and no gains on the ﬁrst attribute for states not
+in A1 . Similarly, P A2 contains those prospects that
+yield gains on the second attribute for states in A2
+and no gains on the second attribute for states not
+in A2 . We deﬁne PA11 = P A1 ∩ P1 and PA22 = P A2 ∩
+P2 . Subsets of PA11 are said to be sign-comonotonic on
+C1 and subsets of PA22 are said to be sign-comonotonic
+on C2 . Under the attribute-speciﬁc evaluation, a prospect
+f ∈ PA11 ∩ PA22 with A1 = 1 1     1 k1  and A2 =
+2 1     2 k2  for some k1  k2 ≤ n is evaluated as
+PTf  =
+
+k1
+
+j=1
+
++
+
++1 j1 U1 f1 j1 +
+
+k2
+
+j=1
+
+n
+
+j=k1 +1
+
++2 j2 U2 f2 j2 +
+
+−1 j1 U1 f1 j1 
+
+n
+
+
+j=k2 +1
+
+−2 j2 U2 f2 j2  (4)
+
+with
++i ji = Wi+ i 1     i j
+− Wi+ i 1     i j − 1
+
+i = 1 2
+
+(5a)
+
+i = 1 2
+
+(5b)
+
+and
+−i ji = Wi− i j     i n
+− Wi− i j + 1     i n
+
+and preferences and choices correspond with this
+evaluation. The functions U1 and U2 are strictly
+increasing and continuous and satisfy U1 r1  =
+U2 r2  = 0. The decision weights +1 ·1 and −1 ·1 are
+the decision weights for gains and losses for the ﬁrst
+
+attribute, +2 ·2 and −2 ·2 are the decision weights for
+gains and losses for the second attribute, W1+ and W1−
+are the weighting functions for gains and losses for
+the ﬁrst attribute, and W2+ and W2− are the weighting
+functions for gains and losses for the second attribute.
+The utility functions are joint ratio scales and the
+attribute weighting functions are unique. A comparison between Equations (3) and (4) reveals that the
+holistic evaluation and the attribute-speciﬁc evaluation differ both in loss aversion and in decision
+weighting.
+An example may further clarify the difference
+between the holistic and the attribute-speciﬁc evaluation of additive utility. Suppose that the RA considers a job offer from a university in a different
+town. The uncertainty she faces is whether her husband will be able to ﬁnd a suitable job in the new
+town. If he does, their combined annual income will
+be $80K but she will only have 15 hours research
+time per week because she will have to take over
+some domestic activities from her husband (e.g., taking care of the children). If he does not ﬁnd a job,
+their combined annual income will be $40K but she
+will have 30 hours research time per week because
+her husband will take care of all domestic activities.
+In the example, there is only one source of uncertainty
+(whether or not the RA’s husband ﬁnds a suitable
+job). In real-life applications, there may be different
+sources of uncertainty affecting the attributes separately. For example, the RA’s research time may not
+be affected by her husband ﬁnding a job (because
+she can hire someone to take care of her domestic
+activities) but it is affected by whether or not she
+will be able to ﬁnd a suitable home near the university (if not, commuting will negatively affect the time
+available for research). To model such situations we
+have to reﬁne the state space (events are “husband
+ﬁnds job and home near the university,” “husband
+ﬁnds job but home far from university,” etc.). For simplicity of exposition, we only consider one source of
+uncertainty.
+The RA’s preferences are monotonic both in money
+(more money is preferred) and in research time (more
+research time is preferred). Suppose that currently the
+RA and her husband earn $50K per year and she has
+20 hours research time per week. Suppose also that
+$80K 15 h  $50K 20 h  $40K 30 h The RA’s
+reference point is $50K 20 h in the holistic evaluation. In the attribute-speciﬁc evaluation, the RA’s
+reference point for annual income is $50K and for
+research time it is 20 hours per week.
+In the holistic evaluation, where we determine ﬁrst
+the sign of an outcome and then apply the decompositions, we assume that the RA’s utility function
+for gains is ux1 x2  − ur1 r2  and her utility function for losses is ux1 x2  − ur1 r2 , where  is a
+
+<-----Page 4----->Bleichrodt, Schmidt, and Zank: Additive Utility in Prospect Theory
+
+867
+
+Management Science 55(5), pp. 863–873, © 2009 INFORMS
+
+coefﬁcient reﬂecting loss aversion and u is a basic
+utility function, expressing the RA’s attitude toward
+outcomes, which is reference independent (Tversky
+and Kahneman 1991, Köbberling and Wakker 2005).
+We assume that the holistic basic utility is additive
+such that ux1 x2  = u1 x1  + u2 x2 .
+In the attribute-speciﬁc evaluation, where ﬁrst the
+decomposition is applied and then it is determined
+whether attributes yield gains or losses, the utility for
+gains is ui xi  − ui ri  and for losses it is i ui xi  −
+ui ri ; i = 1 2, where the i are attribute-speciﬁc loss
+aversion coefﬁcients.
+The RA does not care about job aspects other than
+wage rate and available research time. If event 1 is,
+“her husband ﬁnds a job” and event 2 is, “her husband does not ﬁnd a job,” then, according to the holistic evaluation (Equation (3)), the PT value of the new
+job is equal to
+
+
+1+ u1 80 + u2 15 − u1 50 + u2 20
+
+
++ 2−  u1 40 + u2 30 − u1 50 + u2 20  (6)
+and according to the attribute-speciﬁc evaluation
+(Equation (4)), it is equal to
+
+
+
+
++
+−
+u1 80 − u1 50 + 12
+2 u −
+11
+2 15 − u2 20
+
+
+
+
++
+−
++ 21
+u2 30 − u2 20  (7)
+1 u1 40 − u1 50 + 22
+A comparison between Equations (6) and (7) shows
+that both decision weighting and loss aversion differ
+between the two evaluations. Loss aversion and decision weighting are common for all individual attributes
+in the holistic evaluation; the attribute-speciﬁc evaluation, in general, allows for different degrees of loss aversion and different weighting functions for each of the
+individual attributes.
+The possibility of attribute-dependent weighting
+functions can be realistic in applications. Rottenstreich
+and Hsee (2001) showed that decision weighting depends on the outcome domain with people deviating
+more from expected utility for affect-rich outcomes,
+outcomes that arouse strong emotions. Examples of
+such outcomes are health states and environmental
+effects. For example, Smith and Keeney (2005) studied trade-offs between consumption and health. In
+such a setting it might well be that people weight
+health risks differently than consumption risks. Dyer
+et al. (1998) compared different alternatives for disposing surplus weapons-grade plutonium. Here decision makers may weight risks to the environment
+differently from risk regarding the costs of the alternatives. In §5, we characterize the special case of
+the attribute-speciﬁc evaluation where the weighting functions are the same across different attributes.
+There is no empirical evidence to conclude that loss
+aversion differs across different attributes, but intuitively this seems to make sense.
+
+4.
+
+Preference Foundations
+
+This section develops preference foundations for additive prospect theory under the attribute-speciﬁc
+evaluation, i.e., Equation (4). We continue to assume
+that C = C1 ×C2 with C1 and C2 nondegenerate convex
+subsets of .
+4.1. General Preference Conditions
+This subsection presents the standard preference conditions that are used in both the holistic and attributespeciﬁc approaches. The preference relation  on the
+set of prospects P is a weak order if it is complete (for
+all prospects f  g f  g or g  f ) and transitive.
+Any prospect f ∈ P yields both a prospect f1 ∈ P1
+and a prospect f2 ∈ P2 and, hence, each prospect f
+may be viewed as an element of the product P1 × P2 .
+Hence, we can denote prospects as f1 f2 . Weak
+separability holds when for all f1  g1 ∈ P1 and for all
+f2  g2 ∈ P2  f1 f2  g1 f2 iff f1 g2  g1 g2 and when for
+all f1  g1 ∈ P1 and for all f2  g2 ∈ P2  f1 f2  f1 g2 iff
+g1 f2  g1 g2 . Weak separability entails that the relations
+1 on P1 and 2 on P2 are well-deﬁned.
+Further standard properties are monotonicity for
+outcomes and continuity: outcome monotonicity holds if
+for i = 1 2 fji ≥ gji for all j implies fi i gi with strict
+preference holding if one of the antecedent inequalities is strict; continuity holds if for all prospects fi ,
+the sets gi ∈ Pi 	 gi i fi  and gi ∈ Pi 	 gi i fi  are both
+closed in Cin , i = 1 2
+4.2. Trade-off Consistency
+To deﬁne trade-off consistency we introduce some
+notation. For x ∈ Ci , fi ∈ Pi , i = 1 2 and j ∈ S deﬁne
+
+
+xj fi = f1i      fj−1i  x fj+1i      fni 
+that is, xj fi is the prospect fi with fji replaced by x.
+Let a b c d ∈ C1 . We write
+ab ∼∗1 cd
+if (i) there exist f1  g1 ∈ P1 , and f2 ∈ P2 and a state j
+such that
+aj f1  f2  ∼ bj g1  f2 
+
+and
+
+cj f1  f2  ∼ dj g1  f2 
+
+where aj f1 , bj g1 , cj f1 , and dj g1 are sign-comonotonic on C1 , or (ii) there exist v w ∈ C2 , and f1 ∈ P1
+such that
+a1 f1  v1 f2  ∼ b1 f1  w1 f2 
+
+and
+
+c1 f1  v1 f2  ∼ d1 f1  w1 f2 
+where a1 f1 , b1 f1 , c1 f1 , and d1 f1 are rank-ordered
+prospects in P1 and v1 f2 , and w1 f2 are rank-ordered
+prospects in P2 .
+In the ﬁrst two indifferences, the prospect on
+the second attribute is kept ﬁxed, in the ﬁnal two
+
+<-----Page 5----->Bleichrodt, Schmidt, and Zank: Additive Utility in Prospect Theory
+
+868
+
+Management Science 55(5), pp. 863–873, © 2009 INFORMS
+
+indifferences, everything outside state of nature 1 is
+kept ﬁxed. The ∼∗1 relationship may be interpreted
+as measuring strength of preference. For example,
+if a > b, from the indifferences aj f1  f2  ∼ bj g1  f2 
+and cj f1  f2  ∼ dj g1  f2 , we can see that ab ∼∗1 cd
+means that, in the presence of f2 , a trade-off of a for
+b is an equally good improvement as a trade-off of
+c for d: both exactly offset receiving f1 instead of g1
+for all other states of nature. A similar interpretation
+can be assigned to the indifferences a1 f1  v1 f2  ∼
+b1 f1  w1 f2  and c1 f1  v1 f2  ∼ d1 f1  w1 f2 . The
+∼∗1 relations are deﬁned entirely in terms of observed
+indifferences and no new primitives beyond observed
+choice are assumed in their deﬁnition. Hence, we
+stay entirely within the revealed preference paradigm
+when using the ∼∗1 relations.
+Let w x y z ∈ C2  We deﬁne
+wx ∼∗2 yz
+if (i) there exist f2  g2 ∈ P2 , and f1 ∈ P1 and a state j
+such that
+f1  wj f2  ∼ f1  xj g2  and
+
+f1  yj f2  ∼ f1  zj g2 
+
+where wj f2 , xj g2 , yj f2 , and zj g2 are sign-comonotonic on C2  or (ii) there exist a b ∈ C1 , and f2 ∈ P2
+such that
+a1 f1  w1 f2  ∼ b1 f1  x1 f2  and
+a1 f1  y1 f2  ∼ b1 f1  z1 f2 
+where w1 f2 , x1 f2 , y1 f2 , and z1 f2 are rank-ordered
+prospects in P2 and a1 f1 , and b1 f1 are rank-ordered
+prospects in P1 .
+We say that  satisﬁes trade-off consistency on C1
+if improving the ﬁrst attribute of an outcome in any
+∼∗1 relationship breaks that relationship. That is, if
+ab ∼∗1 cd and a 1 a then it cannot be that a b ∼∗1 cd.
+Loosely speaking, trade-off consistency on C1 ensures
+that the ∼∗1 relationship is well-behaved when interpreted as a strength of preference relationship. If the
+strength of preference of a over b is equal to the
+strength of preference of c over d, then the strength of
+preference of a over b cannot be equal to the strength
+of preference of c over d, when a is strictly better
+than a.
+Similarly,  satisﬁes trade-off consistency on C2 if
+improving the second attribute of an outcome in
+any ∼∗2 relationship breaks that relationship. That is,
+if wx ∼∗2 yz and y  2 y then it cannot be that
+wx ∼∗2 y  z. Trade-off consistency holds if trade-off consistency holds both on C1 and on C2 . An important
+advantage of trade-off consistency as a preference
+condition is that it is closely related to measurements of utility by the trade-off method (Wakker and
+Deneffe 1996). This makes it easy to test trade-off
+
+consistency empirically. Empirical studies that have
+used the trade-off method include Abdellaoui (2000),
+Etchart-Vincent (2004), Schunk and Betsch (2006), and
+Abdellaoui et al. (2007) amongst others.
+Trade-off consistency is a powerful condition. It has
+two effects. First, it ensures that we can deﬁne
+prospect theory functionals for both attributes and
+second, it ensures that the overall evaluation is additive in these two prospect theory functionals.
+4.3. Representation for Two Attributes
+To derive the representing functional for preferences,
+we need an additional assumption. Solvability holds if
+for any two prospects f  g ∈ P there exists outcomes
+ and  such that (1 f1  f2  ∼ g and f1  1 f2  ∼ g.
+Solvability implies that the attribute utility functions
+U1 and U2 are unbounded.
+The next theorem characterizes Equation (4).
+Theorem 1. The following two statements are equivalent:
+(i)  is represented by the functional in Equation (4)
+with strictly increasing weighting functions W1+ , W1− , W2+ ,
+and W2− and continuous, strictly increasing utility functions U1 and U2 .
+(ii)  satisﬁes (1) weak ordering, (2) continuity,
+(3) weak separability, (4) outcome monotonicity, (5) solvability, and (6) trade-off consistency.
+The uniqueness results of prospect theory apply, that is,
+the weighting functions Wi+ and Wi− , i = 1 2, are
+uniquely determined, and the utility functions U1 and U2
+are joint ratio scales.
+
+5.
+
+Common Weighting Functions
+
+In the attribute-speciﬁc evaluation, the weighting
+functions may differ across the two attributes. In some
+cases, however, it might be reasonable to take the
+weighting functions independent of the attributes.
+Empirical evidence suggests, for example, that decision weights for money and for health are close
+(Abdellaoui 2000 compared with Bleichrodt and Pinto
+2000). Using common weighting functions facilitates
+the use of prospect theory in practical applications,
+because fewer elicitations are required. In this section
+we will give a preference foundation for the special
+case of Equation (4) where the weighting functions do
+not depend on the attributes.
+By continuity and connectedness of C1 and C2 , there
+exist gains x1 ∈ C1 and x2 ∈ C2 and losses y1 ∈ C1
+and y2 ∈ C2 , such that x1  r2  ∼ r1  x2  and y1  r2  ∼
+r1  y2  and, hence, such that U1 x1  = U2 x2  and
+U1 y1  = U2 y2 . Recall that r is the constant prospect
+that gives r1  r2  in every state of nature. For any
+event B, let xB f denote the prospect f with fj replaced
+by x for all j in B. We can now deﬁne a condition
+that ensures attribute independence of the weighting
+functions for gains and for losses.
+
+<-----Page 6----->Bleichrodt, Schmidt, and Zank: Additive Utility in Prospect Theory
+
+869
+
+Management Science 55(5), pp. 863–873, © 2009 INFORMS
+
+We say that  satisﬁes attribute-independence for
+states, if for all x1 ∈ C1 and x2 ∈ C2 for which x1  r2  ∼
+r1  x2  and for all events B, x1  r2 B r ∼ r1  x2 B r. Note
+that the condition holds for all x1 ∈ C1 and x2 ∈ C2 ,
+but x1 and x2 must be either both gains or both losses
+for otherwise the indifference x1  r2  ∼ r1  x2  cannot
+obtain.
+We will now explain the idea behind the condition.
+As mentioned before, if x1  r2  ∼ r1  x2  then U1 x1  =
+U2 x2 . If Equation (4) holds and x1 and x2 are both
+gains, the indifference x1  r2 B r ∼ r1  x2 B r implies
+that W1+ BU1 x1  = W2+ BU2 x2  and W1+ B = W2+ B
+follows from U1 x1  = U2 x2 . A similar line of argument shows that W1− B = W2− B whenever x1 and x2
+are losses. Because these equalities hold for all
+events B, we obtain the following result:
+Corollary 2. If we add attribute-independence for
+states to statement (ii) of Theorem 1, then the weighting functions in statement (i) of Theorem 1 are attributeindependent, i.e., W1+ = W2+ = W + and W1− = W2− = W − .
+If 1 = 2 and A1 = A2 then Corollary 2 also implies
+that the decision weights  + and  − are attributeindependent. This follows from the deﬁnition of the
+decision weights, Equations (5a) and (5b). Having
+the weighting functions independent of the attributes
+does not make the attribute-speciﬁc evaluation equal
+to the holistic evaluation. This is easily seen by referring back to the example of the RA considering the
+new job. Under the attribute-speciﬁc evaluation with
+common weighting functions, Equation (7) becomes
+1+ u1 80 − u1 50 + 1− 2 u2 15 − u2 20
++ 2− 1 u1 40 − u1 50 + 2+ u2 30 − u2 15
+showing that the attribute-speciﬁc evaluation clearly
+differs from the holistic evaluation, Equation (6).
+Note that it is not only the presence of the loss aversion parameter that distinguishes the holistic from the
+attribute-speciﬁc evaluation. In general, the two evaluations differ even if a prospect yields only gains or
+only losses. Consider again the job offer example but
+suppose now that the RA’s reference point for annual
+earnings is $30K and for research time it is 10 hours
+per week. The preference $80K 15 h  $40K 30 h
+still holds. Let E1 denote the event “husband ﬁnds a
+job” and E2 the event “husband does not ﬁnd a job.”
+Under the holistic evaluation, the job’s value is
+
+
+W + E1  u1 80+u2 15−u1 30+u2 10
+
+
+
++ 1−W + E1  u1 40+u2 30−u1 30+u2 10 
+and under the attribute-speciﬁc evaluation it is
+
+ 
+
+
+W + E1  u1 80−u1 30 + 1−W + E2  u2 15−u2 10
+
+
+
++ 1−W + E1  u1 40−u1 30
+
+
++W + E2 u2 30−u2 10 
+
+Equality only holds if W + E1  = 1 − W + E2 , i.e.,
+if W + E1  + W + E2  = 1. This must hold for all
+events E1 and E2 , and for the attribute-speciﬁc evaluation this can only be the case if W + is a probability measure. A similar argument can be used to
+derive that W − must be a probability measure. Hence,
+for outcomes of the same sign and attribute independent weighting, the attribute-speciﬁc evaluation
+agrees with the holistic evaluation only when both
+representations reduce to subjective expected utility.
+
+6.
+
+More Than Two Attributes
+
+We will now extend our results to more than two
+attributes. Let C = C1 × · · · × Cm , m > 2. Each Ci is a
+nondegenerate convex subset of . The reference point
+on the ith attribute is denoted ri and is assumed to
+be an interior point of Ci . We will denote the set of
+prospects on Cin as Pi and write prospects as f1      fm .
+Let gi f denote the prospect f ∈ P with fi replaced by
+gi , and let gi hk f denote the prospect f ∈ P with fi
+replaced by gi and fk replaced by hk . Weak separability
+is now deﬁned as follows: for all i ∈ 1     m, fi  gi ∈
+Pi , f   g  ∈ P , fi f   gi f  iff fi g   gi g  . The deﬁnitions of
+outcome monotonicity, continuity, and solvability easily generalize to the case of more than two attributes.
+For trade-off consistency we deﬁne
+ab ∼∗i cd
+if (i) there exist fi  gi ∈ Pi , f ∈ P , and a state j such that
+aj fi i f ∼ bj gi i f
+
+and
+
+cj fi i f ∼ dj gi i f 
+
+where aj fi , bj gi , cj fi , and dj gi are sign-comonotonic on Ci , or (ii) there exist v w ∈ Ck , and f ∈ P
+such that
+a1 fi i v1 fk k f ∼ b1 fi i w1 fk k f
+
+and
+
+c1 fi i v1 fk k f ∼ d1 fi i w1 fk k f 
+where a1 fi , b1 fi , c1 fi , and d1 fi are rank-ordered
+prospects in Pi and v1 fk , and w1 fk are rank-ordered
+prospects in Pk .
+Trade-off consistency holds if each ∼∗i -relationship
+satisﬁes trade-off consistency on Ci .
+We are now in a position to extend Theorem 1 to
+the case of more than two attributes.
+Theorem 3. The following two statements are equivalent:
+
+(i)  is represented by V = m
+i=1 Vi fi  where the Vi
+are prospect theory functionals with strictly increasing
+weighting functions Wi+ and Wi− and continuous, strictly
+increasing utility functions Ui .
+
+<-----Page 7----->Bleichrodt, Schmidt, and Zank: Additive Utility in Prospect Theory
+
+870
+
+Management Science 55(5), pp. 863–873, © 2009 INFORMS
+
+(ii)  satisﬁes (1) weak ordering, (2) continuity,
+(3) weak separability, (4) outcome monotonicity, (5) solvability, and (6) trade-off consistency.
+The uniqueness results of prospect theory apply, that is,
+the weighting functions Wi+ and Wi− are uniquely determined, and the utility functions Ui are joint ratio scales.
+Attribute independence can easily be extended to
+the case of more than two attributes, so that the
+arguments preceding Corollary 2 can still be used
+to ensure that the weighting functions are attributeindependent.
+
+7.
+
+General Outcomes
+
+For ease of exposition, we have assumed thus far
+that all attributes are numerical. In many real-world
+decisions, this assumption is too restrictive. An example is health, the area in which decision analysis is
+most frequently applied (Keller and Kleinmuntz 1998,
+Smith and von Winterfeldt 2004). Health consists of
+two dimensions, survival duration and health quality, and health quality is a nonnumeric attribute. The
+extension of our analysis to nonnumeric attributes is
+as follows.
+Assume that the Ci are connected topological
+spaces. C = C1 × · · · × Cm is endowed with the product
+topology and so is C n . The reference points ri are in
+the interior of Ci for each i. Redeﬁne outcome monotonicity as follows: for all i, if fji  gji for all j then
+fi i gi . The strict version of outcome monotonicity is
+not necessary here as it follows from the version with
+weak preferences and trade-off consistency (Köbberling and Wakker 2003, Lemma 26). We can now state
+the extension of our results to nonnumeric attributes.
+Corollary 4. If the Ci , i = 1     m, are connected
+topological spaces, then Theorems 1 and 3 still hold if we
+drop in (i), the requirement that the attribute-wise utility
+functions are strictly increasing.
+The proof of this claim follows easily from the
+proofs of Theorems 1 and 3. Corollary 2 can still
+be used to ensure that the weighting functions are
+attribute-independent.
+
+8.
+
+Empirical Measurement
+
+A few comments concerning the empirical implementability of additive prospect theory under the
+attribute-speciﬁc evaluation are worth mentioning.
+For empirical purposes a ﬁrst step is obviously the
+veriﬁcation of the preference conditions that have
+been identiﬁed in this paper. When these are satisﬁed, the elicitation of the attribute-speciﬁc evaluation is simpler than that of the holistic evaluation
+because we do not need to know the ranking of outcomes. Essentially, we can apply the known elicitation
+
+techniques for single-dimensional prospect theory to
+each of the attributes. When attribute-independence
+for states holds, the weighting functions have to be
+assessed only once.
+A procedure to measure utility under prospect
+theory was recently proposed by Abdellaoui et al.
+(2007). Their method uses various elicitation techniques (probability equivalence, certainty equivalence,
+and Wakker and Deneffe’s 1996 trade-off method).
+A simpler procedure was proposed by Abdellaoui
+et al. (2008). Their method only uses certainty equivalence questions but is less general than the procedure
+of Abdellaoui et al. (2007) in that it assumes that the
+utility functions are power functions.
+The weighting functions Wi+ and Wi− , i ∈ 1     m
+can be measured either through the nonchoice-based
+methods of Tversky and Fox (1995), Fox and Tversky
+(1998), Wu and Gonzalez (1999), or Kilka and
+Weber (2001) or through the choice-based method of
+Abdellaoui et al. (2005). If probabilities are known
+then the methods of Abdellaoui (2000) or Bleichrodt
+and Pinto (2000) can be applied.
+We can also use the representation results for
+single-dimensional prospect theory (Prelec 1998,
+Wakker and Tversky 1993, Wakker and Zank 2002)
+to restrict the functional forms of the utility functions and the weighting functions. If preferences
+do not change when we multiply all levels of an
+attribute by a common constant (while holding the
+other attribute constant), then the attribute utility
+function must be a power function. If preferences
+are invariant to adding a constant to all levels of
+an attribute such that the sign of the attribute levels is preserved (and the other attribute is held
+constant), then the attribute utility function is exponential. When probabilities are known and preferences satisfy Prelec’s (1998) compound invariance
+conditions, then the weighting functions must have
+the form w i p = exp−i ln−p , i = + −. Conditions for deriving exponential or power weighting
+functions are presented in Diecidue et al. (2009).
+Acknowledgments
+Tony Marley, Peter P. Wakker, and two anonymous reviewers gave helpful comments. The ﬁrst author’s research was
+made possible by a grant from the Netherlands Organization for Scientiﬁc Research (NWO).
+
+Appendix. Proofs
+Proof of Theorem 1. That (i) implies (ii) is routine.
+Hence we assume (ii) and derive (i).
+By weak order, weak separability, outcome monotonicity,
+and continuity,  on P can be represented by V V1 f1 
+V2 f2  with V strictly increasing in V1 and V2 . V1 represents
+1 and V2 represents 2 . By continuity, V1 and V2 are continuous, by outcome monotonicity, they are strictly increasing.
+We will now show that V1 and V2 are prospect theory
+functionals. For a prospect f1 ∈ P1 , deﬁne the prospect f1+
+
+<-----Page 8----->Bleichrodt, Schmidt, and Zank: Additive Utility in Prospect Theory
+Management Science 55(5), pp. 863–873, © 2009 INFORMS
+
+by f1j+ = f1j if f1j 1 r1 and by f1j+ = r1 otherwise, and the
+prospect f1− by f1j− = f1j if f1j ≺1 r1 and by f1j− = r1 otherwise. That is, f1+ is the positive part of f1 and f1− is its
+negative part. In a similar fashion, we deﬁne f2+ and f2− .
+Consider 1 on P1 . Because  satisﬁes outcome monotonicity and C1 is nondegenerate, all states of nature are
+nonnull (a state is null if replacing any outcomes in that
+state does not affect the preference). Also, because r1 lies
+in the interior of C1 , 1 is truly mixed (1 is truly mixed
+if there exists a prospect f1 such that f1+  r1 and f1+ ≺ r1 ,
+that is, genuine trade-offs between gains and losses occur).
+By Theorem 12 in Köbberling and Wakker (2003) there
+exists a prospect theory representation for 1 with U1 , the
+continuous utility function over C1 , U1 r1  = 0, and W1+ ,
+and W1− , the weighting functions over gains and losses on
+the ﬁrst attribute, respectively. Köbberling and Wakker’s
+(2003) weak monotonicity follows from outcome monotonicity and sign-comonotonic trade-off consistency follows
+from trade-off consistency on C1 . By Proposition 8.2 in
+Wakker and Tversky (1993), gain-loss consistency can be
+dropped from Köbberling and Wakker’s (2003) conditions
+when the number of states of nature exceeds two. This is
+the case in our analysis if we interpret attributes as events
+(Sarin and Wakker 1998, Corollary B.3). U1 is strictly increasing because V1 is strictly increasing. W1+ and W1− are strictly
+increasing by outcome monotonicity. By Observation 13 in
+Köbberling and Wakker (2003), U1 is a ratio scale and W1+
+and W1− are unique. By solvability, U1 is unbounded.
+By a similar line of argument, there exists a prospect
+theory representation for 2 , with U2 the continuous and
+strictly increasing utility function on C2 , U2 r2  = 0, U2 a
+ratio scale, and W2+ and W2− the unique and strictly increasing weighting functions over gains and losses on the second
+attribute, respectively. By solvability, U2 is unbounded.
+So far we have shown that V PT1 f1  PT2 f2  represents . It remains to show that V is additive. We will
+do so by showing that the rate of trade-offs between
+PT1 and PT2 is everywhere constant. Take f1 ∈ P1  and
+let f2 be a rank-ordered prospect in P2 . Take 10 ∈ C2 such
+that 10  f22 . Then 10 1 f2 is a rank-ordered prospect
+in P2 . Let g2 be such that f2j  g2j for all j with at least
+one of these preferences strict. By solvability there exists
+an outcome 11 such that (f1  10 1 f2  ∼ f1  11 1 g2 . By
+outcome monotonicity 11 2 10 . Next we consider the
+prospect (f1  11 1 f2 . By solvability we can ﬁnd an outcome 12 such that (f1  11 1 f2  ∼ f1  12 1 g2  Hence,
+12 11 ∼∗2 11 10 . We proceed in this manner to construct
+a standard sequence 10  11     on the second attribute for
+which 1s 1s−1 ∼∗2 11 10 for all natural s. It is easily veriﬁed that this implies that PT2 1s 1 f2  − PT2 1s−1 1 f2  =
+PT2 11 1 f2  − PT2 10 1 f2 . Suppose without loss of generality that PT2 11 1 f2  − PT2 10 1 f2  = 1.
+Next we construct a standard sequence 10  11     on the
+ﬁrst attribute by eliciting indifferences 1t 1 f1  10 1 f2  ∼
+1t−1 1 f1  11 1 f2 , t = 1 2     such that all prospects
+involved are rank-ordered. These indifferences imply that
+1t 1t−1 ∼∗1 11 10 for all natural t and, thus that PT1 1t 1 f1 −
+PT1 1t−1 1 f1  = PT1 11 1 f1  − PT1 10 1 f1 . The indifferences also deﬁne a rate of trade-off between PT1 and PT2 .
+Let PT1 11 1 f1  − PT1 10 1 f1  = c. Then the rate of
+trade-off between PT1 and PT2 is constant for all the
+
+871
+points we have elicited thus far. This claim follows from
+trade-off consistency. By trade-off consistency, we must
+have 11 1 f1  1s−1 1 f2  ∼ 10 1 f1  1s 1 f2  for any s =
+1 2     Applying trade-off consistency again implies that
+we must have 1t 1 f1  1s−1 1 f2  ∼ 1t−1 1 f1  1s 1 f2 
+for any s = 1 2   ; t = 1 2     Hence the rate of trade-off
+between PT1 and PT2 is everywhere c.
+Next we double the density of the grid 10  11     ×
+10  11     that we constructed above. By continuity of U2
+1/2
+and connectedness of C2 we can ﬁnd an outcome 1 such
+1/2
+1/2
+1
+1
+that PT2 1 1 f2  − PT2 0 1 f2  = 1/2 Let 0 = 0 and
+1/2
+1/2
+construct a new standard sequence 0  1     by elicit1/2
+1/2
+ing indifferences (f1  s−1 1 f2  ∼ f1  s 1 g2 . It follows
+1/2
+from outcome monotonicity that 2 = 11 and, hence, in
+1/2
+general 2s = 1s , s = 0 1    
+1/2
+1/2
+We construct a new standard sequence 0  1     on
+1/2
+1
+the ﬁrst attribute by setting 0 = 0 and eliciting indif1/2
+1/2
+1/2
+1/2
+ferences t 1 f1  0 1 f2  ∼ t−1 1 f1  1 1 f2 , t =
+1 2     We have to show that the rate of trade-off between
+1/2
+1/2
+1/2
+1/2
+PT1 and PT2 in this new grid 0  1     × 0  1    
+1/2
+is still constant. For this we have to show that 2t = 1t ,
+1/2
+1/2
+1
+t = 0 1     We will show that 2 = 1 . Then 2j = 1j  for
+all j = 0 1    follows from the construction of the standard
+sequence. By the construction of the standard sequence,
+1/2
+1/2
+1/2
+1/2
+2 1 f1  0 1 f2  ∼ 1 1 f1  1 1 f2 . By trade-off
+1/2
+1/2
+1/2
+1/2
+consistency 1 1 f1  1 1 f2  ∼ 0 1 f1  2 1 f2  =
+1
+1
+1
+1
+0 1 f1  1 1 f2  ∼ 1 1 f1  0 1 f2 . By transitivity
+1/2
+1/2
+and because 10 = 0 , 2 1 f1  10 1 f2  ∼ 11 1 f1 
+1/2
+1
+0 1 f2 . By outcome monotonicity 2 = 11  Hence, the
+rate of trade-off between PT1 and PT2 is still constant when
+we double the density of the grid.
+We continue this doubling of density inﬁnitely, creat−m
+−m
+ing increasingly ﬁne standard sequences 20  12     and
+2−m
+2−m
+0  1      m = 2     On the resulting increasingly ﬁne
+grids the rate of trade-off between PT1 and PT2 remains
+constant by a similar proof as for the case where the density
+of the grid was doubled.
+Because U1 and U2 are unbounded, for any natural m
+−m
+there can be no x1 ∈ C1 and no x2 ∈ C2 such that x1  2t
+2−m
+for all t or x2  s
+for all s. There can also be no outcomes inﬁnitely close to 10 and 10 in the sense that there is
+always an outcome from the grid that lies between an outcome x1 ∈ C1 and 10 , and an outcome from the grid that lies
+between an outcome x2 ∈ C2 and 10 when x1 is unequal to
+10 and x2 is unequal to 10 . If x2 = 10 then U2 x2  − U2 10  =
+c > 0 and, hence, there exists a natural number m such that
+−m
+2−m < c. By construction, there is an element 21 of the grid
+1
+2−m
+such that 0 ≺ 1 ≺ x2 . A similar argument shows that the
+grid interferes everywhere. Let x2 and y2 be two outcomes
+such that x2  y2 . Suppose that U2 x2  − U2 y2  = d > 0. Then
+there exists a natural number m such that 2−m < d and by
+−m
+construction there is an element 2s of the grid such that
+2−m
+y 2 ≺ s ≺ x 2 .
+Finally, because U1 and U2 are unbounded there cannot be elements x1 and x2 that are so bad that they
+are never included in any grid. Consider an outcome x2 .
+Then we can construct a prospect f2 with f2j = x2 for
+all j. Because U2 is unbounded, we can construct a
+prospect g2 such that f2j  g2j for all j. Let 10 = x2 and construct a new grid by eliciting indifferences (f1  10 1 f2  ∼
+
+<-----Page 9----->872
+f1  11 1 g2  f1  11 1 f2  ∼ f1  12 1 g2 ) etc. This produces a dense grid that includes x2 .
+By continuity we can extend the dense grid to all outcomes. Hence, we have shown that on the whole domain
+the rate of trade-off between PT1 and PT2 is constant for
+rank-ordered prospects. Hence, for rank-ordered prospects
+V PT1 f1  PT2 f2  is additive: V f  = PT1 f1  + PT2 f2 
+Because U1 and U2 are continuous and unbounded and C1
+and C2 are connected, we can for any prospects f1 and f2
+ﬁnd rank-ordered prospects g1 and g2 such that f1 ∼1 g1
+and f2 ∼2 g2 . We set V PT1 f1  PT2 f2  = PT1 g1  + PT2 g2 
+Finally, we show that PT1 f1  + PT2 f2  represents . Suppose that f  g There are rank-ordered prospects f  and g 
+such that f  ∼ f and g  ∼ g By transitivity, f   g   Hence,
+PT1 f1  + PT2 f2  = PT1 f1  + PT2 f2  ≥ PT1 g1  + PT2 g2  =
+PT1 g1 +PT2 g2  which completes the proof of statement (i).
+The uniqueness results follow from the uniqueness
+results for PT1 and PT2 combined with the fact that on each
+grid the rate of trade-off between PT1 and PT2 must be constant. This completes the proof of Theorem 1. 
+Proof of Theorem 3. That (i) implies (ii) is routine.
+Hence, we assume (ii) and derive (i). The proof is very
+similar to the proof of Theorem 1 and will not be elaborated here. By weak separability V V1 f1      Vm fm  with
+V strictly increasing in each of the Vi represents . We then
+use the results of Köbberling and Wakker (2003) to show
+that each Vi has a prospect theory representation. Finally,
+we show, exactly as in the proof of Theorem 1, that for all
+i k ∈ 1     m, the rate of trade-off between any PTi and
+PTk is constant. This establishes the proof. 
+
+References
+Abdellaoui, M. 2000. Parameter-free elicitation of utilities and probability weighting functions. Management Sci. 46 1497–1512.
+Abdellaoui, M., C. Barrios, P. P. Wakker. 2007. Reconciling
+introspective utility with revealed preference: Experimental arguments based on prospect theory. J. Econometrics 138
+356–378.
+Abdellaoui, M., H. Bleichrodt, O. l’Haridon. 2008. A tractable
+method to measure utility and loss aversion under prospect
+theory. J. Risk Uncertainty 36 245–266.
+Abdellaoui, M., H. Bleichrodt, C. Paraschiv. 2007. Measuring loss
+aversion under prospect theory: A parameter-free approach.
+Management Sci. 53 1659–1674.
+Abdellaoui, M., F. Vossmann, M. Weber. 2005. Choice-based elicitation and decomposition of decision weights for gains and
+losses under uncertainty. Management Sci. 51 1384–1399.
+Bateman, I., A. Munro, B. Rhodes, C. Starmer, R. Sugden. 1997.
+A test of the theory of reference-dependent preferences. Quart.
+J. Econom. 62 479–505.
+Birnbaum, M. H. 2008. New paradoxes of risky decision making.
+Psych. Rev. 115 463–501.
+Bleichrodt, H., J. Miyamoto. 2003. A characterization of qualityadjusted life-years under cumulative prospect theory. Math.
+Oper. Res. 28 181–193.
+Bleichrodt, H., J. L. Pinto. 2000. A parameter-free elicitation of the
+probability weighting function in medical decision analysis.
+Management Sci. 46 1485–1496.
+Bleichrodt, H., J. L. Pinto. 2002. Loss aversion and scale compatibility in two-attribute trade-offs. J. Math. Psych. 46 315–337.
+
+Bleichrodt, Schmidt, and Zank: Additive Utility in Prospect Theory
+Management Science 55(5), pp. 863–873, © 2009 INFORMS
+
+Diecidue, E., U. Schmidt, H. Zank. 2009. Parametric weighting functions. J. Econom. Theory. Forthcoming.
+Dyckerhoff, R. 1994. Decomposition of multivariate utility functions
+in non-additive utility theory. J. Multi-Criteria Decision Anal. 3
+41–58.
+Dyer, J. S., T. Edmunds, J. C. Butler, J. Jia. 1998. A multiattribute
+utility analysis of alternatives for the disposition of surplus
+weapons-grade plutonium. Oper. Res. 46 749–762.
+Etchart-Vincent, N. 2004. Is probability weighting sensitive to the
+magnitude of consequences? An experimental investigation on
+losses. J. Risk Uncertainty 28 217–235.
+Farquhar, P. H. 1975. A fractional hypercube decomposition theorem for multiattribute utility functions. Oper. Res. 23 941–967.
+Fischer, G. W., M. S. Kamlet, S. E. Fienberg, D. Schkade. 1986. Risk
+preferences for gains and losses in multiple objective decision
+making. Management Sci. 32 1065–1086.
+Fishburn, P. C. 1965. Independence in utility theory with whole
+product sets. Oper. Res. 18 28–45.
+Fishburn, P. C. 1984. Multiattribute nonlinear utility theory. Management Sci. 30 1301–1310.
+Fox, C. R., A. Tversky. 1998. A belief-based account of decision
+under uncertainty. Management Sci. 44 879–895.
+Kahneman, D., A. Tversky. 1979. Prospect theory: An analysis of
+decision under risk. Econometrica 47 263–291.
+Keeney, R., H. Raiffa. 1976. Decisions with Multiple Objectives. Wiley,
+New York.
+Keller, R. L., D. N. Kleinmuntz. 1998. Is this the right time for a new
+decision analysis journal? Decision Anal. Soc. Newsletter 17 3.
+Kilka, M., M. Weber. 2001. What determines the shape of the probability weighting function under uncertainty? Management Sci.
+47 1712–1726.
+Köbberling, V., P. P. Wakker. 2003. Preference foundations for nonexpected utility: A generalized and simpliﬁed technique. Math.
+Oper. Res. 28 395–423.
+Köbberling, V., P. P. Wakker. 2005. An index of loss aversion.
+J. Econom. Theory 122 119–131.
+Marley, A. A. J., D. R. Luce. 2005. Independence properties vis-à-vis
+several utility representations. Theory Decision 58 77–143.
+Miyamoto, J. M. 1988. Generic utility theory: Measurement foundations and applications in multiattribute utility theory. J. Math.
+Psych. 32 357–404.
+Miyamoto, J. M., P. P. Wakker. 1996. Multiattribute utility theory
+without expected utility foundations. Oper. Res. 44 313–326.
+Payne, J. W., D. J. Laughhunn, R. Crum. 1984. Multiattribute risky
+choice behavior: The editing of complex prospects. Management
+Sci. 30 1350–1361.
+Prelec, D. 1998. The probability weighting function. Econometrica 66
+497–527.
+Rottenstreich, Y., C. K. Hsee. 2001. Money, kisses, and electric
+shocks: On the affective psychology of risk. Psych. Sci. 12
+185–190.
+Sarin, R. K., P. P. Wakker. 1998. Dynamic choice and nonexpected
+utility. J. Risk Uncertainty 17 87–119.
+Schmidt, U. 2003. Reference dependence in cumulative prospect
+theory. J. Math. Psych. 47 122–131.
+Schunk, D., C. Betsch. 2006. Explaining heterogeneity in utility functions by individual differences in decision modes.
+J. Econom. Psych. 27 386–401.
+Smith, J. E., R. L. Keeney. 2005. Your money or your life: A prescriptive model for health, safety, and consumption decisions.
+Management Sci. 51 1309–1325.
+Smith, J. E., D. von Winterfeldt. 2004. Decision analysis in Management Science. Management Sci. 50 561–574.
+Tversky, A., C. Fox. 1995. Weighing risk and uncertainty. Psych. Rev.
+102 269–283.
+
+<-----Page 10----->Bleichrodt, Schmidt, and Zank: Additive Utility in Prospect Theory
+Management Science 55(5), pp. 863–873, © 2009 INFORMS
+
+Tversky, A., D. Kahneman. 1991. Loss aversion in riskless choice:
+A reference-dependent model. Quart. J. Econom. 56 1039–1061.
+Tversky, A., D. Kahneman. 1992. Advances in prospect theory:
+Cumulative representation of uncertainty. J. Risk Uncertainty 5
+297–323.
+Wakker, P. P. 1993. Unbounded utility for Savage’s “Foundation of
+Statistics,” and other models. Math. Oper. Res. 18 446–485.
+Wakker, P. P., D. Deneffe. 1996. Eliciting von Neumann-Morgenstern
+utilities when probabilities are distorted or unknown. Management Sci. 42 1131–1150.
+
+873
+Wakker, P. P., A. Tversky. 1993. An axiomatization of cumulative
+prospect theory. J. Risk Uncertainty 7 147–176.
+Wakker, P. P., H. Zank. 2002. A simple preference-foundation of
+cumulative prospect theory with power utility. Eur. Econom.
+Rev. 46 1253–1271.
+Wu, G., R. Gonzalez. 1999. Nonlinear decision weights in choice
+under uncertainty. Management Sci. 45 74–85.
+Zank, H. 2001. Cumulative prospect theory for parametric and multiattribute utilities. Math. Oper. Res. 26 67–81.
+
+

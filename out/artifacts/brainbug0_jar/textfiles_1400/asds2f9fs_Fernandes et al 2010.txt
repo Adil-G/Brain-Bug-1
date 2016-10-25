@@ -1,0 +1,3572 @@
+<-----Page 0----->This article was downloaded by: [Canadian Research Knowledge Network]
+On: 4 March 2011
+Access details: Access Details: [subscription number 932223628]
+Publisher Routledge
+Informa Ltd Registered in England and Wales Registered Number: 1072954 Registered office: Mortimer House, 3741 Mortimer Street, London W1T 3JH, UK
+
+Applied Financial Economics
+
+Publication details, including instructions for authors and subscription information:
+http://www.informaworld.com/smpp/title~content=t713684415
+
+Behaviour finance and estimation risk in stochastic portfolio optimization
+José Luiz Barros Fernandesa; Juan Ignacio Peñab; Benjamin Miranda Tabakc
+a
+Gerência-Executiva de Risco da Área de Política Monetária, Universidade Católica de Brasília and
+Banco Central do Brasil, Brasilia 70673-209, Brazil b Departamento de Economía de la Empresa,
+Universidad Carlos III de Madrid, España c Departamento de Estudos e Pesquisas, Universidade
+Católica de Brasília and Banco Central do Brasil, Brasilia 70872-080, Brazil
+First published on: 26 April 2010
+
+To cite this Article Fernandes, José Luiz Barros , Ignacio Peña, Juan and Miranda Tabak, Benjamin(2010) 'Behaviour
+
+finance and estimation risk in stochastic portfolio optimization', Applied Financial Economics, 20: 9, 719 — 738, First
+published on: 26 April 2010 (iFirst)
+To link to this Article: DOI: 10.1080/09603100903493211
+URL: http://dx.doi.org/10.1080/09603100903493211
+
+PLEASE SCROLL DOWN FOR ARTICLE
+Full terms and conditions of use: http://www.informaworld.com/terms-and-conditions-of-access.pdf
+This article may be used for research, teaching and private study purposes. Any substantial or
+systematic reproduction, re-distribution, re-selling, loan or sub-licensing, systematic supply or
+distribution in any form to anyone is expressly forbidden.
+The publisher does not give any warranty express or implied or make any representation that the contents
+will be complete or accurate or up to date. The accuracy of any instructions, formulae and drug doses
+should be independently verified with primary sources. The publisher shall not be liable for any loss,
+actions, claims, proceedings, demand or costs or damages whatsoever or howsoever caused arising directly
+or indirectly in connection with or arising out of the use of this material.
+
+<-----Page 1----->Applied Financial Economics, 2010, 20, 719–738
+
+Behaviour finance and estimation
+risk in stochastic portfolio
+optimizationy
+José Luiz Barros Fernandesa,*, Juan Ignacio Peñab and
+Benjamin Miranda Tabakc
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+a
+
+Gereˆncia-Executiva de Risco da Área de Polı´tica Monetária, Universidade
+Católica de Brası´lia and Banco Central do Brasil, SQSW302, Bloco I,
+Apt. 417, Brasilia 70673-209, Brazil
+b
+Departamento de Economı´a de la Empresa, Universidad Carlos III de
+Madrid, España
+c
+Departamento de Estudos e Pesquisas, Universidade Católica de Brası´lia
+and Banco Central do Brasil, SBS Quadra 3 Bloco B Ed Sede 9 andar,
+Brasilia 70872-080, Brazil
+
+The objective of this article is twofold. The first is to incorporate mental
+accounting, loss-aversion, asymmetric risk-taking behaviour and probability weighting in a multi-period portfolio optimization for individual
+investors. While these behavioural biases have previously been identified in
+the literature, their overall impact during the determination of optimal
+asset allocation in a multi-period analysis is still missing. The second
+objective is to account for the estimation risk in the analysis. Considering
+26 daily index stock data over the period from 1995 to 2007, we empirically
+evaluate our model (Behaviour Resample Adjusted Technique – BRATE)
+against the traditional Markowitz model.
+
+In a standard asset allocation procedure, once the risk
+tolerance, constraints and financial goals are set, the
+output is given by a mean-variance optimization
+(Markowitz, 1952; Feldman and Reisman, 2003).
+Unfortunately this procedure is likely to fail for
+individuals, who are susceptible to behavioural biases.
+For instance, in response to short-term market
+movements and to the detriment of the long-term
+investment plan, the individual investor may require
+his asset allocation to be changed. Fernandes et al.
+(2007, 2008a) suggest that early liquidation of a longterm investment may be the cause of momentum.
+In terms of emotional biases, several empirical
+studies (Tversky and Kahneman, 1992) have shown
+
+that, when dealing with gains, agents are risk-averse,
+but when choices involve losses, agents are riskseeking
+(asymmetric
+risk-taking
+behaviour).
+Moreover, in a wide variety of domains, people are
+significantly more averse to losses than they are
+attracted to same-sized gains. Loss-aversion (Schmidt
+and Zank, 2005) is a relevant psychological concept
+that has been imported to financial and economic
+analysis, and it represents the foundation of prospect
+theory.
+The current paradigm of individual behaviour in
+finance theory is based on expected utility maximization and risk-aversion, which has been under attack
+in recent years due to its descriptive inaccuracy.
+
+*Corresponding author. E-mail: jlbfernandes@gmail.com
+y
+The views expressed in this article are those of the authors and do not reflect those of the Banco Central or its members.
+Applied Financial Economics ISSN 0960–3107 print/ISSN 1466–4305 online ß 2010 Taylor & Francis
+http://www.informaworld.com
+DOI: 10.1080/09603100903493211
+
+719
+
+<-----Page 2----->Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+720
+Experimental psychologists have demonstrated that
+people systematically deviate from the choice predictions the classical paradigm implies as individuals are
+typically biased.
+Behavioural biases can roughly be grouped in two
+categories: cognitive and emotional, though both
+types yield irrational decisions. Because cognitive
+biases (heuristics like anchoring, availability, and
+representative biases) stem from faulty reasoning,
+better information and advice can often correct
+them. Conversely, emotional biases, such as regret
+and loss-aversion, originate from impulsive feelings
+or intuition, rather than conscious reasoning, and
+are hardly possible to correct. Lo et al. (2005)
+investigated several possible links between psychological factors and trading performance, finding that
+subjects whose emotional reaction to monetary gains
+and losses was more intense on both the positive
+and negative side exhibited significantly worse
+trading performance.
+Shefrin (2005) posits that the portfolios selected by
+investors whose choices conform to prospect theory
+will differ in key aspects from the portfolios selected
+by investors whose choices conform to expected
+utility theory. The general character of behavioural
+portfolios is that they feature a combination of
+securities that are very safe with securities that are
+very risky, with the overall portfolio failing to be well
+diversified. In this sense, an optimal solution to the
+asset allocation problem should guide investors to
+make decisions that serve their best interest. This
+could be the recommendation of an asset allocation
+that suits the investor’s natural psychological preferences (emotional biases), even though it may not
+maximize expected return for a given level of risk.
+More simply, a client’s best practical allocation may
+be a slightly under-performing long-term investment
+programme to which the investor can comfortably
+adhere. From a mean-variance optimization perspective, behavioural investors select portfolios that are
+stochastically dominated. This does not mean that the
+individual investors are irrational in any sense: it is
+not irrational for people to anticipate emotional
+reactions and take them into account when making
+decisions that try to adjust their choices to their
+preferences. However, portfolio managers lack the
+guidelines necessary for incorporating these biases
+during the process of determining asset allocation.
+We address this issue by evaluating whether managers
+should moderate the way clients naturally behave to
+counteract the effects of behavioural biases so that
+they can fit a pre-determined asset allocation or they
+1
+
+J. L. B. Fernandes et al.
+should create an asset allocation that adapt to clients’
+biases, so that clients can comfortable adhere to
+the fund.
+In general terms, prospect theory and its latter
+version cumulative prospect theory1 (Kahneman and
+Tversky, 1979; Tversky and Kahneman, 1992) posits
+four novel concepts in the framework of individuals’
+risk preferences. First, investors evaluate assets
+according to gains and losses and not according to
+final wealth (mental accounting). Second, individuals
+are more averse to losses than they are attracted to
+gains (loss-aversion). Third, individuals are riskseeking in the domain of losses and risk-averse in
+the domain of gains (asymmetric risk preference).
+Finally, individuals evaluate extreme probabilities in
+a way that overestimates low probabilities and
+underestimates high probabilities (probability weighting function). This study, as far as we know, is the
+first to consider all those aspects in the framework of
+portfolio choice.
+There are conflicting results in the finance literature on how prior outcomes affect the risk-taking
+behaviour of investors in subsequent periods. Lossaversion would predict that traders with profitable
+mornings would reduce their exposure to afternoon
+risk, trying to avoid losses and thus guaranteeing the
+previous gains (Weber and Zuchel, 2005). Odean
+(1998) and Weber and Camerer (1998) have shown
+that investors are more willing to sell stocks that
+trade above the purchase price (winners) than stocks
+that trade below purchase price (losers) – a phenomenon termed the disposition effect (Shefrin and
+Statman, 1985). Both works interpreted this behaviour as evidence of decreased risk-aversion after a
+loss, and increased risk-aversion after a gain. The
+standard explanation for the previous behaviour is
+based on prospect theory, and particularly on the fact
+that individuals are risk-seeking in the domain of
+losses and risk-averse in the domain of gains
+(asymmetric risk preference).
+However, another stream of the literature found
+the opposite behaviour. Thaler and Johnson (1990)
+name the house-money effect, the behaviour of
+increasing risk appetite after a gain. Barberis et al.
+(2001) present a model where investors are less lossaverse after a gain while they become more lossaverse after prior losses. Our proposed model
+addresses and clarifies the previous contradiction
+between house-money and disposition effect.
+Despite the vast literature confirming the behavioural biases associated with prospect theory, the
+consideration of all those biases in an asset allocation
+
+Tversky and Kahneman’s Cumulative Prospect Theory (CPT) (1992) combines the concepts of loss-aversion and a nonlinear
+rank dependent weighting of probability assessments.
+
+<-----Page 3----->Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+Behaviour finance and estimation risk in stochastic portfolio optimization
+framework is still missing. Barberis and Huang (2001)
+and Barberis et al. (2001) use loss-aversion and
+mental accounting (Thaler, 1999) to explain aspects
+of stock price behaviour, but do not employ the full
+prospect theory framework and do not examine
+optimal asset allocation. Benartzi and Thaler (1995)
+consider prospect theory to solve the equity premium
+puzzle when investors are loss-averse and evaluate
+their portfolios myopically with a horizon of
+approximately 1 year. They also suggest an optimal
+allocation in equities from 30% to 55%. Magi (2005)
+uses behavioural preferences to numerically solve a
+simple model of international portfolio choice,
+providing a possible explanation for the equity
+home bias puzzle, the tendency of individual investors
+to prefer its home-country stocks despite the greater
+performance of foreign stocks.
+Davies and Satchell (2004) provide a solution for
+the optimal equity allocation, and explore more
+thoroughly the cumulative prospect theory parameter
+space that is consistent with observed equity allocations given a financial market’s returns distributions
+over a one-month horizon. Shefrin (2005) considers
+heterogeneous investors to see the impact of behavioural concepts in the framework of asset pricing.
+The first main goal of this study is to incorporate
+mental accounting, loss-aversion, asymmetric risktaking, disposition effect and probability weighting in
+portfolio optimization in a multi-period setting for
+individual investors. We provide a solution for the
+asset allocation problem, taking into account all
+behavioural biases associated with prospect theory
+and using a utility function (suggested in Giorgi et al.,
+2004) consistent with both the experimental results of
+Tversky and Kahneman, and also with the existence
+of equilibrium. We also shed more light on the issue
+of how prior outcomes affect subsequent risk-taking
+behaviour, investigating the investor’s risk-taking
+behaviour following a rise, or a fall, in the price of
+the risky asset.
+In line with prospect theory, investors derive utility
+from fluctuations in the value of their final wealth. In
+our framework, there is a financial market on which
+two assets are traded. A riskless asset, also called a
+bond, and a risky asset, also called a stock (under the
+assumption of normally distributed returns for the
+risky asset). As we are modelling the decision-making
+process of an individual investor, short selling is not
+allowed. In each period (we consider two periods), the
+investor chooses the weight of his endowment to be
+invested in the risky asset, in order to maximize his
+utility (prospect theory based). We assume that the
+investor acts myopically in a sense that he does not
+discount long-term welfare when evaluating his
+utility, and that the reference point relative to which
+
+721
+
+he measures his gains and losses for the first period is
+his initial endowment. Although all agents solve the
+same maximization problem in the first period, the
+second period decision depends on the reference point
+relative to which the agent measures the second
+period outcomes (gains or losses). We consider two
+possible reference points: the initial wealth or the
+current wealth, and analyse both cases. St-Amour
+(2006) evaluates household portfolios and his results
+reveal that references are strongly relevant and statedependent.
+Another well-known issue in asset allocation
+problems, using Markowitz optimization, is that the
+output is strongly driven by the risk/return estimation, which usually generates very unstable portfolios.
+The most famous problem with this technique is the
+substitution problem, where two assets with the same
+risk but slightly different expected returns. The
+optimizer would give all the weight to the asset with
+the higher expected return, leading to a very unstable
+asset allocation. The second goal of this chapter is to
+incorporate estimation risk in the portfolio allocation
+behavioural problem.
+Recent literature has tried to overcome the
+previous problem of leading to unfeasible portfolios.
+The main focus of those models is to find out how to
+create realistic portfolios considering that the values
+used for risk and return are not deterministic but
+instead just estimates (they are stochastic). It should
+be noted that the misspecification of expected returns
+is much more critical than that of variances (Zimmer
+and Niederhauser, 2003).
+Jorion (1986) offers a simple empirical Bayes
+estimator that should outperform the sample mean
+in the context of a portfolio. His main idea is to select
+an estimator with average minimizing properties
+relative to the loss function (the loss due to estimation
+risk). Instead of the sample mean, an estimator
+obtained by ‘shrinking’ the means towards a common
+value is proposed (the average return for the
+minimum variance portfolio), which should lead to
+decreased estimation error. Similar to Jorion, Kempf
+et al. (2002) assumes that the prior mean is identical
+across all risky assets. However, Kempf ’s model
+considers estimation risk as a second source of risk,
+determined by the heterogeneity of the market and
+given by the SD of the expected returns across risky
+assets.
+Black and Litterman (1992) postulate that the
+consideration of the global Capital Asset Pricing
+Model (CAPM) equilibrium can significantly improve
+the usefulness of asset allocation models, as it can
+provide a neutral starting point for estimating the set
+of expected excess returns required to drive the
+portfolio optimization process. Horst et al. (2002)
+
+<-----Page 4----->J. L. B. Fernandes et al.
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+722
+propose a new adjustment in mean-variance portfolio
+weights to incorporate the estimation risk. The
+adjustment amounts to using a pseudo risk-aversion,
+rather than the actual risk-aversion, which depends on
+the sample size, the number of assets in the portfolio
+and the curvature of the mean-variance frontier. The
+pseudo risk-aversion is always higher than the actual
+one and this difference increases with the uncertainty
+in the expected return estimations. Maenhout (2004)
+also considers an adjustment in the coefficient of riskaversion to insure the investor against some endogenous worst case.
+Finally, Michaud (1998) suggests portfolio sampling as a way to allow an analyst to visualize the
+estimation error in traditional portfolio optimization
+methods, and Sherer (2002) posits that sampling from
+a multivariate normal distribution (a parametric
+method termed Monte Carlo simulation) is a way to
+capture the estimation error. Markowitz and Usmen
+(2003) compared the traditional approach to resampling and their results support the latter. Fernandes
+et al. (2008b) evaluate several asset allocation models
+and suggest that resampling methods typically offer
+the best results.
+This study presents a novel approach (Behavioral
+Resample Adjusted Technique – BRATE) to incorporate behavioural biases and estimation risk into
+mean-variance portfolio selection. In a paper close to
+ours, Vlcek (2006) proposes a model to evaluate
+portfolio choice with loss-aversion, asymmetric risktaking behaviour and segregation of riskless opportunities. His findings suggest that the changes in
+portfolio weights crucially depend on the reference
+point and the ratio between the reference point and the
+current wealth, and thus indirectly on the performance
+of the risky asset. Our work differs from his study as
+we explicitly consider all novel aspects of prospect
+theory: mental accounting, loss-aversion, asymmetric
+risk-taking behaviour and probability weighting
+function. We also evaluate the inefficiency cost of
+the behavioural biases and consider a more general
+form for the risky asset return process, including
+estimation risk in the analysis.
+Considering daily equity data from the period
+from 1995 to 2007, we empirically evaluate our
+model in comparison to the traditional Markowitz
+model. Our results support the use of BRATE as an
+alternative for defining optimal asset allocation and
+posit that a portfolio optimization model may be
+adapted to the individual biases implied in prospect
+theory.
+The remainder of this article contains the following
+sections. Section I discusses the behavioural biases
+considered and describes our model proposing the
+BRATE. Section II presents the empirical study,
+
+describing the data and implementation, and providing the results. Section III concludes the research by
+reviewing the main achievements.
+
+I. The Behavioural Model
+We present a two period’s model for portfolio choice
+in a stylized financial market with only two assets,
+where the investor’s preferences are described by
+cumulative prospect theory as suggested by
+Kahneman and Tversky (1979) and Tversky and
+Kahneman (1992). In our framework, there is a
+financial market in which two assets are traded: a
+riskless asset, also called the bond, and a risky asset,
+the stock. Let us consider the return of the stock in
+each period given by the following process: R ¼
+ þ sn, with n  N(0, 1). The riskfree bond yields a
+sure return of Rf. We assume that the time value of
+the money is positive, i.e. that interest rates are nonnegative.
+The preferences of the investor are based on
+changes in wealth and are described by prospect
+theory. We assume that he owns an initial endowment, W0 (normalized to 1 monetary unit), and that he
+earns no other income. The agent invests a proportion
+ of his wealth in the stock and (1  ) in the bond.
+Since we want to model the individual investor’s
+behaviour, we assume that short selling is not allowed
+(0    l). We also assume that the investor acts
+myopically, and the reference point relative to which
+he measures his gains and losses in the first period is
+his initial wealth. Then, the perceived gain or loss in
+the end of the first period is given by
+
+
+x ¼ DW ¼ ð1  ÞW0 ð1 þ Rf Þ þ W0 ð1 þ RÞ  W0
+; x ¼ ð1  ÞRf þ R
+; x ¼ ð1  ÞRf þ ð þ nÞ
+
+ð1Þ
+
+As pointed out in Vlcek (2006) the choice process
+under prospect theory starts with the editing phase,
+followed by the evaluation of edited prospects and
+finally the alternative with the highest value is chosen.
+During the editing phase, agents discriminate gains
+and losses. They also perform additional mental
+adjustments in the original probability function
+ ¼ f(x), defining the probability weighting function
+(p). Based on experimental evidence, individuals
+adjust the likelihood of outcomes such that small
+probabilities are overweighted and large probabilities
+are underweighted. We will consider the probability
+weighting function, as in Giorgi et al. (2004) given by
+ð pÞ ¼
+
+p
+1
+
+ð p þ ð1  pÞ Þ
+
+ð2Þ
+
+<-----Page 5----->Behaviour finance and estimation risk in stochastic portfolio optimization
+
+723
+1
+
+1.2
+1
+
+0.5
+
+0.8
+p(p)
+
+0.6
+
+–1.5
+
+–1
+
+0
+0
+
+0.4
+
+–0.5
+
+0.2
+
+–1
+
+0
+0
+
+Fig. 1.
+c^0.80
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+–0.5
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1
+
+1
+
+1.5
+
+–1.5
+
+1.2
+
+Cumulative probability weighting function for
+
+where  is the adjustment factor. The graph as shown
+in Fig. 1 compares the values of p and (p),
+considering  ¼ 0.80.2
+In the valuing phase, the agents attach a subjective
+value to the gamble. Let us assume the value function
+proposed by Giorgi et al. (2004) as follows:
+ þ
+  þ e	x , if x  0
+ð3Þ
+vðxÞ ¼
+ e	x   ,
+if x 5 0
+where 	 is the coefficient of absolute risk preference,
+4þ40 makes the value function steeper in the
+negative side (loss-aversion), and x is the change in
+wealth or welfare, rather than final states (mental
+accounting), as proposed by Kahneman and Tversky
+(1979). Also, the value function is concave above the
+reference point and convex below it (asymmetric risk
+preference). It is useful to consider the previous form
+for the value function because of the existence of a
+CAPM equilibrium3 and the ability to reach constant
+coefficients of risk preference (	). The previous
+formulation is also supported by the laboratory
+results from Bosch-Domènech and Silvestre (2003).
+Figure 2 indicates v(x) when 	 ¼ 0.88,  ¼ 2.25 and
+þ ¼ 1 (Kahneman and Tversky suggested values).
+In our two-period model for portfolio choice, the
+investor chooses a weight in the risky asset to
+maximize his expected utility (V). His preferences
+are based on changes in his wealth (x) and are
+described by prospect theory. The total expected
+value he addresses to a given choice of  is given by
+Z1
+d
+ð4Þ
+vðxÞ ð f ðxÞÞdx
+V¼
+dx
+1
+2
+
+0.5
+
+p
+
+Fig. 2. Prospect theory value function for a^0.88,
+k^2.25 and kþ ^ 1
+
+where v(x) is the prospect value of the outcome x, and
+( f(x)) is the weighted cumulative probability associated with that outcome. Prospect theory is a
+descriptive theory postulating that, in comparing
+alternatives, the investor will choose the alternative
+that makes V as high as possible. Let us then evaluate
+the investor’s problem in each period.
+First period
+In the first period, the agent’s problem consists of
+defining the allocation of his initial wealth between
+the two assets traded in the financial market. He
+maximizes his utility in t ¼ 0 by allocating a fraction,
+0, of his initial wealth,4 W0, in the risky asset and
+(1  0) in the riskfree asset. We consider that the
+investor is a myopic optimizer in the sense that he
+takes into account only the first period result. For
+multi-period horizons, the choices at earlier dates
+impact the reference points at later dates. This feature
+allows for complex modelling. However, as pointed
+out in Shefrin (2005), prospect theory is a theory
+about investors who oversimplify, and so, assuming
+that individuals are sophisticated enough to perceive
+the link between their current choices and future
+reference points is something unreasonable. We also
+constrain short selling, as it is common for individual
+investors’ models. Thus, his problem can be given by
+Z1
+d
+ð5Þ
+vðxÞ ð f ðxÞÞdx
+max V ¼
+01
+dx
+1
+Let us make the following derivation: x ¼
+(1  0)Rf þ 0( þ sn). Rearranging the terms in
+x, we get x ¼ (1  0)Rf þ 0 þ 0n. We call
+
+Experiments suggest a value of  between 0.80 and 0.90 (Tversky and Kahneman, 1992).
+Under CPT with Tversky and Kahneman (1992) specifications, equilibria do not exist as at least one investor can infinitely
+increase his utility by infinitely leveraging the market portfolio (the utility index is almost linear for large stakes), while the
+security market line theorem holds (Giorgi et al., 2004).
+4
+We will consider the investor’s initial wealth equal to 1.
+3
+
+<-----Page 6----->J. L. B. Fernandes et al.
+
+724
+(l  0)Rf þ 0 ¼ B and 0s ¼ C. Then, x ¼ B þ Cn,
+and so x40 implies n 4  CB. Then,
+Z1
+d
+V¼
+vðxÞ ð f ðxÞÞ dx
+dx
+1
+Z1
+;V¼
+ðþ e	x þ þ Þdð f ðxÞÞ
+0
+
+Z
+
+0
+
+ð e	x   Þ dð f ðxÞÞ
+
+þ
+1
+
+Z
+
+(
+
+2
+@V
+1 2
+¼ 	2 0 e2	 ð0 Þ  e	B 
+@
+
+
+
+ 	
+ð1  0 ÞRf þ 0 
+ 	0   þ e	ð½ð10 ÞRf þ0 Þ
+ 
+0 
+
+
+	
+
+ð1  0 ÞRf þ 0 
+ 	0 
+
+0 
+
+
+	
+ð1  0 ÞRf þ 0 
+
+þ
+ 0
+ð9Þ
+ 	ð   Þ
+0 
+
+1
+
+ðþ e	ðBþCnÞ þ þ Þ dð f ðnÞÞ
+
+;V¼
+CB
+
+Z
+
+CB
+
+þ
+
+ð e	ðBþCnÞ   Þ dð f ðnÞÞ
+
+1
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+
+
+
+
+
+B
+B
+; V ¼ þ 1  ^ 
+   
+C
+C
+Z B
+C
+þ  e	B
+e	nC dð f ðnÞÞ
+
+As a consequence, the following properties hold,6
+
+1
+þ 	B
+
+Z
+
+@V
+4 0;
+@
+@V
+(ii)
+¼ 0 for  ¼ 0 or  ¼ 1;
+@
+@V
+(iii)
+5 0 for 40.
+@
+
+1
+
+(i)
+
+e	nC dð f ðnÞÞ
+
+ e
+
+CB
+
+
+
+B
+; V ¼ þ  ðþ þ  Þ 
+C
+Z1
+e	nC dð f ðnÞÞ
+þ  e	B
+
+Equations 6 and 7 clearly yield different weights for
+the risky asset, considering the remaining parameters
+fixed. Thus, it is possible to evaluate the cost of
+inefficiency associated with the behavioural biases as
+compared to the standard utility solution.
+	
+
+ 	
+
+
+Cost ¼ ð1  0S ÞRf þ 0S R  ð1  0PT ÞRf þ 0PT R
+
+B
+C
+
+ þ e	B
+
+Z
+
+1
+
+e	nC dð f ðnÞÞ
+
+CB
+
+
+
+B
+; V ¼   ð þ  Þ 
+C
+
+
+
+B
+1 2 2
+þ e2	 C  e	B    	C
+C
+
+
+B
+ þ e	B 
+ 	C
+C
+þ
+
+þ
+
+
+
+ð10Þ
+where 0S is the risky asset weight given by the
+standard utility maximization problem, and 0PT is the
+stock weight as defined in our model.
+ð6Þ
+
+where for the last step, we used5
+Z
+
+1
+
+1 2 2
+
+e	x d
+ðxÞ ¼ e2	
+
+
+
+^
+
+ð	
+ zÞ
+
+z
+
+Observe that, if we were considering a standard utility
+function (risk-aversion over all possible outcomes),
+the value would be given by
+1 2
+
+VS ¼ þ  þ e	þ2	
+5
+6
+
+C2
+
+This last derivation is valid for the case where  ¼ 1.
+See the Appendix for the proofs.
+
+Moreover, the partial derivatives of V (Equation 6) are
+(
+
+@V
+1 2
+	 ð0 Þ2
+2
+¼ 	e
+ e	½ð10 ÞRf þ0 
+@
+
+
+ 	
+
+ð1  0 ÞRf þ 0 
+ 	0 
+ 
+0 
+þ 	½ð10 ÞRf þ0 
+þ e
+
+
+	
+)
+ð1  0 ÞRf þ 0 
+ 	0 
+ ^
+ 0 ð8Þ
+0 
+
+ð7Þ
+
+Proposition 1: The optimal asset allocation in t ¼ 0,
+for the risky asset 0	 is such that maximizes the value
+function given by
+
+
+B
+þ
+þ
+
+V ¼   ð þ  Þ 
+C
+
+
+
+B
+1 2 2
+þ e2	 C  e	B    	C
+C
+
+
+B
+ 	C
+þ e	B 
+C
+where B ¼ ½ð1  0	 ÞRf þ 0	  and C ¼ 0	 .
+
+<-----Page 7----->Behaviour finance and estimation risk in stochastic portfolio optimization
+0.16
+
+0.16
+Vpt
+Vs
+
+0.14
+
+0.14
+
+0.13
+
+0.13
+
+0.12
+
+0.12
+
+0.11
+
+0.1
+
+0.09
+
+0.09
+
+0.08
+
+0.08
+20
+
+40
+
+60
+q (%)
+
+80
+
+100
+
+120
+
+Fig. 3. Prospect value and standard utility value as
+function of h
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+0.11
+
+0.1
+
+0
+
+Vpt
+Vs
+
+0.15
+
+V (q)
+
+V (q)
+
+0.15
+
+If we were considering a standard utility function,
+the optimal allocation in t ¼ 0, for the risky asset
+would then be given by
+0	 ¼
+
+  Rf
+	 2
+
+Let us first consider standard values for the model’s
+parameters.7 The riskfree rate equals the historical
+annual return of the US three-month Treasury Bill
+(T-Bill; Rf ¼ 2.73%). The equity expected return and
+volatility equals the historical average of the Morgan
+Stanley Capital International (MSCI) global equity
+index and its SD ( ¼ 7.61% and  ¼ 12.98%). The
+adjustment factor in the probability weighting function equals  ¼ 0.90. The coefficient of risk-aversion
+equals 	 ¼ 3. Also, as suggested by Kahneman and
+Tversky,  ¼ 2.25 and þ ¼ 1. The individual’s
+values (prospect theory and standard) as a function
+of the percentage of his wealth invested in the risky
+asset are given in Fig. 3. The individual investor is
+expected to choose the allocation in the risky asset
+which maximizes his expected value.
+As can be observed from the graph, using a
+standard utility function, the allocation in the risky
+asset approaches 100% ( for which the value
+function reaches its maximum), while using prospect
+theory utility, the investor should allocate 81% of his
+wealth in the stock.8 The shapes of the graphs are
+different, notably for large allocations in the stock.
+The value function using standard utility is equal to
+or greater than the one for prospect utility.
+7
+
+725
+
+0
+
+20
+
+40
+
+60
+q (%)
+
+80
+
+100
+
+120
+
+Fig. 4. Prospect value and standard utility value as
+function of h
+
+The reason for this difference comes from the fact
+that in prospect theory, negative outcomes are
+penalized more (as are risky portfolios) because
+individuals are loss-averse (4þ). In the lossaversion literature evidence suggests that individuals
+are around twice more sensitive to losses than they
+are attracted to same size gains. For small allocations
+in stocks, the prospect of losses becomes less likely
+and the value functions tend to coincide.
+Related to the effect of probability weighting, if we
+set  ¼ 1, thus cancelling out its effect, we reach the
+value function as shown in Fig. 4.
+Note that the amount optimally invested by the
+behavioural investor in the risky asset decreases to
+48%, and so probability weighting tends to increase
+the risk appetite. Kahneman and Tversky (1979)
+suggest that the overweighting of low probabilities
+has an ambiguous effect on risk-taking, as it can
+induce risk-aversion in the domain of losses, and riskseeking in the domain of gains. In our case, the
+overestimation of the extreme positive outcomes
+probabilities, shown in Fig. 3, is inducing investors
+to take more risk.
+However, despite the effects of loss-aversion and
+probability weighting, even if we consider  ¼ þ ¼ 1
+and  ¼ 1, keeping constant the remaining parameters, the value functions would not coincide, as can
+be seen in Fig. 5.
+Both models would predict that the investor should
+allocate 100% of his endowments in the stock.
+However, the value functions are different because,
+in prospect theory, individuals are risk-seeking in the
+
+The riskfree rate, the expected return of the risky asset and the volatility of the risky asset were calculated, using daily data,
+over the period from 1995 to 2007. The results were annualized.
+8
+Davies and Satchell (2004) found that the average proportion in domestic and foreign equities of large pension funds in 1993
+was 83% in the UK, which is in line with the prospect theory results.
+
+<-----Page 8----->J. L. B. Fernandes et al.
+
+726
+0.17
+
+0.14
+Vpt
+Vs
+
+0.16
+
+0.12
+
+0.15
+
+0.1
+0.08
+
+0.13
+
+V (m)
+
+V (q)
+
+0.14
+
+0.12
+0.11
+
+0.02
+
+0.09
+
+0
+
+0.08
+
+–0.02
+20
+
+40
+
+60
+q (%)
+
+80
+
+100
+
+120
+
+Fig. 5. Prospect value and standard utility value as
+function of h
+
+0.02
+0.018
+
+Vpt
+Vs
+
+0.016
+V (q)
+
+0.04
+
+0.1
+
+0
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+0.06
+
+0.014
+0.012
+0.01
+0.008
+0.006
+0
+
+20
+
+40
+
+60
+q (%)
+
+80
+
+100
+
+120
+
+Fig. 6. Prospect value and standard utility value as
+function of h
+
+loss domain (asymmetric risk preference). Thus, they
+would be more comfortable in allocating a greater
+part of their wealth in the risky asset. The prospect
+value function is greater than the standard utility
+function.
+Observe that the effect of the asymmetric risk
+preference goes in the opposite direction of lossaversion and probability weighting. When we diminish the coefficient of risk preference (	 ¼ 0.25) in both
+utility functions, we reduce the effect of asymmetry,
+and so the value functions are much closer, as can be
+seen in the Fig. 6.
+The effects of the behavioural biases can thus be
+summarized as follows: loss-aversion reduces risktaking, and asymmetric risk-taking behaviour induces
+risky attitudes. Probability weighting has an ambiguous effect on risk. Our intuition is that, in the long
+
+–0.04
+0
+
+0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1
+µ
+
+Fig. 7.
+
+Prospect value as function of l
+
+run, as the value function parameters are changing,
+these biases tend to cancel out, eliminating the
+efficiency loss originated by each bias. That is why
+we argue that human biases do not need to be
+moderated to reach an efficient investment strategy.
+The experimental results of Blavatskyy and Pogrebna
+(2006) reveal that the effect of loss-aversion is largely
+neutralized by the overweighting of small probabilities and underweighting of moderate and high
+probabilities.
+In order to verify property (i), let us evaluate V
+while changing  and keeping constant the other
+parameters (considering  ¼ 50%). Figure 7 presents
+the graph which indicates that over all positive values
+of , the slope of V is positive. The value function is
+increasing in . Thus, when the risky asset has a
+higher expected return, ceteris paribus implies a
+higher value for the investor.
+Considering properties (ii) and (iii), let us evaluate
+V while changing  and keeping constant the other
+parameters (considering  ¼ 50%). Figure 8 presents
+the graph indicating that over all positive values of ,
+the slope of V is negative, while for  ¼ 0, the slope is
+null. When  tends to infinity, the slope tends to null.
+The value function is decreasing in s.
+The intuition is that, if the volatility of the risky
+asset is higher, for the same allocation, this implies a
+higher probability of losses reducing the value of the
+prospect. In line with traditional rational investor,
+behavioural individuals also prefer higher return and
+lower risk; mainly because they are risk-averse in the
+gain domain and also loss-averse.
+Now let us evaluate the values of 0 when we
+change the riskfree rate and the expected return of the
+risky asset. Since many parameters are involved, it is
+not possible to find closed form solutions for 0.
+Therefore, we present numerical results for the
+
+<-----Page 9----->Behaviour finance and estimation risk in stochastic portfolio optimization
+0.15
+
+727
+
+15
+
+Cost
+
+0.1
+0.05
+
+V (s)
+
+0
+
+5
+0
+0.06
+
+–0.05
+–0.1
+
+0.04
+
+0.1
+0.05
+
+0.02
+
+–0.15
+
+Rf
+
+–0.2
+–0.25
+0
+
+0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9
+s
+
+Fig. 8.
+
+1
+
+Prospect value as function of r
+
+1
+0.8
+0.6
+q
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+10
+
+0.4
+0.2
+0
+0.06
+
+0.15
+0.04
+
+0.1
+0.02
+Rf
+
+0
+
+0
+
+0.05 µ
+
+Fig. 9. Optimal equity allocation in the first period as
+function of l and Rf
+
+optimal allocation of wealth in t ¼ 0. Figure 9
+presents the results for 0%5515% and
+05Rf 56%. The remaining parameters are fixed
+( ¼ 12.98%, 	 ¼ 3,  ¼ 2.25, and þ ¼ 1).
+As expected, when the risky asset offers more
+attractive returns, the agent gradually invests more in
+the stock. When the stock is very attractive, the
+investor chooses to allocate his entire wealth in the
+risky asset. Thus, we observe that 0 is increasing in 
+and decreasing in Rf. Also, when Rf is higher, the
+changes in 0 due to a variation in  are smoother,
+because in these cases losses are less likely and we
+approach the standard utility solution. When Rf is
+lower, the changes in 0 due to a variation in  are
+more abrupt, giving rise to extreme portfolio allocations. If we consider that  is not known with
+certainty, the resulting portfolio would be very
+unstable. Gomes (2003), in a model with loss-averse
+investors, has found that individuals will not hold
+stocks unless the equity premium is quite high.
+
+0 0
+
+µ
+
+Fig. 10. Expected cost in the first period as function of l
+and Rf
+
+We can evaluate the expected cost of inefficiency
+related to the behavioural biases associated with the
+prospect theory function, for the same parameters
+considered in the previous analysis, using
+Equation 10. The result is presented in Fig. 10, and
+its form is due to the fact that, in standard utility
+function, the investor is willing to take more risk than
+with the loss-averse prospect utility. The cost is due to
+the fact that the expected return of the stock is greater
+than the bond, and the standard utility investor is
+allocating a greater part of his wealth in the risky
+asset than the prospect utility individual. Thus, the
+cost is increasing in . However, it is worth noting
+that the previous cost is based on expected returns,
+which are stochastic in practice. The real cost can just
+be observed at the end of the first period with the
+realization of the stock’s return.
+An important insight can be made from Fig. 10 in
+terms of the best practice for asset allocation. As long
+as the riskfree rate is lower and the expected return of
+the stock is higher, the optimal allocation should
+moderate the investor’s biases in order to reach a
+better performance. On the other hand, if the risk
+premium is lower, the moderation is less relevant, and
+the optimal allocation may adapt to the individual’s
+biases.
+We can also analyse the change in the allocation of
+the stock when we vary the loss-aversion in the risktaking behaviour. The result is shown in Fig. 11, for
+2554. Observe that, as long as the investor is
+much more averse to losses than he is attracted to
+gains, the allocation in the risky asset is lower. When
+ ¼ 2.25, the allocation in the risky asset corresponds to 81%, as mentioned previously.
+Dimmock (2005) has already shown that a higher
+level of loss-aversion leads to lower equity exposure,
+and heterogeneity in the coefficient of loss-aversion
+has the ability to explain puzzling features of household financial behaviour.
+
+<-----Page 10----->J. L. B. Fernandes et al.
+
+728
+1
+
+Proposition 2: The optimal asset allocation in t ¼ 1
+for the risky asset 1	 , if the agent measures his gains
+and losses relative to his current wealth, is such that it
+maximizes the same value function of the first period
+1	 ¼ 0	 .
+
+0.9
+0.8
+
+q
+
+0.7
+0.6
+0.5
+0.4
+0.3
+0.2
+
+2
+
+2.2
+
+2.4
+
+2.6
+
+2.8
+
+3
+
+3.2
+
+3.4
+
+3.6
+
+3.8
+
+4
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+l–
+
+Fig. 11. Optimal equity allocation in the first period as
+function of kZ
+
+Second period
+In order to evaluate the second period allocation
+choice of the investor, let us keep some parameters
+fixed: ( ¼ 12.98, 	 ¼ 3,  ¼ 2.25 and þ ¼ 1). After
+the investor has made his first period decision in t ¼ 0,
+the state of nature realizes in t ¼ 1, when he is faced
+with his second period problem. Again, he must
+allocate his wealth in the two possible assets in the
+financial market, bond and stock, to maximize his
+utility. Let us consider the same normal distribution
+for the return of the risky asset. The investor’s wealth
+position at t ¼ 2 equals his position in t ¼ 1 plus the
+return of his portfolio in the second period.
+While all agents solve the same maximization
+problem in the first period, in the second period, it
+will depend on the reference point to which he
+measures his gains and losses (in the framework of
+prospect theory). In our model, there are two
+candidates for the investor’s reference point at t ¼ 1:
+his initial wealth at t ¼ 0 (W0 ¼ 1) or his wealth at the
+end of the first period, t ¼ 1 (W1). If he measures his
+gains and losses relative to his wealth at t ¼ 1 (his
+current wealth), he treats each gain and loss
+separately. On the other hand, if he considers his
+initial wealth as the reference point, he adds up the
+outcomes (gains and losses), that is, he nets his
+positions. The previous distinction is relevant in
+prospect theory. The value function is concave in the
+domain of gains and convex in the loss domain
+(asymmetric risk behaviour).
+First, let us consider as the investor’s reference
+point his current wealth at t ¼ 1. In this case, the
+maximization problem he will solve in the second
+period is the same as the one for the first period.
+Thus, we can state the following proposition.
+
+We can observe that an individual who measures
+his gains and losses relative to his current wealth is
+actually solving the same maximization problem in
+each period. That is why the allocation in the risky
+asset might be the same. This is not surprising; as he
+is not using past information to update his beliefs
+about the assets, his preferences are similarly
+unaffected.
+Next, let us analyse the investor’s maximization
+problem if he evaluates his gains and losses relative to
+his initial wealth. If he has an initial wealth position
+of W0 ¼ 100 and his wealth rises in the first period to
+W1 ¼ 110 and falls in the next period to W2 ¼ 105, he
+values his position at t ¼ 2 as a gain of 5, and not as a
+gain of 10 followed by a loss of 5.
+In the second period, the agent’s problem consists
+of defining the allocation of his wealth (W1) between
+the two assets traded in the financial market. He
+maximizes his utility in t ¼ 1 by allocating a fraction,
+1, of his wealth W1 in the risky asset and 1  1 in the
+riskless asset. As we did in the first period analysis,
+we also constrain short selling.
+Z1
+d
+vðxÞ ð f ðxÞÞdx
+max V ¼
+01
+dx
+1
+Let us make the following derivation:
+
+
+x ¼ W1 ð1  1 ÞRf þ 1 ð þ nÞ
+
+
+þ W0 ð1  0 ÞRf þ 0 R1
+and W1 ¼ W0 b1 þ ð1  0 ÞRf þ 0 R1 c, where R1 is the
+return of the stock in the first period. So
+x ¼ W0 bð1 þ ð1  0 ÞRf þ 0 R1 Þ  ðð1  1 ÞRf þ 1 ð þ
+nÞÞþ ð1  0 ÞRf þ 0 R1 c. Rearranging the terms in x
+and considering W0 ¼ 1, we get
+	
+
+
+
+x ¼ 1 n 1 þ ð1  0 ÞRf þ 0 R1
+
+
+
+þ 1 þ ð1  0 ÞRf þ 0 R1
+
+ 
+
+
+ ð1  1 ÞRf þ 1  þ ð1  0 ÞRf þ 0 R1 Þ
+Let us call
+	
+
+
+ 
+B ¼ 1 þ ð1  0 ÞRf þ 0 R1  ð1  1 ÞRf þ 1 
+
+
+
+þ ð1  0 ÞRf þ 0 R1
+and
+
+
+
+C ¼ 1  1 þ ð1  0 ÞRf þ 0 R1
+
+<-----Page 11----->Behaviour finance and estimation risk in stochastic portfolio optimization
+1
+0.9
+0.8
+0.7
+0.6
+q1
+
+Then, x ¼ B þ Cn, so x40 implies n 4 CB. Then,
+
+
+B
+V ¼ þ  ðþ þ  Þ 
+C
+
+
+
+B
+1 2 2
+	 C
+ 	B
+2
+þe
+ e    	C
+C
+
+
+B
+ 	C
+ð11Þ
+þ e	B 
+C
+
+729
+
+0.5
+0.4
+0.3
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+Proposition 3: The optimal asset allocation in t ¼ 1
+for the risky asset 1	 , if the agent measures his gains
+and losses relative to his initial wealth, is such that it
+maximizes the value function given by
+
+
+B
+V ¼ þ  ðþ þ  Þ 
+C
+
+
+
+B
+1 2 2
+	
+C
+
+	B
+ e    	C
+þ e2
+C
+
+
+B
+þ e	B 
+ 	C
+C
+where
+
+
+	
+
+ 	
+B ¼ W0 1 þ ð1  0 ÞRf þ 0 R1  ð1  1	 ÞRf þ 1	  ,
+	
+
+
+C ¼ W0 1 þ ð1  0 ÞRf þ 0 R1  1	 
+0 is the amount allocated in the risky asset in the first
+period, and R1 is the observed return of the risky asset
+in the previous period.
+Observe that the value function to be maximized is
+close to one of the first period, but with changes in
+the parameters B and C, which account for the
+previous period outcome (gain or loss). As we are
+interested in the investor’s risk-taking behaviour after
+realizing a gain or a loss, let us evaluate the values of
+1 when we change the total return obtained in the
+first period. Recall that the total return from t ¼ 0 to
+t ¼ 1 (Rtot1), depends both on his allocation choice in
+t ¼ 0 and on the realized return of the risky asset R1.
+Rtot1 ¼ ð1  0	 ÞRf þ 0	 R1
+Let us then, evaluate 1	 considering the realized
+return of the stock in the first period varying over the
+following range:   25R15 þ 2. We present
+numerical results for the optimal allocation of wealth,
+1	 , at t ¼ 1. The remaining parameters are fixed
+( ¼ 7.61%,  ¼ 12.98, 	 ¼ 3, W0 ¼ 1,  ¼ 2.25 and
+þ ¼ 1). Figure 12 shows the results. Recall that the
+optimal allocation in the risky asset for the first
+period, considering the previous parameters, is 81%.
+Thus, we need to verify whether the allocation
+in the stock in the second period is greater or
+lower than 81%, indicating greater or lower risk
+
+0.2
+0.1
+0
+–0.15 –0.1 –0.05
+
+0
+
+0.05 0.1
+R tot1
+
+0.15
+
+0.2
+
+0.25
+
+0.3
+
+Fig. 12. Optimal equity allocation in the second period as
+function of the total return obtained in the first period
+
+appetite, respectively. First, observe that, for a total
+return in the first period equal to zero (no gains/
+losses), the situation replicates the same framework
+the investor faced in the first period. Then we reach
+the same optimal allocation in the risky asset (for
+Rtot1 ¼ 0 implies 1	 ¼ 81%).
+Consider the surroundings of the net value
+(Rtot1 ¼ 0). If the investor experiences a gain in the
+first period, the model predicts that he should
+optimally invest less in the risky asset in the second
+period. This behaviour prevails up to the point where
+the loss-aversion effect is less pronounced. On the
+other hand, if a loss is observed in the first period, he
+should take more risk in the following period,
+allocating a greater part of his wealth in the stock.
+This prediction is in line with several experiments,
+which have shown that disposition effect dominates
+house-money in dynamic settings (Weber and Zuchel,
+2005). When the investor experiences a gain in the
+first period, he tends to reduce his risk appetite in
+order to guarantee the previous outcome. On the
+other hand, if he experiences a loss in the first period,
+he will increase his bets on stocks, trying to avoid the
+previous loss. In the model, the pattern holds for the
+whole gain domain; however, in the loss domain, high
+losses in the first period induce less risk appetite in the
+second period. The intuition is that if the investor is
+facing a huge loss, the loss-aversion effect will
+dominate the risk-seeking behaviour, inducing a
+reduction in the optimal allocation in the stocks.
+When we evaluate the expected cost (Equation 10)
+of the behavioural inefficiency in the second period as
+a function of the return of the risky asset in the first
+period (Fig. 13), it is possible to observe that,
+depending on the previous outcome, the cost can be
+
+<-----Page 12----->J. L. B. Fernandes et al.
+
+730
+0.3
+
+0.05
+
+0.25
+0.04
+Accumulative cost
+
+0.2
+
+Cost 2
+
+0.03
+0.02
+0.01
+
+0.15
+0.1
+0.05
+0
+–0.05
+–0.1
+
+0
+
+–0.15
+–0.01
+–0.2
+
+–0.1
+
+0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+–0.2
+–0.2
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+Fig. 13. Expected cost in the second period as function of
+the equity return obtained in the first period
+
+increasing or decreasing. If the value for R1 is such
+that it implies a small loss in the first period, the cost
+is even negative, which means that the expected
+return in the second period under prospect theory is
+greater than the one associated with standard utility.
+This is related to a greater risk appetite of the
+prospect theory individual after a loss, implying a
+greater allocation in the stock, which has a greater
+expected return. If R1 indicates a gain in the first
+period, then the cost is positive once the allocation in
+the stock for the standard utility investor is greater
+than for the prospect utility individual.
+We can conclude that for losses in the first period,
+the optimal allocation should adapt to the individual’s biases to reach better performance as the cost
+comes out to be negative in this domain. For gains in
+the previous outcome, the allocation should moderate
+the biases (observe a positive value for the expected
+cost). For extreme losses in the first period, the
+allocation should also moderate the investor’s biases.
+If we accumulate the cost results in periods 1 and 2,
+we get the graph represented in Fig. 14. It indicates
+that, for a negative stock result in the first period, or
+even a slightly positive one, the prospect theory
+individual outperforms the standard utility investor.
+So the allocation strategy should be adapted to the
+individual biases. The previous results should be taken
+with care as they refer to expected values. In section
+‘Multi-period analysis’, we provide a more robust
+comparison, taking into account the performance of
+those individuals in an out-of-sample analysis.
+Multi-period analysis
+If we extend the two-period analysis to a multi-period
+one, by analogy, if the investor considers his current
+
+–0.1
+
+0
+
+0.1
+
+0.2
+
+0.3
+
+0.4
+
+0.5
+
+R1
+
+R1
+
+Fig. 14. Expected cumulative cost in the second period as
+function of the equity return obtained in the first period
+
+wealth as the reference to which he measures his gains/
+losses, he will solve the same maximization problem
+for each period and the optimal asset allocation is
+given as in Proposition 1. In this situation, the agent
+acts myopically, just considering the following
+period possible gain/loss. In general, this result implies
+a smaller stock allocation if compared to a standard
+utility investor, generating an expected cost associated
+to the prospect theory biases.
+On the other hand, if the individual’s reference
+point is his initial wealth (or his wealth in some
+moment in time t ¼ t1), the allocation is defined as in
+Proposition 3, but now considering the previous
+outcome as the total return obtained by him from
+t ¼ 0 (or from t ¼ t1) to the current time. As discussed
+in the two-period model, the allocation in the risky
+asset will depend on the previous gains/losses, and
+can be greater or smaller than the one chosen by the
+standard utility investor. Observe that the standard
+utility investor always chooses the same allocation in
+the risky asset, no matter what the reference point, as
+neither his decisions nor his beliefs are affected by
+previous outcomes.
+Resampling
+In sections ‘First period’, ‘Second period’ and ‘Multiperiod analysis’ we already evaluated the optimal
+asset allocation under prospect theory preferences
+and considering mental accounting, loss-aversion,
+asymmetric risk-taking behaviour and probability
+weighting. However, there is still an important issue
+in portfolio optimization missing: estimation error.
+Up to now, when solving the investor’s problem, we
+considered the expected return known with certainty,
+
+<-----Page 13----->Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+Behaviour finance and estimation risk in stochastic portfolio optimization
+which is not the case in reality (especially in emerging
+markets where the uncertainty is higher). The
+assumed return for the risky asset is just an estimate,
+and so the real value can be different. This problem is
+relevant in any model of portfolio optimization and is
+crucial under prospect theory, where for lower values
+of the riskfree rate, a slightly increase in the risk
+premium of stocks can lead to extreme allocations. If
+the real return of the risky asset is lower, the
+likelihood of facing a loss is greater and should
+significantly reduce the value of that prospect.
+In an attempt to overcome this estimation problem,
+Michaud (1998) proposed the resampling technique.
+Portfolio sampling allows an analyst to visualize the
+estimation error in traditional portfolio optimization
+methods. Suppose that we estimated both the
+variance and the excess return by using N observations. It is important to note that the point estimates
+are random variables and so another sample of the
+same size from the same distribution would result in
+different estimates.
+Sherer (2002) suggests that sampling from a multivariate normal distribution (a parametric method
+termed Monte Carlo simulation) is a way to capture
+the estimation error. In this sense, return and
+variance would just be the expected values for a
+multivariate normal distribution. If we just consider
+two assets, the probability density function for a
+multivariate normal distribution would be given by
+f ðx, yÞ ¼
+
+1
+pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+2x y 1  2
+1
+x2 y2 2xy
+þ 
+ exp 
+2
+2ð1   Þ x2 y2 x y
+
+!!
+
+By repeating the sampling procedure n times, we get n
+new sets of optimization inputs, and then a different
+efficient allocation. The resampled weight for a
+portfolio would then be given by
+Resamp ¼
+
+n
+1X
+i
+n i¼1
+
+The resampled portfolios should reflect a greater
+diversification (more assets enter in the solution) than
+the classical mean–variance efficient portfolio, and
+should also exhibit less sudden shifts (smooth
+transitions) in allocations as return requirements
+change. Both characteristics are desirable for
+investors.
+Recent literature has shown unambiguous results
+in favour of resampled portfolios in out-of-sample
+analysis (Jiao, 2003; Markowitz and Usmen, 2003;
+9
+
+731
+
+Pawley, 2005; Wolf, 2006). However, Harvey et al.
+(2006), evaluating Bayes versus resampling methods,
+posit that the choice of risk-aversion drives the
+results. Kohli (2005) concludes that, despite the fact
+that there are no conclusive advantages or disadvantages of using resampling as a technique to obtain
+better returns, resampled portfolios do seem to offer
+higher stability and lower transaction costs, two
+crucial features for long-term investors’ choices.
+We then propose the BRATE as a novel methodology to define asset allocation, which incorporates
+behavioural ideas and resampling techniques into
+portfolio optimization, thus adapting to the individual’s preferences. In this case, the optimal asset
+allocation should be given by the previous propositions (1 and 2 or 3, depending on the reference point),
+but the procedure should be performed several times
+for different expected stock returns (given by a
+multivariate normal distribution). The final allocation is then given by the expected risky asset
+allocation. The procedure can be summarized as
+follows.9
+Step 1: Estimate variance–covariance and return
+from the historical inputs.
+Step 2: Resample from inputs (created in Step 1) by
+taking n draws from the input distribution. The
+number of draws reflects the degree of uncertainty in
+the inputs. Calculate new variance–covariance and
+return from sampled series. Estimation error will
+result in estimations that are different from those
+obtained in Step 1.
+Step 3: Calculate the optimal allocation for inputs
+defined in Step 2, using the appropriate propositions
+(1 and 2 or 3, depending on the reference point
+considered).
+Step 4: After repeating Steps 2 and 3 many times,
+calculate average portfolio weights. This is the
+BRATE portfolio allocation.
+In the next section, we provide an empirical
+analysis comparing the BRATE allocation performance to a standard utility allocation.
+
+II. Empirical Study
+Data and implementation
+Our tests are based considering daily data from 26
+countries’ MSCI stock indices and riskfree rates, plus
+
+This methodology is an adaptation of the one proposed in Michaud (1998).
+
+<-----Page 14----->J. L. B. Fernandes et al.
+
+732
+Table 1. Descriptive statistics
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+Currency
+
+T-Bill 3 month
+Australia
+Austria
+Belgium
+Brazil
+Canada
+Chile
+Denmark
+Finland
+France
+Germany
+Ireland
+Italy
+Japan
+Norway
+Portugal
+South Africa
+South Korea
+Spain
+Sweden
+Switzerland
+Taiwan
+Thailand
+The Netherlands
+Turkey
+United Kingdom
+United States
+World Index
+
+USD
+
+Risk
+free
+
+Mean
+
+SD
+
+Skew
+
+Kurt
+
+Sharpe
+ratio
+
+Mean
+
+SD
+
+Skew
+
+Kurt
+
+Sharpe
+ratio
+
+2.722
+3.856
+1.537
+2.218
+16.531
+2.722
+2.470
+2.218
+2.293
+2.243
+2.772
+2.848
+2.974
+0.151
+3.326
+2.923
+7.938
+2.318
+2.797
+2.696
+1.058
+3.251
+3.654
+2.092
+39.514
+3.704
+2.722
+2.722
+
+2.722
+8.971
+11.844
+10.811
+23.184
+11.516
+7.636
+14.767
+21.269
+11.516
+10.987
+10.282
+10.710
+4.536
+12.121
+9.727
+12.625
+12.676
+16.405
+15.473
+12.197
+4.687
+0.076
+10.156
+47.804
+6.779
+9.904
+7.610
+
+0.076
+13.022
+15.790
+18.065
+30.022
+16.686
+15.309
+17.256
+37.629
+20.800
+23.172
+17.956
+20.213
+19.215
+19.635
+15.801
+19.769
+34.524
+21.118
+24.896
+18.051
+26.244
+32.851
+21.489
+45.171
+16.476
+16.978
+12.976
+
+0.574
+0.322
+0.574
+0.317
+0.972
+0.426
+0.166
+0.321
+0.162
+0.048
+0.138
+0.528
+0.064
+0.051
+0.304
+0.261
+0.437
+0.271
+0.078
+0.187
+0.106
+0.149
+1.415
+0.076
+0.324
+0.153
+0.024
+0.144
+
+1.787
+6.685
+7.277
+9.921
+23.667
+8.866
+7.188
+5.778
+9.041
+5.926
+6.244
+8.877
+6.000
+5.152
+6.706
+8.097
+9.002
+6.664
+6.249
+6.700
+7.639
+5.442
+17.779
+7.018
+8.017
+6.225
+6.598
+5.763
+
+0.000
+0.392
+0.652
+0.476
+0.222
+0.527
+0.337
+0.727
+0.504
+0.447
+0.355
+0.414
+0.383
+0.229
+0.449
+0.430
+0.237
+0.300
+0.644
+0.513
+0.617
+0.054
+0.109
+0.375
+0.184
+0.187
+0.422
+0.376
+
+2.722
+10.105
+12.020
+10.886
+17.590
+13.230
+5.670
+14.540
+21.118
+11.416
+10.861
+10.458
+10.660
+2.570
+12.172
+9.878
+8.039
+13.709
+16.405
+16.380
+11.441
+3.150
+1.865
+10.004
+21.521
+8.392
+9.904
+7.610
+
+0.076
+17.275
+17.816
+19.295
+34.552
+18.337
+18.370
+17.973
+37.650
+21.048
+23.232
+19.676
+20.726
+22.234
+20.767
+17.664
+24.810
+41.728
+21.781
+26.850
+17.713
+27.563
+36.002
+21.551
+50.887
+17.037
+16.978
+12.976
+
+0.574
+0.125
+0.319
+0.163
+0.035
+0.532
+0.067
+0.281
+0.101
+0.012
+0.097
+0.304
+0.032
+0.332
+0.318
+0.051
+0.429
+1.336
+0.031
+0.120
+0.010
+0.110
+0.984
+0.006
+0.219
+0.100
+0.024
+0.144
+
+1.787
+6.389
+5.626
+7.275
+8.387
+8.046
+6.509
+5.292
+9.202
+5.332
+5.337
+6.763
+5.237
+6.647
+7.104
+5.834
+7.053
+26.151
+5.682
+6.322
+6.549
+5.505
+13.281
+6.177
+8.094
+5.213
+6.598
+5.763
+
+0.000
+0.428
+0.522
+0.423
+0.430
+0.573
+0.161
+0.657
+0.488
+0.413
+0.350
+0.392
+0.383
+0.008
+0.454
+0.405
+0.214
+0.263
+0.628
+0.509
+0.492
+0.016
+0.128
+0.338
+0.369
+0.332
+0.422
+0.376
+
+Notes: This table provides descriptive statistics for the sample of world markets. For each market we present, the average risk
+free rate, the mean, SD, skewness and kurtosis of stock returns, as well as the Sharpe ratio (annualized values). The values are
+presented in the countries currency and also in USD. The risk free rate used to calculate the Sharpe ratio in USD is the
+3 month US T-Bill rate for all markets.
+
+the MSCI World Index, for the period from 4 April
+1995 to 5 January 2007. Developed countries and
+emerging markets (Brazil, Chile, South Africa, South
+Korea, Taiwan, Thailand, Turkey) were included in
+the analysis in order to find generalizable results. The
+total return time series are calculated on each
+country’s currency and also in US-dollars. Thus, we
+are considering both currency hedged and unhedged
+investors. Table 1 presents some descriptive statistics
+of each market considered, for the whole sample
+period.
+From the table, we verify a risk premium
+associated with the stock market, both considering
+the values in each country’s currency and in USD,
+with the mean return of stocks being higher than the
+one of the corresponding riskfree rate.10
+Let us first consider the values in each country’s
+currency. The average annualized return of the
+10
+
+riskfree rate varied from 0.151% (Japan) to 39.514%
+(Turkey), while for the stock index, it ranges from
+0.076% (Thailand) to 47.804% (Turkey). The annualized volatility (SD) of the stock market varied from
+12.976% (World Index) to 45.171% (Turkey). As
+expected, emerging markets tend to be more volatile
+than developed markets. While in Brazil,
+South Korea, Thailand and Turkey the volatility
+was above 30%, in countries, such as the UK and the
+USA, its value was close to 16%. In terms of skewness
+and kurtosis, usual results appear, indicating that
+daily stock index returns are negative skewed and have
+excess kurtosis (greater than 3). Finally, Table 1
+presents the annualized Sharpe ratio, which was
+greater in developed markets (around 0.35) than
+emerging markets (0.19). Our results are in line with
+previous literature which gives 0.34 as an estimation of
+the long-term Sharpe ratio for the US economy.
+
+The only exception is Thailand where the Sharpe ratio is negative (0.109).
+
+<-----Page 15----->Behaviour finance and estimation risk in stochastic portfolio optimization
+
+733
+
+Table 2. Sharpe ratios
+
+6m–2m
+6m–6m
+1y–6m
+2y–6m
+4y–6m
+1y–1y
+2y–1y
+4y–1y
+Mean
+
+STU
+
+PTU
+
+CPT
+
+RSTU
+
+BRATEa
+
+BRATEb
+
+0.189
+0.101
+0.439
+0.462
+0.135
+0.413
+0.456
+0.206
+
+0.134
+0.080
+0.392
+0.426
+0.023
+0.347
+0.428
+0.126
+
+0.136
+0.083
+0.392
+0.421
+0.023
+0.389
+0.431
+0.126
+
+0.207
+0.125
+0.438
+0.464
+0.122
+0.420
+0.461
+0.193
+
+0.154
+0.102
+0.400
+0.434
+0.018
+0.354
+0.444
+0.114
+
+0.156
+0.114
+0.401
+0.423
+0.019
+0.393
+0.465
+0.113
+
+0.215
+
+0.207
+
+0.213
+
+0.225
+
+0.219
+
+0.227
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+Notes: This table presents the Sharpe ratio of the efficient portfolio generated by each estimation model. The
+Sharpe ratio is calculated by dividing the excess return observed by the SD.
+
+When we consider the values in USD, say in the
+perspective of a US based international investor who
+does not currency hedge his investments, we find
+similar results. The average daily return in USD is
+close to the one in the country’s currency, which is
+evidence of the mean reverting aspect of the foreign
+exchange market. However, the SD in USD is slightly
+greater than the one in the country’s currency, as the
+former includes both stock market risk and currency
+risk (the volatility of the foreign exchange rate). In
+terms of skewness and kurtosis, the previous results
+remain. However, now the Sharpe ratios do not
+present relevant differences among emerging and
+developed markets (for instance it is 0.430 for Brazil
+and 0.422 for the USA). Thus it seems that emerging
+stock markets are less interesting for domestic
+investors than for foreign unhedged investors.
+Next we analyse the performance of the following
+optimization strategies: an investor with a standard
+utility preference (STU); an investor with prospect
+utility preference (PTU), with reference point given
+by his current wealth; an investor with PTU, with
+reference point given by his wealth in the previous
+period (CPT); an investor with a standard utility
+preference (resampled) (RSTU); an investor with
+prospect utility preference, with reference point given
+by his current wealth (resampled) (BRATEa); and an
+investor with PTU, with reference point given by his
+wealth in the previous period (resampled) (BRATEb).
+The utility function parameters are fixed (	 ¼ 3,
+ ¼ 2.25 and þ ¼ 1). We vary the estimation
+period (p) in an out-of-sample analysis. The parameters are estimated using daily return observations
+of the past p days. We define the efficient portfolio
+and hold it for the next (e) months, then re-estimate
+the parameters and adjust the portfolio weights. To
+judge the financial performance of the strategies,
+11
+
+1 bps ¼ 0.01%.
+
+we compute their average return and empirical
+Sharpe ratios.
+Results
+The Sharpe ratios of the different strategies are
+presented in Table 2 for the World Index and for the
+total period from 1995 to 2007, considering p ¼ 6
+months, 1, 2 and 4 years, and e varying from 2
+months to 1 year. We are evaluating the different
+strategies for a US based international stock investor.
+The riskfree rate considered was the 3 month T-Bill.
+In general, we can state that the resampled models
+offered better results for a short selling constrained
+investor. It is an expected result as resampled models
+take into account the estimation risk, generating a
+more diversified portfolio which tends to outperform
+in out-of-sample studies. The highest Sharpe ratio
+was reached by the BRATEb model for an estimation
+period of 2 years and evaluation period of 1 year
+(0.465). On average resampled models increase the
+Sharpe ratio in around 0.10, when compared to the
+deterministic ones. Also, while the (R)STU investor
+seems to outperform (R)PTU, it does not happen
+with (R)CPT.
+If we consider just the total return obtained by each
+strategy, we find the results presented in Table 3. In
+this case, it is possible to infer an inefficiency cost
+related to the behavioural investors, who tend to
+underperform the results of the standard utility
+investor in around 10 bps.11 However if take into
+account the increment in risk (a risk adjusted measure
+like Shape ratio), the inefficiency disappears.
+Based on the previous results, we can state that
+resampled models tend to outperform traditional
+models. Also, there is no clear advantage of
+standard utility investors over behavioural prospect
+theory investors at least to the CPT investor.
+
+<-----Page 16----->J. L. B. Fernandes et al.
+
+734
+Table 3. Average total return
+STU
+
+PTU
+
+CPT
+
+RSTU
+
+BRATEa
+
+BRATEb
+
+6m–2m
+6m–6m
+1y–6m
+2y–6m
+4y–6m
+1y–1y
+2y–1y
+4y–1y
+
+4.302
+3.654
+6.670
+7.377
+1.065
+6.711
+7.247
+0.419
+
+3.781
+3.449
+6.211
+6.987
+2.083
+5.981
+6.935
+1.226
+
+3.822
+3.476
+6.211
+6.875
+2.083
+6.295
+6.966
+1.226
+
+4.447
+3.883
+6.632
+7.345
+1.064
+6.630
+7.289
+0.530
+
+3.935
+3.643
+6.238
+6.910
+1.992
+5.979
+7.068
+1.287
+
+3.976
+3.749
+6.242
+6.775
+1.993
+6.341
+7.194
+1.297
+
+Mean
+
+4.681
+
+4.582
+
+4.619
+
+4.727
+
+4.631
+
+4.696
+
+Note: This table presents the average total return of the efficient portfolio generated by each estimation model.
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+Table 4. Sharpe ratios
+
+Australia
+Austria
+Belgium
+Brazil
+Canada
+Chile
+Denmark
+Finland
+France
+Germany
+Ireland
+Italy
+Japan
+Norway
+Portugal
+South Africa
+South Korea
+Spain
+Sweden
+Switzerland
+Taiwan
+Thailand
+The Netherlands
+Turkey
+United Kingdom
+United States
+World Index
+
+STU
+
+PTU
+
+CPT
+
+RSTU
+
+BRATEa
+
+BRATEb
+
+0.309
+0.629
+0.977
+0.323
+0.490
+0.729
+0.914
+0.696
+0.778
+0.619
+0.615
+0.737
+0.041
+0.389
+0.751
+0.161
+0.101
+0.932
+0.634
+0.773
+0.001
+0.041
+0.657
+0.183
+0.411
+0.618
+0.439
+
+0.352
+0.578
+0.982
+0.326
+0.490
+0.726
+0.914
+0.685
+0.790
+0.614
+0.607
+0.769
+0.080
+0.368
+0.685
+0.206
+0.019
+0.949
+0.631
+0.720
+0.003
+0.012
+0.655
+0.189
+0.428
+0.624
+0.392
+
+0.353
+0.584
+0.973
+0.304
+0.490
+0.721
+0.914
+0.638
+0.755
+0.619
+0.636
+0.740
+0.042
+0.368
+0.728
+0.218
+0.035
+0.954
+0.631
+0.739
+0.000
+0.048
+0.657
+0.094
+0.423
+0.626
+0.392
+
+0.309
+0.618
+0.982
+0.335
+0.490
+0.735
+0.908
+0.691
+0.780
+0.619
+0.626
+0.733
+0.057
+0.402
+0.764
+0.167
+0.111
+0.930
+0.643
+0.773
+0.004
+0.055
+0.657
+0.185
+0.411
+0.615
+0.438
+
+0.346
+0.593
+0.986
+0.333
+0.488
+0.740
+0.910
+0.658
+0.785
+0.616
+0.607
+0.753
+0.051
+0.398
+0.716
+0.208
+0.066
+0.936
+0.634
+0.739
+0.005
+0.033
+0.654
+0.190
+0.429
+0.623
+0.400
+
+0.345
+0.597
+0.977
+0.317
+0.489
+0.736
+0.909
+0.665
+0.764
+0.616
+0.634
+0.726
+0.040
+0.398
+0.738
+0.224
+0.058
+0.936
+0.633
+0.748
+0.004
+0.018
+0.655
+0.103
+0.426
+0.616
+0.401
+
+Notes: This table presents the Sharpe ratio of the efficient portfolio generated considering an estimation period of
+1 year and evaluation period of 6 months (in each country’s currency). The Sharpe ratio is calculated by dividing
+the excess return observed by the SD.
+
+Levy and Levy (2004) reached a similar result,
+positing that the practical differences between prospect theory and traditional mean–variance theory
+are minor. In this sense, behavioural biases should
+not be moderated, nor should standard models be
+adapted to include behavioural biases.
+When we take into account each market separately, we find the results presented in Table 4
+
+(in each country’s currency). Considering each
+country individually, there’s no clear dominance
+of a single strategy. Resampled models tend to
+outperform traditional models in emerging markets
+(observe the results for Brazil, Chile, South Africa,
+South Korea, Taiwan, Thailand and Turkey), where
+the uncertainty over the risk/return estimation is
+higher.
+
+<-----Page 17----->Behaviour finance and estimation risk in stochastic portfolio optimization
+
+735
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+Table 5. Sharpe ratios
+
+Australia
+Austria
+Belgium
+Brazil
+Canada
+Chile
+Denmark
+Finland
+France
+Germany
+Ireland
+Italy
+Japan
+Norway
+Portugal
+South Africa
+South Korea
+Spain
+Sweden
+Switzerland
+Taiwan
+Thailand
+The Netherlands
+Turkey
+United Kingdom
+United States
+World Index
+
+STU
+
+PTU
+
+CPT
+
+RSTU
+
+BRATEa
+
+BRATEb
+
+0.589
+0.896
+0.904
+0.656
+0.421
+0.752
+0.781
+0.612
+0.654
+0.533
+0.654
+0.674
+0.195
+0.351
+0.666
+0.465
+0.226
+0.858
+0.562
+0.599
+0.090
+0.104
+0.645
+0.288
+0.625
+0.618
+0.439
+
+0.567
+1.015
+0.904
+0.653
+0.421
+0.757
+0.754
+0.596
+0.643
+0.509
+0.593
+0.614
+0.181
+0.387
+0.641
+0.441
+0.222
+0.899
+0.558
+0.531
+0.100
+0.040
+0.655
+0.250
+0.574
+0.624
+0.392
+
+0.564
+1.015
+0.904
+0.653
+0.421
+0.757
+0.820
+0.597
+0.625
+0.521
+0.600
+0.640
+0.194
+0.387
+0.641
+0.456
+0.189
+0.899
+0.566
+0.552
+0.086
+0.030
+0.656
+0.238
+0.605
+0.626
+0.392
+
+0.591
+0.882
+0.886
+0.669
+0.423
+0.774
+0.776
+0.613
+0.649
+0.537
+0.641
+0.681
+0.198
+0.361
+0.669
+0.479
+0.233
+0.862
+0.563
+0.596
+0.083
+0.114
+0.645
+0.296
+0.632
+0.612
+0.438
+
+0.595
+0.971
+0.886
+0.675
+0.420
+0.776
+0.773
+0.597
+0.625
+0.502
+0.620
+0.638
+0.175
+0.381
+0.647
+0.459
+0.230
+0.892
+0.554
+0.607
+0.095
+0.108
+0.653
+0.267
+0.597
+0.615
+0.400
+
+0.591
+0.977
+0.899
+0.668
+0.420
+0.775
+0.803
+0.593
+0.629
+0.516
+0.618
+0.664
+0.182
+0.380
+0.660
+0.460
+0.191
+0.894
+0.565
+0.612
+0.076
+0.096
+0.654
+0.246
+0.626
+0.612
+0.401
+
+Notes: This table presents the Sharpe ratio of the efficient portfolio generated considering an estimation period of
+1 year and evaluation period of 6 months (values in USD). The Sharpe ratio is calculated by dividing the excess
+return observed by the SD.
+
+In terms of the comparison between the standard
+and the prospect utility investor, generally the former
+does not outperform the latter, indicating no clear
+dominance of the traditional rational model. In this
+sense, there is no need for moderating the behavioural
+biases as described by prospect theory, as no extra
+financial efficiency is gained.
+Generally speaking, an interesting finding is the
+fact that all previous allocation models outperform
+the 100% risky strategy. The Sharpe ratio of the
+100% stock strategy was 0.383 while all resampled
+models reached, on average, a result above 0.509.12
+Finally, if we take into account the values in USD
+and so considering that the investor is facing
+foreign exchange risk, we reach the results presented
+in Table 5.
+Again, the results indicate a dominance of
+resampled models in emerging markets, while for
+developed countries, no clear dominance can be seen.
+The traditional rational model does not outperform
+the behavioural ones. Finally, all six dynamic models
+add value for the investor when compared to a 100%
+12
+
+stock invested individual. Observe that the Sharpe
+ratio found for the different markets (both in the
+country’s currency and in USD) are notably higher
+than the ones presented in Table 1.
+Summing up, resampled models, which take into
+account estimation risk, tend to outperform deterministic models, notably for emerging markets where
+the uncertainty of the expected return estimation is
+higher. Moreover, prospect theory utility investors do
+not reach worse returns if compared to the traditional
+rational ones, which indicates no need for addressing
+bias moderation in the portfolio allocation.
+
+III. Conclusions
+This study had two objectives: first to incorporate
+mental accounting, loss-aversion, asymmetric risktaking behaviour and probability weighting in portfolio optimization for individual investors; and second
+to take into account the estimation risk in the analysis.
+
+A t-test over the Sharpe ratio differences offered a significant result with a p-value of 0.0001.
+
+<-----Page 18----->J. L. B. Fernandes et al.
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+736
+Considering daily index stock data from 26
+countries over the period from 1995 to 2007, we
+empirically evaluated our model (BRATE) against
+the traditional Markowitz. Several estimation and
+evaluation periods were used and we also considered
+a foreign exchange hedged and an unhedged strategy.
+Our results support the use of BRATE as an
+alternative for defining optimal asset allocation and
+posit that a portfolio optimization model may be
+adapted to the individual biases implied in prospect
+theory. Behavioural biases do not seem to reduce
+efficiency when we consider a dynamic setting. This
+result is robust for different developed and emerging
+markets. Also, the previous optimization models add
+value for the individual investor when compared to a
+naive 100% risky strategy.
+As further extensions of the present research, we
+suggest the inclusion of several risky assets in the
+analysis. In this case, the issue of multiple mental
+accounting is a crucial issue to address the problem.
+An investor who evaluates every security in their own
+mental account will not necessarily view additional
+securities as redundant, which dramatically increases
+the complexity of the problem.
+We also leave unanswered the question of how
+individuals arrive at the underlying return distribution. That is the model above is a proposed
+mechanism for how individuals might transform a
+given probability distribution (assumed to be an
+accurate representation of the underlying distribution) into decision weights. Once we introduce
+uncertainty, it can induce individual biases, subjectivity and error. There is evidence that people display
+considerable overconfidence when asked to provide
+a subjective assessment of a probability distribution.13 Moreover, it is questionable whether the
+weightings provided by CPT truly reflect the process
+by which individuals evaluate continuous probability
+distributions.
+Another suggestion is an analysis if the Sharpe
+ratio is an appropriate performance measure when
+considering behavioural investors. Is the volatility
+capturing all the relevant risk for the individual
+behavioural investor? The consideration of estimation error in the Sharpe ratio estimation is also left
+for a further research.
+The agent who measures his gains and losses
+always relative to his actual wealth solves the same
+maximization problem each period, therefore selecting a fix-mix strategy. An open question remains, if a
+fix-mix strategy, where the investor set a fixed
+proportion of stocks and bonds for his portfolio,
+can be the cause of the disposition effect.
+13
+
+Acknowledgements
+The article has benefitted from discussions with
+Magnus Dahlquist and seminar participants at the
+Financial Management Association International
+(FMA) European conference in Stockholm, 2006.
+
+References
+Barberis, N. and Huang, M. (2001) Mental accounting, loss
+aversion, and individual stock returns, Journal of
+Finance, LVI, 1247–95.
+Barberis, N., Huang, M. and Santos, T. (2001) Prospect
+theory and asset prices, Quarterly Journal of
+Economics, CXVI, 1–53.
+Benartzi, S. and Thaler, R. (1995) Myopic loss aversion and
+the equity premium puzzle, Quarterly Journal of
+Economics, 110, 73–92.
+Black, F. and Litterman, R. (1992) Global portfolio
+optimization, Financial Analysts Journal, 48, 28–43.
+Blavatskyy, P. and Pogrebna, G. (2006) Myopic loss
+aversion revisited: the effect of probability distortions
+in choice under risk, IEW Working Paper No. 249.
+Available at SSRN: http://ssrn.com/abstract¼754644
+(accessed 14 December 2009).
+Bosch-Domènech, A. and Silvestre, J. (2003) Reflections on
+gains and losses: a 2  2  7 experiment, Journal of
+Risk and Uncertainty, 33, 217–35.
+Davies, G. and Satchell, S. (2004) Continuous cumulative
+prospect theory and individual asset allocation,
+Cambridge Working Papers in Economics No. 467.
+Dimmock, S. G. (2005) Loss-aversion and household
+portfolio choice. Available at SSRN: http://ssrn.com/
+abstract¼680783 (accessed 14 December 2009).
+Feldman, D. and Reisman, H. (2003) Simple construction
+of the efficient frontier, European Financial
+Management, 9, 251–9.
+Fernandes, J., Hasman, A. and Qeña, I. (2008a) Risk
+premium: insights over the threshold, Applied Financial
+Economics, 18, 41–59.
+Fernandes, J. L. B., Ornelas, J. R. H. and Takami, M.
+(2008b) Incorporating market and credit risk in
+stochastic portfolio optimization, ICFAI Journal of
+Financial Risk Management, 5, 7–28.
+Fernandes, J., Qeña, J. I., Tabak, B. and Ornelas, J. (2007)
+Professional portfolio managers, a setting for momentum strategies. Available at SSRN: http://ssrn.com/
+abstract¼961343 (accessed 14 December 2009).
+Giorgi, E., Hens, T. and Levy, H. (2004) Existence of
+CAPM equilibria with prospect theory preferences,
+National Centre of Competence in Research Financial
+Valuation and Risk Management, Working Paper
+No. 85, pp. 1–42.
+Gomes, F. J. (2003) Portfolio choice and trading volume
+with loss averse investors, EFA 0663. Available at
+SSRN: http://ssrn.com/abstract¼249569 (accessed 14
+December 2009).
+Harvey, C., Liechty, J. and Liechty, M. (2006) Bayes versus
+resampling: a rematch. Available at SSRN: http://
+ssrn.com/abstract¼898241 (accessed 14 December
+2009).
+
+Their subjective distribution is too tightly centred on their estimated mean.
+
+<-----Page 19----->Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+Behaviour finance and estimation risk in stochastic portfolio optimization
+
+737
+
+Horst, J., Roon, F. and Werker, B. (2002) Incorporating
+estimation risk in portfolio choice, Center Working
+Paper No. 65. Available at SSRN: http://ssrn.com/
+abstract¼244695 (accessed 14 December 2009).
+Jiao, W. (2003) Portfolio resampling and efficiency issues,
+Master thesis presented at Humboldt – University of
+Berlin.
+Jorion, P. (1986) Bayes-Stein estimation for portfolio
+analysis, The Journal of Financial and Quantitative
+Analysis, 21, 279–92.
+Kahneman, D. and Tversky, A. (1979) Prospect theory: an
+analysis of decision under risk, Econometrica, 47,
+263–92.
+Kempf, A., Kreuzberg, K. and Memmel, C. (2002) How to
+incorporate estimation risk, in Markowitz Optimization, Operations Research Proceedings 2001, Berlin.
+Kohli, J. (2005) An empirical analysis of resampled
+efficiency, Thesis submitted to the Faculty of the
+Worcester Polytechnic Institute.
+Levy, H. and Levy, M. (2004) Prospect theory and meanvariance analysis, Review of Financial Studies, 17,
+1015–41.
+Lo, A., Repin, D. and Steenbarger, B. (2005) Fear and
+greed in financial markets: a clinical study of daytraders, American Economic Review, 95, 352–9.
+Maenhout, P. (2004) Robust portfolio rules and asset
+pricing, Review of Financial Studies, 17, 325–62.
+Magi, A. (2005) Financial decision-making and portfolio
+choice under behavioural preferences: implications
+for the equity home bias puzzle. Available at SSRN:
+http://ssrn.com/abstract¼725521
+(accessed
+14
+December 2009).
+Markowitz, H. (1952) Portfolio selection, The Journal of
+Finance, 7, 77–91.
+Markowitz, H. and Usmen, N. (2003) Resampled frontiers
+versus diffuse Bayes: an experiment, Journal of
+Investment Management, 1, 9–25.
+Michaud, R. (1998) Efficient Asset Management, Harvard
+Business School Press, Boston, MA.
+Odean, T. (1998) Are investors reluctant to realize their
+losses, The Journal of Finance, 53, 1775–98.
+Pawley, M. (2005) Resampled mean-variance optimization
+and the dynamic nature of markets, paper presented at
+
+The Biennial 2005 Conference of the Economic Society
+of South Africa.
+Schmidt, U. and Zank, H. (2005) What is loss aversion?,
+The Journal of Risk and Uncertainty, 30, 157–67.
+Shefrin, H. (2005) A Behavioral Approach to Asset Pricing,
+Elsevier Academic Press, London, UK.
+Shefrin, H. and Statman, M. (1985) The disposition effect
+to sell winners too early and ride losers too long:
+theory and evidence, Journal of Finance, 40, 777–90.
+Sherer, B. (2002) Portfolio resampling: review and critique,
+Financial Analysts Journal, 58, 98–109.
+St-Amour, P. (2006) Benchmarks in aggregate household
+portfolios, Swiss Finance Institute Research Paper No.
+07–09. Available at SSRN: http://ssrn.com/abstract¼
+985256 (accessed 14 December 2009).
+Thaler, R. H. (1999) Mental accounting matters, Journal of
+Behavioral Decision Making, 12, 183–206.
+Thaler, R. H. and Johnson, E. J. (1990) Gambling with the
+house-money and trying to break even: the effects of
+prior outcomes on risky choice, Management Science,
+36, 643–60.
+Tversky, A. and Kahneman, D. (1992) Advances in
+prospect theory: cumulative representation of uncertainty, Journal of Risk and Uncertainty, 5, 297–323.
+Vlcek, M. (2006) Portfolio choice with loss aversion,
+asymmetric risk-taking behavior and segregation of
+riskless opportunities, Swiss Finance Institute,
+Research Paper Series No. 6–27.
+Weber, M. and Camerer, C. (1998) The disposition effect in
+securities trading: an experimental analysis, Journal of
+Economic Behavior and Organization, 33, 167–84.
+Weber, M. and Zuchel, H. (2005) How do prior outcomes
+affect risk attitude? Comparing escalation of commitment and house-money effect, Decision Analysis, 2,
+30–43.
+Wolf, M. (2006) Resampling versus shrinkage for benchmarked managers, Institute for Empirical Research in
+Economies, Working Paper Series No. 263, University
+of Zurich.
+Zimmer, C. and Niederhauser, B. (2003) Determining an
+efficient frontier in a stochastic moments setting,
+Departamento de Administração, Working Paper
+Series No. 03/010, Universidade de São Paulo.
+
+Appendix: Proofs of the Value Function
+Properties
+
+as
+
+We want to prove that the following property holds:
+@V
+40
+@
+The partial derivative of V (Equation 6) is given by
+(
+
+@V
+1 2
+	 ð0 Þ2
+2
+¼ 	e
+ e	½ð10 ÞRf þ0 
+@
+
+
+ 	
+
+ð1  0 ÞRf þ 0 
+ 	0 
+ 
+0 
+þ 	½ð10 ÞRf þ0 
+þ e
+
+
+	
+)
+ð1  0 ÞRf þ 0 
+ 	0 
+
+ 0
+0 
+
+	
+
+
+
+
+
+ð1  0 ÞRf þ 0 
+ 	½ð10 ÞRf þ0 
+ 	0 
+ 1
+ e
+0 
+þ þ e	½ð10 ÞRf þ0 
+
+
+	
+
+ð1  0 ÞRf þ 0 
+
+ 	0  4 0
+0 
+
+(i)
+
+so,
+@V
+40
+@
+Now, let us prove properties (ii) and (iii).
+(ii)
+
+@V
+¼ 0 for  ¼ 0 or  ¼ 1
+@
+
+8
+
+<-----Page 20----->J. L. B. Fernandes et al.
+
+738
+(iii)
+
+@V
+5 0 for s40
+@
+
+Downloaded By: [Canadian Research Knowledge Network] At: 14:08 4 March 2011
+
+The partial derivative of V (Equation 6) is given by
+(
+
+2
+@V
+1 2
+¼ 	2 0 e2	 ð0 Þ  e	ðð10 ÞRf þ0 Þ
+@
+
+ 
+
+ð1  0 ÞRf þ 0 
+ 	0 
+ 
+0 
+þ 	ð½ð10 ÞRf þ0 Þ
+ e
+
+
+	
+
+ð1  0 ÞRf þ 0 
+ 	0 
+
+0 
+
+)
+
+þ 0 ½ð1  0 ÞRf þ 0 
+ 	ð   Þ
+ 0
+0 
+It follows
+@ Vð, 0Þ ¼ 0 using that (1) ¼ 0, (1) ¼ 1 and
+0 (1) ¼ 0.
+1 2
+
+2
+
+consider f ð, Þ ¼ 01  1 e2	 ð0 Þ 
+	½ð10 ÞRf þ0 
+e
+@ Vð, Þ for s40. We show that
+f(, )50.
+Suppose that for some * and s(*)40,
+f(, s(*))40.
+Since
+f(, )
+is
+continuous,
+lim!0 f ð, Þ ¼ þ e2	bð10 ÞRf þ0 c 5 0
+and
+lim!1 f ð, Þ ¼ 0 for all 40, we can assume
+without loss of generality that s(*)40 is a local
+maxima of f(*, ). We compute the partial derivative
+of f with respect to s. We have
+
+
+0
+ð1  0 ÞRf þ 0 
+0
+þ 	0 
+@ f ð, Þ ¼ 
+0 
+ 	
+
+
+
+  ð1  0 ÞRf þ 0  ð0 Þ2  	
+	
+
+
+
+þ þ ð1  0 ÞRf þ 0  ð0 Þ2 þ 	
+	
+
+2
+ 	1 ð  þ Þ ð1  0 ÞRf þ 0  ð0 Þ4
+!
+
+2
+2
+ 	  ð0 Þ
+0
+Let
+
+us
+
+Let  ¼ (0s)2 then
+ 
+
+2
+  þ 	
+@ f ð, Þ ¼ 0 ,  
+ð1  0 ÞRf þ 0  
+	
+	
+
+   þ
+þ ð þ þ Þ ð1  0 ÞRf þ 0  þ
+	
+
+
+
+¼ 0w
+,  2 f0, 	 ðÞg
+Here
+	 ðÞ ¼
+
+	
+
+
+	 ð1  0 ÞRf þ 0  ð þ þ Þ þ ð  þ Þ
+:
+	
+
+2
+ð  þ Þ ð1  0 ÞRf þ 0 
+
+Moreover, for  4 	 ðÞ, @ f ð, Þ 5 0 and for
+055*(), @ f ð, Þ 4 0. It follows that  	 ðÞ ¼
+	 ðÞ1=2
+4 0 is the unique maximum/minimum of f(, )
+0
+and since for s4s*(), @ f ð, Þ 4 0 and for
+05s5s*(), @ f ð, Þ 5 0,  	 ðÞ is a minimum.
+This contradicts the existence of * and s(*) local
+maxima of f(*, ) such that f(*, s(*))40. Hence,
+f(, )50 and therefore @ Vð, Þ 5 0.
+Also,
+lim @ f ð, Þ ¼ 0 for  4 0 since
+
+!1
+
+0
+
+1
+2 2
+1
+ð0 Þe2ð0 Þ 	 e	½ð10 ÞRf þ0 
+B
+C
+
+A
+lim @
+½ð10 ÞRf þ0 
+!1
+ 
+ 	ð0 Þ
+
+0
+
+1
+2 2
+1
+ð0 Þe2ð0 Þ 	 e	½ð10 ÞRf þ0 
+1
+B
+C
+
+ A ¼ pﬃﬃﬃﬃﬃﬃ
+¼ lim @
+½ð10 ÞRf þ0 
+!1
+	 2
+
+ 	ð0 Þ
+
+and
+0
+
+lim 
+
+!1
+
+	
+
+ð1  0 ÞRf þ 0 
+ð0 Þ
+
+
+
+
+1
+¼ pﬃﬃﬃﬃﬃﬃ
+2
+
+

@@ -1,0 +1,561 @@
+<-----Page 0----->An Evolutionary Threshold Logistic Regression Model for
+Business Failures Forecast
+Ping-Chen Lin1 Po-Chang Ko2, Chun-Chung Yu2
+1
+Institute of Finance and Information
+2
+Department of Information Management
+1,2
+National Kaohsiung University of Applied Sciences
+Abstract
+A more precise business failure forecast helps
+to provide important judgment principles to
+decision-makers. The logistic regression (LR)
+model is a common evaluation model employed in
+prediction of business failures. Fewer researches
+focus on the threshold selection, which will
+influence the final predicting performance. Besides,
+it is very challenging to discover critical
+information from these statements, although
+financial statements reflect a certain degree of
+firm’s business activities. However, selecting
+predictor variables depends on their linear
+searching characteristic, if applying traditional
+statistical methods, such as stepwise and etc.
+Genetic algorithm (GA) has been shown to be able
+to select the variable set with population diversity
+and to perform efficient search in large space. In
+this paper, we combine both LR and GA to form a
+new efficient business failure forecasting
+mechanism which maximizes the forecasting
+accuracy with minimum critical predictor variable
+and optimal threshold. From our experimental
+results, this approach effectively helps improving
+the forecasting accuracy of traditional LR.
+
+1. Introduction
+Business failures means a business has
+insolvency with loss to debtors (bank) and no
+longer continue to trade until the financial problem
+had been solved. The bank will also incur bad debt
+crisis when loaner occurs business failures. Large
+number of business failures even lead to the
+national financial crisis.
+Logistic regression model is a common
+evaluation model used to measure credit risk.
+Westgaard and Wijst [2] use LR to predict default
+probabilities of bank credit portfolio. Laitinen and
+Laitinen [13] applied the Taylor’s expansion to
+approximate the parameters of LR which unable to
+improve the prediction accuracy. Ko and Lin [6]
+propose a hybrid evolutionary approach to forecast
+financial distress which allows extracting the
+
+critical financial variables. However, fewer
+researches are interested in the optimization the
+threshold of the LR model. The trial and error or
+0.5 are commonly used approaches to determine
+threshold.
+Determining suitable predictor variables set
+for logistic regression (LR) is another one of
+critical task. Most of the traditional extracting
+methodologies use linear approach essentially,
+such as stepwise method [12], factor analysis [11]
+and etc., to select predictor variables. Both
+variables and threshold selection would influence
+the forecast accuracy of the evaluation model
+[2][3][4][5][6].
+GA introduced by Holland in 1975[14], is a
+well-known efficient search method in large space.
+It’s proven to be suitable for feature selection
+problems in past studies [15][16][17]. We
+therefore combine the advantages of both logistic
+regression and genetic algorithm to establish a new
+efficient forecasting mechanism which maximizes
+the forecasting accuracy based on the optimized
+threshold.
+The rest of this paper is organized as follows.
+Our proposed approach and the functionalities of
+each process are introduced in Section 2. The
+experiments are implemented and proposed in
+Section 3. We also compare the acquired results
+with other methodology. Finally, conclusions are
+made to our approach about business failure
+forecast.
+
+2. Threshold Logistic Regression model
+In this article, an efficient Threshold Logistic
+Regression (TLR) model with nonlinear searching
+capability introduced by GA shown in Figure 1 is
+proposed to predict more accurate business failure.
+All of the predictor variables and optimized
+threshold would be encoded into a chromosome
+(individuals) in the TLR model. Each individual in
+the newer population will be decoded and fed to
+logistic regression model to evaluate its forecast
+accuracy, which is denoted as the fitness value.
+
+0-7695-2882-1/07 $25.00 ©2007 IEEE
+
+<-----Page 1----->The TLR approach generates the next-generation
+population from the parent population according to
+the fitness of chromosomes.
+
+accuracy ratio (Gfit) is illustrated in Equation (2). 
+is an Exclusive-OR operator which returns 1 if ŷ i
+and yi are different, or returns 0 otherwise.
+
+1
+
+G fit
+
+\
+N
+
+, where \
+
+N
+
+¦ ( yˆ
+
+i
+
+ yi )
+
+(2)
+
+i 1
+
+Table 1 Initial collected variables sets
+Variables
+x1
+x2
+x3
+x4
+x5
+x6
+x7
+x8
+x9
+x10
+x11
+x12
+x13
+x14
+x15
+x16
+x17
+x18
+x19
+x20
+x21
+x22
+x23
+x24
+x25
+
+Figure 1 The TLR architecture
+
+2.1 Encoding and Fitness function
+Each individual is encoded into 35 bits string
+shown in Figure 2. The first 25 bits (bi, i=1,2,…,25)
+represent the presence (1) or absence (0) of the
+corresponding financial ratio (xi), such as ROA(C),
+employee fee, and etc., as illustrated in Table 1.
+Let X={ x1, x2, …, x25,}. The remaining 10 bits (bi,
+i=26,…,35) refer to the fraction of thresholdʳ Tʿʳ
+which is derived from Equation (1).
+35
+
+T
+
+¦ bk 
+
+k 26
+
+b1
+
+b2
+
+Ξ..
+
+2 k 26
+210  1
+b25
+
+(1)
+
+b26
+
+ΞΞ.
+
+b35
+
+minimal as possible. Let ŷ i denote the predicted
+output through our TLR model, yi represent the
+real outcome of the i-th record, and N be the
+number of our target companies. The forecast
+
+ROA(C)-EBIDA%
+ROA(B)-EBITDA%
+ROE(B)-Net Income ExDisposal
+Operating Income %
+Net Income%- ExDisposal
+Operating Expenses %
+Employee Fee %
+Cash Flow Operating/Current Liabilities %
+EPS-Net Income
+Real. Gross Profit%
+Year over Year%-Net Income ExDisposal
+Year over Year %-Return on Total Assets
+Year over Year %-Total Equity
+Cash Reinvestment Ratio %
+Acid Test
+Liabilities /Total Assets %
+Interest-Bearing Debt/Shareholders' Equity
+Operation Income Per Employee
+Total Assets
+Net Income
+Times Interest Earning
+Equity Turnover
+Days Inventory Outstanding
+Days Receivables Outstanding
+Days Payables Outstanding
+
+2.2 Logistic Regression Model
+The selected predictor variables set X̂ ={ x̂1 ,
+x̂2 ,… , x̂m } in each chromosome are extracted from
+original X, whose bi=1. Let v={v1, v2, …, vm}
+denote the values of corresponding financial ratios
+in X̂ . Assume the relation of yi* and vi is a
+linear combination shown as below, where yi*
+and Hi refer to the predicted output and error item
+for i-th sample, respectively.
+
+Figure 2 Encoding format of individual
+Because better predicting accuracy of
+business failures based on optimized threshold is
+preferred, the number of wrong prediction (\) is
+
+Meaning
+
+yi*
+
+If
+
+E 0,i  E1v1,i    E m vm,i  H i
+
+(3)
+
+yi* is larger than threshold (I), it means
+
+“business fails” ( ŷi =1), otherwise business failure
+does not occur ( ŷi =0) shown in Equation (5). The
+relation of I and T is illustrated in Equation (5).
+
+<-----Page 2----->yˆ i
+
+T
+
+­1, yi* ! I
+®
+¯0, otherwise
+
+1
+I
+1  e I
+
+§1 ·
+ ln¨  1¸
+©T ¹
+
+(4)
+(5)
+
+From Equation (3) and (4), we have
+p( yˆ i
+
+1vi )
+
+p>E 0,i  E1v1,i    E m vm,i  H i  ! I @
+
+p>H i ! I  ( E 0,i  E1v1,i    E m vm,i )@
+
+(6)
+
+Assume the cumulative distribution function (CDF)
+of Hi is a logistic distribution. That is,
+
+PH  H i 
+
+1
+1  e H i
+
+generations
+
+100
+
+Populations
+
+30
+
+chromosome length
+
+35
+
+Selection method
+crossover rate
+Mutation rate
+
+Tournament
+0.9
+0.005
+
+Equation (11) is calculated from our
+experiment via our TLR model, whose threshold
+converges to 0.5244.
+yˆ i
+
+(7)
+
+Because the logistic distribution is a symmetric
+distribution, Equation (8) is derived from Equation
+(6) and (7)
+
+(-21.4748 )  (-1.3053)x3  0.2944 x5
+
+ (-0.3209)x8  4.1713x9  0.5028x14 
+0.2679 x17  (-0.0100)x18  (-0.0010)x19
+
+(11)
+
+ Hi
+
+Finally, the Maximum Likelihood Estimation
+(MLE) is used to estimate the parameters (E0,
+E1, …, Em) of logistic regression model.
+
+To manifest the superiority of our approach,
+we compare our results with Logistic Regression
+based on the Stepwise method (LRS). The
+forecasting accuracy of one quarter before failure
+in the testing set is shown in Table 4. It is worth
+noting that using TLR model to select the critical
+financial ratios and optimize its threshold will
+produce better forecasting accuracies than using
+traditional LRS model. The number of wrong
+predictionʳ ӧ (ratio) of TLR and LRS are 16
+(19.75 %) and 18 (20.99%), and the accuracy ratio
+of TLR and LRS are 80.25% and 77.78%,
+respectively.
+
+3. Experimental Results
+
+Table 4 Forecasting accuracies of TLR and LRs.
+
+p( yˆ i
+
+1 v i ) p>H i  ( E 0,i  E1v1,i    E m vm,i )  I @
+
+(8)
+
+Similarly,
+p( yˆ i
+
+0 v i ) 1  p>H i  ( E 0,i  E1v1,i    E m vm,i )  I @
+
+(9)
+
+Let P  yˆ i i | x i  pi , where i=0, 1. Then,
+P  yˆ i 
+
+1 yi
+
+piyi 1  pi 
+
+(10)
+
+There are 243 companies are selected to be
+our analysis targets after eliminating some samples
+without sufficient effective financial values since
+1998 as shown in Table 2. These selected
+companies are further divided into a
+failures/non-failures set and training/testing set.
+The ratio of failures to non-failures is near to 3:1
+[1]. The detailed financial data of each company
+are from Taiwan Economic Journal Data Bank
+(TEJ). The parameters of GA are illustrated in
+Table 3. To emphasize the capability of integrating
+logistic regression, MLE and GA functions in our
+implementations, all of the simulation programs
+are written in Java programming language.
+Table 2 Distribution of target companies
+failures non-failures Total
+Training set
+47
+115
+162
+Testing set
+34
+47
+81
+Total
+81
+162
+243
+Table 3 The parameters of GA
+
+Model
+
+TLR
+
+LRS
+
+Type I error (ratio)
+
+10 (12.35%)
+
+11᧤13.58 %᧥
+
+Type II error
+ӧ (ratio)
+(Gfit)
+Threshold
+
+6 (7.41%)
+16 (19.75 %)
+80.25 %
+0.4932
+
+7᧤8.64 %᧥
+18 (20.99%)
+77.78 %
+0.5
+
+Accuracy
+
+4. Conclusion
+The more important to forecasting of business
+failures is induced by the global economic
+environment radical changing. It would provide
+much more superior forecasting performance to
+integrate the computational intelligence techniques
+and conventional statistical methods. The
+evolutionary algorithms especially provide
+efficient optimization in the problem domain with
+a non-linear searching capability. In this article, we
+introduce a business failure forecasting approach
+(TLR), which extracts efficient critical financial
+ratio set and optimizes threshold for logistic
+
+<-----Page 3----->regression based on genetic algorithm. Fewer
+researches focus on the threshold selection of
+logistic regression in the past. In our experiments,
+optimizing the threshold will influence the final
+predicting performance. In addition, it is
+inconvenient for decision makers if considering
+too many financial ratios simultaneously. Our
+proposed TLR model effectively extracts minimal
+critical financial ratios set and achieves better
+forecasting accuracy than using conventional
+statistical techniques – the integration of Stepwise
+and logistic regression.
+
+Reference
+[1] H.
+Simon,
+Neural
+Networks:
+A
+Comprehensive Foundation, Prentice-Hall,
+Englewood Cliffs, NJ, 1999.
+[2] Sjur Westgaard, Nico van der Wijst, Default
+probabilities in a corporate bank portfolio: A
+logistic model approach, European Journal of
+Operational Reseach 135 (2001) 338-349.
+[3] Zhongsheng Hua, Yu Wang, Xiaoyan Xu, Bin
+Zhang, Liang Liang, Predicting corporate
+financial distress based on integration of
+support vector machine and logistic regression,
+Expert Systems with Applications 33 (2007)
+434Ω440
+[4] Sveinn Vidar Gudmundsson, Airline failure
+and distress prediction: a comparison of
+quantitative
+and
+qualitative
+models,
+Transportation Research Part E 35 (1999)
+155±182
+[5] R. Dean Foreman, A logistic analysis of
+bankruptcy
+within
+the
+US
+local
+telecommunications industry, Journal of
+Economics and Business 55 (2003) 135–166
+[6] Po-Chang
+Ko,
+Ping-Chen
+Lin
+,An
+evolution-based approach with modularized
+evaluations to forecast financial distress,
+Knowledge-Based Systems 19 (2006) 84–91
+[7] Hosmer, David W., Scott Taber, & Stanley
+Lemeshow, The importance of assessing the
+fit of logistic regression models: A case study.
+American Journal of Public Health. , Vol. 81
+No.21:1630-1635Δ1991.
+[8] Tony Van Gestel, Bart Baesens, Peter Van
+Dijcke, Joao Garcia, Johan A.K. Suykens, Jan
+Vanthienen, A process model to develop an
+internal rating system: Sovereign credit ratings,
+Decision Support Systems 42 (2006)
+1131–1151
+[9] R.L. Wilson, R. Sharda, Bankruptcy prediction
+using neural networks, Decision Support
+
+Systems 11 (1994) 545–557.
+[10]Michael Doumpos, Constantin Zopounidis,
+Assessing financial risks using a multicriteria
+sorting procedure: the case of country risk
+assessment, Omega 29 (2001) 97̈́109
+[11]E.B. Deakin, A discriminant analysis of
+predictors of business failure,Journal of
+Accounting Research (1972) 167–179.
+[12]J.M. Donate, J.C. Schryver, C.C. Hinkel, R.L.
+Schmoyer Jr., M.R. Leuze,N.W. Grandy,
+Mining multi-dimensional data for decision
+support, Future Generation Computer Systems
+15 (1999) 433–441
+[13]Laitinen, E. K.; T. Laitinen, “Bankruptcy
+prediction: Application of the in logistic
+regression”, International Review of Financial
+Analysis Volume: 9, Issue: 4, Winter, 2000,
+pp. 327-349.
+[14]Holland, J., Adaptation in Natural and
+Artificial Systems: An Introductory Analysis
+with Applications to Biology, Control and
+Artificial
+Intelligence.
+(University
+of
+Michigan Press, 1975.
+[15]Jain, A., D. Zongker, Feature selection:
+evaluation, application, and small sample
+performance, IEEE Transaction on Pattern
+Analysis and Machine Intelligence (1997)
+153–158.
+[16]Liu, H., R. Setiono, A probabilistic approach
+to feature selection: a filter solution,
+Proceedings of 13th International Conference
+on Machine Learning, 1996, pp. 319–327.
+[17]Emmanouilidis, C., A. Hunter, J. MacIntyre, C.
+Cox, Multiple-criteria genetic algorithms for
+feature selection in neurofuzzy modeling,
+International Joint Conference on Neural
+Networks, 1999, pp. 4387–4392.
+
+

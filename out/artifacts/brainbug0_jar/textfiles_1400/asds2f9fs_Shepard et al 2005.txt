@@ -1,0 +1,1515 @@
+<-----Page 0----->European Journal of Operational Research 163 (2005) 545–564
+www.elsevier.com/locate/dsw
+
+O.R. Applications
+
+Allocation of attention within venture capital ﬁrms
+Dean A. Shepherd
+a
+
+a,*
+,
+
+Michael J. Armstrong b, Moren Levesque
+
+c,1
+
+Leeds School of Business, University of Colorado at Boulder, Campus Box 419, Boulder, CO 80309-0419, USA
+b
+Sprott School of Business, Carleton University, Ottawa, ON, Canada K1S 5B6
+c
+Weatherhead School of Management, Case Western Reserve University, Cleveland, OH 44106-7235, USA
+Received 6 May 2002; accepted 5 November 2003
+Available online 28 January 2004
+
+Abstract
+In this article we use a simple queuing network to model the process through which entrepreneurs receive venture
+capital funding. Our model focuses in particular on the allocation of venture capitalistsÕ attention between pre- and
+post-investment activities, and on the degree of selectivity in deciding which ventures to fund. Based upon this model we
+develop expressions for the ﬁnancial performance of the venture capital process, both overall and also from the perspectives of the entrepreneurs, investors, managers, and venture capitalists involved. For these ﬁnancial measures we
+derive the optimal allocation of attention between pre- and post-investment activities, and the optimal proportion of
+venture proposals to accept. Further analysis shows how these diﬀerent ﬁnancial measures and optimal values respond
+to changes in the business climate. More interestingly, our analysis also shows where and to what extent the diﬀerent
+parties could be expected to agree or disagree on how best to manage the process.
+Ó 2003 Elsevier B.V. All rights reserved.
+Keywords: Human resources; Venture capital; Productivity; Allocation decision
+
+1. Introduction
+Cooperative relationships between venture capitalists (VCs) and entrepreneurs are necessary for the
+success of VC backed companies (Sapienza and Korsgaard, 1996; Steier and Greenwood, 1995; Cable and
+Shane, 1997). Timmons and Bygrave (1986) propose that the cooperative relationship between a VC and
+entrepreneur is more important to the success of the business than the capital itself. While it appears that
+co-operation provides signiﬁcant beneﬁts, it does not characterise all VC–entrepreneur relationships
+(Sahlman, 1990). There is a degree of uncertainty that the VC will pursue his or her own self interests rather
+than comply with the requirements of the contract for venture capital, i.e., VCs face agency risk (adapted
+
+*
+
+Corresponding author. Tel.: +1-303-7355423; fax: +1-303-4925962.
+E-mail addresses: dean.shepherd@colorado.edu (D.A. Shepherd), michael_armstrong@carleton.ca (M.J. Armstrong), moren.levesque@cwru.edu (M. Levesque).
+1
+Tel.: +1-216-368-2117; fax: +1-216-368-4785.
+0377-2217/$ - see front matter Ó 2003 Elsevier B.V. All rights reserved.
+doi:10.1016/j.ejor.2003.11.006
+
+<-----Page 1----->546
+
+D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+from Fiet (1995)). This agency perspective oﬀers a description of the risks a principal (the VC) faces when
+dealing with an agent (the entrepreneur) and actions that the VC can take to ‘‘force’’ the entrepreneur to
+co-operate. For example, the VC can introduce penalties for defection including a dilution of the entrepreneurÕs equity in the venture (Sahlman, 1990), replacement of the entrepreneur with professional management (Barney et al., 1996; Hoﬀman and Blakely, 1987) and through compensation structures (Sahlman,
+1990).
+There has been less research, however, about the incentives for VCs to pursue opportunistic behaviour at
+the expense of co-operation (and at the expense of the entrepreneur). In this case the VC can be considered
+the agent and the entrepreneur the principal (Cable and Shane, 1997). For example, VCs may act
+opportunistically to harvest a venture (and obtain their proﬁts) rather than reinvest in the ventureÕs future
+products and development (Sahlman, 1990), they may pressure the entrepreneur to seek short-term proﬁts
+(Gomez-Mejia et al., 1990) even to the detriment of long-term proﬁtability and/or the VCs may underinvest
+in the venture (Cable and Shane, 1997; Gorman and Sahlman, 1989; Bygrave and Timmons, 1991). For
+another example, VCs often face situations where they are ﬂooded with entrepreneursÕ requests for
+ﬁnancing (in the form of lengthy business plans) and simultaneously need to assist current portfolio ventures in improving performance. The more active VCs spend 35 hours per month per venture assisting the
+management team, while less active ﬁrms spend less than 7 hours per month per investment (Elango et al.,
+1995).
+Therefore, it appears that VCs may opportunistically manage the venture capital process in a way that
+advantages them and disadvantages the entrepreneur. Furthermore, entrepreneurs are not the only
+stakeholders of the venture capital process and the way that it is managed likely impacts the desirability of
+the outcome for these other stakeholder groups. For example, scholars have relatively ignored the relationship between VC ﬁrms and their funds providers (Robbie et al., 1997).
+The important question is how should time, eﬀort and/or resources within the VC ﬁrm be allocated? The
+optimal allocation likely depends on the perspective taken. What is optimal for the VC might not be
+optimal for the entrepreneur or the limited partners supplying the fundÕs capital to the VC. Therefore,
+rather than focus on the control mechanisms that a VC can use to ensure the entrepreneur acts in a cooperative manner, this paper investigates the way the VC process is managed and its impact on the
+desirability of the outcome, as perceived by the diﬀerent stakeholder groups.
+The above discussion leads to this paperÕs two key research questions. What is the allocation of a VC
+ﬁrmÕs attention (time, talent, and treasure) between pre-investment activities and post-investment activities
+that is considered optimal across all stakeholders? How and under what conditions is the allocation of
+attention that is optimal for the process overall (i.e. is best for the common good) diﬀerent from what might
+be preferred by the various stakeholders (entrepreneurs, investors, managers and employees)? We investigate these important questions by using a queuing network model. A queuing network is a system of
+queues (waiting lines) where the departures from one queue become the arrivals at another. Queuing
+networks are useful models of systems that involve some form of customer ﬂow (e.g., of venture proposals)
+amongst various locations (e.g., stages in the venture capital process) where the inherent variability of the
+ﬂow can lead to line-ups and delays at a given location (e.g., an overﬂowing stack of proposals to review).
+Despite the usefulness of this approach to the investigation of the venture capital process it has yet to be
+used for this purpose, though it is often used to evaluate systems of machines in a factory (e.g., Papadopoulos et al., 1993) or the operations of health care service providers (e.g., Bretthauer and Cote, 1998).
+By addressing these important issues facing VC ﬁrms, the present article makes a number of contributions to the literature. First, a VC ﬁrm (as all ﬁrms) has a number of stakeholders each with diﬀerent
+expectations and aspirations for the ﬁrm. This article provides a deeper understanding of the trade-oﬀs
+amongst these stakeholder groups. Second, research on the VC process has made a signiﬁcant contribution
+to the literature, in particular Tyebjee and Bruno (1984), although such process research is limited in
+number. This article builds on these primarily descriptive studies, to provide a decision model with
+
+<-----Page 2----->D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+547
+
+prescriptive beneﬁts. Such beneﬁts are likely to have important practical implications for the managers of
+VC ﬁrms and may also beneﬁt other entrepreneurial ﬁnancing ﬁrms (e.g., the Small Business Development
+Corporation).
+Third, the allocation of attention is an important issue as individual VCs have limited time and energy to
+allocate among the various tasks of the venture capital process. To VC ﬁrms, VCs represent a costly resource to acquire and maintain (i.e., a substantial ﬁxed cost for the VC ﬁrm) and represent the basis of a VC
+ﬁrmÕs competitive advantage. Thus, VCsÕ time is valuable resource that needs to be eﬀectively managed.
+This paper provides prescriptions on how the process can be managed to provide a higher proﬁt for the VC
+ﬁrm. But the support of stakeholders is also important and this paper provides some insight into the
+possible reactions of diﬀerent stakeholder groups depending on how the process has been managed.
+The remainder of the paper proceeds as follows. We begin by reviewing the existing research on the VC
+process. We then describe our assumptions about the venture capital process in terms of operations and
+ﬁnancing. Based upon these assumptions, we formulate models of ﬁnancial performance for the VC process
+from the diﬀerent viewpoints of the investors, managers, and VC employees. We analyse these diﬀerent
+measures of performance to investigate how they would vary in response to changing business conditions,
+and more interestingly how the diﬀerent entities involved would likely agree or disagree regarding the
+management of the process. We conclude with a discussion of the limitations of the model and suggest
+possible avenues for future research. Appendix A contains the details of our mathematical analysis.
+
+2. Venture capital process
+The VC process can be thought of as a series of activities or stages that each new venture works through
+from the time the venture is ﬁrst proposed, up until the time when the VC ﬁrm successfully exits from the
+venture and takes its proﬁt. For example, Tyebjee and Bruno (1984) proposed a model of the venture
+capital process with ﬁve such stages: deal origination, deal screening, deal evaluation, deal structuring and
+post-investment. Because of our particular focus in this paper, we use a broader classiﬁcation with only two
+categories of VC activities that encapsulate the ﬁve stages proposed above.
+The ﬁrst category, ‘‘pre-investment activities’’, refers to all VC tasks up to and including the signing of
+an investment contract: soliciting new venture proposals for submission to the VC ﬁrm, determining
+whether these proposals meet the ﬁrmÕs broad screening criteria, conducting due diligence (more extensive
+research to determine the likely success of the venture), and then negotiating and structuring a relationship
+with the entrepreneur. It should be noted that in the 1980s, most proposals that the VC ﬁrm received were
+referrals from third parties including other VCs and that VCs spent little time in searching for deals––the
+task was rather passive (Tyebjee and Bruno, 1984). However, more recently the industry can be characterised by greater competition between VC ﬁrms increasing the need for VC ﬁrms to be more proactive in
+this task, i.e., allocate more time to it (cf. Sweeting, 1991). VCs diﬀer in the screening criteria they use to
+select ventures including type of industry, industry stage of development, geographic location, and size of
+investment required. These are detailed in lists of VCs, for example PrattÕs Guide to Venture Capital
+Sources (1998). There is considerable research on how VCs use the information gathered from due diligence
+to make their assessment of likely success; e.g., VCs typically use decision criteria such as entrepreneur/team
+characteristics, product/service characteristics, and market and ﬁnancial characteristics (Zacharakis and
+Meyer, 1998). Eventually the relationship between the VC ﬁrm and the entrepreneur needs to be developed
+and formalised (i.e., the terms of the venture capital contract need to be negotiated and agreed upon) in
+order for the venture investment, and hence the ‘‘pre-investment activities’’, to be completed.
+The second category, ‘‘post-investment activities’’, includes all actions by the VC ﬁrm after the initial
+investment deal has been signed. In general this involves providing guidance (and possibly additional
+funding) to help improve the performance of the venture. One of the most important beneﬁts arising from a
+
+<-----Page 3----->548
+
+D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+relationship with a VC is access to their extensive network. This is often utilised to ﬁnd and recruit top
+quality management, to ﬁnd other co-investors for immediate or follow up investment, to introduce the
+venture to important service providers such as specialised accountants, and to help ﬁnd and develop
+necessary strategic alliances (Sandberg, 1986). Furthermore, VCs often serve as sounding board for
+management ideas, and are a valuable source of strategic and operational advice (Lerner, 1994, 1995;
+Sweeting, 1991; Tyebjee and Bruno, 1984).
+Ultimately, the VCÕs ﬁnal action is to exit from the venture. The VC can exit from the venture using one
+of ﬁve vehicles: (1) an IPO exist where after an initial public oﬀering the VC sells the ﬁrmÕs shares in the
+venture to the market (this may occur some period after the IPO), (2) an acquisition exist where the VC,
+and all other owners, sell the entire venture to a third party, (3) a secondary sale where the VC ﬁrms sells its
+share in the venture to a third party but for this vehicle the entrepreneur and other owners do not sell their
+shares, (4) a buyback exit where the VC ﬁrm sells it shares in the venture to the entrepreneur and/or the
+venture itself, and (5) a write-oﬀ exit, which typically involves the failure of the venture (Cumming and
+MacIntosh, 2003).
+3. Queuing network model and assumptions
+3.1. VC process––Operations
+We begin by constructing a model of the operation of the VC process for a generic VC ﬁrm. For this
+purpose we have chosen to use an open queuing network with three nodes (labelled N1, N2, and N3; see
+Fig. 1) through which ventures ﬂow. Node N1 represents the involvement of the proposed venture and a
+VC ﬁrm in ‘‘pre-investment activities’’; similarly, N3 represents the involvement of a funded venture and a
+VC ﬁrm in ‘‘post-investment activities’’. Node N2 represents the development eﬀorts of a funded venture
+during periods that do not require the responsible VC ﬁrm to be actively involved.
+Entrepreneurs with venture ideas that require ﬁnancing submit their proposals on an unscheduled (i.e.,
+random) basis to the VC ﬁrm for consideration; on average, we suppose that k venture proposals arrive at
+node N1 (‘‘evaluation of new ventures’’) each year. We will phrase our discussion in terms of years, but this
+choice of time units is unimportant (one could just as well use, e.g., months). The amount of time it takes a
+VC to perform all of the pre-investment activities (e.g., screening, evaluation, structuring) varies from one
+venture to another; we shall assume that on average the VC ﬁrm can deal with sa proposals per year. We
+use s to represent the proportion of VC attention (time, eﬀort, etc.) devoted to pre-investment activities (so s
+takes values between 0 and 1), and a as the average number of ventures the VCs could handle per year if
+they devoted all of their attention to this category of activity. Note that depending on the rate at which
+proposals arrive and the amount of attention devoted to working with them, a given proposal may have to
+λ pnf
+proposals
+
+λ
+
+N1
+Evaluation
+of New
+Ventures
+
+λ (1-p)
+
+rejections
+
+λp
+
+N2
+Ventures in
+Development
+
+N3
+Assistance
+to Funded
+Ventures
+
+λ pf
+λ p(1-l-n)f
+failures
+
+Fig. 1. Venture capital process as an open queuing network.
+
+exit
+
+λ plf
+
+<-----Page 4----->D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+549
+
+wait (queued-up in the VCÕs in-basket) before being looked at by the VC. We assume that the average
+capacity sa is larger than the average total proposal submission rate k (otherwise work could pile-up
+without end). Given these assumptions, we can model N1 as a single server queue with service rate sa. Once
+the VCs have ﬁnished processing a venture proposal at N1, the proposal has either successfully passed the
+screening and evaluation (with probability p) or it has failed (with probability 1  p). Ventures, which pass,
+receive funding and proceed to N2; ventures, which fail, are rejected by the VC and leave the system.
+Ventures at node N2 (‘‘ventures in development’’) are in the ﬁrmÕs funded portfolio and are undergoing
+development. This represents a period of time where the entrepreneurs do not require a signiﬁcant assistance from the VC, i.e., entrepreneurs have their funding and are working to ﬁne-tune, produce, and sell
+their new product or service. We assume that a venture spends an average amount of time c in development
+before again requiring the VCÕs attention. Because no signiﬁcant VC assistance is required here, there is
+never a line-up of idle ventures; they are all busy with development. We can therefore model N2 as an
+inﬁnite server queue with service rate 1=c.
+Eventually a venture will again require the attention of a VC at the ﬁrm, for any of several possible
+reasons. The entrepreneur may simply require some management advice or other non-monetary assistance
+from the VC. The venture may be succeeding, so that the VCÕs attention is required to manage the exit
+process (IPO or trade sale); on the other hand, the venture may be failing, so that the VC may need to
+become involved in salvage eﬀorts. It is also possible that the venture may have spent all of its previous
+rounds of capital and needs additional funding, or whatever the reason, at this point the venture will leave
+this node N2 and proceed to N3.
+Ventures at N3 (‘‘assistance to funded ventures’’) are still in the funded portfolio, but are either receiving
+assistance from the VC or are waiting their turn to do so; in either case, we suppose that their development
+eﬀorts are temporarily on hold. We assume that the VCs can handle tb ventures per year at this node. We let
+t indicate the proportion of VC attention devoted to post-investment activities (e.g., providing advice,
+arranging extra funding, managing the exit process), and b indicate the average number of ventures the VCs
+could deal with in a year if they devoted all of their attention to post-investment work. Note that s þ t ¼ 1.
+Like N1, we can also model N3 as a single server queue with service rate tb; we again assume that the
+average work capacity tb is larger than the average workload (which we later show to be kpf ). A venture
+which completes service at N3 either continues with its development eﬀorts (with probability n), achieves a
+successful exit (with probability l), or fails outright (with probability m); note that l þ m þ n ¼ 1.
+A venture that leaves N3 either due to a successful exit or because it has failed is no longer in the funded
+portfolio but rather has left the system. In contrast, a venture that leaves N3 to resume development returns
+to N2 and remains in the portfolio. The returning venture then carries on with its development eﬀorts until
+it once again needs a VCÕs intervention. We refer to this return path as a ‘‘feedback loop’’, as a venture may
+cycle many times between development eﬀorts (at N2) and obtaining assistance (at N3). For later calculations concerning this feedback of repeating ventures, it will be convenient to deﬁne a feedback factor
+f ¼ 1=ð1  nÞ. This f is the average number of times a funded venture engages in development eﬀorts at
+N2: one initial visit, plus (f  1) repeat visits. Due to this feedback eﬀect, at any point in time only some of
+the ventures at each of N2 and N3 are there for the ﬁrst time. A smaller number are there for their ﬁrst
+repeat visit, and still smaller numbers are there for their second, third, etc. repeat visits.
+Deﬁned in this way our model of the VC process forms a simple Jackson open queuing network with
+three nodes. This type of queuing network has a steady state distribution in product form, which allows the
+analysis of each node and the ﬂow between nodes to be handled in a relatively simple manner (e.g., Gelenbe
+and Pujolle, 1987). The average ﬂows on each arc of the network (in number of ventures per year) are
+derived in Appendix A and are shown in Fig. 1. These ﬂow rates can in turn be used to derive the average
+number of ventures present at each node in the systemÕs steady state (see Appendix A for details). The
+expected number of ventures undergoing or awaiting VC pre-investment processing at N1 is V1 ¼ k=ðsa  k)
+while the expected total number of ventures undergoing or awaiting VC post-investment assistance at N3 is
+
+<-----Page 5----->550
+
+D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+V3 ¼ kpf =ðtb  kpf ). The expected number of ventures undergoing development (at N2) is given by
+V2 ¼ kpfc; of this total, kpc are there for the ﬁrst time, while the remaining kpcðf  1Þ are ‘‘repeaters’’, i.e.,
+this is their second or subsequent period of development eﬀort.
+It is worth emphasising that these expressions for venture ﬂows and status are all long-run averages; the
+actual number of ventures moving from N2 to N3 for example may vary greatly from year to year due to
+variation in arrival and service times. It is this variation (or randomness) that causes line-ups and delays at
+N1 and N3, in spite of the fact that each of these nodes has suﬃcient processing capacity to handle its
+average workload.
+Although there is a fair amount of detail in this operating model of the VC ﬁrm and process, it is still of
+course a major simpliﬁcation of reality. For example, we have not made any distinction amongst senior
+VCs (partners in the ﬁrm), junior VCs (associates), and support staﬀ (such as administrative assistants) in
+regards to their productivity in working with ventures. Nor have we considered whether individual VCs
+specialise in just one type of task (e.g., screening new venture proposals) or are instead generalists who deal
+with the entire process. We simply consider the VCs in aggregate, and assume that the ﬁrm is able to adjust
+its overall allocation of attention in some manner (by re-assignment of VCs, training and development,
+hiring and ﬁring, etc.).
+3.2. VC process––Revenues and expenditures
+We assume that each venture that successfully completes the pre-investment activities (N1) and commences development (at N2) receives an initial lump sum capital investment of an average of I dollars from
+the VC investment fund. Similarly, each time a venture recommences development (at N2) after receiving
+assistance from the VC during post-investment (N3) it receives an additional capital investment of an
+average of J dollars; we expect that typically I P J P 0. Note that this follow-on investment can occur
+many times (since a venture may visit N2 and N3 many times) and that J is simply the average amount; thus
+ventures that merely require management advice would not receive any additional money at this point.
+A venture that successfully completes its development exits the portfolio (from N3). At this time the
+venture is assumed to have attained a considerable value and could be sold to provide an average capital
+revenue (the ‘‘proceeds from harvest’’) of RðpÞ. Portion rRðpÞ is allotted to the VC fund, while the remaining
+amount ð1  rÞRðpÞ is retained by the entrepreneur, where proportion r 2 ½0; 1. For modelling purposes we
+treat these as lump sums received at time of exit, since a VCÕs return comes primarily from the selling of
+equity in the venture; in some cases they may represent the present value of a future revenue stream (e.g., if
+the entrepreneur retains her equity stake rather than selling). Here we assume that the average revenue per
+exit is a function of the quality controls that the VCs use when they perform their pre-investment activities.
+All else being equal, we would expect that the higher the proportion p of proposals that are accepted, the
+lower the average quality of these ventures and thus the lower the average revenue from their eventual exit.
+To model this, we assume that the average revenue function RðpÞ is decreasing in p at an accelerating rate,
+0
+00
+so RðpÞ 6 0 and RðpÞ 6 0. This revenue covers the investments in the venture and other associated costs as
+well as providing a proﬁt. Ventures that fail at N3 also leave the portfolio but provide zero revenue. Note
+that here and in the rest of this paper for convenience we assume that all payments are measured on an
+after-tax basis.
+In addition to these investment revenues and expenditures, the VC process involves a number of other
+payments amongst participants. The investment fund (i.e., the limited partners or investors) pays the VC
+ﬁrm (1) a yearly management fee of proportion z 2 ½0; 1 of the fundÕs assets, and (2) a performance bonus
+of proportion x 2 ½0; 1 of that part of the fundÕs annual return that exceeds a set target rate (the ‘‘hurdle
+rate’’) of k P 0. For example, the fund may be set up so that any returns in excess of 40% per year (k ¼ 0:40)
+are shared, with 1/4 of this excess going to the VC ﬁrm (x ¼ 0:25) and the remaining 3/4 going to the
+investors (1  x ¼ 0:75).
+
+<-----Page 6----->D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+551
+
+In turn, the ﬁrm must pay its VC employees a total of H dollars per year in salaries and beneﬁts. In
+addition to this base salary cost, the ﬁrm rewards the VCs with a commission of proportion y 2 ½0; x of that
+part of the fundÕs annual return that exceeds the set target rate, with x > y. Beyond paying its VCs, we
+assume that the ﬁrm also must pay a total of G dollars per year in overhead expenses; this could cover such
+things as rent, wages for a receptionist or accounting staﬀ, etc.
+3.3. VC process––major actors
+Although there may be many individuals involved in the VC process, herein we consider four main
+groups: investors, managers, employees, and entrepreneurs. Investors supply the funds to invest in ventures;
+depending on how the ﬁrm is structured, these may be limited partners in the ﬁrm or they may be purchasers of mutual fund units. By managers, we mean the general partners (if the VC ﬁrm is a partnership),
+or the major shareholders (if the ﬁrm is a corporation); these are the people who make the major decisions
+and beneﬁt from any residual proﬁt or loss by the company. By employees we mean the venture capitalists
+who actually do the pre- and post-investment work with the ventures; they may be junior associates or
+employees of the ﬁrm. In some cases, individual investors (often referred to as Business Angels) ﬁll all three
+roles simultaneously: they provide the funds, manage the investment, and advise the ventures (cf. Harrison
+et al., 1997). Entrepreneurs of course supply the initial venture ideas and subsequently develop them using
+the venture funding. In the next section we consider what the objectives of these diﬀerent groups might be,
+and how these objectives are aﬀected by the operation of the VC process.
+
+4. Financial objectives
+In this section we combine the above ﬁnancial assumptions with our queuing network model of the VC
+process to construct several ﬁnancial models of the VC process. The reader may ﬁnd it helpful to refer to
+Table 1 for a summary of the notation introduced.
+4.1. Investors
+4.1.1. Goals
+The investors provide the funds to invest in ventures in exchange for a future return to their investment.
+They thus would clearly be interested in the performance of these venture investments, but presumably
+would be interested in the rest of the VC ﬁrm (the managers and employees) only to the extent that the ﬁrm
+is managing these investments on their behalf. We therefore shall assume that the goal of the investors is to
+maximise their return on investment (ROI) from the venture portfolio (Dean and Giglierano, 1990;
+Zacharakis and Meyer, 1998). ROI is calculated as an annual percentage ratio by dividing the portfolioÕs
+annual income by the amount of money invested in that portfolio.
+4.1.2. Process
+To derive the average amount invested in the portfolio, we need to know when money enters the
+portfolio and becomes available for investment. It is clear that funds have to be available at least some
+amount of time before they can be provided to a venture; thus any investment portfolio will consist partly
+of cash (awaiting investment) and partly of actual venture investments. This would be especially true for
+those VC ﬁrms that run their portfolios as mutual funds; cash could arrive (from the sale of fund units) and
+then sit idle for some time until it is invested. Rather than trying to directly model this fund-raising process
+and its time lags, we will simply choose a reasonable point in time as an approximation. We assume herein
+that money to invest in a venture becomes available (at least on average) at the moment that a venture
+
+<-----Page 7----->552
+
+D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+Table 1
+Eﬀect of changing parameters on ﬁnancial models
+Item
+
+k
+p
+t
+s
+a
+b
+c
+G
+H
+I
+J
+Rð
+Þ
+r
+x
+y
+z
+l
+n
+k
+
+Brief description
+
+Proposal arrival rate
+Proposal acceptance probability
+VC attention: post-investment
+VC attention: pre-investment
+VC productivity: pre-investment
+VC productivity: post-investment
+Development time
+Firm overhead costs
+Employee salary
+Initial investment
+Follow-on investment
+Exit revenue function
+Exit revenue proportion to investors
+Performance bonus paid to ﬁrm
+Performance commission for
+employees
+Management fee paid to ﬁrm
+Probability of successful exit
+Probability of continued development
+Performance target rate of return
+
+How does a change in one parameter aﬀect each of the following?
+Investor ROI
+
+Manager
+earnings
+
+Employee
+pay
+
+Entrepreneur
+wait
+
+)
+)
+Quasi-concave
+Quasi-concave
++
++
+)
+ne
+ne
+)
+)
++
++
+)
+ne
+
+Varies
+Varies
+Varies1
+Varies1
+)
+)
+Varies
+)
+)
+Varies
+Varies
++
++
++
+)
+
+Varies
+Concave
+Concave
+Concave
++
++
+)
+ne
++
+)
+)
++
++
+ne
++
+
++
++
+Convex
+Convex
+)
+)
++
+ne
+ne
+ne
+ne
+ne
+ne
+ne
+ne
+
+)
++
+Varies
++
+
++
++
+Varies
+)
+
+ne
++
+Varies
+)
+
+ne
+)
++
+ne
+
+(+) Objective is increasing in that parameter, ()) objective is decreasing in that parameter, ne: no eﬀect, objective is independent of that
+parameter, varies: eﬀect on objective varies depending on values of other parameters and varies1 : concave if z < kðx  yÞ, convex if
+z > kðx  yÞ.
+
+proposal ﬁrst arrives at the VC ﬁrm (i.e. at N1), even though the actual investment will not occur until after
+the venture successfully completes all pre-investment activities and enters the funded portfolio (at N2).
+Having made this assumption about investment timing, we can calculate the average total portfolio
+investment by multiplying the average number of funded ventures at each node (or ‘‘to-be-funded’’ ventures, in the case of N1) by the average amount invested in each one. This leads to an expression for the size
+of the investment portfolio (in dollars). Formally,
+Investment ¼ I½pV1 þ V2 þ V3  þ J ðf  1Þ½V2 þ V3 
+
+
+
+
+kp
+kpf
+kpf
+¼I
+þ ckpf þ
+þ J ðf  1Þ ckpf þ
+:
+sa  k
+tb  kpf
+tb  kpf
+
+ð1Þ
+ð2Þ
+
+The portfolioÕs average gross income is the annual revenue from successful venture exits less the costs of
+the original and follow-up investments made. We can write this as
+Gross Inc: ¼ kp½lfrRðpÞ  I  Jnf :
+
+ð3Þ
+
+If the venture portfolio is proﬁtable on average, then this expression will of course be positive; we shall
+assume this to be true in our later analysis.
+We divide this gross income by the size of the investment portfolio and then subtract the performance
+bonus and the management fee to get investorÕs ROI.
+
+
+Gross Inc:
+Gross Inc:
+ð1  xÞ½lfrRðpÞ  I  Jnf 
+h
+i þ xk  z:
+x
+ROI ¼
+k z¼ 
+ð4Þ
+
+f
+1
+Investment
+Investment
+½I sak
+þ ½I þ Jnf  cf þ tbkpf
+
+<-----Page 8----->D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+553
+
+The behaviour of ROI with respect to changes in business conditions (i.e., individual parameters) is
+mostly straightforward; Table 1 lists a summary of sensitivity results for this and other ﬁnancial expressions
+that we derive later. For example, we can see that ROI will increase if the VCs become more eﬃcient at preinvestment activities (i.e., if a increases) but it will decrease if more venture proposals are submitted (i.e., if k
+increases).
+4.1.3. Maximization of returns
+More interesting is the question of how investors will want the VC process to be managed so as to
+maximise their ROI. In other words, from their point of view what is the best allocation of attention t and
+acceptance proportion p?
+Maximisation of investor’s ROI with respect to attention allocation t: ROI is quasi-concave in t, so there
+exists a unique optimal allocation of VC attention to post-investment activities tinv such that
+I
+
+a
+2
+
+ha  atinv  ki
+
+¼ ðI þ Jnf Þ
+
+bf
+htinv b  kpf i
+
+2
+
+:
+
+ð5Þ
+
+Maximisation of investor’s ROI with respect to acceptance proportion p: ROI is decreasing in p, so
+investors would prefer to have as small a proportion of ventures accepted as possible, i.e. pinv ! 0.
+Since the VC employees have only a ﬁxed amount of attention (time, energy, etc.) to provide, the
+investorÕs ROI can be maximised primarily by choosing the best allocation of attention between preinvestment activities (at N1, via variable s) and post-investment activities (at N3, via variable t). Recall that
+since s ¼ ð1  tÞ, by determining the best value of t we implicitly determine the corresponding value for s.
+The ﬁrst result above shows that investors would like to see a ‘‘balanced’’ allocation of attention by the VCs
+between pre- and post-investment activities. This moderate approach allows for the fastest possible ﬂow of
+ventures through the process, thus reducing the amount of capital tied-up in the investment pool at any one
+time. The second result indicates that investors would prefer to have only the highest quality ventures to
+invest in; our model implicitly assumes that investors are free to put their money elsewhere if desired, so
+they have no incentive to settle for anything but ‘‘the very best’’.
+
+4.2. Management
+By management, we mean the senior members of the ﬁrm who would share any residual proﬁts. If the
+VC ﬁrm is structured as a partnership, then these would be the partners of the ﬁrm; in a corporate setting,
+these could instead include major shareholders and any senior managers who receive a signiﬁcant portion
+of their remuneration through proﬁt sharing or stock options. We assume that management is interested in
+maximising the ﬁrmÕs annual earnings; this consists of the management fee plus the performance bonus,
+minus the overhead costs G and the salaries H of the VC employees as well as their commission from the
+performance bonus. This gives the following expression.
+
+
+Gross Inc:
+Earnings ¼ z½Investment  G  H þ ðx  yÞ
+ k ½Investment
+ð6Þ
+Investment
+	 
+
+
+
+
+1
+f
+þ ½I þ Jnf  cf þ
+GH
+¼ zkp ½I
+sa  k
+tb  kpf
+þ ðx  yÞkp½lfrRðpÞ  I  Jnf 
+	 
+
+
+
+
+1
+f
+þ ½I þ Jnf  cf þ
+:
+ ðx  yÞkkp ½I
+sa  k
+tb  kpf
+
+ð7Þ
+
+<-----Page 9----->554
+
+D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+As with the investors, we are interested in knowing managementÕs view of an ‘‘optimal’’ VC process, i.e.,
+one that would maximise their own gains.
+Maximisation of manager’s Earnings with respect to attention allocation t: the behaviour of Earnings
+depends on the relative size of management fees versus performance bonuses.
+(a) If z > kðx  yÞ i.e. management fees are greater than performance bonuses on average, then Earnings will
+be convex in t, with the worst possible value being t ¼ tinv as this would minimise Earnings. Instead management would prefer to have t either as low as possible or as high as possible, i.e. either tmgr:lo ! ða  kÞ=a
+or tmgr:hi ! minfkpf =b; 1g.
+(b) If z < kðx  yÞ i.e. management fees are smaller than performance bonuses on average, then Earnings will
+be concave in t, with a unique maximum tmgr:bonus ¼ tinv .
+Maximisation of manager’s Earnings with respect to acceptance proportion p:
+(a) Earnings from management fees are convex and increasing in p, which would encourage managers to accept as large a proportion of ventures as possible.
+(b) Earnings from performance bonuses are concave in p, which would encourage managers to seek some ‘‘balanced’’ proportion of ventures to accept, i.e. pmgr:bonus ¼ p:
+( 
+#)
+
+
+ "
+2
+1
+f
+p½I
+þ
+Jnf
+kf
+½lfrRðpÞ  I  Jnf þ lfrpR0 ðpÞ  k ½I
+þ ½I þ Jnf  cf þ
+þ
+¼ 0:
+sa  k
+tb  kpf
+htb  kpf i2
+ð8Þ
+(c) The behaviour of Earnings overall will depend on the relative extent to which the ﬁrm’s revenue is composed
+of management fees rather than performance bonuses, and on the relative availability of high quality ventures that is reﬂected in the slope of RðpÞ. The acceptance proportion pmgr that would be optimal overall for
+managers would be at least as great as pmgr:bonus .
+These results are driven by the trade-oﬀ implied by the two forms of revenue that management receives.
+A high acceptance rate coupled with fast pre-investment service will provide a large pool of investments
+upon which to charge management fees; on the other hand, a moderate acceptance rate and a balanced
+allocation of attention will provide a faster ﬂow of successful exits and thereby earn the ﬁrm higher performance bonuses.
+4.3. Employees
+By employees, we mean the venture capitalists who actually deal with ventures during the pre- and postinvestment activities but who would typically not share in any residual proﬁts of the ﬁrm. If the ﬁrm is
+structured as a partnership, then these would be the associates of the ﬁrm (i.e., the professional workers
+who had not yet been admitted into the partnership). We assume that the employees as a group are
+interested in maximising their annual Pay, which is a mixture of ﬁxed salaries and beneﬁts plus the variable
+commissions taken from the ﬁrmÕs performance bonus. This leads to the following expression.
+
+
+Gross Inc:
+Pay ¼ H þ y
+ k Investment
+Investment
+	 
+
+
+
+
+1
+f
+¼ H þ ykp½lfrRðpÞ  I  Jnf   ykkp ½I
+þ ½I þ Jnf  cf þ
+:
+ð9Þ
+sa  k
+tb  kpf
+The following results show how employees could be expected to view the operation of the VC process.
+Maximisation of VC employee’s Pay with respect to attention allocation t: Pay is concave in t with a unique
+optimal value temp ¼ tinv .
+
+<-----Page 10----->D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+555
+
+Maximisation of VC employee’s Pay with respect to acceptance proportion p: Pay is concave in p, so there
+exists a unique optimum acceptance proportion pemp ¼ p such that
+	
+
+
+
+
+I
+f
+pkf 2
+0
+þ
+lfrRðpÞ  plfrR ðpÞ  I  Jnf  k
+þ ½I þ Jnf  cf þ
+¼ 0:
+ð10Þ
+sa  k
+tb  kpf tb  kpf
+The second result reﬂects a trade-oﬀ for the employee: accepting more ventures leads to more eventual
+exits and so more commission checks; but accepting fewer ventures means the venture quality is higher and
+so the average commission check is larger. The optimal acceptance proportion provides a balance between
+these two inﬂuences.
+4.4. Entrepreneurs
+We assume that the objective of the entrepreneur is to take the venture to a successful exit as quickly as
+possible, for both ﬁnancial and personal reasons. The entrepreneur will likely seek a short wait because they
+are motivated to ‘‘launch their dream’’ and for it to reach it full potential. For example, Cova and Svanfeldt
+(1993) propose that entrepreneurs ‘‘. . . create a product that ﬂows from their own internal desires and
+needs. They create primarily to express subjective conceptions of beauty, emotion, or some aesthetic ideal.’’
+(p. 297).
+On the ﬁnancial side, an entrepreneur will presumably want to maximise return on equity (ROE), which
+is a function of the amount of the entrepreneurÕs equity stake, the capital revenue eventually obtained, and
+the time (or wait) in years from when the investment is made until when the revenue is received. Thus
+
+1=W
+Revenue
+ROE ¼
+ 1:
+ð11Þ
+Equity
+The W th root takes account of compounding interest (i.e., the time value of money); e.g., if the venture
+takes two years to complete, we calculate the square root of the term in square brackets above to get the %
+rate of annual return. As previously mentioned, in our model an entrepreneur receives her capital revenue
+(either in cash or marketable shares) at the same time as the VC exits, in amount ð1  rÞRðpÞ. We also
+assume that the entrepreneurÕs equity investment in the venture, in terms of both ﬁnancial equity and
+‘‘sweat equity’’, either remains the same or increases if the VC process drags on in time. Thus to maximise
+ROE the entrepreneur needs to minimise the waiting time from when the entrepreneur ﬁrst applies for
+funding until the venture successfully exits.
+The entrepreneurÕs average total wait W is the sum of the waits at each node, each times the frequency
+that this node is visited; i.e. W ¼ W1 þ fW2 þ fW3 . Therefore,
+W ¼
+
+1
+f
+þ fc þ
+:
+sa  k
+tb  kpf
+
+ð12Þ
+
+The following results show how entrepreneurs could be expected to view the operation of the VC
+process.
+Minimisation of the entrepreneur’s wait W with respect to attention allocation t:W is convex with respect to
+t, so there is a unique optimal allocation of attention tent to post-investment activities such that
+a
+ha  atent  ki
+
+2
+
+¼
+
+bf
+2
+
+htent b  kpf i
+
+:
+
+ð13Þ
+
+Furthermore this preferred allocation is less than that preferred by the investors, i.e. tent < tinv .
+The entrepreneur would prefer somewhat less attention to companies already in the portfolio, and more
+attention on the initial screening process. This is because the entrepreneur has to endure the full delay
+
+<-----Page 11----->556
+
+D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+during screening, while the investor is less concerned; the investor has not taken a stake in the venture yet,
+but the entrepreneur has.
+The above results assume we take the point of view of an entrepreneur at the beginning of the process,
+that is, one who has not yet received funding. Once ventures get past the screening stage (N1) and into the
+portfolio, then those entrepreneurs would naturally prefer t ¼ 1 (i.e., 100% of VC attention focussed on
+ventures in the portfolio) because they do not care about any other venture proposals which apply afterwards. In fact they would prefer less competition for VC attention. For similar reasons we do not consider
+an entrepreneurÕs preference for acceptance proportion p; in principle, an entrepreneur would want p ¼ 1
+for their own venture and p ¼ 0 for all others, so that no other ventures would enter the portfolio and
+compete for the VCÕs attention.
+
+5. Comparison of preferences
+In the previous section, we determined how each of the various entities involved in the VC process would
+view decisions about allocation of attention (i.e., the best value for t) and acceptance control for venture
+proposals (i.e., the best value of p). In this section, we compare the extent to which they could be expected
+to agree or disagree with each other.
+5.1. The allocation of VC attention
+Let us consider ﬁrst the allocation of VC attention (as described by t) between pre- and post-investment
+activities. In the previous section we found that both investors and employees would prefer to see a
+‘‘balanced’’ allocation of attention tinv ¼ temp that would lead to fewer delays in the ﬂow of ventures through
+the portfolio (from investment to harvest). In contrast entrepreneurs could be expected to prefer somewhat
+less attention on post-investment activities and more on pre-investment, since they would be more concerned about the total time until harvest (i.e., they worry more about initial delays during screening).
+ManagementÕs preferences are less consistent, as they largely depend on the relative balance
+between management fees and performance bonuses that they receive. We can summarise these views as
+follows.
+Relative preferences for allocation of VC attention to post-investment activities (as opposed to preinvestment activities): for a given VC process, investors and employees share the same preferences for allocation, and both would prefer a higher allocation than would entrepreneurs. Managers whose earnings consist
+mostly of performance bonuses would prefer the same allocation as investors, but those who rely mostly on
+management fees will prefer either a much lower allocation or a much higher allocation than any of the other
+parties. Thus we have
+tmgr:lo < tent < temp ¼ tinv ¼ tmgr:bonus < tmgr:hi :
+
+ð14Þ
+
+Therefore, we could expect investors, entrepreneurs and managers to have diverging opinions on what
+constitutes ‘‘best practice’’ for allocation of attention in the VC process. The strength of this disagreement
+will of course vary depending on the particular business situation; one aspect of this is illustrated in Table 2.
+For example, an increase in management fee percentage z paid to the ﬁrm will cause managers to become
+more strongly opposed to allocating attention according to tinv (since they would have even more to gain if
+they could increase the portfolio size) and thus increase investor-management tensions. On the other hand,
+an increase in exit bonuses x paid to the ﬁrm will cause the investors to become less concerned about using
+allocation tinv (a higher bonus means less revenue leftover for them, so less to be concerned about) and so
+reduce tensions.
+
+<-----Page 12----->D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+557
+
+Table 2
+Eﬀect of changing parameters on investor/manager disagreement
+Item
+
+Brief parameter description
+
+Investor preference in
+favor of tinv
+
+Manager preference
+against tinv
+
+k
+p
+a
+b
+c
+I
+J
+Rð
+Þ
+r
+x
+z
+l
+n
+k
+y
+
+Proposal arrival rate
+Proposal acceptance probability
+VC productivity: pre-investment
+VC productivity: post-investment
+Development time
+Initial investment
+Follow-on investment
+Exit revenue function
+Exit revenue proportion to investors
+Performance bonus paid to ﬁrm
+Management fee paid to ﬁrm
+Probability of successful exit
+Probability of continued development
+Target rate for fund performance
+Commission paid to VC employees
+
++
+)
++
++
+)
+)
+)
++
++
+)
+ne
++
+Varies
+ne
+ne
+
++
++
+ne
+ne
+ne
+ne
+ne
+ne
+ne
+)
++
+ne
+ne
+)
++
+
+For managers whose earnings consist more of management fees than of performance bonuses. (+) Strength of preference (like/dislike)
+is increasing in that parameter, ()) strength of preference (like/dislike) is decreasing in that parameter, ne: no eﬀect, strength of
+preference is independent of that parameter. Note: for parameters not shown, there is also no eﬀect.
+
+We can also refer back to Table 1 in this regard. For example, an increase in either the overall revenue
+function Rð
+Þ (i.e. such that exit revenues are higher for all values of acceptance proportion p) or the
+probability of successful exit l would lead to improvements in everyoneÕs ﬁnances.
+5.2. The proportion of venture proposals to accept for funding
+We showed that for the employees there is an optimal proportion of proposals to accept pemp which gives
+the best balance between accepting too many and too few proposals. In contrast to this, we found that
+investors would prefer to accept only the best ventures for funding so that their money could earn the
+highest possible return, but that managers would typically like to accept a large proportion of proposals so
+as to create a large portfolio upon which to charge management fees. The following result summarises the
+relative preferences of these diﬀerent groups.
+Relative preferences for venture proposal acceptance a.k.a. ‘‘quality control standards’’: for a given VC
+process, investors would prefer a lower venture acceptance proportion than would employees, and employees
+would prefer a lower proportion than would managers. Thus we have
+pinv < pemp < pmgr :
+
+ð15Þ
+
+Above we look at the diﬀerent parties involved in the VC process to determine their underlying preferences; one might think of these as the opening oﬀers that each party would be inclined to make at the
+beginning of negotiations over how the fund should run. Any ﬁnal agreement amongst the parties must
+necessarily be a compromise of these diﬀerent (and sometimes opposing) preferences; for example, management clearly cannot expect to get everything it wants, as there would then be no motivation for investors
+to invest in the fund or for VC employees to work for the ﬁrm. One of the important implications of this
+model is to point out that these parties may rationally disagree on the operation of the process, sometimes
+in ways that are not obvious.
+
+<-----Page 13----->558
+
+D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+6. Discussion
+6.1. Summary of results
+In this article we examined the venture capital process by which new ventures obtain investor funding via
+venture capital ﬁrms. To do this, we constructed a simple Jackson queuing network with two key management parameters: the allocation of VC attention between pre- and post-investment involvement with the
+ventures; and the proportion of venture proposals that would be accepted for funding. Using this queuing
+network along with a number of simple assumptions concerning the ﬁnancial aspects of the VC process, we
+developed a set of expressions to describe the ﬁnancial performance of the process. These expressions allowed us to consider how to best manage the VC process in order to optimise the process overall from the
+diﬀering viewpoints of entrepreneurs, investors, VC ﬁrm managers, and VC workers. Our sensitivity
+analysis showed (in Tables 1 and 2) how these ‘‘best practice’’ results would be aﬀected by changes in the
+business environment. More interestingly, our comparative analysis showed how the diﬀerent parties could
+rationally be expected to disagree in several respects over what would in fact constitute ‘‘best practice’’.
+With regards to the allocation of VC attention between pre- and post-investment activities, we found that
+while investors would typically support a ‘‘balanced’’ allocation that would also be in the best interests of
+the process overall, the managers of the VC ﬁrm would likely be diametrically opposed to this allocation.
+With regards to the acceptance of proposed ventures to fund, we found that each of these groups would
+have a diﬀerent view of how selective the process ought to be.
+Overall this paperÕs comparative results suggest that there may be signiﬁcant potential for disagreements
+about the proper operation of the VC process, as each entity tries to maximise its own rewards at the
+possible expense of each other and of the ‘‘greater good’’. We should point out here that we are not
+claiming that any of these three groups will always focus solely on its own performance objective and
+completely disregard the needs of the other groups. For example, managers would recognise that investors
+must receive an ‘‘adequate’’ ROI, otherwise they would stop investing, and employees know that the VC
+ﬁrm has to be proﬁtable enough to survive in order for them to retain their jobs; thus there would inevitably
+be at least some willingness to negotiate and compromise on decisions about attention allocation and
+acceptance proportion. What we do think our results show is how the motivation and initial bargaining
+positions for each group would rationally diﬀer during any such negotiations.
+6.2. Limitations
+In our ﬁnancial modelling, for each of the parties involved we deliberately chose a single ﬁnancial
+measure (out of many possible ones) to represent that groupÕs motivation. Our modelÕs results therefore
+could be criticised as being mere artefacts of the particular choices we made. We would reply that although
+our choices of measures are to some extent arbitrary, they are nonetheless reasonable and are at least
+representative of the way these parties actually evaluate performance. Thus we believe that while our
+conclusions may not be deﬁnitive, they would at least be indicative of actual behaviour.
+To keep the model tractable and relatively easy-to-follow, we have ignored some of the higher-order
+interdependencies amongst parameters. For example, while our revenue function R does take into account
+the selectivity of the VC ﬁrm in accepting proposals, it does not directly consider the time lag between the
+moment of investment and the moment of successful exit, or the amount invested in any particular venture.
+We would argue that this sort of simpliﬁcation is a necessary feature of modelling work (one cannot include
+everything) and that we have included the most important relationships; thus we believe that our model
+simpliﬁcation does not detract from the value of the analysis.
+We also note that there are several technical assumptions inherent in our queuing model that we have
+made in order to keep the mathematics relatively simple. For example, we have assumed that the work done
+
+<-----Page 14----->D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+559
+
+by the VCs with the ventures can be appropriately represented by single server Markovian queues; while
+these are rarely exact representations of reality, they are often approximately correct and are a standard assumption in the absence of detailed data (see for example Cooper (1990) or Papadopoulos et al.
+(1993)).
+
+7. Conclusion
+There are a number of tasks that venture capitalists must perform well within the venture capital process
+in order to maximise the proﬁtability of the process. In this article we have proposed a simple model of the
+venture capital process that gives us some insight as to how the process might best be managed and why
+there may be disagreements about what ‘‘best’’ actually means. Each factor that requires consideration in
+our model is readily operationalised and therefore the model proposed here can (and hopefully will) provide
+a basis for empirical testing.
+Our work complements previous studies which have tended to concentrate more on what VCs do at each
+stage of the process (thus describing the elements of current practices), rather than on how these stages ﬁt
+together and should best be managed (thus suggesting the development of better practices). These
+descriptive studies have made a substantial contribution to the literature, but we believe that more research
+is required into the means of improving the performance of the venture capital process. We believe that we
+have taken a small but important step in this direction and hope that other scholars will also focus on
+improving (over and above describing) the VC process.
+
+Appendix A. Mathematical derivations
+A.1. Flow of ventures through the system
+Derivation of the average rate of venture ﬂow through each arc of the network is mostly a straightforward process; begin with rate k of new proposals arriving at N1 and proceed from left to right through
+the network. For the ‘‘feedback loop’’ between N2 and N3 the ﬂows are derived by simultaneous solution
+of 2 ﬂow balance equations:
+Flow2!3 ¼ kp þ Flow3!2
+
+and
+
+Flow3!2 ¼ n Flow2!3 :
+
+The solutions of these ﬂows are shown along with the ﬂows on the other arcs in Fig. 1.
+
+A.2. System steady state
+We model nodes N1 and N3 as M/M/1 queues; thus we implicitly assume that the group of VCs working
+at each node can reasonably be represented as a single server, and that the times between arrivals and the
+times for service both follow exponential distributions. Given these assumptions, the expected number
+of ventures at each node i (either being helped or awaiting service) is calculated as
+Vi ¼ ðarrival rateÞ=½ðservice rateÞ  ðarrival rateÞ. Node N2 is modelled as an M/M/1 queue (hence no
+line-ups and no waiting), so the expected number of ventures at that node undergoing development is
+simply V2 ¼ (arrival rate)(average stay).
+
+<-----Page 15----->560
+
+D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+A.3. Results for the investors
+For optimisation of ROII with respect to t, replace s by 1  t and take the ﬁrst derivative to obtain
+"
+#
+o
+ð1  xÞ
+Ia
+ðI þ Jnf Þbf
+ROI ¼ 
+
+;
+ðA:1Þ
+½lfrRðpÞ  I  Jnf 
+2
+2
+2
+ot
+½Dðt; pÞ
+ha  at  ki
+htb  kpf i
+where Dðt; pÞðP 0Þ represents the denominator in the ﬁrst term of Eq. (4). When this equation equals zero
+we have an extreme point. To verify that this is a maximum, take the second derivative at such a point
+(where o ROI=ot ¼ 0) to obtain
+"
+#
+o2
+ð1  xÞ
+2Ia2
+2ðI þ Jnf Þb2 f
+ROI ¼ 
+½lfrRðpÞ  I  Jnf 
+þ
+:
+ðA:2Þ
+2
+3
+3
+ot2
+ha  at  ki
+½Dðt; pÞ
+htb  kpf i
+Since this is negative at any such point (at least so long as the VC process is proﬁtable with a positive net
+income), we know that the point must be a unique maximum and thus that ROI is strongly quasi-concave
+in t.
+Regarding acceptance probability p, we obtain a ﬁrst derivative of
+(
+	 
+
+
+
+
+o
+ð1  xÞ
+1
+f
+0
+ROI ¼
+lfrR ðpÞ ½I
+þ ½I þ Jnf  cf þ
+op
+a  at  k
+tb  kpf
+Dðt; pÞ2
+("
+#))
+½I þ Jnf kf 2
+ ½lfrRðpÞ  I  Jnf 
+:
+ðA:3Þ
+2
+htb  kpf i
+This is negative so long as the ﬁrm is proﬁtable, and hence ROI is decreasing in p.
+
+A.4. Results for the managers
+For optimisation of Earnings with respect to t, substitute s ¼ 1  t and take the ﬁrst derivative to obtain
+(
+)
+o
+Ia
+ðI þ Jnf Þbf
+Earnings ¼ ½z  kðx  yÞkp
+
+:
+ðA:4Þ
+2
+2
+ot
+ha  at  ki
+htb  kpf i
+Note the similarity between this and oROI=ot. The second derivative is
+("
+# "
+#)
+o2
+2Ia2
+2ðI þ Jnf Þb2 f
+Earnings ¼ ½z  kðx  yÞkp
+þ
+:
+3
+3
+ot2
+ha  at  ki
+htb  kpf i
+
+ðA:5Þ
+
+Since the term in braces is always positive, Earnings will be convex in t with a unique minimum at tinv if
+z > kðx  yÞ. Conversely, Earnings will be concave in t with a unique maximum at tinv if z < kðx  yÞ.
+With respect to p, the ﬁrst derivative of Earnings is
+( 
+#)
+
+
+ "
+o
+1
+f
+p½I þ Jnf kf 2
+Earnings ¼ kz ½I
+þ ½I þ Jnf  cf þ
+þ
+2
+op
+sa  k
+tb  kpf
+htb  kpf i
+þ kðx  yÞ½lfrRðpÞ  I  Jnf þ lfrpR0 ðpÞ
+( 
+#)
+
+
+ "
+1
+f
+p½I þ Jnf kf 2
+þ ½I þ Jnf  cf þ
+þ
+ kkðx  yÞ ½I
+:
+sa  k
+tb  kpf
+htb  kpf i2
+
+ðA:6Þ
+
+<-----Page 16----->D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+561
+
+The ﬁrst part of this expression is always positive, showing that management fees are increasing in p.
+Next take the second derivative and rearrange terms to obtain
+"
+#	
+
+
+o2
+ðI þ Jnf Þkf 2
+pkf
+1
+þ
+Earnings
+¼
+2kz
+þ kðx  yÞlfr½2R0 ðpÞ þ pR00 ðpÞ
+2
+tb  kpf
+op2
+ðtb  kpf Þ
+"
+#	
+
+
+ðI þ Jnf Þkf 2
+pkf
+ 2kkðx  yÞ
+:
+ðA:7Þ
+1þ
+2
+tb  kpf
+ðtb  kpftÞ
+The ﬁrst term in Eq. (A.7) is always positive, showing that earnings due to management fees are convex in
+p; the second and third terms are always negative, showing that earnings from exit bonuses are concave in p.
+A.5. Results for the employees
+Take the ﬁrst and second derivatives of Pay with respect to t to obtain
+"
+#
+o
+Ia
+ðI þ Jnf Þbf
+Pay ¼ ykpk
+
+;
+2
+2
+ot
+ha  at  ki
+htb  kpf i
+"
+#
+o2
+2Ia2
+2ðI þ Jnf Þb2 f
+Pay ¼ ykpk
+þ
+:
+ot2
+ha  at  ki3
+htb  kpf i3
+
+ðA:8Þ
+
+Since the second derivative is always negative, Pay is concave in t.
+With respect to p, take the ﬁrst and second derivatives to obtain
+o
+Pay ¼ yk½lfrRðpÞ  I  Jnf þ plfrR0 ðpÞ
+op
+#)
+(
+"
+
+I
+f
+pkf 2
+þ
+;
+ ykk
+þ ½I þ Jnf  cf þ
+sa  k
+tb  kpf htb  kpf i2
+(
+)
+o2
+2½I þ Jnf kf 2 p½I þ Jnf 2k2 f 3
+0
+00
+Pay ¼ yk½2lfrR ðpÞ þ plfrR ðpÞ  ykk
+þ
+:
+2
+3
+op2
+htb  kpf i
+htb  kpf i
+
+ðA:9Þ
+
+ðA:10Þ
+
+The second derivative is always negative, so Pay is concave in p with a unique maximum at pemp .
+A.6. Results for entrepreneurs
+For optimisation with respect to t, replace s by 1  t and take the ﬁrst derivative to obtain
+o
+a
+bf
+W ¼
+
+2
+2
+ot
+ha  at  ki
+htb  kpf i
+
+ðA:11Þ
+
+(note the similarity between this and o Earnings=ot). The second derivative is
+o2
+2a2
+2b2 f
+W
+¼
+þ
+;
+ot2
+ha  at  ki3 htb  kpf i3
+
+ðA:12Þ
+
+which is always positive; hence the wait must be convex in t, with a unique minimum at tent . The relation
+between the size of tinv and tent is shown by comparing Eq. (A.11) to (A.1) for investors and noting that
+ðIÞ < ðI þ Jnf Þ; thus the value of t that makes (A.1) equal zero will instead make (A.11) positive.
+
+<-----Page 17----->562
+
+D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+A.7. Results for comparing preferences
+The ordering of acceptance probability preferences follows from a comparison of the various derivatives
+with respect to p. From Eq. (A.6), we see that earnings from bonuses are optimised at some point
+pmgr:bonus ¼ p:
+(
+"
+#)
+
+I
+f
+pkf 2
+0
+þ
+½lfrRðpÞ  I  Jnf þ plfrR ðpÞ ¼ k
+þ ½I þ Jnf  cf þ
+:
+ðA:13Þ
+sa  k
+tb  kpf htb  kpf i2
+Comparing this to equation (A.9) we can see that this same relation identiﬁes the optimal acceptance
+proportion pemp , so we have pmgr:bonus ¼ pemp . Since we know that managementÕs optimal value
+pmgr > pmgr:bonus , then it follows as well that pmgr > pemp . Conversely, o ROI=op is negative for all p, including
+at pemp ; thus investors would prefer a value of p less than pemp .
+The ordering of post-investment attention allocation preferences likewise follows from a comparison of
+the respective derivatives with respect to t.
+
+A.8. Results for tables
+The sensitivity results in Table 1 are obtained by examining the sign of the derivative of each ﬁnancial
+equation with respect to that parameter. For example, to ﬁnd the eﬀect of a change in the proposal arrival
+rate k on ROI (Eq. (4)), take the derivative
+(
+)
+o
+ð1  xÞ
+I
+½I þ Jnf pf 2
+ROI ¼ 
+½lfrRðpÞ  I  Jnf 
+þ
+:
+ðA:14Þ
+ok
+½Dðt; pÞ2
+hsa  ki2 htb  kpf i2
+Since this is negative (at least so long as the VC process is proﬁtable with a positive net income), ROI must
+be decreasing in k. The other listed results are obtained in similar manner, starting with Eqs. (4), (7), (9) or
+(12) as appropriate. For the eﬀect of changes in revenue function RðpÞ, we take derivatives with respect to R
+as if it were a parameter rather than a function; i.e. as if RðpÞ were increasing by the same percentage for all
+p.
+For Table 2 we work with Eqs. (A.1) and (A.4) and focus on the case where managersÕ earnings consist
+more of management fees than of performance bonuses, thus z > kðx  yÞ. Note that in both cases the
+location of the extreme point tinv (maximum ROI, minimum Earnings) is determined by the expression
+"
+#
+a
+bf
+I
+ ðI þ Jnf Þ
+:
+ðA:15Þ
+ha  at  ki2
+htb  kpf i2
+When this equals zero, the derivatives are zero. When this is not zero, then the magnitude of each derivative
+(i.e. the marginal cost or marginal beneﬁt of not using tinv ) is determined by the magnitude (either negative
+or positive) of the ‘‘multiplier’’ ½z  kðx  yÞkp for o Earnings=ot and
+ð1  xÞ½lfrRðpÞ  I  Jnf 
+½Dðt; pÞ
+
+2
+
+ðA:16Þ
+
+for o ROI=ot. The results in Table 2 are obtained by taking the partial derivative of each multiplier with
+respect to each parameter. For example, an increase in p causes investors to have a stronger preference for
+using tinv , since of½z  kðx  yÞkpg=op ¼ ½z  kðx  yÞk > 0. Conversely for managers we have
+
+<-----Page 18----->D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+"
+#
+o ð1  xÞ½lfrRðpÞ  I  Jnf 
+op
+½Dðt; pÞ2
+(
+)
+ð1  xÞ
+ðI þ Jnf Þkf 2
+0
+¼
+lfrR ðpÞDðt; pÞ  2½lfrRðpÞ  I  Jnf 
+<0
+3
+2
+htb  kpf i
+½Dðt; pÞ
+
+563
+
+ðA:17Þ
+
+indicating that their preference for avoiding tinv becomes weaker.
+
+References
+Barney, J., Busenitz, L., Fiet, J., Moesel, D., 1996. New venture teamsÕ assessment of learning assistance from venture capital ﬁrms.
+Journal of Business Venturing 11 (4), 257–272.
+Bretthauer, K.M., Cote, M.J., 1998. A model for planning resource requirements in health care organizations. Decision Sciences 29,
+243–270.
+Bygrave, W., Timmons, J., 1991. Venture and Risk Capital: Practice and Performance, Promises and Policy. Harvard Business School
+Press, Boston, MA.
+Cable, D.M., Shane, S., 1997. A prisonerÕs dilemma approach to entrepreneur–venture capitalist relationships. Academy of
+Management Review 22, 142–176.
+Cooper, R.B., 1990. Queuing models. In: Heyman, D.P., Sobel, M.J. (Eds.), Stochastic Models. North-Holland, New York, pp. 469–
+518.
+Cova, B., Svanfeldt, C., 1993. Societal innovations and the post-modern aestheticization of everyday life. International Journal of
+Research in Marketing 10, 297–310.
+Cumming, D.J., MacIntosh, J.G., 2003. A cross-country comparison of full and partial venture capital exits. Journal of Banking and
+Finance 27, 511–548.
+Dean, B.V., Giglierano, J.J., 1990. Multistage ﬁnancing of technical start-up companies in Silicon Valley. Journal of Business
+Venturing 5, 375–389.
+Elango, B., Fried, V.H., Hisrich, R.D., Polonchek, A., 1995. How venture capital ﬁrms diﬀer. Journal of Business Venturing 10, 157–
+179.
+Fiet, J., 1995. Reliance upon informants in the venture capital industry. Journal of Business Venturing 10, 195–223.
+Gelenbe, E., Pujolle, G., 1987. Introduction to Queuing Networks. John Wiley and Sons, New York.
+Gomez-Mejia, L., Balkin, D., Welbourne, T., 1990. Inﬂuence of venture capitalists on high tech management. The Journal of High
+Technology Management Research 1, 103–118.
+Gorman, M., Sahlman, W., 1989. What do venture capitalists do? Journal of Business Venturing 4, 231–248.
+Harrison, R.T., Dibben, M.R., Mason, C.M., 1997. The role of trust in the informal investorÕs investment decision: An exploratory
+analysis. Entrepreneurship: Theory and Practice 21 (4), 63–81.
+Hoﬀman, H., Blakely, J., 1987. You can negotiate with venture capitalists. Harvard Business Review (March–April), 6–24.
+Lerner, J., 1994. Venture capitalists and the decision to go public. Journal of Financial Economics 35, 293–316.
+Lerner, J., 1995. Venture capitalists and the oversight of private ﬁrms. Journal of Finance 50, 301–318.
+Papadopoulos, H.T., Heavey, C., Browne, J., 1993. Queuing Theory in Manufacturing Systems Analysis and Design. Chapman and
+Hall, London.
+Pratt, S.E., 1998. PrattÕs Guide to Venture Capital Sources. Securities Data Publishing, New York.
+Robbie, K., Wright, M., Chiplin, B., 1997. The monitoring of venture capital ﬁrms. Entrepreneurship: Theory and Practice 21 (4), 9–
+28.
+Sahlman, W., 1990. The structure and governance of venture-capital organisations. Journal of Financial Economics 27, 473–521.
+Sandberg, W.R., 1986. New Venture Performance: The Role of Strategy, Industry Structure, and the Entrepreneur. Lexington Books,
+Lexington, MA.
+Sapienza, H., Korsgaard, M.A., 1996. Procedural justice in entrepreneur–investor relations. Academy of Management Journal 39 (3),
+544–574.
+Steier, L., Greenwood, R., 1995. Venture capitalists relationships in the deal structuring and post-investment stages of new ﬁrm
+creation. Journal of Management Studies 32, 337–357.
+Sweeting, R.C., 1991. UK venture capital funds and the funding of new technology-based businesses: Process and relationships.
+Journal of Management Studies 28, 601–622.
+
+<-----Page 19----->564
+
+D.A. Shepherd et al. / European Journal of Operational Research 163 (2005) 545–564
+
+Timmons, J., Bygrave, W., 1986. Venture capitalÕs role in ﬁnancing innovation for economic growth. Journal of Business Venturing 1,
+161–176.
+Tyebjee, T.T., Bruno, A.V., 1984. A model of venture capitalist investment activity. Management Science 30, 1051–1066.
+Zacharakis, A.L., Meyer, G.D., 1998. A lack of insight: Do venture capitalists really understand their own decision processes? Journal
+of Business Venturing 13, 57–76.
+
+

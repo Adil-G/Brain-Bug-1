@@ -1,0 +1,1334 @@
+<-----Page 0----->Bulletin of Mathematical Biology (2007) 69: 1453–1476
+DOI 10.1007/s11538-006-9173-x
+
+ORIGINAL ARTICLE
+
+Dynamics of Vaccination Strategies via Projected
+Dynamical Systems
+Monica-Gabriela Cojocarua,b,∗ , Chris T. Bauchb ,
+Matthew D. Johnstonb
+a
+b
+
+Division of Engineering and Applied Science, Harvard University, Cambridge, MA
+Department of Mathematics & Statistics, University of Guelph, Guelph, ON, Canada
+
+Received: 24 April 2006 / Accepted: 11 September 2006 / Published online: 18 January 2007
+
+C Society for Mathematical Biology 2007
+
+Abstract Previous game theoretical analyses of vaccinating behaviour have underscored the strategic interaction between individuals attempting to maximise their
+health states, in situations where an individual’s health state depends upon the
+vaccination decisions of others due to the presence of herd immunity. Here, we
+extend such analyses by applying the theories of variational inequalities (VI) and
+projected dynamical systems (PDS) to vaccination games. A PDS provides a dynamics that gives the conditions for existence, uniqueness and stability properties
+of Nash equilibria. In this paper, it is used to analyse the dynamics of vaccinating
+behaviour in a population consisting of distinct social groups, where each group
+has different perceptions of vaccine and disease risks. In particular, we study populations with two groups, where the size of one group is strictly larger than the
+size of the other group (a majority/minority population). We find that a population with a vaccine-inclined majority group and a vaccine-averse minority group
+exhibits higher average vaccine coverage than the corresponding homogeneous
+population, when the vaccine is perceived as being risky relative to the disease.
+Our model also reproduces a feature of real populations: In certain parameter
+regimes, it is possible to have a majority group adopting high vaccination rates and
+simultaneously a vaccine-averse minority group adopting low vaccination rates.
+Moreover, we find that minority groups will tend to exhibit more extreme changes
+in vaccinating behaviour for a given change in risk perception, in comparison to
+majority groups. These results emphasise the important role played by social heterogeneity in vaccination behaviour, while also highlighting the valuable role that
+can be played by PDS and VI in mathematical epidemiology.
+
+∗ Corresponding
+
+author.
+E-mail addresses: mcojocar@uoguelph.ca (Monica-Gabriela Cojocaru); cbauch@uoguelph.ca
+(Chris T. Bauch); mjohns07@uoguelph.ca (Matthew D. Johnston).
+
+<-----Page 1----->1454
+
+Cojocaru et al.
+
+Keywords Vaccination strategy games · Heterogeneous risk perceptions ·
+Projected dynamical systems · Variational inequalities
+
+1. Introduction
+Population biology is an inherent part of voluntary vaccination policies. It has been
+shown that whether or not an individual decides to vaccinate depends partly upon
+the perceived probability of their becoming infected, which, in turn, depends upon
+the level of disease prevalence (Goldstein et al., 1996; Chapman and Coups, 1999;
+Bauch, 2005). Disease prevalence is, in turn, a function of the vaccine coverage
+in the population (Anderson and May, 1991), which is the collective result of the
+vaccination decisions of other individuals, if vaccination is voluntary. Hence, the
+individuals in a given population are effectively engaged in a strategic interaction
+(a ‘game’) with one another, mediated by transmission dynamics.
+Vaccine scares are not uncommon and have occurred for various vaccines, including those for polio, smallpox, pertussis, measles–mumps–rubella, and Hepatitis B (Gangarosa et al., 1998; Durbach, 2000; Albert et al., 2001; Poland and Jacobsen, 2001; Plotkin, 2002; Biroscak et al., 2003; Jansen et al., 2003). At high levels
+of vaccine coverage, there is a reduced individual incentive to vaccinate, since unvaccinated individuals are already protected through herd immunity. If concerns
+about the potential health risks of vaccination then develop, high vaccine coverage
+levels may be prone to destabilise, and vaccine coverage can drop precipitously.
+Several mathematical modelling studies have incorporated the effects of human
+behaviour under a voluntary policy, either explicitly or implicitly, using game theoretical or other techniques (Fine and Clarkson, 1986; Geoffard and Philipson, 1997;
+Bauch et al., 2003; Bauch and Earn, 2004; Bauch, 2005). However, epidemiological
+studies, which are usually concerned with individual risk factors or particular focus populations, do not account for this population biological context (Asch et al.,
+1994; Roberts et al., 1995; Lashuay et al., 2000; Evans et al., 2001; Schmitt, 2002;
+Smailbegovic et al., 2002; Bellaby, 2003). It is increasingly recognised that incorporation of human behaviour into epidemic models is an important, if challenging,
+goal (Fischhoff, 2003; McKenzie and Roberts, 2003). The example of strategic interactions under a voluntary vaccination policy is a case in point.
+Recent studies explore the application of game theory to vaccinating behaviour
+under voluntary policies for childhood diseases (Bauch and Earn, 2004; Bauch,
+2005), such as measles, mumps, chickenpox, pertussis and rubella (Anderson
+and May, 1991). In these papers, the authors assume a homogeneous population
+where all individuals share the same perception of risk. However, in real populations, risk perception can vary significantly across distinct social groups (Durbach,
+2000; Lashuay et al., 2000). Many countries with high overall vaccine coverage
+have minority social or religious groups that vaccinate rarely or never, and which
+are, therefore, prone to outbreaks. Canada and The Netherlands, for instance,
+maintain high coverage rates for rubella vaccine but have recently seen rubella
+outbreaks in minority religious communities with almost no vaccine coverage
+(Eurosurveillance, 2005). Since the actions of even a small group of nonvaccinators
+can have a significant impact on disease prevalence when vaccine coverage levels
+
+<-----Page 2----->Dynamics of Vaccination Strategies via Projected Dynamical Systems
+
+1455
+
+are high, it is important to understand the influence of social heterogeneity on the
+dynamics of vaccinating behaviour.
+In previous vaccine game studies, individuals implicitly understand the existence
+of a critical coverage level provided by herd immunity, such that a disease can
+be eradicated without vaccinating everyone. This has been shown to result in a
+“Prisoner’s Dilemma,” whereby high coverage levels are unstable due to nonvaccinating behaviour (Bauch et al., 2003; Bauch, 2005). By comparison, in the
+present study, we assume that individuals do not perceive a critical coverage level.
+Rather, they perceive a possibility of being infected even when vaccine coverage
+is very high. In such a situation, we wish to determine whether non-vaccinating behaviour can still occur in some groups while other groups maintain high coverage
+levels.
+Here we study the dynamics of vaccinating behaviour in a population divided
+into k social groups, each having a different perceived risk of infection and vaccination, and where vaccination is purely voluntary. We assume an infectious disease for which vaccination can take place only shortly after birth, where parents
+decide on a voluntary basis to vaccinate their children, and in which individuals (children) can be either susceptible, infectious or recovered (immune). These
+are known as Susceptible–Infectious–Recovered (SIR) models, and have been
+well-validated and widely applied in infectious disease epidemiology (Anderson
+and May, 1991).
+The mathematical approach used here for deriving the dynamics is that of projected dynamical systems (PDS), via variational inequalities (VI). This approach is
+widely used in operations research, economic theory, finance and network analysis
+and mathematical physics (see, for example Dupuis and Nagurney, 1993; Nagurney
+and Zhang, 1996; Nagurney and Siokos, 1997; Isac and Cojocaru, 2002; Cojocaru,
+2005; Cojocaru et al., 2005, the references therein).
+A PDS is a dynamical system whose flow is constrained to evolve on a closed
+and convex subset, generically denoted by K, of the ambient space. In this paper, we consider the ambient space to be the Euclidean space Rk and we consider
+the constraint set K to be a k-dimensional cube in Rk. In general, a PDS is produced by projecting the velocity field of an ordinary differential equation onto the
+boundary of the constraint set K whenever the velocity is not pointing inside the
+tangent cone to K. Hence, a PDS essentially solves a control problem, namely that
+of keeping all trajectories of the projected velocity within the set K (in the interior
+as well as on its boundary). A PDS could be considered a topological dynamical
+system, since its flow is continuous, but there is little resemblance to the classical
+dynamical systems theory since a projected system has a nonlinear, discontinuous
+velocity. The results present in the PDS literature (both on Euclidean space and
+on more general Hilbert spaces) are based on nonlinear and convex analysis and
+differential inclusions (see, for example Henry, 1973; Aubin and Cellina, 1984; Isac
+and Cojocaru, 2002; Cojocaru and Jonker, 2004; Cojocaru, 2006).
+The ability to use a projected dynamics means that we are able to handle
+boundary phenomena (like boundary critical points, their stability, etc.), alongside interior ones, with ease. This is especially useful for modelling vaccinating behaviour in a socially heterogeneous population, since small minority groups adopting pure nonvaccinator behaviour (zero vaccine uptake) correspond to boundary
+
+<-----Page 3----->1456
+
+Cojocaru et al.
+
+equilibria. The PDS theory contains existence, uniqueness and local and global
+stability results for equilibria and periodic solutions of constrained problems, no
+matter where they occur in K. In short, a projected dynamics is very useful for
+studying the time evolution of constrained phenomena.
+There exists an intimate relation between PDS and variational inequality (VI)
+problems. In general, a VI problem is a unifying mathematical tool used to reformulate equilibrium problems from diverse fields in a mathematically consistent
+and solvable way (see, for example Minty, 1978; Kinderlehrer and Stampacchia,
+1980; Baiocchi and Capello, 1984; Isac, 1992, and Isac et al., 2002). Initially, VI
+problems were introduced (in 1963–1964) in order to help solving boundary value
+problems; later they were shown to represent mathematical formulations of certain classes of equilibrium problems in applied mathematics (elastic problems in
+mechanics, differential optimization problems, Nash games), economics (spatial
+price equilibrium and financial equilibrium problems), operations research and engineering (human migration, transportation and electrical networks problems).
+In this paper, we use the finite-dimensional theories of VI and PDS because
+of the intrinsic relation between certain Nash games and variational inequalities.
+In fact, the solutions to a VI problem are exactly those of the underlying game
+and vice versa. Moreover, to each VI problem, one can associate a PDS. The two
+extremely useful characteristics of such an association are: the critical points of the
+PDS are the same as the solutions to the associated VI, hence, they coincide with
+the solutions of the Nash game; the flow of the PDS remains in the constraint set
+of interest at all times, thus enabling an accurate description of how the system
+(in our case, the vaccination strategies of various groups within the population)
+reaches a steady state. All these are exposed in detail in Section 3.
+By using the PDS approach, we thus gain greater analytic capabilities, such as
+the ability to visualise the structure of the game dynamics through theoretical analysis, and to compute the optimal strategy and the respective equilibrium vaccination coverage. We are also able to show robust stability properties of our optimal
+strategy under perturbations. To our knowledge, this is the first application of VI
+and PDS theories in mathematical epidemiology.
+Our goals in this paper are twofold. First, we wish to use vaccination games
+to explore the impact of social heterogeneity on vaccinating behaviour. Second,
+we wish to illustrate the usefulness of VI and PDS techniques for problems in
+epidemic modelling. In Section 2, we describe the vaccination game. In Section 3,
+we give a brief introduction to the theories of PDS and VI and their relation to
+game theory, and we list the mathematical results that are used here. In Section 4,
+we analyse the dynamics of vaccination strategies, show that equilibria (optimal
+strategies) exist and are unique and discuss the structure of this dynamics under
+perturbations. In Section 5, we compute such equilibria in a general setting. In
+Section 6, we present numerical results, while Section 7 discusses these results.
+2. The vaccination game
+In this section, we present in brief the vaccination game, using similar notations as
+in previous publications (Bauch and Earn, 2004). We consider a population consisting of various social groups, where each group may have a different perception
+
+<-----Page 4----->Dynamics of Vaccination Strategies via Projected Dynamical Systems
+
+1457
+
+of risks and, therefore, may adopt different strategies. We consider a disease for
+which there is lifelong natural immunity, and in which individuals are typically
+infected early in life in the absence of vaccination (this describes the so-called paediatric infectious diseases, such as measles, mumps, rubella, pertussis and chickenpox) (Anderson and May, 1991). Likewise, we consider a vaccine that is administered primarily in the youngest age classes, and in which vaccination coverage is
+typically low later in life.
+As discussed in the Introduction, the decision to vaccinate depends partly upon
+the perceived risks associated with infection and vaccination. The perceived probability of significant morbidity due to vaccination is denoted by rv . The perceived
+probability of becoming infected given that a proportion p of the population is
+vaccinated, is denoted by π p and the perceived probability of significant morbidity
+upon infection is denoted by rinf . The overall perceived probability of experiencing significant morbidity because of not vaccinating is thus π prinf . We denote by
+r := rv /rinf the relative (perceived) risk of vaccination versus infection. We assume
+that all individuals within a group share a common assessment of the risks involved
+with vaccination and infection, but different groups have different relative risk assessments.
+Suppose that the strategy set for all individuals in group i is {Pi |Pi ∈ [0, 1 P ]},
+where 1 P < 1 but large enough and Pi is the probability that a child in group i is
+vaccinated. We wish to find a Nash equilibrium strategy P∗ := (P1∗ , P2∗ , . . . , Pk∗ ),
+such that when everyone in group i plays Pi∗ , no sufficiently small subset of individuals in any group can achieve a higher utility (payoff) by switching to a different
+strategy Pi = Pi∗ . At Pi∗ , there is no incentive to switch strategies, so such strategies should be stable equilibrium solutions of our game. In Sections 3 and 4, we
+derive a dynamics of the vaccination game that establishes existence and stability
+properties of such optimal strategies.
+The utility function in a group where the perceived relative risk is r , and where
+the vaccine coverage in the population as a whole is p, is given by
+u(Pi , p) = −r Pi − π p (1 − Pi ) subject to Pi ∈ [0, 1 P ],
+
+(1)
+
+after suitable rescaling. The players in a given round of the game are the parents of
+a given cohort of children, who play the game only once (they can decide only once
+whether or not to vaccinate their child). Future rounds of the game are played by
+the parents of later cohorts.
+In order to find a mathematical expression for π p , one approach is to use equilibrium solutions of a deterministic SIR compartmental model and assume that
+individuals have perfect knowledge of their probability of eventually becoming infected (Bauch and Earn, 2004). However, individuals do not have perfect knowledge of their probability of being infected. One could, for instance, assume that the
+perceived probability of eventually becoming infected increases linearly with the
+current prevalence of disease in the population (Bauch, 2005). Here, we assume
+for ease of analysis that π p is a decreasing function of p given by π p = b/(a + p).
+This expresses the fact that disease prevalence is implicitly a function of how
+many individuals have been vaccinated, and that greater perceived coverage in the
+population means a reduced perceived infection risk for susceptible individuals.
+
+<-----Page 5----->1458
+
+Cojocaru et al.
+
+Individuals also do not perceive a critical coverage threshold beyond which the disease is eradicated, as discussed in the Introduction. Unfortunately, because appropriate data are generally lacking on perceived risks of vaccination and infection,
+the validity of this function cannot be tested. However, we use values of a and b
+that are guided by epidemiologic constraints to ensure plausible results (discussed
+in Section 6).
+Other expressions for π p can be considered; we address this point in detail in
+Remark 4.2 of Section 4 later. We also note that time lags may be relevant
+here, since transmission dynamics can take several years to respond to changes
+in vaccine coverage. However, for highly transmissible childhood diseases such as
+measles and pertussis, we assume the effect of this lag to be small, since most vaccination and disease transmission occurs in the youngest age classes.
+
+3. Game theory, variational inequalities and projected dynamical systems
+3.1. Games and VI
+In this section, we show that a Nash game setting is readily applicable to our study
+of vaccination behaviour in heterogeneous populations. Historically, the first to
+study noncooperative behaviour was Cournot in 1838 (Cournot, 1838). Nash formalised and generalised these ideas in Nash (1950, 1951). Here, we reformulate
+a Nash game as a variational inequality problem, using the setting in Nagurney
+and Siokos (1997). To this VI, we associate a projected dynamical system whose
+(mathematical) equilibria are exactly the solutions of the Nash game. There are
+important consequences for introducing this new way of thinking for the mathematical modelling of the vaccination strategies game, as outlined in the Introduction. The most important is that we are now in possession of a dynamics that gives
+the conditions for existence, uniqueness and stability properties of equilibria for a
+game between population groups with heterogeneous risk perceptions.
+In this paper, we limit ourselves to the use of VI and PDS theories on the Euclidean space Rk. By a convex subset K ⊂ Rk, we understand a set with the property that for any x, y ∈ K and any λ ∈ [0, 1], the point λx + (1 − λ)y ∈ K; the set K
+is closed if any sequence with elements from K has a limit in K. Finally, a mapping
+f : K → Rk is called convex if, for any x, y ∈ K and any λ ∈ [0, 1], we have
+f (λx + (1 − λ)y) ≤ λ f (x) + (1 − λ) f (y).
+
+Definition 3.1. Let K ⊂ Rk be a closed, convex, nonempty set and F : K → Rk
+be a mapping. A variational inequality problem given by F and K is that of:
+finding x ∈ K so that F(x), y − x	 ≥ 0, for all y ∈ K,
+where ·, ·	 is the inner product on Rk, defined by x, y	 =
+K.
+
+(2)
+
+k
+i=1
+
+xi yi , for any x, y ∈
+
+<-----Page 6----->Dynamics of Vaccination Strategies via Projected Dynamical Systems
+
+1459
+
+As discussed in the previous section, it has been shown that Nash equilibria
+satisfy a VI whenever F is a gradient map (Gabay and Moulin, 1980). In general,
+we consider a Nash game with m players, each player i having at his/her disposal a
+strategy vector xi = {xi1 , . . . , xin } selected from a closed, convex set Ki ⊂ Rn , with
+a utility (or pay-off) function ui : K → R, where K = K1 × K2 × · · · × Km ⊂ Rmn .
+The rationality postulate is that each player i selects a strategy vector xi ∈ Ki that
+maximises his/her utility level ui (x1 , . . . , xi−1 , xi , xi+1 , . . . , xm) given the decisions
+(x j ) j=i of the other players. In this framework one then has:
+Definition 3.2 (Nash Equilibrium).
+∗
+(x1∗ , . . . , xm
+) ∈ K such that
+ui (xi∗ , x̂i∗ ) ≥ ui (xi , x̂i∗ ),
+
+A Nash equilibrium is a strategy vector x ∗ =
+
+∀xi ∈ Ki , ∀i,
+
+∗
+∗
+∗
+where x̂i∗ = (x1∗ , . . . , xi−1
+, xi+1
+, . . . , xm
+).
+
+This model is used, for example, in market analysis (Nagurney and Siokos, 1997)
+where m represents the number of investors and n the number of financial instruments. A game of this form can be formulated as a VI as follows (for a proof, see
+Gabay and Moulin (1980)).
+Theorem 3.1. Provided the utility functions ui are of class C 1 and concave (meaning —ui is convex) with respect to the variables xi , then x ∗ ∈ K is a Nash equilibrium
+if and only if it satisfies the VI
+F(x ∗ ), x − x ∗ 	 ≥ 0,
+
+∀x ∈ K,
+
+where F(x) = (−∇x1 u1 (x), . . . , −∇xm um(x)) and ∇xi ui (x) = ( ∂u∂ xi (x)
+,...,
+i1
+
+(3)
+∂ui (x)
+).
+∂ xin
+
+3.2. PDS and VI
+In general, the theories of PDS and VI are developed on more general spaces
+(Hilbert, Banach). Hence, the results cited in this subsection are, in fact, formulated on these spaces. However, since we only need to consider the Euclidean
+space, we present everything in this context.
+Let K ⊂ Rk be a non-empty, closed, convex subset. We assume the reader is
+familiar with the concepts of tangent cone to K at x ∈ K, TK (x), and normal cone to
+K, NK (x) at x ∈ K, defined, respectively, by TK (x) = ∪h>0 (K − x)/ h, and NK (x) =
+{n ∈ Rk | n, x − y	 ≥ 0, ∀y ∈ K} (otherwise, see, for example, Aubin and Cellina
+(1984) for an introduction and/or more details). The projection operator of Rk onto
+K, denoted by PK : Rk → K is given by z → PK (z), where PK (z) satisfies
+||PK (z) − z|| = inf ||x − z||.
+x∈K
+
+The operator PK is perhaps better known as the closest element mapping, meaning
+for each z ∈ Rk, PK (z) is the vector in K which realises the minimum distance
+between the vector z and the set K.
+
+<-----Page 7----->1460
+
+Cojocaru et al.
+
+The properties of the projection operator are well-known (see, for instance,
+Zarantonello (1971) or Kinderlehrer and Stampacchia (1980)). However PK is not
+differentiable in the usual (Frechet) sense; in turn, we can estimate its one-sided
+directional derivative, for any x ∈ K and any direction v ∈ Rk, as the limit (for a
+proof, see Shapiro (1994), Lemma 4.6):
+ K (x, v) := lim+
+δ→0
+
+PK (x + δv) − x
+;
+δ
+
+moreover
+
+ K (x, v) = PTK (x) (v),
+
+hence,  K (x, v) is another projection operator, this time projecting v onto the
+tangent cone to K at x.
+Let  K : K × Rk → Rk be the operator given by (x, v) →  K (x, v). Note that
+ K is discontinuous on the boundary of the set K. Detailed characterizations of
+ K are given in Dupuis and Ishii (1990) and Isac and Cojocaru (2003). One characterization we are using here is a consequence of Moreau’s Theorem (see Cojocaru
+and Jonker, 2004, for a proof): there exists n ∈ NK (x) such that
+v =  K (x, v) + n.
+
+(4)
+
+The following result gives the existence of PDS.
+Theorem 3.2. Let K ⊂ Rk be a non-empty, closed, convex subset. Suppose x0 ∈ K
+and assume one of the following conditions hold:
+a) F : K → Rk is a Lipschitz continuous vector field;
+b) K is a convex polyhedral set and F is a vector field with linear growth (i.e. there
+exists M > 0 so that for all x ∈ K, ||F(x)|| ≤ M(1 + ||x||)).
+Then, the initial value problem
+dx(τ )
+=  K (x(τ ), −F(x(τ ))),
+dτ
+
+x(0) = x0 ∈ K,
+
+(5)
+
+has a unique absolutely continuous solution on the interval [0, ∞).
+For a proof, see Cojocaru and Jonker (2004) for a) and Dupuis and Nagurney
+(1993) for b).
+Definition 3.3. A projected dynamical system is given by a mapping φ : R+ ×
+K → K given by (τ, x) → φx (τ ) which solves the initial value problem (5) with
+φx (0) = x ∈ K.
+Hence, a PDS is a dynamical system forced to evolve only within the set K (interior as well as boundary). Another important feature of a PDS like the one given
+earlier is the following (for a proof, see Cojocaru and Jonker, 2004):
+Theorem 3.3. The critical (or equilibrium) points of (5) coincide with the solutions
+to the problem represented by (2) and vice versa.
+
+<-----Page 8----->Dynamics of Vaccination Strategies via Projected Dynamical Systems
+
+1461
+
+We note here the alternate sign convention used in the literature for the vector
+field F in the VI (2) and the PDS (5). In general, the critical points of the PDS (5)
+are defined as solutions to the equation  K (x, −F(x)) = 0. In the case of PDS, as
+a consequence of (4), we get the following equivalent definition:
+Definition 3.4.
+
+All critical points of the PDS (5) are solutions of the inclusion:
+
+find x ∈ K so that − F(x) ∈ NK (x).
+
+4. Dynamics of vaccination strategies
+Using the setup in Section 2 and the theory outlined in Section 3, we model the
+vaccination game as follows. We consider a population with N individuals divided
+into k distinct groups. The division is made according to the assumption that all individuals within a group share the same relative risk perception. However, distinct
+groups have distinct relative risk perceptions. Thus, in the language of Section 3,
+we consider a game with k players where each player has a 1-dimensional vaccination strategy vector. We denote by Pi , i ∈ {1, 2, . . . , k} the vaccination strategy
+corresponding to the i-th group and by i N the number of individuals in group i
+choosing strategy Pi . In this context, we have
+i ∈ (0, 1) and
+
+k
+
+
+i = 1.
+
+i=1
+
+Remark 4.1.
+1) We remark here that we are not interested in i = 0. For if this is true for some
+i ∈ {1, 2, . . . , k}, then the problem is reduced to a population with k − 1 or less
+distinct groups.
+2) We also note that if there exists i with i = 1, then the problem is reduced to
+that of a population where all individuals share the same risk assessment. This
+reduces to the social homogeneous case considered in previous work (Bauch
+and Earn, 2004).
+3) We denote by ri the relative risk assessment for the i-th group. We are interested in the case ri = r j , ∀i, j ∈ {1, 2, . . . , k}, otherwise, the problem reduces
+to the case of a population with k − 1 or less distinct groups.
+Under these hypotheses,
+k the vaccination coverage level of the entire population
+is assumed to be p = i=1
+i Pi . Following Section 2 and Bauch and Earn (2004),
+the expected payoff (utility) function for a player is given by
+ui (Pi , p) = −ri Pi − π p (1 − Pi ),
+
+∀i ∈ {1, 2, . . . , k},
+
+where π p is assumed to be of the form π p = b/(a + p) = b/(a +
+
+(6)
+
+
+i Pi ).
+
+<-----Page 9----->1462
+
+Cojocaru et al.
+
+Let K := {P := (P1 , . . . , Pk) | Pi ∈ [0, 1 P ]} and let the mapping u : K → Rk be
+given by u(P) = (u1 (P1 , p), . . . , uk(Pk, p)). This game can be formulated, following Theorem 3.1, as the variational inequality problem
+find P∗ ∈ K s.t.
+
+
+k 
+
+∂ui (Pi , p)
+| Pi∗ , Pi − Pi∗ ≥ 0, ∀ P = (P1 , . . . , Pk) ∈ K,
+−
+∂ Pi
+i=1
+
+since each ui is of class C 1 and concave with respect to Pi . This VI is further equivalent to
+find P∗ ∈ K s.t.
+
+
+k 
+
+bi (1 − Pi )
+∗
+∗, P − P
+|
+ri − π p | P∗ − 
+≥ 0,
+i
+2 P
+k
+i
+a + i=1
+i Pi
+i=1
+
+∀ P ∈ K.
+
+(7)
+
+Following Section 3, in order to study the proposed vaccination dynamics, we let
+F : K → Rk with F(P) = (− ∂∂uP11 , . . . , − ∂∂uPkk ) and we associate to the VI problem
+(7) the projected dynamical system given by K (P, −F(P)) = PTK (P) (−F(P)),
+namely:
+
+b1 (1 − P1 (τ ))
+dP(τ )
+= PTK (P(τ )) π p(τ ) + 
+2 − r1 , . . . , π p(τ )
+k
+dτ
+i Pi (τ )
+a + i=1
+
+bk(1 − Pk(τ ))
++
+2 − rk , with P(0) ∈ K.
+k
+i Pi (τ )
+a + i=1
+
+(8)
+
+According to Theorem 3.3, the stationary points of PDS (8) should coincide with
+the solutions of the Nash game. Moreover, to study the question of stability of
+these game solutions under perturbations, we need to introduce
+Definition 4.1.
+
+A mapping f : K → Rk is called monotone if
+
+ f (P) − f (Q), (P − Q)	 ≥ 0,
+
+for all P, Q ∈ K,
+
+and is called strictly monotone if
+ f (P) − f (Q), (P − Q)	 > 0,
+
+for all P = Q ∈ K.
+
+Monotonicity is a central concept in nonlinear and convex analysis and it has
+been used and generalised extensively (Henry, 1973; Minty, 1978; Kinderlehrer
+and Stampacchia, 1980; Aubin and Cellina, 1984; Krasnosleskii and Zabreiko,
+1984; Karamardian and Schaible, 1990; Nagurney and Zhang, 1996; Isac and Cojocaru, 2002; Cojocaru and Jonker, 2004; Cojocaru, 2006). As defined and used here
+
+<-----Page 10----->Dynamics of Vaccination Strategies via Projected Dynamical Systems
+
+1463
+
+(or in any of the cited references), one should note that monotonicity is a generalization of the usual notion of a monotone real function of one variable. In the
+theory of PDS, monotonicity and its extensions, like strict monotonicity explained
+earlier, play a central role in the sense that they give information about the behaviour of perturbed equilibria, as well as about existence of periodic cycles. One
+of these results states that a PDS with a strictly monotone field F can only have a
+unique equilibrium and that all solutions are monotonically attracted to this point.
+The attraction can happen for solutions starting in a neighbourhood of the equilibrium, or can extend to all solutions starting anywhere in the set K.
+Definition 4.2. Let x ∗ be a critical point of the projected equation (5). Then x ∗
+is a local strict monotone attractor if there exists a neighbourhood N (x ∗ ) ⊂ K
+of x ∗ , so that for any trajectory x(τ ) of (5) starting at x0 ∈ N (x ∗ ), the function
+τ → ||x(τ ) − x ∗ || is decreasing.
+Moreover, x ∗ is a global strict monotone attractor if the definition above is satisfied for trajectories of (5), starting at any point x0 ∈ K.
+
+We must note at this point that a (strict) monotone attractor is different than an
+attractor in the sense of the classical dynamical systems theory. We are now able
+to prove the most important result of this paper.
+
+Theorem 4.1. The Nash game introduced earlier has a unique solution. This solution is a global strict monotone attractor for the vaccination strategies dynamics.
+
+Proof: Step 1. We show first that the field F : K → Rk is strictly monotone on K.
+This is relatively easy to see if we keep in mind that for differentiable functions
+like F, strict monotonicity is equivalent to (see Nagurney and Zhang, 1996)
+
+P T (∇ F)P > 0,
+
+for all P = 0 ∈ K.
+
+(9)
+
+In this case,
+⎡
+
+⎤
+21 2 . . . k
+∇F = 
+2 ⎣ . . . . . . . . . . . . . ⎦
+k
+i Pi
+a + i=1
+1 2 . . . 2k
+⎡
+12 (1 − P1 ) 1 2 (1 − P1 )
+2b
+⎢
+...
+...
++
+3 ⎣
+k
+i Pi
+a + i=1
+1 k(1 − Pk) 2 k(1 − Pk)
+b
+
+⎤
+. . . 1 k(1 − P1 )
+⎥
+...
+....
+⎦.
+2
+. . . k (1 − Pk)
+
+<-----Page 11----->1464
+
+Cojocaru et al.
+
+Since Pi ∈ [0, 1 P ], 1 P < 1, then
+b
+
+P (∇ F)P = 
+2
+k
+a + i=1
+i Pi
+T
+
++
+a+
+
+2b
+k
+
+i=1 i Pi
+
+ k
+
+
+
+i Pi2
+
++
+
+i=1
+
+
+
+3
+
+k
+
+
+
+
+k
+
+
+
+Pi
+
+i=1
+
+k
+
+
+
+i Pi
+
+i=1
+
+i Pi
+
+i=1
+
+× (1 (1 − P1 )P1 + · · · + k(1 − Pk)Pk) > 0,
+
+∀P = 0.
+
+Hence, F is strictly monotone on K.
+Now, by Kinderlehrer and Stampacchia (1980) game (7) has a unique solution.
+Step 2. We show next that −F : K → Rk is a vector field with linear growth, i.e.
+there exists M > 0 so that
+||− F(P)|| ≤ M(1 + ||P||),
+
+∀P ∈ K.
+
+Then, by Theorem 3.2, PDS (8), is well-defined and by Theorem 3.3, its critical points are the solutions of our Nash game. By Nagurney and Zhang (1996),
+Cojocaru (2002), and Isac and Cojocaru (2002), this solution is a strict monotone
+attractor for the game dynamics.
+To see that −F has linear growth, we choose P ∈ K, we set  := max{1 , . . . , k},
+and we evaluate ||F(P)||, where −F = −( f + g1 + g2 ), with
+
+f (P) =
+
+g1 (P) =
+
+a+
+
+b
+k
+
+(a +
+
+i=1 i Pi
+
+b1
+k
+
+− r1 , . . . ,
+
+2
+i=1 i Pi )
+
+,...,
+
+a+
+
+(a +
+
+b
+k
+
+i=1 i Pi
+
+bk
+k
+
+2
+i=1 i Pi )
+
+
+− rk ,
+
+,
+
+and
+
+
+b1 P1
+bk Pk
+g2 (P) = − 
+2 , . . . , − 
+2
+k
+k
+a + i=1 i Pi
+a + i=1 i Pi
+
+
+.
+
+Then
+⎡
+
+k
+
+2
+|| f (P)|| = ⎣
+b
+i=1
+
+a+
+
+1
+k
+
+i=1 i Pi
+
+2 ⎤ 12
+
+√
+⎦ + ||(r1 , . . . , rk)|| ≤ b k + ||r ||.
+a
+
+<-----Page 12----->Dynamics of Vaccination Strategies via Projected Dynamical Systems
+
+1465
+
+Similar to our computation earlier, next we have
+⎛
+
+⎡
+
+⎞2 ⎤ 12
+
+√
+
+1
+b k
+⎢ 2 2
+⎟ ⎥
+2 ⎜
+||g1 (P)|| = ⎣b 1 + · · · + k ⎝ 
+2 ⎠ ⎦ ≤
+k
+a2
+a + i=1
+i Pi
+and
+||g2 (P)|| = b
+2
+
+2
+
+k
+
+i=1
+
+
+i2
+
+
+a+
+
+Pi
+k
+
+i=1 i Pi
+
+
+
+2
+2
+
+≤ b2  2 k
+
+k
+
+√
+1
+=⇒ ||g2 (P)|| ≤ b k 
+Pi2
+4
+k
+a + i=1 i Pi i=1
+
+k
+
+i=1
+
+ 12
+
+Pi2
+
+4
+k
+a + i=1 i Pi
+
+√
+b k
+≤
+||P||.
+a2
+
+Finally,
+||− F(P)|| ≤
+
+√
+√
+√
+b k
+b k b k
++
+||P|| ≤ M(1 + ||P||),
++ ||r || +
+a
+a2
+a2
+
+√
+√
+where M := (b k/a + ||r || + b k/a 2 ). The proof is complete.
+
+
+
+Remark 4.2. We remark that other expressions for πp can be considered, for example, given suitable constants a, b, let π p := ae−b i Pi . Then VI problem (7)
+would be given by a mapping F with components Fi := ri − π p (1 + bi (1 − Pi )),
+∀i ∈ {1, . . . , k}. If this mapping F satisfies the hypotheses of Theorem 4.1, then we
+obtain again the existence and uniqueness of a Nash game equilibrium for this
+new setup. Hence, our methodology up to this point can be applied under other
+assumptions for the form of π p .
+
+5. Optimal strategy computation
+Given the proposed dynamics, we can theoretically find the structure of the solution of our vaccination game. By Definition 3.4 in Section 3 and Theorem 4.1
+earlier, we have that the unique optimal strategy is the point P∗ ∈ K where P∗ is
+the solution of the inclusion −F(P) ∈ NK (P). To simplify solving this inclusion,
+we notice that (see Aubin and Cellina (1984)) the projected equation in Eq. (8) is
+equivalent to the following system of projected equations:
+⎧
+dP1 (τ )
+⎪
+⎪
+⎪
+⎨ dτ = PT[0,1 P ] (P1 (τ )) (−F1 (P(τ )))
+...
+⎪
+⎪
+(τ
+)
+dP
+⎪
+k
+⎩
+= PT[0,1 P ] (Pk(τ )) (−Fk(P(τ )))
+dτ
+
+<-----Page 13----->1466
+
+Cojocaru et al.
+
+Hence, the optimal strategy P∗ = (P1∗ , . . . , Pk∗ ) for our game is that each Pi∗ is a
+critical point of the respective ith projected equation of the system shown earlier;
+in other words, Pi∗ uniquely solves −Fi (P) ∈ N[0,1 P ] (Pi ), for all i ∈ {1, . . . , k}.
+But for each fixed i ∈ {1, . . . , k}, the inclusion −Fi (P∗ ) ∈ N[0,1 P ] (Pi∗ ) is equivalent to the following system
+⎧ ∗
+⎪
+⎨ Pi ∈ (0, 1 P ) is an equilibrium
+Pi∗ = 0 is an equilibrium
+⎪
+⎩ ∗
+Pi = 1 P is an equilibrium
+
+if − Fi (P∗ ) = 0
+if − Fi (P∗ ) < 0 .
+
+(10)
+
+∗
+
+if − Fi (P ) > 0
+
+Since solvability of (10) depends on the sign of the quantity
+−Fi (P) :=
+
+a+
+
+b
+
+
+i Pi
+
+bi (1 − Pi )
++
+2 − r i ,
+
+a + i Pi
+
+the following scenarios are possible for the unique optimal strategy.
+Case 1: The game dynamics could be monotonically attracted to the equilibrium
+strategy P∗ = 0; this means that at equilibrium, we have
+−Fi (P∗ ) |0 < 0 ⇔
+
+i 
+b
+1+
+< ri ,
+a
+a
+
+for all i ∈ {1, . . . , k}.
+
+Case 2: The game dynamics could be monotonically attracted to the equilibrium
+strategy P∗ = (1 P , . . . , 1 P ); this means that at equilibrium
+Fi (P∗ ) |1 P > 0 ⇔
+
+b
+bi (1 − 1 P )
++
+> ri ,
+a + 1P
+(a + 1 P )2
+
+for all i ∈ {1, 2, . . . , k}.
+
+Case 3: Without loss of generality, let i ∈ {1, . . . , s}, s < k. The game dynamics
+s times
+
+could be monotonically attracted to the equilibrium strategy P∗ = (0, . . . , 0,
+k−s times
+
+1 P , . . . , 1 P ).
+Case 4: The game dynamics could be monotonically attracted to an equilibrium
+strategy P∗ , where there exists at least one group i whose strategy Pi∗ ∈
+(0, 1 P ).
+As we see in the next section, in order to find such solutions, depending on the
+values of the parameters i , ri , a, b, etc., we may need to compute approximate
+trajectories of Eq. (8), following the method in the constructive proof of Theorem 3.2 (see Cojocaru (2002); Cojocaru and Jonker (2004) where we showed that
+each trajectory of Eq. (5) is approximated by a linearly piecewise function). For
+computations and figures, we used MAPLE 8.
+
+<-----Page 14----->Dynamics of Vaccination Strategies via Projected Dynamical Systems
+
+1467
+
+6. Results
+We consider here examples with 1, 2 and 3 population groups, in order to determine the impact of social heterogeneity in risk perception on vaccine coverage
+under a voluntary vaccination policy. Before we begin, we remark that according to Theorem 4.1, in all examples there is a unique optimal strategy which is
+globally monotonically attracting for all time-dependent strategies starting anywhere in the constraint set K. Moreover, we define a and b in the expression for
+π p as follows: the parameter a determines the sensitivity of the perceived probability of infection to the vaccine coverage, i.e. large values of a imply a population where the perceived probability of infection depends weakly upon the vaccine coverage, whereas small values of a imply strong dependence. The parameter combination ab is the maximum possible perceived probability of infection,
+achieved at p = 0. Clearly, we must have 0 < b < a so that π0 < 1. For a disease such as measles, the probability that an individual eventually gets infected
+in the absence of any vaccination programme is close to 90% (Anderson and
+May, 1991). Hence, when p = 0, we set π0 = b/a = 0.90. Likewise, when p ≈ pcrit ,
+where pcrit is the critical coverage level required to eradicate a disease, then
+π pcrit ≈ 0, hence we require that a  pcrit , and b  pcrit . For measles, pcrit ≈ 0.9.
+With a = 0.1, and b = 0.09, we are consistent with these restrictions. Significantly
+smaller values for a and b would yield unrealistic behaviour for intermediate values of p. We use a = 0.1, b = 0.09 and 1 P := 0.9 throughout in our numerical
+results.
+6.1. One group model
+Let us consider a 1 group model, so that  = 1 and all individuals share the same
+relative risk assessment r . In this case π p = b/(a + P) and p = P. According to
+the previous section, we search first for points 0 < P∗ < 1 such that
+b
+b(1 − P∗ )
++
+= r =⇒ P∗ = −a +
+a + P∗
+(a + P∗ )2
+
+
+
+b(a + 1)
+.
+r
+
+Clearly, as r decreases, the equilibrium coverage increases. We deduce that for a =
+0.1, b = 0.09, 1 p := 0.9, and consequently r ∈ (0.099, 9.9), we have p∗ ∈ (0, 0.9).
+For all r ≥ 9.9, the coverage is 0, and for r ≤ 0.099 the coverage p∗ = 0.9. This result is intuitive, since it means more people vaccinate as the vaccine is perceived to
+be increasingly less risky than the disease. Previous work also predicted the existence of a threshold in perceived risk, below which vaccinating behaviour becomes
+increasingly prevalent and above which no one vaccinates (Bauch and Earn, 2004).
+6.2. Two groups model
+Here, we study a population consisting of a majority group (of proportion 1 )
+which is relatively more inclined to vaccinate, and a minority group (of proportion 2 < 1 ) which is relatively less inclined to vaccinate (r2 > r1 ). We determine
+
+<-----Page 15----->1468
+
+Cojocaru et al.
+
+the impact of social heterogeneity by comparing the 1 group case to several 2 group
+cases (for various values of 1 , 2 , r1 , r2 ). We wish to determine whether vaccine
+coverage is higher or lower in the 2 group cases with average relative risk assessment
+r := 1 r1 + 2 r2 ,
+
+(11)
+
+compared to the 1 group case with the same value of r . The following analysis
+shows that social heterogeneity generally leads to higher vaccine coverage.
+Let us take a = 0.1, b = 0.09 and 1 P := 0.9 (as justified above). Figures 1
+and 2 illustrate the effects of heterogeneity in two cases. Figure 1 shows
+the average vaccine coverage p∗ (r ) = 1 P1∗ (r ) + 2 P2∗ (r ) versus r with r1 =
+0.7r , r2 = r (1 − 0.71 )/2 , for various values of 1 and 2 . In general, the possible values of the vector of equilibrium strategies are P∗ = (P1∗ , P2∗ ), Pi∗ ∈
+[0, 0.9]. In the examples of Fig. 1 we obtained only five values, namely
+(0.9, 0.9), (0.9, P2∗ (r )), (0.9, 0), (P1∗ (r ), 0), (0, 0). For each of these, we computed
+and graphed the corresponding equilibrium vaccine coverage p∗ (r ). The r values at
+which vaccine coverage is equal or higher in the heterogeneous population than in
+the homogeneous population for the four cases considered in Fig. 1 are described
+by the following table:
+1
+1
+1
+1
+
+group sizes
+= 0.9, 2 = 0.1
+= 0.8, 2 = 0.2
+= 0.7, 2 = 0.3
+= 0.6, 2 = 0.4
+
+r values for which p∗ (r ) ≥ p∗ (r, 1 group)
+r ∈ (0, 0.027] and r ≥ 0.1195
+r ∈ (0, 0.049] and r ≥ 0.1472
+r ∈ (0, 0.068] and r ≥ 0.1857
+r ∈ (0, 0.086] and r ≥ 0.2416
+
+Figure 2 shows p∗ (r ) versus r for the case 1 = 0.9 and 1 = 0.1, but using
+various degrees of difference in risk perception between the majority and the
+minority groups (see table shown later and Fig. 2). Again, we obtained only five
+equilibrium values, namely (0.9, 0.9), (0.9, P2∗ (r )), (0.9, 0), (P1∗ (r ), 0), (0, 0). For
+each of these, we computed and graphed the corresponding equilibrium vaccine
+coverage p∗ (r ). The r values at which vaccine coverage is equal or higher in the
+heterogeneous population than in the homogeneous population for the five cases
+considered in Fig. 2, are described by the following table:
+relative risks perceptions
+r1 = 0.9r, r2 = 1.9r
+r1 = 0.8r, r2 = 2.8r
+r1 = 0.7r, r2 = 3.7r
+r1 = 0.6r, r2 = 4.6r
+r1 = 0.5, r2 = 5.5r
+
+r values for which p∗ (r ) ≥ p∗ (r, 1 group)
+r ∈ (0, 0.0516] and r ≥ 0.1195
+r ∈ (0, 0.035] and r ≥ 0.1195
+r ∈ (0, 0.0265] and r ≥ 0.1195
+r ∈ (0, 0.0213] and r ≥ 0.1195
+r ∈ (0, 0.0178] and r ≥ 0.1195
+
+Figures 1 and 2 show that, generally speaking, vaccine coverage is higher in populations with social heterogeneity and where there is a majority group and a minority group that is more risk-averse. An exception occurs at lower values of r
+
+<-----Page 16----->Dynamics of Vaccination Strategies via Projected Dynamical Systems
+
+1469
+
+Fig. 1 Equilibrium coverage p∗ (r ) where r1 = 0.7r and r2 = r − 0.7r 1 /2 , for one group and
+several two group cases.
+
+(where the vaccine is perceived to be substantially less risky than the disease): in
+these cases, the situation is often reversed.
+Figure 3 presents surface plots of P1∗ and P2∗ as functions of r1 and r2 , for the
+case 1 = 0.8, 2 = 0.2. This figure shows that an increasing perception of vaccine risk in the majority group (r1 ) has a proportionate impact on vaccine coverage in that group. By comparison, an increasing perception of vaccine risk in
+the minority group (r2 ) has a more dramatic effect, with a sharp transition to pure
+nonvaccinating behaviour occuring at a low value of r2 . This suggests that minority
+
+<-----Page 17----->1470
+
+Cojocaru et al.
+
+Fig. 2 Equilibrium coverage p∗ (r ) where 1 = 0.9 and 2 = 0.1, for one group and several two
+group cases.
+
+groups with differing risk perceptions will tend to exhibit more extreme vaccination behaviour than the majority groups.
+Figure 4a (resp. Fig. 5a) shows the convergence of a 2-group population with a
+0.9 majority and 0.1 minority to the Nash equilibrium (0.9, 0) with average coverage p∗ = 0.81 (resp. to (0.9, 0.434) with average coverage p∗ = 0.853) corresponding to low values of r . Figure 4b (resp. Fig. 5b) shows what happens when r is
+increased by 10%, as might occur during a vaccine scare. After the shift in r , the
+population converges to a new Nash equilibrium (0.697, 0) with a reduced vaccine coverage of p∗ = 0.6273 (resp. to (0.894, 0) with a reduced vaccine coverage
+p∗ = 0.8046).
+
+<-----Page 18----->Dynamics of Vaccination Strategies via Projected Dynamical Systems
+
+1471
+
+Fig. 3 The equilibrium group coverages P1∗ = P1∗ (r1 , r2 ) and P2∗ = P2∗ (r1 , r2 ) represented as surfaces in R3 in a two group population with 1 = 0.8 majority and 2 = 0.2 minority. P1∗ (r1 , r2 ) is the
+green–blue surface and P2∗ (r1 , r2 ) is the yellow–red surface. We see here that the minority group
+exhibits a more extreme vaccination behaviour than the majority group, for a given change in risk
+perception.
+
+6.3. Three groups model
+Here, we study an interesting example of the case with three social groups. We
+consider a population consisting of three equally-sized groups (1 = 2 = 3 = 13 ),
+all of which perceive the vaccine to be less risky than the disease (r1 = 3/4, r2 =
+
+Fig. 4 Effect of a change in average perceived relative risk r on average vaccine coverage level
+p∗ (r ), in a population with two social groups (1 = 0.9, 2 = 0.1 ). The left panel shows the
+phase portrait of the time-dependent group strategies P1 (τ ), P2 (τ ) given by the projected system (8), corresponding to r1 = 0.07 and r2 = 0.37. The red curve evolves from the initial strategies (P1 (0), P2 (0)) = (0.7, 0.3) to the Nash equilibrium (0.9, 0), whose overall coverage is p∗ =
+1 P1∗ + 2 P2∗ = 0.81. The right panel shows how the strategies converge from the former equilibrium state (0.9, 0) to a new Nash equilibrium (0.697, 0) with a reduced coverage p∗ = 0.6273 after
+a sudden increase of 10% (to r1 = 0.17 and r2 = 0.47) in relative risk perception, which models
+the effects of a vaccine scare. The Nash equilibrium points are marked with a diamond symbol.
+
+<-----Page 19----->1472
+
+Cojocaru et al.
+
+Fig. 5 Effect of a change in average perceived relative risk r on average vaccine coverage levels p∗ (r ), in a population with two social groups (1 = 0.9, 2 = 0.1 ). The left panel shows the
+phase portrait of the time-dependent group strategies P1 (τ ), P2 (τ ) given by the projected system (8), corresponding to r1 = 0.01 and r2 = 0.085. The red curve evolves from the initial strategies (P1 (0), P2 (0)) = (0.7, 0.3) to a Nash equilibrium P∗ = (0.9, 0.434) whose overall coverage is
+p∗ = 1 P1∗ + 2 P2∗ = 0.853. The right panel shows how the population converges from the former
+equilibrium state (0.9, 0.434) to a new Nash equilibium P∗ = (0.894, 0) with coverage p∗ = 0.8046
+after a sudden increase of 10% (to r1 = 0.1 and r2 = 0.185) in relative risk perception, which models the effects of a vaccine scare. The Nash equilibrium points are marked with a diamond symbol.
+
+1/6, r3 = 1/5). With these values,
+πp =
+
+0.09
+0.1 +
+
+P1 +P2 +P3
+3
+
+=
+
+0.27
+.
+0.3 + P1 + P2 + P3
+
+For initial conditions P1 (0) = 0.7, P2 (0) = 0.05, P3 (0) = 0.4, we compute approximate solutions for the PDS (8) and obtain that the equilibrium point is P∗ =
+(0, 0.893, 0.528) (Fig. 6). Based on Theorem 4.1, this is the unique equilibrium
+point and all solutions starting at any initial point P(0) ∈ K are monotonically attracted to it.
+Interestingly, the first group does not vaccinate at all, even though they perceive
+the vaccine as being less risky than the disease (r1 = 3/4). This group is taking advantage of the herd immunity afforded by the other two groups which have even
+lower perceived relative risk. Moreover, the difference in perceived risk between
+groups 2 and 3 is not very large (r2 = 1/6, r3 = 1/5) and yet group 2 adopts a significantly higher level of vaccination than group 3. This example illustrates how
+individuals take into account not only their own perception of risk but also what
+strategies other individuals are adopting, since this influences disease prevalence
+and hence their own probability of becoming infected.
+
+7. Discussion
+This paper applies for the first time the theories and methodologies of PDS and VI
+to epidemic modelling. There are several reasons why this approach is potentially
+
+<-----Page 20----->Dynamics of Vaccination Strategies via Projected Dynamical Systems
+
+1473
+
+Fig. 6 Game dynamics for a three group model where i = 13 , ∀i ∈ {1, 2, 3} and r1 = 34 , r2 =
+1
+1
+6 , r3 = 5 . The curve represents the time evolution of each of the three groups’ strategies, from the
+initial state (P1 (0), P2 (0), P3 (0)) = (0.7, 0.05, 0.4) to the Nash equilibrium P∗ = (0, 0.893, 0.526).
+The Nash equilibrium point is marked with a diamond symbol.
+
+valuable for biomathematics. First, the solutions of the heterogeneous Nash games
+have boundary components, and hence a projected dynamics approach must be
+used instead of a classical dynamical system approach. Second, with these techniques, we have the ability to see the structure of the game solutions through theoretical analysis. We are able to compute the optimal strategy and the respective
+equilibrium vaccination coverage with relatively little effort. Due to the constraint
+set being a k-dimensional cube, the expression of the projection of the velocity
+field F is easily found. The presence of monotonicity is obviously the main factor
+in analysing the behaviour of the projected flow under perturbations. In this paper, we presented 1, 2 and 3-dimensional examples, so one can readily visualise the
+results. However, multidimensional (k > 3) examples can be computed as well.
+It should be noted that these results depend upon our choice of the perceived
+probability of infection π p . We expect that qualitatively similar choices for π p will
+have qualitatively similar equilibria (Remark 4.2). A potentially interesting case
+where the results may differ qualitatively is when π p exhibits an upper threshold
+beyond which the perceived probability of infection is zero (Section 2) (Bauch and
+Earn, 2004). This constitutes a topic for future work. When π p has a critical upper
+threshold, then a “Prisoner’s Dilemma” may result in coverage levels below that
+required to eliminate a disease (Introduction). Here we show that a “Prisoner’s
+Dilemma” is not necessary for nonvaccinating behaviour to develop, at least in
+certain social groups. Rather, nonvaccinating behaviour can develop due only to
+
+<-----Page 21----->1474
+
+Cojocaru et al.
+
+differences in the perception of risk, even if individuals perceive a nonzero risk at
+arbitrarily high coverage levels.
+In this paper, we explored the impact of social heterogeneity in risk perception on vaccine coverage under a voluntary vaccination policy. The PDS approach
+proved to be particularly valuable here, since minority groups playing a pure nonvaccinator strategy (or majority groups playing a pure vaccinator strategy) correspond to boundary equilibria. In real populations, there are often distinct minority groups with very different perceptions of vaccine risks or vaccine desirability
+(Eurosurveillance, 2005). We have shown that populations with two groups with
+distinct risk perceptions tend to exhibit higher average vaccine coverage than the
+equivalent homogeneous population, except when r is small (i.e. when the vaccine
+is perceived to be substantially less risky than the disease). Hence, heterogeneous
+populations should generally exhibit higher vaccine coverage, and perhaps greater
+stability, in a vaccine scare situation (large r ) than suggested by simpler, socially
+homogeneous models (Bauch and Earn, 2004). Conversely, in situations when r
+is large, homogenisation of risk perception among different social groups through
+the influence of mass media may result in lower coverage levels unless there is a
+systematic bias in favor of vaccines. However, we emphasise that these conclusions
+may depend upon model assumptions. This model also illustrates how minority
+and majority groups react differently to changes in risk perception. As illustrated
+in Fig. 3, a majority group reacts in a relatively gradual way to a change in risk perception, whereas the response of the minority group to a change in risk perception
+is almost a step function.
+Game theoretical models illustrate how vaccine scares and declining vaccine
+coverage, especially in countries with voluntary vaccination policies such as the
+United Kingdom, are not isolated historical events, but rather possible instances
+of inherently unstable dynamics which can apply in any population under a voluntary vaccination policy. While mandatory vaccination would serve the public interest by effectively eradicating diseases, there are also implications for individual
+rights. Understanding and predicting long-term trends in population vaccination
+behaviour via game dynamic models is, therefore, valuable for the development of
+sound, evidence-based public health policy.
+Acknowledgments
+The authors gratefully acknowledge the support received from the Natural Sciences and Engineering Research Council (NSERC) of Canada for this work. The
+first author’s work was also supported by the Fields Institute for Research in Mathematical Sciences and Division of Engineering and Applied Science at Harvard
+University. The first author was a Visiting Scholar at time of submission of this
+paper. Her research was funded by NSERC Discovery Grant 262899. The second author’s research was funded by NSERC Discovery Grant 298305. The third
+author’s research was funded by NSERC USRA program in conjunction with Discovery Grant 262899.
+The authors wish to thank the referees for valuable comments that led to a better
+presentation of this work.
+
+<-----Page 22----->Dynamics of Vaccination Strategies via Projected Dynamical Systems
+
+1475
+
+References
+Albert, M.R., Ostheimer, K.G., Breman, J.G., 2001. The last smallpox epidemic in Boston and the
+vaccination controversy, 1901–1903. N. Engl. J. Med. 344, 375–379.
+Anderson, R.M., May, R.M., 1991. Infectious Diseases of Humans. Oxford University Press,
+Oxford.
+Asch, D.A., Baron, J., Hershey, J.C., Kunreuther, H., Meszaros, J., Ritov, I., Spranca, M., 1994.
+Omission bias and pertussis vaccination. Med. Decis. Making 14, 118–123.
+Aubin, J.P., Cellina, A., 1984. Differential Inclusions. Springer-Verlag, Berlin.
+Baiocchi, C., Capello, A., 1984. Variational and Quasivariational Inequalities. Applications to
+Free Boundary Problems. Wiley, New York.
+Bauch, C.T., 2005. Imitation dynamics predict vaccinating behaviour. Proc. R. Soc. Lond. B 272,
+1669–1675.
+Bauch, C.T., Earn, D.J.D., 2004. Vaccination and the theory of games. Proc. Natl. Acad. Sci. 101,
+13391–13394.
+Bauch, C.T., Galvani, A.P., Earn, D.J.D., 2003. Group interest versus self interest in smallpox
+vaccination policy. Proc. Natl. Acad. Sci. 100, 10564–10567.
+Bellaby, P., 2003. Communication and miscommunication of risk: Understanding UK parents attitudes to combined MMR vaccination. Br. Med. J. 327, 725–728.
+Biroscak, B., Fiore, A., Fasano, N., Fineis, P., Collins, M., Stoltman, G., 2003. Impact of the
+thimerosal controversy on hepatitis B vaccine coverage of infants born to women of unknown hepatitis B surface antigen status in Michigan. Pediatrics 111, e645–e649.
+Chapman, G.B., Coups, E.J., 1999. Predictors of influenza vaccine acceptance among healthy
+adults. Prev. Med. 29, 249–262.
+Cojocaru, M.G., 2002. Projected Dynamical Systems on Hilbert Spaces, Ph.D. Thesis, Queen’s
+University, Canada.
+Cojocaru, M.-G., 2005. Infinite-dimensional projected dynamics and the 1-dimensional obstacle
+problem. J. Funct. Spaces Appl. 3(3), 251–262.
+Cojocaru, M.-G., 2006. Monotonicity and existence of periodic cycles for projected dynamical
+dystems on Hilbert spaces. Proc. Am. Math. Soc. 134, 793–804.
+Cojocaru, M.-G., Daniele, P., Nagurney, A., 2005. Projected dynamical systems and evolutionary
+variational inequalities via Hilbert spaces and applications. J. Optim. Theory Appl. 127(3),
+549–563.
+Cojocaru, M.G., Jonker, L.B., 2004. Projected differential equations in Hilbert spaces. Proc. Am.
+Math. Soc. 132(1), 183–193.
+Cournot, A.A., 1838. Researches into the Mathematical Principles of the Theory of Wealth (English translation 1897). MacMillan, London.
+Dupuis, P., Ishii, H., 1990. On Lipschitz continuity of the solution mapping to the Skorokhod
+problem, with applications. Stoch. Stoch. Rep. 35, 31–62.
+Dupuis, P., Nagurney, A., 1993. Dynamical systems and variational inequalities. Ann. Oper. Res.
+44, 9–42.
+Durbach, N., 2000. They might as well brand us: Working class resistance to compulsory vaccination in Victorian England. Soc. Hist. Med. 13(1), 45–62.
+Eurosurveillance Weekly Release, vol. 5, Issue 10, 19 May 2005. URL: http://www.
+eurosurveillance.org/ew/2005/050519.asp
+Evans, M., Stoddart, H., Condon, L., Freeman, E., Grizzell, M., Mullen, R., 2001. Parents perspectives on the MMR immunisation: A focus group study. Br. J. Gen. Pract. 51, 904–910.
+Fine, P.E.M., Clarkson, J.A., 1986. Individual versus public priorities in the determination of optimal vaccination policies. Am. J. Epidemiol. 124, 1012–1020.
+Fischhoff, B., 2003. Assessing and communicating the risks of terrorism. In: Teich, A.H., Nelson,
+S.D., Lita, S.J. (Eds.), Science and Technology in a Vulnerable World [Suppl. to the AAAS
+Science and Technology Policy Yearbook 2003]. AAAs, Washington, DC, pp. 51–64. Available at: http://www.aaas.org/spp/yearbook/2003/stvwch5.pdf. Accessed December 13, 2005.
+Gabay, D., Moulin, H., 1980. On the uniqueness and stbility of Nash-equilibria in noncooperative
+games. In: Applied Stochastic Control in Econometrics and Management Science. North
+Holland, Amsterdam.
+Gangarosa, E.J., Galazka, A.M., Wolfe, C.R., Phillips, L.M., Gangarosa, R.E., Miller, E., Chen,
+R.T., 1998. Impact of anti-vaccine movements on pertussis control: The untold story. Lancet
+351, 356–361.
+
+<-----Page 23----->1476
+
+Cojocaru et al.
+
+Geoffard, P.Y., Philipson, T., 1997. Disease eradication: Private versus public vaccination. Am.
+Econ. Rev. 87, 222–230.
+Goldstein, K.P., Philipson, T.J., Joo, H., Daum, R.S., 1996. The effect of epidemic measles on
+immunization rates. JAMA 276, 56–58.
+Hartman, P, Stampacchia, G., 1966. On some nonlinear elliptic differential functional equations.
+Acta Math. 115, 271–310.
+Henry, C., 1973. An existence theorem for a class of diffferential equations with multivalued right
+hand sides. J. Math. Anal. Appl. 41, 179–186.
+Isac, G., 1992. Complemetarity Problems, Lecture Notes in Mathematics. Springer-Verlag, Berlin.
+Isac, G., Bulavski, V.A., Kalashnikov, V. V., 2002. Complementarity, Equilibrium, Efficiency and
+Economics. Kluwer Academic, Dordrecht, The Netherlands.
+Isac, G., Cojocaru, M.G., 2002. Variational inequalities, complementarity problems and pseudomonotonicity. Dynamical aspects. In: Proceedings of the International Conference on Nonlinear Operators, Differential Equations and Applications, Babes-Bolyai University of ClujNapoca III, pp. 41–62.
+Isac, G., Cojocaru, M.G., 2004. The projection operator in a Hilbert space and its directional
+derivative. Consequences for the theory of projected dynamical systems. J. Funct. Spaces
+Appl. 2(1), 71–95.
+Jansen, V.A., Stollenwerk, N., Jensen, H.J., Ramsay, M.E., Edmunds, W.J., Rhodes, C.J., 2003.
+Measles outbreaks in a population with declining vaccine uptake. Science 301, 804.
+Karamardian, S., Schaible, S., 1990. Seven kinds of monotone maps. J. Opt. Theory Appl. 66(1),
+37–46.
+Kinderlehrer, D., Stampacchia, G., 1980. An Introduction to Variational Inequalities and Their
+Applications. Academic, New York.
+Krasnoselskii, M.A., Zabreiko, P.P., 1984. Geometrical Methods of Nonlinear Analysis: A Series
+of Comprehensive Studies in Mathematics, vol. 263. Springer-Verlag, Berlin.
+Lashuay, N., Tjoa, T., de Nuncio, M.L.Z., Franklin, M., Elder, J., Jones, M., 2000. Exposure to
+immunization media messages among African American parents. Prev. Med. 31, 522–528.
+McKenzie, E., Roberts, F., 2003. Modeling social responses to bioterrorism involving infectious agents. DIMACS Technical Report 2003-30, Rutgers University. Available at:
+http://dimacs.rutgers.edu/Workshops/Modeling/Report.doc, Accessed December 13, 2005.
+Minty, G.J., 1978. On variational inequalities for monotone operators. Adv. Math. 30, 1–7.
+Nagurney, A., Siokos, S., 1997. Financial Networks: Statics and Dynamics. Springer-Verlag,
+Berlin.
+Nagurney, A., Zhang, D., 1996. Projected Dynamical Systems and Variational Inequalities with
+Applications. Kluwer Academic, Dordrecht, The Netherlands.
+Nash, J.F., 1950, Equilibrium points in n-person games. Proc. Natl. Acad. Sci. 36, 48–49.
+Nash, J.F., 1951, Noncooperative games. Ann. Math. 54, 286–298.
+Plotkin, S., 2002. Lessons learned concerning vaccine safety. Vaccine 20(Suppl. 1), S16–S19.
+Poland, G., Jacobsen, R., 2001. Understanding those who do not understand: A brief review of
+the anti-vaccine movement. Vaccine 19, 2440–2445.
+Roberts, R.J., Sandifer, Q.D., Evans, M.R., Nolan-Farrell, M.Z., Davis, P.M., 1995. Reasons for
+non-uptake of measles, mumps and rubella catch up immunisation in a measles epidemic and
+side effects of the vaccine. Br. Med. J. 310, 1629–1639.
+Schmitt, H.J., 2002. Factors influencing vaccine uptake in Germany. Vaccine 20(Suppl. 1), S2–S4.
+Shapiro, A.S., 1994. Existence and differentiability of metric projections in Hilbert spaces. SIAM
+J. Optim. 4, 130–141.
+Smailbegovic, M.S., Laing, G.J., Bedford, H., 2003. Why do parents decide against immunization?
+The effect of health beliefs and health professionals. Child Care Health Dev. 29, 303–311.
+Zarantonello, E., 1971. Projections on convex sets in Hilbert space and spectral theory. In: Contributions to Nonlinear Functional Analysis, Publ. No. 27, Math. Res. Center, Univ. Wisconsin.
+Academic, New York, pp. 237–424.
+
+

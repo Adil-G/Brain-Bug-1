@@ -1,0 +1,984 @@
+<-----Page 0----->~
+
+Journalof ManufacturingSystems
+Vol. 24/No. 3
+2005
+
+Teaching Axiomatic Design to Engineers
+Theory, Applications, and Software
+Christopher A. Brown, Dept. of Mechanical Engineering, Worcester Polytechnic Institute,
+Worcester, Massachusetts, USA. E-marl: brown@wpi.edu
+
+Abstract
+
+of the effectiveness of teaching essential methods in
+engineering design has a broad and significant impact
+on adding value to the practice of engineering. The
+contribution offered by the current work is to advance
+the practice of teaching axiomatic design, particularly
+in a course on manufacturing processes, while giving
+proper perspective to the contributions of N.P. Suh
+(1990, 2001).
+In 1997, Campbell and Colbeck published an
+insightful critical literature review on teaching and
+assessing engineering design. They note that there
+are no articles about how to assess students' designs
+and that the literature on teaching engineering design
+is relatively new, begun about 1987. Campbell and
+Colbeck point out that the approach to teaching
+engineering involves practice solving open-ended
+p r o b l e m s , creativity, t e a m w o r k , teaching by
+coaching, and experience for offering evaluation of
+student work. They stress the need for more education
+on teamwork.
+Evaluation of engineering designs in the absence
+of an underlying science is problematic. Love (1980)
+showed how design evaluation could be based on
+the degree of achieving objectives or functions. Pugh
+(1991), taking a broad view that incorporates
+m a r k e t i n g and selling as well as traditional
+engineering design functions, also bases evaluation
+on a student's level of success in achieving design
+objectives.
+The University of Maryland has made notable
+contributions to the literature on teaching engineering
+design, including Dieter's book (1991), which
+emphasizes an algorithmic approach to design and
+discusses evolution, iteration, trial and error, art, and
+intuition in optimization of designs. Dieter also shows
+a method for evaluating designs based on the degree
+of achieving the functions. Parcover and McCuen
+(1995) cite the need for curricular improvements.
+They focused on the constructive learning method,
+
+Axiomatic design (introduced and described by N.P. Suh in
+1990 and 2001 books) shows that the engineering of good
+designs can be taught as a science. There is a simple set of
+underlying rules, or design axioms, on which good designs
+are based. The design axioms provide the opportunity for teaching design as a science, in that it is based on some simple
+underlying principles. Taking advantage of this opportunity, a
+systematic approach to teaching how to engineer and critically evaluate good designs has been developed.
+Three steps are used in introducing axiomatic design. First
+is providing motivation, which is attempted by observing that
+design is fundamental to all engineering. The purpose of
+traditional engineering analysis, which is emphasized in
+engineering studies, is to support design. Second is developing the concept that there are two simple axioms, independence and information, that govern design, just as
+Newton's laws govern mechanics. Third is observing that to
+apply the axioms designs must be decomposed into a hierarchical structure. This leads to stating that there are three
+essential elements to engineering design: the axioms, the
+structure, and the process for creating that structure.
+A barrier to teaching and using this scientific, axiomatic
+approach to design has been the difficulty of creating, modifying, managing, and communicating anything beyond relatively simple design hierarchies. Any design with more than
+a few functional requirements was difficult to manage. Recently introduced design software (Acclaro, http://
+www.axiomaticdesign.com) has overcome this barrier. It can
+easily handle many hundreds of functional requirements and
+facilitates the application of the independence axiom. The
+impact on the teaching process is that the students learn to
+construct large design hierarchies quickly and spend more
+time on mastering applications.
+
+Introduction
+The objective of tiffs paper is to present a simple,
+straightforward approach for teaching engineers the
+theory and applications of axiomatic design in less
+than a full course. Axiomatic design is especially
+worthwhile because the design axioms elevate
+engineering design to a science, governed by a few
+basic rules, from what has been a kind of an art
+integrated with engineering analysis. The importance
+
+186
+
+<-----Page 1----->Journal of Manu~?lcturing Systems
+Vol. 24/No. 3
+2005
+
+practices to independence analysis. He cites the
+strength of axiomatic design in promoting a hieratical
+representation that facilitates communication,
+documentation, and evaluation. He also notes that
+high-level restructuring of the design process in
+industry is required to implement axiomatic design.
+An axiomatic approach to design allows
+engineering design to be taught as a science. As in
+other sciences, basic underlying principles with broad
+applications can be taught. These principles are
+applied to solving design problems and are used for
+evaluation. This approach has clear and important
+advantages over the traditional approaches, which rely
+on compliance with sometimes abstract algorithms to
+attempt to ensure good results. These approaches
+often include intuition, innate creativity, and evaluation
+by experience, teaching by one-on-one coaching, and
+a process based on time-intensive iterations of trialand-error work. A good design method should be self
+consistent and could therefore be used to design the
+content as well as the best approach for teaching
+engineering design. This current contribution presents
+a special approach to teaching axiomatic design, an
+approach that has been developed over period of a
+decade and a half of graduate studies at Worcester
+Polytechnic Institute (WPI).
+
+the content of which is process oriented, focusing
+on individual problem solving. They emphasize
+experience and iteration with prototypes and testing
+for evaluating designs. Zhang (1999) discussed a
+product-driven approach to teaching design to
+hundreds of first-year students at the University of
+Maryland that emphasizes experience, one-on-one
+instruction, and is resource intensive.
+Decomposition can be a useful approach for a
+variety of e n g i n e e r i n g problems. Frindley,
+Jorgensen, and Lamancusa (1997) discuss the use
+of a kind of lateral decomposition, or product
+dissection, divided into three segments: function,
+performance, and manufacture. The purpose was to
+facilitate the use of benchmarking in the design
+process rather than assisting the design process itself.
+In that work, it was enabling the application of
+benchmarking that provided the motivation for
+product dissection or decomposition. Their paper
+focuses on development and applications of the
+benchmarking process tbr classroom use.
+In a landmark book for advancing a scientific
+approach to design, Suh (1990) put forth a
+proposition that good engineering design is governed
+by two axioms" a x i o m o n e - - m a x i m i z i n g
+independence (or minimizing coupling), mad axiom
+two --minimizing information (or maximizing the
+probability of success). This approach is refined and
+further illustrated with expanded applications of
+axiomatic design in a second book (Suh 2001). In
+Sub's axiomatic approach, designs are evaluated
+according to their compliance with the axioms, which
+inherently incorporates the degree of achieving the
+functional requirements. The design structure of
+lateral decomposition into design domains and
+vertical decomposition into hierarchies defines the
+necessary parts of applying the axioms. Suh also
+defines the process of creating the hierarchy by zigzagging between the domains at progressively more
+detailed levels of the hierarchy, as well as by a process
+of physical integration of the components. These are
+excellent books (Suh 1990, 2001), although they
+may be challenging for any teaching situation other
+than a graduate or advanced undergraduate course
+dedicated to axiomatic design.
+For teaching axiomatic design, Bathurst (2004),
+in a paper given at the Third International Conference
+on Axiomatic Design and intended for those already
+familiar with axiomatic design, emphasizes the
+importance of examples and adapting existing design
+
+Methods
+The basic premise in designing the class is that
+people learn best by doing. Therefore, the basics of
+the principal elements of axiomatic design are
+covered quickly and in just enough depth so that
+they can be used at the beginning of the course.
+Thereafter, the principal elements are elaborated,
+decomposed, and expanded and used with greater
+sophistication.
+This teaching method for axiomatic design has
+evolved over a decade and a half in the first part of a
+graduate course at WPI on the design and analysis
+of manufacturing processes. The class meets for
+three hours one evening a week and includes 20 to
+30 students. About half the people in the class are
+working full time as engineers in industry. One
+objective of the class is to have some of these fulltime engineers use axiomatic design within a month,
+at least qualitatively, and do it because they believe
+axiomatic design will help them to do their jobs better.
+All the basic elements of axiomatic design and
+the process to implement it are presented in the first
+
+187
+
+<-----Page 2----->Journal of Mam<facturing Systems
+
+Vol. 24/No. 3
+2005
+
+lecture so that the students can do an initial simple
+design exercise. In the second and third weeks, the
+basic elements are covered again, decomposed, and
+reinforced and expanded with more detail and
+applications. The students are given increasingly more
+sophisticated exercises to verify their understanding
+of the material. The students then work in groups to
+do a larger design project on a manufacturing process
+as part of the rest of the course.
+The objective of the evaluation of the students' work
+in the first month is not to find ways to differentiate
+the students according to their abilities, but to verify
+that they have a c h i e v e d a m i n i m u m level of
+competency and to assist those who have not. The
+homework ~ading is done in a way to show students
+where they may be lacking basic competencies. Errors
+are noted, with appropriate points deducted. Students
+are encouraged to redo homework exercises for full
+credit to verify their competency.
+Class time is used for a combination of lecture
+and d i s c u s s i o n , along with p r e s e n t a t i o n s of
+homework. The lectures are based on modules,
+which are introduced by discussion questions. The
+class discusses a question, such as how can you tell
+a good design from a bad one. A lecture module
+follows the discussion, so that essential points that
+are missed will be covered. Examples of the students'
+homework efforts are presented and discussed.
+
+have often been left up to intuition and inspiration.
+Design courses that are intended to teach something
+beyond drafting or analysis tend to try to coach some
+kind of process, often abstract, for creative intuition
+or inspiration. Many engineers leave engineering
+school knowing little more about how to create a new
+design than they did in high school. Axiomatic design
+lifts engineering design from an iterative, abstract,
+intuitive process, which relies on inspiration to achieve
+creativity, to a science with clear and simple underlying
+principles. Effective use of axiomatic design will
+produce better designs in less time than any of the
+other earlier educational design methods.
+
+Basic Elements of Axiomatic Design
+There are three basic elements that need to be
+understood to get started teaching axiomatic design.
+They are: design axioms, structures, and processes
+(Table 1). The axioms are decomposed into the rules
+or grammar that govern design, i.e., the two axioms,
+already mentioned above and the corollaries and
+theorems (Suh 1990, 2001). The structures are
+decomposed laterally (Figure 1) into the design
+domains and vertically (Figure 2) into the design
+hierarchies (Suh 1990, 2001). The processes consist
+of decomposition by zig-zagging between the design
+domains (Figure 3) down to the "leaf levels" or "nitt3;gritty," for example, the most detailed or fundamental
+level of the design hierarchy and physical integration
+or composition of the final design (Suh 1990, 2001).
+The lateral decomposition (Figure 1) has been
+called the playing field for design, and the axioms,
+corollaries, mid theorems have been called the rules.
+While the domains are usually presented with the
+customer domain (not shown in Figure 1) and the
+process domain, the design exercises concentrate on
+the r e l a t i o n s h i p s b e t w e e n the F u n c t i o n a l
+Requirements (FRs) and the Design Parameters (DPs)
+in the functional and physical domains. The process
+domain is used as a check to see if a reasonable
+
+Motivation
+Motivation in students is essential for effective
+teaching. The motivation for learning axiomatic
+design is presented along the following arguments.
+The basic function of engineers is to design, that is,
+to create devices and systems that never existed
+before. Nearly every aspect of the industrialized,
+modern world is designed. The process by which
+things are designed influences everything. The
+design process is arguably the single most important
+process in the modem world, yet the key components
+
+Table 1
+Three Basic Elements of Engineering Design
+
+Elements
+Axioms
+Structures
+Processes
+
+Components
+Maximize independence
+Minimize information
+Lateral
+Ve1"tical
+Zig-zagging
+Physical integration
+
+Details
+Decouple functional elements
+Maximize probabilit5, of success
+Design domains
+Hierarchies in the domains
+Between functional and physical
+domains
+Recomposition
+
+188
+
+Notes
+Provides adjustability and controllability
+Provides robustness and high yield
+Customer-Functional-Physical-Process
+Decomposition from general to specific
+Generation of vertical hierarchies
+
+Constnlctionintophysicalsystems
+
+<-----Page 3----->Journal of Manuf~lcturing Systems
+Vol. 24/No. 3
+2005
+
+Functional
+
+J Process I
+
+Physical ]
+
+What it does
+
+What it looks like
+
+How it is made
+
+Functional
+Requirements
+
+Design
+Parameters
+
+Process
+Variables
+
+FRs
+
+FR1
+FR2
+FR3
+
+etc.
+
+~{.....¢
+
+DPs
+
+DP1
+DP2
+DP3
+etc.
+
+PVs
+
+• ...... •
+
+PVI
+PV2
+PV3
+etc.
+
+of interest. The first assignment, using
+the software, is to create a design with
+at least 15 FRs and three levels in the
+hierarchy. Deficiencies that are
+c o m m o n l y found initially are
+formulating good FRs, understanding
+the difference between FRs and
+constraints,
+and
+performing
+reasonable decompositions.
+
+Decompositions
+
+At each level of the hierarchy, the
+FRs must be collectively exhaustive
+and mutually exclusive (CEME).
+This means that the r e q u i r e d
+functions are covered without overlap between the
+FRs. The overlap would result in coupling and violate
+the independence axiom. Also, the decompositions
+must logically flow from one level to the next. If an
+FR at one level, say FR1, is to guard against
+mechanical impacts, then it might be decomposed
+in one of several logical ways. One way would be
+to decompose it into guarding against mechanical
+impacts from different directions, so that, for
+example, FRI.1 guards against vertical impacts,
+FR1.2 is to guard against frontal impacts, and FR1.3
+is to guard against lateral i m p a c t s . A n o t h e r
+decomposition scheme would be to guard against
+impacts of different duration. This could substitute
+for the above decomposition or be useful in the
+next level of decomposition. In the case of guarding
+against shocks from different directions, while three
+lower level FRs for guarding against impacts from
+three different orthogonal directions appears to be
+decoupled, i.e., mutually exclusive, it is not clear if
+oblique impacts would be included; therefore, the
+exercise would require some checking to be sure
+that these l o w e r l e v e l FRs are c o l l e c t i v e l y
+exhaustive.
+In the initial decompositions, a common mistake
+is to decompose an FR into only one other FR. This
+results in either an incomplete decomposition, i.e.,
+the lower level FR is not collectively exhaustive, or
+else it makes the lower level FR redundant, just a redefinition of the higher level FR. In the FR decomposition structure, each parent must have at least two
+children, unlike the biological metaphor.
+The second homework is to apply axiom one,
+the independence axiom, using a design matrix, as
+
+Figure 1
+
+Lateral Decomposition of Design Structure into Design Domains. Arrows represent
+mapping between the domains. Understanding the nature of the mapping is the objective
+of engineering analysis and experimentation (Suh 1990. 2001).
+
+manufacturing process and process variables exist.
+This helps with c o n c u r r e n t or s i m u l t a n e o u s
+engineering. Manufacturing process and tool design
+are recast as product design problems aligned with
+the appropriate customer FRs and DPs.
+Defining the FRs properly is essential for a good
+design. The final design cannot be better than the FRs.
+Engineers have a tendency to jump immediately to
+physical embodiments, DPs, in addressing design
+problems. The result, frequently, is that the FRs are not
+well defined. Understanding the difference between FRs
+and Constraints (C's) is also essential. Guidelines for
+these requirements are shown in Table 2.
+The objective of the first homework exercise is to
+verify the students' ability to create the vertical
+d e c o m p o s i t i o n in the functional and physical
+domains, as shown in Figure 2. (The design matrix
+is discussed below.) This requires following the
+process shown in Figure 3. In the zig-zagging
+process, the DPs at one level supply a context, if not
+a constraint, on the FRs and DPs at the lower levels.
+
+Software
+The A c c l a r o s o f t w a r e ( A x i o m a t i c D e s i g n
+Solutions,
+Inc.,
+Brighton,
+MA,
+http://
+w w w . a x i o m a t i c d e s i g n . c o m ) has raised this first
+exercise to a level where significant designs can be
+considered. Without the software, it is cumbersome
+to impossible to represent designs with a significant
+number of FRs. About 15 FRs and three levels of the
+hierarchy are about the m a x i m u m that can be
+manipulated reasonably without software. Especially
+important is the ability to hide levels of the hierarchy
+so that the designer can focus on ouly the current level
+
+189
+
+<-----Page 4----->Journal of Mant{~cturing Systems
+Vol. 2 4 / N o , 3
+2005
+
+E
+
+E
+
+E
+
+o
+
+o
+
+t~
+o
+C:~ "O
+
+0
+
+0
+
+0
+-o
+
+N
+
+8 X
+o
+
+s
+~
+
+13_
+
+¢-
+
+.r-
+
+~_ n
+~ ca
+
+;," b~ ~
+
+,'"
+
+~
+
+~ @ ~
+
+~
+
+~d
+
+?-
+
+i
+
+W
+
+~FR0: Provide for safe landing
+
+I
+
+~-,-*FRI:Dissipate impact energy
+~-FR2: Provide side impact protection
+
+o.N
+
+--FR3: Store impact attenuation system until needed
+
+6I: ?1
+
+I
+
+~FR4: Deploy impact attenuation system
+*~FR5: Control collapse of pneumatic attenuation system
+---FR5.1: Emptyair pocket on impact
+~---FR5.2: Limittipp ng
+
+li':t
+6t
+
+FR52.1 : Maintain near vertical orientation
+,g
+
+~'~FR5.2.2: Localize restoring forces
+~FR5.3: Provide "soft" end of travel stop
+~FR6: Ensure stable flotation
+
+Figure 2
+Vertical Decomposition and Design M a t r i x - - A e c l a r o Screenshot.
+One decomposition branch has been expanded to illustrate the hieratical nature of the decomposition. The X's in the matrix indicate
+interactions. This design is quasi-coupled, in that there are off-diagonal X's, but only in one half, that is, one triangle of the matrix.
+
+shown in Figure 2, and to indicate with X's and O's
+where the coupling is. The most desirable result is
+a diagonal matrix, where each FR has its own DP
+and each DP influences only one.? FR. If this is not
+possible, then a triangular matrix is workable. Either in class or as homework, the problems in 3.10
+at the end of chapter 3 in Principles of Design (Suh
+1990) are worked out. This exercise shows that
+design interactions can be represented compactly
+and manipulated symbolically, according to simple
+rules, just as there are mathematical representations
+in the areas of mechanics, thermodynamics, or electrical circuits.
+
+Information Content
+The third homework addresses the second axiom,
+information. Without some historical and disciplinary perspective, it may not be fully appreciated why
+the information content (/) is used and represented
+as the log of the reciprocal of the probabilities of
+success q'i).
+I = log(l/p, )+ log (1/p 2)+ log (1/p 3)...
+
+(1)
+
+The similarity with statistical thermodynamics (S
+= k In(w)) only helps those who u n d e r s t a n d
+Boltzman's work. In any event, it may be easier to
+
+190
+
+<-----Page 5----->Journal of" Manufacturing Systems
+Vol. 24/No. 3
+2005
+
+Figure 3
+Process of Zig-Zagging Between FRs and DPs.
+At each level, one DP is selected to satisfy one FR. Subsequently, that DP imposes a constraint on the next level down.
+The process stops when the next level is obvious (Suh 1990, 2001).
+
+Table 2
+Guides for Formulating Functional Requirements (FRs), Design Parameters (DPs), and Constraints (C's)
+Functional Requirements (FRs)
+
+Design Parameters (DPs)
+
+Constraints (C's) (e.g., cost, time, weight)
+
+List of what the design should do
+
+List of what it should look like (prints)
+
+Start with verbs
+
+Start with nouns
+
+Satisfy customer needs
+Independent from other FRS
+Have functional tolerances
+Requires a DP
+Minimum list
+Avoidconjunctions
+
+Satisfy FRs
+One selected lbr each FR
+Have physical tolerances
+Must not have a DP
+
+List of what it must conform to
+Define boundaries
+May be linked to several FRs
+Have limits
+
+about 15 F R - D P pairs, which are sometimes combined with D P - P V pairs. With the Acclaro software,
+designs with more than 100 F R - D P pairs with several levels have been developed.
+It should be noted that while the F R - D P - P V combination is useful for all kinds of product design,
+when it is used for conventional, c o n s u m e r - t y p e
+products, it is not necessarily suited for the corresponding process design. The PVs are essential for
+the concurrent, or simultaneous, engineering aspects
+of the product design. In a course on process design, the design of the process is a separate design
+problem. In designing manufacturing processes, the
+process should be viewed as a product, so it makes
+sense to define a new set of FRs with the product
+being the manufacturing process. This allows the
+inclusion of FRs such as throughput rate, which is
+not often a reasonable or appropriate consideration
+in the design of the product being processed.
+
+minimize a summing function that goes to zero, as
+the information content does, than to maximize the
+probability of a multiplicative function. The information content is discussed in the context of manufacturing tolerances, so that the probability of success
+is the ratio of the c o m m o n range (the manufactured
+parts complying with the design tolerance) to the
+system range (the total manufactured parts). It is
+shown how the information content can accommodate manufacturing capabilities similar to the Cj,kparameter and, in addition, include the inlbrmation
+associated with a missed delivery.
+
+Design Exercises and Term Projects
+S u b s e q u e n t h o m e w o r k assignments are design
+exercises and can contribute to the components of a
+term project. The design projects are student selected
+within g e n e r o u s b o u n d s for m a n u f a c t u r i n g processes. Without the software, these were limited to
+
+191.
+
+<-----Page 6----->Journal of Mam(facturing Systems
+Vol. 24/No. 3
+2005
+
+It is possible that a process will supply special
+tooling. This can create another design layer. The
+processing needs can generate FRs for the tool design, which then has tooling DPs and PVs. Historically, m a n y new products have r e q u i r e d new
+processes and tooling. Before Watts could make the
+cylinders for a steam engine, WiIkinson need to make
+his boring machine. The design of tooling and machines for manufacturing is considered to be appropriate for the course.
+Practical problems are often brought to class by
+the practicing engineers. Recent projects have included:
+
+elements of the design matrix that were represented
+by X's and O's in the second exercise. These matrix
+elements can be formulae, tables, ntles, or graphs
+that explain the relation between the FRs and DPs.
+
+Results and Discussion
+The results of this approach have been overwhelmingly positive. Ever 3, time this approach has been
+used, for more than 10 years, students have reported
+using ,axiomatic design to some extent at work within
+the first month. A survey was done of former students who could be contacted by e-mail. Comments
+from former students who responded are in the Appendix. All who responded appear to be using axiomatic design qualitatively, primarily the axioms and
+secondarily the structure. In one instance a former
+student stressed its value in communication.
+In one spectacularly successful case, a student
+applied axiomatic design to a redesign of the production system he was responsible for, and it resulted
+in savings of $2.4 million before the course finished.
+The student was subsequently promoted, from tool
+designer to manager of manufacturing engineering
+to VP for engineering.
+The introduction of Acclaro software has facilitated the teaching of axiomatic design, resulting in
+significantly more sophisticated designs and deeper
+understanding of the decomposition process and
+hieratical structure. There is currently potential to
+sell software to former students' companies.
+Teamwork is facilitated by the structure required in
+axiomatic design. This has been observed in two ways.
+Conununication for mutual understanding is essential for good teamwork and is enhanced by practicing
+axiomatic design, through the use of evaluation rules
+mad the imposition of a structure on the design. Teamwork is also facilitated by the decoupled decomposition, in that different members of the team can more
+easily and clearly divide the tasks and work on them
+more independently when they are decoupled.
+Using axiomatic design requires greater investment in the higher levels of the design than is the
+practice historically. Engineers are often uncomfortable with investing so much time in design work,
+without producing drawings. Managers need to realize the value of design effort at the higher levels.
+For example, definitions need to be formulated to
+facilitate exclusivity and decomposition. The goals
+of the design need to be clearly and succinctly stated.
+
+1. The design of a new fabrication shop with a
+floor layout and machine placement that would
+maximize value added and reduce waste for a
+variety of small and large projects.
+2. A multi-chamber ball mill with progressively
+smaller balls, which decouples the optimal grinding configuration functional requirements from
+the input feed-size design parameter. This hmovation also allows for a varying number of chambers based on grinding needs, which leads to a
+more efficient process. An enclosed continuous
+flow system using a vacuum extraction method
+reduces possible operator error by limiting the
+required information needed for a successful
+product. The enclosed system also helps to minimize waste due to a reduction in contamination,
+further reducing the required information.
+3. An injection molding-assembly system, included modification to an existing process with
+low yield, to break up the manufacturing line
+into separate, modular cells. Each of these cells
+will produce components that would feed intermediate inventory. A final assembly line
+would use these three components as inputs and
+perform only the final assembly of the container. This modified system would not only
+decouple these workcells but would result in a
+significant reduction in complexity. Information content would be reduced from 17-=0.9435
+to I , ~ = 0.3150, a reduction of 67%.
+4. A new assembly system for HVAC sheet metal
+components fabricated from one stamping cycle
+and one forming cycle, reducing the tooling and
+maintenance and increasing the production rate.
+In a portion of the term project, students seek references from the archival literature to understand the
+
+192
+
+<-----Page 7----->Journal of Manufacturing Systems
+Vol. 24/No. 3
+2005
+
+Often it is clear from the homework efforts that there
+is confusion between designing the product and creating the design process for designing the product.
+Both exercises can have value, but they should be
+distinct. Also, there is sometimes confusion between
+designing the process and designing the tools to accomplish the process. These kinds of confusions may
+only be apparent when a clear, systematic, and scientifically rigorous design approach is used.
+The design axioms, like Newton's laws, cannot be
+proven. Their legitimacy is derived from the fact that
+they have never been observed to be violated, at least
+within some domains of applicability. Students are
+challenged to find exceptions to the axioms. Over the
+years, all the challenges to the axioms have been resolved to the satisfaction of everyone in the class
+through a caxeful consideration of the principles of
+axiomatic design. In most cases, there is a misunderstanding of a definition or a poor statement of the
+functional requirements. Of course, these resolutions
+of alleged violations of the axioms are taking place in
+a classroom under the guidance of a professor, who
+the students know has yet to record their grades.
+For teaching large design courses, such as have
+been reported in the literature, it is possible that the
+scientific, axiomatic approach to design will reduce
+some of the resource demands. It should be possible
+to formulate more general, universal instructions to
+lead students through the design process, eliminating the need for some individual coaching. In addition, axiomatic design provides clear and simple rules
+for evaluating the results of students' work, eliminating the need to get experienced designers to legitimatize the evaluations.
+
+3. The use of specially designed software facilitates the process of teaching the decomposition of FR and DP hierarchies in axiomatic
+design. The Acclaro software allowed the class
+to do more designs, and more complex designs,
+advancing the facility for practical applications.
+
+Acknowledgments
+The author would like to thank Professor Nam
+Suh of MIT for his interesting discussions; Axiomatic Design Solutions, Inc., Brighton, MA (http://
+www.axiomaticdesign.com) for use of its software;
+and WPI and its students.
+
+References
+Bathhurst, S. (2004). "On learning and executing axiomatic design in
+the engineering indust~.'" Proc. of ICAD 2004. 3rd Int'l Conf. on
+Axiomatic Design. Seoul, June 21-24, 2004.
+Campbell, S. and Colbeck, C.L. (1997). " T e a c h i n g and a s s e s s i n g
+engineering design: a review of the research." Session 3530, ASEE
+Conf.
+Dieter, G.E. (1991). Engineering Design: A Materials and Processing Approach. New York: McGraw-Hill.
+Frindley. J.L.; J o r g e n s e n , J.E.; and L a m a n c u s a , J.S. (1997).
+"Benchmarking: a process basis for teaching design." Proc. of
+27th Annual Conf.: Teaching and Learning in an Era of Change,
+Nov. 1997.
+Love, S.F. (1986). "Planning and creating s u c c e s s f u l engineering
+designs: m a n a g i n g the design process." A d v a n c e d Professional
+D e v e l o p m e n t Inc.
+McDonald, C. (1998). "Paying attention pays off." The Wire. Worcester, MA: Worcester Polytechnic Institute (v12, n l , June 1998),
+
+http://~wcw.wpi.edu/News,O/ire/June98/attention.html.
+Parcover, J.A. and McCuen, R.H. (1995). "Discover3, approach to teaching engineering design.'" Journal of Pr(L¢essional Issues in Engg.
+Education and Practice (v121, n4, Oct. 1995), pp236-241.
+Pugh, S. (1991). Total Design Integrated Methods f o r Successful
+Product Engineering. Boston: Addison-Wesley.
+Suh. N.P. (1990). The Principles o f Design. New York: O x f o r d
+Univ. Press.
+Suh. N.P. (2001). Axiomatic Design - Advances and Applications.
+New York: Oxford Univ. Press.
+Zhang, G. (1999). "A support structure of teaching engineering design to freshman students." Proc. of 29th ASEE/IEEE Frontiers in
+Education Conf., San Juan, 1999.
+
+Conclusions
+l. Many of the difficulties with teaching traditional
+design are avoided with axiomatic design. The
+presumption is that basing design on the axiomatic approach provides clear underlying
+principles on which to base design practice.
+2. As presented in this implementation of teaching
+axiomatic design, practicing engineers are able
+to use axiomatic design on the job after four 3hour classes. Based on experience in an evening
+graduate engineering class, some practicing engineers generally report that the3; start to use
+axiomatic design at work within the first month.
+
+Author's Biography
+Chris Brown received his PhD in 1983 from the University of
+Vermont. He spent the next four years at the Swiss Federal Institute of
+Technology in Lausanne teaching labs in mechanical metallurgy and
+doing research. For two years he then was a senior research engineer
+at Atlas Copco's European Research Center before going to Worcester
+Polytechnic Institute in 1989. At WPI, he teaches courses on surface
+metrology, design and analysis of manufacturing processes, and the
+technology of alpine skiing. Brown is the founder and director of
+WPI's Haas Technical Education Center for CNC machining and V~rl?I's
+Surface Metrology Lab. He has a patent on and develops software for
+using fractal geometry to analyze surface textures. He is a fellow of
+ASME, a past member of the SME board of directors, and an associate member of CIRP. He also consults on and teaches axiomatic design for industry and academia.
+
+193
+
+<-----Page 8----->Joumtal of Manufacturing Systems
+Vol. 24/No. 3
+2005
+
+Appendix
+"Axiomatic design takes you from argument to analysis
+when evaluating designs . . . . used at preliminary stages of
+concept selection/evaluation and high-level system design to identify fundamental high-level coupling. Always,
+it comes down to seeing coupling and getting rid of it. I've
+done it at the system level, at the sub-system level, and the
+component level. Each has resulted in a better design. One
+change in particular has resulted in improved dimensional
+stability of our latest torch design. The simple change (let
+the insulator insulate and not position/align) has fundamentally changed the performance of the torch. The locating
+features do not change dimensionally over the life of the
+torch. We have the data to prove it. Another was 'let the
+water tube carD" the water and not align itself.' (We added an
+alignment feature to align and another to position a~ally.)
+One feature, one function. We use structured designs of experiments (one form is Taguchi - robustness) to verify the
+stiffness of important interactions, and we use the experiments to choose an O or X if there is disagreement about
+whether there is an interaction at all (O or X ) . We first use
+our tribal knowledge and analysis to decide if it's an O or X.
+We revert to experimentation when we can't choose AND we
+think a strong interaction could be troublesome."
+
+"We use axiomatic design for creating FRs and DPs to
+ensure the incorporation of all necessary elements of a design and to stm't narrowing down possible solutions. [We]
+created FR and DP lists with constraints. Used for being sure
+all req's[requirements] are accounted for and to help narrow
+down [choices] from many possibilities of designs. [We] used
+axiomatic design also to show robustness of a particular
+solution after the narrowing-down of solutions is complete.
+We have used [a~omatic design] only for new designs and
+concept generation. We have not used it much for rework, or
+design improvement, or other possible applications.
+
+-Michael Rufo, Project Engineer, Foster Miller hw.
+"Two examples [from my previous job] come to mind.
+The first was a design of a process line for a low production
+sensor system used on a US Navy Submarine .... by considering a "decoupling of operations" approach, we were able to
+optimize the man usage and layout of the sensors for concurrent assemblies (up to 3 at a time, as opposed to the original plan from start to finish). This also allowed us to speed
+up our overall time from 8 weeks to 4.5 weeks (which we
+held or beat consistently from the first unit on). The tools all
+worked for their specific purpose, and although at first it was
+a hard sell to go from the original 5 "specialized hand tools'
+up to -12, once the workers had the "right tool for the job"
+it went quickly, painlessly, and easily made back the additional money spent on the tooling . . . . we developed a conceptual tool design that met all the requirements individually
+(again, decoupled) . . . . This tool saved 1 full week of our
+schedule in itself. And due to the simplicity of the design,
+...the cost of the part stayed low, the maintenance is easy
+and inexpensive, and it performed flawlessly....'"
+
+-E.M. Shipulski, PhD, VP of Engineering
+"The axioms have had a profound effect on my ability to
+design effective code and in problem solving."
+
+-Wm. S. Johnsen, PhD, Sr. Software Engineer
+"This changes the way I think about everything."
+
+-Owner, president, mamtger of a fabrication shop
+"I have found that I have used the overal] structure of Ax
+[axiomatic design] mostly to outline what the problem is
+and what the main components for the design are going to
+need to be. I also used it for brainstorming possible solutions to problems. One example is the development of a new
+method to articulate an endoscope for my previous employer
+(Optim, Inc, Sturbridge, MA). By reviewing what the doctors needed (CAs) along with what the doctors complain
+about when using endoscopes, I was able to identify" the
+functional aspects of a new design. From this, I was then
+able to brainstorm physical designs that would meet those
+requirements. Without getting into great detail, the new design will allow doctors to easily articulate an endoscope in
+4-axis environment, with tactile feedback, using only one
+hand, which will then allow doctors to operate other tools to
+do biopsies or other procedures through the endoscope. The
+new design was purely mechanical to eliminate the complexity of motorized systems. The previous method for operating an endoscope [required the use of] both hands and
+an assistant and was nonintuitive. The new design has resuited in my first patent. The strong point [of the course] was
+doing our own test exanaple and seeing other students' work."
+
+-Michael Malchiodi, Mechanical Engineer,
+Associate Professional Sta~ Johns Hopkins University
+Applied Physics Laboratory
+"I have used the concepts to talk to strategic suppliers
+overseas and domestic to alert them to what is important in
+the design process and to make sure they can stream-line
+their internal design process and give careful thought during their NPI stage, to pass on the cost savings to us. The
+group projects presentation enabled me to hear from other
+professionals and students their point of view when designing a new product."
+
+-Po Tse
+"I use axiomatic design...primarily in developing processes in electro-mechanical assembly. Most recently to decompose and existing process to diagnose the ' W H Y ' of the
+root cause of a problem. The stren~h is the simplicity of the
+concepts; the weakness is the language used to communicate them, particularly axiom 2, referred to as the "information content" and using a logarithm calculation. It may be
+technically the best; however, if one of the functional requirements is communicating the results to nontechnical
+
+-Ralph Tillhlghast, MS, Engineer
+
+194
+
+<-----Page 9----->Journal of Manufacturing Systems
+Vol. 24/No. 3
+2005
+
+people (management), then the term "information content"
+and the log calculation are not the best DP."
+
+A strong point [of the course] was that it showed us a
+new and simple manner to begin the design process. A weak
+point could be that you have to stay with it to fully use its
+potential. If you miss a couple of steps when designing and
+get lazy, then it doesn't help you in the end because you
+could miss those small aspects. If you do keep up with it
+though, you're sure not to leave out any necessary design
+parameters."
+
+-John Scanlan, Mamtfacturing Engineer, Teradyne
+Students f r o m first course to use Acclaro:
+"I typically use the elements of the design concept when
+designing machines and fixtures. I may not take the time to
+write out the list or use Acclaro, but I have the process in the
+back of my mind and try" to keep components and key elements decoupled as often as possible.
+My first big project was a degating system to separate
+two pieces post-shot that were connected by a runner. I
+knew that I needed to move the pieces into position, cut
+them, contain the pieces after cutting, and then bring the
+pieces back to the operator. So, I designed a nest to hold
+the pieces that were on a slide (all it did was slide the nest,
+so, no coupling there), a piston to bring the cutter into
+position, a slide on the end of the piston to adjust for width
+variations, and the cutters. So, I broke down what needed
+to be done at each step, and designed stand-alone (or semiindependent) components for each step.
+
+-Timothy Baird, Project Engineer
+"Its teachings definitely affect my thinking, planning and
+engineering. Being self employed, my engineering time must
+be optimized to the maximum, and I really don't have time
+to write down nay customer restraints, functional requirements, and design parameters (must have learned something
+there), but I live by the rules. It's like a Zen rule of life."
+
+-Jason Long, CEO, President and
+Head Janitor of NextGenA VD
+
+195
+
+

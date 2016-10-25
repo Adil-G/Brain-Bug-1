@@ -22,6 +22,7 @@ public class MainGUI {
     JFrame      preFrame;
     String      chatbotName = "Petricia";
     int         size        = (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()*0.7);
+    boolean IS_DEEP = false;
     public static String personal = "personalChat.txt";
     public static String web = "webData.txt";
     public static String local = "local.txt";
@@ -156,7 +157,7 @@ public class MainGUI {
 
     }
     public static PrintStream originalStream = System.out;
-    public void setSendMessageToUser(String userResponse) throws Exception {
+    public void setSendMessageToUser(String userResponse, boolean isDeep) throws Exception {
 
 
         PrintStream dummyStream    = new PrintStream(new OutputStream(){
@@ -167,7 +168,7 @@ public class MainGUI {
 
         System.setOut(dummyStream);
 
-        String answer = TestChatBot.getAnswerWithGUI(userResponse);
+        String answer = TestChatBot.getAnswerWithGUI(userResponse, isDeep);
 
         System.setOut(originalStream);
 /*
@@ -233,7 +234,7 @@ public class MainGUI {
                         messageBox.setText("");
                         messageBox.requestFocusInWindow();
                         try {
-                            setSendMessageToUser(question);
+                            setSendMessageToUser(question,IS_DEEP);
                         } catch (Exception e) {
                             e.printStackTrace();
                             try {

@@ -28,14 +28,14 @@ import java.util.regex.Pattern;
  * Created by corpi on 2016-05-01.
  */
 public class FindKeyWordsTest {
-    public static HashMap<String, HashSet<KeyWordPattern>> getSynonyms(HashSet<KeyWordPattern> keywords)
+    public static HashMap<KeyWordPattern, HashSet<KeyWordPattern>> getSynonyms(HashSet<KeyWordPattern> keywords, boolean isDeep)
     {
-        HashMap<String, HashSet<KeyWordPattern>> synonymMap = new HashMap<>();
+        HashMap<KeyWordPattern, HashSet<KeyWordPattern>> synonymMap = new HashMap<>();
         for(KeyWordPattern keys : keywords)
         {
-            String word = keys.getKeyWords()[1];
-            HashSet<String> syns = Thesaurus.getSynonyms(word);
-            syns.add(word);
+            KeyWordPattern word = new KeyWordPattern(keys.getKeyWords());
+            HashSet<String> syns = Thesaurus.getSynonyms(keys.getKeyWords()[1], isDeep);
+            syns.add(keys.getKeyWords()[1]);
             HashSet<KeyWordPattern> copy = new HashSet<>();
             for (String keyword : syns) {
                 // find the root word
