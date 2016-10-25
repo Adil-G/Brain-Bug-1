@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -19,6 +20,10 @@ public class Scan {
     ,File[] listOfFiles, HashMap<KeyWordPattern, HashSet<KeyWordPattern>> keyword2SynonymMap
     , HashSet<KeyWordPattern> newKeyWordsFullNouns)
     {
+        Pattern ignorePagesWithThis = KeyWordPattern.superMatcher(keyword2SynonymMap);
+        System.setOut(MainGUI.originalStream);
+        System.out.println(ignorePagesWithThis.toString());
+        ;
         for (File result : listOfFiles) {
             try {
                 //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
@@ -34,7 +39,7 @@ public class Scan {
                             result, "utf-8").toLowerCase();
                     //String[] sentences = biggestText.split("[\\.\\?!\\n]+");
                     boolean isRelevant = false;
-                    for(Map.Entry<KeyWordPattern, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
+                    /*for(Map.Entry<KeyWordPattern, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
                     {
                         if(isRelevant)
                             break;
@@ -42,12 +47,7 @@ public class Scan {
                             if (biggestText.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[0])
                                     ||biggestText.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[1])
 
-                                        /*||
 
-                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                ||
-                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
-                                        */
                                     ) {
 
                                 isRelevant = true;
@@ -55,7 +55,8 @@ public class Scan {
                             }
                         }
                     }
-                    if(!isRelevant)
+                    */
+                    if(!ignorePagesWithThis.matcher(biggestText).find())
                         continue;
                     HashSet<ParagraphInfo> sentsNouns = new HashSet<>();
                     HashSet<ParagraphInfo> sentsVerbsOrAdjFinal = new HashSet<>();
@@ -71,7 +72,7 @@ public class Scan {
                     {
                         ++pageNum;
                         // then split by sentence
-                        isRelevant = false;
+                        /*isRelevant = false;
                         for(Map.Entry<KeyWordPattern, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
                         {
                             if(isRelevant)
@@ -80,12 +81,7 @@ public class Scan {
                                 if (page.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[0])
                                         ||page.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[1])
 
-                                        /*||
 
-                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                ||
-                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
-                                        */
                                         ) {
 
                                     isRelevant = true;
@@ -93,7 +89,8 @@ public class Scan {
                                 }
                             }
                         }
-                        if(!isRelevant) {
+                        */
+                        if(!ignorePagesWithThis.matcher(page).find()) {
                             continue;
                         }
                         parNum = 0;
@@ -102,7 +99,7 @@ public class Scan {
                         /*
                             */
                             parNum++;
-                            isRelevant = false;
+                            /*isRelevant = false;
                             for(Map.Entry<KeyWordPattern, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
                             {
                                 if(isRelevant)
@@ -112,12 +109,7 @@ public class Scan {
                                             y.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[0])
                                                     || y.toLowerCase().toLowerCase().contains(keyWord.getKeyWords()[1])
 
-                                        /*||
 
-                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                ||
-                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
-                                        */
                                             ) {
 
                                         isRelevant = true;
@@ -127,6 +119,7 @@ public class Scan {
                             }
                             if(!isRelevant)
                                 continue;
+                                */
                             HashSet<String> usedKeywords = new HashSet<>();
                             int keyWordCount = 0;
                             HashSet<String> usedKeywords_2 = new HashSet<>();
@@ -157,19 +150,24 @@ public class Scan {
                                         exactKeyWordCount += 1;
                                 }
                             }
+                            System.setOut(MainGUI.originalStream);
+                            System.out.println("23fj8aw98j3a");
+                            Matcher match = ignorePagesWithThis.matcher(y.toLowerCase());
+                            if(match.find())
+                            {
+
+                                keyWordCount_2++;
+                                usedKeywords_2.add(match.group());
+                            }
+                            /*
                             for(Map.Entry<KeyWordPattern, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
                             {
+
                                 Pattern wba = subKeyWord.getKey().getPattern1();
                                 Pattern wbb = subKeyWord.getKey().getPattern2();
                                 if (wba.matcher(y.toLowerCase()).find()||
                                         wbb.matcher(y.toLowerCase()).find()
 
-                                        /*||
-
-                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                ||
-                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
-                                        */
                                         ) {
 
                                     keyWordCount_2++;
@@ -182,12 +180,6 @@ public class Scan {
                                     if (wb0.matcher(y.toLowerCase()).find()||
                                             wb1.matcher(y.toLowerCase()).find()
 
-                                        /*||
-
-                                        y.toLowerCase().contains(keyWord[0].toLowerCase())
-                                                ||
-                                                y.toLowerCase().contains(keyWord[1].toLowerCase())
-                                        */
                                             ) {
 
                                         keyWordCount_2++;
@@ -195,7 +187,9 @@ public class Scan {
                                         break;
                                     }
                                 }
+
                             }
+                            */
 
                             //keyWordCount = 0;
                             System.setOut(general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.dummyStream);

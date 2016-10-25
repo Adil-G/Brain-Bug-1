@@ -33,7 +33,8 @@ public class TestChatBot {
         WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.DELIMITER = "<92j8q9g93sajd9f8jqa9pf8j>";//File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\pakalupapito\\local.txt");
 */
         //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\local.txt");
-           File file = new File("..\\textbooks\\2021\\a.txt");
+          // File file = new File("..\\textbooks\\2021\\a.txt");
+        File file = new File("..\\textfiles_1400\\local.txt");
          //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\env1000\\local.txt");
 
 
@@ -42,7 +43,7 @@ public class TestChatBot {
         // user input
 
         //System.out.println();
-        return getAnswer(file,question,"openNLP\\", isDeep);
+        return getAnswer(file,question,"openNLP\\", true||isDeep);
     }
     public static String getAnswer(File file,String question,String openNLPDir, boolean isDeep) throws Exception {
         String answer = "No Result.";

@@ -4,6 +4,10 @@ import general.chat.MainGUI;
 
 import javax.swing.event.MouseInputAdapter;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -44,6 +48,27 @@ public class KeyWordPattern {
 
         return stringPrint;
     }
+    public static Pattern superMatcher(HashMap<KeyWordPattern, HashSet<KeyWordPattern>> keyword2SynonymMap)
+    {
+        String compileThis = "(";
+        boolean isFirst = true;
+        for(Map.Entry<KeyWordPattern, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
+        {
+            for(KeyWordPattern keyWord : subKeyWord.getValue())
+            {
+               if(isFirst) {
+                   compileThis += keyWord.getKeyWords()[0] + "|" + keyWord.getKeyWords()[1];
+                   isFirst = false;
+               }
+                else
+               {
+                   compileThis += "|" + keyWord.getKeyWords()[0] + "|" + keyWord.getKeyWords()[1];
+               }
+            }
+        }
+        compileThis+=")";
+        return  Pattern.compile(compileThis);
+    }
     @Override
     public int hashCode() {
         return this.getKeyWords()[1].hashCode();
@@ -63,6 +88,13 @@ public class KeyWordPattern {
         //System.setOut(MainGUI.originalStream);
         //System.out.println("989u8r false");
         return false;
+    }
+    public static void main(String[] args)
+    {
+        Pattern pat = Pattern.compile("(comput|computer)");
+        Matcher mat = pat.matcher("mips had a good computer morning");
+        if(mat.find())
+            System.out.println(mat.group());
     }
     /*
     @Override
