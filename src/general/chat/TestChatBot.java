@@ -40,7 +40,7 @@ public class TestChatBot {
 
         //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\elepahnts\\local.txt");
 
-        // user input
+        // user inpu
 
         //System.out.println();
         return getAnswer(file,question,"openNLP\\", true||isDeep);
