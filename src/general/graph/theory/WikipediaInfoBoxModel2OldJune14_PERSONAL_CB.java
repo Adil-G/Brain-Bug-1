@@ -400,17 +400,24 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             ArrayList<String> answers = new ArrayList<>();
             String finalsAns = "";
             int kwCount = 0;
-            for(Map.Entry<Integer, HashSet<HashSet<String>>> map :closestMatchedQueries.entrySet())
+            TreeMap<Integer, HashSet<HashSet<String>>> closestMatchedQueriesCopy = new TreeMap<>(closestMatchedQueries);
+            int keyCount = 0;
+            for(Map.Entry<Integer, HashSet<HashSet<String>>> map :closestMatchedQueriesCopy.entrySet())
             {
 
-
+                if(keyCount++<2)
                 for(HashSet<String> kwElement :map.getValue()) {
                     String message = "";
                     for (String kw : kwElement) {
                         message += " + " + kw;
                     }
                     ++kwCount;
-                    finalsAns += "\n\nSuggestion #" + kwCount + ".\n" + message;
+                    if(!message.isEmpty()) {
+                        Message answerX = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(message, message, isDeep);
+                        for (String ans : answerX.getAnswers())
+                            finalsAns += ans;
+                    }
+                    //finalsAns += "\n\nSuggestion #" + kwCount + ".\n" + message;
                 }
 
             }

@@ -3,9 +3,9 @@ package general.chat;
 import general.TestChatBotMain;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB;
 
-import java.io.File;
-import java.io.OutputStream;
-import java.io.PrintStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static general.chat.MainGUI.local;
@@ -24,6 +24,19 @@ public class TestChatBot {
 
         System.out.println(getAnswer(file,question,"openNLP\\", false));
     }
+    public static void writeFile1(ArrayList<String> list, File fout ) throws IOException {
+        FileOutputStream fos = new FileOutputStream(fout);
+
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+        bw.flush();
+        for(String line : list)
+        {
+            bw.write(line);
+            bw.write(" ");
+        }
+
+        bw.close();
+    }
     public static String getAnswerWithGUI(String question,boolean isDeep) throws Exception {
         // hard coded
         /*File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\bell\\local.txt");
@@ -34,7 +47,15 @@ public class TestChatBot {
 */
         //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\local.txt");
           // File file = new File("..\\textbooks\\2021\\a.txt");
-        File file = new File("..\\textfiles_1400\\local.txt");
+        File file = new File("..\\textbooks\\test\\a.txt");
+        System.setOut(MainGUI.originalStream);
+        ArrayList<String> sentences =  DMiningGoogleOnlyChunksUnordered.excecute(question);
+        File newFile = new File("..\\textbooks\\test\\info.txt");
+        if(!newFile.exists())
+            Files.createFile(newFile.toPath());
+
+        System.out.println("size = "+sentences.size());
+        writeFile1(sentences, newFile);
          //File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\env1000\\local.txt");
 
 
@@ -43,7 +64,14 @@ public class TestChatBot {
         // user inpu
 
         //System.out.println();
-        return getAnswer(file,question,"openNLP\\", true||isDeep);
+        String finalAnswer = getAnswer(file,question,"openNLP\\", false||isDeep);
+        String[] answers = finalAnswer.split("(\\n\\n)+");
+        String allCorrectMatches = "";
+        for(String lead : answers)
+        {
+            allCorrectMatches += "<abcd>"+lead;
+        }
+        return allCorrectMatches;
     }
     public static String getAnswer(File file,String question,String openNLPDir, boolean isDeep) throws Exception {
         String answer = "No Result.";

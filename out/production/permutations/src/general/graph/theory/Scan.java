@@ -68,7 +68,7 @@ public class Scan {
                     // split by pages first
                     int pageNum = 0;
 
-                    for (String page : biggestText.split("========\\d+========|<-----page \\d+----->"))
+                    for (String page : biggestText.split("========\\d+========|<-----page \\d+----->"))//
                     {
                         ++pageNum;
                         // then split by sentence
