@@ -19,7 +19,7 @@ public class DMiningGoogleOnlyChunksUnordered {
     public static int Max_LINKS = 24;
     public static int NumberOfFacts = 300;//30;
     public static Map<Double, String> mostCommonWords;
-    public static List<String> info = new ArrayList<String>();
+
     public static List<String> nouns;
     public static String prev = "";
 
@@ -28,8 +28,9 @@ public class DMiningGoogleOnlyChunksUnordered {
     {
         excecute("coffee");
     }
-    public static ArrayList<String> excecute(String input) throws Exception {
+    public static ArrayList<UrlFileConnector> excecute(String input) throws Exception {
         //processPage(input);
+        ArrayList<String> info = new ArrayList<String>();
        ArrayList<String> results=  GSAPI.main(new String[]{input.trim()});
         System.out.println(results);
         for(String result :results)
@@ -38,10 +39,10 @@ public class DMiningGoogleOnlyChunksUnordered {
         }
         //info.clear();
         //info.add(input);
-        return searchResult();
+        return searchResult(info);
     }
-    public static ArrayList<String> searchResult() throws IOException {
-        ArrayList<String> chunks = new ArrayList<String>();
+    public static ArrayList<UrlFileConnector> searchResult(ArrayList<String> info) throws IOException {
+        ArrayList<UrlFileConnector> chunks = new ArrayList<UrlFileConnector>();
         Map<String, HashSet<String>> firstCluster = new HashMap<String, HashSet<String>>();
         mostCommonWords = new TreeMap<Double, String>(Collections.reverseOrder());
         List<String> list = new ArrayList<String>();
@@ -62,11 +63,12 @@ public class DMiningGoogleOnlyChunksUnordered {
                 for (Element p : paragraphs) {
                     //System.out.println(e.text());
                     if (!p.text().contains(":") && !p.text().toLowerCase().contains("welcome") && !p.text().toLowerCase().contains("is a song")) {
-                        chunks.add(p.text().replaceAll("\\[[0-9]+\\]", ""));
-                        wholeText += p.text();
+
+                        wholeText += p.text().replaceAll("\\[[0-9]+\\]", "");
                         System.out.println("Adding more data..." + p.text());
                     }
                 }
+                chunks.add(new UrlFileConnector(url, wholeText));
             } catch (IOException j) {
                 System.out.println("Failed url connection." + url + " Trying another one.");
             } catch (Exception g) {
@@ -75,7 +77,7 @@ public class DMiningGoogleOnlyChunksUnordered {
         }
         //System.out.println(wholeText);
         //String[] sentence = wholeText.split("\\.");
-        ArrayList<String> sentences = chunks;//Arrays.asList(sentence);
+        ArrayList<UrlFileConnector> sentences = chunks;//Arrays.asList(sentence);
 
         return sentences;
     }

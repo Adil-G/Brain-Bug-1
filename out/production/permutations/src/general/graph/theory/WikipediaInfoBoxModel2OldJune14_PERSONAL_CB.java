@@ -6,6 +6,7 @@ import general.FindKeyWordsTest;
 import general.LuceneSnowBallTest;
 import general.chat.MainGUI;
 import general.chat.ProgressBarDemo;
+import general.chat.UrlFileConnector;
 import general.comparePhrasesold_june7;
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.wordnet.SynonymMap;
@@ -91,7 +92,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         return str.substring(0,str.length()-1);
     }
 
-    public static general.graph.theory.Message chatbotTypeSept11(String question, String origionalQuestion, boolean isDeep) throws Exception {
+    public static general.graph.theory.Message chatbotTypeSept11(String question, String origionalQuestion, boolean isDeep, ArrayList<UrlFileConnector> ufc) throws Exception {
         String newQuestion = new String();
         for(String part :Parse(question))
             newQuestion += part + " ";
@@ -250,7 +251,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             newstedListInception.add( new HashSet<>(ResultsToArrayList.subList(step * i, step * (i+1))));
         }*/
         int NUM_OF_CORES = 16;
-        ArrayList<File[]> chunks = ArrayChunks.chunks(new ArrayList<>(Arrays.asList(listOfFiles)),NUM_OF_CORES);
+        ArrayList<UrlFileConnector> chunks = ufc;
         NUM_OF_CORES = chunks.size();
         //File[] someFile = chunks.get(0);
         Thread[] threads = new Thread[NUM_OF_CORES];
@@ -261,7 +262,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             threads[i] = new Thread() {
                 public void run() {
                     // do stuff
-                    File[] someFiles = chunks.get(finalI);
+                    UrlFileConnector[] someFiles = new UrlFileConnector[]{chunks.get(finalI)};
                     scan.scanit( totalFinalfinalSetOfWordsTree
                             ,someFiles, keyword2SynonymMap
                             , finalNewKeyWordsFullNouns);
@@ -413,9 +414,9 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                     }
                     ++kwCount;
                     if(!message.isEmpty()) {
-                        Message answerX = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(message, message, isDeep);
+                        Message answerX = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(message, message, isDeep, ufc);
                         for (String ans : answerX.getAnswers())
-                            finalsAns += ans;
+                            finalsAns += "<f39j8f9sa9jf>"+ans + "("+map.getKey()+")";
                     }
                     //finalsAns += "\n\nSuggestion #" + kwCount + ".\n" + message;
                 }

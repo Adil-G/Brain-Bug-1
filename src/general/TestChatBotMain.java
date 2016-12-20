@@ -1,8 +1,11 @@
 package general;
 
 import general.chat.MainGUI;
+import general.chat.TestChatBot;
+import general.chat.UrlFileConnector;
 import general.graph.theory.Message;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB;
+import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB_SUM;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -26,11 +29,11 @@ public class TestChatBotMain {
     public static void main(String[] args) throws Exception {
 
         while(true) {
-            runChatbot((new Scanner(System.in)).nextLine(), false);
+            //runChatbot((new Scanner(System.in)).nextLine(), false, TestChatBot.NO_SUM);
         }
 
     }
-    public static String runChatbot(String userInput, boolean isDeep) throws Exception {
+    public static String runChatbot(String userInput, boolean isDeep, Enum isSummary, ArrayList<UrlFileConnector> ufc) throws Exception {
         // Empty chatbot log file
         list.clear();
         // String query = (new Scanner(System.in)).nextLine();
@@ -146,16 +149,21 @@ public class TestChatBotMain {
                 output += word + " ";
             }
             System.out.println("new string = " + output);
-            if (!WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsFileNameEquals(MainGUI.web)
+            /*if (!WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsFileNameEquals(MainGUI.web)
                     &&!WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsFileNameEquals(MainGUI.local))
                 if (isUserAskingAQustion) {
                     writeFile1(output);
                     //writeFile1(originalInput);
                 } else
                     writeFile1(output);
+                    */
 
             System.out.println("faf3ggh: " + query);
-            Message finalAnswers = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(query, originalInput, isDeep);
+            Message finalAnswers = null;
+            if(isSummary == TestChatBot.NO_SUM)
+                finalAnswers = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(query, originalInput, isDeep, ufc);
+            else
+                finalAnswers = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(query,originalInput,isDeep,ufc);
             //JSONObject obj = new JSONObject();
             //JSONArray arr = new JSONArray();
             String answerString = "";
@@ -170,7 +178,7 @@ public class TestChatBotMain {
                     answerString += message;
                 else
                 {
-                    answerString +=""+i+".\n"+ message;
+                    answerString +="<f39j8f9sa9jf>"+ message;
                 }
             }
             //obj.put(finalAnswers.getMessage(),arr);

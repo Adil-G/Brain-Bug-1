@@ -1,6 +1,7 @@
 package general.graph.theory;
 
 import general.chat.MainGUI;
+import general.chat.UrlFileConnector;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -16,27 +17,23 @@ import java.util.regex.Pattern;
  * Created by corpi on 2016-10-23.
  */
 public class Scan {
-    public void scanit( TreeMap<Integer, HashSet<ParagraphInfo>> totalFinalfinalSetOfWordsTree
-    ,File[] listOfFiles, HashMap<KeyWordPattern, HashSet<KeyWordPattern>> keyword2SynonymMap
+    public void scanit(TreeMap<Integer, HashSet<ParagraphInfo>> totalFinalfinalSetOfWordsTree
+    , UrlFileConnector[] listOfFiles, HashMap<KeyWordPattern, HashSet<KeyWordPattern>> keyword2SynonymMap
     , HashSet<KeyWordPattern> newKeyWordsFullNouns)
     {
         Pattern ignorePagesWithThis = KeyWordPattern.superMatcher(keyword2SynonymMap);
         System.setOut(MainGUI.originalStream);
         System.out.println(ignorePagesWithThis.toString());
         ;
-        for (File result : listOfFiles) {
+        for (UrlFileConnector result : listOfFiles) {
             try {
                 //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
-                if (result.getName().toLowerCase().endsWith(".txt")
-                        && !result.getName().toLowerCase().startsWith(".")
-                        && !(Paths.get(general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsFileName).equals(result.toPath()))
-                        ) {
+                if ( true) {
 
                     int charsize = 0;
 
 
-                    String biggestText = FileUtils.readFileToString(
-                            result, "utf-8").toLowerCase();
+                    String biggestText = result.data;
                     //String[] sentences = biggestText.split("[\\.\\?!\\n]+");
                     boolean isRelevant = false;
                     /*for(Map.Entry<KeyWordPattern, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
@@ -62,8 +59,7 @@ public class Scan {
                     HashSet<ParagraphInfo> sentsVerbsOrAdjFinal = new HashSet<>();
 
 
-                    String publicationName = result.getName()
-                            .substring(0, result.getName().lastIndexOf("."));
+                    String publicationName = result.url;
                     int parNum = 0;
                     // split by pages first
                     int pageNum = 0;
@@ -94,7 +90,7 @@ public class Scan {
                             continue;
                         }
                         parNum = 0;
-                        for (String y : page.split(general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.DELIMITER))
+                        for (String y : page.split("[\\.\\?!]+"))
                         {
                         /*
                             */
@@ -151,7 +147,7 @@ public class Scan {
                                 }
                             }
                             System.setOut(MainGUI.originalStream);
-                            System.out.println("23fj8aw98j3a");
+                            System.out.println("23fj8aw98j3a"+general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.DELIMITER+"23fj8aw98j3a");
                             Matcher match = ignorePagesWithThis.matcher(y.toLowerCase());
                             if(match.find())
                             {

@@ -1,24 +1,12 @@
 package general.graph.theory;
 
 import SentenceGenerator.ComparePhrases;
-import SentenceGenerator.GoogleCSAPI;
 import general.FindKeyWordsTest;
 import general.LuceneSnowBallTest;
 import general.chat.MainGUI;
-import general.chat.ProgressBarDemo;
-import general.chat.UrlFileConnector;
-import general.comparePhrasesold_june7;
-import org.apache.commons.io.FileUtils;
-import org.apache.lucene.wordnet.SynonymMap;
-import sun.applet.Main;
 
-import javax.swing.*;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.*;
-import java.lang.reflect.Array;
-import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -26,12 +14,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static general.FindKeyWordsTest.findName;
-
 /**
  * Created by corpi on 2016-04-30.
  */
-public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
+public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB_SUM {
     final public static boolean IS_CLEANING_QUERY = true;
     final public static int KEYWORD_IMPORTANCE_INDEX = 2;
     public static String statementsFileName = "statements2";
@@ -92,7 +78,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         return str.substring(0,str.length()-1);
     }
 
-    public static general.graph.theory.Message chatbotTypeSept11(String question, String origionalQuestion, boolean isDeep, ArrayList<UrlFileConnector> ufc) throws Exception {
+    public static Message chatbotTypeSept11(String question, String origionalQuestion, boolean isDeep) throws Exception {
         String newQuestion = new String();
         for(String part :Parse(question))
             newQuestion += part + " ";
@@ -103,7 +89,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         if (statementsFileNameEquals(MainGUI.web)
                 || (statementsFileNameEquals(MainGUI.local
         ) && MainGUI.useNewData == true)) {
-            PrintWriter writer = new PrintWriter(new File(WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsFileName));
+            PrintWriter writer = new PrintWriter(new File(WikipediaInfoBoxModel2OldJune14_PERSONAL_CB_SUM.statementsFileName));
             writer.print("");
             writer.close();
         }
@@ -226,7 +212,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         ArrayList<HashSet<ParagraphInfo>> totalListOfTrees = new ArrayList<>();
         TreeMap<Integer, HashSet<ParagraphInfo>> totalFinalfinalSetOfWordsTree = new TreeMap<>(Collections.reverseOrder());
         ArrayList<String> match = new ArrayList<String>();
-        File[] listOfFiles = Paths.get(statementsFileName).getParent().toFile().listFiles();
+        File[] listOfFiles = new File[]{new File("D:\\permutations-june-19-2-aug-25\\permutations\\src\\general\\chat\\article.txt")};
         int index = 0;
 
         long origionalFreeMemory = Runtime.getRuntime().freeMemory();
@@ -234,7 +220,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
         int prevValue = 0;
         newKeyWordsFullNouns = newKeyWordsNouns;
         newKeyWordsFullNouns.addAll(newKeyWordsVerbsOrAdjectives);
-        HashMap<KeyWordPattern, HashSet<KeyWordPattern>> keyword2SynonymMap = general.FindKeyWordsTest.getSynonyms(newKeyWordsFullNouns,isDeep);
+        HashMap<KeyWordPattern, HashSet<KeyWordPattern>> keyword2SynonymMap = FindKeyWordsTest.getSynonyms(newKeyWordsFullNouns,isDeep);
 
 
 
@@ -251,18 +237,18 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
             newstedListInception.add( new HashSet<>(ResultsToArrayList.subList(step * i, step * (i+1))));
         }*/
         int NUM_OF_CORES = 16;
-        ArrayList<UrlFileConnector> chunks = ufc;
+        ArrayList<File[]> chunks = ArrayChunks.chunks(new ArrayList<>(Arrays.asList(listOfFiles)),NUM_OF_CORES);
         NUM_OF_CORES = chunks.size();
         //File[] someFile = chunks.get(0);
         Thread[] threads = new Thread[NUM_OF_CORES];
-        Scan scan = new Scan();
+        Scan_SUM scan = new Scan_SUM();
         HashSet<KeyWordPattern> finalNewKeyWordsFullNouns = newKeyWordsFullNouns;
         for (int i = 0; i < NUM_OF_CORES; i++) {
             int finalI = i;
             threads[i] = new Thread() {
                 public void run() {
                     // do stuff
-                    UrlFileConnector[] someFiles = new UrlFileConnector[]{chunks.get(finalI)};
+                    File[] someFiles = chunks.get(finalI);
                     scan.scanit( totalFinalfinalSetOfWordsTree
                             ,someFiles, keyword2SynonymMap
                             , finalNewKeyWordsFullNouns);
@@ -414,7 +400,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                     }
                     ++kwCount;
                     if(!message.isEmpty()) {
-                        Message answerX = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(message, message, isDeep, ufc);
+                        Message answerX = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB_SUM.chatbotTypeSept11(message, message, isDeep);
                         for (String ans : answerX.getAnswers())
                             finalsAns += "<f39j8f9sa9jf>"+ans + "("+map.getKey()+")";
                     }
