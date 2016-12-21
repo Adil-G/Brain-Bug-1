@@ -2,6 +2,8 @@ package general.chat; /**
  * Created by corpi on 2016-07-09.
  */
 
+import general.graph.theory.ParagraphInfo;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -168,7 +170,7 @@ public class MainGUI {
 
         System.setOut(dummyStream);
 
-        String answer = TestChatBot.getAnswerWithGUI(userResponse, isDeep);
+        ParagraphInfo answer = TestChatBot.getAnswerWithGUI(userResponse, isDeep);
 
         System.setOut(originalStream);
 /*

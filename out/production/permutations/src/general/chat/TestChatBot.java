@@ -1,16 +1,13 @@
 package general.chat;
 
 import general.TestChatBotMain;
+import general.graph.theory.ParagraphInfo;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB;
-import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB_SUM;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 
 import static general.chat.MainGUI.local;
 
@@ -58,7 +55,7 @@ public class TestChatBot {
 
         bw.close();
     }
-    public static String getAnswerWithGUI(String question,boolean isDeep) throws Exception {
+    public static ParagraphInfo getAnswerWithGUI(String question, boolean isDeep) throws Exception {
         // hard coded
         /*File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\openNLP\\local_docs\\bell\\local.txt");
 
@@ -86,16 +83,25 @@ public class TestChatBot {
         // user inpu
 
         //System.out.println();
-        String finalAnswer = getAnswer(file,question,"openNLP\\", false||isDeep, NO_SUM,sentences);
-        String[] answers = finalAnswer.split("(\\n\\n)+");
+        ArrayList<ParagraphInfo> finalAnswer = getAnswer(file,question,"openNLP\\", false||isDeep, NO_SUM,sentences);
+
         String allCorrectMatches = "";
-        for(String lead : answers)
+        for(ParagraphInfo lead : finalAnswer)
         {
-            allCorrectMatches += "<abcd>"+lead.replaceAll("- ##################### info, 1 ##################### ","").trim();
+            allCorrectMatches += lead.getText().trim();
         }
-        return allCorrectMatches;
+        ParagraphInfo best = new ParagraphInfo("","","");
+        for(ParagraphInfo lead : finalAnswer)
+        {
+            String quote = lead.getText().trim();
+            if(quote.equals(allCorrectMatches))
+            {
+                best = lead;
+            }
+        }
+        return best;
     }
-    public static String matchLength(String[] answers, String question, Enum size, Enum summaryMode)
+    public static ParagraphInfo matchLength(ArrayList<ParagraphInfo> answers, String question, Enum size, Enum summaryMode)
     {
         String closestLengthMatch = "";
         if(size == BIG) {
@@ -105,9 +111,9 @@ public class TestChatBot {
                 closestLengthMatch += repeatThis;
             }
         }
-        for(String lead : answers)
+        for(ParagraphInfo lead : answers)
         {
-            String analyzeLead = lead.replaceAll("- ##################### info, 1 ##################### ","").trim();
+            String analyzeLead = lead.getText().trim();
 
             System.out.println(lead);
             if(summaryMode == NO_SUM&&(analyzeLead.contains(question)||question.contains(analyzeLead)))
@@ -120,25 +126,33 @@ public class TestChatBot {
                 closestLengthMatch = analyzeLead;
             }
         }
-        return closestLengthMatch;
+        ParagraphInfo best = new ParagraphInfo("","","");
+        for(ParagraphInfo lead : answers)
+        {
+            String quote = lead.getText().trim();
+            if(quote.equals(closestLengthMatch))
+            {
+                best = lead;
+            }
+        }
+        return best;
     }
-    public static String getAnswerSummary(String question,boolean isDeep, Enum isSummary, String data) throws Exception {
+    public static ParagraphInfo getAnswerSummary(String question, boolean isDeep, Enum isSummary, String data) throws Exception {
         File file = new File("D:\\permutations-june-19-2-aug-25\\permutations\\src\\general\\chat\\Summerize.java");
         System.setOut(MainGUI.originalStream);
         File newFile = new File("D:\\permutations-june-19-2-aug-25\\permutations\\src\\general\\chat\\Summerize.java");
         if(!newFile.exists())
             Files.createFile(newFile.toPath());
-        String finalAnswer = getAnswer(file,question,"openNLP\\", false||isDeep, SUM, new ArrayList<UrlFileConnector>(
+        ArrayList<ParagraphInfo> finalAnswer = getAnswer(file,question,"openNLP\\", false||isDeep, SUM, new ArrayList<UrlFileConnector>(
                 Arrays.asList(new UrlFileConnector[]{new UrlFileConnector("default",data)})
         ));
-        String[] answers = finalAnswer.split("(\\n\\n)+");
-        String correctMatch = matchLength(answers, question, SMALL, isSummary);
+        ParagraphInfo correctMatch = matchLength(finalAnswer, question, SMALL, isSummary);
 
-        if(correctMatch.isEmpty())
-            correctMatch = matchLength(answers, question, BIG,isSummary);
-        return correctMatch.replace("1.", "");
+        if(correctMatch.getText().isEmpty())
+            correctMatch = matchLength(finalAnswer, question, BIG,isSummary);
+        return correctMatch;
     }
-    public static String getAnswerBlog(String question,boolean isDeep, Enum isSummary) throws Exception {
+    public static ParagraphInfo getAnswerBlog(String question, boolean isDeep, Enum isSummary) throws Exception {
         File file = new File("..\\textbooks\\test\\a.txt");
         System.setOut(MainGUI.originalStream);
         ArrayList<UrlFileConnector> sentences =  DMiningGoogleOnlyChunksUnordered.excecute(question);
@@ -149,16 +163,16 @@ public class TestChatBot {
         System.out.println("size = "+sentences.size());
         writeFile1(sentences, newFile);
         */
-        String finalAnswer = getAnswer(file,question,"openNLP\\", false||isDeep, NO_SUM, sentences);
-        String[] answers = finalAnswer.split("(\\n\\n)+");
-        String correctMatch = matchLength(answers, question, SMALL, isSummary);
+        ArrayList<ParagraphInfo> finalAnswer = getAnswer(file,question,"openNLP\\", false||isDeep, NO_SUM, sentences);
 
-        if(correctMatch.isEmpty())
-            correctMatch = matchLength(answers, question, BIG,isSummary);
-        return correctMatch.replace("1.", "");
+        ParagraphInfo correctMatch = matchLength(finalAnswer, question, SMALL, isSummary);
+
+        if(correctMatch.getText().isEmpty())
+            correctMatch = matchLength(finalAnswer, question, BIG,isSummary);
+        return correctMatch;
     }
-    public static String getAnswer(File file,String question,String openNLPDir, boolean isDeep, Enum isSummary, ArrayList<UrlFileConnector> ufc) throws Exception {
-        String answer = "No Result.";
+    public static ArrayList<ParagraphInfo> getAnswer(File file, String question, String openNLPDir, boolean isDeep, Enum isSummary, ArrayList<UrlFileConnector> ufc) throws Exception {
+        ArrayList<ParagraphInfo> answer = new ArrayList<>();
         if(file!=null) {
             // Set up environment and DATA
             MainGUI.useNewData = false;
