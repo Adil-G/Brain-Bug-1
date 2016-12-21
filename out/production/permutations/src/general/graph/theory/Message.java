@@ -11,8 +11,8 @@ public class Message {
     public static final String POSSIBLE = "suggestions";
     public static final String IMPOSSIBLE = "no possible answer";
     private String message;
-    private ArrayList<String> answers;
-    public Message(String message, ArrayList<String> answers)
+    private ArrayList<ParagraphInfo> answers;
+    public Message(String message, ArrayList<ParagraphInfo> answers)
     {
         this.message = message;
         this.answers = answers;
@@ -21,7 +21,7 @@ public class Message {
     {
         return this.message;
     }
-    public ArrayList<String> getAnswers()
+    public ArrayList<ParagraphInfo> getAnswers()
     {
         return this.answers;
     }

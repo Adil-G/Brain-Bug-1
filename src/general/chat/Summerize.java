@@ -8,6 +8,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import com.mashape.unirest.request.HttpRequestWithBody;
 import com.mashape.unirest.request.body.RequestBodyEntity;
 import com.sun.xml.internal.fastinfoset.Encoder;
+import general.graph.theory.ParagraphInfo;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.RequestEntity;
@@ -42,23 +43,28 @@ public class Summerize {
         Summerize sum = new Summerize();
 
         String contents = sum.sum(sum.webContents("http://insidetech.monster.com/benefits/articles/8537-10-best-tech-blogs"));
-        ArrayList<String> topics = new ArrayList<>();
+        ArrayList<ParagraphInfo> topics = new ArrayList<>();
         for(String idea : contents.split("[\\.\\?!]+")) {
 
             String question = idea;
-            String answer = TestChatBot.getAnswerBlog(question, false, TestChatBot.NO_SUM);
+            ParagraphInfo answer = TestChatBot.getAnswerBlog(question, false, TestChatBot.NO_SUM);
 
-            System.out.println(answer);
+            System.out.println(answer.getInfo());
             topics.add(answer);
         }
         System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
         System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
         System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
         System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-        for(String sentence : topics)
+        ArrayList<ParagraphInfo> fullDoc = new ArrayList<>();
+        for(ParagraphInfo sentence : topics)
         {
-            System.out.println(sentence+"\n\n");
+            ParagraphInfo paragraphInfo = new ParagraphInfo(Paraphrase1.paraphrase(sentence.getText()),sentence.getPub(),
+                    Jsoup.connect(sentence.getPub()).get().title());
+            System.out.println(paragraphInfo.getInfo());
+            fullDoc.add(paragraphInfo);
         }
+        System.out.println("\n\n"+fullDoc);
     }
     public String webContents(String url) throws IOException {
         String wholeText = "";

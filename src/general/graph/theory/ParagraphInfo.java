@@ -29,6 +29,6 @@ public class ParagraphInfo {
     public String getInfo()
     {
         return "\n"+this.getText()
-                + "(" + this.getPub() + ")";
+                + "(" + this.getPub() +","+this.getPageNumber()+")";
     }
 }

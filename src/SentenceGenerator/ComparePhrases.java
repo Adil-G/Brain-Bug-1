@@ -274,30 +274,30 @@ public class ComparePhrases {
         return outcome;
     }
 
-    public static ArrayList<String> rankAnswers(String query, ArrayList<String> unsortedParagraphs, HashSet<KeyWordPattern> keyWords)
+    public static ArrayList<ParagraphInfo> rankAnswers(String query, ArrayList<ParagraphInfo> unsortedParagraphs, HashSet<KeyWordPattern> keyWords)
     {
-        TreeMap<Double, HashSet<String>> sorted = new TreeMap<>();
+        TreeMap<Double, HashSet<ParagraphInfo>> sorted = new TreeMap<>();
 
-        for(String paragraph : unsortedParagraphs)
+        for(ParagraphInfo paragraph : unsortedParagraphs)
         {
-            double score = Math.abs(computeParagraph(paragraph,keyWords) - computeParagraph(query,keyWords));
+            double score = Math.abs(computeParagraph(paragraph.getInfo(),keyWords) - computeParagraph(query,keyWords));
             if(sorted.containsKey(score))
             {
-                HashSet<String> set = sorted.get(score);
+                HashSet<ParagraphInfo> set = sorted.get(score);
                 set.add(paragraph);
                 sorted.put(score,set);
             }
             else
             {
-                HashSet<String> set = new HashSet<>();
+                HashSet<ParagraphInfo> set = new HashSet<>();
                 set.add(paragraph);
                 sorted.put(score,set);
             }
         }
-        ArrayList<String> sortedList = new ArrayList<>();
-        for(Map.Entry<Double,HashSet<String>> entry : sorted.entrySet())
+        ArrayList<ParagraphInfo> sortedList = new ArrayList<>();
+        for(Map.Entry<Double,HashSet<ParagraphInfo>> entry : sorted.entrySet())
         {
-            for(String para : entry.getValue())
+            for(ParagraphInfo para : entry.getValue())
                 sortedList.add(para);
         }
         return  sortedList;

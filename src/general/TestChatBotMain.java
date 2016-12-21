@@ -1,13 +1,10 @@
 package general;
 
-import general.chat.MainGUI;
 import general.chat.TestChatBot;
 import general.chat.UrlFileConnector;
 import general.graph.theory.Message;
+import general.graph.theory.ParagraphInfo;
 import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB;
-import general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB_SUM;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,7 +13,6 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -33,7 +29,7 @@ public class TestChatBotMain {
         }
 
     }
-    public static String runChatbot(String userInput, boolean isDeep, Enum isSummary, ArrayList<UrlFileConnector> ufc) throws Exception {
+    public static ArrayList<ParagraphInfo> runChatbot(String userInput, boolean isDeep, Enum isSummary, ArrayList<UrlFileConnector> ufc) throws Exception {
         // Empty chatbot log file
         list.clear();
         // String query = (new Scanner(System.in)).nextLine();
@@ -166,27 +162,27 @@ public class TestChatBotMain {
                 finalAnswers = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(query,originalInput,isDeep,ufc);
             //JSONObject obj = new JSONObject();
             //JSONArray arr = new JSONArray();
-            String answerString = "";
-            if(finalAnswers.getMessage().equals(Message.POSSIBLE))
-                answerString += "There is nothing on that specific topic.\nPlease choose from one of these topics:";
+            ArrayList<ParagraphInfo> answerString = new ArrayList<>();
+            //if(finalAnswers.getMessage().equals(Message.POSSIBLE))
+            //    answerString += "There is nothing on that specific topic.\nPlease choose from one of these topics:";
             int i = 0;
-            for(String message : finalAnswers.getAnswers())
+            for(ParagraphInfo message : finalAnswers.getAnswers())
             {
                 ++i;
                 //arr.add(message);
                 if(finalAnswers.getMessage().equals(Message.POSSIBLE))
-                    answerString += message;
+                    answerString.add(message);
                 else
                 {
-                    answerString +="<f39j8f9sa9jf>"+ message;
+                    answerString.add(message);
                 }
             }
             //obj.put(finalAnswers.getMessage(),arr);
             //return obj.toJSONString();//;
-            answerString = "ANSWERING THE QUESTION: \""+originalInput+"\"\n\n" +answerString;
+            //answerString = "ANSWERING THE QUESTION: \""+originalInput+"\"\n\n" +answerString;
             return answerString;
         }
-        return "HPE Haven Timeout";
+        return new ArrayList<>();
     }
     public static void writeFile1(String input) throws IOException {
         try {

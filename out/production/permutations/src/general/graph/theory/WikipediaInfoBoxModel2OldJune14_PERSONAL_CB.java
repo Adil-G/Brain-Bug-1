@@ -225,7 +225,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
 
         ArrayList<HashSet<ParagraphInfo>> totalListOfTrees = new ArrayList<>();
         TreeMap<Integer, HashSet<ParagraphInfo>> totalFinalfinalSetOfWordsTree = new TreeMap<>(Collections.reverseOrder());
-        ArrayList<String> match = new ArrayList<String>();
+        ArrayList<ParagraphInfo> match = new ArrayList<ParagraphInfo>();
         File[] listOfFiles = Paths.get(statementsFileName).getParent().toFile().listFiles();
         int index = 0;
 
@@ -398,7 +398,7 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                     possibleQueries.add(possibleQuery);
             }
             */
-            ArrayList<String> answers = new ArrayList<>();
+            ArrayList<ParagraphInfo> answers = new ArrayList<>();
             String finalsAns = "";
             int kwCount = 0;
             TreeMap<Integer, HashSet<HashSet<String>>> closestMatchedQueriesCopy = new TreeMap<>(closestMatchedQueries);
@@ -415,14 +415,14 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
                     ++kwCount;
                     if(!message.isEmpty()) {
                         Message answerX = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(message, message, isDeep, ufc);
-                        for (String ans : answerX.getAnswers())
+                        for (ParagraphInfo ans : answerX.getAnswers())
                             finalsAns += "<f39j8f9sa9jf>"+ans + "("+map.getKey()+")";
                     }
                     //finalsAns += "\n\nSuggestion #" + kwCount + ".\n" + message;
                 }
 
             }
-            answers.add(finalsAns);
+            answers.add(new ParagraphInfo(finalsAns,"suggestion","1"));
             return new Message(Message.POSSIBLE,answers);
 
         }
@@ -457,16 +457,16 @@ public class WikipediaInfoBoxModel2OldJune14_PERSONAL_CB {
 
     }
     public static TreeMap<Integer, HashSet<HashSet<String>>> closestMatchedQueries = new TreeMap<>(Collections.reverseOrder());
-    public static ArrayList<String> getchats(TreeMap<Integer, HashSet<ParagraphInfo>> treeOfAnswers, String query, PrintStream dummyStream
+    public static ArrayList<ParagraphInfo> getchats(TreeMap<Integer, HashSet<ParagraphInfo>> treeOfAnswers, String query, PrintStream dummyStream
     ,HashSet<KeyWordPattern> newKeyWordsFullNouns) throws IOException {
-        ArrayList<String> container = new ArrayList<>();
+        ArrayList<ParagraphInfo> container = new ArrayList<>();
         int paragraphCount = 0;
         TreeMap<Double, HashSet<AnswerPair>> match = new TreeMap<>(Collections.reverseOrder());
         for ( int score : treeOfAnswers.keySet()) {
-            ArrayList<String> miniContainer = new ArrayList<>();
+            ArrayList<ParagraphInfo> miniContainer = new ArrayList<>();
             for(ParagraphInfo paragraph : treeOfAnswers.get(score)) {
                 if(paragraphCount++ < 500)
-                    miniContainer.add(paragraph.getInfo());
+                    miniContainer.add(paragraph);
             }
             container.addAll(ComparePhrases.rankAnswers(query,miniContainer,newKeyWordsFullNouns));
 
