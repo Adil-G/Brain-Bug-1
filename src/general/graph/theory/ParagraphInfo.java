@@ -41,4 +41,8 @@ public class ParagraphInfo {
                     // + "(" + this.getPub() +","+this.getPageNumber()+")";
                     + " (" + "<a href=\""+this.getPub()+"\">"+this.getPub()+"</a>" + ")";
     }
+    public String toString()
+    {
+        return  this.getInfo();
+    }
 }

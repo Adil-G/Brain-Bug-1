@@ -56,7 +56,6 @@ public class TestChatBot {
           // File file = new File("..\\textbooks\\2021\\a.txt");
         File file = new File("..\\textbooks\\test\\a.txt");
         System.setOut(MainGUI.originalStream);
-        ArrayList<UrlFileConnector> sentences =  new DMiningGoogleOnlyChunksUnordered().excecute(question,"");
         /*File newFile = new File("..\\textbooks\\test\\info.txt");
         if(!newFile.exists())
             Files.createFile(newFile.toPath());
@@ -72,7 +71,7 @@ public class TestChatBot {
         // user inpu
 
         //System.out.println();
-        ArrayList<ParagraphInfo> finalAnswer = getAnswer(new HashSet<>(),"",file,question,"openNLP\\", false||isDeep, NO_SUM,sentences);
+        ArrayList<ParagraphInfo> finalAnswer = getAnswer(file,question, false||isDeep);
 
         String allCorrectMatches = "";
         for(ParagraphInfo lead : finalAnswer)
@@ -137,7 +136,7 @@ public class TestChatBot {
         System.out.println("size = "+sentences.size());
         writeFile1(sentences, newFile);
         */
-        ArrayList<ParagraphInfo> finalAnswer = getAnswer(usedURLs,contents,file,question,"openNLP\\", false||isDeep, NO_SUM, sentences);
+        ArrayList<ParagraphInfo> finalAnswer = getAnswer(file,question, false||isDeep);
 
         ParagraphInfo correctMatch = matchLength(finalAnswer, question, SMALL, isSummary);
 
@@ -145,7 +144,7 @@ public class TestChatBot {
             correctMatch = matchLength(finalAnswer, question, BIG,isSummary);
         return correctMatch;
     }
-    public ArrayList<ParagraphInfo> getAnswer(HashSet<String> usedURLs,String contents,File file, String question, String openNLPDir, boolean isDeep, Enum isSummary, ArrayList<UrlFileConnector> ufc) throws Exception {
+    public ArrayList<ParagraphInfo> getAnswer(File file, String question, boolean isDeep) throws Exception {
         ArrayList<ParagraphInfo> answer = new ArrayList<>();
         if(file!=null) {
             // Set up environment and DATA
@@ -166,7 +165,7 @@ public class TestChatBot {
             });
             System.setOut(dummyStream);
             //String question  =  new java.util.Scanner(System.in).nextLine();
-            answer = new TestChatBotMain().runChatbot(usedURLs, contents, question, isDeep, isSummary,ufc);
+            answer = new TestChatBotMain().runChatbot( question, isDeep);
 
 
                         System.setOut(MainGUI.originalStream);

@@ -13,17 +13,17 @@ import java.util.regex.Pattern;
  * Created by corpi on 2016-10-23.
  */
 public class Scan {
-    public void scanit(TreeMap<Integer, HashSet<HashSet<String>>> closestMatchedQueries, HashSet<String> usedURLs, String contents, TreeMap<Integer, HashSet<ParagraphInfo>> totalFinalfinalSetOfWordsTree
-    , UrlFileConnector[] listOfFiles, HashMap<KeyWordPattern, HashSet<KeyWordPattern>> keyword2SynonymMap
+    public void scanit(TreeMap<Integer, HashSet<HashSet<String>>> closestMatchedQueries,  TreeMap<Integer, HashSet<ParagraphInfo>> totalFinalfinalSetOfWordsTree
+    , String[] listOfFiles, HashMap<KeyWordPattern, HashSet<KeyWordPattern>> keyword2SynonymMap
     , HashSet<KeyWordPattern> newKeyWordsFullNouns)
     {
         Pattern ignorePagesWithThis = KeyWordPattern.superMatcher(keyword2SynonymMap);
         System.setOut(MainGUI.originalStream);
         System.out.println(ignorePagesWithThis.toString());
         ;
-        for (UrlFileConnector result : listOfFiles) {
-            if((!result.url.toLowerCase().contains("wikipedia"))&&usedURLs.contains(result.url))
-                continue;
+        for (String result : listOfFiles) {
+
+
             try {
                 //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
                 if ( true) {
@@ -31,7 +31,7 @@ public class Scan {
                     int charsize = 0;
 
 
-                    String biggestText = result.data;
+                    String biggestText = "";
                     //String[] sentences = biggestText.split("[\\.\\?!\\n]+");
                     boolean isRelevant = false;
                     /*for(Map.Entry<KeyWordPattern, HashSet<KeyWordPattern>> subKeyWord :keyword2SynonymMap.entrySet())
@@ -57,7 +57,7 @@ public class Scan {
                     HashSet<ParagraphInfo> sentsVerbsOrAdjFinal = new HashSet<>();
 
 
-                    String publicationName = result.url;
+                    String publicationName = "";
                     int parNum = 0;
                     // split by pages first
                     int pageNum = 0;
@@ -90,8 +90,7 @@ public class Scan {
                         parNum = 0;
                         for (String y : page.split("[\\.\\?!]+"))
                         {
-                            if(contents.toLowerCase().contains(y.toLowerCase().trim()))
-                                continue;
+
                         /*
                             */
                             parNum++;

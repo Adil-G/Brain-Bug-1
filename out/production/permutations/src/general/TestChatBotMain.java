@@ -30,7 +30,7 @@ public class TestChatBotMain {
         }
 
     }
-    public ArrayList<ParagraphInfo> runChatbot(HashSet<String> usedURLs, String contents, String userInput, boolean isDeep, Enum isSummary, ArrayList<UrlFileConnector> ufc) throws Exception {
+    public ArrayList<ParagraphInfo> runChatbot( String userInput, boolean isDeep) throws Exception {
         // Empty chatbot log file
         list.clear();
         // String query = (new Scanner(System.in)).nextLine();
@@ -157,10 +157,8 @@ public class TestChatBotMain {
 
             System.out.println("faf3ggh: " + query);
             Message finalAnswers = null;
-            if(isSummary == TestChatBot.NO_SUM)
-                finalAnswers = new WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().chatbotTypeSept11(usedURLs,contents,query, originalInput, isDeep, ufc);
-            else
-                finalAnswers = new WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().chatbotTypeSept11(usedURLs,contents,query,originalInput,isDeep,ufc);
+
+            finalAnswers = new WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().chatbotTypeSept11(query,originalInput,isDeep);
             //JSONObject obj = new JSONObject();
             //JSONArray arr = new JSONArray();
             ArrayList<ParagraphInfo> answerString = new ArrayList<>();
