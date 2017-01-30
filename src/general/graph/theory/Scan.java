@@ -21,7 +21,7 @@ public class Scan {
         System.setOut(MainGUI.originalStream);
         System.out.println(ignorePagesWithThis.toString());
         ;
-        for (String result : listOfFiles) {
+        for (String publicationName : listOfFiles) {
 
 
             try {
@@ -57,7 +57,7 @@ public class Scan {
                     HashSet<ParagraphInfo> sentsVerbsOrAdjFinal = new HashSet<>();
 
 
-                    String publicationName = "";
+                    //String  = "";
                     int parNum = 0;
                     // split by pages first
                     int pageNum = 0;
