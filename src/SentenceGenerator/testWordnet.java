@@ -17,7 +17,7 @@ public class testWordnet {
     public static SynonymMap map;
     public static void main(String[] args) throws Exception {
         String[] words = new String[] { "high"};
-        SynonymMap map = new SynonymMap(new FileInputStream(WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsDirectoryName
+        SynonymMap map = new SynonymMap(new FileInputStream(new WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().statementsDirectoryName
                 +"wn_s.pl"));
 
         for (int i = 0; i < words.length; i++) {
@@ -27,7 +27,7 @@ public class testWordnet {
 
     }
     public static void synonymsInit() throws IOException {
-        map = new SynonymMap(new FileInputStream(WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsDirectoryName
+        map = new SynonymMap(new FileInputStream(new WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().statementsDirectoryName
                 +"wn_s.pl"));
 
     }

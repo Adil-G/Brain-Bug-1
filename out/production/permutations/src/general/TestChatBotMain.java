@@ -12,6 +12,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -20,16 +21,16 @@ import java.util.concurrent.Executors;
  * Created by corpi on 2016-05-07.
  */
 public class TestChatBotMain {
-    public static ArrayList<String> list = new ArrayList<>();
-    public static ArrayList<String> answersUsed =  new ArrayList<>();
-    public static void main(String[] args) throws Exception {
+    public  ArrayList<String> list = new ArrayList<>();
+    public  ArrayList<String> answersUsed =  new ArrayList<>();
+    public  void main(String[] args) throws Exception {
 
         while(true) {
             //runChatbot((new Scanner(System.in)).nextLine(), false, TestChatBot.NO_SUM);
         }
 
     }
-    public static ArrayList<ParagraphInfo> runChatbot(String userInput, boolean isDeep, Enum isSummary, ArrayList<UrlFileConnector> ufc) throws Exception {
+    public ArrayList<ParagraphInfo> runChatbot(HashSet<String> usedURLs, String contents, String userInput, boolean isDeep, Enum isSummary, ArrayList<UrlFileConnector> ufc) throws Exception {
         // Empty chatbot log file
         list.clear();
         // String query = (new Scanner(System.in)).nextLine();
@@ -157,9 +158,9 @@ public class TestChatBotMain {
             System.out.println("faf3ggh: " + query);
             Message finalAnswers = null;
             if(isSummary == TestChatBot.NO_SUM)
-                finalAnswers = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(query, originalInput, isDeep, ufc);
+                finalAnswers = new WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().chatbotTypeSept11(usedURLs,contents,query, originalInput, isDeep, ufc);
             else
-                finalAnswers = WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.chatbotTypeSept11(query,originalInput,isDeep,ufc);
+                finalAnswers = new WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().chatbotTypeSept11(usedURLs,contents,query,originalInput,isDeep,ufc);
             //JSONObject obj = new JSONObject();
             //JSONArray arr = new JSONArray();
             ArrayList<ParagraphInfo> answerString = new ArrayList<>();
@@ -183,13 +184,5 @@ public class TestChatBotMain {
             return answerString;
         }
         return new ArrayList<>();
-    }
-    public static void writeFile1(String input) throws IOException {
-        try {
-            Files.write(Paths.get(WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsFileName),
-                    (input+"\n").getBytes(), StandardOpenOption.APPEND);
-        }catch (IOException e) {
-            //exception handling left as an exercise for the reader
-        }
     }
 }

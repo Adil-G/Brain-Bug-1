@@ -170,7 +170,7 @@ public class MainGUI {
 
         System.setOut(dummyStream);
 
-        ParagraphInfo answer = TestChatBot.getAnswerWithGUI(userResponse, isDeep);
+        ParagraphInfo answer = new TestChatBot().getAnswerWithGUI(userResponse, isDeep);
 
         System.setOut(originalStream);
 /*

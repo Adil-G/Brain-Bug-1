@@ -29,6 +29,16 @@ public class ParagraphInfo {
     public String getInfo()
     {
         return "\n"+this.getText()
+               // + "(" + this.getPub() +","+this.getPageNumber()+")";
                 + "(" + this.getPub() + ")";
+    }
+    public String getBlog()
+    {
+        if(this.getPub().toLowerCase().contains("wikipedia"))
+            return "\n"+this.getText();
+        else
+            return "\n"+this.getText()
+                    // + "(" + this.getPub() +","+this.getPageNumber()+")";
+                    + " (" + "<a href=\""+this.getPub()+"\">"+this.getPub()+"</a>" + ")";
     }
 }

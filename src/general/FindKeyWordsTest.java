@@ -1,6 +1,5 @@
 package general;
 
-import SentenceGenerator.ComparePhrases;
 import com.knowledgebooks.nlp.ExtractNames;
 import com.knowledgebooks.nlp.util.ScoredList;
 import general.chat.Thesaurus;
@@ -28,13 +27,13 @@ import java.util.regex.Pattern;
  * Created by corpi on 2016-05-01.
  */
 public class FindKeyWordsTest {
-    public static HashMap<KeyWordPattern, HashSet<KeyWordPattern>> getSynonyms(HashSet<KeyWordPattern> keywords, boolean isDeep)
+    public  HashMap<KeyWordPattern, HashSet<KeyWordPattern>> getSynonyms(HashSet<KeyWordPattern> keywords, boolean isDeep)
     {
         HashMap<KeyWordPattern, HashSet<KeyWordPattern>> synonymMap = new HashMap<>();
         for(KeyWordPattern keys : keywords)
         {
             KeyWordPattern word = new KeyWordPattern(keys.getKeyWords());
-            HashSet<String> syns = Thesaurus.getSynonyms(keys.getKeyWords()[1], isDeep);
+            HashSet<String> syns = new Thesaurus().getSynonyms(keys.getKeyWords()[1], isDeep);
             syns.add(keys.getKeyWords()[1]);
             HashSet<KeyWordPattern> copy = new HashSet<>();
             for (String keyword : syns) {
@@ -54,9 +53,9 @@ public class FindKeyWordsTest {
         }
         return synonymMap;
     }
-    public static ArrayList<String> findName(String input) throws IOException {
+    public  ArrayList<String> findName(String input) throws IOException {
         InputStream is = new FileInputStream(
-                WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsDirectoryName+"en-ner-person.bin");
+                new WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().statementsDirectoryName+"en-ner-person.bin");
 
         TokenNameFinderModel model = new TokenNameFinderModel(is);
         is.close();
@@ -78,7 +77,7 @@ public class FindKeyWordsTest {
         }
         return names;
     }
-    public static ArrayList<String> getPlaces(String input)
+    public  ArrayList<String> getPlaces(String input)
     {
         PrintStream c = System.out;
         ExtractNames extractNames = new ExtractNames();
@@ -93,14 +92,14 @@ public class FindKeyWordsTest {
         String[] places = place.split(":\\d,\\s?");
         return new ArrayList<String>(Arrays.asList(places));
     }
-    public static void main(String[] args) throws IOException {
+    public  void main(String[] args) throws IOException {
         System.out.println(findName("who is Hillary"));
     }
-    public static ArrayList<String> POSTag2(String input) throws IOException {
+    public  ArrayList<String> POSTag2(String input) throws IOException {
         /*POSModel model = new POSModelLoader()
                 .load(new File(WikipediaInfoBoxModel2OldJune14_PERSONAL.statementsDirectoryName+"en-pos-maxent.bin"));
                 */
-        POSModel model = new POSModel(new FileInputStream(WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.statementsDirectoryName+"en-pos-maxent.bin")
+        POSModel model = new POSModel(new FileInputStream(new WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().statementsDirectoryName+"en-pos-maxent.bin")
         );
         PerformanceMonitor perfMon = new PerformanceMonitor(System.err, "sent");
         POSTaggerME tagger = new POSTaggerME(model);
@@ -126,7 +125,7 @@ public class FindKeyWordsTest {
         perfMon.stopAndPrintFinalResult();
         return new ArrayList<String>(Arrays.asList(samp.split("\\s+")));
     }
-    public static String getPropernoun(String raw) throws IOException {
+    public  String getPropernoun(String raw) throws IOException {
 
         ArrayList<String> rawParsed = POSTag2(raw);
         ArrayList<String> noun = new ArrayList<>();
@@ -184,7 +183,7 @@ public class FindKeyWordsTest {
             name += word + " ";
         return name;
     }
-    public static String getVerbs(String raw) throws IOException {
+    public  String getVerbs(String raw) throws IOException {
 
         ArrayList<String> rawParsed = POSTag2(raw);
         ArrayList<String> noun = new ArrayList<>();
@@ -246,7 +245,7 @@ public class FindKeyWordsTest {
             name += word + " ";
         return name;
     }
-    public static String getNonNouns(String raw) throws IOException {
+    public  String getNonNouns(String raw) throws IOException {
                 String name = "";
                 ArrayList<String> rawParsed = POSTag2(raw);
                 ArrayList<String> noun = new ArrayList<>();
@@ -286,7 +285,7 @@ public class FindKeyWordsTest {
 
         return name.trim();
     }
-    public static String getMixedPOS(String raw) throws IOException {
+    public  String getMixedPOS(String raw) throws IOException {
 
         ArrayList<String> rawParsed = POSTag2(raw);
         ArrayList<String> noun = new ArrayList<>();
@@ -363,7 +362,7 @@ public class FindKeyWordsTest {
 
         return name;
     }
-    public static String getNouns(String raw) throws IOException {
+    public  String getNouns(String raw) throws IOException {
 
         ArrayList<String> rawParsed = POSTag2(raw);
         ArrayList<String> noun = new ArrayList<>();
@@ -453,7 +452,7 @@ public class FindKeyWordsTest {
 */
         return name;
     }
-    public static String getVerbOrAdjective(String raw) throws IOException {
+    public  String getVerbOrAdjective(String raw) throws IOException {
 
         ArrayList<String> rawParsed = POSTag2(raw);
         ArrayList<String> noun = new ArrayList<>();

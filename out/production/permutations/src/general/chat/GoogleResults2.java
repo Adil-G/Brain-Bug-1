@@ -16,7 +16,7 @@ public class GoogleResults2{
         public String toString() { return "Results[" + results + "]"; }
     }
 
-    public static class Result {
+    public class Result {
         private String url;
         private String title;
         public String getUrl() { return url; }

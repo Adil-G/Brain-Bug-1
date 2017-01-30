@@ -101,7 +101,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library name="opennlp-tools-1.6.0.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/openNLP/apache-opennlp-1.6.0/lib/opennlp-tools-1.6.0.jar!/" />
@@ -110,7 +110,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library name="opennlp-uima-1.6.0.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/openNLP/apache-opennlp-1.6.0/lib/opennlp-uima-1.6.0.jar!/" />
@@ -119,8 +119,18 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="com.kenai.nbpwr:org-apache-commons-io:1.3.1-201002241208" level="project" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
+      <library name="com.kenai.nbpwr:org-apache-commons-io:1.3.1-201002241208" type="repository">
+        <properties maven-id="com.kenai.nbpwr:org-apache-commons-io:1.3.1-201002241208" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Selenium/startUsingSeleniumWebDriver-master/lib/org-apache-commons-io-1.3.1-201002241208.jar!/" />
+          <root url="jar://$MODULE_DIR$/../Selenium/startUsingSeleniumWebDriver-master/lib/commons-io-1.3.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/knowledgebooks-with-data-0.2.0.jar!/" />
@@ -129,9 +139,8 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="org.apache.lucene:lucene-wordnet:3.3.0" level="project" />
-    <orderEntry type="library" name="org.apache.lucene:lucene-queries:3.3.0" level="project" />
-    <orderEntry type="module-library">
+    <orderEntry type="library" exported="" name="org.apache.lucene:lucene-wordnet:3.3.0" level="project" />
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/jsoup-1.8.1.jar!/" />
@@ -140,20 +149,9 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/gson-1.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="com.google.code.gson:gson:2.0" level="project" />
-    <orderEntry type="library" name="com.mashape.unirest:unirest-java:1.3.0" level="project" />
-    <orderEntry type="library" name="commons-httpclient:commons-httpclient:3.1" level="project" />
-    <orderEntry type="library" name="org.kie.modules:org-apache-commons-lang3:6.5.0.Final" level="project" />
-    <orderEntry type="module-library">
+    <orderEntry type="library" exported="" name="com.google.code.gson:gson:2.0" level="project" />
+    <orderEntry type="library" exported="" name="com.mashape.unirest:unirest-java:1.3.0" level="project" />
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/ws4j-1.0.1.jar!/" />
@@ -161,6 +159,75 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$MODULE_DIR$/ws4j-1.0.1.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="common-lang3" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/common-lang3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/common-lang3.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Selenium/startUsingSeleniumWebDriver-master/gson-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Selenium/startUsingSeleniumWebDriver-master/lucene-queries-3.3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Selenium/startUsingSeleniumWebDriver-master/commons-httpclient-3.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="jython" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../Selenium/startUsingSeleniumWebDriver-master" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../Selenium/startUsingSeleniumWebDriver-master" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../Selenium/startUsingSeleniumWebDriver-master/hodresponseparser.jar!/" />
+          <root url="jar://$MODULE_DIR$/../Selenium/startUsingSeleniumWebDriver-master/hodclient.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../Selenium/startUsingSeleniumWebDriver-master/java-json.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

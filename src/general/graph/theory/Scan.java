@@ -2,13 +2,9 @@ package general.graph.theory;
 
 import general.chat.MainGUI;
 import general.chat.UrlFileConnector;
-import org.apache.commons.io.FileUtils;
 
-import java.io.File;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,7 +13,7 @@ import java.util.regex.Pattern;
  * Created by corpi on 2016-10-23.
  */
 public class Scan {
-    public void scanit(TreeMap<Integer, HashSet<ParagraphInfo>> totalFinalfinalSetOfWordsTree
+    public void scanit(TreeMap<Integer, HashSet<HashSet<String>>> closestMatchedQueries, HashSet<String> usedURLs, String contents, TreeMap<Integer, HashSet<ParagraphInfo>> totalFinalfinalSetOfWordsTree
     , UrlFileConnector[] listOfFiles, HashMap<KeyWordPattern, HashSet<KeyWordPattern>> keyword2SynonymMap
     , HashSet<KeyWordPattern> newKeyWordsFullNouns)
     {
@@ -26,6 +22,8 @@ public class Scan {
         System.out.println(ignorePagesWithThis.toString());
         ;
         for (UrlFileConnector result : listOfFiles) {
+            if((!result.url.toLowerCase().contains("wikipedia"))&&usedURLs.contains(result.url))
+                continue;
             try {
                 //newContentPane.progressBar.setValue((int) (100.0 * (((double) index++) / listOfFiles.length)));
                 if ( true) {
@@ -92,6 +90,8 @@ public class Scan {
                         parNum = 0;
                         for (String y : page.split("[\\.\\?!]+"))
                         {
+                            if(contents.toLowerCase().contains(y.toLowerCase().trim()))
+                                continue;
                         /*
                             */
                             parNum++;
@@ -147,7 +147,7 @@ public class Scan {
                                 }
                             }
                             System.setOut(MainGUI.originalStream);
-                            System.out.println("23fj8aw98j3a"+general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.DELIMITER+"23fj8aw98j3a");
+                            System.out.println("23fj8aw98j3a"+new general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().DELIMITER+"23fj8aw98j3a");
                             Matcher match = ignorePagesWithThis.matcher(y.toLowerCase());
                             if(match.find())
                             {
@@ -188,13 +188,13 @@ public class Scan {
                             */
 
                             //keyWordCount = 0;
-                            System.setOut(general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.dummyStream);
+                            System.setOut(new general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().dummyStream);
                             ParagraphInfo info = new ParagraphInfo(y, publicationName, String.valueOf(pageNum));
                             //newKeyWordsFullNouns.size()
                             System.setOut(MainGUI.originalStream);
                             //System.out.println("f32s8:"+usedKeywords);
                             //System.out.println("f32s9:"+newKeyWordsFullNouns);
-                            if (usedKeywords.size() > general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.clamp(newKeyWordsFullNouns.size() - 1, 0)) {
+                            if (usedKeywords.size() > new  general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().clamp(newKeyWordsFullNouns.size() - 1, 0)) {
                                 keyWordCount = keyWordCount + exactKeyWordCount;
                                 System.setOut(MainGUI.originalStream);
                                 if (totalFinalfinalSetOfWordsTree.containsKey(keyWordCount)) {
@@ -212,37 +212,37 @@ public class Scan {
                                 System.out.println("298gj2f keyword count " + info.getText());
                                 System.out.println("298gj2f size " + newKeyWordsFullNouns.size());
                                 System.out.println("298gj2f" + info.getText());
-                                System.setOut(general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.dummyStream);
+                                System.setOut(new general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB().dummyStream);
                             } else {
-                                if (general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.size() > 0) {
-                                    if (keyWordCount > general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.firstKey()) {
+                                if (closestMatchedQueries.size() > 0) {
+                                    if (keyWordCount >closestMatchedQueries.firstKey()) {
                                         HashSet<HashSet<String>> currentQueries = new HashSet<>();
                                         currentQueries.add(usedKeywords);
-                                        general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.put(keyWordCount, currentQueries);
-                                    } else if (keyWordCount == general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.firstKey()) {
-                                        HashSet<HashSet<String>> currentQueries = general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.get(keyWordCount);
+                                        closestMatchedQueries.put(keyWordCount, currentQueries);
+                                    } else if (keyWordCount == closestMatchedQueries.firstKey()) {
+                                        HashSet<HashSet<String>> currentQueries = closestMatchedQueries.get(keyWordCount);
                                         currentQueries.add(usedKeywords);
-                                        general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.put(keyWordCount, currentQueries);
+                                        closestMatchedQueries.put(keyWordCount, currentQueries);
                                     }
                                 } else {
                                     HashSet<HashSet<String>> currentQueries = new HashSet<>();
                                     currentQueries.add(usedKeywords);
-                                    general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.put(keyWordCount, currentQueries);
+                                    closestMatchedQueries.put(keyWordCount, currentQueries);
                                 }
-                                if (general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.size() > 0) {
-                                    if (keyWordCount_2 > general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.firstKey()) {
+                                if ( closestMatchedQueries.size() > 0) {
+                                    if (keyWordCount_2 >  closestMatchedQueries.firstKey()) {
                                         HashSet<HashSet<String>> currentQueries = new HashSet<>();
                                         currentQueries.add(usedKeywords_2);
-                                        general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.put(keyWordCount_2, currentQueries);
-                                    } else if (keyWordCount_2 == general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.firstKey()) {
-                                        HashSet<HashSet<String>> currentQueries = general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.get(keyWordCount_2);
+                                       closestMatchedQueries.put(keyWordCount_2, currentQueries);
+                                    } else if (keyWordCount_2 ==  closestMatchedQueries.firstKey()) {
+                                        HashSet<HashSet<String>> currentQueries =  closestMatchedQueries.get(keyWordCount_2);
                                         currentQueries.add(usedKeywords_2);
-                                        general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.put(keyWordCount_2, currentQueries);
+                                        closestMatchedQueries.put(keyWordCount_2, currentQueries);
                                     }
                                 } else {
                                     HashSet<HashSet<String>> currentQueries = new HashSet<>();
                                     currentQueries.add(usedKeywords_2);
-                                    general.graph.theory.WikipediaInfoBoxModel2OldJune14_PERSONAL_CB.closestMatchedQueries.put(keyWordCount_2, currentQueries);
+                                    closestMatchedQueries.put(keyWordCount_2, currentQueries);
                                 }
                             }
 

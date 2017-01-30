@@ -15,7 +15,7 @@ public class Thesaurus {
         SendRequest request = new SendRequest((new Scanner(System.in)).nextLine(), "en_US", "xTuRi7OxPOyuqHaMBFkJ", "json");
         System.out.println(request.synonyms);
     }
-    public static HashSet<String> getSynonyms(String input, boolean isDeep)
+    public HashSet<String> getSynonyms(String input, boolean isDeep)
     {
         if(!isDeep)
             return new HashSet<String>();
